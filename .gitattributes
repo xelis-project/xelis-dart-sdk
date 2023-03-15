@@ -1,0 +1,4 @@
+* text=auto
+
+*.freezed.dart linguist-generated
+*.g.dart linguist-generated
