@@ -20,6 +20,7 @@ SubmitBlockParams _$SubmitBlockParamsFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$SubmitBlockParams {
+  /// @nodoc
   @JsonKey(name: 'block_template')
   String get blockTemplate => throw _privateConstructorUsedError;
 
@@ -104,6 +105,7 @@ class _$_SubmitBlockParams implements _SubmitBlockParams {
   factory _$_SubmitBlockParams.fromJson(Map<String, dynamic> json) =>
       _$$_SubmitBlockParamsFromJson(json);
 
+  /// @nodoc
   @override
   @JsonKey(name: 'block_template')
   final String blockTemplate;
@@ -150,6 +152,8 @@ abstract class _SubmitBlockParams implements SubmitBlockParams {
       _$_SubmitBlockParams.fromJson;
 
   @override
+
+  /// @nodoc
   @JsonKey(name: 'block_template')
   String get blockTemplate;
   @override

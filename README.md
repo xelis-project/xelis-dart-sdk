@@ -1,14 +1,11 @@
 # XELIS-DART-SDK
 
-Xelis software development kit for Dart.
+Software Development Kit in Dart for Xelis Blockchain.
 
 ## Features
 
-TODO
-
-## Getting started
-
-TODO
+- JSON-RPC Client to interact with daemon API.
+- Websocket channel to listen chain events.
 
 ## Usage
 
@@ -21,7 +18,7 @@ import 'package:xelis_dart_sdk/xelis_dart_sdk.dart';
 
 Future<void> main() async {
   try {
-    final daemonRepository = DaemonClientRepository(rpcAddress: testnetNodeURL)
+    final daemonRepository = DaemonClientRepository(rpcAddress: localhostAddress)
       ..startRpcClient();
     final res = await daemonRepository.getInfo();
     print('result: $res');
@@ -41,7 +38,3 @@ Future<void> main() async {
   // exit(0);
 }
 ```
-
-## Additional information
-
-TODO

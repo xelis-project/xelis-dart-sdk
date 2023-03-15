@@ -20,35 +20,64 @@ Block _$BlockFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Block {
+  /// @nodoc
   @JsonKey(name: 'block_type')
   String get blockType => throw _privateConstructorUsedError;
+
+  /// @nodoc
   @JsonKey(name: 'cumulative_difficulty')
   int get cumulativeDifficulty => throw _privateConstructorUsedError;
+
+  /// @nodoc
   @JsonKey(name: 'difficulty')
   int get difficulty => throw _privateConstructorUsedError;
+
+  /// @nodoc
   @JsonKey(name: 'extra_nonce')
   String get extraNonce => throw _privateConstructorUsedError;
+
+  /// @nodoc
   @JsonKey(name: 'hash')
   String get hash => throw _privateConstructorUsedError;
+
+  /// @nodoc
   @JsonKey(name: 'height')
   int get height => throw _privateConstructorUsedError;
+
+  /// @nodoc
   @JsonKey(name: 'miner')
   String get miner => throw _privateConstructorUsedError;
+
+  /// @nodoc
   @JsonKey(name: 'nonce')
   int get nonce => throw _privateConstructorUsedError;
+
+  /// @nodoc
   @JsonKey(name: 'reward')
   int? get reward => throw _privateConstructorUsedError;
+
+  /// @nodoc
   @JsonKey(name: 'supply')
-  int? get supply =>
-      throw _privateConstructorUsedError; // TODO convert timestamp to DateTime
+  int? get supply => throw _privateConstructorUsedError;
+
+  /// TODO convert timestamp to DateTime
+  /// @nodoc
   @JsonKey(name: 'timestamp')
   int get timestamp => throw _privateConstructorUsedError;
+
+  /// @nodoc
   @JsonKey(name: 'tips')
   List<String> get tips => throw _privateConstructorUsedError;
+
+  /// @nodoc
   @JsonKey(name: 'topoheight')
   int? get topoHeight => throw _privateConstructorUsedError;
+
+  /// @nodoc
   @JsonKey(name: 'total_size_in_bytes')
   int get totalSizeInBytes => throw _privateConstructorUsedError;
+
+  /// @nodoc
   @JsonKey(name: 'txs_hashes')
   List<String> get txsHashes => throw _privateConstructorUsedError;
 
@@ -328,41 +357,66 @@ class _$_Block implements _Block {
   factory _$_Block.fromJson(Map<String, dynamic> json) =>
       _$$_BlockFromJson(json);
 
+  /// @nodoc
   @override
   @JsonKey(name: 'block_type')
   final String blockType;
+
+  /// @nodoc
   @override
   @JsonKey(name: 'cumulative_difficulty')
   final int cumulativeDifficulty;
+
+  /// @nodoc
   @override
   @JsonKey(name: 'difficulty')
   final int difficulty;
+
+  /// @nodoc
   @override
   @JsonKey(name: 'extra_nonce')
   final String extraNonce;
+
+  /// @nodoc
   @override
   @JsonKey(name: 'hash')
   final String hash;
+
+  /// @nodoc
   @override
   @JsonKey(name: 'height')
   final int height;
+
+  /// @nodoc
   @override
   @JsonKey(name: 'miner')
   final String miner;
+
+  /// @nodoc
   @override
   @JsonKey(name: 'nonce')
   final int nonce;
+
+  /// @nodoc
   @override
   @JsonKey(name: 'reward')
   final int? reward;
+
+  /// @nodoc
   @override
   @JsonKey(name: 'supply')
   final int? supply;
-// TODO convert timestamp to DateTime
+
+  /// TODO convert timestamp to DateTime
+  /// @nodoc
   @override
   @JsonKey(name: 'timestamp')
   final int timestamp;
+
+  /// @nodoc
   final List<String> _tips;
+
+  /// @nodoc
   @override
   @JsonKey(name: 'tips')
   List<String> get tips {
@@ -371,13 +425,20 @@ class _$_Block implements _Block {
     return EqualUnmodifiableListView(_tips);
   }
 
+  /// @nodoc
   @override
   @JsonKey(name: 'topoheight')
   final int? topoHeight;
+
+  /// @nodoc
   @override
   @JsonKey(name: 'total_size_in_bytes')
   final int totalSizeInBytes;
+
+  /// @nodoc
   final List<String> _txsHashes;
+
+  /// @nodoc
   @override
   @JsonKey(name: 'txs_hashes')
   List<String> get txsHashes {
@@ -491,48 +552,79 @@ abstract class _Block implements Block {
   factory _Block.fromJson(Map<String, dynamic> json) = _$_Block.fromJson;
 
   @override
+
+  /// @nodoc
   @JsonKey(name: 'block_type')
   String get blockType;
   @override
+
+  /// @nodoc
   @JsonKey(name: 'cumulative_difficulty')
   int get cumulativeDifficulty;
   @override
+
+  /// @nodoc
   @JsonKey(name: 'difficulty')
   int get difficulty;
   @override
+
+  /// @nodoc
   @JsonKey(name: 'extra_nonce')
   String get extraNonce;
   @override
+
+  /// @nodoc
   @JsonKey(name: 'hash')
   String get hash;
   @override
+
+  /// @nodoc
   @JsonKey(name: 'height')
   int get height;
   @override
+
+  /// @nodoc
   @JsonKey(name: 'miner')
   String get miner;
   @override
+
+  /// @nodoc
   @JsonKey(name: 'nonce')
   int get nonce;
   @override
+
+  /// @nodoc
   @JsonKey(name: 'reward')
   int? get reward;
   @override
+
+  /// @nodoc
   @JsonKey(name: 'supply')
   int? get supply;
-  @override // TODO convert timestamp to DateTime
+  @override
+
+  /// TODO convert timestamp to DateTime
+  /// @nodoc
   @JsonKey(name: 'timestamp')
   int get timestamp;
   @override
+
+  /// @nodoc
   @JsonKey(name: 'tips')
   List<String> get tips;
   @override
+
+  /// @nodoc
   @JsonKey(name: 'topoheight')
   int? get topoHeight;
   @override
+
+  /// @nodoc
   @JsonKey(name: 'total_size_in_bytes')
   int get totalSizeInBytes;
   @override
+
+  /// @nodoc
   @JsonKey(name: 'txs_hashes')
   List<String> get txsHashes;
   @override

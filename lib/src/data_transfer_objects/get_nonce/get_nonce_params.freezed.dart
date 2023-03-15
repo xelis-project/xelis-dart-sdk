@@ -20,6 +20,7 @@ GetNonceParams _$GetNonceParamsFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$GetNonceParams {
+  /// @nodoc
   @JsonKey(name: 'address')
   String get address => throw _privateConstructorUsedError;
 
@@ -103,6 +104,7 @@ class _$_GetNonceParams implements _GetNonceParams {
   factory _$_GetNonceParams.fromJson(Map<String, dynamic> json) =>
       _$$_GetNonceParamsFromJson(json);
 
+  /// @nodoc
   @override
   @JsonKey(name: 'address')
   final String address;
@@ -147,6 +149,8 @@ abstract class _GetNonceParams implements GetNonceParams {
       _$_GetNonceParams.fromJson;
 
   @override
+
+  /// @nodoc
   @JsonKey(name: 'address')
   String get address;
   @override

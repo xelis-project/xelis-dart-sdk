@@ -20,8 +20,11 @@ GetLastBalanceParams _$GetLastBalanceParamsFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$GetLastBalanceParams {
+  /// @nodoc
   @JsonKey(name: 'address')
   String get address => throw _privateConstructorUsedError;
+
+  /// @nodoc
   @JsonKey(name: 'asset')
   String get asset => throw _privateConstructorUsedError;
 
@@ -122,9 +125,12 @@ class _$_GetLastBalanceParams implements _GetLastBalanceParams {
   factory _$_GetLastBalanceParams.fromJson(Map<String, dynamic> json) =>
       _$$_GetLastBalanceParamsFromJson(json);
 
+  /// @nodoc
   @override
   @JsonKey(name: 'address')
   final String address;
+
+  /// @nodoc
   @override
   @JsonKey(name: 'asset')
   final String asset;
@@ -172,9 +178,13 @@ abstract class _GetLastBalanceParams implements GetLastBalanceParams {
       _$_GetLastBalanceParams.fromJson;
 
   @override
+
+  /// @nodoc
   @JsonKey(name: 'address')
   String get address;
   @override
+
+  /// @nodoc
   @JsonKey(name: 'asset')
   String get asset;
   @override

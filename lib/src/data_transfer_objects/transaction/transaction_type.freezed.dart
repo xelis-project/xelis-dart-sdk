@@ -20,14 +20,20 @@ TransactionType _$TransactionTypeFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$TransactionType {
+  /// @nodoc
   @JsonKey(name: 'Transfer')
   List<Transfer>? get transfers => throw _privateConstructorUsedError;
 
   /// TODO data structure
+  /// @nodoc
   @JsonKey(name: 'Burn')
   dynamic get burn => throw _privateConstructorUsedError;
+
+  /// @nodoc
   @JsonKey(name: 'CallContract')
   CallContract? get callContract => throw _privateConstructorUsedError;
+
+  /// @nodoc
   @JsonKey(name: 'DeployContract')
   String? get deployContract => throw _privateConstructorUsedError;
 
@@ -172,7 +178,10 @@ class _$_TransactionType implements _TransactionType {
   factory _$_TransactionType.fromJson(Map<String, dynamic> json) =>
       _$$_TransactionTypeFromJson(json);
 
+  /// @nodoc
   final List<Transfer>? _transfers;
+
+  /// @nodoc
   @override
   @JsonKey(name: 'Transfer')
   List<Transfer>? get transfers {
@@ -184,12 +193,17 @@ class _$_TransactionType implements _TransactionType {
   }
 
   /// TODO data structure
+  /// @nodoc
   @override
   @JsonKey(name: 'Burn')
   final dynamic burn;
+
+  /// @nodoc
   @override
   @JsonKey(name: 'CallContract')
   final CallContract? callContract;
+
+  /// @nodoc
   @override
   @JsonKey(name: 'DeployContract')
   final String? deployContract;
@@ -248,17 +262,24 @@ abstract class _TransactionType implements TransactionType {
       _$_TransactionType.fromJson;
 
   @override
+
+  /// @nodoc
   @JsonKey(name: 'Transfer')
   List<Transfer>? get transfers;
   @override
 
   /// TODO data structure
+  /// @nodoc
   @JsonKey(name: 'Burn')
   dynamic get burn;
   @override
+
+  /// @nodoc
   @JsonKey(name: 'CallContract')
   CallContract? get callContract;
   @override
+
+  /// @nodoc
   @JsonKey(name: 'DeployContract')
   String? get deployContract;
   @override

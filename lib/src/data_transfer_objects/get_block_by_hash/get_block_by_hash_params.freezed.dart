@@ -20,8 +20,11 @@ GetBlockByHashParams _$GetBlockByHashParamsFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$GetBlockByHashParams {
+  /// @nodoc
   @JsonKey(name: 'hash')
   String get hash => throw _privateConstructorUsedError;
+
+  /// @nodoc
   @JsonKey(name: 'include_txs')
   bool? get includeTxs => throw _privateConstructorUsedError;
 
@@ -123,9 +126,12 @@ class _$_GetBlockByHashParams implements _GetBlockByHashParams {
   factory _$_GetBlockByHashParams.fromJson(Map<String, dynamic> json) =>
       _$$_GetBlockByHashParamsFromJson(json);
 
+  /// @nodoc
   @override
   @JsonKey(name: 'hash')
   final String hash;
+
+  /// @nodoc
   @override
   @JsonKey(name: 'include_txs')
   final bool? includeTxs;
@@ -174,9 +180,13 @@ abstract class _GetBlockByHashParams implements GetBlockByHashParams {
       _$_GetBlockByHashParams.fromJson;
 
   @override
+
+  /// @nodoc
   @JsonKey(name: 'hash')
   String get hash;
   @override
+
+  /// @nodoc
   @JsonKey(name: 'include_txs')
   bool? get includeTxs;
   @override

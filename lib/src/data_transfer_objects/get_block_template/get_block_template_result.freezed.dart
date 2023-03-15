@@ -21,8 +21,11 @@ GetBlockTemplateResult _$GetBlockTemplateResultFromJson(
 
 /// @nodoc
 mixin _$GetBlockTemplateResult {
+  /// @nodoc
   @JsonKey(name: 'difficulty')
   int get difficulty => throw _privateConstructorUsedError;
+
+  /// @nodoc
   @JsonKey(name: 'template')
   String get template => throw _privateConstructorUsedError;
 
@@ -124,9 +127,12 @@ class _$_GetBlockTemplateResult implements _GetBlockTemplateResult {
   factory _$_GetBlockTemplateResult.fromJson(Map<String, dynamic> json) =>
       _$$_GetBlockTemplateResultFromJson(json);
 
+  /// @nodoc
   @override
   @JsonKey(name: 'difficulty')
   final int difficulty;
+
+  /// @nodoc
   @override
   @JsonKey(name: 'template')
   final String template;
@@ -176,9 +182,13 @@ abstract class _GetBlockTemplateResult implements GetBlockTemplateResult {
       _$_GetBlockTemplateResult.fromJson;
 
   @override
+
+  /// @nodoc
   @JsonKey(name: 'difficulty')
   int get difficulty;
   @override
+
+  /// @nodoc
   @JsonKey(name: 'template')
   String get template;
   @override

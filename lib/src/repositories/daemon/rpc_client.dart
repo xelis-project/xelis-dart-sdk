@@ -5,7 +5,7 @@ import 'package:web_socket_channel/web_socket_channel.dart';
 
 /// @nodoc
 class ClientRepository {
-  /// TODO doc
+  /// @nodoc
   ClientRepository(this.uri) : rpcClient = _setUpClient(uri);
 
   /// JSON-RPC server Uri address.

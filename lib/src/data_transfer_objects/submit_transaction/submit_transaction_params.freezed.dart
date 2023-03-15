@@ -21,6 +21,7 @@ SubmitTransactionParams _$SubmitTransactionParamsFromJson(
 
 /// @nodoc
 mixin _$SubmitTransactionParams {
+  /// @nodoc
   @JsonKey(name: 'data')
   String get hex => throw _privateConstructorUsedError;
 
@@ -106,6 +107,7 @@ class _$_SubmitTransactionParams implements _SubmitTransactionParams {
   factory _$_SubmitTransactionParams.fromJson(Map<String, dynamic> json) =>
       _$$_SubmitTransactionParamsFromJson(json);
 
+  /// @nodoc
   @override
   @JsonKey(name: 'data')
   final String hex;
@@ -152,6 +154,8 @@ abstract class _SubmitTransactionParams implements SubmitTransactionParams {
       _$_SubmitTransactionParams.fromJson;
 
   @override
+
+  /// @nodoc
   @JsonKey(name: 'data')
   String get hex;
   @override

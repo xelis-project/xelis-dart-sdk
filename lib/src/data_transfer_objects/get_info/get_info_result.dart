@@ -6,21 +6,43 @@ part 'get_info_result.freezed.dart';
 
 part 'get_info_result.g.dart';
 
+/// @nodoc
 @freezed
 class GetInfoResult with _$GetInfoResult {
+  /// @nodoc
   const factory GetInfoResult({
+    /// @nodoc
     @JsonKey(name: 'block_time_target') required int blockTimeTarget,
+
+    /// @nodoc
     @JsonKey(name: 'difficulty') required int difficulty,
+
+    /// @nodoc
     @JsonKey(name: 'height') required int height,
+
+    /// @nodoc
     @JsonKey(name: 'mempool_size') required int mempoolSize,
+
+    /// @nodoc
     @JsonKey(name: 'native_supply') required int nativeSupply,
+
+    /// @nodoc
     @JsonKey(name: 'network') required String network,
+
+    /// @nodoc
     @JsonKey(name: 'stableheight') required int stableHeight,
+
+    /// @nodoc
     @JsonKey(name: 'top_hash') required String topHash,
+
+    /// @nodoc
     @JsonKey(name: 'topoheight') required int topoHeight,
+
+    /// @nodoc
     @JsonKey(name: 'version') required String version,
   }) = _GetInfoResult;
 
+  /// @nodoc
   factory GetInfoResult.fromJson(Map<String, dynamic> json) =>
       _$GetInfoResultFromJson(json);
 }

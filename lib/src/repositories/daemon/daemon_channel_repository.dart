@@ -7,16 +7,17 @@ import 'package:xelis_dart_sdk/xelis_dart_sdk.dart';
 
 // enum SocketStates { connecting, open, closing, closed, disconnected }
 
-/// TODO doc
+/// A repository that provides WebSocketChannel and methods to listen
+/// and react to chain event.
 class DaemonChannelRepository {
-  /// TODO doc
+  /// @nodoc
   DaemonChannelRepository({required String rpcAddress})
       : uri = setUpUri(rpcAddress);
 
-  /// TODO doc
+  /// Websocket URI
   final Uri uri;
 
-  /// TODO doc
+  /// Websocket channel
   WebSocketChannel? channel;
 
   static const _subscribe = 'subscribe';
@@ -28,10 +29,10 @@ class DaemonChannelRepository {
   static const _transactionSCResult = 'TransactionSCResult';
   static const _newAsset = 'NewAsset';
 
-  /// TODO doc
+  /// Returns channel's stream.
   Stream<dynamic>? get stream => channel?.stream;
 
-  /// TODO doc
+  /// Establish the channel to communicate with daemon.
   Future<void> connect() async {
     if (channel != null) {
       return;
@@ -40,7 +41,7 @@ class DaemonChannelRepository {
     return channel!.ready;
   }
 
-  /// TODO doc
+  /// Close the websocket channel.
   Future<void> disconnect() async {
     if (channel != null) {
       await channel!.sink.close(status.goingAway);
@@ -48,7 +49,7 @@ class DaemonChannelRepository {
     }
   }
 
-  /// TODO doc
+  /// Start listening by adding the callback of your choice.
   StreamSubscription<dynamic>? listenDaemonEvent({
     void Function(Block block)? onNewBlock,
     void Function(BlockOrderEvent blockOrderEvent)? onBlockOrdered,
@@ -91,8 +92,8 @@ class DaemonChannelRepository {
     );
   }
 
-  /// TODO doc
-  Stream<dynamic>? subscribeOnNewBlock() {
+  /// Subscribe to NewBlock event.
+  Stream<dynamic>? subscribeToNewBlock() {
     _subscribeMethod(_newBlock);
     return channel?.stream.skipWhile((event) {
       return !_isNewBlock(event as String);
@@ -101,39 +102,39 @@ class DaemonChannelRepository {
     );
   }
 
-  /// TODO doc
-  void unsubscribeOnNewBlock() {
+  /// Unsubscribe to NewBlock event.
+  void unsubscribeToNewBlock() {
     _unsubscribeMethod(_newBlock);
   }
 
-  /// TODO doc
-  Stream<dynamic>? subscribeOnBlockOrdered() {
+  /// Subscribe to BlockOrdered event.
+  Stream<dynamic>? subscribeToBlockOrdered() {
     _subscribeMethod(_blockOrdered);
     return channel?.stream
         .skipWhile((element) => !_isBlockOrdered(element as String))
         .map((event) => BlockOrderEvent.fromJson(_getResult(event as String)));
   }
 
-  /// TODO doc
-  void unsubscribeOnBlockOrdered() {
+  /// Unsubscribe to BlockOrdered event.
+  void unsubscribeToBlockOrdered() {
     _unsubscribeMethod(_blockOrdered);
   }
 
-  /// TODO doc
-  Stream<dynamic>? subscribeOnTransactionAddedInMempool() {
+  /// Subscribe to TransactionAddedInMempool event.
+  Stream<dynamic>? subscribeToTransactionAddedInMempool() {
     _subscribeMethod(_transactionAddedInMempool);
     return channel?.stream.skipWhile(
       (element) => !_isTransactionAddedInMempool(element as String),
     );
   }
 
-  /// TODO doc
-  void unsubscribeOnTransactionAddedInMempool() {
+  /// Unsubscribe to TransactionAddedInMempool event.
+  void unsubscribeToTransactionAddedInMempool() {
     _unsubscribeMethod(_transactionAddedInMempool);
   }
 
-  /// TODO doc
-  Stream<dynamic>? subscribeOnTransactionExecuted() {
+  /// Subscribe to TransactionExecuted event.
+  Stream<dynamic>? subscribeToTransactionExecuted() {
     _subscribeMethod(_transactionExecuted);
     return channel?.stream
         .skipWhile((element) => !_isTransactionExecuted(element as String))
@@ -143,43 +144,43 @@ class DaemonChannelRepository {
         );
   }
 
-  /// TODO doc
-  void unsubscribeOnTransactionExecuted() {
+  /// Unsubscribe to TransactionExecuted event.
+  void unsubscribeToTransactionExecuted() {
     _unsubscribeMethod(_transactionExecuted);
   }
 
-  /// TODO doc
-  Stream<dynamic>? subscribeOnTransactionSCResult() {
+  /// Subscribe to TransactionSCResult event.
+  Stream<dynamic>? subscribeToTransactionSCResult() {
     _subscribeMethod(_transactionSCResult);
     return channel?.stream
         .skipWhile((element) => !_isTransactionSCResult(element as String));
   }
 
-  /// TODO doc
-  void unsubscribeOnTransactionSCResult() {
+  /// Subscribe to TransactionSCResult event.
+  void unsubscribeToTransactionSCResult() {
     _unsubscribeMethod(_transactionSCResult);
   }
 
-  /// TODO doc
-  Stream<dynamic>? subscribeOnNewAsset() {
+  /// Subscribe to NewAsset event.
+  Stream<dynamic>? subscribeToNewAsset() {
     _subscribeMethod(_newAsset);
     return channel?.stream
         .skipWhile((element) => !_isNewAsset(element as String));
   }
 
-  /// TODO doc
-  void unsubscribeOnNewAsset() {
+  /// Unsubscribe to NewAsset event.
+  void unsubscribeToNewAsset() {
     _unsubscribeMethod(_newAsset);
   }
 
-  /// TODO doc
+  /// Unsubscribe from all events.
   void unsubscribeAll() {
-    unsubscribeOnNewBlock();
-    unsubscribeOnNewAsset();
-    unsubscribeOnBlockOrdered();
-    unsubscribeOnTransactionAddedInMempool();
-    unsubscribeOnTransactionExecuted();
-    unsubscribeOnTransactionSCResult();
+    unsubscribeToNewBlock();
+    unsubscribeToNewAsset();
+    unsubscribeToBlockOrdered();
+    unsubscribeToTransactionAddedInMempool();
+    unsubscribeToTransactionExecuted();
+    unsubscribeToTransactionSCResult();
   }
 
   String? _getEventType(String event) {

@@ -20,10 +20,15 @@ BlockOrderEvent _$BlockOrderEventFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$BlockOrderEvent {
+  /// @nodoc
   @JsonKey(name: 'block_hash')
   String get blockHash => throw _privateConstructorUsedError;
+
+  /// @nodoc
   @JsonKey(name: 'block_type')
   String get blockType => throw _privateConstructorUsedError;
+
+  /// @nodoc
   @JsonKey(name: 'topoheight')
   int get topoHeight => throw _privateConstructorUsedError;
 
@@ -136,12 +141,17 @@ class _$_BlockOrderEvent implements _BlockOrderEvent {
   factory _$_BlockOrderEvent.fromJson(Map<String, dynamic> json) =>
       _$$_BlockOrderEventFromJson(json);
 
+  /// @nodoc
   @override
   @JsonKey(name: 'block_hash')
   final String blockHash;
+
+  /// @nodoc
   @override
   @JsonKey(name: 'block_type')
   final String blockType;
+
+  /// @nodoc
   @override
   @JsonKey(name: 'topoheight')
   final int topoHeight;
@@ -194,12 +204,18 @@ abstract class _BlockOrderEvent implements BlockOrderEvent {
       _$_BlockOrderEvent.fromJson;
 
   @override
+
+  /// @nodoc
   @JsonKey(name: 'block_hash')
   String get blockHash;
   @override
+
+  /// @nodoc
   @JsonKey(name: 'block_type')
   String get blockType;
   @override
+
+  /// @nodoc
   @JsonKey(name: 'topoheight')
   int get topoHeight;
   @override

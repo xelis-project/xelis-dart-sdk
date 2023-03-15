@@ -20,24 +20,43 @@ GetInfoResult _$GetInfoResultFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$GetInfoResult {
+  /// @nodoc
   @JsonKey(name: 'block_time_target')
   int get blockTimeTarget => throw _privateConstructorUsedError;
+
+  /// @nodoc
   @JsonKey(name: 'difficulty')
   int get difficulty => throw _privateConstructorUsedError;
+
+  /// @nodoc
   @JsonKey(name: 'height')
   int get height => throw _privateConstructorUsedError;
+
+  /// @nodoc
   @JsonKey(name: 'mempool_size')
   int get mempoolSize => throw _privateConstructorUsedError;
+
+  /// @nodoc
   @JsonKey(name: 'native_supply')
   int get nativeSupply => throw _privateConstructorUsedError;
+
+  /// @nodoc
   @JsonKey(name: 'network')
   String get network => throw _privateConstructorUsedError;
+
+  /// @nodoc
   @JsonKey(name: 'stableheight')
   int get stableHeight => throw _privateConstructorUsedError;
+
+  /// @nodoc
   @JsonKey(name: 'top_hash')
   String get topHash => throw _privateConstructorUsedError;
+
+  /// @nodoc
   @JsonKey(name: 'topoheight')
   int get topoHeight => throw _privateConstructorUsedError;
+
+  /// @nodoc
   @JsonKey(name: 'version')
   String get version => throw _privateConstructorUsedError;
 
@@ -241,33 +260,52 @@ class _$_GetInfoResult implements _GetInfoResult {
   factory _$_GetInfoResult.fromJson(Map<String, dynamic> json) =>
       _$$_GetInfoResultFromJson(json);
 
+  /// @nodoc
   @override
   @JsonKey(name: 'block_time_target')
   final int blockTimeTarget;
+
+  /// @nodoc
   @override
   @JsonKey(name: 'difficulty')
   final int difficulty;
+
+  /// @nodoc
   @override
   @JsonKey(name: 'height')
   final int height;
+
+  /// @nodoc
   @override
   @JsonKey(name: 'mempool_size')
   final int mempoolSize;
+
+  /// @nodoc
   @override
   @JsonKey(name: 'native_supply')
   final int nativeSupply;
+
+  /// @nodoc
   @override
   @JsonKey(name: 'network')
   final String network;
+
+  /// @nodoc
   @override
   @JsonKey(name: 'stableheight')
   final int stableHeight;
+
+  /// @nodoc
   @override
   @JsonKey(name: 'top_hash')
   final String topHash;
+
+  /// @nodoc
   @override
   @JsonKey(name: 'topoheight')
   final int topoHeight;
+
+  /// @nodoc
   @override
   @JsonKey(name: 'version')
   final String version;
@@ -356,33 +394,53 @@ abstract class _GetInfoResult implements GetInfoResult {
       _$_GetInfoResult.fromJson;
 
   @override
+
+  /// @nodoc
   @JsonKey(name: 'block_time_target')
   int get blockTimeTarget;
   @override
+
+  /// @nodoc
   @JsonKey(name: 'difficulty')
   int get difficulty;
   @override
+
+  /// @nodoc
   @JsonKey(name: 'height')
   int get height;
   @override
+
+  /// @nodoc
   @JsonKey(name: 'mempool_size')
   int get mempoolSize;
   @override
+
+  /// @nodoc
   @JsonKey(name: 'native_supply')
   int get nativeSupply;
   @override
+
+  /// @nodoc
   @JsonKey(name: 'network')
   String get network;
   @override
+
+  /// @nodoc
   @JsonKey(name: 'stableheight')
   int get stableHeight;
   @override
+
+  /// @nodoc
   @JsonKey(name: 'top_hash')
   String get topHash;
   @override
+
+  /// @nodoc
   @JsonKey(name: 'topoheight')
   int get topoHeight;
   @override
+
+  /// @nodoc
   @JsonKey(name: 'version')
   String get version;
   @override

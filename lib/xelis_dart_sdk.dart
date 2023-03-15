@@ -1,4 +1,4 @@
-/// Xelis software development kit for Dart.
+/// Software Development Kit in Dart for Xelis Blockchain.
 library xelis_dart_sdk;
 
 export 'src/data_transfer_objects/dtos.dart';

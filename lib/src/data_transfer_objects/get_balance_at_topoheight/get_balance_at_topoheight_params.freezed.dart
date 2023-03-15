@@ -21,10 +21,15 @@ GetBalanceAtTopoHeightParams _$GetBalanceAtTopoHeightParamsFromJson(
 
 /// @nodoc
 mixin _$GetBalanceAtTopoHeightParams {
+  /// @nodoc
   @JsonKey(name: 'address')
   String get address => throw _privateConstructorUsedError;
+
+  /// @nodoc
   @JsonKey(name: 'asset')
   String get asset => throw _privateConstructorUsedError;
+
+  /// @nodoc
   @JsonKey(name: 'topoheight')
   int get topoHeight => throw _privateConstructorUsedError;
 
@@ -143,12 +148,17 @@ class _$_GetBalanceAtTopoHeightParams implements _GetBalanceAtTopoHeightParams {
   factory _$_GetBalanceAtTopoHeightParams.fromJson(Map<String, dynamic> json) =>
       _$$_GetBalanceAtTopoHeightParamsFromJson(json);
 
+  /// @nodoc
   @override
   @JsonKey(name: 'address')
   final String address;
+
+  /// @nodoc
   @override
   @JsonKey(name: 'asset')
   final String asset;
+
+  /// @nodoc
   @override
   @JsonKey(name: 'topoheight')
   final int topoHeight;
@@ -200,12 +210,18 @@ abstract class _GetBalanceAtTopoHeightParams
       _$_GetBalanceAtTopoHeightParams.fromJson;
 
   @override
+
+  /// @nodoc
   @JsonKey(name: 'address')
   String get address;
   @override
+
+  /// @nodoc
   @JsonKey(name: 'asset')
   String get asset;
   @override
+
+  /// @nodoc
   @JsonKey(name: 'topoheight')
   int get topoHeight;
   @override

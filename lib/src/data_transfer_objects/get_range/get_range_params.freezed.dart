@@ -20,8 +20,11 @@ GetRangeParams _$GetRangeParamsFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$GetRangeParams {
+  /// @nodoc
   @JsonKey(name: 'start_topoheight')
   int? get startTopoHeight => throw _privateConstructorUsedError;
+
+  /// @nodoc
   @JsonKey(name: 'end_topoheight')
   int? get endTopoHeight => throw _privateConstructorUsedError;
 
@@ -122,9 +125,12 @@ class _$_GetRangeParams implements _GetRangeParams {
   factory _$_GetRangeParams.fromJson(Map<String, dynamic> json) =>
       _$$_GetRangeParamsFromJson(json);
 
+  /// @nodoc
   @override
   @JsonKey(name: 'start_topoheight')
   final int? startTopoHeight;
+
+  /// @nodoc
   @override
   @JsonKey(name: 'end_topoheight')
   final int? endTopoHeight;
@@ -173,9 +179,13 @@ abstract class _GetRangeParams implements GetRangeParams {
       _$_GetRangeParams.fromJson;
 
   @override
+
+  /// @nodoc
   @JsonKey(name: 'start_topoheight')
   int? get startTopoHeight;
   @override
+
+  /// @nodoc
   @JsonKey(name: 'end_topoheight')
   int? get endTopoHeight;
   @override

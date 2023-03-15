@@ -20,22 +20,35 @@ Transaction _$TransactionFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Transaction {
+  /// @nodoc
   @JsonKey(name: 'blocks')
   List<String>? get blocks => throw _privateConstructorUsedError;
+
+  /// @nodoc
   @JsonKey(name: 'executed_in_block')
   String? get executedInBlock => throw _privateConstructorUsedError;
+
+  /// @nodoc
   @JsonKey(name: 'hash')
   String get hash => throw _privateConstructorUsedError;
 
-  /// TODO TransactionType
+  /// @nodoc
   @JsonKey(name: 'data')
   TransactionType get data => throw _privateConstructorUsedError;
+
+  /// @nodoc
   @JsonKey(name: 'fee')
   int get fee => throw _privateConstructorUsedError;
+
+  /// @nodoc
   @JsonKey(name: 'nonce')
   int get nonce => throw _privateConstructorUsedError;
+
+  /// @nodoc
   @JsonKey(name: 'owner')
   String get owner => throw _privateConstructorUsedError;
+
+  /// @nodoc
   @JsonKey(name: 'signature')
   String get signature => throw _privateConstructorUsedError;
 
@@ -228,7 +241,10 @@ class _$_Transaction implements _Transaction {
   factory _$_Transaction.fromJson(Map<String, dynamic> json) =>
       _$$_TransactionFromJson(json);
 
+  /// @nodoc
   final List<String>? _blocks;
+
+  /// @nodoc
   @override
   @JsonKey(name: 'blocks')
   List<String>? get blocks {
@@ -239,26 +255,37 @@ class _$_Transaction implements _Transaction {
     return EqualUnmodifiableListView(value);
   }
 
+  /// @nodoc
   @override
   @JsonKey(name: 'executed_in_block')
   final String? executedInBlock;
+
+  /// @nodoc
   @override
   @JsonKey(name: 'hash')
   final String hash;
 
-  /// TODO TransactionType
+  /// @nodoc
   @override
   @JsonKey(name: 'data')
   final TransactionType data;
+
+  /// @nodoc
   @override
   @JsonKey(name: 'fee')
   final int fee;
+
+  /// @nodoc
   @override
   @JsonKey(name: 'nonce')
   final int nonce;
+
+  /// @nodoc
   @override
   @JsonKey(name: 'owner')
   final String owner;
+
+  /// @nodoc
   @override
   @JsonKey(name: 'signature')
   final String signature;
@@ -328,29 +355,43 @@ abstract class _Transaction implements Transaction {
       _$_Transaction.fromJson;
 
   @override
+
+  /// @nodoc
   @JsonKey(name: 'blocks')
   List<String>? get blocks;
   @override
+
+  /// @nodoc
   @JsonKey(name: 'executed_in_block')
   String? get executedInBlock;
   @override
+
+  /// @nodoc
   @JsonKey(name: 'hash')
   String get hash;
   @override
 
-  /// TODO TransactionType
+  /// @nodoc
   @JsonKey(name: 'data')
   TransactionType get data;
   @override
+
+  /// @nodoc
   @JsonKey(name: 'fee')
   int get fee;
   @override
+
+  /// @nodoc
   @JsonKey(name: 'nonce')
   int get nonce;
   @override
+
+  /// @nodoc
   @JsonKey(name: 'owner')
   String get owner;
   @override
+
+  /// @nodoc
   @JsonKey(name: 'signature')
   String get signature;
   @override

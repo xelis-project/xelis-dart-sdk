@@ -20,8 +20,11 @@ GetLastBalanceResult _$GetLastBalanceResultFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$GetLastBalanceResult {
+  /// @nodoc
   @JsonKey(name: 'balance')
   Balance get balance => throw _privateConstructorUsedError;
+
+  /// @nodoc
   @JsonKey(name: 'topoheight')
   int get topoHeight => throw _privateConstructorUsedError;
 
@@ -135,9 +138,12 @@ class _$_GetLastBalanceResult implements _GetLastBalanceResult {
   factory _$_GetLastBalanceResult.fromJson(Map<String, dynamic> json) =>
       _$$_GetLastBalanceResultFromJson(json);
 
+  /// @nodoc
   @override
   @JsonKey(name: 'balance')
   final Balance balance;
+
+  /// @nodoc
   @override
   @JsonKey(name: 'topoheight')
   final int topoHeight;
@@ -186,9 +192,13 @@ abstract class _GetLastBalanceResult implements GetLastBalanceResult {
       _$_GetLastBalanceResult.fromJson;
 
   @override
+
+  /// @nodoc
   @JsonKey(name: 'balance')
   Balance get balance;
   @override
+
+  /// @nodoc
   @JsonKey(name: 'topoheight')
   int get topoHeight;
   @override

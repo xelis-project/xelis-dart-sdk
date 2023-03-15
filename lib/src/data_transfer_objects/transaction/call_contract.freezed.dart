@@ -20,10 +20,15 @@ CallContract _$CallContractFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$CallContract {
+  /// @nodoc
   @JsonKey(name: 'contract')
   String get contractHash => throw _privateConstructorUsedError;
+
+  /// @nodoc
   @JsonKey(name: 'assets')
   Map<String, int> get assets => throw _privateConstructorUsedError;
+
+  /// @nodoc
   @JsonKey(name: 'params')
   Map<String, dynamic> get params => throw _privateConstructorUsedError;
 
@@ -138,10 +143,15 @@ class _$_CallContract implements _CallContract {
   factory _$_CallContract.fromJson(Map<String, dynamic> json) =>
       _$$_CallContractFromJson(json);
 
+  /// @nodoc
   @override
   @JsonKey(name: 'contract')
   final String contractHash;
+
+  /// @nodoc
   final Map<String, int> _assets;
+
+  /// @nodoc
   @override
   @JsonKey(name: 'assets')
   Map<String, int> get assets {
@@ -150,7 +160,10 @@ class _$_CallContract implements _CallContract {
     return EqualUnmodifiableMapView(_assets);
   }
 
+  /// @nodoc
   final Map<String, dynamic> _params;
+
+  /// @nodoc
   @override
   @JsonKey(name: 'params')
   Map<String, dynamic> get params {
@@ -210,12 +223,18 @@ abstract class _CallContract implements CallContract {
       _$_CallContract.fromJson;
 
   @override
+
+  /// @nodoc
   @JsonKey(name: 'contract')
   String get contractHash;
   @override
+
+  /// @nodoc
   @JsonKey(name: 'assets')
   Map<String, int> get assets;
   @override
+
+  /// @nodoc
   @JsonKey(name: 'params')
   Map<String, dynamic> get params;
   @override

@@ -20,6 +20,7 @@ GetTopBlockParams _$GetTopBlockParamsFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$GetTopBlockParams {
+  /// @nodoc
   @JsonKey(name: 'include_txs')
   bool? get includeTxs => throw _privateConstructorUsedError;
 
@@ -104,6 +105,7 @@ class _$_GetTopBlockParams implements _GetTopBlockParams {
   factory _$_GetTopBlockParams.fromJson(Map<String, dynamic> json) =>
       _$$_GetTopBlockParamsFromJson(json);
 
+  /// @nodoc
   @override
   @JsonKey(name: 'include_txs')
   final bool? includeTxs;
@@ -150,6 +152,8 @@ abstract class _GetTopBlockParams implements GetTopBlockParams {
       _$_GetTopBlockParams.fromJson;
 
   @override
+
+  /// @nodoc
   @JsonKey(name: 'include_txs')
   bool? get includeTxs;
   @override

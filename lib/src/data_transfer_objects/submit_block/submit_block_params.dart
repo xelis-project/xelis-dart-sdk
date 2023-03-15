@@ -6,12 +6,16 @@ part 'submit_block_params.freezed.dart';
 
 part 'submit_block_params.g.dart';
 
+/// @nodoc
 @freezed
 class SubmitBlockParams with _$SubmitBlockParams {
+  /// @nodoc
   const factory SubmitBlockParams({
+    /// @nodoc
     @JsonKey(name: 'block_template') required String blockTemplate,
   }) = _SubmitBlockParams;
 
+  /// @nodoc
   factory SubmitBlockParams.fromJson(Map<String, dynamic> json) =>
       _$SubmitBlockParamsFromJson(json);
 }
