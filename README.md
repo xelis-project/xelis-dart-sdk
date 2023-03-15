@@ -28,8 +28,8 @@ Future<void> main() async {
 
     // After the connection, subscribe to the desired events,
     daemonChannel
-      ..subscribeOnNewBlock()
-      ..subscribeOnBlockOrdered()
+      ..subscribeToNewBlock()
+      ..subscribeToBlockOrdered()
     // Then add your callback and start listening.
       ..listenDaemonEvent(onNewBlock: print, onBlockOrdered: print);
   } catch (e) {
