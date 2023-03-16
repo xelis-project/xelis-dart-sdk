@@ -15,7 +15,7 @@ Future<void> main() async {
     daemonChannel
       ..subscribeToNewBlock()
       ..subscribeToBlockOrdered()
-      ..listenDaemonEvent(onNewBlock: print, onBlockOrdered: print);
+      ..listenDaemonEvents(onNewBlock: print, onBlockOrdered: print);
   } catch (e) {
     print(e);
   }

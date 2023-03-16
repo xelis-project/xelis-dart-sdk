@@ -50,11 +50,12 @@ class DaemonChannelRepository {
   }
 
   /// Start listening by adding the callback of your choice.
-  StreamSubscription<dynamic>? listenDaemonEvent({
+  StreamSubscription<dynamic>? listenDaemonEvents({
     void Function(Block block)? onNewBlock,
     void Function(BlockOrderEvent blockOrderEvent)? onBlockOrdered,
     void Function(dynamic event)? onTransactionAddedInMempool,
-    void Function(dynamic event)? onTransactionExecuted,
+    void Function(TransactionExecutedEvent transactionExecutedEvent)?
+        onTransactionExecuted,
     void Function(dynamic event)? onTransactionSCResult,
     void Function(dynamic event)? onNewAsset,
     Function? onError,

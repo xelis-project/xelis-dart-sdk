@@ -31,7 +31,7 @@ Future<void> main() async {
       ..subscribeToNewBlock()
       ..subscribeToBlockOrdered()
     // Then add your callback and start listening.
-      ..listenDaemonEvent(onNewBlock: print, onBlockOrdered: print);
+      ..listenDaemonEvents(onNewBlock: print, onBlockOrdered: print);
   } catch (e) {
     print(e);
   }
