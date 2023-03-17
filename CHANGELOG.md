@@ -1,3 +1,7 @@
+## 0.0.4
+
+- fix: param type for onTransactionAddedInMempool callback.
+
 ## 0.0.3
 
 - fix: unique json-rpc id.

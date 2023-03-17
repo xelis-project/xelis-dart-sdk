@@ -53,7 +53,7 @@ class DaemonChannelRepository {
   StreamSubscription<dynamic>? listenDaemonEvents({
     void Function(Block block)? onNewBlock,
     void Function(BlockOrderEvent blockOrderEvent)? onBlockOrdered,
-    void Function(dynamic event)? onTransactionAddedInMempool,
+    void Function(Transaction transaction)? onTransactionAddedInMempool,
     void Function(TransactionExecutedEvent transactionExecutedEvent)?
         onTransactionExecuted,
     void Function(dynamic event)? onTransactionSCResult,
@@ -73,7 +73,8 @@ class DaemonChannelRepository {
           onBlockOrdered?.call(blockOrderEvent);
         }
         if (_isTransactionAddedInMempool(event)) {
-          onTransactionAddedInMempool?.call(event);
+          final transaction = Transaction.fromJson(_getResult(event));
+          onTransactionAddedInMempool?.call(transaction);
         }
         if (_isTransactionExecuted(event)) {
           final transactionExecutedEvent =
