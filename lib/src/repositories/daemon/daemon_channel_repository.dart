@@ -223,7 +223,7 @@ class DaemonChannelRepository {
 
   String _jsonRequest(String method, String event) {
     return jsonEncode({
-      'id': 1,
+      'id': DateTime.now().microsecondsSinceEpoch,
       'jsonrpc': '2.0',
       'method': method,
       'params': {'notify': event}
