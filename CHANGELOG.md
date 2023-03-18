@@ -1,3 +1,7 @@
+## 0.0.5
+
+- fix: strong typing for event stream objects.
+
 ## 0.0.4
 
 - fix: param type for onTransactionAddedInMempool callback.

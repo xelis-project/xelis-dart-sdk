@@ -95,7 +95,7 @@ class DaemonChannelRepository {
   }
 
   /// Subscribe to NewBlock event.
-  Stream<dynamic>? subscribeToNewBlock() {
+  Stream<Block>? subscribeToNewBlock() {
     _subscribeMethod(_newBlock);
     return channel?.stream.skipWhile((event) {
       return !_isNewBlock(event as String);
@@ -110,7 +110,7 @@ class DaemonChannelRepository {
   }
 
   /// Subscribe to BlockOrdered event.
-  Stream<dynamic>? subscribeToBlockOrdered() {
+  Stream<BlockOrderEvent>? subscribeToBlockOrdered() {
     _subscribeMethod(_blockOrdered);
     return channel?.stream
         .skipWhile((element) => !_isBlockOrdered(element as String))
@@ -123,11 +123,13 @@ class DaemonChannelRepository {
   }
 
   /// Subscribe to TransactionAddedInMempool event.
-  Stream<dynamic>? subscribeToTransactionAddedInMempool() {
+  Stream<Transaction>? subscribeToTransactionAddedInMempool() {
     _subscribeMethod(_transactionAddedInMempool);
-    return channel?.stream.skipWhile(
-      (element) => !_isTransactionAddedInMempool(element as String),
-    );
+    return channel?.stream
+        .skipWhile(
+          (element) => !_isTransactionAddedInMempool(element as String),
+        )
+        .map((event) => Transaction.fromJson(event as Map<String, dynamic>));
   }
 
   /// Unsubscribe to TransactionAddedInMempool event.
@@ -136,7 +138,7 @@ class DaemonChannelRepository {
   }
 
   /// Subscribe to TransactionExecuted event.
-  Stream<dynamic>? subscribeToTransactionExecuted() {
+  Stream<TransactionExecutedEvent>? subscribeToTransactionExecuted() {
     _subscribeMethod(_transactionExecuted);
     return channel?.stream
         .skipWhile((element) => !_isTransactionExecuted(element as String))
