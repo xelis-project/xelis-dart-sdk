@@ -1,6 +1,7 @@
 // ignore_for_file: public_member_api_docs, invalid_annotation_target
 
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/get_info/network.dart';
 
 part 'get_info_result.freezed.dart';
 
@@ -27,7 +28,7 @@ class GetInfoResult with _$GetInfoResult {
     @JsonKey(name: 'native_supply') required int nativeSupply,
 
     /// @nodoc
-    @JsonKey(name: 'network') required String network,
+    @JsonKey(name: 'network') required Network network,
 
     /// @nodoc
     @JsonKey(name: 'stableheight') required int stableHeight,

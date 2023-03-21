@@ -1,3 +1,7 @@
+## 0.1.5
+
+- feat: add Network enum.
+
 ## 0.0.5
 
 - fix: strong typing for event stream objects.

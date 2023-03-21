@@ -15,7 +15,7 @@ _$_GetInfoResult _$$_GetInfoResultFromJson(Map<String, dynamic> json) =>
       height: json['height'] as int,
       mempoolSize: json['mempool_size'] as int,
       nativeSupply: json['native_supply'] as int,
-      network: json['network'] as String,
+      network: $enumDecode(_$NetworkEnumMap, json['network']),
       stableHeight: json['stableheight'] as int,
       topHash: json['top_hash'] as String,
       topoHeight: json['topoheight'] as int,
@@ -29,9 +29,15 @@ Map<String, dynamic> _$$_GetInfoResultToJson(_$_GetInfoResult instance) =>
       'height': instance.height,
       'mempool_size': instance.mempoolSize,
       'native_supply': instance.nativeSupply,
-      'network': instance.network,
+      'network': _$NetworkEnumMap[instance.network]!,
       'stableheight': instance.stableHeight,
       'top_hash': instance.topHash,
       'topoheight': instance.topoHeight,
       'version': instance.version,
     };
+
+const _$NetworkEnumMap = {
+  Network.mainnet: 'Mainnet',
+  Network.testnet: 'Testnet',
+  Network.dev: 'Dev',
+};

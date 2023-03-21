@@ -42,7 +42,7 @@ mixin _$GetInfoResult {
 
   /// @nodoc
   @JsonKey(name: 'network')
-  String get network => throw _privateConstructorUsedError;
+  Network get network => throw _privateConstructorUsedError;
 
   /// @nodoc
   @JsonKey(name: 'stableheight')
@@ -78,7 +78,7 @@ abstract class $GetInfoResultCopyWith<$Res> {
       @JsonKey(name: 'height') int height,
       @JsonKey(name: 'mempool_size') int mempoolSize,
       @JsonKey(name: 'native_supply') int nativeSupply,
-      @JsonKey(name: 'network') String network,
+      @JsonKey(name: 'network') Network network,
       @JsonKey(name: 'stableheight') int stableHeight,
       @JsonKey(name: 'top_hash') String topHash,
       @JsonKey(name: 'topoheight') int topoHeight,
@@ -133,7 +133,7 @@ class _$GetInfoResultCopyWithImpl<$Res, $Val extends GetInfoResult>
       network: null == network
           ? _value.network
           : network // ignore: cast_nullable_to_non_nullable
-              as String,
+              as Network,
       stableHeight: null == stableHeight
           ? _value.stableHeight
           : stableHeight // ignore: cast_nullable_to_non_nullable
@@ -168,7 +168,7 @@ abstract class _$$_GetInfoResultCopyWith<$Res>
       @JsonKey(name: 'height') int height,
       @JsonKey(name: 'mempool_size') int mempoolSize,
       @JsonKey(name: 'native_supply') int nativeSupply,
-      @JsonKey(name: 'network') String network,
+      @JsonKey(name: 'network') Network network,
       @JsonKey(name: 'stableheight') int stableHeight,
       @JsonKey(name: 'top_hash') String topHash,
       @JsonKey(name: 'topoheight') int topoHeight,
@@ -221,7 +221,7 @@ class __$$_GetInfoResultCopyWithImpl<$Res>
       network: null == network
           ? _value.network
           : network // ignore: cast_nullable_to_non_nullable
-              as String,
+              as Network,
       stableHeight: null == stableHeight
           ? _value.stableHeight
           : stableHeight // ignore: cast_nullable_to_non_nullable
@@ -288,7 +288,7 @@ class _$_GetInfoResult implements _GetInfoResult {
   /// @nodoc
   @override
   @JsonKey(name: 'network')
-  final String network;
+  final Network network;
 
   /// @nodoc
   @override
@@ -380,7 +380,7 @@ abstract class _GetInfoResult implements GetInfoResult {
       @JsonKey(name: 'native_supply')
           required final int nativeSupply,
       @JsonKey(name: 'network')
-          required final String network,
+          required final Network network,
       @JsonKey(name: 'stableheight')
           required final int stableHeight,
       @JsonKey(name: 'top_hash')
@@ -422,7 +422,7 @@ abstract class _GetInfoResult implements GetInfoResult {
 
   /// @nodoc
   @JsonKey(name: 'network')
-  String get network;
+  Network get network;
   @override
 
   /// @nodoc
