@@ -8,6 +8,7 @@ export 'get_block_template/get_block_template_params.dart';
 export 'get_block_template/get_block_template_result.dart';
 export 'get_blocks_at_height/get_blocks_at_height_params.dart';
 export 'get_info/get_info_result.dart';
+export 'get_info/network.dart';
 export 'get_last_balance/get_last_balance_params.dart';
 export 'get_last_balance/get_last_balance_result.dart';
 export 'get_nonce/get_nonce_params.dart';
