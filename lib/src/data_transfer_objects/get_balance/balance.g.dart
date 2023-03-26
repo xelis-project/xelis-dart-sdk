@@ -10,7 +10,7 @@ part of 'balance.dart';
 
 _$_Balance _$$_BalanceFromJson(Map<String, dynamic> json) => _$_Balance(
       balance: json['balance'] as int,
-      previousTopoHeight: json['previous_topoheight'] as int,
+      previousTopoHeight: json['previous_topoheight'] as int?,
     );
 
 Map<String, dynamic> _$$_BalanceToJson(_$_Balance instance) =>

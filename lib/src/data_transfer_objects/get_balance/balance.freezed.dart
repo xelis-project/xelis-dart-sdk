@@ -26,7 +26,7 @@ mixin _$Balance {
 
   /// @nodoc
   @JsonKey(name: 'previous_topoheight')
-  int get previousTopoHeight => throw _privateConstructorUsedError;
+  int? get previousTopoHeight => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -40,7 +40,7 @@ abstract class $BalanceCopyWith<$Res> {
   @useResult
   $Res call(
       {@JsonKey(name: 'balance') int balance,
-      @JsonKey(name: 'previous_topoheight') int previousTopoHeight});
+      @JsonKey(name: 'previous_topoheight') int? previousTopoHeight});
 }
 
 /// @nodoc
@@ -57,17 +57,17 @@ class _$BalanceCopyWithImpl<$Res, $Val extends Balance>
   @override
   $Res call({
     Object? balance = null,
-    Object? previousTopoHeight = null,
+    Object? previousTopoHeight = freezed,
   }) {
     return _then(_value.copyWith(
       balance: null == balance
           ? _value.balance
           : balance // ignore: cast_nullable_to_non_nullable
               as int,
-      previousTopoHeight: null == previousTopoHeight
+      previousTopoHeight: freezed == previousTopoHeight
           ? _value.previousTopoHeight
           : previousTopoHeight // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
     ) as $Val);
   }
 }
@@ -81,7 +81,7 @@ abstract class _$$_BalanceCopyWith<$Res> implements $BalanceCopyWith<$Res> {
   @useResult
   $Res call(
       {@JsonKey(name: 'balance') int balance,
-      @JsonKey(name: 'previous_topoheight') int previousTopoHeight});
+      @JsonKey(name: 'previous_topoheight') int? previousTopoHeight});
 }
 
 /// @nodoc
@@ -95,17 +95,17 @@ class __$$_BalanceCopyWithImpl<$Res>
   @override
   $Res call({
     Object? balance = null,
-    Object? previousTopoHeight = null,
+    Object? previousTopoHeight = freezed,
   }) {
     return _then(_$_Balance(
       balance: null == balance
           ? _value.balance
           : balance // ignore: cast_nullable_to_non_nullable
               as int,
-      previousTopoHeight: null == previousTopoHeight
+      previousTopoHeight: freezed == previousTopoHeight
           ? _value.previousTopoHeight
           : previousTopoHeight // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
     ));
   }
 }
@@ -115,7 +115,7 @@ class __$$_BalanceCopyWithImpl<$Res>
 class _$_Balance implements _Balance {
   const _$_Balance(
       {@JsonKey(name: 'balance') required this.balance,
-      @JsonKey(name: 'previous_topoheight') required this.previousTopoHeight});
+      @JsonKey(name: 'previous_topoheight') this.previousTopoHeight});
 
   factory _$_Balance.fromJson(Map<String, dynamic> json) =>
       _$$_BalanceFromJson(json);
@@ -128,7 +128,7 @@ class _$_Balance implements _Balance {
   /// @nodoc
   @override
   @JsonKey(name: 'previous_topoheight')
-  final int previousTopoHeight;
+  final int? previousTopoHeight;
 
   @override
   String toString() {
@@ -168,7 +168,7 @@ abstract class _Balance implements Balance {
       {@JsonKey(name: 'balance')
           required final int balance,
       @JsonKey(name: 'previous_topoheight')
-          required final int previousTopoHeight}) = _$_Balance;
+          final int? previousTopoHeight}) = _$_Balance;
 
   factory _Balance.fromJson(Map<String, dynamic> json) = _$_Balance.fromJson;
 
@@ -181,7 +181,7 @@ abstract class _Balance implements Balance {
 
   /// @nodoc
   @JsonKey(name: 'previous_topoheight')
-  int get previousTopoHeight;
+  int? get previousTopoHeight;
   @override
   @JsonKey(ignore: true)
   _$$_BalanceCopyWith<_$_Balance> get copyWith =>

@@ -15,7 +15,7 @@ class Balance with _$Balance {
     @JsonKey(name: 'balance') required int balance,
 
     /// @nodoc
-    @JsonKey(name: 'previous_topoheight') required int previousTopoHeight,
+    @JsonKey(name: 'previous_topoheight') int? previousTopoHeight,
   }) = _Balance;
 
   /// @nodoc

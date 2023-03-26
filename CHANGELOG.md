@@ -1,3 +1,7 @@
+## 0.1.6
+
+- fix: topoHeight property in Balance.
+
 ## 0.1.5
 
 - feat: add Network enum.
