@@ -5,8 +5,6 @@ import 'package:web_socket_channel/status.dart' as status;
 import 'package:web_socket_channel/web_socket_channel.dart';
 import 'package:xelis_dart_sdk/xelis_dart_sdk.dart';
 
-// enum SocketStates { connecting, open, closing, closed, disconnected }
-
 /// A repository that provides WebSocketChannel and methods to listen
 /// and react to chain event.
 class DaemonChannelRepository {
@@ -20,6 +18,9 @@ class DaemonChannelRepository {
   /// Websocket channel
   WebSocketChannel? channel;
 
+  /// Multi-subscription stream from channel.
+  Stream<dynamic>? broadcastStream;
+
   static const _subscribe = 'subscribe';
   static const _unsubscribe = 'unsubscribe';
   static const _newBlock = 'NewBlock';
@@ -29,15 +30,17 @@ class DaemonChannelRepository {
   static const _transactionSCResult = 'TransactionSCResult';
   static const _newAsset = 'NewAsset';
 
-  /// Returns channel's stream.
-  Stream<dynamic>? get stream => channel?.stream;
-
   /// Establish the channel to communicate with daemon.
   Future<void> connect() async {
     if (channel != null) {
       return;
     }
     channel = WebSocketChannel.connect(uri);
+
+    broadcastStream = channel?.stream.asBroadcastStream(
+      onCancel: (subscription) => subscription.cancel(),
+    );
+
     return channel!.ready;
   }
 
@@ -62,7 +65,16 @@ class DaemonChannelRepository {
     void Function()? onDone,
     bool? cancelOnError,
   }) {
-    return stream?.listen(
+    if (onNewBlock != null) _subscribeMethod(_newBlock);
+    if (onBlockOrdered != null) _subscribeMethod(_blockOrdered);
+    if (onTransactionAddedInMempool != null) {
+      _subscribeMethod(_transactionAddedInMempool);
+    }
+    if (onTransactionExecuted != null) _subscribeMethod(_transactionExecuted);
+    if (onTransactionSCResult != null) _subscribeMethod(_transactionSCResult);
+    if (onNewAsset != null) _subscribeMethod(_newAsset);
+
+    return broadcastStream?.listen(
       (event) {
         if (_isNewBlock(event as String)) {
           final block = Block.fromJson(_getResult(event));
@@ -97,11 +109,9 @@ class DaemonChannelRepository {
   /// Subscribe to NewBlock event.
   Stream<Block>? subscribeToNewBlock() {
     _subscribeMethod(_newBlock);
-    return channel?.stream.skipWhile((event) {
-      return !_isNewBlock(event as String);
-    }).map(
-      (event) => Block.fromJson(_getResult(event as String)),
-    );
+    return broadcastStream
+        ?.where((event) => _isNewBlock(event as String))
+        .map((event) => Block.fromJson(_getResult(event as String)));
   }
 
   /// Unsubscribe to NewBlock event.
@@ -112,8 +122,8 @@ class DaemonChannelRepository {
   /// Subscribe to BlockOrdered event.
   Stream<BlockOrderEvent>? subscribeToBlockOrdered() {
     _subscribeMethod(_blockOrdered);
-    return channel?.stream
-        .skipWhile((element) => !_isBlockOrdered(element as String))
+    return broadcastStream
+        ?.where((event) => _isBlockOrdered(event as String))
         .map((event) => BlockOrderEvent.fromJson(_getResult(event as String)));
   }
 
@@ -125,10 +135,8 @@ class DaemonChannelRepository {
   /// Subscribe to TransactionAddedInMempool event.
   Stream<Transaction>? subscribeToTransactionAddedInMempool() {
     _subscribeMethod(_transactionAddedInMempool);
-    return channel?.stream
-        .skipWhile(
-          (element) => !_isTransactionAddedInMempool(element as String),
-        )
+    return broadcastStream
+        ?.where((event) => _isTransactionAddedInMempool(event as String))
         .map((event) => Transaction.fromJson(event as Map<String, dynamic>));
   }
 
@@ -140,8 +148,8 @@ class DaemonChannelRepository {
   /// Subscribe to TransactionExecuted event.
   Stream<TransactionExecutedEvent>? subscribeToTransactionExecuted() {
     _subscribeMethod(_transactionExecuted);
-    return channel?.stream
-        .skipWhile((element) => !_isTransactionExecuted(element as String))
+    return broadcastStream
+        ?.where((event) => _isTransactionExecuted(event as String))
         .map(
           (event) =>
               TransactionExecutedEvent.fromJson(_getResult(event as String)),
@@ -156,8 +164,8 @@ class DaemonChannelRepository {
   /// Subscribe to TransactionSCResult event.
   Stream<dynamic>? subscribeToTransactionSCResult() {
     _subscribeMethod(_transactionSCResult);
-    return channel?.stream
-        .skipWhile((element) => !_isTransactionSCResult(element as String));
+    return broadcastStream
+        ?.where((event) => _isTransactionSCResult(event as String));
   }
 
   /// Subscribe to TransactionSCResult event.
@@ -168,8 +176,7 @@ class DaemonChannelRepository {
   /// Subscribe to NewAsset event.
   Stream<dynamic>? subscribeToNewAsset() {
     _subscribeMethod(_newAsset);
-    return channel?.stream
-        .skipWhile((element) => !_isNewAsset(element as String));
+    return broadcastStream?.where((event) => _isNewAsset(event as String));
   }
 
   /// Unsubscribe to NewAsset event.

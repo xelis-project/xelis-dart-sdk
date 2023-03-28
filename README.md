@@ -24,14 +24,22 @@ Future<void> main() async {
     print('result: $res');
 
     final daemonChannel = DaemonChannelRepository(rpcAddress: localhostAddress);
+    // You must initiate the connection first.
     await daemonChannel.connect();
 
-    // After the connection, subscribe to the desired events,
-    daemonChannel
-      ..subscribeToNewBlock()
-      ..subscribeToBlockOrdered()
-    // Then add your callback and start listening.
-      ..listenDaemonEvents(onNewBlock: print, onBlockOrdered: print);
+    // there are 5 different types of events, 
+    // you can start listening and add callbacks depending on the event.
+    daemonChannel.listenDaemonEvents(onNewBlock: print, onBlockOrdered: print);
+
+    // It is also possible to only get the stream of a specific event.
+    final newBlockStream = daemonChannel.subscribeToNewBlock();
+    // Then start listening with your callback 
+    final newBlockListener = newBlockStream?.listen(print);
+    // pause...
+    newBlockListener.pause();
+    // resume...
+    newBlockListener.resume();
+    
   } catch (e) {
     print(e);
   }

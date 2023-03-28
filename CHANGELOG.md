@@ -1,3 +1,7 @@
+## 0.2.0
+
+- feat: DaemonChannelRepository with broadcast Stream for more flexibility.
+
 ## 0.1.6
 
 - fix: topoHeight property in Balance.

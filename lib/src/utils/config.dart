@@ -15,4 +15,4 @@ const xelisAsset =
     '0000000000000000000000000000000000000000000000000000000000000000';
 
 /// Set up Uri object with WebSocket scheme.
-Uri setUpUri(String rpcAddress) => Uri.parse('ws://$rpcAddress/ws');
+Uri setUpUri(String rpcAddress) => Uri.parse('wss://$rpcAddress/ws');
