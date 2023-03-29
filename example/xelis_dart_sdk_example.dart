@@ -12,10 +12,7 @@ Future<void> main() async {
     final daemonChannel = DaemonChannelRepository(rpcAddress: localhostAddress);
     await daemonChannel.connect();
 
-    daemonChannel
-      ..subscribeToNewBlock()
-      ..subscribeToBlockOrdered()
-      ..listenDaemonEvents(onNewBlock: print, onBlockOrdered: print);
+    daemonChannel.listenDaemonEvents(onNewBlock: print, onBlockOrdered: print);
   } catch (e) {
     print(e);
   }
