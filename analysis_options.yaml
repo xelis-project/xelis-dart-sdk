@@ -2,7 +2,6 @@ include: package:lints/recommended.yaml
 
 analyzer:
   exclude:
-    - "example/xelis_dart_sdk_example.dart"
     - "**/*.g.dart"
     - "**/*.freezed.dart"
   language:
