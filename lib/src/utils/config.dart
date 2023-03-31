@@ -2,7 +2,7 @@
 const localhostAddress = '127.0.0.1:8080';
 
 /// @nodoc
-const nodeURL = 'node.xelis.io';
+const mainnetNodeURL = 'node.xelis.io';
 
 /// @nodoc
 const testnetNodeURL = 'testnet-node.xelis.io';
@@ -15,4 +15,5 @@ const xelisAsset =
     '0000000000000000000000000000000000000000000000000000000000000000';
 
 /// Set up Uri object with WebSocket scheme.
-Uri setUpUri(String rpcAddress) => Uri.parse('wss://$rpcAddress/ws');
+Uri setUpUri(String rpcAddress, {required bool secureWebSocket}) =>
+    Uri.parse('ws${secureWebSocket ? 's' : ''}://$rpcAddress/ws');

@@ -1,3 +1,7 @@
+## 0.3.0
+
+- feat: Secure Websocket option.
+
 ## 0.2.0
 
 - feat: DaemonChannelRepository with broadcast Stream for more flexibility.

@@ -18,12 +18,15 @@ import 'package:xelis_dart_sdk/xelis_dart_sdk.dart';
 
 Future<void> main() async {
   try {
-    final daemonRepository = DaemonClientRepository(rpcAddress: localhostAddress)
-      ..startRpcClient();
+    final daemonRepository = DaemonClientRepository(
+      rpcAddress: localhostAddress, secureWebSocket: false,
+    )..startRpcClient();
     final res = await daemonRepository.getInfo();
     print('result: $res');
 
-    final daemonChannel = DaemonChannelRepository(rpcAddress: localhostAddress);
+    final daemonChannel = DaemonChannelRepository(
+      rpcAddress: localhostAddress, secureWebSocket: false,
+    );
     // You must initiate the connection first.
     await daemonChannel.connect();
 

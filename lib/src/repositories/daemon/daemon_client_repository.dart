@@ -9,15 +9,17 @@ import 'package:xelis_dart_sdk/xelis_dart_sdk.dart';
 ///
 ///```dart
 ///final daemonRepository =
-///   DaemonClientRepository(rpcAddress: localhostAddress)..startRpcClient();
+///   DaemonClientRepository(rpcAddress: mainnetNodeURL)..startRpcClient();
 ///
 ///final res = await daemonRepository.getInfo();
 ///```
 ///
 class DaemonClientRepository extends ClientRepository {
-  /// @nodoc
-  DaemonClientRepository({required String rpcAddress})
-      : super(setUpUri(rpcAddress));
+  /// Note: Secure WebSocket is enabled by default.
+  DaemonClientRepository({
+    required String rpcAddress,
+    bool secureWebSocket = true,
+  }) : super(setUpUri(rpcAddress, secureWebSocket: secureWebSocket));
 
   static const String _getVersion = 'get_version';
   static const String _getInfo = 'get_info';

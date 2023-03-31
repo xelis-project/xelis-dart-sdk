@@ -6,11 +6,13 @@ import 'package:web_socket_channel/web_socket_channel.dart';
 import 'package:xelis_dart_sdk/xelis_dart_sdk.dart';
 
 /// A repository that provides WebSocketChannel and methods to listen
-/// and react to chain event.
+/// and react to chain events.
 class DaemonChannelRepository {
-  /// @nodoc
-  DaemonChannelRepository({required String rpcAddress})
-      : uri = setUpUri(rpcAddress);
+  /// Note: Secure WebSocket is enabled by default.
+  DaemonChannelRepository({
+    required String rpcAddress,
+    bool secureWebSocket = true,
+  }) : uri = setUpUri(rpcAddress, secureWebSocket: secureWebSocket);
 
   /// Websocket URI
   final Uri uri;
@@ -31,6 +33,8 @@ class DaemonChannelRepository {
   static const _newAsset = 'NewAsset';
 
   /// Establish the channel to communicate with daemon.
+  ///
+  /// Note: It has to be called first.
   Future<void> connect() async {
     if (channel != null) {
       return;
