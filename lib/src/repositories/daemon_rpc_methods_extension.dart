@@ -1,78 +1,35 @@
-import 'package:xelis_dart_sdk/src/repositories/daemon/rpc_client.dart';
-
 import 'package:xelis_dart_sdk/xelis_dart_sdk.dart';
 
-/// A repository that provides all the necessary to communicate via JSON-RPC
-/// with Xelis daemon API.
-///
-/// before calling the available RPC methods, you need to start the client :
-///
-///```dart
-///final daemonRepository =
-///   DaemonClientRepository(rpcAddress: mainnetNodeURL)..startRpcClient();
-///
-///final res = await daemonRepository.getInfo();
-///```
-///
-class DaemonClientRepository extends ClientRepository {
-  /// Note: Secure WebSocket is enabled by default.
-  DaemonClientRepository({
-    required String rpcAddress,
-    bool secureWebSocket = true,
-  }) : super(setUpUri(rpcAddress, secureWebSocket: secureWebSocket));
-
-  static const String _getVersion = 'get_version';
-  static const String _getInfo = 'get_info';
-  static const String _getHeight = 'get_height';
-  static const String _getTopoHeight = 'get_topoheight';
-  static const String _getStableHeight = 'get_stableheight';
-  static const String _getBlockTemplate = 'get_block_template';
-  static const String _getBlockAtTopoHeight = 'get_block_at_topoheight';
-  static const String _getBlocksAtHeight = 'get_blocks_at_height';
-  static const String _getBlockByHash = 'get_block_by_hash';
-  static const String _getTopBlock = 'get_top_block';
-  static const String _getNonce = 'get_nonce';
-  static const String _getLastBalance = 'get_last_balance';
-  static const String _getBalanceAtTopoHeight = 'get_balance_at_topoheight';
-  static const String _getAssets = 'get_assets';
-  static const String _countTransactions = 'count_transactions';
-  static const String _getTips = 'get_tips';
-  static const String _p2pStatus = 'p2p_status';
-  static const String _getDagOrder = 'get_dag_order';
-  static const String _submitTransaction = 'submit_transaction';
-  static const String _getTransaction = 'get_transaction';
-  static const String _getTransactions = 'get_transactions';
-  static const String _getMempool = 'get_mempool';
-  static const String _submitBlock = 'submit_block';
-  static const String _getBlocks = 'get_blocks';
-
+/// Extension of [DaemonClientRepository] that provides all the methods to query
+/// Xelis daemon.
+extension DaemonRpcMethodsExtension on DaemonClientRepository {
   /// Returns current daemon version.
   Future<String> getVersion() async {
-    final result = await rpcClient.sendRequest(_getVersion);
+    final result = await sendRequest(DaemonMethod.getVersion);
     return result as String;
   }
 
   /// Returns current information from chain.
   Future<GetInfoResult> getInfo() async {
-    final result = await rpcClient.sendRequest(_getInfo);
+    final result = await sendRequest(DaemonMethod.getInfo);
     return GetInfoResult.fromJson(result as Map<String, dynamic>);
   }
 
   /// Returns current height  of the chain.
   Future<int> getHeight() async {
-    final result = await rpcClient.sendRequest(_getHeight);
+    final result = await sendRequest(DaemonMethod.getHeight);
     return result as int;
   }
 
   /// Returns current topological height of the chain.
   Future<int> getTopoHeight() async {
-    final result = await rpcClient.sendRequest(_getTopoHeight);
+    final result = await sendRequest(DaemonMethod.getTopoHeight);
     return result as int;
   }
 
   /// Returns the stable height of the chain.
   Future<int> getStableHeight() async {
-    final result = await rpcClient.sendRequest(_getStableHeight);
+    final result = await sendRequest(DaemonMethod.getStableHeight);
     return result as int;
   }
 
@@ -80,8 +37,8 @@ class DaemonClientRepository extends ClientRepository {
   Future<GetBlockTemplateResult> getBlockTemplate(
     GetBlockTemplateParams getBlockTemplateParams,
   ) async {
-    final result = await rpcClient.sendRequest(
-      _getBlockTemplate,
+    final result = await sendRequest(
+      DaemonMethod.getBlockTemplate,
       getBlockTemplateParams.toJson(),
     );
     return GetBlockTemplateResult.fromJson(result as Map<String, dynamic>);
@@ -91,8 +48,8 @@ class DaemonClientRepository extends ClientRepository {
   Future<Block> getBlockAtTopoHeight(
     GetBlockAtTopoHeightParams getBlockAtTopoHeightParams,
   ) async {
-    final result = await rpcClient.sendRequest(
-      _getBlockAtTopoHeight,
+    final result = await sendRequest(
+      DaemonMethod.getBlockAtTopoHeight,
       getBlockAtTopoHeightParams.toJson(),
     );
     return Block.fromJson(result as Map<String, dynamic>);
@@ -102,8 +59,8 @@ class DaemonClientRepository extends ClientRepository {
   Future<List<Block>> getBlocksAtHeight(
     GetBlocksAtHeightParams getBlocksAtHeightParams,
   ) async {
-    final result = await rpcClient.sendRequest(
-      _getBlocksAtHeight,
+    final result = await sendRequest(
+      DaemonMethod.getBlocksAtHeight,
       getBlocksAtHeightParams.toJson(),
     );
     return (result as List)
@@ -115,8 +72,8 @@ class DaemonClientRepository extends ClientRepository {
   Future<Block> getBlockByHash(
     GetBlockByHashParams getBlockByHashParams,
   ) async {
-    final result = await rpcClient.sendRequest(
-      _getBlockByHash,
+    final result = await sendRequest(
+      DaemonMethod.getBlockByHash,
       getBlockByHashParams.toJson(),
     );
     return Block.fromJson(result as Map<String, dynamic>);
@@ -126,8 +83,8 @@ class DaemonClientRepository extends ClientRepository {
   Future<Block> getTopBlock([
     GetTopBlockParams? getTopBlockParams,
   ]) async {
-    final result = await rpcClient.sendRequest(
-      _getTopBlock,
+    final result = await sendRequest(
+      DaemonMethod.getTopBlock,
       getTopBlockParams?.toJson() ?? const GetTopBlockParams().toJson(),
     );
     return Block.fromJson(result as Map<String, dynamic>);
@@ -139,7 +96,7 @@ class DaemonClientRepository extends ClientRepository {
   /// Each nonce represents how many TX has been made by this address.
   Future<int> getNonce(GetNonceParams getNonceParams) async {
     final result =
-        await rpcClient.sendRequest(_getNonce, getNonceParams.toJson());
+        await sendRequest(DaemonMethod.getNonce, getNonceParams.toJson());
     return result as int;
   }
 
@@ -149,8 +106,8 @@ class DaemonClientRepository extends ClientRepository {
   Future<GetLastBalanceResult> getLastBalance(
     GetLastBalanceParams getLastBalanceParams,
   ) async {
-    final result = await rpcClient.sendRequest(
-      _getLastBalance,
+    final result = await sendRequest(
+      DaemonMethod.getLastBalance,
       getLastBalanceParams.toJson(),
     );
     return GetLastBalanceResult.fromJson(result as Map<String, dynamic>);
@@ -162,8 +119,8 @@ class DaemonClientRepository extends ClientRepository {
   Future<Balance> getBalanceAtTopoHeight(
     GetBalanceAtTopoHeightParams getBalanceAtTopoHeightParams,
   ) async {
-    final result = await rpcClient.sendRequest(
-      _getBalanceAtTopoHeight,
+    final result = await sendRequest(
+      DaemonMethod.getBalanceAtTopoHeight,
       getBalanceAtTopoHeightParams.toJson(),
     );
     return Balance.fromJson(result as Map<String, dynamic>);
@@ -171,25 +128,25 @@ class DaemonClientRepository extends ClientRepository {
 
   /// Returns all assets available on network.
   Future<List<String>> getAssets() async {
-    final result = await rpcClient.sendRequest(_getAssets);
+    final result = await sendRequest(DaemonMethod.getAssets);
     return (result as List).map((e) => e as String).toList();
   }
 
   /// Returns the number of transactions saved on node disk.
   Future<int> countTransactions() async {
-    final result = await rpcClient.sendRequest(_countTransactions);
+    final result = await sendRequest(DaemonMethod.countTransactions);
     return result as int;
   }
 
   /// Returns Tips (highest blocks from blockDAG) from chain.
   Future<List<String>> getTips() async {
-    final result = await rpcClient.sendRequest(_getTips);
+    final result = await sendRequest(DaemonMethod.getTips);
     return (result as List).map((e) => e as String).toList();
   }
 
   /// Returns some informations about P2P.
   Future<P2pStatusResult> p2pStatus() async {
-    final result = await rpcClient.sendRequest(_p2pStatus);
+    final result = await sendRequest(DaemonMethod.p2pStatus);
     return P2pStatusResult.fromJson(result as Map<String, dynamic>);
   }
 
@@ -199,7 +156,7 @@ class DaemonClientRepository extends ClientRepository {
   /// hash ordered descending. Maximum of 64 blocks hash only per request.
   Future<List<String>> getDagOrder(GetRangeParams getRangeParams) async {
     final result =
-        await rpcClient.sendRequest(_getDagOrder, getRangeParams.toJson());
+        await sendRequest(DaemonMethod.getDagOrder, getRangeParams.toJson());
     return (result as List).map((e) => e as String).toList();
   }
 
@@ -207,8 +164,8 @@ class DaemonClientRepository extends ClientRepository {
   Future<bool> submitTransaction(
     SubmitTransactionParams submitTransactionParams,
   ) async {
-    final result = await rpcClient.sendRequest(
-      _submitTransaction,
+    final result = await sendRequest(
+      DaemonMethod.submitTransaction,
       submitTransactionParams.toJson(),
     );
     return result as bool;
@@ -221,8 +178,8 @@ class DaemonClientRepository extends ClientRepository {
   Future<Transaction> getTransaction(
     GetTransactionParams getTransactionParams,
   ) async {
-    final result = await rpcClient.sendRequest(
-      _getTransaction,
+    final result = await sendRequest(
+      DaemonMethod.getTransaction,
       getTransactionParams.toJson(),
     );
     return Transaction.fromJson(result as Map<String, dynamic>);
@@ -230,8 +187,8 @@ class DaemonClientRepository extends ClientRepository {
 
   /// Fetch all transactions presents in the mempool.
   Future<Transaction> getMempool() async {
-    final result = await rpcClient.sendRequest(
-      _getMempool,
+    final result = await sendRequest(
+      DaemonMethod.getMempool,
     );
     return Transaction.fromJson(result as Map<String, dynamic>);
   }
@@ -241,8 +198,8 @@ class DaemonClientRepository extends ClientRepository {
   Future<List<Transaction>> getTransactions(
     GetTransactionsParams getTransactionsParams,
   ) async {
-    final result = await rpcClient.sendRequest(
-      _getTransactions,
+    final result = await sendRequest(
+      DaemonMethod.getTransactions,
       getTransactionsParams.toJson(),
     );
     return (result as List)
@@ -254,8 +211,8 @@ class DaemonClientRepository extends ClientRepository {
   Future<bool> submitBlock(
     SubmitBlockParams submitBlockParams,
   ) async {
-    final result = await rpcClient.sendRequest(
-      _submitBlock,
+    final result = await sendRequest(
+      DaemonMethod.submitBlock,
       submitBlockParams.toJson(),
     );
     return result as bool;
@@ -265,7 +222,7 @@ class DaemonClientRepository extends ClientRepository {
   /// based on topo height.
   Future<List<Block>> getBlocks(GetRangeParams getRangeParams) async {
     final result =
-        await rpcClient.sendRequest(_getBlocks, getRangeParams.toJson());
+        await sendRequest(DaemonMethod.getBlocks, getRangeParams.toJson());
     return (result as List)
         .map((e) => Block.fromJson(e as Map<String, dynamic>))
         .toList();

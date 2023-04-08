@@ -1,48 +1,79 @@
 # XELIS-DART-SDK
 
-Software Development Kit in Dart for Xelis Blockchain.
+Software Development Kit in Dart for XELIS Blockchain.
 
 ## Features
 
-- JSON-RPC Client to interact with daemon API.
-- Websocket channel to listen chain events.
+JSON-RPC Client to interact with daemon API:
+- Call JSON-RPC methods.
+- Subscribe and listen to events.
 
 ## Usage
 
-Use `DaemonClientRepository` to interact via JSON-RPC with a Xelis node.
-
-Or use `DaemonChannelRepository` to create a websocket channel and receive events of your choice.
+Use `DaemonClientRepository` as shown below to interact with a XELIS node.
 
 ```dart
 import 'package:xelis_dart_sdk/xelis_dart_sdk.dart';
 
 Future<void> main() async {
   try {
+    // Create a daemon client repository which will be used 
+    // to interact with a Xelis node.
     final daemonRepository = DaemonClientRepository(
-      rpcAddress: localhostAddress, secureWebSocket: false,
-    )..startRpcClient();
+      endPoint: localhostAddress,
+      secureWebSocket: false,
+    );
+
+    // You must initiate the connection first.
+    await daemonRepository.connect();
+
+    // You can use the repository to make requests to the daemon.
     final res = await daemonRepository.getInfo();
     print('result: $res');
 
-    final daemonChannel = DaemonChannelRepository(
-      rpcAddress: localhostAddress, secureWebSocket: false,
-    );
-    // You must initiate the connection first.
-    await daemonChannel.connect();
+    // You can also use the repository to listen to events.
 
-    // there are 5 different types of events, 
-    // you can start listening and add callbacks depending on the event.
-    daemonChannel.listenDaemonEvents(onNewBlock: print, onBlockOrdered: print);
+    // There are 5 different types of events,
+    // you can add callbacks depending on the event.
+    daemonRepository
+      ..onNewBlock((block) {
+        print('new block: $block');
+      })
 
-    // It is also possible to only get the stream of a specific event.
-    final newBlockStream = daemonChannel.subscribeToNewBlock();
-    // Then start listening with your callback 
-    final newBlockListener = newBlockStream?.listen(print);
-    // pause...
-    newBlockListener.pause();
-    // resume...
-    newBlockListener.resume();
-    
+    // You can add multiple callbacks for the same event.
+    // They will be called in the order they were added.
+      ..onNewBlock((block) {
+        print('another callback for new block: $block');
+      })
+
+    // Here with another events.
+      ..onBlockOrdered((block) {
+        print('block ordered: $block');
+      })
+      ..onTransactionAddedInMempool((tx) {
+        print('tx added in mempool: $tx');
+      })
+      ..onTransactionExecuted((tx) {
+        print('tx executed: $tx');
+      })
+
+    // You can also unsubscribe from the events.
+    // This will remove all the callbacks for the event.
+      ..unsubscribeFromNewBlock()
+
+    // You can unsubscribe from all the events at once.
+      ..unsubscribeFromAll()
+
+    // You can also add callbacks for the connection events ...
+      ..onOpen(() {
+        print('channel opened');
+      })
+      ..onClose(() {
+        print('channel closed');
+      })
+      ..onError((error) {
+        print('channel error: $error');
+      });
   } catch (e) {
     print(e);
   }

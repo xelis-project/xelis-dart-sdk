@@ -1,3 +1,10 @@
+## 0.4.0
+
+- Complete rework of the DaemonClientRepository.
+- Only one socket connection is used for all requests and events.
+- Retry Timer for socket connection.
+
+
 ## 0.3.0
 
 - feat: Secure Websocket option.
