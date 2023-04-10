@@ -5,7 +5,6 @@ import 'package:json_rpc_2/json_rpc_2.dart';
 import 'package:logging/logging.dart';
 import 'package:web_socket_channel/status.dart' as status;
 import 'package:web_socket_channel/web_socket_channel.dart';
-import 'package:xelis_dart_sdk/src/repositories/socket_states.dart';
 import 'package:xelis_dart_sdk/xelis_dart_sdk.dart';
 
 /// A repository that provides JSON-RPC Client to communicate with Xelis daemon.
