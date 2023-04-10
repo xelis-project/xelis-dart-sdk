@@ -113,11 +113,11 @@ class DaemonClientRepository {
   ///
   /// Note: It has to be called first.
   Future<void> connect() async {
-    _log('connect called');
     if (_channel != null) {
       return;
     }
     try {
+      _log('connecting to $_uri...');
       state = SocketStates.connecting;
       _channel = WebSocketChannel.connect(_uri);
 
@@ -158,6 +158,7 @@ class DaemonClientRepository {
       // state = SocketStates.closing;
       chan.sink.close(status.goingAway);
       if (state != SocketStates.closed) {
+        _log('disconnecting...');
         state = SocketStates.disconnected;
         if (reconnectTimer != null) {
           reconnectTimer!.reset();
@@ -224,6 +225,7 @@ class DaemonClientRepository {
 
   /// Restores subscriptions after a reconnect.
   void _restoreSubscriptions() {
+    _log('restoring subscriptions if any ...');
     if (eventCallbacks[DaemonEvent.newBlock]!.isNotEmpty) {
       subscribeTo(DaemonEvent.newBlock);
     }
@@ -248,66 +250,65 @@ class DaemonClientRepository {
   void _handleData(dynamic rawData) {
     final data = jsonDecode(rawData as String) as Map<String, dynamic>;
     if (data.containsKey('result')) {
-      if (data['result'] is Map) {
+      if (data['result'] is Map &&
+          (data['result'] as Map<String, dynamic>).containsKey('event')) {
         final result = data['result'] as Map<String, dynamic>;
-        if (result.containsKey('event')) {
-          final event = toDaemonEvent(
-            result['event'] as String,
-          );
-          switch (event) {
-            case DaemonEvent.newBlock:
-              for (final callback in eventCallbacks[event]!) {
-                // ignore: avoid_dynamic_calls
-                callback(
-                  Block.fromJson(result),
-                );
-              }
-              break;
-            case DaemonEvent.blockOrdered:
-              for (final callback in eventCallbacks[event]!) {
-                // ignore: avoid_dynamic_calls
-                callback(
-                  BlockOrderEvent.fromJson(
-                    data['result'] as Map<String, dynamic>,
-                  ),
-                );
-              }
-              break;
-            case DaemonEvent.transactionAddedInMempool:
-              for (final callback in eventCallbacks[event]!) {
-                // ignore: avoid_dynamic_calls
-                callback(
-                  Transaction.fromJson(result),
-                );
-              }
-              break;
-            case DaemonEvent.transactionExecuted:
-              for (final callback in eventCallbacks[event]!) {
-                // ignore: avoid_dynamic_calls
-                callback(
-                  TransactionExecutedEvent.fromJson(result),
-                );
-              }
-              break;
-            case DaemonEvent.transactionSCResult:
-              for (final callback in eventCallbacks[event]!) {
-                // ignore: avoid_dynamic_calls
-                callback(result);
-              }
-              break;
-            case DaemonEvent.newAsset:
-              for (final callback in eventCallbacks[event]!) {
-                // ignore: avoid_dynamic_calls
-                callback(result);
-              }
-              break;
-          }
-        } else {
-          final id = data['id'] as int;
-          if (_pendingRequests[id] != null) {
-            _pendingRequests[id]!.completer.complete(result);
-            _pendingRequests.remove(id);
-          }
+        final event = toDaemonEvent(
+          result['event'] as String,
+        );
+        switch (event) {
+          case DaemonEvent.newBlock:
+            for (final callback in eventCallbacks[event]!) {
+              // ignore: avoid_dynamic_calls
+              callback(
+                Block.fromJson(result),
+              );
+            }
+            break;
+          case DaemonEvent.blockOrdered:
+            for (final callback in eventCallbacks[event]!) {
+              // ignore: avoid_dynamic_calls
+              callback(
+                BlockOrderEvent.fromJson(
+                  data['result'] as Map<String, dynamic>,
+                ),
+              );
+            }
+            break;
+          case DaemonEvent.transactionAddedInMempool:
+            for (final callback in eventCallbacks[event]!) {
+              // ignore: avoid_dynamic_calls
+              callback(
+                Transaction.fromJson(result),
+              );
+            }
+            break;
+          case DaemonEvent.transactionExecuted:
+            for (final callback in eventCallbacks[event]!) {
+              // ignore: avoid_dynamic_calls
+              callback(
+                TransactionExecutedEvent.fromJson(result),
+              );
+            }
+            break;
+          case DaemonEvent.transactionSCResult:
+            for (final callback in eventCallbacks[event]!) {
+              // ignore: avoid_dynamic_calls
+              callback(result);
+            }
+            break;
+          case DaemonEvent.newAsset:
+            for (final callback in eventCallbacks[event]!) {
+              // ignore: avoid_dynamic_calls
+              callback(result);
+            }
+            break;
+        }
+      } else {
+        final id = data['id'] as int;
+        if (_pendingRequests[id] != null) {
+          _pendingRequests[id]!.completer.complete(data['result']);
+          _pendingRequests.remove(id);
         }
       }
     } else if (data.containsKey('error')) {
@@ -333,7 +334,7 @@ class DaemonClientRepository {
     }
     state = SocketStates.open;
 
-    _log('connected to daemon');
+    _log('successfully connected to xelis daemon');
 
     _restoreSubscriptions();
     _pendingRequests.clear();
@@ -346,7 +347,8 @@ class DaemonClientRepository {
   // Calls all callbacks for a given connection state.
   void _onConnClose() {
     if (state == SocketStates.closed && reconnectTimer != null) {
-      _log('reconnect timer: schedule timeout on conn close');
+      _log('lost connection to xelis daemon '
+          '- reconnect timer: schedule timeout');
       reconnectTimer!.scheduleTimeout();
     }
     for (final callback in _stateChangeCallbacks['close']!) {
@@ -358,7 +360,8 @@ class DaemonClientRepository {
   // Calls all callbacks for a given connection state.
   void _onConnError(dynamic error) {
     if (reconnectTimer != null) {
-      _log('reconnect timer: schedule timeout on conn error');
+      _log('error connecting to xelis daemon '
+          '- reconnect timer: schedule timeout');
       state = SocketStates.closed;
       reconnectTimer!.scheduleTimeout();
     }

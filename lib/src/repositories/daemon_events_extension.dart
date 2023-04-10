@@ -7,8 +7,10 @@ extension DaemonEventsExtension on DaemonClientRepository {
   ///
   /// Note: It is called when a new block is added to the chain.
   void onNewBlock(void Function(Block block) callback) {
+    if (eventCallbacks[DaemonEvent.newBlock]!.isEmpty) {
+      subscribeTo(DaemonEvent.newBlock);
+    }
     registerCallback(DaemonEvent.newBlock, callback);
-    if (eventCallbacks.isEmpty) subscribeTo(DaemonEvent.newBlock);
   }
 
   /// Unsubscribes from NewBlock event.
@@ -20,8 +22,10 @@ extension DaemonEventsExtension on DaemonClientRepository {
   ///
   /// Note: It is called when a block is ordered.
   void onBlockOrdered(void Function(BlockOrderEvent blockOrderEvent) callback) {
+    if (eventCallbacks[DaemonEvent.blockOrdered]!.isEmpty) {
+      subscribeTo(DaemonEvent.blockOrdered);
+    }
     registerCallback(DaemonEvent.blockOrdered, callback);
-    if (eventCallbacks.isEmpty) subscribeTo(DaemonEvent.blockOrdered);
   }
 
   /// Unsubscribes from BlockOrdered event.
@@ -35,10 +39,10 @@ extension DaemonEventsExtension on DaemonClientRepository {
   void onTransactionAddedInMempool(
     void Function(Transaction transaction) callback,
   ) {
-    registerCallback(DaemonEvent.transactionAddedInMempool, callback);
-    if (eventCallbacks.isEmpty) {
+    if (eventCallbacks[DaemonEvent.transactionAddedInMempool]!.isEmpty) {
       subscribeTo(DaemonEvent.transactionAddedInMempool);
     }
+    registerCallback(DaemonEvent.transactionAddedInMempool, callback);
   }
 
   /// Unsubscribes from TransactionAddedInMempool event.
@@ -52,8 +56,10 @@ extension DaemonEventsExtension on DaemonClientRepository {
   void onTransactionExecuted(
     void Function(TransactionExecutedEvent transactionExecutedEvent) callback,
   ) {
+    if (eventCallbacks[DaemonEvent.transactionExecuted]!.isEmpty) {
+      subscribeTo(DaemonEvent.transactionExecuted);
+    }
     registerCallback(DaemonEvent.transactionExecuted, callback);
-    if (eventCallbacks.isEmpty) subscribeTo(DaemonEvent.transactionExecuted);
   }
 
   /// Unsubscribes from TransactionExecuted event.
@@ -67,8 +73,10 @@ extension DaemonEventsExtension on DaemonClientRepository {
   void onTransactionSCResult(
     void Function(dynamic rawTransactionSCResult) callback,
   ) {
+    if (eventCallbacks[DaemonEvent.transactionSCResult]!.isEmpty) {
+      subscribeTo(DaemonEvent.transactionSCResult);
+    }
     registerCallback(DaemonEvent.transactionSCResult, callback);
-    if (eventCallbacks.isEmpty) subscribeTo(DaemonEvent.transactionSCResult);
   }
 
   /// Unsubscribes from TransactionSCResult event.
@@ -80,8 +88,10 @@ extension DaemonEventsExtension on DaemonClientRepository {
   ///
   /// Note: It is called when a new asset is added to the chain.
   void onNewAsset(void Function(dynamic rawNewAsset) callback) {
+    if (eventCallbacks[DaemonEvent.newAsset]!.isEmpty) {
+      subscribeTo(DaemonEvent.newAsset);
+    }
     registerCallback(DaemonEvent.newAsset, callback);
-    if (eventCallbacks.isEmpty) subscribeTo(DaemonEvent.newAsset);
   }
 
   /// Unsubscribes from NewAsset event.
