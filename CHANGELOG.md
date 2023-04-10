@@ -1,3 +1,7 @@
+## 0.4.2
+
+- socket states.
+
 ## 0.4.1
 
 - Handle all types in "result" field of JSON-RPC response.

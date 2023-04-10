@@ -152,7 +152,6 @@ class DaemonClientRepository {
   ///
   /// Note: It is called automatically when the channel is lost.
   void disconnect() {
-    _log('disconnect called');
     final chan = _channel;
     if (chan != null) {
       // state = SocketStates.closing;

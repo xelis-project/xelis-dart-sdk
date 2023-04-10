@@ -7,5 +7,6 @@ export 'src/repositories/daemon_constants.dart';
 export 'src/repositories/daemon_events_extension.dart';
 export 'src/repositories/daemon_rpc_methods_extension.dart';
 export 'src/repositories/retry_timer.dart';
+export 'src/repositories/socket_states.dart';
 export 'src/utils/config.dart';
 export 'src/utils/data_converter.dart';
