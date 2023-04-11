@@ -55,7 +55,13 @@ class Block with _$Block {
     @JsonKey(name: 'total_size_in_bytes') required int totalSizeInBytes,
 
     /// @nodoc
+    @JsonKey(name: 'total_fees') required int totalFees,
+
+    /// @nodoc
     @JsonKey(name: 'txs_hashes') required List<String> txsHashes,
+
+    /// @nodoc
+    // @JsonKey(name: 'data') dynamic data,
   }) = _Block;
 
   /// @nodoc

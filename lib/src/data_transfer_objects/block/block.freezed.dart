@@ -78,6 +78,10 @@ mixin _$Block {
   int get totalSizeInBytes => throw _privateConstructorUsedError;
 
   /// @nodoc
+  @JsonKey(name: 'total_fees')
+  int get totalFees => throw _privateConstructorUsedError;
+
+  /// @nodoc
   @JsonKey(name: 'txs_hashes')
   List<String> get txsHashes => throw _privateConstructorUsedError;
 
@@ -106,6 +110,7 @@ abstract class $BlockCopyWith<$Res> {
       @JsonKey(name: 'tips') List<String> tips,
       @JsonKey(name: 'topoheight') int? topoHeight,
       @JsonKey(name: 'total_size_in_bytes') int totalSizeInBytes,
+      @JsonKey(name: 'total_fees') int totalFees,
       @JsonKey(name: 'txs_hashes') List<String> txsHashes});
 }
 
@@ -136,6 +141,7 @@ class _$BlockCopyWithImpl<$Res, $Val extends Block>
     Object? tips = null,
     Object? topoHeight = freezed,
     Object? totalSizeInBytes = null,
+    Object? totalFees = null,
     Object? txsHashes = null,
   }) {
     return _then(_value.copyWith(
@@ -195,6 +201,10 @@ class _$BlockCopyWithImpl<$Res, $Val extends Block>
           ? _value.totalSizeInBytes
           : totalSizeInBytes // ignore: cast_nullable_to_non_nullable
               as int,
+      totalFees: null == totalFees
+          ? _value.totalFees
+          : totalFees // ignore: cast_nullable_to_non_nullable
+              as int,
       txsHashes: null == txsHashes
           ? _value.txsHashes
           : txsHashes // ignore: cast_nullable_to_non_nullable
@@ -224,6 +234,7 @@ abstract class _$$_BlockCopyWith<$Res> implements $BlockCopyWith<$Res> {
       @JsonKey(name: 'tips') List<String> tips,
       @JsonKey(name: 'topoheight') int? topoHeight,
       @JsonKey(name: 'total_size_in_bytes') int totalSizeInBytes,
+      @JsonKey(name: 'total_fees') int totalFees,
       @JsonKey(name: 'txs_hashes') List<String> txsHashes});
 }
 
@@ -250,6 +261,7 @@ class __$$_BlockCopyWithImpl<$Res> extends _$BlockCopyWithImpl<$Res, _$_Block>
     Object? tips = null,
     Object? topoHeight = freezed,
     Object? totalSizeInBytes = null,
+    Object? totalFees = null,
     Object? txsHashes = null,
   }) {
     return _then(_$_Block(
@@ -309,6 +321,10 @@ class __$$_BlockCopyWithImpl<$Res> extends _$BlockCopyWithImpl<$Res, _$_Block>
           ? _value.totalSizeInBytes
           : totalSizeInBytes // ignore: cast_nullable_to_non_nullable
               as int,
+      totalFees: null == totalFees
+          ? _value.totalFees
+          : totalFees // ignore: cast_nullable_to_non_nullable
+              as int,
       txsHashes: null == txsHashes
           ? _value._txsHashes
           : txsHashes // ignore: cast_nullable_to_non_nullable
@@ -349,6 +365,8 @@ class _$_Block implements _Block {
           this.topoHeight,
       @JsonKey(name: 'total_size_in_bytes')
           required this.totalSizeInBytes,
+      @JsonKey(name: 'total_fees')
+          required this.totalFees,
       @JsonKey(name: 'txs_hashes')
           required final List<String> txsHashes})
       : _tips = tips,
@@ -436,6 +454,11 @@ class _$_Block implements _Block {
   final int totalSizeInBytes;
 
   /// @nodoc
+  @override
+  @JsonKey(name: 'total_fees')
+  final int totalFees;
+
+  /// @nodoc
   final List<String> _txsHashes;
 
   /// @nodoc
@@ -449,7 +472,7 @@ class _$_Block implements _Block {
 
   @override
   String toString() {
-    return 'Block(blockType: $blockType, cumulativeDifficulty: $cumulativeDifficulty, difficulty: $difficulty, extraNonce: $extraNonce, hash: $hash, height: $height, miner: $miner, nonce: $nonce, reward: $reward, supply: $supply, timestamp: $timestamp, tips: $tips, topoHeight: $topoHeight, totalSizeInBytes: $totalSizeInBytes, txsHashes: $txsHashes)';
+    return 'Block(blockType: $blockType, cumulativeDifficulty: $cumulativeDifficulty, difficulty: $difficulty, extraNonce: $extraNonce, hash: $hash, height: $height, miner: $miner, nonce: $nonce, reward: $reward, supply: $supply, timestamp: $timestamp, tips: $tips, topoHeight: $topoHeight, totalSizeInBytes: $totalSizeInBytes, totalFees: $totalFees, txsHashes: $txsHashes)';
   }
 
   @override
@@ -478,6 +501,8 @@ class _$_Block implements _Block {
                 other.topoHeight == topoHeight) &&
             (identical(other.totalSizeInBytes, totalSizeInBytes) ||
                 other.totalSizeInBytes == totalSizeInBytes) &&
+            (identical(other.totalFees, totalFees) ||
+                other.totalFees == totalFees) &&
             const DeepCollectionEquality()
                 .equals(other._txsHashes, _txsHashes));
   }
@@ -500,6 +525,7 @@ class _$_Block implements _Block {
       const DeepCollectionEquality().hash(_tips),
       topoHeight,
       totalSizeInBytes,
+      totalFees,
       const DeepCollectionEquality().hash(_txsHashes));
 
   @JsonKey(ignore: true)
@@ -546,6 +572,8 @@ abstract class _Block implements Block {
           final int? topoHeight,
       @JsonKey(name: 'total_size_in_bytes')
           required final int totalSizeInBytes,
+      @JsonKey(name: 'total_fees')
+          required final int totalFees,
       @JsonKey(name: 'txs_hashes')
           required final List<String> txsHashes}) = _$_Block;
 
@@ -622,6 +650,11 @@ abstract class _Block implements Block {
   /// @nodoc
   @JsonKey(name: 'total_size_in_bytes')
   int get totalSizeInBytes;
+  @override
+
+  /// @nodoc
+  @JsonKey(name: 'total_fees')
+  int get totalFees;
   @override
 
   /// @nodoc
