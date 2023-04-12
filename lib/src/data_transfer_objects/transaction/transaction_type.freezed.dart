@@ -24,10 +24,9 @@ mixin _$TransactionType {
   @JsonKey(name: 'Transfer')
   List<Transfer>? get transfers => throw _privateConstructorUsedError;
 
-  /// TODO data structure
   /// @nodoc
   @JsonKey(name: 'Burn')
-  dynamic get burn => throw _privateConstructorUsedError;
+  Burn? get burn => throw _privateConstructorUsedError;
 
   /// @nodoc
   @JsonKey(name: 'CallContract')
@@ -51,10 +50,11 @@ abstract class $TransactionTypeCopyWith<$Res> {
   @useResult
   $Res call(
       {@JsonKey(name: 'Transfer') List<Transfer>? transfers,
-      @JsonKey(name: 'Burn') dynamic burn,
+      @JsonKey(name: 'Burn') Burn? burn,
       @JsonKey(name: 'CallContract') CallContract? callContract,
       @JsonKey(name: 'DeployContract') String? deployContract});
 
+  $BurnCopyWith<$Res>? get burn;
   $CallContractCopyWith<$Res>? get callContract;
 }
 
@@ -84,7 +84,7 @@ class _$TransactionTypeCopyWithImpl<$Res, $Val extends TransactionType>
       burn: freezed == burn
           ? _value.burn
           : burn // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as Burn?,
       callContract: freezed == callContract
           ? _value.callContract
           : callContract // ignore: cast_nullable_to_non_nullable
@@ -94,6 +94,18 @@ class _$TransactionTypeCopyWithImpl<$Res, $Val extends TransactionType>
           : deployContract // ignore: cast_nullable_to_non_nullable
               as String?,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $BurnCopyWith<$Res>? get burn {
+    if (_value.burn == null) {
+      return null;
+    }
+
+    return $BurnCopyWith<$Res>(_value.burn!, (value) {
+      return _then(_value.copyWith(burn: value) as $Val);
+    });
   }
 
   @override
@@ -119,10 +131,12 @@ abstract class _$$_TransactionTypeCopyWith<$Res>
   @useResult
   $Res call(
       {@JsonKey(name: 'Transfer') List<Transfer>? transfers,
-      @JsonKey(name: 'Burn') dynamic burn,
+      @JsonKey(name: 'Burn') Burn? burn,
       @JsonKey(name: 'CallContract') CallContract? callContract,
       @JsonKey(name: 'DeployContract') String? deployContract});
 
+  @override
+  $BurnCopyWith<$Res>? get burn;
   @override
   $CallContractCopyWith<$Res>? get callContract;
 }
@@ -151,7 +165,7 @@ class __$$_TransactionTypeCopyWithImpl<$Res>
       burn: freezed == burn
           ? _value.burn
           : burn // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as Burn?,
       callContract: freezed == callContract
           ? _value.callContract
           : callContract // ignore: cast_nullable_to_non_nullable
@@ -192,11 +206,10 @@ class _$_TransactionType implements _TransactionType {
     return EqualUnmodifiableListView(value);
   }
 
-  /// TODO data structure
   /// @nodoc
   @override
   @JsonKey(name: 'Burn')
-  final dynamic burn;
+  final Burn? burn;
 
   /// @nodoc
   @override
@@ -220,7 +233,7 @@ class _$_TransactionType implements _TransactionType {
             other is _$_TransactionType &&
             const DeepCollectionEquality()
                 .equals(other._transfers, _transfers) &&
-            const DeepCollectionEquality().equals(other.burn, burn) &&
+            (identical(other.burn, burn) || other.burn == burn) &&
             (identical(other.callContract, callContract) ||
                 other.callContract == callContract) &&
             (identical(other.deployContract, deployContract) ||
@@ -232,7 +245,7 @@ class _$_TransactionType implements _TransactionType {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(_transfers),
-      const DeepCollectionEquality().hash(burn),
+      burn,
       callContract,
       deployContract);
 
@@ -253,7 +266,7 @@ class _$_TransactionType implements _TransactionType {
 abstract class _TransactionType implements TransactionType {
   const factory _TransactionType(
           {@JsonKey(name: 'Transfer') final List<Transfer>? transfers,
-          @JsonKey(name: 'Burn') final dynamic burn,
+          @JsonKey(name: 'Burn') final Burn? burn,
           @JsonKey(name: 'CallContract') final CallContract? callContract,
           @JsonKey(name: 'DeployContract') final String? deployContract}) =
       _$_TransactionType;
@@ -268,10 +281,9 @@ abstract class _TransactionType implements TransactionType {
   List<Transfer>? get transfers;
   @override
 
-  /// TODO data structure
   /// @nodoc
   @JsonKey(name: 'Burn')
-  dynamic get burn;
+  Burn? get burn;
   @override
 
   /// @nodoc

@@ -19,6 +19,7 @@ export 'get_transactions/get_transactions_params.dart';
 export 'p2p_status/p2p_status_result.dart';
 export 'submit_block/submit_block_params.dart';
 export 'submit_transaction/submit_transaction_params.dart';
+export 'transaction/burn.dart';
 export 'transaction/call_contract.dart';
 export 'transaction/transaction.dart';
 export 'transaction/transaction_type.dart';

@@ -13,7 +13,9 @@ _$_TransactionType _$$_TransactionTypeFromJson(Map<String, dynamic> json) =>
       transfers: (json['Transfer'] as List<dynamic>?)
           ?.map((e) => Transfer.fromJson(e as Map<String, dynamic>))
           .toList(),
-      burn: json['Burn'],
+      burn: json['Burn'] == null
+          ? null
+          : Burn.fromJson(json['Burn'] as Map<String, dynamic>),
       callContract: json['CallContract'] == null
           ? null
           : CallContract.fromJson(json['CallContract'] as Map<String, dynamic>),

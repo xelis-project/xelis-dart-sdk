@@ -1,3 +1,7 @@
+## 0.4.3
+
+- fix: missing field in Block and Burn TransactionType.
+
 ## 0.4.2
 
 - socket states.

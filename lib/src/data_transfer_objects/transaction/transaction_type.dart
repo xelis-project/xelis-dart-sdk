@@ -16,9 +16,8 @@ class TransactionType with _$TransactionType {
     /// @nodoc
     @JsonKey(name: 'Transfer') List<Transfer>? transfers,
 
-    /// TODO data structure
     /// @nodoc
-    @JsonKey(name: 'Burn') dynamic burn,
+    @JsonKey(name: 'Burn') Burn? burn,
 
     /// @nodoc
     @JsonKey(name: 'CallContract') CallContract? callContract,
