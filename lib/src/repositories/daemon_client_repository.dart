@@ -3,8 +3,7 @@ import 'dart:convert';
 
 import 'package:json_rpc_2/json_rpc_2.dart';
 import 'package:logging/logging.dart';
-import 'package:web_socket_channel/status.dart' as status;
-import 'package:web_socket_channel/web_socket_channel.dart';
+import 'package:web_socket_client/web_socket_client.dart';
 import 'package:xelis_dart_sdk/xelis_dart_sdk.dart';
 
 /// A repository that provides JSON-RPC Client to communicate with Xelis daemon.
@@ -15,48 +14,21 @@ class DaemonClientRepository {
   DaemonClientRepository({
     required String endPoint,
     bool secureWebSocket = true,
-    int timeout = 60000,
-    TimerCalculation? reconnectAfterMs,
+    int timeout = 20000,
     Logger? logger,
   })  : _uri = setUpUri(endPoint, secureWebSocket: secureWebSocket),
         _channelTimeout = timeout,
-        _reconnectAfterMs = reconnectAfterMs ??
-            RetryTimer.createRetryFunction(
-              1000,
-              15000,
-            ),
-        log = logger {
-    reconnectTimer = RetryTimer(
-      () {
-        disconnect();
-        connect();
-      },
-      _reconnectAfterMs,
-    );
-  }
+        log = logger;
 
   // Websocket URI
   final Uri _uri;
 
-  // Websocket channel
-  WebSocketChannel? _channel;
-
-  /// Reconnect timer
-  RetryTimer? reconnectTimer;
-
-  /// Reconnect after milliseconds
-  ///
-  /// Note: It is used to reconnect after the specified time.
-  /// Type: [TimerCalculation]
-  /// Default: [RetryTimer.createRetryFunction(1000, 15000)]
-  final TimerCalculation _reconnectAfterMs;
-
-  /// Current state of the connection
-  SocketStates state = SocketStates.disconnected;
+  /// Websocket client
+  WebSocket? socket;
 
   /// Channel timeout
   ///
-  /// Note: It is used to close the channel if it is not connected
+  /// Note: It is used to close the socket if it is not connected
   /// after the specified time.
   final int _channelTimeout;
 
@@ -102,68 +74,55 @@ class DaemonClientRepository {
   static Uri setUpUri(String rpcAddress, {required bool secureWebSocket}) =>
       Uri.parse('ws${secureWebSocket ? 's' : ''}://$rpcAddress/ws');
 
-  /// Check if socket state is closed.
-  bool get isClosed => state == SocketStates.closed;
+  /// get connection state
+  Stream<ConnectionState> get connection =>
+      socket?.connection ?? const Stream.empty();
 
-  /// Check if socket state is disconnected.
-  bool get isDisconnected => state == SocketStates.disconnected;
-
-  /// Initialize the channel to communicate with daemon and start listening.
+  /// Initialize the websocket to communicate with daemon and start listening.
   ///
   /// Note: It has to be called first.
-  Future<void> connect() async {
-    if (_channel != null) {
-      return;
-    }
-    try {
-      _log('connecting to $_uri...');
-      state = SocketStates.connecting;
-      _channel = WebSocketChannel.connect(_uri);
+  void connect() {
+    final backoff = LinearBackoff(
+      initial: Duration.zero,
+      increment: const Duration(seconds: 1),
+      maximum: const Duration(seconds: 5),
+    );
+    socket = WebSocket(
+      _uri,
+      timeout: Duration(milliseconds: _channelTimeout),
+      backoff: backoff,
+    );
 
-      await _channel!.ready.catchError(_onConnError);
-
-      if (state != SocketStates.connecting) {
-        return;
-      }
-
-      _onConnOpen();
-
-      _channel!.stream.timeout(Duration(milliseconds: _channelTimeout));
-
-      _log('listening to channel stream...');
-
-      _channel!.stream.listen(
-        _handleData,
-        onDone: () {
-          if (state != SocketStates.disconnected) {
-            state = SocketStates.closed;
-          }
+    socket?.connection.listen(
+      (state) {
+        if (state is Connecting) {
+          _log('connecting to $_uri...');
+        } else if (state is Connected) {
+          _log('connected to $_uri...');
+          _onConnOpen();
+        } else if (state is Reconnecting) {
+          _log('reconnecting to $_uri...');
+        } else if (state is Reconnected) {
+          _log('reconnected to $_uri...');
+          _restoreSubscriptions();
+          _pendingRequests.clear();
+          _onConnOpen();
+        } else if (state is Disconnected) {
+          _log('disconnected from $_uri...');
           _onConnClose();
-        },
-        onError: _onConnError,
-      );
-    } catch (e) {
-      _onConnError(e);
-    }
+        }
+      },
+      onError: _onConnError,
+    );
+
+    socket?.messages.listen(_handleData, onError: _onConnError);
   }
 
   /// Close the websocket channel.
   ///
   /// Note: It is called automatically when the channel is lost.
   void disconnect() {
-    final chan = _channel;
-    if (chan != null) {
-      // state = SocketStates.closing;
-      chan.sink.close(status.goingAway);
-      if (state != SocketStates.closed) {
-        _log('disconnecting...');
-        state = SocketStates.disconnected;
-        if (reconnectTimer != null) {
-          reconnectTimer!.reset();
-        }
-      }
-      _channel = null;
-    }
+    socket?.close(1000, 'CLOSE_NORMAL');
   }
 
   /// Registers a callbacks for connection state change events.
@@ -192,6 +151,19 @@ class DaemonClientRepository {
     DaemonMethod method, [
     Map<String, dynamic>? params,
   ]) async {
+    if (socket == null) {
+      _log('trying to send request when socket is null');
+      throw Exception('trying to send request when socket is null');
+    }
+
+    if (socket?.connection.state is Disconnected) {
+      _log('trying to send request when socket is disconnected');
+      throw Exception('trying to send request when socket is disconnected');
+    }
+    // Wait until a connection has been established.
+    await socket?.connection
+        .firstWhere((state) => state is Connected || state is Reconnected);
+
     _send(method, params);
     final completer = Completer<dynamic>.sync();
     _pendingRequests[_id] = _Request(method.value, completer, params);
@@ -202,16 +174,15 @@ class DaemonClientRepository {
   void subscribeTo(DaemonEvent event) {
     _log('subscribing to ${event.value}...');
     _id++;
-    _channel?.sink
-        .add(_jsonRequest(DaemonMethod.subscribe, {'notify': event.value}));
+    socket?.send(_jsonRequest(DaemonMethod.subscribe, {'notify': event.value}));
   }
 
   /// Unsubscribe from a daemon event.
   void unsubscribeFrom(DaemonEvent event) {
     _log('unsubscribing from ${event.value}...');
     _id++;
-    _channel?.sink
-        .add(_jsonRequest(DaemonMethod.unsubscribe, {'notify': event.value}));
+    socket
+        ?.send(_jsonRequest(DaemonMethod.unsubscribe, {'notify': event.value}));
     eventCallbacks[event]!.clear();
   }
 
@@ -327,15 +298,7 @@ class DaemonClientRepository {
 
   // Calls all callbacks for a given connection state.
   void _onConnOpen() {
-    if (reconnectTimer != null) {
-      reconnectTimer!.reset();
-    }
-    state = SocketStates.open;
-
     _log('successfully connected to xelis daemon');
-
-    _restoreSubscriptions();
-    _pendingRequests.clear();
     for (final callback in _stateChangeCallbacks['open']!) {
       // ignore: avoid_dynamic_calls
       callback();
@@ -344,11 +307,7 @@ class DaemonClientRepository {
 
   // Calls all callbacks for a given connection state.
   void _onConnClose() {
-    if (state == SocketStates.closed && reconnectTimer != null) {
-      _log('lost connection to xelis daemon '
-          '- reconnect timer: schedule timeout');
-      reconnectTimer!.scheduleTimeout();
-    }
+    _log('connection to xelis daemon closed');
     for (final callback in _stateChangeCallbacks['close']!) {
       // ignore: avoid_dynamic_calls
       callback();
@@ -357,12 +316,7 @@ class DaemonClientRepository {
 
   // Calls all callbacks for a given connection state.
   void _onConnError(dynamic error) {
-    if (reconnectTimer != null) {
-      _log('error connecting to xelis daemon '
-          '- reconnect timer: schedule timeout');
-      state = SocketStates.closed;
-      reconnectTimer!.scheduleTimeout();
-    }
+    _log('error connecting to xelis daemon: $error');
     for (final callback in _stateChangeCallbacks['error']!) {
       // ignore: avoid_dynamic_calls
       callback(error);
@@ -370,20 +324,10 @@ class DaemonClientRepository {
   }
 
   void _send(DaemonMethod method, Map<String, dynamic>? params) {
-    if (isClosed || isDisconnected) {
-      throw StateError('The connection is closed.');
-    }
-
     _id++;
     final request = _jsonRequest(method, params);
-
     _log('sending request: $request');
-
-    if (_channel != null) {
-      _channel!.sink.add(request);
-    } else {
-      throw StateError('The socket channel is null.');
-    }
+    socket?.send(request);
   }
 
   // Creates a JSON-RPC request.

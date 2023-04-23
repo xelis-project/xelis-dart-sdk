@@ -1,3 +1,7 @@
+## 0.4.4
+
+- fix: reconnect behavior.
+
 ## 0.4.3
 
 - fix: missing field in Block and Burn TransactionType.

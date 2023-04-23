@@ -10,7 +10,7 @@ Future<void> main() async {
     );
 
     // You must initiate the connection first.
-    await daemonRepository.connect();
+    daemonRepository.connect();
 
     // You can use the repository to make requests to the daemon.
     final res = await daemonRepository.getInfo();
