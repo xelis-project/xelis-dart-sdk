@@ -1,3 +1,7 @@
+## 0.4.5
+
+- fix: default backoff strategy, client state & misc.
+
 ## 0.4.4
 
 - fix: reconnect behavior.

@@ -2,6 +2,7 @@
 library xelis_dart_sdk;
 
 export 'src/data_transfer_objects/dtos.dart';
+export 'src/repositories/client_state.dart' show ClientState;
 export 'src/repositories/daemon_client_repository.dart';
 export 'src/repositories/daemon_constants.dart';
 export 'src/repositories/daemon_events_extension.dart';

@@ -4,6 +4,7 @@ import 'dart:convert';
 import 'package:json_rpc_2/json_rpc_2.dart';
 import 'package:logging/logging.dart';
 import 'package:web_socket_client/web_socket_client.dart';
+import 'package:xelis_dart_sdk/src/repositories/client_state.dart';
 import 'package:xelis_dart_sdk/xelis_dart_sdk.dart';
 
 /// A repository that provides JSON-RPC Client to communicate with Xelis daemon.
@@ -14,7 +15,7 @@ class DaemonClientRepository {
   DaemonClientRepository({
     required String endPoint,
     bool secureWebSocket = true,
-    int timeout = 20000,
+    int timeout = 60000,
     Logger? logger,
   })  : _uri = setUpUri(endPoint, secureWebSocket: secureWebSocket),
         _channelTimeout = timeout,
@@ -74,23 +75,24 @@ class DaemonClientRepository {
   static Uri setUpUri(String rpcAddress, {required bool secureWebSocket}) =>
       Uri.parse('ws${secureWebSocket ? 's' : ''}://$rpcAddress/ws');
 
-  /// get connection state
-  Stream<ConnectionState> get connection =>
-      socket?.connection ?? const Stream.empty();
+  /// get client state
+  Stream<ClientState> get state async* {
+    if (socket == null) {
+      yield* const Stream.empty();
+    } else {
+      await for (final state in socket!.connection) {
+        yield toClientState(state);
+      }
+    }
+  }
 
   /// Initialize the websocket to communicate with daemon and start listening.
   ///
   /// Note: It has to be called first.
   void connect() {
-    final backoff = LinearBackoff(
-      initial: Duration.zero,
-      increment: const Duration(seconds: 1),
-      maximum: const Duration(seconds: 5),
-    );
     socket = WebSocket(
       _uri,
       timeout: Duration(milliseconds: _channelTimeout),
-      backoff: backoff,
     );
 
     socket?.connection.listen(
@@ -171,18 +173,21 @@ class DaemonClientRepository {
   }
 
   /// Subscribe to a daemon event.
-  void subscribeTo(DaemonEvent event) {
+  Future<void> subscribeTo(DaemonEvent event) async {
     _log('subscribing to ${event.value}...');
-    _id++;
-    socket?.send(_jsonRequest(DaemonMethod.subscribe, {'notify': event.value}));
+    // Wait until a connection has been established.
+    await socket?.connection
+        .firstWhere((state) => state is Connected || state is Reconnected);
+    _send(DaemonMethod.subscribe, {'notify': event.value});
   }
 
   /// Unsubscribe from a daemon event.
-  void unsubscribeFrom(DaemonEvent event) {
+  Future<void> unsubscribeFrom(DaemonEvent event) async {
     _log('unsubscribing from ${event.value}...');
-    _id++;
-    socket
-        ?.send(_jsonRequest(DaemonMethod.unsubscribe, {'notify': event.value}));
+    // Wait until a connection has been established.
+    await socket?.connection
+        .firstWhere((state) => state is Connected || state is Reconnected);
+    _send(DaemonMethod.unsubscribe, {'notify': event.value});
     eventCallbacks[event]!.clear();
   }
 
@@ -323,7 +328,7 @@ class DaemonClientRepository {
     }
   }
 
-  void _send(DaemonMethod method, Map<String, dynamic>? params) {
+  void _send(DaemonMethod method, [Map<String, dynamic>? params]) {
     _id++;
     final request = _jsonRequest(method, params);
     _log('sending request: $request');
@@ -331,7 +336,7 @@ class DaemonClientRepository {
   }
 
   // Creates a JSON-RPC request.
-  String _jsonRequest(DaemonMethod method, Map<String, dynamic>? params) {
+  String _jsonRequest(DaemonMethod method, [Map<String, dynamic>? params]) {
     if (params != null) {
       return jsonEncode(
         {'id': _id, 'jsonrpc': '2.0', 'method': method.value, 'params': params},

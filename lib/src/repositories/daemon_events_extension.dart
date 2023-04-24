@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:xelis_dart_sdk/xelis_dart_sdk.dart';
 
 /// Extension of [DaemonClientRepository] that provides methods to
@@ -8,14 +10,14 @@ extension DaemonEventsExtension on DaemonClientRepository {
   /// Note: It is called when a new block is added to the chain.
   void onNewBlock(void Function(Block block) callback) {
     if (eventCallbacks[DaemonEvent.newBlock]!.isEmpty) {
-      subscribeTo(DaemonEvent.newBlock);
+      unawaited(subscribeTo(DaemonEvent.newBlock));
     }
     registerCallback(DaemonEvent.newBlock, callback);
   }
 
   /// Unsubscribes from NewBlock event.
   void unsubscribeFromNewBlock() {
-    unsubscribeFrom(DaemonEvent.newBlock);
+    unawaited(unsubscribeFrom(DaemonEvent.newBlock));
   }
 
   /// Registers a callback for BlockOrdered event.
@@ -23,14 +25,14 @@ extension DaemonEventsExtension on DaemonClientRepository {
   /// Note: It is called when a block is ordered.
   void onBlockOrdered(void Function(BlockOrderEvent blockOrderEvent) callback) {
     if (eventCallbacks[DaemonEvent.blockOrdered]!.isEmpty) {
-      subscribeTo(DaemonEvent.blockOrdered);
+      unawaited(subscribeTo(DaemonEvent.blockOrdered));
     }
     registerCallback(DaemonEvent.blockOrdered, callback);
   }
 
   /// Unsubscribes from BlockOrdered event.
   void unsubscribeFromBlockOrdered() {
-    unsubscribeFrom(DaemonEvent.blockOrdered);
+    unawaited(unsubscribeFrom(DaemonEvent.blockOrdered));
   }
 
   /// Registers a callback for TransactionAddedInMempool event.
@@ -40,14 +42,14 @@ extension DaemonEventsExtension on DaemonClientRepository {
     void Function(Transaction transaction) callback,
   ) {
     if (eventCallbacks[DaemonEvent.transactionAddedInMempool]!.isEmpty) {
-      subscribeTo(DaemonEvent.transactionAddedInMempool);
+      unawaited(subscribeTo(DaemonEvent.transactionAddedInMempool));
     }
     registerCallback(DaemonEvent.transactionAddedInMempool, callback);
   }
 
   /// Unsubscribes from TransactionAddedInMempool event.
   void unsubscribeFromTransactionAddedInMempool() {
-    unsubscribeFrom(DaemonEvent.transactionAddedInMempool);
+    unawaited(unsubscribeFrom(DaemonEvent.transactionAddedInMempool));
   }
 
   /// Registers a callback for TransactionExecuted event.
@@ -57,14 +59,14 @@ extension DaemonEventsExtension on DaemonClientRepository {
     void Function(TransactionExecutedEvent transactionExecutedEvent) callback,
   ) {
     if (eventCallbacks[DaemonEvent.transactionExecuted]!.isEmpty) {
-      subscribeTo(DaemonEvent.transactionExecuted);
+      unawaited(subscribeTo(DaemonEvent.transactionExecuted));
     }
     registerCallback(DaemonEvent.transactionExecuted, callback);
   }
 
   /// Unsubscribes from TransactionExecuted event.
   void unsubscribeFromTransactionExecuted() {
-    unsubscribeFrom(DaemonEvent.transactionExecuted);
+    unawaited(unsubscribeFrom(DaemonEvent.transactionExecuted));
   }
 
   /// Registers a callback for TransactionSCResult event.
@@ -74,14 +76,14 @@ extension DaemonEventsExtension on DaemonClientRepository {
     void Function(dynamic rawTransactionSCResult) callback,
   ) {
     if (eventCallbacks[DaemonEvent.transactionSCResult]!.isEmpty) {
-      subscribeTo(DaemonEvent.transactionSCResult);
+      unawaited(subscribeTo(DaemonEvent.transactionSCResult));
     }
     registerCallback(DaemonEvent.transactionSCResult, callback);
   }
 
   /// Unsubscribes from TransactionSCResult event.
   void unsubscribeFromTransactionSCResult() {
-    unsubscribeFrom(DaemonEvent.transactionSCResult);
+    unawaited(unsubscribeFrom(DaemonEvent.transactionSCResult));
   }
 
   /// Registers a callback for NewAsset event.
@@ -89,23 +91,23 @@ extension DaemonEventsExtension on DaemonClientRepository {
   /// Note: It is called when a new asset is added to the chain.
   void onNewAsset(void Function(dynamic rawNewAsset) callback) {
     if (eventCallbacks[DaemonEvent.newAsset]!.isEmpty) {
-      subscribeTo(DaemonEvent.newAsset);
+      unawaited(subscribeTo(DaemonEvent.newAsset));
     }
     registerCallback(DaemonEvent.newAsset, callback);
   }
 
   /// Unsubscribes from NewAsset event.
   void unsubscribeFromNewAsset() {
-    unsubscribeFrom(DaemonEvent.newAsset);
+    unawaited(unsubscribeFrom(DaemonEvent.newAsset));
   }
 
   /// Unsubscribes from all events.
   void unsubscribeFromAll() {
-    unsubscribeFrom(DaemonEvent.newBlock);
-    unsubscribeFrom(DaemonEvent.blockOrdered);
-    unsubscribeFrom(DaemonEvent.transactionAddedInMempool);
-    unsubscribeFrom(DaemonEvent.transactionExecuted);
-    unsubscribeFrom(DaemonEvent.transactionSCResult);
-    unsubscribeFrom(DaemonEvent.newAsset);
+    unsubscribeFromNewBlock();
+    unsubscribeFromBlockOrdered();
+    unsubscribeFromTransactionAddedInMempool();
+    unsubscribeFromTransactionExecuted();
+    unsubscribeFromTransactionSCResult();
+    unsubscribeFromNewAsset();
   }
 }
