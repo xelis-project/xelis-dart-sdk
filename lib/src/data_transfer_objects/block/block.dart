@@ -55,7 +55,7 @@ class Block with _$Block {
     @JsonKey(name: 'total_size_in_bytes') required int totalSizeInBytes,
 
     /// @nodoc
-    @JsonKey(name: 'total_fees') required int totalFees,
+    @JsonKey(name: 'total_fees') int? totalFees,
 
     /// @nodoc
     @JsonKey(name: 'txs_hashes') required List<String> txsHashes,

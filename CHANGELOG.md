@@ -1,3 +1,7 @@
+## 0.4.6
+
+- fix: totalFees in Block can be null.
+
 ## 0.4.5
 
 - fix: default backoff strategy, client state & misc.

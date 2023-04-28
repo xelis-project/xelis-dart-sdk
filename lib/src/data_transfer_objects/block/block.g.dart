@@ -23,7 +23,7 @@ _$_Block _$$_BlockFromJson(Map<String, dynamic> json) => _$_Block(
       tips: (json['tips'] as List<dynamic>).map((e) => e as String).toList(),
       topoHeight: json['topoheight'] as int?,
       totalSizeInBytes: json['total_size_in_bytes'] as int,
-      totalFees: json['total_fees'] as int,
+      totalFees: json['total_fees'] as int?,
       txsHashes: (json['txs_hashes'] as List<dynamic>)
           .map((e) => e as String)
           .toList(),

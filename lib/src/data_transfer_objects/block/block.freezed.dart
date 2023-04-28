@@ -79,7 +79,7 @@ mixin _$Block {
 
   /// @nodoc
   @JsonKey(name: 'total_fees')
-  int get totalFees => throw _privateConstructorUsedError;
+  int? get totalFees => throw _privateConstructorUsedError;
 
   /// @nodoc
   @JsonKey(name: 'txs_hashes')
@@ -110,7 +110,7 @@ abstract class $BlockCopyWith<$Res> {
       @JsonKey(name: 'tips') List<String> tips,
       @JsonKey(name: 'topoheight') int? topoHeight,
       @JsonKey(name: 'total_size_in_bytes') int totalSizeInBytes,
-      @JsonKey(name: 'total_fees') int totalFees,
+      @JsonKey(name: 'total_fees') int? totalFees,
       @JsonKey(name: 'txs_hashes') List<String> txsHashes});
 }
 
@@ -141,7 +141,7 @@ class _$BlockCopyWithImpl<$Res, $Val extends Block>
     Object? tips = null,
     Object? topoHeight = freezed,
     Object? totalSizeInBytes = null,
-    Object? totalFees = null,
+    Object? totalFees = freezed,
     Object? txsHashes = null,
   }) {
     return _then(_value.copyWith(
@@ -201,10 +201,10 @@ class _$BlockCopyWithImpl<$Res, $Val extends Block>
           ? _value.totalSizeInBytes
           : totalSizeInBytes // ignore: cast_nullable_to_non_nullable
               as int,
-      totalFees: null == totalFees
+      totalFees: freezed == totalFees
           ? _value.totalFees
           : totalFees // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       txsHashes: null == txsHashes
           ? _value.txsHashes
           : txsHashes // ignore: cast_nullable_to_non_nullable
@@ -234,7 +234,7 @@ abstract class _$$_BlockCopyWith<$Res> implements $BlockCopyWith<$Res> {
       @JsonKey(name: 'tips') List<String> tips,
       @JsonKey(name: 'topoheight') int? topoHeight,
       @JsonKey(name: 'total_size_in_bytes') int totalSizeInBytes,
-      @JsonKey(name: 'total_fees') int totalFees,
+      @JsonKey(name: 'total_fees') int? totalFees,
       @JsonKey(name: 'txs_hashes') List<String> txsHashes});
 }
 
@@ -261,7 +261,7 @@ class __$$_BlockCopyWithImpl<$Res> extends _$BlockCopyWithImpl<$Res, _$_Block>
     Object? tips = null,
     Object? topoHeight = freezed,
     Object? totalSizeInBytes = null,
-    Object? totalFees = null,
+    Object? totalFees = freezed,
     Object? txsHashes = null,
   }) {
     return _then(_$_Block(
@@ -321,10 +321,10 @@ class __$$_BlockCopyWithImpl<$Res> extends _$BlockCopyWithImpl<$Res, _$_Block>
           ? _value.totalSizeInBytes
           : totalSizeInBytes // ignore: cast_nullable_to_non_nullable
               as int,
-      totalFees: null == totalFees
+      totalFees: freezed == totalFees
           ? _value.totalFees
           : totalFees // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       txsHashes: null == txsHashes
           ? _value._txsHashes
           : txsHashes // ignore: cast_nullable_to_non_nullable
@@ -366,7 +366,7 @@ class _$_Block implements _Block {
       @JsonKey(name: 'total_size_in_bytes')
           required this.totalSizeInBytes,
       @JsonKey(name: 'total_fees')
-          required this.totalFees,
+          this.totalFees,
       @JsonKey(name: 'txs_hashes')
           required final List<String> txsHashes})
       : _tips = tips,
@@ -456,7 +456,7 @@ class _$_Block implements _Block {
   /// @nodoc
   @override
   @JsonKey(name: 'total_fees')
-  final int totalFees;
+  final int? totalFees;
 
   /// @nodoc
   final List<String> _txsHashes;
@@ -573,7 +573,7 @@ abstract class _Block implements Block {
       @JsonKey(name: 'total_size_in_bytes')
           required final int totalSizeInBytes,
       @JsonKey(name: 'total_fees')
-          required final int totalFees,
+          final int? totalFees,
       @JsonKey(name: 'txs_hashes')
           required final List<String> txsHashes}) = _$_Block;
 
@@ -654,7 +654,7 @@ abstract class _Block implements Block {
 
   /// @nodoc
   @JsonKey(name: 'total_fees')
-  int get totalFees;
+  int? get totalFees;
   @override
 
   /// @nodoc
