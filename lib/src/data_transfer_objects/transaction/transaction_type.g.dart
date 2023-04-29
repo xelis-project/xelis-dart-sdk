@@ -10,16 +10,17 @@ part of 'transaction_type.dart';
 
 _$_TransactionType _$$_TransactionTypeFromJson(Map<String, dynamic> json) =>
     _$_TransactionType(
-      transfers: (json['Transfer'] as List<dynamic>?)
+      transfers: (json['transfers'] as List<dynamic>?)
           ?.map((e) => Transfer.fromJson(e as Map<String, dynamic>))
           .toList(),
-      burn: json['Burn'] == null
+      burn: json['burn'] == null
           ? null
-          : Burn.fromJson(json['Burn'] as Map<String, dynamic>),
-      callContract: json['CallContract'] == null
+          : Burn.fromJson(json['burn'] as Map<String, dynamic>),
+      callContract: json['call_contract'] == null
           ? null
-          : CallContract.fromJson(json['CallContract'] as Map<String, dynamic>),
-      deployContract: json['DeployContract'] as String?,
+          : CallContract.fromJson(
+              json['call_contract'] as Map<String, dynamic>),
+      deployContract: json['deploy_contract'] as String?,
     );
 
 Map<String, dynamic> _$$_TransactionTypeToJson(_$_TransactionType instance) {
@@ -31,9 +32,9 @@ Map<String, dynamic> _$$_TransactionTypeToJson(_$_TransactionType instance) {
     }
   }
 
-  writeNotNull('Transfer', instance.transfers);
-  writeNotNull('Burn', instance.burn);
-  writeNotNull('CallContract', instance.callContract);
-  writeNotNull('DeployContract', instance.deployContract);
+  writeNotNull('transfers', instance.transfers);
+  writeNotNull('burn', instance.burn);
+  writeNotNull('call_contract', instance.callContract);
+  writeNotNull('deploy_contract', instance.deployContract);
   return val;
 }

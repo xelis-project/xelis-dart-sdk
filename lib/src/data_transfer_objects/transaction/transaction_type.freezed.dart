@@ -21,19 +21,19 @@ TransactionType _$TransactionTypeFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$TransactionType {
   /// @nodoc
-  @JsonKey(name: 'Transfer')
+  @JsonKey(name: 'transfers')
   List<Transfer>? get transfers => throw _privateConstructorUsedError;
 
   /// @nodoc
-  @JsonKey(name: 'Burn')
+  @JsonKey(name: 'burn')
   Burn? get burn => throw _privateConstructorUsedError;
 
   /// @nodoc
-  @JsonKey(name: 'CallContract')
+  @JsonKey(name: 'call_contract')
   CallContract? get callContract => throw _privateConstructorUsedError;
 
   /// @nodoc
-  @JsonKey(name: 'DeployContract')
+  @JsonKey(name: 'deploy_contract')
   String? get deployContract => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -49,10 +49,10 @@ abstract class $TransactionTypeCopyWith<$Res> {
       _$TransactionTypeCopyWithImpl<$Res, TransactionType>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'Transfer') List<Transfer>? transfers,
-      @JsonKey(name: 'Burn') Burn? burn,
-      @JsonKey(name: 'CallContract') CallContract? callContract,
-      @JsonKey(name: 'DeployContract') String? deployContract});
+      {@JsonKey(name: 'transfers') List<Transfer>? transfers,
+      @JsonKey(name: 'burn') Burn? burn,
+      @JsonKey(name: 'call_contract') CallContract? callContract,
+      @JsonKey(name: 'deploy_contract') String? deployContract});
 
   $BurnCopyWith<$Res>? get burn;
   $CallContractCopyWith<$Res>? get callContract;
@@ -130,10 +130,10 @@ abstract class _$$_TransactionTypeCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'Transfer') List<Transfer>? transfers,
-      @JsonKey(name: 'Burn') Burn? burn,
-      @JsonKey(name: 'CallContract') CallContract? callContract,
-      @JsonKey(name: 'DeployContract') String? deployContract});
+      {@JsonKey(name: 'transfers') List<Transfer>? transfers,
+      @JsonKey(name: 'burn') Burn? burn,
+      @JsonKey(name: 'call_contract') CallContract? callContract,
+      @JsonKey(name: 'deploy_contract') String? deployContract});
 
   @override
   $BurnCopyWith<$Res>? get burn;
@@ -183,10 +183,10 @@ class __$$_TransactionTypeCopyWithImpl<$Res>
 @JsonSerializable(includeIfNull: false)
 class _$_TransactionType implements _TransactionType {
   const _$_TransactionType(
-      {@JsonKey(name: 'Transfer') final List<Transfer>? transfers,
-      @JsonKey(name: 'Burn') this.burn,
-      @JsonKey(name: 'CallContract') this.callContract,
-      @JsonKey(name: 'DeployContract') this.deployContract})
+      {@JsonKey(name: 'transfers') final List<Transfer>? transfers,
+      @JsonKey(name: 'burn') this.burn,
+      @JsonKey(name: 'call_contract') this.callContract,
+      @JsonKey(name: 'deploy_contract') this.deployContract})
       : _transfers = transfers;
 
   factory _$_TransactionType.fromJson(Map<String, dynamic> json) =>
@@ -197,7 +197,7 @@ class _$_TransactionType implements _TransactionType {
 
   /// @nodoc
   @override
-  @JsonKey(name: 'Transfer')
+  @JsonKey(name: 'transfers')
   List<Transfer>? get transfers {
     final value = _transfers;
     if (value == null) return null;
@@ -208,17 +208,17 @@ class _$_TransactionType implements _TransactionType {
 
   /// @nodoc
   @override
-  @JsonKey(name: 'Burn')
+  @JsonKey(name: 'burn')
   final Burn? burn;
 
   /// @nodoc
   @override
-  @JsonKey(name: 'CallContract')
+  @JsonKey(name: 'call_contract')
   final CallContract? callContract;
 
   /// @nodoc
   @override
-  @JsonKey(name: 'DeployContract')
+  @JsonKey(name: 'deploy_contract')
   final String? deployContract;
 
   @override
@@ -265,10 +265,10 @@ class _$_TransactionType implements _TransactionType {
 
 abstract class _TransactionType implements TransactionType {
   const factory _TransactionType(
-          {@JsonKey(name: 'Transfer') final List<Transfer>? transfers,
-          @JsonKey(name: 'Burn') final Burn? burn,
-          @JsonKey(name: 'CallContract') final CallContract? callContract,
-          @JsonKey(name: 'DeployContract') final String? deployContract}) =
+          {@JsonKey(name: 'transfers') final List<Transfer>? transfers,
+          @JsonKey(name: 'burn') final Burn? burn,
+          @JsonKey(name: 'call_contract') final CallContract? callContract,
+          @JsonKey(name: 'deploy_contract') final String? deployContract}) =
       _$_TransactionType;
 
   factory _TransactionType.fromJson(Map<String, dynamic> json) =
@@ -277,22 +277,22 @@ abstract class _TransactionType implements TransactionType {
   @override
 
   /// @nodoc
-  @JsonKey(name: 'Transfer')
+  @JsonKey(name: 'transfers')
   List<Transfer>? get transfers;
   @override
 
   /// @nodoc
-  @JsonKey(name: 'Burn')
+  @JsonKey(name: 'burn')
   Burn? get burn;
   @override
 
   /// @nodoc
-  @JsonKey(name: 'CallContract')
+  @JsonKey(name: 'call_contract')
   CallContract? get callContract;
   @override
 
   /// @nodoc
-  @JsonKey(name: 'DeployContract')
+  @JsonKey(name: 'deploy_contract')
   String? get deployContract;
   @override
   @JsonKey(ignore: true)

@@ -1,3 +1,7 @@
+## 0.4.7
+
+- fix: json key in TransactionType.
+
 ## 0.4.6
 
 - fix: totalFees in Block can be null.

@@ -14,16 +14,16 @@ class TransactionType with _$TransactionType {
   @JsonSerializable(includeIfNull: false)
   const factory TransactionType({
     /// @nodoc
-    @JsonKey(name: 'Transfer') List<Transfer>? transfers,
+    @JsonKey(name: 'transfers') List<Transfer>? transfers,
 
     /// @nodoc
-    @JsonKey(name: 'Burn') Burn? burn,
+    @JsonKey(name: 'burn') Burn? burn,
 
     /// @nodoc
-    @JsonKey(name: 'CallContract') CallContract? callContract,
+    @JsonKey(name: 'call_contract') CallContract? callContract,
 
     /// @nodoc
-    @JsonKey(name: 'DeployContract') String? deployContract,
+    @JsonKey(name: 'deploy_contract') String? deployContract,
   }) = _TransactionType;
 
   /// @nodoc
