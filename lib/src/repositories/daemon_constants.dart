@@ -71,8 +71,11 @@ enum DaemonMethod {
   /// Submit a block.
   submitBlock('submit_block'),
 
-  /// Get blocks.
-  getBlocks('get_blocks'),
+  /// Get blocks range by topoheight.
+  getBlocksRangeByTopoHeight('get_blocks_range_by_topoheight'),
+
+  /// Get blocks range by height.
+  getBlocksRangeByHeight('get_blocks_range_by_height'),
 
   // EVENTS METHODS
 

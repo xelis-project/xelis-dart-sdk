@@ -154,9 +154,13 @@ extension DaemonRpcMethodsExtension on DaemonClientRepository {
   ///
   /// If no parameters are set, it will retrieve the last 64 blocks
   /// hash ordered descending. Maximum of 64 blocks hash only per request.
-  Future<List<String>> getDagOrder(GetRangeParams getRangeParams) async {
-    final result =
-        await sendRequest(DaemonMethod.getDagOrder, getRangeParams.toJson());
+  Future<List<String>> getDagOrder(
+    GetTopoHeightRangeParams getTopoHeightRangeParams,
+  ) async {
+    final result = await sendRequest(
+      DaemonMethod.getDagOrder,
+      getTopoHeightRangeParams.toJson(),
+    );
     return (result as List).map((e) => e as String).toList();
   }
 
@@ -220,9 +224,27 @@ extension DaemonRpcMethodsExtension on DaemonClientRepository {
 
   /// Returns a specific range of blocks (up to 20 maximum)
   /// based on topo height.
-  Future<List<Block>> getBlocks(GetRangeParams getRangeParams) async {
-    final result =
-        await sendRequest(DaemonMethod.getBlocks, getRangeParams.toJson());
+  Future<List<Block>> getBlocksRangeByTopoHeight(
+    GetTopoHeightRangeParams getTopoHeightRangeParams,
+  ) async {
+    final result = await sendRequest(
+      DaemonMethod.getBlocksRangeByTopoHeight,
+      getTopoHeightRangeParams.toJson(),
+    );
+    return (result as List)
+        .map((e) => Block.fromJson(e as Map<String, dynamic>))
+        .toList();
+  }
+
+  /// Returns a specific range of blocks (up to 20 maximum)
+  /// based on height.
+  Future<List<Block>> getBlocksRangeByHeight(
+    GetHeightRangeParams getHeightRangeParams,
+  ) async {
+    final result = await sendRequest(
+      DaemonMethod.getBlocksRangeByHeight,
+      getHeightRangeParams.toJson(),
+    );
     return (result as List)
         .map((e) => Block.fromJson(e as Map<String, dynamic>))
         .toList();

@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'get_range_params.dart';
+part of 'get_topoheight_range_params.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,12 +14,13 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-GetRangeParams _$GetRangeParamsFromJson(Map<String, dynamic> json) {
-  return _GetRangeParams.fromJson(json);
+GetTopoHeightRangeParams _$GetTopoHeightRangeParamsFromJson(
+    Map<String, dynamic> json) {
+  return _GetTopoHeightRangeParams.fromJson(json);
 }
 
 /// @nodoc
-mixin _$GetRangeParams {
+mixin _$GetTopoHeightRangeParams {
   /// @nodoc
   @JsonKey(name: 'start_topoheight')
   int? get startTopoHeight => throw _privateConstructorUsedError;
@@ -30,15 +31,15 @@ mixin _$GetRangeParams {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $GetRangeParamsCopyWith<GetRangeParams> get copyWith =>
+  $GetTopoHeightRangeParamsCopyWith<GetTopoHeightRangeParams> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $GetRangeParamsCopyWith<$Res> {
-  factory $GetRangeParamsCopyWith(
-          GetRangeParams value, $Res Function(GetRangeParams) then) =
-      _$GetRangeParamsCopyWithImpl<$Res, GetRangeParams>;
+abstract class $GetTopoHeightRangeParamsCopyWith<$Res> {
+  factory $GetTopoHeightRangeParamsCopyWith(GetTopoHeightRangeParams value,
+          $Res Function(GetTopoHeightRangeParams) then) =
+      _$GetTopoHeightRangeParamsCopyWithImpl<$Res, GetTopoHeightRangeParams>;
   @useResult
   $Res call(
       {@JsonKey(name: 'start_topoheight') int? startTopoHeight,
@@ -46,9 +47,10 @@ abstract class $GetRangeParamsCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$GetRangeParamsCopyWithImpl<$Res, $Val extends GetRangeParams>
-    implements $GetRangeParamsCopyWith<$Res> {
-  _$GetRangeParamsCopyWithImpl(this._value, this._then);
+class _$GetTopoHeightRangeParamsCopyWithImpl<$Res,
+        $Val extends GetTopoHeightRangeParams>
+    implements $GetTopoHeightRangeParamsCopyWith<$Res> {
+  _$GetTopoHeightRangeParamsCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -75,11 +77,12 @@ class _$GetRangeParamsCopyWithImpl<$Res, $Val extends GetRangeParams>
 }
 
 /// @nodoc
-abstract class _$$_GetRangeParamsCopyWith<$Res>
-    implements $GetRangeParamsCopyWith<$Res> {
-  factory _$$_GetRangeParamsCopyWith(
-          _$_GetRangeParams value, $Res Function(_$_GetRangeParams) then) =
-      __$$_GetRangeParamsCopyWithImpl<$Res>;
+abstract class _$$_GetTopoHeightRangeParamsCopyWith<$Res>
+    implements $GetTopoHeightRangeParamsCopyWith<$Res> {
+  factory _$$_GetTopoHeightRangeParamsCopyWith(
+          _$_GetTopoHeightRangeParams value,
+          $Res Function(_$_GetTopoHeightRangeParams) then) =
+      __$$_GetTopoHeightRangeParamsCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -88,11 +91,12 @@ abstract class _$$_GetRangeParamsCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_GetRangeParamsCopyWithImpl<$Res>
-    extends _$GetRangeParamsCopyWithImpl<$Res, _$_GetRangeParams>
-    implements _$$_GetRangeParamsCopyWith<$Res> {
-  __$$_GetRangeParamsCopyWithImpl(
-      _$_GetRangeParams _value, $Res Function(_$_GetRangeParams) _then)
+class __$$_GetTopoHeightRangeParamsCopyWithImpl<$Res>
+    extends _$GetTopoHeightRangeParamsCopyWithImpl<$Res,
+        _$_GetTopoHeightRangeParams>
+    implements _$$_GetTopoHeightRangeParamsCopyWith<$Res> {
+  __$$_GetTopoHeightRangeParamsCopyWithImpl(_$_GetTopoHeightRangeParams _value,
+      $Res Function(_$_GetTopoHeightRangeParams) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -101,7 +105,7 @@ class __$$_GetRangeParamsCopyWithImpl<$Res>
     Object? startTopoHeight = freezed,
     Object? endTopoHeight = freezed,
   }) {
-    return _then(_$_GetRangeParams(
+    return _then(_$_GetTopoHeightRangeParams(
       startTopoHeight: freezed == startTopoHeight
           ? _value.startTopoHeight
           : startTopoHeight // ignore: cast_nullable_to_non_nullable
@@ -117,13 +121,13 @@ class __$$_GetRangeParamsCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$_GetRangeParams implements _GetRangeParams {
-  const _$_GetRangeParams(
+class _$_GetTopoHeightRangeParams implements _GetTopoHeightRangeParams {
+  const _$_GetTopoHeightRangeParams(
       {@JsonKey(name: 'start_topoheight') this.startTopoHeight,
       @JsonKey(name: 'end_topoheight') this.endTopoHeight});
 
-  factory _$_GetRangeParams.fromJson(Map<String, dynamic> json) =>
-      _$$_GetRangeParamsFromJson(json);
+  factory _$_GetTopoHeightRangeParams.fromJson(Map<String, dynamic> json) =>
+      _$$_GetTopoHeightRangeParamsFromJson(json);
 
   /// @nodoc
   @override
@@ -137,14 +141,14 @@ class _$_GetRangeParams implements _GetRangeParams {
 
   @override
   String toString() {
-    return 'GetRangeParams(startTopoHeight: $startTopoHeight, endTopoHeight: $endTopoHeight)';
+    return 'GetTopoHeightRangeParams(startTopoHeight: $startTopoHeight, endTopoHeight: $endTopoHeight)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_GetRangeParams &&
+            other is _$_GetTopoHeightRangeParams &&
             (identical(other.startTopoHeight, startTopoHeight) ||
                 other.startTopoHeight == startTopoHeight) &&
             (identical(other.endTopoHeight, endTopoHeight) ||
@@ -158,25 +162,26 @@ class _$_GetRangeParams implements _GetRangeParams {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_GetRangeParamsCopyWith<_$_GetRangeParams> get copyWith =>
-      __$$_GetRangeParamsCopyWithImpl<_$_GetRangeParams>(this, _$identity);
+  _$$_GetTopoHeightRangeParamsCopyWith<_$_GetTopoHeightRangeParams>
+      get copyWith => __$$_GetTopoHeightRangeParamsCopyWithImpl<
+          _$_GetTopoHeightRangeParams>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_GetRangeParamsToJson(
+    return _$$_GetTopoHeightRangeParamsToJson(
       this,
     );
   }
 }
 
-abstract class _GetRangeParams implements GetRangeParams {
-  const factory _GetRangeParams(
+abstract class _GetTopoHeightRangeParams implements GetTopoHeightRangeParams {
+  const factory _GetTopoHeightRangeParams(
           {@JsonKey(name: 'start_topoheight') final int? startTopoHeight,
           @JsonKey(name: 'end_topoheight') final int? endTopoHeight}) =
-      _$_GetRangeParams;
+      _$_GetTopoHeightRangeParams;
 
-  factory _GetRangeParams.fromJson(Map<String, dynamic> json) =
-      _$_GetRangeParams.fromJson;
+  factory _GetTopoHeightRangeParams.fromJson(Map<String, dynamic> json) =
+      _$_GetTopoHeightRangeParams.fromJson;
 
   @override
 
@@ -190,6 +195,6 @@ abstract class _GetRangeParams implements GetRangeParams {
   int? get endTopoHeight;
   @override
   @JsonKey(ignore: true)
-  _$$_GetRangeParamsCopyWith<_$_GetRangeParams> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_GetTopoHeightRangeParamsCopyWith<_$_GetTopoHeightRangeParams>
+      get copyWith => throw _privateConstructorUsedError;
 }

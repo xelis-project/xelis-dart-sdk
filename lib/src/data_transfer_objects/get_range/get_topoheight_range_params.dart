@@ -2,24 +2,24 @@
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'get_range_params.freezed.dart';
+part 'get_topoheight_range_params.freezed.dart';
 
-part 'get_range_params.g.dart';
+part 'get_topoheight_range_params.g.dart';
 
 /// @nodoc
 @freezed
-class GetRangeParams with _$GetRangeParams {
+class GetTopoHeightRangeParams with _$GetTopoHeightRangeParams {
   /// @nodoc
   @JsonSerializable(includeIfNull: false)
-  const factory GetRangeParams({
+  const factory GetTopoHeightRangeParams({
     /// @nodoc
     @JsonKey(name: 'start_topoheight') int? startTopoHeight,
 
     /// @nodoc
     @JsonKey(name: 'end_topoheight') int? endTopoHeight,
-  }) = _GetRangeParams;
+  }) = _GetTopoHeightRangeParams;
 
   /// @nodoc
-  factory GetRangeParams.fromJson(Map<String, dynamic> json) =>
-      _$GetRangeParamsFromJson(json);
+  factory GetTopoHeightRangeParams.fromJson(Map<String, dynamic> json) =>
+      _$GetTopoHeightRangeParamsFromJson(json);
 }

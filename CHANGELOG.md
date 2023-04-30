@@ -1,3 +1,7 @@
+## 0.5.0
+
+- feat: getBlocksRangeByTopoHeight and getBlocksRangeByHeight RPC methods.
+
 ## 0.4.7
 
 - fix: json key in TransactionType.
