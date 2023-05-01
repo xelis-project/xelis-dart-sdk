@@ -25,10 +25,15 @@ Future<void> main() async {
     );
 
     // You must initiate the connection first.
-    await daemonRepository.connect();
+    daemonRepository.connect();
 
     // You can use the repository to make requests to the daemon.
-    final res = await daemonRepository.getInfo();
+    var res = await daemonRepository.getInfo();
+    print('result: $res');
+
+    // Another example with a RPC request that requires parameters.
+    res = await dr.getBlockAtTopoHeight(
+        GetBlockAtTopoHeightParams(topoHeight: 1750, includeTxs: true));
     print('result: $res');
 
     // You can also use the repository to listen to events.
