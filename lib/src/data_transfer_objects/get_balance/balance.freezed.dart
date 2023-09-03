@@ -165,10 +165,9 @@ class _$_Balance implements _Balance {
 
 abstract class _Balance implements Balance {
   const factory _Balance(
-      {@JsonKey(name: 'balance')
-          required final int balance,
+      {@JsonKey(name: 'balance') required final int balance,
       @JsonKey(name: 'previous_topoheight')
-          final int? previousTopoHeight}) = _$_Balance;
+      final int? previousTopoHeight}) = _$_Balance;
 
   factory _Balance.fromJson(Map<String, dynamic> json) = _$_Balance.fromJson;
 

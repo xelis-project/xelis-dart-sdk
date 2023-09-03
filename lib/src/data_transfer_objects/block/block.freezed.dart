@@ -337,38 +337,23 @@ class __$$_BlockCopyWithImpl<$Res> extends _$BlockCopyWithImpl<$Res, _$_Block>
 @JsonSerializable()
 class _$_Block implements _Block {
   const _$_Block(
-      {@JsonKey(name: 'block_type')
-          required this.blockType,
+      {@JsonKey(name: 'block_type') required this.blockType,
       @JsonKey(name: 'cumulative_difficulty')
-          required this.cumulativeDifficulty,
-      @JsonKey(name: 'difficulty')
-          required this.difficulty,
-      @JsonKey(name: 'extra_nonce')
-          required this.extraNonce,
-      @JsonKey(name: 'hash')
-          required this.hash,
-      @JsonKey(name: 'height')
-          required this.height,
-      @JsonKey(name: 'miner')
-          required this.miner,
-      @JsonKey(name: 'nonce')
-          required this.nonce,
-      @JsonKey(name: 'reward')
-          this.reward,
-      @JsonKey(name: 'supply')
-          this.supply,
-      @JsonKey(name: 'timestamp')
-          required this.timestamp,
-      @JsonKey(name: 'tips')
-          required final List<String> tips,
-      @JsonKey(name: 'topoheight')
-          this.topoHeight,
-      @JsonKey(name: 'total_size_in_bytes')
-          required this.totalSizeInBytes,
-      @JsonKey(name: 'total_fees')
-          this.totalFees,
-      @JsonKey(name: 'txs_hashes')
-          required final List<String> txsHashes})
+      required this.cumulativeDifficulty,
+      @JsonKey(name: 'difficulty') required this.difficulty,
+      @JsonKey(name: 'extra_nonce') required this.extraNonce,
+      @JsonKey(name: 'hash') required this.hash,
+      @JsonKey(name: 'height') required this.height,
+      @JsonKey(name: 'miner') required this.miner,
+      @JsonKey(name: 'nonce') required this.nonce,
+      @JsonKey(name: 'reward') this.reward,
+      @JsonKey(name: 'supply') this.supply,
+      @JsonKey(name: 'timestamp') required this.timestamp,
+      @JsonKey(name: 'tips') required final List<String> tips,
+      @JsonKey(name: 'topoheight') this.topoHeight,
+      @JsonKey(name: 'total_size_in_bytes') required this.totalSizeInBytes,
+      @JsonKey(name: 'total_fees') this.totalFees,
+      @JsonKey(name: 'txs_hashes') required final List<String> txsHashes})
       : _tips = tips,
         _txsHashes = txsHashes;
 
@@ -544,38 +529,24 @@ class _$_Block implements _Block {
 
 abstract class _Block implements Block {
   const factory _Block(
-      {@JsonKey(name: 'block_type')
-          required final String blockType,
+      {@JsonKey(name: 'block_type') required final String blockType,
       @JsonKey(name: 'cumulative_difficulty')
-          required final int cumulativeDifficulty,
-      @JsonKey(name: 'difficulty')
-          required final int difficulty,
-      @JsonKey(name: 'extra_nonce')
-          required final String extraNonce,
-      @JsonKey(name: 'hash')
-          required final String hash,
-      @JsonKey(name: 'height')
-          required final int height,
-      @JsonKey(name: 'miner')
-          required final String miner,
-      @JsonKey(name: 'nonce')
-          required final int nonce,
-      @JsonKey(name: 'reward')
-          final int? reward,
-      @JsonKey(name: 'supply')
-          final int? supply,
-      @JsonKey(name: 'timestamp')
-          required final int timestamp,
-      @JsonKey(name: 'tips')
-          required final List<String> tips,
-      @JsonKey(name: 'topoheight')
-          final int? topoHeight,
-      @JsonKey(name: 'total_size_in_bytes')
-          required final int totalSizeInBytes,
-      @JsonKey(name: 'total_fees')
-          final int? totalFees,
+      required final int cumulativeDifficulty,
+      @JsonKey(name: 'difficulty') required final int difficulty,
+      @JsonKey(name: 'extra_nonce') required final String extraNonce,
+      @JsonKey(name: 'hash') required final String hash,
+      @JsonKey(name: 'height') required final int height,
+      @JsonKey(name: 'miner') required final String miner,
+      @JsonKey(name: 'nonce') required final int nonce,
+      @JsonKey(name: 'reward') final int? reward,
+      @JsonKey(name: 'supply') final int? supply,
+      @JsonKey(name: 'timestamp') required final int timestamp,
+      @JsonKey(name: 'tips') required final List<String> tips,
+      @JsonKey(name: 'topoheight') final int? topoHeight,
+      @JsonKey(name: 'total_size_in_bytes') required final int totalSizeInBytes,
+      @JsonKey(name: 'total_fees') final int? totalFees,
       @JsonKey(name: 'txs_hashes')
-          required final List<String> txsHashes}) = _$_Block;
+      required final List<String> txsHashes}) = _$_Block;
 
   factory _Block.fromJson(Map<String, dynamic> json) = _$_Block.fromJson;
 

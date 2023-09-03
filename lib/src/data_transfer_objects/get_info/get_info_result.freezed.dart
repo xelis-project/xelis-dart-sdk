@@ -369,26 +369,17 @@ class _$_GetInfoResult implements _GetInfoResult {
 
 abstract class _GetInfoResult implements GetInfoResult {
   const factory _GetInfoResult(
-      {@JsonKey(name: 'block_time_target')
-          required final int blockTimeTarget,
-      @JsonKey(name: 'difficulty')
-          required final int difficulty,
-      @JsonKey(name: 'height')
-          required final int height,
-      @JsonKey(name: 'mempool_size')
-          required final int mempoolSize,
-      @JsonKey(name: 'native_supply')
-          required final int nativeSupply,
-      @JsonKey(name: 'network')
-          required final Network network,
-      @JsonKey(name: 'stableheight')
-          required final int stableHeight,
-      @JsonKey(name: 'top_hash')
-          required final String topHash,
-      @JsonKey(name: 'topoheight')
-          required final int topoHeight,
+      {@JsonKey(name: 'block_time_target') required final int blockTimeTarget,
+      @JsonKey(name: 'difficulty') required final int difficulty,
+      @JsonKey(name: 'height') required final int height,
+      @JsonKey(name: 'mempool_size') required final int mempoolSize,
+      @JsonKey(name: 'native_supply') required final int nativeSupply,
+      @JsonKey(name: 'network') required final Network network,
+      @JsonKey(name: 'stableheight') required final int stableHeight,
+      @JsonKey(name: 'top_hash') required final String topHash,
+      @JsonKey(name: 'topoheight') required final int topoHeight,
       @JsonKey(name: 'version')
-          required final String version}) = _$_GetInfoResult;
+      required final String version}) = _$_GetInfoResult;
 
   factory _GetInfoResult.fromJson(Map<String, dynamic> json) =
       _$_GetInfoResult.fromJson;

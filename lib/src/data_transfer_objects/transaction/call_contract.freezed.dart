@@ -212,12 +212,10 @@ class _$_CallContract implements _CallContract {
 
 abstract class _CallContract implements CallContract {
   const factory _CallContract(
-      {@JsonKey(name: 'contract')
-          required final String contractHash,
-      @JsonKey(name: 'assets')
-          required final Map<String, int> assets,
+      {@JsonKey(name: 'contract') required final String contractHash,
+      @JsonKey(name: 'assets') required final Map<String, int> assets,
       @JsonKey(name: 'params')
-          required final Map<String, dynamic> params}) = _$_CallContract;
+      required final Map<String, dynamic> params}) = _$_CallContract;
 
   factory _CallContract.fromJson(Map<String, dynamic> json) =
       _$_CallContract.fromJson;

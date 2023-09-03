@@ -146,7 +146,7 @@ class _$_SubmitBlockParams implements _SubmitBlockParams {
 abstract class _SubmitBlockParams implements SubmitBlockParams {
   const factory _SubmitBlockParams(
       {@JsonKey(name: 'block_template')
-          required final String blockTemplate}) = _$_SubmitBlockParams;
+      required final String blockTemplate}) = _$_SubmitBlockParams;
 
   factory _SubmitBlockParams.fromJson(Map<String, dynamic> json) =
       _$_SubmitBlockParams.fromJson;

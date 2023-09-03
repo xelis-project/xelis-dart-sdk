@@ -144,7 +144,7 @@ extension DaemonRpcMethodsExtension on DaemonClientRepository {
     return (result as List).map((e) => e as String).toList();
   }
 
-  /// Returns some informations about P2P.
+  /// Returns information about P2P.
   Future<P2pStatusResult> p2pStatus() async {
     final result = await sendRequest(DaemonMethod.p2pStatus);
     return P2pStatusResult.fromJson(result as Map<String, dynamic>);

@@ -28,7 +28,7 @@
 
 ## 0.4.1
 
-- Handle all types in "result" field of JSON-RPC response.
+- Handle all types in the "result" field of JSON-RPC response.
 - No subscription if event has already been subscribed before.
 - More logging messages.
 
