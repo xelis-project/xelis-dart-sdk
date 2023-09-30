@@ -243,7 +243,6 @@ class DaemonClientRepository {
                 Block.fromJson(result),
               );
             }
-            break;
           case DaemonEvent.blockOrdered:
             for (final callback in eventCallbacks[event]!) {
               // ignore: avoid_dynamic_calls
@@ -253,7 +252,6 @@ class DaemonClientRepository {
                 ),
               );
             }
-            break;
           case DaemonEvent.stableHeightChanged:
             for (final callback in eventCallbacks[event]!) {
               // ignore: avoid_dynamic_calls
@@ -263,7 +261,6 @@ class DaemonClientRepository {
                 ),
               );
             }
-            break;
           case DaemonEvent.transactionAddedInMempool:
             for (final callback in eventCallbacks[event]!) {
               // ignore: avoid_dynamic_calls
@@ -271,7 +268,6 @@ class DaemonClientRepository {
                 Transaction.fromJson(result),
               );
             }
-            break;
           case DaemonEvent.transactionExecuted:
             for (final callback in eventCallbacks[event]!) {
               // ignore: avoid_dynamic_calls
@@ -279,19 +275,16 @@ class DaemonClientRepository {
                 TransactionExecutedEvent.fromJson(result),
               );
             }
-            break;
           case DaemonEvent.transactionSCResult:
             for (final callback in eventCallbacks[event]!) {
               // ignore: avoid_dynamic_calls
               callback(result);
             }
-            break;
           case DaemonEvent.newAsset:
             for (final callback in eventCallbacks[event]!) {
               // ignore: avoid_dynamic_calls
               callback(result);
             }
-            break;
         }
       } else {
         final id = data['id'] as int;

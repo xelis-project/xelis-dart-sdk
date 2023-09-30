@@ -148,23 +148,23 @@ class _$GetInfoResultCopyWithImpl<$Res, $Val extends GetInfoResult>
       height: null == height
           ? _value.height
           : height // ignore: cast_nullable_to_non_nullable
-      as int,
+              as int,
       mempoolSize: null == mempoolSize
           ? _value.mempoolSize
           : mempoolSize // ignore: cast_nullable_to_non_nullable
-      as int,
+              as int,
       nativeSupply: null == nativeSupply
           ? _value.nativeSupply
           : nativeSupply // ignore: cast_nullable_to_non_nullable
-      as int,
+              as int,
       network: null == network
           ? _value.network
           : network // ignore: cast_nullable_to_non_nullable
-      as Network,
+              as Network,
       stableHeight: null == stableHeight
           ? _value.stableHeight
           : stableHeight // ignore: cast_nullable_to_non_nullable
-      as int,
+              as int,
       topHash: null == topHash
           ? _value.topHash
           : topHash // ignore: cast_nullable_to_non_nullable

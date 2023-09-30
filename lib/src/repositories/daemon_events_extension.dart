@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:xelis_dart_sdk/src/data_transfer_objects/stable_height_changed_event/stable_height_changed_event.dart';
 import 'package:xelis_dart_sdk/xelis_dart_sdk.dart';
 
 /// Extension of [DaemonClientRepository] that provides methods to
@@ -25,7 +24,8 @@ extension DaemonEventsExtension on DaemonClientRepository {
   ///
   /// Note: It is called when a block is ordered.
   void onBlockOrdered(
-      void Function(BlockOrderedEvent blockOrderEvent) callback) {
+    void Function(BlockOrderedEvent blockOrderEvent) callback,
+  ) {
     if (eventCallbacks[DaemonEvent.blockOrdered]!.isEmpty) {
       unawaited(subscribeTo(DaemonEvent.blockOrdered));
     }
