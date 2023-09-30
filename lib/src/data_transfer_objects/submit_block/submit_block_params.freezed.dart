@@ -64,22 +64,23 @@ class _$SubmitBlockParamsCopyWithImpl<$Res, $Val extends SubmitBlockParams>
 }
 
 /// @nodoc
-abstract class _$$_SubmitBlockParamsCopyWith<$Res>
+abstract class _$$SubmitBlockParamsImplCopyWith<$Res>
     implements $SubmitBlockParamsCopyWith<$Res> {
-  factory _$$_SubmitBlockParamsCopyWith(_$_SubmitBlockParams value,
-          $Res Function(_$_SubmitBlockParams) then) =
-      __$$_SubmitBlockParamsCopyWithImpl<$Res>;
+  factory _$$SubmitBlockParamsImplCopyWith(_$SubmitBlockParamsImpl value,
+          $Res Function(_$SubmitBlockParamsImpl) then) =
+      __$$SubmitBlockParamsImplCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call({@JsonKey(name: 'block_template') String blockTemplate});
 }
 
 /// @nodoc
-class __$$_SubmitBlockParamsCopyWithImpl<$Res>
-    extends _$SubmitBlockParamsCopyWithImpl<$Res, _$_SubmitBlockParams>
-    implements _$$_SubmitBlockParamsCopyWith<$Res> {
-  __$$_SubmitBlockParamsCopyWithImpl(
-      _$_SubmitBlockParams _value, $Res Function(_$_SubmitBlockParams) _then)
+class __$$SubmitBlockParamsImplCopyWithImpl<$Res>
+    extends _$SubmitBlockParamsCopyWithImpl<$Res, _$SubmitBlockParamsImpl>
+    implements _$$SubmitBlockParamsImplCopyWith<$Res> {
+  __$$SubmitBlockParamsImplCopyWithImpl(_$SubmitBlockParamsImpl _value,
+      $Res Function(_$SubmitBlockParamsImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -87,7 +88,7 @@ class __$$_SubmitBlockParamsCopyWithImpl<$Res>
   $Res call({
     Object? blockTemplate = null,
   }) {
-    return _then(_$_SubmitBlockParams(
+    return _then(_$SubmitBlockParamsImpl(
       blockTemplate: null == blockTemplate
           ? _value.blockTemplate
           : blockTemplate // ignore: cast_nullable_to_non_nullable
@@ -98,12 +99,12 @@ class __$$_SubmitBlockParamsCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_SubmitBlockParams implements _SubmitBlockParams {
-  const _$_SubmitBlockParams(
+class _$SubmitBlockParamsImpl implements _SubmitBlockParams {
+  const _$SubmitBlockParamsImpl(
       {@JsonKey(name: 'block_template') required this.blockTemplate});
 
-  factory _$_SubmitBlockParams.fromJson(Map<String, dynamic> json) =>
-      _$$_SubmitBlockParamsFromJson(json);
+  factory _$SubmitBlockParamsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SubmitBlockParamsImplFromJson(json);
 
   /// @nodoc
   @override
@@ -119,7 +120,7 @@ class _$_SubmitBlockParams implements _SubmitBlockParams {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SubmitBlockParams &&
+            other is _$SubmitBlockParamsImpl &&
             (identical(other.blockTemplate, blockTemplate) ||
                 other.blockTemplate == blockTemplate));
   }
@@ -131,13 +132,13 @@ class _$_SubmitBlockParams implements _SubmitBlockParams {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SubmitBlockParamsCopyWith<_$_SubmitBlockParams> get copyWith =>
-      __$$_SubmitBlockParamsCopyWithImpl<_$_SubmitBlockParams>(
+  _$$SubmitBlockParamsImplCopyWith<_$SubmitBlockParamsImpl> get copyWith =>
+      __$$SubmitBlockParamsImplCopyWithImpl<_$SubmitBlockParamsImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_SubmitBlockParamsToJson(
+    return _$$SubmitBlockParamsImplToJson(
       this,
     );
   }
@@ -146,18 +147,19 @@ class _$_SubmitBlockParams implements _SubmitBlockParams {
 abstract class _SubmitBlockParams implements SubmitBlockParams {
   const factory _SubmitBlockParams(
       {@JsonKey(name: 'block_template')
-      required final String blockTemplate}) = _$_SubmitBlockParams;
+      required final String blockTemplate}) = _$SubmitBlockParamsImpl;
 
   factory _SubmitBlockParams.fromJson(Map<String, dynamic> json) =
-      _$_SubmitBlockParams.fromJson;
+      _$SubmitBlockParamsImpl.fromJson;
 
   @override
 
   /// @nodoc
   @JsonKey(name: 'block_template')
   String get blockTemplate;
+
   @override
   @JsonKey(ignore: true)
-  _$$_SubmitBlockParamsCopyWith<_$_SubmitBlockParams> get copyWith =>
+  _$$SubmitBlockParamsImplCopyWith<_$SubmitBlockParamsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

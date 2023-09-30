@@ -13,6 +13,12 @@ class GetInfoResult with _$GetInfoResult {
   /// @nodoc
   const factory GetInfoResult({
     /// @nodoc
+    @JsonKey(name: 'average_block_time') required int averageBlockTime,
+
+    /// @nodoc
+    @JsonKey(name: 'block_reward') required int blockReward,
+
+    /// @nodoc
     @JsonKey(name: 'block_time_target') required int blockTimeTarget,
 
     /// @nodoc
@@ -41,6 +47,9 @@ class GetInfoResult with _$GetInfoResult {
 
     /// @nodoc
     @JsonKey(name: 'version') required String version,
+
+    /// @nodoc
+    @JsonKey(name: 'pruned_topoheight') int? prunedTopoHeight,
   }) = _GetInfoResult;
 
   /// @nodoc

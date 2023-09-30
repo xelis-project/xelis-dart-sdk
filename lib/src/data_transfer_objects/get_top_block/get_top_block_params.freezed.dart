@@ -64,22 +64,23 @@ class _$GetTopBlockParamsCopyWithImpl<$Res, $Val extends GetTopBlockParams>
 }
 
 /// @nodoc
-abstract class _$$_GetTopBlockParamsCopyWith<$Res>
+abstract class _$$GetTopBlockParamsImplCopyWith<$Res>
     implements $GetTopBlockParamsCopyWith<$Res> {
-  factory _$$_GetTopBlockParamsCopyWith(_$_GetTopBlockParams value,
-          $Res Function(_$_GetTopBlockParams) then) =
-      __$$_GetTopBlockParamsCopyWithImpl<$Res>;
+  factory _$$GetTopBlockParamsImplCopyWith(_$GetTopBlockParamsImpl value,
+          $Res Function(_$GetTopBlockParamsImpl) then) =
+      __$$GetTopBlockParamsImplCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call({@JsonKey(name: 'include_txs') bool? includeTxs});
 }
 
 /// @nodoc
-class __$$_GetTopBlockParamsCopyWithImpl<$Res>
-    extends _$GetTopBlockParamsCopyWithImpl<$Res, _$_GetTopBlockParams>
-    implements _$$_GetTopBlockParamsCopyWith<$Res> {
-  __$$_GetTopBlockParamsCopyWithImpl(
-      _$_GetTopBlockParams _value, $Res Function(_$_GetTopBlockParams) _then)
+class __$$GetTopBlockParamsImplCopyWithImpl<$Res>
+    extends _$GetTopBlockParamsCopyWithImpl<$Res, _$GetTopBlockParamsImpl>
+    implements _$$GetTopBlockParamsImplCopyWith<$Res> {
+  __$$GetTopBlockParamsImplCopyWithImpl(_$GetTopBlockParamsImpl _value,
+      $Res Function(_$GetTopBlockParamsImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -87,7 +88,7 @@ class __$$_GetTopBlockParamsCopyWithImpl<$Res>
   $Res call({
     Object? includeTxs = freezed,
   }) {
-    return _then(_$_GetTopBlockParams(
+    return _then(_$GetTopBlockParamsImpl(
       includeTxs: freezed == includeTxs
           ? _value.includeTxs
           : includeTxs // ignore: cast_nullable_to_non_nullable
@@ -99,11 +100,12 @@ class __$$_GetTopBlockParamsCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$_GetTopBlockParams implements _GetTopBlockParams {
-  const _$_GetTopBlockParams({@JsonKey(name: 'include_txs') this.includeTxs});
+class _$GetTopBlockParamsImpl implements _GetTopBlockParams {
+  const _$GetTopBlockParamsImpl(
+      {@JsonKey(name: 'include_txs') this.includeTxs});
 
-  factory _$_GetTopBlockParams.fromJson(Map<String, dynamic> json) =>
-      _$$_GetTopBlockParamsFromJson(json);
+  factory _$GetTopBlockParamsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$GetTopBlockParamsImplFromJson(json);
 
   /// @nodoc
   @override
@@ -119,7 +121,7 @@ class _$_GetTopBlockParams implements _GetTopBlockParams {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_GetTopBlockParams &&
+            other is _$GetTopBlockParamsImpl &&
             (identical(other.includeTxs, includeTxs) ||
                 other.includeTxs == includeTxs));
   }
@@ -131,13 +133,13 @@ class _$_GetTopBlockParams implements _GetTopBlockParams {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_GetTopBlockParamsCopyWith<_$_GetTopBlockParams> get copyWith =>
-      __$$_GetTopBlockParamsCopyWithImpl<_$_GetTopBlockParams>(
+  _$$GetTopBlockParamsImplCopyWith<_$GetTopBlockParamsImpl> get copyWith =>
+      __$$GetTopBlockParamsImplCopyWithImpl<_$GetTopBlockParamsImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_GetTopBlockParamsToJson(
+    return _$$GetTopBlockParamsImplToJson(
       this,
     );
   }
@@ -146,18 +148,19 @@ class _$_GetTopBlockParams implements _GetTopBlockParams {
 abstract class _GetTopBlockParams implements GetTopBlockParams {
   const factory _GetTopBlockParams(
           {@JsonKey(name: 'include_txs') final bool? includeTxs}) =
-      _$_GetTopBlockParams;
+      _$GetTopBlockParamsImpl;
 
   factory _GetTopBlockParams.fromJson(Map<String, dynamic> json) =
-      _$_GetTopBlockParams.fromJson;
+      _$GetTopBlockParamsImpl.fromJson;
 
   @override
 
   /// @nodoc
   @JsonKey(name: 'include_txs')
   bool? get includeTxs;
+
   @override
   @JsonKey(ignore: true)
-  _$$_GetTopBlockParamsCopyWith<_$_GetTopBlockParams> get copyWith =>
+  _$$GetTopBlockParamsImplCopyWith<_$GetTopBlockParamsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

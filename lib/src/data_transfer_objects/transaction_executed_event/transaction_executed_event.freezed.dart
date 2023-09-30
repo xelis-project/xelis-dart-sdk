@@ -87,12 +87,13 @@ class _$TransactionExecutedEventCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_TransactionExecutedEventCopyWith<$Res>
+abstract class _$$TransactionExecutedEventImplCopyWith<$Res>
     implements $TransactionExecutedEventCopyWith<$Res> {
-  factory _$$_TransactionExecutedEventCopyWith(
-          _$_TransactionExecutedEvent value,
-          $Res Function(_$_TransactionExecutedEvent) then) =
-      __$$_TransactionExecutedEventCopyWithImpl<$Res>;
+  factory _$$TransactionExecutedEventImplCopyWith(
+          _$TransactionExecutedEventImpl value,
+          $Res Function(_$TransactionExecutedEventImpl) then) =
+      __$$TransactionExecutedEventImplCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call(
@@ -102,12 +103,13 @@ abstract class _$$_TransactionExecutedEventCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_TransactionExecutedEventCopyWithImpl<$Res>
+class __$$TransactionExecutedEventImplCopyWithImpl<$Res>
     extends _$TransactionExecutedEventCopyWithImpl<$Res,
-        _$_TransactionExecutedEvent>
-    implements _$$_TransactionExecutedEventCopyWith<$Res> {
-  __$$_TransactionExecutedEventCopyWithImpl(_$_TransactionExecutedEvent _value,
-      $Res Function(_$_TransactionExecutedEvent) _then)
+        _$TransactionExecutedEventImpl>
+    implements _$$TransactionExecutedEventImplCopyWith<$Res> {
+  __$$TransactionExecutedEventImplCopyWithImpl(
+      _$TransactionExecutedEventImpl _value,
+      $Res Function(_$TransactionExecutedEventImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -117,7 +119,7 @@ class __$$_TransactionExecutedEventCopyWithImpl<$Res>
     Object? txHash = null,
     Object? topoHeight = null,
   }) {
-    return _then(_$_TransactionExecutedEvent(
+    return _then(_$TransactionExecutedEventImpl(
       blockHash: null == blockHash
           ? _value.blockHash
           : blockHash // ignore: cast_nullable_to_non_nullable
@@ -136,14 +138,14 @@ class __$$_TransactionExecutedEventCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_TransactionExecutedEvent implements _TransactionExecutedEvent {
-  const _$_TransactionExecutedEvent(
+class _$TransactionExecutedEventImpl implements _TransactionExecutedEvent {
+  const _$TransactionExecutedEventImpl(
       {@JsonKey(name: 'block_hash') required this.blockHash,
       @JsonKey(name: 'tx_hash') required this.txHash,
       @JsonKey(name: 'topoheight') required this.topoHeight});
 
-  factory _$_TransactionExecutedEvent.fromJson(Map<String, dynamic> json) =>
-      _$$_TransactionExecutedEventFromJson(json);
+  factory _$TransactionExecutedEventImpl.fromJson(Map<String, dynamic> json) =>
+      _$$TransactionExecutedEventImplFromJson(json);
 
   /// @nodoc
   @override
@@ -169,7 +171,7 @@ class _$_TransactionExecutedEvent implements _TransactionExecutedEvent {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_TransactionExecutedEvent &&
+            other is _$TransactionExecutedEventImpl &&
             (identical(other.blockHash, blockHash) ||
                 other.blockHash == blockHash) &&
             (identical(other.txHash, txHash) || other.txHash == txHash) &&
@@ -184,13 +186,13 @@ class _$_TransactionExecutedEvent implements _TransactionExecutedEvent {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_TransactionExecutedEventCopyWith<_$_TransactionExecutedEvent>
-      get copyWith => __$$_TransactionExecutedEventCopyWithImpl<
-          _$_TransactionExecutedEvent>(this, _$identity);
+  _$$TransactionExecutedEventImplCopyWith<_$TransactionExecutedEventImpl>
+      get copyWith => __$$TransactionExecutedEventImplCopyWithImpl<
+          _$TransactionExecutedEventImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_TransactionExecutedEventToJson(
+    return _$$TransactionExecutedEventImplToJson(
       this,
     );
   }
@@ -201,10 +203,10 @@ abstract class _TransactionExecutedEvent implements TransactionExecutedEvent {
           {@JsonKey(name: 'block_hash') required final String blockHash,
           @JsonKey(name: 'tx_hash') required final String txHash,
           @JsonKey(name: 'topoheight') required final int topoHeight}) =
-      _$_TransactionExecutedEvent;
+      _$TransactionExecutedEventImpl;
 
   factory _TransactionExecutedEvent.fromJson(Map<String, dynamic> json) =
-      _$_TransactionExecutedEvent.fromJson;
+      _$TransactionExecutedEventImpl.fromJson;
 
   @override
 
@@ -223,6 +225,6 @@ abstract class _TransactionExecutedEvent implements TransactionExecutedEvent {
   int get topoHeight;
   @override
   @JsonKey(ignore: true)
-  _$$_TransactionExecutedEventCopyWith<_$_TransactionExecutedEvent>
+  _$$TransactionExecutedEventImplCopyWith<_$TransactionExecutedEventImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

@@ -8,14 +8,14 @@ part of 'submit_transaction_params.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_SubmitTransactionParams _$$_SubmitTransactionParamsFromJson(
+_$SubmitTransactionParamsImpl _$$SubmitTransactionParamsImplFromJson(
         Map<String, dynamic> json) =>
-    _$_SubmitTransactionParams(
+    _$SubmitTransactionParamsImpl(
       hex: json['data'] as String,
     );
 
-Map<String, dynamic> _$$_SubmitTransactionParamsToJson(
-        _$_SubmitTransactionParams instance) =>
+Map<String, dynamic> _$$SubmitTransactionParamsImplToJson(
+        _$SubmitTransactionParamsImpl instance) =>
     <String, dynamic>{
       'data': instance.hex,
     };

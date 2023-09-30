@@ -66,22 +66,25 @@ class _$GetTransactionsParamsCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_GetTransactionsParamsCopyWith<$Res>
+abstract class _$$GetTransactionsParamsImplCopyWith<$Res>
     implements $GetTransactionsParamsCopyWith<$Res> {
-  factory _$$_GetTransactionsParamsCopyWith(_$_GetTransactionsParams value,
-          $Res Function(_$_GetTransactionsParams) then) =
-      __$$_GetTransactionsParamsCopyWithImpl<$Res>;
+  factory _$$GetTransactionsParamsImplCopyWith(
+          _$GetTransactionsParamsImpl value,
+          $Res Function(_$GetTransactionsParamsImpl) then) =
+      __$$GetTransactionsParamsImplCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call({@JsonKey(name: 'tx_hashes') List<String> txHashes});
 }
 
 /// @nodoc
-class __$$_GetTransactionsParamsCopyWithImpl<$Res>
-    extends _$GetTransactionsParamsCopyWithImpl<$Res, _$_GetTransactionsParams>
-    implements _$$_GetTransactionsParamsCopyWith<$Res> {
-  __$$_GetTransactionsParamsCopyWithImpl(_$_GetTransactionsParams _value,
-      $Res Function(_$_GetTransactionsParams) _then)
+class __$$GetTransactionsParamsImplCopyWithImpl<$Res>
+    extends _$GetTransactionsParamsCopyWithImpl<$Res,
+        _$GetTransactionsParamsImpl>
+    implements _$$GetTransactionsParamsImplCopyWith<$Res> {
+  __$$GetTransactionsParamsImplCopyWithImpl(_$GetTransactionsParamsImpl _value,
+      $Res Function(_$GetTransactionsParamsImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -89,7 +92,7 @@ class __$$_GetTransactionsParamsCopyWithImpl<$Res>
   $Res call({
     Object? txHashes = null,
   }) {
-    return _then(_$_GetTransactionsParams(
+    return _then(_$GetTransactionsParamsImpl(
       txHashes: null == txHashes
           ? _value._txHashes
           : txHashes // ignore: cast_nullable_to_non_nullable
@@ -100,13 +103,13 @@ class __$$_GetTransactionsParamsCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_GetTransactionsParams implements _GetTransactionsParams {
-  const _$_GetTransactionsParams(
+class _$GetTransactionsParamsImpl implements _GetTransactionsParams {
+  const _$GetTransactionsParamsImpl(
       {@JsonKey(name: 'tx_hashes') required final List<String> txHashes})
       : _txHashes = txHashes;
 
-  factory _$_GetTransactionsParams.fromJson(Map<String, dynamic> json) =>
-      _$$_GetTransactionsParamsFromJson(json);
+  factory _$GetTransactionsParamsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$GetTransactionsParamsImplFromJson(json);
 
   /// @nodoc
   final List<String> _txHashes;
@@ -129,7 +132,7 @@ class _$_GetTransactionsParams implements _GetTransactionsParams {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_GetTransactionsParams &&
+            other is _$GetTransactionsParamsImpl &&
             const DeepCollectionEquality().equals(other._txHashes, _txHashes));
   }
 
@@ -141,13 +144,13 @@ class _$_GetTransactionsParams implements _GetTransactionsParams {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_GetTransactionsParamsCopyWith<_$_GetTransactionsParams> get copyWith =>
-      __$$_GetTransactionsParamsCopyWithImpl<_$_GetTransactionsParams>(
-          this, _$identity);
+  _$$GetTransactionsParamsImplCopyWith<_$GetTransactionsParamsImpl>
+      get copyWith => __$$GetTransactionsParamsImplCopyWithImpl<
+          _$GetTransactionsParamsImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_GetTransactionsParamsToJson(
+    return _$$GetTransactionsParamsImplToJson(
       this,
     );
   }
@@ -156,18 +159,19 @@ class _$_GetTransactionsParams implements _GetTransactionsParams {
 abstract class _GetTransactionsParams implements GetTransactionsParams {
   const factory _GetTransactionsParams(
           {@JsonKey(name: 'tx_hashes') required final List<String> txHashes}) =
-      _$_GetTransactionsParams;
+      _$GetTransactionsParamsImpl;
 
   factory _GetTransactionsParams.fromJson(Map<String, dynamic> json) =
-      _$_GetTransactionsParams.fromJson;
+      _$GetTransactionsParamsImpl.fromJson;
 
   @override
 
   /// @nodoc
   @JsonKey(name: 'tx_hashes')
   List<String> get txHashes;
+
   @override
   @JsonKey(ignore: true)
-  _$$_GetTransactionsParamsCopyWith<_$_GetTransactionsParams> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GetTransactionsParamsImplCopyWith<_$GetTransactionsParamsImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

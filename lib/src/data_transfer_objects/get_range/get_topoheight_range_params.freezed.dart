@@ -77,12 +77,13 @@ class _$GetTopoHeightRangeParamsCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_GetTopoHeightRangeParamsCopyWith<$Res>
+abstract class _$$GetTopoHeightRangeParamsImplCopyWith<$Res>
     implements $GetTopoHeightRangeParamsCopyWith<$Res> {
-  factory _$$_GetTopoHeightRangeParamsCopyWith(
-          _$_GetTopoHeightRangeParams value,
-          $Res Function(_$_GetTopoHeightRangeParams) then) =
-      __$$_GetTopoHeightRangeParamsCopyWithImpl<$Res>;
+  factory _$$GetTopoHeightRangeParamsImplCopyWith(
+          _$GetTopoHeightRangeParamsImpl value,
+          $Res Function(_$GetTopoHeightRangeParamsImpl) then) =
+      __$$GetTopoHeightRangeParamsImplCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call(
@@ -91,12 +92,13 @@ abstract class _$$_GetTopoHeightRangeParamsCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_GetTopoHeightRangeParamsCopyWithImpl<$Res>
+class __$$GetTopoHeightRangeParamsImplCopyWithImpl<$Res>
     extends _$GetTopoHeightRangeParamsCopyWithImpl<$Res,
-        _$_GetTopoHeightRangeParams>
-    implements _$$_GetTopoHeightRangeParamsCopyWith<$Res> {
-  __$$_GetTopoHeightRangeParamsCopyWithImpl(_$_GetTopoHeightRangeParams _value,
-      $Res Function(_$_GetTopoHeightRangeParams) _then)
+        _$GetTopoHeightRangeParamsImpl>
+    implements _$$GetTopoHeightRangeParamsImplCopyWith<$Res> {
+  __$$GetTopoHeightRangeParamsImplCopyWithImpl(
+      _$GetTopoHeightRangeParamsImpl _value,
+      $Res Function(_$GetTopoHeightRangeParamsImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -105,7 +107,7 @@ class __$$_GetTopoHeightRangeParamsCopyWithImpl<$Res>
     Object? startTopoHeight = freezed,
     Object? endTopoHeight = freezed,
   }) {
-    return _then(_$_GetTopoHeightRangeParams(
+    return _then(_$GetTopoHeightRangeParamsImpl(
       startTopoHeight: freezed == startTopoHeight
           ? _value.startTopoHeight
           : startTopoHeight // ignore: cast_nullable_to_non_nullable
@@ -121,13 +123,13 @@ class __$$_GetTopoHeightRangeParamsCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$_GetTopoHeightRangeParams implements _GetTopoHeightRangeParams {
-  const _$_GetTopoHeightRangeParams(
+class _$GetTopoHeightRangeParamsImpl implements _GetTopoHeightRangeParams {
+  const _$GetTopoHeightRangeParamsImpl(
       {@JsonKey(name: 'start_topoheight') this.startTopoHeight,
       @JsonKey(name: 'end_topoheight') this.endTopoHeight});
 
-  factory _$_GetTopoHeightRangeParams.fromJson(Map<String, dynamic> json) =>
-      _$$_GetTopoHeightRangeParamsFromJson(json);
+  factory _$GetTopoHeightRangeParamsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$GetTopoHeightRangeParamsImplFromJson(json);
 
   /// @nodoc
   @override
@@ -148,7 +150,7 @@ class _$_GetTopoHeightRangeParams implements _GetTopoHeightRangeParams {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_GetTopoHeightRangeParams &&
+            other is _$GetTopoHeightRangeParamsImpl &&
             (identical(other.startTopoHeight, startTopoHeight) ||
                 other.startTopoHeight == startTopoHeight) &&
             (identical(other.endTopoHeight, endTopoHeight) ||
@@ -162,13 +164,13 @@ class _$_GetTopoHeightRangeParams implements _GetTopoHeightRangeParams {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_GetTopoHeightRangeParamsCopyWith<_$_GetTopoHeightRangeParams>
-      get copyWith => __$$_GetTopoHeightRangeParamsCopyWithImpl<
-          _$_GetTopoHeightRangeParams>(this, _$identity);
+  _$$GetTopoHeightRangeParamsImplCopyWith<_$GetTopoHeightRangeParamsImpl>
+      get copyWith => __$$GetTopoHeightRangeParamsImplCopyWithImpl<
+          _$GetTopoHeightRangeParamsImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_GetTopoHeightRangeParamsToJson(
+    return _$$GetTopoHeightRangeParamsImplToJson(
       this,
     );
   }
@@ -178,10 +180,10 @@ abstract class _GetTopoHeightRangeParams implements GetTopoHeightRangeParams {
   const factory _GetTopoHeightRangeParams(
           {@JsonKey(name: 'start_topoheight') final int? startTopoHeight,
           @JsonKey(name: 'end_topoheight') final int? endTopoHeight}) =
-      _$_GetTopoHeightRangeParams;
+      _$GetTopoHeightRangeParamsImpl;
 
   factory _GetTopoHeightRangeParams.fromJson(Map<String, dynamic> json) =
-      _$_GetTopoHeightRangeParams.fromJson;
+      _$GetTopoHeightRangeParamsImpl.fromJson;
 
   @override
 
@@ -195,6 +197,6 @@ abstract class _GetTopoHeightRangeParams implements GetTopoHeightRangeParams {
   int? get endTopoHeight;
   @override
   @JsonKey(ignore: true)
-  _$$_GetTopoHeightRangeParamsCopyWith<_$_GetTopoHeightRangeParams>
+  _$$GetTopoHeightRangeParamsImplCopyWith<_$GetTopoHeightRangeParamsImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

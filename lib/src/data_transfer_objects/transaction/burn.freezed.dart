@@ -73,9 +73,11 @@ class _$BurnCopyWithImpl<$Res, $Val extends Burn>
 }
 
 /// @nodoc
-abstract class _$$_BurnCopyWith<$Res> implements $BurnCopyWith<$Res> {
-  factory _$$_BurnCopyWith(_$_Burn value, $Res Function(_$_Burn) then) =
-      __$$_BurnCopyWithImpl<$Res>;
+abstract class _$$BurnImplCopyWith<$Res> implements $BurnCopyWith<$Res> {
+  factory _$$BurnImplCopyWith(
+          _$BurnImpl value, $Res Function(_$BurnImpl) then) =
+      __$$BurnImplCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call(
@@ -84,9 +86,10 @@ abstract class _$$_BurnCopyWith<$Res> implements $BurnCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_BurnCopyWithImpl<$Res> extends _$BurnCopyWithImpl<$Res, _$_Burn>
-    implements _$$_BurnCopyWith<$Res> {
-  __$$_BurnCopyWithImpl(_$_Burn _value, $Res Function(_$_Burn) _then)
+class __$$BurnImplCopyWithImpl<$Res>
+    extends _$BurnCopyWithImpl<$Res, _$BurnImpl>
+    implements _$$BurnImplCopyWith<$Res> {
+  __$$BurnImplCopyWithImpl(_$BurnImpl _value, $Res Function(_$BurnImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -95,7 +98,7 @@ class __$$_BurnCopyWithImpl<$Res> extends _$BurnCopyWithImpl<$Res, _$_Burn>
     Object? asset = null,
     Object? amount = null,
   }) {
-    return _then(_$_Burn(
+    return _then(_$BurnImpl(
       asset: null == asset
           ? _value.asset
           : asset // ignore: cast_nullable_to_non_nullable
@@ -110,12 +113,13 @@ class __$$_BurnCopyWithImpl<$Res> extends _$BurnCopyWithImpl<$Res, _$_Burn>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Burn implements _Burn {
-  const _$_Burn(
+class _$BurnImpl implements _Burn {
+  const _$BurnImpl(
       {@JsonKey(name: 'asset') required this.asset,
       @JsonKey(name: 'amount') required this.amount});
 
-  factory _$_Burn.fromJson(Map<String, dynamic> json) => _$$_BurnFromJson(json);
+  factory _$BurnImpl.fromJson(Map<String, dynamic> json) =>
+      _$$BurnImplFromJson(json);
 
   /// @nodoc
   @override
@@ -136,7 +140,7 @@ class _$_Burn implements _Burn {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Burn &&
+            other is _$BurnImpl &&
             (identical(other.asset, asset) || other.asset == asset) &&
             (identical(other.amount, amount) || other.amount == amount));
   }
@@ -148,12 +152,12 @@ class _$_Burn implements _Burn {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_BurnCopyWith<_$_Burn> get copyWith =>
-      __$$_BurnCopyWithImpl<_$_Burn>(this, _$identity);
+  _$$BurnImplCopyWith<_$BurnImpl> get copyWith =>
+      __$$BurnImplCopyWithImpl<_$BurnImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_BurnToJson(
+    return _$$BurnImplToJson(
       this,
     );
   }
@@ -162,21 +166,24 @@ class _$_Burn implements _Burn {
 abstract class _Burn implements Burn {
   const factory _Burn(
       {@JsonKey(name: 'asset') required final String asset,
-      @JsonKey(name: 'amount') required final int amount}) = _$_Burn;
+      @JsonKey(name: 'amount') required final int amount}) = _$BurnImpl;
 
-  factory _Burn.fromJson(Map<String, dynamic> json) = _$_Burn.fromJson;
+  factory _Burn.fromJson(Map<String, dynamic> json) = _$BurnImpl.fromJson;
 
   @override
 
   /// @nodoc
   @JsonKey(name: 'asset')
   String get asset;
+
   @override
 
   /// @nodoc
   @JsonKey(name: 'amount')
   int get amount;
+
   @override
   @JsonKey(ignore: true)
-  _$$_BurnCopyWith<_$_Burn> get copyWith => throw _privateConstructorUsedError;
+  _$$BurnImplCopyWith<_$BurnImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

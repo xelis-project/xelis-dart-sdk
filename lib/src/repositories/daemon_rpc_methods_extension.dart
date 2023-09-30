@@ -126,7 +126,7 @@ extension DaemonRpcMethodsExtension on DaemonClientRepository {
     return Balance.fromJson(result as Map<String, dynamic>);
   }
 
-  /// Returns all assets available on network.
+  /// Get all assets available on network with its registered topoheight.
   Future<List<String>> getAssets() async {
     final result = await sendRequest(DaemonMethod.getAssets);
     return (result as List).map((e) => e as String).toList();
@@ -135,6 +135,12 @@ extension DaemonRpcMethodsExtension on DaemonClientRepository {
   /// Returns the number of transactions saved on node disk.
   Future<int> countTransactions() async {
     final result = await sendRequest(DaemonMethod.countTransactions);
+    return result as int;
+  }
+
+  /// Counts the number of assets saved on disk.
+  Future<int> countAssets() async {
+    final result = await sendRequest(DaemonMethod.countAssets);
     return result as int;
   }
 

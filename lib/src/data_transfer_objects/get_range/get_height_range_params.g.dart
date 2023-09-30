@@ -8,15 +8,15 @@ part of 'get_height_range_params.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_GetHeightRangeParams _$$_GetHeightRangeParamsFromJson(
+_$GetHeightRangeParamsImpl _$$GetHeightRangeParamsImplFromJson(
         Map<String, dynamic> json) =>
-    _$_GetHeightRangeParams(
+    _$GetHeightRangeParamsImpl(
       startHeight: json['start_height'] as int?,
       endHeight: json['end_height'] as int?,
     );
 
-Map<String, dynamic> _$$_GetHeightRangeParamsToJson(
-    _$_GetHeightRangeParams instance) {
+Map<String, dynamic> _$$GetHeightRangeParamsImplToJson(
+    _$GetHeightRangeParamsImpl instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {

@@ -73,10 +73,11 @@ class _$BalanceCopyWithImpl<$Res, $Val extends Balance>
 }
 
 /// @nodoc
-abstract class _$$_BalanceCopyWith<$Res> implements $BalanceCopyWith<$Res> {
-  factory _$$_BalanceCopyWith(
-          _$_Balance value, $Res Function(_$_Balance) then) =
-      __$$_BalanceCopyWithImpl<$Res>;
+abstract class _$$BalanceImplCopyWith<$Res> implements $BalanceCopyWith<$Res> {
+  factory _$$BalanceImplCopyWith(
+          _$BalanceImpl value, $Res Function(_$BalanceImpl) then) =
+      __$$BalanceImplCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call(
@@ -85,10 +86,11 @@ abstract class _$$_BalanceCopyWith<$Res> implements $BalanceCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_BalanceCopyWithImpl<$Res>
-    extends _$BalanceCopyWithImpl<$Res, _$_Balance>
-    implements _$$_BalanceCopyWith<$Res> {
-  __$$_BalanceCopyWithImpl(_$_Balance _value, $Res Function(_$_Balance) _then)
+class __$$BalanceImplCopyWithImpl<$Res>
+    extends _$BalanceCopyWithImpl<$Res, _$BalanceImpl>
+    implements _$$BalanceImplCopyWith<$Res> {
+  __$$BalanceImplCopyWithImpl(
+      _$BalanceImpl _value, $Res Function(_$BalanceImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -97,7 +99,7 @@ class __$$_BalanceCopyWithImpl<$Res>
     Object? balance = null,
     Object? previousTopoHeight = freezed,
   }) {
-    return _then(_$_Balance(
+    return _then(_$BalanceImpl(
       balance: null == balance
           ? _value.balance
           : balance // ignore: cast_nullable_to_non_nullable
@@ -112,13 +114,13 @@ class __$$_BalanceCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Balance implements _Balance {
-  const _$_Balance(
+class _$BalanceImpl implements _Balance {
+  const _$BalanceImpl(
       {@JsonKey(name: 'balance') required this.balance,
       @JsonKey(name: 'previous_topoheight') this.previousTopoHeight});
 
-  factory _$_Balance.fromJson(Map<String, dynamic> json) =>
-      _$$_BalanceFromJson(json);
+  factory _$BalanceImpl.fromJson(Map<String, dynamic> json) =>
+      _$$BalanceImplFromJson(json);
 
   /// @nodoc
   @override
@@ -139,7 +141,7 @@ class _$_Balance implements _Balance {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Balance &&
+            other is _$BalanceImpl &&
             (identical(other.balance, balance) || other.balance == balance) &&
             (identical(other.previousTopoHeight, previousTopoHeight) ||
                 other.previousTopoHeight == previousTopoHeight));
@@ -152,12 +154,12 @@ class _$_Balance implements _Balance {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_BalanceCopyWith<_$_Balance> get copyWith =>
-      __$$_BalanceCopyWithImpl<_$_Balance>(this, _$identity);
+  _$$BalanceImplCopyWith<_$BalanceImpl> get copyWith =>
+      __$$BalanceImplCopyWithImpl<_$BalanceImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_BalanceToJson(
+    return _$$BalanceImplToJson(
       this,
     );
   }
@@ -167,22 +169,24 @@ abstract class _Balance implements Balance {
   const factory _Balance(
       {@JsonKey(name: 'balance') required final int balance,
       @JsonKey(name: 'previous_topoheight')
-      final int? previousTopoHeight}) = _$_Balance;
+      final int? previousTopoHeight}) = _$BalanceImpl;
 
-  factory _Balance.fromJson(Map<String, dynamic> json) = _$_Balance.fromJson;
+  factory _Balance.fromJson(Map<String, dynamic> json) = _$BalanceImpl.fromJson;
 
   @override
 
   /// @nodoc
   @JsonKey(name: 'balance')
   int get balance;
+
   @override
 
   /// @nodoc
   @JsonKey(name: 'previous_topoheight')
   int? get previousTopoHeight;
+
   @override
   @JsonKey(ignore: true)
-  _$$_BalanceCopyWith<_$_Balance> get copyWith =>
+  _$$BalanceImplCopyWith<_$BalanceImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -76,11 +76,12 @@ class _$GetHeightRangeParamsCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_GetHeightRangeParamsCopyWith<$Res>
+abstract class _$$GetHeightRangeParamsImplCopyWith<$Res>
     implements $GetHeightRangeParamsCopyWith<$Res> {
-  factory _$$_GetHeightRangeParamsCopyWith(_$_GetHeightRangeParams value,
-          $Res Function(_$_GetHeightRangeParams) then) =
-      __$$_GetHeightRangeParamsCopyWithImpl<$Res>;
+  factory _$$GetHeightRangeParamsImplCopyWith(_$GetHeightRangeParamsImpl value,
+          $Res Function(_$GetHeightRangeParamsImpl) then) =
+      __$$GetHeightRangeParamsImplCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call(
@@ -89,11 +90,11 @@ abstract class _$$_GetHeightRangeParamsCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_GetHeightRangeParamsCopyWithImpl<$Res>
-    extends _$GetHeightRangeParamsCopyWithImpl<$Res, _$_GetHeightRangeParams>
-    implements _$$_GetHeightRangeParamsCopyWith<$Res> {
-  __$$_GetHeightRangeParamsCopyWithImpl(_$_GetHeightRangeParams _value,
-      $Res Function(_$_GetHeightRangeParams) _then)
+class __$$GetHeightRangeParamsImplCopyWithImpl<$Res>
+    extends _$GetHeightRangeParamsCopyWithImpl<$Res, _$GetHeightRangeParamsImpl>
+    implements _$$GetHeightRangeParamsImplCopyWith<$Res> {
+  __$$GetHeightRangeParamsImplCopyWithImpl(_$GetHeightRangeParamsImpl _value,
+      $Res Function(_$GetHeightRangeParamsImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -102,7 +103,7 @@ class __$$_GetHeightRangeParamsCopyWithImpl<$Res>
     Object? startHeight = freezed,
     Object? endHeight = freezed,
   }) {
-    return _then(_$_GetHeightRangeParams(
+    return _then(_$GetHeightRangeParamsImpl(
       startHeight: freezed == startHeight
           ? _value.startHeight
           : startHeight // ignore: cast_nullable_to_non_nullable
@@ -118,13 +119,13 @@ class __$$_GetHeightRangeParamsCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$_GetHeightRangeParams implements _GetHeightRangeParams {
-  const _$_GetHeightRangeParams(
+class _$GetHeightRangeParamsImpl implements _GetHeightRangeParams {
+  const _$GetHeightRangeParamsImpl(
       {@JsonKey(name: 'start_height') this.startHeight,
       @JsonKey(name: 'end_height') this.endHeight});
 
-  factory _$_GetHeightRangeParams.fromJson(Map<String, dynamic> json) =>
-      _$$_GetHeightRangeParamsFromJson(json);
+  factory _$GetHeightRangeParamsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$GetHeightRangeParamsImplFromJson(json);
 
   /// @nodoc
   @override
@@ -145,7 +146,7 @@ class _$_GetHeightRangeParams implements _GetHeightRangeParams {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_GetHeightRangeParams &&
+            other is _$GetHeightRangeParamsImpl &&
             (identical(other.startHeight, startHeight) ||
                 other.startHeight == startHeight) &&
             (identical(other.endHeight, endHeight) ||
@@ -159,13 +160,14 @@ class _$_GetHeightRangeParams implements _GetHeightRangeParams {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_GetHeightRangeParamsCopyWith<_$_GetHeightRangeParams> get copyWith =>
-      __$$_GetHeightRangeParamsCopyWithImpl<_$_GetHeightRangeParams>(
-          this, _$identity);
+  _$$GetHeightRangeParamsImplCopyWith<_$GetHeightRangeParamsImpl>
+      get copyWith =>
+          __$$GetHeightRangeParamsImplCopyWithImpl<_$GetHeightRangeParamsImpl>(
+              this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_GetHeightRangeParamsToJson(
+    return _$$GetHeightRangeParamsImplToJson(
       this,
     );
   }
@@ -175,23 +177,25 @@ abstract class _GetHeightRangeParams implements GetHeightRangeParams {
   const factory _GetHeightRangeParams(
           {@JsonKey(name: 'start_height') final int? startHeight,
           @JsonKey(name: 'end_height') final int? endHeight}) =
-      _$_GetHeightRangeParams;
+      _$GetHeightRangeParamsImpl;
 
   factory _GetHeightRangeParams.fromJson(Map<String, dynamic> json) =
-      _$_GetHeightRangeParams.fromJson;
+      _$GetHeightRangeParamsImpl.fromJson;
 
   @override
 
   /// @nodoc
   @JsonKey(name: 'start_height')
   int? get startHeight;
+
   @override
 
   /// @nodoc
   @JsonKey(name: 'end_height')
   int? get endHeight;
+
   @override
   @JsonKey(ignore: true)
-  _$$_GetHeightRangeParamsCopyWith<_$_GetHeightRangeParams> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GetHeightRangeParamsImplCopyWith<_$GetHeightRangeParamsImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

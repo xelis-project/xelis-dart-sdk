@@ -2,15 +2,15 @@
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'block_order_event.freezed.dart';
+part 'block_ordered_event.freezed.dart';
 
-part 'block_order_event.g.dart';
+part 'block_ordered_event.g.dart';
 
 /// @nodoc
 @freezed
-class BlockOrderEvent with _$BlockOrderEvent {
+class BlockOrderedEvent with _$BlockOrderedEvent {
   /// @nodoc
-  const factory BlockOrderEvent({
+  const factory BlockOrderedEvent({
     /// @nodoc
     @JsonKey(name: 'block_hash') required String blockHash,
 
@@ -19,9 +19,9 @@ class BlockOrderEvent with _$BlockOrderEvent {
 
     /// @nodoc
     @JsonKey(name: 'topoheight') required int topoHeight,
-  }) = _BlockOrderEvent;
+  }) = _BlockOrderedEvent;
 
   /// @nodoc
-  factory BlockOrderEvent.fromJson(Map<String, dynamic> json) =>
-      _$BlockOrderEventFromJson(json);
+  factory BlockOrderedEvent.fromJson(Map<String, dynamic> json) =>
+      _$BlockOrderedEventFromJson(json);
 }

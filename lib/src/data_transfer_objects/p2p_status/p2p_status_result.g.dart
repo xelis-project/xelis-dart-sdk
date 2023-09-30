@@ -8,8 +8,9 @@ part of 'p2p_status_result.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_P2pStatusResult _$$_P2pStatusResultFromJson(Map<String, dynamic> json) =>
-    _$_P2pStatusResult(
+_$P2pStatusResultImpl _$$P2pStatusResultImplFromJson(
+        Map<String, dynamic> json) =>
+    _$P2pStatusResultImpl(
       bestTopoHeight: json['best_topoheight'] as int,
       maxPeers: json['max_peers'] as int,
       ourTopoHeight: json['our_topoheight'] as int,
@@ -18,7 +19,8 @@ _$_P2pStatusResult _$$_P2pStatusResultFromJson(Map<String, dynamic> json) =>
       tag: json['tag'] as String?,
     );
 
-Map<String, dynamic> _$$_P2pStatusResultToJson(_$_P2pStatusResult instance) =>
+Map<String, dynamic> _$$P2pStatusResultImplToJson(
+        _$P2pStatusResultImpl instance) =>
     <String, dynamic>{
       'best_topoheight': instance.bestTopoHeight,
       'max_peers': instance.maxPeers,

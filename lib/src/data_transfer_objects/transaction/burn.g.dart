@@ -8,12 +8,13 @@ part of 'burn.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Burn _$$_BurnFromJson(Map<String, dynamic> json) => _$_Burn(
+_$BurnImpl _$$BurnImplFromJson(Map<String, dynamic> json) => _$BurnImpl(
       asset: json['asset'] as String,
       amount: json['amount'] as int,
     );
 
-Map<String, dynamic> _$$_BurnToJson(_$_Burn instance) => <String, dynamic>{
+Map<String, dynamic> _$$BurnImplToJson(_$BurnImpl instance) =>
+    <String, dynamic>{
       'asset': instance.asset,
       'amount': instance.amount,
     };

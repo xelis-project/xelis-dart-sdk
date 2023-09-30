@@ -64,22 +64,23 @@ class _$GetNonceParamsCopyWithImpl<$Res, $Val extends GetNonceParams>
 }
 
 /// @nodoc
-abstract class _$$_GetNonceParamsCopyWith<$Res>
+abstract class _$$GetNonceParamsImplCopyWith<$Res>
     implements $GetNonceParamsCopyWith<$Res> {
-  factory _$$_GetNonceParamsCopyWith(
-          _$_GetNonceParams value, $Res Function(_$_GetNonceParams) then) =
-      __$$_GetNonceParamsCopyWithImpl<$Res>;
+  factory _$$GetNonceParamsImplCopyWith(_$GetNonceParamsImpl value,
+          $Res Function(_$GetNonceParamsImpl) then) =
+      __$$GetNonceParamsImplCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call({@JsonKey(name: 'address') String address});
 }
 
 /// @nodoc
-class __$$_GetNonceParamsCopyWithImpl<$Res>
-    extends _$GetNonceParamsCopyWithImpl<$Res, _$_GetNonceParams>
-    implements _$$_GetNonceParamsCopyWith<$Res> {
-  __$$_GetNonceParamsCopyWithImpl(
-      _$_GetNonceParams _value, $Res Function(_$_GetNonceParams) _then)
+class __$$GetNonceParamsImplCopyWithImpl<$Res>
+    extends _$GetNonceParamsCopyWithImpl<$Res, _$GetNonceParamsImpl>
+    implements _$$GetNonceParamsImplCopyWith<$Res> {
+  __$$GetNonceParamsImplCopyWithImpl(
+      _$GetNonceParamsImpl _value, $Res Function(_$GetNonceParamsImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -87,7 +88,7 @@ class __$$_GetNonceParamsCopyWithImpl<$Res>
   $Res call({
     Object? address = null,
   }) {
-    return _then(_$_GetNonceParams(
+    return _then(_$GetNonceParamsImpl(
       address: null == address
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
@@ -98,11 +99,11 @@ class __$$_GetNonceParamsCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_GetNonceParams implements _GetNonceParams {
-  const _$_GetNonceParams({@JsonKey(name: 'address') required this.address});
+class _$GetNonceParamsImpl implements _GetNonceParams {
+  const _$GetNonceParamsImpl({@JsonKey(name: 'address') required this.address});
 
-  factory _$_GetNonceParams.fromJson(Map<String, dynamic> json) =>
-      _$$_GetNonceParamsFromJson(json);
+  factory _$GetNonceParamsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$GetNonceParamsImplFromJson(json);
 
   /// @nodoc
   @override
@@ -118,7 +119,7 @@ class _$_GetNonceParams implements _GetNonceParams {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_GetNonceParams &&
+            other is _$GetNonceParamsImpl &&
             (identical(other.address, address) || other.address == address));
   }
 
@@ -129,12 +130,13 @@ class _$_GetNonceParams implements _GetNonceParams {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_GetNonceParamsCopyWith<_$_GetNonceParams> get copyWith =>
-      __$$_GetNonceParamsCopyWithImpl<_$_GetNonceParams>(this, _$identity);
+  _$$GetNonceParamsImplCopyWith<_$GetNonceParamsImpl> get copyWith =>
+      __$$GetNonceParamsImplCopyWithImpl<_$GetNonceParamsImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_GetNonceParamsToJson(
+    return _$$GetNonceParamsImplToJson(
       this,
     );
   }
@@ -143,18 +145,19 @@ class _$_GetNonceParams implements _GetNonceParams {
 abstract class _GetNonceParams implements GetNonceParams {
   const factory _GetNonceParams(
           {@JsonKey(name: 'address') required final String address}) =
-      _$_GetNonceParams;
+      _$GetNonceParamsImpl;
 
   factory _GetNonceParams.fromJson(Map<String, dynamic> json) =
-      _$_GetNonceParams.fromJson;
+      _$GetNonceParamsImpl.fromJson;
 
   @override
 
   /// @nodoc
   @JsonKey(name: 'address')
   String get address;
+
   @override
   @JsonKey(ignore: true)
-  _$$_GetNonceParamsCopyWith<_$_GetNonceParams> get copyWith =>
+  _$$GetNonceParamsImplCopyWith<_$GetNonceParamsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

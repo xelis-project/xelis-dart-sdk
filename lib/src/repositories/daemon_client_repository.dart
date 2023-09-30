@@ -56,7 +56,9 @@ class DaemonClientRepository {
   final Map<DaemonEvent, List<Function>> eventCallbacks = {
     DaemonEvent.newBlock: <void Function(Block block)>[],
     DaemonEvent.blockOrdered:
-        <void Function(BlockOrderEvent blockOrderEvent)>[],
+        <void Function(BlockOrderedEvent blockOrderEvent)>[],
+    DaemonEvent.stableHeightChanged:
+        <void Function(StableHeightChangedEvent stableHeightChangedEvent)>[],
     DaemonEvent.transactionAddedInMempool:
         <void Function(Transaction transaction)>[],
     DaemonEvent.transactionExecuted:
@@ -206,6 +208,9 @@ class DaemonClientRepository {
     if (eventCallbacks[DaemonEvent.blockOrdered]!.isNotEmpty) {
       subscribeTo(DaemonEvent.blockOrdered);
     }
+    if (eventCallbacks[DaemonEvent.stableHeightChanged]!.isNotEmpty) {
+      subscribeTo(DaemonEvent.stableHeightChanged);
+    }
     if (eventCallbacks[DaemonEvent.transactionAddedInMempool]!.isNotEmpty) {
       subscribeTo(DaemonEvent.transactionAddedInMempool);
     }
@@ -243,7 +248,17 @@ class DaemonClientRepository {
             for (final callback in eventCallbacks[event]!) {
               // ignore: avoid_dynamic_calls
               callback(
-                BlockOrderEvent.fromJson(
+                BlockOrderedEvent.fromJson(
+                  data['result'] as Map<String, dynamic>,
+                ),
+              );
+            }
+            break;
+          case DaemonEvent.stableHeightChanged:
+            for (final callback in eventCallbacks[event]!) {
+              // ignore: avoid_dynamic_calls
+              callback(
+                StableHeightChangedEvent.fromJson(
                   data['result'] as Map<String, dynamic>,
                 ),
               );

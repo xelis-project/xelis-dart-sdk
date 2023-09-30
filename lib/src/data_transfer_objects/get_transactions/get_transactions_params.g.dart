@@ -8,15 +8,15 @@ part of 'get_transactions_params.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_GetTransactionsParams _$$_GetTransactionsParamsFromJson(
+_$GetTransactionsParamsImpl _$$GetTransactionsParamsImplFromJson(
         Map<String, dynamic> json) =>
-    _$_GetTransactionsParams(
+    _$GetTransactionsParamsImpl(
       txHashes:
           (json['tx_hashes'] as List<dynamic>).map((e) => e as String).toList(),
     );
 
-Map<String, dynamic> _$$_GetTransactionsParamsToJson(
-        _$_GetTransactionsParams instance) =>
+Map<String, dynamic> _$$GetTransactionsParamsImplToJson(
+        _$GetTransactionsParamsImpl instance) =>
     <String, dynamic>{
       'tx_hashes': instance.txHashes,
     };

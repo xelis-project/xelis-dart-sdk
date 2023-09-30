@@ -21,6 +21,14 @@ GetInfoResult _$GetInfoResultFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$GetInfoResult {
   /// @nodoc
+  @JsonKey(name: 'average_block_time')
+  int get averageBlockTime => throw _privateConstructorUsedError;
+
+  /// @nodoc
+  @JsonKey(name: 'block_reward')
+  int get blockReward => throw _privateConstructorUsedError;
+
+  /// @nodoc
   @JsonKey(name: 'block_time_target')
   int get blockTimeTarget => throw _privateConstructorUsedError;
 
@@ -60,7 +68,12 @@ mixin _$GetInfoResult {
   @JsonKey(name: 'version')
   String get version => throw _privateConstructorUsedError;
 
+  /// @nodoc
+  @JsonKey(name: 'pruned_topoheight')
+  int? get prunedTopoHeight => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   $GetInfoResultCopyWith<GetInfoResult> get copyWith =>
       throw _privateConstructorUsedError;
@@ -73,7 +86,9 @@ abstract class $GetInfoResultCopyWith<$Res> {
       _$GetInfoResultCopyWithImpl<$Res, GetInfoResult>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'block_time_target') int blockTimeTarget,
+      {@JsonKey(name: 'average_block_time') int averageBlockTime,
+      @JsonKey(name: 'block_reward') int blockReward,
+      @JsonKey(name: 'block_time_target') int blockTimeTarget,
       @JsonKey(name: 'difficulty') int difficulty,
       @JsonKey(name: 'height') int height,
       @JsonKey(name: 'mempool_size') int mempoolSize,
@@ -82,7 +97,8 @@ abstract class $GetInfoResultCopyWith<$Res> {
       @JsonKey(name: 'stableheight') int stableHeight,
       @JsonKey(name: 'top_hash') String topHash,
       @JsonKey(name: 'topoheight') int topoHeight,
-      @JsonKey(name: 'version') String version});
+      @JsonKey(name: 'version') String version,
+      @JsonKey(name: 'pruned_topoheight') int? prunedTopoHeight});
 }
 
 /// @nodoc
@@ -98,6 +114,8 @@ class _$GetInfoResultCopyWithImpl<$Res, $Val extends GetInfoResult>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? averageBlockTime = null,
+    Object? blockReward = null,
     Object? blockTimeTarget = null,
     Object? difficulty = null,
     Object? height = null,
@@ -108,8 +126,17 @@ class _$GetInfoResultCopyWithImpl<$Res, $Val extends GetInfoResult>
     Object? topHash = null,
     Object? topoHeight = null,
     Object? version = null,
+    Object? prunedTopoHeight = freezed,
   }) {
     return _then(_value.copyWith(
+      averageBlockTime: null == averageBlockTime
+          ? _value.averageBlockTime
+          : averageBlockTime // ignore: cast_nullable_to_non_nullable
+              as int,
+      blockReward: null == blockReward
+          ? _value.blockReward
+          : blockReward // ignore: cast_nullable_to_non_nullable
+              as int,
       blockTimeTarget: null == blockTimeTarget
           ? _value.blockTimeTarget
           : blockTimeTarget // ignore: cast_nullable_to_non_nullable
@@ -121,23 +148,23 @@ class _$GetInfoResultCopyWithImpl<$Res, $Val extends GetInfoResult>
       height: null == height
           ? _value.height
           : height // ignore: cast_nullable_to_non_nullable
-              as int,
+      as int,
       mempoolSize: null == mempoolSize
           ? _value.mempoolSize
           : mempoolSize // ignore: cast_nullable_to_non_nullable
-              as int,
+      as int,
       nativeSupply: null == nativeSupply
           ? _value.nativeSupply
           : nativeSupply // ignore: cast_nullable_to_non_nullable
-              as int,
+      as int,
       network: null == network
           ? _value.network
           : network // ignore: cast_nullable_to_non_nullable
-              as Network,
+      as Network,
       stableHeight: null == stableHeight
           ? _value.stableHeight
           : stableHeight // ignore: cast_nullable_to_non_nullable
-              as int,
+      as int,
       topHash: null == topHash
           ? _value.topHash
           : topHash // ignore: cast_nullable_to_non_nullable
@@ -150,20 +177,27 @@ class _$GetInfoResultCopyWithImpl<$Res, $Val extends GetInfoResult>
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
               as String,
+      prunedTopoHeight: freezed == prunedTopoHeight
+          ? _value.prunedTopoHeight
+          : prunedTopoHeight // ignore: cast_nullable_to_non_nullable
+              as int?,
     ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$_GetInfoResultCopyWith<$Res>
+abstract class _$$GetInfoResultImplCopyWith<$Res>
     implements $GetInfoResultCopyWith<$Res> {
-  factory _$$_GetInfoResultCopyWith(
-          _$_GetInfoResult value, $Res Function(_$_GetInfoResult) then) =
-      __$$_GetInfoResultCopyWithImpl<$Res>;
+  factory _$$GetInfoResultImplCopyWith(
+          _$GetInfoResultImpl value, $Res Function(_$GetInfoResultImpl) then) =
+      __$$GetInfoResultImplCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'block_time_target') int blockTimeTarget,
+      {@JsonKey(name: 'average_block_time') int averageBlockTime,
+      @JsonKey(name: 'block_reward') int blockReward,
+      @JsonKey(name: 'block_time_target') int blockTimeTarget,
       @JsonKey(name: 'difficulty') int difficulty,
       @JsonKey(name: 'height') int height,
       @JsonKey(name: 'mempool_size') int mempoolSize,
@@ -172,20 +206,23 @@ abstract class _$$_GetInfoResultCopyWith<$Res>
       @JsonKey(name: 'stableheight') int stableHeight,
       @JsonKey(name: 'top_hash') String topHash,
       @JsonKey(name: 'topoheight') int topoHeight,
-      @JsonKey(name: 'version') String version});
+      @JsonKey(name: 'version') String version,
+      @JsonKey(name: 'pruned_topoheight') int? prunedTopoHeight});
 }
 
 /// @nodoc
-class __$$_GetInfoResultCopyWithImpl<$Res>
-    extends _$GetInfoResultCopyWithImpl<$Res, _$_GetInfoResult>
-    implements _$$_GetInfoResultCopyWith<$Res> {
-  __$$_GetInfoResultCopyWithImpl(
-      _$_GetInfoResult _value, $Res Function(_$_GetInfoResult) _then)
+class __$$GetInfoResultImplCopyWithImpl<$Res>
+    extends _$GetInfoResultCopyWithImpl<$Res, _$GetInfoResultImpl>
+    implements _$$GetInfoResultImplCopyWith<$Res> {
+  __$$GetInfoResultImplCopyWithImpl(
+      _$GetInfoResultImpl _value, $Res Function(_$GetInfoResultImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? averageBlockTime = null,
+    Object? blockReward = null,
     Object? blockTimeTarget = null,
     Object? difficulty = null,
     Object? height = null,
@@ -196,8 +233,17 @@ class __$$_GetInfoResultCopyWithImpl<$Res>
     Object? topHash = null,
     Object? topoHeight = null,
     Object? version = null,
+    Object? prunedTopoHeight = freezed,
   }) {
-    return _then(_$_GetInfoResult(
+    return _then(_$GetInfoResultImpl(
+      averageBlockTime: null == averageBlockTime
+          ? _value.averageBlockTime
+          : averageBlockTime // ignore: cast_nullable_to_non_nullable
+              as int,
+      blockReward: null == blockReward
+          ? _value.blockReward
+          : blockReward // ignore: cast_nullable_to_non_nullable
+              as int,
       blockTimeTarget: null == blockTimeTarget
           ? _value.blockTimeTarget
           : blockTimeTarget // ignore: cast_nullable_to_non_nullable
@@ -238,15 +284,21 @@ class __$$_GetInfoResultCopyWithImpl<$Res>
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
               as String,
+      prunedTopoHeight: freezed == prunedTopoHeight
+          ? _value.prunedTopoHeight
+          : prunedTopoHeight // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$_GetInfoResult implements _GetInfoResult {
-  const _$_GetInfoResult(
-      {@JsonKey(name: 'block_time_target') required this.blockTimeTarget,
+class _$GetInfoResultImpl implements _GetInfoResult {
+  const _$GetInfoResultImpl(
+      {@JsonKey(name: 'average_block_time') required this.averageBlockTime,
+      @JsonKey(name: 'block_reward') required this.blockReward,
+      @JsonKey(name: 'block_time_target') required this.blockTimeTarget,
       @JsonKey(name: 'difficulty') required this.difficulty,
       @JsonKey(name: 'height') required this.height,
       @JsonKey(name: 'mempool_size') required this.mempoolSize,
@@ -255,10 +307,21 @@ class _$_GetInfoResult implements _GetInfoResult {
       @JsonKey(name: 'stableheight') required this.stableHeight,
       @JsonKey(name: 'top_hash') required this.topHash,
       @JsonKey(name: 'topoheight') required this.topoHeight,
-      @JsonKey(name: 'version') required this.version});
+      @JsonKey(name: 'version') required this.version,
+      @JsonKey(name: 'pruned_topoheight') this.prunedTopoHeight});
 
-  factory _$_GetInfoResult.fromJson(Map<String, dynamic> json) =>
-      _$$_GetInfoResultFromJson(json);
+  factory _$GetInfoResultImpl.fromJson(Map<String, dynamic> json) =>
+      _$$GetInfoResultImplFromJson(json);
+
+  /// @nodoc
+  @override
+  @JsonKey(name: 'average_block_time')
+  final int averageBlockTime;
+
+  /// @nodoc
+  @override
+  @JsonKey(name: 'block_reward')
+  final int blockReward;
 
   /// @nodoc
   @override
@@ -310,16 +373,25 @@ class _$_GetInfoResult implements _GetInfoResult {
   @JsonKey(name: 'version')
   final String version;
 
+  /// @nodoc
+  @override
+  @JsonKey(name: 'pruned_topoheight')
+  final int? prunedTopoHeight;
+
   @override
   String toString() {
-    return 'GetInfoResult(blockTimeTarget: $blockTimeTarget, difficulty: $difficulty, height: $height, mempoolSize: $mempoolSize, nativeSupply: $nativeSupply, network: $network, stableHeight: $stableHeight, topHash: $topHash, topoHeight: $topoHeight, version: $version)';
+    return 'GetInfoResult(averageBlockTime: $averageBlockTime, blockReward: $blockReward, blockTimeTarget: $blockTimeTarget, difficulty: $difficulty, height: $height, mempoolSize: $mempoolSize, nativeSupply: $nativeSupply, network: $network, stableHeight: $stableHeight, topHash: $topHash, topoHeight: $topoHeight, version: $version, prunedTopoHeight: $prunedTopoHeight)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_GetInfoResult &&
+            other is _$GetInfoResultImpl &&
+            (identical(other.averageBlockTime, averageBlockTime) ||
+                other.averageBlockTime == averageBlockTime) &&
+            (identical(other.blockReward, blockReward) ||
+                other.blockReward == blockReward) &&
             (identical(other.blockTimeTarget, blockTimeTarget) ||
                 other.blockTimeTarget == blockTimeTarget) &&
             (identical(other.difficulty, difficulty) ||
@@ -335,13 +407,17 @@ class _$_GetInfoResult implements _GetInfoResult {
             (identical(other.topHash, topHash) || other.topHash == topHash) &&
             (identical(other.topoHeight, topoHeight) ||
                 other.topoHeight == topoHeight) &&
-            (identical(other.version, version) || other.version == version));
+            (identical(other.version, version) || other.version == version) &&
+            (identical(other.prunedTopoHeight, prunedTopoHeight) ||
+                other.prunedTopoHeight == prunedTopoHeight));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      averageBlockTime,
+      blockReward,
       blockTimeTarget,
       difficulty,
       height,
@@ -351,17 +427,18 @@ class _$_GetInfoResult implements _GetInfoResult {
       stableHeight,
       topHash,
       topoHeight,
-      version);
+      version,
+      prunedTopoHeight);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_GetInfoResultCopyWith<_$_GetInfoResult> get copyWith =>
-      __$$_GetInfoResultCopyWithImpl<_$_GetInfoResult>(this, _$identity);
+  _$$GetInfoResultImplCopyWith<_$GetInfoResultImpl> get copyWith =>
+      __$$GetInfoResultImplCopyWithImpl<_$GetInfoResultImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_GetInfoResultToJson(
+    return _$$GetInfoResultImplToJson(
       this,
     );
   }
@@ -369,7 +446,9 @@ class _$_GetInfoResult implements _GetInfoResult {
 
 abstract class _GetInfoResult implements GetInfoResult {
   const factory _GetInfoResult(
-      {@JsonKey(name: 'block_time_target') required final int blockTimeTarget,
+      {@JsonKey(name: 'average_block_time') required final int averageBlockTime,
+      @JsonKey(name: 'block_reward') required final int blockReward,
+      @JsonKey(name: 'block_time_target') required final int blockTimeTarget,
       @JsonKey(name: 'difficulty') required final int difficulty,
       @JsonKey(name: 'height') required final int height,
       @JsonKey(name: 'mempool_size') required final int mempoolSize,
@@ -378,22 +457,37 @@ abstract class _GetInfoResult implements GetInfoResult {
       @JsonKey(name: 'stableheight') required final int stableHeight,
       @JsonKey(name: 'top_hash') required final String topHash,
       @JsonKey(name: 'topoheight') required final int topoHeight,
-      @JsonKey(name: 'version')
-      required final String version}) = _$_GetInfoResult;
+      @JsonKey(name: 'version') required final String version,
+      @JsonKey(name: 'pruned_topoheight')
+      final int? prunedTopoHeight}) = _$GetInfoResultImpl;
 
   factory _GetInfoResult.fromJson(Map<String, dynamic> json) =
-      _$_GetInfoResult.fromJson;
+      _$GetInfoResultImpl.fromJson;
+
+  @override
+
+  /// @nodoc
+  @JsonKey(name: 'average_block_time')
+  int get averageBlockTime;
+
+  @override
+
+  /// @nodoc
+  @JsonKey(name: 'block_reward')
+  int get blockReward;
 
   @override
 
   /// @nodoc
   @JsonKey(name: 'block_time_target')
   int get blockTimeTarget;
+
   @override
 
   /// @nodoc
   @JsonKey(name: 'difficulty')
   int get difficulty;
+
   @override
 
   /// @nodoc
@@ -429,13 +523,21 @@ abstract class _GetInfoResult implements GetInfoResult {
   /// @nodoc
   @JsonKey(name: 'topoheight')
   int get topoHeight;
+
   @override
 
   /// @nodoc
   @JsonKey(name: 'version')
   String get version;
+
+  @override
+
+  /// @nodoc
+  @JsonKey(name: 'pruned_topoheight')
+  int? get prunedTopoHeight;
+
   @override
   @JsonKey(ignore: true)
-  _$$_GetInfoResultCopyWith<_$_GetInfoResult> get copyWith =>
+  _$$GetInfoResultImplCopyWith<_$GetInfoResultImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

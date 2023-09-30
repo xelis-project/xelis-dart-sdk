@@ -1,3 +1,10 @@
+## 0.6.0
+
+Daemon API upgrade :
+
+- new StableHeightChanged event.
+- new countAssets RPC method.
+
 ## 0.5.0
 
 - feat: getBlocksRangeByTopoHeight and getBlocksRangeByHeight RPC methods.

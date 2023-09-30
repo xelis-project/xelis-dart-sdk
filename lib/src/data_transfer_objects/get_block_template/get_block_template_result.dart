@@ -15,6 +15,9 @@ class GetBlockTemplateResult with _$GetBlockTemplateResult {
     @JsonKey(name: 'difficulty') required int difficulty,
 
     /// @nodoc
+    @JsonKey(name: 'height') required int height,
+
+    /// @nodoc
     @JsonKey(name: 'template') required String template,
   }) = _GetBlockTemplateResult;
 

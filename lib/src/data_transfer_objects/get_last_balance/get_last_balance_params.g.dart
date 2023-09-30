@@ -8,15 +8,15 @@ part of 'get_last_balance_params.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_GetLastBalanceParams _$$_GetLastBalanceParamsFromJson(
+_$GetLastBalanceParamsImpl _$$GetLastBalanceParamsImplFromJson(
         Map<String, dynamic> json) =>
-    _$_GetLastBalanceParams(
+    _$GetLastBalanceParamsImpl(
       address: json['address'] as String,
       asset: json['asset'] as String,
     );
 
-Map<String, dynamic> _$$_GetLastBalanceParamsToJson(
-        _$_GetLastBalanceParams instance) =>
+Map<String, dynamic> _$$GetLastBalanceParamsImplToJson(
+        _$GetLastBalanceParamsImpl instance) =>
     <String, dynamic>{
       'address': instance.address,
       'asset': instance.asset,

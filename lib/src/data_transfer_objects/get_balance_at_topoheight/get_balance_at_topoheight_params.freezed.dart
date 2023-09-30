@@ -89,12 +89,13 @@ class _$GetBalanceAtTopoHeightParamsCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_GetBalanceAtTopoHeightParamsCopyWith<$Res>
+abstract class _$$GetBalanceAtTopoHeightParamsImplCopyWith<$Res>
     implements $GetBalanceAtTopoHeightParamsCopyWith<$Res> {
-  factory _$$_GetBalanceAtTopoHeightParamsCopyWith(
-          _$_GetBalanceAtTopoHeightParams value,
-          $Res Function(_$_GetBalanceAtTopoHeightParams) then) =
-      __$$_GetBalanceAtTopoHeightParamsCopyWithImpl<$Res>;
+  factory _$$GetBalanceAtTopoHeightParamsImplCopyWith(
+          _$GetBalanceAtTopoHeightParamsImpl value,
+          $Res Function(_$GetBalanceAtTopoHeightParamsImpl) then) =
+      __$$GetBalanceAtTopoHeightParamsImplCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call(
@@ -104,13 +105,13 @@ abstract class _$$_GetBalanceAtTopoHeightParamsCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_GetBalanceAtTopoHeightParamsCopyWithImpl<$Res>
+class __$$GetBalanceAtTopoHeightParamsImplCopyWithImpl<$Res>
     extends _$GetBalanceAtTopoHeightParamsCopyWithImpl<$Res,
-        _$_GetBalanceAtTopoHeightParams>
-    implements _$$_GetBalanceAtTopoHeightParamsCopyWith<$Res> {
-  __$$_GetBalanceAtTopoHeightParamsCopyWithImpl(
-      _$_GetBalanceAtTopoHeightParams _value,
-      $Res Function(_$_GetBalanceAtTopoHeightParams) _then)
+        _$GetBalanceAtTopoHeightParamsImpl>
+    implements _$$GetBalanceAtTopoHeightParamsImplCopyWith<$Res> {
+  __$$GetBalanceAtTopoHeightParamsImplCopyWithImpl(
+      _$GetBalanceAtTopoHeightParamsImpl _value,
+      $Res Function(_$GetBalanceAtTopoHeightParamsImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -120,7 +121,7 @@ class __$$_GetBalanceAtTopoHeightParamsCopyWithImpl<$Res>
     Object? asset = null,
     Object? topoHeight = null,
   }) {
-    return _then(_$_GetBalanceAtTopoHeightParams(
+    return _then(_$GetBalanceAtTopoHeightParamsImpl(
       address: null == address
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
@@ -139,14 +140,16 @@ class __$$_GetBalanceAtTopoHeightParamsCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_GetBalanceAtTopoHeightParams implements _GetBalanceAtTopoHeightParams {
-  const _$_GetBalanceAtTopoHeightParams(
+class _$GetBalanceAtTopoHeightParamsImpl
+    implements _GetBalanceAtTopoHeightParams {
+  const _$GetBalanceAtTopoHeightParamsImpl(
       {@JsonKey(name: 'address') required this.address,
       @JsonKey(name: 'asset') required this.asset,
       @JsonKey(name: 'topoheight') required this.topoHeight});
 
-  factory _$_GetBalanceAtTopoHeightParams.fromJson(Map<String, dynamic> json) =>
-      _$$_GetBalanceAtTopoHeightParamsFromJson(json);
+  factory _$GetBalanceAtTopoHeightParamsImpl.fromJson(
+          Map<String, dynamic> json) =>
+      _$$GetBalanceAtTopoHeightParamsImplFromJson(json);
 
   /// @nodoc
   @override
@@ -172,7 +175,7 @@ class _$_GetBalanceAtTopoHeightParams implements _GetBalanceAtTopoHeightParams {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_GetBalanceAtTopoHeightParams &&
+            other is _$GetBalanceAtTopoHeightParamsImpl &&
             (identical(other.address, address) || other.address == address) &&
             (identical(other.asset, asset) || other.asset == asset) &&
             (identical(other.topoHeight, topoHeight) ||
@@ -186,13 +189,14 @@ class _$_GetBalanceAtTopoHeightParams implements _GetBalanceAtTopoHeightParams {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_GetBalanceAtTopoHeightParamsCopyWith<_$_GetBalanceAtTopoHeightParams>
-      get copyWith => __$$_GetBalanceAtTopoHeightParamsCopyWithImpl<
-          _$_GetBalanceAtTopoHeightParams>(this, _$identity);
+  _$$GetBalanceAtTopoHeightParamsImplCopyWith<
+          _$GetBalanceAtTopoHeightParamsImpl>
+      get copyWith => __$$GetBalanceAtTopoHeightParamsImplCopyWithImpl<
+          _$GetBalanceAtTopoHeightParamsImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_GetBalanceAtTopoHeightParamsToJson(
+    return _$$GetBalanceAtTopoHeightParamsImplToJson(
       this,
     );
   }
@@ -204,10 +208,10 @@ abstract class _GetBalanceAtTopoHeightParams
           {@JsonKey(name: 'address') required final String address,
           @JsonKey(name: 'asset') required final String asset,
           @JsonKey(name: 'topoheight') required final int topoHeight}) =
-      _$_GetBalanceAtTopoHeightParams;
+      _$GetBalanceAtTopoHeightParamsImpl;
 
   factory _GetBalanceAtTopoHeightParams.fromJson(Map<String, dynamic> json) =
-      _$_GetBalanceAtTopoHeightParams.fromJson;
+      _$GetBalanceAtTopoHeightParamsImpl.fromJson;
 
   @override
 
@@ -219,13 +223,16 @@ abstract class _GetBalanceAtTopoHeightParams
   /// @nodoc
   @JsonKey(name: 'asset')
   String get asset;
+
   @override
 
   /// @nodoc
   @JsonKey(name: 'topoheight')
   int get topoHeight;
+
   @override
   @JsonKey(ignore: true)
-  _$$_GetBalanceAtTopoHeightParamsCopyWith<_$_GetBalanceAtTopoHeightParams>
+  _$$GetBalanceAtTopoHeightParamsImplCopyWith<
+          _$GetBalanceAtTopoHeightParamsImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

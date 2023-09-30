@@ -78,12 +78,13 @@ class _$GetBlockAtTopoHeightParamsCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_GetBlockAtTopoHeightParamsCopyWith<$Res>
+abstract class _$$GetBlockAtTopoHeightParamsImplCopyWith<$Res>
     implements $GetBlockAtTopoHeightParamsCopyWith<$Res> {
-  factory _$$_GetBlockAtTopoHeightParamsCopyWith(
-          _$_GetBlockAtTopoHeightParams value,
-          $Res Function(_$_GetBlockAtTopoHeightParams) then) =
-      __$$_GetBlockAtTopoHeightParamsCopyWithImpl<$Res>;
+  factory _$$GetBlockAtTopoHeightParamsImplCopyWith(
+          _$GetBlockAtTopoHeightParamsImpl value,
+          $Res Function(_$GetBlockAtTopoHeightParamsImpl) then) =
+      __$$GetBlockAtTopoHeightParamsImplCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call(
@@ -92,13 +93,13 @@ abstract class _$$_GetBlockAtTopoHeightParamsCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_GetBlockAtTopoHeightParamsCopyWithImpl<$Res>
+class __$$GetBlockAtTopoHeightParamsImplCopyWithImpl<$Res>
     extends _$GetBlockAtTopoHeightParamsCopyWithImpl<$Res,
-        _$_GetBlockAtTopoHeightParams>
-    implements _$$_GetBlockAtTopoHeightParamsCopyWith<$Res> {
-  __$$_GetBlockAtTopoHeightParamsCopyWithImpl(
-      _$_GetBlockAtTopoHeightParams _value,
-      $Res Function(_$_GetBlockAtTopoHeightParams) _then)
+        _$GetBlockAtTopoHeightParamsImpl>
+    implements _$$GetBlockAtTopoHeightParamsImplCopyWith<$Res> {
+  __$$GetBlockAtTopoHeightParamsImplCopyWithImpl(
+      _$GetBlockAtTopoHeightParamsImpl _value,
+      $Res Function(_$GetBlockAtTopoHeightParamsImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -107,7 +108,7 @@ class __$$_GetBlockAtTopoHeightParamsCopyWithImpl<$Res>
     Object? topoHeight = null,
     Object? includeTxs = freezed,
   }) {
-    return _then(_$_GetBlockAtTopoHeightParams(
+    return _then(_$GetBlockAtTopoHeightParamsImpl(
       topoHeight: null == topoHeight
           ? _value.topoHeight
           : topoHeight // ignore: cast_nullable_to_non_nullable
@@ -123,13 +124,14 @@ class __$$_GetBlockAtTopoHeightParamsCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$_GetBlockAtTopoHeightParams implements _GetBlockAtTopoHeightParams {
-  const _$_GetBlockAtTopoHeightParams(
+class _$GetBlockAtTopoHeightParamsImpl implements _GetBlockAtTopoHeightParams {
+  const _$GetBlockAtTopoHeightParamsImpl(
       {@JsonKey(name: 'topoheight') required this.topoHeight,
       @JsonKey(name: 'include_txs') this.includeTxs});
 
-  factory _$_GetBlockAtTopoHeightParams.fromJson(Map<String, dynamic> json) =>
-      _$$_GetBlockAtTopoHeightParamsFromJson(json);
+  factory _$GetBlockAtTopoHeightParamsImpl.fromJson(
+          Map<String, dynamic> json) =>
+      _$$GetBlockAtTopoHeightParamsImplFromJson(json);
 
   /// @nodoc
   @override
@@ -150,7 +152,7 @@ class _$_GetBlockAtTopoHeightParams implements _GetBlockAtTopoHeightParams {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_GetBlockAtTopoHeightParams &&
+            other is _$GetBlockAtTopoHeightParamsImpl &&
             (identical(other.topoHeight, topoHeight) ||
                 other.topoHeight == topoHeight) &&
             (identical(other.includeTxs, includeTxs) ||
@@ -164,13 +166,13 @@ class _$_GetBlockAtTopoHeightParams implements _GetBlockAtTopoHeightParams {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_GetBlockAtTopoHeightParamsCopyWith<_$_GetBlockAtTopoHeightParams>
-      get copyWith => __$$_GetBlockAtTopoHeightParamsCopyWithImpl<
-          _$_GetBlockAtTopoHeightParams>(this, _$identity);
+  _$$GetBlockAtTopoHeightParamsImplCopyWith<_$GetBlockAtTopoHeightParamsImpl>
+      get copyWith => __$$GetBlockAtTopoHeightParamsImplCopyWithImpl<
+          _$GetBlockAtTopoHeightParamsImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_GetBlockAtTopoHeightParamsToJson(
+    return _$$GetBlockAtTopoHeightParamsImplToJson(
       this,
     );
   }
@@ -181,10 +183,10 @@ abstract class _GetBlockAtTopoHeightParams
   const factory _GetBlockAtTopoHeightParams(
           {@JsonKey(name: 'topoheight') required final int topoHeight,
           @JsonKey(name: 'include_txs') final bool? includeTxs}) =
-      _$_GetBlockAtTopoHeightParams;
+      _$GetBlockAtTopoHeightParamsImpl;
 
   factory _GetBlockAtTopoHeightParams.fromJson(Map<String, dynamic> json) =
-      _$_GetBlockAtTopoHeightParams.fromJson;
+      _$GetBlockAtTopoHeightParamsImpl.fromJson;
 
   @override
 
@@ -198,6 +200,6 @@ abstract class _GetBlockAtTopoHeightParams
   bool? get includeTxs;
   @override
   @JsonKey(ignore: true)
-  _$$_GetBlockAtTopoHeightParamsCopyWith<_$_GetBlockAtTopoHeightParams>
+  _$$GetBlockAtTopoHeightParamsImplCopyWith<_$GetBlockAtTopoHeightParamsImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

@@ -61,6 +61,9 @@ class Block with _$Block {
     @JsonKey(name: 'txs_hashes') required List<String> txsHashes,
 
     /// @nodoc
+    @JsonKey(name: 'version') required int version,
+
+    /// @nodoc
     // @JsonKey(name: 'data') dynamic data,
   }) = _Block;
 

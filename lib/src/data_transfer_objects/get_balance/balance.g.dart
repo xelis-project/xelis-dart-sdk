@@ -8,12 +8,13 @@ part of 'balance.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Balance _$$_BalanceFromJson(Map<String, dynamic> json) => _$_Balance(
+_$BalanceImpl _$$BalanceImplFromJson(Map<String, dynamic> json) =>
+    _$BalanceImpl(
       balance: json['balance'] as int,
       previousTopoHeight: json['previous_topoheight'] as int?,
     );
 
-Map<String, dynamic> _$$_BalanceToJson(_$_Balance instance) =>
+Map<String, dynamic> _$$BalanceImplToJson(_$BalanceImpl instance) =>
     <String, dynamic>{
       'balance': instance.balance,
       'previous_topoheight': instance.previousTopoHeight,

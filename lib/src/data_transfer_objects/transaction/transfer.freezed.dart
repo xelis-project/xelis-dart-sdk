@@ -94,10 +94,12 @@ class _$TransferCopyWithImpl<$Res, $Val extends Transfer>
 }
 
 /// @nodoc
-abstract class _$$_TransferCopyWith<$Res> implements $TransferCopyWith<$Res> {
-  factory _$$_TransferCopyWith(
-          _$_Transfer value, $Res Function(_$_Transfer) then) =
-      __$$_TransferCopyWithImpl<$Res>;
+abstract class _$$TransferImplCopyWith<$Res>
+    implements $TransferCopyWith<$Res> {
+  factory _$$TransferImplCopyWith(
+          _$TransferImpl value, $Res Function(_$TransferImpl) then) =
+      __$$TransferImplCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call(
@@ -108,11 +110,11 @@ abstract class _$$_TransferCopyWith<$Res> implements $TransferCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_TransferCopyWithImpl<$Res>
-    extends _$TransferCopyWithImpl<$Res, _$_Transfer>
-    implements _$$_TransferCopyWith<$Res> {
-  __$$_TransferCopyWithImpl(
-      _$_Transfer _value, $Res Function(_$_Transfer) _then)
+class __$$TransferImplCopyWithImpl<$Res>
+    extends _$TransferCopyWithImpl<$Res, _$TransferImpl>
+    implements _$$TransferImplCopyWith<$Res> {
+  __$$TransferImplCopyWithImpl(
+      _$TransferImpl _value, $Res Function(_$TransferImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -123,7 +125,7 @@ class __$$_TransferCopyWithImpl<$Res>
     Object? extraData = freezed,
     Object? to = null,
   }) {
-    return _then(_$_Transfer(
+    return _then(_$TransferImpl(
       amount: null == amount
           ? _value.amount
           : amount // ignore: cast_nullable_to_non_nullable
@@ -146,15 +148,15 @@ class __$$_TransferCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Transfer implements _Transfer {
-  const _$_Transfer(
+class _$TransferImpl implements _Transfer {
+  const _$TransferImpl(
       {@JsonKey(name: 'amount') required this.amount,
       @JsonKey(name: 'asset') required this.asset,
       @JsonKey(name: 'extra_data') required this.extraData,
       @JsonKey(name: 'to') required this.to});
 
-  factory _$_Transfer.fromJson(Map<String, dynamic> json) =>
-      _$$_TransferFromJson(json);
+  factory _$TransferImpl.fromJson(Map<String, dynamic> json) =>
+      _$$TransferImplFromJson(json);
 
   /// @nodoc
   @override
@@ -185,7 +187,7 @@ class _$_Transfer implements _Transfer {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Transfer &&
+            other is _$TransferImpl &&
             (identical(other.amount, amount) || other.amount == amount) &&
             (identical(other.asset, asset) || other.asset == asset) &&
             const DeepCollectionEquality().equals(other.extraData, extraData) &&
@@ -200,12 +202,12 @@ class _$_Transfer implements _Transfer {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_TransferCopyWith<_$_Transfer> get copyWith =>
-      __$$_TransferCopyWithImpl<_$_Transfer>(this, _$identity);
+  _$$TransferImplCopyWith<_$TransferImpl> get copyWith =>
+      __$$TransferImplCopyWithImpl<_$TransferImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_TransferToJson(
+    return _$$TransferImplToJson(
       this,
     );
   }
@@ -216,15 +218,17 @@ abstract class _Transfer implements Transfer {
       {@JsonKey(name: 'amount') required final int amount,
       @JsonKey(name: 'asset') required final String asset,
       @JsonKey(name: 'extra_data') required final dynamic extraData,
-      @JsonKey(name: 'to') required final String to}) = _$_Transfer;
+      @JsonKey(name: 'to') required final String to}) = _$TransferImpl;
 
-  factory _Transfer.fromJson(Map<String, dynamic> json) = _$_Transfer.fromJson;
+  factory _Transfer.fromJson(Map<String, dynamic> json) =
+      _$TransferImpl.fromJson;
 
   @override
 
   /// @nodoc
   @JsonKey(name: 'amount')
   int get amount;
+
   @override
 
   /// @nodoc
@@ -235,13 +239,15 @@ abstract class _Transfer implements Transfer {
   /// @nodoc
   @JsonKey(name: 'extra_data')
   dynamic get extraData;
+
   @override
 
   /// @nodoc
   @JsonKey(name: 'to')
   String get to;
+
   @override
   @JsonKey(ignore: true)
-  _$$_TransferCopyWith<_$_Transfer> get copyWith =>
+  _$$TransferImplCopyWith<_$TransferImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

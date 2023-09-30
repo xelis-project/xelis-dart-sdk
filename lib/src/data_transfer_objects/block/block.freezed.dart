@@ -85,7 +85,12 @@ mixin _$Block {
   @JsonKey(name: 'txs_hashes')
   List<String> get txsHashes => throw _privateConstructorUsedError;
 
+  /// @nodoc
+  @JsonKey(name: 'version')
+  int get version => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   $BlockCopyWith<Block> get copyWith => throw _privateConstructorUsedError;
 }
@@ -111,7 +116,8 @@ abstract class $BlockCopyWith<$Res> {
       @JsonKey(name: 'topoheight') int? topoHeight,
       @JsonKey(name: 'total_size_in_bytes') int totalSizeInBytes,
       @JsonKey(name: 'total_fees') int? totalFees,
-      @JsonKey(name: 'txs_hashes') List<String> txsHashes});
+      @JsonKey(name: 'txs_hashes') List<String> txsHashes,
+      @JsonKey(name: 'version') int version});
 }
 
 /// @nodoc
@@ -143,6 +149,7 @@ class _$BlockCopyWithImpl<$Res, $Val extends Block>
     Object? totalSizeInBytes = null,
     Object? totalFees = freezed,
     Object? txsHashes = null,
+    Object? version = null,
   }) {
     return _then(_value.copyWith(
       blockType: null == blockType
@@ -209,14 +216,20 @@ class _$BlockCopyWithImpl<$Res, $Val extends Block>
           ? _value.txsHashes
           : txsHashes // ignore: cast_nullable_to_non_nullable
               as List<String>,
+      version: null == version
+          ? _value.version
+          : version // ignore: cast_nullable_to_non_nullable
+              as int,
     ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$_BlockCopyWith<$Res> implements $BlockCopyWith<$Res> {
-  factory _$$_BlockCopyWith(_$_Block value, $Res Function(_$_Block) then) =
-      __$$_BlockCopyWithImpl<$Res>;
+abstract class _$$BlockImplCopyWith<$Res> implements $BlockCopyWith<$Res> {
+  factory _$$BlockImplCopyWith(
+          _$BlockImpl value, $Res Function(_$BlockImpl) then) =
+      __$$BlockImplCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call(
@@ -235,13 +248,16 @@ abstract class _$$_BlockCopyWith<$Res> implements $BlockCopyWith<$Res> {
       @JsonKey(name: 'topoheight') int? topoHeight,
       @JsonKey(name: 'total_size_in_bytes') int totalSizeInBytes,
       @JsonKey(name: 'total_fees') int? totalFees,
-      @JsonKey(name: 'txs_hashes') List<String> txsHashes});
+      @JsonKey(name: 'txs_hashes') List<String> txsHashes,
+      @JsonKey(name: 'version') int version});
 }
 
 /// @nodoc
-class __$$_BlockCopyWithImpl<$Res> extends _$BlockCopyWithImpl<$Res, _$_Block>
-    implements _$$_BlockCopyWith<$Res> {
-  __$$_BlockCopyWithImpl(_$_Block _value, $Res Function(_$_Block) _then)
+class __$$BlockImplCopyWithImpl<$Res>
+    extends _$BlockCopyWithImpl<$Res, _$BlockImpl>
+    implements _$$BlockImplCopyWith<$Res> {
+  __$$BlockImplCopyWithImpl(
+      _$BlockImpl _value, $Res Function(_$BlockImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -263,8 +279,9 @@ class __$$_BlockCopyWithImpl<$Res> extends _$BlockCopyWithImpl<$Res, _$_Block>
     Object? totalSizeInBytes = null,
     Object? totalFees = freezed,
     Object? txsHashes = null,
+    Object? version = null,
   }) {
-    return _then(_$_Block(
+    return _then(_$BlockImpl(
       blockType: null == blockType
           ? _value.blockType
           : blockType // ignore: cast_nullable_to_non_nullable
@@ -329,14 +346,18 @@ class __$$_BlockCopyWithImpl<$Res> extends _$BlockCopyWithImpl<$Res, _$_Block>
           ? _value._txsHashes
           : txsHashes // ignore: cast_nullable_to_non_nullable
               as List<String>,
+      version: null == version
+          ? _value.version
+          : version // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$_Block implements _Block {
-  const _$_Block(
+class _$BlockImpl implements _Block {
+  const _$BlockImpl(
       {@JsonKey(name: 'block_type') required this.blockType,
       @JsonKey(name: 'cumulative_difficulty')
       required this.cumulativeDifficulty,
@@ -353,12 +374,13 @@ class _$_Block implements _Block {
       @JsonKey(name: 'topoheight') this.topoHeight,
       @JsonKey(name: 'total_size_in_bytes') required this.totalSizeInBytes,
       @JsonKey(name: 'total_fees') this.totalFees,
-      @JsonKey(name: 'txs_hashes') required final List<String> txsHashes})
+      @JsonKey(name: 'txs_hashes') required final List<String> txsHashes,
+      @JsonKey(name: 'version') required this.version})
       : _tips = tips,
         _txsHashes = txsHashes;
 
-  factory _$_Block.fromJson(Map<String, dynamic> json) =>
-      _$$_BlockFromJson(json);
+  factory _$BlockImpl.fromJson(Map<String, dynamic> json) =>
+      _$$BlockImplFromJson(json);
 
   /// @nodoc
   @override
@@ -455,16 +477,21 @@ class _$_Block implements _Block {
     return EqualUnmodifiableListView(_txsHashes);
   }
 
+  /// @nodoc
+  @override
+  @JsonKey(name: 'version')
+  final int version;
+
   @override
   String toString() {
-    return 'Block(blockType: $blockType, cumulativeDifficulty: $cumulativeDifficulty, difficulty: $difficulty, extraNonce: $extraNonce, hash: $hash, height: $height, miner: $miner, nonce: $nonce, reward: $reward, supply: $supply, timestamp: $timestamp, tips: $tips, topoHeight: $topoHeight, totalSizeInBytes: $totalSizeInBytes, totalFees: $totalFees, txsHashes: $txsHashes)';
+    return 'Block(blockType: $blockType, cumulativeDifficulty: $cumulativeDifficulty, difficulty: $difficulty, extraNonce: $extraNonce, hash: $hash, height: $height, miner: $miner, nonce: $nonce, reward: $reward, supply: $supply, timestamp: $timestamp, tips: $tips, topoHeight: $topoHeight, totalSizeInBytes: $totalSizeInBytes, totalFees: $totalFees, txsHashes: $txsHashes, version: $version)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Block &&
+            other is _$BlockImpl &&
             (identical(other.blockType, blockType) ||
                 other.blockType == blockType) &&
             (identical(other.cumulativeDifficulty, cumulativeDifficulty) ||
@@ -489,7 +516,8 @@ class _$_Block implements _Block {
             (identical(other.totalFees, totalFees) ||
                 other.totalFees == totalFees) &&
             const DeepCollectionEquality()
-                .equals(other._txsHashes, _txsHashes));
+                .equals(other._txsHashes, _txsHashes) &&
+            (identical(other.version, version) || other.version == version));
   }
 
   @JsonKey(ignore: true)
@@ -511,17 +539,18 @@ class _$_Block implements _Block {
       topoHeight,
       totalSizeInBytes,
       totalFees,
-      const DeepCollectionEquality().hash(_txsHashes));
+      const DeepCollectionEquality().hash(_txsHashes),
+      version);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_BlockCopyWith<_$_Block> get copyWith =>
-      __$$_BlockCopyWithImpl<_$_Block>(this, _$identity);
+  _$$BlockImplCopyWith<_$BlockImpl> get copyWith =>
+      __$$BlockImplCopyWithImpl<_$BlockImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_BlockToJson(
+    return _$$BlockImplToJson(
       this,
     );
   }
@@ -545,10 +574,10 @@ abstract class _Block implements Block {
       @JsonKey(name: 'topoheight') final int? topoHeight,
       @JsonKey(name: 'total_size_in_bytes') required final int totalSizeInBytes,
       @JsonKey(name: 'total_fees') final int? totalFees,
-      @JsonKey(name: 'txs_hashes')
-      required final List<String> txsHashes}) = _$_Block;
+      @JsonKey(name: 'txs_hashes') required final List<String> txsHashes,
+      @JsonKey(name: 'version') required final int version}) = _$BlockImpl;
 
-  factory _Block.fromJson(Map<String, dynamic> json) = _$_Block.fromJson;
+  factory _Block.fromJson(Map<String, dynamic> json) = _$BlockImpl.fromJson;
 
   @override
 
@@ -626,13 +655,21 @@ abstract class _Block implements Block {
   /// @nodoc
   @JsonKey(name: 'total_fees')
   int? get totalFees;
+
   @override
 
   /// @nodoc
   @JsonKey(name: 'txs_hashes')
   List<String> get txsHashes;
+
+  @override
+
+  /// @nodoc
+  @JsonKey(name: 'version')
+  int get version;
+
   @override
   @JsonKey(ignore: true)
-  _$$_BlockCopyWith<_$_Block> get copyWith =>
+  _$$BlockImplCopyWith<_$BlockImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

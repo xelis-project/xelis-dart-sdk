@@ -8,12 +8,13 @@ part of 'get_nonce_params.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_GetNonceParams _$$_GetNonceParamsFromJson(Map<String, dynamic> json) =>
-    _$_GetNonceParams(
+_$GetNonceParamsImpl _$$GetNonceParamsImplFromJson(Map<String, dynamic> json) =>
+    _$GetNonceParamsImpl(
       address: json['address'] as String,
     );
 
-Map<String, dynamic> _$$_GetNonceParamsToJson(_$_GetNonceParams instance) =>
+Map<String, dynamic> _$$GetNonceParamsImplToJson(
+        _$GetNonceParamsImpl instance) =>
     <String, dynamic>{
       'address': instance.address,
     };

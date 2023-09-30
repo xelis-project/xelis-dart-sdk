@@ -76,11 +76,12 @@ class _$GetLastBalanceParamsCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_GetLastBalanceParamsCopyWith<$Res>
+abstract class _$$GetLastBalanceParamsImplCopyWith<$Res>
     implements $GetLastBalanceParamsCopyWith<$Res> {
-  factory _$$_GetLastBalanceParamsCopyWith(_$_GetLastBalanceParams value,
-          $Res Function(_$_GetLastBalanceParams) then) =
-      __$$_GetLastBalanceParamsCopyWithImpl<$Res>;
+  factory _$$GetLastBalanceParamsImplCopyWith(_$GetLastBalanceParamsImpl value,
+          $Res Function(_$GetLastBalanceParamsImpl) then) =
+      __$$GetLastBalanceParamsImplCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call(
@@ -89,11 +90,11 @@ abstract class _$$_GetLastBalanceParamsCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_GetLastBalanceParamsCopyWithImpl<$Res>
-    extends _$GetLastBalanceParamsCopyWithImpl<$Res, _$_GetLastBalanceParams>
-    implements _$$_GetLastBalanceParamsCopyWith<$Res> {
-  __$$_GetLastBalanceParamsCopyWithImpl(_$_GetLastBalanceParams _value,
-      $Res Function(_$_GetLastBalanceParams) _then)
+class __$$GetLastBalanceParamsImplCopyWithImpl<$Res>
+    extends _$GetLastBalanceParamsCopyWithImpl<$Res, _$GetLastBalanceParamsImpl>
+    implements _$$GetLastBalanceParamsImplCopyWith<$Res> {
+  __$$GetLastBalanceParamsImplCopyWithImpl(_$GetLastBalanceParamsImpl _value,
+      $Res Function(_$GetLastBalanceParamsImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -102,7 +103,7 @@ class __$$_GetLastBalanceParamsCopyWithImpl<$Res>
     Object? address = null,
     Object? asset = null,
   }) {
-    return _then(_$_GetLastBalanceParams(
+    return _then(_$GetLastBalanceParamsImpl(
       address: null == address
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
@@ -117,13 +118,13 @@ class __$$_GetLastBalanceParamsCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_GetLastBalanceParams implements _GetLastBalanceParams {
-  const _$_GetLastBalanceParams(
+class _$GetLastBalanceParamsImpl implements _GetLastBalanceParams {
+  const _$GetLastBalanceParamsImpl(
       {@JsonKey(name: 'address') required this.address,
       @JsonKey(name: 'asset') required this.asset});
 
-  factory _$_GetLastBalanceParams.fromJson(Map<String, dynamic> json) =>
-      _$$_GetLastBalanceParamsFromJson(json);
+  factory _$GetLastBalanceParamsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$GetLastBalanceParamsImplFromJson(json);
 
   /// @nodoc
   @override
@@ -144,7 +145,7 @@ class _$_GetLastBalanceParams implements _GetLastBalanceParams {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_GetLastBalanceParams &&
+            other is _$GetLastBalanceParamsImpl &&
             (identical(other.address, address) || other.address == address) &&
             (identical(other.asset, asset) || other.asset == asset));
   }
@@ -156,13 +157,14 @@ class _$_GetLastBalanceParams implements _GetLastBalanceParams {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_GetLastBalanceParamsCopyWith<_$_GetLastBalanceParams> get copyWith =>
-      __$$_GetLastBalanceParamsCopyWithImpl<_$_GetLastBalanceParams>(
-          this, _$identity);
+  _$$GetLastBalanceParamsImplCopyWith<_$GetLastBalanceParamsImpl>
+      get copyWith =>
+          __$$GetLastBalanceParamsImplCopyWithImpl<_$GetLastBalanceParamsImpl>(
+              this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_GetLastBalanceParamsToJson(
+    return _$$GetLastBalanceParamsImplToJson(
       this,
     );
   }
@@ -172,23 +174,25 @@ abstract class _GetLastBalanceParams implements GetLastBalanceParams {
   const factory _GetLastBalanceParams(
           {@JsonKey(name: 'address') required final String address,
           @JsonKey(name: 'asset') required final String asset}) =
-      _$_GetLastBalanceParams;
+      _$GetLastBalanceParamsImpl;
 
   factory _GetLastBalanceParams.fromJson(Map<String, dynamic> json) =
-      _$_GetLastBalanceParams.fromJson;
+      _$GetLastBalanceParamsImpl.fromJson;
 
   @override
 
   /// @nodoc
   @JsonKey(name: 'address')
   String get address;
+
   @override
 
   /// @nodoc
   @JsonKey(name: 'asset')
   String get asset;
+
   @override
   @JsonKey(ignore: true)
-  _$$_GetLastBalanceParamsCopyWith<_$_GetLastBalanceParams> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GetLastBalanceParamsImplCopyWith<_$GetLastBalanceParamsImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

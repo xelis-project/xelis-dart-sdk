@@ -8,7 +8,7 @@ part of 'block.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Block _$$_BlockFromJson(Map<String, dynamic> json) => _$_Block(
+_$BlockImpl _$$BlockImplFromJson(Map<String, dynamic> json) => _$BlockImpl(
       blockType: json['block_type'] as String,
       cumulativeDifficulty: json['cumulative_difficulty'] as int,
       difficulty: json['difficulty'] as int,
@@ -27,9 +27,11 @@ _$_Block _$$_BlockFromJson(Map<String, dynamic> json) => _$_Block(
       txsHashes: (json['txs_hashes'] as List<dynamic>)
           .map((e) => e as String)
           .toList(),
+      version: json['version'] as int,
     );
 
-Map<String, dynamic> _$$_BlockToJson(_$_Block instance) => <String, dynamic>{
+Map<String, dynamic> _$$BlockImplToJson(_$BlockImpl instance) =>
+    <String, dynamic>{
       'block_type': instance.blockType,
       'cumulative_difficulty': instance.cumulativeDifficulty,
       'difficulty': instance.difficulty,
@@ -46,4 +48,5 @@ Map<String, dynamic> _$$_BlockToJson(_$_Block instance) => <String, dynamic>{
       'total_size_in_bytes': instance.totalSizeInBytes,
       'total_fees': instance.totalFees,
       'txs_hashes': instance.txsHashes,
+      'version': instance.version,
     };

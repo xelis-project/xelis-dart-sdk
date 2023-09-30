@@ -115,11 +115,12 @@ class _$P2pStatusResultCopyWithImpl<$Res, $Val extends P2pStatusResult>
 }
 
 /// @nodoc
-abstract class _$$_P2pStatusResultCopyWith<$Res>
+abstract class _$$P2pStatusResultImplCopyWith<$Res>
     implements $P2pStatusResultCopyWith<$Res> {
-  factory _$$_P2pStatusResultCopyWith(
-          _$_P2pStatusResult value, $Res Function(_$_P2pStatusResult) then) =
-      __$$_P2pStatusResultCopyWithImpl<$Res>;
+  factory _$$P2pStatusResultImplCopyWith(_$P2pStatusResultImpl value,
+          $Res Function(_$P2pStatusResultImpl) then) =
+      __$$P2pStatusResultImplCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call(
@@ -132,11 +133,11 @@ abstract class _$$_P2pStatusResultCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_P2pStatusResultCopyWithImpl<$Res>
-    extends _$P2pStatusResultCopyWithImpl<$Res, _$_P2pStatusResult>
-    implements _$$_P2pStatusResultCopyWith<$Res> {
-  __$$_P2pStatusResultCopyWithImpl(
-      _$_P2pStatusResult _value, $Res Function(_$_P2pStatusResult) _then)
+class __$$P2pStatusResultImplCopyWithImpl<$Res>
+    extends _$P2pStatusResultCopyWithImpl<$Res, _$P2pStatusResultImpl>
+    implements _$$P2pStatusResultImplCopyWith<$Res> {
+  __$$P2pStatusResultImplCopyWithImpl(
+      _$P2pStatusResultImpl _value, $Res Function(_$P2pStatusResultImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -149,7 +150,7 @@ class __$$_P2pStatusResultCopyWithImpl<$Res>
     Object? peerId = null,
     Object? tag = freezed,
   }) {
-    return _then(_$_P2pStatusResult(
+    return _then(_$P2pStatusResultImpl(
       bestTopoHeight: null == bestTopoHeight
           ? _value.bestTopoHeight
           : bestTopoHeight // ignore: cast_nullable_to_non_nullable
@@ -180,8 +181,8 @@ class __$$_P2pStatusResultCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_P2pStatusResult implements _P2pStatusResult {
-  const _$_P2pStatusResult(
+class _$P2pStatusResultImpl implements _P2pStatusResult {
+  const _$P2pStatusResultImpl(
       {@JsonKey(name: 'best_topoheight') required this.bestTopoHeight,
       @JsonKey(name: 'max_peers') required this.maxPeers,
       @JsonKey(name: 'our_topoheight') required this.ourTopoHeight,
@@ -189,8 +190,8 @@ class _$_P2pStatusResult implements _P2pStatusResult {
       @JsonKey(name: 'peer_id') required this.peerId,
       @JsonKey(name: 'tag') this.tag});
 
-  factory _$_P2pStatusResult.fromJson(Map<String, dynamic> json) =>
-      _$$_P2pStatusResultFromJson(json);
+  factory _$P2pStatusResultImpl.fromJson(Map<String, dynamic> json) =>
+      _$$P2pStatusResultImplFromJson(json);
 
   /// @nodoc
   @override
@@ -231,7 +232,7 @@ class _$_P2pStatusResult implements _P2pStatusResult {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_P2pStatusResult &&
+            other is _$P2pStatusResultImpl &&
             (identical(other.bestTopoHeight, bestTopoHeight) ||
                 other.bestTopoHeight == bestTopoHeight) &&
             (identical(other.maxPeers, maxPeers) ||
@@ -252,12 +253,13 @@ class _$_P2pStatusResult implements _P2pStatusResult {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_P2pStatusResultCopyWith<_$_P2pStatusResult> get copyWith =>
-      __$$_P2pStatusResultCopyWithImpl<_$_P2pStatusResult>(this, _$identity);
+  _$$P2pStatusResultImplCopyWith<_$P2pStatusResultImpl> get copyWith =>
+      __$$P2pStatusResultImplCopyWithImpl<_$P2pStatusResultImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_P2pStatusResultToJson(
+    return _$$P2pStatusResultImplToJson(
       this,
     );
   }
@@ -270,10 +272,10 @@ abstract class _P2pStatusResult implements P2pStatusResult {
       @JsonKey(name: 'our_topoheight') required final int ourTopoHeight,
       @JsonKey(name: 'peer_count') required final int peerCount,
       @JsonKey(name: 'peer_id') required final int peerId,
-      @JsonKey(name: 'tag') final String? tag}) = _$_P2pStatusResult;
+      @JsonKey(name: 'tag') final String? tag}) = _$P2pStatusResultImpl;
 
   factory _P2pStatusResult.fromJson(Map<String, dynamic> json) =
-      _$_P2pStatusResult.fromJson;
+      _$P2pStatusResultImpl.fromJson;
 
   @override
 
@@ -300,13 +302,15 @@ abstract class _P2pStatusResult implements P2pStatusResult {
   /// @nodoc
   @JsonKey(name: 'peer_id')
   int get peerId;
+
   @override
 
   /// @nodoc
   @JsonKey(name: 'tag')
   String? get tag;
+
   @override
   @JsonKey(ignore: true)
-  _$$_P2pStatusResultCopyWith<_$_P2pStatusResult> get copyWith =>
+  _$$P2pStatusResultImplCopyWith<_$P2pStatusResultImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

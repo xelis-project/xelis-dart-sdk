@@ -8,15 +8,15 @@ part of 'get_topoheight_range_params.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_GetTopoHeightRangeParams _$$_GetTopoHeightRangeParamsFromJson(
+_$GetTopoHeightRangeParamsImpl _$$GetTopoHeightRangeParamsImplFromJson(
         Map<String, dynamic> json) =>
-    _$_GetTopoHeightRangeParams(
+    _$GetTopoHeightRangeParamsImpl(
       startTopoHeight: json['start_topoheight'] as int?,
       endTopoHeight: json['end_topoheight'] as int?,
     );
 
-Map<String, dynamic> _$$_GetTopoHeightRangeParamsToJson(
-    _$_GetTopoHeightRangeParams instance) {
+Map<String, dynamic> _$$GetTopoHeightRangeParamsImplToJson(
+    _$GetTopoHeightRangeParamsImpl instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {

@@ -122,11 +122,12 @@ class _$TransactionTypeCopyWithImpl<$Res, $Val extends TransactionType>
 }
 
 /// @nodoc
-abstract class _$$_TransactionTypeCopyWith<$Res>
+abstract class _$$TransactionTypeImplCopyWith<$Res>
     implements $TransactionTypeCopyWith<$Res> {
-  factory _$$_TransactionTypeCopyWith(
-          _$_TransactionType value, $Res Function(_$_TransactionType) then) =
-      __$$_TransactionTypeCopyWithImpl<$Res>;
+  factory _$$TransactionTypeImplCopyWith(_$TransactionTypeImpl value,
+          $Res Function(_$TransactionTypeImpl) then) =
+      __$$TransactionTypeImplCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call(
@@ -142,11 +143,11 @@ abstract class _$$_TransactionTypeCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_TransactionTypeCopyWithImpl<$Res>
-    extends _$TransactionTypeCopyWithImpl<$Res, _$_TransactionType>
-    implements _$$_TransactionTypeCopyWith<$Res> {
-  __$$_TransactionTypeCopyWithImpl(
-      _$_TransactionType _value, $Res Function(_$_TransactionType) _then)
+class __$$TransactionTypeImplCopyWithImpl<$Res>
+    extends _$TransactionTypeCopyWithImpl<$Res, _$TransactionTypeImpl>
+    implements _$$TransactionTypeImplCopyWith<$Res> {
+  __$$TransactionTypeImplCopyWithImpl(
+      _$TransactionTypeImpl _value, $Res Function(_$TransactionTypeImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -157,7 +158,7 @@ class __$$_TransactionTypeCopyWithImpl<$Res>
     Object? callContract = freezed,
     Object? deployContract = freezed,
   }) {
-    return _then(_$_TransactionType(
+    return _then(_$TransactionTypeImpl(
       transfers: freezed == transfers
           ? _value._transfers
           : transfers // ignore: cast_nullable_to_non_nullable
@@ -181,16 +182,16 @@ class __$$_TransactionTypeCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$_TransactionType implements _TransactionType {
-  const _$_TransactionType(
+class _$TransactionTypeImpl implements _TransactionType {
+  const _$TransactionTypeImpl(
       {@JsonKey(name: 'transfers') final List<Transfer>? transfers,
       @JsonKey(name: 'burn') this.burn,
       @JsonKey(name: 'call_contract') this.callContract,
       @JsonKey(name: 'deploy_contract') this.deployContract})
       : _transfers = transfers;
 
-  factory _$_TransactionType.fromJson(Map<String, dynamic> json) =>
-      _$$_TransactionTypeFromJson(json);
+  factory _$TransactionTypeImpl.fromJson(Map<String, dynamic> json) =>
+      _$$TransactionTypeImplFromJson(json);
 
   /// @nodoc
   final List<Transfer>? _transfers;
@@ -230,7 +231,7 @@ class _$_TransactionType implements _TransactionType {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_TransactionType &&
+            other is _$TransactionTypeImpl &&
             const DeepCollectionEquality()
                 .equals(other._transfers, _transfers) &&
             (identical(other.burn, burn) || other.burn == burn) &&
@@ -252,12 +253,13 @@ class _$_TransactionType implements _TransactionType {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_TransactionTypeCopyWith<_$_TransactionType> get copyWith =>
-      __$$_TransactionTypeCopyWithImpl<_$_TransactionType>(this, _$identity);
+  _$$TransactionTypeImplCopyWith<_$TransactionTypeImpl> get copyWith =>
+      __$$TransactionTypeImplCopyWithImpl<_$TransactionTypeImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_TransactionTypeToJson(
+    return _$$TransactionTypeImplToJson(
       this,
     );
   }
@@ -269,10 +271,10 @@ abstract class _TransactionType implements TransactionType {
           @JsonKey(name: 'burn') final Burn? burn,
           @JsonKey(name: 'call_contract') final CallContract? callContract,
           @JsonKey(name: 'deploy_contract') final String? deployContract}) =
-      _$_TransactionType;
+      _$TransactionTypeImpl;
 
   factory _TransactionType.fromJson(Map<String, dynamic> json) =
-      _$_TransactionType.fromJson;
+      _$TransactionTypeImpl.fromJson;
 
   @override
 
@@ -289,13 +291,15 @@ abstract class _TransactionType implements TransactionType {
   /// @nodoc
   @JsonKey(name: 'call_contract')
   CallContract? get callContract;
+
   @override
 
   /// @nodoc
   @JsonKey(name: 'deploy_contract')
   String? get deployContract;
+
   @override
   @JsonKey(ignore: true)
-  _$$_TransactionTypeCopyWith<_$_TransactionType> get copyWith =>
+  _$$TransactionTypeImplCopyWith<_$TransactionTypeImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

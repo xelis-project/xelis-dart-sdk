@@ -2,79 +2,87 @@
 
 /// The RPC methods that can be called on the daemon.
 enum DaemonMethod {
-  /// Get the version of the daemon.
+  /// Retrieve current daemon version.
   getVersion('get_version'),
 
-  /// Get the info of the network.
+  /// Retrieve current info from chain.
   getInfo('get_info'),
 
-  /// Get the height of the network.
+  /// Retrieve current height of the chain.
   getHeight('get_height'),
 
-  /// Get the topoheight of the network.
+  /// Retrieve current topological height of the chain.
   getTopoHeight('get_topoheight'),
 
-  /// Get the stableheight of the network.
+  /// Retrieve current stable height of the chain.
   getStableHeight('get_stableheight'),
 
-  /// Get the block template.
+  /// Retrieve the block template for PoW work.
   getBlockTemplate('get_block_template'),
 
-  /// Get the block at topoheight.
+  /// Retrieve a block at a specific topo height.
   getBlockAtTopoHeight('get_block_at_topoheight'),
 
-  /// Get the blocks at height.
+  /// Retrieve all blocks at a specific height.
   getBlocksAtHeight('get_blocks_at_height'),
 
-  /// Get the block by hash.
+  /// Retrieve a block by its hash.
   getBlockByHash('get_block_by_hash'),
 
-  /// Get the top block.
+  /// Retrieve the highest block based on the topological height.
   getTopBlock('get_top_block'),
 
-  /// Get the nonce of a given address.
+  /// Retrieve the nonce for a given address.
   getNonce('get_nonce'),
 
-  /// Get the last balance of a given address.
+  /// Get up-to-date asset's balance for a specific address.
   getLastBalance('get_last_balance'),
 
-  /// Get the balance at topoheight of a given address.
+  /// Get asset's balance from address at exact topoheight.
   getBalanceAtTopoHeight('get_balance_at_topoheight'),
 
-  /// Get the assets.
+  /// Get all assets available on network with its registered topoheight.
   getAssets('get_assets'),
 
-  /// Count the transactions.
+  /// Counts the number of assets saved on disk.
+  countAssets('count_assets'),
+
+  /// Counts the number of transactions saved on disk.
   countTransactions('count_transactions'),
 
-  /// Get the tips.
+  /// Retrieve Tips (highest blocks from blockDAG) from chain.
   getTips('get_tips'),
 
-  /// Get the p2p status.
+  /// Retrieve some information about P2p.
   p2pStatus('p2p_status'),
 
-  /// Get the dag order.
+  /// Retrieve the whole DAG order (all blocks hash ordered by topoheight).
+  /// If no parameters are set,
+  /// it will retrieve the last 64 blocks hash ordered descending.
+  /// Maximum of 64 blocks hash only per request.
   getDagOrder('get_dag_order'),
 
-  /// Submit a transaction.
+  /// Submit a transaction in hex format to daemon mempool.
   submitTransaction('submit_transaction'),
 
-  /// Get a transaction.
+  /// Fetch a transaction on disk and in mempool by its hash from daemon.
   getTransaction('get_transaction'),
 
-  /// Get transactions.
+  /// Fetch transactions by theirs hashes
+  /// from database and mempool of daemon and keep the same order in response.
   getTransactions('get_transactions'),
 
-  /// Get transactions in the mempool.
+  /// Fetch all transactions presents in the mempool.
   getMempool('get_mempool'),
 
-  /// Submit a block.
+  /// Submit a block to the daemon.
   submitBlock('submit_block'),
 
-  /// Get blocks range by topoheight.
+  /// Retrieve a specific range of blocks (up to 20 maximum)
+  /// based on topoheight.
   getBlocksRangeByTopoHeight('get_blocks_range_by_topoheight'),
 
-  /// Get blocks range by height.
+  /// Retrieve a specific range of blocks (up to 20 maximum) based on height.
   getBlocksRangeByHeight('get_blocks_range_by_height'),
 
   // EVENTS METHODS
@@ -99,6 +107,9 @@ enum DaemonEvent {
 
   /// Block ordered event.
   blockOrdered('BlockOrdered'),
+
+  /// Stable height changed event.
+  stableHeightChanged('StableHeightChanged'),
 
   /// Transaction added in mempool event.
   transactionAddedInMempool('TransactionAddedInMempool'),
@@ -126,6 +137,8 @@ DaemonEvent toDaemonEvent(String value) {
       return DaemonEvent.newBlock;
     case 'BlockOrdered':
       return DaemonEvent.blockOrdered;
+    case 'StableHeightChanged':
+      return DaemonEvent.stableHeightChanged;
     case 'TransactionAddedInMempool':
       return DaemonEvent.transactionAddedInMempool;
     case 'TransactionExecuted':

@@ -85,11 +85,12 @@ class _$CallContractCopyWithImpl<$Res, $Val extends CallContract>
 }
 
 /// @nodoc
-abstract class _$$_CallContractCopyWith<$Res>
+abstract class _$$CallContractImplCopyWith<$Res>
     implements $CallContractCopyWith<$Res> {
-  factory _$$_CallContractCopyWith(
-          _$_CallContract value, $Res Function(_$_CallContract) then) =
-      __$$_CallContractCopyWithImpl<$Res>;
+  factory _$$CallContractImplCopyWith(
+          _$CallContractImpl value, $Res Function(_$CallContractImpl) then) =
+      __$$CallContractImplCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call(
@@ -99,11 +100,11 @@ abstract class _$$_CallContractCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_CallContractCopyWithImpl<$Res>
-    extends _$CallContractCopyWithImpl<$Res, _$_CallContract>
-    implements _$$_CallContractCopyWith<$Res> {
-  __$$_CallContractCopyWithImpl(
-      _$_CallContract _value, $Res Function(_$_CallContract) _then)
+class __$$CallContractImplCopyWithImpl<$Res>
+    extends _$CallContractCopyWithImpl<$Res, _$CallContractImpl>
+    implements _$$CallContractImplCopyWith<$Res> {
+  __$$CallContractImplCopyWithImpl(
+      _$CallContractImpl _value, $Res Function(_$CallContractImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -113,7 +114,7 @@ class __$$_CallContractCopyWithImpl<$Res>
     Object? assets = null,
     Object? params = null,
   }) {
-    return _then(_$_CallContract(
+    return _then(_$CallContractImpl(
       contractHash: null == contractHash
           ? _value.contractHash
           : contractHash // ignore: cast_nullable_to_non_nullable
@@ -132,16 +133,16 @@ class __$$_CallContractCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_CallContract implements _CallContract {
-  const _$_CallContract(
+class _$CallContractImpl implements _CallContract {
+  const _$CallContractImpl(
       {@JsonKey(name: 'contract') required this.contractHash,
       @JsonKey(name: 'assets') required final Map<String, int> assets,
       @JsonKey(name: 'params') required final Map<String, dynamic> params})
       : _assets = assets,
         _params = params;
 
-  factory _$_CallContract.fromJson(Map<String, dynamic> json) =>
-      _$$_CallContractFromJson(json);
+  factory _$CallContractImpl.fromJson(Map<String, dynamic> json) =>
+      _$$CallContractImplFromJson(json);
 
   /// @nodoc
   @override
@@ -181,7 +182,7 @@ class _$_CallContract implements _CallContract {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_CallContract &&
+            other is _$CallContractImpl &&
             (identical(other.contractHash, contractHash) ||
                 other.contractHash == contractHash) &&
             const DeepCollectionEquality().equals(other._assets, _assets) &&
@@ -199,12 +200,12 @@ class _$_CallContract implements _CallContract {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_CallContractCopyWith<_$_CallContract> get copyWith =>
-      __$$_CallContractCopyWithImpl<_$_CallContract>(this, _$identity);
+  _$$CallContractImplCopyWith<_$CallContractImpl> get copyWith =>
+      __$$CallContractImplCopyWithImpl<_$CallContractImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CallContractToJson(
+    return _$$CallContractImplToJson(
       this,
     );
   }
@@ -215,10 +216,10 @@ abstract class _CallContract implements CallContract {
       {@JsonKey(name: 'contract') required final String contractHash,
       @JsonKey(name: 'assets') required final Map<String, int> assets,
       @JsonKey(name: 'params')
-      required final Map<String, dynamic> params}) = _$_CallContract;
+      required final Map<String, dynamic> params}) = _$CallContractImpl;
 
   factory _CallContract.fromJson(Map<String, dynamic> json) =
-      _$_CallContract.fromJson;
+      _$CallContractImpl.fromJson;
 
   @override
 
@@ -230,13 +231,15 @@ abstract class _CallContract implements CallContract {
   /// @nodoc
   @JsonKey(name: 'assets')
   Map<String, int> get assets;
+
   @override
 
   /// @nodoc
   @JsonKey(name: 'params')
   Map<String, dynamic> get params;
+
   @override
   @JsonKey(ignore: true)
-  _$$_CallContractCopyWith<_$_CallContract> get copyWith =>
+  _$$CallContractImplCopyWith<_$CallContractImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

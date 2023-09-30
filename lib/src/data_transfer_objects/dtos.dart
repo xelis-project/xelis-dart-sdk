@@ -1,5 +1,5 @@
 export 'block/block.dart';
-export 'block_order_event/block_order_event.dart';
+export 'block_ordered_event/block_ordered_event.dart';
 export 'get_balance/balance.dart';
 export 'get_balance_at_topoheight/get_balance_at_topoheight_params.dart';
 export 'get_block_at_topoheight/get_block_at_topoheight_params.dart';
@@ -18,6 +18,7 @@ export 'get_top_block/get_top_block_params.dart';
 export 'get_transaction/get_transaction_params.dart';
 export 'get_transactions/get_transactions_params.dart';
 export 'p2p_status/p2p_status_result.dart';
+export 'stable_height_changed_event/stable_height_changed_event.dart';
 export 'submit_block/submit_block_params.dart';
 export 'submit_transaction/submit_transaction_params.dart';
 export 'transaction/burn.dart';

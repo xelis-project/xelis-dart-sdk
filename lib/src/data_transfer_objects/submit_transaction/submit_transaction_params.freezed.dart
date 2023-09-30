@@ -66,23 +66,26 @@ class _$SubmitTransactionParamsCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_SubmitTransactionParamsCopyWith<$Res>
+abstract class _$$SubmitTransactionParamsImplCopyWith<$Res>
     implements $SubmitTransactionParamsCopyWith<$Res> {
-  factory _$$_SubmitTransactionParamsCopyWith(_$_SubmitTransactionParams value,
-          $Res Function(_$_SubmitTransactionParams) then) =
-      __$$_SubmitTransactionParamsCopyWithImpl<$Res>;
+  factory _$$SubmitTransactionParamsImplCopyWith(
+          _$SubmitTransactionParamsImpl value,
+          $Res Function(_$SubmitTransactionParamsImpl) then) =
+      __$$SubmitTransactionParamsImplCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call({@JsonKey(name: 'data') String hex});
 }
 
 /// @nodoc
-class __$$_SubmitTransactionParamsCopyWithImpl<$Res>
+class __$$SubmitTransactionParamsImplCopyWithImpl<$Res>
     extends _$SubmitTransactionParamsCopyWithImpl<$Res,
-        _$_SubmitTransactionParams>
-    implements _$$_SubmitTransactionParamsCopyWith<$Res> {
-  __$$_SubmitTransactionParamsCopyWithImpl(_$_SubmitTransactionParams _value,
-      $Res Function(_$_SubmitTransactionParams) _then)
+        _$SubmitTransactionParamsImpl>
+    implements _$$SubmitTransactionParamsImplCopyWith<$Res> {
+  __$$SubmitTransactionParamsImplCopyWithImpl(
+      _$SubmitTransactionParamsImpl _value,
+      $Res Function(_$SubmitTransactionParamsImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -90,7 +93,7 @@ class __$$_SubmitTransactionParamsCopyWithImpl<$Res>
   $Res call({
     Object? hex = null,
   }) {
-    return _then(_$_SubmitTransactionParams(
+    return _then(_$SubmitTransactionParamsImpl(
       hex: null == hex
           ? _value.hex
           : hex // ignore: cast_nullable_to_non_nullable
@@ -101,11 +104,12 @@ class __$$_SubmitTransactionParamsCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_SubmitTransactionParams implements _SubmitTransactionParams {
-  const _$_SubmitTransactionParams({@JsonKey(name: 'data') required this.hex});
+class _$SubmitTransactionParamsImpl implements _SubmitTransactionParams {
+  const _$SubmitTransactionParamsImpl(
+      {@JsonKey(name: 'data') required this.hex});
 
-  factory _$_SubmitTransactionParams.fromJson(Map<String, dynamic> json) =>
-      _$$_SubmitTransactionParamsFromJson(json);
+  factory _$SubmitTransactionParamsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SubmitTransactionParamsImplFromJson(json);
 
   /// @nodoc
   @override
@@ -121,7 +125,7 @@ class _$_SubmitTransactionParams implements _SubmitTransactionParams {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SubmitTransactionParams &&
+            other is _$SubmitTransactionParamsImpl &&
             (identical(other.hex, hex) || other.hex == hex));
   }
 
@@ -132,14 +136,13 @@ class _$_SubmitTransactionParams implements _SubmitTransactionParams {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SubmitTransactionParamsCopyWith<_$_SubmitTransactionParams>
-      get copyWith =>
-          __$$_SubmitTransactionParamsCopyWithImpl<_$_SubmitTransactionParams>(
-              this, _$identity);
+  _$$SubmitTransactionParamsImplCopyWith<_$SubmitTransactionParamsImpl>
+      get copyWith => __$$SubmitTransactionParamsImplCopyWithImpl<
+          _$SubmitTransactionParamsImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_SubmitTransactionParamsToJson(
+    return _$$SubmitTransactionParamsImplToJson(
       this,
     );
   }
@@ -148,10 +151,10 @@ class _$_SubmitTransactionParams implements _SubmitTransactionParams {
 abstract class _SubmitTransactionParams implements SubmitTransactionParams {
   const factory _SubmitTransactionParams(
           {@JsonKey(name: 'data') required final String hex}) =
-      _$_SubmitTransactionParams;
+      _$SubmitTransactionParamsImpl;
 
   factory _SubmitTransactionParams.fromJson(Map<String, dynamic> json) =
-      _$_SubmitTransactionParams.fromJson;
+      _$SubmitTransactionParamsImpl.fromJson;
 
   @override
 
@@ -160,6 +163,6 @@ abstract class _SubmitTransactionParams implements SubmitTransactionParams {
   String get hex;
   @override
   @JsonKey(ignore: true)
-  _$$_SubmitTransactionParamsCopyWith<_$_SubmitTransactionParams>
+  _$$SubmitTransactionParamsImplCopyWith<_$SubmitTransactionParamsImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

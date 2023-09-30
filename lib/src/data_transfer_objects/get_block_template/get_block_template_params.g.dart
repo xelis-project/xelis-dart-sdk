@@ -8,14 +8,14 @@ part of 'get_block_template_params.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_GetBlockTemplateParams _$$_GetBlockTemplateParamsFromJson(
+_$GetBlockTemplateParamsImpl _$$GetBlockTemplateParamsImplFromJson(
         Map<String, dynamic> json) =>
-    _$_GetBlockTemplateParams(
+    _$GetBlockTemplateParamsImpl(
       address: json['address'] as String,
     );
 
-Map<String, dynamic> _$$_GetBlockTemplateParamsToJson(
-        _$_GetBlockTemplateParams instance) =>
+Map<String, dynamic> _$$GetBlockTemplateParamsImplToJson(
+        _$GetBlockTemplateParamsImpl instance) =>
     <String, dynamic>{
       'address': instance.address,
     };

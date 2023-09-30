@@ -8,8 +8,9 @@ part of 'transaction_type.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_TransactionType _$$_TransactionTypeFromJson(Map<String, dynamic> json) =>
-    _$_TransactionType(
+_$TransactionTypeImpl _$$TransactionTypeImplFromJson(
+        Map<String, dynamic> json) =>
+    _$TransactionTypeImpl(
       transfers: (json['transfers'] as List<dynamic>?)
           ?.map((e) => Transfer.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -23,7 +24,8 @@ _$_TransactionType _$$_TransactionTypeFromJson(Map<String, dynamic> json) =>
       deployContract: json['deploy_contract'] as String?,
     );
 
-Map<String, dynamic> _$$_TransactionTypeToJson(_$_TransactionType instance) {
+Map<String, dynamic> _$$TransactionTypeImplToJson(
+    _$TransactionTypeImpl instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {

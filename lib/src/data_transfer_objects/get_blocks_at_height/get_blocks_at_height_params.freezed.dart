@@ -77,11 +77,13 @@ class _$GetBlocksAtHeightParamsCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_GetBlocksAtHeightParamsCopyWith<$Res>
+abstract class _$$GetBlocksAtHeightParamsImplCopyWith<$Res>
     implements $GetBlocksAtHeightParamsCopyWith<$Res> {
-  factory _$$_GetBlocksAtHeightParamsCopyWith(_$_GetBlocksAtHeightParams value,
-          $Res Function(_$_GetBlocksAtHeightParams) then) =
-      __$$_GetBlocksAtHeightParamsCopyWithImpl<$Res>;
+  factory _$$GetBlocksAtHeightParamsImplCopyWith(
+          _$GetBlocksAtHeightParamsImpl value,
+          $Res Function(_$GetBlocksAtHeightParamsImpl) then) =
+      __$$GetBlocksAtHeightParamsImplCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call(
@@ -90,12 +92,13 @@ abstract class _$$_GetBlocksAtHeightParamsCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_GetBlocksAtHeightParamsCopyWithImpl<$Res>
+class __$$GetBlocksAtHeightParamsImplCopyWithImpl<$Res>
     extends _$GetBlocksAtHeightParamsCopyWithImpl<$Res,
-        _$_GetBlocksAtHeightParams>
-    implements _$$_GetBlocksAtHeightParamsCopyWith<$Res> {
-  __$$_GetBlocksAtHeightParamsCopyWithImpl(_$_GetBlocksAtHeightParams _value,
-      $Res Function(_$_GetBlocksAtHeightParams) _then)
+        _$GetBlocksAtHeightParamsImpl>
+    implements _$$GetBlocksAtHeightParamsImplCopyWith<$Res> {
+  __$$GetBlocksAtHeightParamsImplCopyWithImpl(
+      _$GetBlocksAtHeightParamsImpl _value,
+      $Res Function(_$GetBlocksAtHeightParamsImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -104,7 +107,7 @@ class __$$_GetBlocksAtHeightParamsCopyWithImpl<$Res>
     Object? height = null,
     Object? includeTxs = freezed,
   }) {
-    return _then(_$_GetBlocksAtHeightParams(
+    return _then(_$GetBlocksAtHeightParamsImpl(
       height: null == height
           ? _value.height
           : height // ignore: cast_nullable_to_non_nullable
@@ -120,13 +123,13 @@ class __$$_GetBlocksAtHeightParamsCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$_GetBlocksAtHeightParams implements _GetBlocksAtHeightParams {
-  const _$_GetBlocksAtHeightParams(
+class _$GetBlocksAtHeightParamsImpl implements _GetBlocksAtHeightParams {
+  const _$GetBlocksAtHeightParamsImpl(
       {@JsonKey(name: 'height') required this.height,
       @JsonKey(name: 'include_txs') this.includeTxs});
 
-  factory _$_GetBlocksAtHeightParams.fromJson(Map<String, dynamic> json) =>
-      _$$_GetBlocksAtHeightParamsFromJson(json);
+  factory _$GetBlocksAtHeightParamsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$GetBlocksAtHeightParamsImplFromJson(json);
 
   /// @nodoc
   @override
@@ -147,7 +150,7 @@ class _$_GetBlocksAtHeightParams implements _GetBlocksAtHeightParams {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_GetBlocksAtHeightParams &&
+            other is _$GetBlocksAtHeightParamsImpl &&
             (identical(other.height, height) || other.height == height) &&
             (identical(other.includeTxs, includeTxs) ||
                 other.includeTxs == includeTxs));
@@ -160,14 +163,13 @@ class _$_GetBlocksAtHeightParams implements _GetBlocksAtHeightParams {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_GetBlocksAtHeightParamsCopyWith<_$_GetBlocksAtHeightParams>
-      get copyWith =>
-          __$$_GetBlocksAtHeightParamsCopyWithImpl<_$_GetBlocksAtHeightParams>(
-              this, _$identity);
+  _$$GetBlocksAtHeightParamsImplCopyWith<_$GetBlocksAtHeightParamsImpl>
+      get copyWith => __$$GetBlocksAtHeightParamsImplCopyWithImpl<
+          _$GetBlocksAtHeightParamsImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_GetBlocksAtHeightParamsToJson(
+    return _$$GetBlocksAtHeightParamsImplToJson(
       this,
     );
   }
@@ -177,10 +179,10 @@ abstract class _GetBlocksAtHeightParams implements GetBlocksAtHeightParams {
   const factory _GetBlocksAtHeightParams(
           {@JsonKey(name: 'height') required final int height,
           @JsonKey(name: 'include_txs') final bool? includeTxs}) =
-      _$_GetBlocksAtHeightParams;
+      _$GetBlocksAtHeightParamsImpl;
 
   factory _GetBlocksAtHeightParams.fromJson(Map<String, dynamic> json) =
-      _$_GetBlocksAtHeightParams.fromJson;
+      _$GetBlocksAtHeightParamsImpl.fromJson;
 
   @override
 
@@ -194,6 +196,6 @@ abstract class _GetBlocksAtHeightParams implements GetBlocksAtHeightParams {
   bool? get includeTxs;
   @override
   @JsonKey(ignore: true)
-  _$$_GetBlocksAtHeightParamsCopyWith<_$_GetBlocksAtHeightParams>
+  _$$GetBlocksAtHeightParamsImplCopyWith<_$GetBlocksAtHeightParamsImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

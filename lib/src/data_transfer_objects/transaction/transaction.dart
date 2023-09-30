@@ -29,6 +29,12 @@ class Transaction with _$Transaction {
     @JsonKey(name: 'fee') required int fee,
 
     /// @nodoc
+    @JsonKey(name: 'version') required int version,
+
+    /// @nodoc
+    @JsonKey(name: 'in_mempool') required bool inMempool,
+
+    /// @nodoc
     @JsonKey(name: 'nonce') required int nonce,
 
     /// @nodoc

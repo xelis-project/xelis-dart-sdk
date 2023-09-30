@@ -76,11 +76,12 @@ class _$GetBlockByHashParamsCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_GetBlockByHashParamsCopyWith<$Res>
+abstract class _$$GetBlockByHashParamsImplCopyWith<$Res>
     implements $GetBlockByHashParamsCopyWith<$Res> {
-  factory _$$_GetBlockByHashParamsCopyWith(_$_GetBlockByHashParams value,
-          $Res Function(_$_GetBlockByHashParams) then) =
-      __$$_GetBlockByHashParamsCopyWithImpl<$Res>;
+  factory _$$GetBlockByHashParamsImplCopyWith(_$GetBlockByHashParamsImpl value,
+          $Res Function(_$GetBlockByHashParamsImpl) then) =
+      __$$GetBlockByHashParamsImplCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call(
@@ -89,11 +90,11 @@ abstract class _$$_GetBlockByHashParamsCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_GetBlockByHashParamsCopyWithImpl<$Res>
-    extends _$GetBlockByHashParamsCopyWithImpl<$Res, _$_GetBlockByHashParams>
-    implements _$$_GetBlockByHashParamsCopyWith<$Res> {
-  __$$_GetBlockByHashParamsCopyWithImpl(_$_GetBlockByHashParams _value,
-      $Res Function(_$_GetBlockByHashParams) _then)
+class __$$GetBlockByHashParamsImplCopyWithImpl<$Res>
+    extends _$GetBlockByHashParamsCopyWithImpl<$Res, _$GetBlockByHashParamsImpl>
+    implements _$$GetBlockByHashParamsImplCopyWith<$Res> {
+  __$$GetBlockByHashParamsImplCopyWithImpl(_$GetBlockByHashParamsImpl _value,
+      $Res Function(_$GetBlockByHashParamsImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -102,7 +103,7 @@ class __$$_GetBlockByHashParamsCopyWithImpl<$Res>
     Object? hash = null,
     Object? includeTxs = freezed,
   }) {
-    return _then(_$_GetBlockByHashParams(
+    return _then(_$GetBlockByHashParamsImpl(
       hash: null == hash
           ? _value.hash
           : hash // ignore: cast_nullable_to_non_nullable
@@ -118,13 +119,13 @@ class __$$_GetBlockByHashParamsCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$_GetBlockByHashParams implements _GetBlockByHashParams {
-  const _$_GetBlockByHashParams(
+class _$GetBlockByHashParamsImpl implements _GetBlockByHashParams {
+  const _$GetBlockByHashParamsImpl(
       {@JsonKey(name: 'hash') required this.hash,
       @JsonKey(name: 'include_txs') this.includeTxs});
 
-  factory _$_GetBlockByHashParams.fromJson(Map<String, dynamic> json) =>
-      _$$_GetBlockByHashParamsFromJson(json);
+  factory _$GetBlockByHashParamsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$GetBlockByHashParamsImplFromJson(json);
 
   /// @nodoc
   @override
@@ -145,7 +146,7 @@ class _$_GetBlockByHashParams implements _GetBlockByHashParams {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_GetBlockByHashParams &&
+            other is _$GetBlockByHashParamsImpl &&
             (identical(other.hash, hash) || other.hash == hash) &&
             (identical(other.includeTxs, includeTxs) ||
                 other.includeTxs == includeTxs));
@@ -158,13 +159,14 @@ class _$_GetBlockByHashParams implements _GetBlockByHashParams {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_GetBlockByHashParamsCopyWith<_$_GetBlockByHashParams> get copyWith =>
-      __$$_GetBlockByHashParamsCopyWithImpl<_$_GetBlockByHashParams>(
-          this, _$identity);
+  _$$GetBlockByHashParamsImplCopyWith<_$GetBlockByHashParamsImpl>
+      get copyWith =>
+          __$$GetBlockByHashParamsImplCopyWithImpl<_$GetBlockByHashParamsImpl>(
+              this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_GetBlockByHashParamsToJson(
+    return _$$GetBlockByHashParamsImplToJson(
       this,
     );
   }
@@ -174,23 +176,25 @@ abstract class _GetBlockByHashParams implements GetBlockByHashParams {
   const factory _GetBlockByHashParams(
           {@JsonKey(name: 'hash') required final String hash,
           @JsonKey(name: 'include_txs') final bool? includeTxs}) =
-      _$_GetBlockByHashParams;
+      _$GetBlockByHashParamsImpl;
 
   factory _GetBlockByHashParams.fromJson(Map<String, dynamic> json) =
-      _$_GetBlockByHashParams.fromJson;
+      _$GetBlockByHashParamsImpl.fromJson;
 
   @override
 
   /// @nodoc
   @JsonKey(name: 'hash')
   String get hash;
+
   @override
 
   /// @nodoc
   @JsonKey(name: 'include_txs')
   bool? get includeTxs;
+
   @override
   @JsonKey(ignore: true)
-  _$$_GetBlockByHashParamsCopyWith<_$_GetBlockByHashParams> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GetBlockByHashParamsImplCopyWith<_$GetBlockByHashParamsImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:xelis_dart_sdk/src/data_transfer_objects/stable_height_changed_event/stable_height_changed_event.dart';
 import 'package:xelis_dart_sdk/xelis_dart_sdk.dart';
 
 /// Extension of [DaemonClientRepository] that provides methods to
@@ -23,7 +24,8 @@ extension DaemonEventsExtension on DaemonClientRepository {
   /// Registers a callback for BlockOrdered event.
   ///
   /// Note: It is called when a block is ordered.
-  void onBlockOrdered(void Function(BlockOrderEvent blockOrderEvent) callback) {
+  void onBlockOrdered(
+      void Function(BlockOrderedEvent blockOrderEvent) callback) {
     if (eventCallbacks[DaemonEvent.blockOrdered]!.isEmpty) {
       unawaited(subscribeTo(DaemonEvent.blockOrdered));
     }
@@ -33,6 +35,24 @@ extension DaemonEventsExtension on DaemonClientRepository {
   /// Unsubscribes from BlockOrdered event.
   void unsubscribeFromBlockOrdered() {
     unawaited(unsubscribeFrom(DaemonEvent.blockOrdered));
+  }
+
+  /// Registers a callback for StableHeightChanged event.
+  ///
+  /// Note: It is called when stable height has changed
+  /// (different than the previous one).
+  void onStableHeightChanged(
+    void Function(StableHeightChangedEvent stableHeightChangedEvent) callback,
+  ) {
+    if (eventCallbacks[DaemonEvent.stableHeightChanged]!.isEmpty) {
+      unawaited(subscribeTo(DaemonEvent.stableHeightChanged));
+    }
+    registerCallback(DaemonEvent.stableHeightChanged, callback);
+  }
+
+  /// Unsubscribes from StableHeightChanged event.
+  void unsubscribeFromStableHeightChanged() {
+    unawaited(unsubscribeFrom(DaemonEvent.stableHeightChanged));
   }
 
   /// Registers a callback for TransactionAddedInMempool event.

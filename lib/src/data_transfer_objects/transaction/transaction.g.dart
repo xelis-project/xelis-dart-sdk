@@ -8,20 +8,22 @@ part of 'transaction.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Transaction _$$_TransactionFromJson(Map<String, dynamic> json) =>
-    _$_Transaction(
+_$TransactionImpl _$$TransactionImplFromJson(Map<String, dynamic> json) =>
+    _$TransactionImpl(
       blocks:
           (json['blocks'] as List<dynamic>?)?.map((e) => e as String).toList(),
       executedInBlock: json['executed_in_block'] as String?,
       hash: json['hash'] as String,
       data: TransactionType.fromJson(json['data'] as Map<String, dynamic>),
       fee: json['fee'] as int,
+      version: json['version'] as int,
+      inMempool: json['in_mempool'] as bool,
       nonce: json['nonce'] as int,
       owner: json['owner'] as String,
       signature: json['signature'] as String,
     );
 
-Map<String, dynamic> _$$_TransactionToJson(_$_Transaction instance) {
+Map<String, dynamic> _$$TransactionImplToJson(_$TransactionImpl instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
@@ -35,6 +37,8 @@ Map<String, dynamic> _$$_TransactionToJson(_$_Transaction instance) {
   val['hash'] = instance.hash;
   val['data'] = instance.data;
   val['fee'] = instance.fee;
+  val['version'] = instance.version;
+  val['in_mempool'] = instance.inMempool;
   val['nonce'] = instance.nonce;
   val['owner'] = instance.owner;
   val['signature'] = instance.signature;

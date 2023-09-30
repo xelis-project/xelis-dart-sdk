@@ -86,11 +86,12 @@ class _$GetLastBalanceResultCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_GetLastBalanceResultCopyWith<$Res>
+abstract class _$$GetLastBalanceResultImplCopyWith<$Res>
     implements $GetLastBalanceResultCopyWith<$Res> {
-  factory _$$_GetLastBalanceResultCopyWith(_$_GetLastBalanceResult value,
-          $Res Function(_$_GetLastBalanceResult) then) =
-      __$$_GetLastBalanceResultCopyWithImpl<$Res>;
+  factory _$$GetLastBalanceResultImplCopyWith(_$GetLastBalanceResultImpl value,
+          $Res Function(_$GetLastBalanceResultImpl) then) =
+      __$$GetLastBalanceResultImplCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call(
@@ -102,11 +103,11 @@ abstract class _$$_GetLastBalanceResultCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_GetLastBalanceResultCopyWithImpl<$Res>
-    extends _$GetLastBalanceResultCopyWithImpl<$Res, _$_GetLastBalanceResult>
-    implements _$$_GetLastBalanceResultCopyWith<$Res> {
-  __$$_GetLastBalanceResultCopyWithImpl(_$_GetLastBalanceResult _value,
-      $Res Function(_$_GetLastBalanceResult) _then)
+class __$$GetLastBalanceResultImplCopyWithImpl<$Res>
+    extends _$GetLastBalanceResultCopyWithImpl<$Res, _$GetLastBalanceResultImpl>
+    implements _$$GetLastBalanceResultImplCopyWith<$Res> {
+  __$$GetLastBalanceResultImplCopyWithImpl(_$GetLastBalanceResultImpl _value,
+      $Res Function(_$GetLastBalanceResultImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -115,7 +116,7 @@ class __$$_GetLastBalanceResultCopyWithImpl<$Res>
     Object? balance = null,
     Object? topoHeight = null,
   }) {
-    return _then(_$_GetLastBalanceResult(
+    return _then(_$GetLastBalanceResultImpl(
       balance: null == balance
           ? _value.balance
           : balance // ignore: cast_nullable_to_non_nullable
@@ -130,13 +131,13 @@ class __$$_GetLastBalanceResultCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_GetLastBalanceResult implements _GetLastBalanceResult {
-  const _$_GetLastBalanceResult(
+class _$GetLastBalanceResultImpl implements _GetLastBalanceResult {
+  const _$GetLastBalanceResultImpl(
       {@JsonKey(name: 'balance') required this.balance,
       @JsonKey(name: 'topoheight') required this.topoHeight});
 
-  factory _$_GetLastBalanceResult.fromJson(Map<String, dynamic> json) =>
-      _$$_GetLastBalanceResultFromJson(json);
+  factory _$GetLastBalanceResultImpl.fromJson(Map<String, dynamic> json) =>
+      _$$GetLastBalanceResultImplFromJson(json);
 
   /// @nodoc
   @override
@@ -157,7 +158,7 @@ class _$_GetLastBalanceResult implements _GetLastBalanceResult {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_GetLastBalanceResult &&
+            other is _$GetLastBalanceResultImpl &&
             (identical(other.balance, balance) || other.balance == balance) &&
             (identical(other.topoHeight, topoHeight) ||
                 other.topoHeight == topoHeight));
@@ -170,13 +171,14 @@ class _$_GetLastBalanceResult implements _GetLastBalanceResult {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_GetLastBalanceResultCopyWith<_$_GetLastBalanceResult> get copyWith =>
-      __$$_GetLastBalanceResultCopyWithImpl<_$_GetLastBalanceResult>(
-          this, _$identity);
+  _$$GetLastBalanceResultImplCopyWith<_$GetLastBalanceResultImpl>
+      get copyWith =>
+          __$$GetLastBalanceResultImplCopyWithImpl<_$GetLastBalanceResultImpl>(
+              this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_GetLastBalanceResultToJson(
+    return _$$GetLastBalanceResultImplToJson(
       this,
     );
   }
@@ -186,23 +188,25 @@ abstract class _GetLastBalanceResult implements GetLastBalanceResult {
   const factory _GetLastBalanceResult(
           {@JsonKey(name: 'balance') required final Balance balance,
           @JsonKey(name: 'topoheight') required final int topoHeight}) =
-      _$_GetLastBalanceResult;
+      _$GetLastBalanceResultImpl;
 
   factory _GetLastBalanceResult.fromJson(Map<String, dynamic> json) =
-      _$_GetLastBalanceResult.fromJson;
+      _$GetLastBalanceResultImpl.fromJson;
 
   @override
 
   /// @nodoc
   @JsonKey(name: 'balance')
   Balance get balance;
+
   @override
 
   /// @nodoc
   @JsonKey(name: 'topoheight')
   int get topoHeight;
+
   @override
   @JsonKey(ignore: true)
-  _$$_GetLastBalanceResultCopyWith<_$_GetLastBalanceResult> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GetLastBalanceResultImplCopyWith<_$GetLastBalanceResultImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

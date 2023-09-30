@@ -8,15 +8,15 @@ part of 'get_last_balance_result.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_GetLastBalanceResult _$$_GetLastBalanceResultFromJson(
+_$GetLastBalanceResultImpl _$$GetLastBalanceResultImplFromJson(
         Map<String, dynamic> json) =>
-    _$_GetLastBalanceResult(
+    _$GetLastBalanceResultImpl(
       balance: Balance.fromJson(json['balance'] as Map<String, dynamic>),
       topoHeight: json['topoheight'] as int,
     );
 
-Map<String, dynamic> _$$_GetLastBalanceResultToJson(
-        _$_GetLastBalanceResult instance) =>
+Map<String, dynamic> _$$GetLastBalanceResultImplToJson(
+        _$GetLastBalanceResultImpl instance) =>
     <String, dynamic>{
       'balance': instance.balance,
       'topoheight': instance.topoHeight,
