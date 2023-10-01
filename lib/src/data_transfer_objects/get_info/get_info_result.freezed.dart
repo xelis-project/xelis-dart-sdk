@@ -84,6 +84,7 @@ abstract class $GetInfoResultCopyWith<$Res> {
   factory $GetInfoResultCopyWith(
           GetInfoResult value, $Res Function(GetInfoResult) then) =
       _$GetInfoResultCopyWithImpl<$Res, GetInfoResult>;
+
   @useResult
   $Res call(
       {@JsonKey(name: 'average_block_time') int averageBlockTime,
@@ -108,6 +109,7 @@ class _$GetInfoResultCopyWithImpl<$Res, $Val extends GetInfoResult>
 
   // ignore: unused_field
   final $Val _value;
+
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -493,31 +495,37 @@ abstract class _GetInfoResult implements GetInfoResult {
   /// @nodoc
   @JsonKey(name: 'height')
   int get height;
+
   @override
 
   /// @nodoc
   @JsonKey(name: 'mempool_size')
   int get mempoolSize;
+
   @override
 
   /// @nodoc
   @JsonKey(name: 'native_supply')
   int get nativeSupply;
+
   @override
 
   /// @nodoc
   @JsonKey(name: 'network')
   Network get network;
+
   @override
 
   /// @nodoc
   @JsonKey(name: 'stableheight')
   int get stableHeight;
+
   @override
 
   /// @nodoc
   @JsonKey(name: 'top_hash')
   String get topHash;
+
   @override
 
   /// @nodoc

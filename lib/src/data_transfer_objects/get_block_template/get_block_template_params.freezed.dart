@@ -72,7 +72,6 @@ abstract class _$$GetBlockTemplateParamsImplCopyWith<$Res>
           _$GetBlockTemplateParamsImpl value,
           $Res Function(_$GetBlockTemplateParamsImpl) then) =
       __$$GetBlockTemplateParamsImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call({@JsonKey(name: 'address') String address});
@@ -161,7 +160,6 @@ abstract class _GetBlockTemplateParams implements GetBlockTemplateParams {
   /// @nodoc
   @JsonKey(name: 'address')
   String get address;
-
   @override
   @JsonKey(ignore: true)
   _$$GetBlockTemplateParamsImplCopyWith<_$GetBlockTemplateParamsImpl>

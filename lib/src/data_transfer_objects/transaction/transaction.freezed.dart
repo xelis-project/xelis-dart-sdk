@@ -170,7 +170,6 @@ abstract class _$$TransactionImplCopyWith<$Res>
   factory _$$TransactionImplCopyWith(
           _$TransactionImpl value, $Res Function(_$TransactionImpl) then) =
       __$$TransactionImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -426,43 +425,36 @@ abstract class _Transaction implements Transaction {
   /// @nodoc
   @JsonKey(name: 'data')
   TransactionType get data;
-
   @override
 
   /// @nodoc
   @JsonKey(name: 'fee')
   int get fee;
-
   @override
 
   /// @nodoc
   @JsonKey(name: 'version')
   int get version;
-
   @override
 
   /// @nodoc
   @JsonKey(name: 'in_mempool')
   bool get inMempool;
-
   @override
 
   /// @nodoc
   @JsonKey(name: 'nonce')
   int get nonce;
-
   @override
 
   /// @nodoc
   @JsonKey(name: 'owner')
   String get owner;
-
   @override
 
   /// @nodoc
   @JsonKey(name: 'signature')
   String get signature;
-
   @override
   @JsonKey(ignore: true)
   _$$TransactionImplCopyWith<_$TransactionImpl> get copyWith =>

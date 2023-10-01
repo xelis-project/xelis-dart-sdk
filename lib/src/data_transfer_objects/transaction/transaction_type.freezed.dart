@@ -127,7 +127,6 @@ abstract class _$$TransactionTypeImplCopyWith<$Res>
   factory _$$TransactionTypeImplCopyWith(_$TransactionTypeImpl value,
           $Res Function(_$TransactionTypeImpl) then) =
       __$$TransactionTypeImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -291,13 +290,11 @@ abstract class _TransactionType implements TransactionType {
   /// @nodoc
   @JsonKey(name: 'call_contract')
   CallContract? get callContract;
-
   @override
 
   /// @nodoc
   @JsonKey(name: 'deploy_contract')
   String? get deployContract;
-
   @override
   @JsonKey(ignore: true)
   _$$TransactionTypeImplCopyWith<_$TransactionTypeImpl> get copyWith =>

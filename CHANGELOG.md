@@ -1,3 +1,7 @@
+## 0.7.0
+
+- feat: getAccounts RPC method.
+
 ## 0.6.0
 
 Daemon API upgrade :

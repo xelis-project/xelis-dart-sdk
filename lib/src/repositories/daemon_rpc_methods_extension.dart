@@ -255,4 +255,18 @@ extension DaemonRpcMethodsExtension on DaemonClientRepository {
         .map((e) => Block.fromJson(e as Map<String, dynamic>))
         .toList();
   }
+
+  /// Retrieve all available accounts
+  /// (each account got at least one interaction on chain).
+  Future<GetAccountsResult> getAccounts([
+    GetAccountsParams? getAccountsParams,
+  ]) async {
+    final result = await sendRequest(
+      DaemonMethod.getAccounts,
+      getAccountsParams?.toJson() ?? const GetAccountsParams().toJson(),
+    );
+    return GetAccountsResult(
+      publicKeys: (result as List).map((e) => e as String).toList(),
+    );
+  }
 }

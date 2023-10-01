@@ -91,7 +91,6 @@ abstract class _$$GetLastBalanceResultImplCopyWith<$Res>
   factory _$$GetLastBalanceResultImplCopyWith(_$GetLastBalanceResultImpl value,
           $Res Function(_$GetLastBalanceResultImpl) then) =
       __$$GetLastBalanceResultImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -198,13 +197,11 @@ abstract class _GetLastBalanceResult implements GetLastBalanceResult {
   /// @nodoc
   @JsonKey(name: 'balance')
   Balance get balance;
-
   @override
 
   /// @nodoc
   @JsonKey(name: 'topoheight')
   int get topoHeight;
-
   @override
   @JsonKey(ignore: true)
   _$$GetLastBalanceResultImplCopyWith<_$GetLastBalanceResultImpl>

@@ -85,6 +85,10 @@ enum DaemonMethod {
   /// Retrieve a specific range of blocks (up to 20 maximum) based on height.
   getBlocksRangeByHeight('get_blocks_range_by_height'),
 
+  /// Retrieve all available accounts
+  /// (each account got at least one interaction on chain).
+  getAccounts('get_accounts'),
+
   // EVENTS METHODS
 
   /// Subscribe to an event.
