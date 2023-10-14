@@ -21,7 +21,6 @@ SubmitTransactionParams _$SubmitTransactionParamsFromJson(
 
 /// @nodoc
 mixin _$SubmitTransactionParams {
-  /// @nodoc
   @JsonKey(name: 'data')
   String get hex => throw _privateConstructorUsedError;
 
@@ -72,7 +71,6 @@ abstract class _$$SubmitTransactionParamsImplCopyWith<$Res>
           _$SubmitTransactionParamsImpl value,
           $Res Function(_$SubmitTransactionParamsImpl) then) =
       __$$SubmitTransactionParamsImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call({@JsonKey(name: 'data') String hex});
@@ -111,7 +109,6 @@ class _$SubmitTransactionParamsImpl implements _SubmitTransactionParams {
   factory _$SubmitTransactionParamsImpl.fromJson(Map<String, dynamic> json) =>
       _$$SubmitTransactionParamsImplFromJson(json);
 
-  /// @nodoc
   @override
   @JsonKey(name: 'data')
   final String hex;
@@ -157,8 +154,6 @@ abstract class _SubmitTransactionParams implements SubmitTransactionParams {
       _$SubmitTransactionParamsImpl.fromJson;
 
   @override
-
-  /// @nodoc
   @JsonKey(name: 'data')
   String get hex;
   @override

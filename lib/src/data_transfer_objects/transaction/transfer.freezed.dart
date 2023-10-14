@@ -20,19 +20,12 @@ Transfer _$TransferFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Transfer {
-  /// @nodoc
   @JsonKey(name: 'amount')
   int get amount => throw _privateConstructorUsedError;
-
-  /// @nodoc
   @JsonKey(name: 'asset')
   String get asset => throw _privateConstructorUsedError;
-
-  /// @nodoc
   @JsonKey(name: 'extra_data')
   dynamic get extraData => throw _privateConstructorUsedError;
-
-  /// @nodoc
   @JsonKey(name: 'to')
   String get to => throw _privateConstructorUsedError;
 
@@ -99,7 +92,6 @@ abstract class _$$TransferImplCopyWith<$Res>
   factory _$$TransferImplCopyWith(
           _$TransferImpl value, $Res Function(_$TransferImpl) then) =
       __$$TransferImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -158,22 +150,15 @@ class _$TransferImpl implements _Transfer {
   factory _$TransferImpl.fromJson(Map<String, dynamic> json) =>
       _$$TransferImplFromJson(json);
 
-  /// @nodoc
   @override
   @JsonKey(name: 'amount')
   final int amount;
-
-  /// @nodoc
   @override
   @JsonKey(name: 'asset')
   final String asset;
-
-  /// @nodoc
   @override
   @JsonKey(name: 'extra_data')
   final dynamic extraData;
-
-  /// @nodoc
   @override
   @JsonKey(name: 'to')
   final String to;
@@ -224,28 +209,17 @@ abstract class _Transfer implements Transfer {
       _$TransferImpl.fromJson;
 
   @override
-
-  /// @nodoc
   @JsonKey(name: 'amount')
   int get amount;
-
   @override
-
-  /// @nodoc
   @JsonKey(name: 'asset')
   String get asset;
   @override
-
-  /// @nodoc
   @JsonKey(name: 'extra_data')
   dynamic get extraData;
-
   @override
-
-  /// @nodoc
   @JsonKey(name: 'to')
   String get to;
-
   @override
   @JsonKey(ignore: true)
   _$$TransferImplCopyWith<_$TransferImpl> get copyWith =>

@@ -21,11 +21,8 @@ GetBlocksAtHeightParams _$GetBlocksAtHeightParamsFromJson(
 
 /// @nodoc
 mixin _$GetBlocksAtHeightParams {
-  /// @nodoc
   @JsonKey(name: 'height')
   int get height => throw _privateConstructorUsedError;
-
-  /// @nodoc
   @JsonKey(name: 'include_txs')
   bool? get includeTxs => throw _privateConstructorUsedError;
 
@@ -83,7 +80,6 @@ abstract class _$$GetBlocksAtHeightParamsImplCopyWith<$Res>
           _$GetBlocksAtHeightParamsImpl value,
           $Res Function(_$GetBlocksAtHeightParamsImpl) then) =
       __$$GetBlocksAtHeightParamsImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -131,12 +127,9 @@ class _$GetBlocksAtHeightParamsImpl implements _GetBlocksAtHeightParams {
   factory _$GetBlocksAtHeightParamsImpl.fromJson(Map<String, dynamic> json) =>
       _$$GetBlocksAtHeightParamsImplFromJson(json);
 
-  /// @nodoc
   @override
   @JsonKey(name: 'height')
   final int height;
-
-  /// @nodoc
   @override
   @JsonKey(name: 'include_txs')
   final bool? includeTxs;
@@ -185,13 +178,9 @@ abstract class _GetBlocksAtHeightParams implements GetBlocksAtHeightParams {
       _$GetBlocksAtHeightParamsImpl.fromJson;
 
   @override
-
-  /// @nodoc
   @JsonKey(name: 'height')
   int get height;
   @override
-
-  /// @nodoc
   @JsonKey(name: 'include_txs')
   bool? get includeTxs;
   @override

@@ -1,3 +1,8 @@
+## 0.8.0
+
+- feat: getAsset RPC method.
+- feat: countAccounts RPC method.
+
 ## 0.7.0
 
 - feat: getAccounts RPC method.

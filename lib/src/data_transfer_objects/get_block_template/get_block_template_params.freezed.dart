@@ -21,7 +21,6 @@ GetBlockTemplateParams _$GetBlockTemplateParamsFromJson(
 
 /// @nodoc
 mixin _$GetBlockTemplateParams {
-  /// @nodoc
   @JsonKey(name: 'address')
   String get address => throw _privateConstructorUsedError;
 
@@ -110,7 +109,6 @@ class _$GetBlockTemplateParamsImpl implements _GetBlockTemplateParams {
   factory _$GetBlockTemplateParamsImpl.fromJson(Map<String, dynamic> json) =>
       _$$GetBlockTemplateParamsImplFromJson(json);
 
-  /// @nodoc
   @override
   @JsonKey(name: 'address')
   final String address;
@@ -156,8 +154,6 @@ abstract class _GetBlockTemplateParams implements GetBlockTemplateParams {
       _$GetBlockTemplateParamsImpl.fromJson;
 
   @override
-
-  /// @nodoc
   @JsonKey(name: 'address')
   String get address;
   @override

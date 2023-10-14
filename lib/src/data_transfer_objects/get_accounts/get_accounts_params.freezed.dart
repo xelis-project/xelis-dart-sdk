@@ -20,24 +20,16 @@ GetAccountsParams _$GetAccountsParamsFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$GetAccountsParams {
-  /// @nodoc
   @JsonKey(name: 'skip')
   int? get skip => throw _privateConstructorUsedError;
-
-  /// @nodoc
   @JsonKey(name: 'maximum')
   int? get maximum => throw _privateConstructorUsedError;
-
-  /// @nodoc
   @JsonKey(name: 'minimum_topoheight')
   int? get minTopoHeight => throw _privateConstructorUsedError;
-
-  /// @nodoc
   @JsonKey(name: 'maximum_topoheight')
   int? get maxTopoHeight => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $GetAccountsParamsCopyWith<GetAccountsParams> get copyWith =>
       throw _privateConstructorUsedError;
@@ -48,7 +40,6 @@ abstract class $GetAccountsParamsCopyWith<$Res> {
   factory $GetAccountsParamsCopyWith(
           GetAccountsParams value, $Res Function(GetAccountsParams) then) =
       _$GetAccountsParamsCopyWithImpl<$Res, GetAccountsParams>;
-
   @useResult
   $Res call(
       {@JsonKey(name: 'skip') int? skip,
@@ -64,7 +55,6 @@ class _$GetAccountsParamsCopyWithImpl<$Res, $Val extends GetAccountsParams>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -103,7 +93,6 @@ abstract class _$$GetAccountsParamsImplCopyWith<$Res>
   factory _$$GetAccountsParamsImplCopyWith(_$GetAccountsParamsImpl value,
           $Res Function(_$GetAccountsParamsImpl) then) =
       __$$GetAccountsParamsImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -162,22 +151,15 @@ class _$GetAccountsParamsImpl implements _GetAccountsParams {
   factory _$GetAccountsParamsImpl.fromJson(Map<String, dynamic> json) =>
       _$$GetAccountsParamsImplFromJson(json);
 
-  /// @nodoc
   @override
   @JsonKey(name: 'skip')
   final int? skip;
-
-  /// @nodoc
   @override
   @JsonKey(name: 'maximum')
   final int? maximum;
-
-  /// @nodoc
   @override
   @JsonKey(name: 'minimum_topoheight')
   final int? minTopoHeight;
-
-  /// @nodoc
   @override
   @JsonKey(name: 'maximum_topoheight')
   final int? maxTopoHeight;
@@ -232,29 +214,17 @@ abstract class _GetAccountsParams implements GetAccountsParams {
       _$GetAccountsParamsImpl.fromJson;
 
   @override
-
-  /// @nodoc
   @JsonKey(name: 'skip')
   int? get skip;
-
   @override
-
-  /// @nodoc
   @JsonKey(name: 'maximum')
   int? get maximum;
-
   @override
-
-  /// @nodoc
   @JsonKey(name: 'minimum_topoheight')
   int? get minTopoHeight;
-
   @override
-
-  /// @nodoc
   @JsonKey(name: 'maximum_topoheight')
   int? get maxTopoHeight;
-
   @override
   @JsonKey(ignore: true)
   _$$GetAccountsParamsImplCopyWith<_$GetAccountsParamsImpl> get copyWith =>

@@ -20,11 +20,8 @@ GetHeightRangeParams _$GetHeightRangeParamsFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$GetHeightRangeParams {
-  /// @nodoc
   @JsonKey(name: 'start_height')
   int? get startHeight => throw _privateConstructorUsedError;
-
-  /// @nodoc
   @JsonKey(name: 'end_height')
   int? get endHeight => throw _privateConstructorUsedError;
 
@@ -81,7 +78,6 @@ abstract class _$$GetHeightRangeParamsImplCopyWith<$Res>
   factory _$$GetHeightRangeParamsImplCopyWith(_$GetHeightRangeParamsImpl value,
           $Res Function(_$GetHeightRangeParamsImpl) then) =
       __$$GetHeightRangeParamsImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -127,12 +123,9 @@ class _$GetHeightRangeParamsImpl implements _GetHeightRangeParams {
   factory _$GetHeightRangeParamsImpl.fromJson(Map<String, dynamic> json) =>
       _$$GetHeightRangeParamsImplFromJson(json);
 
-  /// @nodoc
   @override
   @JsonKey(name: 'start_height')
   final int? startHeight;
-
-  /// @nodoc
   @override
   @JsonKey(name: 'end_height')
   final int? endHeight;
@@ -183,17 +176,11 @@ abstract class _GetHeightRangeParams implements GetHeightRangeParams {
       _$GetHeightRangeParamsImpl.fromJson;
 
   @override
-
-  /// @nodoc
   @JsonKey(name: 'start_height')
   int? get startHeight;
-
   @override
-
-  /// @nodoc
   @JsonKey(name: 'end_height')
   int? get endHeight;
-
   @override
   @JsonKey(ignore: true)
   _$$GetHeightRangeParamsImplCopyWith<_$GetHeightRangeParamsImpl>

@@ -20,11 +20,8 @@ Balance _$BalanceFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Balance {
-  /// @nodoc
   @JsonKey(name: 'balance')
   int get balance => throw _privateConstructorUsedError;
-
-  /// @nodoc
   @JsonKey(name: 'previous_topoheight')
   int? get previousTopoHeight => throw _privateConstructorUsedError;
 
@@ -77,7 +74,6 @@ abstract class _$$BalanceImplCopyWith<$Res> implements $BalanceCopyWith<$Res> {
   factory _$$BalanceImplCopyWith(
           _$BalanceImpl value, $Res Function(_$BalanceImpl) then) =
       __$$BalanceImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -122,12 +118,9 @@ class _$BalanceImpl implements _Balance {
   factory _$BalanceImpl.fromJson(Map<String, dynamic> json) =>
       _$$BalanceImplFromJson(json);
 
-  /// @nodoc
   @override
   @JsonKey(name: 'balance')
   final int balance;
-
-  /// @nodoc
   @override
   @JsonKey(name: 'previous_topoheight')
   final int? previousTopoHeight;
@@ -174,17 +167,11 @@ abstract class _Balance implements Balance {
   factory _Balance.fromJson(Map<String, dynamic> json) = _$BalanceImpl.fromJson;
 
   @override
-
-  /// @nodoc
   @JsonKey(name: 'balance')
   int get balance;
-
   @override
-
-  /// @nodoc
   @JsonKey(name: 'previous_topoheight')
   int? get previousTopoHeight;
-
   @override
   @JsonKey(ignore: true)
   _$$BalanceImplCopyWith<_$BalanceImpl> get copyWith =>

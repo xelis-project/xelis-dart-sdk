@@ -20,15 +20,10 @@ CallContract _$CallContractFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$CallContract {
-  /// @nodoc
   @JsonKey(name: 'contract')
   String get contractHash => throw _privateConstructorUsedError;
-
-  /// @nodoc
   @JsonKey(name: 'assets')
   Map<String, int> get assets => throw _privateConstructorUsedError;
-
-  /// @nodoc
   @JsonKey(name: 'params')
   Map<String, dynamic> get params => throw _privateConstructorUsedError;
 
@@ -90,7 +85,6 @@ abstract class _$$CallContractImplCopyWith<$Res>
   factory _$$CallContractImplCopyWith(
           _$CallContractImpl value, $Res Function(_$CallContractImpl) then) =
       __$$CallContractImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -144,15 +138,10 @@ class _$CallContractImpl implements _CallContract {
   factory _$CallContractImpl.fromJson(Map<String, dynamic> json) =>
       _$$CallContractImplFromJson(json);
 
-  /// @nodoc
   @override
   @JsonKey(name: 'contract')
   final String contractHash;
-
-  /// @nodoc
   final Map<String, int> _assets;
-
-  /// @nodoc
   @override
   @JsonKey(name: 'assets')
   Map<String, int> get assets {
@@ -161,10 +150,7 @@ class _$CallContractImpl implements _CallContract {
     return EqualUnmodifiableMapView(_assets);
   }
 
-  /// @nodoc
   final Map<String, dynamic> _params;
-
-  /// @nodoc
   @override
   @JsonKey(name: 'params')
   Map<String, dynamic> get params {
@@ -222,22 +208,14 @@ abstract class _CallContract implements CallContract {
       _$CallContractImpl.fromJson;
 
   @override
-
-  /// @nodoc
   @JsonKey(name: 'contract')
   String get contractHash;
   @override
-
-  /// @nodoc
   @JsonKey(name: 'assets')
   Map<String, int> get assets;
-
   @override
-
-  /// @nodoc
   @JsonKey(name: 'params')
   Map<String, dynamic> get params;
-
   @override
   @JsonKey(ignore: true)
   _$$CallContractImplCopyWith<_$CallContractImpl> get copyWith =>

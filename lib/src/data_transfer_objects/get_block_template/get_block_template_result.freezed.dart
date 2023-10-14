@@ -21,20 +21,14 @@ GetBlockTemplateResult _$GetBlockTemplateResultFromJson(
 
 /// @nodoc
 mixin _$GetBlockTemplateResult {
-  /// @nodoc
   @JsonKey(name: 'difficulty')
   int get difficulty => throw _privateConstructorUsedError;
-
-  /// @nodoc
   @JsonKey(name: 'height')
   int get height => throw _privateConstructorUsedError;
-
-  /// @nodoc
   @JsonKey(name: 'template')
   String get template => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $GetBlockTemplateResultCopyWith<GetBlockTemplateResult> get copyWith =>
       throw _privateConstructorUsedError;
@@ -94,7 +88,6 @@ abstract class _$$GetBlockTemplateResultImplCopyWith<$Res>
           _$GetBlockTemplateResultImpl value,
           $Res Function(_$GetBlockTemplateResultImpl) then) =
       __$$GetBlockTemplateResultImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -148,17 +141,12 @@ class _$GetBlockTemplateResultImpl implements _GetBlockTemplateResult {
   factory _$GetBlockTemplateResultImpl.fromJson(Map<String, dynamic> json) =>
       _$$GetBlockTemplateResultImplFromJson(json);
 
-  /// @nodoc
   @override
   @JsonKey(name: 'difficulty')
   final int difficulty;
-
-  /// @nodoc
   @override
   @JsonKey(name: 'height')
   final int height;
-
-  /// @nodoc
   @override
   @JsonKey(name: 'template')
   final String template;
@@ -210,23 +198,14 @@ abstract class _GetBlockTemplateResult implements GetBlockTemplateResult {
       _$GetBlockTemplateResultImpl.fromJson;
 
   @override
-
-  /// @nodoc
   @JsonKey(name: 'difficulty')
   int get difficulty;
-
   @override
-
-  /// @nodoc
   @JsonKey(name: 'height')
   int get height;
-
   @override
-
-  /// @nodoc
   @JsonKey(name: 'template')
   String get template;
-
   @override
   @JsonKey(ignore: true)
   _$$GetBlockTemplateResultImplCopyWith<_$GetBlockTemplateResultImpl>

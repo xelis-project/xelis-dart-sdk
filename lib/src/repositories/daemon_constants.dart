@@ -41,6 +41,9 @@ enum DaemonMethod {
   /// Get asset's balance from address at exact topoheight.
   getBalanceAtTopoHeight('get_balance_at_topoheight'),
 
+  /// Get registered topoheight and decimals data from a specific asset.
+  getAsset('get_asset'),
+
   /// Get all assets available on network with its registered topoheight.
   getAssets('get_assets'),
 
@@ -88,6 +91,9 @@ enum DaemonMethod {
   /// Retrieve all available accounts
   /// (each account got at least one interaction on chain).
   getAccounts('get_accounts'),
+
+  /// Counts the number of accounts saved on disk
+  countAccounts('count_accounts'),
 
   // EVENTS METHODS
 

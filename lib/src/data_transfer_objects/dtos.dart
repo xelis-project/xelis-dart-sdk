@@ -1,7 +1,10 @@
+export 'asset/asset.dart';
 export 'block/block.dart';
 export 'block_ordered_event/block_ordered_event.dart';
 export 'get_accounts/get_accounts_params.dart';
 export 'get_accounts/get_accounts_result.dart';
+export 'get_asset/get_asset_params.dart';
+export 'get_assets/get_assets_params.dart';
 export 'get_balance/balance.dart';
 export 'get_balance_at_topoheight/get_balance_at_topoheight_params.dart';
 export 'get_block_at_topoheight/get_block_at_topoheight_params.dart';

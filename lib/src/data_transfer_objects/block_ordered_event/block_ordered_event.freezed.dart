@@ -20,20 +20,14 @@ BlockOrderedEvent _$BlockOrderedEventFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$BlockOrderedEvent {
-  /// @nodoc
   @JsonKey(name: 'block_hash')
   String get blockHash => throw _privateConstructorUsedError;
-
-  /// @nodoc
   @JsonKey(name: 'block_type')
   String get blockType => throw _privateConstructorUsedError;
-
-  /// @nodoc
   @JsonKey(name: 'topoheight')
   int get topoHeight => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $BlockOrderedEventCopyWith<BlockOrderedEvent> get copyWith =>
       throw _privateConstructorUsedError;
@@ -44,7 +38,6 @@ abstract class $BlockOrderedEventCopyWith<$Res> {
   factory $BlockOrderedEventCopyWith(
           BlockOrderedEvent value, $Res Function(BlockOrderedEvent) then) =
       _$BlockOrderedEventCopyWithImpl<$Res, BlockOrderedEvent>;
-
   @useResult
   $Res call(
       {@JsonKey(name: 'block_hash') String blockHash,
@@ -59,7 +52,6 @@ class _$BlockOrderedEventCopyWithImpl<$Res, $Val extends BlockOrderedEvent>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -93,7 +85,6 @@ abstract class _$$BlockOrderedEventImplCopyWith<$Res>
   factory _$$BlockOrderedEventImplCopyWith(_$BlockOrderedEventImpl value,
           $Res Function(_$BlockOrderedEventImpl) then) =
       __$$BlockOrderedEventImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -145,17 +136,12 @@ class _$BlockOrderedEventImpl implements _BlockOrderedEvent {
   factory _$BlockOrderedEventImpl.fromJson(Map<String, dynamic> json) =>
       _$$BlockOrderedEventImplFromJson(json);
 
-  /// @nodoc
   @override
   @JsonKey(name: 'block_hash')
   final String blockHash;
-
-  /// @nodoc
   @override
   @JsonKey(name: 'block_type')
   final String blockType;
-
-  /// @nodoc
   @override
   @JsonKey(name: 'topoheight')
   final int topoHeight;
@@ -209,23 +195,14 @@ abstract class _BlockOrderedEvent implements BlockOrderedEvent {
       _$BlockOrderedEventImpl.fromJson;
 
   @override
-
-  /// @nodoc
   @JsonKey(name: 'block_hash')
   String get blockHash;
-
   @override
-
-  /// @nodoc
   @JsonKey(name: 'block_type')
   String get blockType;
-
   @override
-
-  /// @nodoc
   @JsonKey(name: 'topoheight')
   int get topoHeight;
-
   @override
   @JsonKey(ignore: true)
   _$$BlockOrderedEventImplCopyWith<_$BlockOrderedEventImpl> get copyWith =>

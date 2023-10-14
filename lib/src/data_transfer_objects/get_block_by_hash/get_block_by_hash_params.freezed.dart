@@ -20,11 +20,8 @@ GetBlockByHashParams _$GetBlockByHashParamsFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$GetBlockByHashParams {
-  /// @nodoc
   @JsonKey(name: 'hash')
   String get hash => throw _privateConstructorUsedError;
-
-  /// @nodoc
   @JsonKey(name: 'include_txs')
   bool? get includeTxs => throw _privateConstructorUsedError;
 
@@ -81,7 +78,6 @@ abstract class _$$GetBlockByHashParamsImplCopyWith<$Res>
   factory _$$GetBlockByHashParamsImplCopyWith(_$GetBlockByHashParamsImpl value,
           $Res Function(_$GetBlockByHashParamsImpl) then) =
       __$$GetBlockByHashParamsImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -127,12 +123,9 @@ class _$GetBlockByHashParamsImpl implements _GetBlockByHashParams {
   factory _$GetBlockByHashParamsImpl.fromJson(Map<String, dynamic> json) =>
       _$$GetBlockByHashParamsImplFromJson(json);
 
-  /// @nodoc
   @override
   @JsonKey(name: 'hash')
   final String hash;
-
-  /// @nodoc
   @override
   @JsonKey(name: 'include_txs')
   final bool? includeTxs;
@@ -182,17 +175,11 @@ abstract class _GetBlockByHashParams implements GetBlockByHashParams {
       _$GetBlockByHashParamsImpl.fromJson;
 
   @override
-
-  /// @nodoc
   @JsonKey(name: 'hash')
   String get hash;
-
   @override
-
-  /// @nodoc
   @JsonKey(name: 'include_txs')
   bool? get includeTxs;
-
   @override
   @JsonKey(ignore: true)
   _$$GetBlockByHashParamsImplCopyWith<_$GetBlockByHashParamsImpl>

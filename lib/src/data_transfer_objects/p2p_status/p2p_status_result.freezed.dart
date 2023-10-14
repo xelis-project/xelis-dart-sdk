@@ -20,27 +20,16 @@ P2pStatusResult _$P2pStatusResultFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$P2pStatusResult {
-  /// @nodoc
   @JsonKey(name: 'best_topoheight')
   int get bestTopoHeight => throw _privateConstructorUsedError;
-
-  /// @nodoc
   @JsonKey(name: 'max_peers')
   int get maxPeers => throw _privateConstructorUsedError;
-
-  /// @nodoc
   @JsonKey(name: 'our_topoheight')
   int get ourTopoHeight => throw _privateConstructorUsedError;
-
-  /// @nodoc
   @JsonKey(name: 'peer_count')
   int get peerCount => throw _privateConstructorUsedError;
-
-  /// @nodoc
   @JsonKey(name: 'peer_id')
   int get peerId => throw _privateConstructorUsedError;
-
-  /// @nodoc
   @JsonKey(name: 'tag')
   String? get tag => throw _privateConstructorUsedError;
 
@@ -120,7 +109,6 @@ abstract class _$$P2pStatusResultImplCopyWith<$Res>
   factory _$$P2pStatusResultImplCopyWith(_$P2pStatusResultImpl value,
           $Res Function(_$P2pStatusResultImpl) then) =
       __$$P2pStatusResultImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -193,32 +181,21 @@ class _$P2pStatusResultImpl implements _P2pStatusResult {
   factory _$P2pStatusResultImpl.fromJson(Map<String, dynamic> json) =>
       _$$P2pStatusResultImplFromJson(json);
 
-  /// @nodoc
   @override
   @JsonKey(name: 'best_topoheight')
   final int bestTopoHeight;
-
-  /// @nodoc
   @override
   @JsonKey(name: 'max_peers')
   final int maxPeers;
-
-  /// @nodoc
   @override
   @JsonKey(name: 'our_topoheight')
   final int ourTopoHeight;
-
-  /// @nodoc
   @override
   @JsonKey(name: 'peer_count')
   final int peerCount;
-
-  /// @nodoc
   @override
   @JsonKey(name: 'peer_id')
   final int peerId;
-
-  /// @nodoc
   @override
   @JsonKey(name: 'tag')
   final String? tag;
@@ -278,37 +255,23 @@ abstract class _P2pStatusResult implements P2pStatusResult {
       _$P2pStatusResultImpl.fromJson;
 
   @override
-
-  /// @nodoc
   @JsonKey(name: 'best_topoheight')
   int get bestTopoHeight;
   @override
-
-  /// @nodoc
   @JsonKey(name: 'max_peers')
   int get maxPeers;
   @override
-
-  /// @nodoc
   @JsonKey(name: 'our_topoheight')
   int get ourTopoHeight;
   @override
-
-  /// @nodoc
   @JsonKey(name: 'peer_count')
   int get peerCount;
   @override
-
-  /// @nodoc
   @JsonKey(name: 'peer_id')
   int get peerId;
-
   @override
-
-  /// @nodoc
   @JsonKey(name: 'tag')
   String? get tag;
-
   @override
   @JsonKey(ignore: true)
   _$$P2pStatusResultImplCopyWith<_$P2pStatusResultImpl> get copyWith =>

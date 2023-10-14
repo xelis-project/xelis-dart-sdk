@@ -16,7 +16,6 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$GetAccountsResult {
-  /// @nodoc
   List<String> get publicKeys => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -29,7 +28,6 @@ abstract class $GetAccountsResultCopyWith<$Res> {
   factory $GetAccountsResultCopyWith(
           GetAccountsResult value, $Res Function(GetAccountsResult) then) =
       _$GetAccountsResultCopyWithImpl<$Res, GetAccountsResult>;
-
   @useResult
   $Res call({List<String> publicKeys});
 }
@@ -41,7 +39,6 @@ class _$GetAccountsResultCopyWithImpl<$Res, $Val extends GetAccountsResult>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -65,7 +62,6 @@ abstract class _$$GetAccountsResultImplCopyWith<$Res>
   factory _$$GetAccountsResultImplCopyWith(_$GetAccountsResultImpl value,
           $Res Function(_$GetAccountsResultImpl) then) =
       __$$GetAccountsResultImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call({List<String> publicKeys});
@@ -99,10 +95,7 @@ class _$GetAccountsResultImpl implements _GetAccountsResult {
   const _$GetAccountsResultImpl({required final List<String> publicKeys})
       : _publicKeys = publicKeys;
 
-  /// @nodoc
   final List<String> _publicKeys;
-
-  /// @nodoc
   @override
   List<String> get publicKeys {
     if (_publicKeys is EqualUnmodifiableListView) return _publicKeys;
@@ -141,10 +134,7 @@ abstract class _GetAccountsResult implements GetAccountsResult {
       _$GetAccountsResultImpl;
 
   @override
-
-  /// @nodoc
   List<String> get publicKeys;
-
   @override
   @JsonKey(ignore: true)
   _$$GetAccountsResultImplCopyWith<_$GetAccountsResultImpl> get copyWith =>

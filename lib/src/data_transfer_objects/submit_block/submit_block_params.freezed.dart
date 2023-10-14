@@ -20,7 +20,6 @@ SubmitBlockParams _$SubmitBlockParamsFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$SubmitBlockParams {
-  /// @nodoc
   @JsonKey(name: 'block_template')
   String get blockTemplate => throw _privateConstructorUsedError;
 
@@ -69,7 +68,6 @@ abstract class _$$SubmitBlockParamsImplCopyWith<$Res>
   factory _$$SubmitBlockParamsImplCopyWith(_$SubmitBlockParamsImpl value,
           $Res Function(_$SubmitBlockParamsImpl) then) =
       __$$SubmitBlockParamsImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call({@JsonKey(name: 'block_template') String blockTemplate});
@@ -106,7 +104,6 @@ class _$SubmitBlockParamsImpl implements _SubmitBlockParams {
   factory _$SubmitBlockParamsImpl.fromJson(Map<String, dynamic> json) =>
       _$$SubmitBlockParamsImplFromJson(json);
 
-  /// @nodoc
   @override
   @JsonKey(name: 'block_template')
   final String blockTemplate;
@@ -153,11 +150,8 @@ abstract class _SubmitBlockParams implements SubmitBlockParams {
       _$SubmitBlockParamsImpl.fromJson;
 
   @override
-
-  /// @nodoc
   @JsonKey(name: 'block_template')
   String get blockTemplate;
-
   @override
   @JsonKey(ignore: true)
   _$$SubmitBlockParamsImplCopyWith<_$SubmitBlockParamsImpl> get copyWith =>

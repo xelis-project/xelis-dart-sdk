@@ -21,7 +21,6 @@ GetTransactionsParams _$GetTransactionsParamsFromJson(
 
 /// @nodoc
 mixin _$GetTransactionsParams {
-  /// @nodoc
   @JsonKey(name: 'tx_hashes')
   List<String> get txHashes => throw _privateConstructorUsedError;
 
@@ -72,7 +71,6 @@ abstract class _$$GetTransactionsParamsImplCopyWith<$Res>
           _$GetTransactionsParamsImpl value,
           $Res Function(_$GetTransactionsParamsImpl) then) =
       __$$GetTransactionsParamsImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call({@JsonKey(name: 'tx_hashes') List<String> txHashes});
@@ -111,10 +109,7 @@ class _$GetTransactionsParamsImpl implements _GetTransactionsParams {
   factory _$GetTransactionsParamsImpl.fromJson(Map<String, dynamic> json) =>
       _$$GetTransactionsParamsImplFromJson(json);
 
-  /// @nodoc
   final List<String> _txHashes;
-
-  /// @nodoc
   @override
   @JsonKey(name: 'tx_hashes')
   List<String> get txHashes {
@@ -165,11 +160,8 @@ abstract class _GetTransactionsParams implements GetTransactionsParams {
       _$GetTransactionsParamsImpl.fromJson;
 
   @override
-
-  /// @nodoc
   @JsonKey(name: 'tx_hashes')
   List<String> get txHashes;
-
   @override
   @JsonKey(ignore: true)
   _$$GetTransactionsParamsImplCopyWith<_$GetTransactionsParamsImpl>

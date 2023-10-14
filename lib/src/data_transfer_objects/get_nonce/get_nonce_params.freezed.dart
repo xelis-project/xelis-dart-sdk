@@ -20,7 +20,6 @@ GetNonceParams _$GetNonceParamsFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$GetNonceParams {
-  /// @nodoc
   @JsonKey(name: 'address')
   String get address => throw _privateConstructorUsedError;
 
@@ -69,7 +68,6 @@ abstract class _$$GetNonceParamsImplCopyWith<$Res>
   factory _$$GetNonceParamsImplCopyWith(_$GetNonceParamsImpl value,
           $Res Function(_$GetNonceParamsImpl) then) =
       __$$GetNonceParamsImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call({@JsonKey(name: 'address') String address});
@@ -105,7 +103,6 @@ class _$GetNonceParamsImpl implements _GetNonceParams {
   factory _$GetNonceParamsImpl.fromJson(Map<String, dynamic> json) =>
       _$$GetNonceParamsImplFromJson(json);
 
-  /// @nodoc
   @override
   @JsonKey(name: 'address')
   final String address;
@@ -151,11 +148,8 @@ abstract class _GetNonceParams implements GetNonceParams {
       _$GetNonceParamsImpl.fromJson;
 
   @override
-
-  /// @nodoc
   @JsonKey(name: 'address')
   String get address;
-
   @override
   @JsonKey(ignore: true)
   _$$GetNonceParamsImplCopyWith<_$GetNonceParamsImpl> get copyWith =>

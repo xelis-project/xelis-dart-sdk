@@ -21,11 +21,8 @@ GetTopoHeightRangeParams _$GetTopoHeightRangeParamsFromJson(
 
 /// @nodoc
 mixin _$GetTopoHeightRangeParams {
-  /// @nodoc
   @JsonKey(name: 'start_topoheight')
   int? get startTopoHeight => throw _privateConstructorUsedError;
-
-  /// @nodoc
   @JsonKey(name: 'end_topoheight')
   int? get endTopoHeight => throw _privateConstructorUsedError;
 
@@ -83,7 +80,6 @@ abstract class _$$GetTopoHeightRangeParamsImplCopyWith<$Res>
           _$GetTopoHeightRangeParamsImpl value,
           $Res Function(_$GetTopoHeightRangeParamsImpl) then) =
       __$$GetTopoHeightRangeParamsImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -131,12 +127,9 @@ class _$GetTopoHeightRangeParamsImpl implements _GetTopoHeightRangeParams {
   factory _$GetTopoHeightRangeParamsImpl.fromJson(Map<String, dynamic> json) =>
       _$$GetTopoHeightRangeParamsImplFromJson(json);
 
-  /// @nodoc
   @override
   @JsonKey(name: 'start_topoheight')
   final int? startTopoHeight;
-
-  /// @nodoc
   @override
   @JsonKey(name: 'end_topoheight')
   final int? endTopoHeight;
@@ -186,13 +179,9 @@ abstract class _GetTopoHeightRangeParams implements GetTopoHeightRangeParams {
       _$GetTopoHeightRangeParamsImpl.fromJson;
 
   @override
-
-  /// @nodoc
   @JsonKey(name: 'start_topoheight')
   int? get startTopoHeight;
   @override
-
-  /// @nodoc
   @JsonKey(name: 'end_topoheight')
   int? get endTopoHeight;
   @override

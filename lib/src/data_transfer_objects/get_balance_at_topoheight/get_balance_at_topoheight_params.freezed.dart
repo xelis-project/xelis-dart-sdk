@@ -21,15 +21,10 @@ GetBalanceAtTopoHeightParams _$GetBalanceAtTopoHeightParamsFromJson(
 
 /// @nodoc
 mixin _$GetBalanceAtTopoHeightParams {
-  /// @nodoc
   @JsonKey(name: 'address')
   String get address => throw _privateConstructorUsedError;
-
-  /// @nodoc
   @JsonKey(name: 'asset')
   String get asset => throw _privateConstructorUsedError;
-
-  /// @nodoc
   @JsonKey(name: 'topoheight')
   int get topoHeight => throw _privateConstructorUsedError;
 
@@ -95,7 +90,6 @@ abstract class _$$GetBalanceAtTopoHeightParamsImplCopyWith<$Res>
           _$GetBalanceAtTopoHeightParamsImpl value,
           $Res Function(_$GetBalanceAtTopoHeightParamsImpl) then) =
       __$$GetBalanceAtTopoHeightParamsImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -151,17 +145,12 @@ class _$GetBalanceAtTopoHeightParamsImpl
           Map<String, dynamic> json) =>
       _$$GetBalanceAtTopoHeightParamsImplFromJson(json);
 
-  /// @nodoc
   @override
   @JsonKey(name: 'address')
   final String address;
-
-  /// @nodoc
   @override
   @JsonKey(name: 'asset')
   final String asset;
-
-  /// @nodoc
   @override
   @JsonKey(name: 'topoheight')
   final int topoHeight;
@@ -214,22 +203,14 @@ abstract class _GetBalanceAtTopoHeightParams
       _$GetBalanceAtTopoHeightParamsImpl.fromJson;
 
   @override
-
-  /// @nodoc
   @JsonKey(name: 'address')
   String get address;
   @override
-
-  /// @nodoc
   @JsonKey(name: 'asset')
   String get asset;
-
   @override
-
-  /// @nodoc
   @JsonKey(name: 'topoheight')
   int get topoHeight;
-
   @override
   @JsonKey(ignore: true)
   _$$GetBalanceAtTopoHeightParamsImplCopyWith<

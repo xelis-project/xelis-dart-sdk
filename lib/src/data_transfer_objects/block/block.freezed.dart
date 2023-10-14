@@ -20,72 +20,54 @@ Block _$BlockFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Block {
-  /// @nodoc
   @JsonKey(name: 'block_type')
   String get blockType => throw _privateConstructorUsedError;
 
-  /// @nodoc
   @JsonKey(name: 'cumulative_difficulty')
   int get cumulativeDifficulty => throw _privateConstructorUsedError;
 
-  /// @nodoc
   @JsonKey(name: 'difficulty')
   int get difficulty => throw _privateConstructorUsedError;
 
-  /// @nodoc
   @JsonKey(name: 'extra_nonce')
   String get extraNonce => throw _privateConstructorUsedError;
 
-  /// @nodoc
   @JsonKey(name: 'hash')
   String get hash => throw _privateConstructorUsedError;
 
-  /// @nodoc
   @JsonKey(name: 'height')
   int get height => throw _privateConstructorUsedError;
 
-  /// @nodoc
   @JsonKey(name: 'miner')
   String get miner => throw _privateConstructorUsedError;
 
-  /// @nodoc
   @JsonKey(name: 'nonce')
   int get nonce => throw _privateConstructorUsedError;
 
-  /// @nodoc
   @JsonKey(name: 'reward')
   int? get reward => throw _privateConstructorUsedError;
 
-  /// @nodoc
   @JsonKey(name: 'supply')
-  int? get supply => throw _privateConstructorUsedError;
-
-  /// TODO convert timestamp to DateTime
-  /// @nodoc
+  int? get supply =>
+      throw _privateConstructorUsedError; // TODO convert timestamp to DateTime
   @JsonKey(name: 'timestamp')
   int get timestamp => throw _privateConstructorUsedError;
 
-  /// @nodoc
   @JsonKey(name: 'tips')
   List<String> get tips => throw _privateConstructorUsedError;
 
-  /// @nodoc
   @JsonKey(name: 'topoheight')
   int? get topoHeight => throw _privateConstructorUsedError;
 
-  /// @nodoc
   @JsonKey(name: 'total_size_in_bytes')
   int get totalSizeInBytes => throw _privateConstructorUsedError;
 
-  /// @nodoc
   @JsonKey(name: 'total_fees')
   int? get totalFees => throw _privateConstructorUsedError;
 
-  /// @nodoc
   @JsonKey(name: 'txs_hashes')
   List<String> get txsHashes => throw _privateConstructorUsedError;
 
-  /// @nodoc
   @JsonKey(name: 'version')
   int get version => throw _privateConstructorUsedError;
 
@@ -99,6 +81,7 @@ mixin _$Block {
 abstract class $BlockCopyWith<$Res> {
   factory $BlockCopyWith(Block value, $Res Function(Block) then) =
       _$BlockCopyWithImpl<$Res, Block>;
+
   @useResult
   $Res call(
       {@JsonKey(name: 'block_type') String blockType,
@@ -127,6 +110,7 @@ class _$BlockCopyWithImpl<$Res, $Val extends Block>
 
   // ignore: unused_field
   final $Val _value;
+
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -382,66 +366,43 @@ class _$BlockImpl implements _Block {
   factory _$BlockImpl.fromJson(Map<String, dynamic> json) =>
       _$$BlockImplFromJson(json);
 
-  /// @nodoc
   @override
   @JsonKey(name: 'block_type')
   final String blockType;
-
-  /// @nodoc
   @override
   @JsonKey(name: 'cumulative_difficulty')
   final int cumulativeDifficulty;
-
-  /// @nodoc
   @override
   @JsonKey(name: 'difficulty')
   final int difficulty;
-
-  /// @nodoc
   @override
   @JsonKey(name: 'extra_nonce')
   final String extraNonce;
-
-  /// @nodoc
   @override
   @JsonKey(name: 'hash')
   final String hash;
-
-  /// @nodoc
   @override
   @JsonKey(name: 'height')
   final int height;
-
-  /// @nodoc
   @override
   @JsonKey(name: 'miner')
   final String miner;
-
-  /// @nodoc
   @override
   @JsonKey(name: 'nonce')
   final int nonce;
-
-  /// @nodoc
   @override
   @JsonKey(name: 'reward')
   final int? reward;
-
-  /// @nodoc
   @override
   @JsonKey(name: 'supply')
   final int? supply;
 
-  /// TODO convert timestamp to DateTime
-  /// @nodoc
+// TODO convert timestamp to DateTime
   @override
   @JsonKey(name: 'timestamp')
   final int timestamp;
-
-  /// @nodoc
   final List<String> _tips;
 
-  /// @nodoc
   @override
   @JsonKey(name: 'tips')
   List<String> get tips {
@@ -450,25 +411,17 @@ class _$BlockImpl implements _Block {
     return EqualUnmodifiableListView(_tips);
   }
 
-  /// @nodoc
   @override
   @JsonKey(name: 'topoheight')
   final int? topoHeight;
-
-  /// @nodoc
   @override
   @JsonKey(name: 'total_size_in_bytes')
   final int totalSizeInBytes;
-
-  /// @nodoc
   @override
   @JsonKey(name: 'total_fees')
   final int? totalFees;
-
-  /// @nodoc
   final List<String> _txsHashes;
 
-  /// @nodoc
   @override
   @JsonKey(name: 'txs_hashes')
   List<String> get txsHashes {
@@ -477,7 +430,6 @@ class _$BlockImpl implements _Block {
     return EqualUnmodifiableListView(_txsHashes);
   }
 
-  /// @nodoc
   @override
   @JsonKey(name: 'version')
   final int version;
@@ -580,91 +532,70 @@ abstract class _Block implements Block {
   factory _Block.fromJson(Map<String, dynamic> json) = _$BlockImpl.fromJson;
 
   @override
-
-  /// @nodoc
   @JsonKey(name: 'block_type')
   String get blockType;
-  @override
 
-  /// @nodoc
+  @override
   @JsonKey(name: 'cumulative_difficulty')
   int get cumulativeDifficulty;
-  @override
 
-  /// @nodoc
+  @override
   @JsonKey(name: 'difficulty')
   int get difficulty;
-  @override
 
-  /// @nodoc
+  @override
   @JsonKey(name: 'extra_nonce')
   String get extraNonce;
-  @override
 
-  /// @nodoc
+  @override
   @JsonKey(name: 'hash')
   String get hash;
-  @override
 
-  /// @nodoc
+  @override
   @JsonKey(name: 'height')
   int get height;
-  @override
 
-  /// @nodoc
+  @override
   @JsonKey(name: 'miner')
   String get miner;
-  @override
 
-  /// @nodoc
+  @override
   @JsonKey(name: 'nonce')
   int get nonce;
-  @override
 
-  /// @nodoc
+  @override
   @JsonKey(name: 'reward')
   int? get reward;
-  @override
 
-  /// @nodoc
+  @override
   @JsonKey(name: 'supply')
   int? get supply;
-  @override
 
-  /// TODO convert timestamp to DateTime
-  /// @nodoc
+  @override // TODO convert timestamp to DateTime
   @JsonKey(name: 'timestamp')
   int get timestamp;
-  @override
 
-  /// @nodoc
+  @override
   @JsonKey(name: 'tips')
   List<String> get tips;
-  @override
 
-  /// @nodoc
+  @override
   @JsonKey(name: 'topoheight')
   int? get topoHeight;
-  @override
 
-  /// @nodoc
+  @override
   @JsonKey(name: 'total_size_in_bytes')
   int get totalSizeInBytes;
-  @override
 
-  /// @nodoc
+  @override
   @JsonKey(name: 'total_fees')
   int? get totalFees;
 
   @override
-
-  /// @nodoc
   @JsonKey(name: 'txs_hashes')
   List<String> get txsHashes;
 
   @override
-
-  /// @nodoc
   @JsonKey(name: 'version')
   int get version;
 

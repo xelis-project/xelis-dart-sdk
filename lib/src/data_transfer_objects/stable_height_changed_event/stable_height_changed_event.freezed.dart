@@ -21,16 +21,12 @@ StableHeightChangedEvent _$StableHeightChangedEventFromJson(
 
 /// @nodoc
 mixin _$StableHeightChangedEvent {
-  /// @nodoc
   @JsonKey(name: 'previous_stable_height')
   int get previousStableHeight => throw _privateConstructorUsedError;
-
-  /// @nodoc
   @JsonKey(name: 'new_stable_height')
   int get newStableHeight => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $StableHeightChangedEventCopyWith<StableHeightChangedEvent> get copyWith =>
       throw _privateConstructorUsedError;
@@ -41,7 +37,6 @@ abstract class $StableHeightChangedEventCopyWith<$Res> {
   factory $StableHeightChangedEventCopyWith(StableHeightChangedEvent value,
           $Res Function(StableHeightChangedEvent) then) =
       _$StableHeightChangedEventCopyWithImpl<$Res, StableHeightChangedEvent>;
-
   @useResult
   $Res call(
       {@JsonKey(name: 'previous_stable_height') int previousStableHeight,
@@ -56,7 +51,6 @@ class _$StableHeightChangedEventCopyWithImpl<$Res,
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -86,7 +80,6 @@ abstract class _$$StableHeightChangedEventImplCopyWith<$Res>
           _$StableHeightChangedEventImpl value,
           $Res Function(_$StableHeightChangedEventImpl) then) =
       __$$StableHeightChangedEventImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -134,12 +127,9 @@ class _$StableHeightChangedEventImpl implements _StableHeightChangedEvent {
   factory _$StableHeightChangedEventImpl.fromJson(Map<String, dynamic> json) =>
       _$$StableHeightChangedEventImplFromJson(json);
 
-  /// @nodoc
   @override
   @JsonKey(name: 'previous_stable_height')
   final int previousStableHeight;
-
-  /// @nodoc
   @override
   @JsonKey(name: 'new_stable_height')
   final int newStableHeight;
@@ -191,17 +181,11 @@ abstract class _StableHeightChangedEvent implements StableHeightChangedEvent {
       _$StableHeightChangedEventImpl.fromJson;
 
   @override
-
-  /// @nodoc
   @JsonKey(name: 'previous_stable_height')
   int get previousStableHeight;
-
   @override
-
-  /// @nodoc
   @JsonKey(name: 'new_stable_height')
   int get newStableHeight;
-
   @override
   @JsonKey(ignore: true)
   _$$StableHeightChangedEventImplCopyWith<_$StableHeightChangedEventImpl>

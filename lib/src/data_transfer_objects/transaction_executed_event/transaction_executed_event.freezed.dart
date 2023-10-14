@@ -21,15 +21,10 @@ TransactionExecutedEvent _$TransactionExecutedEventFromJson(
 
 /// @nodoc
 mixin _$TransactionExecutedEvent {
-  /// @nodoc
   @JsonKey(name: 'block_hash')
   String get blockHash => throw _privateConstructorUsedError;
-
-  /// @nodoc
   @JsonKey(name: 'tx_hash')
   String get txHash => throw _privateConstructorUsedError;
-
-  /// @nodoc
   @JsonKey(name: 'topoheight')
   int get topoHeight => throw _privateConstructorUsedError;
 
@@ -93,7 +88,6 @@ abstract class _$$TransactionExecutedEventImplCopyWith<$Res>
           _$TransactionExecutedEventImpl value,
           $Res Function(_$TransactionExecutedEventImpl) then) =
       __$$TransactionExecutedEventImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -147,17 +141,12 @@ class _$TransactionExecutedEventImpl implements _TransactionExecutedEvent {
   factory _$TransactionExecutedEventImpl.fromJson(Map<String, dynamic> json) =>
       _$$TransactionExecutedEventImplFromJson(json);
 
-  /// @nodoc
   @override
   @JsonKey(name: 'block_hash')
   final String blockHash;
-
-  /// @nodoc
   @override
   @JsonKey(name: 'tx_hash')
   final String txHash;
-
-  /// @nodoc
   @override
   @JsonKey(name: 'topoheight')
   final int topoHeight;
@@ -209,18 +198,12 @@ abstract class _TransactionExecutedEvent implements TransactionExecutedEvent {
       _$TransactionExecutedEventImpl.fromJson;
 
   @override
-
-  /// @nodoc
   @JsonKey(name: 'block_hash')
   String get blockHash;
   @override
-
-  /// @nodoc
   @JsonKey(name: 'tx_hash')
   String get txHash;
   @override
-
-  /// @nodoc
   @JsonKey(name: 'topoheight')
   int get topoHeight;
   @override

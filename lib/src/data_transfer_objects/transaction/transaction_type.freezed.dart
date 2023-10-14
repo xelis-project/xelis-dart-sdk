@@ -20,19 +20,12 @@ TransactionType _$TransactionTypeFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$TransactionType {
-  /// @nodoc
   @JsonKey(name: 'transfers')
   List<Transfer>? get transfers => throw _privateConstructorUsedError;
-
-  /// @nodoc
   @JsonKey(name: 'burn')
   Burn? get burn => throw _privateConstructorUsedError;
-
-  /// @nodoc
   @JsonKey(name: 'call_contract')
   CallContract? get callContract => throw _privateConstructorUsedError;
-
-  /// @nodoc
   @JsonKey(name: 'deploy_contract')
   String? get deployContract => throw _privateConstructorUsedError;
 
@@ -192,10 +185,7 @@ class _$TransactionTypeImpl implements _TransactionType {
   factory _$TransactionTypeImpl.fromJson(Map<String, dynamic> json) =>
       _$$TransactionTypeImplFromJson(json);
 
-  /// @nodoc
   final List<Transfer>? _transfers;
-
-  /// @nodoc
   @override
   @JsonKey(name: 'transfers')
   List<Transfer>? get transfers {
@@ -206,17 +196,12 @@ class _$TransactionTypeImpl implements _TransactionType {
     return EqualUnmodifiableListView(value);
   }
 
-  /// @nodoc
   @override
   @JsonKey(name: 'burn')
   final Burn? burn;
-
-  /// @nodoc
   @override
   @JsonKey(name: 'call_contract')
   final CallContract? callContract;
-
-  /// @nodoc
   @override
   @JsonKey(name: 'deploy_contract')
   final String? deployContract;
@@ -276,23 +261,15 @@ abstract class _TransactionType implements TransactionType {
       _$TransactionTypeImpl.fromJson;
 
   @override
-
-  /// @nodoc
   @JsonKey(name: 'transfers')
   List<Transfer>? get transfers;
   @override
-
-  /// @nodoc
   @JsonKey(name: 'burn')
   Burn? get burn;
   @override
-
-  /// @nodoc
   @JsonKey(name: 'call_contract')
   CallContract? get callContract;
   @override
-
-  /// @nodoc
   @JsonKey(name: 'deploy_contract')
   String? get deployContract;
   @override

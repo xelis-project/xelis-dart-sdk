@@ -20,11 +20,8 @@ Burn _$BurnFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Burn {
-  /// @nodoc
   @JsonKey(name: 'asset')
   String get asset => throw _privateConstructorUsedError;
-
-  /// @nodoc
   @JsonKey(name: 'amount')
   int get amount => throw _privateConstructorUsedError;
 
@@ -77,7 +74,6 @@ abstract class _$$BurnImplCopyWith<$Res> implements $BurnCopyWith<$Res> {
   factory _$$BurnImplCopyWith(
           _$BurnImpl value, $Res Function(_$BurnImpl) then) =
       __$$BurnImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -121,12 +117,9 @@ class _$BurnImpl implements _Burn {
   factory _$BurnImpl.fromJson(Map<String, dynamic> json) =>
       _$$BurnImplFromJson(json);
 
-  /// @nodoc
   @override
   @JsonKey(name: 'asset')
   final String asset;
-
-  /// @nodoc
   @override
   @JsonKey(name: 'amount')
   final int amount;
@@ -171,17 +164,11 @@ abstract class _Burn implements Burn {
   factory _Burn.fromJson(Map<String, dynamic> json) = _$BurnImpl.fromJson;
 
   @override
-
-  /// @nodoc
   @JsonKey(name: 'asset')
   String get asset;
-
   @override
-
-  /// @nodoc
   @JsonKey(name: 'amount')
   int get amount;
-
   @override
   @JsonKey(ignore: true)
   _$$BurnImplCopyWith<_$BurnImpl> get copyWith =>

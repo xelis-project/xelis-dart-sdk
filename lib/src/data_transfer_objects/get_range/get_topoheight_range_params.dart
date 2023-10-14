@@ -6,20 +6,14 @@ part 'get_topoheight_range_params.freezed.dart';
 
 part 'get_topoheight_range_params.g.dart';
 
-/// @nodoc
 @freezed
 class GetTopoHeightRangeParams with _$GetTopoHeightRangeParams {
-  /// @nodoc
   @JsonSerializable(includeIfNull: false)
   const factory GetTopoHeightRangeParams({
-    /// @nodoc
     @JsonKey(name: 'start_topoheight') int? startTopoHeight,
-
-    /// @nodoc
     @JsonKey(name: 'end_topoheight') int? endTopoHeight,
   }) = _GetTopoHeightRangeParams;
 
-  /// @nodoc
   factory GetTopoHeightRangeParams.fromJson(Map<String, dynamic> json) =>
       _$GetTopoHeightRangeParamsFromJson(json);
 }
