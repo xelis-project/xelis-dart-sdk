@@ -287,4 +287,36 @@ extension DaemonRpcMethodsExtension on DaemonClientRepository {
     final result = await sendRequest(DaemonMethod.countAccounts);
     return result as int;
   }
+
+  /// Retrieve all peers connected
+  Future<List<Peer>> getPeers() async {
+    final result = await sendRequest(DaemonMethod.getPeers);
+    return (result as List)
+        .map((e) => Peer.fromJson(e as Map<String, dynamic>))
+        .toList();
+  }
+
+  /// Fetch up to 20 history events for an account on a specific asset
+  Future<GetAccountHistoryResult> getAccountHistory(
+    GetAccountHistoryParams getAccountHistoryParams,
+  ) async {
+    final result = await sendRequest(
+      DaemonMethod.getAccountHistory,
+      getAccountHistoryParams.toJson(),
+    );
+    return GetAccountHistoryResult.fromJson(result as Map<String, dynamic>);
+  }
+
+  /// Retrieve all assets for an account
+  Future<GetAccountAssetsResult> getAccountAssets(
+    GetAccountAssetsParams getAccountAssetsParams,
+  ) async {
+    final result = await sendRequest(
+      DaemonMethod.getAccountAssets,
+      getAccountAssetsParams.toJson(),
+    );
+    return GetAccountAssetsResult(
+      assets: (result as List).map((e) => e as String).toList(),
+    );
+  }
 }

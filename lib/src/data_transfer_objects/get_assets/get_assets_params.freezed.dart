@@ -22,12 +22,10 @@ GetAssetsParams _$GetAssetsParamsFromJson(Map<String, dynamic> json) {
 mixin _$GetAssetsParams {
   @JsonKey(name: 'skip')
   int? get skip => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'maximum')
   int? get maximum => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $GetAssetsParamsCopyWith<GetAssetsParams> get copyWith =>
       throw _privateConstructorUsedError;
@@ -38,7 +36,6 @@ abstract class $GetAssetsParamsCopyWith<$Res> {
   factory $GetAssetsParamsCopyWith(
           GetAssetsParams value, $Res Function(GetAssetsParams) then) =
       _$GetAssetsParamsCopyWithImpl<$Res, GetAssetsParams>;
-
   @useResult
   $Res call(
       {@JsonKey(name: 'skip') int? skip,
@@ -52,7 +49,6 @@ class _$GetAssetsParamsCopyWithImpl<$Res, $Val extends GetAssetsParams>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -81,7 +77,6 @@ abstract class _$$GetAssetsParamsImplCopyWith<$Res>
   factory _$$GetAssetsParamsImplCopyWith(_$GetAssetsParamsImpl value,
           $Res Function(_$GetAssetsParamsImpl) then) =
       __$$GetAssetsParamsImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -177,11 +172,9 @@ abstract class _GetAssetsParams implements GetAssetsParams {
   @override
   @JsonKey(name: 'skip')
   int? get skip;
-
   @override
   @JsonKey(name: 'maximum')
   int? get maximum;
-
   @override
   @JsonKey(ignore: true)
   _$$GetAssetsParamsImplCopyWith<_$GetAssetsParamsImpl> get copyWith =>

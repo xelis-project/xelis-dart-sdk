@@ -95,6 +95,15 @@ enum DaemonMethod {
   /// Counts the number of accounts saved on disk
   countAccounts('count_accounts'),
 
+  /// Retrieve all peers connected
+  getPeers('get_peers'),
+
+  /// Fetch up to 20 history events for an account on a specific asset
+  getAccountHistory('get_account_history'),
+
+  /// Retrieve all assets for an account
+  getAccountAssets('get_account_assets'),
+
   // EVENTS METHODS
 
   /// Subscribe to an event.

@@ -1,11 +1,23 @@
+## 0.9.0
+
+Daemon API upgrade :
+
+- new getPeers RPC method.
+- new getAccountHistory RPC method.
+- new getAccountAssets RPC method.
+
 ## 0.8.0
 
-- feat: getAsset RPC method.
-- feat: countAccounts RPC method.
+Daemon API upgrade :
+
+- new getAsset RPC method.
+- new countAccounts RPC method.
 
 ## 0.7.0
 
-- feat: getAccounts RPC method.
+Daemon API upgrade :
+
+- new getAccounts RPC method.
 
 ## 0.6.0
 
@@ -16,7 +28,7 @@ Daemon API upgrade :
 
 ## 0.5.0
 
-- feat: getBlocksRangeByTopoHeight and getBlocksRangeByHeight RPC methods.
+- new getBlocksRangeByTopoHeight and getBlocksRangeByHeight RPC methods.
 
 ## 0.4.7
 

@@ -22,15 +22,12 @@ Asset _$AssetFromJson(Map<String, dynamic> json) {
 mixin _$Asset {
   @JsonKey(name: 'asset')
   String get asset => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'topoheight')
   int get topoheight => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'decimals')
   int get decimals => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $AssetCopyWith<Asset> get copyWith => throw _privateConstructorUsedError;
 }
@@ -39,7 +36,6 @@ mixin _$Asset {
 abstract class $AssetCopyWith<$Res> {
   factory $AssetCopyWith(Asset value, $Res Function(Asset) then) =
       _$AssetCopyWithImpl<$Res, Asset>;
-
   @useResult
   $Res call(
       {@JsonKey(name: 'asset') String asset,
@@ -54,7 +50,6 @@ class _$AssetCopyWithImpl<$Res, $Val extends Asset>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -87,7 +82,6 @@ abstract class _$$AssetImplCopyWith<$Res> implements $AssetCopyWith<$Res> {
   factory _$$AssetImplCopyWith(
           _$AssetImpl value, $Res Function(_$AssetImpl) then) =
       __$$AssetImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -195,15 +189,12 @@ abstract class _Asset implements Asset {
   @override
   @JsonKey(name: 'asset')
   String get asset;
-
   @override
   @JsonKey(name: 'topoheight')
   int get topoheight;
-
   @override
   @JsonKey(name: 'decimals')
   int get decimals;
-
   @override
   @JsonKey(ignore: true)
   _$$AssetImplCopyWith<_$AssetImpl> get copyWith =>
