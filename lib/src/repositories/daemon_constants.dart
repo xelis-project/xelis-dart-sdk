@@ -104,6 +104,9 @@ enum DaemonMethod {
   /// Retrieve all assets for an account
   getAccountAssets('get_account_assets'),
 
+  /// Verify if address has a nonce on-chain registered
+  hasNonce('has_nonce'),
+
   // EVENTS METHODS
 
   /// Subscribe to an event.

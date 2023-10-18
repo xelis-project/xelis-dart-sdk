@@ -23,21 +23,16 @@ GetAccountHistoryParams _$GetAccountHistoryParamsFromJson(
 mixin _$GetAccountHistoryParams {
   @JsonKey(name: 'address')
   String get address => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'hash')
   String? get hash => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'topoheight')
   int? get topoheight => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'minimum_topoheight')
   int? get minimumTopoheight => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'maximum_topoheight')
   int? get maximumTopoheight => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $GetAccountHistoryParamsCopyWith<GetAccountHistoryParams> get copyWith =>
       throw _privateConstructorUsedError;
@@ -48,7 +43,6 @@ abstract class $GetAccountHistoryParamsCopyWith<$Res> {
   factory $GetAccountHistoryParamsCopyWith(GetAccountHistoryParams value,
           $Res Function(GetAccountHistoryParams) then) =
       _$GetAccountHistoryParamsCopyWithImpl<$Res, GetAccountHistoryParams>;
-
   @useResult
   $Res call(
       {@JsonKey(name: 'address') String address,
@@ -66,7 +60,6 @@ class _$GetAccountHistoryParamsCopyWithImpl<$Res,
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -111,7 +104,6 @@ abstract class _$$GetAccountHistoryParamsImplCopyWith<$Res>
           _$GetAccountHistoryParamsImpl value,
           $Res Function(_$GetAccountHistoryParamsImpl) then) =
       __$$GetAccountHistoryParamsImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -250,23 +242,18 @@ abstract class _GetAccountHistoryParams implements GetAccountHistoryParams {
   @override
   @JsonKey(name: 'address')
   String get address;
-
   @override
   @JsonKey(name: 'hash')
   String? get hash;
-
   @override
   @JsonKey(name: 'topoheight')
   int? get topoheight;
-
   @override
   @JsonKey(name: 'minimum_topoheight')
   int? get minimumTopoheight;
-
   @override
   @JsonKey(name: 'maximum_topoheight')
   int? get maximumTopoheight;
-
   @override
   @JsonKey(ignore: true)
   _$$GetAccountHistoryParamsImplCopyWith<_$GetAccountHistoryParamsImpl>

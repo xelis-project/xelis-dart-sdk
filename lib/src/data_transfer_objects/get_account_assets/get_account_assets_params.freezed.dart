@@ -25,7 +25,6 @@ mixin _$GetAccountAssetsParams {
   String get address => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $GetAccountAssetsParamsCopyWith<GetAccountAssetsParams> get copyWith =>
       throw _privateConstructorUsedError;
@@ -36,7 +35,6 @@ abstract class $GetAccountAssetsParamsCopyWith<$Res> {
   factory $GetAccountAssetsParamsCopyWith(GetAccountAssetsParams value,
           $Res Function(GetAccountAssetsParams) then) =
       _$GetAccountAssetsParamsCopyWithImpl<$Res, GetAccountAssetsParams>;
-
   @useResult
   $Res call({@JsonKey(name: 'address') String address});
 }
@@ -49,7 +47,6 @@ class _$GetAccountAssetsParamsCopyWithImpl<$Res,
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -74,7 +71,6 @@ abstract class _$$GetAccountAssetsParamsImplCopyWith<$Res>
           _$GetAccountAssetsParamsImpl value,
           $Res Function(_$GetAccountAssetsParamsImpl) then) =
       __$$GetAccountAssetsParamsImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call({@JsonKey(name: 'address') String address});
@@ -160,7 +156,6 @@ abstract class _GetAccountAssetsParams implements GetAccountAssetsParams {
   @override
   @JsonKey(name: 'address')
   String get address;
-
   @override
   @JsonKey(ignore: true)
   _$$GetAccountAssetsParamsImplCopyWith<_$GetAccountAssetsParamsImpl>

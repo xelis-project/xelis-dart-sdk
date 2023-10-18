@@ -23,27 +23,20 @@ GetAccountHistoryResult _$GetAccountHistoryResultFromJson(
 mixin _$GetAccountHistoryResult {
   @JsonKey(name: 'topoheight')
   int get topoheight => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'hash')
   String get hash => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'block_timestamp')
   int get blockTimestamp => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'burn')
   BurnHistory? get burnHistory => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'mining')
   MiningHistory? get miningHistory => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'outgoing')
   OutgoingHistory? get outgoingHistory => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'incoming')
   IncomingHistory? get incomingHistory => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $GetAccountHistoryResultCopyWith<GetAccountHistoryResult> get copyWith =>
       throw _privateConstructorUsedError;
@@ -54,7 +47,6 @@ abstract class $GetAccountHistoryResultCopyWith<$Res> {
   factory $GetAccountHistoryResultCopyWith(GetAccountHistoryResult value,
           $Res Function(GetAccountHistoryResult) then) =
       _$GetAccountHistoryResultCopyWithImpl<$Res, GetAccountHistoryResult>;
-
   @useResult
   $Res call(
       {@JsonKey(name: 'topoheight') int topoheight,
@@ -66,11 +58,8 @@ abstract class $GetAccountHistoryResultCopyWith<$Res> {
       @JsonKey(name: 'incoming') IncomingHistory? incomingHistory});
 
   $BurnHistoryCopyWith<$Res>? get burnHistory;
-
   $MiningHistoryCopyWith<$Res>? get miningHistory;
-
   $OutgoingHistoryCopyWith<$Res>? get outgoingHistory;
-
   $IncomingHistoryCopyWith<$Res>? get incomingHistory;
 }
 
@@ -82,7 +71,6 @@ class _$GetAccountHistoryResultCopyWithImpl<$Res,
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -185,7 +173,6 @@ abstract class _$$GetAccountHistoryResultImplCopyWith<$Res>
           _$GetAccountHistoryResultImpl value,
           $Res Function(_$GetAccountHistoryResultImpl) then) =
       __$$GetAccountHistoryResultImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -199,13 +186,10 @@ abstract class _$$GetAccountHistoryResultImplCopyWith<$Res>
 
   @override
   $BurnHistoryCopyWith<$Res>? get burnHistory;
-
   @override
   $MiningHistoryCopyWith<$Res>? get miningHistory;
-
   @override
   $OutgoingHistoryCopyWith<$Res>? get outgoingHistory;
-
   @override
   $IncomingHistoryCopyWith<$Res>? get incomingHistory;
 }
@@ -363,31 +347,24 @@ abstract class _GetAccountHistoryResult implements GetAccountHistoryResult {
   @override
   @JsonKey(name: 'topoheight')
   int get topoheight;
-
   @override
   @JsonKey(name: 'hash')
   String get hash;
-
   @override
   @JsonKey(name: 'block_timestamp')
   int get blockTimestamp;
-
   @override
   @JsonKey(name: 'burn')
   BurnHistory? get burnHistory;
-
   @override
   @JsonKey(name: 'mining')
   MiningHistory? get miningHistory;
-
   @override
   @JsonKey(name: 'outgoing')
   OutgoingHistory? get outgoingHistory;
-
   @override
   @JsonKey(name: 'incoming')
   IncomingHistory? get incomingHistory;
-
   @override
   @JsonKey(ignore: true)
   _$$GetAccountHistoryResultImplCopyWith<_$GetAccountHistoryResultImpl>

@@ -24,7 +24,6 @@ mixin _$GetAccountAssetsResult {
   List<String> get assets => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $GetAccountAssetsResultCopyWith<GetAccountAssetsResult> get copyWith =>
       throw _privateConstructorUsedError;
@@ -35,7 +34,6 @@ abstract class $GetAccountAssetsResultCopyWith<$Res> {
   factory $GetAccountAssetsResultCopyWith(GetAccountAssetsResult value,
           $Res Function(GetAccountAssetsResult) then) =
       _$GetAccountAssetsResultCopyWithImpl<$Res, GetAccountAssetsResult>;
-
   @useResult
   $Res call({List<String> assets});
 }
@@ -48,7 +46,6 @@ class _$GetAccountAssetsResultCopyWithImpl<$Res,
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -73,7 +70,6 @@ abstract class _$$GetAccountAssetsResultImplCopyWith<$Res>
           _$GetAccountAssetsResultImpl value,
           $Res Function(_$GetAccountAssetsResultImpl) then) =
       __$$GetAccountAssetsResultImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call({List<String> assets});
@@ -113,7 +109,6 @@ class _$GetAccountAssetsResultImpl implements _GetAccountAssetsResult {
       _$$GetAccountAssetsResultImplFromJson(json);
 
   final List<String> _assets;
-
   @override
   List<String> get assets {
     if (_assets is EqualUnmodifiableListView) return _assets;
@@ -163,7 +158,6 @@ abstract class _GetAccountAssetsResult implements GetAccountAssetsResult {
 
   @override
   List<String> get assets;
-
   @override
   @JsonKey(ignore: true)
   _$$GetAccountAssetsResultImplCopyWith<_$GetAccountAssetsResultImpl>

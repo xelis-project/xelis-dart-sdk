@@ -319,4 +319,11 @@ extension DaemonRpcMethodsExtension on DaemonClientRepository {
       assets: (result as List).map((e) => e as String).toList(),
     );
   }
+
+  /// Verify if address has a nonce on-chain registered
+  Future<HasNonceResult> hasNonce(HasNonceParams hasNonceParams) async {
+    final result =
+        await sendRequest(DaemonMethod.hasNonce, hasNonceParams.toJson());
+    return HasNonceResult.fromJson(result as Map<String, dynamic>);
+  }
 }

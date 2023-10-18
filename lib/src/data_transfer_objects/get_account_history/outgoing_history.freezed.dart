@@ -24,7 +24,6 @@ mixin _$OutgoingHistory {
   int get amount => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $OutgoingHistoryCopyWith<OutgoingHistory> get copyWith =>
       throw _privateConstructorUsedError;
@@ -35,7 +34,6 @@ abstract class $OutgoingHistoryCopyWith<$Res> {
   factory $OutgoingHistoryCopyWith(
           OutgoingHistory value, $Res Function(OutgoingHistory) then) =
       _$OutgoingHistoryCopyWithImpl<$Res, OutgoingHistory>;
-
   @useResult
   $Res call({@JsonKey(name: 'amount') int amount});
 }
@@ -47,7 +45,6 @@ class _$OutgoingHistoryCopyWithImpl<$Res, $Val extends OutgoingHistory>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -71,7 +68,6 @@ abstract class _$$OutgoingHistoryImplCopyWith<$Res>
   factory _$$OutgoingHistoryImplCopyWith(_$OutgoingHistoryImpl value,
           $Res Function(_$OutgoingHistoryImpl) then) =
       __$$OutgoingHistoryImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call({@JsonKey(name: 'amount') int amount});
@@ -154,7 +150,6 @@ abstract class _OutgoingHistory implements OutgoingHistory {
   @override
   @JsonKey(name: 'amount')
   int get amount;
-
   @override
   @JsonKey(ignore: true)
   _$$OutgoingHistoryImplCopyWith<_$OutgoingHistoryImpl> get copyWith =>
