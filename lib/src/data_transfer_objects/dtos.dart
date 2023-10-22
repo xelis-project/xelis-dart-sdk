@@ -34,6 +34,7 @@ export 'get_transactions/get_transactions_params.dart';
 export 'has_nonce/has_nonce_params.dart';
 export 'has_nonce/has_nonce_result.dart';
 export 'p2p_status/p2p_status_result.dart';
+export 'peer_disconnected_event/peer_disconnected_event.dart';
 export 'stable_height_changed_event/stable_height_changed_event.dart';
 export 'submit_block/submit_block_params.dart';
 export 'submit_transaction/submit_transaction_params.dart';

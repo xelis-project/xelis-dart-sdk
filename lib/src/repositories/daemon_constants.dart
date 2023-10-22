@@ -146,7 +146,10 @@ enum DaemonEvent {
   newAsset('NewAsset'),
 
   /// New peer connected event.
-  peerConnected('PeerConnected');
+  peerConnected('PeerConnected'),
+
+  /// New peer disconnected event.
+  peerDisconnected('PeerDisconnected');
 
   /// The value of the event.
   final String value;
