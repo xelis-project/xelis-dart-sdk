@@ -149,7 +149,10 @@ enum DaemonEvent {
   peerConnected('PeerConnected'),
 
   /// New peer disconnected event.
-  peerDisconnected('PeerDisconnected');
+  peerDisconnected('PeerDisconnected'),
+
+  /// New PeerPeerListUpdated event.
+  peerPeerListUpdated('PeerPeerListUpdated');
 
   /// The value of the event.
   final String value;

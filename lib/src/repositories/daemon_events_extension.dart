@@ -149,6 +149,21 @@ extension DaemonEventsExtension on DaemonClientRepository {
     unawaited(unsubscribeFrom(DaemonEvent.peerDisconnected));
   }
 
+  /// Registers a callback for PeerPeerListUpdated event.
+  void onPeerPeerListUpdated(
+    void Function(PeerPeerListUpdatedEvent peerPeerListUpdatedEvent) callback,
+  ) {
+    if (eventCallbacks[DaemonEvent.peerPeerListUpdated]!.isEmpty) {
+      unawaited(subscribeTo(DaemonEvent.peerPeerListUpdated));
+    }
+    registerCallback(DaemonEvent.peerPeerListUpdated, callback);
+  }
+
+  /// Unsubscribes from PeerPeerListUpdated event.
+  void unsubscribeFromPeerPeerListUpdated() {
+    unawaited(unsubscribeFrom(DaemonEvent.peerDisconnected));
+  }
+
   /// Unsubscribes from all events.
   void unsubscribeFromAll() {
     unsubscribeFromNewBlock();
@@ -159,5 +174,6 @@ extension DaemonEventsExtension on DaemonClientRepository {
     unsubscribeFromNewAsset();
     unsubscribeFromPeerConnected();
     unsubscribeFromPeerDisconnected();
+    unsubscribeFromPeerPeerListUpdated();
   }
 }

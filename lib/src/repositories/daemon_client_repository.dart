@@ -71,6 +71,8 @@ class DaemonClientRepository {
     DaemonEvent.peerConnected: <void Function(Peer peer)>[],
     DaemonEvent.peerDisconnected:
         <void Function(PeerDisconnectedEvent peerDisconnectedEvent)>[],
+    DaemonEvent.peerPeerListUpdated:
+        <void Function(PeerPeerListUpdatedEvent peerPeerListUpdated)>[],
   };
 
   /// The map of request ids to pending requests.
@@ -300,6 +302,13 @@ class DaemonClientRepository {
               // ignore: avoid_dynamic_calls
               callback(
                 PeerDisconnectedEvent.fromJson(result),
+              );
+            }
+          case DaemonEvent.peerPeerListUpdated:
+            for (final callback in eventCallbacks[event]!) {
+              // ignore: avoid_dynamic_calls
+              callback(
+                PeerPeerListUpdatedEvent.fromJson(result),
               );
             }
         }
