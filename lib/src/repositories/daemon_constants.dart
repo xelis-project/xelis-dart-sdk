@@ -143,7 +143,10 @@ enum DaemonEvent {
   transactionSCResult('TransactionSCResult'),
 
   /// New asset event.
-  newAsset('NewAsset');
+  newAsset('NewAsset'),
+
+  /// New peer connected event.
+  peerConnected('PeerConnected');
 
   /// The value of the event.
   final String value;
@@ -169,6 +172,8 @@ DaemonEvent toDaemonEvent(String value) {
       return DaemonEvent.transactionSCResult;
     case 'NewAsset':
       return DaemonEvent.newAsset;
+    case 'PeerConnected':
+      return DaemonEvent.peerConnected;
     default:
       throw Exception('Unknown event: $value');
   }

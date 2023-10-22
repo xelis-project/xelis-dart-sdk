@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
 
-import 'package:json_rpc_2/json_rpc_2.dart';
+import 'package:json_rpc_2/json_rpc_2.dart' as json_pc_2;
 import 'package:logging/logging.dart';
 import 'package:web_socket_client/web_socket_client.dart';
 import 'package:xelis_dart_sdk/src/repositories/client_state.dart';
@@ -68,6 +68,7 @@ class DaemonClientRepository {
         <void Function(dynamic rawTransactionSCResult)>[],
     // TODO: define rawNewAsset type
     DaemonEvent.newAsset: <void Function(dynamic rawNewAsset)>[],
+    DaemonEvent.peerConnected: <void Function(Peer peer)>[],
   };
 
   /// The map of request ids to pending requests.
@@ -285,6 +286,13 @@ class DaemonClientRepository {
               // ignore: avoid_dynamic_calls
               callback(result);
             }
+          case DaemonEvent.peerConnected:
+            for (final callback in eventCallbacks[event]!) {
+              // ignore: avoid_dynamic_calls
+              callback(
+                Peer.fromJson(result),
+              );
+            }
         }
       } else {
         final id = data['id'] as int;
@@ -298,7 +306,7 @@ class DaemonClientRepository {
       final error = data['error'] as Map<String, dynamic>;
       if (_pendingRequests[id] != null) {
         _pendingRequests[id]!.completer.completeError(
-              RpcException(
+          json_pc_2.RpcException(
                 error['code'] as int,
                 error['message'] as String,
                 data: error['data'],
