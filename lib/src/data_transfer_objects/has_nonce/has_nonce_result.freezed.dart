@@ -24,7 +24,6 @@ mixin _$HasNonceResult {
   bool get result => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $HasNonceResultCopyWith<HasNonceResult> get copyWith =>
       throw _privateConstructorUsedError;
@@ -35,7 +34,6 @@ abstract class $HasNonceResultCopyWith<$Res> {
   factory $HasNonceResultCopyWith(
           HasNonceResult value, $Res Function(HasNonceResult) then) =
       _$HasNonceResultCopyWithImpl<$Res, HasNonceResult>;
-
   @useResult
   $Res call({@JsonKey(name: 'result') bool result});
 }
@@ -47,7 +45,6 @@ class _$HasNonceResultCopyWithImpl<$Res, $Val extends HasNonceResult>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -71,7 +68,6 @@ abstract class _$$HasNonceResultImplCopyWith<$Res>
   factory _$$HasNonceResultImplCopyWith(_$HasNonceResultImpl value,
           $Res Function(_$HasNonceResultImpl) then) =
       __$$HasNonceResultImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call({@JsonKey(name: 'result') bool result});
@@ -154,7 +150,6 @@ abstract class _HasNonceResult implements HasNonceResult {
   @override
   @JsonKey(name: 'result')
   bool get result;
-
   @override
   @JsonKey(ignore: true)
   _$$HasNonceResultImplCopyWith<_$HasNonceResultImpl> get copyWith =>

@@ -19,6 +19,7 @@ class Peer with _$Peer {
     @JsonKey(name: 'top_block_hash') required String topBlockHash,
     @JsonKey(name: 'topoheight') required int topoheight,
     @JsonKey(name: 'version') required String version,
+    @JsonKey(name: 'peers') required List<String> peers,
   }) = _Peer;
 
   factory Peer.fromJson(Map<String, dynamic> json) => _$PeerFromJson(json);

@@ -24,7 +24,6 @@ mixin _$GetAssetParams {
   String get asset => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $GetAssetParamsCopyWith<GetAssetParams> get copyWith =>
       throw _privateConstructorUsedError;
@@ -35,7 +34,6 @@ abstract class $GetAssetParamsCopyWith<$Res> {
   factory $GetAssetParamsCopyWith(
           GetAssetParams value, $Res Function(GetAssetParams) then) =
       _$GetAssetParamsCopyWithImpl<$Res, GetAssetParams>;
-
   @useResult
   $Res call({@JsonKey(name: 'asset') String asset});
 }
@@ -47,7 +45,6 @@ class _$GetAssetParamsCopyWithImpl<$Res, $Val extends GetAssetParams>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -71,7 +68,6 @@ abstract class _$$GetAssetParamsImplCopyWith<$Res>
   factory _$$GetAssetParamsImplCopyWith(_$GetAssetParamsImpl value,
           $Res Function(_$GetAssetParamsImpl) then) =
       __$$GetAssetParamsImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call({@JsonKey(name: 'asset') String asset});
@@ -154,7 +150,6 @@ abstract class _GetAssetParams implements GetAssetParams {
   @override
   @JsonKey(name: 'asset')
   String get asset;
-
   @override
   @JsonKey(ignore: true)
   _$$GetAssetParamsImplCopyWith<_$GetAssetParamsImpl> get copyWith =>

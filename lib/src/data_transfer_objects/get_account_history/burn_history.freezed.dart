@@ -24,7 +24,6 @@ mixin _$BurnHistory {
   int get amount => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $BurnHistoryCopyWith<BurnHistory> get copyWith =>
       throw _privateConstructorUsedError;
@@ -35,7 +34,6 @@ abstract class $BurnHistoryCopyWith<$Res> {
   factory $BurnHistoryCopyWith(
           BurnHistory value, $Res Function(BurnHistory) then) =
       _$BurnHistoryCopyWithImpl<$Res, BurnHistory>;
-
   @useResult
   $Res call({@JsonKey(name: 'amount') int amount});
 }
@@ -47,7 +45,6 @@ class _$BurnHistoryCopyWithImpl<$Res, $Val extends BurnHistory>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -71,7 +68,6 @@ abstract class _$$BurnHistoryImplCopyWith<$Res>
   factory _$$BurnHistoryImplCopyWith(
           _$BurnHistoryImpl value, $Res Function(_$BurnHistoryImpl) then) =
       __$$BurnHistoryImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call({@JsonKey(name: 'amount') int amount});
@@ -152,7 +148,6 @@ abstract class _BurnHistory implements BurnHistory {
   @override
   @JsonKey(name: 'amount')
   int get amount;
-
   @override
   @JsonKey(ignore: true)
   _$$BurnHistoryImplCopyWith<_$BurnHistoryImpl> get copyWith =>

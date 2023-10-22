@@ -19,6 +19,7 @@ _$PeerImpl _$$PeerImplFromJson(Map<String, dynamic> json) => _$PeerImpl(
       topBlockHash: json['top_block_hash'] as String,
       topoheight: json['topoheight'] as int,
       version: json['version'] as String,
+      peers: (json['peers'] as List<dynamic>).map((e) => e as String).toList(),
     );
 
 Map<String, dynamic> _$$PeerImplToJson(_$PeerImpl instance) =>
@@ -33,4 +34,5 @@ Map<String, dynamic> _$$PeerImplToJson(_$PeerImpl instance) =>
       'top_block_hash': instance.topBlockHash,
       'topoheight': instance.topoheight,
       'version': instance.version,
+      'peers': instance.peers,
     };

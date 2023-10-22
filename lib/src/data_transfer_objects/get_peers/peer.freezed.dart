@@ -22,36 +22,28 @@ Peer _$PeerFromJson(Map<String, dynamic> json) {
 mixin _$Peer {
   @JsonKey(name: 'addr')
   String get address => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'cumulative_difficulty')
   int get cumulativeDifficulty => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'height')
   int get height => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'id')
   int get id => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'last_ping')
   int get lastPing => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'pruned_topoheight')
   int get prunedTopoHeight => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'tag')
   String? get tag => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'top_block_hash')
   String get topBlockHash => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'topoheight')
   int get topoheight => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'version')
   String get version => throw _privateConstructorUsedError;
+  @JsonKey(name: 'peers')
+  List<String> get peers => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $PeerCopyWith<Peer> get copyWith => throw _privateConstructorUsedError;
 }
@@ -60,7 +52,6 @@ mixin _$Peer {
 abstract class $PeerCopyWith<$Res> {
   factory $PeerCopyWith(Peer value, $Res Function(Peer) then) =
       _$PeerCopyWithImpl<$Res, Peer>;
-
   @useResult
   $Res call(
       {@JsonKey(name: 'addr') String address,
@@ -72,7 +63,8 @@ abstract class $PeerCopyWith<$Res> {
       @JsonKey(name: 'tag') String? tag,
       @JsonKey(name: 'top_block_hash') String topBlockHash,
       @JsonKey(name: 'topoheight') int topoheight,
-      @JsonKey(name: 'version') String version});
+      @JsonKey(name: 'version') String version,
+      @JsonKey(name: 'peers') List<String> peers});
 }
 
 /// @nodoc
@@ -82,7 +74,6 @@ class _$PeerCopyWithImpl<$Res, $Val extends Peer>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -99,6 +90,7 @@ class _$PeerCopyWithImpl<$Res, $Val extends Peer>
     Object? topBlockHash = null,
     Object? topoheight = null,
     Object? version = null,
+    Object? peers = null,
   }) {
     return _then(_value.copyWith(
       address: null == address
@@ -141,6 +133,10 @@ class _$PeerCopyWithImpl<$Res, $Val extends Peer>
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
               as String,
+      peers: null == peers
+          ? _value.peers
+          : peers // ignore: cast_nullable_to_non_nullable
+              as List<String>,
     ) as $Val);
   }
 }
@@ -150,7 +146,6 @@ abstract class _$$PeerImplCopyWith<$Res> implements $PeerCopyWith<$Res> {
   factory _$$PeerImplCopyWith(
           _$PeerImpl value, $Res Function(_$PeerImpl) then) =
       __$$PeerImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -163,7 +158,8 @@ abstract class _$$PeerImplCopyWith<$Res> implements $PeerCopyWith<$Res> {
       @JsonKey(name: 'tag') String? tag,
       @JsonKey(name: 'top_block_hash') String topBlockHash,
       @JsonKey(name: 'topoheight') int topoheight,
-      @JsonKey(name: 'version') String version});
+      @JsonKey(name: 'version') String version,
+      @JsonKey(name: 'peers') List<String> peers});
 }
 
 /// @nodoc
@@ -186,6 +182,7 @@ class __$$PeerImplCopyWithImpl<$Res>
     Object? topBlockHash = null,
     Object? topoheight = null,
     Object? version = null,
+    Object? peers = null,
   }) {
     return _then(_$PeerImpl(
       address: null == address
@@ -228,6 +225,10 @@ class __$$PeerImplCopyWithImpl<$Res>
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
               as String,
+      peers: null == peers
+          ? _value._peers
+          : peers // ignore: cast_nullable_to_non_nullable
+              as List<String>,
     ));
   }
 }
@@ -246,7 +247,9 @@ class _$PeerImpl implements _Peer {
       @JsonKey(name: 'tag') this.tag,
       @JsonKey(name: 'top_block_hash') required this.topBlockHash,
       @JsonKey(name: 'topoheight') required this.topoheight,
-      @JsonKey(name: 'version') required this.version});
+      @JsonKey(name: 'version') required this.version,
+      @JsonKey(name: 'peers') required final List<String> peers})
+      : _peers = peers;
 
   factory _$PeerImpl.fromJson(Map<String, dynamic> json) =>
       _$$PeerImplFromJson(json);
@@ -281,10 +284,18 @@ class _$PeerImpl implements _Peer {
   @override
   @JsonKey(name: 'version')
   final String version;
+  final List<String> _peers;
+  @override
+  @JsonKey(name: 'peers')
+  List<String> get peers {
+    if (_peers is EqualUnmodifiableListView) return _peers;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_peers);
+  }
 
   @override
   String toString() {
-    return 'Peer(address: $address, cumulativeDifficulty: $cumulativeDifficulty, height: $height, id: $id, lastPing: $lastPing, prunedTopoHeight: $prunedTopoHeight, tag: $tag, topBlockHash: $topBlockHash, topoheight: $topoheight, version: $version)';
+    return 'Peer(address: $address, cumulativeDifficulty: $cumulativeDifficulty, height: $height, id: $id, lastPing: $lastPing, prunedTopoHeight: $prunedTopoHeight, tag: $tag, topBlockHash: $topBlockHash, topoheight: $topoheight, version: $version, peers: $peers)';
   }
 
   @override
@@ -306,7 +317,8 @@ class _$PeerImpl implements _Peer {
                 other.topBlockHash == topBlockHash) &&
             (identical(other.topoheight, topoheight) ||
                 other.topoheight == topoheight) &&
-            (identical(other.version, version) || other.version == version));
+            (identical(other.version, version) || other.version == version) &&
+            const DeepCollectionEquality().equals(other._peers, _peers));
   }
 
   @JsonKey(ignore: true)
@@ -322,7 +334,8 @@ class _$PeerImpl implements _Peer {
       tag,
       topBlockHash,
       topoheight,
-      version);
+      version,
+      const DeepCollectionEquality().hash(_peers));
 
   @JsonKey(ignore: true)
   @override
@@ -350,50 +363,44 @@ abstract class _Peer implements Peer {
       @JsonKey(name: 'tag') final String? tag,
       @JsonKey(name: 'top_block_hash') required final String topBlockHash,
       @JsonKey(name: 'topoheight') required final int topoheight,
-      @JsonKey(name: 'version') required final String version}) = _$PeerImpl;
+      @JsonKey(name: 'version') required final String version,
+      @JsonKey(name: 'peers') required final List<String> peers}) = _$PeerImpl;
 
   factory _Peer.fromJson(Map<String, dynamic> json) = _$PeerImpl.fromJson;
 
   @override
   @JsonKey(name: 'addr')
   String get address;
-
   @override
   @JsonKey(name: 'cumulative_difficulty')
   int get cumulativeDifficulty;
-
   @override
   @JsonKey(name: 'height')
   int get height;
-
   @override
   @JsonKey(name: 'id')
   int get id;
-
   @override
   @JsonKey(name: 'last_ping')
   int get lastPing;
-
   @override
   @JsonKey(name: 'pruned_topoheight')
   int get prunedTopoHeight;
-
   @override
   @JsonKey(name: 'tag')
   String? get tag;
-
   @override
   @JsonKey(name: 'top_block_hash')
   String get topBlockHash;
-
   @override
   @JsonKey(name: 'topoheight')
   int get topoheight;
-
   @override
   @JsonKey(name: 'version')
   String get version;
-
+  @override
+  @JsonKey(name: 'peers')
+  List<String> get peers;
   @override
   @JsonKey(ignore: true)
   _$$PeerImplCopyWith<_$PeerImpl> get copyWith =>

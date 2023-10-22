@@ -24,7 +24,6 @@ mixin _$MiningHistory {
   int get reward => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $MiningHistoryCopyWith<MiningHistory> get copyWith =>
       throw _privateConstructorUsedError;
@@ -35,7 +34,6 @@ abstract class $MiningHistoryCopyWith<$Res> {
   factory $MiningHistoryCopyWith(
           MiningHistory value, $Res Function(MiningHistory) then) =
       _$MiningHistoryCopyWithImpl<$Res, MiningHistory>;
-
   @useResult
   $Res call({@JsonKey(name: 'reward') int reward});
 }
@@ -47,7 +45,6 @@ class _$MiningHistoryCopyWithImpl<$Res, $Val extends MiningHistory>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -71,7 +68,6 @@ abstract class _$$MiningHistoryImplCopyWith<$Res>
   factory _$$MiningHistoryImplCopyWith(
           _$MiningHistoryImpl value, $Res Function(_$MiningHistoryImpl) then) =
       __$$MiningHistoryImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call({@JsonKey(name: 'reward') int reward});
@@ -153,7 +149,6 @@ abstract class _MiningHistory implements MiningHistory {
   @override
   @JsonKey(name: 'reward')
   int get reward;
-
   @override
   @JsonKey(ignore: true)
   _$$MiningHistoryImplCopyWith<_$MiningHistoryImpl> get copyWith =>
