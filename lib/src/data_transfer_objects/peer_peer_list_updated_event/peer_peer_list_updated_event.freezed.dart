@@ -22,13 +22,12 @@ PeerPeerListUpdatedEvent _$PeerPeerListUpdatedEventFromJson(
 /// @nodoc
 mixin _$PeerPeerListUpdatedEvent {
   @JsonKey(name: 'peer_id')
-  int get id => throw _privateConstructorUsedError;
+  num get id => throw _privateConstructorUsedError;
 
   @JsonKey(name: 'peerlist')
   List<String> get peerList => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $PeerPeerListUpdatedEventCopyWith<PeerPeerListUpdatedEvent> get copyWith =>
       throw _privateConstructorUsedError;
@@ -39,10 +38,9 @@ abstract class $PeerPeerListUpdatedEventCopyWith<$Res> {
   factory $PeerPeerListUpdatedEventCopyWith(PeerPeerListUpdatedEvent value,
           $Res Function(PeerPeerListUpdatedEvent) then) =
       _$PeerPeerListUpdatedEventCopyWithImpl<$Res, PeerPeerListUpdatedEvent>;
-
   @useResult
   $Res call(
-      {@JsonKey(name: 'peer_id') int id,
+      {@JsonKey(name: 'peer_id') num id,
       @JsonKey(name: 'peerlist') List<String> peerList});
 }
 
@@ -54,7 +52,6 @@ class _$PeerPeerListUpdatedEventCopyWithImpl<$Res,
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -68,7 +65,7 @@ class _$PeerPeerListUpdatedEventCopyWithImpl<$Res,
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as num,
       peerList: null == peerList
           ? _value.peerList
           : peerList // ignore: cast_nullable_to_non_nullable
@@ -84,11 +81,10 @@ abstract class _$$PeerPeerListUpdatedEventImplCopyWith<$Res>
           _$PeerPeerListUpdatedEventImpl value,
           $Res Function(_$PeerPeerListUpdatedEventImpl) then) =
       __$$PeerPeerListUpdatedEventImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'peer_id') int id,
+      {@JsonKey(name: 'peer_id') num id,
       @JsonKey(name: 'peerlist') List<String> peerList});
 }
 
@@ -112,7 +108,7 @@ class __$$PeerPeerListUpdatedEventImplCopyWithImpl<$Res>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as num,
       peerList: null == peerList
           ? _value._peerList
           : peerList // ignore: cast_nullable_to_non_nullable
@@ -134,7 +130,7 @@ class _$PeerPeerListUpdatedEventImpl implements _PeerPeerListUpdatedEvent {
 
   @override
   @JsonKey(name: 'peer_id')
-  final int id;
+  final num id;
   final List<String> _peerList;
 
   @override
@@ -181,7 +177,7 @@ class _$PeerPeerListUpdatedEventImpl implements _PeerPeerListUpdatedEvent {
 
 abstract class _PeerPeerListUpdatedEvent implements PeerPeerListUpdatedEvent {
   const factory _PeerPeerListUpdatedEvent(
-          {@JsonKey(name: 'peer_id') required final int id,
+      {@JsonKey(name: 'peer_id') required final num id,
           @JsonKey(name: 'peerlist') required final List<String> peerList}) =
       _$PeerPeerListUpdatedEventImpl;
 
@@ -190,12 +186,11 @@ abstract class _PeerPeerListUpdatedEvent implements PeerPeerListUpdatedEvent {
 
   @override
   @JsonKey(name: 'peer_id')
-  int get id;
+  num get id;
 
   @override
   @JsonKey(name: 'peerlist')
   List<String> get peerList;
-
   @override
   @JsonKey(ignore: true)
   _$$PeerPeerListUpdatedEventImplCopyWith<_$PeerPeerListUpdatedEventImpl>

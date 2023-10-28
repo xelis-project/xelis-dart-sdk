@@ -32,3 +32,15 @@ String stringToHex(String input) {
   final bytes = utf8.encode(input);
   return hex.encode(bytes);
 }
+
+final _jsonLiterals = RegExp(
+  r'"(?:[^"\\]|\\.)*"|((?<![eE.\d+\-])[+\-]?\d+(?![\d.eE]))',
+);
+
+/// Quote numerical values in a raw json
+String _quoteNumericalValues(String jsonSource) =>
+    jsonSource.replaceAllMapped(_jsonLiterals, (m) {
+      final digits = m[1];
+      if (digits != null) return '"$digits"';
+      return m[0]!;
+    });

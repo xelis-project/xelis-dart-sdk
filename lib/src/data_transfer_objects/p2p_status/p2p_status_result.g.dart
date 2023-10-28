@@ -15,7 +15,7 @@ _$P2pStatusResultImpl _$$P2pStatusResultImplFromJson(
       maxPeers: json['max_peers'] as int,
       ourTopoHeight: json['our_topoheight'] as int,
       peerCount: json['peer_count'] as int,
-      peerId: json['peer_id'] as int,
+      peerId: json['peer_id'] as num,
       tag: json['tag'] as String?,
     );
 

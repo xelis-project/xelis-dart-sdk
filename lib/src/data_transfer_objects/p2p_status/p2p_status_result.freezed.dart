@@ -28,8 +28,10 @@ mixin _$P2pStatusResult {
   int get ourTopoHeight => throw _privateConstructorUsedError;
   @JsonKey(name: 'peer_count')
   int get peerCount => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'peer_id')
-  int get peerId => throw _privateConstructorUsedError;
+  num get peerId => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'tag')
   String? get tag => throw _privateConstructorUsedError;
 
@@ -50,7 +52,7 @@ abstract class $P2pStatusResultCopyWith<$Res> {
       @JsonKey(name: 'max_peers') int maxPeers,
       @JsonKey(name: 'our_topoheight') int ourTopoHeight,
       @JsonKey(name: 'peer_count') int peerCount,
-      @JsonKey(name: 'peer_id') int peerId,
+      @JsonKey(name: 'peer_id') num peerId,
       @JsonKey(name: 'tag') String? tag});
 }
 
@@ -94,7 +96,7 @@ class _$P2pStatusResultCopyWithImpl<$Res, $Val extends P2pStatusResult>
       peerId: null == peerId
           ? _value.peerId
           : peerId // ignore: cast_nullable_to_non_nullable
-              as int,
+              as num,
       tag: freezed == tag
           ? _value.tag
           : tag // ignore: cast_nullable_to_non_nullable
@@ -116,7 +118,7 @@ abstract class _$$P2pStatusResultImplCopyWith<$Res>
       @JsonKey(name: 'max_peers') int maxPeers,
       @JsonKey(name: 'our_topoheight') int ourTopoHeight,
       @JsonKey(name: 'peer_count') int peerCount,
-      @JsonKey(name: 'peer_id') int peerId,
+      @JsonKey(name: 'peer_id') num peerId,
       @JsonKey(name: 'tag') String? tag});
 }
 
@@ -158,7 +160,7 @@ class __$$P2pStatusResultImplCopyWithImpl<$Res>
       peerId: null == peerId
           ? _value.peerId
           : peerId // ignore: cast_nullable_to_non_nullable
-              as int,
+              as num,
       tag: freezed == tag
           ? _value.tag
           : tag // ignore: cast_nullable_to_non_nullable
@@ -195,7 +197,7 @@ class _$P2pStatusResultImpl implements _P2pStatusResult {
   final int peerCount;
   @override
   @JsonKey(name: 'peer_id')
-  final int peerId;
+  final num peerId;
   @override
   @JsonKey(name: 'tag')
   final String? tag;
@@ -248,7 +250,7 @@ abstract class _P2pStatusResult implements P2pStatusResult {
       @JsonKey(name: 'max_peers') required final int maxPeers,
       @JsonKey(name: 'our_topoheight') required final int ourTopoHeight,
       @JsonKey(name: 'peer_count') required final int peerCount,
-      @JsonKey(name: 'peer_id') required final int peerId,
+      @JsonKey(name: 'peer_id') required final num peerId,
       @JsonKey(name: 'tag') final String? tag}) = _$P2pStatusResultImpl;
 
   factory _P2pStatusResult.fromJson(Map<String, dynamic> json) =
@@ -263,12 +265,15 @@ abstract class _P2pStatusResult implements P2pStatusResult {
   @override
   @JsonKey(name: 'our_topoheight')
   int get ourTopoHeight;
+
   @override
   @JsonKey(name: 'peer_count')
   int get peerCount;
+
   @override
   @JsonKey(name: 'peer_id')
-  int get peerId;
+  num get peerId;
+
   @override
   @JsonKey(name: 'tag')
   String? get tag;

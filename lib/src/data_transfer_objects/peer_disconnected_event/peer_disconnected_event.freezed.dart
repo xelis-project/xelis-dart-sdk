@@ -22,7 +22,8 @@ PeerDisconnectedEvent _$PeerDisconnectedEventFromJson(
 /// @nodoc
 mixin _$PeerDisconnectedEvent {
   @JsonKey(name: 'peer_id')
-  int get id => throw _privateConstructorUsedError;
+  num get id => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'peer_addr')
   String get address => throw _privateConstructorUsedError;
 
@@ -39,7 +40,7 @@ abstract class $PeerDisconnectedEventCopyWith<$Res> {
       _$PeerDisconnectedEventCopyWithImpl<$Res, PeerDisconnectedEvent>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'peer_id') int id,
+      {@JsonKey(name: 'peer_id') num id,
       @JsonKey(name: 'peer_addr') String address});
 }
 
@@ -64,7 +65,7 @@ class _$PeerDisconnectedEventCopyWithImpl<$Res,
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as num,
       address: null == address
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
@@ -83,7 +84,7 @@ abstract class _$$PeerDisconnectedEventImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'peer_id') int id,
+      {@JsonKey(name: 'peer_id') num id,
       @JsonKey(name: 'peer_addr') String address});
 }
 
@@ -106,7 +107,7 @@ class __$$PeerDisconnectedEventImplCopyWithImpl<$Res>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as num,
       address: null == address
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
@@ -127,7 +128,7 @@ class _$PeerDisconnectedEventImpl implements _PeerDisconnectedEvent {
 
   @override
   @JsonKey(name: 'peer_id')
-  final int id;
+  final num id;
   @override
   @JsonKey(name: 'peer_addr')
   final String address;
@@ -167,7 +168,7 @@ class _$PeerDisconnectedEventImpl implements _PeerDisconnectedEvent {
 
 abstract class _PeerDisconnectedEvent implements PeerDisconnectedEvent {
   const factory _PeerDisconnectedEvent(
-          {@JsonKey(name: 'peer_id') required final int id,
+      {@JsonKey(name: 'peer_id') required final num id,
           @JsonKey(name: 'peer_addr') required final String address}) =
       _$PeerDisconnectedEventImpl;
 
@@ -176,7 +177,8 @@ abstract class _PeerDisconnectedEvent implements PeerDisconnectedEvent {
 
   @override
   @JsonKey(name: 'peer_id')
-  int get id;
+  num get id;
+
   @override
   @JsonKey(name: 'peer_addr')
   String get address;

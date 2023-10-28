@@ -11,7 +11,7 @@ part of 'peer_disconnected_event.dart';
 _$PeerDisconnectedEventImpl _$$PeerDisconnectedEventImplFromJson(
         Map<String, dynamic> json) =>
     _$PeerDisconnectedEventImpl(
-      id: json['peer_id'] as int,
+      id: json['peer_id'] as num,
       address: json['peer_addr'] as String,
     );
 

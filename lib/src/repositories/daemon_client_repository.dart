@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
 
-import 'package:json_rpc_2/json_rpc_2.dart' as json_pc_2;
+import 'package:json_rpc_2/json_rpc_2.dart' as json_rpc_2;
 import 'package:logging/logging.dart';
 import 'package:web_socket_client/web_socket_client.dart';
 import 'package:xelis_dart_sdk/src/repositories/client_state.dart';
@@ -324,7 +324,7 @@ class DaemonClientRepository {
       final error = data['error'] as Map<String, dynamic>;
       if (_pendingRequests[id] != null) {
         _pendingRequests[id]!.completer.completeError(
-          json_pc_2.RpcException(
+          json_rpc_2.RpcException(
                 error['code'] as int,
                 error['message'] as String,
                 data: error['data'],

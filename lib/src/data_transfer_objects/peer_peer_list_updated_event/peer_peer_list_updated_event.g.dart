@@ -11,7 +11,7 @@ part of 'peer_peer_list_updated_event.dart';
 _$PeerPeerListUpdatedEventImpl _$$PeerPeerListUpdatedEventImplFromJson(
         Map<String, dynamic> json) =>
     _$PeerPeerListUpdatedEventImpl(
-      id: json['peer_id'] as int,
+      id: json['peer_id'] as num,
       peerList:
           (json['peerlist'] as List<dynamic>).map((e) => e as String).toList(),
     );

@@ -11,6 +11,7 @@ dependencies:
   freezed_annotation: ^2.4.1
   json_annotation: ^4.8.1
   json_rpc_2: ^3.0.2
+  jsontool: ^1.2.0
   logging: ^1.2.0
   very_good_analysis: ^5.1.0
   web_socket_client: ^0.1.0

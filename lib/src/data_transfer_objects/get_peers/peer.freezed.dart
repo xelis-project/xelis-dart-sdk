@@ -26,12 +26,16 @@ mixin _$Peer {
   int get cumulativeDifficulty => throw _privateConstructorUsedError;
   @JsonKey(name: 'height')
   int get height => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'id')
-  int get id => throw _privateConstructorUsedError;
+  num get id => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'last_ping')
   int get lastPing => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'pruned_topoheight')
-  int get prunedTopoHeight => throw _privateConstructorUsedError;
+  int? get prunedTopoHeight => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'tag')
   String? get tag => throw _privateConstructorUsedError;
   @JsonKey(name: 'top_block_hash')
@@ -57,9 +61,9 @@ abstract class $PeerCopyWith<$Res> {
       {@JsonKey(name: 'addr') String address,
       @JsonKey(name: 'cumulative_difficulty') int cumulativeDifficulty,
       @JsonKey(name: 'height') int height,
-      @JsonKey(name: 'id') int id,
+      @JsonKey(name: 'id') num id,
       @JsonKey(name: 'last_ping') int lastPing,
-      @JsonKey(name: 'pruned_topoheight') int prunedTopoHeight,
+      @JsonKey(name: 'pruned_topoheight') int? prunedTopoHeight,
       @JsonKey(name: 'tag') String? tag,
       @JsonKey(name: 'top_block_hash') String topBlockHash,
       @JsonKey(name: 'topoheight') int topoheight,
@@ -85,7 +89,7 @@ class _$PeerCopyWithImpl<$Res, $Val extends Peer>
     Object? height = null,
     Object? id = null,
     Object? lastPing = null,
-    Object? prunedTopoHeight = null,
+    Object? prunedTopoHeight = freezed,
     Object? tag = freezed,
     Object? topBlockHash = null,
     Object? topoheight = null,
@@ -108,15 +112,15 @@ class _$PeerCopyWithImpl<$Res, $Val extends Peer>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as num,
       lastPing: null == lastPing
           ? _value.lastPing
           : lastPing // ignore: cast_nullable_to_non_nullable
               as int,
-      prunedTopoHeight: null == prunedTopoHeight
+      prunedTopoHeight: freezed == prunedTopoHeight
           ? _value.prunedTopoHeight
           : prunedTopoHeight // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       tag: freezed == tag
           ? _value.tag
           : tag // ignore: cast_nullable_to_non_nullable
@@ -152,9 +156,9 @@ abstract class _$$PeerImplCopyWith<$Res> implements $PeerCopyWith<$Res> {
       {@JsonKey(name: 'addr') String address,
       @JsonKey(name: 'cumulative_difficulty') int cumulativeDifficulty,
       @JsonKey(name: 'height') int height,
-      @JsonKey(name: 'id') int id,
+      @JsonKey(name: 'id') num id,
       @JsonKey(name: 'last_ping') int lastPing,
-      @JsonKey(name: 'pruned_topoheight') int prunedTopoHeight,
+      @JsonKey(name: 'pruned_topoheight') int? prunedTopoHeight,
       @JsonKey(name: 'tag') String? tag,
       @JsonKey(name: 'top_block_hash') String topBlockHash,
       @JsonKey(name: 'topoheight') int topoheight,
@@ -177,7 +181,7 @@ class __$$PeerImplCopyWithImpl<$Res>
     Object? height = null,
     Object? id = null,
     Object? lastPing = null,
-    Object? prunedTopoHeight = null,
+    Object? prunedTopoHeight = freezed,
     Object? tag = freezed,
     Object? topBlockHash = null,
     Object? topoheight = null,
@@ -200,15 +204,15 @@ class __$$PeerImplCopyWithImpl<$Res>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as num,
       lastPing: null == lastPing
           ? _value.lastPing
           : lastPing // ignore: cast_nullable_to_non_nullable
               as int,
-      prunedTopoHeight: null == prunedTopoHeight
+      prunedTopoHeight: freezed == prunedTopoHeight
           ? _value.prunedTopoHeight
           : prunedTopoHeight // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       tag: freezed == tag
           ? _value.tag
           : tag // ignore: cast_nullable_to_non_nullable
@@ -243,7 +247,7 @@ class _$PeerImpl implements _Peer {
       @JsonKey(name: 'height') required this.height,
       @JsonKey(name: 'id') required this.id,
       @JsonKey(name: 'last_ping') required this.lastPing,
-      @JsonKey(name: 'pruned_topoheight') required this.prunedTopoHeight,
+      @JsonKey(name: 'pruned_topoheight') this.prunedTopoHeight,
       @JsonKey(name: 'tag') this.tag,
       @JsonKey(name: 'top_block_hash') required this.topBlockHash,
       @JsonKey(name: 'topoheight') required this.topoheight,
@@ -265,13 +269,13 @@ class _$PeerImpl implements _Peer {
   final int height;
   @override
   @JsonKey(name: 'id')
-  final int id;
+  final num id;
   @override
   @JsonKey(name: 'last_ping')
   final int lastPing;
   @override
   @JsonKey(name: 'pruned_topoheight')
-  final int prunedTopoHeight;
+  final int? prunedTopoHeight;
   @override
   @JsonKey(name: 'tag')
   final String? tag;
@@ -357,9 +361,9 @@ abstract class _Peer implements Peer {
       @JsonKey(name: 'cumulative_difficulty')
       required final int cumulativeDifficulty,
       @JsonKey(name: 'height') required final int height,
-      @JsonKey(name: 'id') required final int id,
+      @JsonKey(name: 'id') required final num id,
       @JsonKey(name: 'last_ping') required final int lastPing,
-      @JsonKey(name: 'pruned_topoheight') required final int prunedTopoHeight,
+      @JsonKey(name: 'pruned_topoheight') final int? prunedTopoHeight,
       @JsonKey(name: 'tag') final String? tag,
       @JsonKey(name: 'top_block_hash') required final String topBlockHash,
       @JsonKey(name: 'topoheight') required final int topoheight,
@@ -374,18 +378,23 @@ abstract class _Peer implements Peer {
   @override
   @JsonKey(name: 'cumulative_difficulty')
   int get cumulativeDifficulty;
+
   @override
   @JsonKey(name: 'height')
   int get height;
+
   @override
   @JsonKey(name: 'id')
-  int get id;
+  num get id;
+
   @override
   @JsonKey(name: 'last_ping')
   int get lastPing;
+
   @override
   @JsonKey(name: 'pruned_topoheight')
-  int get prunedTopoHeight;
+  int? get prunedTopoHeight;
+
   @override
   @JsonKey(name: 'tag')
   String? get tag;

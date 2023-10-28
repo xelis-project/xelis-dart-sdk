@@ -13,7 +13,7 @@ class P2pStatusResult with _$P2pStatusResult {
     @JsonKey(name: 'max_peers') required int maxPeers,
     @JsonKey(name: 'our_topoheight') required int ourTopoHeight,
     @JsonKey(name: 'peer_count') required int peerCount,
-    @JsonKey(name: 'peer_id') required int peerId,
+    @JsonKey(name: 'peer_id') required num peerId,
     @JsonKey(name: 'tag') String? tag,
   }) = _P2pStatusResult;
 

@@ -9,7 +9,7 @@ part 'peer_peer_list_updated_event.g.dart';
 @freezed
 class PeerPeerListUpdatedEvent with _$PeerPeerListUpdatedEvent {
   const factory PeerPeerListUpdatedEvent({
-    @JsonKey(name: 'peer_id') required int id,
+    @JsonKey(name: 'peer_id') required num id,
     @JsonKey(name: 'peerlist') required List<String> peerList,
   }) = _PeerPeerListUpdatedEvent;
 

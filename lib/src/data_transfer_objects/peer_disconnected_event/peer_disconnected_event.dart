@@ -9,7 +9,7 @@ part 'peer_disconnected_event.g.dart';
 @freezed
 class PeerDisconnectedEvent with _$PeerDisconnectedEvent {
   const factory PeerDisconnectedEvent({
-    @JsonKey(name: 'peer_id') required int id,
+    @JsonKey(name: 'peer_id') required num id,
     @JsonKey(name: 'peer_addr') required String address,
   }) = _PeerDisconnectedEvent;
 
