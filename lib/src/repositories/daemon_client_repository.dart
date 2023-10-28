@@ -345,7 +345,7 @@ class DaemonClientRepository {
       final error = data['error'] as Map<String, dynamic>;
       if (_pendingRequests[id] != null) {
         _pendingRequests[id]!.completer.completeError(
-          json_rpc_2.RpcException(
+              json_rpc_2.RpcException(
                 error['code'] as int,
                 error['message'] as String,
                 data: error['data'],

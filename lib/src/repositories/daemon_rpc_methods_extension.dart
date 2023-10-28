@@ -326,4 +326,15 @@ extension DaemonRpcMethodsExtension on DaemonClientRepository {
         await sendRequest(DaemonMethod.hasNonce, hasNonceParams.toJson());
     return HasNonceResult.fromJson(result as Map<String, dynamic>);
   }
+
+  /// Check if the asked TX is executed in the block.
+  Future<bool> isTxExecutedInBlock(
+    IsTxExecutedInBlockParams isTxExecutedInBlockParams,
+  ) async {
+    final result = await sendRequest(
+      DaemonMethod.isTxExecutedInBlock,
+      isTxExecutedInBlockParams.toJson(),
+    );
+    return result as bool;
+  }
 }

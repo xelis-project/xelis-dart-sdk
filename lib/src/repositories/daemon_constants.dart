@@ -107,6 +107,9 @@ enum DaemonMethod {
   /// Verify if address has a nonce on-chain registered
   hasNonce('has_nonce'),
 
+  /// Check if the asked TX is executed in the block
+  isTxExecutedInBlock('is_tx_executed_in_block'),
+
   // EVENTS METHODS
 
   /// Subscribe to an event.

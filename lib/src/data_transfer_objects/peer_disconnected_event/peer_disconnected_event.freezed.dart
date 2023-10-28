@@ -168,7 +168,7 @@ class _$PeerDisconnectedEventImpl implements _PeerDisconnectedEvent {
 
 abstract class _PeerDisconnectedEvent implements PeerDisconnectedEvent {
   const factory _PeerDisconnectedEvent(
-      {@JsonKey(name: 'peer_id') required final num id,
+          {@JsonKey(name: 'peer_id') required final num id,
           @JsonKey(name: 'peer_addr') required final String address}) =
       _$PeerDisconnectedEventImpl;
 

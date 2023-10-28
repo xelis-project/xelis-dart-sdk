@@ -177,7 +177,7 @@ class _$PeerPeerListUpdatedEventImpl implements _PeerPeerListUpdatedEvent {
 
 abstract class _PeerPeerListUpdatedEvent implements PeerPeerListUpdatedEvent {
   const factory _PeerPeerListUpdatedEvent(
-      {@JsonKey(name: 'peer_id') required final num id,
+          {@JsonKey(name: 'peer_id') required final num id,
           @JsonKey(name: 'peerlist') required final List<String> peerList}) =
       _$PeerPeerListUpdatedEventImpl;
 
