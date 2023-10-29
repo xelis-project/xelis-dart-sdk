@@ -26,16 +26,12 @@ mixin _$Peer {
   int get cumulativeDifficulty => throw _privateConstructorUsedError;
   @JsonKey(name: 'height')
   int get height => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'id')
   num get id => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'last_ping')
   int get lastPing => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'pruned_topoheight')
   int? get prunedTopoHeight => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'tag')
   String? get tag => throw _privateConstructorUsedError;
   @JsonKey(name: 'top_block_hash')
@@ -378,23 +374,18 @@ abstract class _Peer implements Peer {
   @override
   @JsonKey(name: 'cumulative_difficulty')
   int get cumulativeDifficulty;
-
   @override
   @JsonKey(name: 'height')
   int get height;
-
   @override
   @JsonKey(name: 'id')
   num get id;
-
   @override
   @JsonKey(name: 'last_ping')
   int get lastPing;
-
   @override
   @JsonKey(name: 'pruned_topoheight')
   int? get prunedTopoHeight;
-
   @override
   @JsonKey(name: 'tag')
   String? get tag;

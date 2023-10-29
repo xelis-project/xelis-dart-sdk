@@ -23,7 +23,6 @@ PeerPeerListUpdatedEvent _$PeerPeerListUpdatedEventFromJson(
 mixin _$PeerPeerListUpdatedEvent {
   @JsonKey(name: 'peer_id')
   num get id => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'peerlist')
   List<String> get peerList => throw _privateConstructorUsedError;
 
@@ -132,7 +131,6 @@ class _$PeerPeerListUpdatedEventImpl implements _PeerPeerListUpdatedEvent {
   @JsonKey(name: 'peer_id')
   final num id;
   final List<String> _peerList;
-
   @override
   @JsonKey(name: 'peerlist')
   List<String> get peerList {
@@ -187,7 +185,6 @@ abstract class _PeerPeerListUpdatedEvent implements PeerPeerListUpdatedEvent {
   @override
   @JsonKey(name: 'peer_id')
   num get id;
-
   @override
   @JsonKey(name: 'peerlist')
   List<String> get peerList;

@@ -23,7 +23,11 @@ mixin _$GetNonceParams {
   @JsonKey(name: 'address')
   String get address => throw _privateConstructorUsedError;
 
+  @JsonKey(name: 'topoheight')
+  int? get topoHeight => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   $GetNonceParamsCopyWith<GetNonceParams> get copyWith =>
       throw _privateConstructorUsedError;
@@ -34,8 +38,11 @@ abstract class $GetNonceParamsCopyWith<$Res> {
   factory $GetNonceParamsCopyWith(
           GetNonceParams value, $Res Function(GetNonceParams) then) =
       _$GetNonceParamsCopyWithImpl<$Res, GetNonceParams>;
+
   @useResult
-  $Res call({@JsonKey(name: 'address') String address});
+  $Res call(
+      {@JsonKey(name: 'address') String address,
+      @JsonKey(name: 'topoheight') int? topoHeight});
 }
 
 /// @nodoc
@@ -45,6 +52,7 @@ class _$GetNonceParamsCopyWithImpl<$Res, $Val extends GetNonceParams>
 
   // ignore: unused_field
   final $Val _value;
+
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -52,12 +60,17 @@ class _$GetNonceParamsCopyWithImpl<$Res, $Val extends GetNonceParams>
   @override
   $Res call({
     Object? address = null,
+    Object? topoHeight = freezed,
   }) {
     return _then(_value.copyWith(
       address: null == address
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
               as String,
+      topoHeight: freezed == topoHeight
+          ? _value.topoHeight
+          : topoHeight // ignore: cast_nullable_to_non_nullable
+              as int?,
     ) as $Val);
   }
 }
@@ -68,9 +81,12 @@ abstract class _$$GetNonceParamsImplCopyWith<$Res>
   factory _$$GetNonceParamsImplCopyWith(_$GetNonceParamsImpl value,
           $Res Function(_$GetNonceParamsImpl) then) =
       __$$GetNonceParamsImplCopyWithImpl<$Res>;
+
   @override
   @useResult
-  $Res call({@JsonKey(name: 'address') String address});
+  $Res call(
+      {@JsonKey(name: 'address') String address,
+      @JsonKey(name: 'topoheight') int? topoHeight});
 }
 
 /// @nodoc
@@ -85,12 +101,17 @@ class __$$GetNonceParamsImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? address = null,
+    Object? topoHeight = freezed,
   }) {
     return _then(_$GetNonceParamsImpl(
       address: null == address
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
               as String,
+      topoHeight: freezed == topoHeight
+          ? _value.topoHeight
+          : topoHeight // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -98,7 +119,9 @@ class __$$GetNonceParamsImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$GetNonceParamsImpl implements _GetNonceParams {
-  const _$GetNonceParamsImpl({@JsonKey(name: 'address') required this.address});
+  const _$GetNonceParamsImpl(
+      {@JsonKey(name: 'address') required this.address,
+      @JsonKey(name: 'topoheight') this.topoHeight});
 
   factory _$GetNonceParamsImpl.fromJson(Map<String, dynamic> json) =>
       _$$GetNonceParamsImplFromJson(json);
@@ -106,10 +129,13 @@ class _$GetNonceParamsImpl implements _GetNonceParams {
   @override
   @JsonKey(name: 'address')
   final String address;
+  @override
+  @JsonKey(name: 'topoheight')
+  final int? topoHeight;
 
   @override
   String toString() {
-    return 'GetNonceParams(address: $address)';
+    return 'GetNonceParams(address: $address, topoHeight: $topoHeight)';
   }
 
   @override
@@ -117,12 +143,14 @@ class _$GetNonceParamsImpl implements _GetNonceParams {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GetNonceParamsImpl &&
-            (identical(other.address, address) || other.address == address));
+            (identical(other.address, address) || other.address == address) &&
+            (identical(other.topoHeight, topoHeight) ||
+                other.topoHeight == topoHeight));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, address);
+  int get hashCode => Object.hash(runtimeType, address, topoHeight);
 
   @JsonKey(ignore: true)
   @override
@@ -141,7 +169,8 @@ class _$GetNonceParamsImpl implements _GetNonceParams {
 
 abstract class _GetNonceParams implements GetNonceParams {
   const factory _GetNonceParams(
-          {@JsonKey(name: 'address') required final String address}) =
+          {@JsonKey(name: 'address') required final String address,
+          @JsonKey(name: 'topoheight') final int? topoHeight}) =
       _$GetNonceParamsImpl;
 
   factory _GetNonceParams.fromJson(Map<String, dynamic> json) =
@@ -150,6 +179,11 @@ abstract class _GetNonceParams implements GetNonceParams {
   @override
   @JsonKey(name: 'address')
   String get address;
+
+  @override
+  @JsonKey(name: 'topoheight')
+  int? get topoHeight;
+
   @override
   @JsonKey(ignore: true)
   _$$GetNonceParamsImplCopyWith<_$GetNonceParamsImpl> get copyWith =>

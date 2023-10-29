@@ -28,10 +28,8 @@ mixin _$P2pStatusResult {
   int get ourTopoHeight => throw _privateConstructorUsedError;
   @JsonKey(name: 'peer_count')
   int get peerCount => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'peer_id')
   num get peerId => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'tag')
   String? get tag => throw _privateConstructorUsedError;
 
@@ -265,15 +263,12 @@ abstract class _P2pStatusResult implements P2pStatusResult {
   @override
   @JsonKey(name: 'our_topoheight')
   int get ourTopoHeight;
-
   @override
   @JsonKey(name: 'peer_count')
   int get peerCount;
-
   @override
   @JsonKey(name: 'peer_id')
   num get peerId;
-
   @override
   @JsonKey(name: 'tag')
   String? get tag;

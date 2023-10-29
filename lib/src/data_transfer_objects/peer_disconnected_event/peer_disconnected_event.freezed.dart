@@ -23,7 +23,6 @@ PeerDisconnectedEvent _$PeerDisconnectedEventFromJson(
 mixin _$PeerDisconnectedEvent {
   @JsonKey(name: 'peer_id')
   num get id => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'peer_addr')
   String get address => throw _privateConstructorUsedError;
 
@@ -178,7 +177,6 @@ abstract class _PeerDisconnectedEvent implements PeerDisconnectedEvent {
   @override
   @JsonKey(name: 'peer_id')
   num get id;
-
   @override
   @JsonKey(name: 'peer_addr')
   String get address;

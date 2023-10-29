@@ -10,6 +10,7 @@ part 'get_nonce_params.g.dart';
 class GetNonceParams with _$GetNonceParams {
   const factory GetNonceParams({
     @JsonKey(name: 'address') required String address,
+    @JsonKey(name: 'topoheight') int? topoHeight,
   }) = _GetNonceParams;
 
   factory GetNonceParams.fromJson(Map<String, dynamic> json) =>
