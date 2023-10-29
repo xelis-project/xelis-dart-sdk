@@ -1,3 +1,11 @@
+## 0.10.0
+
+Daemon API upgrade :
+
+- new hasNonce RPC method.
+- new isTxExecutedInBlock RPC method.
+- new Peer events.
+
 ## 0.9.0
 
 Daemon API upgrade :
