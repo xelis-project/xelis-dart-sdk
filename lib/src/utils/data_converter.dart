@@ -33,6 +33,7 @@ String stringToHex(String input) {
   return hex.encode(bytes);
 }
 
+/*
 final _jsonLiterals = RegExp(
   r'"(?:[^"\\]|\\.)*"|((?<![eE.\d+\-])[+\-]?\d+(?![\d.eE]))',
 );
@@ -44,3 +45,4 @@ String _quoteNumericalValues(String jsonSource) =>
       if (digits != null) return '"$digits"';
       return m[0]!;
     });
+*/
