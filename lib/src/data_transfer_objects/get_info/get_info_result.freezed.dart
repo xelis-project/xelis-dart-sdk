@@ -22,48 +22,34 @@ GetInfoResult _$GetInfoResultFromJson(Map<String, dynamic> json) {
 mixin _$GetInfoResult {
   @JsonKey(name: 'height')
   int get height => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'topoheight')
   int get topoHeight => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'stableheight')
   int get stableHeight => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'pruned_topoheight')
   int? get prunedTopoHeight => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'top_block_hash')
   String get topBlockHash => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'circulating_supply')
   int get circulatingSupply => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'maximum_supply')
   int get maximumSupply => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'difficulty')
   int get difficulty => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'block_time_target')
   int get blockTimeTarget => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'average_block_time')
   int get averageBlockTime => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'block_reward')
   int get blockReward => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'mempool_size')
   int get mempoolSize => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'version')
   String get version => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'network')
   Network get network => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $GetInfoResultCopyWith<GetInfoResult> get copyWith =>
       throw _privateConstructorUsedError;
@@ -452,59 +438,45 @@ abstract class _GetInfoResult implements GetInfoResult {
   @override
   @JsonKey(name: 'height')
   int get height;
-
   @override
   @JsonKey(name: 'topoheight')
   int get topoHeight;
-
   @override
   @JsonKey(name: 'stableheight')
   int get stableHeight;
-
   @override
   @JsonKey(name: 'pruned_topoheight')
   int? get prunedTopoHeight;
-
   @override
   @JsonKey(name: 'top_block_hash')
   String get topBlockHash;
-
   @override
   @JsonKey(name: 'circulating_supply')
   int get circulatingSupply;
-
   @override
   @JsonKey(name: 'maximum_supply')
   int get maximumSupply;
-
   @override
   @JsonKey(name: 'difficulty')
   int get difficulty;
-
   @override
   @JsonKey(name: 'block_time_target')
   int get blockTimeTarget;
-
   @override
   @JsonKey(name: 'average_block_time')
   int get averageBlockTime;
-
   @override
   @JsonKey(name: 'block_reward')
   int get blockReward;
-
   @override
   @JsonKey(name: 'mempool_size')
   int get mempoolSize;
-
   @override
   @JsonKey(name: 'version')
   String get version;
-
   @override
   @JsonKey(name: 'network')
   Network get network;
-
   @override
   @JsonKey(ignore: true)
   _$$GetInfoResultImplCopyWith<_$GetInfoResultImpl> get copyWith =>

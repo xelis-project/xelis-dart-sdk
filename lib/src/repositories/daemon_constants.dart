@@ -110,6 +110,9 @@ enum DaemonMethod {
   /// Check if the asked TX is executed in the block
   isTxExecutedInBlock('is_tx_executed_in_block'),
 
+  /// Get the configured dev fees
+  getDevFeeThresholds('get_dev_fee_thresholds'),
+
   // EVENTS METHODS
 
   /// Subscribe to an event.

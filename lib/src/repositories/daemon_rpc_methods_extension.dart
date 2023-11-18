@@ -337,4 +337,12 @@ extension DaemonRpcMethodsExtension on DaemonClientRepository {
     );
     return result as bool;
   }
+
+  /// Get the configured dev fees
+  Future<List<DevFeeThresholds>> getDevFeeThresholds() async {
+    final result = await sendRequest(DaemonMethod.getDevFeeThresholds);
+    return (result as List)
+        .map((e) => DevFeeThresholds.fromJson(e as Map<String, dynamic>))
+        .toList();
+  }
 }
