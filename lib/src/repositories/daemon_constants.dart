@@ -110,8 +110,11 @@ enum DaemonMethod {
   /// Check if the asked TX is executed in the block
   isTxExecutedInBlock('is_tx_executed_in_block'),
 
-  /// Get the configured dev fees
+  /// Retrieve configured dev fees thresholds
   getDevFeeThresholds('get_dev_fee_thresholds'),
+
+  /// Get size of the blockchain on disk
+  getSizeOnDisk('get_size_on_disk'),
 
   // EVENTS METHODS
 

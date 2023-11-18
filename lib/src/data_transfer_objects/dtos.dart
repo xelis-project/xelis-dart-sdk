@@ -29,6 +29,7 @@ export 'get_nonce/get_nonce_params.dart';
 export 'get_peers/peer.dart';
 export 'get_range/get_height_range_params.dart';
 export 'get_range/get_topoheight_range_params.dart';
+export 'get_size_on_disk/get_size_on_disk_result.dart';
 export 'get_top_block/get_top_block_params.dart';
 export 'get_transaction/get_transaction_params.dart';
 export 'get_transactions/get_transactions_params.dart';

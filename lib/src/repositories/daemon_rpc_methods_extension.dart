@@ -327,7 +327,7 @@ extension DaemonRpcMethodsExtension on DaemonClientRepository {
     return HasNonceResult.fromJson(result as Map<String, dynamic>);
   }
 
-  /// Check if the asked TX is executed in the block.
+  /// Check if the asked TX is executed in the block
   Future<bool> isTxExecutedInBlock(
     IsTxExecutedInBlockParams isTxExecutedInBlockParams,
   ) async {
@@ -338,11 +338,17 @@ extension DaemonRpcMethodsExtension on DaemonClientRepository {
     return result as bool;
   }
 
-  /// Get the configured dev fees
+  /// Retrieve configured dev fees thresholds
   Future<List<DevFeeThresholds>> getDevFeeThresholds() async {
     final result = await sendRequest(DaemonMethod.getDevFeeThresholds);
     return (result as List)
         .map((e) => DevFeeThresholds.fromJson(e as Map<String, dynamic>))
         .toList();
+  }
+
+  /// Get size of the blockchain on disk
+  Future<GetSizeOnDiskResult> getSizeOnDisk() async {
+    final result = await sendRequest(DaemonMethod.getSizeOnDisk);
+    return GetSizeOnDiskResult.fromJson(result as Map<String, dynamic>);
   }
 }
