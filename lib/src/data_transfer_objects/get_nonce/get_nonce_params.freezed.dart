@@ -22,12 +22,10 @@ GetNonceParams _$GetNonceParamsFromJson(Map<String, dynamic> json) {
 mixin _$GetNonceParams {
   @JsonKey(name: 'address')
   String get address => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'topoheight')
   int? get topoHeight => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $GetNonceParamsCopyWith<GetNonceParams> get copyWith =>
       throw _privateConstructorUsedError;
@@ -38,7 +36,6 @@ abstract class $GetNonceParamsCopyWith<$Res> {
   factory $GetNonceParamsCopyWith(
           GetNonceParams value, $Res Function(GetNonceParams) then) =
       _$GetNonceParamsCopyWithImpl<$Res, GetNonceParams>;
-
   @useResult
   $Res call(
       {@JsonKey(name: 'address') String address,
@@ -52,7 +49,6 @@ class _$GetNonceParamsCopyWithImpl<$Res, $Val extends GetNonceParams>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -81,7 +77,6 @@ abstract class _$$GetNonceParamsImplCopyWith<$Res>
   factory _$$GetNonceParamsImplCopyWith(_$GetNonceParamsImpl value,
           $Res Function(_$GetNonceParamsImpl) then) =
       __$$GetNonceParamsImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -179,11 +174,9 @@ abstract class _GetNonceParams implements GetNonceParams {
   @override
   @JsonKey(name: 'address')
   String get address;
-
   @override
   @JsonKey(name: 'topoheight')
   int? get topoHeight;
-
   @override
   @JsonKey(ignore: true)
   _$$GetNonceParamsImplCopyWith<_$GetNonceParamsImpl> get copyWith =>

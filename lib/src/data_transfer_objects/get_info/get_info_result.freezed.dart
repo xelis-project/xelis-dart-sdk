@@ -20,34 +20,50 @@ GetInfoResult _$GetInfoResultFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$GetInfoResult {
-  @JsonKey(name: 'average_block_time')
-  int get averageBlockTime => throw _privateConstructorUsedError;
-  @JsonKey(name: 'block_reward')
-  int get blockReward => throw _privateConstructorUsedError;
-  @JsonKey(name: 'block_time_target')
-  int get blockTimeTarget => throw _privateConstructorUsedError;
-  @JsonKey(name: 'difficulty')
-  int get difficulty => throw _privateConstructorUsedError;
   @JsonKey(name: 'height')
   int get height => throw _privateConstructorUsedError;
-  @JsonKey(name: 'mempool_size')
-  int get mempoolSize => throw _privateConstructorUsedError;
-  @JsonKey(name: 'native_supply')
-  int get nativeSupply => throw _privateConstructorUsedError;
-  @JsonKey(name: 'network')
-  Network get network => throw _privateConstructorUsedError;
-  @JsonKey(name: 'stableheight')
-  int get stableHeight => throw _privateConstructorUsedError;
-  @JsonKey(name: 'top_hash')
-  String get topHash => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'topoheight')
   int get topoHeight => throw _privateConstructorUsedError;
-  @JsonKey(name: 'version')
-  String get version => throw _privateConstructorUsedError;
+
+  @JsonKey(name: 'stableheight')
+  int get stableHeight => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'pruned_topoheight')
   int? get prunedTopoHeight => throw _privateConstructorUsedError;
 
+  @JsonKey(name: 'top_block_hash')
+  String get topBlockHash => throw _privateConstructorUsedError;
+
+  @JsonKey(name: 'circulating_supply')
+  int get circulatingSupply => throw _privateConstructorUsedError;
+
+  @JsonKey(name: 'maximum_supply')
+  int get maximumSupply => throw _privateConstructorUsedError;
+
+  @JsonKey(name: 'difficulty')
+  int get difficulty => throw _privateConstructorUsedError;
+
+  @JsonKey(name: 'block_time_target')
+  int get blockTimeTarget => throw _privateConstructorUsedError;
+
+  @JsonKey(name: 'average_block_time')
+  int get averageBlockTime => throw _privateConstructorUsedError;
+
+  @JsonKey(name: 'block_reward')
+  int get blockReward => throw _privateConstructorUsedError;
+
+  @JsonKey(name: 'mempool_size')
+  int get mempoolSize => throw _privateConstructorUsedError;
+
+  @JsonKey(name: 'version')
+  String get version => throw _privateConstructorUsedError;
+
+  @JsonKey(name: 'network')
+  Network get network => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   $GetInfoResultCopyWith<GetInfoResult> get copyWith =>
       throw _privateConstructorUsedError;
@@ -60,19 +76,20 @@ abstract class $GetInfoResultCopyWith<$Res> {
       _$GetInfoResultCopyWithImpl<$Res, GetInfoResult>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'average_block_time') int averageBlockTime,
-      @JsonKey(name: 'block_reward') int blockReward,
-      @JsonKey(name: 'block_time_target') int blockTimeTarget,
-      @JsonKey(name: 'difficulty') int difficulty,
-      @JsonKey(name: 'height') int height,
-      @JsonKey(name: 'mempool_size') int mempoolSize,
-      @JsonKey(name: 'native_supply') int nativeSupply,
-      @JsonKey(name: 'network') Network network,
-      @JsonKey(name: 'stableheight') int stableHeight,
-      @JsonKey(name: 'top_hash') String topHash,
+      {@JsonKey(name: 'height') int height,
       @JsonKey(name: 'topoheight') int topoHeight,
+      @JsonKey(name: 'stableheight') int stableHeight,
+      @JsonKey(name: 'pruned_topoheight') int? prunedTopoHeight,
+      @JsonKey(name: 'top_block_hash') String topBlockHash,
+      @JsonKey(name: 'circulating_supply') int circulatingSupply,
+      @JsonKey(name: 'maximum_supply') int maximumSupply,
+      @JsonKey(name: 'difficulty') int difficulty,
+      @JsonKey(name: 'block_time_target') int blockTimeTarget,
+      @JsonKey(name: 'average_block_time') int averageBlockTime,
+      @JsonKey(name: 'block_reward') int blockReward,
+      @JsonKey(name: 'mempool_size') int mempoolSize,
       @JsonKey(name: 'version') String version,
-      @JsonKey(name: 'pruned_topoheight') int? prunedTopoHeight});
+      @JsonKey(name: 'network') Network network});
 }
 
 /// @nodoc
@@ -88,21 +105,58 @@ class _$GetInfoResultCopyWithImpl<$Res, $Val extends GetInfoResult>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? height = null,
+    Object? topoHeight = null,
+    Object? stableHeight = null,
+    Object? prunedTopoHeight = freezed,
+    Object? topBlockHash = null,
+    Object? circulatingSupply = null,
+    Object? maximumSupply = null,
+    Object? difficulty = null,
+    Object? blockTimeTarget = null,
     Object? averageBlockTime = null,
     Object? blockReward = null,
-    Object? blockTimeTarget = null,
-    Object? difficulty = null,
-    Object? height = null,
     Object? mempoolSize = null,
-    Object? nativeSupply = null,
-    Object? network = null,
-    Object? stableHeight = null,
-    Object? topHash = null,
-    Object? topoHeight = null,
     Object? version = null,
-    Object? prunedTopoHeight = freezed,
+    Object? network = null,
   }) {
     return _then(_value.copyWith(
+      height: null == height
+          ? _value.height
+          : height // ignore: cast_nullable_to_non_nullable
+              as int,
+      topoHeight: null == topoHeight
+          ? _value.topoHeight
+          : topoHeight // ignore: cast_nullable_to_non_nullable
+              as int,
+      stableHeight: null == stableHeight
+          ? _value.stableHeight
+          : stableHeight // ignore: cast_nullable_to_non_nullable
+              as int,
+      prunedTopoHeight: freezed == prunedTopoHeight
+          ? _value.prunedTopoHeight
+          : prunedTopoHeight // ignore: cast_nullable_to_non_nullable
+              as int?,
+      topBlockHash: null == topBlockHash
+          ? _value.topBlockHash
+          : topBlockHash // ignore: cast_nullable_to_non_nullable
+              as String,
+      circulatingSupply: null == circulatingSupply
+          ? _value.circulatingSupply
+          : circulatingSupply // ignore: cast_nullable_to_non_nullable
+              as int,
+      maximumSupply: null == maximumSupply
+          ? _value.maximumSupply
+          : maximumSupply // ignore: cast_nullable_to_non_nullable
+              as int,
+      difficulty: null == difficulty
+          ? _value.difficulty
+          : difficulty // ignore: cast_nullable_to_non_nullable
+              as int,
+      blockTimeTarget: null == blockTimeTarget
+          ? _value.blockTimeTarget
+          : blockTimeTarget // ignore: cast_nullable_to_non_nullable
+              as int,
       averageBlockTime: null == averageBlockTime
           ? _value.averageBlockTime
           : averageBlockTime // ignore: cast_nullable_to_non_nullable
@@ -111,50 +165,18 @@ class _$GetInfoResultCopyWithImpl<$Res, $Val extends GetInfoResult>
           ? _value.blockReward
           : blockReward // ignore: cast_nullable_to_non_nullable
               as int,
-      blockTimeTarget: null == blockTimeTarget
-          ? _value.blockTimeTarget
-          : blockTimeTarget // ignore: cast_nullable_to_non_nullable
-              as int,
-      difficulty: null == difficulty
-          ? _value.difficulty
-          : difficulty // ignore: cast_nullable_to_non_nullable
-              as int,
-      height: null == height
-          ? _value.height
-          : height // ignore: cast_nullable_to_non_nullable
-              as int,
       mempoolSize: null == mempoolSize
           ? _value.mempoolSize
           : mempoolSize // ignore: cast_nullable_to_non_nullable
-              as int,
-      nativeSupply: null == nativeSupply
-          ? _value.nativeSupply
-          : nativeSupply // ignore: cast_nullable_to_non_nullable
-              as int,
-      network: null == network
-          ? _value.network
-          : network // ignore: cast_nullable_to_non_nullable
-              as Network,
-      stableHeight: null == stableHeight
-          ? _value.stableHeight
-          : stableHeight // ignore: cast_nullable_to_non_nullable
-              as int,
-      topHash: null == topHash
-          ? _value.topHash
-          : topHash // ignore: cast_nullable_to_non_nullable
-              as String,
-      topoHeight: null == topoHeight
-          ? _value.topoHeight
-          : topoHeight // ignore: cast_nullable_to_non_nullable
               as int,
       version: null == version
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
               as String,
-      prunedTopoHeight: freezed == prunedTopoHeight
-          ? _value.prunedTopoHeight
-          : prunedTopoHeight // ignore: cast_nullable_to_non_nullable
-              as int?,
+      network: null == network
+          ? _value.network
+          : network // ignore: cast_nullable_to_non_nullable
+              as Network,
     ) as $Val);
   }
 }
@@ -168,19 +190,20 @@ abstract class _$$GetInfoResultImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'average_block_time') int averageBlockTime,
-      @JsonKey(name: 'block_reward') int blockReward,
-      @JsonKey(name: 'block_time_target') int blockTimeTarget,
-      @JsonKey(name: 'difficulty') int difficulty,
-      @JsonKey(name: 'height') int height,
-      @JsonKey(name: 'mempool_size') int mempoolSize,
-      @JsonKey(name: 'native_supply') int nativeSupply,
-      @JsonKey(name: 'network') Network network,
-      @JsonKey(name: 'stableheight') int stableHeight,
-      @JsonKey(name: 'top_hash') String topHash,
+      {@JsonKey(name: 'height') int height,
       @JsonKey(name: 'topoheight') int topoHeight,
+      @JsonKey(name: 'stableheight') int stableHeight,
+      @JsonKey(name: 'pruned_topoheight') int? prunedTopoHeight,
+      @JsonKey(name: 'top_block_hash') String topBlockHash,
+      @JsonKey(name: 'circulating_supply') int circulatingSupply,
+      @JsonKey(name: 'maximum_supply') int maximumSupply,
+      @JsonKey(name: 'difficulty') int difficulty,
+      @JsonKey(name: 'block_time_target') int blockTimeTarget,
+      @JsonKey(name: 'average_block_time') int averageBlockTime,
+      @JsonKey(name: 'block_reward') int blockReward,
+      @JsonKey(name: 'mempool_size') int mempoolSize,
       @JsonKey(name: 'version') String version,
-      @JsonKey(name: 'pruned_topoheight') int? prunedTopoHeight});
+      @JsonKey(name: 'network') Network network});
 }
 
 /// @nodoc
@@ -194,21 +217,58 @@ class __$$GetInfoResultImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? height = null,
+    Object? topoHeight = null,
+    Object? stableHeight = null,
+    Object? prunedTopoHeight = freezed,
+    Object? topBlockHash = null,
+    Object? circulatingSupply = null,
+    Object? maximumSupply = null,
+    Object? difficulty = null,
+    Object? blockTimeTarget = null,
     Object? averageBlockTime = null,
     Object? blockReward = null,
-    Object? blockTimeTarget = null,
-    Object? difficulty = null,
-    Object? height = null,
     Object? mempoolSize = null,
-    Object? nativeSupply = null,
-    Object? network = null,
-    Object? stableHeight = null,
-    Object? topHash = null,
-    Object? topoHeight = null,
     Object? version = null,
-    Object? prunedTopoHeight = freezed,
+    Object? network = null,
   }) {
     return _then(_$GetInfoResultImpl(
+      height: null == height
+          ? _value.height
+          : height // ignore: cast_nullable_to_non_nullable
+              as int,
+      topoHeight: null == topoHeight
+          ? _value.topoHeight
+          : topoHeight // ignore: cast_nullable_to_non_nullable
+              as int,
+      stableHeight: null == stableHeight
+          ? _value.stableHeight
+          : stableHeight // ignore: cast_nullable_to_non_nullable
+              as int,
+      prunedTopoHeight: freezed == prunedTopoHeight
+          ? _value.prunedTopoHeight
+          : prunedTopoHeight // ignore: cast_nullable_to_non_nullable
+              as int?,
+      topBlockHash: null == topBlockHash
+          ? _value.topBlockHash
+          : topBlockHash // ignore: cast_nullable_to_non_nullable
+              as String,
+      circulatingSupply: null == circulatingSupply
+          ? _value.circulatingSupply
+          : circulatingSupply // ignore: cast_nullable_to_non_nullable
+              as int,
+      maximumSupply: null == maximumSupply
+          ? _value.maximumSupply
+          : maximumSupply // ignore: cast_nullable_to_non_nullable
+              as int,
+      difficulty: null == difficulty
+          ? _value.difficulty
+          : difficulty // ignore: cast_nullable_to_non_nullable
+              as int,
+      blockTimeTarget: null == blockTimeTarget
+          ? _value.blockTimeTarget
+          : blockTimeTarget // ignore: cast_nullable_to_non_nullable
+              as int,
       averageBlockTime: null == averageBlockTime
           ? _value.averageBlockTime
           : averageBlockTime // ignore: cast_nullable_to_non_nullable
@@ -217,50 +277,18 @@ class __$$GetInfoResultImplCopyWithImpl<$Res>
           ? _value.blockReward
           : blockReward // ignore: cast_nullable_to_non_nullable
               as int,
-      blockTimeTarget: null == blockTimeTarget
-          ? _value.blockTimeTarget
-          : blockTimeTarget // ignore: cast_nullable_to_non_nullable
-              as int,
-      difficulty: null == difficulty
-          ? _value.difficulty
-          : difficulty // ignore: cast_nullable_to_non_nullable
-              as int,
-      height: null == height
-          ? _value.height
-          : height // ignore: cast_nullable_to_non_nullable
-              as int,
       mempoolSize: null == mempoolSize
           ? _value.mempoolSize
           : mempoolSize // ignore: cast_nullable_to_non_nullable
-              as int,
-      nativeSupply: null == nativeSupply
-          ? _value.nativeSupply
-          : nativeSupply // ignore: cast_nullable_to_non_nullable
-              as int,
-      network: null == network
-          ? _value.network
-          : network // ignore: cast_nullable_to_non_nullable
-              as Network,
-      stableHeight: null == stableHeight
-          ? _value.stableHeight
-          : stableHeight // ignore: cast_nullable_to_non_nullable
-              as int,
-      topHash: null == topHash
-          ? _value.topHash
-          : topHash // ignore: cast_nullable_to_non_nullable
-              as String,
-      topoHeight: null == topoHeight
-          ? _value.topoHeight
-          : topoHeight // ignore: cast_nullable_to_non_nullable
               as int,
       version: null == version
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
               as String,
-      prunedTopoHeight: freezed == prunedTopoHeight
-          ? _value.prunedTopoHeight
-          : prunedTopoHeight // ignore: cast_nullable_to_non_nullable
-              as int?,
+      network: null == network
+          ? _value.network
+          : network // ignore: cast_nullable_to_non_nullable
+              as Network,
     ));
   }
 }
@@ -269,23 +297,51 @@ class __$$GetInfoResultImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$GetInfoResultImpl implements _GetInfoResult {
   const _$GetInfoResultImpl(
-      {@JsonKey(name: 'average_block_time') required this.averageBlockTime,
-      @JsonKey(name: 'block_reward') required this.blockReward,
-      @JsonKey(name: 'block_time_target') required this.blockTimeTarget,
-      @JsonKey(name: 'difficulty') required this.difficulty,
-      @JsonKey(name: 'height') required this.height,
-      @JsonKey(name: 'mempool_size') required this.mempoolSize,
-      @JsonKey(name: 'native_supply') required this.nativeSupply,
-      @JsonKey(name: 'network') required this.network,
-      @JsonKey(name: 'stableheight') required this.stableHeight,
-      @JsonKey(name: 'top_hash') required this.topHash,
+      {@JsonKey(name: 'height') required this.height,
       @JsonKey(name: 'topoheight') required this.topoHeight,
+      @JsonKey(name: 'stableheight') required this.stableHeight,
+      @JsonKey(name: 'pruned_topoheight') this.prunedTopoHeight,
+      @JsonKey(name: 'top_block_hash') required this.topBlockHash,
+      @JsonKey(name: 'circulating_supply') required this.circulatingSupply,
+      @JsonKey(name: 'maximum_supply') required this.maximumSupply,
+      @JsonKey(name: 'difficulty') required this.difficulty,
+      @JsonKey(name: 'block_time_target') required this.blockTimeTarget,
+      @JsonKey(name: 'average_block_time') required this.averageBlockTime,
+      @JsonKey(name: 'block_reward') required this.blockReward,
+      @JsonKey(name: 'mempool_size') required this.mempoolSize,
       @JsonKey(name: 'version') required this.version,
-      @JsonKey(name: 'pruned_topoheight') this.prunedTopoHeight});
+      @JsonKey(name: 'network') required this.network});
 
   factory _$GetInfoResultImpl.fromJson(Map<String, dynamic> json) =>
       _$$GetInfoResultImplFromJson(json);
 
+  @override
+  @JsonKey(name: 'height')
+  final int height;
+  @override
+  @JsonKey(name: 'topoheight')
+  final int topoHeight;
+  @override
+  @JsonKey(name: 'stableheight')
+  final int stableHeight;
+  @override
+  @JsonKey(name: 'pruned_topoheight')
+  final int? prunedTopoHeight;
+  @override
+  @JsonKey(name: 'top_block_hash')
+  final String topBlockHash;
+  @override
+  @JsonKey(name: 'circulating_supply')
+  final int circulatingSupply;
+  @override
+  @JsonKey(name: 'maximum_supply')
+  final int maximumSupply;
+  @override
+  @JsonKey(name: 'difficulty')
+  final int difficulty;
+  @override
+  @JsonKey(name: 'block_time_target')
+  final int blockTimeTarget;
   @override
   @JsonKey(name: 'average_block_time')
   final int averageBlockTime;
@@ -293,42 +349,18 @@ class _$GetInfoResultImpl implements _GetInfoResult {
   @JsonKey(name: 'block_reward')
   final int blockReward;
   @override
-  @JsonKey(name: 'block_time_target')
-  final int blockTimeTarget;
-  @override
-  @JsonKey(name: 'difficulty')
-  final int difficulty;
-  @override
-  @JsonKey(name: 'height')
-  final int height;
-  @override
   @JsonKey(name: 'mempool_size')
   final int mempoolSize;
-  @override
-  @JsonKey(name: 'native_supply')
-  final int nativeSupply;
-  @override
-  @JsonKey(name: 'network')
-  final Network network;
-  @override
-  @JsonKey(name: 'stableheight')
-  final int stableHeight;
-  @override
-  @JsonKey(name: 'top_hash')
-  final String topHash;
-  @override
-  @JsonKey(name: 'topoheight')
-  final int topoHeight;
   @override
   @JsonKey(name: 'version')
   final String version;
   @override
-  @JsonKey(name: 'pruned_topoheight')
-  final int? prunedTopoHeight;
+  @JsonKey(name: 'network')
+  final Network network;
 
   @override
   String toString() {
-    return 'GetInfoResult(averageBlockTime: $averageBlockTime, blockReward: $blockReward, blockTimeTarget: $blockTimeTarget, difficulty: $difficulty, height: $height, mempoolSize: $mempoolSize, nativeSupply: $nativeSupply, network: $network, stableHeight: $stableHeight, topHash: $topHash, topoHeight: $topoHeight, version: $version, prunedTopoHeight: $prunedTopoHeight)';
+    return 'GetInfoResult(height: $height, topoHeight: $topoHeight, stableHeight: $stableHeight, prunedTopoHeight: $prunedTopoHeight, topBlockHash: $topBlockHash, circulatingSupply: $circulatingSupply, maximumSupply: $maximumSupply, difficulty: $difficulty, blockTimeTarget: $blockTimeTarget, averageBlockTime: $averageBlockTime, blockReward: $blockReward, mempoolSize: $mempoolSize, version: $version, network: $network)';
   }
 
   @override
@@ -336,47 +368,51 @@ class _$GetInfoResultImpl implements _GetInfoResult {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GetInfoResultImpl &&
+            (identical(other.height, height) || other.height == height) &&
+            (identical(other.topoHeight, topoHeight) ||
+                other.topoHeight == topoHeight) &&
+            (identical(other.stableHeight, stableHeight) ||
+                other.stableHeight == stableHeight) &&
+            (identical(other.prunedTopoHeight, prunedTopoHeight) ||
+                other.prunedTopoHeight == prunedTopoHeight) &&
+            (identical(other.topBlockHash, topBlockHash) ||
+                other.topBlockHash == topBlockHash) &&
+            (identical(other.circulatingSupply, circulatingSupply) ||
+                other.circulatingSupply == circulatingSupply) &&
+            (identical(other.maximumSupply, maximumSupply) ||
+                other.maximumSupply == maximumSupply) &&
+            (identical(other.difficulty, difficulty) ||
+                other.difficulty == difficulty) &&
+            (identical(other.blockTimeTarget, blockTimeTarget) ||
+                other.blockTimeTarget == blockTimeTarget) &&
             (identical(other.averageBlockTime, averageBlockTime) ||
                 other.averageBlockTime == averageBlockTime) &&
             (identical(other.blockReward, blockReward) ||
                 other.blockReward == blockReward) &&
-            (identical(other.blockTimeTarget, blockTimeTarget) ||
-                other.blockTimeTarget == blockTimeTarget) &&
-            (identical(other.difficulty, difficulty) ||
-                other.difficulty == difficulty) &&
-            (identical(other.height, height) || other.height == height) &&
             (identical(other.mempoolSize, mempoolSize) ||
                 other.mempoolSize == mempoolSize) &&
-            (identical(other.nativeSupply, nativeSupply) ||
-                other.nativeSupply == nativeSupply) &&
-            (identical(other.network, network) || other.network == network) &&
-            (identical(other.stableHeight, stableHeight) ||
-                other.stableHeight == stableHeight) &&
-            (identical(other.topHash, topHash) || other.topHash == topHash) &&
-            (identical(other.topoHeight, topoHeight) ||
-                other.topoHeight == topoHeight) &&
             (identical(other.version, version) || other.version == version) &&
-            (identical(other.prunedTopoHeight, prunedTopoHeight) ||
-                other.prunedTopoHeight == prunedTopoHeight));
+            (identical(other.network, network) || other.network == network));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      height,
+      topoHeight,
+      stableHeight,
+      prunedTopoHeight,
+      topBlockHash,
+      circulatingSupply,
+      maximumSupply,
+      difficulty,
+      blockTimeTarget,
       averageBlockTime,
       blockReward,
-      blockTimeTarget,
-      difficulty,
-      height,
       mempoolSize,
-      nativeSupply,
-      network,
-      stableHeight,
-      topHash,
-      topoHeight,
       version,
-      prunedTopoHeight);
+      network);
 
   @JsonKey(ignore: true)
   @override
@@ -394,63 +430,81 @@ class _$GetInfoResultImpl implements _GetInfoResult {
 
 abstract class _GetInfoResult implements GetInfoResult {
   const factory _GetInfoResult(
-      {@JsonKey(name: 'average_block_time') required final int averageBlockTime,
-      @JsonKey(name: 'block_reward') required final int blockReward,
-      @JsonKey(name: 'block_time_target') required final int blockTimeTarget,
-      @JsonKey(name: 'difficulty') required final int difficulty,
-      @JsonKey(name: 'height') required final int height,
-      @JsonKey(name: 'mempool_size') required final int mempoolSize,
-      @JsonKey(name: 'native_supply') required final int nativeSupply,
-      @JsonKey(name: 'network') required final Network network,
-      @JsonKey(name: 'stableheight') required final int stableHeight,
-      @JsonKey(name: 'top_hash') required final String topHash,
+      {@JsonKey(name: 'height') required final int height,
       @JsonKey(name: 'topoheight') required final int topoHeight,
+      @JsonKey(name: 'stableheight') required final int stableHeight,
+      @JsonKey(name: 'pruned_topoheight') final int? prunedTopoHeight,
+      @JsonKey(name: 'top_block_hash') required final String topBlockHash,
+      @JsonKey(name: 'circulating_supply') required final int circulatingSupply,
+      @JsonKey(name: 'maximum_supply') required final int maximumSupply,
+      @JsonKey(name: 'difficulty') required final int difficulty,
+      @JsonKey(name: 'block_time_target') required final int blockTimeTarget,
+      @JsonKey(name: 'average_block_time') required final int averageBlockTime,
+      @JsonKey(name: 'block_reward') required final int blockReward,
+      @JsonKey(name: 'mempool_size') required final int mempoolSize,
       @JsonKey(name: 'version') required final String version,
-      @JsonKey(name: 'pruned_topoheight')
-      final int? prunedTopoHeight}) = _$GetInfoResultImpl;
+      @JsonKey(name: 'network')
+      required final Network network}) = _$GetInfoResultImpl;
 
   factory _GetInfoResult.fromJson(Map<String, dynamic> json) =
       _$GetInfoResultImpl.fromJson;
 
   @override
-  @JsonKey(name: 'average_block_time')
-  int get averageBlockTime;
-  @override
-  @JsonKey(name: 'block_reward')
-  int get blockReward;
-  @override
-  @JsonKey(name: 'block_time_target')
-  int get blockTimeTarget;
-  @override
-  @JsonKey(name: 'difficulty')
-  int get difficulty;
-  @override
   @JsonKey(name: 'height')
   int get height;
-  @override
-  @JsonKey(name: 'mempool_size')
-  int get mempoolSize;
-  @override
-  @JsonKey(name: 'native_supply')
-  int get nativeSupply;
-  @override
-  @JsonKey(name: 'network')
-  Network get network;
-  @override
-  @JsonKey(name: 'stableheight')
-  int get stableHeight;
-  @override
-  @JsonKey(name: 'top_hash')
-  String get topHash;
+
   @override
   @JsonKey(name: 'topoheight')
   int get topoHeight;
+
   @override
-  @JsonKey(name: 'version')
-  String get version;
+  @JsonKey(name: 'stableheight')
+  int get stableHeight;
+
   @override
   @JsonKey(name: 'pruned_topoheight')
   int? get prunedTopoHeight;
+
+  @override
+  @JsonKey(name: 'top_block_hash')
+  String get topBlockHash;
+
+  @override
+  @JsonKey(name: 'circulating_supply')
+  int get circulatingSupply;
+
+  @override
+  @JsonKey(name: 'maximum_supply')
+  int get maximumSupply;
+
+  @override
+  @JsonKey(name: 'difficulty')
+  int get difficulty;
+
+  @override
+  @JsonKey(name: 'block_time_target')
+  int get blockTimeTarget;
+
+  @override
+  @JsonKey(name: 'average_block_time')
+  int get averageBlockTime;
+
+  @override
+  @JsonKey(name: 'block_reward')
+  int get blockReward;
+
+  @override
+  @JsonKey(name: 'mempool_size')
+  int get mempoolSize;
+
+  @override
+  @JsonKey(name: 'version')
+  String get version;
+
+  @override
+  @JsonKey(name: 'network')
+  Network get network;
+
   @override
   @JsonKey(ignore: true)
   _$$GetInfoResultImplCopyWith<_$GetInfoResultImpl> get copyWith =>
