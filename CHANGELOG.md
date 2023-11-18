@@ -1,3 +1,11 @@
+## 0.11.0
+
+Daemon API upgrade :
+
+- new getDevFeeThresholds RPC method.
+- new getSizeOnDisk RPC method.
+- GetInfo response update.
+
 ## 0.10.0
 
 Daemon API upgrade :
