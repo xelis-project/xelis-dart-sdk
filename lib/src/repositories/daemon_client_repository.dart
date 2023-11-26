@@ -69,12 +69,12 @@ class DaemonClientRepository {
     // TODO: define rawNewAsset type
     DaemonEvent.newAsset: <void Function(dynamic rawNewAsset)>[],
     DaemonEvent.peerConnected: <void Function(Peer peer)>[],
-    DaemonEvent.peerDisconnected:
-        <void Function(PeerDisconnectedEvent peerDisconnectedEvent)>[],
+    DaemonEvent.peerDisconnected: <void Function(Peer peer)>[],
     DaemonEvent.peerPeerListUpdated:
         <void Function(PeerPeerListUpdatedEvent peerPeerListUpdated)>[],
+    DaemonEvent.peerStateUpdated: <void Function(Peer peer)>[],
     DaemonEvent.peerPeerDisconnected:
-        <void Function(PeerDisconnectedEvent peerDisconnectedEvent)>[],
+        <void Function(PeerPeerDisconnectedEvent peerPeerDisconnectedEvent)>[],
   };
 
   /// The map of request ids to pending requests.
@@ -239,6 +239,9 @@ class DaemonClientRepository {
     if (eventCallbacks[DaemonEvent.peerPeerListUpdated]!.isNotEmpty) {
       subscribeTo(DaemonEvent.peerPeerListUpdated);
     }
+    if (eventCallbacks[DaemonEvent.peerStateUpdated]!.isNotEmpty) {
+      subscribeTo(DaemonEvent.peerStateUpdated);
+    }
     if (eventCallbacks[DaemonEvent.peerPeerDisconnected]!.isNotEmpty) {
       subscribeTo(DaemonEvent.peerPeerDisconnected);
     }
@@ -306,30 +309,49 @@ class DaemonClientRepository {
             }
           case DaemonEvent.peerConnected:
             for (final callback in eventCallbacks[event]!) {
+              final peerConnectedEvent = Peer.fromJson(result);
+              _log('Peer connected: $peerConnectedEvent');
               // ignore: avoid_dynamic_calls
               callback(
-                Peer.fromJson(result),
+                peerConnectedEvent,
               );
             }
           case DaemonEvent.peerDisconnected:
             for (final callback in eventCallbacks[event]!) {
+              final peerDisconnectedEvent = Peer.fromJson(result);
+              _log('Peer disconnected: $peerDisconnectedEvent');
               // ignore: avoid_dynamic_calls
               callback(
-                PeerDisconnectedEvent.fromJson(result),
+                peerDisconnectedEvent,
               );
             }
           case DaemonEvent.peerPeerListUpdated:
             for (final callback in eventCallbacks[event]!) {
+              final peerPeerListUpdatedEvent =
+                  PeerPeerListUpdatedEvent.fromJson(result);
+              _log('Peer peer list updated: $peerPeerListUpdatedEvent');
               // ignore: avoid_dynamic_calls
               callback(
-                PeerPeerListUpdatedEvent.fromJson(result),
+                peerPeerListUpdatedEvent,
+              );
+            }
+          case DaemonEvent.peerStateUpdated:
+            for (final callback in eventCallbacks[event]!) {
+              final peerStateUpdatedEvent = Peer.fromJson(result);
+              _log('Peer state updated: $peerStateUpdatedEvent');
+              // ignore: avoid_dynamic_calls
+              callback(
+                peerStateUpdatedEvent,
               );
             }
           case DaemonEvent.peerPeerDisconnected:
             for (final callback in eventCallbacks[event]!) {
+              final peerPeerDisconnectedEvent =
+                  PeerPeerDisconnectedEvent.fromJson(result);
+              _log('Peer peer disconnected: $peerPeerDisconnectedEvent');
               // ignore: avoid_dynamic_calls
               callback(
-                PeerDisconnectedEvent.fromJson(result),
+                peerPeerDisconnectedEvent,
               );
             }
         }

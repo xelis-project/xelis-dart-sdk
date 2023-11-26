@@ -37,7 +37,7 @@ export 'has_nonce/has_nonce_params.dart';
 export 'has_nonce/has_nonce_result.dart';
 export 'is_tx_executed_in_block/is_tx_executed_in_block_params.dart';
 export 'p2p_status/p2p_status_result.dart';
-export 'peer_disconnected_event/peer_disconnected_event.dart';
+export 'peer_peer_disconnected_event/peer_peer_disconnected_event.dart';
 export 'peer_peer_list_updated_event/peer_peer_list_updated_event.dart';
 export 'stable_height_changed_event/stable_height_changed_event.dart';
 export 'submit_block/submit_block_params.dart';

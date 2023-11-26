@@ -154,14 +154,17 @@ enum DaemonEvent {
   /// New asset event.
   newAsset('NewAsset'),
 
-  /// New peer connected event.
+  /// New PeerConnected event.
   peerConnected('PeerConnected'),
 
-  /// New peer disconnected event.
+  /// New PeerDisconnected event.
   peerDisconnected('PeerDisconnected'),
 
   /// New PeerPeerListUpdated event.
   peerPeerListUpdated('PeerPeerListUpdated'),
+
+  /// New PeerStateUpdated event.
+  peerStateUpdated('PeerStateUpdated'),
 
   /// New PeerPeerDisconnected event.
   peerPeerDisconnected('PeerPeerDisconnected');
@@ -192,6 +195,14 @@ DaemonEvent toDaemonEvent(String value) {
       return DaemonEvent.newAsset;
     case 'PeerConnected':
       return DaemonEvent.peerConnected;
+    case 'PeerDisconnected':
+      return DaemonEvent.peerDisconnected;
+    case 'PeerPeerListUpdated':
+      return DaemonEvent.peerPeerListUpdated;
+    case 'PeerStateUpdated':
+      return DaemonEvent.peerStateUpdated;
+    case 'PeerPeerDisconnected':
+      return DaemonEvent.peerPeerDisconnected;
     default:
       throw Exception('Unknown event: $value');
   }

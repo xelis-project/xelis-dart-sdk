@@ -136,7 +136,7 @@ extension DaemonEventsExtension on DaemonClientRepository {
 
   /// Registers a callback for PeerDisconnected event.
   void onPeerDisconnected(
-    void Function(PeerDisconnectedEvent peerDisconnectedEvent) callback,
+    void Function(Peer peerDisconnected) callback,
   ) {
     if (eventCallbacks[DaemonEvent.peerDisconnected]!.isEmpty) {
       unawaited(subscribeTo(DaemonEvent.peerDisconnected));
@@ -161,7 +161,37 @@ extension DaemonEventsExtension on DaemonClientRepository {
 
   /// Unsubscribes from PeerPeerListUpdated event.
   void unsubscribeFromPeerPeerListUpdated() {
-    unawaited(unsubscribeFrom(DaemonEvent.peerDisconnected));
+    unawaited(unsubscribeFrom(DaemonEvent.peerPeerListUpdated));
+  }
+
+  /// Registers a callback for PeerStateUpdated event.
+  void onPeerStateUpdated(
+    void Function(Peer peerUpdated) callback,
+  ) {
+    if (eventCallbacks[DaemonEvent.peerStateUpdated]!.isEmpty) {
+      unawaited(subscribeTo(DaemonEvent.peerStateUpdated));
+    }
+    registerCallback(DaemonEvent.peerStateUpdated, callback);
+  }
+
+  /// Unsubscribes from PeerStateUpdated event.
+  void unsubscribeFromPeerStateUpdated() {
+    unawaited(unsubscribeFrom(DaemonEvent.peerStateUpdated));
+  }
+
+  /// Registers a callback for PeerPeerDisconnected event.
+  void onPeerPeerDisconnected(
+    void Function(Peer peerDisconnected) callback,
+  ) {
+    if (eventCallbacks[DaemonEvent.peerPeerDisconnected]!.isEmpty) {
+      unawaited(subscribeTo(DaemonEvent.peerPeerDisconnected));
+    }
+    registerCallback(DaemonEvent.peerPeerDisconnected, callback);
+  }
+
+  /// Unsubscribes from PeerPeerDisconnected event.
+  void unsubscribeFromPeerPeerDisconnected() {
+    unawaited(unsubscribeFrom(DaemonEvent.peerPeerDisconnected));
   }
 
   /// Unsubscribes from all events.
@@ -175,5 +205,7 @@ extension DaemonEventsExtension on DaemonClientRepository {
     unsubscribeFromPeerConnected();
     unsubscribeFromPeerDisconnected();
     unsubscribeFromPeerPeerListUpdated();
+    unsubscribeFromPeerStateUpdated();
+    unsubscribeFromPeerPeerDisconnected();
   }
 }

@@ -22,12 +22,10 @@ DevFeeThresholds _$DevFeeThresholdsFromJson(Map<String, dynamic> json) {
 mixin _$DevFeeThresholds {
   @JsonKey(name: 'height')
   int get height => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'fee_percentage')
   int get feePercentage => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $DevFeeThresholdsCopyWith<DevFeeThresholds> get copyWith =>
       throw _privateConstructorUsedError;
@@ -38,7 +36,6 @@ abstract class $DevFeeThresholdsCopyWith<$Res> {
   factory $DevFeeThresholdsCopyWith(
           DevFeeThresholds value, $Res Function(DevFeeThresholds) then) =
       _$DevFeeThresholdsCopyWithImpl<$Res, DevFeeThresholds>;
-
   @useResult
   $Res call(
       {@JsonKey(name: 'height') int height,
@@ -52,7 +49,6 @@ class _$DevFeeThresholdsCopyWithImpl<$Res, $Val extends DevFeeThresholds>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -81,7 +77,6 @@ abstract class _$$DevFeeThresholdsImplCopyWith<$Res>
   factory _$$DevFeeThresholdsImplCopyWith(_$DevFeeThresholdsImpl value,
           $Res Function(_$DevFeeThresholdsImpl) then) =
       __$$DevFeeThresholdsImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -179,11 +174,9 @@ abstract class _DevFeeThresholds implements DevFeeThresholds {
   @override
   @JsonKey(name: 'height')
   int get height;
-
   @override
   @JsonKey(name: 'fee_percentage')
   int get feePercentage;
-
   @override
   @JsonKey(ignore: true)
   _$$DevFeeThresholdsImplCopyWith<_$DevFeeThresholdsImpl> get copyWith =>
