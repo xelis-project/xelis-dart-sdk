@@ -1,3 +1,10 @@
+## 0.12.0
+
+Daemon API upgrade :
+
+- new PeerStateUpdated event.
+- Peer event response updates.
+
 ## 0.11.0
 
 Daemon API upgrade :
