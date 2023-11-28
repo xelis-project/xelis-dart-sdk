@@ -54,17 +54,18 @@ abstract class $PeerCopyWith<$Res> {
   factory $PeerCopyWith(Peer value, $Res Function(Peer) then) =
       _$PeerCopyWithImpl<$Res, Peer>;
   @useResult
-  $Res call({@JsonKey(name: 'addr') String address,
-    @JsonKey(name: 'cumulative_difficulty') int cumulativeDifficulty,
-    @JsonKey(name: 'height') int height,
-    @JsonKey(name: 'id') num id,
-    @JsonKey(name: 'last_ping') int lastPing,
-    @JsonKey(name: 'pruned_topoheight') int? prunedTopoHeight,
-    @JsonKey(name: 'tag') String? tag,
-    @JsonKey(name: 'top_block_hash') String topBlockHash,
-    @JsonKey(name: 'topoheight') int topoheight,
-    @JsonKey(name: 'version') String version,
-    @JsonKey(name: 'peers') Map<String, PeerType> peers});
+  $Res call(
+      {@JsonKey(name: 'addr') String address,
+      @JsonKey(name: 'cumulative_difficulty') int cumulativeDifficulty,
+      @JsonKey(name: 'height') int height,
+      @JsonKey(name: 'id') num id,
+      @JsonKey(name: 'last_ping') int lastPing,
+      @JsonKey(name: 'pruned_topoheight') int? prunedTopoHeight,
+      @JsonKey(name: 'tag') String? tag,
+      @JsonKey(name: 'top_block_hash') String topBlockHash,
+      @JsonKey(name: 'topoheight') int topoheight,
+      @JsonKey(name: 'version') String version,
+      @JsonKey(name: 'peers') Map<String, PeerType> peers});
 }
 
 /// @nodoc
@@ -146,19 +147,21 @@ abstract class _$$PeerImplCopyWith<$Res> implements $PeerCopyWith<$Res> {
   factory _$$PeerImplCopyWith(
           _$PeerImpl value, $Res Function(_$PeerImpl) then) =
       __$$PeerImplCopyWithImpl<$Res>;
+
   @override
   @useResult
-  $Res call({@JsonKey(name: 'addr') String address,
-    @JsonKey(name: 'cumulative_difficulty') int cumulativeDifficulty,
-    @JsonKey(name: 'height') int height,
-    @JsonKey(name: 'id') num id,
-    @JsonKey(name: 'last_ping') int lastPing,
-    @JsonKey(name: 'pruned_topoheight') int? prunedTopoHeight,
-    @JsonKey(name: 'tag') String? tag,
-    @JsonKey(name: 'top_block_hash') String topBlockHash,
-    @JsonKey(name: 'topoheight') int topoheight,
-    @JsonKey(name: 'version') String version,
-    @JsonKey(name: 'peers') Map<String, PeerType> peers});
+  $Res call(
+      {@JsonKey(name: 'addr') String address,
+      @JsonKey(name: 'cumulative_difficulty') int cumulativeDifficulty,
+      @JsonKey(name: 'height') int height,
+      @JsonKey(name: 'id') num id,
+      @JsonKey(name: 'last_ping') int lastPing,
+      @JsonKey(name: 'pruned_topoheight') int? prunedTopoHeight,
+      @JsonKey(name: 'tag') String? tag,
+      @JsonKey(name: 'top_block_hash') String topBlockHash,
+      @JsonKey(name: 'topoheight') int topoheight,
+      @JsonKey(name: 'version') String version,
+      @JsonKey(name: 'peers') Map<String, PeerType> peers});
 }
 
 /// @nodoc

@@ -1,3 +1,13 @@
+## 0.12.1
+
+Daemon API upgrade :
+
+- fix Peer object.
+
+Misc :
+
+- update README
+
 ## 0.12.0
 
 Daemon API upgrade :
