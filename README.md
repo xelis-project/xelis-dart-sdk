@@ -4,10 +4,63 @@ Software Development Kit in Dart for XELIS Blockchain.
 
 ## Features
 
-JSON-RPC Client to interact with daemon API:
+JSON-RPC Client to interact with daemon API.
 
-- Call JSON-RPC methods.
-- Subscribe and listen to events.
+### JSON-RPC methods
+
+- getVersion
+- getInfo
+- getHeight
+- getTopoHeight
+- getStableHeight
+- getBlockTemplate
+- getBlockAtTopoHeight
+- getBlocksAtHeight
+- getBlockByHash
+- getTopBlock
+- getNonce
+- getLastBalance
+- getBalanceAtTopoHeight
+- getAsset
+- getAssets
+- countAssets
+- countTransactions
+- getTips
+- p2pStatus
+- getDagOrder
+- submitTransaction
+- getTransaction
+- getTransactions
+- getMempool
+- submitBlock
+- getBlocksRangeByTopoHeight
+- getBlocksRangeByHeight
+- getAccounts
+- countAccounts
+- getPeers
+- getAccountHistory
+- getAccountAssets
+- hasNonce
+- isTxExecutedInBlock
+- getDevFeeThresholds
+- getSizeOnDisk
+
+### Websocket Events
+
+Subscribe and listen to events.
+
+- newBlock
+- blockOrdered
+- stableHeightChanged
+- transactionAddedInMempool
+- transactionExecuted
+- transactionSCResult
+- newAsset
+- peerConnected
+- peerDisconnected
+- peerPeerListUpdated
+- peerStateUpdated
+- peerPeerDisconnected
 
 ## Usage
 
@@ -38,9 +91,6 @@ Future<void> main() async {
     print('result: $res');
 
     // You can also use the repository to listen to events.
-
-    // There are 7 different types of events,
-    // you can add callbacks depending on the event.
     daemonRepository
       ..onNewBlock((block) {
         print('new block: $block');
