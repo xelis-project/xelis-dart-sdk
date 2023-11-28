@@ -19,7 +19,9 @@ _$PeerImpl _$$PeerImplFromJson(Map<String, dynamic> json) => _$PeerImpl(
       topBlockHash: json['top_block_hash'] as String,
       topoheight: json['topoheight'] as int,
       version: json['version'] as String,
-      peers: (json['peers'] as List<dynamic>).map((e) => e as String).toList(),
+      peers: (json['peers'] as Map<String, dynamic>).map(
+        (k, e) => MapEntry(k, $enumDecode(_$PeerTypeEnumMap, e)),
+      ),
     );
 
 Map<String, dynamic> _$$PeerImplToJson(_$PeerImpl instance) =>
@@ -34,5 +36,11 @@ Map<String, dynamic> _$$PeerImplToJson(_$PeerImpl instance) =>
       'top_block_hash': instance.topBlockHash,
       'topoheight': instance.topoheight,
       'version': instance.version,
-      'peers': instance.peers,
+      'peers': instance.peers.map((k, e) => MapEntry(k, _$PeerTypeEnumMap[e]!)),
     };
+
+const _$PeerTypeEnumMap = {
+  PeerType.incoming: 'In',
+  PeerType.outgoing: 'Out',
+  PeerType.both: 'Both',
+};

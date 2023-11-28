@@ -27,6 +27,7 @@ export 'get_last_balance/get_last_balance_params.dart';
 export 'get_last_balance/get_last_balance_result.dart';
 export 'get_nonce/get_nonce_params.dart';
 export 'get_peers/peer.dart';
+export 'get_peers/peer_type.dart';
 export 'get_range/get_height_range_params.dart';
 export 'get_range/get_topoheight_range_params.dart';
 export 'get_size_on_disk/get_size_on_disk_result.dart';

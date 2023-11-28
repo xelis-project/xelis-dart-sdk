@@ -1,6 +1,7 @@
 // ignore_for_file: public_member_api_docs, invalid_annotation_target, always_put_required_named_parameters_first
 
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/dtos.dart';
 
 part 'peer.freezed.dart';
 
@@ -19,7 +20,7 @@ class Peer with _$Peer {
     @JsonKey(name: 'top_block_hash') required String topBlockHash,
     @JsonKey(name: 'topoheight') required int topoheight,
     @JsonKey(name: 'version') required String version,
-    @JsonKey(name: 'peers') required List<String> peers,
+    @JsonKey(name: 'peers') required Map<String, PeerType> peers,
   }) = _Peer;
 
   factory Peer.fromJson(Map<String, dynamic> json) => _$PeerFromJson(json);

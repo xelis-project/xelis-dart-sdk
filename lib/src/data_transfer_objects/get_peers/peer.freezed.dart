@@ -40,8 +40,9 @@ mixin _$Peer {
   int get topoheight => throw _privateConstructorUsedError;
   @JsonKey(name: 'version')
   String get version => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'peers')
-  List<String> get peers => throw _privateConstructorUsedError;
+  Map<String, PeerType> get peers => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -53,18 +54,17 @@ abstract class $PeerCopyWith<$Res> {
   factory $PeerCopyWith(Peer value, $Res Function(Peer) then) =
       _$PeerCopyWithImpl<$Res, Peer>;
   @useResult
-  $Res call(
-      {@JsonKey(name: 'addr') String address,
-      @JsonKey(name: 'cumulative_difficulty') int cumulativeDifficulty,
-      @JsonKey(name: 'height') int height,
-      @JsonKey(name: 'id') num id,
-      @JsonKey(name: 'last_ping') int lastPing,
-      @JsonKey(name: 'pruned_topoheight') int? prunedTopoHeight,
-      @JsonKey(name: 'tag') String? tag,
-      @JsonKey(name: 'top_block_hash') String topBlockHash,
-      @JsonKey(name: 'topoheight') int topoheight,
-      @JsonKey(name: 'version') String version,
-      @JsonKey(name: 'peers') List<String> peers});
+  $Res call({@JsonKey(name: 'addr') String address,
+    @JsonKey(name: 'cumulative_difficulty') int cumulativeDifficulty,
+    @JsonKey(name: 'height') int height,
+    @JsonKey(name: 'id') num id,
+    @JsonKey(name: 'last_ping') int lastPing,
+    @JsonKey(name: 'pruned_topoheight') int? prunedTopoHeight,
+    @JsonKey(name: 'tag') String? tag,
+    @JsonKey(name: 'top_block_hash') String topBlockHash,
+    @JsonKey(name: 'topoheight') int topoheight,
+    @JsonKey(name: 'version') String version,
+    @JsonKey(name: 'peers') Map<String, PeerType> peers});
 }
 
 /// @nodoc
@@ -136,7 +136,7 @@ class _$PeerCopyWithImpl<$Res, $Val extends Peer>
       peers: null == peers
           ? _value.peers
           : peers // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as Map<String, PeerType>,
     ) as $Val);
   }
 }
@@ -148,18 +148,17 @@ abstract class _$$PeerImplCopyWith<$Res> implements $PeerCopyWith<$Res> {
       __$$PeerImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {@JsonKey(name: 'addr') String address,
-      @JsonKey(name: 'cumulative_difficulty') int cumulativeDifficulty,
-      @JsonKey(name: 'height') int height,
-      @JsonKey(name: 'id') num id,
-      @JsonKey(name: 'last_ping') int lastPing,
-      @JsonKey(name: 'pruned_topoheight') int? prunedTopoHeight,
-      @JsonKey(name: 'tag') String? tag,
-      @JsonKey(name: 'top_block_hash') String topBlockHash,
-      @JsonKey(name: 'topoheight') int topoheight,
-      @JsonKey(name: 'version') String version,
-      @JsonKey(name: 'peers') List<String> peers});
+  $Res call({@JsonKey(name: 'addr') String address,
+    @JsonKey(name: 'cumulative_difficulty') int cumulativeDifficulty,
+    @JsonKey(name: 'height') int height,
+    @JsonKey(name: 'id') num id,
+    @JsonKey(name: 'last_ping') int lastPing,
+    @JsonKey(name: 'pruned_topoheight') int? prunedTopoHeight,
+    @JsonKey(name: 'tag') String? tag,
+    @JsonKey(name: 'top_block_hash') String topBlockHash,
+    @JsonKey(name: 'topoheight') int topoheight,
+    @JsonKey(name: 'version') String version,
+    @JsonKey(name: 'peers') Map<String, PeerType> peers});
 }
 
 /// @nodoc
@@ -228,7 +227,7 @@ class __$$PeerImplCopyWithImpl<$Res>
       peers: null == peers
           ? _value._peers
           : peers // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as Map<String, PeerType>,
     ));
   }
 }
@@ -248,7 +247,7 @@ class _$PeerImpl implements _Peer {
       @JsonKey(name: 'top_block_hash') required this.topBlockHash,
       @JsonKey(name: 'topoheight') required this.topoheight,
       @JsonKey(name: 'version') required this.version,
-      @JsonKey(name: 'peers') required final List<String> peers})
+      @JsonKey(name: 'peers') required final Map<String, PeerType> peers})
       : _peers = peers;
 
   factory _$PeerImpl.fromJson(Map<String, dynamic> json) =>
@@ -284,13 +283,14 @@ class _$PeerImpl implements _Peer {
   @override
   @JsonKey(name: 'version')
   final String version;
-  final List<String> _peers;
+  final Map<String, PeerType> _peers;
+
   @override
   @JsonKey(name: 'peers')
-  List<String> get peers {
-    if (_peers is EqualUnmodifiableListView) return _peers;
+  Map<String, PeerType> get peers {
+    if (_peers is EqualUnmodifiableMapView) return _peers;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_peers);
+    return EqualUnmodifiableMapView(_peers);
   }
 
   @override
@@ -353,18 +353,19 @@ class _$PeerImpl implements _Peer {
 
 abstract class _Peer implements Peer {
   const factory _Peer(
-      {@JsonKey(name: 'addr') required final String address,
-      @JsonKey(name: 'cumulative_difficulty')
-      required final int cumulativeDifficulty,
-      @JsonKey(name: 'height') required final int height,
-      @JsonKey(name: 'id') required final num id,
-      @JsonKey(name: 'last_ping') required final int lastPing,
-      @JsonKey(name: 'pruned_topoheight') final int? prunedTopoHeight,
-      @JsonKey(name: 'tag') final String? tag,
-      @JsonKey(name: 'top_block_hash') required final String topBlockHash,
-      @JsonKey(name: 'topoheight') required final int topoheight,
-      @JsonKey(name: 'version') required final String version,
-      @JsonKey(name: 'peers') required final List<String> peers}) = _$PeerImpl;
+          {@JsonKey(name: 'addr') required final String address,
+          @JsonKey(name: 'cumulative_difficulty')
+          required final int cumulativeDifficulty,
+          @JsonKey(name: 'height') required final int height,
+          @JsonKey(name: 'id') required final num id,
+          @JsonKey(name: 'last_ping') required final int lastPing,
+          @JsonKey(name: 'pruned_topoheight') final int? prunedTopoHeight,
+          @JsonKey(name: 'tag') final String? tag,
+          @JsonKey(name: 'top_block_hash') required final String topBlockHash,
+          @JsonKey(name: 'topoheight') required final int topoheight,
+          @JsonKey(name: 'version') required final String version,
+          @JsonKey(name: 'peers') required final Map<String, PeerType> peers}) =
+      _$PeerImpl;
 
   factory _Peer.fromJson(Map<String, dynamic> json) = _$PeerImpl.fromJson;
 
@@ -395,12 +396,15 @@ abstract class _Peer implements Peer {
   @override
   @JsonKey(name: 'topoheight')
   int get topoheight;
+
   @override
   @JsonKey(name: 'version')
   String get version;
+
   @override
   @JsonKey(name: 'peers')
-  List<String> get peers;
+  Map<String, PeerType> get peers;
+
   @override
   @JsonKey(ignore: true)
   _$$PeerImplCopyWith<_$PeerImpl> get copyWith =>
