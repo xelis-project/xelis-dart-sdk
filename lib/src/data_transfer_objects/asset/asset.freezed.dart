@@ -149,7 +149,7 @@ class _$AssetImpl implements _Asset {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AssetImpl &&

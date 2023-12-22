@@ -1,8 +1,8 @@
 import 'package:xelis_dart_sdk/xelis_dart_sdk.dart';
 
-/// Extension of [DaemonClientRepository] that provides all the methods to query
+/// Extension of [DaemonClient] that provides all the methods to query
 /// Xelis daemon.
-extension DaemonRpcMethodsExtension on DaemonClientRepository {
+extension DaemonRpcMethodsExtension on DaemonClient {
   /// Returns current daemon version.
   Future<String> getVersion() async {
     final result = await sendRequest(DaemonMethod.getVersion);

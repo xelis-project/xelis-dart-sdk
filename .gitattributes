@@ -1,4 +1,2 @@
-* text=auto
-
-*.freezed.dart linguist-generated
-*.g.dart linguist-generated
+*.freezed.dart linguist-generated=true
+*.g.dart linguist-generated=true

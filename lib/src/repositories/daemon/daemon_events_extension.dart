@@ -2,18 +2,14 @@ import 'dart:async';
 
 import 'package:xelis_dart_sdk/xelis_dart_sdk.dart';
 
-/// Extension of [DaemonClientRepository] that provides methods to
+/// Extension of [DaemonClient] that provides methods to
 /// subscribe/unsubscribe to daemon events.
-extension DaemonEventsExtension on DaemonClientRepository {
+extension DaemonEventsExtension on DaemonClient {
   /// Registers a callback for NewBlock event.
   ///
   /// Note: It is called when a new block is added to the chain.
-  void onNewBlock(void Function(Block block) callback) {
-    if (eventCallbacks[DaemonEvent.newBlock]!.isEmpty) {
-      unawaited(subscribeTo(DaemonEvent.newBlock));
-    }
-    registerCallback(DaemonEvent.newBlock, callback);
-  }
+  void onNewBlock(void Function(Block block) callback) =>
+      onEvent(DaemonEvent.newBlock, callback);
 
   /// Unsubscribes from NewBlock event.
   void unsubscribeFromNewBlock() {
@@ -25,12 +21,8 @@ extension DaemonEventsExtension on DaemonClientRepository {
   /// Note: It is called when a block is ordered.
   void onBlockOrdered(
     void Function(BlockOrderedEvent blockOrderEvent) callback,
-  ) {
-    if (eventCallbacks[DaemonEvent.blockOrdered]!.isEmpty) {
-      unawaited(subscribeTo(DaemonEvent.blockOrdered));
-    }
-    registerCallback(DaemonEvent.blockOrdered, callback);
-  }
+  ) =>
+      onEvent(DaemonEvent.blockOrdered, callback);
 
   /// Unsubscribes from BlockOrdered event.
   void unsubscribeFromBlockOrdered() {
@@ -43,12 +35,8 @@ extension DaemonEventsExtension on DaemonClientRepository {
   /// (different than the previous one).
   void onStableHeightChanged(
     void Function(StableHeightChangedEvent stableHeightChangedEvent) callback,
-  ) {
-    if (eventCallbacks[DaemonEvent.stableHeightChanged]!.isEmpty) {
-      unawaited(subscribeTo(DaemonEvent.stableHeightChanged));
-    }
-    registerCallback(DaemonEvent.stableHeightChanged, callback);
-  }
+  ) =>
+      onEvent(DaemonEvent.stableHeightChanged, callback);
 
   /// Unsubscribes from StableHeightChanged event.
   void unsubscribeFromStableHeightChanged() {
@@ -60,12 +48,8 @@ extension DaemonEventsExtension on DaemonClientRepository {
   /// Note: It is called when a transaction is added to the mempool.
   void onTransactionAddedInMempool(
     void Function(Transaction transaction) callback,
-  ) {
-    if (eventCallbacks[DaemonEvent.transactionAddedInMempool]!.isEmpty) {
-      unawaited(subscribeTo(DaemonEvent.transactionAddedInMempool));
-    }
-    registerCallback(DaemonEvent.transactionAddedInMempool, callback);
-  }
+  ) =>
+      onEvent(DaemonEvent.transactionAddedInMempool, callback);
 
   /// Unsubscribes from TransactionAddedInMempool event.
   void unsubscribeFromTransactionAddedInMempool() {
@@ -77,12 +61,8 @@ extension DaemonEventsExtension on DaemonClientRepository {
   /// Note: It is called when a transaction is executed.
   void onTransactionExecuted(
     void Function(TransactionExecutedEvent transactionExecutedEvent) callback,
-  ) {
-    if (eventCallbacks[DaemonEvent.transactionExecuted]!.isEmpty) {
-      unawaited(subscribeTo(DaemonEvent.transactionExecuted));
-    }
-    registerCallback(DaemonEvent.transactionExecuted, callback);
-  }
+  ) =>
+      onEvent(DaemonEvent.transactionExecuted, callback);
 
   /// Unsubscribes from TransactionExecuted event.
   void unsubscribeFromTransactionExecuted() {
@@ -94,12 +74,8 @@ extension DaemonEventsExtension on DaemonClientRepository {
   /// Note: It is called when a transaction SC result is received.
   void onTransactionSCResult(
     void Function(dynamic rawTransactionSCResult) callback,
-  ) {
-    if (eventCallbacks[DaemonEvent.transactionSCResult]!.isEmpty) {
-      unawaited(subscribeTo(DaemonEvent.transactionSCResult));
-    }
-    registerCallback(DaemonEvent.transactionSCResult, callback);
-  }
+  ) =>
+      onEvent(DaemonEvent.transactionSCResult, callback);
 
   /// Unsubscribes from TransactionSCResult event.
   void unsubscribeFromTransactionSCResult() {
@@ -109,12 +85,8 @@ extension DaemonEventsExtension on DaemonClientRepository {
   /// Registers a callback for NewAsset event.
   ///
   /// Note: It is called when a new asset is added to the chain.
-  void onNewAsset(void Function(dynamic rawNewAsset) callback) {
-    if (eventCallbacks[DaemonEvent.newAsset]!.isEmpty) {
-      unawaited(subscribeTo(DaemonEvent.newAsset));
-    }
-    registerCallback(DaemonEvent.newAsset, callback);
-  }
+  void onNewAsset(void Function(dynamic rawNewAsset) callback) =>
+      onEvent(DaemonEvent.newAsset, callback);
 
   /// Unsubscribes from NewAsset event.
   void unsubscribeFromNewAsset() {
@@ -122,12 +94,8 @@ extension DaemonEventsExtension on DaemonClientRepository {
   }
 
   /// Registers a callback for PeerConnected event.
-  void onPeerConnected(void Function(Peer peerConnected) callback) {
-    if (eventCallbacks[DaemonEvent.peerConnected]!.isEmpty) {
-      unawaited(subscribeTo(DaemonEvent.peerConnected));
-    }
-    registerCallback(DaemonEvent.peerConnected, callback);
-  }
+  void onPeerConnected(void Function(Peer peerConnected) callback) =>
+      onEvent(DaemonEvent.peerConnected, callback);
 
   /// Unsubscribes from PeerConnected event.
   void unsubscribeFromPeerConnected() {
@@ -137,12 +105,8 @@ extension DaemonEventsExtension on DaemonClientRepository {
   /// Registers a callback for PeerDisconnected event.
   void onPeerDisconnected(
     void Function(Peer peerDisconnected) callback,
-  ) {
-    if (eventCallbacks[DaemonEvent.peerDisconnected]!.isEmpty) {
-      unawaited(subscribeTo(DaemonEvent.peerDisconnected));
-    }
-    registerCallback(DaemonEvent.peerDisconnected, callback);
-  }
+  ) =>
+      onEvent(DaemonEvent.peerDisconnected, callback);
 
   /// Unsubscribes from PeerDisconnected event.
   void unsubscribeFromPeerDisconnected() {
@@ -152,12 +116,8 @@ extension DaemonEventsExtension on DaemonClientRepository {
   /// Registers a callback for PeerPeerListUpdated event.
   void onPeerPeerListUpdated(
     void Function(PeerPeerListUpdatedEvent peerPeerListUpdatedEvent) callback,
-  ) {
-    if (eventCallbacks[DaemonEvent.peerPeerListUpdated]!.isEmpty) {
-      unawaited(subscribeTo(DaemonEvent.peerPeerListUpdated));
-    }
-    registerCallback(DaemonEvent.peerPeerListUpdated, callback);
-  }
+  ) =>
+      onEvent(DaemonEvent.peerPeerListUpdated, callback);
 
   /// Unsubscribes from PeerPeerListUpdated event.
   void unsubscribeFromPeerPeerListUpdated() {
@@ -167,12 +127,8 @@ extension DaemonEventsExtension on DaemonClientRepository {
   /// Registers a callback for PeerStateUpdated event.
   void onPeerStateUpdated(
     void Function(Peer peerUpdated) callback,
-  ) {
-    if (eventCallbacks[DaemonEvent.peerStateUpdated]!.isEmpty) {
-      unawaited(subscribeTo(DaemonEvent.peerStateUpdated));
-    }
-    registerCallback(DaemonEvent.peerStateUpdated, callback);
-  }
+  ) =>
+      onEvent(DaemonEvent.peerStateUpdated, callback);
 
   /// Unsubscribes from PeerStateUpdated event.
   void unsubscribeFromPeerStateUpdated() {
@@ -182,12 +138,8 @@ extension DaemonEventsExtension on DaemonClientRepository {
   /// Registers a callback for PeerPeerDisconnected event.
   void onPeerPeerDisconnected(
     void Function(Peer peerDisconnected) callback,
-  ) {
-    if (eventCallbacks[DaemonEvent.peerPeerDisconnected]!.isEmpty) {
-      unawaited(subscribeTo(DaemonEvent.peerPeerDisconnected));
-    }
-    registerCallback(DaemonEvent.peerPeerDisconnected, callback);
-  }
+  ) =>
+      onEvent(DaemonEvent.peerPeerDisconnected, callback);
 
   /// Unsubscribes from PeerPeerDisconnected event.
   void unsubscribeFromPeerPeerDisconnected() {

@@ -4,23 +4,23 @@ Future<void> main() async {
   try {
     // Create a daemon client repository which will be used
     // to interact with a Xelis node.
-    final daemonRepository = DaemonClientRepository(
+    final daemonClient = DaemonClient(
       endPoint: localhostAddress,
       secureWebSocket: false,
     );
 
     // You must initiate the connection first.
-    daemonRepository.connect();
+    daemonClient.connect();
 
     // You can use the repository to make requests to the daemon.
-    final res = await daemonRepository.getInfo();
+    final res = await daemonClient.getInfo();
     print('result: $res');
 
     // You can also use the repository to listen to events.
 
     // There are 5 different types of events,
     // you can add callbacks depending on the event.
-    daemonRepository
+    daemonClient
       ..onNewBlock((block) {
         print('new block: $block');
       })

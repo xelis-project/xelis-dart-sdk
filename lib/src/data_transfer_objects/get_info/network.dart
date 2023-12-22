@@ -12,5 +12,19 @@ enum Network {
 
   /// @nodoc
   @JsonValue('Dev')
-  dev,
+  dev;
+
+  /// Converts json value into Network enum.
+  factory Network.fromStr(String value) {
+    switch (value) {
+      case 'Mainnet':
+        return Network.mainnet;
+      case 'Testnet':
+        return Network.testnet;
+      case 'Dev':
+        return Network.dev;
+      default:
+        throw Exception('Unknown network: $value');
+    }
+  }
 }

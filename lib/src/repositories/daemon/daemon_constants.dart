@@ -1,7 +1,7 @@
-// ignore_for_file: sort_constructors_first
+import 'package:xelis_dart_sdk/xelis_dart_sdk.dart';
 
 /// The RPC methods that can be called on the daemon.
-enum DaemonMethod {
+enum DaemonMethod implements XelisJsonKey {
   /// Retrieve current daemon version.
   getVersion('get_version'),
 
@@ -114,25 +114,18 @@ enum DaemonMethod {
   getDevFeeThresholds('get_dev_fee_thresholds'),
 
   /// Get size of the blockchain on disk
-  getSizeOnDisk('get_size_on_disk'),
-
-  // EVENTS METHODS
-
-  /// Subscribe to an event.
-  subscribe('subscribe'),
-
-  /// Unsubscribe to an event.
-  unsubscribe('unsubscribe');
-
-  /// The json value of the method.
-  final String value;
+  getSizeOnDisk('get_size_on_disk');
 
   /// Creates a new [DaemonMethod] instance.
-  const DaemonMethod(this.value);
+  const DaemonMethod(this.jsonKey);
+
+  /// The json value of the method.
+  @override
+  final String jsonKey;
 }
 
 /// The events that can be subscribed to on the daemon.
-enum DaemonEvent {
+enum DaemonEvent implements XelisJsonKey {
   /// New block event.
   newBlock('NewBlock'),
 
@@ -169,41 +162,42 @@ enum DaemonEvent {
   /// New PeerPeerDisconnected event.
   peerPeerDisconnected('PeerPeerDisconnected');
 
-  /// The value of the event.
-  final String value;
-
   /// Creates a new [DaemonEvent] instance.
-  const DaemonEvent(this.value);
-}
+  const DaemonEvent(this.jsonKey);
 
-/// Converts a [String] to a [DaemonMethod].
-DaemonEvent toDaemonEvent(String value) {
-  switch (value) {
-    case 'NewBlock':
-      return DaemonEvent.newBlock;
-    case 'BlockOrdered':
-      return DaemonEvent.blockOrdered;
-    case 'StableHeightChanged':
-      return DaemonEvent.stableHeightChanged;
-    case 'TransactionAddedInMempool':
-      return DaemonEvent.transactionAddedInMempool;
-    case 'TransactionExecuted':
-      return DaemonEvent.transactionExecuted;
-    case 'TransactionSCResult':
-      return DaemonEvent.transactionSCResult;
-    case 'NewAsset':
-      return DaemonEvent.newAsset;
-    case 'PeerConnected':
-      return DaemonEvent.peerConnected;
-    case 'PeerDisconnected':
-      return DaemonEvent.peerDisconnected;
-    case 'PeerPeerListUpdated':
-      return DaemonEvent.peerPeerListUpdated;
-    case 'PeerStateUpdated':
-      return DaemonEvent.peerStateUpdated;
-    case 'PeerPeerDisconnected':
-      return DaemonEvent.peerPeerDisconnected;
-    default:
-      throw Exception('Unknown event: $value');
+  /// Factory to convert a [String] to a [DaemonMethod].
+  factory DaemonEvent.fromStr(String value) {
+    switch (value) {
+      case 'NewBlock':
+        return DaemonEvent.newBlock;
+      case 'BlockOrdered':
+        return DaemonEvent.blockOrdered;
+      case 'StableHeightChanged':
+        return DaemonEvent.stableHeightChanged;
+      case 'TransactionAddedInMempool':
+        return DaemonEvent.transactionAddedInMempool;
+      case 'TransactionExecuted':
+        return DaemonEvent.transactionExecuted;
+      case 'TransactionSCResult':
+        return DaemonEvent.transactionSCResult;
+      case 'NewAsset':
+        return DaemonEvent.newAsset;
+      case 'PeerConnected':
+        return DaemonEvent.peerConnected;
+      case 'PeerDisconnected':
+        return DaemonEvent.peerDisconnected;
+      case 'PeerPeerListUpdated':
+        return DaemonEvent.peerPeerListUpdated;
+      case 'PeerStateUpdated':
+        return DaemonEvent.peerStateUpdated;
+      case 'PeerPeerDisconnected':
+        return DaemonEvent.peerPeerDisconnected;
+      default:
+        throw Exception('Unknown event: $value');
+    }
   }
+
+  /// The json key of the event.
+  @override
+  final String jsonKey;
 }

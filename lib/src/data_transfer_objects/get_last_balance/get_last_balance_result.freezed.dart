@@ -148,7 +148,7 @@ class _$GetLastBalanceResultImpl implements _GetLastBalanceResult {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GetLastBalanceResultImpl &&

@@ -113,7 +113,7 @@ class _$HasNonceResultImpl implements _HasNonceResult {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$HasNonceResultImpl &&

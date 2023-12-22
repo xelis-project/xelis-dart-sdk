@@ -40,7 +40,6 @@ mixin _$Peer {
   int get topoheight => throw _privateConstructorUsedError;
   @JsonKey(name: 'version')
   String get version => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'peers')
   Map<String, PeerType> get peers => throw _privateConstructorUsedError;
 
@@ -147,7 +146,6 @@ abstract class _$$PeerImplCopyWith<$Res> implements $PeerCopyWith<$Res> {
   factory _$$PeerImplCopyWith(
           _$PeerImpl value, $Res Function(_$PeerImpl) then) =
       __$$PeerImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -287,7 +285,6 @@ class _$PeerImpl implements _Peer {
   @JsonKey(name: 'version')
   final String version;
   final Map<String, PeerType> _peers;
-
   @override
   @JsonKey(name: 'peers')
   Map<String, PeerType> get peers {
@@ -302,7 +299,7 @@ class _$PeerImpl implements _Peer {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$PeerImpl &&
@@ -399,15 +396,12 @@ abstract class _Peer implements Peer {
   @override
   @JsonKey(name: 'topoheight')
   int get topoheight;
-
   @override
   @JsonKey(name: 'version')
   String get version;
-
   @override
   @JsonKey(name: 'peers')
   Map<String, PeerType> get peers;
-
   @override
   @JsonKey(ignore: true)
   _$$PeerImplCopyWith<_$PeerImpl> get copyWith =>

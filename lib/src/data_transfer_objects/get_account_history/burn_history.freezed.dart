@@ -113,7 +113,7 @@ class _$BurnHistoryImpl implements _BurnHistory {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$BurnHistoryImpl &&
