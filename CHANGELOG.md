@@ -1,3 +1,8 @@
+## 0.13.0
+
+- new JSON-RPC client to interact with CLI wallet.
+- global refactoring.
+
 ## 0.12.1
 
 Daemon API upgrade :
