@@ -8,5 +8,7 @@ export 'src/repositories/daemon/daemon_constants.dart';
 export 'src/repositories/daemon/daemon_events_extension.dart';
 export 'src/repositories/daemon/daemon_rpc_methods_extension.dart';
 export 'src/repositories/rpc_client_repository.dart';
+export 'src/repositories/wallet/wallet_constants.dart';
+export 'src/repositories/wallet/wallet_rpc_methods_extension.dart';
 export 'src/utils/config.dart';
 export 'src/utils/data_converter.dart';

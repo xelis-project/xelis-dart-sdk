@@ -4,9 +4,11 @@ Software Development Kit in Dart for XELIS Blockchain.
 
 ## Features
 
-JSON-RPC Client to interact with daemon API.
+JSON-RPC Clients to interact with daemon and wallet API.
 
 ### JSON-RPC methods
+
+#### Daemon
 
 - getVersion
 - getInfo
@@ -45,9 +47,29 @@ JSON-RPC Client to interact with daemon API.
 - getDevFeeThresholds
 - getSizeOnDisk
 
+#### Wallet
+
+- getVersion
+- getNetwork
+- getNonce
+- getTopoHeight
+- getAddress
+- splitAddress
+- rescan
+- getBalance
+- getTrackedAssets
+- getAssetPrecision
+- getTransaction
+- buildTransaction
+- listTransactions
+- isOnline
+- signData
+
 ### Websocket Events
 
 Subscribe and listen to events.
+
+#### Daemon
 
 - newBlock
 - blockOrdered
@@ -62,9 +84,16 @@ Subscribe and listen to events.
 - peerStateUpdated
 - peerPeerDisconnected
 
+#### Wallet
+
+- newChainInfo
+- newAsset
+- newTransaction
+- balanceChanged
+
 ## Usage
 
-Use `DaemonClientRepository` as shown below to interact with a XELIS node.
+Use `DaemonClient` as shown below to interact with a XELIS node.
 
 ```dart
 import 'package:xelis_dart_sdk/xelis_dart_sdk.dart';
@@ -73,7 +102,7 @@ Future<void> main() async {
   try {
     // Create a daemon client repository which will be used 
     // to interact with a Xelis node.
-    final daemonRepository = DaemonClientRepository(
+    final daemonRepository = DaemonClient(
       endPoint: localhostAddress,
       secureWebSocket: false,
     );
