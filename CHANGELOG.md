@@ -1,3 +1,7 @@
+## 0.13.1
+
+- fix suffix for websocket connection.
+
 ## 0.13.0
 
 - new JSON-RPC client to interact with CLI wallet.
