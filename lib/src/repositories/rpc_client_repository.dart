@@ -63,7 +63,7 @@ sealed class RpcClientRepository {
 
   /// Set up Uri object with WebSocket scheme.
   static Uri setUpUri(String rpcAddress, {required bool secureWebSocket}) =>
-      Uri.parse('ws${secureWebSocket ? 's' : ''}://$rpcAddress/ws');
+      Uri.parse('ws${secureWebSocket ? 's' : ''}://$rpcAddress/json_rpc');
 
   /// get client state
   Stream<ClientState> get state async* {
