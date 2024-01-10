@@ -1,3 +1,7 @@
+## 0.13.2
+
+- update all events name to snake case.
+
 ## 0.13.1
 
 - fix suffix for websocket connection.
