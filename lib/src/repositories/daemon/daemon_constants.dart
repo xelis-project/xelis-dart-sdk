@@ -127,40 +127,40 @@ enum DaemonMethod implements XelisJsonKey {
 /// The events that can be subscribed to on the daemon.
 enum DaemonEvent implements XelisJsonKey {
   /// New block event.
-  newBlock('NewBlock'),
+  newBlock('new_block'),
 
   /// Block ordered event.
-  blockOrdered('BlockOrdered'),
+  blockOrdered('block_ordered'),
 
   /// Stable height changed event.
-  stableHeightChanged('StableHeightChanged'),
+  stableHeightChanged('stable_height_changed'),
 
   /// Transaction added in mempool event.
-  transactionAddedInMempool('TransactionAddedInMempool'),
+  transactionAddedInMempool('transaction_added_in_mempool'),
 
   /// Transaction executed event.
-  transactionExecuted('TransactionExecuted'),
+  transactionExecuted('transaction_executed'),
 
   /// Transaction smart contract result event.
-  transactionSCResult('TransactionSCResult'),
+  transactionSCResult('transaction_sc_result'),
 
   /// New asset event.
-  newAsset('NewAsset'),
+  newAsset('new_asset'),
 
   /// New PeerConnected event.
-  peerConnected('PeerConnected'),
+  peerConnected('peer_connected'),
 
   /// New PeerDisconnected event.
-  peerDisconnected('PeerDisconnected'),
+  peerDisconnected('peer_disconnected'),
 
   /// New PeerPeerListUpdated event.
-  peerPeerListUpdated('PeerPeerListUpdated'),
+  peerPeerListUpdated('peer_peer_list_updated'),
 
   /// New PeerStateUpdated event.
-  peerStateUpdated('PeerStateUpdated'),
+  peerStateUpdated('peer_state_updated'),
 
   /// New PeerPeerDisconnected event.
-  peerPeerDisconnected('PeerPeerDisconnected');
+  peerPeerDisconnected('peer_peer_disconnected');
 
   /// Creates a new [DaemonEvent] instance.
   const DaemonEvent(this.jsonKey);
@@ -168,29 +168,29 @@ enum DaemonEvent implements XelisJsonKey {
   /// Factory to convert a [String] to a [DaemonMethod].
   factory DaemonEvent.fromStr(String value) {
     switch (value) {
-      case 'NewBlock':
+      case 'new_block':
         return DaemonEvent.newBlock;
-      case 'BlockOrdered':
+      case 'block_ordered':
         return DaemonEvent.blockOrdered;
-      case 'StableHeightChanged':
+      case 'stable_height_changed':
         return DaemonEvent.stableHeightChanged;
-      case 'TransactionAddedInMempool':
+      case 'transaction_added_in_mempool':
         return DaemonEvent.transactionAddedInMempool;
-      case 'TransactionExecuted':
+      case 'transaction_executed':
         return DaemonEvent.transactionExecuted;
-      case 'TransactionSCResult':
+      case 'transaction_sc_result':
         return DaemonEvent.transactionSCResult;
-      case 'NewAsset':
+      case 'new_asset':
         return DaemonEvent.newAsset;
-      case 'PeerConnected':
+      case 'peer_connected':
         return DaemonEvent.peerConnected;
-      case 'PeerDisconnected':
+      case 'peer_disconnected':
         return DaemonEvent.peerDisconnected;
-      case 'PeerPeerListUpdated':
+      case 'peer_peer_list_updated':
         return DaemonEvent.peerPeerListUpdated;
-      case 'PeerStateUpdated':
+      case 'peer_state_updated':
         return DaemonEvent.peerStateUpdated;
-      case 'PeerPeerDisconnected':
+      case 'peer_peer_disconnected':
         return DaemonEvent.peerPeerDisconnected;
       default:
         throw Exception('Unknown event: $value');
