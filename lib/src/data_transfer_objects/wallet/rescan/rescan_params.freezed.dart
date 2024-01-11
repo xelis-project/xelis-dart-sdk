@@ -24,7 +24,6 @@ mixin _$RescanParams {
   int get topoHeight => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $RescanParamsCopyWith<RescanParams> get copyWith =>
       throw _privateConstructorUsedError;
@@ -35,7 +34,6 @@ abstract class $RescanParamsCopyWith<$Res> {
   factory $RescanParamsCopyWith(
           RescanParams value, $Res Function(RescanParams) then) =
       _$RescanParamsCopyWithImpl<$Res, RescanParams>;
-
   @useResult
   $Res call({@JsonKey(name: 'topoheight') int topoHeight});
 }
@@ -47,7 +45,6 @@ class _$RescanParamsCopyWithImpl<$Res, $Val extends RescanParams>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -71,7 +68,6 @@ abstract class _$$RescanParamsImplCopyWith<$Res>
   factory _$$RescanParamsImplCopyWith(
           _$RescanParamsImpl value, $Res Function(_$RescanParamsImpl) then) =
       __$$RescanParamsImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call({@JsonKey(name: 'topoheight') int topoHeight});
@@ -155,7 +151,6 @@ abstract class _RescanParams implements RescanParams {
   @override
   @JsonKey(name: 'topoheight')
   int get topoHeight;
-
   @override
   @JsonKey(ignore: true)
   _$$RescanParamsImplCopyWith<_$RescanParamsImpl> get copyWith =>

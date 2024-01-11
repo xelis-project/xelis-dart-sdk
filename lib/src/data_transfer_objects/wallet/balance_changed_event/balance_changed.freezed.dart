@@ -22,12 +22,10 @@ BalanceChanged _$BalanceChangedFromJson(Map<String, dynamic> json) {
 mixin _$BalanceChanged {
   @JsonKey(name: 'asset')
   String get assetHash => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'balance')
   int get balance => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $BalanceChangedCopyWith<BalanceChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -38,7 +36,6 @@ abstract class $BalanceChangedCopyWith<$Res> {
   factory $BalanceChangedCopyWith(
           BalanceChanged value, $Res Function(BalanceChanged) then) =
       _$BalanceChangedCopyWithImpl<$Res, BalanceChanged>;
-
   @useResult
   $Res call(
       {@JsonKey(name: 'asset') String assetHash,
@@ -52,7 +49,6 @@ class _$BalanceChangedCopyWithImpl<$Res, $Val extends BalanceChanged>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -81,7 +77,6 @@ abstract class _$$BalanceChangedImplCopyWith<$Res>
   factory _$$BalanceChangedImplCopyWith(_$BalanceChangedImpl value,
           $Res Function(_$BalanceChangedImpl) then) =
       __$$BalanceChangedImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -179,11 +174,9 @@ abstract class _BalanceChanged implements BalanceChanged {
   @override
   @JsonKey(name: 'asset')
   String get assetHash;
-
   @override
   @JsonKey(name: 'balance')
   int get balance;
-
   @override
   @JsonKey(ignore: true)
   _$$BalanceChangedImplCopyWith<_$BalanceChangedImpl> get copyWith =>

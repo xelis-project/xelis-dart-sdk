@@ -1,3 +1,7 @@
+## 0.13.3
+
+- update get_last_balance RPC method to get_balance.
+
 ## 0.13.2
 
 - update all events name to snake case.

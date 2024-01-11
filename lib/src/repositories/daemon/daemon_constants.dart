@@ -36,7 +36,7 @@ enum DaemonMethod implements XelisJsonKey {
   getNonce('get_nonce'),
 
   /// Get up-to-date asset's balance for a specific address.
-  getLastBalance('get_last_balance'),
+  getBalance('get_balance'),
 
   /// Get asset's balance from address at exact topoheight.
   getBalanceAtTopoHeight('get_balance_at_topoheight'),

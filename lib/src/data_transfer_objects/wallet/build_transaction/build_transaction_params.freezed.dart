@@ -23,27 +23,20 @@ BuildTransactionParams _$BuildTransactionParamsFromJson(
 mixin _$BuildTransactionParams {
   @JsonKey(name: 'transfers')
   List<Transfer>? get transfers => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'burn')
   Burn? get burn => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'call_contract')
   CallContract? get callContract => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'deploy_contract')
   String? get deployContract => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'fee')
   FeeBuilder? get feeBuilder => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'broadcast')
   bool get broadcast => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'tx_as_hex')
   bool? get txAsHex => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $BuildTransactionParamsCopyWith<BuildTransactionParams> get copyWith =>
       throw _privateConstructorUsedError;
@@ -54,7 +47,6 @@ abstract class $BuildTransactionParamsCopyWith<$Res> {
   factory $BuildTransactionParamsCopyWith(BuildTransactionParams value,
           $Res Function(BuildTransactionParams) then) =
       _$BuildTransactionParamsCopyWithImpl<$Res, BuildTransactionParams>;
-
   @useResult
   $Res call(
       {@JsonKey(name: 'transfers') List<Transfer>? transfers,
@@ -66,9 +58,7 @@ abstract class $BuildTransactionParamsCopyWith<$Res> {
       @JsonKey(name: 'tx_as_hex') bool? txAsHex});
 
   $BurnCopyWith<$Res>? get burn;
-
   $CallContractCopyWith<$Res>? get callContract;
-
   $FeeBuilderCopyWith<$Res>? get feeBuilder;
 }
 
@@ -80,7 +70,6 @@ class _$BuildTransactionParamsCopyWithImpl<$Res,
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -171,7 +160,6 @@ abstract class _$$BuildTransactionParamsImplCopyWith<$Res>
           _$BuildTransactionParamsImpl value,
           $Res Function(_$BuildTransactionParamsImpl) then) =
       __$$BuildTransactionParamsImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -185,10 +173,8 @@ abstract class _$$BuildTransactionParamsImplCopyWith<$Res>
 
   @override
   $BurnCopyWith<$Res>? get burn;
-
   @override
   $CallContractCopyWith<$Res>? get callContract;
-
   @override
   $FeeBuilderCopyWith<$Res>? get feeBuilder;
 }
@@ -265,7 +251,6 @@ class _$BuildTransactionParamsImpl implements _BuildTransactionParams {
       _$$BuildTransactionParamsImplFromJson(json);
 
   final List<Transfer>? _transfers;
-
   @override
   @JsonKey(name: 'transfers')
   List<Transfer>? get transfers {
@@ -363,31 +348,24 @@ abstract class _BuildTransactionParams implements BuildTransactionParams {
   @override
   @JsonKey(name: 'transfers')
   List<Transfer>? get transfers;
-
   @override
   @JsonKey(name: 'burn')
   Burn? get burn;
-
   @override
   @JsonKey(name: 'call_contract')
   CallContract? get callContract;
-
   @override
   @JsonKey(name: 'deploy_contract')
   String? get deployContract;
-
   @override
   @JsonKey(name: 'fee')
   FeeBuilder? get feeBuilder;
-
   @override
   @JsonKey(name: 'broadcast')
   bool get broadcast;
-
   @override
   @JsonKey(name: 'tx_as_hex')
   bool? get txAsHex;
-
   @override
   @JsonKey(ignore: true)
   _$$BuildTransactionParamsImplCopyWith<_$BuildTransactionParamsImpl>

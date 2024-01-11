@@ -2,19 +2,21 @@
 
 // ignore_for_file: package_api_docs, non_constant_identifier_names
 
-part of 'balance.dart';
+part of 'versioned_balance.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$BalanceImpl _$$BalanceImplFromJson(Map<String, dynamic> json) =>
-    _$BalanceImpl(
+_$VersionedBalanceImpl _$$VersionedBalanceImplFromJson(
+        Map<String, dynamic> json) =>
+    _$VersionedBalanceImpl(
       balance: json['balance'] as int,
       previousTopoHeight: json['previous_topoheight'] as int?,
     );
 
-Map<String, dynamic> _$$BalanceImplToJson(_$BalanceImpl instance) =>
+Map<String, dynamic> _$$VersionedBalanceImplToJson(
+        _$VersionedBalanceImpl instance) =>
     <String, dynamic>{
       'balance': instance.balance,
       'previous_topoheight': instance.previousTopoHeight,

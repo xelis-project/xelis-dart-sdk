@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'balance.dart';
+part of 'versioned_balance.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,26 +14,31 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-Balance _$BalanceFromJson(Map<String, dynamic> json) {
-  return _Balance.fromJson(json);
+VersionedBalance _$VersionedBalanceFromJson(Map<String, dynamic> json) {
+  return _VersionedBalance.fromJson(json);
 }
 
 /// @nodoc
-mixin _$Balance {
+mixin _$VersionedBalance {
   @JsonKey(name: 'balance')
   int get balance => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'previous_topoheight')
   int? get previousTopoHeight => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
-  $BalanceCopyWith<Balance> get copyWith => throw _privateConstructorUsedError;
+  $VersionedBalanceCopyWith<VersionedBalance> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $BalanceCopyWith<$Res> {
-  factory $BalanceCopyWith(Balance value, $Res Function(Balance) then) =
-      _$BalanceCopyWithImpl<$Res, Balance>;
+abstract class $VersionedBalanceCopyWith<$Res> {
+  factory $VersionedBalanceCopyWith(
+          VersionedBalance value, $Res Function(VersionedBalance) then) =
+      _$VersionedBalanceCopyWithImpl<$Res, VersionedBalance>;
+
   @useResult
   $Res call(
       {@JsonKey(name: 'balance') int balance,
@@ -41,12 +46,13 @@ abstract class $BalanceCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$BalanceCopyWithImpl<$Res, $Val extends Balance>
-    implements $BalanceCopyWith<$Res> {
-  _$BalanceCopyWithImpl(this._value, this._then);
+class _$VersionedBalanceCopyWithImpl<$Res, $Val extends VersionedBalance>
+    implements $VersionedBalanceCopyWith<$Res> {
+  _$VersionedBalanceCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
+
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -70,10 +76,12 @@ class _$BalanceCopyWithImpl<$Res, $Val extends Balance>
 }
 
 /// @nodoc
-abstract class _$$BalanceImplCopyWith<$Res> implements $BalanceCopyWith<$Res> {
-  factory _$$BalanceImplCopyWith(
-          _$BalanceImpl value, $Res Function(_$BalanceImpl) then) =
-      __$$BalanceImplCopyWithImpl<$Res>;
+abstract class _$$VersionedBalanceImplCopyWith<$Res>
+    implements $VersionedBalanceCopyWith<$Res> {
+  factory _$$VersionedBalanceImplCopyWith(_$VersionedBalanceImpl value,
+          $Res Function(_$VersionedBalanceImpl) then) =
+      __$$VersionedBalanceImplCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call(
@@ -82,11 +90,11 @@ abstract class _$$BalanceImplCopyWith<$Res> implements $BalanceCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$BalanceImplCopyWithImpl<$Res>
-    extends _$BalanceCopyWithImpl<$Res, _$BalanceImpl>
-    implements _$$BalanceImplCopyWith<$Res> {
-  __$$BalanceImplCopyWithImpl(
-      _$BalanceImpl _value, $Res Function(_$BalanceImpl) _then)
+class __$$VersionedBalanceImplCopyWithImpl<$Res>
+    extends _$VersionedBalanceCopyWithImpl<$Res, _$VersionedBalanceImpl>
+    implements _$$VersionedBalanceImplCopyWith<$Res> {
+  __$$VersionedBalanceImplCopyWithImpl(_$VersionedBalanceImpl _value,
+      $Res Function(_$VersionedBalanceImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -95,7 +103,7 @@ class __$$BalanceImplCopyWithImpl<$Res>
     Object? balance = null,
     Object? previousTopoHeight = freezed,
   }) {
-    return _then(_$BalanceImpl(
+    return _then(_$VersionedBalanceImpl(
       balance: null == balance
           ? _value.balance
           : balance // ignore: cast_nullable_to_non_nullable
@@ -110,13 +118,13 @@ class __$$BalanceImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$BalanceImpl implements _Balance {
-  const _$BalanceImpl(
+class _$VersionedBalanceImpl implements _VersionedBalance {
+  const _$VersionedBalanceImpl(
       {@JsonKey(name: 'balance') required this.balance,
       @JsonKey(name: 'previous_topoheight') this.previousTopoHeight});
 
-  factory _$BalanceImpl.fromJson(Map<String, dynamic> json) =>
-      _$$BalanceImplFromJson(json);
+  factory _$VersionedBalanceImpl.fromJson(Map<String, dynamic> json) =>
+      _$$VersionedBalanceImplFromJson(json);
 
   @override
   @JsonKey(name: 'balance')
@@ -127,14 +135,14 @@ class _$BalanceImpl implements _Balance {
 
   @override
   String toString() {
-    return 'Balance(balance: $balance, previousTopoHeight: $previousTopoHeight)';
+    return 'VersionedBalance(balance: $balance, previousTopoHeight: $previousTopoHeight)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$BalanceImpl &&
+            other is _$VersionedBalanceImpl &&
             (identical(other.balance, balance) || other.balance == balance) &&
             (identical(other.previousTopoHeight, previousTopoHeight) ||
                 other.previousTopoHeight == previousTopoHeight));
@@ -147,33 +155,37 @@ class _$BalanceImpl implements _Balance {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$BalanceImplCopyWith<_$BalanceImpl> get copyWith =>
-      __$$BalanceImplCopyWithImpl<_$BalanceImpl>(this, _$identity);
+  _$$VersionedBalanceImplCopyWith<_$VersionedBalanceImpl> get copyWith =>
+      __$$VersionedBalanceImplCopyWithImpl<_$VersionedBalanceImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$BalanceImplToJson(
+    return _$$VersionedBalanceImplToJson(
       this,
     );
   }
 }
 
-abstract class _Balance implements Balance {
-  const factory _Balance(
+abstract class _VersionedBalance implements VersionedBalance {
+  const factory _VersionedBalance(
       {@JsonKey(name: 'balance') required final int balance,
       @JsonKey(name: 'previous_topoheight')
-      final int? previousTopoHeight}) = _$BalanceImpl;
+      final int? previousTopoHeight}) = _$VersionedBalanceImpl;
 
-  factory _Balance.fromJson(Map<String, dynamic> json) = _$BalanceImpl.fromJson;
+  factory _VersionedBalance.fromJson(Map<String, dynamic> json) =
+      _$VersionedBalanceImpl.fromJson;
 
   @override
   @JsonKey(name: 'balance')
   int get balance;
+
   @override
   @JsonKey(name: 'previous_topoheight')
   int? get previousTopoHeight;
+
   @override
   @JsonKey(ignore: true)
-  _$$BalanceImplCopyWith<_$BalanceImpl> get copyWith =>
+  _$$VersionedBalanceImplCopyWith<_$VersionedBalanceImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

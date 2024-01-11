@@ -2,22 +2,23 @@
 
 // ignore_for_file: package_api_docs, non_constant_identifier_names
 
-part of 'get_last_balance_result.dart';
+part of 'get_balance_result.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$GetLastBalanceResultImpl _$$GetLastBalanceResultImplFromJson(
+_$GetBalanceResultImpl _$$GetBalanceResultImplFromJson(
         Map<String, dynamic> json) =>
-    _$GetLastBalanceResultImpl(
-      balance: Balance.fromJson(json['balance'] as Map<String, dynamic>),
+    _$GetBalanceResultImpl(
+      versionedBalance:
+          VersionedBalance.fromJson(json['version'] as Map<String, dynamic>),
       topoHeight: json['topoheight'] as int,
     );
 
-Map<String, dynamic> _$$GetLastBalanceResultImplToJson(
-        _$GetLastBalanceResultImpl instance) =>
+Map<String, dynamic> _$$GetBalanceResultImplToJson(
+        _$GetBalanceResultImpl instance) =>
     <String, dynamic>{
-      'balance': instance.balance,
+      'version': instance.versionedBalance,
       'topoheight': instance.topoHeight,
     };

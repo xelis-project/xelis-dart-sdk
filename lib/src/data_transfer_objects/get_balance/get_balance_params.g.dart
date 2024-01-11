@@ -2,21 +2,21 @@
 
 // ignore_for_file: package_api_docs, non_constant_identifier_names
 
-part of 'get_last_balance_params.dart';
+part of 'get_balance_params.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$GetLastBalanceParamsImpl _$$GetLastBalanceParamsImplFromJson(
+_$GetBalanceParamsImpl _$$GetBalanceParamsImplFromJson(
         Map<String, dynamic> json) =>
-    _$GetLastBalanceParamsImpl(
+    _$GetBalanceParamsImpl(
       address: json['address'] as String,
       asset: json['asset'] as String,
     );
 
-Map<String, dynamic> _$$GetLastBalanceParamsImplToJson(
-        _$GetLastBalanceParamsImpl instance) =>
+Map<String, dynamic> _$$GetBalanceParamsImplToJson(
+        _$GetBalanceParamsImpl instance) =>
     <String, dynamic>{
       'address': instance.address,
       'asset': instance.asset,

@@ -22,30 +22,22 @@ TransactionEntry _$TransactionEntryFromJson(Map<String, dynamic> json) {
 mixin _$TransactionEntry {
   @JsonKey(name: 'hash')
   String get hash => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'topoheight')
   int get topoHeight => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'transfers')
   List<Transfer>? get transfers => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'burn')
   Burn? get burn => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'call_contract')
   CallContract? get callContract => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'deploy_contract')
   String? get deployContract => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'fee')
   int? get fee => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'nonce')
   int? get nonce => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $TransactionEntryCopyWith<TransactionEntry> get copyWith =>
       throw _privateConstructorUsedError;
@@ -56,7 +48,6 @@ abstract class $TransactionEntryCopyWith<$Res> {
   factory $TransactionEntryCopyWith(
           TransactionEntry value, $Res Function(TransactionEntry) then) =
       _$TransactionEntryCopyWithImpl<$Res, TransactionEntry>;
-
   @useResult
   $Res call(
       {@JsonKey(name: 'hash') String hash,
@@ -69,7 +60,6 @@ abstract class $TransactionEntryCopyWith<$Res> {
       @JsonKey(name: 'nonce') int? nonce});
 
   $BurnCopyWith<$Res>? get burn;
-
   $CallContractCopyWith<$Res>? get callContract;
 }
 
@@ -80,7 +70,6 @@ class _$TransactionEntryCopyWithImpl<$Res, $Val extends TransactionEntry>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -163,7 +152,6 @@ abstract class _$$TransactionEntryImplCopyWith<$Res>
   factory _$$TransactionEntryImplCopyWith(_$TransactionEntryImpl value,
           $Res Function(_$TransactionEntryImpl) then) =
       __$$TransactionEntryImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -178,7 +166,6 @@ abstract class _$$TransactionEntryImplCopyWith<$Res>
 
   @override
   $BurnCopyWith<$Res>? get burn;
-
   @override
   $CallContractCopyWith<$Res>? get callContract;
 }
@@ -264,7 +251,6 @@ class _$TransactionEntryImpl implements _TransactionEntry {
   @JsonKey(name: 'topoheight')
   final int topoHeight;
   final List<Transfer>? _transfers;
-
   @override
   @JsonKey(name: 'transfers')
   List<Transfer>? get transfers {
@@ -360,35 +346,27 @@ abstract class _TransactionEntry implements TransactionEntry {
   @override
   @JsonKey(name: 'hash')
   String get hash;
-
   @override
   @JsonKey(name: 'topoheight')
   int get topoHeight;
-
   @override
   @JsonKey(name: 'transfers')
   List<Transfer>? get transfers;
-
   @override
   @JsonKey(name: 'burn')
   Burn? get burn;
-
   @override
   @JsonKey(name: 'call_contract')
   CallContract? get callContract;
-
   @override
   @JsonKey(name: 'deploy_contract')
   String? get deployContract;
-
   @override
   @JsonKey(name: 'fee')
   int? get fee;
-
   @override
   @JsonKey(name: 'nonce')
   int? get nonce;
-
   @override
   @JsonKey(ignore: true)
   _$$TransactionEntryImplCopyWith<_$TransactionEntryImpl> get copyWith =>
