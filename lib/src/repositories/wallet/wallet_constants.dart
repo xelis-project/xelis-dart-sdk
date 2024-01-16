@@ -57,12 +57,22 @@ enum WalletMethod implements XelisJsonKey {
   signData('sign_data'),
 
   //----------------------------------------------------------------------------
-  // TODO: implement
+  /// TODO: implement
   getMatchingKeys('get_matching_keys'),
+
+  /// TODO: implement
   getValueFromKey('get_value_from_key'),
+
+  /// TODO: implement
   store('store'),
+
+  /// TODO: implement
   delete('delete'),
+
+  /// TODO: implement
   hasKey('has_key'),
+
+  /// TODO: implement
   queryDB('query_db');
   //----------------------------------------------------------------------------
 
