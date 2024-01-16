@@ -100,6 +100,24 @@ extension DaemonRpcMethodsExtension on DaemonClient {
     return result as int;
   }
 
+  /// Get nonce from address at exact topoheight.
+  Future<GetNonceAtTopoHeightResult> getNonceAtTopoHeight(
+    GetNonceAtTopoHeightParams getNonceAtTopoHeightParams,
+  ) async {
+    final result = await sendRequest(
+      DaemonMethod.getNonceAtTopoheight,
+      getNonceAtTopoHeightParams.toJson(),
+    );
+    return GetNonceAtTopoHeightResult.fromJson(result as Map<String, dynamic>);
+  }
+
+  /// Verify if address has a balance on-chain registered for requested asset.
+  Future<HasBalanceResult> hasBalance(HasBalanceParams hasBalanceParams) async {
+    final result =
+        await sendRequest(DaemonMethod.hasBalance, hasBalanceParams.toJson());
+    return HasBalanceResult.fromJson(result as Map<String, dynamic>);
+  }
+
   /// Returns up-to-date asset's balance for a specific address.
   ///
   /// NOTE: Balance is returned in atomic units.

@@ -22,7 +22,6 @@ GetBalanceResult _$GetBalanceResultFromJson(Map<String, dynamic> json) {
 mixin _$GetBalanceResult {
   @JsonKey(name: 'version')
   VersionedBalance get versionedBalance => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'topoheight')
   int get topoHeight => throw _privateConstructorUsedError;
 
@@ -190,7 +189,6 @@ abstract class _GetBalanceResult implements GetBalanceResult {
   @override
   @JsonKey(name: 'version')
   VersionedBalance get versionedBalance;
-
   @override
   @JsonKey(name: 'topoheight')
   int get topoHeight;

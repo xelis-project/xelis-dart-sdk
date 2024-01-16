@@ -1,3 +1,10 @@
+## 0.14.0
+
+Daemon API upgrade :
+
+- new hasBalance RPC method.
+- new getNonceAtTopoheight RPC method.
+
 ## 0.13.3
 
 - update get_last_balance RPC method to get_balance.

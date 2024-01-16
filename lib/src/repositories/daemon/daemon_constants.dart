@@ -35,6 +35,12 @@ enum DaemonMethod implements XelisJsonKey {
   /// Retrieve the nonce for a given address.
   getNonce('get_nonce'),
 
+  /// Get nonce from address at exact topoheight.
+  getNonceAtTopoheight('get_nonce_at_topoheight'),
+
+  /// Verify if address has a balance on-chain registered for requested asset.
+  hasBalance('has_balance'),
+
   /// Get up-to-date asset's balance for a specific address.
   getBalance('get_balance'),
 

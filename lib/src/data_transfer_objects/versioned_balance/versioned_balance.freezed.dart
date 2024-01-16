@@ -22,12 +22,10 @@ VersionedBalance _$VersionedBalanceFromJson(Map<String, dynamic> json) {
 mixin _$VersionedBalance {
   @JsonKey(name: 'balance')
   int get balance => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'previous_topoheight')
   int? get previousTopoHeight => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $VersionedBalanceCopyWith<VersionedBalance> get copyWith =>
       throw _privateConstructorUsedError;
@@ -38,7 +36,6 @@ abstract class $VersionedBalanceCopyWith<$Res> {
   factory $VersionedBalanceCopyWith(
           VersionedBalance value, $Res Function(VersionedBalance) then) =
       _$VersionedBalanceCopyWithImpl<$Res, VersionedBalance>;
-
   @useResult
   $Res call(
       {@JsonKey(name: 'balance') int balance,
@@ -52,7 +49,6 @@ class _$VersionedBalanceCopyWithImpl<$Res, $Val extends VersionedBalance>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -81,7 +77,6 @@ abstract class _$$VersionedBalanceImplCopyWith<$Res>
   factory _$$VersionedBalanceImplCopyWith(_$VersionedBalanceImpl value,
           $Res Function(_$VersionedBalanceImpl) then) =
       __$$VersionedBalanceImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -179,11 +174,9 @@ abstract class _VersionedBalance implements VersionedBalance {
   @override
   @JsonKey(name: 'balance')
   int get balance;
-
   @override
   @JsonKey(name: 'previous_topoheight')
   int? get previousTopoHeight;
-
   @override
   @JsonKey(ignore: true)
   _$$VersionedBalanceImplCopyWith<_$VersionedBalanceImpl> get copyWith =>
