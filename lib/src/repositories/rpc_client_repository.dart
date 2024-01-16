@@ -232,11 +232,11 @@ sealed class RpcClientRepository {
     } else if (json
         case {
           'id': final int id,
-          // 'jsonrpc': '2.0',
+          'jsonrpc': '2.0',
           'error': {
             'code': final int code,
             'message': final String message,
-            'json': final dynamic data
+            // 'json': final dynamic data
           }
         }) {
       if (_pendingRequests[id] != null) {
@@ -244,7 +244,7 @@ sealed class RpcClientRepository {
               json_rpc_2.RpcException(
                 code,
                 message,
-                data: data,
+                // data: data,
               ),
             );
         _pendingRequests.remove(id);
