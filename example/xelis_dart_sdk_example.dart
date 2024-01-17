@@ -17,9 +17,6 @@ Future<void> main() async {
     print('result: $res');
 
     // You can also use the repository to listen to events.
-
-    // There are 5 different types of events,
-    // you can add callbacks depending on the event.
     daemonClient
       ..onNewBlock((block) {
         print('new block: $block');

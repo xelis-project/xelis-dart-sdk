@@ -21,8 +21,10 @@ JSON-RPC Clients to interact with daemon and wallet API.
 - getBlockByHash
 - getTopBlock
 - getNonce
-- getLastBalance
+- getNonceAtTopoHeight
+- getBalance
 - getBalanceAtTopoHeight
+- hasBalance
 - getAsset
 - getAssets
 - countAssets
