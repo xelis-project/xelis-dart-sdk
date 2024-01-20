@@ -88,10 +88,13 @@ Subscribe and listen to events.
 
 #### Wallet
 
-- newChainInfo
+- newTopoheight
 - newAsset
 - newTransaction
 - balanceChanged
+- rescan
+- Online
+- Offline
 
 ## Usage
 
