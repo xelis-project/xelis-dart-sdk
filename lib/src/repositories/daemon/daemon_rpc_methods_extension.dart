@@ -215,27 +215,29 @@ extension DaemonRpcMethodsExtension on DaemonClient {
   ///
   /// NOTE: result returned in data field can changes based on
   /// the TransactionType (transfer, burn, Smart Contract call, Deploy Code...).
-  Future<Transaction> getTransaction(
+  Future<TransactionResponse> getTransaction(
     GetTransactionParams getTransactionParams,
   ) async {
     final result = await sendRequest(
       DaemonMethod.getTransaction,
       getTransactionParams.toJson(),
     );
-    return Transaction.fromJson(result as Map<String, dynamic>);
+    return TransactionResponse.fromJson(result as Map<String, dynamic>);
   }
 
   /// Fetch all transactions presents in the mempool.
-  Future<Transaction> getMempool() async {
+  Future<List<TransactionResponse>> getMempool() async {
     final result = await sendRequest(
       DaemonMethod.getMempool,
     );
-    return Transaction.fromJson(result as Map<String, dynamic>);
+    return (result as List)
+        .map((e) => TransactionResponse.fromJson(e as Map<String, dynamic>))
+        .toList();
   }
 
   /// Fetch transactions by theirs hashes from daemon and keep
   /// the same order in response.
-  Future<List<Transaction>> getTransactions(
+  Future<List<TransactionResponse>> getTransactions(
     GetTransactionsParams getTransactionsParams,
   ) async {
     final result = await sendRequest(
@@ -243,7 +245,7 @@ extension DaemonRpcMethodsExtension on DaemonClient {
       getTransactionsParams.toJson(),
     );
     return (result as List)
-        .map((e) => Transaction.fromJson(e as Map<String, dynamic>))
+        .map((e) => TransactionResponse.fromJson(e as Map<String, dynamic>))
         .toList();
   }
 

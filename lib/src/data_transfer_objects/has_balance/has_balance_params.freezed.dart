@@ -22,15 +22,12 @@ HasBalanceParams _$HasBalanceParamsFromJson(Map<String, dynamic> json) {
 mixin _$HasBalanceParams {
   @JsonKey(name: 'address')
   String get address => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'asset')
   String get asset => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'topoheight')
   int? get topoheight => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $HasBalanceParamsCopyWith<HasBalanceParams> get copyWith =>
       throw _privateConstructorUsedError;
@@ -41,7 +38,6 @@ abstract class $HasBalanceParamsCopyWith<$Res> {
   factory $HasBalanceParamsCopyWith(
           HasBalanceParams value, $Res Function(HasBalanceParams) then) =
       _$HasBalanceParamsCopyWithImpl<$Res, HasBalanceParams>;
-
   @useResult
   $Res call(
       {@JsonKey(name: 'address') String address,
@@ -56,7 +52,6 @@ class _$HasBalanceParamsCopyWithImpl<$Res, $Val extends HasBalanceParams>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -90,7 +85,6 @@ abstract class _$$HasBalanceParamsImplCopyWith<$Res>
   factory _$$HasBalanceParamsImplCopyWith(_$HasBalanceParamsImpl value,
           $Res Function(_$HasBalanceParamsImpl) then) =
       __$$HasBalanceParamsImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -200,15 +194,12 @@ abstract class _HasBalanceParams implements HasBalanceParams {
   @override
   @JsonKey(name: 'address')
   String get address;
-
   @override
   @JsonKey(name: 'asset')
   String get asset;
-
   @override
   @JsonKey(name: 'topoheight')
   int? get topoheight;
-
   @override
   @JsonKey(ignore: true)
   _$$HasBalanceParamsImplCopyWith<_$HasBalanceParamsImpl> get copyWith =>

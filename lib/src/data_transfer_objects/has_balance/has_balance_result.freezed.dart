@@ -24,7 +24,6 @@ mixin _$HasBalanceResult {
   bool get exist => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $HasBalanceResultCopyWith<HasBalanceResult> get copyWith =>
       throw _privateConstructorUsedError;
@@ -35,7 +34,6 @@ abstract class $HasBalanceResultCopyWith<$Res> {
   factory $HasBalanceResultCopyWith(
           HasBalanceResult value, $Res Function(HasBalanceResult) then) =
       _$HasBalanceResultCopyWithImpl<$Res, HasBalanceResult>;
-
   @useResult
   $Res call({@JsonKey(name: 'exist') bool exist});
 }
@@ -47,7 +45,6 @@ class _$HasBalanceResultCopyWithImpl<$Res, $Val extends HasBalanceResult>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -71,7 +68,6 @@ abstract class _$$HasBalanceResultImplCopyWith<$Res>
   factory _$$HasBalanceResultImplCopyWith(_$HasBalanceResultImpl value,
           $Res Function(_$HasBalanceResultImpl) then) =
       __$$HasBalanceResultImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call({@JsonKey(name: 'exist') bool exist});
@@ -154,7 +150,6 @@ abstract class _HasBalanceResult implements HasBalanceResult {
   @override
   @JsonKey(name: 'exist')
   bool get exist;
-
   @override
   @JsonKey(ignore: true)
   _$$HasBalanceResultImplCopyWith<_$HasBalanceResultImpl> get copyWith =>

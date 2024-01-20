@@ -47,7 +47,7 @@ extension DaemonEventsExtension on DaemonClient {
   ///
   /// Note: It is called when a transaction is added to the mempool.
   void onTransactionAddedInMempool(
-    void Function(Transaction transaction) callback,
+    void Function(TransactionResponse transactionResponse) callback,
   ) =>
       onEvent(DaemonEvent.transactionAddedInMempool, callback);
 

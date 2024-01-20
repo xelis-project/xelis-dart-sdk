@@ -88,19 +88,29 @@ enum WalletMethod implements XelisJsonKey {
 enum WalletEvent implements XelisJsonKey {
   /// When a a get_info request is made
   /// and we receive a different topoheight than previous one
-  newChainInfo('NewChainInfo'),
+  newTopoHeight('new_chain_info'),
 
   /// When a new asset is added to wallet
   /// Contains a Hash as value
-  newAsset('NewAsset'),
+  newAsset('new_asset'),
 
   /// When a new transaction is added to wallet
   /// Contains TransactionEntry struct as value
-  newTransaction('NewTransaction'),
+  newTransaction('new_transaction'),
 
   /// When a balance is changed
   /// Contains a BalanceChanged as value
-  balanceChanged('BalanceChanged');
+  balanceChanged('balance_changed'),
+
+  /// When a rescan happened on the wallet.
+  /// Contains a topoheight as value to indicate until which topoheight transactions got deleted.
+  rescan('rescan'),
+
+  /// When network state changed to Online.
+  online('online'),
+
+  /// When network state changed to Offline.
+  offline('offline');
 
   /// Creates a new [WalletEvent] instance.
   const WalletEvent(this.jsonKey);
@@ -108,14 +118,20 @@ enum WalletEvent implements XelisJsonKey {
   /// Factory to convert a [String] to a [WalletEvent].
   factory WalletEvent.fromStr(String value) {
     switch (value) {
-      case 'NewChainInfo':
-        return WalletEvent.newChainInfo;
-      case 'NewAsset':
+      case 'new_chain_info':
+        return WalletEvent.newTopoHeight;
+      case 'new_asset':
         return WalletEvent.newAsset;
-      case 'NewTransaction':
+      case 'new_transaction':
         return WalletEvent.newTransaction;
-      case 'BalanceChanged':
+      case 'balance_changed':
         return WalletEvent.balanceChanged;
+      case 'rescan':
+        return WalletEvent.rescan;
+      case 'online':
+        return WalletEvent.online;
+      case 'offline':
+        return WalletEvent.offline;
       default:
         throw Exception('Unknown event: $value');
     }

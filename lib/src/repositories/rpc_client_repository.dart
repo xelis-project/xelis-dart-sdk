@@ -76,14 +76,16 @@ sealed class RpcClientRepository {
     }
   }
 
-  /// Initialize the websocket to communicate with daemon and start listening.
+  /// Initialize the websocket for specific target.
+  ///
+  /// Note: must be implemented.
+  WebSocket _initWebSocket();
+
+  /// Initialize the websocket to communicate with RPC server and start listening.
   ///
   /// Note: It has to be called first.
   void connect() {
-    socket = WebSocket(
-      _uri,
-      timeout: Duration(milliseconds: _channelTimeout),
-    );
+    socket = _initWebSocket();
 
     socket?.connection.listen(
       (state) {
@@ -253,25 +255,25 @@ sealed class RpcClientRepository {
   }
 
   /// Manages the event response.
+  ///
+  /// Note: must be implemented.
   void _handleEvent(String eventJsonKey, Map<String, dynamic> result);
 
   // Calls all callbacks for a given connection state.
   void _onConnOpen() {
-    _logInfo('successfully connected to xelis daemon');
     // ignore: avoid_dynamic_calls
     _stateChangeCallbacks['open']!.map((callback) => callback());
   }
 
   // Calls all callbacks for a given connection state.
   void _onConnClose() {
-    _logInfo('connection to xelis daemon closed');
     // ignore: avoid_dynamic_calls
     _stateChangeCallbacks['close']!.map((callback) => callback());
   }
 
   // Calls all callbacks for a given connection state.
   void _onConnError(dynamic error) {
-    _logInfo('error connecting to xelis daemon: $error');
+    _logInfo('error connecting to Xelis: $error');
     // ignore: avoid_dynamic_calls
     _stateChangeCallbacks['error']!.map((callback) => callback());
   }

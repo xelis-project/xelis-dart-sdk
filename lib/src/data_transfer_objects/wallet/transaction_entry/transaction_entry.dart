@@ -9,13 +9,14 @@ part 'transaction_entry.g.dart';
 
 @freezed
 class TransactionEntry with _$TransactionEntry {
+  @JsonSerializable(includeIfNull: false)
   const factory TransactionEntry({
     @JsonKey(name: 'hash') required String hash,
     @JsonKey(name: 'topoheight') required int topoHeight,
-    @JsonKey(name: 'transfers') List<Transfer>? transfers,
+    @JsonKey(name: 'coinbase') Coinbase? coinbase,
     @JsonKey(name: 'burn') Burn? burn,
-    @JsonKey(name: 'call_contract') CallContract? callContract,
-    @JsonKey(name: 'deploy_contract') String? deployContract,
+    @JsonKey(name: 'outgoing') Outgoing? outgoingTransfers,
+    @JsonKey(name: 'incoming') Incoming? incomingTransfers,
     @JsonKey(name: 'fee') int? fee,
     @JsonKey(name: 'nonce') int? nonce,
   }) = _TransactionEntry;

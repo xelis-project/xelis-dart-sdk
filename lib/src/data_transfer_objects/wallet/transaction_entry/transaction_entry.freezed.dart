@@ -22,22 +22,30 @@ TransactionEntry _$TransactionEntryFromJson(Map<String, dynamic> json) {
 mixin _$TransactionEntry {
   @JsonKey(name: 'hash')
   String get hash => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'topoheight')
   int get topoHeight => throw _privateConstructorUsedError;
-  @JsonKey(name: 'transfers')
-  List<Transfer>? get transfers => throw _privateConstructorUsedError;
+
+  @JsonKey(name: 'coinbase')
+  Coinbase? get coinbase => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'burn')
   Burn? get burn => throw _privateConstructorUsedError;
-  @JsonKey(name: 'call_contract')
-  CallContract? get callContract => throw _privateConstructorUsedError;
-  @JsonKey(name: 'deploy_contract')
-  String? get deployContract => throw _privateConstructorUsedError;
+
+  @JsonKey(name: 'outgoing')
+  Outgoing? get outgoingTransfers => throw _privateConstructorUsedError;
+
+  @JsonKey(name: 'incoming')
+  Incoming? get incomingTransfers => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'fee')
   int? get fee => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'nonce')
   int? get nonce => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   $TransactionEntryCopyWith<TransactionEntry> get copyWith =>
       throw _privateConstructorUsedError;
@@ -52,15 +60,20 @@ abstract class $TransactionEntryCopyWith<$Res> {
   $Res call(
       {@JsonKey(name: 'hash') String hash,
       @JsonKey(name: 'topoheight') int topoHeight,
-      @JsonKey(name: 'transfers') List<Transfer>? transfers,
+      @JsonKey(name: 'coinbase') Coinbase? coinbase,
       @JsonKey(name: 'burn') Burn? burn,
-      @JsonKey(name: 'call_contract') CallContract? callContract,
-      @JsonKey(name: 'deploy_contract') String? deployContract,
+      @JsonKey(name: 'outgoing') Outgoing? outgoingTransfers,
+      @JsonKey(name: 'incoming') Incoming? incomingTransfers,
       @JsonKey(name: 'fee') int? fee,
       @JsonKey(name: 'nonce') int? nonce});
 
+  $CoinbaseCopyWith<$Res>? get coinbase;
+
   $BurnCopyWith<$Res>? get burn;
-  $CallContractCopyWith<$Res>? get callContract;
+
+  $OutgoingCopyWith<$Res>? get outgoingTransfers;
+
+  $IncomingCopyWith<$Res>? get incomingTransfers;
 }
 
 /// @nodoc
@@ -78,10 +91,10 @@ class _$TransactionEntryCopyWithImpl<$Res, $Val extends TransactionEntry>
   $Res call({
     Object? hash = null,
     Object? topoHeight = null,
-    Object? transfers = freezed,
+    Object? coinbase = freezed,
     Object? burn = freezed,
-    Object? callContract = freezed,
-    Object? deployContract = freezed,
+    Object? outgoingTransfers = freezed,
+    Object? incomingTransfers = freezed,
     Object? fee = freezed,
     Object? nonce = freezed,
   }) {
@@ -94,22 +107,22 @@ class _$TransactionEntryCopyWithImpl<$Res, $Val extends TransactionEntry>
           ? _value.topoHeight
           : topoHeight // ignore: cast_nullable_to_non_nullable
               as int,
-      transfers: freezed == transfers
-          ? _value.transfers
-          : transfers // ignore: cast_nullable_to_non_nullable
-              as List<Transfer>?,
+      coinbase: freezed == coinbase
+          ? _value.coinbase
+          : coinbase // ignore: cast_nullable_to_non_nullable
+              as Coinbase?,
       burn: freezed == burn
           ? _value.burn
           : burn // ignore: cast_nullable_to_non_nullable
               as Burn?,
-      callContract: freezed == callContract
-          ? _value.callContract
-          : callContract // ignore: cast_nullable_to_non_nullable
-              as CallContract?,
-      deployContract: freezed == deployContract
-          ? _value.deployContract
-          : deployContract // ignore: cast_nullable_to_non_nullable
-              as String?,
+      outgoingTransfers: freezed == outgoingTransfers
+          ? _value.outgoingTransfers
+          : outgoingTransfers // ignore: cast_nullable_to_non_nullable
+              as Outgoing?,
+      incomingTransfers: freezed == incomingTransfers
+          ? _value.incomingTransfers
+          : incomingTransfers // ignore: cast_nullable_to_non_nullable
+              as Incoming?,
       fee: freezed == fee
           ? _value.fee
           : fee // ignore: cast_nullable_to_non_nullable
@@ -119,6 +132,18 @@ class _$TransactionEntryCopyWithImpl<$Res, $Val extends TransactionEntry>
           : nonce // ignore: cast_nullable_to_non_nullable
               as int?,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $CoinbaseCopyWith<$Res>? get coinbase {
+    if (_value.coinbase == null) {
+      return null;
+    }
+
+    return $CoinbaseCopyWith<$Res>(_value.coinbase!, (value) {
+      return _then(_value.copyWith(coinbase: value) as $Val);
+    });
   }
 
   @override
@@ -135,13 +160,25 @@ class _$TransactionEntryCopyWithImpl<$Res, $Val extends TransactionEntry>
 
   @override
   @pragma('vm:prefer-inline')
-  $CallContractCopyWith<$Res>? get callContract {
-    if (_value.callContract == null) {
+  $OutgoingCopyWith<$Res>? get outgoingTransfers {
+    if (_value.outgoingTransfers == null) {
       return null;
     }
 
-    return $CallContractCopyWith<$Res>(_value.callContract!, (value) {
-      return _then(_value.copyWith(callContract: value) as $Val);
+    return $OutgoingCopyWith<$Res>(_value.outgoingTransfers!, (value) {
+      return _then(_value.copyWith(outgoingTransfers: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $IncomingCopyWith<$Res>? get incomingTransfers {
+    if (_value.incomingTransfers == null) {
+      return null;
+    }
+
+    return $IncomingCopyWith<$Res>(_value.incomingTransfers!, (value) {
+      return _then(_value.copyWith(incomingTransfers: value) as $Val);
     });
   }
 }
@@ -157,17 +194,24 @@ abstract class _$$TransactionEntryImplCopyWith<$Res>
   $Res call(
       {@JsonKey(name: 'hash') String hash,
       @JsonKey(name: 'topoheight') int topoHeight,
-      @JsonKey(name: 'transfers') List<Transfer>? transfers,
+      @JsonKey(name: 'coinbase') Coinbase? coinbase,
       @JsonKey(name: 'burn') Burn? burn,
-      @JsonKey(name: 'call_contract') CallContract? callContract,
-      @JsonKey(name: 'deploy_contract') String? deployContract,
+      @JsonKey(name: 'outgoing') Outgoing? outgoingTransfers,
+      @JsonKey(name: 'incoming') Incoming? incomingTransfers,
       @JsonKey(name: 'fee') int? fee,
       @JsonKey(name: 'nonce') int? nonce});
 
   @override
-  $BurnCopyWith<$Res>? get burn;
+  $CoinbaseCopyWith<$Res>? get coinbase;
+
   @override
-  $CallContractCopyWith<$Res>? get callContract;
+  $BurnCopyWith<$Res>? get burn;
+
+  @override
+  $OutgoingCopyWith<$Res>? get outgoingTransfers;
+
+  @override
+  $IncomingCopyWith<$Res>? get incomingTransfers;
 }
 
 /// @nodoc
@@ -183,10 +227,10 @@ class __$$TransactionEntryImplCopyWithImpl<$Res>
   $Res call({
     Object? hash = null,
     Object? topoHeight = null,
-    Object? transfers = freezed,
+    Object? coinbase = freezed,
     Object? burn = freezed,
-    Object? callContract = freezed,
-    Object? deployContract = freezed,
+    Object? outgoingTransfers = freezed,
+    Object? incomingTransfers = freezed,
     Object? fee = freezed,
     Object? nonce = freezed,
   }) {
@@ -199,22 +243,22 @@ class __$$TransactionEntryImplCopyWithImpl<$Res>
           ? _value.topoHeight
           : topoHeight // ignore: cast_nullable_to_non_nullable
               as int,
-      transfers: freezed == transfers
-          ? _value._transfers
-          : transfers // ignore: cast_nullable_to_non_nullable
-              as List<Transfer>?,
+      coinbase: freezed == coinbase
+          ? _value.coinbase
+          : coinbase // ignore: cast_nullable_to_non_nullable
+              as Coinbase?,
       burn: freezed == burn
           ? _value.burn
           : burn // ignore: cast_nullable_to_non_nullable
               as Burn?,
-      callContract: freezed == callContract
-          ? _value.callContract
-          : callContract // ignore: cast_nullable_to_non_nullable
-              as CallContract?,
-      deployContract: freezed == deployContract
-          ? _value.deployContract
-          : deployContract // ignore: cast_nullable_to_non_nullable
-              as String?,
+      outgoingTransfers: freezed == outgoingTransfers
+          ? _value.outgoingTransfers
+          : outgoingTransfers // ignore: cast_nullable_to_non_nullable
+              as Outgoing?,
+      incomingTransfers: freezed == incomingTransfers
+          ? _value.incomingTransfers
+          : incomingTransfers // ignore: cast_nullable_to_non_nullable
+              as Incoming?,
       fee: freezed == fee
           ? _value.fee
           : fee // ignore: cast_nullable_to_non_nullable
@@ -228,18 +272,18 @@ class __$$TransactionEntryImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(includeIfNull: false)
 class _$TransactionEntryImpl implements _TransactionEntry {
   const _$TransactionEntryImpl(
       {@JsonKey(name: 'hash') required this.hash,
       @JsonKey(name: 'topoheight') required this.topoHeight,
-      @JsonKey(name: 'transfers') final List<Transfer>? transfers,
+      @JsonKey(name: 'coinbase') this.coinbase,
       @JsonKey(name: 'burn') this.burn,
-      @JsonKey(name: 'call_contract') this.callContract,
-      @JsonKey(name: 'deploy_contract') this.deployContract,
+      @JsonKey(name: 'outgoing') this.outgoingTransfers,
+      @JsonKey(name: 'incoming') this.incomingTransfers,
       @JsonKey(name: 'fee') this.fee,
-      @JsonKey(name: 'nonce') this.nonce})
-      : _transfers = transfers;
+      @JsonKey(name: 'nonce') this.nonce});
 
   factory _$TransactionEntryImpl.fromJson(Map<String, dynamic> json) =>
       _$$TransactionEntryImplFromJson(json);
@@ -250,26 +294,18 @@ class _$TransactionEntryImpl implements _TransactionEntry {
   @override
   @JsonKey(name: 'topoheight')
   final int topoHeight;
-  final List<Transfer>? _transfers;
   @override
-  @JsonKey(name: 'transfers')
-  List<Transfer>? get transfers {
-    final value = _transfers;
-    if (value == null) return null;
-    if (_transfers is EqualUnmodifiableListView) return _transfers;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
+  @JsonKey(name: 'coinbase')
+  final Coinbase? coinbase;
   @override
   @JsonKey(name: 'burn')
   final Burn? burn;
   @override
-  @JsonKey(name: 'call_contract')
-  final CallContract? callContract;
+  @JsonKey(name: 'outgoing')
+  final Outgoing? outgoingTransfers;
   @override
-  @JsonKey(name: 'deploy_contract')
-  final String? deployContract;
+  @JsonKey(name: 'incoming')
+  final Incoming? incomingTransfers;
   @override
   @JsonKey(name: 'fee')
   final int? fee;
@@ -279,7 +315,7 @@ class _$TransactionEntryImpl implements _TransactionEntry {
 
   @override
   String toString() {
-    return 'TransactionEntry(hash: $hash, topoHeight: $topoHeight, transfers: $transfers, burn: $burn, callContract: $callContract, deployContract: $deployContract, fee: $fee, nonce: $nonce)';
+    return 'TransactionEntry(hash: $hash, topoHeight: $topoHeight, coinbase: $coinbase, burn: $burn, outgoingTransfers: $outgoingTransfers, incomingTransfers: $incomingTransfers, fee: $fee, nonce: $nonce)';
   }
 
   @override
@@ -290,29 +326,21 @@ class _$TransactionEntryImpl implements _TransactionEntry {
             (identical(other.hash, hash) || other.hash == hash) &&
             (identical(other.topoHeight, topoHeight) ||
                 other.topoHeight == topoHeight) &&
-            const DeepCollectionEquality()
-                .equals(other._transfers, _transfers) &&
+            (identical(other.coinbase, coinbase) ||
+                other.coinbase == coinbase) &&
             (identical(other.burn, burn) || other.burn == burn) &&
-            (identical(other.callContract, callContract) ||
-                other.callContract == callContract) &&
-            (identical(other.deployContract, deployContract) ||
-                other.deployContract == deployContract) &&
+            (identical(other.outgoingTransfers, outgoingTransfers) ||
+                other.outgoingTransfers == outgoingTransfers) &&
+            (identical(other.incomingTransfers, incomingTransfers) ||
+                other.incomingTransfers == incomingTransfers) &&
             (identical(other.fee, fee) || other.fee == fee) &&
             (identical(other.nonce, nonce) || other.nonce == nonce));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      hash,
-      topoHeight,
-      const DeepCollectionEquality().hash(_transfers),
-      burn,
-      callContract,
-      deployContract,
-      fee,
-      nonce);
+  int get hashCode => Object.hash(runtimeType, hash, topoHeight, coinbase, burn,
+      outgoingTransfers, incomingTransfers, fee, nonce);
 
   @JsonKey(ignore: true)
   @override
@@ -333,10 +361,10 @@ abstract class _TransactionEntry implements TransactionEntry {
   const factory _TransactionEntry(
       {@JsonKey(name: 'hash') required final String hash,
       @JsonKey(name: 'topoheight') required final int topoHeight,
-      @JsonKey(name: 'transfers') final List<Transfer>? transfers,
+      @JsonKey(name: 'coinbase') final Coinbase? coinbase,
       @JsonKey(name: 'burn') final Burn? burn,
-      @JsonKey(name: 'call_contract') final CallContract? callContract,
-      @JsonKey(name: 'deploy_contract') final String? deployContract,
+      @JsonKey(name: 'outgoing') final Outgoing? outgoingTransfers,
+      @JsonKey(name: 'incoming') final Incoming? incomingTransfers,
       @JsonKey(name: 'fee') final int? fee,
       @JsonKey(name: 'nonce') final int? nonce}) = _$TransactionEntryImpl;
 
@@ -346,21 +374,27 @@ abstract class _TransactionEntry implements TransactionEntry {
   @override
   @JsonKey(name: 'hash')
   String get hash;
+
   @override
   @JsonKey(name: 'topoheight')
   int get topoHeight;
+
   @override
-  @JsonKey(name: 'transfers')
-  List<Transfer>? get transfers;
+  @JsonKey(name: 'coinbase')
+  Coinbase? get coinbase;
+
   @override
   @JsonKey(name: 'burn')
   Burn? get burn;
+
   @override
-  @JsonKey(name: 'call_contract')
-  CallContract? get callContract;
+  @JsonKey(name: 'outgoing')
+  Outgoing? get outgoingTransfers;
+
   @override
-  @JsonKey(name: 'deploy_contract')
-  String? get deployContract;
+  @JsonKey(name: 'incoming')
+  Incoming? get incomingTransfers;
+
   @override
   @JsonKey(name: 'fee')
   int? get fee;

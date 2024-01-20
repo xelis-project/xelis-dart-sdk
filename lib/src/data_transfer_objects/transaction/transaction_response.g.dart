@@ -2,14 +2,15 @@
 
 // ignore_for_file: package_api_docs, non_constant_identifier_names
 
-part of 'transaction.dart';
+part of 'transaction_response.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$TransactionImpl _$$TransactionImplFromJson(Map<String, dynamic> json) =>
-    _$TransactionImpl(
+_$TransactionResponseImpl _$$TransactionResponseImplFromJson(
+        Map<String, dynamic> json) =>
+    _$TransactionResponseImpl(
       blocks:
           (json['blocks'] as List<dynamic>?)?.map((e) => e as String).toList(),
       executedInBlock: json['executed_in_block'] as String?,
@@ -23,7 +24,8 @@ _$TransactionImpl _$$TransactionImplFromJson(Map<String, dynamic> json) =>
       signature: json['signature'] as String,
     );
 
-Map<String, dynamic> _$$TransactionImplToJson(_$TransactionImpl instance) {
+Map<String, dynamic> _$$TransactionResponseImplToJson(
+    _$TransactionResponseImpl instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {

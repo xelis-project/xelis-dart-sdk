@@ -86,14 +86,14 @@ extension WalletRpcMethodsExtension on WalletClient {
   }
 
   /// Gets transaction by hash from wallet.
-  Future<Transaction> getTransaction(
+  Future<TransactionEntry> getTransaction(
     GetTransactionParams getTransactionParams,
   ) async {
     final result = await sendRequest(
       WalletMethod.getTransaction,
       getTransactionParams.toJson(),
     );
-    return Transaction.fromJson(result as Map<String, dynamic>);
+    return TransactionEntry.fromJson(result as Map<String, dynamic>);
   }
 
   /// Builds a transaction to be send by the wallet.
@@ -101,24 +101,25 @@ extension WalletRpcMethodsExtension on WalletClient {
   ///
   /// NOTE: Amount set are in atomic units, for XELIS it would 100000 to
   /// represents 1 XELIS because of 5 decimals precision.
-  Future<Transaction> buildTransaction(
+  Future<TransactionResponse> buildTransaction(
     BuildTransactionParams buildTransactionParams,
   ) async {
     final result = await sendRequest(
       WalletMethod.buildTransaction,
       buildTransactionParams.toJson(),
     );
-    return Transaction.fromJson(result as Map<String, dynamic>);
+    return TransactionResponse.fromJson(result as Map<String, dynamic>);
   }
 
   /// Search for transactions based on various parameters.
   /// By default it accepts every TXs.
-  Future<List<TransactionEntry>> listTransactions(
-    ListTransactionsParams listTransactionsParams,
-  ) async {
+  Future<List<TransactionEntry>> listTransactions([
+    ListTransactionsParams? listTransactionsParams,
+  ]) async {
     final result = await sendRequest(
       WalletMethod.listTransactions,
-      listTransactionsParams.toJson(),
+      listTransactionsParams?.toJson() ??
+          const ListTransactionsParams().toJson(),
     );
 
     return (result as List)

@@ -3,14 +3,14 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/dtos.dart';
 
-part 'transaction.freezed.dart';
+part 'transaction_response.freezed.dart';
 
-part 'transaction.g.dart';
+part 'transaction_response.g.dart';
 
 @freezed
-class Transaction with _$Transaction {
+class TransactionResponse with _$TransactionResponse {
   @JsonSerializable(includeIfNull: false)
-  const factory Transaction({
+  const factory TransactionResponse({
     @JsonKey(name: 'blocks') List<String>? blocks,
     @JsonKey(name: 'executed_in_block') String? executedInBlock,
     @JsonKey(name: 'hash') required String hash,
@@ -21,8 +21,8 @@ class Transaction with _$Transaction {
     @JsonKey(name: 'nonce') required int nonce,
     @JsonKey(name: 'owner') required String owner,
     @JsonKey(name: 'signature') required String signature,
-  }) = _Transaction;
+  }) = _TransactionResponse;
 
-  factory Transaction.fromJson(Map<String, dynamic> json) =>
-      _$TransactionFromJson(json);
+  factory TransactionResponse.fromJson(Map<String, dynamic> json) =>
+      _$TransactionResponseFromJson(json);
 }

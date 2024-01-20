@@ -23,12 +23,10 @@ GetNonceAtTopoHeightResult _$GetNonceAtTopoHeightResultFromJson(
 mixin _$GetNonceAtTopoHeightResult {
   @JsonKey(name: 'nonce')
   int get nonce => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'previous_topoheight')
   int? get previousTopoheight => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $GetNonceAtTopoHeightResultCopyWith<GetNonceAtTopoHeightResult>
       get copyWith => throw _privateConstructorUsedError;
@@ -40,7 +38,6 @@ abstract class $GetNonceAtTopoHeightResultCopyWith<$Res> {
           $Res Function(GetNonceAtTopoHeightResult) then) =
       _$GetNonceAtTopoHeightResultCopyWithImpl<$Res,
           GetNonceAtTopoHeightResult>;
-
   @useResult
   $Res call(
       {@JsonKey(name: 'nonce') int nonce,
@@ -55,7 +52,6 @@ class _$GetNonceAtTopoHeightResultCopyWithImpl<$Res,
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -85,7 +81,6 @@ abstract class _$$GetNonceAtTopoHeightResultImplCopyWith<$Res>
           _$GetNonceAtTopoHeightResultImpl value,
           $Res Function(_$GetNonceAtTopoHeightResultImpl) then) =
       __$$GetNonceAtTopoHeightResultImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -187,11 +182,9 @@ abstract class _GetNonceAtTopoHeightResult
   @override
   @JsonKey(name: 'nonce')
   int get nonce;
-
   @override
   @JsonKey(name: 'previous_topoheight')
   int? get previousTopoheight;
-
   @override
   @JsonKey(ignore: true)
   _$$GetNonceAtTopoHeightResultImplCopyWith<_$GetNonceAtTopoHeightResultImpl>

@@ -1,3 +1,9 @@
+## 0.15.0
+
+- fix some dtos.
+- activate wallet events.
+- add BasicAuth to wallet client.
+
 ## 0.14.0
 
 Daemon API upgrade :

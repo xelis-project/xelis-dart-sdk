@@ -18,7 +18,7 @@ class DaemonClient extends RpcClientRepository {
       DaemonEvent.stableHeightChanged:
           <void Function(StableHeightChangedEvent stableHeightChangedEvent)>[],
       DaemonEvent.transactionAddedInMempool:
-          <void Function(Transaction transaction)>[],
+          <void Function(TransactionResponse transaction)>[],
       DaemonEvent.transactionExecuted:
           <void Function(TransactionExecutedEvent transactionExecutedEvent)>[],
       // TODO: define rawTransactionSCResult type
@@ -38,6 +38,14 @@ class DaemonClient extends RpcClientRepository {
   }
 
   @override
+  WebSocket _initWebSocket() {
+    return WebSocket(
+      _uri,
+      timeout: Duration(milliseconds: _channelTimeout),
+    );
+  }
+
+  @override
   void _handleEvent(String eventJsonKey, Map<String, dynamic> result) {
     final event = DaemonEvent.fromStr(eventJsonKey);
     switch (event) {
@@ -54,7 +62,7 @@ class DaemonClient extends RpcClientRepository {
         _logInfo('Stable height changed: $stableHeightChanged');
         _triggerCallbacks(event, stableHeightChanged);
       case DaemonEvent.transactionAddedInMempool:
-        final transaction = Transaction.fromJson(result);
+        final transaction = TransactionResponse.fromJson(result);
         _logInfo('Transaction added in mempool: $transaction');
         _triggerCallbacks(event, transaction);
       case DaemonEvent.transactionExecuted:

@@ -2,20 +2,21 @@
 
 // ignore_for_file: package_api_docs, non_constant_identifier_names
 
-part of 'balance_changed.dart';
+part of 'balance_changed_event.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$BalanceChangedImpl _$$BalanceChangedImplFromJson(Map<String, dynamic> json) =>
-    _$BalanceChangedImpl(
+_$BalanceChangedEventImpl _$$BalanceChangedEventImplFromJson(
+        Map<String, dynamic> json) =>
+    _$BalanceChangedEventImpl(
       assetHash: json['asset'] as String,
       balance: json['balance'] as int,
     );
 
-Map<String, dynamic> _$$BalanceChangedImplToJson(
-        _$BalanceChangedImpl instance) =>
+Map<String, dynamic> _$$BalanceChangedEventImplToJson(
+        _$BalanceChangedEventImpl instance) =>
     <String, dynamic>{
       'asset': instance.assetHash,
       'balance': instance.balance,

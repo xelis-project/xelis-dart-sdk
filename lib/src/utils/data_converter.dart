@@ -33,6 +33,12 @@ String stringToHex(String input) {
   return hex.encode(bytes);
 }
 
+/// Converts a character string into a base64 string.
+String stringToBase64(String input) {
+  final bytes = utf8.encode(input);
+  return base64.encode(bytes);
+}
+
 /*
 final _jsonLiterals = RegExp(
   r'"(?:[^"\\]|\\.)*"|((?<![eE.\d+\-])[+\-]?\d+(?![\d.eE]))',

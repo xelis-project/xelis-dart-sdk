@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'transaction.dart';
+part of 'transaction_response.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,20 +14,24 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-Transaction _$TransactionFromJson(Map<String, dynamic> json) {
-  return _Transaction.fromJson(json);
+TransactionResponse _$TransactionResponseFromJson(Map<String, dynamic> json) {
+  return _TransactionResponse.fromJson(json);
 }
 
 /// @nodoc
-mixin _$Transaction {
+mixin _$TransactionResponse {
   @JsonKey(name: 'blocks')
   List<String>? get blocks => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'executed_in_block')
   String? get executedInBlock => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'hash')
   String get hash => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'data')
   TransactionType get data => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'fee')
   int get fee => throw _privateConstructorUsedError;
   @JsonKey(name: 'version')
@@ -42,16 +46,18 @@ mixin _$Transaction {
   String get signature => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
-  $TransactionCopyWith<Transaction> get copyWith =>
+  $TransactionResponseCopyWith<TransactionResponse> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $TransactionCopyWith<$Res> {
-  factory $TransactionCopyWith(
-          Transaction value, $Res Function(Transaction) then) =
-      _$TransactionCopyWithImpl<$Res, Transaction>;
+abstract class $TransactionResponseCopyWith<$Res> {
+  factory $TransactionResponseCopyWith(
+          TransactionResponse value, $Res Function(TransactionResponse) then) =
+      _$TransactionResponseCopyWithImpl<$Res, TransactionResponse>;
+
   @useResult
   $Res call(
       {@JsonKey(name: 'blocks') List<String>? blocks,
@@ -69,12 +75,13 @@ abstract class $TransactionCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$TransactionCopyWithImpl<$Res, $Val extends Transaction>
-    implements $TransactionCopyWith<$Res> {
-  _$TransactionCopyWithImpl(this._value, this._then);
+class _$TransactionResponseCopyWithImpl<$Res, $Val extends TransactionResponse>
+    implements $TransactionResponseCopyWith<$Res> {
+  _$TransactionResponseCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
+
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -146,11 +153,12 @@ class _$TransactionCopyWithImpl<$Res, $Val extends Transaction>
 }
 
 /// @nodoc
-abstract class _$$TransactionImplCopyWith<$Res>
-    implements $TransactionCopyWith<$Res> {
-  factory _$$TransactionImplCopyWith(
-          _$TransactionImpl value, $Res Function(_$TransactionImpl) then) =
-      __$$TransactionImplCopyWithImpl<$Res>;
+abstract class _$$TransactionResponseImplCopyWith<$Res>
+    implements $TransactionResponseCopyWith<$Res> {
+  factory _$$TransactionResponseImplCopyWith(_$TransactionResponseImpl value,
+          $Res Function(_$TransactionResponseImpl) then) =
+      __$$TransactionResponseImplCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call(
@@ -170,11 +178,11 @@ abstract class _$$TransactionImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$TransactionImplCopyWithImpl<$Res>
-    extends _$TransactionCopyWithImpl<$Res, _$TransactionImpl>
-    implements _$$TransactionImplCopyWith<$Res> {
-  __$$TransactionImplCopyWithImpl(
-      _$TransactionImpl _value, $Res Function(_$TransactionImpl) _then)
+class __$$TransactionResponseImplCopyWithImpl<$Res>
+    extends _$TransactionResponseCopyWithImpl<$Res, _$TransactionResponseImpl>
+    implements _$$TransactionResponseImplCopyWith<$Res> {
+  __$$TransactionResponseImplCopyWithImpl(_$TransactionResponseImpl _value,
+      $Res Function(_$TransactionResponseImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -191,7 +199,7 @@ class __$$TransactionImplCopyWithImpl<$Res>
     Object? owner = null,
     Object? signature = null,
   }) {
-    return _then(_$TransactionImpl(
+    return _then(_$TransactionResponseImpl(
       blocks: freezed == blocks
           ? _value._blocks
           : blocks // ignore: cast_nullable_to_non_nullable
@@ -239,8 +247,8 @@ class __$$TransactionImplCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$TransactionImpl implements _Transaction {
-  const _$TransactionImpl(
+class _$TransactionResponseImpl implements _TransactionResponse {
+  const _$TransactionResponseImpl(
       {@JsonKey(name: 'blocks') final List<String>? blocks,
       @JsonKey(name: 'executed_in_block') this.executedInBlock,
       @JsonKey(name: 'hash') required this.hash,
@@ -253,10 +261,11 @@ class _$TransactionImpl implements _Transaction {
       @JsonKey(name: 'signature') required this.signature})
       : _blocks = blocks;
 
-  factory _$TransactionImpl.fromJson(Map<String, dynamic> json) =>
-      _$$TransactionImplFromJson(json);
+  factory _$TransactionResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$TransactionResponseImplFromJson(json);
 
   final List<String>? _blocks;
+
   @override
   @JsonKey(name: 'blocks')
   List<String>? get blocks {
@@ -297,14 +306,14 @@ class _$TransactionImpl implements _Transaction {
 
   @override
   String toString() {
-    return 'Transaction(blocks: $blocks, executedInBlock: $executedInBlock, hash: $hash, data: $data, fee: $fee, version: $version, inMempool: $inMempool, nonce: $nonce, owner: $owner, signature: $signature)';
+    return 'TransactionResponse(blocks: $blocks, executedInBlock: $executedInBlock, hash: $hash, data: $data, fee: $fee, version: $version, inMempool: $inMempool, nonce: $nonce, owner: $owner, signature: $signature)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$TransactionImpl &&
+            other is _$TransactionResponseImpl &&
             const DeepCollectionEquality().equals(other._blocks, _blocks) &&
             (identical(other.executedInBlock, executedInBlock) ||
                 other.executedInBlock == executedInBlock) &&
@@ -338,19 +347,20 @@ class _$TransactionImpl implements _Transaction {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$TransactionImplCopyWith<_$TransactionImpl> get copyWith =>
-      __$$TransactionImplCopyWithImpl<_$TransactionImpl>(this, _$identity);
+  _$$TransactionResponseImplCopyWith<_$TransactionResponseImpl> get copyWith =>
+      __$$TransactionResponseImplCopyWithImpl<_$TransactionResponseImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$TransactionImplToJson(
+    return _$$TransactionResponseImplToJson(
       this,
     );
   }
 }
 
-abstract class _Transaction implements Transaction {
-  const factory _Transaction(
+abstract class _TransactionResponse implements TransactionResponse {
+  const factory _TransactionResponse(
           {@JsonKey(name: 'blocks') final List<String>? blocks,
           @JsonKey(name: 'executed_in_block') final String? executedInBlock,
           @JsonKey(name: 'hash') required final String hash,
@@ -361,17 +371,19 @@ abstract class _Transaction implements Transaction {
           @JsonKey(name: 'nonce') required final int nonce,
           @JsonKey(name: 'owner') required final String owner,
           @JsonKey(name: 'signature') required final String signature}) =
-      _$TransactionImpl;
+      _$TransactionResponseImpl;
 
-  factory _Transaction.fromJson(Map<String, dynamic> json) =
-      _$TransactionImpl.fromJson;
+  factory _TransactionResponse.fromJson(Map<String, dynamic> json) =
+      _$TransactionResponseImpl.fromJson;
 
   @override
   @JsonKey(name: 'blocks')
   List<String>? get blocks;
+
   @override
   @JsonKey(name: 'executed_in_block')
   String? get executedInBlock;
+
   @override
   @JsonKey(name: 'hash')
   String get hash;
@@ -393,11 +405,13 @@ abstract class _Transaction implements Transaction {
   @override
   @JsonKey(name: 'owner')
   String get owner;
+
   @override
   @JsonKey(name: 'signature')
   String get signature;
+
   @override
   @JsonKey(ignore: true)
-  _$$TransactionImplCopyWith<_$TransactionImpl> get copyWith =>
+  _$$TransactionResponseImplCopyWith<_$TransactionResponseImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
