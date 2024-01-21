@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'tranfer_entry.dart';
+part of 'transfer_entry.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -22,18 +22,14 @@ TransferEntry _$TransferEntryFromJson(Map<String, dynamic> json) {
 mixin _$TransferEntry {
   @JsonKey(name: 'amount')
   int get amount => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'asset')
   String get asset => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'extra_data')
   dynamic get extraData => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'key')
   String get key => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $TransferEntryCopyWith<TransferEntry> get copyWith =>
       throw _privateConstructorUsedError;
@@ -44,7 +40,6 @@ abstract class $TransferEntryCopyWith<$Res> {
   factory $TransferEntryCopyWith(
           TransferEntry value, $Res Function(TransferEntry) then) =
       _$TransferEntryCopyWithImpl<$Res, TransferEntry>;
-
   @useResult
   $Res call(
       {@JsonKey(name: 'amount') int amount,
@@ -60,7 +55,6 @@ class _$TransferEntryCopyWithImpl<$Res, $Val extends TransferEntry>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -99,7 +93,6 @@ abstract class _$$TransferEntryImplCopyWith<$Res>
   factory _$$TransferEntryImplCopyWith(
           _$TransferEntryImpl value, $Res Function(_$TransferEntryImpl) then) =
       __$$TransferEntryImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -219,19 +212,15 @@ abstract class _TransferEntry implements TransferEntry {
   @override
   @JsonKey(name: 'amount')
   int get amount;
-
   @override
   @JsonKey(name: 'asset')
   String get asset;
-
   @override
   @JsonKey(name: 'extra_data')
   dynamic get extraData;
-
   @override
   @JsonKey(name: 'key')
   String get key;
-
   @override
   @JsonKey(ignore: true)
   _$$TransferEntryImplCopyWith<_$TransferEntryImpl> get copyWith =>

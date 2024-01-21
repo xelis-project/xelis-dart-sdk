@@ -11,8 +11,8 @@ class Transfer with _$Transfer {
   const factory Transfer({
     @JsonKey(name: 'amount') required int amount,
     @JsonKey(name: 'asset') required String asset,
-    @JsonKey(name: 'extra_data') required dynamic extraData,
     @JsonKey(name: 'to') required String to,
+    @JsonKey(name: 'extra_data') dynamic extraData,
   }) = _Transfer;
 
   factory Transfer.fromJson(Map<String, dynamic> json) =>

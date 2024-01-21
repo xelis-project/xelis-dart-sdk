@@ -1,3 +1,9 @@
+## 0.15.1
+
+Wallet:
+
+- use sealed classes for Transaction and TransactionEntry types.
+
 ## 0.15.0
 
 - fix some dtos.

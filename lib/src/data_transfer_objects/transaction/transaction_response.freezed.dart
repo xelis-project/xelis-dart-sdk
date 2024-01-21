@@ -14,38 +14,18 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-TransactionResponse _$TransactionResponseFromJson(Map<String, dynamic> json) {
-  return _TransactionResponse.fromJson(json);
-}
-
 /// @nodoc
 mixin _$TransactionResponse {
-  @JsonKey(name: 'blocks')
   List<String>? get blocks => throw _privateConstructorUsedError;
-
-  @JsonKey(name: 'executed_in_block')
   String? get executedInBlock => throw _privateConstructorUsedError;
-
-  @JsonKey(name: 'hash')
   String get hash => throw _privateConstructorUsedError;
-
-  @JsonKey(name: 'data')
   TransactionType get data => throw _privateConstructorUsedError;
-
-  @JsonKey(name: 'fee')
   int get fee => throw _privateConstructorUsedError;
-  @JsonKey(name: 'version')
   int get version => throw _privateConstructorUsedError;
-  @JsonKey(name: 'in_mempool')
   bool get inMempool => throw _privateConstructorUsedError;
-  @JsonKey(name: 'nonce')
   int get nonce => throw _privateConstructorUsedError;
-  @JsonKey(name: 'owner')
   String get owner => throw _privateConstructorUsedError;
-  @JsonKey(name: 'signature')
   String get signature => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $TransactionResponseCopyWith<TransactionResponse> get copyWith =>
@@ -57,19 +37,18 @@ abstract class $TransactionResponseCopyWith<$Res> {
   factory $TransactionResponseCopyWith(
           TransactionResponse value, $Res Function(TransactionResponse) then) =
       _$TransactionResponseCopyWithImpl<$Res, TransactionResponse>;
-
   @useResult
   $Res call(
-      {@JsonKey(name: 'blocks') List<String>? blocks,
-      @JsonKey(name: 'executed_in_block') String? executedInBlock,
-      @JsonKey(name: 'hash') String hash,
-      @JsonKey(name: 'data') TransactionType data,
-      @JsonKey(name: 'fee') int fee,
-      @JsonKey(name: 'version') int version,
-      @JsonKey(name: 'in_mempool') bool inMempool,
-      @JsonKey(name: 'nonce') int nonce,
-      @JsonKey(name: 'owner') String owner,
-      @JsonKey(name: 'signature') String signature});
+      {List<String>? blocks,
+      String? executedInBlock,
+      String hash,
+      TransactionType data,
+      int fee,
+      int version,
+      bool inMempool,
+      int nonce,
+      String owner,
+      String signature});
 
   $TransactionTypeCopyWith<$Res> get data;
 }
@@ -81,7 +60,6 @@ class _$TransactionResponseCopyWithImpl<$Res, $Val extends TransactionResponse>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -162,16 +140,16 @@ abstract class _$$TransactionResponseImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'blocks') List<String>? blocks,
-      @JsonKey(name: 'executed_in_block') String? executedInBlock,
-      @JsonKey(name: 'hash') String hash,
-      @JsonKey(name: 'data') TransactionType data,
-      @JsonKey(name: 'fee') int fee,
-      @JsonKey(name: 'version') int version,
-      @JsonKey(name: 'in_mempool') bool inMempool,
-      @JsonKey(name: 'nonce') int nonce,
-      @JsonKey(name: 'owner') String owner,
-      @JsonKey(name: 'signature') String signature});
+      {List<String>? blocks,
+      String? executedInBlock,
+      String hash,
+      TransactionType data,
+      int fee,
+      int version,
+      bool inMempool,
+      int nonce,
+      String owner,
+      String signature});
 
   @override
   $TransactionTypeCopyWith<$Res> get data;
@@ -246,28 +224,22 @@ class __$$TransactionResponseImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-@JsonSerializable(includeIfNull: false)
 class _$TransactionResponseImpl implements _TransactionResponse {
   const _$TransactionResponseImpl(
-      {@JsonKey(name: 'blocks') final List<String>? blocks,
-      @JsonKey(name: 'executed_in_block') this.executedInBlock,
-      @JsonKey(name: 'hash') required this.hash,
-      @JsonKey(name: 'data') required this.data,
-      @JsonKey(name: 'fee') required this.fee,
-      @JsonKey(name: 'version') required this.version,
-      @JsonKey(name: 'in_mempool') required this.inMempool,
-      @JsonKey(name: 'nonce') required this.nonce,
-      @JsonKey(name: 'owner') required this.owner,
-      @JsonKey(name: 'signature') required this.signature})
+      {final List<String>? blocks,
+      this.executedInBlock,
+      required this.hash,
+      required this.data,
+      required this.fee,
+      required this.version,
+      required this.inMempool,
+      required this.nonce,
+      required this.owner,
+      required this.signature})
       : _blocks = blocks;
 
-  factory _$TransactionResponseImpl.fromJson(Map<String, dynamic> json) =>
-      _$$TransactionResponseImplFromJson(json);
-
   final List<String>? _blocks;
-
   @override
-  @JsonKey(name: 'blocks')
   List<String>? get blocks {
     final value = _blocks;
     if (value == null) return null;
@@ -277,31 +249,22 @@ class _$TransactionResponseImpl implements _TransactionResponse {
   }
 
   @override
-  @JsonKey(name: 'executed_in_block')
   final String? executedInBlock;
   @override
-  @JsonKey(name: 'hash')
   final String hash;
   @override
-  @JsonKey(name: 'data')
   final TransactionType data;
   @override
-  @JsonKey(name: 'fee')
   final int fee;
   @override
-  @JsonKey(name: 'version')
   final int version;
   @override
-  @JsonKey(name: 'in_mempool')
   final bool inMempool;
   @override
-  @JsonKey(name: 'nonce')
   final int nonce;
   @override
-  @JsonKey(name: 'owner')
   final String owner;
   @override
-  @JsonKey(name: 'signature')
   final String signature;
 
   @override
@@ -329,7 +292,6 @@ class _$TransactionResponseImpl implements _TransactionResponse {
                 other.signature == signature));
   }
 
-  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -350,66 +312,41 @@ class _$TransactionResponseImpl implements _TransactionResponse {
   _$$TransactionResponseImplCopyWith<_$TransactionResponseImpl> get copyWith =>
       __$$TransactionResponseImplCopyWithImpl<_$TransactionResponseImpl>(
           this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$TransactionResponseImplToJson(
-      this,
-    );
-  }
 }
 
 abstract class _TransactionResponse implements TransactionResponse {
   const factory _TransactionResponse(
-          {@JsonKey(name: 'blocks') final List<String>? blocks,
-          @JsonKey(name: 'executed_in_block') final String? executedInBlock,
-          @JsonKey(name: 'hash') required final String hash,
-          @JsonKey(name: 'data') required final TransactionType data,
-          @JsonKey(name: 'fee') required final int fee,
-          @JsonKey(name: 'version') required final int version,
-          @JsonKey(name: 'in_mempool') required final bool inMempool,
-          @JsonKey(name: 'nonce') required final int nonce,
-          @JsonKey(name: 'owner') required final String owner,
-          @JsonKey(name: 'signature') required final String signature}) =
-      _$TransactionResponseImpl;
-
-  factory _TransactionResponse.fromJson(Map<String, dynamic> json) =
-      _$TransactionResponseImpl.fromJson;
+      {final List<String>? blocks,
+      final String? executedInBlock,
+      required final String hash,
+      required final TransactionType data,
+      required final int fee,
+      required final int version,
+      required final bool inMempool,
+      required final int nonce,
+      required final String owner,
+      required final String signature}) = _$TransactionResponseImpl;
 
   @override
-  @JsonKey(name: 'blocks')
   List<String>? get blocks;
-
   @override
-  @JsonKey(name: 'executed_in_block')
   String? get executedInBlock;
-
   @override
-  @JsonKey(name: 'hash')
   String get hash;
   @override
-  @JsonKey(name: 'data')
   TransactionType get data;
   @override
-  @JsonKey(name: 'fee')
   int get fee;
   @override
-  @JsonKey(name: 'version')
   int get version;
   @override
-  @JsonKey(name: 'in_mempool')
   bool get inMempool;
   @override
-  @JsonKey(name: 'nonce')
   int get nonce;
   @override
-  @JsonKey(name: 'owner')
   String get owner;
-
   @override
-  @JsonKey(name: 'signature')
   String get signature;
-
   @override
   @JsonKey(ignore: true)
   _$$TransactionResponseImplCopyWith<_$TransactionResponseImpl> get copyWith =>

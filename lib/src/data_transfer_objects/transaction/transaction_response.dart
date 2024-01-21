@@ -5,24 +5,122 @@ import 'package:xelis_dart_sdk/src/data_transfer_objects/dtos.dart';
 
 part 'transaction_response.freezed.dart';
 
-part 'transaction_response.g.dart';
-
 @freezed
 class TransactionResponse with _$TransactionResponse {
-  @JsonSerializable(includeIfNull: false)
   const factory TransactionResponse({
-    @JsonKey(name: 'blocks') List<String>? blocks,
-    @JsonKey(name: 'executed_in_block') String? executedInBlock,
-    @JsonKey(name: 'hash') required String hash,
-    @JsonKey(name: 'data') required TransactionType data,
-    @JsonKey(name: 'fee') required int fee,
-    @JsonKey(name: 'version') required int version,
-    @JsonKey(name: 'in_mempool') required bool inMempool,
-    @JsonKey(name: 'nonce') required int nonce,
-    @JsonKey(name: 'owner') required String owner,
-    @JsonKey(name: 'signature') required String signature,
+    List<String>? blocks,
+    String? executedInBlock,
+    required String hash,
+    required TransactionType data,
+    required int fee,
+    required int version,
+    required bool inMempool,
+    required int nonce,
+    required String owner,
+    required String signature,
   }) = _TransactionResponse;
 
-  factory TransactionResponse.fromJson(Map<String, dynamic> json) =>
-      _$TransactionResponseFromJson(json);
+  factory TransactionResponse.fromJson(Map<String, dynamic> json) {
+    if (json
+        case {
+          'blocks': final List<dynamic>? blocks,
+          'hash': final String hash,
+          'data': final Map<String, dynamic> transfers,
+          'fee': final int fee,
+          'version': final int version,
+          'in_mempool': final bool inMempool,
+          'nonce': final int nonce,
+          'owner': final String owner,
+          'signature': final String signature,
+        }) {
+      return TransactionResponse(
+        blocks: blocks?.map((e) => e as String).toList(),
+        executedInBlock: json['executed_in_block'] as String?,
+        hash: hash,
+        data: Transfers.fromJson(transfers),
+        fee: fee,
+        version: version,
+        inMempool: inMempool,
+        nonce: nonce,
+        owner: owner,
+        signature: signature,
+      );
+    } else if (json
+        case {
+          'blocks': final List<dynamic>? blocks,
+          'hash': final String hash,
+          'data': {'burn': final Map<String, dynamic> burn},
+          'fee': final int fee,
+          'version': final int version,
+          'in_mempool': final bool inMempool,
+          'nonce': final int nonce,
+          'owner': final String owner,
+          'signature': final String signature,
+        }) {
+      return TransactionResponse(
+        blocks: blocks?.map((e) => e as String).toList(),
+        executedInBlock: json['executed_in_block'] as String?,
+        hash: hash,
+        data: Burn.fromJson(burn),
+        fee: fee,
+        version: version,
+        inMempool: inMempool,
+        nonce: nonce,
+        owner: owner,
+        signature: signature,
+      );
+    } else if (json
+        case {
+          'blocks': final List<dynamic>? blocks,
+          'hash': final String hash,
+          'data': {'call_contract': final Map<String, dynamic> callContract},
+          'fee': final int fee,
+          'version': final int version,
+          'in_mempool': final bool inMempool,
+          'nonce': final int nonce,
+          'owner': final String owner,
+          'signature': final String signature,
+        }) {
+      return TransactionResponse(
+        blocks: blocks?.map((e) => e as String).toList(),
+        executedInBlock: json['executed_in_block'] as String?,
+        hash: hash,
+        data: CallContract.fromJson(callContract),
+        fee: fee,
+        version: version,
+        inMempool: inMempool,
+        nonce: nonce,
+        owner: owner,
+        signature: signature,
+      );
+    } else if (json
+        case {
+          'blocks': final List<dynamic>? blocks,
+          'hash': final String hash,
+          'data': {
+            'deploy_contract': final Map<String, dynamic> deployContract
+          },
+          'fee': final int fee,
+          'version': final int version,
+          'in_mempool': final bool inMempool,
+          'nonce': final int nonce,
+          'owner': final String owner,
+          'signature': final String signature,
+        }) {
+      return TransactionResponse(
+        blocks: blocks?.map((e) => e as String).toList(),
+        executedInBlock: json['executed_in_block'] as String?,
+        hash: hash,
+        data: DeployContract.fromJson(deployContract),
+        fee: fee,
+        version: version,
+        inMempool: inMempool,
+        nonce: nonce,
+        owner: owner,
+        signature: signature,
+      );
+    } else {
+      throw Exception('Unknown type for this transaction : $json');
+    }
+  }
 }

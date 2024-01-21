@@ -5,24 +5,41 @@ import 'package:xelis_dart_sdk/xelis_dart_sdk.dart';
 
 part 'build_transaction_params.freezed.dart';
 
-part 'build_transaction_params.g.dart';
-
 @freezed
 class BuildTransactionParams with _$BuildTransactionParams {
-  /// At least one of these fields :
-  /// [transfers], [burn], [callContract], [deployContract]
-  /// must not be Null (!)
-  @JsonSerializable(includeIfNull: false)
   const factory BuildTransactionParams({
-    @JsonKey(name: 'transfers') List<Transfer>? transfers,
-    @JsonKey(name: 'burn') Burn? burn,
-    @JsonKey(name: 'call_contract') CallContract? callContract,
-    @JsonKey(name: 'deploy_contract') String? deployContract,
-    @JsonKey(name: 'fee') FeeBuilder? feeBuilder,
-    @JsonKey(name: 'broadcast') required bool broadcast,
-    @JsonKey(name: 'tx_as_hex') bool? txAsHex,
+    required TransactionType transactionType,
+    FeeBuilder? feeBuilder,
+    required bool broadcast,
+    bool? txAsHex,
   }) = _BuildTransactionParams;
 
-  factory BuildTransactionParams.fromJson(Map<String, dynamic> json) =>
-      _$BuildTransactionParamsFromJson(json);
+  const BuildTransactionParams._();
+
+  Map<String, dynamic> toJson() => switch (transactionType) {
+        Transfers() => {
+            ...transactionType.toJson(),
+            if (feeBuilder != null) 'fee': feeBuilder,
+            'broadcast': broadcast,
+            if (txAsHex != null) 'tx_as_hex': txAsHex,
+          },
+        Burn() => {
+            'burn': transactionType.toJson(),
+            if (feeBuilder != null) 'fee': feeBuilder,
+            'broadcast': broadcast,
+            if (txAsHex != null) 'tx_as_hex': txAsHex,
+          },
+        CallContract() => {
+            'call_contract': transactionType.toJson(),
+            if (feeBuilder != null) 'fee': feeBuilder,
+            'broadcast': broadcast,
+            if (txAsHex != null) 'tx_as_hex': txAsHex,
+          },
+        DeployContract() => {
+            'deploy_contract': transactionType.toJson(),
+            if (feeBuilder != null) 'fee': feeBuilder,
+            'broadcast': broadcast,
+            if (txAsHex != null) 'tx_as_hex': txAsHex,
+          },
+      };
 }

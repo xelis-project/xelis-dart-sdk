@@ -22,14 +22,18 @@ Transfer _$TransferFromJson(Map<String, dynamic> json) {
 mixin _$Transfer {
   @JsonKey(name: 'amount')
   int get amount => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'asset')
   String get asset => throw _privateConstructorUsedError;
-  @JsonKey(name: 'extra_data')
-  dynamic get extraData => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'to')
   String get to => throw _privateConstructorUsedError;
 
+  @JsonKey(name: 'extra_data')
+  dynamic get extraData => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   $TransferCopyWith<Transfer> get copyWith =>
       throw _privateConstructorUsedError;
@@ -39,12 +43,13 @@ mixin _$Transfer {
 abstract class $TransferCopyWith<$Res> {
   factory $TransferCopyWith(Transfer value, $Res Function(Transfer) then) =
       _$TransferCopyWithImpl<$Res, Transfer>;
+
   @useResult
   $Res call(
       {@JsonKey(name: 'amount') int amount,
       @JsonKey(name: 'asset') String asset,
-      @JsonKey(name: 'extra_data') dynamic extraData,
-      @JsonKey(name: 'to') String to});
+      @JsonKey(name: 'to') String to,
+      @JsonKey(name: 'extra_data') dynamic extraData});
 }
 
 /// @nodoc
@@ -62,8 +67,8 @@ class _$TransferCopyWithImpl<$Res, $Val extends Transfer>
   $Res call({
     Object? amount = null,
     Object? asset = null,
-    Object? extraData = freezed,
     Object? to = null,
+    Object? extraData = freezed,
   }) {
     return _then(_value.copyWith(
       amount: null == amount
@@ -74,14 +79,14 @@ class _$TransferCopyWithImpl<$Res, $Val extends Transfer>
           ? _value.asset
           : asset // ignore: cast_nullable_to_non_nullable
               as String,
-      extraData: freezed == extraData
-          ? _value.extraData
-          : extraData // ignore: cast_nullable_to_non_nullable
-              as dynamic,
       to: null == to
           ? _value.to
           : to // ignore: cast_nullable_to_non_nullable
               as String,
+      extraData: freezed == extraData
+          ? _value.extraData
+          : extraData // ignore: cast_nullable_to_non_nullable
+              as dynamic,
     ) as $Val);
   }
 }
@@ -92,13 +97,14 @@ abstract class _$$TransferImplCopyWith<$Res>
   factory _$$TransferImplCopyWith(
           _$TransferImpl value, $Res Function(_$TransferImpl) then) =
       __$$TransferImplCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call(
       {@JsonKey(name: 'amount') int amount,
       @JsonKey(name: 'asset') String asset,
-      @JsonKey(name: 'extra_data') dynamic extraData,
-      @JsonKey(name: 'to') String to});
+      @JsonKey(name: 'to') String to,
+      @JsonKey(name: 'extra_data') dynamic extraData});
 }
 
 /// @nodoc
@@ -114,8 +120,8 @@ class __$$TransferImplCopyWithImpl<$Res>
   $Res call({
     Object? amount = null,
     Object? asset = null,
-    Object? extraData = freezed,
     Object? to = null,
+    Object? extraData = freezed,
   }) {
     return _then(_$TransferImpl(
       amount: null == amount
@@ -126,14 +132,14 @@ class __$$TransferImplCopyWithImpl<$Res>
           ? _value.asset
           : asset // ignore: cast_nullable_to_non_nullable
               as String,
-      extraData: freezed == extraData
-          ? _value.extraData
-          : extraData // ignore: cast_nullable_to_non_nullable
-              as dynamic,
       to: null == to
           ? _value.to
           : to // ignore: cast_nullable_to_non_nullable
               as String,
+      extraData: freezed == extraData
+          ? _value.extraData
+          : extraData // ignore: cast_nullable_to_non_nullable
+              as dynamic,
     ));
   }
 }
@@ -144,8 +150,8 @@ class _$TransferImpl implements _Transfer {
   const _$TransferImpl(
       {@JsonKey(name: 'amount') required this.amount,
       @JsonKey(name: 'asset') required this.asset,
-      @JsonKey(name: 'extra_data') required this.extraData,
-      @JsonKey(name: 'to') required this.to});
+      @JsonKey(name: 'to') required this.to,
+      @JsonKey(name: 'extra_data') this.extraData});
 
   factory _$TransferImpl.fromJson(Map<String, dynamic> json) =>
       _$$TransferImplFromJson(json);
@@ -157,15 +163,15 @@ class _$TransferImpl implements _Transfer {
   @JsonKey(name: 'asset')
   final String asset;
   @override
-  @JsonKey(name: 'extra_data')
-  final dynamic extraData;
-  @override
   @JsonKey(name: 'to')
   final String to;
+  @override
+  @JsonKey(name: 'extra_data')
+  final dynamic extraData;
 
   @override
   String toString() {
-    return 'Transfer(amount: $amount, asset: $asset, extraData: $extraData, to: $to)';
+    return 'Transfer(amount: $amount, asset: $asset, to: $to, extraData: $extraData)';
   }
 
   @override
@@ -175,14 +181,14 @@ class _$TransferImpl implements _Transfer {
             other is _$TransferImpl &&
             (identical(other.amount, amount) || other.amount == amount) &&
             (identical(other.asset, asset) || other.asset == asset) &&
-            const DeepCollectionEquality().equals(other.extraData, extraData) &&
-            (identical(other.to, to) || other.to == to));
+            (identical(other.to, to) || other.to == to) &&
+            const DeepCollectionEquality().equals(other.extraData, extraData));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, amount, asset,
-      const DeepCollectionEquality().hash(extraData), to);
+  int get hashCode => Object.hash(runtimeType, amount, asset, to,
+      const DeepCollectionEquality().hash(extraData));
 
   @JsonKey(ignore: true)
   @override
@@ -202,8 +208,8 @@ abstract class _Transfer implements Transfer {
   const factory _Transfer(
       {@JsonKey(name: 'amount') required final int amount,
       @JsonKey(name: 'asset') required final String asset,
-      @JsonKey(name: 'extra_data') required final dynamic extraData,
-      @JsonKey(name: 'to') required final String to}) = _$TransferImpl;
+      @JsonKey(name: 'to') required final String to,
+      @JsonKey(name: 'extra_data') final dynamic extraData}) = _$TransferImpl;
 
   factory _Transfer.fromJson(Map<String, dynamic> json) =
       _$TransferImpl.fromJson;
@@ -211,15 +217,19 @@ abstract class _Transfer implements Transfer {
   @override
   @JsonKey(name: 'amount')
   int get amount;
+
   @override
   @JsonKey(name: 'asset')
   String get asset;
-  @override
-  @JsonKey(name: 'extra_data')
-  dynamic get extraData;
+
   @override
   @JsonKey(name: 'to')
   String get to;
+
+  @override
+  @JsonKey(name: 'extra_data')
+  dynamic get extraData;
+
   @override
   @JsonKey(ignore: true)
   _$$TransferImplCopyWith<_$TransferImpl> get copyWith =>

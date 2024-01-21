@@ -2,9 +2,9 @@
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'tranfer_entry.freezed.dart';
+part 'transfer_entry.freezed.dart';
 
-part 'tranfer_entry.g.dart';
+part 'transfer_entry.g.dart';
 
 @freezed
 class TransferEntry with _$TransferEntry {

@@ -8,14 +8,25 @@ part 'transaction_type.freezed.dart';
 part 'transaction_type.g.dart';
 
 @freezed
-class TransactionType with _$TransactionType {
-  @JsonSerializable(includeIfNull: false)
-  const factory TransactionType({
-    @JsonKey(name: 'transfers') List<Transfer>? transfers,
-    @JsonKey(name: 'burn') Burn? burn,
-    @JsonKey(name: 'call_contract') CallContract? callContract,
-    @JsonKey(name: 'deploy_contract') String? deployContract,
-  }) = _TransactionType;
+sealed class TransactionType with _$TransactionType {
+  const factory TransactionType.transfers({
+    @JsonKey(name: 'transfers') required List<Transfer> transfers,
+  }) = Transfers;
+
+  const factory TransactionType.burn({
+    @JsonKey(name: 'asset') required String asset,
+    @JsonKey(name: 'amount') required int amount,
+  }) = Burn;
+
+  const factory TransactionType.callContract({
+    @JsonKey(name: 'contract') required String contractHash,
+    @JsonKey(name: 'assets') required Map<String, int> assets,
+    @JsonKey(name: 'params') required Map<String, dynamic> params,
+  }) = CallContract;
+
+  const factory TransactionType.deployContract(
+    @JsonKey(name: 'deploy_contract') dynamic deployContract,
+  ) = DeployContract;
 
   factory TransactionType.fromJson(Map<String, dynamic> json) =>
       _$TransactionTypeFromJson(json);

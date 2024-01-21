@@ -2,7 +2,7 @@
 
 // ignore_for_file: package_api_docs, non_constant_identifier_names
 
-part of 'tranfer_entry.dart';
+part of 'transfer_entry.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator

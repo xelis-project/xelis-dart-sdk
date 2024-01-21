@@ -12,14 +12,14 @@ _$TransferImpl _$$TransferImplFromJson(Map<String, dynamic> json) =>
     _$TransferImpl(
       amount: json['amount'] as int,
       asset: json['asset'] as String,
-      extraData: json['extra_data'],
       to: json['to'] as String,
+      extraData: json['extra_data'],
     );
 
 Map<String, dynamic> _$$TransferImplToJson(_$TransferImpl instance) =>
     <String, dynamic>{
       'amount': instance.amount,
       'asset': instance.asset,
-      'extra_data': instance.extraData,
       'to': instance.to,
+      'extra_data': instance.extraData,
     };
