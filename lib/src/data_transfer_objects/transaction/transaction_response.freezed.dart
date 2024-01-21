@@ -136,7 +136,6 @@ abstract class _$$TransactionResponseImplCopyWith<$Res>
   factory _$$TransactionResponseImplCopyWith(_$TransactionResponseImpl value,
           $Res Function(_$TransactionResponseImpl) then) =
       __$$TransactionResponseImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(

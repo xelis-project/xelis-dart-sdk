@@ -50,7 +50,6 @@ mixin _$TransactionEntryType {
         outgoing,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(@JsonKey(name: 'reward') int reward)? coinbase,
@@ -120,7 +119,7 @@ class _$TransactionEntryTypeCopyWithImpl<$Res,
     implements $TransactionEntryTypeCopyWith<$Res> {
   _$TransactionEntryTypeCopyWithImpl(this._value, this._then);
 
-// ignore: unused_field
+  // ignore: unused_field
   final $Val _value;
 // ignore: unused_field
   final $Res Function($Val) _then;
@@ -570,7 +569,7 @@ class _$IncomingEntryImpl implements IncomingEntry {
   @JsonKey(name: 'transfers')
   List<TransferEntry> get transfers {
     if (_transfers is EqualUnmodifiableListView) return _transfers;
-// ignore: implicit_dynamic_type
+    // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_transfers);
   }
 
@@ -768,7 +767,7 @@ class _$OutgoingEntryImpl implements OutgoingEntry {
   @JsonKey(name: 'transfers')
   List<TransferEntry> get transfers {
     if (_transfers is EqualUnmodifiableListView) return _transfers;
-// ignore: implicit_dynamic_type
+    // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_transfers);
   }
 
