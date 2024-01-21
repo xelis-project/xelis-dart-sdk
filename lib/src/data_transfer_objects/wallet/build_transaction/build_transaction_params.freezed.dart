@@ -17,7 +17,6 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$BuildTransactionParams {
   TransactionType get transactionType => throw _privateConstructorUsedError;
-
   FeeBuilder? get feeBuilder => throw _privateConstructorUsedError;
   bool get broadcast => throw _privateConstructorUsedError;
   bool? get txAsHex => throw _privateConstructorUsedError;
@@ -32,7 +31,6 @@ abstract class $BuildTransactionParamsCopyWith<$Res> {
   factory $BuildTransactionParamsCopyWith(BuildTransactionParams value,
           $Res Function(BuildTransactionParams) then) =
       _$BuildTransactionParamsCopyWithImpl<$Res, BuildTransactionParams>;
-
   @useResult
   $Res call(
       {TransactionType transactionType,
@@ -41,7 +39,6 @@ abstract class $BuildTransactionParamsCopyWith<$Res> {
       bool? txAsHex});
 
   $TransactionTypeCopyWith<$Res> get transactionType;
-
   $FeeBuilderCopyWith<$Res>? get feeBuilder;
 }
 
@@ -112,7 +109,6 @@ abstract class _$$BuildTransactionParamsImplCopyWith<$Res>
           _$BuildTransactionParamsImpl value,
           $Res Function(_$BuildTransactionParamsImpl) then) =
       __$$BuildTransactionParamsImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -123,7 +119,6 @@ abstract class _$$BuildTransactionParamsImplCopyWith<$Res>
 
   @override
   $TransactionTypeCopyWith<$Res> get transactionType;
-
   @override
   $FeeBuilderCopyWith<$Res>? get feeBuilder;
 }
@@ -223,21 +218,16 @@ abstract class _BuildTransactionParams extends BuildTransactionParams {
       final FeeBuilder? feeBuilder,
       required final bool broadcast,
       final bool? txAsHex}) = _$BuildTransactionParamsImpl;
-
   const _BuildTransactionParams._() : super._();
 
   @override
   TransactionType get transactionType;
-
   @override
   FeeBuilder? get feeBuilder;
-
   @override
   bool get broadcast;
-
   @override
   bool? get txAsHex;
-
   @override
   @JsonKey(ignore: true)
   _$$BuildTransactionParamsImplCopyWith<_$BuildTransactionParamsImpl>

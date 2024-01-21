@@ -18,9 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$TransactionEntry {
   String get hash => throw _privateConstructorUsedError;
   int get topoHeight => throw _privateConstructorUsedError;
-
   TransactionEntryType get txEntryType => throw _privateConstructorUsedError;
-
   int? get fee => throw _privateConstructorUsedError;
   int? get nonce => throw _privateConstructorUsedError;
 
@@ -34,7 +32,6 @@ abstract class $TransactionEntryCopyWith<$Res> {
   factory $TransactionEntryCopyWith(
           TransactionEntry value, $Res Function(TransactionEntry) then) =
       _$TransactionEntryCopyWithImpl<$Res, TransactionEntry>;
-
   @useResult
   $Res call(
       {String hash,
@@ -104,7 +101,6 @@ abstract class _$$TransactionEntryImplCopyWith<$Res>
   factory _$$TransactionEntryImplCopyWith(_$TransactionEntryImpl value,
           $Res Function(_$TransactionEntryImpl) then) =
       __$$TransactionEntryImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -222,13 +218,10 @@ abstract class _TransactionEntry implements TransactionEntry {
 
   @override
   String get hash;
-
   @override
   int get topoHeight;
-
   @override
   TransactionEntryType get txEntryType;
-
   @override
   int? get fee;
   @override
