@@ -23,20 +23,27 @@ ListTransactionsParams _$ListTransactionsParamsFromJson(
 mixin _$ListTransactionsParams {
   @JsonKey(name: 'min_topoheight')
   int? get minTopoHeight => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'max_topoheight')
   int? get maxTopoHeight => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'address')
   String? get address => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'accept_incoming')
   bool? get acceptIncoming => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'accept_outgoing')
   bool? get acceptOutgoing => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'accept_coinbase')
   bool? get acceptCoinbase => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'accept_burn')
   bool? get acceptBurn => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   $ListTransactionsParamsCopyWith<ListTransactionsParams> get copyWith =>
       throw _privateConstructorUsedError;
@@ -47,6 +54,7 @@ abstract class $ListTransactionsParamsCopyWith<$Res> {
   factory $ListTransactionsParamsCopyWith(ListTransactionsParams value,
           $Res Function(ListTransactionsParams) then) =
       _$ListTransactionsParamsCopyWithImpl<$Res, ListTransactionsParams>;
+
   @useResult
   $Res call(
       {@JsonKey(name: 'min_topoheight') int? minTopoHeight,
@@ -66,6 +74,7 @@ class _$ListTransactionsParamsCopyWithImpl<$Res,
 
   // ignore: unused_field
   final $Val _value;
+
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -120,6 +129,7 @@ abstract class _$$ListTransactionsParamsImplCopyWith<$Res>
           _$ListTransactionsParamsImpl value,
           $Res Function(_$ListTransactionsParamsImpl) then) =
       __$$ListTransactionsParamsImplCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call(
@@ -286,24 +296,31 @@ abstract class _ListTransactionsParams implements ListTransactionsParams {
   @override
   @JsonKey(name: 'min_topoheight')
   int? get minTopoHeight;
+
   @override
   @JsonKey(name: 'max_topoheight')
   int? get maxTopoHeight;
+
   @override
   @JsonKey(name: 'address')
   String? get address;
+
   @override
   @JsonKey(name: 'accept_incoming')
   bool? get acceptIncoming;
+
   @override
   @JsonKey(name: 'accept_outgoing')
   bool? get acceptOutgoing;
+
   @override
   @JsonKey(name: 'accept_coinbase')
   bool? get acceptCoinbase;
+
   @override
   @JsonKey(name: 'accept_burn')
   bool? get acceptBurn;
+
   @override
   @JsonKey(ignore: true)
   _$$ListTransactionsParamsImplCopyWith<_$ListTransactionsParamsImpl>

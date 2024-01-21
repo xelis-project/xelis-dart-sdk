@@ -22,10 +22,12 @@ SplitAddressResult _$SplitAddressResultFromJson(Map<String, dynamic> json) {
 mixin _$SplitAddressResult {
   @JsonKey(name: 'address')
   String get address => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'integrated_data')
   Map<String, dynamic> get integratedData => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   $SplitAddressResultCopyWith<SplitAddressResult> get copyWith =>
       throw _privateConstructorUsedError;
@@ -36,6 +38,7 @@ abstract class $SplitAddressResultCopyWith<$Res> {
   factory $SplitAddressResultCopyWith(
           SplitAddressResult value, $Res Function(SplitAddressResult) then) =
       _$SplitAddressResultCopyWithImpl<$Res, SplitAddressResult>;
+
   @useResult
   $Res call(
       {@JsonKey(name: 'address') String address,
@@ -49,6 +52,7 @@ class _$SplitAddressResultCopyWithImpl<$Res, $Val extends SplitAddressResult>
 
   // ignore: unused_field
   final $Val _value;
+
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -77,6 +81,7 @@ abstract class _$$SplitAddressResultImplCopyWith<$Res>
   factory _$$SplitAddressResultImplCopyWith(_$SplitAddressResultImpl value,
           $Res Function(_$SplitAddressResultImpl) then) =
       __$$SplitAddressResultImplCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call(
@@ -127,6 +132,7 @@ class _$SplitAddressResultImpl implements _SplitAddressResult {
   @JsonKey(name: 'address')
   final String address;
   final Map<String, dynamic> _integratedData;
+
   @override
   @JsonKey(name: 'integrated_data')
   Map<String, dynamic> get integratedData {
@@ -183,9 +189,11 @@ abstract class _SplitAddressResult implements SplitAddressResult {
   @override
   @JsonKey(name: 'address')
   String get address;
+
   @override
   @JsonKey(name: 'integrated_data')
   Map<String, dynamic> get integratedData;
+
   @override
   @JsonKey(ignore: true)
   _$$SplitAddressResultImplCopyWith<_$SplitAddressResultImpl> get copyWith =>

@@ -22,10 +22,12 @@ GetSizeOnDiskResult _$GetSizeOnDiskResultFromJson(Map<String, dynamic> json) {
 mixin _$GetSizeOnDiskResult {
   @JsonKey(name: 'size_bytes')
   int get sizeBytes => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'size_formatted')
   String get sizeFormatted => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   $GetSizeOnDiskResultCopyWith<GetSizeOnDiskResult> get copyWith =>
       throw _privateConstructorUsedError;
@@ -36,6 +38,7 @@ abstract class $GetSizeOnDiskResultCopyWith<$Res> {
   factory $GetSizeOnDiskResultCopyWith(
           GetSizeOnDiskResult value, $Res Function(GetSizeOnDiskResult) then) =
       _$GetSizeOnDiskResultCopyWithImpl<$Res, GetSizeOnDiskResult>;
+
   @useResult
   $Res call(
       {@JsonKey(name: 'size_bytes') int sizeBytes,
@@ -49,6 +52,7 @@ class _$GetSizeOnDiskResultCopyWithImpl<$Res, $Val extends GetSizeOnDiskResult>
 
   // ignore: unused_field
   final $Val _value;
+
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -77,6 +81,7 @@ abstract class _$$GetSizeOnDiskResultImplCopyWith<$Res>
   factory _$$GetSizeOnDiskResultImplCopyWith(_$GetSizeOnDiskResultImpl value,
           $Res Function(_$GetSizeOnDiskResultImpl) then) =
       __$$GetSizeOnDiskResultImplCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call(
@@ -175,9 +180,11 @@ abstract class _GetSizeOnDiskResult implements GetSizeOnDiskResult {
   @override
   @JsonKey(name: 'size_bytes')
   int get sizeBytes;
+
   @override
   @JsonKey(name: 'size_formatted')
   String get sizeFormatted;
+
   @override
   @JsonKey(ignore: true)
   _$$GetSizeOnDiskResultImplCopyWith<_$GetSizeOnDiskResultImpl> get copyWith =>

@@ -22,18 +22,14 @@ Transfer _$TransferFromJson(Map<String, dynamic> json) {
 mixin _$Transfer {
   @JsonKey(name: 'amount')
   int get amount => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'asset')
   String get asset => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'to')
   String get to => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'extra_data')
   dynamic get extraData => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $TransferCopyWith<Transfer> get copyWith =>
       throw _privateConstructorUsedError;
@@ -43,7 +39,6 @@ mixin _$Transfer {
 abstract class $TransferCopyWith<$Res> {
   factory $TransferCopyWith(Transfer value, $Res Function(Transfer) then) =
       _$TransferCopyWithImpl<$Res, Transfer>;
-
   @useResult
   $Res call(
       {@JsonKey(name: 'amount') int amount,
@@ -97,7 +92,6 @@ abstract class _$$TransferImplCopyWith<$Res>
   factory _$$TransferImplCopyWith(
           _$TransferImpl value, $Res Function(_$TransferImpl) then) =
       __$$TransferImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -217,19 +211,15 @@ abstract class _Transfer implements Transfer {
   @override
   @JsonKey(name: 'amount')
   int get amount;
-
   @override
   @JsonKey(name: 'asset')
   String get asset;
-
   @override
   @JsonKey(name: 'to')
   String get to;
-
   @override
   @JsonKey(name: 'extra_data')
   dynamic get extraData;
-
   @override
   @JsonKey(ignore: true)
   _$$TransferImplCopyWith<_$TransferImpl> get copyWith =>

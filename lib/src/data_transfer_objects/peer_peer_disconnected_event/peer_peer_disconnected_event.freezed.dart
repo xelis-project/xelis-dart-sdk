@@ -23,10 +23,12 @@ PeerPeerDisconnectedEvent _$PeerPeerDisconnectedEventFromJson(
 mixin _$PeerPeerDisconnectedEvent {
   @JsonKey(name: 'peer_id')
   num get id => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'peer_addr')
   String get address => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   $PeerPeerDisconnectedEventCopyWith<PeerPeerDisconnectedEvent> get copyWith =>
       throw _privateConstructorUsedError;
@@ -37,6 +39,7 @@ abstract class $PeerPeerDisconnectedEventCopyWith<$Res> {
   factory $PeerPeerDisconnectedEventCopyWith(PeerPeerDisconnectedEvent value,
           $Res Function(PeerPeerDisconnectedEvent) then) =
       _$PeerPeerDisconnectedEventCopyWithImpl<$Res, PeerPeerDisconnectedEvent>;
+
   @useResult
   $Res call(
       {@JsonKey(name: 'peer_id') num id,
@@ -51,6 +54,7 @@ class _$PeerPeerDisconnectedEventCopyWithImpl<$Res,
 
   // ignore: unused_field
   final $Val _value;
+
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -80,6 +84,7 @@ abstract class _$$PeerPeerDisconnectedEventImplCopyWith<$Res>
           _$PeerPeerDisconnectedEventImpl value,
           $Res Function(_$PeerPeerDisconnectedEventImpl) then) =
       __$$PeerPeerDisconnectedEventImplCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call(
@@ -178,9 +183,11 @@ abstract class _PeerPeerDisconnectedEvent implements PeerPeerDisconnectedEvent {
   @override
   @JsonKey(name: 'peer_id')
   num get id;
+
   @override
   @JsonKey(name: 'peer_addr')
   String get address;
+
   @override
   @JsonKey(ignore: true)
   _$$PeerPeerDisconnectedEventImplCopyWith<_$PeerPeerDisconnectedEventImpl>
