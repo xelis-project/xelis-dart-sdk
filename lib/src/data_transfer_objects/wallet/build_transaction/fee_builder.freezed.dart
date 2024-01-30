@@ -22,12 +22,10 @@ FeeBuilder _$FeeBuilderFromJson(Map<String, dynamic> json) {
 mixin _$FeeBuilder {
   @JsonKey(name: 'Multiplier')
   double? get multiplier => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'Value')
   int? get value => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $FeeBuilderCopyWith<FeeBuilder> get copyWith =>
       throw _privateConstructorUsedError;
@@ -38,7 +36,6 @@ abstract class $FeeBuilderCopyWith<$Res> {
   factory $FeeBuilderCopyWith(
           FeeBuilder value, $Res Function(FeeBuilder) then) =
       _$FeeBuilderCopyWithImpl<$Res, FeeBuilder>;
-
   @useResult
   $Res call(
       {@JsonKey(name: 'Multiplier') double? multiplier,
@@ -52,7 +49,6 @@ class _$FeeBuilderCopyWithImpl<$Res, $Val extends FeeBuilder>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -81,7 +77,6 @@ abstract class _$$FeeBuilderImplCopyWith<$Res>
   factory _$$FeeBuilderImplCopyWith(
           _$FeeBuilderImpl value, $Res Function(_$FeeBuilderImpl) then) =
       __$$FeeBuilderImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -177,11 +172,9 @@ abstract class _FeeBuilder implements FeeBuilder {
   @override
   @JsonKey(name: 'Multiplier')
   double? get multiplier;
-
   @override
   @JsonKey(name: 'Value')
   int? get value;
-
   @override
   @JsonKey(ignore: true)
   _$$FeeBuilderImplCopyWith<_$FeeBuilderImpl> get copyWith =>

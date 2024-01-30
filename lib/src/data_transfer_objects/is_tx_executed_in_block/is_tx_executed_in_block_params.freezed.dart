@@ -23,12 +23,10 @@ IsTxExecutedInBlockParams _$IsTxExecutedInBlockParamsFromJson(
 mixin _$IsTxExecutedInBlockParams {
   @JsonKey(name: 'tx_hash')
   String get txHash => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'block_hash')
   String get blockHash => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $IsTxExecutedInBlockParamsCopyWith<IsTxExecutedInBlockParams> get copyWith =>
       throw _privateConstructorUsedError;
@@ -39,7 +37,6 @@ abstract class $IsTxExecutedInBlockParamsCopyWith<$Res> {
   factory $IsTxExecutedInBlockParamsCopyWith(IsTxExecutedInBlockParams value,
           $Res Function(IsTxExecutedInBlockParams) then) =
       _$IsTxExecutedInBlockParamsCopyWithImpl<$Res, IsTxExecutedInBlockParams>;
-
   @useResult
   $Res call(
       {@JsonKey(name: 'tx_hash') String txHash,
@@ -54,7 +51,6 @@ class _$IsTxExecutedInBlockParamsCopyWithImpl<$Res,
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -84,7 +80,6 @@ abstract class _$$IsTxExecutedInBlockParamsImplCopyWith<$Res>
           _$IsTxExecutedInBlockParamsImpl value,
           $Res Function(_$IsTxExecutedInBlockParamsImpl) then) =
       __$$IsTxExecutedInBlockParamsImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -184,11 +179,9 @@ abstract class _IsTxExecutedInBlockParams implements IsTxExecutedInBlockParams {
   @override
   @JsonKey(name: 'tx_hash')
   String get txHash;
-
   @override
   @JsonKey(name: 'block_hash')
   String get blockHash;
-
   @override
   @JsonKey(ignore: true)
   _$$IsTxExecutedInBlockParamsImplCopyWith<_$IsTxExecutedInBlockParamsImpl>

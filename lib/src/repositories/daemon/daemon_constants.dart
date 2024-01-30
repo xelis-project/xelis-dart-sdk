@@ -166,7 +166,16 @@ enum DaemonEvent implements XelisJsonKey {
   peerStateUpdated('peer_state_updated'),
 
   /// New PeerPeerDisconnected event.
-  peerPeerDisconnected('peer_peer_disconnected');
+  peerPeerDisconnected('peer_peer_disconnected'),
+
+  /// When a block that was ordered is not in the new DAG order.
+  /// It contains BlockOrphanedEvent that got orphaned.
+  blockOrphaned('block_orphaned'),
+
+  /// When a transaction that was executed in a block is not reintroduced
+  /// in mempool.
+  /// It contains TransactionOrphanedEvent as value.
+  transactionOrphaned('transaction_orphaned');
 
   /// Creates a new [DaemonEvent] instance.
   const DaemonEvent(this.jsonKey);
@@ -198,6 +207,10 @@ enum DaemonEvent implements XelisJsonKey {
         return DaemonEvent.peerStateUpdated;
       case 'peer_peer_disconnected':
         return DaemonEvent.peerPeerDisconnected;
+      case 'block_orphaned':
+        return DaemonEvent.blockOrphaned;
+      case 'transaction_orphaned':
+        return DaemonEvent.transactionOrphaned;
       default:
         throw Exception('Unknown event: $value');
     }

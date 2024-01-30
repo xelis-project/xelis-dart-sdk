@@ -88,7 +88,7 @@ enum WalletMethod implements XelisJsonKey {
 enum WalletEvent implements XelisJsonKey {
   /// When a a get_info request is made
   /// and we receive a different topoheight than previous one
-  newTopoHeight('new_chain_info'),
+  newTopoHeight('new_topo_height'),
 
   /// When a new asset is added to wallet
   /// Contains a Hash as value
@@ -118,7 +118,7 @@ enum WalletEvent implements XelisJsonKey {
   /// Factory to convert a [String] to a [WalletEvent].
   factory WalletEvent.fromStr(String value) {
     switch (value) {
-      case 'new_chain_info':
+      case 'new_topo_height':
         return WalletEvent.newTopoHeight;
       case 'new_asset':
         return WalletEvent.newAsset;

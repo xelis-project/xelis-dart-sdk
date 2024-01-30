@@ -24,7 +24,6 @@ mixin _$GetAddressParams {
   Map<String, dynamic> get integratedData => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $GetAddressParamsCopyWith<GetAddressParams> get copyWith =>
       throw _privateConstructorUsedError;
@@ -35,7 +34,6 @@ abstract class $GetAddressParamsCopyWith<$Res> {
   factory $GetAddressParamsCopyWith(
           GetAddressParams value, $Res Function(GetAddressParams) then) =
       _$GetAddressParamsCopyWithImpl<$Res, GetAddressParams>;
-
   @useResult
   $Res call(
       {@JsonKey(name: 'integrated_data') Map<String, dynamic> integratedData});
@@ -48,7 +46,6 @@ class _$GetAddressParamsCopyWithImpl<$Res, $Val extends GetAddressParams>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -72,7 +69,6 @@ abstract class _$$GetAddressParamsImplCopyWith<$Res>
   factory _$$GetAddressParamsImplCopyWith(_$GetAddressParamsImpl value,
           $Res Function(_$GetAddressParamsImpl) then) =
       __$$GetAddressParamsImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -113,7 +109,6 @@ class _$GetAddressParamsImpl implements _GetAddressParams {
       _$$GetAddressParamsImplFromJson(json);
 
   final Map<String, dynamic> _integratedData;
-
   @override
   @JsonKey(name: 'integrated_data')
   Map<String, dynamic> get integratedData {
@@ -168,7 +163,6 @@ abstract class _GetAddressParams implements GetAddressParams {
   @override
   @JsonKey(name: 'integrated_data')
   Map<String, dynamic> get integratedData;
-
   @override
   @JsonKey(ignore: true)
   _$$GetAddressParamsImplCopyWith<_$GetAddressParamsImpl> get copyWith =>

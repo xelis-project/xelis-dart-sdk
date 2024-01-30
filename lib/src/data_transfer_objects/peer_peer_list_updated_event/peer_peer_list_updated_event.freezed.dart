@@ -23,12 +23,10 @@ PeerPeerListUpdatedEvent _$PeerPeerListUpdatedEventFromJson(
 mixin _$PeerPeerListUpdatedEvent {
   @JsonKey(name: 'peer_id')
   num get id => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'peerlist')
   List<String> get peerList => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $PeerPeerListUpdatedEventCopyWith<PeerPeerListUpdatedEvent> get copyWith =>
       throw _privateConstructorUsedError;
@@ -39,7 +37,6 @@ abstract class $PeerPeerListUpdatedEventCopyWith<$Res> {
   factory $PeerPeerListUpdatedEventCopyWith(PeerPeerListUpdatedEvent value,
           $Res Function(PeerPeerListUpdatedEvent) then) =
       _$PeerPeerListUpdatedEventCopyWithImpl<$Res, PeerPeerListUpdatedEvent>;
-
   @useResult
   $Res call(
       {@JsonKey(name: 'peer_id') num id,
@@ -54,7 +51,6 @@ class _$PeerPeerListUpdatedEventCopyWithImpl<$Res,
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -84,7 +80,6 @@ abstract class _$$PeerPeerListUpdatedEventImplCopyWith<$Res>
           _$PeerPeerListUpdatedEventImpl value,
           $Res Function(_$PeerPeerListUpdatedEventImpl) then) =
       __$$PeerPeerListUpdatedEventImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -136,7 +131,6 @@ class _$PeerPeerListUpdatedEventImpl implements _PeerPeerListUpdatedEvent {
   @JsonKey(name: 'peer_id')
   final num id;
   final List<String> _peerList;
-
   @override
   @JsonKey(name: 'peerlist')
   List<String> get peerList {
@@ -191,11 +185,9 @@ abstract class _PeerPeerListUpdatedEvent implements PeerPeerListUpdatedEvent {
   @override
   @JsonKey(name: 'peer_id')
   num get id;
-
   @override
   @JsonKey(name: 'peerlist')
   List<String> get peerList;
-
   @override
   @JsonKey(ignore: true)
   _$$PeerPeerListUpdatedEventImplCopyWith<_$PeerPeerListUpdatedEventImpl>

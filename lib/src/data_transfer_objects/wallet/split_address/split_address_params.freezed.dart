@@ -24,7 +24,6 @@ mixin _$SplitAddressParams {
   String get address => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $SplitAddressParamsCopyWith<SplitAddressParams> get copyWith =>
       throw _privateConstructorUsedError;
@@ -35,7 +34,6 @@ abstract class $SplitAddressParamsCopyWith<$Res> {
   factory $SplitAddressParamsCopyWith(
           SplitAddressParams value, $Res Function(SplitAddressParams) then) =
       _$SplitAddressParamsCopyWithImpl<$Res, SplitAddressParams>;
-
   @useResult
   $Res call({@JsonKey(name: 'address') String address});
 }
@@ -47,7 +45,6 @@ class _$SplitAddressParamsCopyWithImpl<$Res, $Val extends SplitAddressParams>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -71,7 +68,6 @@ abstract class _$$SplitAddressParamsImplCopyWith<$Res>
   factory _$$SplitAddressParamsImplCopyWith(_$SplitAddressParamsImpl value,
           $Res Function(_$SplitAddressParamsImpl) then) =
       __$$SplitAddressParamsImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call({@JsonKey(name: 'address') String address});
@@ -155,7 +151,6 @@ abstract class _SplitAddressParams implements SplitAddressParams {
   @override
   @JsonKey(name: 'address')
   String get address;
-
   @override
   @JsonKey(ignore: true)
   _$$SplitAddressParamsImplCopyWith<_$SplitAddressParamsImpl> get copyWith =>

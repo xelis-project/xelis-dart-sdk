@@ -1,3 +1,10 @@
+## 0.16.0
+
+Daemon API upgrade :
+
+- new blockOrphaned Event.
+- new transactionOrphaned Event.
+
 ## 0.15.1
 
 Wallet:

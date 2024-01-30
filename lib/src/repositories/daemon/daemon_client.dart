@@ -32,8 +32,11 @@ class DaemonClient extends RpcClientRepository {
           <void Function(PeerPeerListUpdatedEvent peerPeerListUpdated)>[],
       DaemonEvent.peerStateUpdated: <void Function(Peer peer)>[],
       DaemonEvent.peerPeerDisconnected: <void Function(
-        PeerPeerDisconnectedEvent peerPeerDisconnectedEvent,
-      )>[],
+          PeerPeerDisconnectedEvent peerPeerDisconnectedEvent)>[],
+      DaemonEvent.blockOrphaned:
+          <void Function(BlockOrphanedEvent blockOrphanedEvent)>[],
+      DaemonEvent.transactionOrphaned:
+          <void Function(TransactionResponse transactionResponse)>[],
     };
   }
 
@@ -95,6 +98,14 @@ class DaemonClient extends RpcClientRepository {
         final peerPeerDisconnected = PeerPeerDisconnectedEvent.fromJson(result);
         _logInfo('Peer peer disconnected: $peerPeerDisconnected');
         _triggerCallbacks(event, peerPeerDisconnected);
+      case DaemonEvent.blockOrphaned:
+        final blockOrphanedEvent = BlockOrphanedEvent.fromJson(result);
+        _logInfo('Block orphaned: $blockOrphanedEvent');
+        _triggerCallbacks(event, blockOrphanedEvent);
+      case DaemonEvent.transactionOrphaned:
+        final transactionResponse = TransactionResponse.fromJson(result);
+        _logInfo('Transaction orphaned: $transactionResponse');
+        _triggerCallbacks(event, transactionResponse);
     }
   }
 

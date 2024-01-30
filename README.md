@@ -75,9 +75,11 @@ Subscribe and listen to events.
 
 - newBlock
 - blockOrdered
+- blockOrphaned
 - stableHeightChanged
 - transactionAddedInMempool
 - transactionExecuted
+- transactionOrphaned
 - transactionSCResult
 - newAsset
 - peerConnected

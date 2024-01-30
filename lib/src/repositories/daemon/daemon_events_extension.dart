@@ -29,6 +29,18 @@ extension DaemonEventsExtension on DaemonClient {
     unawaited(unsubscribeFrom(DaemonEvent.blockOrdered));
   }
 
+  /// When a block that was ordered is not in the new DAG order.
+  /// It contains BlockOrphanedEvent that got orphaned.
+  void onBlockOrphaned(
+    void Function(BlockOrphanedEvent blockOrphanedEvent) callback,
+  ) =>
+      onEvent(DaemonEvent.blockOrphaned, callback);
+
+  /// Unsubscribes from BlockOrphaned event.
+  void unsubscribeOnBlockOrphaned() {
+    unawaited(unsubscribeFrom(DaemonEvent.blockOrphaned));
+  }
+
   /// Registers a callback for StableHeightChanged event.
   ///
   /// Note: It is called when stable height has changed
@@ -67,6 +79,19 @@ extension DaemonEventsExtension on DaemonClient {
   /// Unsubscribes from TransactionExecuted event.
   void unsubscribeFromTransactionExecuted() {
     unawaited(unsubscribeFrom(DaemonEvent.transactionExecuted));
+  }
+
+  /// When a transaction that was executed in a block is not reintroduced
+  /// in mempool.
+  /// It contains TransactionOrphanedEvent as value.
+  void onTransactionOrphaned(
+    void Function(TransactionResponse transactionResponse) callback,
+  ) =>
+      onEvent(DaemonEvent.transactionOrphaned, callback);
+
+  /// Unsubscribes from TransactionOrphaned event.
+  void unsubscribeOnTransactionOrphaned() {
+    unawaited(unsubscribeFrom(DaemonEvent.transactionOrphaned));
   }
 
   /// Registers a callback for TransactionSCResult event.
