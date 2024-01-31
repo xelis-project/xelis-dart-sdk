@@ -1,7 +1,7 @@
 // ignore_for_file: public_member_api_docs, invalid_annotation_target, always_put_required_named_parameters_first
 
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:xelis_dart_sdk/src/data_transfer_objects/get_info/network.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/network/network.dart';
 
 part 'get_info_result.freezed.dart';
 

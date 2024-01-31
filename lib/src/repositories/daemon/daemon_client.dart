@@ -32,7 +32,8 @@ class DaemonClient extends RpcClientRepository {
           <void Function(PeerPeerListUpdatedEvent peerPeerListUpdated)>[],
       DaemonEvent.peerStateUpdated: <void Function(Peer peer)>[],
       DaemonEvent.peerPeerDisconnected: <void Function(
-          PeerPeerDisconnectedEvent peerPeerDisconnectedEvent)>[],
+        PeerPeerDisconnectedEvent peerPeerDisconnectedEvent,
+      )>[],
       DaemonEvent.blockOrphaned:
           <void Function(BlockOrphanedEvent blockOrphanedEvent)>[],
       DaemonEvent.transactionOrphaned:
