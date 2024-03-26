@@ -24,7 +24,7 @@ mixin _$TransactionResponse {
   int get version => throw _privateConstructorUsedError;
   bool get inMempool => throw _privateConstructorUsedError;
   int get nonce => throw _privateConstructorUsedError;
-  String get owner => throw _privateConstructorUsedError;
+  String get source => throw _privateConstructorUsedError;
   String get signature => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -47,7 +47,7 @@ abstract class $TransactionResponseCopyWith<$Res> {
       int version,
       bool inMempool,
       int nonce,
-      String owner,
+      String source,
       String signature});
 
   $TransactionTypeCopyWith<$Res> get data;
@@ -74,7 +74,7 @@ class _$TransactionResponseCopyWithImpl<$Res, $Val extends TransactionResponse>
     Object? version = null,
     Object? inMempool = null,
     Object? nonce = null,
-    Object? owner = null,
+    Object? source = null,
     Object? signature = null,
   }) {
     return _then(_value.copyWith(
@@ -110,9 +110,9 @@ class _$TransactionResponseCopyWithImpl<$Res, $Val extends TransactionResponse>
           ? _value.nonce
           : nonce // ignore: cast_nullable_to_non_nullable
               as int,
-      owner: null == owner
-          ? _value.owner
-          : owner // ignore: cast_nullable_to_non_nullable
+      source: null == source
+          ? _value.source
+          : source // ignore: cast_nullable_to_non_nullable
               as String,
       signature: null == signature
           ? _value.signature
@@ -147,7 +147,7 @@ abstract class _$$TransactionResponseImplCopyWith<$Res>
       int version,
       bool inMempool,
       int nonce,
-      String owner,
+      String source,
       String signature});
 
   @override
@@ -173,7 +173,7 @@ class __$$TransactionResponseImplCopyWithImpl<$Res>
     Object? version = null,
     Object? inMempool = null,
     Object? nonce = null,
-    Object? owner = null,
+    Object? source = null,
     Object? signature = null,
   }) {
     return _then(_$TransactionResponseImpl(
@@ -209,9 +209,9 @@ class __$$TransactionResponseImplCopyWithImpl<$Res>
           ? _value.nonce
           : nonce // ignore: cast_nullable_to_non_nullable
               as int,
-      owner: null == owner
-          ? _value.owner
-          : owner // ignore: cast_nullable_to_non_nullable
+      source: null == source
+          ? _value.source
+          : source // ignore: cast_nullable_to_non_nullable
               as String,
       signature: null == signature
           ? _value.signature
@@ -233,7 +233,7 @@ class _$TransactionResponseImpl implements _TransactionResponse {
       required this.version,
       required this.inMempool,
       required this.nonce,
-      required this.owner,
+      required this.source,
       required this.signature})
       : _blocks = blocks;
 
@@ -262,13 +262,13 @@ class _$TransactionResponseImpl implements _TransactionResponse {
   @override
   final int nonce;
   @override
-  final String owner;
+  final String source;
   @override
   final String signature;
 
   @override
   String toString() {
-    return 'TransactionResponse(blocks: $blocks, executedInBlock: $executedInBlock, hash: $hash, data: $data, fee: $fee, version: $version, inMempool: $inMempool, nonce: $nonce, owner: $owner, signature: $signature)';
+    return 'TransactionResponse(blocks: $blocks, executedInBlock: $executedInBlock, hash: $hash, data: $data, fee: $fee, version: $version, inMempool: $inMempool, nonce: $nonce, source: $source, signature: $signature)';
   }
 
   @override
@@ -286,7 +286,7 @@ class _$TransactionResponseImpl implements _TransactionResponse {
             (identical(other.inMempool, inMempool) ||
                 other.inMempool == inMempool) &&
             (identical(other.nonce, nonce) || other.nonce == nonce) &&
-            (identical(other.owner, owner) || other.owner == owner) &&
+            (identical(other.source, source) || other.source == source) &&
             (identical(other.signature, signature) ||
                 other.signature == signature));
   }
@@ -302,7 +302,7 @@ class _$TransactionResponseImpl implements _TransactionResponse {
       version,
       inMempool,
       nonce,
-      owner,
+      source,
       signature);
 
   @JsonKey(ignore: true)
@@ -323,7 +323,7 @@ abstract class _TransactionResponse implements TransactionResponse {
       required final int version,
       required final bool inMempool,
       required final int nonce,
-      required final String owner,
+      required final String source,
       required final String signature}) = _$TransactionResponseImpl;
 
   @override
@@ -343,7 +343,7 @@ abstract class _TransactionResponse implements TransactionResponse {
   @override
   int get nonce;
   @override
-  String get owner;
+  String get source;
   @override
   String get signature;
   @override

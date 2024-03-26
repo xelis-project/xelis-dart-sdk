@@ -16,7 +16,7 @@ class TransactionResponse with _$TransactionResponse {
     required int version,
     required bool inMempool,
     required int nonce,
-    required String owner,
+    required String source,
     required String signature,
   }) = _TransactionResponse;
 
@@ -30,7 +30,7 @@ class TransactionResponse with _$TransactionResponse {
           'version': final int version,
           'in_mempool': final bool inMempool,
           'nonce': final int nonce,
-          'owner': final String owner,
+          'source': final String source,
           'signature': final String signature,
         }) {
       return TransactionResponse(
@@ -42,7 +42,7 @@ class TransactionResponse with _$TransactionResponse {
         version: version,
         inMempool: inMempool,
         nonce: nonce,
-        owner: owner,
+        source: source,
         signature: signature,
       );
     } else if (json
@@ -54,7 +54,7 @@ class TransactionResponse with _$TransactionResponse {
           'version': final int version,
           'in_mempool': final bool inMempool,
           'nonce': final int nonce,
-          'owner': final String owner,
+          'source': final String source,
           'signature': final String signature,
         }) {
       return TransactionResponse(
@@ -66,7 +66,7 @@ class TransactionResponse with _$TransactionResponse {
         version: version,
         inMempool: inMempool,
         nonce: nonce,
-        owner: owner,
+        source: source,
         signature: signature,
       );
     } else if (json
@@ -78,7 +78,7 @@ class TransactionResponse with _$TransactionResponse {
           'version': final int version,
           'in_mempool': final bool inMempool,
           'nonce': final int nonce,
-          'owner': final String owner,
+          'source': final String source,
           'signature': final String signature,
         }) {
       return TransactionResponse(
@@ -90,7 +90,7 @@ class TransactionResponse with _$TransactionResponse {
         version: version,
         inMempool: inMempool,
         nonce: nonce,
-        owner: owner,
+        source: source,
         signature: signature,
       );
     } else if (json
@@ -104,7 +104,7 @@ class TransactionResponse with _$TransactionResponse {
           'version': final int version,
           'in_mempool': final bool inMempool,
           'nonce': final int nonce,
-          'owner': final String owner,
+          'source': final String source,
           'signature': final String signature,
         }) {
       return TransactionResponse(
@@ -116,7 +116,7 @@ class TransactionResponse with _$TransactionResponse {
         version: version,
         inMempool: inMempool,
         nonce: nonce,
-        owner: owner,
+        source: source,
         signature: signature,
       );
     } else {
