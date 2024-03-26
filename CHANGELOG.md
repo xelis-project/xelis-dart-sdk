@@ -1,3 +1,9 @@
+## 0.16.1
+
+- difficulty member type changed in GetInfoResult.
+- "owner" became "source" in TransactionResponse.
+- add DevFee in GetAccountHistoryResult
+
 ## 0.16.0
 
 Daemon API upgrade :

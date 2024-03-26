@@ -5,6 +5,7 @@ export 'block_orphaned_event/block_orphaned_event.dart';
 export 'get_account_assets/get_account_assets_params.dart';
 export 'get_account_assets/get_account_assets_result.dart';
 export 'get_account_history/burn_history.dart';
+export 'get_account_history/dev_fee_history.dart';
 export 'get_account_history/get_account_history_params.dart';
 export 'get_account_history/get_account_history_result.dart';
 export 'get_account_history/incoming_history.dart';

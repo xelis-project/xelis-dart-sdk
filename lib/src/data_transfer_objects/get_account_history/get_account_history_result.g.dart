@@ -26,6 +26,9 @@ _$GetAccountHistoryResultImpl _$$GetAccountHistoryResultImplFromJson(
       incomingHistory: json['incoming'] == null
           ? null
           : IncomingHistory.fromJson(json['incoming'] as Map<String, dynamic>),
+      devFeeHistory: json['dev_fee'] == null
+          ? null
+          : DevFeeHistory.fromJson(json['dev_fee'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$GetAccountHistoryResultImplToJson(
@@ -38,4 +41,5 @@ Map<String, dynamic> _$$GetAccountHistoryResultImplToJson(
       'mining': instance.miningHistory,
       'outgoing': instance.outgoingHistory,
       'incoming': instance.incomingHistory,
+      'dev_fee': instance.devFeeHistory,
     };

@@ -35,6 +35,8 @@ mixin _$GetAccountHistoryResult {
   OutgoingHistory? get outgoingHistory => throw _privateConstructorUsedError;
   @JsonKey(name: 'incoming')
   IncomingHistory? get incomingHistory => throw _privateConstructorUsedError;
+  @JsonKey(name: 'dev_fee')
+  DevFeeHistory? get devFeeHistory => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -55,12 +57,14 @@ abstract class $GetAccountHistoryResultCopyWith<$Res> {
       @JsonKey(name: 'burn') BurnHistory? burnHistory,
       @JsonKey(name: 'mining') MiningHistory? miningHistory,
       @JsonKey(name: 'outgoing') OutgoingHistory? outgoingHistory,
-      @JsonKey(name: 'incoming') IncomingHistory? incomingHistory});
+      @JsonKey(name: 'incoming') IncomingHistory? incomingHistory,
+      @JsonKey(name: 'dev_fee') DevFeeHistory? devFeeHistory});
 
   $BurnHistoryCopyWith<$Res>? get burnHistory;
   $MiningHistoryCopyWith<$Res>? get miningHistory;
   $OutgoingHistoryCopyWith<$Res>? get outgoingHistory;
   $IncomingHistoryCopyWith<$Res>? get incomingHistory;
+  $DevFeeHistoryCopyWith<$Res>? get devFeeHistory;
 }
 
 /// @nodoc
@@ -84,6 +88,7 @@ class _$GetAccountHistoryResultCopyWithImpl<$Res,
     Object? miningHistory = freezed,
     Object? outgoingHistory = freezed,
     Object? incomingHistory = freezed,
+    Object? devFeeHistory = freezed,
   }) {
     return _then(_value.copyWith(
       topoheight: null == topoheight
@@ -114,6 +119,10 @@ class _$GetAccountHistoryResultCopyWithImpl<$Res,
           ? _value.incomingHistory
           : incomingHistory // ignore: cast_nullable_to_non_nullable
               as IncomingHistory?,
+      devFeeHistory: freezed == devFeeHistory
+          ? _value.devFeeHistory
+          : devFeeHistory // ignore: cast_nullable_to_non_nullable
+              as DevFeeHistory?,
     ) as $Val);
   }
 
@@ -164,6 +173,18 @@ class _$GetAccountHistoryResultCopyWithImpl<$Res,
       return _then(_value.copyWith(incomingHistory: value) as $Val);
     });
   }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $DevFeeHistoryCopyWith<$Res>? get devFeeHistory {
+    if (_value.devFeeHistory == null) {
+      return null;
+    }
+
+    return $DevFeeHistoryCopyWith<$Res>(_value.devFeeHistory!, (value) {
+      return _then(_value.copyWith(devFeeHistory: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -182,7 +203,8 @@ abstract class _$$GetAccountHistoryResultImplCopyWith<$Res>
       @JsonKey(name: 'burn') BurnHistory? burnHistory,
       @JsonKey(name: 'mining') MiningHistory? miningHistory,
       @JsonKey(name: 'outgoing') OutgoingHistory? outgoingHistory,
-      @JsonKey(name: 'incoming') IncomingHistory? incomingHistory});
+      @JsonKey(name: 'incoming') IncomingHistory? incomingHistory,
+      @JsonKey(name: 'dev_fee') DevFeeHistory? devFeeHistory});
 
   @override
   $BurnHistoryCopyWith<$Res>? get burnHistory;
@@ -192,6 +214,8 @@ abstract class _$$GetAccountHistoryResultImplCopyWith<$Res>
   $OutgoingHistoryCopyWith<$Res>? get outgoingHistory;
   @override
   $IncomingHistoryCopyWith<$Res>? get incomingHistory;
+  @override
+  $DevFeeHistoryCopyWith<$Res>? get devFeeHistory;
 }
 
 /// @nodoc
@@ -214,6 +238,7 @@ class __$$GetAccountHistoryResultImplCopyWithImpl<$Res>
     Object? miningHistory = freezed,
     Object? outgoingHistory = freezed,
     Object? incomingHistory = freezed,
+    Object? devFeeHistory = freezed,
   }) {
     return _then(_$GetAccountHistoryResultImpl(
       topoheight: null == topoheight
@@ -244,6 +269,10 @@ class __$$GetAccountHistoryResultImplCopyWithImpl<$Res>
           ? _value.incomingHistory
           : incomingHistory // ignore: cast_nullable_to_non_nullable
               as IncomingHistory?,
+      devFeeHistory: freezed == devFeeHistory
+          ? _value.devFeeHistory
+          : devFeeHistory // ignore: cast_nullable_to_non_nullable
+              as DevFeeHistory?,
     ));
   }
 }
@@ -258,7 +287,8 @@ class _$GetAccountHistoryResultImpl implements _GetAccountHistoryResult {
       @JsonKey(name: 'burn') this.burnHistory,
       @JsonKey(name: 'mining') this.miningHistory,
       @JsonKey(name: 'outgoing') this.outgoingHistory,
-      @JsonKey(name: 'incoming') this.incomingHistory});
+      @JsonKey(name: 'incoming') this.incomingHistory,
+      @JsonKey(name: 'dev_fee') this.devFeeHistory});
 
   factory _$GetAccountHistoryResultImpl.fromJson(Map<String, dynamic> json) =>
       _$$GetAccountHistoryResultImplFromJson(json);
@@ -284,10 +314,13 @@ class _$GetAccountHistoryResultImpl implements _GetAccountHistoryResult {
   @override
   @JsonKey(name: 'incoming')
   final IncomingHistory? incomingHistory;
+  @override
+  @JsonKey(name: 'dev_fee')
+  final DevFeeHistory? devFeeHistory;
 
   @override
   String toString() {
-    return 'GetAccountHistoryResult(topoheight: $topoheight, hash: $hash, blockTimestamp: $blockTimestamp, burnHistory: $burnHistory, miningHistory: $miningHistory, outgoingHistory: $outgoingHistory, incomingHistory: $incomingHistory)';
+    return 'GetAccountHistoryResult(topoheight: $topoheight, hash: $hash, blockTimestamp: $blockTimestamp, burnHistory: $burnHistory, miningHistory: $miningHistory, outgoingHistory: $outgoingHistory, incomingHistory: $incomingHistory, devFeeHistory: $devFeeHistory)';
   }
 
   @override
@@ -307,13 +340,23 @@ class _$GetAccountHistoryResultImpl implements _GetAccountHistoryResult {
             (identical(other.outgoingHistory, outgoingHistory) ||
                 other.outgoingHistory == outgoingHistory) &&
             (identical(other.incomingHistory, incomingHistory) ||
-                other.incomingHistory == incomingHistory));
+                other.incomingHistory == incomingHistory) &&
+            (identical(other.devFeeHistory, devFeeHistory) ||
+                other.devFeeHistory == devFeeHistory));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, topoheight, hash, blockTimestamp,
-      burnHistory, miningHistory, outgoingHistory, incomingHistory);
+  int get hashCode => Object.hash(
+      runtimeType,
+      topoheight,
+      hash,
+      blockTimestamp,
+      burnHistory,
+      miningHistory,
+      outgoingHistory,
+      incomingHistory,
+      devFeeHistory);
 
   @JsonKey(ignore: true)
   @override
@@ -338,7 +381,8 @@ abstract class _GetAccountHistoryResult implements GetAccountHistoryResult {
           @JsonKey(name: 'burn') final BurnHistory? burnHistory,
           @JsonKey(name: 'mining') final MiningHistory? miningHistory,
           @JsonKey(name: 'outgoing') final OutgoingHistory? outgoingHistory,
-          @JsonKey(name: 'incoming') final IncomingHistory? incomingHistory}) =
+          @JsonKey(name: 'incoming') final IncomingHistory? incomingHistory,
+          @JsonKey(name: 'dev_fee') final DevFeeHistory? devFeeHistory}) =
       _$GetAccountHistoryResultImpl;
 
   factory _GetAccountHistoryResult.fromJson(Map<String, dynamic> json) =
@@ -365,6 +409,9 @@ abstract class _GetAccountHistoryResult implements GetAccountHistoryResult {
   @override
   @JsonKey(name: 'incoming')
   IncomingHistory? get incomingHistory;
+  @override
+  @JsonKey(name: 'dev_fee')
+  DevFeeHistory? get devFeeHistory;
   @override
   @JsonKey(ignore: true)
   _$$GetAccountHistoryResultImplCopyWith<_$GetAccountHistoryResultImpl>

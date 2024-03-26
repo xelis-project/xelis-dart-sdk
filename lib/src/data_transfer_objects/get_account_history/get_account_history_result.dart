@@ -18,6 +18,7 @@ class GetAccountHistoryResult with _$GetAccountHistoryResult {
     @JsonKey(name: 'mining') MiningHistory? miningHistory,
     @JsonKey(name: 'outgoing') OutgoingHistory? outgoingHistory,
     @JsonKey(name: 'incoming') IncomingHistory? incomingHistory,
+    @JsonKey(name: 'dev_fee') DevFeeHistory? devFeeHistory,
   }) = _GetAccountHistoryResult;
 
   factory GetAccountHistoryResult.fromJson(Map<String, dynamic> json) =>
