@@ -17,7 +17,7 @@ _$GetInfoResultImpl _$$GetInfoResultImplFromJson(Map<String, dynamic> json) =>
       topBlockHash: json['top_block_hash'] as String,
       circulatingSupply: json['circulating_supply'] as int,
       maximumSupply: json['maximum_supply'] as int,
-      difficulty: json['difficulty'] as int,
+      difficulty: json['difficulty'] as String,
       blockTimeTarget: json['block_time_target'] as int,
       averageBlockTime: json['average_block_time'] as int,
       blockReward: json['block_reward'] as int,

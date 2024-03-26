@@ -1,6 +1,6 @@
 name: xelis_dart_sdk
 description: Software Development Kit in Dart to build Apps for the Xelis Blockchain.
-version: 0.16.0
+version: 0.16.1
 repository: https://github.com/xelis-project/xelis-dart-jdk
 
 environment:
@@ -18,7 +18,7 @@ dependencies:
 
 dev_dependencies:
   build_runner: ^2.4.8
-  freezed: ^2.4.6
+  freezed: ^2.4.7
   json_serializable: ^6.7.1
   lints: ^3.0.0
   test: ^1.25.2

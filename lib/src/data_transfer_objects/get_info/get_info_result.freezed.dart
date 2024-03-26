@@ -12,7 +12,7 @@ part of 'get_info_result.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 GetInfoResult _$GetInfoResultFromJson(Map<String, dynamic> json) {
   return _GetInfoResult.fromJson(json);
@@ -35,7 +35,7 @@ mixin _$GetInfoResult {
   @JsonKey(name: 'maximum_supply')
   int get maximumSupply => throw _privateConstructorUsedError;
   @JsonKey(name: 'difficulty')
-  int get difficulty => throw _privateConstructorUsedError;
+  String get difficulty => throw _privateConstructorUsedError;
   @JsonKey(name: 'block_time_target')
   int get blockTimeTarget => throw _privateConstructorUsedError;
   @JsonKey(name: 'average_block_time')
@@ -69,7 +69,7 @@ abstract class $GetInfoResultCopyWith<$Res> {
       @JsonKey(name: 'top_block_hash') String topBlockHash,
       @JsonKey(name: 'circulating_supply') int circulatingSupply,
       @JsonKey(name: 'maximum_supply') int maximumSupply,
-      @JsonKey(name: 'difficulty') int difficulty,
+      @JsonKey(name: 'difficulty') String difficulty,
       @JsonKey(name: 'block_time_target') int blockTimeTarget,
       @JsonKey(name: 'average_block_time') int averageBlockTime,
       @JsonKey(name: 'block_reward') int blockReward,
@@ -138,7 +138,7 @@ class _$GetInfoResultCopyWithImpl<$Res, $Val extends GetInfoResult>
       difficulty: null == difficulty
           ? _value.difficulty
           : difficulty // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       blockTimeTarget: null == blockTimeTarget
           ? _value.blockTimeTarget
           : blockTimeTarget // ignore: cast_nullable_to_non_nullable
@@ -183,7 +183,7 @@ abstract class _$$GetInfoResultImplCopyWith<$Res>
       @JsonKey(name: 'top_block_hash') String topBlockHash,
       @JsonKey(name: 'circulating_supply') int circulatingSupply,
       @JsonKey(name: 'maximum_supply') int maximumSupply,
-      @JsonKey(name: 'difficulty') int difficulty,
+      @JsonKey(name: 'difficulty') String difficulty,
       @JsonKey(name: 'block_time_target') int blockTimeTarget,
       @JsonKey(name: 'average_block_time') int averageBlockTime,
       @JsonKey(name: 'block_reward') int blockReward,
@@ -250,7 +250,7 @@ class __$$GetInfoResultImplCopyWithImpl<$Res>
       difficulty: null == difficulty
           ? _value.difficulty
           : difficulty // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       blockTimeTarget: null == blockTimeTarget
           ? _value.blockTimeTarget
           : blockTimeTarget // ignore: cast_nullable_to_non_nullable
@@ -324,7 +324,7 @@ class _$GetInfoResultImpl implements _GetInfoResult {
   final int maximumSupply;
   @override
   @JsonKey(name: 'difficulty')
-  final int difficulty;
+  final String difficulty;
   @override
   @JsonKey(name: 'block_time_target')
   final int blockTimeTarget;
@@ -423,7 +423,7 @@ abstract class _GetInfoResult implements GetInfoResult {
       @JsonKey(name: 'top_block_hash') required final String topBlockHash,
       @JsonKey(name: 'circulating_supply') required final int circulatingSupply,
       @JsonKey(name: 'maximum_supply') required final int maximumSupply,
-      @JsonKey(name: 'difficulty') required final int difficulty,
+      @JsonKey(name: 'difficulty') required final String difficulty,
       @JsonKey(name: 'block_time_target') required final int blockTimeTarget,
       @JsonKey(name: 'average_block_time') required final int averageBlockTime,
       @JsonKey(name: 'block_reward') required final int blockReward,
@@ -458,7 +458,7 @@ abstract class _GetInfoResult implements GetInfoResult {
   int get maximumSupply;
   @override
   @JsonKey(name: 'difficulty')
-  int get difficulty;
+  String get difficulty;
   @override
   @JsonKey(name: 'block_time_target')
   int get blockTimeTarget;

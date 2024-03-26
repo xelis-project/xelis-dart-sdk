@@ -17,7 +17,7 @@ class GetInfoResult with _$GetInfoResult {
     @JsonKey(name: 'top_block_hash') required String topBlockHash,
     @JsonKey(name: 'circulating_supply') required int circulatingSupply,
     @JsonKey(name: 'maximum_supply') required int maximumSupply,
-    @JsonKey(name: 'difficulty') required int difficulty,
+    @JsonKey(name: 'difficulty') required String difficulty,
     @JsonKey(name: 'block_time_target') required int blockTimeTarget,
     @JsonKey(name: 'average_block_time') required int averageBlockTime,
     @JsonKey(name: 'block_reward') required int blockReward,
