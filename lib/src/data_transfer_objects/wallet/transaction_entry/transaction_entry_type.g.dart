@@ -38,7 +38,7 @@ _$IncomingEntryImpl _$$IncomingEntryImplFromJson(Map<String, dynamic> json) =>
     _$IncomingEntryImpl(
       from: json['from'] as String,
       transfers: (json['transfers'] as List<dynamic>)
-          .map((e) => TransferEntry.fromJson(e as Map<String, dynamic>))
+          .map((e) => TransferInEntry.fromJson(e as Map<String, dynamic>))
           .toList(),
       $type: json['runtimeType'] as String?,
     );
@@ -53,7 +53,7 @@ Map<String, dynamic> _$$IncomingEntryImplToJson(_$IncomingEntryImpl instance) =>
 _$OutgoingEntryImpl _$$OutgoingEntryImplFromJson(Map<String, dynamic> json) =>
     _$OutgoingEntryImpl(
       transfers: (json['transfers'] as List<dynamic>)
-          .map((e) => TransferEntry.fromJson(e as Map<String, dynamic>))
+          .map((e) => TransferOutEntry.fromJson(e as Map<String, dynamic>))
           .toList(),
       $type: json['runtimeType'] as String?,
     );

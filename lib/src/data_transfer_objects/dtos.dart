@@ -64,4 +64,5 @@ export 'wallet/split_address/split_address_params.dart';
 export 'wallet/split_address/split_address_result.dart';
 export 'wallet/transaction_entry/transaction_entry.dart';
 export 'wallet/transaction_entry/transaction_entry_type.dart';
-export 'wallet/transaction_entry/transfer_entry.dart';
+export 'wallet/transaction_entry/transfer_in_entry.dart';
+export 'wallet/transaction_entry/transfer_out_entry.dart';

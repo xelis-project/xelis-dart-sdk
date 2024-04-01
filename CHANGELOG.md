@@ -1,3 +1,7 @@
+## 0.16.2
+
+- fix transfer entry.
+
 ## 0.16.1
 
 - difficulty member type changed in GetInfoResult.

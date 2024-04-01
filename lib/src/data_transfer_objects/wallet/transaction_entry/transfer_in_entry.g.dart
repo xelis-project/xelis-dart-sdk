@@ -2,24 +2,24 @@
 
 // ignore_for_file: package_api_docs, non_constant_identifier_names
 
-part of 'transfer_entry.dart';
+part of 'transfer_in_entry.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$TransferEntryImpl _$$TransferEntryImplFromJson(Map<String, dynamic> json) =>
-    _$TransferEntryImpl(
+_$TransferInEntryImpl _$$TransferInEntryImplFromJson(
+        Map<String, dynamic> json) =>
+    _$TransferInEntryImpl(
       amount: json['amount'] as int,
       asset: json['asset'] as String,
       extraData: json['extra_data'],
-      key: json['key'] as String,
     );
 
-Map<String, dynamic> _$$TransferEntryImplToJson(_$TransferEntryImpl instance) =>
+Map<String, dynamic> _$$TransferInEntryImplToJson(
+        _$TransferInEntryImpl instance) =>
     <String, dynamic>{
       'amount': instance.amount,
       'asset': instance.asset,
       'extra_data': instance.extraData,
-      'key': instance.key,
     };

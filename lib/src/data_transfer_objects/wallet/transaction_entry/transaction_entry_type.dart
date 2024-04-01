@@ -20,11 +20,11 @@ sealed class TransactionEntryType with _$TransactionEntryType {
 
   const factory TransactionEntryType.incoming({
     @JsonKey(name: 'from') required String from,
-    @JsonKey(name: 'transfers') required List<TransferEntry> transfers,
+    @JsonKey(name: 'transfers') required List<TransferInEntry> transfers,
   }) = IncomingEntry;
 
   const factory TransactionEntryType.outgoing({
-    @JsonKey(name: 'transfers') required List<TransferEntry> transfers,
+    @JsonKey(name: 'transfers') required List<TransferOutEntry> transfers,
   }) = OutgoingEntry;
 
   factory TransactionEntryType.fromJson(Map<String, dynamic> json) =>

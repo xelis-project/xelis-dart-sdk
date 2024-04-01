@@ -1,0 +1,231 @@
+// coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
+
+part of 'transfer_out_entry.dart';
+
+// **************************************************************************
+// FreezedGenerator
+// **************************************************************************
+
+T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
+TransferOutEntry _$TransferOutEntryFromJson(Map<String, dynamic> json) {
+  return _TransferOutEntry.fromJson(json);
+}
+
+/// @nodoc
+mixin _$TransferOutEntry {
+  @JsonKey(name: 'destination')
+  String get destination => throw _privateConstructorUsedError;
+  @JsonKey(name: 'amount')
+  int get amount => throw _privateConstructorUsedError;
+  @JsonKey(name: 'asset')
+  String get asset => throw _privateConstructorUsedError;
+  @JsonKey(name: 'extra_data')
+  dynamic get extraData => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $TransferOutEntryCopyWith<TransferOutEntry> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $TransferOutEntryCopyWith<$Res> {
+  factory $TransferOutEntryCopyWith(
+          TransferOutEntry value, $Res Function(TransferOutEntry) then) =
+      _$TransferOutEntryCopyWithImpl<$Res, TransferOutEntry>;
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'destination') String destination,
+      @JsonKey(name: 'amount') int amount,
+      @JsonKey(name: 'asset') String asset,
+      @JsonKey(name: 'extra_data') dynamic extraData});
+}
+
+/// @nodoc
+class _$TransferOutEntryCopyWithImpl<$Res, $Val extends TransferOutEntry>
+    implements $TransferOutEntryCopyWith<$Res> {
+  _$TransferOutEntryCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? destination = null,
+    Object? amount = null,
+    Object? asset = null,
+    Object? extraData = freezed,
+  }) {
+    return _then(_value.copyWith(
+      destination: null == destination
+          ? _value.destination
+          : destination // ignore: cast_nullable_to_non_nullable
+              as String,
+      amount: null == amount
+          ? _value.amount
+          : amount // ignore: cast_nullable_to_non_nullable
+              as int,
+      asset: null == asset
+          ? _value.asset
+          : asset // ignore: cast_nullable_to_non_nullable
+              as String,
+      extraData: freezed == extraData
+          ? _value.extraData
+          : extraData // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$TransferOutEntryImplCopyWith<$Res>
+    implements $TransferOutEntryCopyWith<$Res> {
+  factory _$$TransferOutEntryImplCopyWith(_$TransferOutEntryImpl value,
+          $Res Function(_$TransferOutEntryImpl) then) =
+      __$$TransferOutEntryImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'destination') String destination,
+      @JsonKey(name: 'amount') int amount,
+      @JsonKey(name: 'asset') String asset,
+      @JsonKey(name: 'extra_data') dynamic extraData});
+}
+
+/// @nodoc
+class __$$TransferOutEntryImplCopyWithImpl<$Res>
+    extends _$TransferOutEntryCopyWithImpl<$Res, _$TransferOutEntryImpl>
+    implements _$$TransferOutEntryImplCopyWith<$Res> {
+  __$$TransferOutEntryImplCopyWithImpl(_$TransferOutEntryImpl _value,
+      $Res Function(_$TransferOutEntryImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? destination = null,
+    Object? amount = null,
+    Object? asset = null,
+    Object? extraData = freezed,
+  }) {
+    return _then(_$TransferOutEntryImpl(
+      destination: null == destination
+          ? _value.destination
+          : destination // ignore: cast_nullable_to_non_nullable
+              as String,
+      amount: null == amount
+          ? _value.amount
+          : amount // ignore: cast_nullable_to_non_nullable
+              as int,
+      asset: null == asset
+          ? _value.asset
+          : asset // ignore: cast_nullable_to_non_nullable
+              as String,
+      extraData: freezed == extraData
+          ? _value.extraData
+          : extraData // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$TransferOutEntryImpl implements _TransferOutEntry {
+  const _$TransferOutEntryImpl(
+      {@JsonKey(name: 'destination') required this.destination,
+      @JsonKey(name: 'amount') required this.amount,
+      @JsonKey(name: 'asset') required this.asset,
+      @JsonKey(name: 'extra_data') required this.extraData});
+
+  factory _$TransferOutEntryImpl.fromJson(Map<String, dynamic> json) =>
+      _$$TransferOutEntryImplFromJson(json);
+
+  @override
+  @JsonKey(name: 'destination')
+  final String destination;
+  @override
+  @JsonKey(name: 'amount')
+  final int amount;
+  @override
+  @JsonKey(name: 'asset')
+  final String asset;
+  @override
+  @JsonKey(name: 'extra_data')
+  final dynamic extraData;
+
+  @override
+  String toString() {
+    return 'TransferOutEntry(destination: $destination, amount: $amount, asset: $asset, extraData: $extraData)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$TransferOutEntryImpl &&
+            (identical(other.destination, destination) ||
+                other.destination == destination) &&
+            (identical(other.amount, amount) || other.amount == amount) &&
+            (identical(other.asset, asset) || other.asset == asset) &&
+            const DeepCollectionEquality().equals(other.extraData, extraData));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, destination, amount, asset,
+      const DeepCollectionEquality().hash(extraData));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$TransferOutEntryImplCopyWith<_$TransferOutEntryImpl> get copyWith =>
+      __$$TransferOutEntryImplCopyWithImpl<_$TransferOutEntryImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$TransferOutEntryImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _TransferOutEntry implements TransferOutEntry {
+  const factory _TransferOutEntry(
+          {@JsonKey(name: 'destination') required final String destination,
+          @JsonKey(name: 'amount') required final int amount,
+          @JsonKey(name: 'asset') required final String asset,
+          @JsonKey(name: 'extra_data') required final dynamic extraData}) =
+      _$TransferOutEntryImpl;
+
+  factory _TransferOutEntry.fromJson(Map<String, dynamic> json) =
+      _$TransferOutEntryImpl.fromJson;
+
+  @override
+  @JsonKey(name: 'destination')
+  String get destination;
+  @override
+  @JsonKey(name: 'amount')
+  int get amount;
+  @override
+  @JsonKey(name: 'asset')
+  String get asset;
+  @override
+  @JsonKey(name: 'extra_data')
+  dynamic get extraData;
+  @override
+  @JsonKey(ignore: true)
+  _$$TransferOutEntryImplCopyWith<_$TransferOutEntryImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
