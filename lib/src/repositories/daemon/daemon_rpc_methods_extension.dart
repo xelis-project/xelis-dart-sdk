@@ -371,4 +371,17 @@ extension DaemonRpcMethodsExtension on DaemonClient {
     final result = await sendRequest(DaemonMethod.getSizeOnDisk);
     return GetSizeOnDiskResult.fromJson(result as Map<String, dynamic>);
   }
+
+  /// Retrieve the stored mempool cache for a requested address.
+  ///
+  /// This includes nonce range (min/max) used, final output balances expected per asset used, and all transactions hashes related to this account.
+  Future<GetMempoolCacheResult> getMempoolCache(
+    GetMempoolCacheParams getMempoolCacheParams,
+  ) async {
+    final result = await sendRequest(
+      DaemonMethod.getMempoolCache,
+      getMempoolCacheParams.toJson(),
+    );
+    return GetMempoolCacheResult.fromJson(result as Map<String, dynamic>);
+  }
 }

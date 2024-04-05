@@ -120,7 +120,10 @@ enum DaemonMethod implements XelisJsonKey {
   getDevFeeThresholds('get_dev_fee_thresholds'),
 
   /// Get size of the blockchain on disk
-  getSizeOnDisk('get_size_on_disk');
+  getSizeOnDisk('get_size_on_disk'),
+
+  /// Retrieve the stored mempool cache for a requested address
+  getMempoolCache('get_mempool_cache');
 
   /// Creates a new [DaemonMethod] instance.
   const DaemonMethod(this.jsonKey);
