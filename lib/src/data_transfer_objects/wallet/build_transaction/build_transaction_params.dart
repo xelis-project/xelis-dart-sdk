@@ -1,12 +1,14 @@
-// ignore_for_file: public_member_api_docs, invalid_annotation_target, always_put_required_named_parameters_first
+// ignore_for_file: invalid_annotation_target, always_put_required_named_parameters_first
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:xelis_dart_sdk/xelis_dart_sdk.dart';
 
 part 'build_transaction_params.freezed.dart';
 
+/// @nodoc
 @freezed
 class BuildTransactionParams with _$BuildTransactionParams {
+  /// @nodoc
   const factory BuildTransactionParams({
     required TransactionType transactionType,
     FeeBuilder? feeBuilder,
@@ -16,6 +18,7 @@ class BuildTransactionParams with _$BuildTransactionParams {
 
   const BuildTransactionParams._();
 
+  /// @nodoc
   Map<String, dynamic> toJson() => switch (transactionType) {
         Transfers() => {
             ...transactionType.toJson(),

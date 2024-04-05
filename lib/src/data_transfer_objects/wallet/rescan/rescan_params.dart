@@ -1,4 +1,4 @@
-// ignore_for_file: public_member_api_docs, invalid_annotation_target
+// ignore_for_file: invalid_annotation_target
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -6,12 +6,15 @@ part 'rescan_params.freezed.dart';
 
 part 'rescan_params.g.dart';
 
+/// @nodoc
 @freezed
 class RescanParams with _$RescanParams {
+  /// @nodoc
   const factory RescanParams({
     @JsonKey(name: 'topoheight') required int topoHeight,
   }) = _RescanParams;
 
+  /// @nodoc
   factory RescanParams.fromJson(Map<String, dynamic> json) =>
       _$RescanParamsFromJson(json);
 }

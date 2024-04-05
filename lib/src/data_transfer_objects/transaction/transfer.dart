@@ -1,4 +1,4 @@
-// ignore_for_file: public_member_api_docs, invalid_annotation_target
+// ignore_for_file: invalid_annotation_target
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -6,8 +6,10 @@ part 'transfer.freezed.dart';
 
 part 'transfer.g.dart';
 
+/// @nodoc
 @freezed
 class Transfer with _$Transfer {
+  /// @nodoc
   const factory Transfer({
     @JsonKey(name: 'amount') required int amount,
     @JsonKey(name: 'asset') required String asset,
@@ -15,6 +17,7 @@ class Transfer with _$Transfer {
     @JsonKey(name: 'extra_data') dynamic extraData,
   }) = _Transfer;
 
+  /// @nodoc
   factory Transfer.fromJson(Map<String, dynamic> json) =>
       _$TransferFromJson(json);
 }

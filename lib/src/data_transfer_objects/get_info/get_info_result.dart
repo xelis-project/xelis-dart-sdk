@@ -1,4 +1,4 @@
-// ignore_for_file: public_member_api_docs, invalid_annotation_target, always_put_required_named_parameters_first
+// ignore_for_file: invalid_annotation_target, always_put_required_named_parameters_first
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/network/network.dart';
@@ -7,8 +7,10 @@ part 'get_info_result.freezed.dart';
 
 part 'get_info_result.g.dart';
 
+/// @nodoc
 @freezed
 class GetInfoResult with _$GetInfoResult {
+  /// @nodoc
   const factory GetInfoResult({
     @JsonKey(name: 'height') required int height,
     @JsonKey(name: 'topoheight') required int topoHeight,
@@ -26,6 +28,7 @@ class GetInfoResult with _$GetInfoResult {
     @JsonKey(name: 'network') required Network network,
   }) = _GetInfoResult;
 
+  /// @nodoc
   factory GetInfoResult.fromJson(Map<String, dynamic> json) =>
       _$GetInfoResultFromJson(json);
 }

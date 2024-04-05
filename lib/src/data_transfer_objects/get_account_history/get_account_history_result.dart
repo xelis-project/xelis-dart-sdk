@@ -1,4 +1,4 @@
-// ignore_for_file: public_member_api_docs, invalid_annotation_target
+// ignore_for_file: invalid_annotation_target
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -8,8 +8,10 @@ part 'get_account_history_result.freezed.dart';
 
 part 'get_account_history_result.g.dart';
 
+/// @nodoc
 @freezed
 class GetAccountHistoryResult with _$GetAccountHistoryResult {
+  /// @nodoc
   const factory GetAccountHistoryResult({
     @JsonKey(name: 'topoheight') required int topoheight,
     @JsonKey(name: 'hash') required String hash,
@@ -21,6 +23,7 @@ class GetAccountHistoryResult with _$GetAccountHistoryResult {
     @JsonKey(name: 'dev_fee') DevFeeHistory? devFeeHistory,
   }) = _GetAccountHistoryResult;
 
+  /// @nodoc
   factory GetAccountHistoryResult.fromJson(Map<String, dynamic> json) =>
       _$GetAccountHistoryResultFromJson(json);
 }

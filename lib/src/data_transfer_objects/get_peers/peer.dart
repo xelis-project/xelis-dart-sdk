@@ -1,4 +1,4 @@
-// ignore_for_file: public_member_api_docs, invalid_annotation_target, always_put_required_named_parameters_first
+// ignore_for_file: invalid_annotation_target, always_put_required_named_parameters_first
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/dtos.dart';
@@ -7,8 +7,10 @@ part 'peer.freezed.dart';
 
 part 'peer.g.dart';
 
+/// @nodoc
 @freezed
 class Peer with _$Peer {
+  /// @nodoc
   const factory Peer({
     @JsonKey(name: 'addr') required String address,
     @JsonKey(name: 'cumulative_difficulty') required int cumulativeDifficulty,
@@ -23,5 +25,6 @@ class Peer with _$Peer {
     @JsonKey(name: 'peers') required Map<String, PeerType> peers,
   }) = _Peer;
 
+  /// @nodoc
   factory Peer.fromJson(Map<String, dynamic> json) => _$PeerFromJson(json);
 }

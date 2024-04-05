@@ -1,4 +1,4 @@
-// ignore_for_file: public_member_api_docs, invalid_annotation_target, always_put_required_named_parameters_first
+// ignore_for_file: invalid_annotation_target, always_put_required_named_parameters_first
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -6,8 +6,10 @@ part 'block.freezed.dart';
 
 part 'block.g.dart';
 
+/// @nodoc
 @freezed
 class Block with _$Block {
+  /// @nodoc
   const factory Block({
     @JsonKey(name: 'block_type') required String blockType,
     @JsonKey(name: 'cumulative_difficulty') required int cumulativeDifficulty,
@@ -31,5 +33,6 @@ class Block with _$Block {
     // @JsonKey(name: 'data') dynamic data,
   }) = _Block;
 
+  /// @nodoc
   factory Block.fromJson(Map<String, dynamic> json) => _$BlockFromJson(json);
 }

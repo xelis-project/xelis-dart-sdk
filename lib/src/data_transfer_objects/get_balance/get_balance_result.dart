@@ -1,4 +1,4 @@
-// ignore_for_file: public_member_api_docs, invalid_annotation_target
+// ignore_for_file: invalid_annotation_target
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -8,13 +8,16 @@ part 'get_balance_result.freezed.dart';
 
 part 'get_balance_result.g.dart';
 
+/// @nodoc
 @freezed
 class GetBalanceResult with _$GetBalanceResult {
+  /// @nodoc
   const factory GetBalanceResult({
     @JsonKey(name: 'version') required VersionedBalance versionedBalance,
     @JsonKey(name: 'topoheight') required int topoHeight,
   }) = _GetBalanceResult;
 
+  /// @nodoc
   factory GetBalanceResult.fromJson(Map<String, dynamic> json) =>
       _$GetBalanceResultFromJson(json);
 }

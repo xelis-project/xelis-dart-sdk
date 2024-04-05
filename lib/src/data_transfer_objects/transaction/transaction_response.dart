@@ -1,12 +1,14 @@
-// ignore_for_file: public_member_api_docs, invalid_annotation_target, always_put_required_named_parameters_first
+// ignore_for_file: invalid_annotation_target, always_put_required_named_parameters_first
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/dtos.dart';
 
 part 'transaction_response.freezed.dart';
 
+/// @nodoc
 @freezed
 class TransactionResponse with _$TransactionResponse {
+  /// @nodoc
   const factory TransactionResponse({
     List<String>? blocks,
     String? executedInBlock,
@@ -20,6 +22,7 @@ class TransactionResponse with _$TransactionResponse {
     required String signature,
   }) = _TransactionResponse;
 
+  /// @nodoc
   factory TransactionResponse.fromJson(Map<String, dynamic> json) {
     if (json
         case {

@@ -1,4 +1,4 @@
-// ignore_for_file: public_member_api_docs, invalid_annotation_target
+// ignore_for_file: invalid_annotation_target
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -6,8 +6,10 @@ part 'p2p_status_result.freezed.dart';
 
 part 'p2p_status_result.g.dart';
 
+/// @nodoc
 @freezed
 class P2pStatusResult with _$P2pStatusResult {
+  /// @nodoc
   const factory P2pStatusResult({
     @JsonKey(name: 'best_topoheight') required int bestTopoHeight,
     @JsonKey(name: 'max_peers') required int maxPeers,
@@ -17,6 +19,7 @@ class P2pStatusResult with _$P2pStatusResult {
     @JsonKey(name: 'tag') String? tag,
   }) = _P2pStatusResult;
 
+  /// @nodoc
   factory P2pStatusResult.fromJson(Map<String, dynamic> json) =>
       _$P2pStatusResultFromJson(json);
 }

@@ -1,12 +1,14 @@
-// ignore_for_file: public_member_api_docs, invalid_annotation_target
+// ignore_for_file: invalid_annotation_target
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:xelis_dart_sdk/xelis_dart_sdk.dart';
 
 part 'transaction_entry.freezed.dart';
 
+/// @nodoc
 @freezed
 class TransactionEntry with _$TransactionEntry {
+  /// @nodoc
   const factory TransactionEntry({
     required String hash,
     required int topoHeight,
@@ -15,6 +17,7 @@ class TransactionEntry with _$TransactionEntry {
     int? nonce,
   }) = _TransactionEntry;
 
+  /// @nodoc
   factory TransactionEntry.fromJson(Map<String, dynamic> json) {
     if (json
         case {

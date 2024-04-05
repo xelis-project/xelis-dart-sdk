@@ -1,4 +1,4 @@
-// ignore_for_file: public_member_api_docs, invalid_annotation_target
+// ignore_for_file: invalid_annotation_target
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -6,12 +6,15 @@ part 'incoming_history.freezed.dart';
 
 part 'incoming_history.g.dart';
 
+/// @nodoc
 @freezed
 class IncomingHistory with _$IncomingHistory {
+  /// @nodoc
   const factory IncomingHistory({
     @JsonKey(name: 'amount') required int amount,
   }) = _IncomingHistory;
 
+  /// @nodoc
   factory IncomingHistory.fromJson(Map<String, dynamic> json) =>
       _$IncomingHistoryFromJson(json);
 }
