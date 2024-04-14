@@ -52,6 +52,8 @@ Map<String, dynamic> _$$IncomingEntryImplToJson(_$IncomingEntryImpl instance) =>
 
 _$OutgoingEntryImpl _$$OutgoingEntryImplFromJson(Map<String, dynamic> json) =>
     _$OutgoingEntryImpl(
+      fee: json['fee'] as int,
+      nonce: json['nonce'] as int,
       transfers: (json['transfers'] as List<dynamic>)
           .map((e) => TransferOutEntry.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -60,6 +62,8 @@ _$OutgoingEntryImpl _$$OutgoingEntryImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$OutgoingEntryImplToJson(_$OutgoingEntryImpl instance) =>
     <String, dynamic>{
+      'fee': instance.fee,
+      'nonce': instance.nonce,
       'transfers': instance.transfers,
       'runtimeType': instance.$type,
     };

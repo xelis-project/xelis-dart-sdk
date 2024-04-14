@@ -46,6 +46,8 @@ mixin _$TransactionEntryType {
             @JsonKey(name: 'transfers') List<TransferInEntry> transfers)
         incoming,
     required TResult Function(
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce,
             @JsonKey(name: 'transfers') List<TransferOutEntry> transfers)
         outgoing,
   }) =>
@@ -60,6 +62,8 @@ mixin _$TransactionEntryType {
             @JsonKey(name: 'transfers') List<TransferInEntry> transfers)?
         incoming,
     TResult? Function(
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce,
             @JsonKey(name: 'transfers') List<TransferOutEntry> transfers)?
         outgoing,
   }) =>
@@ -74,6 +78,8 @@ mixin _$TransactionEntryType {
             @JsonKey(name: 'transfers') List<TransferInEntry> transfers)?
         incoming,
     TResult Function(
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce,
             @JsonKey(name: 'transfers') List<TransferOutEntry> transfers)?
         outgoing,
     required TResult orElse(),
@@ -208,6 +214,8 @@ class _$CoinbaseEntryImpl implements CoinbaseEntry {
             @JsonKey(name: 'transfers') List<TransferInEntry> transfers)
         incoming,
     required TResult Function(
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce,
             @JsonKey(name: 'transfers') List<TransferOutEntry> transfers)
         outgoing,
   }) {
@@ -225,6 +233,8 @@ class _$CoinbaseEntryImpl implements CoinbaseEntry {
             @JsonKey(name: 'transfers') List<TransferInEntry> transfers)?
         incoming,
     TResult? Function(
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce,
             @JsonKey(name: 'transfers') List<TransferOutEntry> transfers)?
         outgoing,
   }) {
@@ -242,6 +252,8 @@ class _$CoinbaseEntryImpl implements CoinbaseEntry {
             @JsonKey(name: 'transfers') List<TransferInEntry> transfers)?
         incoming,
     TResult Function(
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce,
             @JsonKey(name: 'transfers') List<TransferOutEntry> transfers)?
         outgoing,
     required TResult orElse(),
@@ -407,6 +419,8 @@ class _$BurnEntryImpl implements BurnEntry {
             @JsonKey(name: 'transfers') List<TransferInEntry> transfers)
         incoming,
     required TResult Function(
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce,
             @JsonKey(name: 'transfers') List<TransferOutEntry> transfers)
         outgoing,
   }) {
@@ -424,6 +438,8 @@ class _$BurnEntryImpl implements BurnEntry {
             @JsonKey(name: 'transfers') List<TransferInEntry> transfers)?
         incoming,
     TResult? Function(
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce,
             @JsonKey(name: 'transfers') List<TransferOutEntry> transfers)?
         outgoing,
   }) {
@@ -441,6 +457,8 @@ class _$BurnEntryImpl implements BurnEntry {
             @JsonKey(name: 'transfers') List<TransferInEntry> transfers)?
         incoming,
     TResult Function(
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce,
             @JsonKey(name: 'transfers') List<TransferOutEntry> transfers)?
         outgoing,
     required TResult orElse(),
@@ -617,6 +635,8 @@ class _$IncomingEntryImpl implements IncomingEntry {
             @JsonKey(name: 'transfers') List<TransferInEntry> transfers)
         incoming,
     required TResult Function(
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce,
             @JsonKey(name: 'transfers') List<TransferOutEntry> transfers)
         outgoing,
   }) {
@@ -634,6 +654,8 @@ class _$IncomingEntryImpl implements IncomingEntry {
             @JsonKey(name: 'transfers') List<TransferInEntry> transfers)?
         incoming,
     TResult? Function(
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce,
             @JsonKey(name: 'transfers') List<TransferOutEntry> transfers)?
         outgoing,
   }) {
@@ -651,6 +673,8 @@ class _$IncomingEntryImpl implements IncomingEntry {
             @JsonKey(name: 'transfers') List<TransferInEntry> transfers)?
         incoming,
     TResult Function(
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce,
             @JsonKey(name: 'transfers') List<TransferOutEntry> transfers)?
         outgoing,
     required TResult orElse(),
@@ -730,7 +754,10 @@ abstract class _$$OutgoingEntryImplCopyWith<$Res> {
           _$OutgoingEntryImpl value, $Res Function(_$OutgoingEntryImpl) then) =
       __$$OutgoingEntryImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({@JsonKey(name: 'transfers') List<TransferOutEntry> transfers});
+  $Res call(
+      {@JsonKey(name: 'fee') int fee,
+      @JsonKey(name: 'nonce') int nonce,
+      @JsonKey(name: 'transfers') List<TransferOutEntry> transfers});
 }
 
 /// @nodoc
@@ -744,9 +771,19 @@ class __$$OutgoingEntryImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? fee = null,
+    Object? nonce = null,
     Object? transfers = null,
   }) {
     return _then(_$OutgoingEntryImpl(
+      fee: null == fee
+          ? _value.fee
+          : fee // ignore: cast_nullable_to_non_nullable
+              as int,
+      nonce: null == nonce
+          ? _value.nonce
+          : nonce // ignore: cast_nullable_to_non_nullable
+              as int,
       transfers: null == transfers
           ? _value._transfers
           : transfers // ignore: cast_nullable_to_non_nullable
@@ -759,7 +796,9 @@ class __$$OutgoingEntryImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$OutgoingEntryImpl implements OutgoingEntry {
   const _$OutgoingEntryImpl(
-      {@JsonKey(name: 'transfers')
+      {@JsonKey(name: 'fee') required this.fee,
+      @JsonKey(name: 'nonce') required this.nonce,
+      @JsonKey(name: 'transfers')
       required final List<TransferOutEntry> transfers,
       final String? $type})
       : _transfers = transfers,
@@ -768,6 +807,12 @@ class _$OutgoingEntryImpl implements OutgoingEntry {
   factory _$OutgoingEntryImpl.fromJson(Map<String, dynamic> json) =>
       _$$OutgoingEntryImplFromJson(json);
 
+  @override
+  @JsonKey(name: 'fee')
+  final int fee;
+  @override
+  @JsonKey(name: 'nonce')
+  final int nonce;
   final List<TransferOutEntry> _transfers;
   @override
   @JsonKey(name: 'transfers')
@@ -782,7 +827,7 @@ class _$OutgoingEntryImpl implements OutgoingEntry {
 
   @override
   String toString() {
-    return 'TransactionEntryType.outgoing(transfers: $transfers)';
+    return 'TransactionEntryType.outgoing(fee: $fee, nonce: $nonce, transfers: $transfers)';
   }
 
   @override
@@ -790,14 +835,16 @@ class _$OutgoingEntryImpl implements OutgoingEntry {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$OutgoingEntryImpl &&
+            (identical(other.fee, fee) || other.fee == fee) &&
+            (identical(other.nonce, nonce) || other.nonce == nonce) &&
             const DeepCollectionEquality()
                 .equals(other._transfers, _transfers));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_transfers));
+  int get hashCode => Object.hash(
+      runtimeType, fee, nonce, const DeepCollectionEquality().hash(_transfers));
 
   @JsonKey(ignore: true)
   @override
@@ -816,10 +863,12 @@ class _$OutgoingEntryImpl implements OutgoingEntry {
             @JsonKey(name: 'transfers') List<TransferInEntry> transfers)
         incoming,
     required TResult Function(
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce,
             @JsonKey(name: 'transfers') List<TransferOutEntry> transfers)
         outgoing,
   }) {
-    return outgoing(transfers);
+    return outgoing(fee, nonce, transfers);
   }
 
   @override
@@ -833,10 +882,12 @@ class _$OutgoingEntryImpl implements OutgoingEntry {
             @JsonKey(name: 'transfers') List<TransferInEntry> transfers)?
         incoming,
     TResult? Function(
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce,
             @JsonKey(name: 'transfers') List<TransferOutEntry> transfers)?
         outgoing,
   }) {
-    return outgoing?.call(transfers);
+    return outgoing?.call(fee, nonce, transfers);
   }
 
   @override
@@ -850,12 +901,14 @@ class _$OutgoingEntryImpl implements OutgoingEntry {
             @JsonKey(name: 'transfers') List<TransferInEntry> transfers)?
         incoming,
     TResult Function(
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce,
             @JsonKey(name: 'transfers') List<TransferOutEntry> transfers)?
         outgoing,
     required TResult orElse(),
   }) {
     if (outgoing != null) {
-      return outgoing(transfers);
+      return outgoing(fee, nonce, transfers);
     }
     return orElse();
   }
@@ -907,12 +960,18 @@ class _$OutgoingEntryImpl implements OutgoingEntry {
 
 abstract class OutgoingEntry implements TransactionEntryType {
   const factory OutgoingEntry(
-      {@JsonKey(name: 'transfers')
+      {@JsonKey(name: 'fee') required final int fee,
+      @JsonKey(name: 'nonce') required final int nonce,
+      @JsonKey(name: 'transfers')
       required final List<TransferOutEntry> transfers}) = _$OutgoingEntryImpl;
 
   factory OutgoingEntry.fromJson(Map<String, dynamic> json) =
       _$OutgoingEntryImpl.fromJson;
 
+  @JsonKey(name: 'fee')
+  int get fee;
+  @JsonKey(name: 'nonce')
+  int get nonce;
   @JsonKey(name: 'transfers')
   List<TransferOutEntry> get transfers;
   @JsonKey(ignore: true)

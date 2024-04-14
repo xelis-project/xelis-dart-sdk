@@ -29,6 +29,8 @@ sealed class TransactionEntryType with _$TransactionEntryType {
 
   /// @nodoc
   const factory TransactionEntryType.outgoing({
+    @JsonKey(name: 'fee') required int fee,
+    @JsonKey(name: 'nonce') required int nonce,
     @JsonKey(name: 'transfers') required List<TransferOutEntry> transfers,
   }) = OutgoingEntry;
 

@@ -13,8 +13,6 @@ class TransactionEntry with _$TransactionEntry {
     required String hash,
     required int topoHeight,
     required TransactionEntryType txEntryType,
-    int? fee,
-    int? nonce,
   }) = _TransactionEntry;
 
   /// @nodoc
@@ -29,8 +27,6 @@ class TransactionEntry with _$TransactionEntry {
         hash: hash,
         topoHeight: topoHeight,
         txEntryType: CoinbaseEntry.fromJson(coinbase),
-        fee: json['fee'] as int?,
-        nonce: json['nonce'] as int?,
       );
     } else if (json
         case {
@@ -42,8 +38,6 @@ class TransactionEntry with _$TransactionEntry {
         hash: hash,
         topoHeight: topoHeight,
         txEntryType: BurnEntry.fromJson(burn),
-        fee: json['fee'] as int?,
-        nonce: json['nonce'] as int?,
       );
     } else if (json
         case {
@@ -55,8 +49,6 @@ class TransactionEntry with _$TransactionEntry {
         hash: hash,
         topoHeight: topoHeight,
         txEntryType: IncomingEntry.fromJson(incoming),
-        fee: json['fee'] as int?,
-        nonce: json['nonce'] as int?,
       );
     } else if (json
         case {
@@ -68,8 +60,6 @@ class TransactionEntry with _$TransactionEntry {
         hash: hash,
         topoHeight: topoHeight,
         txEntryType: OutgoingEntry.fromJson(outgoing),
-        fee: json['fee'] as int?,
-        nonce: json['nonce'] as int?,
       );
     } else {
       throw Exception('Unknown type for this transaction entry: $json');

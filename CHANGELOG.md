@@ -1,3 +1,13 @@
+## 0.17.0
+
+Daemon API upgrade :
+
+- GetMempoolCache RPC method.
+
+Wallet API:
+
+- Fix outgoing transaction entry.
+
 ## 0.16.2
 
 - fix transfer entry.

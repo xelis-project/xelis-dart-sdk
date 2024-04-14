@@ -19,8 +19,6 @@ mixin _$TransactionEntry {
   String get hash => throw _privateConstructorUsedError;
   int get topoHeight => throw _privateConstructorUsedError;
   TransactionEntryType get txEntryType => throw _privateConstructorUsedError;
-  int? get fee => throw _privateConstructorUsedError;
-  int? get nonce => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $TransactionEntryCopyWith<TransactionEntry> get copyWith =>
@@ -33,12 +31,7 @@ abstract class $TransactionEntryCopyWith<$Res> {
           TransactionEntry value, $Res Function(TransactionEntry) then) =
       _$TransactionEntryCopyWithImpl<$Res, TransactionEntry>;
   @useResult
-  $Res call(
-      {String hash,
-      int topoHeight,
-      TransactionEntryType txEntryType,
-      int? fee,
-      int? nonce});
+  $Res call({String hash, int topoHeight, TransactionEntryType txEntryType});
 
   $TransactionEntryTypeCopyWith<$Res> get txEntryType;
 }
@@ -59,8 +52,6 @@ class _$TransactionEntryCopyWithImpl<$Res, $Val extends TransactionEntry>
     Object? hash = null,
     Object? topoHeight = null,
     Object? txEntryType = null,
-    Object? fee = freezed,
-    Object? nonce = freezed,
   }) {
     return _then(_value.copyWith(
       hash: null == hash
@@ -75,14 +66,6 @@ class _$TransactionEntryCopyWithImpl<$Res, $Val extends TransactionEntry>
           ? _value.txEntryType
           : txEntryType // ignore: cast_nullable_to_non_nullable
               as TransactionEntryType,
-      fee: freezed == fee
-          ? _value.fee
-          : fee // ignore: cast_nullable_to_non_nullable
-              as int?,
-      nonce: freezed == nonce
-          ? _value.nonce
-          : nonce // ignore: cast_nullable_to_non_nullable
-              as int?,
     ) as $Val);
   }
 
@@ -103,12 +86,7 @@ abstract class _$$TransactionEntryImplCopyWith<$Res>
       __$$TransactionEntryImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String hash,
-      int topoHeight,
-      TransactionEntryType txEntryType,
-      int? fee,
-      int? nonce});
+  $Res call({String hash, int topoHeight, TransactionEntryType txEntryType});
 
   @override
   $TransactionEntryTypeCopyWith<$Res> get txEntryType;
@@ -128,8 +106,6 @@ class __$$TransactionEntryImplCopyWithImpl<$Res>
     Object? hash = null,
     Object? topoHeight = null,
     Object? txEntryType = null,
-    Object? fee = freezed,
-    Object? nonce = freezed,
   }) {
     return _then(_$TransactionEntryImpl(
       hash: null == hash
@@ -144,14 +120,6 @@ class __$$TransactionEntryImplCopyWithImpl<$Res>
           ? _value.txEntryType
           : txEntryType // ignore: cast_nullable_to_non_nullable
               as TransactionEntryType,
-      fee: freezed == fee
-          ? _value.fee
-          : fee // ignore: cast_nullable_to_non_nullable
-              as int?,
-      nonce: freezed == nonce
-          ? _value.nonce
-          : nonce // ignore: cast_nullable_to_non_nullable
-              as int?,
     ));
   }
 }
@@ -162,9 +130,7 @@ class _$TransactionEntryImpl implements _TransactionEntry {
   const _$TransactionEntryImpl(
       {required this.hash,
       required this.topoHeight,
-      required this.txEntryType,
-      this.fee,
-      this.nonce});
+      required this.txEntryType});
 
   @override
   final String hash;
@@ -172,14 +138,10 @@ class _$TransactionEntryImpl implements _TransactionEntry {
   final int topoHeight;
   @override
   final TransactionEntryType txEntryType;
-  @override
-  final int? fee;
-  @override
-  final int? nonce;
 
   @override
   String toString() {
-    return 'TransactionEntry(hash: $hash, topoHeight: $topoHeight, txEntryType: $txEntryType, fee: $fee, nonce: $nonce)';
+    return 'TransactionEntry(hash: $hash, topoHeight: $topoHeight, txEntryType: $txEntryType)';
   }
 
   @override
@@ -191,14 +153,11 @@ class _$TransactionEntryImpl implements _TransactionEntry {
             (identical(other.topoHeight, topoHeight) ||
                 other.topoHeight == topoHeight) &&
             (identical(other.txEntryType, txEntryType) ||
-                other.txEntryType == txEntryType) &&
-            (identical(other.fee, fee) || other.fee == fee) &&
-            (identical(other.nonce, nonce) || other.nonce == nonce));
+                other.txEntryType == txEntryType));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, hash, topoHeight, txEntryType, fee, nonce);
+  int get hashCode => Object.hash(runtimeType, hash, topoHeight, txEntryType);
 
   @JsonKey(ignore: true)
   @override
@@ -210,11 +169,10 @@ class _$TransactionEntryImpl implements _TransactionEntry {
 
 abstract class _TransactionEntry implements TransactionEntry {
   const factory _TransactionEntry(
-      {required final String hash,
-      required final int topoHeight,
-      required final TransactionEntryType txEntryType,
-      final int? fee,
-      final int? nonce}) = _$TransactionEntryImpl;
+          {required final String hash,
+          required final int topoHeight,
+          required final TransactionEntryType txEntryType}) =
+      _$TransactionEntryImpl;
 
   @override
   String get hash;
@@ -222,10 +180,6 @@ abstract class _TransactionEntry implements TransactionEntry {
   int get topoHeight;
   @override
   TransactionEntryType get txEntryType;
-  @override
-  int? get fee;
-  @override
-  int? get nonce;
   @override
   @JsonKey(ignore: true)
   _$$TransactionEntryImplCopyWith<_$TransactionEntryImpl> get copyWith =>
