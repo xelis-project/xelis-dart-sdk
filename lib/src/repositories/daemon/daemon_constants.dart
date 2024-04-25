@@ -110,6 +110,17 @@ enum DaemonMethod implements XelisJsonKey {
   /// Retrieve all assets for an account
   getAccountAssets('get_account_assets'),
 
+  /// Verify if the account on chain is registered.
+  /// This is useful to determine if we should pay additionnal fee or not.
+  ///
+  /// For transactions, it is recommended to verify that the account is already registered in stable height.
+  isAccountRegistered('is_account_registered'),
+
+  /// Retrieve the account registration topoheight.
+  ///
+  /// This is like its "first time" doing an action on the chain.
+  getAccountRegistrationTopoheight('get_account_registration_topoheight'),
+
   /// Verify if address has a nonce on-chain registered
   hasNonce('has_nonce'),
 

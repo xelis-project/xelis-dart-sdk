@@ -19,6 +19,9 @@ class TransactionResponse with _$TransactionResponse {
     required bool inMempool,
     required int nonce,
     required String source,
+    required List<int> rangeProof,
+    required List<Map<String, dynamic>> sourceCommitments,
+    required Map<String, dynamic> reference,
     required String signature,
   }) = _TransactionResponse;
 
@@ -34,6 +37,10 @@ class TransactionResponse with _$TransactionResponse {
           'in_mempool': final bool inMempool,
           'nonce': final int nonce,
           'source': final String source,
+          'range_proof': final List<int> rangeProof,
+          'source_commitments': final List<Map<String, dynamic>>
+              sourceCommitments,
+          'reference': final Map<String, dynamic> reference,
           'signature': final String signature,
         }) {
       return TransactionResponse(
@@ -46,6 +53,9 @@ class TransactionResponse with _$TransactionResponse {
         inMempool: inMempool,
         nonce: nonce,
         source: source,
+        rangeProof: rangeProof,
+        sourceCommitments: sourceCommitments,
+        reference: reference,
         signature: signature,
       );
     } else if (json
@@ -58,6 +68,10 @@ class TransactionResponse with _$TransactionResponse {
           'in_mempool': final bool inMempool,
           'nonce': final int nonce,
           'source': final String source,
+          'range_proof': final List<int> rangeProof,
+          'source_commitments': final List<Map<String, dynamic>>
+              sourceCommitments,
+          'reference': final Map<String, dynamic> reference,
           'signature': final String signature,
         }) {
       return TransactionResponse(
@@ -70,9 +84,12 @@ class TransactionResponse with _$TransactionResponse {
         inMempool: inMempool,
         nonce: nonce,
         source: source,
+        rangeProof: rangeProof,
+        sourceCommitments: sourceCommitments,
+        reference: reference,
         signature: signature,
       );
-    } else if (json
+    } /*else if (json
         case {
           'blocks': final List<dynamic>? blocks,
           'hash': final String hash,
@@ -82,6 +99,10 @@ class TransactionResponse with _$TransactionResponse {
           'in_mempool': final bool inMempool,
           'nonce': final int nonce,
           'source': final String source,
+          'range_proof': final List<int> rangeProof,
+          'source_commitments': final List<Map<String, dynamic>>
+              sourceCommitments,
+          'reference': final Map<String, dynamic> reference,
           'signature': final String signature,
         }) {
       return TransactionResponse(
@@ -94,6 +115,9 @@ class TransactionResponse with _$TransactionResponse {
         inMempool: inMempool,
         nonce: nonce,
         source: source,
+        rangeProof: rangeProof,
+        sourceCommitments: sourceCommitments,
+        reference: reference,
         signature: signature,
       );
     } else if (json
@@ -108,6 +132,10 @@ class TransactionResponse with _$TransactionResponse {
           'in_mempool': final bool inMempool,
           'nonce': final int nonce,
           'source': final String source,
+          'range_proof': final List<int> rangeProof,
+          'source_commitments': final List<Map<String, dynamic>>
+              sourceCommitments,
+          'reference': final Map<String, dynamic> reference,
           'signature': final String signature,
         }) {
       return TransactionResponse(
@@ -120,9 +148,13 @@ class TransactionResponse with _$TransactionResponse {
         inMempool: inMempool,
         nonce: nonce,
         source: source,
+        rangeProof: rangeProof,
+        sourceCommitments: sourceCommitments,
+        reference: reference,
         signature: signature,
       );
-    } else {
+    }*/
+    else {
       throw Exception('Unknown type for this transaction : $json');
     }
   }

@@ -20,12 +20,16 @@ Transfer _$TransferFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Transfer {
-  @JsonKey(name: 'amount')
-  int get amount => throw _privateConstructorUsedError;
   @JsonKey(name: 'asset')
   String get asset => throw _privateConstructorUsedError;
-  @JsonKey(name: 'to')
-  String get to => throw _privateConstructorUsedError;
+  @JsonKey(name: 'commitment')
+  List<int> get commitment => throw _privateConstructorUsedError;
+  @JsonKey(name: 'ct_validity_proof')
+  Map<String, dynamic> get validityProof => throw _privateConstructorUsedError;
+  @JsonKey(name: 'destination')
+  String get destination => throw _privateConstructorUsedError;
+  @JsonKey(name: 'receiver_handle')
+  List<int> get receiverHandle => throw _privateConstructorUsedError;
   @JsonKey(name: 'extra_data')
   dynamic get extraData => throw _privateConstructorUsedError;
 
@@ -41,9 +45,11 @@ abstract class $TransferCopyWith<$Res> {
       _$TransferCopyWithImpl<$Res, Transfer>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'amount') int amount,
-      @JsonKey(name: 'asset') String asset,
-      @JsonKey(name: 'to') String to,
+      {@JsonKey(name: 'asset') String asset,
+      @JsonKey(name: 'commitment') List<int> commitment,
+      @JsonKey(name: 'ct_validity_proof') Map<String, dynamic> validityProof,
+      @JsonKey(name: 'destination') String destination,
+      @JsonKey(name: 'receiver_handle') List<int> receiverHandle,
       @JsonKey(name: 'extra_data') dynamic extraData});
 }
 
@@ -60,24 +66,34 @@ class _$TransferCopyWithImpl<$Res, $Val extends Transfer>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? amount = null,
     Object? asset = null,
-    Object? to = null,
+    Object? commitment = null,
+    Object? validityProof = null,
+    Object? destination = null,
+    Object? receiverHandle = null,
     Object? extraData = freezed,
   }) {
     return _then(_value.copyWith(
-      amount: null == amount
-          ? _value.amount
-          : amount // ignore: cast_nullable_to_non_nullable
-              as int,
       asset: null == asset
           ? _value.asset
           : asset // ignore: cast_nullable_to_non_nullable
               as String,
-      to: null == to
-          ? _value.to
-          : to // ignore: cast_nullable_to_non_nullable
+      commitment: null == commitment
+          ? _value.commitment
+          : commitment // ignore: cast_nullable_to_non_nullable
+              as List<int>,
+      validityProof: null == validityProof
+          ? _value.validityProof
+          : validityProof // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>,
+      destination: null == destination
+          ? _value.destination
+          : destination // ignore: cast_nullable_to_non_nullable
               as String,
+      receiverHandle: null == receiverHandle
+          ? _value.receiverHandle
+          : receiverHandle // ignore: cast_nullable_to_non_nullable
+              as List<int>,
       extraData: freezed == extraData
           ? _value.extraData
           : extraData // ignore: cast_nullable_to_non_nullable
@@ -95,9 +111,11 @@ abstract class _$$TransferImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'amount') int amount,
-      @JsonKey(name: 'asset') String asset,
-      @JsonKey(name: 'to') String to,
+      {@JsonKey(name: 'asset') String asset,
+      @JsonKey(name: 'commitment') List<int> commitment,
+      @JsonKey(name: 'ct_validity_proof') Map<String, dynamic> validityProof,
+      @JsonKey(name: 'destination') String destination,
+      @JsonKey(name: 'receiver_handle') List<int> receiverHandle,
       @JsonKey(name: 'extra_data') dynamic extraData});
 }
 
@@ -112,24 +130,34 @@ class __$$TransferImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? amount = null,
     Object? asset = null,
-    Object? to = null,
+    Object? commitment = null,
+    Object? validityProof = null,
+    Object? destination = null,
+    Object? receiverHandle = null,
     Object? extraData = freezed,
   }) {
     return _then(_$TransferImpl(
-      amount: null == amount
-          ? _value.amount
-          : amount // ignore: cast_nullable_to_non_nullable
-              as int,
       asset: null == asset
           ? _value.asset
           : asset // ignore: cast_nullable_to_non_nullable
               as String,
-      to: null == to
-          ? _value.to
-          : to // ignore: cast_nullable_to_non_nullable
+      commitment: null == commitment
+          ? _value._commitment
+          : commitment // ignore: cast_nullable_to_non_nullable
+              as List<int>,
+      validityProof: null == validityProof
+          ? _value._validityProof
+          : validityProof // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>,
+      destination: null == destination
+          ? _value.destination
+          : destination // ignore: cast_nullable_to_non_nullable
               as String,
+      receiverHandle: null == receiverHandle
+          ? _value._receiverHandle
+          : receiverHandle // ignore: cast_nullable_to_non_nullable
+              as List<int>,
       extraData: freezed == extraData
           ? _value.extraData
           : extraData // ignore: cast_nullable_to_non_nullable
@@ -142,30 +170,60 @@ class __$$TransferImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$TransferImpl implements _Transfer {
   const _$TransferImpl(
-      {@JsonKey(name: 'amount') required this.amount,
-      @JsonKey(name: 'asset') required this.asset,
-      @JsonKey(name: 'to') required this.to,
-      @JsonKey(name: 'extra_data') this.extraData});
+      {@JsonKey(name: 'asset') required this.asset,
+      @JsonKey(name: 'commitment') required final List<int> commitment,
+      @JsonKey(name: 'ct_validity_proof')
+      required final Map<String, dynamic> validityProof,
+      @JsonKey(name: 'destination') required this.destination,
+      @JsonKey(name: 'receiver_handle') required final List<int> receiverHandle,
+      @JsonKey(name: 'extra_data') this.extraData})
+      : _commitment = commitment,
+        _validityProof = validityProof,
+        _receiverHandle = receiverHandle;
 
   factory _$TransferImpl.fromJson(Map<String, dynamic> json) =>
       _$$TransferImplFromJson(json);
 
   @override
-  @JsonKey(name: 'amount')
-  final int amount;
-  @override
   @JsonKey(name: 'asset')
   final String asset;
+  final List<int> _commitment;
   @override
-  @JsonKey(name: 'to')
-  final String to;
+  @JsonKey(name: 'commitment')
+  List<int> get commitment {
+    if (_commitment is EqualUnmodifiableListView) return _commitment;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_commitment);
+  }
+
+  final Map<String, dynamic> _validityProof;
+  @override
+  @JsonKey(name: 'ct_validity_proof')
+  Map<String, dynamic> get validityProof {
+    if (_validityProof is EqualUnmodifiableMapView) return _validityProof;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_validityProof);
+  }
+
+  @override
+  @JsonKey(name: 'destination')
+  final String destination;
+  final List<int> _receiverHandle;
+  @override
+  @JsonKey(name: 'receiver_handle')
+  List<int> get receiverHandle {
+    if (_receiverHandle is EqualUnmodifiableListView) return _receiverHandle;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_receiverHandle);
+  }
+
   @override
   @JsonKey(name: 'extra_data')
   final dynamic extraData;
 
   @override
   String toString() {
-    return 'Transfer(amount: $amount, asset: $asset, to: $to, extraData: $extraData)';
+    return 'Transfer(asset: $asset, commitment: $commitment, validityProof: $validityProof, destination: $destination, receiverHandle: $receiverHandle, extraData: $extraData)';
   }
 
   @override
@@ -173,15 +231,27 @@ class _$TransferImpl implements _Transfer {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TransferImpl &&
-            (identical(other.amount, amount) || other.amount == amount) &&
             (identical(other.asset, asset) || other.asset == asset) &&
-            (identical(other.to, to) || other.to == to) &&
+            const DeepCollectionEquality()
+                .equals(other._commitment, _commitment) &&
+            const DeepCollectionEquality()
+                .equals(other._validityProof, _validityProof) &&
+            (identical(other.destination, destination) ||
+                other.destination == destination) &&
+            const DeepCollectionEquality()
+                .equals(other._receiverHandle, _receiverHandle) &&
             const DeepCollectionEquality().equals(other.extraData, extraData));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, amount, asset, to,
+  int get hashCode => Object.hash(
+      runtimeType,
+      asset,
+      const DeepCollectionEquality().hash(_commitment),
+      const DeepCollectionEquality().hash(_validityProof),
+      destination,
+      const DeepCollectionEquality().hash(_receiverHandle),
       const DeepCollectionEquality().hash(extraData));
 
   @JsonKey(ignore: true)
@@ -200,23 +270,32 @@ class _$TransferImpl implements _Transfer {
 
 abstract class _Transfer implements Transfer {
   const factory _Transfer(
-      {@JsonKey(name: 'amount') required final int amount,
-      @JsonKey(name: 'asset') required final String asset,
-      @JsonKey(name: 'to') required final String to,
+      {@JsonKey(name: 'asset') required final String asset,
+      @JsonKey(name: 'commitment') required final List<int> commitment,
+      @JsonKey(name: 'ct_validity_proof')
+      required final Map<String, dynamic> validityProof,
+      @JsonKey(name: 'destination') required final String destination,
+      @JsonKey(name: 'receiver_handle') required final List<int> receiverHandle,
       @JsonKey(name: 'extra_data') final dynamic extraData}) = _$TransferImpl;
 
   factory _Transfer.fromJson(Map<String, dynamic> json) =
       _$TransferImpl.fromJson;
 
   @override
-  @JsonKey(name: 'amount')
-  int get amount;
-  @override
   @JsonKey(name: 'asset')
   String get asset;
   @override
-  @JsonKey(name: 'to')
-  String get to;
+  @JsonKey(name: 'commitment')
+  List<int> get commitment;
+  @override
+  @JsonKey(name: 'ct_validity_proof')
+  Map<String, dynamic> get validityProof;
+  @override
+  @JsonKey(name: 'destination')
+  String get destination;
+  @override
+  @JsonKey(name: 'receiver_handle')
+  List<int> get receiverHandle;
   @override
   @JsonKey(name: 'extra_data')
   dynamic get extraData;

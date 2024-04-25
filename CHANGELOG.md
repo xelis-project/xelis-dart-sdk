@@ -1,3 +1,18 @@
+## 0.18.0
+
+Daemon API upgrade :
+
+- new getMempoolCache RPC method.
+- new isAccountRegistered RPC method.
+- new getAccountRegistrationTopoheight RPC method.
+- fix some dtos.
+
+Wallet API upgrade :
+
+- new hasBalance RPC method.
+- new estimateFees RPC method.
+- fix some dtos.
+
 ## 0.17.0
 
 Daemon API upgrade :

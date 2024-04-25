@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'asset.dart';
+part of 'asset_data.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,14 +14,12 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-Asset _$AssetFromJson(Map<String, dynamic> json) {
-  return _Asset.fromJson(json);
+AssetData _$AssetDataFromJson(Map<String, dynamic> json) {
+  return _AssetData.fromJson(json);
 }
 
 /// @nodoc
-mixin _$Asset {
-  @JsonKey(name: 'asset')
-  String get asset => throw _privateConstructorUsedError;
+mixin _$AssetData {
   @JsonKey(name: 'topoheight')
   int get topoheight => throw _privateConstructorUsedError;
   @JsonKey(name: 'decimals')
@@ -29,24 +27,24 @@ mixin _$Asset {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $AssetCopyWith<Asset> get copyWith => throw _privateConstructorUsedError;
+  $AssetDataCopyWith<AssetData> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $AssetCopyWith<$Res> {
-  factory $AssetCopyWith(Asset value, $Res Function(Asset) then) =
-      _$AssetCopyWithImpl<$Res, Asset>;
+abstract class $AssetDataCopyWith<$Res> {
+  factory $AssetDataCopyWith(AssetData value, $Res Function(AssetData) then) =
+      _$AssetDataCopyWithImpl<$Res, AssetData>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'asset') String asset,
-      @JsonKey(name: 'topoheight') int topoheight,
+      {@JsonKey(name: 'topoheight') int topoheight,
       @JsonKey(name: 'decimals') int decimals});
 }
 
 /// @nodoc
-class _$AssetCopyWithImpl<$Res, $Val extends Asset>
-    implements $AssetCopyWith<$Res> {
-  _$AssetCopyWithImpl(this._value, this._then);
+class _$AssetDataCopyWithImpl<$Res, $Val extends AssetData>
+    implements $AssetDataCopyWith<$Res> {
+  _$AssetDataCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -56,15 +54,10 @@ class _$AssetCopyWithImpl<$Res, $Val extends Asset>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? asset = null,
     Object? topoheight = null,
     Object? decimals = null,
   }) {
     return _then(_value.copyWith(
-      asset: null == asset
-          ? _value.asset
-          : asset // ignore: cast_nullable_to_non_nullable
-              as String,
       topoheight: null == topoheight
           ? _value.topoheight
           : topoheight // ignore: cast_nullable_to_non_nullable
@@ -78,38 +71,33 @@ class _$AssetCopyWithImpl<$Res, $Val extends Asset>
 }
 
 /// @nodoc
-abstract class _$$AssetImplCopyWith<$Res> implements $AssetCopyWith<$Res> {
-  factory _$$AssetImplCopyWith(
-          _$AssetImpl value, $Res Function(_$AssetImpl) then) =
-      __$$AssetImplCopyWithImpl<$Res>;
+abstract class _$$AssetDataImplCopyWith<$Res>
+    implements $AssetDataCopyWith<$Res> {
+  factory _$$AssetDataImplCopyWith(
+          _$AssetDataImpl value, $Res Function(_$AssetDataImpl) then) =
+      __$$AssetDataImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'asset') String asset,
-      @JsonKey(name: 'topoheight') int topoheight,
+      {@JsonKey(name: 'topoheight') int topoheight,
       @JsonKey(name: 'decimals') int decimals});
 }
 
 /// @nodoc
-class __$$AssetImplCopyWithImpl<$Res>
-    extends _$AssetCopyWithImpl<$Res, _$AssetImpl>
-    implements _$$AssetImplCopyWith<$Res> {
-  __$$AssetImplCopyWithImpl(
-      _$AssetImpl _value, $Res Function(_$AssetImpl) _then)
+class __$$AssetDataImplCopyWithImpl<$Res>
+    extends _$AssetDataCopyWithImpl<$Res, _$AssetDataImpl>
+    implements _$$AssetDataImplCopyWith<$Res> {
+  __$$AssetDataImplCopyWithImpl(
+      _$AssetDataImpl _value, $Res Function(_$AssetDataImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? asset = null,
     Object? topoheight = null,
     Object? decimals = null,
   }) {
-    return _then(_$AssetImpl(
-      asset: null == asset
-          ? _value.asset
-          : asset // ignore: cast_nullable_to_non_nullable
-              as String,
+    return _then(_$AssetDataImpl(
       topoheight: null == topoheight
           ? _value.topoheight
           : topoheight // ignore: cast_nullable_to_non_nullable
@@ -124,18 +112,14 @@ class __$$AssetImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$AssetImpl implements _Asset {
-  const _$AssetImpl(
-      {@JsonKey(name: 'asset') required this.asset,
-      @JsonKey(name: 'topoheight') required this.topoheight,
+class _$AssetDataImpl implements _AssetData {
+  const _$AssetDataImpl(
+      {@JsonKey(name: 'topoheight') required this.topoheight,
       @JsonKey(name: 'decimals') required this.decimals});
 
-  factory _$AssetImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AssetImplFromJson(json);
+  factory _$AssetDataImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AssetDataImplFromJson(json);
 
-  @override
-  @JsonKey(name: 'asset')
-  final String asset;
   @override
   @JsonKey(name: 'topoheight')
   final int topoheight;
@@ -145,15 +129,14 @@ class _$AssetImpl implements _Asset {
 
   @override
   String toString() {
-    return 'Asset(asset: $asset, topoheight: $topoheight, decimals: $decimals)';
+    return 'AssetData(topoheight: $topoheight, decimals: $decimals)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AssetImpl &&
-            (identical(other.asset, asset) || other.asset == asset) &&
+            other is _$AssetDataImpl &&
             (identical(other.topoheight, topoheight) ||
                 other.topoheight == topoheight) &&
             (identical(other.decimals, decimals) ||
@@ -162,33 +145,31 @@ class _$AssetImpl implements _Asset {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, asset, topoheight, decimals);
+  int get hashCode => Object.hash(runtimeType, topoheight, decimals);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$AssetImplCopyWith<_$AssetImpl> get copyWith =>
-      __$$AssetImplCopyWithImpl<_$AssetImpl>(this, _$identity);
+  _$$AssetDataImplCopyWith<_$AssetDataImpl> get copyWith =>
+      __$$AssetDataImplCopyWithImpl<_$AssetDataImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$AssetImplToJson(
+    return _$$AssetDataImplToJson(
       this,
     );
   }
 }
 
-abstract class _Asset implements Asset {
-  const factory _Asset(
-      {@JsonKey(name: 'asset') required final String asset,
-      @JsonKey(name: 'topoheight') required final int topoheight,
-      @JsonKey(name: 'decimals') required final int decimals}) = _$AssetImpl;
+abstract class _AssetData implements AssetData {
+  const factory _AssetData(
+          {@JsonKey(name: 'topoheight') required final int topoheight,
+          @JsonKey(name: 'decimals') required final int decimals}) =
+      _$AssetDataImpl;
 
-  factory _Asset.fromJson(Map<String, dynamic> json) = _$AssetImpl.fromJson;
+  factory _AssetData.fromJson(Map<String, dynamic> json) =
+      _$AssetDataImpl.fromJson;
 
-  @override
-  @JsonKey(name: 'asset')
-  String get asset;
   @override
   @JsonKey(name: 'topoheight')
   int get topoheight;
@@ -197,6 +178,6 @@ abstract class _Asset implements Asset {
   int get decimals;
   @override
   @JsonKey(ignore: true)
-  _$$AssetImplCopyWith<_$AssetImpl> get copyWith =>
+  _$$AssetDataImplCopyWith<_$AssetDataImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

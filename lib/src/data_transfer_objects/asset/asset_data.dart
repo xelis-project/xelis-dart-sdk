@@ -2,20 +2,20 @@
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'asset.freezed.dart';
+part 'asset_data.freezed.dart';
 
-part 'asset.g.dart';
+part 'asset_data.g.dart';
 
 /// @nodoc
 @freezed
-class Asset with _$Asset {
+class AssetData with _$AssetData {
   /// @nodoc
-  const factory Asset({
-    @JsonKey(name: 'asset') required String asset,
+  const factory AssetData({
     @JsonKey(name: 'topoheight') required int topoheight,
     @JsonKey(name: 'decimals') required int decimals,
-  }) = _Asset;
+  }) = _AssetData;
 
   /// @nodoc
-  factory Asset.fromJson(Map<String, dynamic> json) => _$AssetFromJson(json);
+  factory AssetData.fromJson(Map<String, dynamic> json) =>
+      _$AssetDataFromJson(json);
 }

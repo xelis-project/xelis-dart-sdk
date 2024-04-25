@@ -20,8 +20,8 @@ RescanParams _$RescanParamsFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$RescanParams {
-  @JsonKey(name: 'topoheight')
-  int get topoHeight => throw _privateConstructorUsedError;
+  @JsonKey(name: 'until_topoheight')
+  int get untilTopoheight => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +35,7 @@ abstract class $RescanParamsCopyWith<$Res> {
           RescanParams value, $Res Function(RescanParams) then) =
       _$RescanParamsCopyWithImpl<$Res, RescanParams>;
   @useResult
-  $Res call({@JsonKey(name: 'topoheight') int topoHeight});
+  $Res call({@JsonKey(name: 'until_topoheight') int untilTopoheight});
 }
 
 /// @nodoc
@@ -51,12 +51,12 @@ class _$RescanParamsCopyWithImpl<$Res, $Val extends RescanParams>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? topoHeight = null,
+    Object? untilTopoheight = null,
   }) {
     return _then(_value.copyWith(
-      topoHeight: null == topoHeight
-          ? _value.topoHeight
-          : topoHeight // ignore: cast_nullable_to_non_nullable
+      untilTopoheight: null == untilTopoheight
+          ? _value.untilTopoheight
+          : untilTopoheight // ignore: cast_nullable_to_non_nullable
               as int,
     ) as $Val);
   }
@@ -70,7 +70,7 @@ abstract class _$$RescanParamsImplCopyWith<$Res>
       __$$RescanParamsImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({@JsonKey(name: 'topoheight') int topoHeight});
+  $Res call({@JsonKey(name: 'until_topoheight') int untilTopoheight});
 }
 
 /// @nodoc
@@ -84,12 +84,12 @@ class __$$RescanParamsImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? topoHeight = null,
+    Object? untilTopoheight = null,
   }) {
     return _then(_$RescanParamsImpl(
-      topoHeight: null == topoHeight
-          ? _value.topoHeight
-          : topoHeight // ignore: cast_nullable_to_non_nullable
+      untilTopoheight: null == untilTopoheight
+          ? _value.untilTopoheight
+          : untilTopoheight // ignore: cast_nullable_to_non_nullable
               as int,
     ));
   }
@@ -99,18 +99,18 @@ class __$$RescanParamsImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$RescanParamsImpl implements _RescanParams {
   const _$RescanParamsImpl(
-      {@JsonKey(name: 'topoheight') required this.topoHeight});
+      {@JsonKey(name: 'until_topoheight') required this.untilTopoheight});
 
   factory _$RescanParamsImpl.fromJson(Map<String, dynamic> json) =>
       _$$RescanParamsImplFromJson(json);
 
   @override
-  @JsonKey(name: 'topoheight')
-  final int topoHeight;
+  @JsonKey(name: 'until_topoheight')
+  final int untilTopoheight;
 
   @override
   String toString() {
-    return 'RescanParams(topoHeight: $topoHeight)';
+    return 'RescanParams(untilTopoheight: $untilTopoheight)';
   }
 
   @override
@@ -118,13 +118,13 @@ class _$RescanParamsImpl implements _RescanParams {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$RescanParamsImpl &&
-            (identical(other.topoHeight, topoHeight) ||
-                other.topoHeight == topoHeight));
+            (identical(other.untilTopoheight, untilTopoheight) ||
+                other.untilTopoheight == untilTopoheight));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, topoHeight);
+  int get hashCode => Object.hash(runtimeType, untilTopoheight);
 
   @JsonKey(ignore: true)
   @override
@@ -142,15 +142,15 @@ class _$RescanParamsImpl implements _RescanParams {
 
 abstract class _RescanParams implements RescanParams {
   const factory _RescanParams(
-          {@JsonKey(name: 'topoheight') required final int topoHeight}) =
-      _$RescanParamsImpl;
+      {@JsonKey(name: 'until_topoheight')
+      required final int untilTopoheight}) = _$RescanParamsImpl;
 
   factory _RescanParams.fromJson(Map<String, dynamic> json) =
       _$RescanParamsImpl.fromJson;
 
   @override
-  @JsonKey(name: 'topoheight')
-  int get topoHeight;
+  @JsonKey(name: 'until_topoheight')
+  int get untilTopoheight;
   @override
   @JsonKey(ignore: true)
   _$$RescanParamsImplCopyWith<_$RescanParamsImpl> get copyWith =>

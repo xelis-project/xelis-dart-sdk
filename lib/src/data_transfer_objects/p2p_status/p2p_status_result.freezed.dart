@@ -22,6 +22,8 @@ P2pStatusResult _$P2pStatusResultFromJson(Map<String, dynamic> json) {
 mixin _$P2pStatusResult {
   @JsonKey(name: 'best_topoheight')
   int get bestTopoHeight => throw _privateConstructorUsedError;
+  @JsonKey(name: 'median_topoheight')
+  int get medianTopoHeight => throw _privateConstructorUsedError;
   @JsonKey(name: 'max_peers')
   int get maxPeers => throw _privateConstructorUsedError;
   @JsonKey(name: 'our_topoheight')
@@ -47,6 +49,7 @@ abstract class $P2pStatusResultCopyWith<$Res> {
   @useResult
   $Res call(
       {@JsonKey(name: 'best_topoheight') int bestTopoHeight,
+      @JsonKey(name: 'median_topoheight') int medianTopoHeight,
       @JsonKey(name: 'max_peers') int maxPeers,
       @JsonKey(name: 'our_topoheight') int ourTopoHeight,
       @JsonKey(name: 'peer_count') int peerCount,
@@ -68,6 +71,7 @@ class _$P2pStatusResultCopyWithImpl<$Res, $Val extends P2pStatusResult>
   @override
   $Res call({
     Object? bestTopoHeight = null,
+    Object? medianTopoHeight = null,
     Object? maxPeers = null,
     Object? ourTopoHeight = null,
     Object? peerCount = null,
@@ -78,6 +82,10 @@ class _$P2pStatusResultCopyWithImpl<$Res, $Val extends P2pStatusResult>
       bestTopoHeight: null == bestTopoHeight
           ? _value.bestTopoHeight
           : bestTopoHeight // ignore: cast_nullable_to_non_nullable
+              as int,
+      medianTopoHeight: null == medianTopoHeight
+          ? _value.medianTopoHeight
+          : medianTopoHeight // ignore: cast_nullable_to_non_nullable
               as int,
       maxPeers: null == maxPeers
           ? _value.maxPeers
@@ -113,6 +121,7 @@ abstract class _$$P2pStatusResultImplCopyWith<$Res>
   @useResult
   $Res call(
       {@JsonKey(name: 'best_topoheight') int bestTopoHeight,
+      @JsonKey(name: 'median_topoheight') int medianTopoHeight,
       @JsonKey(name: 'max_peers') int maxPeers,
       @JsonKey(name: 'our_topoheight') int ourTopoHeight,
       @JsonKey(name: 'peer_count') int peerCount,
@@ -132,6 +141,7 @@ class __$$P2pStatusResultImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? bestTopoHeight = null,
+    Object? medianTopoHeight = null,
     Object? maxPeers = null,
     Object? ourTopoHeight = null,
     Object? peerCount = null,
@@ -142,6 +152,10 @@ class __$$P2pStatusResultImplCopyWithImpl<$Res>
       bestTopoHeight: null == bestTopoHeight
           ? _value.bestTopoHeight
           : bestTopoHeight // ignore: cast_nullable_to_non_nullable
+              as int,
+      medianTopoHeight: null == medianTopoHeight
+          ? _value.medianTopoHeight
+          : medianTopoHeight // ignore: cast_nullable_to_non_nullable
               as int,
       maxPeers: null == maxPeers
           ? _value.maxPeers
@@ -172,6 +186,7 @@ class __$$P2pStatusResultImplCopyWithImpl<$Res>
 class _$P2pStatusResultImpl implements _P2pStatusResult {
   const _$P2pStatusResultImpl(
       {@JsonKey(name: 'best_topoheight') required this.bestTopoHeight,
+      @JsonKey(name: 'median_topoheight') required this.medianTopoHeight,
       @JsonKey(name: 'max_peers') required this.maxPeers,
       @JsonKey(name: 'our_topoheight') required this.ourTopoHeight,
       @JsonKey(name: 'peer_count') required this.peerCount,
@@ -184,6 +199,9 @@ class _$P2pStatusResultImpl implements _P2pStatusResult {
   @override
   @JsonKey(name: 'best_topoheight')
   final int bestTopoHeight;
+  @override
+  @JsonKey(name: 'median_topoheight')
+  final int medianTopoHeight;
   @override
   @JsonKey(name: 'max_peers')
   final int maxPeers;
@@ -202,7 +220,7 @@ class _$P2pStatusResultImpl implements _P2pStatusResult {
 
   @override
   String toString() {
-    return 'P2pStatusResult(bestTopoHeight: $bestTopoHeight, maxPeers: $maxPeers, ourTopoHeight: $ourTopoHeight, peerCount: $peerCount, peerId: $peerId, tag: $tag)';
+    return 'P2pStatusResult(bestTopoHeight: $bestTopoHeight, medianTopoHeight: $medianTopoHeight, maxPeers: $maxPeers, ourTopoHeight: $ourTopoHeight, peerCount: $peerCount, peerId: $peerId, tag: $tag)';
   }
 
   @override
@@ -212,6 +230,8 @@ class _$P2pStatusResultImpl implements _P2pStatusResult {
             other is _$P2pStatusResultImpl &&
             (identical(other.bestTopoHeight, bestTopoHeight) ||
                 other.bestTopoHeight == bestTopoHeight) &&
+            (identical(other.medianTopoHeight, medianTopoHeight) ||
+                other.medianTopoHeight == medianTopoHeight) &&
             (identical(other.maxPeers, maxPeers) ||
                 other.maxPeers == maxPeers) &&
             (identical(other.ourTopoHeight, ourTopoHeight) ||
@@ -224,8 +244,8 @@ class _$P2pStatusResultImpl implements _P2pStatusResult {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, bestTopoHeight, maxPeers,
-      ourTopoHeight, peerCount, peerId, tag);
+  int get hashCode => Object.hash(runtimeType, bestTopoHeight, medianTopoHeight,
+      maxPeers, ourTopoHeight, peerCount, peerId, tag);
 
   @JsonKey(ignore: true)
   @override
@@ -245,6 +265,7 @@ class _$P2pStatusResultImpl implements _P2pStatusResult {
 abstract class _P2pStatusResult implements P2pStatusResult {
   const factory _P2pStatusResult(
       {@JsonKey(name: 'best_topoheight') required final int bestTopoHeight,
+      @JsonKey(name: 'median_topoheight') required final int medianTopoHeight,
       @JsonKey(name: 'max_peers') required final int maxPeers,
       @JsonKey(name: 'our_topoheight') required final int ourTopoHeight,
       @JsonKey(name: 'peer_count') required final int peerCount,
@@ -257,6 +278,9 @@ abstract class _P2pStatusResult implements P2pStatusResult {
   @override
   @JsonKey(name: 'best_topoheight')
   int get bestTopoHeight;
+  @override
+  @JsonKey(name: 'median_topoheight')
+  int get medianTopoHeight;
   @override
   @JsonKey(name: 'max_peers')
   int get maxPeers;

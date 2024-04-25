@@ -52,6 +52,8 @@ extension WalletRpcMethodsExtension on WalletClient {
   /// Requests the wallet to rescan balances and transactions history
   /// until the specified topoheight.
   /// When no topoheight is set, it rescan until 0.
+  ///
+  /// **WARNING**: All balances and transactions will be deleted from wallet storage to be up-to-date with the chain of the node connected to.
   Future<bool> rescan(RescanParams rescanParams) async {
     final result = await sendRequest(
       WalletMethod.rescan,
@@ -63,9 +65,22 @@ extension WalletRpcMethodsExtension on WalletClient {
 
   /// Gets asset balance from wallet.
   /// When no parameter is set, default asset is XELIS.
-  Future<int> getBalance() async {
-    final result = await sendRequest(WalletMethod.getBalance);
+  Future<int> getBalance([GetBalanceParams? getBalanceParams]) async {
+    final result = await sendRequest(
+      WalletMethod.getBalance,
+      getBalanceParams?.toJson() ?? const GetBalanceParams().toJson(),
+    );
     return result as int;
+  }
+
+  /// Gets asset balance from wallet.
+  /// When no parameter is set, default asset is XELIS.
+  Future<bool> hasBalance([GetBalanceParams? getBalanceParams]) async {
+    final result = await sendRequest(
+      WalletMethod.hasBalance,
+      getBalanceParams?.toJson() ?? const GetBalanceParams().toJson(),
+    );
+    return result as bool;
   }
 
   /// Retrieves all assets that are tracked by the wallet.
@@ -101,14 +116,14 @@ extension WalletRpcMethodsExtension on WalletClient {
   ///
   /// NOTE: Amount set are in atomic units, for XELIS it would 100000 to
   /// represents 1 XELIS because of 5 decimals precision.
-  Future<TransactionResponse> buildTransaction(
+  Future<WalletTransactionResponse> buildTransaction(
     BuildTransactionParams buildTransactionParams,
   ) async {
     final result = await sendRequest(
       WalletMethod.buildTransaction,
       buildTransactionParams.toJson(),
     );
-    return TransactionResponse.fromJson(result as Map<String, dynamic>);
+    return WalletTransactionResponse.fromJson(result as Map<String, dynamic>);
   }
 
   /// Search for transactions based on various parameters.
@@ -146,5 +161,16 @@ extension WalletRpcMethodsExtension on WalletClient {
     );
 
     return result as String;
+  }
+
+  /// Estimate the minimum required fees for a future transaction.
+  /// Returned fees are in atomic units.
+  Future<int> estimateFees(TransactionType transactionType) async {
+    final result = await sendRequest(
+      WalletMethod.estimateFees,
+      transactionType.toJson(),
+    );
+
+    return result as int;
   }
 }

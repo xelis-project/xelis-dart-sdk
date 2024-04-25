@@ -121,14 +121,14 @@ extension DaemonRpcMethodsExtension on DaemonClient {
   /// Returns up-to-date asset's balance for a specific address.
   ///
   /// NOTE: Balance is returned in atomic units.
-  Future<GetBalanceResult> getBalance(
-    GetBalanceParams getBalanceParams,
+  Future<GetWalletBalanceResult> getBalance(
+    GetWalletBalanceParams getBalanceParams,
   ) async {
     final result = await sendRequest(
       DaemonMethod.getBalance,
       getBalanceParams.toJson(),
     );
-    return GetBalanceResult.fromJson(result as Map<String, dynamic>);
+    return GetWalletBalanceResult.fromJson(result as Map<String, dynamic>);
   }
 
   /// Returns asset's balance from address at exact topo height.
@@ -145,20 +145,21 @@ extension DaemonRpcMethodsExtension on DaemonClient {
   }
 
   /// Get registered topoheight and decimals data from a specific asset.
-  Future<Asset> getAsset(GetAssetParams getAssetParams) async {
+  Future<AssetData> getAsset(GetAssetParams getAssetParams) async {
     final result =
         await sendRequest(DaemonMethod.getAsset, getAssetParams.toJson());
-    return Asset.fromJson(result as Map<String, dynamic>);
+    return AssetData.fromJson(result as Map<String, dynamic>);
   }
 
   /// Get all assets available on network with its registered topoheight.
-  Future<List<Asset>> getAssets([GetAssetsParams? getAssetsParams]) async {
+  Future<List<AssetWithData>> getAssets(
+      [GetAssetsParams? getAssetsParams]) async {
     final result = await sendRequest(
       DaemonMethod.getAssets,
       getAssetsParams?.toJson() ?? const GetAssetsParams().toJson(),
     );
     return (result as List)
-        .map((e) => Asset.fromJson(e as Map<String, dynamic>))
+        .map((e) => AssetWithData.fromJson(e as Map<String, dynamic>))
         .toList();
   }
 
@@ -338,6 +339,34 @@ extension DaemonRpcMethodsExtension on DaemonClient {
     return GetAccountAssetsResult(
       assets: (result as List).map((e) => e as String).toList(),
     );
+  }
+
+  /// Verify if the account on chain is registered.
+  /// This is useful to determine if we should pay additionnal fee or not.
+  ///
+  /// For transactions, it is recommended to verify that the account is already registered in stable height.
+  Future<bool> isAccountRegistered(
+    IsAccountRegisteredParams isAccountRegisteredParams,
+  ) async {
+    final result = await sendRequest(
+      DaemonMethod.isAccountRegistered,
+      isAccountRegisteredParams.toJson(),
+    );
+    return result as bool;
+  }
+
+  /// Retrieve the account registration topoheight.
+  ///
+  /// This is like its "first time" doing an action on the chain.
+  Future<int> getAccountRegistrationTopoheight(
+    GetAccountRegistrationTopoheightParams
+        getAccountRegistrationTopoheightParams,
+  ) async {
+    final result = await sendRequest(
+      DaemonMethod.getAccountRegistrationTopoheight,
+      getAccountRegistrationTopoheightParams.toJson(),
+    );
+    return result as int;
   }
 
   /// Verify if address has a nonce on-chain registered

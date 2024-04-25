@@ -2,20 +2,20 @@
 
 // ignore_for_file: package_api_docs, non_constant_identifier_names
 
-part of 'outgoing_history.dart';
+part of 'get_balance_params.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$OutgoingHistoryImpl _$$OutgoingHistoryImplFromJson(
+_$GetBalanceParamsImpl _$$GetBalanceParamsImplFromJson(
         Map<String, dynamic> json) =>
-    _$OutgoingHistoryImpl(
-      to: json['to'] as String,
+    _$GetBalanceParamsImpl(
+      assetHash: json['asset'] as String?,
     );
 
-Map<String, dynamic> _$$OutgoingHistoryImplToJson(
-        _$OutgoingHistoryImpl instance) =>
+Map<String, dynamic> _$$GetBalanceParamsImplToJson(
+        _$GetBalanceParamsImpl instance) =>
     <String, dynamic>{
-      'to': instance.to,
+      'asset': instance.assetHash,
     };

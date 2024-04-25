@@ -29,8 +29,6 @@ class Block with _$Block {
     @JsonKey(name: 'total_fees') int? totalFees,
     @JsonKey(name: 'txs_hashes') required List<String> txsHashes,
     @JsonKey(name: 'version') required int version,
-
-    // @JsonKey(name: 'data') dynamic data,
   }) = _Block;
 
   /// @nodoc

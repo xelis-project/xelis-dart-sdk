@@ -11,11 +11,11 @@ part of 'incoming_history.dart';
 _$IncomingHistoryImpl _$$IncomingHistoryImplFromJson(
         Map<String, dynamic> json) =>
     _$IncomingHistoryImpl(
-      amount: json['amount'] as int,
+      from: json['from'] as String,
     );
 
 Map<String, dynamic> _$$IncomingHistoryImplToJson(
         _$IncomingHistoryImpl instance) =>
     <String, dynamic>{
-      'amount': instance.amount,
+      'from': instance.from,
     };

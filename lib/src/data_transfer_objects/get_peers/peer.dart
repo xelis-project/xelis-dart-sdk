@@ -17,6 +17,7 @@ class Peer with _$Peer {
     @JsonKey(name: 'height') required int height,
     @JsonKey(name: 'id') required num id,
     @JsonKey(name: 'last_ping') required int lastPing,
+    @JsonKey(name: 'local_port') required int localPort,
     @JsonKey(name: 'pruned_topoheight') int? prunedTopoHeight,
     @JsonKey(name: 'tag') String? tag,
     @JsonKey(name: 'top_block_hash') required String topBlockHash,

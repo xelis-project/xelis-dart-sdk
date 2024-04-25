@@ -12,6 +12,7 @@ class P2pStatusResult with _$P2pStatusResult {
   /// @nodoc
   const factory P2pStatusResult({
     @JsonKey(name: 'best_topoheight') required int bestTopoHeight,
+    @JsonKey(name: 'median_topoheight') required int medianTopoHeight,
     @JsonKey(name: 'max_peers') required int maxPeers,
     @JsonKey(name: 'our_topoheight') required int ourTopoHeight,
     @JsonKey(name: 'peer_count') required int peerCount,

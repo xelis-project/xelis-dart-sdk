@@ -48,6 +48,9 @@ JSON-RPC Clients to interact with daemon and wallet API.
 - isTxExecutedInBlock
 - getDevFeeThresholds
 - getSizeOnDisk
+- getMempoolCache
+- isAccountRegistered
+- getAccountRegistrationTopoheight
 
 #### Wallet
 
@@ -59,6 +62,7 @@ JSON-RPC Clients to interact with daemon and wallet API.
 - splitAddress
 - rescan
 - getBalance
+- hasBalance
 - getTrackedAssets
 - getAssetPrecision
 - getTransaction
@@ -66,6 +70,7 @@ JSON-RPC Clients to interact with daemon and wallet API.
 - listTransactions
 - isOnline
 - signData
+- estimateFees
 
 ### Websocket Events
 

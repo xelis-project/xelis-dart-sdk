@@ -11,7 +11,7 @@ part 'rescan_params.g.dart';
 class RescanParams with _$RescanParams {
   /// @nodoc
   const factory RescanParams({
-    @JsonKey(name: 'topoheight') required int topoHeight,
+    @JsonKey(name: 'until_topoheight') required int untilTopoheight,
   }) = _RescanParams;
 
   /// @nodoc

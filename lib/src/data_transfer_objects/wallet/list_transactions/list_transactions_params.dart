@@ -19,6 +19,8 @@ class ListTransactionsParams with _$ListTransactionsParams {
     @JsonKey(name: 'accept_outgoing') bool? acceptOutgoing,
     @JsonKey(name: 'accept_coinbase') bool? acceptCoinbase,
     @JsonKey(name: 'accept_burn') bool? acceptBurn,
+    // TODO
+    @JsonKey(name: 'query') dynamic query,
   }) = _ListTransactionsParams;
 
   /// @nodoc

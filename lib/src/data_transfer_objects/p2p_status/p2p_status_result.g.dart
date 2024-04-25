@@ -12,6 +12,7 @@ _$P2pStatusResultImpl _$$P2pStatusResultImplFromJson(
         Map<String, dynamic> json) =>
     _$P2pStatusResultImpl(
       bestTopoHeight: json['best_topoheight'] as int,
+      medianTopoHeight: json['median_topoheight'] as int,
       maxPeers: json['max_peers'] as int,
       ourTopoHeight: json['our_topoheight'] as int,
       peerCount: json['peer_count'] as int,
@@ -23,6 +24,7 @@ Map<String, dynamic> _$$P2pStatusResultImplToJson(
         _$P2pStatusResultImpl instance) =>
     <String, dynamic>{
       'best_topoheight': instance.bestTopoHeight,
+      'median_topoheight': instance.medianTopoHeight,
       'max_peers': instance.maxPeers,
       'our_topoheight': instance.ourTopoHeight,
       'peer_count': instance.peerCount,

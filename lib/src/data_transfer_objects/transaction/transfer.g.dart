@@ -10,16 +10,23 @@ part of 'transfer.dart';
 
 _$TransferImpl _$$TransferImplFromJson(Map<String, dynamic> json) =>
     _$TransferImpl(
-      amount: json['amount'] as int,
       asset: json['asset'] as String,
-      to: json['to'] as String,
+      commitment:
+          (json['commitment'] as List<dynamic>).map((e) => e as int).toList(),
+      validityProof: json['ct_validity_proof'] as Map<String, dynamic>,
+      destination: json['destination'] as String,
+      receiverHandle: (json['receiver_handle'] as List<dynamic>)
+          .map((e) => e as int)
+          .toList(),
       extraData: json['extra_data'],
     );
 
 Map<String, dynamic> _$$TransferImplToJson(_$TransferImpl instance) =>
     <String, dynamic>{
-      'amount': instance.amount,
       'asset': instance.asset,
-      'to': instance.to,
+      'commitment': instance.commitment,
+      'ct_validity_proof': instance.validityProof,
+      'destination': instance.destination,
+      'receiver_handle': instance.receiverHandle,
       'extra_data': instance.extraData,
     };

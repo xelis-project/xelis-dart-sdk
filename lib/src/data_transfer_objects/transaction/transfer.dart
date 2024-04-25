@@ -11,9 +11,12 @@ part 'transfer.g.dart';
 class Transfer with _$Transfer {
   /// @nodoc
   const factory Transfer({
-    @JsonKey(name: 'amount') required int amount,
     @JsonKey(name: 'asset') required String asset,
-    @JsonKey(name: 'to') required String to,
+    @JsonKey(name: 'commitment') required List<int> commitment,
+    @JsonKey(name: 'ct_validity_proof')
+    required Map<String, dynamic> validityProof,
+    @JsonKey(name: 'destination') required String destination,
+    @JsonKey(name: 'receiver_handle') required List<int> receiverHandle,
     @JsonKey(name: 'extra_data') dynamic extraData,
   }) = _Transfer;
 

@@ -21,9 +21,9 @@ AssetWithData _$AssetWithDataFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$AssetWithData {
   @JsonKey(name: 'asset')
-  String get assetHash => throw _privateConstructorUsedError;
+  String get asset => throw _privateConstructorUsedError;
   @JsonKey(name: 'topoheight')
-  int get topoHeight => throw _privateConstructorUsedError;
+  int get topoheight => throw _privateConstructorUsedError;
   @JsonKey(name: 'decimals')
   int get decimals => throw _privateConstructorUsedError;
 
@@ -40,8 +40,8 @@ abstract class $AssetWithDataCopyWith<$Res> {
       _$AssetWithDataCopyWithImpl<$Res, AssetWithData>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'asset') String assetHash,
-      @JsonKey(name: 'topoheight') int topoHeight,
+      {@JsonKey(name: 'asset') String asset,
+      @JsonKey(name: 'topoheight') int topoheight,
       @JsonKey(name: 'decimals') int decimals});
 }
 
@@ -58,18 +58,18 @@ class _$AssetWithDataCopyWithImpl<$Res, $Val extends AssetWithData>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? assetHash = null,
-    Object? topoHeight = null,
+    Object? asset = null,
+    Object? topoheight = null,
     Object? decimals = null,
   }) {
     return _then(_value.copyWith(
-      assetHash: null == assetHash
-          ? _value.assetHash
-          : assetHash // ignore: cast_nullable_to_non_nullable
+      asset: null == asset
+          ? _value.asset
+          : asset // ignore: cast_nullable_to_non_nullable
               as String,
-      topoHeight: null == topoHeight
-          ? _value.topoHeight
-          : topoHeight // ignore: cast_nullable_to_non_nullable
+      topoheight: null == topoheight
+          ? _value.topoheight
+          : topoheight // ignore: cast_nullable_to_non_nullable
               as int,
       decimals: null == decimals
           ? _value.decimals
@@ -88,8 +88,8 @@ abstract class _$$AssetWithDataImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'asset') String assetHash,
-      @JsonKey(name: 'topoheight') int topoHeight,
+      {@JsonKey(name: 'asset') String asset,
+      @JsonKey(name: 'topoheight') int topoheight,
       @JsonKey(name: 'decimals') int decimals});
 }
 
@@ -104,18 +104,18 @@ class __$$AssetWithDataImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? assetHash = null,
-    Object? topoHeight = null,
+    Object? asset = null,
+    Object? topoheight = null,
     Object? decimals = null,
   }) {
     return _then(_$AssetWithDataImpl(
-      assetHash: null == assetHash
-          ? _value.assetHash
-          : assetHash // ignore: cast_nullable_to_non_nullable
+      asset: null == asset
+          ? _value.asset
+          : asset // ignore: cast_nullable_to_non_nullable
               as String,
-      topoHeight: null == topoHeight
-          ? _value.topoHeight
-          : topoHeight // ignore: cast_nullable_to_non_nullable
+      topoheight: null == topoheight
+          ? _value.topoheight
+          : topoheight // ignore: cast_nullable_to_non_nullable
               as int,
       decimals: null == decimals
           ? _value.decimals
@@ -129,8 +129,8 @@ class __$$AssetWithDataImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$AssetWithDataImpl implements _AssetWithData {
   const _$AssetWithDataImpl(
-      {@JsonKey(name: 'asset') required this.assetHash,
-      @JsonKey(name: 'topoheight') required this.topoHeight,
+      {@JsonKey(name: 'asset') required this.asset,
+      @JsonKey(name: 'topoheight') required this.topoheight,
       @JsonKey(name: 'decimals') required this.decimals});
 
   factory _$AssetWithDataImpl.fromJson(Map<String, dynamic> json) =>
@@ -138,17 +138,17 @@ class _$AssetWithDataImpl implements _AssetWithData {
 
   @override
   @JsonKey(name: 'asset')
-  final String assetHash;
+  final String asset;
   @override
   @JsonKey(name: 'topoheight')
-  final int topoHeight;
+  final int topoheight;
   @override
   @JsonKey(name: 'decimals')
   final int decimals;
 
   @override
   String toString() {
-    return 'AssetWithData(assetHash: $assetHash, topoHeight: $topoHeight, decimals: $decimals)';
+    return 'AssetWithData(asset: $asset, topoheight: $topoheight, decimals: $decimals)';
   }
 
   @override
@@ -156,17 +156,16 @@ class _$AssetWithDataImpl implements _AssetWithData {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AssetWithDataImpl &&
-            (identical(other.assetHash, assetHash) ||
-                other.assetHash == assetHash) &&
-            (identical(other.topoHeight, topoHeight) ||
-                other.topoHeight == topoHeight) &&
+            (identical(other.asset, asset) || other.asset == asset) &&
+            (identical(other.topoheight, topoheight) ||
+                other.topoheight == topoheight) &&
             (identical(other.decimals, decimals) ||
                 other.decimals == decimals));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, assetHash, topoHeight, decimals);
+  int get hashCode => Object.hash(runtimeType, asset, topoheight, decimals);
 
   @JsonKey(ignore: true)
   @override
@@ -184,8 +183,8 @@ class _$AssetWithDataImpl implements _AssetWithData {
 
 abstract class _AssetWithData implements AssetWithData {
   const factory _AssetWithData(
-          {@JsonKey(name: 'asset') required final String assetHash,
-          @JsonKey(name: 'topoheight') required final int topoHeight,
+          {@JsonKey(name: 'asset') required final String asset,
+          @JsonKey(name: 'topoheight') required final int topoheight,
           @JsonKey(name: 'decimals') required final int decimals}) =
       _$AssetWithDataImpl;
 
@@ -194,10 +193,10 @@ abstract class _AssetWithData implements AssetWithData {
 
   @override
   @JsonKey(name: 'asset')
-  String get assetHash;
+  String get asset;
   @override
   @JsonKey(name: 'topoheight')
-  int get topoHeight;
+  int get topoheight;
   @override
   @JsonKey(name: 'decimals')
   int get decimals;

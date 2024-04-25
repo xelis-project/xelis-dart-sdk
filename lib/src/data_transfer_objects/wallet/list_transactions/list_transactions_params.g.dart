@@ -18,6 +18,7 @@ _$ListTransactionsParamsImpl _$$ListTransactionsParamsImplFromJson(
       acceptOutgoing: json['accept_outgoing'] as bool?,
       acceptCoinbase: json['accept_coinbase'] as bool?,
       acceptBurn: json['accept_burn'] as bool?,
+      query: json['query'],
     );
 
 Map<String, dynamic> _$$ListTransactionsParamsImplToJson(
@@ -37,5 +38,6 @@ Map<String, dynamic> _$$ListTransactionsParamsImplToJson(
   writeNotNull('accept_outgoing', instance.acceptOutgoing);
   writeNotNull('accept_coinbase', instance.acceptCoinbase);
   writeNotNull('accept_burn', instance.acceptBurn);
+  writeNotNull('query', instance.query);
   return val;
 }

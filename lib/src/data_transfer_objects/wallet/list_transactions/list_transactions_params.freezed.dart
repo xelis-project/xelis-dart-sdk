@@ -34,7 +34,9 @@ mixin _$ListTransactionsParams {
   @JsonKey(name: 'accept_coinbase')
   bool? get acceptCoinbase => throw _privateConstructorUsedError;
   @JsonKey(name: 'accept_burn')
-  bool? get acceptBurn => throw _privateConstructorUsedError;
+  bool? get acceptBurn => throw _privateConstructorUsedError; // TODO
+  @JsonKey(name: 'query')
+  dynamic get query => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -55,7 +57,8 @@ abstract class $ListTransactionsParamsCopyWith<$Res> {
       @JsonKey(name: 'accept_incoming') bool? acceptIncoming,
       @JsonKey(name: 'accept_outgoing') bool? acceptOutgoing,
       @JsonKey(name: 'accept_coinbase') bool? acceptCoinbase,
-      @JsonKey(name: 'accept_burn') bool? acceptBurn});
+      @JsonKey(name: 'accept_burn') bool? acceptBurn,
+      @JsonKey(name: 'query') dynamic query});
 }
 
 /// @nodoc
@@ -79,6 +82,7 @@ class _$ListTransactionsParamsCopyWithImpl<$Res,
     Object? acceptOutgoing = freezed,
     Object? acceptCoinbase = freezed,
     Object? acceptBurn = freezed,
+    Object? query = freezed,
   }) {
     return _then(_value.copyWith(
       minTopoHeight: freezed == minTopoHeight
@@ -109,6 +113,10 @@ class _$ListTransactionsParamsCopyWithImpl<$Res,
           ? _value.acceptBurn
           : acceptBurn // ignore: cast_nullable_to_non_nullable
               as bool?,
+      query: freezed == query
+          ? _value.query
+          : query // ignore: cast_nullable_to_non_nullable
+              as dynamic,
     ) as $Val);
   }
 }
@@ -129,7 +137,8 @@ abstract class _$$ListTransactionsParamsImplCopyWith<$Res>
       @JsonKey(name: 'accept_incoming') bool? acceptIncoming,
       @JsonKey(name: 'accept_outgoing') bool? acceptOutgoing,
       @JsonKey(name: 'accept_coinbase') bool? acceptCoinbase,
-      @JsonKey(name: 'accept_burn') bool? acceptBurn});
+      @JsonKey(name: 'accept_burn') bool? acceptBurn,
+      @JsonKey(name: 'query') dynamic query});
 }
 
 /// @nodoc
@@ -152,6 +161,7 @@ class __$$ListTransactionsParamsImplCopyWithImpl<$Res>
     Object? acceptOutgoing = freezed,
     Object? acceptCoinbase = freezed,
     Object? acceptBurn = freezed,
+    Object? query = freezed,
   }) {
     return _then(_$ListTransactionsParamsImpl(
       minTopoHeight: freezed == minTopoHeight
@@ -182,6 +192,10 @@ class __$$ListTransactionsParamsImplCopyWithImpl<$Res>
           ? _value.acceptBurn
           : acceptBurn // ignore: cast_nullable_to_non_nullable
               as bool?,
+      query: freezed == query
+          ? _value.query
+          : query // ignore: cast_nullable_to_non_nullable
+              as dynamic,
     ));
   }
 }
@@ -197,7 +211,8 @@ class _$ListTransactionsParamsImpl implements _ListTransactionsParams {
       @JsonKey(name: 'accept_incoming') this.acceptIncoming,
       @JsonKey(name: 'accept_outgoing') this.acceptOutgoing,
       @JsonKey(name: 'accept_coinbase') this.acceptCoinbase,
-      @JsonKey(name: 'accept_burn') this.acceptBurn});
+      @JsonKey(name: 'accept_burn') this.acceptBurn,
+      @JsonKey(name: 'query') this.query});
 
   factory _$ListTransactionsParamsImpl.fromJson(Map<String, dynamic> json) =>
       _$$ListTransactionsParamsImplFromJson(json);
@@ -223,10 +238,14 @@ class _$ListTransactionsParamsImpl implements _ListTransactionsParams {
   @override
   @JsonKey(name: 'accept_burn')
   final bool? acceptBurn;
+// TODO
+  @override
+  @JsonKey(name: 'query')
+  final dynamic query;
 
   @override
   String toString() {
-    return 'ListTransactionsParams(minTopoHeight: $minTopoHeight, maxTopoHeight: $maxTopoHeight, address: $address, acceptIncoming: $acceptIncoming, acceptOutgoing: $acceptOutgoing, acceptCoinbase: $acceptCoinbase, acceptBurn: $acceptBurn)';
+    return 'ListTransactionsParams(minTopoHeight: $minTopoHeight, maxTopoHeight: $maxTopoHeight, address: $address, acceptIncoming: $acceptIncoming, acceptOutgoing: $acceptOutgoing, acceptCoinbase: $acceptCoinbase, acceptBurn: $acceptBurn, query: $query)';
   }
 
   @override
@@ -246,13 +265,22 @@ class _$ListTransactionsParamsImpl implements _ListTransactionsParams {
             (identical(other.acceptCoinbase, acceptCoinbase) ||
                 other.acceptCoinbase == acceptCoinbase) &&
             (identical(other.acceptBurn, acceptBurn) ||
-                other.acceptBurn == acceptBurn));
+                other.acceptBurn == acceptBurn) &&
+            const DeepCollectionEquality().equals(other.query, query));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, minTopoHeight, maxTopoHeight,
-      address, acceptIncoming, acceptOutgoing, acceptCoinbase, acceptBurn);
+  int get hashCode => Object.hash(
+      runtimeType,
+      minTopoHeight,
+      maxTopoHeight,
+      address,
+      acceptIncoming,
+      acceptOutgoing,
+      acceptCoinbase,
+      acceptBurn,
+      const DeepCollectionEquality().hash(query));
 
   @JsonKey(ignore: true)
   @override
@@ -277,7 +305,8 @@ abstract class _ListTransactionsParams implements ListTransactionsParams {
           @JsonKey(name: 'accept_incoming') final bool? acceptIncoming,
           @JsonKey(name: 'accept_outgoing') final bool? acceptOutgoing,
           @JsonKey(name: 'accept_coinbase') final bool? acceptCoinbase,
-          @JsonKey(name: 'accept_burn') final bool? acceptBurn}) =
+          @JsonKey(name: 'accept_burn') final bool? acceptBurn,
+          @JsonKey(name: 'query') final dynamic query}) =
       _$ListTransactionsParamsImpl;
 
   factory _ListTransactionsParams.fromJson(Map<String, dynamic> json) =
@@ -304,6 +333,9 @@ abstract class _ListTransactionsParams implements ListTransactionsParams {
   @override
   @JsonKey(name: 'accept_burn')
   bool? get acceptBurn;
+  @override // TODO
+  @JsonKey(name: 'query')
+  dynamic get query;
   @override
   @JsonKey(ignore: true)
   _$$ListTransactionsParamsImplCopyWith<_$ListTransactionsParamsImpl>

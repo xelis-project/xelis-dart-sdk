@@ -10,10 +10,10 @@ part of 'rescan_params.dart';
 
 _$RescanParamsImpl _$$RescanParamsImplFromJson(Map<String, dynamic> json) =>
     _$RescanParamsImpl(
-      topoHeight: json['topoheight'] as int,
+      untilTopoheight: json['until_topoheight'] as int,
     );
 
 Map<String, dynamic> _$$RescanParamsImplToJson(_$RescanParamsImpl instance) =>
     <String, dynamic>{
-      'topoheight': instance.topoHeight,
+      'until_topoheight': instance.untilTopoheight,
     };

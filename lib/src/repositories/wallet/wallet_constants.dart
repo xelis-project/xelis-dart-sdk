@@ -30,6 +30,10 @@ enum WalletMethod implements XelisJsonKey {
   /// When no parameter is set, default asset is XELIS.
   getBalance('get_balance'),
 
+  /// Verify if wallet has the requested asset balance.
+  /// When no parameter is set, default asset is XELIS.
+  hasBalance('has_balance'),
+
   /// Retrieves all assets that are tracked by the wallet.
   getTrackedAssets('get_tracked_assets'),
 
@@ -55,6 +59,10 @@ enum WalletMethod implements XelisJsonKey {
 
   /// Signs data with the wallet's private key.
   signData('sign_data'),
+
+  /// Estimate the minimum required fees for a future transaction.
+  /// Returned fees are in atomic units.
+  estimateFees('estimate_fees'),
 
   //----------------------------------------------------------------------------
   /// TODO: implement

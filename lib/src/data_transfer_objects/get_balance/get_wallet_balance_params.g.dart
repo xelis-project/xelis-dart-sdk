@@ -2,21 +2,22 @@
 
 // ignore_for_file: package_api_docs, non_constant_identifier_names
 
-part of 'asset.dart';
+part of 'get_wallet_balance_params.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$AssetImpl _$$AssetImplFromJson(Map<String, dynamic> json) => _$AssetImpl(
+_$GetWalletBalanceParamsImpl _$$GetWalletBalanceParamsImplFromJson(
+        Map<String, dynamic> json) =>
+    _$GetWalletBalanceParamsImpl(
+      address: json['address'] as String,
       asset: json['asset'] as String,
-      topoheight: json['topoheight'] as int,
-      decimals: json['decimals'] as int,
     );
 
-Map<String, dynamic> _$$AssetImplToJson(_$AssetImpl instance) =>
+Map<String, dynamic> _$$GetWalletBalanceParamsImplToJson(
+        _$GetWalletBalanceParamsImpl instance) =>
     <String, dynamic>{
+      'address': instance.address,
       'asset': instance.asset,
-      'topoheight': instance.topoheight,
-      'decimals': instance.decimals,
     };

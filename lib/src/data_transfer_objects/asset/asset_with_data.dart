@@ -11,8 +11,8 @@ part 'asset_with_data.g.dart';
 class AssetWithData with _$AssetWithData {
   /// @nodoc
   const factory AssetWithData({
-    @JsonKey(name: 'asset') required String assetHash,
-    @JsonKey(name: 'topoheight') required int topoHeight,
+    @JsonKey(name: 'asset') required String asset,
+    @JsonKey(name: 'topoheight') required int topoheight,
     @JsonKey(name: 'decimals') required int decimals,
   }) = _AssetWithData;
 

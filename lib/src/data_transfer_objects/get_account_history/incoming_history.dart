@@ -11,7 +11,7 @@ part 'incoming_history.g.dart';
 class IncomingHistory with _$IncomingHistory {
   /// @nodoc
   const factory IncomingHistory({
-    @JsonKey(name: 'amount') required int amount,
+    @JsonKey(name: 'from') required String from,
   }) = _IncomingHistory;
 
   /// @nodoc

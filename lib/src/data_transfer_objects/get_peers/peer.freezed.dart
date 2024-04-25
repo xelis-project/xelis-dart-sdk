@@ -30,6 +30,8 @@ mixin _$Peer {
   num get id => throw _privateConstructorUsedError;
   @JsonKey(name: 'last_ping')
   int get lastPing => throw _privateConstructorUsedError;
+  @JsonKey(name: 'local_port')
+  int get localPort => throw _privateConstructorUsedError;
   @JsonKey(name: 'pruned_topoheight')
   int? get prunedTopoHeight => throw _privateConstructorUsedError;
   @JsonKey(name: 'tag')
@@ -59,6 +61,7 @@ abstract class $PeerCopyWith<$Res> {
       @JsonKey(name: 'height') int height,
       @JsonKey(name: 'id') num id,
       @JsonKey(name: 'last_ping') int lastPing,
+      @JsonKey(name: 'local_port') int localPort,
       @JsonKey(name: 'pruned_topoheight') int? prunedTopoHeight,
       @JsonKey(name: 'tag') String? tag,
       @JsonKey(name: 'top_block_hash') String topBlockHash,
@@ -85,6 +88,7 @@ class _$PeerCopyWithImpl<$Res, $Val extends Peer>
     Object? height = null,
     Object? id = null,
     Object? lastPing = null,
+    Object? localPort = null,
     Object? prunedTopoHeight = freezed,
     Object? tag = freezed,
     Object? topBlockHash = null,
@@ -112,6 +116,10 @@ class _$PeerCopyWithImpl<$Res, $Val extends Peer>
       lastPing: null == lastPing
           ? _value.lastPing
           : lastPing // ignore: cast_nullable_to_non_nullable
+              as int,
+      localPort: null == localPort
+          ? _value.localPort
+          : localPort // ignore: cast_nullable_to_non_nullable
               as int,
       prunedTopoHeight: freezed == prunedTopoHeight
           ? _value.prunedTopoHeight
@@ -154,6 +162,7 @@ abstract class _$$PeerImplCopyWith<$Res> implements $PeerCopyWith<$Res> {
       @JsonKey(name: 'height') int height,
       @JsonKey(name: 'id') num id,
       @JsonKey(name: 'last_ping') int lastPing,
+      @JsonKey(name: 'local_port') int localPort,
       @JsonKey(name: 'pruned_topoheight') int? prunedTopoHeight,
       @JsonKey(name: 'tag') String? tag,
       @JsonKey(name: 'top_block_hash') String topBlockHash,
@@ -177,6 +186,7 @@ class __$$PeerImplCopyWithImpl<$Res>
     Object? height = null,
     Object? id = null,
     Object? lastPing = null,
+    Object? localPort = null,
     Object? prunedTopoHeight = freezed,
     Object? tag = freezed,
     Object? topBlockHash = null,
@@ -204,6 +214,10 @@ class __$$PeerImplCopyWithImpl<$Res>
       lastPing: null == lastPing
           ? _value.lastPing
           : lastPing // ignore: cast_nullable_to_non_nullable
+              as int,
+      localPort: null == localPort
+          ? _value.localPort
+          : localPort // ignore: cast_nullable_to_non_nullable
               as int,
       prunedTopoHeight: freezed == prunedTopoHeight
           ? _value.prunedTopoHeight
@@ -243,6 +257,7 @@ class _$PeerImpl implements _Peer {
       @JsonKey(name: 'height') required this.height,
       @JsonKey(name: 'id') required this.id,
       @JsonKey(name: 'last_ping') required this.lastPing,
+      @JsonKey(name: 'local_port') required this.localPort,
       @JsonKey(name: 'pruned_topoheight') this.prunedTopoHeight,
       @JsonKey(name: 'tag') this.tag,
       @JsonKey(name: 'top_block_hash') required this.topBlockHash,
@@ -270,6 +285,9 @@ class _$PeerImpl implements _Peer {
   @JsonKey(name: 'last_ping')
   final int lastPing;
   @override
+  @JsonKey(name: 'local_port')
+  final int localPort;
+  @override
   @JsonKey(name: 'pruned_topoheight')
   final int? prunedTopoHeight;
   @override
@@ -295,7 +313,7 @@ class _$PeerImpl implements _Peer {
 
   @override
   String toString() {
-    return 'Peer(address: $address, cumulativeDifficulty: $cumulativeDifficulty, height: $height, id: $id, lastPing: $lastPing, prunedTopoHeight: $prunedTopoHeight, tag: $tag, topBlockHash: $topBlockHash, topoheight: $topoheight, version: $version, peers: $peers)';
+    return 'Peer(address: $address, cumulativeDifficulty: $cumulativeDifficulty, height: $height, id: $id, lastPing: $lastPing, localPort: $localPort, prunedTopoHeight: $prunedTopoHeight, tag: $tag, topBlockHash: $topBlockHash, topoheight: $topoheight, version: $version, peers: $peers)';
   }
 
   @override
@@ -310,6 +328,8 @@ class _$PeerImpl implements _Peer {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.lastPing, lastPing) ||
                 other.lastPing == lastPing) &&
+            (identical(other.localPort, localPort) ||
+                other.localPort == localPort) &&
             (identical(other.prunedTopoHeight, prunedTopoHeight) ||
                 other.prunedTopoHeight == prunedTopoHeight) &&
             (identical(other.tag, tag) || other.tag == tag) &&
@@ -330,6 +350,7 @@ class _$PeerImpl implements _Peer {
       height,
       id,
       lastPing,
+      localPort,
       prunedTopoHeight,
       tag,
       topBlockHash,
@@ -359,6 +380,7 @@ abstract class _Peer implements Peer {
           @JsonKey(name: 'height') required final int height,
           @JsonKey(name: 'id') required final num id,
           @JsonKey(name: 'last_ping') required final int lastPing,
+          @JsonKey(name: 'local_port') required final int localPort,
           @JsonKey(name: 'pruned_topoheight') final int? prunedTopoHeight,
           @JsonKey(name: 'tag') final String? tag,
           @JsonKey(name: 'top_block_hash') required final String topBlockHash,
@@ -384,6 +406,9 @@ abstract class _Peer implements Peer {
   @override
   @JsonKey(name: 'last_ping')
   int get lastPing;
+  @override
+  @JsonKey(name: 'local_port')
+  int get localPort;
   @override
   @JsonKey(name: 'pruned_topoheight')
   int? get prunedTopoHeight;

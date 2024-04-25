@@ -20,10 +20,8 @@ GetBalanceParams _$GetBalanceParamsFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$GetBalanceParams {
-  @JsonKey(name: 'address')
-  String get address => throw _privateConstructorUsedError;
   @JsonKey(name: 'asset')
-  String get asset => throw _privateConstructorUsedError;
+  String? get assetHash => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -37,9 +35,7 @@ abstract class $GetBalanceParamsCopyWith<$Res> {
           GetBalanceParams value, $Res Function(GetBalanceParams) then) =
       _$GetBalanceParamsCopyWithImpl<$Res, GetBalanceParams>;
   @useResult
-  $Res call(
-      {@JsonKey(name: 'address') String address,
-      @JsonKey(name: 'asset') String asset});
+  $Res call({@JsonKey(name: 'asset') String? assetHash});
 }
 
 /// @nodoc
@@ -55,18 +51,13 @@ class _$GetBalanceParamsCopyWithImpl<$Res, $Val extends GetBalanceParams>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? address = null,
-    Object? asset = null,
+    Object? assetHash = freezed,
   }) {
     return _then(_value.copyWith(
-      address: null == address
-          ? _value.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as String,
-      asset: null == asset
-          ? _value.asset
-          : asset // ignore: cast_nullable_to_non_nullable
-              as String,
+      assetHash: freezed == assetHash
+          ? _value.assetHash
+          : assetHash // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -79,9 +70,7 @@ abstract class _$$GetBalanceParamsImplCopyWith<$Res>
       __$$GetBalanceParamsImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {@JsonKey(name: 'address') String address,
-      @JsonKey(name: 'asset') String asset});
+  $Res call({@JsonKey(name: 'asset') String? assetHash});
 }
 
 /// @nodoc
@@ -95,18 +84,13 @@ class __$$GetBalanceParamsImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? address = null,
-    Object? asset = null,
+    Object? assetHash = freezed,
   }) {
     return _then(_$GetBalanceParamsImpl(
-      address: null == address
-          ? _value.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as String,
-      asset: null == asset
-          ? _value.asset
-          : asset // ignore: cast_nullable_to_non_nullable
-              as String,
+      assetHash: freezed == assetHash
+          ? _value.assetHash
+          : assetHash // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -114,23 +98,18 @@ class __$$GetBalanceParamsImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$GetBalanceParamsImpl implements _GetBalanceParams {
-  const _$GetBalanceParamsImpl(
-      {@JsonKey(name: 'address') required this.address,
-      @JsonKey(name: 'asset') required this.asset});
+  const _$GetBalanceParamsImpl({@JsonKey(name: 'asset') this.assetHash});
 
   factory _$GetBalanceParamsImpl.fromJson(Map<String, dynamic> json) =>
       _$$GetBalanceParamsImplFromJson(json);
 
   @override
-  @JsonKey(name: 'address')
-  final String address;
-  @override
   @JsonKey(name: 'asset')
-  final String asset;
+  final String? assetHash;
 
   @override
   String toString() {
-    return 'GetBalanceParams(address: $address, asset: $asset)';
+    return 'GetBalanceParams(assetHash: $assetHash)';
   }
 
   @override
@@ -138,13 +117,13 @@ class _$GetBalanceParamsImpl implements _GetBalanceParams {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GetBalanceParamsImpl &&
-            (identical(other.address, address) || other.address == address) &&
-            (identical(other.asset, asset) || other.asset == asset));
+            (identical(other.assetHash, assetHash) ||
+                other.assetHash == assetHash));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, address, asset);
+  int get hashCode => Object.hash(runtimeType, assetHash);
 
   @JsonKey(ignore: true)
   @override
@@ -163,19 +142,15 @@ class _$GetBalanceParamsImpl implements _GetBalanceParams {
 
 abstract class _GetBalanceParams implements GetBalanceParams {
   const factory _GetBalanceParams(
-          {@JsonKey(name: 'address') required final String address,
-          @JsonKey(name: 'asset') required final String asset}) =
+          {@JsonKey(name: 'asset') final String? assetHash}) =
       _$GetBalanceParamsImpl;
 
   factory _GetBalanceParams.fromJson(Map<String, dynamic> json) =
       _$GetBalanceParamsImpl.fromJson;
 
   @override
-  @JsonKey(name: 'address')
-  String get address;
-  @override
   @JsonKey(name: 'asset')
-  String get asset;
+  String? get assetHash;
   @override
   @JsonKey(ignore: true)
   _$$GetBalanceParamsImplCopyWith<_$GetBalanceParamsImpl> get copyWith =>

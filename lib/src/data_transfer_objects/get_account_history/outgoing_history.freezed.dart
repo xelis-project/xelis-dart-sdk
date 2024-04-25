@@ -20,8 +20,8 @@ OutgoingHistory _$OutgoingHistoryFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$OutgoingHistory {
-  @JsonKey(name: 'amount')
-  int get amount => throw _privateConstructorUsedError;
+  @JsonKey(name: 'to')
+  String get to => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +35,7 @@ abstract class $OutgoingHistoryCopyWith<$Res> {
           OutgoingHistory value, $Res Function(OutgoingHistory) then) =
       _$OutgoingHistoryCopyWithImpl<$Res, OutgoingHistory>;
   @useResult
-  $Res call({@JsonKey(name: 'amount') int amount});
+  $Res call({@JsonKey(name: 'to') String to});
 }
 
 /// @nodoc
@@ -51,13 +51,13 @@ class _$OutgoingHistoryCopyWithImpl<$Res, $Val extends OutgoingHistory>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? amount = null,
+    Object? to = null,
   }) {
     return _then(_value.copyWith(
-      amount: null == amount
-          ? _value.amount
-          : amount // ignore: cast_nullable_to_non_nullable
-              as int,
+      to: null == to
+          ? _value.to
+          : to // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 }
@@ -70,7 +70,7 @@ abstract class _$$OutgoingHistoryImplCopyWith<$Res>
       __$$OutgoingHistoryImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({@JsonKey(name: 'amount') int amount});
+  $Res call({@JsonKey(name: 'to') String to});
 }
 
 /// @nodoc
@@ -84,13 +84,13 @@ class __$$OutgoingHistoryImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? amount = null,
+    Object? to = null,
   }) {
     return _then(_$OutgoingHistoryImpl(
-      amount: null == amount
-          ? _value.amount
-          : amount // ignore: cast_nullable_to_non_nullable
-              as int,
+      to: null == to
+          ? _value.to
+          : to // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -98,18 +98,18 @@ class __$$OutgoingHistoryImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$OutgoingHistoryImpl implements _OutgoingHistory {
-  const _$OutgoingHistoryImpl({@JsonKey(name: 'amount') required this.amount});
+  const _$OutgoingHistoryImpl({@JsonKey(name: 'to') required this.to});
 
   factory _$OutgoingHistoryImpl.fromJson(Map<String, dynamic> json) =>
       _$$OutgoingHistoryImplFromJson(json);
 
   @override
-  @JsonKey(name: 'amount')
-  final int amount;
+  @JsonKey(name: 'to')
+  final String to;
 
   @override
   String toString() {
-    return 'OutgoingHistory(amount: $amount)';
+    return 'OutgoingHistory(to: $to)';
   }
 
   @override
@@ -117,12 +117,12 @@ class _$OutgoingHistoryImpl implements _OutgoingHistory {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$OutgoingHistoryImpl &&
-            (identical(other.amount, amount) || other.amount == amount));
+            (identical(other.to, to) || other.to == to));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, amount);
+  int get hashCode => Object.hash(runtimeType, to);
 
   @JsonKey(ignore: true)
   @override
@@ -141,15 +141,14 @@ class _$OutgoingHistoryImpl implements _OutgoingHistory {
 
 abstract class _OutgoingHistory implements OutgoingHistory {
   const factory _OutgoingHistory(
-          {@JsonKey(name: 'amount') required final int amount}) =
-      _$OutgoingHistoryImpl;
+      {@JsonKey(name: 'to') required final String to}) = _$OutgoingHistoryImpl;
 
   factory _OutgoingHistory.fromJson(Map<String, dynamic> json) =
       _$OutgoingHistoryImpl.fromJson;
 
   @override
-  @JsonKey(name: 'amount')
-  int get amount;
+  @JsonKey(name: 'to')
+  String get to;
   @override
   @JsonKey(ignore: true)
   _$$OutgoingHistoryImplCopyWith<_$OutgoingHistoryImpl> get copyWith =>

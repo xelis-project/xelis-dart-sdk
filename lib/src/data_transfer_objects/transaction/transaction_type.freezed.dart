@@ -20,10 +20,6 @@ TransactionType _$TransactionTypeFromJson(Map<String, dynamic> json) {
       return Transfers.fromJson(json);
     case 'burn':
       return Burn.fromJson(json);
-    case 'callContract':
-      return CallContract.fromJson(json);
-    case 'deployContract':
-      return DeployContract.fromJson(json);
 
     default:
       throw CheckedFromJsonException(json, 'runtimeType', 'TransactionType',
@@ -41,14 +37,6 @@ mixin _$TransactionType {
     required TResult Function(@JsonKey(name: 'asset') String asset,
             @JsonKey(name: 'amount') int amount)
         burn,
-    required TResult Function(
-            @JsonKey(name: 'contract') String contractHash,
-            @JsonKey(name: 'assets') Map<String, int> assets,
-            @JsonKey(name: 'params') Map<String, dynamic> params)
-        callContract,
-    required TResult Function(
-            @JsonKey(name: 'deploy_contract') dynamic deployContract)
-        deployContract,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -58,13 +46,6 @@ mixin _$TransactionType {
     TResult? Function(@JsonKey(name: 'asset') String asset,
             @JsonKey(name: 'amount') int amount)?
         burn,
-    TResult? Function(
-            @JsonKey(name: 'contract') String contractHash,
-            @JsonKey(name: 'assets') Map<String, int> assets,
-            @JsonKey(name: 'params') Map<String, dynamic> params)?
-        callContract,
-    TResult? Function(@JsonKey(name: 'deploy_contract') dynamic deployContract)?
-        deployContract,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -74,13 +55,6 @@ mixin _$TransactionType {
     TResult Function(@JsonKey(name: 'asset') String asset,
             @JsonKey(name: 'amount') int amount)?
         burn,
-    TResult Function(
-            @JsonKey(name: 'contract') String contractHash,
-            @JsonKey(name: 'assets') Map<String, int> assets,
-            @JsonKey(name: 'params') Map<String, dynamic> params)?
-        callContract,
-    TResult Function(@JsonKey(name: 'deploy_contract') dynamic deployContract)?
-        deployContract,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -88,24 +62,18 @@ mixin _$TransactionType {
   TResult map<TResult extends Object?>({
     required TResult Function(Transfers value) transfers,
     required TResult Function(Burn value) burn,
-    required TResult Function(CallContract value) callContract,
-    required TResult Function(DeployContract value) deployContract,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Transfers value)? transfers,
     TResult? Function(Burn value)? burn,
-    TResult? Function(CallContract value)? callContract,
-    TResult? Function(DeployContract value)? deployContract,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Transfers value)? transfers,
     TResult Function(Burn value)? burn,
-    TResult Function(CallContract value)? callContract,
-    TResult Function(DeployContract value)? deployContract,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -219,14 +187,6 @@ class _$TransfersImpl implements Transfers {
     required TResult Function(@JsonKey(name: 'asset') String asset,
             @JsonKey(name: 'amount') int amount)
         burn,
-    required TResult Function(
-            @JsonKey(name: 'contract') String contractHash,
-            @JsonKey(name: 'assets') Map<String, int> assets,
-            @JsonKey(name: 'params') Map<String, dynamic> params)
-        callContract,
-    required TResult Function(
-            @JsonKey(name: 'deploy_contract') dynamic deployContract)
-        deployContract,
   }) {
     return transfers(this.transfers);
   }
@@ -239,13 +199,6 @@ class _$TransfersImpl implements Transfers {
     TResult? Function(@JsonKey(name: 'asset') String asset,
             @JsonKey(name: 'amount') int amount)?
         burn,
-    TResult? Function(
-            @JsonKey(name: 'contract') String contractHash,
-            @JsonKey(name: 'assets') Map<String, int> assets,
-            @JsonKey(name: 'params') Map<String, dynamic> params)?
-        callContract,
-    TResult? Function(@JsonKey(name: 'deploy_contract') dynamic deployContract)?
-        deployContract,
   }) {
     return transfers?.call(this.transfers);
   }
@@ -258,13 +211,6 @@ class _$TransfersImpl implements Transfers {
     TResult Function(@JsonKey(name: 'asset') String asset,
             @JsonKey(name: 'amount') int amount)?
         burn,
-    TResult Function(
-            @JsonKey(name: 'contract') String contractHash,
-            @JsonKey(name: 'assets') Map<String, int> assets,
-            @JsonKey(name: 'params') Map<String, dynamic> params)?
-        callContract,
-    TResult Function(@JsonKey(name: 'deploy_contract') dynamic deployContract)?
-        deployContract,
     required TResult orElse(),
   }) {
     if (transfers != null) {
@@ -278,8 +224,6 @@ class _$TransfersImpl implements Transfers {
   TResult map<TResult extends Object?>({
     required TResult Function(Transfers value) transfers,
     required TResult Function(Burn value) burn,
-    required TResult Function(CallContract value) callContract,
-    required TResult Function(DeployContract value) deployContract,
   }) {
     return transfers(this);
   }
@@ -289,8 +233,6 @@ class _$TransfersImpl implements Transfers {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Transfers value)? transfers,
     TResult? Function(Burn value)? burn,
-    TResult? Function(CallContract value)? callContract,
-    TResult? Function(DeployContract value)? deployContract,
   }) {
     return transfers?.call(this);
   }
@@ -300,8 +242,6 @@ class _$TransfersImpl implements Transfers {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Transfers value)? transfers,
     TResult Function(Burn value)? burn,
-    TResult Function(CallContract value)? callContract,
-    TResult Function(DeployContract value)? deployContract,
     required TResult orElse(),
   }) {
     if (transfers != null) {
@@ -425,14 +365,6 @@ class _$BurnImpl implements Burn {
     required TResult Function(@JsonKey(name: 'asset') String asset,
             @JsonKey(name: 'amount') int amount)
         burn,
-    required TResult Function(
-            @JsonKey(name: 'contract') String contractHash,
-            @JsonKey(name: 'assets') Map<String, int> assets,
-            @JsonKey(name: 'params') Map<String, dynamic> params)
-        callContract,
-    required TResult Function(
-            @JsonKey(name: 'deploy_contract') dynamic deployContract)
-        deployContract,
   }) {
     return burn(asset, amount);
   }
@@ -445,13 +377,6 @@ class _$BurnImpl implements Burn {
     TResult? Function(@JsonKey(name: 'asset') String asset,
             @JsonKey(name: 'amount') int amount)?
         burn,
-    TResult? Function(
-            @JsonKey(name: 'contract') String contractHash,
-            @JsonKey(name: 'assets') Map<String, int> assets,
-            @JsonKey(name: 'params') Map<String, dynamic> params)?
-        callContract,
-    TResult? Function(@JsonKey(name: 'deploy_contract') dynamic deployContract)?
-        deployContract,
   }) {
     return burn?.call(asset, amount);
   }
@@ -464,13 +389,6 @@ class _$BurnImpl implements Burn {
     TResult Function(@JsonKey(name: 'asset') String asset,
             @JsonKey(name: 'amount') int amount)?
         burn,
-    TResult Function(
-            @JsonKey(name: 'contract') String contractHash,
-            @JsonKey(name: 'assets') Map<String, int> assets,
-            @JsonKey(name: 'params') Map<String, dynamic> params)?
-        callContract,
-    TResult Function(@JsonKey(name: 'deploy_contract') dynamic deployContract)?
-        deployContract,
     required TResult orElse(),
   }) {
     if (burn != null) {
@@ -484,8 +402,6 @@ class _$BurnImpl implements Burn {
   TResult map<TResult extends Object?>({
     required TResult Function(Transfers value) transfers,
     required TResult Function(Burn value) burn,
-    required TResult Function(CallContract value) callContract,
-    required TResult Function(DeployContract value) deployContract,
   }) {
     return burn(this);
   }
@@ -495,8 +411,6 @@ class _$BurnImpl implements Burn {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Transfers value)? transfers,
     TResult? Function(Burn value)? burn,
-    TResult? Function(CallContract value)? callContract,
-    TResult? Function(DeployContract value)? deployContract,
   }) {
     return burn?.call(this);
   }
@@ -506,8 +420,6 @@ class _$BurnImpl implements Burn {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Transfers value)? transfers,
     TResult Function(Burn value)? burn,
-    TResult Function(CallContract value)? callContract,
-    TResult Function(DeployContract value)? deployContract,
     required TResult orElse(),
   }) {
     if (burn != null) {
@@ -537,445 +449,5 @@ abstract class Burn implements TransactionType {
   int get amount;
   @JsonKey(ignore: true)
   _$$BurnImplCopyWith<_$BurnImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$CallContractImplCopyWith<$Res> {
-  factory _$$CallContractImplCopyWith(
-          _$CallContractImpl value, $Res Function(_$CallContractImpl) then) =
-      __$$CallContractImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'contract') String contractHash,
-      @JsonKey(name: 'assets') Map<String, int> assets,
-      @JsonKey(name: 'params') Map<String, dynamic> params});
-}
-
-/// @nodoc
-class __$$CallContractImplCopyWithImpl<$Res>
-    extends _$TransactionTypeCopyWithImpl<$Res, _$CallContractImpl>
-    implements _$$CallContractImplCopyWith<$Res> {
-  __$$CallContractImplCopyWithImpl(
-      _$CallContractImpl _value, $Res Function(_$CallContractImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? contractHash = null,
-    Object? assets = null,
-    Object? params = null,
-  }) {
-    return _then(_$CallContractImpl(
-      contractHash: null == contractHash
-          ? _value.contractHash
-          : contractHash // ignore: cast_nullable_to_non_nullable
-              as String,
-      assets: null == assets
-          ? _value._assets
-          : assets // ignore: cast_nullable_to_non_nullable
-              as Map<String, int>,
-      params: null == params
-          ? _value._params
-          : params // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$CallContractImpl implements CallContract {
-  const _$CallContractImpl(
-      {@JsonKey(name: 'contract') required this.contractHash,
-      @JsonKey(name: 'assets') required final Map<String, int> assets,
-      @JsonKey(name: 'params') required final Map<String, dynamic> params,
-      final String? $type})
-      : _assets = assets,
-        _params = params,
-        $type = $type ?? 'callContract';
-
-  factory _$CallContractImpl.fromJson(Map<String, dynamic> json) =>
-      _$$CallContractImplFromJson(json);
-
-  @override
-  @JsonKey(name: 'contract')
-  final String contractHash;
-  final Map<String, int> _assets;
-  @override
-  @JsonKey(name: 'assets')
-  Map<String, int> get assets {
-    if (_assets is EqualUnmodifiableMapView) return _assets;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(_assets);
-  }
-
-  final Map<String, dynamic> _params;
-  @override
-  @JsonKey(name: 'params')
-  Map<String, dynamic> get params {
-    if (_params is EqualUnmodifiableMapView) return _params;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(_params);
-  }
-
-  @JsonKey(name: 'runtimeType')
-  final String $type;
-
-  @override
-  String toString() {
-    return 'TransactionType.callContract(contractHash: $contractHash, assets: $assets, params: $params)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$CallContractImpl &&
-            (identical(other.contractHash, contractHash) ||
-                other.contractHash == contractHash) &&
-            const DeepCollectionEquality().equals(other._assets, _assets) &&
-            const DeepCollectionEquality().equals(other._params, _params));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      contractHash,
-      const DeepCollectionEquality().hash(_assets),
-      const DeepCollectionEquality().hash(_params));
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$CallContractImplCopyWith<_$CallContractImpl> get copyWith =>
-      __$$CallContractImplCopyWithImpl<_$CallContractImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(
-            @JsonKey(name: 'transfers') List<Transfer> transfers)
-        transfers,
-    required TResult Function(@JsonKey(name: 'asset') String asset,
-            @JsonKey(name: 'amount') int amount)
-        burn,
-    required TResult Function(
-            @JsonKey(name: 'contract') String contractHash,
-            @JsonKey(name: 'assets') Map<String, int> assets,
-            @JsonKey(name: 'params') Map<String, dynamic> params)
-        callContract,
-    required TResult Function(
-            @JsonKey(name: 'deploy_contract') dynamic deployContract)
-        deployContract,
-  }) {
-    return callContract(contractHash, assets, params);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(@JsonKey(name: 'transfers') List<Transfer> transfers)?
-        transfers,
-    TResult? Function(@JsonKey(name: 'asset') String asset,
-            @JsonKey(name: 'amount') int amount)?
-        burn,
-    TResult? Function(
-            @JsonKey(name: 'contract') String contractHash,
-            @JsonKey(name: 'assets') Map<String, int> assets,
-            @JsonKey(name: 'params') Map<String, dynamic> params)?
-        callContract,
-    TResult? Function(@JsonKey(name: 'deploy_contract') dynamic deployContract)?
-        deployContract,
-  }) {
-    return callContract?.call(contractHash, assets, params);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(@JsonKey(name: 'transfers') List<Transfer> transfers)?
-        transfers,
-    TResult Function(@JsonKey(name: 'asset') String asset,
-            @JsonKey(name: 'amount') int amount)?
-        burn,
-    TResult Function(
-            @JsonKey(name: 'contract') String contractHash,
-            @JsonKey(name: 'assets') Map<String, int> assets,
-            @JsonKey(name: 'params') Map<String, dynamic> params)?
-        callContract,
-    TResult Function(@JsonKey(name: 'deploy_contract') dynamic deployContract)?
-        deployContract,
-    required TResult orElse(),
-  }) {
-    if (callContract != null) {
-      return callContract(contractHash, assets, params);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(Transfers value) transfers,
-    required TResult Function(Burn value) burn,
-    required TResult Function(CallContract value) callContract,
-    required TResult Function(DeployContract value) deployContract,
-  }) {
-    return callContract(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Transfers value)? transfers,
-    TResult? Function(Burn value)? burn,
-    TResult? Function(CallContract value)? callContract,
-    TResult? Function(DeployContract value)? deployContract,
-  }) {
-    return callContract?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(Transfers value)? transfers,
-    TResult Function(Burn value)? burn,
-    TResult Function(CallContract value)? callContract,
-    TResult Function(DeployContract value)? deployContract,
-    required TResult orElse(),
-  }) {
-    if (callContract != null) {
-      return callContract(this);
-    }
-    return orElse();
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$CallContractImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class CallContract implements TransactionType {
-  const factory CallContract(
-      {@JsonKey(name: 'contract') required final String contractHash,
-      @JsonKey(name: 'assets') required final Map<String, int> assets,
-      @JsonKey(name: 'params')
-      required final Map<String, dynamic> params}) = _$CallContractImpl;
-
-  factory CallContract.fromJson(Map<String, dynamic> json) =
-      _$CallContractImpl.fromJson;
-
-  @JsonKey(name: 'contract')
-  String get contractHash;
-  @JsonKey(name: 'assets')
-  Map<String, int> get assets;
-  @JsonKey(name: 'params')
-  Map<String, dynamic> get params;
-  @JsonKey(ignore: true)
-  _$$CallContractImplCopyWith<_$CallContractImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$DeployContractImplCopyWith<$Res> {
-  factory _$$DeployContractImplCopyWith(_$DeployContractImpl value,
-          $Res Function(_$DeployContractImpl) then) =
-      __$$DeployContractImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({@JsonKey(name: 'deploy_contract') dynamic deployContract});
-}
-
-/// @nodoc
-class __$$DeployContractImplCopyWithImpl<$Res>
-    extends _$TransactionTypeCopyWithImpl<$Res, _$DeployContractImpl>
-    implements _$$DeployContractImplCopyWith<$Res> {
-  __$$DeployContractImplCopyWithImpl(
-      _$DeployContractImpl _value, $Res Function(_$DeployContractImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? deployContract = freezed,
-  }) {
-    return _then(_$DeployContractImpl(
-      freezed == deployContract
-          ? _value.deployContract
-          : deployContract // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$DeployContractImpl implements DeployContract {
-  const _$DeployContractImpl(
-      @JsonKey(name: 'deploy_contract') this.deployContract,
-      {final String? $type})
-      : $type = $type ?? 'deployContract';
-
-  factory _$DeployContractImpl.fromJson(Map<String, dynamic> json) =>
-      _$$DeployContractImplFromJson(json);
-
-  @override
-  @JsonKey(name: 'deploy_contract')
-  final dynamic deployContract;
-
-  @JsonKey(name: 'runtimeType')
-  final String $type;
-
-  @override
-  String toString() {
-    return 'TransactionType.deployContract(deployContract: $deployContract)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$DeployContractImpl &&
-            const DeepCollectionEquality()
-                .equals(other.deployContract, deployContract));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(deployContract));
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$DeployContractImplCopyWith<_$DeployContractImpl> get copyWith =>
-      __$$DeployContractImplCopyWithImpl<_$DeployContractImpl>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(
-            @JsonKey(name: 'transfers') List<Transfer> transfers)
-        transfers,
-    required TResult Function(@JsonKey(name: 'asset') String asset,
-            @JsonKey(name: 'amount') int amount)
-        burn,
-    required TResult Function(
-            @JsonKey(name: 'contract') String contractHash,
-            @JsonKey(name: 'assets') Map<String, int> assets,
-            @JsonKey(name: 'params') Map<String, dynamic> params)
-        callContract,
-    required TResult Function(
-            @JsonKey(name: 'deploy_contract') dynamic deployContract)
-        deployContract,
-  }) {
-    return deployContract(this.deployContract);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(@JsonKey(name: 'transfers') List<Transfer> transfers)?
-        transfers,
-    TResult? Function(@JsonKey(name: 'asset') String asset,
-            @JsonKey(name: 'amount') int amount)?
-        burn,
-    TResult? Function(
-            @JsonKey(name: 'contract') String contractHash,
-            @JsonKey(name: 'assets') Map<String, int> assets,
-            @JsonKey(name: 'params') Map<String, dynamic> params)?
-        callContract,
-    TResult? Function(@JsonKey(name: 'deploy_contract') dynamic deployContract)?
-        deployContract,
-  }) {
-    return deployContract?.call(this.deployContract);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(@JsonKey(name: 'transfers') List<Transfer> transfers)?
-        transfers,
-    TResult Function(@JsonKey(name: 'asset') String asset,
-            @JsonKey(name: 'amount') int amount)?
-        burn,
-    TResult Function(
-            @JsonKey(name: 'contract') String contractHash,
-            @JsonKey(name: 'assets') Map<String, int> assets,
-            @JsonKey(name: 'params') Map<String, dynamic> params)?
-        callContract,
-    TResult Function(@JsonKey(name: 'deploy_contract') dynamic deployContract)?
-        deployContract,
-    required TResult orElse(),
-  }) {
-    if (deployContract != null) {
-      return deployContract(this.deployContract);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(Transfers value) transfers,
-    required TResult Function(Burn value) burn,
-    required TResult Function(CallContract value) callContract,
-    required TResult Function(DeployContract value) deployContract,
-  }) {
-    return deployContract(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Transfers value)? transfers,
-    TResult? Function(Burn value)? burn,
-    TResult? Function(CallContract value)? callContract,
-    TResult? Function(DeployContract value)? deployContract,
-  }) {
-    return deployContract?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(Transfers value)? transfers,
-    TResult Function(Burn value)? burn,
-    TResult Function(CallContract value)? callContract,
-    TResult Function(DeployContract value)? deployContract,
-    required TResult orElse(),
-  }) {
-    if (deployContract != null) {
-      return deployContract(this);
-    }
-    return orElse();
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$DeployContractImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class DeployContract implements TransactionType {
-  const factory DeployContract(
-          @JsonKey(name: 'deploy_contract') final dynamic deployContract) =
-      _$DeployContractImpl;
-
-  factory DeployContract.fromJson(Map<String, dynamic> json) =
-      _$DeployContractImpl.fromJson;
-
-  @JsonKey(name: 'deploy_contract')
-  dynamic get deployContract;
-  @JsonKey(ignore: true)
-  _$$DeployContractImplCopyWith<_$DeployContractImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

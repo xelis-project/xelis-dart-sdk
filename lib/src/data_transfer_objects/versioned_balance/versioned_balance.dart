@@ -11,8 +11,10 @@ part 'versioned_balance.g.dart';
 class VersionedBalance with _$VersionedBalance {
   /// @nodoc
   const factory VersionedBalance({
-    @JsonKey(name: 'balance') required int balance,
-    @JsonKey(name: 'previous_topoheight') int? previousTopoHeight,
+    @JsonKey(name: 'balance_type') required String balanceType,
+    @JsonKey(name: 'final_balance') required Map<String, dynamic> finalBalance,
+    @JsonKey(name: 'previous_topoheight') required int previousTopoheight,
+    @JsonKey(name: 'output_balance') required dynamic outputBalance,
   }) = _VersionedBalance;
 
   /// @nodoc

@@ -34,32 +34,3 @@ Map<String, dynamic> _$$BurnImplToJson(_$BurnImpl instance) =>
       'amount': instance.amount,
       'runtimeType': instance.$type,
     };
-
-_$CallContractImpl _$$CallContractImplFromJson(Map<String, dynamic> json) =>
-    _$CallContractImpl(
-      contractHash: json['contract'] as String,
-      assets: Map<String, int>.from(json['assets'] as Map),
-      params: json['params'] as Map<String, dynamic>,
-      $type: json['runtimeType'] as String?,
-    );
-
-Map<String, dynamic> _$$CallContractImplToJson(_$CallContractImpl instance) =>
-    <String, dynamic>{
-      'contract': instance.contractHash,
-      'assets': instance.assets,
-      'params': instance.params,
-      'runtimeType': instance.$type,
-    };
-
-_$DeployContractImpl _$$DeployContractImplFromJson(Map<String, dynamic> json) =>
-    _$DeployContractImpl(
-      json['deploy_contract'],
-      $type: json['runtimeType'] as String?,
-    );
-
-Map<String, dynamic> _$$DeployContractImplToJson(
-        _$DeployContractImpl instance) =>
-    <String, dynamic>{
-      'deploy_contract': instance.deployContract,
-      'runtimeType': instance.$type,
-    };

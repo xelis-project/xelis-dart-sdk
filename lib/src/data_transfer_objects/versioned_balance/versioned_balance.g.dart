@@ -11,13 +11,17 @@ part of 'versioned_balance.dart';
 _$VersionedBalanceImpl _$$VersionedBalanceImplFromJson(
         Map<String, dynamic> json) =>
     _$VersionedBalanceImpl(
-      balance: json['balance'] as int,
-      previousTopoHeight: json['previous_topoheight'] as int?,
+      balanceType: json['balance_type'] as String,
+      finalBalance: json['final_balance'] as Map<String, dynamic>,
+      previousTopoheight: json['previous_topoheight'] as int,
+      outputBalance: json['output_balance'],
     );
 
 Map<String, dynamic> _$$VersionedBalanceImplToJson(
         _$VersionedBalanceImpl instance) =>
     <String, dynamic>{
-      'balance': instance.balance,
-      'previous_topoheight': instance.previousTopoHeight,
+      'balance_type': instance.balanceType,
+      'final_balance': instance.finalBalance,
+      'previous_topoheight': instance.previousTopoheight,
+      'output_balance': instance.outputBalance,
     };
