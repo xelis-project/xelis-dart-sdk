@@ -12,7 +12,7 @@ _$GetNonceAtTopoHeightParamsImpl _$$GetNonceAtTopoHeightParamsImplFromJson(
         Map<String, dynamic> json) =>
     _$GetNonceAtTopoHeightParamsImpl(
       address: json['address'] as String,
-      topoheight: json['topoheight'] as int,
+      topoheight: (json['topoheight'] as num).toInt(),
     );
 
 Map<String, dynamic> _$$GetNonceAtTopoHeightParamsImplToJson(

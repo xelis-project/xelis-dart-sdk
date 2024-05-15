@@ -13,7 +13,7 @@ _$GetWalletBalanceResultImpl _$$GetWalletBalanceResultImplFromJson(
     _$GetWalletBalanceResultImpl(
       versionedBalance:
           VersionedBalance.fromJson(json['version'] as Map<String, dynamic>),
-      topoheight: json['topoheight'] as int,
+      topoheight: (json['topoheight'] as num).toInt(),
     );
 
 Map<String, dynamic> _$$GetWalletBalanceResultImplToJson(

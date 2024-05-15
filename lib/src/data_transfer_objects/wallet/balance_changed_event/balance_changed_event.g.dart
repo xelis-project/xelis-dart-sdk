@@ -12,7 +12,7 @@ _$BalanceChangedEventImpl _$$BalanceChangedEventImplFromJson(
         Map<String, dynamic> json) =>
     _$BalanceChangedEventImpl(
       assetHash: json['asset'] as String,
-      balance: json['balance'] as int,
+      balance: (json['balance'] as num).toInt(),
     );
 
 Map<String, dynamic> _$$BalanceChangedEventImplToJson(

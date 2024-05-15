@@ -10,24 +10,24 @@ part of 'block.dart';
 
 _$BlockImpl _$$BlockImplFromJson(Map<String, dynamic> json) => _$BlockImpl(
       blockType: json['block_type'] as String,
-      cumulativeDifficulty: json['cumulative_difficulty'] as int,
-      difficulty: json['difficulty'] as int,
+      cumulativeDifficulty: (json['cumulative_difficulty'] as num).toInt(),
+      difficulty: (json['difficulty'] as num).toInt(),
       extraNonce: json['extra_nonce'] as String,
       hash: json['hash'] as String,
-      height: json['height'] as int,
+      height: (json['height'] as num).toInt(),
       miner: json['miner'] as String,
-      nonce: json['nonce'] as int,
-      reward: json['reward'] as int?,
-      supply: json['supply'] as int?,
-      timestamp: json['timestamp'] as int,
+      nonce: (json['nonce'] as num).toInt(),
+      reward: (json['reward'] as num?)?.toInt(),
+      supply: (json['supply'] as num?)?.toInt(),
+      timestamp: (json['timestamp'] as num).toInt(),
       tips: (json['tips'] as List<dynamic>).map((e) => e as String).toList(),
-      topoHeight: json['topoheight'] as int?,
-      totalSizeInBytes: json['total_size_in_bytes'] as int,
-      totalFees: json['total_fees'] as int?,
+      topoHeight: (json['topoheight'] as num?)?.toInt(),
+      totalSizeInBytes: (json['total_size_in_bytes'] as num).toInt(),
+      totalFees: (json['total_fees'] as num?)?.toInt(),
       txsHashes: (json['txs_hashes'] as List<dynamic>)
           .map((e) => e as String)
           .toList(),
-      version: json['version'] as int,
+      version: (json['version'] as num).toInt(),
     );
 
 Map<String, dynamic> _$$BlockImplToJson(_$BlockImpl instance) =>

@@ -13,7 +13,7 @@ _$BlockOrderedEventImpl _$$BlockOrderedEventImplFromJson(
     _$BlockOrderedEventImpl(
       blockHash: json['block_hash'] as String,
       blockType: json['block_type'] as String,
-      topoHeight: json['topoheight'] as int,
+      topoHeight: (json['topoheight'] as num).toInt(),
     );
 
 Map<String, dynamic> _$$BlockOrderedEventImplToJson(

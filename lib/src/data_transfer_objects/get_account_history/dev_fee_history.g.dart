@@ -10,7 +10,7 @@ part of 'dev_fee_history.dart';
 
 _$DevFeeHistoryImpl _$$DevFeeHistoryImplFromJson(Map<String, dynamic> json) =>
     _$DevFeeHistoryImpl(
-      reward: json['reward'] as int,
+      reward: (json['reward'] as num).toInt(),
     );
 
 Map<String, dynamic> _$$DevFeeHistoryImplToJson(_$DevFeeHistoryImpl instance) =>

@@ -10,7 +10,7 @@ part of 'burn_history.dart';
 
 _$BurnHistoryImpl _$$BurnHistoryImplFromJson(Map<String, dynamic> json) =>
     _$BurnHistoryImpl(
-      amount: json['amount'] as int,
+      amount: (json['amount'] as num).toInt(),
     );
 
 Map<String, dynamic> _$$BurnHistoryImplToJson(_$BurnHistoryImpl instance) =>

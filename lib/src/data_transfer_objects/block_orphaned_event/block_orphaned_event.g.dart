@@ -12,7 +12,7 @@ _$BlockOrphanedEventImpl _$$BlockOrphanedEventImplFromJson(
         Map<String, dynamic> json) =>
     _$BlockOrphanedEventImpl(
       blockHash: json['block_hash'] as String,
-      oldTopoHeight: json['old_topoheight'] as int,
+      oldTopoHeight: (json['old_topoheight'] as num).toInt(),
     );
 
 Map<String, dynamic> _$$BlockOrphanedEventImplToJson(

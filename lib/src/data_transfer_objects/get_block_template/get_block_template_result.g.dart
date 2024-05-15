@@ -11,8 +11,8 @@ part of 'get_block_template_result.dart';
 _$GetBlockTemplateResultImpl _$$GetBlockTemplateResultImplFromJson(
         Map<String, dynamic> json) =>
     _$GetBlockTemplateResultImpl(
-      difficulty: json['difficulty'] as int,
-      height: json['height'] as int,
+      difficulty: (json['difficulty'] as num).toInt(),
+      height: (json['height'] as num).toInt(),
       template: json['template'] as String,
     );
 

@@ -11,7 +11,7 @@ part of 'transfer_in_entry.dart';
 _$TransferInEntryImpl _$$TransferInEntryImplFromJson(
         Map<String, dynamic> json) =>
     _$TransferInEntryImpl(
-      amount: json['amount'] as int,
+      amount: (json['amount'] as num).toInt(),
       asset: json['asset'] as String,
       extraData: json['extra_data'],
     );

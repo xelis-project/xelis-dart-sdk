@@ -21,7 +21,7 @@ GetAddressParams _$GetAddressParamsFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$GetAddressParams {
   @JsonKey(name: 'integrated_data')
-  Map<String, dynamic> get integratedData => throw _privateConstructorUsedError;
+  dynamic get integratedData => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,8 +35,7 @@ abstract class $GetAddressParamsCopyWith<$Res> {
           GetAddressParams value, $Res Function(GetAddressParams) then) =
       _$GetAddressParamsCopyWithImpl<$Res, GetAddressParams>;
   @useResult
-  $Res call(
-      {@JsonKey(name: 'integrated_data') Map<String, dynamic> integratedData});
+  $Res call({@JsonKey(name: 'integrated_data') dynamic integratedData});
 }
 
 /// @nodoc
@@ -52,13 +51,13 @@ class _$GetAddressParamsCopyWithImpl<$Res, $Val extends GetAddressParams>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? integratedData = null,
+    Object? integratedData = freezed,
   }) {
     return _then(_value.copyWith(
-      integratedData: null == integratedData
+      integratedData: freezed == integratedData
           ? _value.integratedData
           : integratedData // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
+              as dynamic,
     ) as $Val);
   }
 }
@@ -71,8 +70,7 @@ abstract class _$$GetAddressParamsImplCopyWith<$Res>
       __$$GetAddressParamsImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {@JsonKey(name: 'integrated_data') Map<String, dynamic> integratedData});
+  $Res call({@JsonKey(name: 'integrated_data') dynamic integratedData});
 }
 
 /// @nodoc
@@ -86,13 +84,13 @@ class __$$GetAddressParamsImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? integratedData = null,
+    Object? integratedData = freezed,
   }) {
     return _then(_$GetAddressParamsImpl(
-      integratedData: null == integratedData
-          ? _value._integratedData
+      integratedData: freezed == integratedData
+          ? _value.integratedData
           : integratedData // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
+              as dynamic,
     ));
   }
 }
@@ -101,21 +99,14 @@ class __$$GetAddressParamsImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$GetAddressParamsImpl implements _GetAddressParams {
   const _$GetAddressParamsImpl(
-      {@JsonKey(name: 'integrated_data')
-      required final Map<String, dynamic> integratedData})
-      : _integratedData = integratedData;
+      {@JsonKey(name: 'integrated_data') required this.integratedData});
 
   factory _$GetAddressParamsImpl.fromJson(Map<String, dynamic> json) =>
       _$$GetAddressParamsImplFromJson(json);
 
-  final Map<String, dynamic> _integratedData;
   @override
   @JsonKey(name: 'integrated_data')
-  Map<String, dynamic> get integratedData {
-    if (_integratedData is EqualUnmodifiableMapView) return _integratedData;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(_integratedData);
-  }
+  final dynamic integratedData;
 
   @override
   String toString() {
@@ -128,13 +119,13 @@ class _$GetAddressParamsImpl implements _GetAddressParams {
         (other.runtimeType == runtimeType &&
             other is _$GetAddressParamsImpl &&
             const DeepCollectionEquality()
-                .equals(other._integratedData, _integratedData));
+                .equals(other.integratedData, integratedData));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_integratedData));
+      runtimeType, const DeepCollectionEquality().hash(integratedData));
 
   @JsonKey(ignore: true)
   @override
@@ -153,16 +144,15 @@ class _$GetAddressParamsImpl implements _GetAddressParams {
 
 abstract class _GetAddressParams implements GetAddressParams {
   const factory _GetAddressParams(
-          {@JsonKey(name: 'integrated_data')
-          required final Map<String, dynamic> integratedData}) =
-      _$GetAddressParamsImpl;
+      {@JsonKey(name: 'integrated_data')
+      required final dynamic integratedData}) = _$GetAddressParamsImpl;
 
   factory _GetAddressParams.fromJson(Map<String, dynamic> json) =
       _$GetAddressParamsImpl.fromJson;
 
   @override
   @JsonKey(name: 'integrated_data')
-  Map<String, dynamic> get integratedData;
+  dynamic get integratedData;
   @override
   @JsonKey(ignore: true)
   _$$GetAddressParamsImplCopyWith<_$GetAddressParamsImpl> get copyWith =>

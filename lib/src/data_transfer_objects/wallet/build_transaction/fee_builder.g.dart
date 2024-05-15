@@ -11,7 +11,7 @@ part of 'fee_builder.dart';
 _$FeeBuilderImpl _$$FeeBuilderImplFromJson(Map<String, dynamic> json) =>
     _$FeeBuilderImpl(
       multiplier: (json['Multiplier'] as num?)?.toDouble(),
-      value: json['Value'] as int?,
+      value: (json['Value'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$$FeeBuilderImplToJson(_$FeeBuilderImpl instance) =>

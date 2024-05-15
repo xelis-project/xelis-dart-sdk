@@ -10,15 +10,15 @@ part of 'peer.dart';
 
 _$PeerImpl _$$PeerImplFromJson(Map<String, dynamic> json) => _$PeerImpl(
       address: json['addr'] as String,
-      cumulativeDifficulty: json['cumulative_difficulty'] as int,
-      height: json['height'] as int,
+      cumulativeDifficulty: (json['cumulative_difficulty'] as num).toInt(),
+      height: (json['height'] as num).toInt(),
       id: json['id'] as num,
-      lastPing: json['last_ping'] as int,
-      localPort: json['local_port'] as int,
-      prunedTopoHeight: json['pruned_topoheight'] as int?,
+      lastPing: (json['last_ping'] as num).toInt(),
+      localPort: (json['local_port'] as num).toInt(),
+      prunedTopoHeight: (json['pruned_topoheight'] as num?)?.toInt(),
       tag: json['tag'] as String?,
       topBlockHash: json['top_block_hash'] as String,
-      topoheight: json['topoheight'] as int,
+      topoheight: (json['topoheight'] as num).toInt(),
       version: json['version'] as String,
       peers: (json['peers'] as Map<String, dynamic>).map(
         (k, e) => MapEntry(k, $enumDecode(_$PeerTypeEnumMap, e)),

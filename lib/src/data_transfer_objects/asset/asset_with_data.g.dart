@@ -11,8 +11,8 @@ part of 'asset_with_data.dart';
 _$AssetWithDataImpl _$$AssetWithDataImplFromJson(Map<String, dynamic> json) =>
     _$AssetWithDataImpl(
       asset: json['asset'] as String,
-      topoheight: json['topoheight'] as int,
-      decimals: json['decimals'] as int,
+      topoheight: (json['topoheight'] as num).toInt(),
+      decimals: (json['decimals'] as num).toInt(),
     );
 
 Map<String, dynamic> _$$AssetWithDataImplToJson(_$AssetWithDataImpl instance) =>

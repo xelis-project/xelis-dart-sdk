@@ -11,7 +11,7 @@ part of 'get_nonce_params.dart';
 _$GetNonceParamsImpl _$$GetNonceParamsImplFromJson(Map<String, dynamic> json) =>
     _$GetNonceParamsImpl(
       address: json['address'] as String,
-      topoHeight: json['topoheight'] as int?,
+      topoHeight: (json['topoheight'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$$GetNonceParamsImplToJson(

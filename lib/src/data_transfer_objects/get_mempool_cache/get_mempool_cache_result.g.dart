@@ -12,8 +12,8 @@ _$GetMempoolCacheResultImpl _$$GetMempoolCacheResultImplFromJson(
         Map<String, dynamic> json) =>
     _$GetMempoolCacheResultImpl(
       balances: json['balances'] as Map<String, dynamic>,
-      max: json['max'] as int,
-      min: json['min'] as int,
+      max: (json['max'] as num).toInt(),
+      min: (json['min'] as num).toInt(),
       txs: (json['txs'] as List<dynamic>).map((e) => e as String).toList(),
     );
 

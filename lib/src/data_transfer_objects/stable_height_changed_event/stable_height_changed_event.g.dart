@@ -11,8 +11,8 @@ part of 'stable_height_changed_event.dart';
 _$StableHeightChangedEventImpl _$$StableHeightChangedEventImplFromJson(
         Map<String, dynamic> json) =>
     _$StableHeightChangedEventImpl(
-      previousStableHeight: json['previous_stable_height'] as int,
-      newStableHeight: json['new_stable_height'] as int,
+      previousStableHeight: (json['previous_stable_height'] as num).toInt(),
+      newStableHeight: (json['new_stable_height'] as num).toInt(),
     );
 
 Map<String, dynamic> _$$StableHeightChangedEventImplToJson(

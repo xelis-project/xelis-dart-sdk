@@ -11,12 +11,13 @@ part of 'transfer.dart';
 _$TransferImpl _$$TransferImplFromJson(Map<String, dynamic> json) =>
     _$TransferImpl(
       asset: json['asset'] as String,
-      commitment:
-          (json['commitment'] as List<dynamic>).map((e) => e as int).toList(),
+      commitment: (json['commitment'] as List<dynamic>)
+          .map((e) => (e as num).toInt())
+          .toList(),
       validityProof: json['ct_validity_proof'] as Map<String, dynamic>,
       destination: json['destination'] as String,
       receiverHandle: (json['receiver_handle'] as List<dynamic>)
-          .map((e) => e as int)
+          .map((e) => (e as num).toInt())
           .toList(),
       extraData: json['extra_data'],
     );

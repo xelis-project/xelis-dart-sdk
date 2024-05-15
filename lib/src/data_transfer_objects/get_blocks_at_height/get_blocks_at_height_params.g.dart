@@ -11,7 +11,7 @@ part of 'get_blocks_at_height_params.dart';
 _$GetBlocksAtHeightParamsImpl _$$GetBlocksAtHeightParamsImplFromJson(
         Map<String, dynamic> json) =>
     _$GetBlocksAtHeightParamsImpl(
-      height: json['height'] as int,
+      height: (json['height'] as num).toInt(),
       includeTxs: json['include_txs'] as bool?,
     );
 

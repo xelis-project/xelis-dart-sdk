@@ -11,8 +11,8 @@ part of 'get_assets_params.dart';
 _$GetAssetsParamsImpl _$$GetAssetsParamsImplFromJson(
         Map<String, dynamic> json) =>
     _$GetAssetsParamsImpl(
-      skip: json['skip'] as int?,
-      maximum: json['maximum'] as int?,
+      skip: (json['skip'] as num?)?.toInt(),
+      maximum: (json['maximum'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$$GetAssetsParamsImplToJson(

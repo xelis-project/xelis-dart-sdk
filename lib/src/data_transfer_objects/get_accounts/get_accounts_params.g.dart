@@ -11,10 +11,10 @@ part of 'get_accounts_params.dart';
 _$GetAccountsParamsImpl _$$GetAccountsParamsImplFromJson(
         Map<String, dynamic> json) =>
     _$GetAccountsParamsImpl(
-      skip: json['skip'] as int?,
-      maximum: json['maximum'] as int?,
-      minTopoHeight: json['minimum_topoheight'] as int?,
-      maxTopoHeight: json['maximum_topoheight'] as int?,
+      skip: (json['skip'] as num?)?.toInt(),
+      maximum: (json['maximum'] as num?)?.toInt(),
+      minTopoHeight: (json['minimum_topoheight'] as num?)?.toInt(),
+      maxTopoHeight: (json['maximum_topoheight'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$$GetAccountsParamsImplToJson(

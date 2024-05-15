@@ -24,7 +24,7 @@ Map<String, dynamic> _$$TransfersImplToJson(_$TransfersImpl instance) =>
 
 _$BurnImpl _$$BurnImplFromJson(Map<String, dynamic> json) => _$BurnImpl(
       asset: json['asset'] as String,
-      amount: json['amount'] as int,
+      amount: (json['amount'] as num).toInt(),
       $type: json['runtimeType'] as String?,
     );
 

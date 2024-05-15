@@ -11,8 +11,8 @@ part of 'get_nonce_at_topoheight_result.dart';
 _$GetNonceAtTopoHeightResultImpl _$$GetNonceAtTopoHeightResultImplFromJson(
         Map<String, dynamic> json) =>
     _$GetNonceAtTopoHeightResultImpl(
-      nonce: json['nonce'] as int,
-      previousTopoheight: json['previous_topoheight'] as int?,
+      nonce: (json['nonce'] as num).toInt(),
+      previousTopoheight: (json['previous_topoheight'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$$GetNonceAtTopoHeightResultImplToJson(

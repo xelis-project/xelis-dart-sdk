@@ -11,7 +11,7 @@ part of 'get_address_params.dart';
 _$GetAddressParamsImpl _$$GetAddressParamsImplFromJson(
         Map<String, dynamic> json) =>
     _$GetAddressParamsImpl(
-      integratedData: json['integrated_data'] as Map<String, dynamic>,
+      integratedData: json['integrated_data'],
     );
 
 Map<String, dynamic> _$$GetAddressParamsImplToJson(

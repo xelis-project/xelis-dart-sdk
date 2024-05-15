@@ -10,18 +10,18 @@ part of 'get_info_result.dart';
 
 _$GetInfoResultImpl _$$GetInfoResultImplFromJson(Map<String, dynamic> json) =>
     _$GetInfoResultImpl(
-      height: json['height'] as int,
-      topoHeight: json['topoheight'] as int,
-      stableHeight: json['stableheight'] as int,
-      prunedTopoHeight: json['pruned_topoheight'] as int?,
+      height: (json['height'] as num).toInt(),
+      topoHeight: (json['topoheight'] as num).toInt(),
+      stableHeight: (json['stableheight'] as num).toInt(),
+      prunedTopoHeight: (json['pruned_topoheight'] as num?)?.toInt(),
       topBlockHash: json['top_block_hash'] as String,
-      circulatingSupply: json['circulating_supply'] as int,
-      maximumSupply: json['maximum_supply'] as int,
+      circulatingSupply: (json['circulating_supply'] as num).toInt(),
+      maximumSupply: (json['maximum_supply'] as num).toInt(),
       difficulty: json['difficulty'] as String,
-      blockTimeTarget: json['block_time_target'] as int,
-      averageBlockTime: json['average_block_time'] as int,
-      blockReward: json['block_reward'] as int,
-      mempoolSize: json['mempool_size'] as int,
+      blockTimeTarget: (json['block_time_target'] as num).toInt(),
+      averageBlockTime: (json['average_block_time'] as num).toInt(),
+      blockReward: (json['block_reward'] as num).toInt(),
+      mempoolSize: (json['mempool_size'] as num).toInt(),
       version: json['version'] as String,
       network: $enumDecode(_$NetworkEnumMap, json['network']),
     );

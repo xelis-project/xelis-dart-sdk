@@ -12,7 +12,7 @@ _$TransferOutEntryImpl _$$TransferOutEntryImplFromJson(
         Map<String, dynamic> json) =>
     _$TransferOutEntryImpl(
       destination: json['destination'] as String,
-      amount: json['amount'] as int,
+      amount: (json['amount'] as num).toInt(),
       asset: json['asset'] as String,
       extraData: json['extra_data'],
     );

@@ -13,7 +13,7 @@ _$VersionedBalanceImpl _$$VersionedBalanceImplFromJson(
     _$VersionedBalanceImpl(
       balanceType: json['balance_type'] as String,
       finalBalance: json['final_balance'] as Map<String, dynamic>,
-      previousTopoheight: json['previous_topoheight'] as int,
+      previousTopoheight: (json['previous_topoheight'] as num).toInt(),
       outputBalance: json['output_balance'],
     );
 

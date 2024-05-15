@@ -11,8 +11,8 @@ part of 'get_height_range_params.dart';
 _$GetHeightRangeParamsImpl _$$GetHeightRangeParamsImplFromJson(
         Map<String, dynamic> json) =>
     _$GetHeightRangeParamsImpl(
-      startHeight: json['start_height'] as int?,
-      endHeight: json['end_height'] as int?,
+      startHeight: (json['start_height'] as num?)?.toInt(),
+      endHeight: (json['end_height'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$$GetHeightRangeParamsImplToJson(

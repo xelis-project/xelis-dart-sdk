@@ -11,11 +11,11 @@ part of 'p2p_status_result.dart';
 _$P2pStatusResultImpl _$$P2pStatusResultImplFromJson(
         Map<String, dynamic> json) =>
     _$P2pStatusResultImpl(
-      bestTopoHeight: json['best_topoheight'] as int,
-      medianTopoHeight: json['median_topoheight'] as int,
-      maxPeers: json['max_peers'] as int,
-      ourTopoHeight: json['our_topoheight'] as int,
-      peerCount: json['peer_count'] as int,
+      bestTopoHeight: (json['best_topoheight'] as num).toInt(),
+      medianTopoHeight: (json['median_topoheight'] as num).toInt(),
+      maxPeers: (json['max_peers'] as num).toInt(),
+      ourTopoHeight: (json['our_topoheight'] as num).toInt(),
+      peerCount: (json['peer_count'] as num).toInt(),
       peerId: json['peer_id'] as num,
       tag: json['tag'] as String?,
     );

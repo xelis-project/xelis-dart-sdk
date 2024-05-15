@@ -11,8 +11,8 @@ part of 'get_dev_fee_threshold_result.dart';
 _$DevFeeThresholdsImpl _$$DevFeeThresholdsImplFromJson(
         Map<String, dynamic> json) =>
     _$DevFeeThresholdsImpl(
-      height: json['height'] as int,
-      feePercentage: json['fee_percentage'] as int,
+      height: (json['height'] as num).toInt(),
+      feePercentage: (json['fee_percentage'] as num).toInt(),
     );
 
 Map<String, dynamic> _$$DevFeeThresholdsImplToJson(

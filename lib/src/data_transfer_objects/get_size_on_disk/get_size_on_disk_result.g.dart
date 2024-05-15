@@ -11,7 +11,7 @@ part of 'get_size_on_disk_result.dart';
 _$GetSizeOnDiskResultImpl _$$GetSizeOnDiskResultImplFromJson(
         Map<String, dynamic> json) =>
     _$GetSizeOnDiskResultImpl(
-      sizeBytes: json['size_bytes'] as int,
+      sizeBytes: (json['size_bytes'] as num).toInt(),
       sizeFormatted: json['size_formatted'] as String,
     );
 

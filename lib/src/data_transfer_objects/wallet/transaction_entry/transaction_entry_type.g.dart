@@ -10,7 +10,7 @@ part of 'transaction_entry_type.dart';
 
 _$CoinbaseEntryImpl _$$CoinbaseEntryImplFromJson(Map<String, dynamic> json) =>
     _$CoinbaseEntryImpl(
-      reward: json['reward'] as int,
+      reward: (json['reward'] as num).toInt(),
       $type: json['runtimeType'] as String?,
     );
 
@@ -23,7 +23,7 @@ Map<String, dynamic> _$$CoinbaseEntryImplToJson(_$CoinbaseEntryImpl instance) =>
 _$BurnEntryImpl _$$BurnEntryImplFromJson(Map<String, dynamic> json) =>
     _$BurnEntryImpl(
       asset: json['asset'] as String,
-      amount: json['amount'] as int,
+      amount: (json['amount'] as num).toInt(),
       $type: json['runtimeType'] as String?,
     );
 
@@ -52,8 +52,8 @@ Map<String, dynamic> _$$IncomingEntryImplToJson(_$IncomingEntryImpl instance) =>
 
 _$OutgoingEntryImpl _$$OutgoingEntryImplFromJson(Map<String, dynamic> json) =>
     _$OutgoingEntryImpl(
-      fee: json['fee'] as int,
-      nonce: json['nonce'] as int,
+      fee: (json['fee'] as num).toInt(),
+      nonce: (json['nonce'] as num).toInt(),
       transfers: (json['transfers'] as List<dynamic>)
           .map((e) => TransferOutEntry.fromJson(e as Map<String, dynamic>))
           .toList(),

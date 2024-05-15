@@ -11,8 +11,8 @@ part of 'list_transactions_params.dart';
 _$ListTransactionsParamsImpl _$$ListTransactionsParamsImplFromJson(
         Map<String, dynamic> json) =>
     _$ListTransactionsParamsImpl(
-      minTopoHeight: json['min_topoheight'] as int?,
-      maxTopoHeight: json['max_topoheight'] as int?,
+      minTopoHeight: (json['min_topoheight'] as num?)?.toInt(),
+      maxTopoHeight: (json['max_topoheight'] as num?)?.toInt(),
       address: json['address'] as String?,
       acceptIncoming: json['accept_incoming'] as bool?,
       acceptOutgoing: json['accept_outgoing'] as bool?,

@@ -11,9 +11,9 @@ part of 'get_account_history_result.dart';
 _$GetAccountHistoryResultImpl _$$GetAccountHistoryResultImplFromJson(
         Map<String, dynamic> json) =>
     _$GetAccountHistoryResultImpl(
-      topoheight: json['topoheight'] as int,
+      topoheight: (json['topoheight'] as num).toInt(),
       hash: json['hash'] as String,
-      blockTimestamp: json['block_timestamp'] as int,
+      blockTimestamp: (json['block_timestamp'] as num).toInt(),
       burnHistory: json['burn'] == null
           ? null
           : BurnHistory.fromJson(json['burn'] as Map<String, dynamic>),

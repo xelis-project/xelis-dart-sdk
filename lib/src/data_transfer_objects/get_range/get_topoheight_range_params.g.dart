@@ -11,8 +11,8 @@ part of 'get_topoheight_range_params.dart';
 _$GetTopoHeightRangeParamsImpl _$$GetTopoHeightRangeParamsImplFromJson(
         Map<String, dynamic> json) =>
     _$GetTopoHeightRangeParamsImpl(
-      startTopoHeight: json['start_topoheight'] as int?,
-      endTopoHeight: json['end_topoheight'] as int?,
+      startTopoHeight: (json['start_topoheight'] as num?)?.toInt(),
+      endTopoHeight: (json['end_topoheight'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$$GetTopoHeightRangeParamsImplToJson(
