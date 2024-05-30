@@ -13,6 +13,7 @@ _$SplitAddressResultImpl _$$SplitAddressResultImplFromJson(
     _$SplitAddressResultImpl(
       address: json['address'] as String,
       integratedData: json['integrated_data'] as Map<String, dynamic>,
+      size: (json['size'] as num).toInt(),
     );
 
 Map<String, dynamic> _$$SplitAddressResultImplToJson(
@@ -20,4 +21,5 @@ Map<String, dynamic> _$$SplitAddressResultImplToJson(
     <String, dynamic>{
       'address': instance.address,
       'integrated_data': instance.integratedData,
+      'size': instance.size,
     };

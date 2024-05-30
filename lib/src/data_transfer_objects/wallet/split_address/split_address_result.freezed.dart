@@ -24,6 +24,8 @@ mixin _$SplitAddressResult {
   String get address => throw _privateConstructorUsedError;
   @JsonKey(name: 'integrated_data')
   Map<String, dynamic> get integratedData => throw _privateConstructorUsedError;
+  @JsonKey(name: 'size')
+  int get size => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -39,7 +41,8 @@ abstract class $SplitAddressResultCopyWith<$Res> {
   @useResult
   $Res call(
       {@JsonKey(name: 'address') String address,
-      @JsonKey(name: 'integrated_data') Map<String, dynamic> integratedData});
+      @JsonKey(name: 'integrated_data') Map<String, dynamic> integratedData,
+      @JsonKey(name: 'size') int size});
 }
 
 /// @nodoc
@@ -57,6 +60,7 @@ class _$SplitAddressResultCopyWithImpl<$Res, $Val extends SplitAddressResult>
   $Res call({
     Object? address = null,
     Object? integratedData = null,
+    Object? size = null,
   }) {
     return _then(_value.copyWith(
       address: null == address
@@ -67,6 +71,10 @@ class _$SplitAddressResultCopyWithImpl<$Res, $Val extends SplitAddressResult>
           ? _value.integratedData
           : integratedData // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>,
+      size: null == size
+          ? _value.size
+          : size // ignore: cast_nullable_to_non_nullable
+              as int,
     ) as $Val);
   }
 }
@@ -81,7 +89,8 @@ abstract class _$$SplitAddressResultImplCopyWith<$Res>
   @useResult
   $Res call(
       {@JsonKey(name: 'address') String address,
-      @JsonKey(name: 'integrated_data') Map<String, dynamic> integratedData});
+      @JsonKey(name: 'integrated_data') Map<String, dynamic> integratedData,
+      @JsonKey(name: 'size') int size});
 }
 
 /// @nodoc
@@ -97,6 +106,7 @@ class __$$SplitAddressResultImplCopyWithImpl<$Res>
   $Res call({
     Object? address = null,
     Object? integratedData = null,
+    Object? size = null,
   }) {
     return _then(_$SplitAddressResultImpl(
       address: null == address
@@ -107,6 +117,10 @@ class __$$SplitAddressResultImplCopyWithImpl<$Res>
           ? _value._integratedData
           : integratedData // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>,
+      size: null == size
+          ? _value.size
+          : size // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -117,7 +131,8 @@ class _$SplitAddressResultImpl implements _SplitAddressResult {
   const _$SplitAddressResultImpl(
       {@JsonKey(name: 'address') required this.address,
       @JsonKey(name: 'integrated_data')
-      required final Map<String, dynamic> integratedData})
+      required final Map<String, dynamic> integratedData,
+      @JsonKey(name: 'size') required this.size})
       : _integratedData = integratedData;
 
   factory _$SplitAddressResultImpl.fromJson(Map<String, dynamic> json) =>
@@ -136,8 +151,12 @@ class _$SplitAddressResultImpl implements _SplitAddressResult {
   }
 
   @override
+  @JsonKey(name: 'size')
+  final int size;
+
+  @override
   String toString() {
-    return 'SplitAddressResult(address: $address, integratedData: $integratedData)';
+    return 'SplitAddressResult(address: $address, integratedData: $integratedData, size: $size)';
   }
 
   @override
@@ -147,13 +166,14 @@ class _$SplitAddressResultImpl implements _SplitAddressResult {
             other is _$SplitAddressResultImpl &&
             (identical(other.address, address) || other.address == address) &&
             const DeepCollectionEquality()
-                .equals(other._integratedData, _integratedData));
+                .equals(other._integratedData, _integratedData) &&
+            (identical(other.size, size) || other.size == size));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, address,
-      const DeepCollectionEquality().hash(_integratedData));
+      const DeepCollectionEquality().hash(_integratedData), size);
 
   @JsonKey(ignore: true)
   @override
@@ -174,7 +194,8 @@ abstract class _SplitAddressResult implements SplitAddressResult {
   const factory _SplitAddressResult(
           {@JsonKey(name: 'address') required final String address,
           @JsonKey(name: 'integrated_data')
-          required final Map<String, dynamic> integratedData}) =
+          required final Map<String, dynamic> integratedData,
+          @JsonKey(name: 'size') required final int size}) =
       _$SplitAddressResultImpl;
 
   factory _SplitAddressResult.fromJson(Map<String, dynamic> json) =
@@ -186,6 +207,9 @@ abstract class _SplitAddressResult implements SplitAddressResult {
   @override
   @JsonKey(name: 'integrated_data')
   Map<String, dynamic> get integratedData;
+  @override
+  @JsonKey(name: 'size')
+  int get size;
   @override
   @JsonKey(ignore: true)
   _$$SplitAddressResultImplCopyWith<_$SplitAddressResultImpl> get copyWith =>

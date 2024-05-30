@@ -14,6 +14,7 @@ class SplitAddressResult with _$SplitAddressResult {
     @JsonKey(name: 'address') required String address,
     @JsonKey(name: 'integrated_data')
     required Map<String, dynamic> integratedData,
+    @JsonKey(name: 'size') required int size,
   }) = _SplitAddressResult;
 
   /// @nodoc
