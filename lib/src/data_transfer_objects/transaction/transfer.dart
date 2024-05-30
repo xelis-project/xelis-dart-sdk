@@ -17,6 +17,7 @@ class Transfer with _$Transfer {
     required Map<String, dynamic> validityProof,
     @JsonKey(name: 'destination') required String destination,
     @JsonKey(name: 'receiver_handle') required List<int> receiverHandle,
+    @JsonKey(name: 'sender_handle') required List<int> senderHandle,
     @JsonKey(name: 'extra_data') dynamic extraData,
   }) = _Transfer;
 

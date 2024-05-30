@@ -19,6 +19,9 @@ _$TransferImpl _$$TransferImplFromJson(Map<String, dynamic> json) =>
       receiverHandle: (json['receiver_handle'] as List<dynamic>)
           .map((e) => (e as num).toInt())
           .toList(),
+      senderHandle: (json['sender_handle'] as List<dynamic>)
+          .map((e) => (e as num).toInt())
+          .toList(),
       extraData: json['extra_data'],
     );
 
@@ -29,5 +32,6 @@ Map<String, dynamic> _$$TransferImplToJson(_$TransferImpl instance) =>
       'ct_validity_proof': instance.validityProof,
       'destination': instance.destination,
       'receiver_handle': instance.receiverHandle,
+      'sender_handle': instance.senderHandle,
       'extra_data': instance.extraData,
     };
