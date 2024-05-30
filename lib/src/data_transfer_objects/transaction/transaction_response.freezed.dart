@@ -25,9 +25,8 @@ mixin _$TransactionResponse {
   bool get inMempool => throw _privateConstructorUsedError;
   int get nonce => throw _privateConstructorUsedError;
   String get source => throw _privateConstructorUsedError;
-  List<int> get rangeProof => throw _privateConstructorUsedError;
-  List<Map<String, dynamic>> get sourceCommitments =>
-      throw _privateConstructorUsedError;
+  List<dynamic> get rangeProof => throw _privateConstructorUsedError;
+  List<dynamic> get sourceCommitments => throw _privateConstructorUsedError;
   Map<String, dynamic> get reference => throw _privateConstructorUsedError;
   String get signature => throw _privateConstructorUsedError;
 
@@ -52,8 +51,8 @@ abstract class $TransactionResponseCopyWith<$Res> {
       bool inMempool,
       int nonce,
       String source,
-      List<int> rangeProof,
-      List<Map<String, dynamic>> sourceCommitments,
+      List<dynamic> rangeProof,
+      List<dynamic> sourceCommitments,
       Map<String, dynamic> reference,
       String signature});
 
@@ -127,11 +126,11 @@ class _$TransactionResponseCopyWithImpl<$Res, $Val extends TransactionResponse>
       rangeProof: null == rangeProof
           ? _value.rangeProof
           : rangeProof // ignore: cast_nullable_to_non_nullable
-              as List<int>,
+              as List<dynamic>,
       sourceCommitments: null == sourceCommitments
           ? _value.sourceCommitments
           : sourceCommitments // ignore: cast_nullable_to_non_nullable
-              as List<Map<String, dynamic>>,
+              as List<dynamic>,
       reference: null == reference
           ? _value.reference
           : reference // ignore: cast_nullable_to_non_nullable
@@ -170,8 +169,8 @@ abstract class _$$TransactionResponseImplCopyWith<$Res>
       bool inMempool,
       int nonce,
       String source,
-      List<int> rangeProof,
-      List<Map<String, dynamic>> sourceCommitments,
+      List<dynamic> rangeProof,
+      List<dynamic> sourceCommitments,
       Map<String, dynamic> reference,
       String signature});
 
@@ -244,11 +243,11 @@ class __$$TransactionResponseImplCopyWithImpl<$Res>
       rangeProof: null == rangeProof
           ? _value._rangeProof
           : rangeProof // ignore: cast_nullable_to_non_nullable
-              as List<int>,
+              as List<dynamic>,
       sourceCommitments: null == sourceCommitments
           ? _value._sourceCommitments
           : sourceCommitments // ignore: cast_nullable_to_non_nullable
-              as List<Map<String, dynamic>>,
+              as List<dynamic>,
       reference: null == reference
           ? _value._reference
           : reference // ignore: cast_nullable_to_non_nullable
@@ -274,8 +273,8 @@ class _$TransactionResponseImpl implements _TransactionResponse {
       required this.inMempool,
       required this.nonce,
       required this.source,
-      required final List<int> rangeProof,
-      required final List<Map<String, dynamic>> sourceCommitments,
+      required final List<dynamic> rangeProof,
+      required final List<dynamic> sourceCommitments,
       required final Map<String, dynamic> reference,
       required this.signature})
       : _blocks = blocks,
@@ -309,17 +308,17 @@ class _$TransactionResponseImpl implements _TransactionResponse {
   final int nonce;
   @override
   final String source;
-  final List<int> _rangeProof;
+  final List<dynamic> _rangeProof;
   @override
-  List<int> get rangeProof {
+  List<dynamic> get rangeProof {
     if (_rangeProof is EqualUnmodifiableListView) return _rangeProof;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_rangeProof);
   }
 
-  final List<Map<String, dynamic>> _sourceCommitments;
+  final List<dynamic> _sourceCommitments;
   @override
-  List<Map<String, dynamic>> get sourceCommitments {
+  List<dynamic> get sourceCommitments {
     if (_sourceCommitments is EqualUnmodifiableListView)
       return _sourceCommitments;
     // ignore: implicit_dynamic_type
@@ -404,8 +403,8 @@ abstract class _TransactionResponse implements TransactionResponse {
       required final bool inMempool,
       required final int nonce,
       required final String source,
-      required final List<int> rangeProof,
-      required final List<Map<String, dynamic>> sourceCommitments,
+      required final List<dynamic> rangeProof,
+      required final List<dynamic> sourceCommitments,
       required final Map<String, dynamic> reference,
       required final String signature}) = _$TransactionResponseImpl;
 
@@ -428,9 +427,9 @@ abstract class _TransactionResponse implements TransactionResponse {
   @override
   String get source;
   @override
-  List<int> get rangeProof;
+  List<dynamic> get rangeProof;
   @override
-  List<Map<String, dynamic>> get sourceCommitments;
+  List<dynamic> get sourceCommitments;
   @override
   Map<String, dynamic> get reference;
   @override

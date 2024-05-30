@@ -19,8 +19,8 @@ class TransactionResponse with _$TransactionResponse {
     required bool inMempool,
     required int nonce,
     required String source,
-    required List<int> rangeProof,
-    required List<Map<String, dynamic>> sourceCommitments,
+    required List<dynamic> rangeProof,
+    required List<dynamic> sourceCommitments,
     required Map<String, dynamic> reference,
     required String signature,
   }) = _TransactionResponse;
@@ -37,9 +37,8 @@ class TransactionResponse with _$TransactionResponse {
           'in_mempool': final bool inMempool,
           'nonce': final int nonce,
           'source': final String source,
-          'range_proof': final List<int> rangeProof,
-          'source_commitments': final List<Map<String, dynamic>>
-              sourceCommitments,
+          'range_proof': final List<dynamic> rangeProof,
+          'source_commitments': final List<dynamic> sourceCommitments,
           'reference': final Map<String, dynamic> reference,
           'signature': final String signature,
         }) {
@@ -68,8 +67,8 @@ class TransactionResponse with _$TransactionResponse {
           'in_mempool': final bool inMempool,
           'nonce': final int nonce,
           'source': final String source,
-          'range_proof': final List<int> rangeProof,
-          'source_commitments': final List<Map<String, dynamic>>
+          'range_proof': final List<dynamic> rangeProof,
+          'source_commitments': final List<dynamic>
               sourceCommitments,
           'reference': final Map<String, dynamic> reference,
           'signature': final String signature,
@@ -89,72 +88,7 @@ class TransactionResponse with _$TransactionResponse {
         reference: reference,
         signature: signature,
       );
-    } /*else if (json
-        case {
-          'blocks': final List<dynamic>? blocks,
-          'hash': final String hash,
-          'data': {'call_contract': final Map<String, dynamic> callContract},
-          'fee': final int fee,
-          'version': final int version,
-          'in_mempool': final bool inMempool,
-          'nonce': final int nonce,
-          'source': final String source,
-          'range_proof': final List<int> rangeProof,
-          'source_commitments': final List<Map<String, dynamic>>
-              sourceCommitments,
-          'reference': final Map<String, dynamic> reference,
-          'signature': final String signature,
-        }) {
-      return TransactionResponse(
-        blocks: blocks?.map((e) => e as String).toList(),
-        executedInBlock: json['executed_in_block'] as String?,
-        hash: hash,
-        data: CallContract.fromJson(callContract),
-        fee: fee,
-        version: version,
-        inMempool: inMempool,
-        nonce: nonce,
-        source: source,
-        rangeProof: rangeProof,
-        sourceCommitments: sourceCommitments,
-        reference: reference,
-        signature: signature,
-      );
-    } else if (json
-        case {
-          'blocks': final List<dynamic>? blocks,
-          'hash': final String hash,
-          'data': {
-            'deploy_contract': final Map<String, dynamic> deployContract
-          },
-          'fee': final int fee,
-          'version': final int version,
-          'in_mempool': final bool inMempool,
-          'nonce': final int nonce,
-          'source': final String source,
-          'range_proof': final List<int> rangeProof,
-          'source_commitments': final List<Map<String, dynamic>>
-              sourceCommitments,
-          'reference': final Map<String, dynamic> reference,
-          'signature': final String signature,
-        }) {
-      return TransactionResponse(
-        blocks: blocks?.map((e) => e as String).toList(),
-        executedInBlock: json['executed_in_block'] as String?,
-        hash: hash,
-        data: DeployContract.fromJson(deployContract),
-        fee: fee,
-        version: version,
-        inMempool: inMempool,
-        nonce: nonce,
-        source: source,
-        rangeProof: rangeProof,
-        sourceCommitments: sourceCommitments,
-        reference: reference,
-        signature: signature,
-      );
-    }*/
-    else {
+    } else {
       throw Exception('Unknown type for this transaction : $json');
     }
   }

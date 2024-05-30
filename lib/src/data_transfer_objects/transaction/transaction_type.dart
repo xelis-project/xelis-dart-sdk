@@ -21,18 +21,6 @@ sealed class TransactionType with _$TransactionType {
     @JsonKey(name: 'amount') required int amount,
   }) = Burn;
 
-  /*/// @nodoc
-  const factory TransactionType.callContract({
-    @JsonKey(name: 'contract') required String contractHash,
-    @JsonKey(name: 'assets') required Map<String, int> assets,
-    @JsonKey(name: 'params') required Map<String, dynamic> params,
-  }) = CallContract;
-
-  /// @nodoc
-  const factory TransactionType.deployContract(
-    @JsonKey(name: 'deploy_contract') dynamic deployContract,
-  ) = DeployContract;*/
-
   /// @nodoc
   factory TransactionType.fromJson(Map<String, dynamic> json) =>
       _$TransactionTypeFromJson(json);

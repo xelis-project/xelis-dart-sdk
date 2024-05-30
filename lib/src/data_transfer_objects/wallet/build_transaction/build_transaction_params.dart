@@ -32,17 +32,5 @@ class BuildTransactionParams with _$BuildTransactionParams {
             'broadcast': broadcast,
             if (txAsHex != null) 'tx_as_hex': txAsHex,
           },
-/*        CallContract() => {
-            'call_contract': transactionType.toJson(),
-            if (feeBuilder != null) 'fee': feeBuilder,
-            'broadcast': broadcast,
-            if (txAsHex != null) 'tx_as_hex': txAsHex,
-          },
-        DeployContract() => {
-            'deploy_contract': transactionType.toJson(),
-            if (feeBuilder != null) 'fee': feeBuilder,
-            'broadcast': broadcast,
-            if (txAsHex != null) 'tx_as_hex': txAsHex,
-          },*/
       };
 }
