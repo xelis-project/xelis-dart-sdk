@@ -62,6 +62,8 @@ export 'wallet/balance_changed_event/balance_changed_event.dart';
 export 'wallet/build_transaction/build_transaction_params.dart';
 export 'wallet/build_transaction/fee_builder.dart';
 export 'wallet/build_transaction/wallet_transaction_response.dart';
+export 'wallet/estimate_extra_data_size/estimate_extra_data_size_params.dart';
+export 'wallet/estimate_extra_data_size/estimate_extra_data_size_result.dart';
 export 'wallet/get_address/get_address_params.dart';
 export 'wallet/get_balance/get_balance_params.dart';
 export 'wallet/list_transactions/list_transactions_params.dart';

@@ -173,4 +173,16 @@ extension WalletRpcMethodsExtension on WalletClient {
 
     return result as int;
   }
+
+  /// Estimate the extra data size for a list of destinations.
+  Future<EstimateExtraDataSizeResult> estimateExtraDataSize(
+    EstimateExtraDataSizeParams estimateExtraDataSizeParams,
+  ) async {
+    final result = await sendRequest(
+      WalletMethod.estimateExtraDataSize,
+      estimateExtraDataSizeParams.toJson(),
+    );
+
+    return EstimateExtraDataSizeResult.fromJson(result as Map<String, dynamic>);
+  }
 }

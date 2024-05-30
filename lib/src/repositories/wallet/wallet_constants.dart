@@ -64,6 +64,9 @@ enum WalletMethod implements XelisJsonKey {
   /// Returned fees are in atomic units.
   estimateFees('estimate_fees'),
 
+  /// Estimate the extra data size for a list of destinations.
+  estimateExtraDataSize('estimate_extra_data_size'),
+
   //----------------------------------------------------------------------------
   /// TODO: implement
   getMatchingKeys('get_matching_keys'),
