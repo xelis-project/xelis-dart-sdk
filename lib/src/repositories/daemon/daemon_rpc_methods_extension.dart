@@ -33,6 +33,12 @@ extension DaemonRpcMethodsExtension on DaemonClient {
     return result as int;
   }
 
+  /// Returns the stable topological height of the chain.
+  Future<int> getStableTopoHeight() async {
+    final result = await sendRequest(DaemonMethod.getStableTopoheight);
+    return result as int;
+  }
+
   /// Returns the block template for PoW work.
   Future<GetBlockTemplateResult> getBlockTemplate(
     GetBlockTemplateParams getBlockTemplateParams,

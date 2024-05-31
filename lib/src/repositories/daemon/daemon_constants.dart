@@ -17,6 +17,9 @@ enum DaemonMethod implements XelisJsonKey {
   /// Retrieve current stable height of the chain.
   getStableHeight('get_stable_height'),
 
+  /// Retrieve current stable topological height of the chain.
+  getStableTopoheight('get_stable_topoheight'),
+
   /// Retrieve the block template for PoW work.
   getBlockTemplate('get_block_template'),
 
