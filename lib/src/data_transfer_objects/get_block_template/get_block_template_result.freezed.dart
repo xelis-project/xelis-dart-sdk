@@ -25,6 +25,8 @@ mixin _$GetBlockTemplateResult {
   int get difficulty => throw _privateConstructorUsedError;
   @JsonKey(name: 'height')
   int get height => throw _privateConstructorUsedError;
+  @JsonKey(name: 'topoheight')
+  int get topoheight => throw _privateConstructorUsedError;
   @JsonKey(name: 'template')
   String get template => throw _privateConstructorUsedError;
 
@@ -43,6 +45,7 @@ abstract class $GetBlockTemplateResultCopyWith<$Res> {
   $Res call(
       {@JsonKey(name: 'difficulty') int difficulty,
       @JsonKey(name: 'height') int height,
+      @JsonKey(name: 'topoheight') int topoheight,
       @JsonKey(name: 'template') String template});
 }
 
@@ -62,6 +65,7 @@ class _$GetBlockTemplateResultCopyWithImpl<$Res,
   $Res call({
     Object? difficulty = null,
     Object? height = null,
+    Object? topoheight = null,
     Object? template = null,
   }) {
     return _then(_value.copyWith(
@@ -72,6 +76,10 @@ class _$GetBlockTemplateResultCopyWithImpl<$Res,
       height: null == height
           ? _value.height
           : height // ignore: cast_nullable_to_non_nullable
+              as int,
+      topoheight: null == topoheight
+          ? _value.topoheight
+          : topoheight // ignore: cast_nullable_to_non_nullable
               as int,
       template: null == template
           ? _value.template
@@ -93,6 +101,7 @@ abstract class _$$GetBlockTemplateResultImplCopyWith<$Res>
   $Res call(
       {@JsonKey(name: 'difficulty') int difficulty,
       @JsonKey(name: 'height') int height,
+      @JsonKey(name: 'topoheight') int topoheight,
       @JsonKey(name: 'template') String template});
 }
 
@@ -111,6 +120,7 @@ class __$$GetBlockTemplateResultImplCopyWithImpl<$Res>
   $Res call({
     Object? difficulty = null,
     Object? height = null,
+    Object? topoheight = null,
     Object? template = null,
   }) {
     return _then(_$GetBlockTemplateResultImpl(
@@ -121,6 +131,10 @@ class __$$GetBlockTemplateResultImplCopyWithImpl<$Res>
       height: null == height
           ? _value.height
           : height // ignore: cast_nullable_to_non_nullable
+              as int,
+      topoheight: null == topoheight
+          ? _value.topoheight
+          : topoheight // ignore: cast_nullable_to_non_nullable
               as int,
       template: null == template
           ? _value.template
@@ -136,6 +150,7 @@ class _$GetBlockTemplateResultImpl implements _GetBlockTemplateResult {
   const _$GetBlockTemplateResultImpl(
       {@JsonKey(name: 'difficulty') required this.difficulty,
       @JsonKey(name: 'height') required this.height,
+      @JsonKey(name: 'topoheight') required this.topoheight,
       @JsonKey(name: 'template') required this.template});
 
   factory _$GetBlockTemplateResultImpl.fromJson(Map<String, dynamic> json) =>
@@ -148,12 +163,15 @@ class _$GetBlockTemplateResultImpl implements _GetBlockTemplateResult {
   @JsonKey(name: 'height')
   final int height;
   @override
+  @JsonKey(name: 'topoheight')
+  final int topoheight;
+  @override
   @JsonKey(name: 'template')
   final String template;
 
   @override
   String toString() {
-    return 'GetBlockTemplateResult(difficulty: $difficulty, height: $height, template: $template)';
+    return 'GetBlockTemplateResult(difficulty: $difficulty, height: $height, topoheight: $topoheight, template: $template)';
   }
 
   @override
@@ -164,13 +182,16 @@ class _$GetBlockTemplateResultImpl implements _GetBlockTemplateResult {
             (identical(other.difficulty, difficulty) ||
                 other.difficulty == difficulty) &&
             (identical(other.height, height) || other.height == height) &&
+            (identical(other.topoheight, topoheight) ||
+                other.topoheight == topoheight) &&
             (identical(other.template, template) ||
                 other.template == template));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, difficulty, height, template);
+  int get hashCode =>
+      Object.hash(runtimeType, difficulty, height, topoheight, template);
 
   @JsonKey(ignore: true)
   @override
@@ -191,6 +212,7 @@ abstract class _GetBlockTemplateResult implements GetBlockTemplateResult {
   const factory _GetBlockTemplateResult(
           {@JsonKey(name: 'difficulty') required final int difficulty,
           @JsonKey(name: 'height') required final int height,
+          @JsonKey(name: 'topoheight') required final int topoheight,
           @JsonKey(name: 'template') required final String template}) =
       _$GetBlockTemplateResultImpl;
 
@@ -203,6 +225,9 @@ abstract class _GetBlockTemplateResult implements GetBlockTemplateResult {
   @override
   @JsonKey(name: 'height')
   int get height;
+  @override
+  @JsonKey(name: 'topoheight')
+  int get topoheight;
   @override
   @JsonKey(name: 'template')
   String get template;

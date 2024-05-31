@@ -13,6 +13,7 @@ class GetBlockTemplateResult with _$GetBlockTemplateResult {
   const factory GetBlockTemplateResult({
     @JsonKey(name: 'difficulty') required int difficulty,
     @JsonKey(name: 'height') required int height,
+    @JsonKey(name: 'topoheight') required int topoheight,
     @JsonKey(name: 'template') required String template,
   }) = _GetBlockTemplateResult;
 

@@ -13,6 +13,7 @@ _$GetBlockTemplateResultImpl _$$GetBlockTemplateResultImplFromJson(
     _$GetBlockTemplateResultImpl(
       difficulty: (json['difficulty'] as num).toInt(),
       height: (json['height'] as num).toInt(),
+      topoheight: (json['topoheight'] as num).toInt(),
       template: json['template'] as String,
     );
 
@@ -21,5 +22,6 @@ Map<String, dynamic> _$$GetBlockTemplateResultImplToJson(
     <String, dynamic>{
       'difficulty': instance.difficulty,
       'height': instance.height,
+      'topoheight': instance.topoheight,
       'template': instance.template,
     };
