@@ -1,6 +1,7 @@
 // ignore_for_file: invalid_annotation_target, always_put_required_named_parameters_first
 
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/dtos.dart';
 
 part 'block.freezed.dart';
 
@@ -20,6 +21,8 @@ class Block with _$Block {
     @JsonKey(name: 'miner') required String miner,
     @JsonKey(name: 'nonce') required int nonce,
     @JsonKey(name: 'reward') int? reward,
+    @JsonKey(name: 'miner_reward') int? minerReward,
+    @JsonKey(name: 'dev_reward') int? devReward,
     @JsonKey(name: 'supply') int? supply,
     // TODO convert timestamp to DateTime
     @JsonKey(name: 'timestamp') required int timestamp,
@@ -29,6 +32,7 @@ class Block with _$Block {
     @JsonKey(name: 'total_fees') int? totalFees,
     @JsonKey(name: 'txs_hashes') required List<String> txsHashes,
     @JsonKey(name: 'version') required int version,
+    @JsonKey(name: 'transactions') List<TransactionResponse>? transactions,
   }) = _Block;
 
   /// @nodoc

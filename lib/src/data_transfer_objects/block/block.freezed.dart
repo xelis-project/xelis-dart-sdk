@@ -38,6 +38,10 @@ mixin _$Block {
   int get nonce => throw _privateConstructorUsedError;
   @JsonKey(name: 'reward')
   int? get reward => throw _privateConstructorUsedError;
+  @JsonKey(name: 'miner_reward')
+  int? get minerReward => throw _privateConstructorUsedError;
+  @JsonKey(name: 'dev_reward')
+  int? get devReward => throw _privateConstructorUsedError;
   @JsonKey(name: 'supply')
   int? get supply =>
       throw _privateConstructorUsedError; // TODO convert timestamp to DateTime
@@ -55,6 +59,9 @@ mixin _$Block {
   List<String> get txsHashes => throw _privateConstructorUsedError;
   @JsonKey(name: 'version')
   int get version => throw _privateConstructorUsedError;
+  @JsonKey(name: 'transactions')
+  List<TransactionResponse>? get transactions =>
+      throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -76,6 +83,8 @@ abstract class $BlockCopyWith<$Res> {
       @JsonKey(name: 'miner') String miner,
       @JsonKey(name: 'nonce') int nonce,
       @JsonKey(name: 'reward') int? reward,
+      @JsonKey(name: 'miner_reward') int? minerReward,
+      @JsonKey(name: 'dev_reward') int? devReward,
       @JsonKey(name: 'supply') int? supply,
       @JsonKey(name: 'timestamp') int timestamp,
       @JsonKey(name: 'tips') List<String> tips,
@@ -83,7 +92,8 @@ abstract class $BlockCopyWith<$Res> {
       @JsonKey(name: 'total_size_in_bytes') int totalSizeInBytes,
       @JsonKey(name: 'total_fees') int? totalFees,
       @JsonKey(name: 'txs_hashes') List<String> txsHashes,
-      @JsonKey(name: 'version') int version});
+      @JsonKey(name: 'version') int version,
+      @JsonKey(name: 'transactions') List<TransactionResponse>? transactions});
 }
 
 /// @nodoc
@@ -108,6 +118,8 @@ class _$BlockCopyWithImpl<$Res, $Val extends Block>
     Object? miner = null,
     Object? nonce = null,
     Object? reward = freezed,
+    Object? minerReward = freezed,
+    Object? devReward = freezed,
     Object? supply = freezed,
     Object? timestamp = null,
     Object? tips = null,
@@ -116,6 +128,7 @@ class _$BlockCopyWithImpl<$Res, $Val extends Block>
     Object? totalFees = freezed,
     Object? txsHashes = null,
     Object? version = null,
+    Object? transactions = freezed,
   }) {
     return _then(_value.copyWith(
       blockType: null == blockType
@@ -154,6 +167,14 @@ class _$BlockCopyWithImpl<$Res, $Val extends Block>
           ? _value.reward
           : reward // ignore: cast_nullable_to_non_nullable
               as int?,
+      minerReward: freezed == minerReward
+          ? _value.minerReward
+          : minerReward // ignore: cast_nullable_to_non_nullable
+              as int?,
+      devReward: freezed == devReward
+          ? _value.devReward
+          : devReward // ignore: cast_nullable_to_non_nullable
+              as int?,
       supply: freezed == supply
           ? _value.supply
           : supply // ignore: cast_nullable_to_non_nullable
@@ -186,6 +207,10 @@ class _$BlockCopyWithImpl<$Res, $Val extends Block>
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
               as int,
+      transactions: freezed == transactions
+          ? _value.transactions
+          : transactions // ignore: cast_nullable_to_non_nullable
+              as List<TransactionResponse>?,
     ) as $Val);
   }
 }
@@ -207,6 +232,8 @@ abstract class _$$BlockImplCopyWith<$Res> implements $BlockCopyWith<$Res> {
       @JsonKey(name: 'miner') String miner,
       @JsonKey(name: 'nonce') int nonce,
       @JsonKey(name: 'reward') int? reward,
+      @JsonKey(name: 'miner_reward') int? minerReward,
+      @JsonKey(name: 'dev_reward') int? devReward,
       @JsonKey(name: 'supply') int? supply,
       @JsonKey(name: 'timestamp') int timestamp,
       @JsonKey(name: 'tips') List<String> tips,
@@ -214,7 +241,8 @@ abstract class _$$BlockImplCopyWith<$Res> implements $BlockCopyWith<$Res> {
       @JsonKey(name: 'total_size_in_bytes') int totalSizeInBytes,
       @JsonKey(name: 'total_fees') int? totalFees,
       @JsonKey(name: 'txs_hashes') List<String> txsHashes,
-      @JsonKey(name: 'version') int version});
+      @JsonKey(name: 'version') int version,
+      @JsonKey(name: 'transactions') List<TransactionResponse>? transactions});
 }
 
 /// @nodoc
@@ -237,6 +265,8 @@ class __$$BlockImplCopyWithImpl<$Res>
     Object? miner = null,
     Object? nonce = null,
     Object? reward = freezed,
+    Object? minerReward = freezed,
+    Object? devReward = freezed,
     Object? supply = freezed,
     Object? timestamp = null,
     Object? tips = null,
@@ -245,6 +275,7 @@ class __$$BlockImplCopyWithImpl<$Res>
     Object? totalFees = freezed,
     Object? txsHashes = null,
     Object? version = null,
+    Object? transactions = freezed,
   }) {
     return _then(_$BlockImpl(
       blockType: null == blockType
@@ -283,6 +314,14 @@ class __$$BlockImplCopyWithImpl<$Res>
           ? _value.reward
           : reward // ignore: cast_nullable_to_non_nullable
               as int?,
+      minerReward: freezed == minerReward
+          ? _value.minerReward
+          : minerReward // ignore: cast_nullable_to_non_nullable
+              as int?,
+      devReward: freezed == devReward
+          ? _value.devReward
+          : devReward // ignore: cast_nullable_to_non_nullable
+              as int?,
       supply: freezed == supply
           ? _value.supply
           : supply // ignore: cast_nullable_to_non_nullable
@@ -315,6 +354,10 @@ class __$$BlockImplCopyWithImpl<$Res>
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
               as int,
+      transactions: freezed == transactions
+          ? _value._transactions
+          : transactions // ignore: cast_nullable_to_non_nullable
+              as List<TransactionResponse>?,
     ));
   }
 }
@@ -333,6 +376,8 @@ class _$BlockImpl implements _Block {
       @JsonKey(name: 'miner') required this.miner,
       @JsonKey(name: 'nonce') required this.nonce,
       @JsonKey(name: 'reward') this.reward,
+      @JsonKey(name: 'miner_reward') this.minerReward,
+      @JsonKey(name: 'dev_reward') this.devReward,
       @JsonKey(name: 'supply') this.supply,
       @JsonKey(name: 'timestamp') required this.timestamp,
       @JsonKey(name: 'tips') required final List<String> tips,
@@ -340,9 +385,12 @@ class _$BlockImpl implements _Block {
       @JsonKey(name: 'total_size_in_bytes') required this.totalSizeInBytes,
       @JsonKey(name: 'total_fees') this.totalFees,
       @JsonKey(name: 'txs_hashes') required final List<String> txsHashes,
-      @JsonKey(name: 'version') required this.version})
+      @JsonKey(name: 'version') required this.version,
+      @JsonKey(name: 'transactions')
+      final List<TransactionResponse>? transactions})
       : _tips = tips,
-        _txsHashes = txsHashes;
+        _txsHashes = txsHashes,
+        _transactions = transactions;
 
   factory _$BlockImpl.fromJson(Map<String, dynamic> json) =>
       _$$BlockImplFromJson(json);
@@ -374,6 +422,12 @@ class _$BlockImpl implements _Block {
   @override
   @JsonKey(name: 'reward')
   final int? reward;
+  @override
+  @JsonKey(name: 'miner_reward')
+  final int? minerReward;
+  @override
+  @JsonKey(name: 'dev_reward')
+  final int? devReward;
   @override
   @JsonKey(name: 'supply')
   final int? supply;
@@ -411,10 +465,20 @@ class _$BlockImpl implements _Block {
   @override
   @JsonKey(name: 'version')
   final int version;
+  final List<TransactionResponse>? _transactions;
+  @override
+  @JsonKey(name: 'transactions')
+  List<TransactionResponse>? get transactions {
+    final value = _transactions;
+    if (value == null) return null;
+    if (_transactions is EqualUnmodifiableListView) return _transactions;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   String toString() {
-    return 'Block(blockType: $blockType, cumulativeDifficulty: $cumulativeDifficulty, difficulty: $difficulty, extraNonce: $extraNonce, hash: $hash, height: $height, miner: $miner, nonce: $nonce, reward: $reward, supply: $supply, timestamp: $timestamp, tips: $tips, topoHeight: $topoHeight, totalSizeInBytes: $totalSizeInBytes, totalFees: $totalFees, txsHashes: $txsHashes, version: $version)';
+    return 'Block(blockType: $blockType, cumulativeDifficulty: $cumulativeDifficulty, difficulty: $difficulty, extraNonce: $extraNonce, hash: $hash, height: $height, miner: $miner, nonce: $nonce, reward: $reward, minerReward: $minerReward, devReward: $devReward, supply: $supply, timestamp: $timestamp, tips: $tips, topoHeight: $topoHeight, totalSizeInBytes: $totalSizeInBytes, totalFees: $totalFees, txsHashes: $txsHashes, version: $version, transactions: $transactions)';
   }
 
   @override
@@ -435,6 +499,10 @@ class _$BlockImpl implements _Block {
             (identical(other.miner, miner) || other.miner == miner) &&
             (identical(other.nonce, nonce) || other.nonce == nonce) &&
             (identical(other.reward, reward) || other.reward == reward) &&
+            (identical(other.minerReward, minerReward) ||
+                other.minerReward == minerReward) &&
+            (identical(other.devReward, devReward) ||
+                other.devReward == devReward) &&
             (identical(other.supply, supply) || other.supply == supply) &&
             (identical(other.timestamp, timestamp) ||
                 other.timestamp == timestamp) &&
@@ -447,30 +515,36 @@ class _$BlockImpl implements _Block {
                 other.totalFees == totalFees) &&
             const DeepCollectionEquality()
                 .equals(other._txsHashes, _txsHashes) &&
-            (identical(other.version, version) || other.version == version));
+            (identical(other.version, version) || other.version == version) &&
+            const DeepCollectionEquality()
+                .equals(other._transactions, _transactions));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      blockType,
-      cumulativeDifficulty,
-      difficulty,
-      extraNonce,
-      hash,
-      height,
-      miner,
-      nonce,
-      reward,
-      supply,
-      timestamp,
-      const DeepCollectionEquality().hash(_tips),
-      topoHeight,
-      totalSizeInBytes,
-      totalFees,
-      const DeepCollectionEquality().hash(_txsHashes),
-      version);
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        blockType,
+        cumulativeDifficulty,
+        difficulty,
+        extraNonce,
+        hash,
+        height,
+        miner,
+        nonce,
+        reward,
+        minerReward,
+        devReward,
+        supply,
+        timestamp,
+        const DeepCollectionEquality().hash(_tips),
+        topoHeight,
+        totalSizeInBytes,
+        totalFees,
+        const DeepCollectionEquality().hash(_txsHashes),
+        version,
+        const DeepCollectionEquality().hash(_transactions)
+      ]);
 
   @JsonKey(ignore: true)
   @override
@@ -498,6 +572,8 @@ abstract class _Block implements Block {
       @JsonKey(name: 'miner') required final String miner,
       @JsonKey(name: 'nonce') required final int nonce,
       @JsonKey(name: 'reward') final int? reward,
+      @JsonKey(name: 'miner_reward') final int? minerReward,
+      @JsonKey(name: 'dev_reward') final int? devReward,
       @JsonKey(name: 'supply') final int? supply,
       @JsonKey(name: 'timestamp') required final int timestamp,
       @JsonKey(name: 'tips') required final List<String> tips,
@@ -505,7 +581,9 @@ abstract class _Block implements Block {
       @JsonKey(name: 'total_size_in_bytes') required final int totalSizeInBytes,
       @JsonKey(name: 'total_fees') final int? totalFees,
       @JsonKey(name: 'txs_hashes') required final List<String> txsHashes,
-      @JsonKey(name: 'version') required final int version}) = _$BlockImpl;
+      @JsonKey(name: 'version') required final int version,
+      @JsonKey(name: 'transactions')
+      final List<TransactionResponse>? transactions}) = _$BlockImpl;
 
   factory _Block.fromJson(Map<String, dynamic> json) = _$BlockImpl.fromJson;
 
@@ -537,6 +615,12 @@ abstract class _Block implements Block {
   @JsonKey(name: 'reward')
   int? get reward;
   @override
+  @JsonKey(name: 'miner_reward')
+  int? get minerReward;
+  @override
+  @JsonKey(name: 'dev_reward')
+  int? get devReward;
+  @override
   @JsonKey(name: 'supply')
   int? get supply;
   @override // TODO convert timestamp to DateTime
@@ -560,6 +644,9 @@ abstract class _Block implements Block {
   @override
   @JsonKey(name: 'version')
   int get version;
+  @override
+  @JsonKey(name: 'transactions')
+  List<TransactionResponse>? get transactions;
   @override
   @JsonKey(ignore: true)
   _$$BlockImplCopyWith<_$BlockImpl> get copyWith =>

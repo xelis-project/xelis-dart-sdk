@@ -16,18 +16,31 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$TransactionResponse {
+  @JsonKey(name: 'blocks')
   List<String>? get blocks => throw _privateConstructorUsedError;
+  @JsonKey(name: 'executed_in_block')
   String? get executedInBlock => throw _privateConstructorUsedError;
+  @JsonKey(name: 'hash')
   String get hash => throw _privateConstructorUsedError;
+  @JsonKey(name: 'data')
   TransactionType get data => throw _privateConstructorUsedError;
+  @JsonKey(name: 'fee')
   int get fee => throw _privateConstructorUsedError;
+  @JsonKey(name: 'version')
   int get version => throw _privateConstructorUsedError;
+  @JsonKey(name: 'in_mempool')
   bool get inMempool => throw _privateConstructorUsedError;
+  @JsonKey(name: 'nonce')
   int get nonce => throw _privateConstructorUsedError;
+  @JsonKey(name: 'source')
   String get source => throw _privateConstructorUsedError;
+  @JsonKey(name: 'range_proof')
   List<dynamic> get rangeProof => throw _privateConstructorUsedError;
+  @JsonKey(name: 'source_commitments')
   List<dynamic> get sourceCommitments => throw _privateConstructorUsedError;
+  @JsonKey(name: 'reference')
   Map<String, dynamic> get reference => throw _privateConstructorUsedError;
+  @JsonKey(name: 'signature')
   String get signature => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -42,19 +55,19 @@ abstract class $TransactionResponseCopyWith<$Res> {
       _$TransactionResponseCopyWithImpl<$Res, TransactionResponse>;
   @useResult
   $Res call(
-      {List<String>? blocks,
-      String? executedInBlock,
-      String hash,
-      TransactionType data,
-      int fee,
-      int version,
-      bool inMempool,
-      int nonce,
-      String source,
-      List<dynamic> rangeProof,
-      List<dynamic> sourceCommitments,
-      Map<String, dynamic> reference,
-      String signature});
+      {@JsonKey(name: 'blocks') List<String>? blocks,
+      @JsonKey(name: 'executed_in_block') String? executedInBlock,
+      @JsonKey(name: 'hash') String hash,
+      @JsonKey(name: 'data') TransactionType data,
+      @JsonKey(name: 'fee') int fee,
+      @JsonKey(name: 'version') int version,
+      @JsonKey(name: 'in_mempool') bool inMempool,
+      @JsonKey(name: 'nonce') int nonce,
+      @JsonKey(name: 'source') String source,
+      @JsonKey(name: 'range_proof') List<dynamic> rangeProof,
+      @JsonKey(name: 'source_commitments') List<dynamic> sourceCommitments,
+      @JsonKey(name: 'reference') Map<String, dynamic> reference,
+      @JsonKey(name: 'signature') String signature});
 
   $TransactionTypeCopyWith<$Res> get data;
 }
@@ -160,19 +173,19 @@ abstract class _$$TransactionResponseImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {List<String>? blocks,
-      String? executedInBlock,
-      String hash,
-      TransactionType data,
-      int fee,
-      int version,
-      bool inMempool,
-      int nonce,
-      String source,
-      List<dynamic> rangeProof,
-      List<dynamic> sourceCommitments,
-      Map<String, dynamic> reference,
-      String signature});
+      {@JsonKey(name: 'blocks') List<String>? blocks,
+      @JsonKey(name: 'executed_in_block') String? executedInBlock,
+      @JsonKey(name: 'hash') String hash,
+      @JsonKey(name: 'data') TransactionType data,
+      @JsonKey(name: 'fee') int fee,
+      @JsonKey(name: 'version') int version,
+      @JsonKey(name: 'in_mempool') bool inMempool,
+      @JsonKey(name: 'nonce') int nonce,
+      @JsonKey(name: 'source') String source,
+      @JsonKey(name: 'range_proof') List<dynamic> rangeProof,
+      @JsonKey(name: 'source_commitments') List<dynamic> sourceCommitments,
+      @JsonKey(name: 'reference') Map<String, dynamic> reference,
+      @JsonKey(name: 'signature') String signature});
 
   @override
   $TransactionTypeCopyWith<$Res> get data;
@@ -264,19 +277,20 @@ class __$$TransactionResponseImplCopyWithImpl<$Res>
 
 class _$TransactionResponseImpl implements _TransactionResponse {
   const _$TransactionResponseImpl(
-      {final List<String>? blocks,
-      this.executedInBlock,
-      required this.hash,
-      required this.data,
-      required this.fee,
-      required this.version,
-      required this.inMempool,
-      required this.nonce,
-      required this.source,
-      required final List<dynamic> rangeProof,
+      {@JsonKey(name: 'blocks') final List<String>? blocks,
+      @JsonKey(name: 'executed_in_block') this.executedInBlock,
+      @JsonKey(name: 'hash') required this.hash,
+      @JsonKey(name: 'data') required this.data,
+      @JsonKey(name: 'fee') required this.fee,
+      @JsonKey(name: 'version') required this.version,
+      @JsonKey(name: 'in_mempool') required this.inMempool,
+      @JsonKey(name: 'nonce') required this.nonce,
+      @JsonKey(name: 'source') required this.source,
+      @JsonKey(name: 'range_proof') required final List<dynamic> rangeProof,
+      @JsonKey(name: 'source_commitments')
       required final List<dynamic> sourceCommitments,
-      required final Map<String, dynamic> reference,
-      required this.signature})
+      @JsonKey(name: 'reference') required final Map<String, dynamic> reference,
+      @JsonKey(name: 'signature') required this.signature})
       : _blocks = blocks,
         _rangeProof = rangeProof,
         _sourceCommitments = sourceCommitments,
@@ -284,6 +298,7 @@ class _$TransactionResponseImpl implements _TransactionResponse {
 
   final List<String>? _blocks;
   @override
+  @JsonKey(name: 'blocks')
   List<String>? get blocks {
     final value = _blocks;
     if (value == null) return null;
@@ -293,23 +308,32 @@ class _$TransactionResponseImpl implements _TransactionResponse {
   }
 
   @override
+  @JsonKey(name: 'executed_in_block')
   final String? executedInBlock;
   @override
+  @JsonKey(name: 'hash')
   final String hash;
   @override
+  @JsonKey(name: 'data')
   final TransactionType data;
   @override
+  @JsonKey(name: 'fee')
   final int fee;
   @override
+  @JsonKey(name: 'version')
   final int version;
   @override
+  @JsonKey(name: 'in_mempool')
   final bool inMempool;
   @override
+  @JsonKey(name: 'nonce')
   final int nonce;
   @override
+  @JsonKey(name: 'source')
   final String source;
   final List<dynamic> _rangeProof;
   @override
+  @JsonKey(name: 'range_proof')
   List<dynamic> get rangeProof {
     if (_rangeProof is EqualUnmodifiableListView) return _rangeProof;
     // ignore: implicit_dynamic_type
@@ -318,6 +342,7 @@ class _$TransactionResponseImpl implements _TransactionResponse {
 
   final List<dynamic> _sourceCommitments;
   @override
+  @JsonKey(name: 'source_commitments')
   List<dynamic> get sourceCommitments {
     if (_sourceCommitments is EqualUnmodifiableListView)
       return _sourceCommitments;
@@ -327,6 +352,7 @@ class _$TransactionResponseImpl implements _TransactionResponse {
 
   final Map<String, dynamic> _reference;
   @override
+  @JsonKey(name: 'reference')
   Map<String, dynamic> get reference {
     if (_reference is EqualUnmodifiableMapView) return _reference;
     // ignore: implicit_dynamic_type
@@ -334,6 +360,7 @@ class _$TransactionResponseImpl implements _TransactionResponse {
   }
 
   @override
+  @JsonKey(name: 'signature')
   final String signature;
 
   @override
@@ -394,45 +421,60 @@ class _$TransactionResponseImpl implements _TransactionResponse {
 
 abstract class _TransactionResponse implements TransactionResponse {
   const factory _TransactionResponse(
-      {final List<String>? blocks,
-      final String? executedInBlock,
-      required final String hash,
-      required final TransactionType data,
-      required final int fee,
-      required final int version,
-      required final bool inMempool,
-      required final int nonce,
-      required final String source,
-      required final List<dynamic> rangeProof,
+      {@JsonKey(name: 'blocks') final List<String>? blocks,
+      @JsonKey(name: 'executed_in_block') final String? executedInBlock,
+      @JsonKey(name: 'hash') required final String hash,
+      @JsonKey(name: 'data') required final TransactionType data,
+      @JsonKey(name: 'fee') required final int fee,
+      @JsonKey(name: 'version') required final int version,
+      @JsonKey(name: 'in_mempool') required final bool inMempool,
+      @JsonKey(name: 'nonce') required final int nonce,
+      @JsonKey(name: 'source') required final String source,
+      @JsonKey(name: 'range_proof') required final List<dynamic> rangeProof,
+      @JsonKey(name: 'source_commitments')
       required final List<dynamic> sourceCommitments,
-      required final Map<String, dynamic> reference,
+      @JsonKey(name: 'reference') required final Map<String, dynamic> reference,
+      @JsonKey(name: 'signature')
       required final String signature}) = _$TransactionResponseImpl;
 
   @override
+  @JsonKey(name: 'blocks')
   List<String>? get blocks;
   @override
+  @JsonKey(name: 'executed_in_block')
   String? get executedInBlock;
   @override
+  @JsonKey(name: 'hash')
   String get hash;
   @override
+  @JsonKey(name: 'data')
   TransactionType get data;
   @override
+  @JsonKey(name: 'fee')
   int get fee;
   @override
+  @JsonKey(name: 'version')
   int get version;
   @override
+  @JsonKey(name: 'in_mempool')
   bool get inMempool;
   @override
+  @JsonKey(name: 'nonce')
   int get nonce;
   @override
+  @JsonKey(name: 'source')
   String get source;
   @override
+  @JsonKey(name: 'range_proof')
   List<dynamic> get rangeProof;
   @override
+  @JsonKey(name: 'source_commitments')
   List<dynamic> get sourceCommitments;
   @override
+  @JsonKey(name: 'reference')
   Map<String, dynamic> get reference;
   @override
+  @JsonKey(name: 'signature')
   String get signature;
   @override
   @JsonKey(ignore: true)

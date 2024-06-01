@@ -18,6 +18,8 @@ _$BlockImpl _$$BlockImplFromJson(Map<String, dynamic> json) => _$BlockImpl(
       miner: json['miner'] as String,
       nonce: (json['nonce'] as num).toInt(),
       reward: (json['reward'] as num?)?.toInt(),
+      minerReward: (json['miner_reward'] as num?)?.toInt(),
+      devReward: (json['dev_reward'] as num?)?.toInt(),
       supply: (json['supply'] as num?)?.toInt(),
       timestamp: (json['timestamp'] as num).toInt(),
       tips: (json['tips'] as List<dynamic>).map((e) => e as String).toList(),
@@ -28,6 +30,9 @@ _$BlockImpl _$$BlockImplFromJson(Map<String, dynamic> json) => _$BlockImpl(
           .map((e) => e as String)
           .toList(),
       version: (json['version'] as num).toInt(),
+      transactions: (json['transactions'] as List<dynamic>?)
+          ?.map((e) => TransactionResponse.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$$BlockImplToJson(_$BlockImpl instance) =>
@@ -41,6 +46,8 @@ Map<String, dynamic> _$$BlockImplToJson(_$BlockImpl instance) =>
       'miner': instance.miner,
       'nonce': instance.nonce,
       'reward': instance.reward,
+      'miner_reward': instance.minerReward,
+      'dev_reward': instance.devReward,
       'supply': instance.supply,
       'timestamp': instance.timestamp,
       'tips': instance.tips,
@@ -49,4 +56,5 @@ Map<String, dynamic> _$$BlockImplToJson(_$BlockImpl instance) =>
       'total_fees': instance.totalFees,
       'txs_hashes': instance.txsHashes,
       'version': instance.version,
+      'transactions': instance.transactions,
     };

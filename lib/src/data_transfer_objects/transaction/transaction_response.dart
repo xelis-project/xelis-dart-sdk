@@ -10,19 +10,20 @@ part 'transaction_response.freezed.dart';
 class TransactionResponse with _$TransactionResponse {
   /// @nodoc
   const factory TransactionResponse({
-    List<String>? blocks,
-    String? executedInBlock,
-    required String hash,
-    required TransactionType data,
-    required int fee,
-    required int version,
-    required bool inMempool,
-    required int nonce,
-    required String source,
-    required List<dynamic> rangeProof,
+    @JsonKey(name: 'blocks') List<String>? blocks,
+    @JsonKey(name: 'executed_in_block') String? executedInBlock,
+    @JsonKey(name: 'hash') required String hash,
+    @JsonKey(name: 'data') required TransactionType data,
+    @JsonKey(name: 'fee') required int fee,
+    @JsonKey(name: 'version') required int version,
+    @JsonKey(name: 'in_mempool') required bool inMempool,
+    @JsonKey(name: 'nonce') required int nonce,
+    @JsonKey(name: 'source') required String source,
+    @JsonKey(name: 'range_proof') required List<dynamic> rangeProof,
+    @JsonKey(name: 'source_commitments')
     required List<dynamic> sourceCommitments,
-    required Map<String, dynamic> reference,
-    required String signature,
+    @JsonKey(name: 'reference') required Map<String, dynamic> reference,
+    @JsonKey(name: 'signature') required String signature,
   }) = _TransactionResponse;
 
   /// @nodoc
@@ -68,8 +69,7 @@ class TransactionResponse with _$TransactionResponse {
           'nonce': final int nonce,
           'source': final String source,
           'range_proof': final List<dynamic> rangeProof,
-          'source_commitments': final List<dynamic>
-              sourceCommitments,
+          'source_commitments': final List<dynamic> sourceCommitments,
           'reference': final Map<String, dynamic> reference,
           'signature': final String signature,
         }) {
@@ -91,5 +91,24 @@ class TransactionResponse with _$TransactionResponse {
     } else {
       throw Exception('Unknown type for this transaction : $json');
     }
+  }
+
+  /// @nodoc
+  Map<String, dynamic> toJson() {
+    return {
+      'blocks': blocks?.map((e) => e).toList(),
+      'executed_in_block': executedInBlock,
+      'hash': hash,
+      'data': data.toJson(),
+      'fee': fee,
+      'version': version,
+      'in_mempool': inMempool,
+      'nonce': nonce,
+      'source': source,
+      'range_proof': rangeProof,
+      'source_commitments': sourceCommitments,
+      'reference': reference,
+      'signature': signature,
+    };
   }
 }
