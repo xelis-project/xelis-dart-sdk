@@ -2,13 +2,14 @@
 
 // ignore_for_file: package_api_docs, non_constant_identifier_names
 
-part of 'peer.dart';
+part of 'peer_entry.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$PeerImpl _$$PeerImplFromJson(Map<String, dynamic> json) => _$PeerImpl(
+_$PeerEntryImpl _$$PeerEntryImplFromJson(Map<String, dynamic> json) =>
+    _$PeerEntryImpl(
       address: json['addr'] as String,
       cumulativeDifficulty: (json['cumulative_difficulty'] as num).toInt(),
       height: (json['height'] as num).toInt(),
@@ -21,11 +22,12 @@ _$PeerImpl _$$PeerImplFromJson(Map<String, dynamic> json) => _$PeerImpl(
       topoheight: (json['topoheight'] as num).toInt(),
       version: json['version'] as String,
       peers: (json['peers'] as Map<String, dynamic>).map(
-        (k, e) => MapEntry(k, $enumDecode(_$PeerTypeEnumMap, e)),
+        (k, e) => MapEntry(k, $enumDecode(_$DirectionEnumMap, e)),
       ),
+      connectedOn: (json['connected_on'] as num).toInt(),
     );
 
-Map<String, dynamic> _$$PeerImplToJson(_$PeerImpl instance) =>
+Map<String, dynamic> _$$PeerEntryImplToJson(_$PeerEntryImpl instance) =>
     <String, dynamic>{
       'addr': instance.address,
       'cumulative_difficulty': instance.cumulativeDifficulty,
@@ -38,11 +40,13 @@ Map<String, dynamic> _$$PeerImplToJson(_$PeerImpl instance) =>
       'top_block_hash': instance.topBlockHash,
       'topoheight': instance.topoheight,
       'version': instance.version,
-      'peers': instance.peers.map((k, e) => MapEntry(k, _$PeerTypeEnumMap[e]!)),
+      'peers':
+          instance.peers.map((k, e) => MapEntry(k, _$DirectionEnumMap[e]!)),
+      'connected_on': instance.connectedOn,
     };
 
-const _$PeerTypeEnumMap = {
-  PeerType.incoming: 'In',
-  PeerType.outgoing: 'Out',
-  PeerType.both: 'Both',
+const _$DirectionEnumMap = {
+  Direction.incoming: 'In',
+  Direction.outgoing: 'Out',
+  Direction.both: 'Both',
 };

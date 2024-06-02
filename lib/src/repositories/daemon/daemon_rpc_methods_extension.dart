@@ -343,11 +343,9 @@ extension DaemonRpcMethodsExtension on DaemonClient {
   }
 
   /// Retrieve all peers connected
-  Future<List<Peer>> getPeers() async {
+  Future<GetPeersResult> getPeers() async {
     final result = await sendRequest(DaemonMethod.getPeers);
-    return (result as List)
-        .map((e) => Peer.fromJson(e as Map<String, dynamic>))
-        .toList();
+    return GetPeersResult.fromJson(result as Map<String, dynamic>);
   }
 
   /// Fetch up to 20 history events for an account on a specific asset

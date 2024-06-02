@@ -26,11 +26,11 @@ class DaemonClient extends RpcClientRepository {
           <void Function(dynamic rawTransactionSCResult)>[],
       // TODO: define rawNewAsset type
       DaemonEvent.newAsset: <void Function(dynamic rawNewAsset)>[],
-      DaemonEvent.peerConnected: <void Function(Peer peer)>[],
-      DaemonEvent.peerDisconnected: <void Function(Peer peer)>[],
+      DaemonEvent.peerConnected: <void Function(PeerEntry peer)>[],
+      DaemonEvent.peerDisconnected: <void Function(PeerEntry peer)>[],
       DaemonEvent.peerPeerListUpdated:
           <void Function(PeerPeerListUpdatedEvent peerPeerListUpdated)>[],
-      DaemonEvent.peerStateUpdated: <void Function(Peer peer)>[],
+      DaemonEvent.peerStateUpdated: <void Function(PeerEntry peer)>[],
       DaemonEvent.peerPeerDisconnected: <void Function(
         PeerPeerDisconnectedEvent peerPeerDisconnectedEvent,
       )>[],
@@ -80,11 +80,11 @@ class DaemonClient extends RpcClientRepository {
         _logInfo('New asset: $result');
         _triggerCallbacks(event, result);
       case DaemonEvent.peerConnected:
-        final peerConnected = Peer.fromJson(result);
+        final peerConnected = PeerEntry.fromJson(result);
         _logInfo('Peer connected: $peerConnected');
         _triggerCallbacks(event, peerConnected);
       case DaemonEvent.peerDisconnected:
-        final peerDisconnected = Peer.fromJson(result);
+        final peerDisconnected = PeerEntry.fromJson(result);
         _logInfo('Peer disconnected: $peerDisconnected');
         _triggerCallbacks(event, peerDisconnected);
       case DaemonEvent.peerPeerListUpdated:
@@ -92,7 +92,7 @@ class DaemonClient extends RpcClientRepository {
         _logInfo('Peer peer list updated: $peerPeerListUpdated');
         _triggerCallbacks(event, peerPeerListUpdated);
       case DaemonEvent.peerStateUpdated:
-        final peerStateUpdated = Peer.fromJson(result);
+        final peerStateUpdated = PeerEntry.fromJson(result);
         _logInfo('Peer state updated: $peerStateUpdated');
         _triggerCallbacks(event, peerStateUpdated);
       case DaemonEvent.peerPeerDisconnected:

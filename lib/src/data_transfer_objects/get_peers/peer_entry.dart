@@ -3,15 +3,15 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/dtos.dart';
 
-part 'peer.freezed.dart';
+part 'peer_entry.freezed.dart';
 
-part 'peer.g.dart';
+part 'peer_entry.g.dart';
 
 /// @nodoc
 @freezed
-class Peer with _$Peer {
+class PeerEntry with _$PeerEntry {
   /// @nodoc
-  const factory Peer({
+  const factory PeerEntry({
     @JsonKey(name: 'addr') required String address,
     @JsonKey(name: 'cumulative_difficulty') required int cumulativeDifficulty,
     @JsonKey(name: 'height') required int height,
@@ -23,9 +23,11 @@ class Peer with _$Peer {
     @JsonKey(name: 'top_block_hash') required String topBlockHash,
     @JsonKey(name: 'topoheight') required int topoheight,
     @JsonKey(name: 'version') required String version,
-    @JsonKey(name: 'peers') required Map<String, PeerType> peers,
-  }) = _Peer;
+    @JsonKey(name: 'peers') required Map<String, Direction> peers,
+    @JsonKey(name: 'connected_on') required int connectedOn,
+  }) = _PeerEntry;
 
   /// @nodoc
-  factory Peer.fromJson(Map<String, dynamic> json) => _$PeerFromJson(json);
+  factory PeerEntry.fromJson(Map<String, dynamic> json) =>
+      _$PeerEntryFromJson(json);
 }

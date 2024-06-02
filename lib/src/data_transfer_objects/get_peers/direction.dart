@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-/// Type of Peer
-enum PeerType {
+/// Direction is used for cache to knows from which context it got added
+enum Direction {
   /// @nodoc
   @JsonValue('In')
   incoming,

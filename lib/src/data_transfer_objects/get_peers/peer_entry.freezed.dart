@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'peer.dart';
+part of 'peer_entry.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,12 +14,12 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-Peer _$PeerFromJson(Map<String, dynamic> json) {
-  return _Peer.fromJson(json);
+PeerEntry _$PeerEntryFromJson(Map<String, dynamic> json) {
+  return _PeerEntry.fromJson(json);
 }
 
 /// @nodoc
-mixin _$Peer {
+mixin _$PeerEntry {
   @JsonKey(name: 'addr')
   String get address => throw _privateConstructorUsedError;
   @JsonKey(name: 'cumulative_difficulty')
@@ -43,17 +43,20 @@ mixin _$Peer {
   @JsonKey(name: 'version')
   String get version => throw _privateConstructorUsedError;
   @JsonKey(name: 'peers')
-  Map<String, PeerType> get peers => throw _privateConstructorUsedError;
+  Map<String, Direction> get peers => throw _privateConstructorUsedError;
+  @JsonKey(name: 'connected_on')
+  int get connectedOn => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $PeerCopyWith<Peer> get copyWith => throw _privateConstructorUsedError;
+  $PeerEntryCopyWith<PeerEntry> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $PeerCopyWith<$Res> {
-  factory $PeerCopyWith(Peer value, $Res Function(Peer) then) =
-      _$PeerCopyWithImpl<$Res, Peer>;
+abstract class $PeerEntryCopyWith<$Res> {
+  factory $PeerEntryCopyWith(PeerEntry value, $Res Function(PeerEntry) then) =
+      _$PeerEntryCopyWithImpl<$Res, PeerEntry>;
   @useResult
   $Res call(
       {@JsonKey(name: 'addr') String address,
@@ -67,13 +70,14 @@ abstract class $PeerCopyWith<$Res> {
       @JsonKey(name: 'top_block_hash') String topBlockHash,
       @JsonKey(name: 'topoheight') int topoheight,
       @JsonKey(name: 'version') String version,
-      @JsonKey(name: 'peers') Map<String, PeerType> peers});
+      @JsonKey(name: 'peers') Map<String, Direction> peers,
+      @JsonKey(name: 'connected_on') int connectedOn});
 }
 
 /// @nodoc
-class _$PeerCopyWithImpl<$Res, $Val extends Peer>
-    implements $PeerCopyWith<$Res> {
-  _$PeerCopyWithImpl(this._value, this._then);
+class _$PeerEntryCopyWithImpl<$Res, $Val extends PeerEntry>
+    implements $PeerEntryCopyWith<$Res> {
+  _$PeerEntryCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -95,6 +99,7 @@ class _$PeerCopyWithImpl<$Res, $Val extends Peer>
     Object? topoheight = null,
     Object? version = null,
     Object? peers = null,
+    Object? connectedOn = null,
   }) {
     return _then(_value.copyWith(
       address: null == address
@@ -144,16 +149,21 @@ class _$PeerCopyWithImpl<$Res, $Val extends Peer>
       peers: null == peers
           ? _value.peers
           : peers // ignore: cast_nullable_to_non_nullable
-              as Map<String, PeerType>,
+              as Map<String, Direction>,
+      connectedOn: null == connectedOn
+          ? _value.connectedOn
+          : connectedOn // ignore: cast_nullable_to_non_nullable
+              as int,
     ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$PeerImplCopyWith<$Res> implements $PeerCopyWith<$Res> {
-  factory _$$PeerImplCopyWith(
-          _$PeerImpl value, $Res Function(_$PeerImpl) then) =
-      __$$PeerImplCopyWithImpl<$Res>;
+abstract class _$$PeerEntryImplCopyWith<$Res>
+    implements $PeerEntryCopyWith<$Res> {
+  factory _$$PeerEntryImplCopyWith(
+          _$PeerEntryImpl value, $Res Function(_$PeerEntryImpl) then) =
+      __$$PeerEntryImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -168,14 +178,16 @@ abstract class _$$PeerImplCopyWith<$Res> implements $PeerCopyWith<$Res> {
       @JsonKey(name: 'top_block_hash') String topBlockHash,
       @JsonKey(name: 'topoheight') int topoheight,
       @JsonKey(name: 'version') String version,
-      @JsonKey(name: 'peers') Map<String, PeerType> peers});
+      @JsonKey(name: 'peers') Map<String, Direction> peers,
+      @JsonKey(name: 'connected_on') int connectedOn});
 }
 
 /// @nodoc
-class __$$PeerImplCopyWithImpl<$Res>
-    extends _$PeerCopyWithImpl<$Res, _$PeerImpl>
-    implements _$$PeerImplCopyWith<$Res> {
-  __$$PeerImplCopyWithImpl(_$PeerImpl _value, $Res Function(_$PeerImpl) _then)
+class __$$PeerEntryImplCopyWithImpl<$Res>
+    extends _$PeerEntryCopyWithImpl<$Res, _$PeerEntryImpl>
+    implements _$$PeerEntryImplCopyWith<$Res> {
+  __$$PeerEntryImplCopyWithImpl(
+      _$PeerEntryImpl _value, $Res Function(_$PeerEntryImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -193,8 +205,9 @@ class __$$PeerImplCopyWithImpl<$Res>
     Object? topoheight = null,
     Object? version = null,
     Object? peers = null,
+    Object? connectedOn = null,
   }) {
-    return _then(_$PeerImpl(
+    return _then(_$PeerEntryImpl(
       address: null == address
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
@@ -242,15 +255,19 @@ class __$$PeerImplCopyWithImpl<$Res>
       peers: null == peers
           ? _value._peers
           : peers // ignore: cast_nullable_to_non_nullable
-              as Map<String, PeerType>,
+              as Map<String, Direction>,
+      connectedOn: null == connectedOn
+          ? _value.connectedOn
+          : connectedOn // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$PeerImpl implements _Peer {
-  const _$PeerImpl(
+class _$PeerEntryImpl implements _PeerEntry {
+  const _$PeerEntryImpl(
       {@JsonKey(name: 'addr') required this.address,
       @JsonKey(name: 'cumulative_difficulty')
       required this.cumulativeDifficulty,
@@ -263,11 +280,12 @@ class _$PeerImpl implements _Peer {
       @JsonKey(name: 'top_block_hash') required this.topBlockHash,
       @JsonKey(name: 'topoheight') required this.topoheight,
       @JsonKey(name: 'version') required this.version,
-      @JsonKey(name: 'peers') required final Map<String, PeerType> peers})
+      @JsonKey(name: 'peers') required final Map<String, Direction> peers,
+      @JsonKey(name: 'connected_on') required this.connectedOn})
       : _peers = peers;
 
-  factory _$PeerImpl.fromJson(Map<String, dynamic> json) =>
-      _$$PeerImplFromJson(json);
+  factory _$PeerEntryImpl.fromJson(Map<String, dynamic> json) =>
+      _$$PeerEntryImplFromJson(json);
 
   @override
   @JsonKey(name: 'addr')
@@ -302,25 +320,29 @@ class _$PeerImpl implements _Peer {
   @override
   @JsonKey(name: 'version')
   final String version;
-  final Map<String, PeerType> _peers;
+  final Map<String, Direction> _peers;
   @override
   @JsonKey(name: 'peers')
-  Map<String, PeerType> get peers {
+  Map<String, Direction> get peers {
     if (_peers is EqualUnmodifiableMapView) return _peers;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableMapView(_peers);
   }
 
   @override
+  @JsonKey(name: 'connected_on')
+  final int connectedOn;
+
+  @override
   String toString() {
-    return 'Peer(address: $address, cumulativeDifficulty: $cumulativeDifficulty, height: $height, id: $id, lastPing: $lastPing, localPort: $localPort, prunedTopoHeight: $prunedTopoHeight, tag: $tag, topBlockHash: $topBlockHash, topoheight: $topoheight, version: $version, peers: $peers)';
+    return 'PeerEntry(address: $address, cumulativeDifficulty: $cumulativeDifficulty, height: $height, id: $id, lastPing: $lastPing, localPort: $localPort, prunedTopoHeight: $prunedTopoHeight, tag: $tag, topBlockHash: $topBlockHash, topoheight: $topoheight, version: $version, peers: $peers, connectedOn: $connectedOn)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$PeerImpl &&
+            other is _$PeerEntryImpl &&
             (identical(other.address, address) || other.address == address) &&
             (identical(other.cumulativeDifficulty, cumulativeDifficulty) ||
                 other.cumulativeDifficulty == cumulativeDifficulty) &&
@@ -338,7 +360,9 @@ class _$PeerImpl implements _Peer {
             (identical(other.topoheight, topoheight) ||
                 other.topoheight == topoheight) &&
             (identical(other.version, version) || other.version == version) &&
-            const DeepCollectionEquality().equals(other._peers, _peers));
+            const DeepCollectionEquality().equals(other._peers, _peers) &&
+            (identical(other.connectedOn, connectedOn) ||
+                other.connectedOn == connectedOn));
   }
 
   @JsonKey(ignore: true)
@@ -356,24 +380,25 @@ class _$PeerImpl implements _Peer {
       topBlockHash,
       topoheight,
       version,
-      const DeepCollectionEquality().hash(_peers));
+      const DeepCollectionEquality().hash(_peers),
+      connectedOn);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$PeerImplCopyWith<_$PeerImpl> get copyWith =>
-      __$$PeerImplCopyWithImpl<_$PeerImpl>(this, _$identity);
+  _$$PeerEntryImplCopyWith<_$PeerEntryImpl> get copyWith =>
+      __$$PeerEntryImplCopyWithImpl<_$PeerEntryImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$PeerImplToJson(
+    return _$$PeerEntryImplToJson(
       this,
     );
   }
 }
 
-abstract class _Peer implements Peer {
-  const factory _Peer(
+abstract class _PeerEntry implements PeerEntry {
+  const factory _PeerEntry(
           {@JsonKey(name: 'addr') required final String address,
           @JsonKey(name: 'cumulative_difficulty')
           required final int cumulativeDifficulty,
@@ -386,10 +411,12 @@ abstract class _Peer implements Peer {
           @JsonKey(name: 'top_block_hash') required final String topBlockHash,
           @JsonKey(name: 'topoheight') required final int topoheight,
           @JsonKey(name: 'version') required final String version,
-          @JsonKey(name: 'peers') required final Map<String, PeerType> peers}) =
-      _$PeerImpl;
+          @JsonKey(name: 'peers') required final Map<String, Direction> peers,
+          @JsonKey(name: 'connected_on') required final int connectedOn}) =
+      _$PeerEntryImpl;
 
-  factory _Peer.fromJson(Map<String, dynamic> json) = _$PeerImpl.fromJson;
+  factory _PeerEntry.fromJson(Map<String, dynamic> json) =
+      _$PeerEntryImpl.fromJson;
 
   @override
   @JsonKey(name: 'addr')
@@ -426,9 +453,12 @@ abstract class _Peer implements Peer {
   String get version;
   @override
   @JsonKey(name: 'peers')
-  Map<String, PeerType> get peers;
+  Map<String, Direction> get peers;
+  @override
+  @JsonKey(name: 'connected_on')
+  int get connectedOn;
   @override
   @JsonKey(ignore: true)
-  _$$PeerImplCopyWith<_$PeerImpl> get copyWith =>
+  _$$PeerEntryImplCopyWith<_$PeerEntryImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

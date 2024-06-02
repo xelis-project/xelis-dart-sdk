@@ -12,7 +12,7 @@ class GetTransactionExecutorResult with _$GetTransactionExecutorResult {
   const factory GetTransactionExecutorResult({
     @JsonKey(name: 'block_topoheight') required int blockTopoheight,
     @JsonKey(name: 'block_hash') required String blockHash,
-}) = _GetTransactionExecutorResult;
+  }) = _GetTransactionExecutorResult;
 
   /// @nodoc
   factory GetTransactionExecutorResult.fromJson(Map<String, dynamic> json) =>
