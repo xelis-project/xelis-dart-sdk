@@ -30,6 +30,8 @@ mixin _$TransactionResponse {
   int get version => throw _privateConstructorUsedError;
   @JsonKey(name: 'in_mempool')
   bool get inMempool => throw _privateConstructorUsedError;
+  @JsonKey(name: 'first_seen')
+  int? get firstSeen => throw _privateConstructorUsedError;
   @JsonKey(name: 'nonce')
   int get nonce => throw _privateConstructorUsedError;
   @JsonKey(name: 'source')
@@ -62,6 +64,7 @@ abstract class $TransactionResponseCopyWith<$Res> {
       @JsonKey(name: 'fee') int fee,
       @JsonKey(name: 'version') int version,
       @JsonKey(name: 'in_mempool') bool inMempool,
+      @JsonKey(name: 'first_seen') int? firstSeen,
       @JsonKey(name: 'nonce') int nonce,
       @JsonKey(name: 'source') String source,
       @JsonKey(name: 'range_proof') List<dynamic> rangeProof,
@@ -92,6 +95,7 @@ class _$TransactionResponseCopyWithImpl<$Res, $Val extends TransactionResponse>
     Object? fee = null,
     Object? version = null,
     Object? inMempool = null,
+    Object? firstSeen = freezed,
     Object? nonce = null,
     Object? source = null,
     Object? rangeProof = null,
@@ -128,6 +132,10 @@ class _$TransactionResponseCopyWithImpl<$Res, $Val extends TransactionResponse>
           ? _value.inMempool
           : inMempool // ignore: cast_nullable_to_non_nullable
               as bool,
+      firstSeen: freezed == firstSeen
+          ? _value.firstSeen
+          : firstSeen // ignore: cast_nullable_to_non_nullable
+              as int?,
       nonce: null == nonce
           ? _value.nonce
           : nonce // ignore: cast_nullable_to_non_nullable
@@ -180,6 +188,7 @@ abstract class _$$TransactionResponseImplCopyWith<$Res>
       @JsonKey(name: 'fee') int fee,
       @JsonKey(name: 'version') int version,
       @JsonKey(name: 'in_mempool') bool inMempool,
+      @JsonKey(name: 'first_seen') int? firstSeen,
       @JsonKey(name: 'nonce') int nonce,
       @JsonKey(name: 'source') String source,
       @JsonKey(name: 'range_proof') List<dynamic> rangeProof,
@@ -209,6 +218,7 @@ class __$$TransactionResponseImplCopyWithImpl<$Res>
     Object? fee = null,
     Object? version = null,
     Object? inMempool = null,
+    Object? firstSeen = freezed,
     Object? nonce = null,
     Object? source = null,
     Object? rangeProof = null,
@@ -245,6 +255,10 @@ class __$$TransactionResponseImplCopyWithImpl<$Res>
           ? _value.inMempool
           : inMempool // ignore: cast_nullable_to_non_nullable
               as bool,
+      firstSeen: freezed == firstSeen
+          ? _value.firstSeen
+          : firstSeen // ignore: cast_nullable_to_non_nullable
+              as int?,
       nonce: null == nonce
           ? _value.nonce
           : nonce // ignore: cast_nullable_to_non_nullable
@@ -284,6 +298,7 @@ class _$TransactionResponseImpl implements _TransactionResponse {
       @JsonKey(name: 'fee') required this.fee,
       @JsonKey(name: 'version') required this.version,
       @JsonKey(name: 'in_mempool') required this.inMempool,
+      @JsonKey(name: 'first_seen') this.firstSeen,
       @JsonKey(name: 'nonce') required this.nonce,
       @JsonKey(name: 'source') required this.source,
       @JsonKey(name: 'range_proof') required final List<dynamic> rangeProof,
@@ -326,6 +341,9 @@ class _$TransactionResponseImpl implements _TransactionResponse {
   @JsonKey(name: 'in_mempool')
   final bool inMempool;
   @override
+  @JsonKey(name: 'first_seen')
+  final int? firstSeen;
+  @override
   @JsonKey(name: 'nonce')
   final int nonce;
   @override
@@ -365,7 +383,7 @@ class _$TransactionResponseImpl implements _TransactionResponse {
 
   @override
   String toString() {
-    return 'TransactionResponse(blocks: $blocks, executedInBlock: $executedInBlock, hash: $hash, data: $data, fee: $fee, version: $version, inMempool: $inMempool, nonce: $nonce, source: $source, rangeProof: $rangeProof, sourceCommitments: $sourceCommitments, reference: $reference, signature: $signature)';
+    return 'TransactionResponse(blocks: $blocks, executedInBlock: $executedInBlock, hash: $hash, data: $data, fee: $fee, version: $version, inMempool: $inMempool, firstSeen: $firstSeen, nonce: $nonce, source: $source, rangeProof: $rangeProof, sourceCommitments: $sourceCommitments, reference: $reference, signature: $signature)';
   }
 
   @override
@@ -382,6 +400,8 @@ class _$TransactionResponseImpl implements _TransactionResponse {
             (identical(other.version, version) || other.version == version) &&
             (identical(other.inMempool, inMempool) ||
                 other.inMempool == inMempool) &&
+            (identical(other.firstSeen, firstSeen) ||
+                other.firstSeen == firstSeen) &&
             (identical(other.nonce, nonce) || other.nonce == nonce) &&
             (identical(other.source, source) || other.source == source) &&
             const DeepCollectionEquality()
@@ -404,6 +424,7 @@ class _$TransactionResponseImpl implements _TransactionResponse {
       fee,
       version,
       inMempool,
+      firstSeen,
       nonce,
       source,
       const DeepCollectionEquality().hash(_rangeProof),
@@ -428,6 +449,7 @@ abstract class _TransactionResponse implements TransactionResponse {
       @JsonKey(name: 'fee') required final int fee,
       @JsonKey(name: 'version') required final int version,
       @JsonKey(name: 'in_mempool') required final bool inMempool,
+      @JsonKey(name: 'first_seen') final int? firstSeen,
       @JsonKey(name: 'nonce') required final int nonce,
       @JsonKey(name: 'source') required final String source,
       @JsonKey(name: 'range_proof') required final List<dynamic> rangeProof,
@@ -458,6 +480,9 @@ abstract class _TransactionResponse implements TransactionResponse {
   @override
   @JsonKey(name: 'in_mempool')
   bool get inMempool;
+  @override
+  @JsonKey(name: 'first_seen')
+  int? get firstSeen;
   @override
   @JsonKey(name: 'nonce')
   int get nonce;
