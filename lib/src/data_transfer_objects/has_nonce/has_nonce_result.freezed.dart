@@ -20,8 +20,8 @@ HasNonceResult _$HasNonceResultFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$HasNonceResult {
-  @JsonKey(name: 'result')
-  bool get result => throw _privateConstructorUsedError;
+  @JsonKey(name: 'exist')
+  bool get exist => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +35,7 @@ abstract class $HasNonceResultCopyWith<$Res> {
           HasNonceResult value, $Res Function(HasNonceResult) then) =
       _$HasNonceResultCopyWithImpl<$Res, HasNonceResult>;
   @useResult
-  $Res call({@JsonKey(name: 'result') bool result});
+  $Res call({@JsonKey(name: 'exist') bool exist});
 }
 
 /// @nodoc
@@ -51,12 +51,12 @@ class _$HasNonceResultCopyWithImpl<$Res, $Val extends HasNonceResult>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? result = null,
+    Object? exist = null,
   }) {
     return _then(_value.copyWith(
-      result: null == result
-          ? _value.result
-          : result // ignore: cast_nullable_to_non_nullable
+      exist: null == exist
+          ? _value.exist
+          : exist // ignore: cast_nullable_to_non_nullable
               as bool,
     ) as $Val);
   }
@@ -70,7 +70,7 @@ abstract class _$$HasNonceResultImplCopyWith<$Res>
       __$$HasNonceResultImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({@JsonKey(name: 'result') bool result});
+  $Res call({@JsonKey(name: 'exist') bool exist});
 }
 
 /// @nodoc
@@ -84,12 +84,12 @@ class __$$HasNonceResultImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? result = null,
+    Object? exist = null,
   }) {
     return _then(_$HasNonceResultImpl(
-      result: null == result
-          ? _value.result
-          : result // ignore: cast_nullable_to_non_nullable
+      exist: null == exist
+          ? _value.exist
+          : exist // ignore: cast_nullable_to_non_nullable
               as bool,
     ));
   }
@@ -98,18 +98,18 @@ class __$$HasNonceResultImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$HasNonceResultImpl implements _HasNonceResult {
-  const _$HasNonceResultImpl({@JsonKey(name: 'result') required this.result});
+  const _$HasNonceResultImpl({@JsonKey(name: 'exist') required this.exist});
 
   factory _$HasNonceResultImpl.fromJson(Map<String, dynamic> json) =>
       _$$HasNonceResultImplFromJson(json);
 
   @override
-  @JsonKey(name: 'result')
-  final bool result;
+  @JsonKey(name: 'exist')
+  final bool exist;
 
   @override
   String toString() {
-    return 'HasNonceResult(result: $result)';
+    return 'HasNonceResult(exist: $exist)';
   }
 
   @override
@@ -117,12 +117,12 @@ class _$HasNonceResultImpl implements _HasNonceResult {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$HasNonceResultImpl &&
-            (identical(other.result, result) || other.result == result));
+            (identical(other.exist, exist) || other.exist == exist));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, result);
+  int get hashCode => Object.hash(runtimeType, exist);
 
   @JsonKey(ignore: true)
   @override
@@ -141,15 +141,15 @@ class _$HasNonceResultImpl implements _HasNonceResult {
 
 abstract class _HasNonceResult implements HasNonceResult {
   const factory _HasNonceResult(
-          {@JsonKey(name: 'result') required final bool result}) =
+          {@JsonKey(name: 'exist') required final bool exist}) =
       _$HasNonceResultImpl;
 
   factory _HasNonceResult.fromJson(Map<String, dynamic> json) =
       _$HasNonceResultImpl.fromJson;
 
   @override
-  @JsonKey(name: 'result')
-  bool get result;
+  @JsonKey(name: 'exist')
+  bool get exist;
   @override
   @JsonKey(ignore: true)
   _$$HasNonceResultImplCopyWith<_$HasNonceResultImpl> get copyWith =>

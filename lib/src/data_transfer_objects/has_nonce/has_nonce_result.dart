@@ -11,7 +11,7 @@ part 'has_nonce_result.g.dart';
 class HasNonceResult with _$HasNonceResult {
   /// @nodoc
   const factory HasNonceResult({
-    @JsonKey(name: 'result') required bool result,
+    @JsonKey(name: 'exist') required bool exist,
   }) = _HasNonceResult;
 
   /// @nodoc
