@@ -41,6 +41,7 @@ export 'get_size_on_disk/get_size_on_disk_result.dart';
 export 'get_stable_balance/get_stable_balance_result.dart';
 export 'get_top_block/get_top_block_params.dart';
 export 'get_transaction/get_transaction_params.dart';
+export 'get_transaction_executor/get_transaction_executor_result.dart';
 export 'get_transactions/get_transactions_params.dart';
 export 'has_balance/has_balance_params.dart';
 export 'has_balance/has_balance_result.dart';

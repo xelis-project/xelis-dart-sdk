@@ -246,6 +246,19 @@ extension DaemonRpcMethodsExtension on DaemonClient {
     return TransactionResponse.fromJson(result as Map<String, dynamic>);
   }
 
+  /// TODO: Add documentation
+  Future<GetTransactionExecutorResult> getTransactionExecutor(
+    GetTransactionParams getTransactionParams,
+  ) async {
+    final result = await sendRequest(
+      DaemonMethod.getTransactionExecutor,
+      getTransactionParams.toJson(),
+    );
+    return GetTransactionExecutorResult.fromJson(
+      result as Map<String, dynamic>,
+    );
+  }
+
   /// Fetch all transactions presents in the mempool.
   Future<List<TransactionResponse>> getMempool() async {
     final result = await sendRequest(

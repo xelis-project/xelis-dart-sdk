@@ -89,6 +89,9 @@ enum DaemonMethod implements XelisJsonKey {
   /// from database and mempool of daemon and keep the same order in response.
   getTransactions('get_transactions'),
 
+  /// TODO: Add documentation
+  getTransactionExecutor('get_transaction_executor'),
+
   /// Fetch all transactions presents in the mempool.
   getMempool('get_mempool'),
 
