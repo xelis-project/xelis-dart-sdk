@@ -100,10 +100,10 @@ extension DaemonRpcMethodsExtension on DaemonClient {
   ///
   /// If no nonce is found for this address and its valid, value start at 0.
   /// Each nonce represents how many TX has been made by this address.
-  Future<int> getNonce(GetNonceParams getNonceParams) async {
+  Future<GetNonceResult> getNonce(GetNonceParams getNonceParams) async {
     final result =
         await sendRequest(DaemonMethod.getNonce, getNonceParams.toJson());
-    return result as int;
+    return GetNonceResult.fromJson(result as Map<String, dynamic>);
   }
 
   /// Get nonce from address at exact topoheight.
