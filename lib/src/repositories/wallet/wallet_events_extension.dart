@@ -1,8 +1,6 @@
 import 'dart:async';
 
-import 'package:xelis_dart_sdk/src/data_transfer_objects/dtos.dart';
-import 'package:xelis_dart_sdk/src/repositories/rpc_client_repository.dart';
-import 'package:xelis_dart_sdk/src/repositories/wallet/wallet_constants.dart';
+import 'package:xelis_dart_sdk/xelis_dart_sdk.dart';
 
 /// Extension of [WalletClient] that provides methods to
 /// subscribe/unsubscribe to wallet events.

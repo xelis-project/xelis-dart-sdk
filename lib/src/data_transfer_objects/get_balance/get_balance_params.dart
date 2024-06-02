@@ -11,7 +11,8 @@ part 'get_balance_params.g.dart';
 class GetBalanceParams with _$GetBalanceParams {
   /// @nodoc
   const factory GetBalanceParams({
-    @JsonKey(name: 'asset') String? assetHash,
+    @JsonKey(name: 'address') required String address,
+    @JsonKey(name: 'asset') required String asset,
   }) = _GetBalanceParams;
 
   /// @nodoc

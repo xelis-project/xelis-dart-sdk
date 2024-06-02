@@ -47,6 +47,11 @@ enum DaemonMethod implements XelisJsonKey {
   /// Get up-to-date asset's balance for a specific address.
   getBalance('get_balance'),
 
+  /// Get up-to-date asset's balance for a specific address.
+  ///
+  /// https://github.com/xelis-project/xelis-blockchain/blob/dev/API.md#method-get_stable_balance
+  getStableBalance('get_stable_balance'),
+
   /// Get asset's balance from address at exact topoheight.
   getBalanceAtTopoHeight('get_balance_at_topoheight'),
 
@@ -116,7 +121,8 @@ enum DaemonMethod implements XelisJsonKey {
   /// Verify if the account on chain is registered.
   /// This is useful to determine if we should pay additionnal fee or not.
   ///
-  /// For transactions, it is recommended to verify that the account is already registered in stable height.
+  /// For transactions, it is recommended to verify
+  /// that the account is already registered in stable height.
   isAccountRegistered('is_account_registered'),
 
   /// Retrieve the account registration topoheight.

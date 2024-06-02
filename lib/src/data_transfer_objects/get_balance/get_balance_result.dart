@@ -4,20 +4,20 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'package:xelis_dart_sdk/xelis_dart_sdk.dart';
 
-part 'get_wallet_balance_result.freezed.dart';
+part 'get_balance_result.freezed.dart';
 
-part 'get_wallet_balance_result.g.dart';
+part 'get_balance_result.g.dart';
 
 /// @nodoc
 @freezed
-class GetWalletBalanceResult with _$GetWalletBalanceResult {
+class GetBalanceResult with _$GetBalanceResult {
   /// @nodoc
-  const factory GetWalletBalanceResult({
+  const factory GetBalanceResult({
     @JsonKey(name: 'version') required VersionedBalance versionedBalance,
     @JsonKey(name: 'topoheight') required int topoheight,
-  }) = _GetWalletBalanceResult;
+  }) = _GetBalanceResult;
 
   /// @nodoc
-  factory GetWalletBalanceResult.fromJson(Map<String, dynamic> json) =>
-      _$GetWalletBalanceResultFromJson(json);
+  factory GetBalanceResult.fromJson(Map<String, dynamic> json) =>
+      _$GetBalanceResultFromJson(json);
 }

@@ -127,14 +127,27 @@ extension DaemonRpcMethodsExtension on DaemonClient {
   /// Returns up-to-date asset's balance for a specific address.
   ///
   /// NOTE: Balance is returned in atomic units.
-  Future<GetWalletBalanceResult> getBalance(
-    GetWalletBalanceParams getBalanceParams,
+  Future<GetBalanceResult> getBalance(
+    GetBalanceParams getBalanceParams,
   ) async {
     final result = await sendRequest(
       DaemonMethod.getBalance,
       getBalanceParams.toJson(),
     );
-    return GetWalletBalanceResult.fromJson(result as Map<String, dynamic>);
+    return GetBalanceResult.fromJson(result as Map<String, dynamic>);
+  }
+
+  /// Get up-to-date asset's balance for a specific address.
+  ///
+  /// https://github.com/xelis-project/xelis-blockchain/blob/dev/API.md#method-get_stable_balance
+  Future<GetStableBalanceResult> getStableBalance(
+    GetBalanceParams getBalanceParams,
+  ) async {
+    final result = await sendRequest(
+      DaemonMethod.getStableBalance,
+      getBalanceParams.toJson(),
+    );
+    return GetStableBalanceResult.fromJson(result as Map<String, dynamic>);
   }
 
   /// Returns asset's balance from address at exact topo height.
@@ -158,8 +171,9 @@ extension DaemonRpcMethodsExtension on DaemonClient {
   }
 
   /// Get all assets available on network with its registered topoheight.
-  Future<List<AssetWithData>> getAssets(
-      [GetAssetsParams? getAssetsParams]) async {
+  Future<List<AssetWithData>> getAssets([
+    GetAssetsParams? getAssetsParams,
+  ]) async {
     final result = await sendRequest(
       DaemonMethod.getAssets,
       getAssetsParams?.toJson() ?? const GetAssetsParams().toJson(),
@@ -350,7 +364,8 @@ extension DaemonRpcMethodsExtension on DaemonClient {
   /// Verify if the account on chain is registered.
   /// This is useful to determine if we should pay additionnal fee or not.
   ///
-  /// For transactions, it is recommended to verify that the account is already registered in stable height.
+  /// For transactions, it is recommended to verify
+  /// that the account is already registered in stable height.
   Future<bool> isAccountRegistered(
     IsAccountRegisteredParams isAccountRegisteredParams,
   ) async {

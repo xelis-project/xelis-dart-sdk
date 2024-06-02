@@ -11,13 +11,11 @@ part of 'get_wallet_balance_params.dart';
 _$GetWalletBalanceParamsImpl _$$GetWalletBalanceParamsImplFromJson(
         Map<String, dynamic> json) =>
     _$GetWalletBalanceParamsImpl(
-      address: json['address'] as String,
-      asset: json['asset'] as String,
+      assetHash: json['asset'] as String?,
     );
 
 Map<String, dynamic> _$$GetWalletBalanceParamsImplToJson(
         _$GetWalletBalanceParamsImpl instance) =>
     <String, dynamic>{
-      'address': instance.address,
-      'asset': instance.asset,
+      'asset': instance.assetHash,
     };

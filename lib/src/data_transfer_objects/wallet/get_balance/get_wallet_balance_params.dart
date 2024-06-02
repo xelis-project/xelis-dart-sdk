@@ -11,8 +11,7 @@ part 'get_wallet_balance_params.g.dart';
 class GetWalletBalanceParams with _$GetWalletBalanceParams {
   /// @nodoc
   const factory GetWalletBalanceParams({
-    @JsonKey(name: 'address') required String address,
-    @JsonKey(name: 'asset') required String asset,
+    @JsonKey(name: 'asset') String? assetHash,
   }) = _GetWalletBalanceParams;
 
   /// @nodoc

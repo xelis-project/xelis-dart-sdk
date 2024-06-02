@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'get_balance_params.dart';
+part of 'get_wallet_balance_params.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,34 +14,36 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-GetBalanceParams _$GetBalanceParamsFromJson(Map<String, dynamic> json) {
-  return _GetBalanceParams.fromJson(json);
+GetWalletBalanceParams _$GetWalletBalanceParamsFromJson(
+    Map<String, dynamic> json) {
+  return _GetWalletBalanceParams.fromJson(json);
 }
 
 /// @nodoc
-mixin _$GetBalanceParams {
+mixin _$GetWalletBalanceParams {
   @JsonKey(name: 'asset')
   String? get assetHash => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $GetBalanceParamsCopyWith<GetBalanceParams> get copyWith =>
+  $GetWalletBalanceParamsCopyWith<GetWalletBalanceParams> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $GetBalanceParamsCopyWith<$Res> {
-  factory $GetBalanceParamsCopyWith(
-          GetBalanceParams value, $Res Function(GetBalanceParams) then) =
-      _$GetBalanceParamsCopyWithImpl<$Res, GetBalanceParams>;
+abstract class $GetWalletBalanceParamsCopyWith<$Res> {
+  factory $GetWalletBalanceParamsCopyWith(GetWalletBalanceParams value,
+          $Res Function(GetWalletBalanceParams) then) =
+      _$GetWalletBalanceParamsCopyWithImpl<$Res, GetWalletBalanceParams>;
   @useResult
   $Res call({@JsonKey(name: 'asset') String? assetHash});
 }
 
 /// @nodoc
-class _$GetBalanceParamsCopyWithImpl<$Res, $Val extends GetBalanceParams>
-    implements $GetBalanceParamsCopyWith<$Res> {
-  _$GetBalanceParamsCopyWithImpl(this._value, this._then);
+class _$GetWalletBalanceParamsCopyWithImpl<$Res,
+        $Val extends GetWalletBalanceParams>
+    implements $GetWalletBalanceParamsCopyWith<$Res> {
+  _$GetWalletBalanceParamsCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -63,22 +65,25 @@ class _$GetBalanceParamsCopyWithImpl<$Res, $Val extends GetBalanceParams>
 }
 
 /// @nodoc
-abstract class _$$GetBalanceParamsImplCopyWith<$Res>
-    implements $GetBalanceParamsCopyWith<$Res> {
-  factory _$$GetBalanceParamsImplCopyWith(_$GetBalanceParamsImpl value,
-          $Res Function(_$GetBalanceParamsImpl) then) =
-      __$$GetBalanceParamsImplCopyWithImpl<$Res>;
+abstract class _$$GetWalletBalanceParamsImplCopyWith<$Res>
+    implements $GetWalletBalanceParamsCopyWith<$Res> {
+  factory _$$GetWalletBalanceParamsImplCopyWith(
+          _$GetWalletBalanceParamsImpl value,
+          $Res Function(_$GetWalletBalanceParamsImpl) then) =
+      __$$GetWalletBalanceParamsImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({@JsonKey(name: 'asset') String? assetHash});
 }
 
 /// @nodoc
-class __$$GetBalanceParamsImplCopyWithImpl<$Res>
-    extends _$GetBalanceParamsCopyWithImpl<$Res, _$GetBalanceParamsImpl>
-    implements _$$GetBalanceParamsImplCopyWith<$Res> {
-  __$$GetBalanceParamsImplCopyWithImpl(_$GetBalanceParamsImpl _value,
-      $Res Function(_$GetBalanceParamsImpl) _then)
+class __$$GetWalletBalanceParamsImplCopyWithImpl<$Res>
+    extends _$GetWalletBalanceParamsCopyWithImpl<$Res,
+        _$GetWalletBalanceParamsImpl>
+    implements _$$GetWalletBalanceParamsImplCopyWith<$Res> {
+  __$$GetWalletBalanceParamsImplCopyWithImpl(
+      _$GetWalletBalanceParamsImpl _value,
+      $Res Function(_$GetWalletBalanceParamsImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -86,7 +91,7 @@ class __$$GetBalanceParamsImplCopyWithImpl<$Res>
   $Res call({
     Object? assetHash = freezed,
   }) {
-    return _then(_$GetBalanceParamsImpl(
+    return _then(_$GetWalletBalanceParamsImpl(
       assetHash: freezed == assetHash
           ? _value.assetHash
           : assetHash // ignore: cast_nullable_to_non_nullable
@@ -97,11 +102,11 @@ class __$$GetBalanceParamsImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$GetBalanceParamsImpl implements _GetBalanceParams {
-  const _$GetBalanceParamsImpl({@JsonKey(name: 'asset') this.assetHash});
+class _$GetWalletBalanceParamsImpl implements _GetWalletBalanceParams {
+  const _$GetWalletBalanceParamsImpl({@JsonKey(name: 'asset') this.assetHash});
 
-  factory _$GetBalanceParamsImpl.fromJson(Map<String, dynamic> json) =>
-      _$$GetBalanceParamsImplFromJson(json);
+  factory _$GetWalletBalanceParamsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$GetWalletBalanceParamsImplFromJson(json);
 
   @override
   @JsonKey(name: 'asset')
@@ -109,14 +114,14 @@ class _$GetBalanceParamsImpl implements _GetBalanceParams {
 
   @override
   String toString() {
-    return 'GetBalanceParams(assetHash: $assetHash)';
+    return 'GetWalletBalanceParams(assetHash: $assetHash)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetBalanceParamsImpl &&
+            other is _$GetWalletBalanceParamsImpl &&
             (identical(other.assetHash, assetHash) ||
                 other.assetHash == assetHash));
   }
@@ -128,31 +133,31 @@ class _$GetBalanceParamsImpl implements _GetBalanceParams {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GetBalanceParamsImplCopyWith<_$GetBalanceParamsImpl> get copyWith =>
-      __$$GetBalanceParamsImplCopyWithImpl<_$GetBalanceParamsImpl>(
-          this, _$identity);
+  _$$GetWalletBalanceParamsImplCopyWith<_$GetWalletBalanceParamsImpl>
+      get copyWith => __$$GetWalletBalanceParamsImplCopyWithImpl<
+          _$GetWalletBalanceParamsImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$GetBalanceParamsImplToJson(
+    return _$$GetWalletBalanceParamsImplToJson(
       this,
     );
   }
 }
 
-abstract class _GetBalanceParams implements GetBalanceParams {
-  const factory _GetBalanceParams(
+abstract class _GetWalletBalanceParams implements GetWalletBalanceParams {
+  const factory _GetWalletBalanceParams(
           {@JsonKey(name: 'asset') final String? assetHash}) =
-      _$GetBalanceParamsImpl;
+      _$GetWalletBalanceParamsImpl;
 
-  factory _GetBalanceParams.fromJson(Map<String, dynamic> json) =
-      _$GetBalanceParamsImpl.fromJson;
+  factory _GetWalletBalanceParams.fromJson(Map<String, dynamic> json) =
+      _$GetWalletBalanceParamsImpl.fromJson;
 
   @override
   @JsonKey(name: 'asset')
   String? get assetHash;
   @override
   @JsonKey(ignore: true)
-  _$$GetBalanceParamsImplCopyWith<_$GetBalanceParamsImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GetWalletBalanceParamsImplCopyWith<_$GetWalletBalanceParamsImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

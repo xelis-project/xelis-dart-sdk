@@ -65,20 +65,24 @@ extension WalletRpcMethodsExtension on WalletClient {
 
   /// Gets asset balance from wallet.
   /// When no parameter is set, default asset is XELIS.
-  Future<int> getBalance([GetBalanceParams? getBalanceParams]) async {
+  Future<int> getBalance(
+      [GetWalletBalanceParams? getWalletBalanceParams]) async {
     final result = await sendRequest(
       WalletMethod.getBalance,
-      getBalanceParams?.toJson() ?? const GetBalanceParams().toJson(),
+      getWalletBalanceParams?.toJson() ??
+          const GetWalletBalanceParams().toJson(),
     );
     return result as int;
   }
 
   /// Gets asset balance from wallet.
   /// When no parameter is set, default asset is XELIS.
-  Future<bool> hasBalance([GetBalanceParams? getBalanceParams]) async {
+  Future<bool> hasBalance(
+      [GetWalletBalanceParams? getWalletBalanceParams]) async {
     final result = await sendRequest(
       WalletMethod.hasBalance,
-      getBalanceParams?.toJson() ?? const GetBalanceParams().toJson(),
+      getWalletBalanceParams?.toJson() ??
+          const GetWalletBalanceParams().toJson(),
     );
     return result as bool;
   }

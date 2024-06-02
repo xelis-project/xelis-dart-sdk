@@ -11,11 +11,13 @@ part of 'get_balance_params.dart';
 _$GetBalanceParamsImpl _$$GetBalanceParamsImplFromJson(
         Map<String, dynamic> json) =>
     _$GetBalanceParamsImpl(
-      assetHash: json['asset'] as String?,
+      address: json['address'] as String,
+      asset: json['asset'] as String,
     );
 
 Map<String, dynamic> _$$GetBalanceParamsImplToJson(
         _$GetBalanceParamsImpl instance) =>
     <String, dynamic>{
-      'asset': instance.assetHash,
+      'address': instance.address,
+      'asset': instance.asset,
     };
