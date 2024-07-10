@@ -23,8 +23,12 @@ mixin _$HasBalanceResult {
   @JsonKey(name: 'exist')
   bool get exist => throw _privateConstructorUsedError;
 
+  /// Serializes this HasBalanceResult to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of HasBalanceResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $HasBalanceResultCopyWith<HasBalanceResult> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -48,6 +52,8 @@ class _$HasBalanceResultCopyWithImpl<$Res, $Val extends HasBalanceResult>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of HasBalanceResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -81,6 +87,8 @@ class __$$HasBalanceResultImplCopyWithImpl<$Res>
       $Res Function(_$HasBalanceResultImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of HasBalanceResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -120,11 +128,13 @@ class _$HasBalanceResultImpl implements _HasBalanceResult {
             (identical(other.exist, exist) || other.exist == exist));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, exist);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of HasBalanceResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$HasBalanceResultImplCopyWith<_$HasBalanceResultImpl> get copyWith =>
@@ -150,8 +160,11 @@ abstract class _HasBalanceResult implements HasBalanceResult {
   @override
   @JsonKey(name: 'exist')
   bool get exist;
+
+  /// Create a copy of HasBalanceResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$HasBalanceResultImplCopyWith<_$HasBalanceResultImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

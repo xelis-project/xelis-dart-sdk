@@ -29,8 +29,12 @@ mixin _$VersionedBalance {
   @JsonKey(name: 'output_balance')
   dynamic get outputBalance => throw _privateConstructorUsedError;
 
+  /// Serializes this VersionedBalance to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of VersionedBalance
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $VersionedBalanceCopyWith<VersionedBalance> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -58,6 +62,8 @@ class _$VersionedBalanceCopyWithImpl<$Res, $Val extends VersionedBalance>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of VersionedBalance
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -110,6 +116,8 @@ class __$$VersionedBalanceImplCopyWithImpl<$Res>
       $Res Function(_$VersionedBalanceImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of VersionedBalance
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -192,7 +200,7 @@ class _$VersionedBalanceImpl implements _VersionedBalance {
                 .equals(other.outputBalance, outputBalance));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -201,7 +209,9 @@ class _$VersionedBalanceImpl implements _VersionedBalance {
       previousTopoheight,
       const DeepCollectionEquality().hash(outputBalance));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of VersionedBalance
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$VersionedBalanceImplCopyWith<_$VersionedBalanceImpl> get copyWith =>
@@ -241,8 +251,11 @@ abstract class _VersionedBalance implements VersionedBalance {
   @override
   @JsonKey(name: 'output_balance')
   dynamic get outputBalance;
+
+  /// Create a copy of VersionedBalance
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$VersionedBalanceImplCopyWith<_$VersionedBalanceImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

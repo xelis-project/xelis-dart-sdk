@@ -25,8 +25,12 @@ mixin _$GetAccountRegistrationTopoheightParams {
   @JsonKey(name: 'address')
   String get address => throw _privateConstructorUsedError;
 
+  /// Serializes this GetAccountRegistrationTopoheightParams to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of GetAccountRegistrationTopoheightParams
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $GetAccountRegistrationTopoheightParamsCopyWith<
           GetAccountRegistrationTopoheightParams>
       get copyWith => throw _privateConstructorUsedError;
@@ -54,6 +58,8 @@ class _$GetAccountRegistrationTopoheightParamsCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of GetAccountRegistrationTopoheightParams
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -90,6 +96,8 @@ class __$$GetAccountRegistrationTopoheightParamsImplCopyWithImpl<$Res>
       $Res Function(_$GetAccountRegistrationTopoheightParamsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of GetAccountRegistrationTopoheightParams
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -132,11 +140,13 @@ class _$GetAccountRegistrationTopoheightParamsImpl
             (identical(other.address, address) || other.address == address));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, address);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of GetAccountRegistrationTopoheightParams
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$GetAccountRegistrationTopoheightParamsImplCopyWith<
@@ -166,8 +176,11 @@ abstract class _GetAccountRegistrationTopoheightParams
   @override
   @JsonKey(name: 'address')
   String get address;
+
+  /// Create a copy of GetAccountRegistrationTopoheightParams
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetAccountRegistrationTopoheightParamsImplCopyWith<
           _$GetAccountRegistrationTopoheightParamsImpl>
       get copyWith => throw _privateConstructorUsedError;

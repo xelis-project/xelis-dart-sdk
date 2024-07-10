@@ -26,8 +26,12 @@ mixin _$GetTopoHeightRangeParams {
   @JsonKey(name: 'end_topoheight')
   int? get endTopoHeight => throw _privateConstructorUsedError;
 
+  /// Serializes this GetTopoHeightRangeParams to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of GetTopoHeightRangeParams
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $GetTopoHeightRangeParamsCopyWith<GetTopoHeightRangeParams> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -54,6 +58,8 @@ class _$GetTopoHeightRangeParamsCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of GetTopoHeightRangeParams
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -97,6 +103,8 @@ class __$$GetTopoHeightRangeParamsImplCopyWithImpl<$Res>
       $Res Function(_$GetTopoHeightRangeParamsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of GetTopoHeightRangeParams
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -150,11 +158,13 @@ class _$GetTopoHeightRangeParamsImpl implements _GetTopoHeightRangeParams {
                 other.endTopoHeight == endTopoHeight));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, startTopoHeight, endTopoHeight);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of GetTopoHeightRangeParams
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$GetTopoHeightRangeParamsImplCopyWith<_$GetTopoHeightRangeParamsImpl>
@@ -184,8 +194,11 @@ abstract class _GetTopoHeightRangeParams implements GetTopoHeightRangeParams {
   @override
   @JsonKey(name: 'end_topoheight')
   int? get endTopoHeight;
+
+  /// Create a copy of GetTopoHeightRangeParams
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetTopoHeightRangeParamsImplCopyWith<_$GetTopoHeightRangeParamsImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

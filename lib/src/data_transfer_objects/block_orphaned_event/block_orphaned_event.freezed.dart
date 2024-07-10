@@ -25,8 +25,12 @@ mixin _$BlockOrphanedEvent {
   @JsonKey(name: 'old_topoheight')
   int get oldTopoHeight => throw _privateConstructorUsedError;
 
+  /// Serializes this BlockOrphanedEvent to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of BlockOrphanedEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $BlockOrphanedEventCopyWith<BlockOrphanedEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -52,6 +56,8 @@ class _$BlockOrphanedEventCopyWithImpl<$Res, $Val extends BlockOrphanedEvent>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of BlockOrphanedEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -92,6 +98,8 @@ class __$$BlockOrphanedEventImplCopyWithImpl<$Res>
       $Res Function(_$BlockOrphanedEventImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of BlockOrphanedEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -144,11 +152,13 @@ class _$BlockOrphanedEventImpl implements _BlockOrphanedEvent {
                 other.oldTopoHeight == oldTopoHeight));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, blockHash, oldTopoHeight);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BlockOrphanedEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$BlockOrphanedEventImplCopyWith<_$BlockOrphanedEventImpl> get copyWith =>
@@ -178,8 +188,11 @@ abstract class _BlockOrphanedEvent implements BlockOrphanedEvent {
   @override
   @JsonKey(name: 'old_topoheight')
   int get oldTopoHeight;
+
+  /// Create a copy of BlockOrphanedEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$BlockOrphanedEventImplCopyWith<_$BlockOrphanedEventImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

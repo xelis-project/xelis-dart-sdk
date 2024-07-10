@@ -30,8 +30,12 @@ mixin _$GetBlockTemplateResult {
   @JsonKey(name: 'template')
   String get template => throw _privateConstructorUsedError;
 
+  /// Serializes this GetBlockTemplateResult to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of GetBlockTemplateResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $GetBlockTemplateResultCopyWith<GetBlockTemplateResult> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -60,6 +64,8 @@ class _$GetBlockTemplateResultCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of GetBlockTemplateResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -115,6 +121,8 @@ class __$$GetBlockTemplateResultImplCopyWithImpl<$Res>
       $Res Function(_$GetBlockTemplateResultImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of GetBlockTemplateResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -188,12 +196,14 @@ class _$GetBlockTemplateResultImpl implements _GetBlockTemplateResult {
                 other.template == template));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, difficulty, height, topoheight, template);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of GetBlockTemplateResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$GetBlockTemplateResultImplCopyWith<_$GetBlockTemplateResultImpl>
@@ -231,8 +241,11 @@ abstract class _GetBlockTemplateResult implements GetBlockTemplateResult {
   @override
   @JsonKey(name: 'template')
   String get template;
+
+  /// Create a copy of GetBlockTemplateResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetBlockTemplateResultImplCopyWith<_$GetBlockTemplateResultImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

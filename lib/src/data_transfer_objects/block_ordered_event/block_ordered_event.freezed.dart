@@ -27,8 +27,12 @@ mixin _$BlockOrderedEvent {
   @JsonKey(name: 'topoheight')
   int get topoHeight => throw _privateConstructorUsedError;
 
+  /// Serializes this BlockOrderedEvent to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of BlockOrderedEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $BlockOrderedEventCopyWith<BlockOrderedEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -55,6 +59,8 @@ class _$BlockOrderedEventCopyWithImpl<$Res, $Val extends BlockOrderedEvent>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of BlockOrderedEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -101,6 +107,8 @@ class __$$BlockOrderedEventImplCopyWithImpl<$Res>
       $Res Function(_$BlockOrderedEventImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of BlockOrderedEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -164,12 +172,14 @@ class _$BlockOrderedEventImpl implements _BlockOrderedEvent {
                 other.topoHeight == topoHeight));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, blockHash, blockType, topoHeight);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BlockOrderedEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$BlockOrderedEventImplCopyWith<_$BlockOrderedEventImpl> get copyWith =>
@@ -203,8 +213,11 @@ abstract class _BlockOrderedEvent implements BlockOrderedEvent {
   @override
   @JsonKey(name: 'topoheight')
   int get topoHeight;
+
+  /// Create a copy of BlockOrderedEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$BlockOrderedEventImplCopyWith<_$BlockOrderedEventImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -23,8 +23,12 @@ mixin _$OutgoingHistory {
   @JsonKey(name: 'to')
   String get to => throw _privateConstructorUsedError;
 
+  /// Serializes this OutgoingHistory to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of OutgoingHistory
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $OutgoingHistoryCopyWith<OutgoingHistory> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -48,6 +52,8 @@ class _$OutgoingHistoryCopyWithImpl<$Res, $Val extends OutgoingHistory>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of OutgoingHistory
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -81,6 +87,8 @@ class __$$OutgoingHistoryImplCopyWithImpl<$Res>
       _$OutgoingHistoryImpl _value, $Res Function(_$OutgoingHistoryImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of OutgoingHistory
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -120,11 +128,13 @@ class _$OutgoingHistoryImpl implements _OutgoingHistory {
             (identical(other.to, to) || other.to == to));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, to);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of OutgoingHistory
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$OutgoingHistoryImplCopyWith<_$OutgoingHistoryImpl> get copyWith =>
@@ -149,8 +159,11 @@ abstract class _OutgoingHistory implements OutgoingHistory {
   @override
   @JsonKey(name: 'to')
   String get to;
+
+  /// Create a copy of OutgoingHistory
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$OutgoingHistoryImplCopyWith<_$OutgoingHistoryImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

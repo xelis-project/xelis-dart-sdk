@@ -32,8 +32,12 @@ mixin _$GetAccountHistoryParams {
   @JsonKey(name: 'maximum_topoheight')
   int? get maximumTopoheight => throw _privateConstructorUsedError;
 
+  /// Serializes this GetAccountHistoryParams to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of GetAccountHistoryParams
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $GetAccountHistoryParamsCopyWith<GetAccountHistoryParams> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -63,6 +67,8 @@ class _$GetAccountHistoryParamsCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of GetAccountHistoryParams
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -124,6 +130,8 @@ class __$$GetAccountHistoryParamsImplCopyWithImpl<$Res>
       $Res Function(_$GetAccountHistoryParamsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of GetAccountHistoryParams
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -207,12 +215,14 @@ class _$GetAccountHistoryParamsImpl implements _GetAccountHistoryParams {
                 other.maximumTopoheight == maximumTopoheight));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, address, hash, topoheight,
       minimumTopoheight, maximumTopoheight);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of GetAccountHistoryParams
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$GetAccountHistoryParamsImplCopyWith<_$GetAccountHistoryParamsImpl>
@@ -254,8 +264,11 @@ abstract class _GetAccountHistoryParams implements GetAccountHistoryParams {
   @override
   @JsonKey(name: 'maximum_topoheight')
   int? get maximumTopoheight;
+
+  /// Create a copy of GetAccountHistoryParams
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetAccountHistoryParamsImplCopyWith<_$GetAccountHistoryParamsImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

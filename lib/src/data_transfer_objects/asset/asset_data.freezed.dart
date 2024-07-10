@@ -25,8 +25,12 @@ mixin _$AssetData {
   @JsonKey(name: 'decimals')
   int get decimals => throw _privateConstructorUsedError;
 
+  /// Serializes this AssetData to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AssetData
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AssetDataCopyWith<AssetData> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -51,6 +55,8 @@ class _$AssetDataCopyWithImpl<$Res, $Val extends AssetData>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of AssetData
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -91,6 +97,8 @@ class __$$AssetDataImplCopyWithImpl<$Res>
       _$AssetDataImpl _value, $Res Function(_$AssetDataImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AssetData
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -143,11 +151,13 @@ class _$AssetDataImpl implements _AssetData {
                 other.decimals == decimals));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, topoheight, decimals);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AssetData
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AssetDataImplCopyWith<_$AssetDataImpl> get copyWith =>
@@ -176,8 +186,11 @@ abstract class _AssetData implements AssetData {
   @override
   @JsonKey(name: 'decimals')
   int get decimals;
+
+  /// Create a copy of AssetData
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AssetDataImplCopyWith<_$AssetDataImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

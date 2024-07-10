@@ -27,8 +27,12 @@ mixin _$HasBalanceParams {
   @JsonKey(name: 'topoheight')
   int? get topoheight => throw _privateConstructorUsedError;
 
+  /// Serializes this HasBalanceParams to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of HasBalanceParams
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $HasBalanceParamsCopyWith<HasBalanceParams> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -55,6 +59,8 @@ class _$HasBalanceParamsCopyWithImpl<$Res, $Val extends HasBalanceParams>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of HasBalanceParams
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -101,6 +107,8 @@ class __$$HasBalanceParamsImplCopyWithImpl<$Res>
       $Res Function(_$HasBalanceParamsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of HasBalanceParams
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -162,11 +170,13 @@ class _$HasBalanceParamsImpl implements _HasBalanceParams {
                 other.topoheight == topoheight));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, address, asset, topoheight);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of HasBalanceParams
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$HasBalanceParamsImplCopyWith<_$HasBalanceParamsImpl> get copyWith =>
@@ -200,8 +210,11 @@ abstract class _HasBalanceParams implements HasBalanceParams {
   @override
   @JsonKey(name: 'topoheight')
   int? get topoheight;
+
+  /// Create a copy of HasBalanceParams
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$HasBalanceParamsImplCopyWith<_$HasBalanceParamsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -23,8 +23,12 @@ mixin _$GetTopBlockParams {
   @JsonKey(name: 'include_txs')
   bool? get includeTxs => throw _privateConstructorUsedError;
 
+  /// Serializes this GetTopBlockParams to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of GetTopBlockParams
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $GetTopBlockParamsCopyWith<GetTopBlockParams> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -48,6 +52,8 @@ class _$GetTopBlockParamsCopyWithImpl<$Res, $Val extends GetTopBlockParams>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of GetTopBlockParams
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -81,6 +87,8 @@ class __$$GetTopBlockParamsImplCopyWithImpl<$Res>
       $Res Function(_$GetTopBlockParamsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of GetTopBlockParams
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -123,11 +131,13 @@ class _$GetTopBlockParamsImpl implements _GetTopBlockParams {
                 other.includeTxs == includeTxs));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, includeTxs);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of GetTopBlockParams
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$GetTopBlockParamsImplCopyWith<_$GetTopBlockParamsImpl> get copyWith =>
@@ -153,8 +163,11 @@ abstract class _GetTopBlockParams implements GetTopBlockParams {
   @override
   @JsonKey(name: 'include_txs')
   bool? get includeTxs;
+
+  /// Create a copy of GetTopBlockParams
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetTopBlockParamsImplCopyWith<_$GetTopBlockParamsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

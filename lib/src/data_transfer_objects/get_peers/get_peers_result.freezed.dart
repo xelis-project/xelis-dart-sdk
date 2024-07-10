@@ -27,8 +27,12 @@ mixin _$GetPeersResult {
   @JsonKey(name: 'hidden_peers')
   int get hiddenPeers => throw _privateConstructorUsedError;
 
+  /// Serializes this GetPeersResult to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of GetPeersResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $GetPeersResultCopyWith<GetPeersResult> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -55,6 +59,8 @@ class _$GetPeersResultCopyWithImpl<$Res, $Val extends GetPeersResult>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of GetPeersResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -101,6 +107,8 @@ class __$$GetPeersResultImplCopyWithImpl<$Res>
       _$GetPeersResultImpl _value, $Res Function(_$GetPeersResultImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of GetPeersResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -170,12 +178,14 @@ class _$GetPeersResultImpl implements _GetPeersResult {
                 other.hiddenPeers == hiddenPeers));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType,
       const DeepCollectionEquality().hash(_peers), totalPeers, hiddenPeers);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of GetPeersResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$GetPeersResultImplCopyWith<_$GetPeersResultImpl> get copyWith =>
@@ -209,8 +219,11 @@ abstract class _GetPeersResult implements GetPeersResult {
   @override
   @JsonKey(name: 'hidden_peers')
   int get hiddenPeers;
+
+  /// Create a copy of GetPeersResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetPeersResultImplCopyWith<_$GetPeersResultImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

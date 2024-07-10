@@ -28,8 +28,12 @@ mixin _$GetStableBalanceResult {
   @JsonKey(name: 'stable_block_hash')
   String get stableBlockHash => throw _privateConstructorUsedError;
 
+  /// Serializes this GetStableBalanceResult to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of GetStableBalanceResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $GetStableBalanceResultCopyWith<GetStableBalanceResult> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -59,6 +63,8 @@ class _$GetStableBalanceResultCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of GetStableBalanceResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -82,6 +88,8 @@ class _$GetStableBalanceResultCopyWithImpl<$Res,
     ) as $Val);
   }
 
+  /// Create a copy of GetStableBalanceResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $VersionedBalanceCopyWith<$Res> get versionedBalance {
@@ -119,6 +127,8 @@ class __$$GetStableBalanceResultImplCopyWithImpl<$Res>
       $Res Function(_$GetStableBalanceResultImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of GetStableBalanceResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -182,12 +192,14 @@ class _$GetStableBalanceResultImpl implements _GetStableBalanceResult {
                 other.stableBlockHash == stableBlockHash));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, versionedBalance, stableTopoheight, stableBlockHash);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of GetStableBalanceResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$GetStableBalanceResultImplCopyWith<_$GetStableBalanceResultImpl>
@@ -222,8 +234,11 @@ abstract class _GetStableBalanceResult implements GetStableBalanceResult {
   @override
   @JsonKey(name: 'stable_block_hash')
   String get stableBlockHash;
+
+  /// Create a copy of GetStableBalanceResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetStableBalanceResultImplCopyWith<_$GetStableBalanceResultImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

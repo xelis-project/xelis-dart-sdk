@@ -27,8 +27,12 @@ mixin _$AssetWithData {
   @JsonKey(name: 'decimals')
   int get decimals => throw _privateConstructorUsedError;
 
+  /// Serializes this AssetWithData to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AssetWithData
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AssetWithDataCopyWith<AssetWithData> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -55,6 +59,8 @@ class _$AssetWithDataCopyWithImpl<$Res, $Val extends AssetWithData>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of AssetWithData
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -101,6 +107,8 @@ class __$$AssetWithDataImplCopyWithImpl<$Res>
       _$AssetWithDataImpl _value, $Res Function(_$AssetWithDataImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AssetWithData
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -163,11 +171,13 @@ class _$AssetWithDataImpl implements _AssetWithData {
                 other.decimals == decimals));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, asset, topoheight, decimals);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AssetWithData
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AssetWithDataImplCopyWith<_$AssetWithDataImpl> get copyWith =>
@@ -200,8 +210,11 @@ abstract class _AssetWithData implements AssetWithData {
   @override
   @JsonKey(name: 'decimals')
   int get decimals;
+
+  /// Create a copy of AssetWithData
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AssetWithDataImplCopyWith<_$AssetWithDataImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -26,8 +26,12 @@ mixin _$IsTxExecutedInBlockParams {
   @JsonKey(name: 'block_hash')
   String get blockHash => throw _privateConstructorUsedError;
 
+  /// Serializes this IsTxExecutedInBlockParams to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of IsTxExecutedInBlockParams
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $IsTxExecutedInBlockParamsCopyWith<IsTxExecutedInBlockParams> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -54,6 +58,8 @@ class _$IsTxExecutedInBlockParamsCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of IsTxExecutedInBlockParams
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -97,6 +103,8 @@ class __$$IsTxExecutedInBlockParamsImplCopyWithImpl<$Res>
       $Res Function(_$IsTxExecutedInBlockParamsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of IsTxExecutedInBlockParams
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -148,11 +156,13 @@ class _$IsTxExecutedInBlockParamsImpl implements _IsTxExecutedInBlockParams {
                 other.blockHash == blockHash));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, txHash, blockHash);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of IsTxExecutedInBlockParams
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$IsTxExecutedInBlockParamsImplCopyWith<_$IsTxExecutedInBlockParamsImpl>
@@ -182,8 +192,11 @@ abstract class _IsTxExecutedInBlockParams implements IsTxExecutedInBlockParams {
   @override
   @JsonKey(name: 'block_hash')
   String get blockHash;
+
+  /// Create a copy of IsTxExecutedInBlockParams
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$IsTxExecutedInBlockParamsImplCopyWith<_$IsTxExecutedInBlockParamsImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

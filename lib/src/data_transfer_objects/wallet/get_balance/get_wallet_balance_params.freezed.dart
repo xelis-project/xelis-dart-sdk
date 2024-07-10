@@ -24,8 +24,12 @@ mixin _$GetWalletBalanceParams {
   @JsonKey(name: 'asset')
   String? get assetHash => throw _privateConstructorUsedError;
 
+  /// Serializes this GetWalletBalanceParams to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of GetWalletBalanceParams
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $GetWalletBalanceParamsCopyWith<GetWalletBalanceParams> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -50,6 +54,8 @@ class _$GetWalletBalanceParamsCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of GetWalletBalanceParams
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -86,6 +92,8 @@ class __$$GetWalletBalanceParamsImplCopyWithImpl<$Res>
       $Res Function(_$GetWalletBalanceParamsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of GetWalletBalanceParams
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -126,11 +134,13 @@ class _$GetWalletBalanceParamsImpl implements _GetWalletBalanceParams {
                 other.assetHash == assetHash));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, assetHash);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of GetWalletBalanceParams
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$GetWalletBalanceParamsImplCopyWith<_$GetWalletBalanceParamsImpl>
@@ -156,8 +166,11 @@ abstract class _GetWalletBalanceParams implements GetWalletBalanceParams {
   @override
   @JsonKey(name: 'asset')
   String? get assetHash;
+
+  /// Create a copy of GetWalletBalanceParams
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetWalletBalanceParamsImplCopyWith<_$GetWalletBalanceParamsImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

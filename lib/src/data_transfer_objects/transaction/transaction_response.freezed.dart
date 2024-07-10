@@ -45,7 +45,9 @@ mixin _$TransactionResponse {
   @JsonKey(name: 'signature')
   String get signature => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TransactionResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $TransactionResponseCopyWith<TransactionResponse> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -85,6 +87,8 @@ class _$TransactionResponseCopyWithImpl<$Res, $Val extends TransactionResponse>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of TransactionResponse
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -163,6 +167,8 @@ class _$TransactionResponseCopyWithImpl<$Res, $Val extends TransactionResponse>
     ) as $Val);
   }
 
+  /// Create a copy of TransactionResponse
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $TransactionTypeCopyWith<$Res> get data {
@@ -208,6 +214,8 @@ class __$$TransactionResponseImplCopyWithImpl<$Res>
       $Res Function(_$TransactionResponseImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TransactionResponse
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -432,7 +440,9 @@ class _$TransactionResponseImpl implements _TransactionResponse {
       const DeepCollectionEquality().hash(_reference),
       signature);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TransactionResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$TransactionResponseImplCopyWith<_$TransactionResponseImpl> get copyWith =>
@@ -501,8 +511,11 @@ abstract class _TransactionResponse implements TransactionResponse {
   @override
   @JsonKey(name: 'signature')
   String get signature;
+
+  /// Create a copy of TransactionResponse
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$TransactionResponseImplCopyWith<_$TransactionResponseImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

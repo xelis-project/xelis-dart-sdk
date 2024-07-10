@@ -25,8 +25,12 @@ mixin _$GetAssetsParams {
   @JsonKey(name: 'maximum')
   int? get maximum => throw _privateConstructorUsedError;
 
+  /// Serializes this GetAssetsParams to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of GetAssetsParams
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $GetAssetsParamsCopyWith<GetAssetsParams> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -52,6 +56,8 @@ class _$GetAssetsParamsCopyWithImpl<$Res, $Val extends GetAssetsParams>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of GetAssetsParams
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -92,6 +98,8 @@ class __$$GetAssetsParamsImplCopyWithImpl<$Res>
       _$GetAssetsParamsImpl _value, $Res Function(_$GetAssetsParamsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of GetAssetsParams
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -142,11 +150,13 @@ class _$GetAssetsParamsImpl implements _GetAssetsParams {
             (identical(other.maximum, maximum) || other.maximum == maximum));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, skip, maximum);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of GetAssetsParams
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$GetAssetsParamsImplCopyWith<_$GetAssetsParamsImpl> get copyWith =>
@@ -175,8 +185,11 @@ abstract class _GetAssetsParams implements GetAssetsParams {
   @override
   @JsonKey(name: 'maximum')
   int? get maximum;
+
+  /// Create a copy of GetAssetsParams
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetAssetsParamsImplCopyWith<_$GetAssetsParamsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

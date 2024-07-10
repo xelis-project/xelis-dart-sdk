@@ -28,8 +28,12 @@ mixin _$TransactionExecutedEvent {
   @JsonKey(name: 'topoheight')
   int get topoHeight => throw _privateConstructorUsedError;
 
+  /// Serializes this TransactionExecutedEvent to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of TransactionExecutedEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $TransactionExecutedEventCopyWith<TransactionExecutedEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -57,6 +61,8 @@ class _$TransactionExecutedEventCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of TransactionExecutedEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -106,6 +112,8 @@ class __$$TransactionExecutedEventImplCopyWithImpl<$Res>
       $Res Function(_$TransactionExecutedEventImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TransactionExecutedEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -168,11 +176,13 @@ class _$TransactionExecutedEventImpl implements _TransactionExecutedEvent {
                 other.topoHeight == topoHeight));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, blockHash, txHash, topoHeight);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TransactionExecutedEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$TransactionExecutedEventImplCopyWith<_$TransactionExecutedEventImpl>
@@ -206,8 +216,11 @@ abstract class _TransactionExecutedEvent implements TransactionExecutedEvent {
   @override
   @JsonKey(name: 'topoheight')
   int get topoHeight;
+
+  /// Create a copy of TransactionExecutedEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$TransactionExecutedEventImplCopyWith<_$TransactionExecutedEventImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

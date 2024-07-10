@@ -63,8 +63,12 @@ mixin _$Block {
   List<TransactionResponse>? get transactions =>
       throw _privateConstructorUsedError;
 
+  /// Serializes this Block to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Block
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $BlockCopyWith<Block> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -106,6 +110,8 @@ class _$BlockCopyWithImpl<$Res, $Val extends Block>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Block
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -253,6 +259,8 @@ class __$$BlockImplCopyWithImpl<$Res>
       _$BlockImpl _value, $Res Function(_$BlockImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Block
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -520,7 +528,7 @@ class _$BlockImpl implements _Block {
                 .equals(other._transactions, _transactions));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
@@ -546,7 +554,9 @@ class _$BlockImpl implements _Block {
         const DeepCollectionEquality().hash(_transactions)
       ]);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Block
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$BlockImplCopyWith<_$BlockImpl> get copyWith =>
@@ -622,8 +632,8 @@ abstract class _Block implements Block {
   int? get devReward;
   @override
   @JsonKey(name: 'supply')
-  int? get supply;
-  @override // TODO convert timestamp to DateTime
+  int? get supply; // TODO convert timestamp to DateTime
+  @override
   @JsonKey(name: 'timestamp')
   int get timestamp;
   @override
@@ -647,8 +657,11 @@ abstract class _Block implements Block {
   @override
   @JsonKey(name: 'transactions')
   List<TransactionResponse>? get transactions;
+
+  /// Create a copy of Block
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$BlockImplCopyWith<_$BlockImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

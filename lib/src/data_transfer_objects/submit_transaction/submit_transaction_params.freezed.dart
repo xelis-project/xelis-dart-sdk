@@ -24,8 +24,12 @@ mixin _$SubmitTransactionParams {
   @JsonKey(name: 'data')
   String get hex => throw _privateConstructorUsedError;
 
+  /// Serializes this SubmitTransactionParams to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of SubmitTransactionParams
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SubmitTransactionParamsCopyWith<SubmitTransactionParams> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -50,6 +54,8 @@ class _$SubmitTransactionParamsCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of SubmitTransactionParams
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -86,6 +92,8 @@ class __$$SubmitTransactionParamsImplCopyWithImpl<$Res>
       $Res Function(_$SubmitTransactionParamsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SubmitTransactionParams
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -126,11 +134,13 @@ class _$SubmitTransactionParamsImpl implements _SubmitTransactionParams {
             (identical(other.hex, hex) || other.hex == hex));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, hex);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SubmitTransactionParams
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SubmitTransactionParamsImplCopyWith<_$SubmitTransactionParamsImpl>
@@ -156,8 +166,11 @@ abstract class _SubmitTransactionParams implements SubmitTransactionParams {
   @override
   @JsonKey(name: 'data')
   String get hex;
+
+  /// Create a copy of SubmitTransactionParams
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SubmitTransactionParamsImplCopyWith<_$SubmitTransactionParamsImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

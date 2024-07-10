@@ -30,8 +30,12 @@ mixin _$GetMempoolCacheResult {
   @JsonKey(name: 'txs')
   List<String> get txs => throw _privateConstructorUsedError;
 
+  /// Serializes this GetMempoolCacheResult to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of GetMempoolCacheResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $GetMempoolCacheResultCopyWith<GetMempoolCacheResult> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -60,6 +64,8 @@ class _$GetMempoolCacheResultCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of GetMempoolCacheResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -114,6 +120,8 @@ class __$$GetMempoolCacheResultImplCopyWithImpl<$Res>
       $Res Function(_$GetMempoolCacheResultImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of GetMempoolCacheResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -197,7 +205,7 @@ class _$GetMempoolCacheResultImpl implements _GetMempoolCacheResult {
             const DeepCollectionEquality().equals(other._txs, _txs));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -206,7 +214,9 @@ class _$GetMempoolCacheResultImpl implements _GetMempoolCacheResult {
       min,
       const DeepCollectionEquality().hash(_txs));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of GetMempoolCacheResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$GetMempoolCacheResultImplCopyWith<_$GetMempoolCacheResultImpl>
@@ -244,8 +254,11 @@ abstract class _GetMempoolCacheResult implements GetMempoolCacheResult {
   @override
   @JsonKey(name: 'txs')
   List<String> get txs;
+
+  /// Create a copy of GetMempoolCacheResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetMempoolCacheResultImplCopyWith<_$GetMempoolCacheResultImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

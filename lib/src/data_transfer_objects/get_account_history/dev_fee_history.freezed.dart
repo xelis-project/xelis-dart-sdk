@@ -23,8 +23,12 @@ mixin _$DevFeeHistory {
   @JsonKey(name: 'reward')
   int get reward => throw _privateConstructorUsedError;
 
+  /// Serializes this DevFeeHistory to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of DevFeeHistory
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $DevFeeHistoryCopyWith<DevFeeHistory> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -48,6 +52,8 @@ class _$DevFeeHistoryCopyWithImpl<$Res, $Val extends DevFeeHistory>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of DevFeeHistory
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -81,6 +87,8 @@ class __$$DevFeeHistoryImplCopyWithImpl<$Res>
       _$DevFeeHistoryImpl _value, $Res Function(_$DevFeeHistoryImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of DevFeeHistory
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -120,11 +128,13 @@ class _$DevFeeHistoryImpl implements _DevFeeHistory {
             (identical(other.reward, reward) || other.reward == reward));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, reward);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of DevFeeHistory
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$DevFeeHistoryImplCopyWith<_$DevFeeHistoryImpl> get copyWith =>
@@ -149,8 +159,11 @@ abstract class _DevFeeHistory implements DevFeeHistory {
   @override
   @JsonKey(name: 'reward')
   int get reward;
+
+  /// Create a copy of DevFeeHistory
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$DevFeeHistoryImplCopyWith<_$DevFeeHistoryImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -26,8 +26,12 @@ mixin _$PeerPeerListUpdatedEvent {
   @JsonKey(name: 'peerlist')
   List<String> get peerList => throw _privateConstructorUsedError;
 
+  /// Serializes this PeerPeerListUpdatedEvent to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of PeerPeerListUpdatedEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $PeerPeerListUpdatedEventCopyWith<PeerPeerListUpdatedEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -54,6 +58,8 @@ class _$PeerPeerListUpdatedEventCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of PeerPeerListUpdatedEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -97,6 +103,8 @@ class __$$PeerPeerListUpdatedEventImplCopyWithImpl<$Res>
       $Res Function(_$PeerPeerListUpdatedEventImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of PeerPeerListUpdatedEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -153,12 +161,14 @@ class _$PeerPeerListUpdatedEventImpl implements _PeerPeerListUpdatedEvent {
             const DeepCollectionEquality().equals(other._peerList, _peerList));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, id, const DeepCollectionEquality().hash(_peerList));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of PeerPeerListUpdatedEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$PeerPeerListUpdatedEventImplCopyWith<_$PeerPeerListUpdatedEventImpl>
@@ -188,8 +198,11 @@ abstract class _PeerPeerListUpdatedEvent implements PeerPeerListUpdatedEvent {
   @override
   @JsonKey(name: 'peerlist')
   List<String> get peerList;
+
+  /// Create a copy of PeerPeerListUpdatedEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PeerPeerListUpdatedEventImplCopyWith<_$PeerPeerListUpdatedEventImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

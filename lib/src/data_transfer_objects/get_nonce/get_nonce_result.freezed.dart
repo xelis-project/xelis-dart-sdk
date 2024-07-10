@@ -27,8 +27,12 @@ mixin _$GetNonceResult {
   @JsonKey(name: 'previous_topoheight')
   int? get previousTopoHeight => throw _privateConstructorUsedError;
 
+  /// Serializes this GetNonceResult to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of GetNonceResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $GetNonceResultCopyWith<GetNonceResult> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -55,6 +59,8 @@ class _$GetNonceResultCopyWithImpl<$Res, $Val extends GetNonceResult>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of GetNonceResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -101,6 +107,8 @@ class __$$GetNonceResultImplCopyWithImpl<$Res>
       _$GetNonceResultImpl _value, $Res Function(_$GetNonceResultImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of GetNonceResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -163,12 +171,14 @@ class _$GetNonceResultImpl implements _GetNonceResult {
                 other.previousTopoHeight == previousTopoHeight));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, topoHeight, nonce, previousTopoHeight);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of GetNonceResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$GetNonceResultImplCopyWith<_$GetNonceResultImpl> get copyWith =>
@@ -202,8 +212,11 @@ abstract class _GetNonceResult implements GetNonceResult {
   @override
   @JsonKey(name: 'previous_topoheight')
   int? get previousTopoHeight;
+
+  /// Create a copy of GetNonceResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetNonceResultImplCopyWith<_$GetNonceResultImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

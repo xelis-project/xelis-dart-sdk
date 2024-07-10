@@ -47,8 +47,12 @@ mixin _$PeerEntry {
   @JsonKey(name: 'connected_on')
   int get connectedOn => throw _privateConstructorUsedError;
 
+  /// Serializes this PeerEntry to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of PeerEntry
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $PeerEntryCopyWith<PeerEntry> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -84,6 +88,8 @@ class _$PeerEntryCopyWithImpl<$Res, $Val extends PeerEntry>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of PeerEntry
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -190,6 +196,8 @@ class __$$PeerEntryImplCopyWithImpl<$Res>
       _$PeerEntryImpl _value, $Res Function(_$PeerEntryImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of PeerEntry
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -365,7 +373,7 @@ class _$PeerEntryImpl implements _PeerEntry {
                 other.connectedOn == connectedOn));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -383,7 +391,9 @@ class _$PeerEntryImpl implements _PeerEntry {
       const DeepCollectionEquality().hash(_peers),
       connectedOn);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of PeerEntry
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$PeerEntryImplCopyWith<_$PeerEntryImpl> get copyWith =>
@@ -457,8 +467,11 @@ abstract class _PeerEntry implements PeerEntry {
   @override
   @JsonKey(name: 'connected_on')
   int get connectedOn;
+
+  /// Create a copy of PeerEntry
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PeerEntryImplCopyWith<_$PeerEntryImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

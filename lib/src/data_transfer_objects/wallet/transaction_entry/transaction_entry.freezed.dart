@@ -20,7 +20,9 @@ mixin _$TransactionEntry {
   int get topoHeight => throw _privateConstructorUsedError;
   TransactionEntryType get txEntryType => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TransactionEntry
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $TransactionEntryCopyWith<TransactionEntry> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -46,6 +48,8 @@ class _$TransactionEntryCopyWithImpl<$Res, $Val extends TransactionEntry>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of TransactionEntry
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -69,6 +73,8 @@ class _$TransactionEntryCopyWithImpl<$Res, $Val extends TransactionEntry>
     ) as $Val);
   }
 
+  /// Create a copy of TransactionEntry
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $TransactionEntryTypeCopyWith<$Res> get txEntryType {
@@ -100,6 +106,8 @@ class __$$TransactionEntryImplCopyWithImpl<$Res>
       $Res Function(_$TransactionEntryImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TransactionEntry
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -159,7 +167,9 @@ class _$TransactionEntryImpl implements _TransactionEntry {
   @override
   int get hashCode => Object.hash(runtimeType, hash, topoHeight, txEntryType);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TransactionEntry
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$TransactionEntryImplCopyWith<_$TransactionEntryImpl> get copyWith =>
@@ -180,8 +190,11 @@ abstract class _TransactionEntry implements TransactionEntry {
   int get topoHeight;
   @override
   TransactionEntryType get txEntryType;
+
+  /// Create a copy of TransactionEntry
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$TransactionEntryImplCopyWith<_$TransactionEntryImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

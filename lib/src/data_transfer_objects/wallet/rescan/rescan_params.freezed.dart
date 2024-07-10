@@ -23,8 +23,12 @@ mixin _$RescanParams {
   @JsonKey(name: 'until_topoheight')
   int get untilTopoheight => throw _privateConstructorUsedError;
 
+  /// Serializes this RescanParams to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of RescanParams
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $RescanParamsCopyWith<RescanParams> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -48,6 +52,8 @@ class _$RescanParamsCopyWithImpl<$Res, $Val extends RescanParams>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of RescanParams
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -81,6 +87,8 @@ class __$$RescanParamsImplCopyWithImpl<$Res>
       _$RescanParamsImpl _value, $Res Function(_$RescanParamsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of RescanParams
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -122,11 +130,13 @@ class _$RescanParamsImpl implements _RescanParams {
                 other.untilTopoheight == untilTopoheight));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, untilTopoheight);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of RescanParams
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$RescanParamsImplCopyWith<_$RescanParamsImpl> get copyWith =>
@@ -151,8 +161,11 @@ abstract class _RescanParams implements RescanParams {
   @override
   @JsonKey(name: 'until_topoheight')
   int get untilTopoheight;
+
+  /// Create a copy of RescanParams
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$RescanParamsImplCopyWith<_$RescanParamsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

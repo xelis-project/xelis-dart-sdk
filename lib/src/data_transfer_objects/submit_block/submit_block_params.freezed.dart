@@ -23,8 +23,12 @@ mixin _$SubmitBlockParams {
   @JsonKey(name: 'block_template')
   String get blockTemplate => throw _privateConstructorUsedError;
 
+  /// Serializes this SubmitBlockParams to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of SubmitBlockParams
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SubmitBlockParamsCopyWith<SubmitBlockParams> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -48,6 +52,8 @@ class _$SubmitBlockParamsCopyWithImpl<$Res, $Val extends SubmitBlockParams>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of SubmitBlockParams
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -81,6 +87,8 @@ class __$$SubmitBlockParamsImplCopyWithImpl<$Res>
       $Res Function(_$SubmitBlockParamsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SubmitBlockParams
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -122,11 +130,13 @@ class _$SubmitBlockParamsImpl implements _SubmitBlockParams {
                 other.blockTemplate == blockTemplate));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, blockTemplate);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SubmitBlockParams
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SubmitBlockParamsImplCopyWith<_$SubmitBlockParamsImpl> get copyWith =>
@@ -152,8 +162,11 @@ abstract class _SubmitBlockParams implements SubmitBlockParams {
   @override
   @JsonKey(name: 'block_template')
   String get blockTemplate;
+
+  /// Create a copy of SubmitBlockParams
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SubmitBlockParamsImplCopyWith<_$SubmitBlockParamsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

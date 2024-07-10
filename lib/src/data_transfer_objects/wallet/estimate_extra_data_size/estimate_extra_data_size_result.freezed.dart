@@ -24,8 +24,12 @@ mixin _$EstimateExtraDataSizeResult {
   @JsonKey(name: 'size')
   int get size => throw _privateConstructorUsedError;
 
+  /// Serializes this EstimateExtraDataSizeResult to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of EstimateExtraDataSizeResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $EstimateExtraDataSizeResultCopyWith<EstimateExtraDataSizeResult>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -52,6 +56,8 @@ class _$EstimateExtraDataSizeResultCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of EstimateExtraDataSizeResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -88,6 +94,8 @@ class __$$EstimateExtraDataSizeResultImplCopyWithImpl<$Res>
       $Res Function(_$EstimateExtraDataSizeResultImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of EstimateExtraDataSizeResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -130,11 +138,13 @@ class _$EstimateExtraDataSizeResultImpl
             (identical(other.size, size) || other.size == size));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, size);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of EstimateExtraDataSizeResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$EstimateExtraDataSizeResultImplCopyWith<_$EstimateExtraDataSizeResultImpl>
@@ -161,8 +171,11 @@ abstract class _EstimateExtraDataSizeResult
   @override
   @JsonKey(name: 'size')
   int get size;
+
+  /// Create a copy of EstimateExtraDataSizeResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$EstimateExtraDataSizeResultImplCopyWith<_$EstimateExtraDataSizeResultImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

@@ -77,6 +77,8 @@ mixin _$TransactionType {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
+  /// Serializes this TransactionType to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 }
 
@@ -96,6 +98,9 @@ class _$TransactionTypeCopyWithImpl<$Res, $Val extends TransactionType>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of TransactionType
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -115,6 +120,8 @@ class __$$TransfersImplCopyWithImpl<$Res>
       _$TransfersImpl _value, $Res Function(_$TransfersImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TransactionType
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -167,12 +174,14 @@ class _$TransfersImpl implements Transfers {
                 .equals(other._transfers, _transfers));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(_transfers));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TransactionType
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$TransfersImplCopyWith<_$TransfersImpl> get copyWith =>
@@ -268,7 +277,10 @@ abstract class Transfers implements TransactionType {
 
   @JsonKey(name: 'transfers')
   List<Transfer> get transfers;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of TransactionType
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$TransfersImplCopyWith<_$TransfersImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -291,6 +303,8 @@ class __$$BurnImplCopyWithImpl<$Res>
   __$$BurnImplCopyWithImpl(_$BurnImpl _value, $Res Function(_$BurnImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TransactionType
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -346,11 +360,13 @@ class _$BurnImpl implements Burn {
             (identical(other.amount, amount) || other.amount == amount));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, asset, amount);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TransactionType
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$BurnImplCopyWith<_$BurnImpl> get copyWith =>
@@ -447,7 +463,10 @@ abstract class Burn implements TransactionType {
   String get asset;
   @JsonKey(name: 'amount')
   int get amount;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of TransactionType
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$BurnImplCopyWith<_$BurnImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -23,8 +23,12 @@ mixin _$GetTransactionParams {
   @JsonKey(name: 'hash')
   String get hash => throw _privateConstructorUsedError;
 
+  /// Serializes this GetTransactionParams to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of GetTransactionParams
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $GetTransactionParamsCopyWith<GetTransactionParams> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -49,6 +53,8 @@ class _$GetTransactionParamsCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of GetTransactionParams
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -82,6 +88,8 @@ class __$$GetTransactionParamsImplCopyWithImpl<$Res>
       $Res Function(_$GetTransactionParamsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of GetTransactionParams
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -121,11 +129,13 @@ class _$GetTransactionParamsImpl implements _GetTransactionParams {
             (identical(other.hash, hash) || other.hash == hash));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, hash);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of GetTransactionParams
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$GetTransactionParamsImplCopyWith<_$GetTransactionParamsImpl>
@@ -152,8 +162,11 @@ abstract class _GetTransactionParams implements GetTransactionParams {
   @override
   @JsonKey(name: 'hash')
   String get hash;
+
+  /// Create a copy of GetTransactionParams
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetTransactionParamsImplCopyWith<_$GetTransactionParamsImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

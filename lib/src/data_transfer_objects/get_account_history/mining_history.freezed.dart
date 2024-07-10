@@ -23,8 +23,12 @@ mixin _$MiningHistory {
   @JsonKey(name: 'reward')
   int get reward => throw _privateConstructorUsedError;
 
+  /// Serializes this MiningHistory to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of MiningHistory
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $MiningHistoryCopyWith<MiningHistory> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -48,6 +52,8 @@ class _$MiningHistoryCopyWithImpl<$Res, $Val extends MiningHistory>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of MiningHistory
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -81,6 +87,8 @@ class __$$MiningHistoryImplCopyWithImpl<$Res>
       _$MiningHistoryImpl _value, $Res Function(_$MiningHistoryImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of MiningHistory
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -120,11 +128,13 @@ class _$MiningHistoryImpl implements _MiningHistory {
             (identical(other.reward, reward) || other.reward == reward));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, reward);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of MiningHistory
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$MiningHistoryImplCopyWith<_$MiningHistoryImpl> get copyWith =>
@@ -149,8 +159,11 @@ abstract class _MiningHistory implements MiningHistory {
   @override
   @JsonKey(name: 'reward')
   int get reward;
+
+  /// Create a copy of MiningHistory
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$MiningHistoryImplCopyWith<_$MiningHistoryImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -35,8 +35,12 @@ mixin _$P2pStatusResult {
   @JsonKey(name: 'tag')
   String? get tag => throw _privateConstructorUsedError;
 
+  /// Serializes this P2pStatusResult to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of P2pStatusResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $P2pStatusResultCopyWith<P2pStatusResult> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -67,6 +71,8 @@ class _$P2pStatusResultCopyWithImpl<$Res, $Val extends P2pStatusResult>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of P2pStatusResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -137,6 +143,8 @@ class __$$P2pStatusResultImplCopyWithImpl<$Res>
       _$P2pStatusResultImpl _value, $Res Function(_$P2pStatusResultImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of P2pStatusResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -242,12 +250,14 @@ class _$P2pStatusResultImpl implements _P2pStatusResult {
             (identical(other.tag, tag) || other.tag == tag));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, bestTopoHeight, medianTopoHeight,
       maxPeers, ourTopoHeight, peerCount, peerId, tag);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of P2pStatusResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$P2pStatusResultImplCopyWith<_$P2pStatusResultImpl> get copyWith =>
@@ -296,8 +306,11 @@ abstract class _P2pStatusResult implements P2pStatusResult {
   @override
   @JsonKey(name: 'tag')
   String? get tag;
+
+  /// Create a copy of P2pStatusResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$P2pStatusResultImplCopyWith<_$P2pStatusResultImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

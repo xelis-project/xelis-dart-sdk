@@ -27,8 +27,12 @@ mixin _$TransferInEntry {
   @JsonKey(name: 'extra_data')
   dynamic get extraData => throw _privateConstructorUsedError;
 
+  /// Serializes this TransferInEntry to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of TransferInEntry
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $TransferInEntryCopyWith<TransferInEntry> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -55,6 +59,8 @@ class _$TransferInEntryCopyWithImpl<$Res, $Val extends TransferInEntry>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of TransferInEntry
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -101,6 +107,8 @@ class __$$TransferInEntryImplCopyWithImpl<$Res>
       _$TransferInEntryImpl _value, $Res Function(_$TransferInEntryImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TransferInEntry
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -161,12 +169,14 @@ class _$TransferInEntryImpl implements _TransferInEntry {
             const DeepCollectionEquality().equals(other.extraData, extraData));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, amount, asset,
       const DeepCollectionEquality().hash(extraData));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TransferInEntry
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$TransferInEntryImplCopyWith<_$TransferInEntryImpl> get copyWith =>
@@ -200,8 +210,11 @@ abstract class _TransferInEntry implements TransferInEntry {
   @override
   @JsonKey(name: 'extra_data')
   dynamic get extraData;
+
+  /// Create a copy of TransferInEntry
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$TransferInEntryImplCopyWith<_$TransferInEntryImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

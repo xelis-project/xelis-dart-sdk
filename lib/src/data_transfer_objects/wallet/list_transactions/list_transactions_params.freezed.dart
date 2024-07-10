@@ -38,8 +38,12 @@ mixin _$ListTransactionsParams {
   @JsonKey(name: 'query')
   dynamic get query => throw _privateConstructorUsedError;
 
+  /// Serializes this ListTransactionsParams to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ListTransactionsParams
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ListTransactionsParamsCopyWith<ListTransactionsParams> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -72,6 +76,8 @@ class _$ListTransactionsParamsCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ListTransactionsParams
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -151,6 +157,8 @@ class __$$ListTransactionsParamsImplCopyWithImpl<$Res>
       $Res Function(_$ListTransactionsParamsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ListTransactionsParams
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -269,7 +277,7 @@ class _$ListTransactionsParamsImpl implements _ListTransactionsParams {
             const DeepCollectionEquality().equals(other.query, query));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -282,7 +290,9 @@ class _$ListTransactionsParamsImpl implements _ListTransactionsParams {
       acceptBurn,
       const DeepCollectionEquality().hash(query));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ListTransactionsParams
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ListTransactionsParamsImplCopyWith<_$ListTransactionsParamsImpl>
@@ -332,12 +342,15 @@ abstract class _ListTransactionsParams implements ListTransactionsParams {
   bool? get acceptCoinbase;
   @override
   @JsonKey(name: 'accept_burn')
-  bool? get acceptBurn;
-  @override // TODO
+  bool? get acceptBurn; // TODO
+  @override
   @JsonKey(name: 'query')
   dynamic get query;
+
+  /// Create a copy of ListTransactionsParams
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ListTransactionsParamsImplCopyWith<_$ListTransactionsParamsImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

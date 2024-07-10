@@ -23,8 +23,12 @@ mixin _$SplitAddressParams {
   @JsonKey(name: 'address')
   String get address => throw _privateConstructorUsedError;
 
+  /// Serializes this SplitAddressParams to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of SplitAddressParams
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SplitAddressParamsCopyWith<SplitAddressParams> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -48,6 +52,8 @@ class _$SplitAddressParamsCopyWithImpl<$Res, $Val extends SplitAddressParams>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of SplitAddressParams
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -81,6 +87,8 @@ class __$$SplitAddressParamsImplCopyWithImpl<$Res>
       $Res Function(_$SplitAddressParamsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SplitAddressParams
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -121,11 +129,13 @@ class _$SplitAddressParamsImpl implements _SplitAddressParams {
             (identical(other.address, address) || other.address == address));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, address);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SplitAddressParams
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SplitAddressParamsImplCopyWith<_$SplitAddressParamsImpl> get copyWith =>
@@ -151,8 +161,11 @@ abstract class _SplitAddressParams implements SplitAddressParams {
   @override
   @JsonKey(name: 'address')
   String get address;
+
+  /// Create a copy of SplitAddressParams
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SplitAddressParamsImplCopyWith<_$SplitAddressParamsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

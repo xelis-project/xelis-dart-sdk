@@ -25,8 +25,12 @@ mixin _$GetHeightRangeParams {
   @JsonKey(name: 'end_height')
   int? get endHeight => throw _privateConstructorUsedError;
 
+  /// Serializes this GetHeightRangeParams to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of GetHeightRangeParams
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $GetHeightRangeParamsCopyWith<GetHeightRangeParams> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -53,6 +57,8 @@ class _$GetHeightRangeParamsCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of GetHeightRangeParams
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -93,6 +99,8 @@ class __$$GetHeightRangeParamsImplCopyWithImpl<$Res>
       $Res Function(_$GetHeightRangeParamsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of GetHeightRangeParams
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -146,11 +154,13 @@ class _$GetHeightRangeParamsImpl implements _GetHeightRangeParams {
                 other.endHeight == endHeight));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, startHeight, endHeight);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of GetHeightRangeParams
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$GetHeightRangeParamsImplCopyWith<_$GetHeightRangeParamsImpl>
@@ -181,8 +191,11 @@ abstract class _GetHeightRangeParams implements GetHeightRangeParams {
   @override
   @JsonKey(name: 'end_height')
   int? get endHeight;
+
+  /// Create a copy of GetHeightRangeParams
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetHeightRangeParamsImplCopyWith<_$GetHeightRangeParamsImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

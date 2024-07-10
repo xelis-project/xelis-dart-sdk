@@ -23,8 +23,12 @@ mixin _$GetAddressParams {
   @JsonKey(name: 'integrated_data')
   dynamic get integratedData => throw _privateConstructorUsedError;
 
+  /// Serializes this GetAddressParams to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of GetAddressParams
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $GetAddressParamsCopyWith<GetAddressParams> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -48,6 +52,8 @@ class _$GetAddressParamsCopyWithImpl<$Res, $Val extends GetAddressParams>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of GetAddressParams
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -81,6 +87,8 @@ class __$$GetAddressParamsImplCopyWithImpl<$Res>
       $Res Function(_$GetAddressParamsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of GetAddressParams
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -122,12 +130,14 @@ class _$GetAddressParamsImpl implements _GetAddressParams {
                 .equals(other.integratedData, integratedData));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, const DeepCollectionEquality().hash(integratedData));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of GetAddressParams
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$GetAddressParamsImplCopyWith<_$GetAddressParamsImpl> get copyWith =>
@@ -153,8 +163,11 @@ abstract class _GetAddressParams implements GetAddressParams {
   @override
   @JsonKey(name: 'integrated_data')
   dynamic get integratedData;
+
+  /// Create a copy of GetAddressParams
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetAddressParamsImplCopyWith<_$GetAddressParamsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

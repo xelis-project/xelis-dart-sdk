@@ -25,8 +25,12 @@ mixin _$GetSizeOnDiskResult {
   @JsonKey(name: 'size_formatted')
   String get sizeFormatted => throw _privateConstructorUsedError;
 
+  /// Serializes this GetSizeOnDiskResult to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of GetSizeOnDiskResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $GetSizeOnDiskResultCopyWith<GetSizeOnDiskResult> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -52,6 +56,8 @@ class _$GetSizeOnDiskResultCopyWithImpl<$Res, $Val extends GetSizeOnDiskResult>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of GetSizeOnDiskResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -92,6 +98,8 @@ class __$$GetSizeOnDiskResultImplCopyWithImpl<$Res>
       $Res Function(_$GetSizeOnDiskResultImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of GetSizeOnDiskResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -144,11 +152,13 @@ class _$GetSizeOnDiskResultImpl implements _GetSizeOnDiskResult {
                 other.sizeFormatted == sizeFormatted));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, sizeBytes, sizeFormatted);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of GetSizeOnDiskResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$GetSizeOnDiskResultImplCopyWith<_$GetSizeOnDiskResultImpl> get copyWith =>
@@ -178,8 +188,11 @@ abstract class _GetSizeOnDiskResult implements GetSizeOnDiskResult {
   @override
   @JsonKey(name: 'size_formatted')
   String get sizeFormatted;
+
+  /// Create a copy of GetSizeOnDiskResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetSizeOnDiskResultImplCopyWith<_$GetSizeOnDiskResultImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

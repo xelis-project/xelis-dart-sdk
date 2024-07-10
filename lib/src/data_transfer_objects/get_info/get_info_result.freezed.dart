@@ -49,8 +49,12 @@ mixin _$GetInfoResult {
   @JsonKey(name: 'network')
   Network get network => throw _privateConstructorUsedError;
 
+  /// Serializes this GetInfoResult to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of GetInfoResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $GetInfoResultCopyWith<GetInfoResult> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -88,6 +92,8 @@ class _$GetInfoResultCopyWithImpl<$Res, $Val extends GetInfoResult>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of GetInfoResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -200,6 +206,8 @@ class __$$GetInfoResultImplCopyWithImpl<$Res>
       _$GetInfoResultImpl _value, $Res Function(_$GetInfoResultImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of GetInfoResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -381,7 +389,7 @@ class _$GetInfoResultImpl implements _GetInfoResult {
             (identical(other.network, network) || other.network == network));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -400,7 +408,9 @@ class _$GetInfoResultImpl implements _GetInfoResult {
       version,
       network);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of GetInfoResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$GetInfoResultImplCopyWith<_$GetInfoResultImpl> get copyWith =>
@@ -477,8 +487,11 @@ abstract class _GetInfoResult implements GetInfoResult {
   @override
   @JsonKey(name: 'network')
   Network get network;
+
+  /// Create a copy of GetInfoResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetInfoResultImplCopyWith<_$GetInfoResultImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

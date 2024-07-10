@@ -110,6 +110,8 @@ mixin _$TransactionEntryType {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
+  /// Serializes this TransactionEntryType to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 }
 
@@ -130,6 +132,9 @@ class _$TransactionEntryTypeCopyWithImpl<$Res,
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of TransactionEntryType
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -149,6 +154,8 @@ class __$$CoinbaseEntryImplCopyWithImpl<$Res>
       _$CoinbaseEntryImpl _value, $Res Function(_$CoinbaseEntryImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TransactionEntryType
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -193,11 +200,13 @@ class _$CoinbaseEntryImpl implements CoinbaseEntry {
             (identical(other.reward, reward) || other.reward == reward));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, reward);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TransactionEntryType
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$CoinbaseEntryImplCopyWith<_$CoinbaseEntryImpl> get copyWith =>
@@ -319,7 +328,10 @@ abstract class CoinbaseEntry implements TransactionEntryType {
 
   @JsonKey(name: 'reward')
   int get reward;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of TransactionEntryType
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CoinbaseEntryImplCopyWith<_$CoinbaseEntryImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -343,6 +355,8 @@ class __$$BurnEntryImplCopyWithImpl<$Res>
       _$BurnEntryImpl _value, $Res Function(_$BurnEntryImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TransactionEntryType
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -398,11 +412,13 @@ class _$BurnEntryImpl implements BurnEntry {
             (identical(other.amount, amount) || other.amount == amount));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, asset, amount);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TransactionEntryType
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$BurnEntryImplCopyWith<_$BurnEntryImpl> get copyWith =>
@@ -526,7 +542,10 @@ abstract class BurnEntry implements TransactionEntryType {
   String get asset;
   @JsonKey(name: 'amount')
   int get amount;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of TransactionEntryType
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$BurnEntryImplCopyWith<_$BurnEntryImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -550,6 +569,8 @@ class __$$IncomingEntryImplCopyWithImpl<$Res>
       _$IncomingEntryImpl _value, $Res Function(_$IncomingEntryImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TransactionEntryType
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -613,12 +634,14 @@ class _$IncomingEntryImpl implements IncomingEntry {
                 .equals(other._transfers, _transfers));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, from, const DeepCollectionEquality().hash(_transfers));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TransactionEntryType
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$IncomingEntryImplCopyWith<_$IncomingEntryImpl> get copyWith =>
@@ -743,7 +766,10 @@ abstract class IncomingEntry implements TransactionEntryType {
   String get from;
   @JsonKey(name: 'transfers')
   List<TransferInEntry> get transfers;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of TransactionEntryType
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$IncomingEntryImplCopyWith<_$IncomingEntryImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -768,6 +794,8 @@ class __$$OutgoingEntryImplCopyWithImpl<$Res>
       _$OutgoingEntryImpl _value, $Res Function(_$OutgoingEntryImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TransactionEntryType
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -841,12 +869,14 @@ class _$OutgoingEntryImpl implements OutgoingEntry {
                 .equals(other._transfers, _transfers));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, fee, nonce, const DeepCollectionEquality().hash(_transfers));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TransactionEntryType
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$OutgoingEntryImplCopyWith<_$OutgoingEntryImpl> get copyWith =>
@@ -974,7 +1004,10 @@ abstract class OutgoingEntry implements TransactionEntryType {
   int get nonce;
   @JsonKey(name: 'transfers')
   List<TransferOutEntry> get transfers;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of TransactionEntryType
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$OutgoingEntryImplCopyWith<_$OutgoingEntryImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

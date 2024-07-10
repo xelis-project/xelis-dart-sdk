@@ -25,8 +25,12 @@ mixin _$FeeBuilder {
   @JsonKey(name: 'Value')
   int? get value => throw _privateConstructorUsedError;
 
+  /// Serializes this FeeBuilder to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of FeeBuilder
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $FeeBuilderCopyWith<FeeBuilder> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -52,6 +56,8 @@ class _$FeeBuilderCopyWithImpl<$Res, $Val extends FeeBuilder>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of FeeBuilder
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -92,6 +98,8 @@ class __$$FeeBuilderImplCopyWithImpl<$Res>
       _$FeeBuilderImpl _value, $Res Function(_$FeeBuilderImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of FeeBuilder
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -143,11 +151,13 @@ class _$FeeBuilderImpl implements _FeeBuilder {
             (identical(other.value, value) || other.value == value));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, multiplier, value);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of FeeBuilder
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$FeeBuilderImplCopyWith<_$FeeBuilderImpl> get copyWith =>
@@ -175,8 +185,11 @@ abstract class _FeeBuilder implements FeeBuilder {
   @override
   @JsonKey(name: 'Value')
   int? get value;
+
+  /// Create a copy of FeeBuilder
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$FeeBuilderImplCopyWith<_$FeeBuilderImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

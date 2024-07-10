@@ -24,8 +24,12 @@ mixin _$EstimateExtraDataSizeParams {
   @JsonKey(name: 'destinations')
   List<String> get destinations => throw _privateConstructorUsedError;
 
+  /// Serializes this EstimateExtraDataSizeParams to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of EstimateExtraDataSizeParams
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $EstimateExtraDataSizeParamsCopyWith<EstimateExtraDataSizeParams>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -52,6 +56,8 @@ class _$EstimateExtraDataSizeParamsCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of EstimateExtraDataSizeParams
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -88,6 +94,8 @@ class __$$EstimateExtraDataSizeParamsImplCopyWithImpl<$Res>
       $Res Function(_$EstimateExtraDataSizeParamsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of EstimateExtraDataSizeParams
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -137,12 +145,14 @@ class _$EstimateExtraDataSizeParamsImpl
                 .equals(other._destinations, _destinations));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, const DeepCollectionEquality().hash(_destinations));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of EstimateExtraDataSizeParams
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$EstimateExtraDataSizeParamsImplCopyWith<_$EstimateExtraDataSizeParamsImpl>
@@ -170,8 +180,11 @@ abstract class _EstimateExtraDataSizeParams
   @override
   @JsonKey(name: 'destinations')
   List<String> get destinations;
+
+  /// Create a copy of EstimateExtraDataSizeParams
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$EstimateExtraDataSizeParamsImplCopyWith<_$EstimateExtraDataSizeParamsImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

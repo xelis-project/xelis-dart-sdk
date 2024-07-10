@@ -26,8 +26,12 @@ mixin _$GetBlockAtTopoHeightParams {
   @JsonKey(name: 'include_txs')
   bool? get includeTxs => throw _privateConstructorUsedError;
 
+  /// Serializes this GetBlockAtTopoHeightParams to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of GetBlockAtTopoHeightParams
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $GetBlockAtTopoHeightParamsCopyWith<GetBlockAtTopoHeightParams>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -55,6 +59,8 @@ class _$GetBlockAtTopoHeightParamsCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of GetBlockAtTopoHeightParams
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -98,6 +104,8 @@ class __$$GetBlockAtTopoHeightParamsImplCopyWithImpl<$Res>
       $Res Function(_$GetBlockAtTopoHeightParamsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of GetBlockAtTopoHeightParams
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -152,11 +160,13 @@ class _$GetBlockAtTopoHeightParamsImpl implements _GetBlockAtTopoHeightParams {
                 other.includeTxs == includeTxs));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, topoHeight, includeTxs);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of GetBlockAtTopoHeightParams
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$GetBlockAtTopoHeightParamsImplCopyWith<_$GetBlockAtTopoHeightParamsImpl>
@@ -187,8 +197,11 @@ abstract class _GetBlockAtTopoHeightParams
   @override
   @JsonKey(name: 'include_txs')
   bool? get includeTxs;
+
+  /// Create a copy of GetBlockAtTopoHeightParams
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetBlockAtTopoHeightParamsImplCopyWith<_$GetBlockAtTopoHeightParamsImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

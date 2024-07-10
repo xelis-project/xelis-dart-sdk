@@ -23,8 +23,12 @@ mixin _$GetAssetParams {
   @JsonKey(name: 'asset')
   String get asset => throw _privateConstructorUsedError;
 
+  /// Serializes this GetAssetParams to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of GetAssetParams
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $GetAssetParamsCopyWith<GetAssetParams> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -48,6 +52,8 @@ class _$GetAssetParamsCopyWithImpl<$Res, $Val extends GetAssetParams>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of GetAssetParams
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -81,6 +87,8 @@ class __$$GetAssetParamsImplCopyWithImpl<$Res>
       _$GetAssetParamsImpl _value, $Res Function(_$GetAssetParamsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of GetAssetParams
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -120,11 +128,13 @@ class _$GetAssetParamsImpl implements _GetAssetParams {
             (identical(other.asset, asset) || other.asset == asset));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, asset);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of GetAssetParams
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$GetAssetParamsImplCopyWith<_$GetAssetParamsImpl> get copyWith =>
@@ -150,8 +160,11 @@ abstract class _GetAssetParams implements GetAssetParams {
   @override
   @JsonKey(name: 'asset')
   String get asset;
+
+  /// Create a copy of GetAssetParams
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetAssetParamsImplCopyWith<_$GetAssetParamsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

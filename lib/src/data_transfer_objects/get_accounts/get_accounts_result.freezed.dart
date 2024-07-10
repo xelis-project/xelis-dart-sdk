@@ -18,7 +18,9 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$GetAccountsResult {
   List<String> get publicKeys => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of GetAccountsResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $GetAccountsResultCopyWith<GetAccountsResult> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -42,6 +44,8 @@ class _$GetAccountsResultCopyWithImpl<$Res, $Val extends GetAccountsResult>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of GetAccountsResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -75,6 +79,8 @@ class __$$GetAccountsResultImplCopyWithImpl<$Res>
       $Res Function(_$GetAccountsResultImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of GetAccountsResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -121,7 +127,9 @@ class _$GetAccountsResultImpl implements _GetAccountsResult {
   int get hashCode => Object.hash(
       runtimeType, const DeepCollectionEquality().hash(_publicKeys));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of GetAccountsResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$GetAccountsResultImplCopyWith<_$GetAccountsResultImpl> get copyWith =>
@@ -135,8 +143,11 @@ abstract class _GetAccountsResult implements GetAccountsResult {
 
   @override
   List<String> get publicKeys;
+
+  /// Create a copy of GetAccountsResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetAccountsResultImplCopyWith<_$GetAccountsResultImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

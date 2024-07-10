@@ -25,8 +25,12 @@ mixin _$HasNonceParams {
   @JsonKey(name: 'topoheight')
   int? get topoheight => throw _privateConstructorUsedError;
 
+  /// Serializes this HasNonceParams to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of HasNonceParams
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $HasNonceParamsCopyWith<HasNonceParams> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -52,6 +56,8 @@ class _$HasNonceParamsCopyWithImpl<$Res, $Val extends HasNonceParams>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of HasNonceParams
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -92,6 +98,8 @@ class __$$HasNonceParamsImplCopyWithImpl<$Res>
       _$HasNonceParamsImpl _value, $Res Function(_$HasNonceParamsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of HasNonceParams
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -143,11 +151,13 @@ class _$HasNonceParamsImpl implements _HasNonceParams {
                 other.topoheight == topoheight));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, address, topoheight);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of HasNonceParams
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$HasNonceParamsImplCopyWith<_$HasNonceParamsImpl> get copyWith =>
@@ -177,8 +187,11 @@ abstract class _HasNonceParams implements HasNonceParams {
   @override
   @JsonKey(name: 'topoheight')
   int? get topoheight;
+
+  /// Create a copy of HasNonceParams
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$HasNonceParamsImplCopyWith<_$HasNonceParamsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

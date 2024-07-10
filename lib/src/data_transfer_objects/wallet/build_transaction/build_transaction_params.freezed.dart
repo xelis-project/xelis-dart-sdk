@@ -21,7 +21,9 @@ mixin _$BuildTransactionParams {
   bool get broadcast => throw _privateConstructorUsedError;
   bool? get txAsHex => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BuildTransactionParams
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $BuildTransactionParamsCopyWith<BuildTransactionParams> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -53,6 +55,8 @@ class _$BuildTransactionParamsCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of BuildTransactionParams
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -81,6 +85,8 @@ class _$BuildTransactionParamsCopyWithImpl<$Res,
     ) as $Val);
   }
 
+  /// Create a copy of BuildTransactionParams
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $TransactionTypeCopyWith<$Res> get transactionType {
@@ -89,6 +95,8 @@ class _$BuildTransactionParamsCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of BuildTransactionParams
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $FeeBuilderCopyWith<$Res>? get feeBuilder {
@@ -133,6 +141,8 @@ class __$$BuildTransactionParamsImplCopyWithImpl<$Res>
       $Res Function(_$BuildTransactionParamsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of BuildTransactionParams
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -204,7 +214,9 @@ class _$BuildTransactionParamsImpl extends _BuildTransactionParams {
   int get hashCode =>
       Object.hash(runtimeType, transactionType, feeBuilder, broadcast, txAsHex);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BuildTransactionParams
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$BuildTransactionParamsImplCopyWith<_$BuildTransactionParamsImpl>
@@ -228,8 +240,11 @@ abstract class _BuildTransactionParams extends BuildTransactionParams {
   bool get broadcast;
   @override
   bool? get txAsHex;
+
+  /// Create a copy of BuildTransactionParams
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$BuildTransactionParamsImplCopyWith<_$BuildTransactionParamsImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

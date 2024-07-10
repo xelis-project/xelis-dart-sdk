@@ -24,8 +24,12 @@ mixin _$GetTransactionsParams {
   @JsonKey(name: 'tx_hashes')
   List<String> get txHashes => throw _privateConstructorUsedError;
 
+  /// Serializes this GetTransactionsParams to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of GetTransactionsParams
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $GetTransactionsParamsCopyWith<GetTransactionsParams> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -50,6 +54,8 @@ class _$GetTransactionsParamsCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of GetTransactionsParams
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -85,6 +91,8 @@ class __$$GetTransactionsParamsImplCopyWithImpl<$Res>
       $Res Function(_$GetTransactionsParamsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of GetTransactionsParams
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -131,12 +139,14 @@ class _$GetTransactionsParamsImpl implements _GetTransactionsParams {
             const DeepCollectionEquality().equals(other._txHashes, _txHashes));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(_txHashes));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of GetTransactionsParams
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$GetTransactionsParamsImplCopyWith<_$GetTransactionsParamsImpl>
@@ -162,8 +172,11 @@ abstract class _GetTransactionsParams implements GetTransactionsParams {
   @override
   @JsonKey(name: 'tx_hashes')
   List<String> get txHashes;
+
+  /// Create a copy of GetTransactionsParams
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetTransactionsParamsImplCopyWith<_$GetTransactionsParamsImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

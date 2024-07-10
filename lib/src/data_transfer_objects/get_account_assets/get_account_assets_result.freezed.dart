@@ -23,8 +23,12 @@ GetAccountAssetsResult _$GetAccountAssetsResultFromJson(
 mixin _$GetAccountAssetsResult {
   List<String> get assets => throw _privateConstructorUsedError;
 
+  /// Serializes this GetAccountAssetsResult to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of GetAccountAssetsResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $GetAccountAssetsResultCopyWith<GetAccountAssetsResult> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -49,6 +53,8 @@ class _$GetAccountAssetsResultCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of GetAccountAssetsResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -85,6 +91,8 @@ class __$$GetAccountAssetsResultImplCopyWithImpl<$Res>
       $Res Function(_$GetAccountAssetsResultImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of GetAccountAssetsResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -129,12 +137,14 @@ class _$GetAccountAssetsResultImpl implements _GetAccountAssetsResult {
             const DeepCollectionEquality().equals(other._assets, _assets));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(_assets));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of GetAccountAssetsResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$GetAccountAssetsResultImplCopyWith<_$GetAccountAssetsResultImpl>
@@ -158,8 +168,11 @@ abstract class _GetAccountAssetsResult implements GetAccountAssetsResult {
 
   @override
   List<String> get assets;
+
+  /// Create a copy of GetAccountAssetsResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetAccountAssetsResultImplCopyWith<_$GetAccountAssetsResultImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

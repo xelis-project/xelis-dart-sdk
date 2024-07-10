@@ -38,8 +38,12 @@ mixin _$GetAccountHistoryResult {
   @JsonKey(name: 'dev_fee')
   DevFeeHistory? get devFeeHistory => throw _privateConstructorUsedError;
 
+  /// Serializes this GetAccountHistoryResult to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of GetAccountHistoryResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $GetAccountHistoryResultCopyWith<GetAccountHistoryResult> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -78,6 +82,8 @@ class _$GetAccountHistoryResultCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of GetAccountHistoryResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -126,6 +132,8 @@ class _$GetAccountHistoryResultCopyWithImpl<$Res,
     ) as $Val);
   }
 
+  /// Create a copy of GetAccountHistoryResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $BurnHistoryCopyWith<$Res>? get burnHistory {
@@ -138,6 +146,8 @@ class _$GetAccountHistoryResultCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of GetAccountHistoryResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $MiningHistoryCopyWith<$Res>? get miningHistory {
@@ -150,6 +160,8 @@ class _$GetAccountHistoryResultCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of GetAccountHistoryResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $OutgoingHistoryCopyWith<$Res>? get outgoingHistory {
@@ -162,6 +174,8 @@ class _$GetAccountHistoryResultCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of GetAccountHistoryResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $IncomingHistoryCopyWith<$Res>? get incomingHistory {
@@ -174,6 +188,8 @@ class _$GetAccountHistoryResultCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of GetAccountHistoryResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $DevFeeHistoryCopyWith<$Res>? get devFeeHistory {
@@ -228,6 +244,8 @@ class __$$GetAccountHistoryResultImplCopyWithImpl<$Res>
       $Res Function(_$GetAccountHistoryResultImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of GetAccountHistoryResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -345,7 +363,7 @@ class _$GetAccountHistoryResultImpl implements _GetAccountHistoryResult {
                 other.devFeeHistory == devFeeHistory));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -358,7 +376,9 @@ class _$GetAccountHistoryResultImpl implements _GetAccountHistoryResult {
       incomingHistory,
       devFeeHistory);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of GetAccountHistoryResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$GetAccountHistoryResultImplCopyWith<_$GetAccountHistoryResultImpl>
@@ -412,8 +432,11 @@ abstract class _GetAccountHistoryResult implements GetAccountHistoryResult {
   @override
   @JsonKey(name: 'dev_fee')
   DevFeeHistory? get devFeeHistory;
+
+  /// Create a copy of GetAccountHistoryResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetAccountHistoryResultImplCopyWith<_$GetAccountHistoryResultImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

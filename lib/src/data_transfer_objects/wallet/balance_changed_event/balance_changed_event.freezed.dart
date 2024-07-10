@@ -25,8 +25,12 @@ mixin _$BalanceChangedEvent {
   @JsonKey(name: 'balance')
   int get balance => throw _privateConstructorUsedError;
 
+  /// Serializes this BalanceChangedEvent to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of BalanceChangedEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $BalanceChangedEventCopyWith<BalanceChangedEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -52,6 +56,8 @@ class _$BalanceChangedEventCopyWithImpl<$Res, $Val extends BalanceChangedEvent>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of BalanceChangedEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -92,6 +98,8 @@ class __$$BalanceChangedEventImplCopyWithImpl<$Res>
       $Res Function(_$BalanceChangedEventImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of BalanceChangedEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -143,11 +151,13 @@ class _$BalanceChangedEventImpl implements _BalanceChangedEvent {
             (identical(other.balance, balance) || other.balance == balance));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, assetHash, balance);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BalanceChangedEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$BalanceChangedEventImplCopyWith<_$BalanceChangedEventImpl> get copyWith =>
@@ -177,8 +187,11 @@ abstract class _BalanceChangedEvent implements BalanceChangedEvent {
   @override
   @JsonKey(name: 'balance')
   int get balance;
+
+  /// Create a copy of BalanceChangedEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$BalanceChangedEventImplCopyWith<_$BalanceChangedEventImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

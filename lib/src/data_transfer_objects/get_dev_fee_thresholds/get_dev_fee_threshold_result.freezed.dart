@@ -25,8 +25,12 @@ mixin _$DevFeeThresholds {
   @JsonKey(name: 'fee_percentage')
   int get feePercentage => throw _privateConstructorUsedError;
 
+  /// Serializes this DevFeeThresholds to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of DevFeeThresholds
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $DevFeeThresholdsCopyWith<DevFeeThresholds> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -52,6 +56,8 @@ class _$DevFeeThresholdsCopyWithImpl<$Res, $Val extends DevFeeThresholds>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of DevFeeThresholds
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -92,6 +98,8 @@ class __$$DevFeeThresholdsImplCopyWithImpl<$Res>
       $Res Function(_$DevFeeThresholdsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of DevFeeThresholds
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -143,11 +151,13 @@ class _$DevFeeThresholdsImpl implements _DevFeeThresholds {
                 other.feePercentage == feePercentage));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, height, feePercentage);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of DevFeeThresholds
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$DevFeeThresholdsImplCopyWith<_$DevFeeThresholdsImpl> get copyWith =>
@@ -177,8 +187,11 @@ abstract class _DevFeeThresholds implements DevFeeThresholds {
   @override
   @JsonKey(name: 'fee_percentage')
   int get feePercentage;
+
+  /// Create a copy of DevFeeThresholds
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$DevFeeThresholdsImplCopyWith<_$DevFeeThresholdsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

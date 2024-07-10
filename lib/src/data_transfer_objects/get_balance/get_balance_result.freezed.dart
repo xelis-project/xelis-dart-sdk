@@ -25,8 +25,12 @@ mixin _$GetBalanceResult {
   @JsonKey(name: 'topoheight')
   int get topoheight => throw _privateConstructorUsedError;
 
+  /// Serializes this GetBalanceResult to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of GetBalanceResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $GetBalanceResultCopyWith<GetBalanceResult> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -54,6 +58,8 @@ class _$GetBalanceResultCopyWithImpl<$Res, $Val extends GetBalanceResult>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of GetBalanceResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -72,6 +78,8 @@ class _$GetBalanceResultCopyWithImpl<$Res, $Val extends GetBalanceResult>
     ) as $Val);
   }
 
+  /// Create a copy of GetBalanceResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $VersionedBalanceCopyWith<$Res> get versionedBalance {
@@ -105,6 +113,8 @@ class __$$GetBalanceResultImplCopyWithImpl<$Res>
       $Res Function(_$GetBalanceResultImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of GetBalanceResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -157,11 +167,13 @@ class _$GetBalanceResultImpl implements _GetBalanceResult {
                 other.topoheight == topoheight));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, versionedBalance, topoheight);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of GetBalanceResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$GetBalanceResultImplCopyWith<_$GetBalanceResultImpl> get copyWith =>
@@ -192,8 +204,11 @@ abstract class _GetBalanceResult implements GetBalanceResult {
   @override
   @JsonKey(name: 'topoheight')
   int get topoheight;
+
+  /// Create a copy of GetBalanceResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetBalanceResultImplCopyWith<_$GetBalanceResultImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

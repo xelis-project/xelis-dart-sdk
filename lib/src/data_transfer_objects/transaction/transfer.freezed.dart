@@ -35,8 +35,12 @@ mixin _$Transfer {
   @JsonKey(name: 'extra_data')
   dynamic get extraData => throw _privateConstructorUsedError;
 
+  /// Serializes this Transfer to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Transfer
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $TransferCopyWith<Transfer> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -66,6 +70,8 @@ class _$TransferCopyWithImpl<$Res, $Val extends Transfer>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Transfer
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -136,6 +142,8 @@ class __$$TransferImplCopyWithImpl<$Res>
       _$TransferImpl _value, $Res Function(_$TransferImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Transfer
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -270,7 +278,7 @@ class _$TransferImpl implements _Transfer {
             const DeepCollectionEquality().equals(other.extraData, extraData));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -282,7 +290,9 @@ class _$TransferImpl implements _Transfer {
       const DeepCollectionEquality().hash(_senderHandle),
       const DeepCollectionEquality().hash(extraData));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Transfer
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$TransferImplCopyWith<_$TransferImpl> get copyWith =>
@@ -331,8 +341,11 @@ abstract class _Transfer implements Transfer {
   @override
   @JsonKey(name: 'extra_data')
   dynamic get extraData;
+
+  /// Create a copy of Transfer
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$TransferImplCopyWith<_$TransferImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

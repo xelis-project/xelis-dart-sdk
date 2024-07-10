@@ -29,8 +29,12 @@ mixin _$GetAccountsParams {
   @JsonKey(name: 'maximum_topoheight')
   int? get maxTopoHeight => throw _privateConstructorUsedError;
 
+  /// Serializes this GetAccountsParams to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of GetAccountsParams
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $GetAccountsParamsCopyWith<GetAccountsParams> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -58,6 +62,8 @@ class _$GetAccountsParamsCopyWithImpl<$Res, $Val extends GetAccountsParams>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of GetAccountsParams
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -110,6 +116,8 @@ class __$$GetAccountsParamsImplCopyWithImpl<$Res>
       $Res Function(_$GetAccountsParamsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of GetAccountsParams
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -182,12 +190,14 @@ class _$GetAccountsParamsImpl implements _GetAccountsParams {
                 other.maxTopoHeight == maxTopoHeight));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, skip, maximum, minTopoHeight, maxTopoHeight);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of GetAccountsParams
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$GetAccountsParamsImplCopyWith<_$GetAccountsParamsImpl> get copyWith =>
@@ -225,8 +235,11 @@ abstract class _GetAccountsParams implements GetAccountsParams {
   @override
   @JsonKey(name: 'maximum_topoheight')
   int? get maxTopoHeight;
+
+  /// Create a copy of GetAccountsParams
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetAccountsParamsImplCopyWith<_$GetAccountsParamsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
