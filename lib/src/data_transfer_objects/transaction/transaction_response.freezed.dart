@@ -297,8 +297,8 @@ class __$$TransactionResponseImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$TransactionResponseImpl implements _TransactionResponse {
-  const _$TransactionResponseImpl(
+class _$TransactionResponseImpl extends _TransactionResponse {
+  _$TransactionResponseImpl(
       {@JsonKey(name: 'blocks') final List<String>? blocks,
       @JsonKey(name: 'executed_in_block') this.executedInBlock,
       @JsonKey(name: 'hash') required this.hash,
@@ -317,7 +317,8 @@ class _$TransactionResponseImpl implements _TransactionResponse {
       : _blocks = blocks,
         _rangeProof = rangeProof,
         _sourceCommitments = sourceCommitments,
-        _reference = reference;
+        _reference = reference,
+        super._();
 
   final List<String>? _blocks;
   @override
@@ -450,8 +451,8 @@ class _$TransactionResponseImpl implements _TransactionResponse {
           this, _$identity);
 }
 
-abstract class _TransactionResponse implements TransactionResponse {
-  const factory _TransactionResponse(
+abstract class _TransactionResponse extends TransactionResponse {
+  factory _TransactionResponse(
       {@JsonKey(name: 'blocks') final List<String>? blocks,
       @JsonKey(name: 'executed_in_block') final String? executedInBlock,
       @JsonKey(name: 'hash') required final String hash,
@@ -468,6 +469,7 @@ abstract class _TransactionResponse implements TransactionResponse {
       @JsonKey(name: 'reference') required final Map<String, dynamic> reference,
       @JsonKey(name: 'signature')
       required final String signature}) = _$TransactionResponseImpl;
+  _TransactionResponse._() : super._();
 
   @override
   @JsonKey(name: 'blocks')

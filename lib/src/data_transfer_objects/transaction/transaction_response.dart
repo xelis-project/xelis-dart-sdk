@@ -6,10 +6,11 @@ import 'package:xelis_dart_sdk/src/data_transfer_objects/dtos.dart';
 part 'transaction_response.freezed.dart';
 
 /// @nodoc
-@freezed
+@Freezed(toJson: false)
 class TransactionResponse with _$TransactionResponse {
+
   /// @nodoc
-  const factory TransactionResponse({
+  factory TransactionResponse({
     @JsonKey(name: 'blocks') List<String>? blocks,
     @JsonKey(name: 'executed_in_block') String? executedInBlock,
     @JsonKey(name: 'hash') required String hash,
@@ -26,6 +27,8 @@ class TransactionResponse with _$TransactionResponse {
     @JsonKey(name: 'reference') required Map<String, dynamic> reference,
     @JsonKey(name: 'signature') required String signature,
   }) = _TransactionResponse;
+
+  TransactionResponse._();
 
   /// @nodoc
   factory TransactionResponse.fromJson(Map<String, dynamic> json) {
