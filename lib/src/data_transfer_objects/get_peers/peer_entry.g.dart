@@ -25,6 +25,8 @@ _$PeerEntryImpl _$$PeerEntryImplFromJson(Map<String, dynamic> json) =>
         (k, e) => MapEntry(k, $enumDecode(_$DirectionEnumMap, e)),
       ),
       connectedOn: (json['connected_on'] as num).toInt(),
+      bytesSent: (json['bytes_sent'] as num).toInt(),
+      bytesRecv: (json['bytes_recv'] as num).toInt(),
     );
 
 Map<String, dynamic> _$$PeerEntryImplToJson(_$PeerEntryImpl instance) =>
@@ -43,6 +45,8 @@ Map<String, dynamic> _$$PeerEntryImplToJson(_$PeerEntryImpl instance) =>
       'peers':
           instance.peers.map((k, e) => MapEntry(k, _$DirectionEnumMap[e]!)),
       'connected_on': instance.connectedOn,
+      'bytes_sent': instance.bytesSent,
+      'bytes_recv': instance.bytesRecv,
     };
 
 const _$DirectionEnumMap = {

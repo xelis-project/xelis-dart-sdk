@@ -46,6 +46,10 @@ mixin _$PeerEntry {
   Map<String, Direction> get peers => throw _privateConstructorUsedError;
   @JsonKey(name: 'connected_on')
   int get connectedOn => throw _privateConstructorUsedError;
+  @JsonKey(name: 'bytes_sent')
+  int get bytesSent => throw _privateConstructorUsedError;
+  @JsonKey(name: 'bytes_recv')
+  int get bytesRecv => throw _privateConstructorUsedError;
 
   /// Serializes this PeerEntry to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -75,7 +79,9 @@ abstract class $PeerEntryCopyWith<$Res> {
       @JsonKey(name: 'topoheight') int topoheight,
       @JsonKey(name: 'version') String version,
       @JsonKey(name: 'peers') Map<String, Direction> peers,
-      @JsonKey(name: 'connected_on') int connectedOn});
+      @JsonKey(name: 'connected_on') int connectedOn,
+      @JsonKey(name: 'bytes_sent') int bytesSent,
+      @JsonKey(name: 'bytes_recv') int bytesRecv});
 }
 
 /// @nodoc
@@ -106,6 +112,8 @@ class _$PeerEntryCopyWithImpl<$Res, $Val extends PeerEntry>
     Object? version = null,
     Object? peers = null,
     Object? connectedOn = null,
+    Object? bytesSent = null,
+    Object? bytesRecv = null,
   }) {
     return _then(_value.copyWith(
       address: null == address
@@ -160,6 +168,14 @@ class _$PeerEntryCopyWithImpl<$Res, $Val extends PeerEntry>
           ? _value.connectedOn
           : connectedOn // ignore: cast_nullable_to_non_nullable
               as int,
+      bytesSent: null == bytesSent
+          ? _value.bytesSent
+          : bytesSent // ignore: cast_nullable_to_non_nullable
+              as int,
+      bytesRecv: null == bytesRecv
+          ? _value.bytesRecv
+          : bytesRecv // ignore: cast_nullable_to_non_nullable
+              as int,
     ) as $Val);
   }
 }
@@ -185,7 +201,9 @@ abstract class _$$PeerEntryImplCopyWith<$Res>
       @JsonKey(name: 'topoheight') int topoheight,
       @JsonKey(name: 'version') String version,
       @JsonKey(name: 'peers') Map<String, Direction> peers,
-      @JsonKey(name: 'connected_on') int connectedOn});
+      @JsonKey(name: 'connected_on') int connectedOn,
+      @JsonKey(name: 'bytes_sent') int bytesSent,
+      @JsonKey(name: 'bytes_recv') int bytesRecv});
 }
 
 /// @nodoc
@@ -214,6 +232,8 @@ class __$$PeerEntryImplCopyWithImpl<$Res>
     Object? version = null,
     Object? peers = null,
     Object? connectedOn = null,
+    Object? bytesSent = null,
+    Object? bytesRecv = null,
   }) {
     return _then(_$PeerEntryImpl(
       address: null == address
@@ -268,6 +288,14 @@ class __$$PeerEntryImplCopyWithImpl<$Res>
           ? _value.connectedOn
           : connectedOn // ignore: cast_nullable_to_non_nullable
               as int,
+      bytesSent: null == bytesSent
+          ? _value.bytesSent
+          : bytesSent // ignore: cast_nullable_to_non_nullable
+              as int,
+      bytesRecv: null == bytesRecv
+          ? _value.bytesRecv
+          : bytesRecv // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -289,7 +317,9 @@ class _$PeerEntryImpl implements _PeerEntry {
       @JsonKey(name: 'topoheight') required this.topoheight,
       @JsonKey(name: 'version') required this.version,
       @JsonKey(name: 'peers') required final Map<String, Direction> peers,
-      @JsonKey(name: 'connected_on') required this.connectedOn})
+      @JsonKey(name: 'connected_on') required this.connectedOn,
+      @JsonKey(name: 'bytes_sent') required this.bytesSent,
+      @JsonKey(name: 'bytes_recv') required this.bytesRecv})
       : _peers = peers;
 
   factory _$PeerEntryImpl.fromJson(Map<String, dynamic> json) =>
@@ -340,10 +370,16 @@ class _$PeerEntryImpl implements _PeerEntry {
   @override
   @JsonKey(name: 'connected_on')
   final int connectedOn;
+  @override
+  @JsonKey(name: 'bytes_sent')
+  final int bytesSent;
+  @override
+  @JsonKey(name: 'bytes_recv')
+  final int bytesRecv;
 
   @override
   String toString() {
-    return 'PeerEntry(address: $address, cumulativeDifficulty: $cumulativeDifficulty, height: $height, id: $id, lastPing: $lastPing, localPort: $localPort, prunedTopoHeight: $prunedTopoHeight, tag: $tag, topBlockHash: $topBlockHash, topoheight: $topoheight, version: $version, peers: $peers, connectedOn: $connectedOn)';
+    return 'PeerEntry(address: $address, cumulativeDifficulty: $cumulativeDifficulty, height: $height, id: $id, lastPing: $lastPing, localPort: $localPort, prunedTopoHeight: $prunedTopoHeight, tag: $tag, topBlockHash: $topBlockHash, topoheight: $topoheight, version: $version, peers: $peers, connectedOn: $connectedOn, bytesSent: $bytesSent, bytesRecv: $bytesRecv)';
   }
 
   @override
@@ -370,7 +406,11 @@ class _$PeerEntryImpl implements _PeerEntry {
             (identical(other.version, version) || other.version == version) &&
             const DeepCollectionEquality().equals(other._peers, _peers) &&
             (identical(other.connectedOn, connectedOn) ||
-                other.connectedOn == connectedOn));
+                other.connectedOn == connectedOn) &&
+            (identical(other.bytesSent, bytesSent) ||
+                other.bytesSent == bytesSent) &&
+            (identical(other.bytesRecv, bytesRecv) ||
+                other.bytesRecv == bytesRecv));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -389,7 +429,9 @@ class _$PeerEntryImpl implements _PeerEntry {
       topoheight,
       version,
       const DeepCollectionEquality().hash(_peers),
-      connectedOn);
+      connectedOn,
+      bytesSent,
+      bytesRecv);
 
   /// Create a copy of PeerEntry
   /// with the given fields replaced by the non-null parameter values.
@@ -422,7 +464,9 @@ abstract class _PeerEntry implements PeerEntry {
           @JsonKey(name: 'topoheight') required final int topoheight,
           @JsonKey(name: 'version') required final String version,
           @JsonKey(name: 'peers') required final Map<String, Direction> peers,
-          @JsonKey(name: 'connected_on') required final int connectedOn}) =
+          @JsonKey(name: 'connected_on') required final int connectedOn,
+          @JsonKey(name: 'bytes_sent') required final int bytesSent,
+          @JsonKey(name: 'bytes_recv') required final int bytesRecv}) =
       _$PeerEntryImpl;
 
   factory _PeerEntry.fromJson(Map<String, dynamic> json) =
@@ -467,6 +511,12 @@ abstract class _PeerEntry implements PeerEntry {
   @override
   @JsonKey(name: 'connected_on')
   int get connectedOn;
+  @override
+  @JsonKey(name: 'bytes_sent')
+  int get bytesSent;
+  @override
+  @JsonKey(name: 'bytes_recv')
+  int get bytesRecv;
 
   /// Create a copy of PeerEntry
   /// with the given fields replaced by the non-null parameter values.

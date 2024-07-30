@@ -25,6 +25,8 @@ class PeerEntry with _$PeerEntry {
     @JsonKey(name: 'version') required String version,
     @JsonKey(name: 'peers') required Map<String, Direction> peers,
     @JsonKey(name: 'connected_on') required int connectedOn,
+    @JsonKey(name: 'bytes_sent') required int bytesSent,
+    @JsonKey(name: 'bytes_recv') required int bytesRecv,
   }) = _PeerEntry;
 
   /// @nodoc
