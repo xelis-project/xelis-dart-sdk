@@ -462,4 +462,15 @@ extension DaemonRpcMethodsExtension on DaemonClient {
     final result = await sendRequest(DaemonMethod.getDifficulty);
     return GetDifficultyResult.fromJson(result as Map<String, dynamic>);
   }
+
+  /// Splits address and integrated data into two different fields.
+  Future<SplitAddressResult> splitAddress(
+    SplitAddressParams splitAddressParams,
+  ) async {
+    final result = await sendRequest(
+      DaemonMethod.splitAddress,
+      splitAddressParams.toJson(),
+    );
+    return SplitAddressResult.fromJson(result as Map<String, dynamic>);
+  }
 }

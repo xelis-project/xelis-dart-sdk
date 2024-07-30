@@ -53,7 +53,8 @@ extension WalletRpcMethodsExtension on WalletClient {
   /// until the specified topoheight.
   /// When no topoheight is set, it rescan until 0.
   ///
-  /// **WARNING**: All balances and transactions will be deleted from wallet storage to be up-to-date with the chain of the node connected to.
+  /// **WARNING**: All balances and transactions will be deleted from wallet
+  /// storage to be up-to-date with the chain of the node connected to.
   Future<bool> rescan(RescanParams rescanParams) async {
     final result = await sendRequest(
       WalletMethod.rescan,
