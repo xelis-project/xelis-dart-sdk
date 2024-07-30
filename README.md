@@ -15,6 +15,7 @@ JSON-RPC Clients to interact with daemon and wallet API.
 - getHeight
 - getTopoHeight
 - getStableHeight
+- getStableTopoHeight
 - getBlockTemplate
 - getBlockAtTopoHeight
 - getBlocksAtHeight
@@ -23,6 +24,7 @@ JSON-RPC Clients to interact with daemon and wallet API.
 - getNonce
 - getNonceAtTopoHeight
 - getBalance
+- getStableBalance
 - getBalanceAtTopoHeight
 - hasBalance
 - getAsset
@@ -51,6 +53,11 @@ JSON-RPC Clients to interact with daemon and wallet API.
 - getMempoolCache
 - isAccountRegistered
 - getAccountRegistrationTopoheight
+- getTransactionExecutor
+- getDifficulty
+- validateAddress
+- splitAddress
+- extractKeyFromAddress
 
 #### Wallet
 
@@ -71,6 +78,8 @@ JSON-RPC Clients to interact with daemon and wallet API.
 - isOnline
 - signData
 - estimateFees
+- estimateExtraDataSize
+- clearTxCache
 
 ### Websocket Events
 

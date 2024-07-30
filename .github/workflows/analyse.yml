@@ -1,4 +1,4 @@
-name: Dart lint
+name: Dart checks
 
 on: [ push, pull_request ]
 
