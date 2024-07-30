@@ -67,6 +67,10 @@ enum WalletMethod implements XelisJsonKey {
   /// Estimate the extra data size for a list of destinations.
   estimateExtraDataSize('estimate_extra_data_size'),
 
+  /// In case of a failure while broadcasting a TX from this wallet by yourself,
+  /// you can erase the TX cache stored in the wallet.
+  clearTxCache('clear_tx_cache'),
+
   //----------------------------------------------------------------------------
   /// TODO: implement
   getMatchingKeys('get_matching_keys'),

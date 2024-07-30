@@ -189,4 +189,11 @@ extension WalletRpcMethodsExtension on WalletClient {
 
     return EstimateExtraDataSizeResult.fromJson(result as Map<String, dynamic>);
   }
+
+  /// In case of a failure while broadcasting a TX from this wallet by yourself,
+  /// you can erase the TX cache stored in the wallet.
+  Future<bool> clearTxCache() async {
+    final result = await sendRequest(WalletMethod.clearTxCache);
+    return result as bool;
+  }
 }

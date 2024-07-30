@@ -8,7 +8,6 @@ part 'transaction_response.freezed.dart';
 /// @nodoc
 @Freezed(toJson: false)
 class TransactionResponse with _$TransactionResponse {
-
   /// @nodoc
   factory TransactionResponse({
     @JsonKey(name: 'blocks') List<String>? blocks,
