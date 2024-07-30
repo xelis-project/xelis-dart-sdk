@@ -445,4 +445,15 @@ extension DaemonRpcMethodsExtension on DaemonClient {
     );
     return GetMempoolCacheResult.fromJson(result as Map<String, dynamic>);
   }
+
+  /// Validate an address
+  Future<ValidateAddressResult> validateAddress(
+    ValidateAddressParams validateAddressParams,
+  ) async {
+    final result = await sendRequest(
+      DaemonMethod.validateAddress,
+      validateAddressParams.toJson(),
+    );
+    return ValidateAddressResult.fromJson(result as Map<String, dynamic>);
+  }
 }

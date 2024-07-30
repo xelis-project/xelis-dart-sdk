@@ -61,6 +61,8 @@ export 'transaction/transaction_response.dart';
 export 'transaction/transaction_type.dart';
 export 'transaction/transfer.dart';
 export 'transaction_executed_event/transaction_executed_event.dart';
+export 'validate_address/validate_address_params.dart';
+export 'validate_address/validate_address_result.dart';
 export 'versioned_balance/versioned_balance.dart';
 export 'wallet/balance_changed_event/balance_changed_event.dart';
 export 'wallet/build_transaction/build_transaction_params.dart';

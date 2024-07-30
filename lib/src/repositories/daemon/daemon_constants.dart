@@ -146,7 +146,10 @@ enum DaemonMethod implements XelisJsonKey {
   getSizeOnDisk('get_size_on_disk'),
 
   /// Retrieve the stored mempool cache for a requested address
-  getMempoolCache('get_mempool_cache');
+  getMempoolCache('get_mempool_cache'),
+
+  /// Validate an address
+  validateAddress('validate_address');
 
   /// Creates a new [DaemonMethod] instance.
   const DaemonMethod(this.jsonKey);
