@@ -12,8 +12,9 @@ _$GetAccountHistoryParamsImpl _$$GetAccountHistoryParamsImplFromJson(
         Map<String, dynamic> json) =>
     _$GetAccountHistoryParamsImpl(
       address: json['address'] as String,
-      hash: json['hash'] as String?,
-      topoheight: (json['topoheight'] as num?)?.toInt(),
+      asset: json['asset'] as String,
+      incomingFlow: json['incoming_flow'] as bool,
+      outgoingFlow: json['outgoing_flow'] as bool,
       minimumTopoheight: (json['minimum_topoheight'] as num?)?.toInt(),
       maximumTopoheight: (json['maximum_topoheight'] as num?)?.toInt(),
     );
@@ -22,8 +23,9 @@ Map<String, dynamic> _$$GetAccountHistoryParamsImplToJson(
         _$GetAccountHistoryParamsImpl instance) =>
     <String, dynamic>{
       'address': instance.address,
-      'hash': instance.hash,
-      'topoheight': instance.topoheight,
+      'asset': instance.asset,
+      'incoming_flow': instance.incomingFlow,
+      'outgoing_flow': instance.outgoingFlow,
       'minimum_topoheight': instance.minimumTopoheight,
       'maximum_topoheight': instance.maximumTopoheight,
     };

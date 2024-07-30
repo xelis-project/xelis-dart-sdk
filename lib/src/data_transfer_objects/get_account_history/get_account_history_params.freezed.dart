@@ -23,10 +23,12 @@ GetAccountHistoryParams _$GetAccountHistoryParamsFromJson(
 mixin _$GetAccountHistoryParams {
   @JsonKey(name: 'address')
   String get address => throw _privateConstructorUsedError;
-  @JsonKey(name: 'hash')
-  String? get hash => throw _privateConstructorUsedError;
-  @JsonKey(name: 'topoheight')
-  int? get topoheight => throw _privateConstructorUsedError;
+  @JsonKey(name: 'asset')
+  String get asset => throw _privateConstructorUsedError;
+  @JsonKey(name: 'incoming_flow')
+  bool get incomingFlow => throw _privateConstructorUsedError;
+  @JsonKey(name: 'outgoing_flow')
+  bool get outgoingFlow => throw _privateConstructorUsedError;
   @JsonKey(name: 'minimum_topoheight')
   int? get minimumTopoheight => throw _privateConstructorUsedError;
   @JsonKey(name: 'maximum_topoheight')
@@ -50,8 +52,9 @@ abstract class $GetAccountHistoryParamsCopyWith<$Res> {
   @useResult
   $Res call(
       {@JsonKey(name: 'address') String address,
-      @JsonKey(name: 'hash') String? hash,
-      @JsonKey(name: 'topoheight') int? topoheight,
+      @JsonKey(name: 'asset') String asset,
+      @JsonKey(name: 'incoming_flow') bool incomingFlow,
+      @JsonKey(name: 'outgoing_flow') bool outgoingFlow,
       @JsonKey(name: 'minimum_topoheight') int? minimumTopoheight,
       @JsonKey(name: 'maximum_topoheight') int? maximumTopoheight});
 }
@@ -73,8 +76,9 @@ class _$GetAccountHistoryParamsCopyWithImpl<$Res,
   @override
   $Res call({
     Object? address = null,
-    Object? hash = freezed,
-    Object? topoheight = freezed,
+    Object? asset = null,
+    Object? incomingFlow = null,
+    Object? outgoingFlow = null,
     Object? minimumTopoheight = freezed,
     Object? maximumTopoheight = freezed,
   }) {
@@ -83,14 +87,18 @@ class _$GetAccountHistoryParamsCopyWithImpl<$Res,
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
               as String,
-      hash: freezed == hash
-          ? _value.hash
-          : hash // ignore: cast_nullable_to_non_nullable
-              as String?,
-      topoheight: freezed == topoheight
-          ? _value.topoheight
-          : topoheight // ignore: cast_nullable_to_non_nullable
-              as int?,
+      asset: null == asset
+          ? _value.asset
+          : asset // ignore: cast_nullable_to_non_nullable
+              as String,
+      incomingFlow: null == incomingFlow
+          ? _value.incomingFlow
+          : incomingFlow // ignore: cast_nullable_to_non_nullable
+              as bool,
+      outgoingFlow: null == outgoingFlow
+          ? _value.outgoingFlow
+          : outgoingFlow // ignore: cast_nullable_to_non_nullable
+              as bool,
       minimumTopoheight: freezed == minimumTopoheight
           ? _value.minimumTopoheight
           : minimumTopoheight // ignore: cast_nullable_to_non_nullable
@@ -114,8 +122,9 @@ abstract class _$$GetAccountHistoryParamsImplCopyWith<$Res>
   @useResult
   $Res call(
       {@JsonKey(name: 'address') String address,
-      @JsonKey(name: 'hash') String? hash,
-      @JsonKey(name: 'topoheight') int? topoheight,
+      @JsonKey(name: 'asset') String asset,
+      @JsonKey(name: 'incoming_flow') bool incomingFlow,
+      @JsonKey(name: 'outgoing_flow') bool outgoingFlow,
       @JsonKey(name: 'minimum_topoheight') int? minimumTopoheight,
       @JsonKey(name: 'maximum_topoheight') int? maximumTopoheight});
 }
@@ -136,8 +145,9 @@ class __$$GetAccountHistoryParamsImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? address = null,
-    Object? hash = freezed,
-    Object? topoheight = freezed,
+    Object? asset = null,
+    Object? incomingFlow = null,
+    Object? outgoingFlow = null,
     Object? minimumTopoheight = freezed,
     Object? maximumTopoheight = freezed,
   }) {
@@ -146,14 +156,18 @@ class __$$GetAccountHistoryParamsImplCopyWithImpl<$Res>
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
               as String,
-      hash: freezed == hash
-          ? _value.hash
-          : hash // ignore: cast_nullable_to_non_nullable
-              as String?,
-      topoheight: freezed == topoheight
-          ? _value.topoheight
-          : topoheight // ignore: cast_nullable_to_non_nullable
-              as int?,
+      asset: null == asset
+          ? _value.asset
+          : asset // ignore: cast_nullable_to_non_nullable
+              as String,
+      incomingFlow: null == incomingFlow
+          ? _value.incomingFlow
+          : incomingFlow // ignore: cast_nullable_to_non_nullable
+              as bool,
+      outgoingFlow: null == outgoingFlow
+          ? _value.outgoingFlow
+          : outgoingFlow // ignore: cast_nullable_to_non_nullable
+              as bool,
       minimumTopoheight: freezed == minimumTopoheight
           ? _value.minimumTopoheight
           : minimumTopoheight // ignore: cast_nullable_to_non_nullable
@@ -171,8 +185,9 @@ class __$$GetAccountHistoryParamsImplCopyWithImpl<$Res>
 class _$GetAccountHistoryParamsImpl implements _GetAccountHistoryParams {
   const _$GetAccountHistoryParamsImpl(
       {@JsonKey(name: 'address') required this.address,
-      @JsonKey(name: 'hash') this.hash,
-      @JsonKey(name: 'topoheight') this.topoheight,
+      @JsonKey(name: 'asset') required this.asset,
+      @JsonKey(name: 'incoming_flow') required this.incomingFlow,
+      @JsonKey(name: 'outgoing_flow') required this.outgoingFlow,
       @JsonKey(name: 'minimum_topoheight') this.minimumTopoheight,
       @JsonKey(name: 'maximum_topoheight') this.maximumTopoheight});
 
@@ -183,11 +198,14 @@ class _$GetAccountHistoryParamsImpl implements _GetAccountHistoryParams {
   @JsonKey(name: 'address')
   final String address;
   @override
-  @JsonKey(name: 'hash')
-  final String? hash;
+  @JsonKey(name: 'asset')
+  final String asset;
   @override
-  @JsonKey(name: 'topoheight')
-  final int? topoheight;
+  @JsonKey(name: 'incoming_flow')
+  final bool incomingFlow;
+  @override
+  @JsonKey(name: 'outgoing_flow')
+  final bool outgoingFlow;
   @override
   @JsonKey(name: 'minimum_topoheight')
   final int? minimumTopoheight;
@@ -197,7 +215,7 @@ class _$GetAccountHistoryParamsImpl implements _GetAccountHistoryParams {
 
   @override
   String toString() {
-    return 'GetAccountHistoryParams(address: $address, hash: $hash, topoheight: $topoheight, minimumTopoheight: $minimumTopoheight, maximumTopoheight: $maximumTopoheight)';
+    return 'GetAccountHistoryParams(address: $address, asset: $asset, incomingFlow: $incomingFlow, outgoingFlow: $outgoingFlow, minimumTopoheight: $minimumTopoheight, maximumTopoheight: $maximumTopoheight)';
   }
 
   @override
@@ -206,9 +224,11 @@ class _$GetAccountHistoryParamsImpl implements _GetAccountHistoryParams {
         (other.runtimeType == runtimeType &&
             other is _$GetAccountHistoryParamsImpl &&
             (identical(other.address, address) || other.address == address) &&
-            (identical(other.hash, hash) || other.hash == hash) &&
-            (identical(other.topoheight, topoheight) ||
-                other.topoheight == topoheight) &&
+            (identical(other.asset, asset) || other.asset == asset) &&
+            (identical(other.incomingFlow, incomingFlow) ||
+                other.incomingFlow == incomingFlow) &&
+            (identical(other.outgoingFlow, outgoingFlow) ||
+                other.outgoingFlow == outgoingFlow) &&
             (identical(other.minimumTopoheight, minimumTopoheight) ||
                 other.minimumTopoheight == minimumTopoheight) &&
             (identical(other.maximumTopoheight, maximumTopoheight) ||
@@ -217,8 +237,8 @@ class _$GetAccountHistoryParamsImpl implements _GetAccountHistoryParams {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, address, hash, topoheight,
-      minimumTopoheight, maximumTopoheight);
+  int get hashCode => Object.hash(runtimeType, address, asset, incomingFlow,
+      outgoingFlow, minimumTopoheight, maximumTopoheight);
 
   /// Create a copy of GetAccountHistoryParams
   /// with the given fields replaced by the non-null parameter values.
@@ -240,8 +260,9 @@ class _$GetAccountHistoryParamsImpl implements _GetAccountHistoryParams {
 abstract class _GetAccountHistoryParams implements GetAccountHistoryParams {
   const factory _GetAccountHistoryParams(
           {@JsonKey(name: 'address') required final String address,
-          @JsonKey(name: 'hash') final String? hash,
-          @JsonKey(name: 'topoheight') final int? topoheight,
+          @JsonKey(name: 'asset') required final String asset,
+          @JsonKey(name: 'incoming_flow') required final bool incomingFlow,
+          @JsonKey(name: 'outgoing_flow') required final bool outgoingFlow,
           @JsonKey(name: 'minimum_topoheight') final int? minimumTopoheight,
           @JsonKey(name: 'maximum_topoheight') final int? maximumTopoheight}) =
       _$GetAccountHistoryParamsImpl;
@@ -253,11 +274,14 @@ abstract class _GetAccountHistoryParams implements GetAccountHistoryParams {
   @JsonKey(name: 'address')
   String get address;
   @override
-  @JsonKey(name: 'hash')
-  String? get hash;
+  @JsonKey(name: 'asset')
+  String get asset;
   @override
-  @JsonKey(name: 'topoheight')
-  int? get topoheight;
+  @JsonKey(name: 'incoming_flow')
+  bool get incomingFlow;
+  @override
+  @JsonKey(name: 'outgoing_flow')
+  bool get outgoingFlow;
   @override
   @JsonKey(name: 'minimum_topoheight')
   int? get minimumTopoheight;

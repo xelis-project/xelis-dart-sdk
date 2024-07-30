@@ -12,8 +12,9 @@ class GetAccountHistoryParams with _$GetAccountHistoryParams {
   /// @nodoc
   const factory GetAccountHistoryParams({
     @JsonKey(name: 'address') required String address,
-    @JsonKey(name: 'hash') String? hash,
-    @JsonKey(name: 'topoheight') int? topoheight,
+    @JsonKey(name: 'asset') required String asset,
+    @JsonKey(name: 'incoming_flow') required bool incomingFlow,
+    @JsonKey(name: 'outgoing_flow') required bool outgoingFlow,
     @JsonKey(name: 'minimum_topoheight') int? minimumTopoheight,
     @JsonKey(name: 'maximum_topoheight') int? maximumTopoheight,
   }) = _GetAccountHistoryParams;
