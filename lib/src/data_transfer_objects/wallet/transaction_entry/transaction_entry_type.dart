@@ -19,6 +19,8 @@ sealed class TransactionEntryType with _$TransactionEntryType {
   const factory TransactionEntryType.burn({
     @JsonKey(name: 'asset') required String asset,
     @JsonKey(name: 'amount') required int amount,
+    @JsonKey(name: 'fee') required int fee,
+    @JsonKey(name: 'nonce') required int nonce,
   }) = BurnEntry;
 
   /// @nodoc

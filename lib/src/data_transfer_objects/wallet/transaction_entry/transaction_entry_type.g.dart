@@ -24,6 +24,8 @@ _$BurnEntryImpl _$$BurnEntryImplFromJson(Map<String, dynamic> json) =>
     _$BurnEntryImpl(
       asset: json['asset'] as String,
       amount: (json['amount'] as num).toInt(),
+      fee: (json['fee'] as num).toInt(),
+      nonce: (json['nonce'] as num).toInt(),
       $type: json['runtimeType'] as String?,
     );
 
@@ -31,6 +33,8 @@ Map<String, dynamic> _$$BurnEntryImplToJson(_$BurnEntryImpl instance) =>
     <String, dynamic>{
       'asset': instance.asset,
       'amount': instance.amount,
+      'fee': instance.fee,
+      'nonce': instance.nonce,
       'runtimeType': instance.$type,
     };
 

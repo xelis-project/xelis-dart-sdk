@@ -39,8 +39,11 @@ mixin _$TransactionEntryType {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(@JsonKey(name: 'reward') int reward) coinbase,
-    required TResult Function(@JsonKey(name: 'asset') String asset,
-            @JsonKey(name: 'amount') int amount)
+    required TResult Function(
+            @JsonKey(name: 'asset') String asset,
+            @JsonKey(name: 'amount') int amount,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)
         burn,
     required TResult Function(@JsonKey(name: 'from') String from,
             @JsonKey(name: 'transfers') List<TransferInEntry> transfers)
@@ -55,8 +58,11 @@ mixin _$TransactionEntryType {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(@JsonKey(name: 'reward') int reward)? coinbase,
-    TResult? Function(@JsonKey(name: 'asset') String asset,
-            @JsonKey(name: 'amount') int amount)?
+    TResult? Function(
+            @JsonKey(name: 'asset') String asset,
+            @JsonKey(name: 'amount') int amount,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)?
         burn,
     TResult? Function(@JsonKey(name: 'from') String from,
             @JsonKey(name: 'transfers') List<TransferInEntry> transfers)?
@@ -71,8 +77,11 @@ mixin _$TransactionEntryType {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(@JsonKey(name: 'reward') int reward)? coinbase,
-    TResult Function(@JsonKey(name: 'asset') String asset,
-            @JsonKey(name: 'amount') int amount)?
+    TResult Function(
+            @JsonKey(name: 'asset') String asset,
+            @JsonKey(name: 'amount') int amount,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)?
         burn,
     TResult Function(@JsonKey(name: 'from') String from,
             @JsonKey(name: 'transfers') List<TransferInEntry> transfers)?
@@ -216,8 +225,11 @@ class _$CoinbaseEntryImpl implements CoinbaseEntry {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(@JsonKey(name: 'reward') int reward) coinbase,
-    required TResult Function(@JsonKey(name: 'asset') String asset,
-            @JsonKey(name: 'amount') int amount)
+    required TResult Function(
+            @JsonKey(name: 'asset') String asset,
+            @JsonKey(name: 'amount') int amount,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)
         burn,
     required TResult Function(@JsonKey(name: 'from') String from,
             @JsonKey(name: 'transfers') List<TransferInEntry> transfers)
@@ -235,8 +247,11 @@ class _$CoinbaseEntryImpl implements CoinbaseEntry {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(@JsonKey(name: 'reward') int reward)? coinbase,
-    TResult? Function(@JsonKey(name: 'asset') String asset,
-            @JsonKey(name: 'amount') int amount)?
+    TResult? Function(
+            @JsonKey(name: 'asset') String asset,
+            @JsonKey(name: 'amount') int amount,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)?
         burn,
     TResult? Function(@JsonKey(name: 'from') String from,
             @JsonKey(name: 'transfers') List<TransferInEntry> transfers)?
@@ -254,8 +269,11 @@ class _$CoinbaseEntryImpl implements CoinbaseEntry {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(@JsonKey(name: 'reward') int reward)? coinbase,
-    TResult Function(@JsonKey(name: 'asset') String asset,
-            @JsonKey(name: 'amount') int amount)?
+    TResult Function(
+            @JsonKey(name: 'asset') String asset,
+            @JsonKey(name: 'amount') int amount,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)?
         burn,
     TResult Function(@JsonKey(name: 'from') String from,
             @JsonKey(name: 'transfers') List<TransferInEntry> transfers)?
@@ -344,7 +362,9 @@ abstract class _$$BurnEntryImplCopyWith<$Res> {
   @useResult
   $Res call(
       {@JsonKey(name: 'asset') String asset,
-      @JsonKey(name: 'amount') int amount});
+      @JsonKey(name: 'amount') int amount,
+      @JsonKey(name: 'fee') int fee,
+      @JsonKey(name: 'nonce') int nonce});
 }
 
 /// @nodoc
@@ -362,6 +382,8 @@ class __$$BurnEntryImplCopyWithImpl<$Res>
   $Res call({
     Object? asset = null,
     Object? amount = null,
+    Object? fee = null,
+    Object? nonce = null,
   }) {
     return _then(_$BurnEntryImpl(
       asset: null == asset
@@ -371,6 +393,14 @@ class __$$BurnEntryImplCopyWithImpl<$Res>
       amount: null == amount
           ? _value.amount
           : amount // ignore: cast_nullable_to_non_nullable
+              as int,
+      fee: null == fee
+          ? _value.fee
+          : fee // ignore: cast_nullable_to_non_nullable
+              as int,
+      nonce: null == nonce
+          ? _value.nonce
+          : nonce // ignore: cast_nullable_to_non_nullable
               as int,
     ));
   }
@@ -382,6 +412,8 @@ class _$BurnEntryImpl implements BurnEntry {
   const _$BurnEntryImpl(
       {@JsonKey(name: 'asset') required this.asset,
       @JsonKey(name: 'amount') required this.amount,
+      @JsonKey(name: 'fee') required this.fee,
+      @JsonKey(name: 'nonce') required this.nonce,
       final String? $type})
       : $type = $type ?? 'burn';
 
@@ -394,13 +426,19 @@ class _$BurnEntryImpl implements BurnEntry {
   @override
   @JsonKey(name: 'amount')
   final int amount;
+  @override
+  @JsonKey(name: 'fee')
+  final int fee;
+  @override
+  @JsonKey(name: 'nonce')
+  final int nonce;
 
   @JsonKey(name: 'runtimeType')
   final String $type;
 
   @override
   String toString() {
-    return 'TransactionEntryType.burn(asset: $asset, amount: $amount)';
+    return 'TransactionEntryType.burn(asset: $asset, amount: $amount, fee: $fee, nonce: $nonce)';
   }
 
   @override
@@ -409,12 +447,14 @@ class _$BurnEntryImpl implements BurnEntry {
         (other.runtimeType == runtimeType &&
             other is _$BurnEntryImpl &&
             (identical(other.asset, asset) || other.asset == asset) &&
-            (identical(other.amount, amount) || other.amount == amount));
+            (identical(other.amount, amount) || other.amount == amount) &&
+            (identical(other.fee, fee) || other.fee == fee) &&
+            (identical(other.nonce, nonce) || other.nonce == nonce));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, asset, amount);
+  int get hashCode => Object.hash(runtimeType, asset, amount, fee, nonce);
 
   /// Create a copy of TransactionEntryType
   /// with the given fields replaced by the non-null parameter values.
@@ -428,8 +468,11 @@ class _$BurnEntryImpl implements BurnEntry {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(@JsonKey(name: 'reward') int reward) coinbase,
-    required TResult Function(@JsonKey(name: 'asset') String asset,
-            @JsonKey(name: 'amount') int amount)
+    required TResult Function(
+            @JsonKey(name: 'asset') String asset,
+            @JsonKey(name: 'amount') int amount,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)
         burn,
     required TResult Function(@JsonKey(name: 'from') String from,
             @JsonKey(name: 'transfers') List<TransferInEntry> transfers)
@@ -440,15 +483,18 @@ class _$BurnEntryImpl implements BurnEntry {
             @JsonKey(name: 'transfers') List<TransferOutEntry> transfers)
         outgoing,
   }) {
-    return burn(asset, amount);
+    return burn(asset, amount, fee, nonce);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(@JsonKey(name: 'reward') int reward)? coinbase,
-    TResult? Function(@JsonKey(name: 'asset') String asset,
-            @JsonKey(name: 'amount') int amount)?
+    TResult? Function(
+            @JsonKey(name: 'asset') String asset,
+            @JsonKey(name: 'amount') int amount,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)?
         burn,
     TResult? Function(@JsonKey(name: 'from') String from,
             @JsonKey(name: 'transfers') List<TransferInEntry> transfers)?
@@ -459,15 +505,18 @@ class _$BurnEntryImpl implements BurnEntry {
             @JsonKey(name: 'transfers') List<TransferOutEntry> transfers)?
         outgoing,
   }) {
-    return burn?.call(asset, amount);
+    return burn?.call(asset, amount, fee, nonce);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(@JsonKey(name: 'reward') int reward)? coinbase,
-    TResult Function(@JsonKey(name: 'asset') String asset,
-            @JsonKey(name: 'amount') int amount)?
+    TResult Function(
+            @JsonKey(name: 'asset') String asset,
+            @JsonKey(name: 'amount') int amount,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)?
         burn,
     TResult Function(@JsonKey(name: 'from') String from,
             @JsonKey(name: 'transfers') List<TransferInEntry> transfers)?
@@ -480,7 +529,7 @@ class _$BurnEntryImpl implements BurnEntry {
     required TResult orElse(),
   }) {
     if (burn != null) {
-      return burn(asset, amount);
+      return burn(asset, amount, fee, nonce);
     }
     return orElse();
   }
@@ -533,7 +582,9 @@ class _$BurnEntryImpl implements BurnEntry {
 abstract class BurnEntry implements TransactionEntryType {
   const factory BurnEntry(
       {@JsonKey(name: 'asset') required final String asset,
-      @JsonKey(name: 'amount') required final int amount}) = _$BurnEntryImpl;
+      @JsonKey(name: 'amount') required final int amount,
+      @JsonKey(name: 'fee') required final int fee,
+      @JsonKey(name: 'nonce') required final int nonce}) = _$BurnEntryImpl;
 
   factory BurnEntry.fromJson(Map<String, dynamic> json) =
       _$BurnEntryImpl.fromJson;
@@ -542,6 +593,10 @@ abstract class BurnEntry implements TransactionEntryType {
   String get asset;
   @JsonKey(name: 'amount')
   int get amount;
+  @JsonKey(name: 'fee')
+  int get fee;
+  @JsonKey(name: 'nonce')
+  int get nonce;
 
   /// Create a copy of TransactionEntryType
   /// with the given fields replaced by the non-null parameter values.
@@ -651,8 +706,11 @@ class _$IncomingEntryImpl implements IncomingEntry {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(@JsonKey(name: 'reward') int reward) coinbase,
-    required TResult Function(@JsonKey(name: 'asset') String asset,
-            @JsonKey(name: 'amount') int amount)
+    required TResult Function(
+            @JsonKey(name: 'asset') String asset,
+            @JsonKey(name: 'amount') int amount,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)
         burn,
     required TResult Function(@JsonKey(name: 'from') String from,
             @JsonKey(name: 'transfers') List<TransferInEntry> transfers)
@@ -670,8 +728,11 @@ class _$IncomingEntryImpl implements IncomingEntry {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(@JsonKey(name: 'reward') int reward)? coinbase,
-    TResult? Function(@JsonKey(name: 'asset') String asset,
-            @JsonKey(name: 'amount') int amount)?
+    TResult? Function(
+            @JsonKey(name: 'asset') String asset,
+            @JsonKey(name: 'amount') int amount,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)?
         burn,
     TResult? Function(@JsonKey(name: 'from') String from,
             @JsonKey(name: 'transfers') List<TransferInEntry> transfers)?
@@ -689,8 +750,11 @@ class _$IncomingEntryImpl implements IncomingEntry {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(@JsonKey(name: 'reward') int reward)? coinbase,
-    TResult Function(@JsonKey(name: 'asset') String asset,
-            @JsonKey(name: 'amount') int amount)?
+    TResult Function(
+            @JsonKey(name: 'asset') String asset,
+            @JsonKey(name: 'amount') int amount,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)?
         burn,
     TResult Function(@JsonKey(name: 'from') String from,
             @JsonKey(name: 'transfers') List<TransferInEntry> transfers)?
@@ -886,8 +950,11 @@ class _$OutgoingEntryImpl implements OutgoingEntry {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(@JsonKey(name: 'reward') int reward) coinbase,
-    required TResult Function(@JsonKey(name: 'asset') String asset,
-            @JsonKey(name: 'amount') int amount)
+    required TResult Function(
+            @JsonKey(name: 'asset') String asset,
+            @JsonKey(name: 'amount') int amount,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)
         burn,
     required TResult Function(@JsonKey(name: 'from') String from,
             @JsonKey(name: 'transfers') List<TransferInEntry> transfers)
@@ -905,8 +972,11 @@ class _$OutgoingEntryImpl implements OutgoingEntry {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(@JsonKey(name: 'reward') int reward)? coinbase,
-    TResult? Function(@JsonKey(name: 'asset') String asset,
-            @JsonKey(name: 'amount') int amount)?
+    TResult? Function(
+            @JsonKey(name: 'asset') String asset,
+            @JsonKey(name: 'amount') int amount,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)?
         burn,
     TResult? Function(@JsonKey(name: 'from') String from,
             @JsonKey(name: 'transfers') List<TransferInEntry> transfers)?
@@ -924,8 +994,11 @@ class _$OutgoingEntryImpl implements OutgoingEntry {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(@JsonKey(name: 'reward') int reward)? coinbase,
-    TResult Function(@JsonKey(name: 'asset') String asset,
-            @JsonKey(name: 'amount') int amount)?
+    TResult Function(
+            @JsonKey(name: 'asset') String asset,
+            @JsonKey(name: 'amount') int amount,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)?
         burn,
     TResult Function(@JsonKey(name: 'from') String from,
             @JsonKey(name: 'transfers') List<TransferInEntry> transfers)?
