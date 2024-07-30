@@ -15,6 +15,7 @@ _$GetBlockTemplateResultImpl _$$GetBlockTemplateResultImplFromJson(
       height: (json['height'] as num).toInt(),
       topoheight: (json['topoheight'] as num).toInt(),
       template: json['template'] as String,
+      algorithm: json['algorithm'] as String,
     );
 
 Map<String, dynamic> _$$GetBlockTemplateResultImplToJson(
@@ -24,4 +25,5 @@ Map<String, dynamic> _$$GetBlockTemplateResultImplToJson(
       'height': instance.height,
       'topoheight': instance.topoheight,
       'template': instance.template,
+      'algorithm': instance.algorithm,
     };

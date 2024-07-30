@@ -29,6 +29,8 @@ mixin _$GetBlockTemplateResult {
   int get topoheight => throw _privateConstructorUsedError;
   @JsonKey(name: 'template')
   String get template => throw _privateConstructorUsedError;
+  @JsonKey(name: 'algorithm')
+  String get algorithm => throw _privateConstructorUsedError;
 
   /// Serializes this GetBlockTemplateResult to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -50,7 +52,8 @@ abstract class $GetBlockTemplateResultCopyWith<$Res> {
       {@JsonKey(name: 'difficulty') int difficulty,
       @JsonKey(name: 'height') int height,
       @JsonKey(name: 'topoheight') int topoheight,
-      @JsonKey(name: 'template') String template});
+      @JsonKey(name: 'template') String template,
+      @JsonKey(name: 'algorithm') String algorithm});
 }
 
 /// @nodoc
@@ -73,6 +76,7 @@ class _$GetBlockTemplateResultCopyWithImpl<$Res,
     Object? height = null,
     Object? topoheight = null,
     Object? template = null,
+    Object? algorithm = null,
   }) {
     return _then(_value.copyWith(
       difficulty: null == difficulty
@@ -91,6 +95,10 @@ class _$GetBlockTemplateResultCopyWithImpl<$Res,
           ? _value.template
           : template // ignore: cast_nullable_to_non_nullable
               as String,
+      algorithm: null == algorithm
+          ? _value.algorithm
+          : algorithm // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 }
@@ -108,7 +116,8 @@ abstract class _$$GetBlockTemplateResultImplCopyWith<$Res>
       {@JsonKey(name: 'difficulty') int difficulty,
       @JsonKey(name: 'height') int height,
       @JsonKey(name: 'topoheight') int topoheight,
-      @JsonKey(name: 'template') String template});
+      @JsonKey(name: 'template') String template,
+      @JsonKey(name: 'algorithm') String algorithm});
 }
 
 /// @nodoc
@@ -130,6 +139,7 @@ class __$$GetBlockTemplateResultImplCopyWithImpl<$Res>
     Object? height = null,
     Object? topoheight = null,
     Object? template = null,
+    Object? algorithm = null,
   }) {
     return _then(_$GetBlockTemplateResultImpl(
       difficulty: null == difficulty
@@ -148,6 +158,10 @@ class __$$GetBlockTemplateResultImplCopyWithImpl<$Res>
           ? _value.template
           : template // ignore: cast_nullable_to_non_nullable
               as String,
+      algorithm: null == algorithm
+          ? _value.algorithm
+          : algorithm // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -159,7 +173,8 @@ class _$GetBlockTemplateResultImpl implements _GetBlockTemplateResult {
       {@JsonKey(name: 'difficulty') required this.difficulty,
       @JsonKey(name: 'height') required this.height,
       @JsonKey(name: 'topoheight') required this.topoheight,
-      @JsonKey(name: 'template') required this.template});
+      @JsonKey(name: 'template') required this.template,
+      @JsonKey(name: 'algorithm') required this.algorithm});
 
   factory _$GetBlockTemplateResultImpl.fromJson(Map<String, dynamic> json) =>
       _$$GetBlockTemplateResultImplFromJson(json);
@@ -176,10 +191,13 @@ class _$GetBlockTemplateResultImpl implements _GetBlockTemplateResult {
   @override
   @JsonKey(name: 'template')
   final String template;
+  @override
+  @JsonKey(name: 'algorithm')
+  final String algorithm;
 
   @override
   String toString() {
-    return 'GetBlockTemplateResult(difficulty: $difficulty, height: $height, topoheight: $topoheight, template: $template)';
+    return 'GetBlockTemplateResult(difficulty: $difficulty, height: $height, topoheight: $topoheight, template: $template, algorithm: $algorithm)';
   }
 
   @override
@@ -193,13 +211,15 @@ class _$GetBlockTemplateResultImpl implements _GetBlockTemplateResult {
             (identical(other.topoheight, topoheight) ||
                 other.topoheight == topoheight) &&
             (identical(other.template, template) ||
-                other.template == template));
+                other.template == template) &&
+            (identical(other.algorithm, algorithm) ||
+                other.algorithm == algorithm));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, difficulty, height, topoheight, template);
+  int get hashCode => Object.hash(
+      runtimeType, difficulty, height, topoheight, template, algorithm);
 
   /// Create a copy of GetBlockTemplateResult
   /// with the given fields replaced by the non-null parameter values.
@@ -223,7 +243,8 @@ abstract class _GetBlockTemplateResult implements GetBlockTemplateResult {
           {@JsonKey(name: 'difficulty') required final int difficulty,
           @JsonKey(name: 'height') required final int height,
           @JsonKey(name: 'topoheight') required final int topoheight,
-          @JsonKey(name: 'template') required final String template}) =
+          @JsonKey(name: 'template') required final String template,
+          @JsonKey(name: 'algorithm') required final String algorithm}) =
       _$GetBlockTemplateResultImpl;
 
   factory _GetBlockTemplateResult.fromJson(Map<String, dynamic> json) =
@@ -241,6 +262,9 @@ abstract class _GetBlockTemplateResult implements GetBlockTemplateResult {
   @override
   @JsonKey(name: 'template')
   String get template;
+  @override
+  @JsonKey(name: 'algorithm')
+  String get algorithm;
 
   /// Create a copy of GetBlockTemplateResult
   /// with the given fields replaced by the non-null parameter values.

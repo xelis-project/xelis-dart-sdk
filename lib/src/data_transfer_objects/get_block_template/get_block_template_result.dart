@@ -15,6 +15,7 @@ class GetBlockTemplateResult with _$GetBlockTemplateResult {
     @JsonKey(name: 'height') required int height,
     @JsonKey(name: 'topoheight') required int topoheight,
     @JsonKey(name: 'template') required String template,
+    @JsonKey(name: 'algorithm') required String algorithm,
   }) = _GetBlockTemplateResult;
 
   /// @nodoc
