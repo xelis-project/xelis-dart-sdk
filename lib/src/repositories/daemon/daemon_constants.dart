@@ -155,7 +155,10 @@ enum DaemonMethod implements XelisJsonKey {
   validateAddress('validate_address'),
 
   /// Splits address and integrated data into two different fields.
-  splitAddress('split_address');
+  splitAddress('split_address'),
+
+  /// Extract key from address
+  extractKeyFromAddress('extract_key_from_address');
 
   /// Creates a new [DaemonMethod] instance.
   const DaemonMethod(this.jsonKey);

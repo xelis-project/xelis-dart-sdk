@@ -473,4 +473,15 @@ extension DaemonRpcMethodsExtension on DaemonClient {
     );
     return SplitAddressResult.fromJson(result as Map<String, dynamic>);
   }
+
+  /// Extract key from address
+  Future<ExtractKeyFromAddressResult> extractKeyFromAddress(
+    ExtractKeyFromAddressParams extractKeyFromAddressParams,
+  ) async {
+    final result = await sendRequest(
+      DaemonMethod.extractKeyFromAddress,
+      extractKeyFromAddressParams.toJson(),
+    );
+    return ExtractKeyFromAddressResult.fromJson(result as Map<String, dynamic>);
+  }
 }

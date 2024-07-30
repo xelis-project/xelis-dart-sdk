@@ -3,6 +3,8 @@ export 'asset/asset_with_data.dart';
 export 'block/block.dart';
 export 'block_ordered_event/block_ordered_event.dart';
 export 'block_orphaned_event/block_orphaned_event.dart';
+export 'extract_key_from_address/extract_key_from_address_params.dart';
+export 'extract_key_from_address/extract_key_from_address_result.dart';
 export 'get_account_assets/get_account_assets_params.dart';
 export 'get_account_assets/get_account_assets_result.dart';
 export 'get_account_history/burn_history.dart';
