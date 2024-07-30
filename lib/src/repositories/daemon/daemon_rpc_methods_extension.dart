@@ -456,4 +456,10 @@ extension DaemonRpcMethodsExtension on DaemonClient {
     );
     return ValidateAddressResult.fromJson(result as Map<String, dynamic>);
   }
+
+  /// Returns the current difficulty and associated network hashrate.
+  Future<GetDifficultyResult> getDifficulty() async {
+    final result = await sendRequest(DaemonMethod.getDifficulty);
+    return GetDifficultyResult.fromJson(result as Map<String, dynamic>);
+  }
 }

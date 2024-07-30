@@ -148,6 +148,9 @@ enum DaemonMethod implements XelisJsonKey {
   /// Retrieve the stored mempool cache for a requested address
   getMempoolCache('get_mempool_cache'),
 
+  /// Retrieve current difficulty and associated network hashrate.
+  getDifficulty('get_difficulty'),
+
   /// Validate an address
   validateAddress('validate_address');
 
