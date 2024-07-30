@@ -48,6 +48,10 @@ mixin _$GetInfoResult {
   String get version => throw _privateConstructorUsedError;
   @JsonKey(name: 'network')
   Network get network => throw _privateConstructorUsedError;
+  @JsonKey(name: 'miner_reward')
+  int get minerReward => throw _privateConstructorUsedError;
+  @JsonKey(name: 'dev_reward')
+  int get devReward => throw _privateConstructorUsedError;
 
   /// Serializes this GetInfoResult to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -79,7 +83,9 @@ abstract class $GetInfoResultCopyWith<$Res> {
       @JsonKey(name: 'block_reward') int blockReward,
       @JsonKey(name: 'mempool_size') int mempoolSize,
       @JsonKey(name: 'version') String version,
-      @JsonKey(name: 'network') Network network});
+      @JsonKey(name: 'network') Network network,
+      @JsonKey(name: 'miner_reward') int minerReward,
+      @JsonKey(name: 'dev_reward') int devReward});
 }
 
 /// @nodoc
@@ -111,6 +117,8 @@ class _$GetInfoResultCopyWithImpl<$Res, $Val extends GetInfoResult>
     Object? mempoolSize = null,
     Object? version = null,
     Object? network = null,
+    Object? minerReward = null,
+    Object? devReward = null,
   }) {
     return _then(_value.copyWith(
       height: null == height
@@ -169,6 +177,14 @@ class _$GetInfoResultCopyWithImpl<$Res, $Val extends GetInfoResult>
           ? _value.network
           : network // ignore: cast_nullable_to_non_nullable
               as Network,
+      minerReward: null == minerReward
+          ? _value.minerReward
+          : minerReward // ignore: cast_nullable_to_non_nullable
+              as int,
+      devReward: null == devReward
+          ? _value.devReward
+          : devReward // ignore: cast_nullable_to_non_nullable
+              as int,
     ) as $Val);
   }
 }
@@ -195,7 +211,9 @@ abstract class _$$GetInfoResultImplCopyWith<$Res>
       @JsonKey(name: 'block_reward') int blockReward,
       @JsonKey(name: 'mempool_size') int mempoolSize,
       @JsonKey(name: 'version') String version,
-      @JsonKey(name: 'network') Network network});
+      @JsonKey(name: 'network') Network network,
+      @JsonKey(name: 'miner_reward') int minerReward,
+      @JsonKey(name: 'dev_reward') int devReward});
 }
 
 /// @nodoc
@@ -225,6 +243,8 @@ class __$$GetInfoResultImplCopyWithImpl<$Res>
     Object? mempoolSize = null,
     Object? version = null,
     Object? network = null,
+    Object? minerReward = null,
+    Object? devReward = null,
   }) {
     return _then(_$GetInfoResultImpl(
       height: null == height
@@ -283,6 +303,14 @@ class __$$GetInfoResultImplCopyWithImpl<$Res>
           ? _value.network
           : network // ignore: cast_nullable_to_non_nullable
               as Network,
+      minerReward: null == minerReward
+          ? _value.minerReward
+          : minerReward // ignore: cast_nullable_to_non_nullable
+              as int,
+      devReward: null == devReward
+          ? _value.devReward
+          : devReward // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -304,7 +332,9 @@ class _$GetInfoResultImpl implements _GetInfoResult {
       @JsonKey(name: 'block_reward') required this.blockReward,
       @JsonKey(name: 'mempool_size') required this.mempoolSize,
       @JsonKey(name: 'version') required this.version,
-      @JsonKey(name: 'network') required this.network});
+      @JsonKey(name: 'network') required this.network,
+      @JsonKey(name: 'miner_reward') required this.minerReward,
+      @JsonKey(name: 'dev_reward') required this.devReward});
 
   factory _$GetInfoResultImpl.fromJson(Map<String, dynamic> json) =>
       _$$GetInfoResultImplFromJson(json);
@@ -351,10 +381,16 @@ class _$GetInfoResultImpl implements _GetInfoResult {
   @override
   @JsonKey(name: 'network')
   final Network network;
+  @override
+  @JsonKey(name: 'miner_reward')
+  final int minerReward;
+  @override
+  @JsonKey(name: 'dev_reward')
+  final int devReward;
 
   @override
   String toString() {
-    return 'GetInfoResult(height: $height, topoHeight: $topoHeight, stableHeight: $stableHeight, prunedTopoHeight: $prunedTopoHeight, topBlockHash: $topBlockHash, circulatingSupply: $circulatingSupply, maximumSupply: $maximumSupply, difficulty: $difficulty, blockTimeTarget: $blockTimeTarget, averageBlockTime: $averageBlockTime, blockReward: $blockReward, mempoolSize: $mempoolSize, version: $version, network: $network)';
+    return 'GetInfoResult(height: $height, topoHeight: $topoHeight, stableHeight: $stableHeight, prunedTopoHeight: $prunedTopoHeight, topBlockHash: $topBlockHash, circulatingSupply: $circulatingSupply, maximumSupply: $maximumSupply, difficulty: $difficulty, blockTimeTarget: $blockTimeTarget, averageBlockTime: $averageBlockTime, blockReward: $blockReward, mempoolSize: $mempoolSize, version: $version, network: $network, minerReward: $minerReward, devReward: $devReward)';
   }
 
   @override
@@ -386,7 +422,11 @@ class _$GetInfoResultImpl implements _GetInfoResult {
             (identical(other.mempoolSize, mempoolSize) ||
                 other.mempoolSize == mempoolSize) &&
             (identical(other.version, version) || other.version == version) &&
-            (identical(other.network, network) || other.network == network));
+            (identical(other.network, network) || other.network == network) &&
+            (identical(other.minerReward, minerReward) ||
+                other.minerReward == minerReward) &&
+            (identical(other.devReward, devReward) ||
+                other.devReward == devReward));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -406,7 +446,9 @@ class _$GetInfoResultImpl implements _GetInfoResult {
       blockReward,
       mempoolSize,
       version,
-      network);
+      network,
+      minerReward,
+      devReward);
 
   /// Create a copy of GetInfoResult
   /// with the given fields replaced by the non-null parameter values.
@@ -439,8 +481,10 @@ abstract class _GetInfoResult implements GetInfoResult {
       @JsonKey(name: 'block_reward') required final int blockReward,
       @JsonKey(name: 'mempool_size') required final int mempoolSize,
       @JsonKey(name: 'version') required final String version,
-      @JsonKey(name: 'network')
-      required final Network network}) = _$GetInfoResultImpl;
+      @JsonKey(name: 'network') required final Network network,
+      @JsonKey(name: 'miner_reward') required final int minerReward,
+      @JsonKey(name: 'dev_reward')
+      required final int devReward}) = _$GetInfoResultImpl;
 
   factory _GetInfoResult.fromJson(Map<String, dynamic> json) =
       _$GetInfoResultImpl.fromJson;
@@ -487,6 +531,12 @@ abstract class _GetInfoResult implements GetInfoResult {
   @override
   @JsonKey(name: 'network')
   Network get network;
+  @override
+  @JsonKey(name: 'miner_reward')
+  int get minerReward;
+  @override
+  @JsonKey(name: 'dev_reward')
+  int get devReward;
 
   /// Create a copy of GetInfoResult
   /// with the given fields replaced by the non-null parameter values.

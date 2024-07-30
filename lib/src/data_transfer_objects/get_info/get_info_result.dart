@@ -26,6 +26,8 @@ class GetInfoResult with _$GetInfoResult {
     @JsonKey(name: 'mempool_size') required int mempoolSize,
     @JsonKey(name: 'version') required String version,
     @JsonKey(name: 'network') required Network network,
+    @JsonKey(name: 'miner_reward') required int minerReward,
+    @JsonKey(name: 'dev_reward') required int devReward,
   }) = _GetInfoResult;
 
   /// @nodoc

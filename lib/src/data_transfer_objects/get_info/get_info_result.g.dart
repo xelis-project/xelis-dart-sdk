@@ -24,6 +24,8 @@ _$GetInfoResultImpl _$$GetInfoResultImplFromJson(Map<String, dynamic> json) =>
       mempoolSize: (json['mempool_size'] as num).toInt(),
       version: json['version'] as String,
       network: $enumDecode(_$NetworkEnumMap, json['network']),
+      minerReward: (json['miner_reward'] as num).toInt(),
+      devReward: (json['dev_reward'] as num).toInt(),
     );
 
 Map<String, dynamic> _$$GetInfoResultImplToJson(_$GetInfoResultImpl instance) =>
@@ -42,6 +44,8 @@ Map<String, dynamic> _$$GetInfoResultImplToJson(_$GetInfoResultImpl instance) =>
       'mempool_size': instance.mempoolSize,
       'version': instance.version,
       'network': _$NetworkEnumMap[instance.network]!,
+      'miner_reward': instance.minerReward,
+      'dev_reward': instance.devReward,
     };
 
 const _$NetworkEnumMap = {
