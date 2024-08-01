@@ -158,7 +158,10 @@ enum DaemonMethod implements XelisJsonKey {
   splitAddress('split_address'),
 
   /// Extract key from address
-  extractKeyFromAddress('extract_key_from_address');
+  extractKeyFromAddress('extract_key_from_address'),
+
+  /// Get miner Work
+  getMinerWork('get_miner_work');
 
   /// Creates a new [DaemonMethod] instance.
   const DaemonMethod(this.jsonKey);

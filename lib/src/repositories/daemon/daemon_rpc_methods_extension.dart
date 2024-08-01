@@ -484,4 +484,15 @@ extension DaemonRpcMethodsExtension on DaemonClient {
     );
     return ExtractKeyFromAddressResult.fromJson(result as Map<String, dynamic>);
   }
+
+  /// Get miner Work
+  Future<GetMinerWorkResult> getMinerWork(
+    GetMinerWorkParams getMinerWorkParams,
+  ) async {
+    final result = await sendRequest(
+      DaemonMethod.getMinerWork,
+      getMinerWorkParams.toJson(),
+    );
+    return GetMinerWorkResult.fromJson(result as Map<String, dynamic>);
+  }
 }
