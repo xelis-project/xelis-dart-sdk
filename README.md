@@ -59,6 +59,7 @@ JSON-RPC Clients to interact with daemon and wallet API.
 - splitAddress
 - extractKeyFromAddress
 - getMinerWork
+- getHardForks
 
 #### Wallet
 

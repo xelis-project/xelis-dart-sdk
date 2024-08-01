@@ -29,6 +29,7 @@ export 'get_block_template/get_block_template_result.dart';
 export 'get_blocks_at_height/get_blocks_at_height_params.dart';
 export 'get_dev_fee_thresholds/get_dev_fee_threshold_result.dart';
 export 'get_difficulty/get_difficulty_result.dart';
+export 'get_hard_forks/get_hard_forks_result.dart';
 export 'get_info/get_info_result.dart';
 export 'get_mempool_cache/get_mempool_cache_params.dart';
 export 'get_mempool_cache/get_mempool_cache_result.dart';

@@ -495,4 +495,12 @@ extension DaemonRpcMethodsExtension on DaemonClient {
     );
     return GetMinerWorkResult.fromJson(result as Map<String, dynamic>);
   }
+
+  /// Get hard forks
+  Future<List<GetHardForksResult>> getHardForks() async {
+    final result = await sendRequest(DaemonMethod.getHardForks);
+    return (result as List)
+        .map((e) => GetHardForksResult.fromJson(e as Map<String, dynamic>))
+        .toList();
+  }
 }
