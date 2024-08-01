@@ -1,3 +1,24 @@
+## 0.19.0
+
+Daemon API upgrade :
+
+- new GetTransactionExecutor RPC method.
+- new getStableTopoheight RPC method.
+- new getStableBalance RPC method.
+- new validateAddress RPC method.
+- new getDifficulty RPC method.
+- new splitAddress RPC method.
+- new extractKeyFromAddress RPC method.
+- new getMinerWork RPC method.
+- new GetHardForks RPC method.
+- fix some dtos.
+
+Wallet API:
+
+- new clearTxCache RPC method.
+- new estimateExtraDataSize RPC method.
+- fix some dtos.
+
 ## 0.18.0
 
 Daemon API upgrade :
