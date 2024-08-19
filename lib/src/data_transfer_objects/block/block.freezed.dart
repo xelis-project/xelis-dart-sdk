@@ -22,46 +22,63 @@ Block _$BlockFromJson(Map<String, dynamic> json) {
 mixin _$Block {
   @JsonKey(name: 'block_type')
   String get blockType => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'cumulative_difficulty')
-  int get cumulativeDifficulty => throw _privateConstructorUsedError;
+  String get cumulativeDifficulty => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'difficulty')
-  int get difficulty => throw _privateConstructorUsedError;
+  String get difficulty => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'extra_nonce')
   String get extraNonce => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'hash')
   String get hash => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'height')
   int get height => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'miner')
   String get miner => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'nonce')
   int get nonce => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'reward')
   int? get reward => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'miner_reward')
   int? get minerReward => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'dev_reward')
   int? get devReward => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'supply')
   int? get supply =>
       throw _privateConstructorUsedError; // TODO convert timestamp to DateTime
   @JsonKey(name: 'timestamp')
   int get timestamp => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'tips')
   List<String> get tips => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'topoheight')
   int? get topoHeight => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'total_size_in_bytes')
   int get totalSizeInBytes => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'total_fees')
   int? get totalFees => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'txs_hashes')
   List<String> get txsHashes => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'version')
   int get version => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'transactions')
-  List<TransactionResponse>? get transactions =>
-      throw _privateConstructorUsedError;
+  List<RPCTransaction>? get transactions => throw _privateConstructorUsedError;
 
   /// Serializes this Block to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -76,11 +93,12 @@ mixin _$Block {
 abstract class $BlockCopyWith<$Res> {
   factory $BlockCopyWith(Block value, $Res Function(Block) then) =
       _$BlockCopyWithImpl<$Res, Block>;
+
   @useResult
   $Res call(
       {@JsonKey(name: 'block_type') String blockType,
-      @JsonKey(name: 'cumulative_difficulty') int cumulativeDifficulty,
-      @JsonKey(name: 'difficulty') int difficulty,
+      @JsonKey(name: 'cumulative_difficulty') String cumulativeDifficulty,
+      @JsonKey(name: 'difficulty') String difficulty,
       @JsonKey(name: 'extra_nonce') String extraNonce,
       @JsonKey(name: 'hash') String hash,
       @JsonKey(name: 'height') int height,
@@ -97,7 +115,7 @@ abstract class $BlockCopyWith<$Res> {
       @JsonKey(name: 'total_fees') int? totalFees,
       @JsonKey(name: 'txs_hashes') List<String> txsHashes,
       @JsonKey(name: 'version') int version,
-      @JsonKey(name: 'transactions') List<TransactionResponse>? transactions});
+      @JsonKey(name: 'transactions') List<RPCTransaction>? transactions});
 }
 
 /// @nodoc
@@ -107,6 +125,7 @@ class _$BlockCopyWithImpl<$Res, $Val extends Block>
 
   // ignore: unused_field
   final $Val _value;
+
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -144,11 +163,11 @@ class _$BlockCopyWithImpl<$Res, $Val extends Block>
       cumulativeDifficulty: null == cumulativeDifficulty
           ? _value.cumulativeDifficulty
           : cumulativeDifficulty // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       difficulty: null == difficulty
           ? _value.difficulty
           : difficulty // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       extraNonce: null == extraNonce
           ? _value.extraNonce
           : extraNonce // ignore: cast_nullable_to_non_nullable
@@ -216,7 +235,7 @@ class _$BlockCopyWithImpl<$Res, $Val extends Block>
       transactions: freezed == transactions
           ? _value.transactions
           : transactions // ignore: cast_nullable_to_non_nullable
-              as List<TransactionResponse>?,
+              as List<RPCTransaction>?,
     ) as $Val);
   }
 }
@@ -226,12 +245,13 @@ abstract class _$$BlockImplCopyWith<$Res> implements $BlockCopyWith<$Res> {
   factory _$$BlockImplCopyWith(
           _$BlockImpl value, $Res Function(_$BlockImpl) then) =
       __$$BlockImplCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call(
       {@JsonKey(name: 'block_type') String blockType,
-      @JsonKey(name: 'cumulative_difficulty') int cumulativeDifficulty,
-      @JsonKey(name: 'difficulty') int difficulty,
+      @JsonKey(name: 'cumulative_difficulty') String cumulativeDifficulty,
+      @JsonKey(name: 'difficulty') String difficulty,
       @JsonKey(name: 'extra_nonce') String extraNonce,
       @JsonKey(name: 'hash') String hash,
       @JsonKey(name: 'height') int height,
@@ -248,7 +268,7 @@ abstract class _$$BlockImplCopyWith<$Res> implements $BlockCopyWith<$Res> {
       @JsonKey(name: 'total_fees') int? totalFees,
       @JsonKey(name: 'txs_hashes') List<String> txsHashes,
       @JsonKey(name: 'version') int version,
-      @JsonKey(name: 'transactions') List<TransactionResponse>? transactions});
+      @JsonKey(name: 'transactions') List<RPCTransaction>? transactions});
 }
 
 /// @nodoc
@@ -293,11 +313,11 @@ class __$$BlockImplCopyWithImpl<$Res>
       cumulativeDifficulty: null == cumulativeDifficulty
           ? _value.cumulativeDifficulty
           : cumulativeDifficulty // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       difficulty: null == difficulty
           ? _value.difficulty
           : difficulty // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       extraNonce: null == extraNonce
           ? _value.extraNonce
           : extraNonce // ignore: cast_nullable_to_non_nullable
@@ -365,7 +385,7 @@ class __$$BlockImplCopyWithImpl<$Res>
       transactions: freezed == transactions
           ? _value._transactions
           : transactions // ignore: cast_nullable_to_non_nullable
-              as List<TransactionResponse>?,
+              as List<RPCTransaction>?,
     ));
   }
 }
@@ -394,8 +414,7 @@ class _$BlockImpl implements _Block {
       @JsonKey(name: 'total_fees') this.totalFees,
       @JsonKey(name: 'txs_hashes') required final List<String> txsHashes,
       @JsonKey(name: 'version') required this.version,
-      @JsonKey(name: 'transactions')
-      final List<TransactionResponse>? transactions})
+      @JsonKey(name: 'transactions') final List<RPCTransaction>? transactions})
       : _tips = tips,
         _txsHashes = txsHashes,
         _transactions = transactions;
@@ -408,10 +427,10 @@ class _$BlockImpl implements _Block {
   final String blockType;
   @override
   @JsonKey(name: 'cumulative_difficulty')
-  final int cumulativeDifficulty;
+  final String cumulativeDifficulty;
   @override
   @JsonKey(name: 'difficulty')
-  final int difficulty;
+  final String difficulty;
   @override
   @JsonKey(name: 'extra_nonce')
   final String extraNonce;
@@ -439,11 +458,13 @@ class _$BlockImpl implements _Block {
   @override
   @JsonKey(name: 'supply')
   final int? supply;
+
 // TODO convert timestamp to DateTime
   @override
   @JsonKey(name: 'timestamp')
   final int timestamp;
   final List<String> _tips;
+
   @override
   @JsonKey(name: 'tips')
   List<String> get tips {
@@ -462,6 +483,7 @@ class _$BlockImpl implements _Block {
   @JsonKey(name: 'total_fees')
   final int? totalFees;
   final List<String> _txsHashes;
+
   @override
   @JsonKey(name: 'txs_hashes')
   List<String> get txsHashes {
@@ -473,10 +495,11 @@ class _$BlockImpl implements _Block {
   @override
   @JsonKey(name: 'version')
   final int version;
-  final List<TransactionResponse>? _transactions;
+  final List<RPCTransaction>? _transactions;
+
   @override
   @JsonKey(name: 'transactions')
-  List<TransactionResponse>? get transactions {
+  List<RPCTransaction>? get transactions {
     final value = _transactions;
     if (value == null) return null;
     if (_transactions is EqualUnmodifiableListView) return _transactions;
@@ -574,8 +597,8 @@ abstract class _Block implements Block {
   const factory _Block(
       {@JsonKey(name: 'block_type') required final String blockType,
       @JsonKey(name: 'cumulative_difficulty')
-      required final int cumulativeDifficulty,
-      @JsonKey(name: 'difficulty') required final int difficulty,
+      required final String cumulativeDifficulty,
+      @JsonKey(name: 'difficulty') required final String difficulty,
       @JsonKey(name: 'extra_nonce') required final String extraNonce,
       @JsonKey(name: 'hash') required final String hash,
       @JsonKey(name: 'height') required final int height,
@@ -593,70 +616,88 @@ abstract class _Block implements Block {
       @JsonKey(name: 'txs_hashes') required final List<String> txsHashes,
       @JsonKey(name: 'version') required final int version,
       @JsonKey(name: 'transactions')
-      final List<TransactionResponse>? transactions}) = _$BlockImpl;
+      final List<RPCTransaction>? transactions}) = _$BlockImpl;
 
   factory _Block.fromJson(Map<String, dynamic> json) = _$BlockImpl.fromJson;
 
   @override
   @JsonKey(name: 'block_type')
   String get blockType;
+
   @override
   @JsonKey(name: 'cumulative_difficulty')
-  int get cumulativeDifficulty;
+  String get cumulativeDifficulty;
+
   @override
   @JsonKey(name: 'difficulty')
-  int get difficulty;
+  String get difficulty;
+
   @override
   @JsonKey(name: 'extra_nonce')
   String get extraNonce;
+
   @override
   @JsonKey(name: 'hash')
   String get hash;
+
   @override
   @JsonKey(name: 'height')
   int get height;
+
   @override
   @JsonKey(name: 'miner')
   String get miner;
+
   @override
   @JsonKey(name: 'nonce')
   int get nonce;
+
   @override
   @JsonKey(name: 'reward')
   int? get reward;
+
   @override
   @JsonKey(name: 'miner_reward')
   int? get minerReward;
+
   @override
   @JsonKey(name: 'dev_reward')
   int? get devReward;
+
   @override
   @JsonKey(name: 'supply')
   int? get supply; // TODO convert timestamp to DateTime
   @override
   @JsonKey(name: 'timestamp')
   int get timestamp;
+
   @override
   @JsonKey(name: 'tips')
   List<String> get tips;
+
   @override
   @JsonKey(name: 'topoheight')
   int? get topoHeight;
+
   @override
   @JsonKey(name: 'total_size_in_bytes')
   int get totalSizeInBytes;
+
   @override
   @JsonKey(name: 'total_fees')
   int? get totalFees;
+
   @override
   @JsonKey(name: 'txs_hashes')
   List<String> get txsHashes;
+
   @override
   @JsonKey(name: 'version')
   int get version;
+
   @override
   @JsonKey(name: 'transactions')
-  List<TransactionResponse>? get transactions;
+  List<RPCTransaction>? get transactions;
 
   /// Create a copy of Block
   /// with the given fields replaced by the non-null parameter values.

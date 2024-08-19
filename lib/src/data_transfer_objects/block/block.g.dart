@@ -10,8 +10,8 @@ part of 'block.dart';
 
 _$BlockImpl _$$BlockImplFromJson(Map<String, dynamic> json) => _$BlockImpl(
       blockType: json['block_type'] as String,
-      cumulativeDifficulty: (json['cumulative_difficulty'] as num).toInt(),
-      difficulty: (json['difficulty'] as num).toInt(),
+      cumulativeDifficulty: json['cumulative_difficulty'] as String,
+      difficulty: json['difficulty'] as String,
       extraNonce: json['extra_nonce'] as String,
       hash: json['hash'] as String,
       height: (json['height'] as num).toInt(),
@@ -31,7 +31,7 @@ _$BlockImpl _$$BlockImplFromJson(Map<String, dynamic> json) => _$BlockImpl(
           .toList(),
       version: (json['version'] as num).toInt(),
       transactions: (json['transactions'] as List<dynamic>?)
-          ?.map((e) => TransactionResponse.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => RPCTransaction.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 

@@ -32,7 +32,7 @@ mixin _$TransactionType {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            @JsonKey(name: 'transfers') List<Transfer> transfers)
+            @JsonKey(name: 'transfers') List<RPCTransferPayload> transfers)
         transfers,
     required TResult Function(@JsonKey(name: 'asset') String asset,
             @JsonKey(name: 'amount') int amount)
@@ -41,7 +41,8 @@ mixin _$TransactionType {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(@JsonKey(name: 'transfers') List<Transfer> transfers)?
+    TResult? Function(
+            @JsonKey(name: 'transfers') List<RPCTransferPayload> transfers)?
         transfers,
     TResult? Function(@JsonKey(name: 'asset') String asset,
             @JsonKey(name: 'amount') int amount)?
@@ -50,7 +51,8 @@ mixin _$TransactionType {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(@JsonKey(name: 'transfers') List<Transfer> transfers)?
+    TResult Function(
+            @JsonKey(name: 'transfers') List<RPCTransferPayload> transfers)?
         transfers,
     TResult Function(@JsonKey(name: 'asset') String asset,
             @JsonKey(name: 'amount') int amount)?
@@ -109,7 +111,7 @@ abstract class _$$TransfersImplCopyWith<$Res> {
           _$TransfersImpl value, $Res Function(_$TransfersImpl) then) =
       __$$TransfersImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({@JsonKey(name: 'transfers') List<Transfer> transfers});
+  $Res call({@JsonKey(name: 'transfers') List<RPCTransferPayload> transfers});
 }
 
 /// @nodoc
@@ -131,7 +133,7 @@ class __$$TransfersImplCopyWithImpl<$Res>
       transfers: null == transfers
           ? _value._transfers
           : transfers // ignore: cast_nullable_to_non_nullable
-              as List<Transfer>,
+              as List<RPCTransferPayload>,
     ));
   }
 }
@@ -140,7 +142,8 @@ class __$$TransfersImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$TransfersImpl implements Transfers {
   const _$TransfersImpl(
-      {@JsonKey(name: 'transfers') required final List<Transfer> transfers,
+      {@JsonKey(name: 'transfers')
+      required final List<RPCTransferPayload> transfers,
       final String? $type})
       : _transfers = transfers,
         $type = $type ?? 'transfers';
@@ -148,10 +151,10 @@ class _$TransfersImpl implements Transfers {
   factory _$TransfersImpl.fromJson(Map<String, dynamic> json) =>
       _$$TransfersImplFromJson(json);
 
-  final List<Transfer> _transfers;
+  final List<RPCTransferPayload> _transfers;
   @override
   @JsonKey(name: 'transfers')
-  List<Transfer> get transfers {
+  List<RPCTransferPayload> get transfers {
     if (_transfers is EqualUnmodifiableListView) return _transfers;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_transfers);
@@ -191,7 +194,7 @@ class _$TransfersImpl implements Transfers {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            @JsonKey(name: 'transfers') List<Transfer> transfers)
+            @JsonKey(name: 'transfers') List<RPCTransferPayload> transfers)
         transfers,
     required TResult Function(@JsonKey(name: 'asset') String asset,
             @JsonKey(name: 'amount') int amount)
@@ -203,7 +206,8 @@ class _$TransfersImpl implements Transfers {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(@JsonKey(name: 'transfers') List<Transfer> transfers)?
+    TResult? Function(
+            @JsonKey(name: 'transfers') List<RPCTransferPayload> transfers)?
         transfers,
     TResult? Function(@JsonKey(name: 'asset') String asset,
             @JsonKey(name: 'amount') int amount)?
@@ -215,7 +219,8 @@ class _$TransfersImpl implements Transfers {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(@JsonKey(name: 'transfers') List<Transfer> transfers)?
+    TResult Function(
+            @JsonKey(name: 'transfers') List<RPCTransferPayload> transfers)?
         transfers,
     TResult Function(@JsonKey(name: 'asset') String asset,
             @JsonKey(name: 'amount') int amount)?
@@ -270,13 +275,13 @@ class _$TransfersImpl implements Transfers {
 abstract class Transfers implements TransactionType {
   const factory Transfers(
       {@JsonKey(name: 'transfers')
-      required final List<Transfer> transfers}) = _$TransfersImpl;
+      required final List<RPCTransferPayload> transfers}) = _$TransfersImpl;
 
   factory Transfers.fromJson(Map<String, dynamic> json) =
       _$TransfersImpl.fromJson;
 
   @JsonKey(name: 'transfers')
-  List<Transfer> get transfers;
+  List<RPCTransferPayload> get transfers;
 
   /// Create a copy of TransactionType
   /// with the given fields replaced by the non-null parameter values.
@@ -376,7 +381,7 @@ class _$BurnImpl implements Burn {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            @JsonKey(name: 'transfers') List<Transfer> transfers)
+            @JsonKey(name: 'transfers') List<RPCTransferPayload> transfers)
         transfers,
     required TResult Function(@JsonKey(name: 'asset') String asset,
             @JsonKey(name: 'amount') int amount)
@@ -388,7 +393,8 @@ class _$BurnImpl implements Burn {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(@JsonKey(name: 'transfers') List<Transfer> transfers)?
+    TResult? Function(
+            @JsonKey(name: 'transfers') List<RPCTransferPayload> transfers)?
         transfers,
     TResult? Function(@JsonKey(name: 'asset') String asset,
             @JsonKey(name: 'amount') int amount)?
@@ -400,7 +406,8 @@ class _$BurnImpl implements Burn {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(@JsonKey(name: 'transfers') List<Transfer> transfers)?
+    TResult Function(
+            @JsonKey(name: 'transfers') List<RPCTransferPayload> transfers)?
         transfers,
     TResult Function(@JsonKey(name: 'asset') String asset,
             @JsonKey(name: 'amount') int amount)?

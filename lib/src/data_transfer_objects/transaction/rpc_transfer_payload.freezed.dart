@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'transfer.dart';
+part of 'rpc_transfer_payload.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,41 +14,49 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-Transfer _$TransferFromJson(Map<String, dynamic> json) {
-  return _Transfer.fromJson(json);
+RPCTransferPayload _$RPCTransferPayloadFromJson(Map<String, dynamic> json) {
+  return _RPCTransferPayload.fromJson(json);
 }
 
 /// @nodoc
-mixin _$Transfer {
+mixin _$RPCTransferPayload {
   @JsonKey(name: 'asset')
   String get asset => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'commitment')
   List<int> get commitment => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'ct_validity_proof')
   Map<String, dynamic> get validityProof => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'destination')
   String get destination => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'receiver_handle')
   List<int> get receiverHandle => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'sender_handle')
   List<int> get senderHandle => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'extra_data')
   dynamic get extraData => throw _privateConstructorUsedError;
 
-  /// Serializes this Transfer to a JSON map.
+  /// Serializes this RPCTransferPayload to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-  /// Create a copy of Transfer
+  /// Create a copy of RPCTransferPayload
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $TransferCopyWith<Transfer> get copyWith =>
+  $RPCTransferPayloadCopyWith<RPCTransferPayload> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $TransferCopyWith<$Res> {
-  factory $TransferCopyWith(Transfer value, $Res Function(Transfer) then) =
-      _$TransferCopyWithImpl<$Res, Transfer>;
+abstract class $RPCTransferPayloadCopyWith<$Res> {
+  factory $RPCTransferPayloadCopyWith(
+          RPCTransferPayload value, $Res Function(RPCTransferPayload) then) =
+      _$RPCTransferPayloadCopyWithImpl<$Res, RPCTransferPayload>;
+
   @useResult
   $Res call(
       {@JsonKey(name: 'asset') String asset,
@@ -61,16 +69,17 @@ abstract class $TransferCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$TransferCopyWithImpl<$Res, $Val extends Transfer>
-    implements $TransferCopyWith<$Res> {
-  _$TransferCopyWithImpl(this._value, this._then);
+class _$RPCTransferPayloadCopyWithImpl<$Res, $Val extends RPCTransferPayload>
+    implements $RPCTransferPayloadCopyWith<$Res> {
+  _$RPCTransferPayloadCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
+
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of Transfer
+  /// Create a copy of RPCTransferPayload
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -117,11 +126,12 @@ class _$TransferCopyWithImpl<$Res, $Val extends Transfer>
 }
 
 /// @nodoc
-abstract class _$$TransferImplCopyWith<$Res>
-    implements $TransferCopyWith<$Res> {
-  factory _$$TransferImplCopyWith(
-          _$TransferImpl value, $Res Function(_$TransferImpl) then) =
-      __$$TransferImplCopyWithImpl<$Res>;
+abstract class _$$RPCTransferPayloadImplCopyWith<$Res>
+    implements $RPCTransferPayloadCopyWith<$Res> {
+  factory _$$RPCTransferPayloadImplCopyWith(_$RPCTransferPayloadImpl value,
+          $Res Function(_$RPCTransferPayloadImpl) then) =
+      __$$RPCTransferPayloadImplCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call(
@@ -135,14 +145,14 @@ abstract class _$$TransferImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$TransferImplCopyWithImpl<$Res>
-    extends _$TransferCopyWithImpl<$Res, _$TransferImpl>
-    implements _$$TransferImplCopyWith<$Res> {
-  __$$TransferImplCopyWithImpl(
-      _$TransferImpl _value, $Res Function(_$TransferImpl) _then)
+class __$$RPCTransferPayloadImplCopyWithImpl<$Res>
+    extends _$RPCTransferPayloadCopyWithImpl<$Res, _$RPCTransferPayloadImpl>
+    implements _$$RPCTransferPayloadImplCopyWith<$Res> {
+  __$$RPCTransferPayloadImplCopyWithImpl(_$RPCTransferPayloadImpl _value,
+      $Res Function(_$RPCTransferPayloadImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of Transfer
+  /// Create a copy of RPCTransferPayload
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -155,7 +165,7 @@ class __$$TransferImplCopyWithImpl<$Res>
     Object? senderHandle = null,
     Object? extraData = freezed,
   }) {
-    return _then(_$TransferImpl(
+    return _then(_$RPCTransferPayloadImpl(
       asset: null == asset
           ? _value.asset
           : asset // ignore: cast_nullable_to_non_nullable
@@ -190,8 +200,8 @@ class __$$TransferImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$TransferImpl implements _Transfer {
-  const _$TransferImpl(
+class _$RPCTransferPayloadImpl implements _RPCTransferPayload {
+  const _$RPCTransferPayloadImpl(
       {@JsonKey(name: 'asset') required this.asset,
       @JsonKey(name: 'commitment') required final List<int> commitment,
       @JsonKey(name: 'ct_validity_proof')
@@ -205,13 +215,14 @@ class _$TransferImpl implements _Transfer {
         _receiverHandle = receiverHandle,
         _senderHandle = senderHandle;
 
-  factory _$TransferImpl.fromJson(Map<String, dynamic> json) =>
-      _$$TransferImplFromJson(json);
+  factory _$RPCTransferPayloadImpl.fromJson(Map<String, dynamic> json) =>
+      _$$RPCTransferPayloadImplFromJson(json);
 
   @override
   @JsonKey(name: 'asset')
   final String asset;
   final List<int> _commitment;
+
   @override
   @JsonKey(name: 'commitment')
   List<int> get commitment {
@@ -221,6 +232,7 @@ class _$TransferImpl implements _Transfer {
   }
 
   final Map<String, dynamic> _validityProof;
+
   @override
   @JsonKey(name: 'ct_validity_proof')
   Map<String, dynamic> get validityProof {
@@ -233,6 +245,7 @@ class _$TransferImpl implements _Transfer {
   @JsonKey(name: 'destination')
   final String destination;
   final List<int> _receiverHandle;
+
   @override
   @JsonKey(name: 'receiver_handle')
   List<int> get receiverHandle {
@@ -242,6 +255,7 @@ class _$TransferImpl implements _Transfer {
   }
 
   final List<int> _senderHandle;
+
   @override
   @JsonKey(name: 'sender_handle')
   List<int> get senderHandle {
@@ -256,14 +270,14 @@ class _$TransferImpl implements _Transfer {
 
   @override
   String toString() {
-    return 'Transfer(asset: $asset, commitment: $commitment, validityProof: $validityProof, destination: $destination, receiverHandle: $receiverHandle, senderHandle: $senderHandle, extraData: $extraData)';
+    return 'RPCTransferPayload(asset: $asset, commitment: $commitment, validityProof: $validityProof, destination: $destination, receiverHandle: $receiverHandle, senderHandle: $senderHandle, extraData: $extraData)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$TransferImpl &&
+            other is _$RPCTransferPayloadImpl &&
             (identical(other.asset, asset) || other.asset == asset) &&
             const DeepCollectionEquality()
                 .equals(other._commitment, _commitment) &&
@@ -290,24 +304,25 @@ class _$TransferImpl implements _Transfer {
       const DeepCollectionEquality().hash(_senderHandle),
       const DeepCollectionEquality().hash(extraData));
 
-  /// Create a copy of Transfer
+  /// Create a copy of RPCTransferPayload
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$TransferImplCopyWith<_$TransferImpl> get copyWith =>
-      __$$TransferImplCopyWithImpl<_$TransferImpl>(this, _$identity);
+  _$$RPCTransferPayloadImplCopyWith<_$RPCTransferPayloadImpl> get copyWith =>
+      __$$RPCTransferPayloadImplCopyWithImpl<_$RPCTransferPayloadImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$TransferImplToJson(
+    return _$$RPCTransferPayloadImplToJson(
       this,
     );
   }
 }
 
-abstract class _Transfer implements Transfer {
-  const factory _Transfer(
+abstract class _RPCTransferPayload implements RPCTransferPayload {
+  const factory _RPCTransferPayload(
       {@JsonKey(name: 'asset') required final String asset,
       @JsonKey(name: 'commitment') required final List<int> commitment,
       @JsonKey(name: 'ct_validity_proof')
@@ -315,37 +330,44 @@ abstract class _Transfer implements Transfer {
       @JsonKey(name: 'destination') required final String destination,
       @JsonKey(name: 'receiver_handle') required final List<int> receiverHandle,
       @JsonKey(name: 'sender_handle') required final List<int> senderHandle,
-      @JsonKey(name: 'extra_data') final dynamic extraData}) = _$TransferImpl;
+      @JsonKey(name: 'extra_data')
+      final dynamic extraData}) = _$RPCTransferPayloadImpl;
 
-  factory _Transfer.fromJson(Map<String, dynamic> json) =
-      _$TransferImpl.fromJson;
+  factory _RPCTransferPayload.fromJson(Map<String, dynamic> json) =
+      _$RPCTransferPayloadImpl.fromJson;
 
   @override
   @JsonKey(name: 'asset')
   String get asset;
+
   @override
   @JsonKey(name: 'commitment')
   List<int> get commitment;
+
   @override
   @JsonKey(name: 'ct_validity_proof')
   Map<String, dynamic> get validityProof;
+
   @override
   @JsonKey(name: 'destination')
   String get destination;
+
   @override
   @JsonKey(name: 'receiver_handle')
   List<int> get receiverHandle;
+
   @override
   @JsonKey(name: 'sender_handle')
   List<int> get senderHandle;
+
   @override
   @JsonKey(name: 'extra_data')
   dynamic get extraData;
 
-  /// Create a copy of Transfer
+  /// Create a copy of RPCTransferPayload
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$TransferImplCopyWith<_$TransferImpl> get copyWith =>
+  _$$RPCTransferPayloadImplCopyWith<_$RPCTransferPayloadImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

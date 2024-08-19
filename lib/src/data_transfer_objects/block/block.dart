@@ -13,8 +13,9 @@ class Block with _$Block {
   /// @nodoc
   const factory Block({
     @JsonKey(name: 'block_type') required String blockType,
-    @JsonKey(name: 'cumulative_difficulty') required int cumulativeDifficulty,
-    @JsonKey(name: 'difficulty') required int difficulty,
+    @JsonKey(name: 'cumulative_difficulty')
+    required String cumulativeDifficulty,
+    @JsonKey(name: 'difficulty') required String difficulty,
     @JsonKey(name: 'extra_nonce') required String extraNonce,
     @JsonKey(name: 'hash') required String hash,
     @JsonKey(name: 'height') required int height,
@@ -32,7 +33,7 @@ class Block with _$Block {
     @JsonKey(name: 'total_fees') int? totalFees,
     @JsonKey(name: 'txs_hashes') required List<String> txsHashes,
     @JsonKey(name: 'version') required int version,
-    @JsonKey(name: 'transactions') List<TransactionResponse>? transactions,
+    @JsonKey(name: 'transactions') List<RPCTransaction>? transactions,
   }) = _Block;
 
   /// @nodoc
