@@ -503,4 +503,15 @@ extension DaemonRpcMethodsExtension on DaemonClient {
         .map((e) => GetHardForksResult.fromJson(e as Map<String, dynamic>))
         .toList();
   }
+
+  /// Create an integrated address using a wallet address and data to include.
+  Future<String> makeIntegratedAddress(
+    MakeIntegratedAddressParams makeIntegratedAddressParams,
+  ) async {
+    final result = await sendRequest(
+      DaemonMethod.makeIntegratedAddress,
+      makeIntegratedAddressParams.toJson(),
+    );
+    return result as String;
+  }
 }

@@ -164,7 +164,10 @@ enum DaemonMethod implements XelisJsonKey {
   getMinerWork('get_miner_work'),
 
   /// Get hard forks
-  getHardForks('get_hard_forks');
+  getHardForks('get_hard_forks'),
+
+  /// Create an integrated address using a wallet address and data to include.
+  makeIntegratedAddress('make_integrated_address');
 
   /// Creates a new [DaemonMethod] instance.
   const DaemonMethod(this.jsonKey);

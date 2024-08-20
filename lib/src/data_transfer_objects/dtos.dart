@@ -56,6 +56,7 @@ export 'has_nonce/has_nonce_params.dart';
 export 'has_nonce/has_nonce_result.dart';
 export 'is_account_registered/is_account_registered_params.dart';
 export 'is_tx_executed_in_block/is_tx_executed_in_block_params.dart';
+export 'make_integrated_address/make_integrated_address_params.dart';
 export 'network/network.dart';
 export 'p2p_status/p2p_status_result.dart';
 export 'peer_peer_disconnected_event/peer_peer_disconnected_event.dart';
