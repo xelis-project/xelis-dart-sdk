@@ -63,6 +63,7 @@ export 'peer_peer_list_updated_event/peer_peer_list_updated_event.dart';
 export 'split_address/split_address_params.dart';
 export 'split_address/split_address_result.dart';
 export 'stable_height_changed_event/stable_height_changed_event.dart';
+export 'stable_topoheight_changed_event/stable_topoheight_changed_event.dart';
 export 'submit_block/submit_block_params.dart';
 export 'submit_transaction/submit_transaction_params.dart';
 export 'transaction/rpc_transaction.dart';

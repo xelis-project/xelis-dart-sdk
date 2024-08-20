@@ -22,61 +22,43 @@ Block _$BlockFromJson(Map<String, dynamic> json) {
 mixin _$Block {
   @JsonKey(name: 'block_type')
   String get blockType => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'cumulative_difficulty')
   String get cumulativeDifficulty => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'difficulty')
   String get difficulty => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'extra_nonce')
   String get extraNonce => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'hash')
   String get hash => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'height')
   int get height => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'miner')
   String get miner => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'nonce')
   int get nonce => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'reward')
   int? get reward => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'miner_reward')
   int? get minerReward => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'dev_reward')
   int? get devReward => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'supply')
   int? get supply =>
       throw _privateConstructorUsedError; // TODO convert timestamp to DateTime
   @JsonKey(name: 'timestamp')
   int get timestamp => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'tips')
   List<String> get tips => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'topoheight')
   int? get topoHeight => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'total_size_in_bytes')
   int get totalSizeInBytes => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'total_fees')
   int? get totalFees => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'txs_hashes')
   List<String> get txsHashes => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'version')
   int get version => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'transactions')
   List<RPCTransaction>? get transactions => throw _privateConstructorUsedError;
 
@@ -93,7 +75,6 @@ mixin _$Block {
 abstract class $BlockCopyWith<$Res> {
   factory $BlockCopyWith(Block value, $Res Function(Block) then) =
       _$BlockCopyWithImpl<$Res, Block>;
-
   @useResult
   $Res call(
       {@JsonKey(name: 'block_type') String blockType,
@@ -125,7 +106,6 @@ class _$BlockCopyWithImpl<$Res, $Val extends Block>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -245,7 +225,6 @@ abstract class _$$BlockImplCopyWith<$Res> implements $BlockCopyWith<$Res> {
   factory _$$BlockImplCopyWith(
           _$BlockImpl value, $Res Function(_$BlockImpl) then) =
       __$$BlockImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -458,13 +437,11 @@ class _$BlockImpl implements _Block {
   @override
   @JsonKey(name: 'supply')
   final int? supply;
-
 // TODO convert timestamp to DateTime
   @override
   @JsonKey(name: 'timestamp')
   final int timestamp;
   final List<String> _tips;
-
   @override
   @JsonKey(name: 'tips')
   List<String> get tips {
@@ -483,7 +460,6 @@ class _$BlockImpl implements _Block {
   @JsonKey(name: 'total_fees')
   final int? totalFees;
   final List<String> _txsHashes;
-
   @override
   @JsonKey(name: 'txs_hashes')
   List<String> get txsHashes {
@@ -496,7 +472,6 @@ class _$BlockImpl implements _Block {
   @JsonKey(name: 'version')
   final int version;
   final List<RPCTransaction>? _transactions;
-
   @override
   @JsonKey(name: 'transactions')
   List<RPCTransaction>? get transactions {
@@ -623,78 +598,60 @@ abstract class _Block implements Block {
   @override
   @JsonKey(name: 'block_type')
   String get blockType;
-
   @override
   @JsonKey(name: 'cumulative_difficulty')
   String get cumulativeDifficulty;
-
   @override
   @JsonKey(name: 'difficulty')
   String get difficulty;
-
   @override
   @JsonKey(name: 'extra_nonce')
   String get extraNonce;
-
   @override
   @JsonKey(name: 'hash')
   String get hash;
-
   @override
   @JsonKey(name: 'height')
   int get height;
-
   @override
   @JsonKey(name: 'miner')
   String get miner;
-
   @override
   @JsonKey(name: 'nonce')
   int get nonce;
-
   @override
   @JsonKey(name: 'reward')
   int? get reward;
-
   @override
   @JsonKey(name: 'miner_reward')
   int? get minerReward;
-
   @override
   @JsonKey(name: 'dev_reward')
   int? get devReward;
-
   @override
   @JsonKey(name: 'supply')
   int? get supply; // TODO convert timestamp to DateTime
   @override
   @JsonKey(name: 'timestamp')
   int get timestamp;
-
   @override
   @JsonKey(name: 'tips')
   List<String> get tips;
-
   @override
   @JsonKey(name: 'topoheight')
   int? get topoHeight;
-
   @override
   @JsonKey(name: 'total_size_in_bytes')
   int get totalSizeInBytes;
-
   @override
   @JsonKey(name: 'total_fees')
   int? get totalFees;
-
   @override
   @JsonKey(name: 'txs_hashes')
   List<String> get txsHashes;
-
   @override
   @JsonKey(name: 'version')
   int get version;
-
   @override
   @JsonKey(name: 'transactions')
   List<RPCTransaction>? get transactions;

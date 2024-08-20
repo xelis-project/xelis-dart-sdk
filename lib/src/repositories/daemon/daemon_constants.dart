@@ -185,6 +185,9 @@ enum DaemonEvent implements XelisJsonKey {
   /// Stable height changed event.
   stableHeightChanged('stable_height_changed'),
 
+  /// Stable topoheight changed event.
+  stableTopoHeightChanged('stable_topoheight_changed'),
+
   /// Transaction added in mempool event.
   transactionAddedInMempool('transaction_added_in_mempool'),
 

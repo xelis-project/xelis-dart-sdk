@@ -22,46 +22,32 @@ TransactionResponse _$TransactionResponseFromJson(Map<String, dynamic> json) {
 mixin _$TransactionResponse {
   @JsonKey(name: 'blocks')
   List<String>? get blocks => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'executed_in_block')
   String? get executedInBlock => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'hash')
   String get hash => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'data')
   Transfers get data => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'fee')
   int get fee => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'version')
   int get version => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'in_mempool')
   bool get inMempool => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'first_seen')
   int? get firstSeen => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'nonce')
   int get nonce => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'source')
   String get source => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'range_proof')
   List<dynamic> get rangeProof => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'source_commitments')
   List<dynamic> get sourceCommitments => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'reference')
   Map<String, dynamic> get reference => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'signature')
   String get signature => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'size')
   int get size => throw _privateConstructorUsedError;
 
@@ -80,7 +66,6 @@ abstract class $TransactionResponseCopyWith<$Res> {
   factory $TransactionResponseCopyWith(
           TransactionResponse value, $Res Function(TransactionResponse) then) =
       _$TransactionResponseCopyWithImpl<$Res, TransactionResponse>;
-
   @useResult
   $Res call(
       {@JsonKey(name: 'blocks') List<String>? blocks,
@@ -107,7 +92,6 @@ class _$TransactionResponseCopyWithImpl<$Res, $Val extends TransactionResponse>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -203,7 +187,6 @@ abstract class _$$TransactionResponseImplCopyWith<$Res>
   factory _$$TransactionResponseImplCopyWith(_$TransactionResponseImpl value,
           $Res Function(_$TransactionResponseImpl) then) =
       __$$TransactionResponseImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -347,7 +330,6 @@ class _$TransactionResponseImpl implements _TransactionResponse {
       _$$TransactionResponseImplFromJson(json);
 
   final List<String>? _blocks;
-
   @override
   @JsonKey(name: 'blocks')
   List<String>? get blocks {
@@ -386,7 +368,6 @@ class _$TransactionResponseImpl implements _TransactionResponse {
   @JsonKey(name: 'source')
   final String source;
   final List<dynamic> _rangeProof;
-
   @override
   @JsonKey(name: 'range_proof')
   List<dynamic> get rangeProof {
@@ -396,7 +377,6 @@ class _$TransactionResponseImpl implements _TransactionResponse {
   }
 
   final List<dynamic> _sourceCommitments;
-
   @override
   @JsonKey(name: 'source_commitments')
   List<dynamic> get sourceCommitments {
@@ -407,7 +387,6 @@ class _$TransactionResponseImpl implements _TransactionResponse {
   }
 
   final Map<String, dynamic> _reference;
-
   @override
   @JsonKey(name: 'reference')
   Map<String, dynamic> get reference {
@@ -520,59 +499,45 @@ abstract class _TransactionResponse implements TransactionResponse {
   @override
   @JsonKey(name: 'blocks')
   List<String>? get blocks;
-
   @override
   @JsonKey(name: 'executed_in_block')
   String? get executedInBlock;
-
   @override
   @JsonKey(name: 'hash')
   String get hash;
-
   @override
   @JsonKey(name: 'data')
   Transfers get data;
-
   @override
   @JsonKey(name: 'fee')
   int get fee;
-
   @override
   @JsonKey(name: 'version')
   int get version;
-
   @override
   @JsonKey(name: 'in_mempool')
   bool get inMempool;
-
   @override
   @JsonKey(name: 'first_seen')
   int? get firstSeen;
-
   @override
   @JsonKey(name: 'nonce')
   int get nonce;
-
   @override
   @JsonKey(name: 'source')
   String get source;
-
   @override
   @JsonKey(name: 'range_proof')
   List<dynamic> get rangeProof;
-
   @override
   @JsonKey(name: 'source_commitments')
   List<dynamic> get sourceCommitments;
-
   @override
   @JsonKey(name: 'reference')
   Map<String, dynamic> get reference;
-
   @override
   @JsonKey(name: 'signature')
   String get signature;
-
   @override
   @JsonKey(name: 'size')
   int get size;

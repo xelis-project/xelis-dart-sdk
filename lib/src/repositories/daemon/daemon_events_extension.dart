@@ -43,8 +43,7 @@ extension DaemonEventsExtension on DaemonClient {
 
   /// Registers a callback for StableHeightChanged event.
   ///
-  /// Note: It is called when stable height has changed
-  /// (different than the previous one).
+  /// When stable height has changed (different than the previous one).
   void onStableHeightChanged(
     void Function(StableHeightChangedEvent stableHeightChangedEvent) callback,
   ) =>
@@ -53,6 +52,20 @@ extension DaemonEventsExtension on DaemonClient {
   /// Unsubscribes from StableHeightChanged event.
   void unsubscribeFromStableHeightChanged() {
     unawaited(unsubscribeFrom(DaemonEvent.stableHeightChanged));
+  }
+
+  /// Registers a callback for StableTopoHeightChanged event.
+  ///
+  /// When stable topoheight has changed (different than the previous one).
+  void onStableTopoHeightChanged(
+    void Function(StableTopoheightChangedEvent stableTopoheightChangedEvent)
+        callback,
+  ) =>
+      onEvent(DaemonEvent.stableTopoHeightChanged, callback);
+
+  /// Unsubscribes from StableTopoHeightChanged event.
+  void unsubscribeFromStableTopoHeightChanged() {
+    unawaited(unsubscribeFrom(DaemonEvent.stableTopoHeightChanged));
   }
 
   /// Registers a callback for TransactionAddedInMempool event.

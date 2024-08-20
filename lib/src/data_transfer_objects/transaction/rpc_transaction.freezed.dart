@@ -18,34 +18,24 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$RPCTransaction {
   @JsonKey(name: 'hash')
   String get hash => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'data')
   TransactionType get data => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'fee')
   int get fee => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'version')
   int get version => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'nonce')
   int get nonce => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'source')
   String get source => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'range_proof')
   List<dynamic> get rangeProof => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'source_commitments')
   List<dynamic> get sourceCommitments => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'reference')
   Map<String, dynamic> get reference => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'signature')
   String get signature => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'size')
   int get size => throw _privateConstructorUsedError;
 
@@ -61,7 +51,6 @@ abstract class $RPCTransactionCopyWith<$Res> {
   factory $RPCTransactionCopyWith(
           RPCTransaction value, $Res Function(RPCTransaction) then) =
       _$RPCTransactionCopyWithImpl<$Res, RPCTransaction>;
-
   @useResult
   $Res call(
       {@JsonKey(name: 'hash') String hash,
@@ -86,7 +75,6 @@ class _$RPCTransactionCopyWithImpl<$Res, $Val extends RPCTransaction>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -172,7 +160,6 @@ abstract class _$$RPCTransactionImplCopyWith<$Res>
   factory _$$RPCTransactionImplCopyWith(_$RPCTransactionImpl value,
           $Res Function(_$RPCTransactionImpl) then) =
       __$$RPCTransactionImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -306,7 +293,6 @@ class _$RPCTransactionImpl extends _RPCTransaction {
   @JsonKey(name: 'source')
   final String source;
   final List<dynamic> _rangeProof;
-
   @override
   @JsonKey(name: 'range_proof')
   List<dynamic> get rangeProof {
@@ -316,7 +302,6 @@ class _$RPCTransactionImpl extends _RPCTransaction {
   }
 
   final List<dynamic> _sourceCommitments;
-
   @override
   @JsonKey(name: 'source_commitments')
   List<dynamic> get sourceCommitments {
@@ -327,7 +312,6 @@ class _$RPCTransactionImpl extends _RPCTransaction {
   }
 
   final Map<String, dynamic> _reference;
-
   @override
   @JsonKey(name: 'reference')
   Map<String, dynamic> get reference {
@@ -409,49 +393,38 @@ abstract class _RPCTransaction extends RPCTransaction {
       @JsonKey(name: 'reference') required final Map<String, dynamic> reference,
       @JsonKey(name: 'signature') required final String signature,
       @JsonKey(name: 'size') required final int size}) = _$RPCTransactionImpl;
-
   _RPCTransaction._() : super._();
 
   @override
   @JsonKey(name: 'hash')
   String get hash;
-
   @override
   @JsonKey(name: 'data')
   TransactionType get data;
-
   @override
   @JsonKey(name: 'fee')
   int get fee;
-
   @override
   @JsonKey(name: 'version')
   int get version;
-
   @override
   @JsonKey(name: 'nonce')
   int get nonce;
-
   @override
   @JsonKey(name: 'source')
   String get source;
-
   @override
   @JsonKey(name: 'range_proof')
   List<dynamic> get rangeProof;
-
   @override
   @JsonKey(name: 'source_commitments')
   List<dynamic> get sourceCommitments;
-
   @override
   @JsonKey(name: 'reference')
   Map<String, dynamic> get reference;
-
   @override
   @JsonKey(name: 'signature')
   String get signature;
-
   @override
   @JsonKey(name: 'size')
   int get size;
