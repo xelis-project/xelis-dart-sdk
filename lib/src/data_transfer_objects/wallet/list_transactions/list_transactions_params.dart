@@ -12,6 +12,7 @@ class ListTransactionsParams with _$ListTransactionsParams {
   /// @nodoc
   @JsonSerializable(includeIfNull: false)
   const factory ListTransactionsParams({
+    @JsonKey(name: 'asset') String? asset,
     @JsonKey(name: 'min_topoheight') int? minTopoHeight,
     @JsonKey(name: 'max_topoheight') int? maxTopoHeight,
     @JsonKey(name: 'address') String? address,

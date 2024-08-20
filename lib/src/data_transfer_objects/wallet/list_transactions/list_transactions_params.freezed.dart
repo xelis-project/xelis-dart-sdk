@@ -21,18 +21,27 @@ ListTransactionsParams _$ListTransactionsParamsFromJson(
 
 /// @nodoc
 mixin _$ListTransactionsParams {
+  @JsonKey(name: 'asset')
+  String? get asset => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'min_topoheight')
   int? get minTopoHeight => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'max_topoheight')
   int? get maxTopoHeight => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'address')
   String? get address => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'accept_incoming')
   bool? get acceptIncoming => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'accept_outgoing')
   bool? get acceptOutgoing => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'accept_coinbase')
   bool? get acceptCoinbase => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'accept_burn')
   bool? get acceptBurn => throw _privateConstructorUsedError; // TODO
   @JsonKey(name: 'query')
@@ -53,9 +62,11 @@ abstract class $ListTransactionsParamsCopyWith<$Res> {
   factory $ListTransactionsParamsCopyWith(ListTransactionsParams value,
           $Res Function(ListTransactionsParams) then) =
       _$ListTransactionsParamsCopyWithImpl<$Res, ListTransactionsParams>;
+
   @useResult
   $Res call(
-      {@JsonKey(name: 'min_topoheight') int? minTopoHeight,
+      {@JsonKey(name: 'asset') String? asset,
+      @JsonKey(name: 'min_topoheight') int? minTopoHeight,
       @JsonKey(name: 'max_topoheight') int? maxTopoHeight,
       @JsonKey(name: 'address') String? address,
       @JsonKey(name: 'accept_incoming') bool? acceptIncoming,
@@ -73,6 +84,7 @@ class _$ListTransactionsParamsCopyWithImpl<$Res,
 
   // ignore: unused_field
   final $Val _value;
+
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -81,6 +93,7 @@ class _$ListTransactionsParamsCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? asset = freezed,
     Object? minTopoHeight = freezed,
     Object? maxTopoHeight = freezed,
     Object? address = freezed,
@@ -91,6 +104,10 @@ class _$ListTransactionsParamsCopyWithImpl<$Res,
     Object? query = freezed,
   }) {
     return _then(_value.copyWith(
+      asset: freezed == asset
+          ? _value.asset
+          : asset // ignore: cast_nullable_to_non_nullable
+              as String?,
       minTopoHeight: freezed == minTopoHeight
           ? _value.minTopoHeight
           : minTopoHeight // ignore: cast_nullable_to_non_nullable
@@ -134,10 +151,12 @@ abstract class _$$ListTransactionsParamsImplCopyWith<$Res>
           _$ListTransactionsParamsImpl value,
           $Res Function(_$ListTransactionsParamsImpl) then) =
       __$$ListTransactionsParamsImplCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'min_topoheight') int? minTopoHeight,
+      {@JsonKey(name: 'asset') String? asset,
+      @JsonKey(name: 'min_topoheight') int? minTopoHeight,
       @JsonKey(name: 'max_topoheight') int? maxTopoHeight,
       @JsonKey(name: 'address') String? address,
       @JsonKey(name: 'accept_incoming') bool? acceptIncoming,
@@ -162,6 +181,7 @@ class __$$ListTransactionsParamsImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? asset = freezed,
     Object? minTopoHeight = freezed,
     Object? maxTopoHeight = freezed,
     Object? address = freezed,
@@ -172,6 +192,10 @@ class __$$ListTransactionsParamsImplCopyWithImpl<$Res>
     Object? query = freezed,
   }) {
     return _then(_$ListTransactionsParamsImpl(
+      asset: freezed == asset
+          ? _value.asset
+          : asset // ignore: cast_nullable_to_non_nullable
+              as String?,
       minTopoHeight: freezed == minTopoHeight
           ? _value.minTopoHeight
           : minTopoHeight // ignore: cast_nullable_to_non_nullable
@@ -213,7 +237,8 @@ class __$$ListTransactionsParamsImplCopyWithImpl<$Res>
 @JsonSerializable(includeIfNull: false)
 class _$ListTransactionsParamsImpl implements _ListTransactionsParams {
   const _$ListTransactionsParamsImpl(
-      {@JsonKey(name: 'min_topoheight') this.minTopoHeight,
+      {@JsonKey(name: 'asset') this.asset,
+      @JsonKey(name: 'min_topoheight') this.minTopoHeight,
       @JsonKey(name: 'max_topoheight') this.maxTopoHeight,
       @JsonKey(name: 'address') this.address,
       @JsonKey(name: 'accept_incoming') this.acceptIncoming,
@@ -225,6 +250,9 @@ class _$ListTransactionsParamsImpl implements _ListTransactionsParams {
   factory _$ListTransactionsParamsImpl.fromJson(Map<String, dynamic> json) =>
       _$$ListTransactionsParamsImplFromJson(json);
 
+  @override
+  @JsonKey(name: 'asset')
+  final String? asset;
   @override
   @JsonKey(name: 'min_topoheight')
   final int? minTopoHeight;
@@ -246,6 +274,7 @@ class _$ListTransactionsParamsImpl implements _ListTransactionsParams {
   @override
   @JsonKey(name: 'accept_burn')
   final bool? acceptBurn;
+
 // TODO
   @override
   @JsonKey(name: 'query')
@@ -253,7 +282,7 @@ class _$ListTransactionsParamsImpl implements _ListTransactionsParams {
 
   @override
   String toString() {
-    return 'ListTransactionsParams(minTopoHeight: $minTopoHeight, maxTopoHeight: $maxTopoHeight, address: $address, acceptIncoming: $acceptIncoming, acceptOutgoing: $acceptOutgoing, acceptCoinbase: $acceptCoinbase, acceptBurn: $acceptBurn, query: $query)';
+    return 'ListTransactionsParams(asset: $asset, minTopoHeight: $minTopoHeight, maxTopoHeight: $maxTopoHeight, address: $address, acceptIncoming: $acceptIncoming, acceptOutgoing: $acceptOutgoing, acceptCoinbase: $acceptCoinbase, acceptBurn: $acceptBurn, query: $query)';
   }
 
   @override
@@ -261,6 +290,7 @@ class _$ListTransactionsParamsImpl implements _ListTransactionsParams {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ListTransactionsParamsImpl &&
+            (identical(other.asset, asset) || other.asset == asset) &&
             (identical(other.minTopoHeight, minTopoHeight) ||
                 other.minTopoHeight == minTopoHeight) &&
             (identical(other.maxTopoHeight, maxTopoHeight) ||
@@ -281,6 +311,7 @@ class _$ListTransactionsParamsImpl implements _ListTransactionsParams {
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      asset,
       minTopoHeight,
       maxTopoHeight,
       address,
@@ -309,7 +340,8 @@ class _$ListTransactionsParamsImpl implements _ListTransactionsParams {
 
 abstract class _ListTransactionsParams implements ListTransactionsParams {
   const factory _ListTransactionsParams(
-          {@JsonKey(name: 'min_topoheight') final int? minTopoHeight,
+          {@JsonKey(name: 'asset') final String? asset,
+          @JsonKey(name: 'min_topoheight') final int? minTopoHeight,
           @JsonKey(name: 'max_topoheight') final int? maxTopoHeight,
           @JsonKey(name: 'address') final String? address,
           @JsonKey(name: 'accept_incoming') final bool? acceptIncoming,
@@ -323,23 +355,33 @@ abstract class _ListTransactionsParams implements ListTransactionsParams {
       _$ListTransactionsParamsImpl.fromJson;
 
   @override
+  @JsonKey(name: 'asset')
+  String? get asset;
+
+  @override
   @JsonKey(name: 'min_topoheight')
   int? get minTopoHeight;
+
   @override
   @JsonKey(name: 'max_topoheight')
   int? get maxTopoHeight;
+
   @override
   @JsonKey(name: 'address')
   String? get address;
+
   @override
   @JsonKey(name: 'accept_incoming')
   bool? get acceptIncoming;
+
   @override
   @JsonKey(name: 'accept_outgoing')
   bool? get acceptOutgoing;
+
   @override
   @JsonKey(name: 'accept_coinbase')
   bool? get acceptCoinbase;
+
   @override
   @JsonKey(name: 'accept_burn')
   bool? get acceptBurn; // TODO

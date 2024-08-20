@@ -23,7 +23,6 @@ StableTopoheightChangedEvent _$StableTopoheightChangedEventFromJson(
 mixin _$StableTopoheightChangedEvent {
   @JsonKey(name: 'previous_stable_topoheight')
   int get previousStableTopoheight => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'new_stable_topoheight')
   int get newStableTopoheight => throw _privateConstructorUsedError;
 
@@ -44,7 +43,6 @@ abstract class $StableTopoheightChangedEventCopyWith<$Res> {
           $Res Function(StableTopoheightChangedEvent) then) =
       _$StableTopoheightChangedEventCopyWithImpl<$Res,
           StableTopoheightChangedEvent>;
-
   @useResult
   $Res call(
       {@JsonKey(name: 'previous_stable_topoheight')
@@ -60,7 +58,6 @@ class _$StableTopoheightChangedEventCopyWithImpl<$Res,
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -92,7 +89,6 @@ abstract class _$$StableTopoheightChangedEventImplCopyWith<$Res>
           _$StableTopoheightChangedEventImpl value,
           $Res Function(_$StableTopoheightChangedEventImpl) then) =
       __$$StableTopoheightChangedEventImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -208,7 +204,6 @@ abstract class _StableTopoheightChangedEvent
   @override
   @JsonKey(name: 'previous_stable_topoheight')
   int get previousStableTopoheight;
-
   @override
   @JsonKey(name: 'new_stable_topoheight')
   int get newStableTopoheight;

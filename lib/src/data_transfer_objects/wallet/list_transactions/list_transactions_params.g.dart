@@ -11,6 +11,7 @@ part of 'list_transactions_params.dart';
 _$ListTransactionsParamsImpl _$$ListTransactionsParamsImplFromJson(
         Map<String, dynamic> json) =>
     _$ListTransactionsParamsImpl(
+      asset: json['asset'] as String?,
       minTopoHeight: (json['min_topoheight'] as num?)?.toInt(),
       maxTopoHeight: (json['max_topoheight'] as num?)?.toInt(),
       address: json['address'] as String?,
@@ -31,6 +32,7 @@ Map<String, dynamic> _$$ListTransactionsParamsImplToJson(
     }
   }
 
+  writeNotNull('asset', instance.asset);
   writeNotNull('min_topoheight', instance.minTopoHeight);
   writeNotNull('max_topoheight', instance.maxTopoHeight);
   writeNotNull('address', instance.address);
