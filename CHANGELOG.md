@@ -1,3 +1,15 @@
+## 0.20.0
+
+Daemon API upgrade :
+
+- new makeIntegratedAddress RPC method.
+- add StableHeightChanged event.
+- fix TransactionResponse/RPCTransaction.
+
+Wallet API upgrade :
+
+- add asset in ListTransactionParams.
+
 ## 0.19.0
 
 Daemon API upgrade :
