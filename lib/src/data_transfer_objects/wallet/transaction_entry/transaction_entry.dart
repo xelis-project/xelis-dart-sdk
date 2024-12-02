@@ -13,11 +13,25 @@ class TransactionEntry with _$TransactionEntry {
     required String hash,
     required int topoHeight,
     required TransactionEntryType txEntryType,
+    DateTime? timestamp,
   }) = _TransactionEntry;
 
   /// @nodoc
   factory TransactionEntry.fromJson(Map<String, dynamic> json) {
     if (json
+        case {
+          'hash': final String hash,
+          'topoheight': final int topoHeight,
+          'timestamp': final int timestamp,
+          'coinbase': final Map<String, dynamic> coinbase,
+        }) {
+      return TransactionEntry(
+        hash: hash,
+        topoHeight: topoHeight,
+        timestamp: DateTime.fromMillisecondsSinceEpoch(timestamp),
+        txEntryType: CoinbaseEntry.fromJson(coinbase),
+      );
+    } else if (json
         case {
           'hash': final String hash,
           'topoheight': final int topoHeight,
@@ -27,6 +41,19 @@ class TransactionEntry with _$TransactionEntry {
         hash: hash,
         topoHeight: topoHeight,
         txEntryType: CoinbaseEntry.fromJson(coinbase),
+      );
+    } else if (json
+        case {
+          'hash': final String hash,
+          'topoheight': final int topoHeight,
+          'timestamp': final int timestamp,
+          'burn': final Map<String, dynamic> burn,
+        }) {
+      return TransactionEntry(
+        hash: hash,
+        topoHeight: topoHeight,
+        timestamp: DateTime.fromMillisecondsSinceEpoch(timestamp),
+        txEntryType: BurnEntry.fromJson(burn),
       );
     } else if (json
         case {
@@ -43,12 +70,38 @@ class TransactionEntry with _$TransactionEntry {
         case {
           'hash': final String hash,
           'topoheight': final int topoHeight,
+          'timestamp': final int timestamp,
+          'incoming': final Map<String, dynamic> incoming,
+        }) {
+      return TransactionEntry(
+        hash: hash,
+        topoHeight: topoHeight,
+        timestamp: DateTime.fromMillisecondsSinceEpoch(timestamp),
+        txEntryType: IncomingEntry.fromJson(incoming),
+      );
+    } else if (json
+        case {
+          'hash': final String hash,
+          'topoheight': final int topoHeight,
           'incoming': final Map<String, dynamic> incoming,
         }) {
       return TransactionEntry(
         hash: hash,
         topoHeight: topoHeight,
         txEntryType: IncomingEntry.fromJson(incoming),
+      );
+    } else if (json
+        case {
+          'hash': final String hash,
+          'topoheight': final int topoHeight,
+          'timestamp': final int timestamp,
+          'outgoing': final Map<String, dynamic> outgoing,
+        }) {
+      return TransactionEntry(
+        hash: hash,
+        topoHeight: topoHeight,
+        timestamp: DateTime.fromMillisecondsSinceEpoch(timestamp),
+        txEntryType: OutgoingEntry.fromJson(outgoing),
       );
     } else if (json
         case {

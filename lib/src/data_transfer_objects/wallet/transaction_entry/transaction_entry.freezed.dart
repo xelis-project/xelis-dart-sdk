@@ -19,6 +19,7 @@ mixin _$TransactionEntry {
   String get hash => throw _privateConstructorUsedError;
   int get topoHeight => throw _privateConstructorUsedError;
   TransactionEntryType get txEntryType => throw _privateConstructorUsedError;
+  DateTime? get timestamp => throw _privateConstructorUsedError;
 
   /// Create a copy of TransactionEntry
   /// with the given fields replaced by the non-null parameter values.
@@ -33,7 +34,11 @@ abstract class $TransactionEntryCopyWith<$Res> {
           TransactionEntry value, $Res Function(TransactionEntry) then) =
       _$TransactionEntryCopyWithImpl<$Res, TransactionEntry>;
   @useResult
-  $Res call({String hash, int topoHeight, TransactionEntryType txEntryType});
+  $Res call(
+      {String hash,
+      int topoHeight,
+      TransactionEntryType txEntryType,
+      DateTime? timestamp});
 
   $TransactionEntryTypeCopyWith<$Res> get txEntryType;
 }
@@ -56,6 +61,7 @@ class _$TransactionEntryCopyWithImpl<$Res, $Val extends TransactionEntry>
     Object? hash = null,
     Object? topoHeight = null,
     Object? txEntryType = null,
+    Object? timestamp = freezed,
   }) {
     return _then(_value.copyWith(
       hash: null == hash
@@ -70,6 +76,10 @@ class _$TransactionEntryCopyWithImpl<$Res, $Val extends TransactionEntry>
           ? _value.txEntryType
           : txEntryType // ignore: cast_nullable_to_non_nullable
               as TransactionEntryType,
+      timestamp: freezed == timestamp
+          ? _value.timestamp
+          : timestamp // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
     ) as $Val);
   }
 
@@ -92,7 +102,11 @@ abstract class _$$TransactionEntryImplCopyWith<$Res>
       __$$TransactionEntryImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String hash, int topoHeight, TransactionEntryType txEntryType});
+  $Res call(
+      {String hash,
+      int topoHeight,
+      TransactionEntryType txEntryType,
+      DateTime? timestamp});
 
   @override
   $TransactionEntryTypeCopyWith<$Res> get txEntryType;
@@ -114,6 +128,7 @@ class __$$TransactionEntryImplCopyWithImpl<$Res>
     Object? hash = null,
     Object? topoHeight = null,
     Object? txEntryType = null,
+    Object? timestamp = freezed,
   }) {
     return _then(_$TransactionEntryImpl(
       hash: null == hash
@@ -128,6 +143,10 @@ class __$$TransactionEntryImplCopyWithImpl<$Res>
           ? _value.txEntryType
           : txEntryType // ignore: cast_nullable_to_non_nullable
               as TransactionEntryType,
+      timestamp: freezed == timestamp
+          ? _value.timestamp
+          : timestamp // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
     ));
   }
 }
@@ -138,7 +157,8 @@ class _$TransactionEntryImpl implements _TransactionEntry {
   const _$TransactionEntryImpl(
       {required this.hash,
       required this.topoHeight,
-      required this.txEntryType});
+      required this.txEntryType,
+      this.timestamp});
 
   @override
   final String hash;
@@ -146,10 +166,12 @@ class _$TransactionEntryImpl implements _TransactionEntry {
   final int topoHeight;
   @override
   final TransactionEntryType txEntryType;
+  @override
+  final DateTime? timestamp;
 
   @override
   String toString() {
-    return 'TransactionEntry(hash: $hash, topoHeight: $topoHeight, txEntryType: $txEntryType)';
+    return 'TransactionEntry(hash: $hash, topoHeight: $topoHeight, txEntryType: $txEntryType, timestamp: $timestamp)';
   }
 
   @override
@@ -161,11 +183,14 @@ class _$TransactionEntryImpl implements _TransactionEntry {
             (identical(other.topoHeight, topoHeight) ||
                 other.topoHeight == topoHeight) &&
             (identical(other.txEntryType, txEntryType) ||
-                other.txEntryType == txEntryType));
+                other.txEntryType == txEntryType) &&
+            (identical(other.timestamp, timestamp) ||
+                other.timestamp == timestamp));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, hash, topoHeight, txEntryType);
+  int get hashCode =>
+      Object.hash(runtimeType, hash, topoHeight, txEntryType, timestamp);
 
   /// Create a copy of TransactionEntry
   /// with the given fields replaced by the non-null parameter values.
@@ -179,10 +204,10 @@ class _$TransactionEntryImpl implements _TransactionEntry {
 
 abstract class _TransactionEntry implements TransactionEntry {
   const factory _TransactionEntry(
-          {required final String hash,
-          required final int topoHeight,
-          required final TransactionEntryType txEntryType}) =
-      _$TransactionEntryImpl;
+      {required final String hash,
+      required final int topoHeight,
+      required final TransactionEntryType txEntryType,
+      final DateTime? timestamp}) = _$TransactionEntryImpl;
 
   @override
   String get hash;
@@ -190,6 +215,8 @@ abstract class _TransactionEntry implements TransactionEntry {
   int get topoHeight;
   @override
   TransactionEntryType get txEntryType;
+  @override
+  DateTime? get timestamp;
 
   /// Create a copy of TransactionEntry
   /// with the given fields replaced by the non-null parameter values.
