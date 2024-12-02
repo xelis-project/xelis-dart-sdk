@@ -127,7 +127,6 @@ extension DaemonRpcMethodsExtension on DaemonClient {
   /// Returns up-to-date asset's balance for a specific address.
   ///
   /// NOTE: Balance is returned in atomic units.
-  // TODO to verify
   Future<GetBalanceResult> getBalance(
     GetBalanceParams getBalanceParams,
   ) async {
