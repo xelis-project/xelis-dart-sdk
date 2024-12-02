@@ -23,23 +23,15 @@ _$ListTransactionsParamsImpl _$$ListTransactionsParamsImplFromJson(
     );
 
 Map<String, dynamic> _$$ListTransactionsParamsImplToJson(
-    _$ListTransactionsParamsImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('asset', instance.asset);
-  writeNotNull('min_topoheight', instance.minTopoHeight);
-  writeNotNull('max_topoheight', instance.maxTopoHeight);
-  writeNotNull('address', instance.address);
-  writeNotNull('accept_incoming', instance.acceptIncoming);
-  writeNotNull('accept_outgoing', instance.acceptOutgoing);
-  writeNotNull('accept_coinbase', instance.acceptCoinbase);
-  writeNotNull('accept_burn', instance.acceptBurn);
-  writeNotNull('query', instance.query);
-  return val;
-}
+        _$ListTransactionsParamsImpl instance) =>
+    <String, dynamic>{
+      if (instance.asset case final value?) 'asset': value,
+      if (instance.minTopoHeight case final value?) 'min_topoheight': value,
+      if (instance.maxTopoHeight case final value?) 'max_topoheight': value,
+      if (instance.address case final value?) 'address': value,
+      if (instance.acceptIncoming case final value?) 'accept_incoming': value,
+      if (instance.acceptOutgoing case final value?) 'accept_outgoing': value,
+      if (instance.acceptCoinbase case final value?) 'accept_coinbase': value,
+      if (instance.acceptBurn case final value?) 'accept_burn': value,
+      if (instance.query case final value?) 'query': value,
+    };

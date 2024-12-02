@@ -16,16 +16,8 @@ _$GetTopoHeightRangeParamsImpl _$$GetTopoHeightRangeParamsImplFromJson(
     );
 
 Map<String, dynamic> _$$GetTopoHeightRangeParamsImplToJson(
-    _$GetTopoHeightRangeParamsImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('start_topoheight', instance.startTopoHeight);
-  writeNotNull('end_topoheight', instance.endTopoHeight);
-  return val;
-}
+        _$GetTopoHeightRangeParamsImpl instance) =>
+    <String, dynamic>{
+      if (instance.startTopoHeight case final value?) 'start_topoheight': value,
+      if (instance.endTopoHeight case final value?) 'end_topoheight': value,
+    };

@@ -23,7 +23,6 @@ MakeIntegratedAddressParams _$MakeIntegratedAddressParamsFromJson(
 mixin _$MakeIntegratedAddressParams {
   @JsonKey(name: 'address')
   String get address => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'integrated_data')
   dynamic get data => throw _privateConstructorUsedError;
 
@@ -44,7 +43,6 @@ abstract class $MakeIntegratedAddressParamsCopyWith<$Res> {
           $Res Function(MakeIntegratedAddressParams) then) =
       _$MakeIntegratedAddressParamsCopyWithImpl<$Res,
           MakeIntegratedAddressParams>;
-
   @useResult
   $Res call(
       {@JsonKey(name: 'address') String address,
@@ -59,7 +57,6 @@ class _$MakeIntegratedAddressParamsCopyWithImpl<$Res,
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -91,7 +88,6 @@ abstract class _$$MakeIntegratedAddressParamsImplCopyWith<$Res>
           _$MakeIntegratedAddressParamsImpl value,
           $Res Function(_$MakeIntegratedAddressParamsImpl) then) =
       __$$MakeIntegratedAddressParamsImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -198,7 +194,6 @@ abstract class _MakeIntegratedAddressParams
   @override
   @JsonKey(name: 'address')
   String get address;
-
   @override
   @JsonKey(name: 'integrated_data')
   dynamic get data;

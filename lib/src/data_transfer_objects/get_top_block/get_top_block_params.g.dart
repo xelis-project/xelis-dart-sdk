@@ -15,15 +15,7 @@ _$GetTopBlockParamsImpl _$$GetTopBlockParamsImplFromJson(
     );
 
 Map<String, dynamic> _$$GetTopBlockParamsImplToJson(
-    _$GetTopBlockParamsImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('include_txs', instance.includeTxs);
-  return val;
-}
+        _$GetTopBlockParamsImpl instance) =>
+    <String, dynamic>{
+      if (instance.includeTxs case final value?) 'include_txs': value,
+    };

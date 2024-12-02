@@ -16,17 +16,8 @@ _$GetBlockAtTopoHeightParamsImpl _$$GetBlockAtTopoHeightParamsImplFromJson(
     );
 
 Map<String, dynamic> _$$GetBlockAtTopoHeightParamsImplToJson(
-    _$GetBlockAtTopoHeightParamsImpl instance) {
-  final val = <String, dynamic>{
-    'topoheight': instance.topoHeight,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('include_txs', instance.includeTxs);
-  return val;
-}
+        _$GetBlockAtTopoHeightParamsImpl instance) =>
+    <String, dynamic>{
+      'topoheight': instance.topoHeight,
+      if (instance.includeTxs case final value?) 'include_txs': value,
+    };

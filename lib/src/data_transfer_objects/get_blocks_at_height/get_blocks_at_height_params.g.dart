@@ -16,17 +16,8 @@ _$GetBlocksAtHeightParamsImpl _$$GetBlocksAtHeightParamsImplFromJson(
     );
 
 Map<String, dynamic> _$$GetBlocksAtHeightParamsImplToJson(
-    _$GetBlocksAtHeightParamsImpl instance) {
-  final val = <String, dynamic>{
-    'height': instance.height,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('include_txs', instance.includeTxs);
-  return val;
-}
+        _$GetBlocksAtHeightParamsImpl instance) =>
+    <String, dynamic>{
+      'height': instance.height,
+      if (instance.includeTxs case final value?) 'include_txs': value,
+    };

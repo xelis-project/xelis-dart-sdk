@@ -1,3 +1,9 @@
+## 0.20.1
+
+Wallet API upgrade :
+
+- new timestamp field in TransactionEntry (ready for network-upgrade).
+
 ## 0.20.0
 
 Daemon API upgrade :

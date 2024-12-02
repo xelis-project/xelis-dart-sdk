@@ -23,25 +23,18 @@ ListTransactionsParams _$ListTransactionsParamsFromJson(
 mixin _$ListTransactionsParams {
   @JsonKey(name: 'asset')
   String? get asset => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'min_topoheight')
   int? get minTopoHeight => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'max_topoheight')
   int? get maxTopoHeight => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'address')
   String? get address => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'accept_incoming')
   bool? get acceptIncoming => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'accept_outgoing')
   bool? get acceptOutgoing => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'accept_coinbase')
   bool? get acceptCoinbase => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'accept_burn')
   bool? get acceptBurn => throw _privateConstructorUsedError; // TODO
   @JsonKey(name: 'query')
@@ -62,7 +55,6 @@ abstract class $ListTransactionsParamsCopyWith<$Res> {
   factory $ListTransactionsParamsCopyWith(ListTransactionsParams value,
           $Res Function(ListTransactionsParams) then) =
       _$ListTransactionsParamsCopyWithImpl<$Res, ListTransactionsParams>;
-
   @useResult
   $Res call(
       {@JsonKey(name: 'asset') String? asset,
@@ -84,7 +76,6 @@ class _$ListTransactionsParamsCopyWithImpl<$Res,
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -151,7 +142,6 @@ abstract class _$$ListTransactionsParamsImplCopyWith<$Res>
           _$ListTransactionsParamsImpl value,
           $Res Function(_$ListTransactionsParamsImpl) then) =
       __$$ListTransactionsParamsImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -274,7 +264,6 @@ class _$ListTransactionsParamsImpl implements _ListTransactionsParams {
   @override
   @JsonKey(name: 'accept_burn')
   final bool? acceptBurn;
-
 // TODO
   @override
   @JsonKey(name: 'query')
@@ -357,31 +346,24 @@ abstract class _ListTransactionsParams implements ListTransactionsParams {
   @override
   @JsonKey(name: 'asset')
   String? get asset;
-
   @override
   @JsonKey(name: 'min_topoheight')
   int? get minTopoHeight;
-
   @override
   @JsonKey(name: 'max_topoheight')
   int? get maxTopoHeight;
-
   @override
   @JsonKey(name: 'address')
   String? get address;
-
   @override
   @JsonKey(name: 'accept_incoming')
   bool? get acceptIncoming;
-
   @override
   @JsonKey(name: 'accept_outgoing')
   bool? get acceptOutgoing;
-
   @override
   @JsonKey(name: 'accept_coinbase')
   bool? get acceptCoinbase;
-
   @override
   @JsonKey(name: 'accept_burn')
   bool? get acceptBurn; // TODO

@@ -16,16 +16,8 @@ _$GetHeightRangeParamsImpl _$$GetHeightRangeParamsImplFromJson(
     );
 
 Map<String, dynamic> _$$GetHeightRangeParamsImplToJson(
-    _$GetHeightRangeParamsImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('start_height', instance.startHeight);
-  writeNotNull('end_height', instance.endHeight);
-  return val;
-}
+        _$GetHeightRangeParamsImpl instance) =>
+    <String, dynamic>{
+      if (instance.startHeight case final value?) 'start_height': value,
+      if (instance.endHeight case final value?) 'end_height': value,
+    };

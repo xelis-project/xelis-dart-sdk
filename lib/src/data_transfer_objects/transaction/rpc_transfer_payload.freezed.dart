@@ -22,22 +22,16 @@ RPCTransferPayload _$RPCTransferPayloadFromJson(Map<String, dynamic> json) {
 mixin _$RPCTransferPayload {
   @JsonKey(name: 'asset')
   String get asset => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'commitment')
   List<int> get commitment => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'ct_validity_proof')
   Map<String, dynamic> get validityProof => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'destination')
   String get destination => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'receiver_handle')
   List<int> get receiverHandle => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'sender_handle')
   List<int> get senderHandle => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'extra_data')
   dynamic get extraData => throw _privateConstructorUsedError;
 
@@ -56,7 +50,6 @@ abstract class $RPCTransferPayloadCopyWith<$Res> {
   factory $RPCTransferPayloadCopyWith(
           RPCTransferPayload value, $Res Function(RPCTransferPayload) then) =
       _$RPCTransferPayloadCopyWithImpl<$Res, RPCTransferPayload>;
-
   @useResult
   $Res call(
       {@JsonKey(name: 'asset') String asset,
@@ -75,7 +68,6 @@ class _$RPCTransferPayloadCopyWithImpl<$Res, $Val extends RPCTransferPayload>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -131,7 +123,6 @@ abstract class _$$RPCTransferPayloadImplCopyWith<$Res>
   factory _$$RPCTransferPayloadImplCopyWith(_$RPCTransferPayloadImpl value,
           $Res Function(_$RPCTransferPayloadImpl) then) =
       __$$RPCTransferPayloadImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -222,7 +213,6 @@ class _$RPCTransferPayloadImpl implements _RPCTransferPayload {
   @JsonKey(name: 'asset')
   final String asset;
   final List<int> _commitment;
-
   @override
   @JsonKey(name: 'commitment')
   List<int> get commitment {
@@ -232,7 +222,6 @@ class _$RPCTransferPayloadImpl implements _RPCTransferPayload {
   }
 
   final Map<String, dynamic> _validityProof;
-
   @override
   @JsonKey(name: 'ct_validity_proof')
   Map<String, dynamic> get validityProof {
@@ -245,7 +234,6 @@ class _$RPCTransferPayloadImpl implements _RPCTransferPayload {
   @JsonKey(name: 'destination')
   final String destination;
   final List<int> _receiverHandle;
-
   @override
   @JsonKey(name: 'receiver_handle')
   List<int> get receiverHandle {
@@ -255,7 +243,6 @@ class _$RPCTransferPayloadImpl implements _RPCTransferPayload {
   }
 
   final List<int> _senderHandle;
-
   @override
   @JsonKey(name: 'sender_handle')
   List<int> get senderHandle {
@@ -339,27 +326,21 @@ abstract class _RPCTransferPayload implements RPCTransferPayload {
   @override
   @JsonKey(name: 'asset')
   String get asset;
-
   @override
   @JsonKey(name: 'commitment')
   List<int> get commitment;
-
   @override
   @JsonKey(name: 'ct_validity_proof')
   Map<String, dynamic> get validityProof;
-
   @override
   @JsonKey(name: 'destination')
   String get destination;
-
   @override
   @JsonKey(name: 'receiver_handle')
   List<int> get receiverHandle;
-
   @override
   @JsonKey(name: 'sender_handle')
   List<int> get senderHandle;
-
   @override
   @JsonKey(name: 'extra_data')
   dynamic get extraData;

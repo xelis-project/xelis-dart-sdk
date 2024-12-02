@@ -16,17 +16,8 @@ _$GetBlockByHashParamsImpl _$$GetBlockByHashParamsImplFromJson(
     );
 
 Map<String, dynamic> _$$GetBlockByHashParamsImplToJson(
-    _$GetBlockByHashParamsImpl instance) {
-  final val = <String, dynamic>{
-    'hash': instance.hash,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('include_txs', instance.includeTxs);
-  return val;
-}
+        _$GetBlockByHashParamsImpl instance) =>
+    <String, dynamic>{
+      'hash': instance.hash,
+      if (instance.includeTxs case final value?) 'include_txs': value,
+    };
