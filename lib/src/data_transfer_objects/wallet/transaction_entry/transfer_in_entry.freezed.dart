@@ -25,7 +25,7 @@ mixin _$TransferInEntry {
   @JsonKey(name: 'asset')
   String get asset => throw _privateConstructorUsedError;
   @JsonKey(name: 'extra_data')
-  dynamic get extraData => throw _privateConstructorUsedError;
+  ExtraData get extraData => throw _privateConstructorUsedError;
 
   /// Serializes this TransferInEntry to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -46,7 +46,9 @@ abstract class $TransferInEntryCopyWith<$Res> {
   $Res call(
       {@JsonKey(name: 'amount') int amount,
       @JsonKey(name: 'asset') String asset,
-      @JsonKey(name: 'extra_data') dynamic extraData});
+      @JsonKey(name: 'extra_data') ExtraData extraData});
+
+  $ExtraDataCopyWith<$Res> get extraData;
 }
 
 /// @nodoc
@@ -66,7 +68,7 @@ class _$TransferInEntryCopyWithImpl<$Res, $Val extends TransferInEntry>
   $Res call({
     Object? amount = null,
     Object? asset = null,
-    Object? extraData = freezed,
+    Object? extraData = null,
   }) {
     return _then(_value.copyWith(
       amount: null == amount
@@ -77,11 +79,21 @@ class _$TransferInEntryCopyWithImpl<$Res, $Val extends TransferInEntry>
           ? _value.asset
           : asset // ignore: cast_nullable_to_non_nullable
               as String,
-      extraData: freezed == extraData
+      extraData: null == extraData
           ? _value.extraData
           : extraData // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as ExtraData,
     ) as $Val);
+  }
+
+  /// Create a copy of TransferInEntry
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ExtraDataCopyWith<$Res> get extraData {
+    return $ExtraDataCopyWith<$Res>(_value.extraData, (value) {
+      return _then(_value.copyWith(extraData: value) as $Val);
+    });
   }
 }
 
@@ -96,7 +108,10 @@ abstract class _$$TransferInEntryImplCopyWith<$Res>
   $Res call(
       {@JsonKey(name: 'amount') int amount,
       @JsonKey(name: 'asset') String asset,
-      @JsonKey(name: 'extra_data') dynamic extraData});
+      @JsonKey(name: 'extra_data') ExtraData extraData});
+
+  @override
+  $ExtraDataCopyWith<$Res> get extraData;
 }
 
 /// @nodoc
@@ -114,7 +129,7 @@ class __$$TransferInEntryImplCopyWithImpl<$Res>
   $Res call({
     Object? amount = null,
     Object? asset = null,
-    Object? extraData = freezed,
+    Object? extraData = null,
   }) {
     return _then(_$TransferInEntryImpl(
       amount: null == amount
@@ -125,10 +140,10 @@ class __$$TransferInEntryImplCopyWithImpl<$Res>
           ? _value.asset
           : asset // ignore: cast_nullable_to_non_nullable
               as String,
-      extraData: freezed == extraData
+      extraData: null == extraData
           ? _value.extraData
           : extraData // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as ExtraData,
     ));
   }
 }
@@ -152,7 +167,7 @@ class _$TransferInEntryImpl implements _TransferInEntry {
   final String asset;
   @override
   @JsonKey(name: 'extra_data')
-  final dynamic extraData;
+  final ExtraData extraData;
 
   @override
   String toString() {
@@ -166,13 +181,13 @@ class _$TransferInEntryImpl implements _TransferInEntry {
             other is _$TransferInEntryImpl &&
             (identical(other.amount, amount) || other.amount == amount) &&
             (identical(other.asset, asset) || other.asset == asset) &&
-            const DeepCollectionEquality().equals(other.extraData, extraData));
+            (identical(other.extraData, extraData) ||
+                other.extraData == extraData));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, amount, asset,
-      const DeepCollectionEquality().hash(extraData));
+  int get hashCode => Object.hash(runtimeType, amount, asset, extraData);
 
   /// Create a copy of TransferInEntry
   /// with the given fields replaced by the non-null parameter values.
@@ -195,7 +210,7 @@ abstract class _TransferInEntry implements TransferInEntry {
   const factory _TransferInEntry(
           {@JsonKey(name: 'amount') required final int amount,
           @JsonKey(name: 'asset') required final String asset,
-          @JsonKey(name: 'extra_data') required final dynamic extraData}) =
+          @JsonKey(name: 'extra_data') required final ExtraData extraData}) =
       _$TransferInEntryImpl;
 
   factory _TransferInEntry.fromJson(Map<String, dynamic> json) =
@@ -209,7 +224,7 @@ abstract class _TransferInEntry implements TransferInEntry {
   String get asset;
   @override
   @JsonKey(name: 'extra_data')
-  dynamic get extraData;
+  ExtraData get extraData;
 
   /// Create a copy of TransferInEntry
   /// with the given fields replaced by the non-null parameter values.

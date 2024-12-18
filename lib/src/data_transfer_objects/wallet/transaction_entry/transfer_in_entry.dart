@@ -1,6 +1,7 @@
 // ignore_for_file: invalid_annotation_target
 
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:xelis_dart_sdk/xelis_dart_sdk.dart';
 
 part 'transfer_in_entry.freezed.dart';
 
@@ -13,7 +14,7 @@ class TransferInEntry with _$TransferInEntry {
   const factory TransferInEntry({
     @JsonKey(name: 'amount') required int amount,
     @JsonKey(name: 'asset') required String asset,
-    @JsonKey(name: 'extra_data') required dynamic extraData,
+    @JsonKey(name: 'extra_data') required ExtraData extraData,
   }) = _TransferInEntry;
 
   /// @nodoc

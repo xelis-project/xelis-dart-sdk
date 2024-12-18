@@ -85,6 +85,7 @@ export 'wallet/get_address/get_address_params.dart';
 export 'wallet/get_balance/get_wallet_balance_params.dart';
 export 'wallet/list_transactions/list_transactions_params.dart';
 export 'wallet/rescan/rescan_params.dart';
+export 'wallet/transaction_entry/extra_data.dart';
 export 'wallet/transaction_entry/transaction_entry.dart';
 export 'wallet/transaction_entry/transaction_entry_type.dart';
 export 'wallet/transaction_entry/transfer_in_entry.dart';
