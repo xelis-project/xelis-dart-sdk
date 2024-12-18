@@ -514,4 +514,14 @@ extension DaemonRpcMethodsExtension on DaemonClient {
     );
     return result as String;
   }
+
+  /// Decrypt extra data from a transaction.
+  Future<dynamic> decryptExtraData(
+    DecryptExtraDataParams decryptExtraDataParams,
+  ) async {
+    return sendRequest(
+      DaemonMethod.decryptExtraData,
+      decryptExtraDataParams.toJson(),
+    );
+  }
 }
