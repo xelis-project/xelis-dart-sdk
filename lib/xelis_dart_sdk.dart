@@ -1,5 +1,5 @@
 /// Software Development Kit in Dart for Xelis Blockchain.
-library xelis_dart_sdk;
+library;
 
 export 'src/data_transfer_objects/dtos.dart';
 export 'src/repositories/common/client_state.dart' show ClientState;

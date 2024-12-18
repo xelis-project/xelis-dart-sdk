@@ -1,3 +1,14 @@
+# 0.21.0
+
+Wallet API upgrade :
+
+- new historySynced event.
+- ExtraData dto.
+
+Daemon API upgrade :
+
+- new getExtraData RPC method.
+
 ## 0.20.1
 
 Wallet API upgrade :
