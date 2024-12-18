@@ -125,7 +125,11 @@ enum WalletEvent implements XelisJsonKey {
   online('online'),
 
   /// When network state changed to Offline.
-  offline('offline');
+  offline('offline'),
+
+  /// When the history has been synced again
+  /// Contains current topoheight as value
+  historySynced('history_synced');
 
   /// Creates a new [WalletEvent] instance.
   const WalletEvent(this.jsonKey);
@@ -147,6 +151,8 @@ enum WalletEvent implements XelisJsonKey {
         return WalletEvent.online;
       case 'offline':
         return WalletEvent.offline;
+      case 'history_ synced':
+        return WalletEvent.historySynced;
       default:
         throw Exception('Unknown event: $value');
     }

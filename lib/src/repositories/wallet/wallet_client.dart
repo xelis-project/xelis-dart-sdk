@@ -23,6 +23,7 @@ class WalletClient extends RpcClientRepository {
       WalletEvent.rescan: <void Function(int topoheight)>[],
       WalletEvent.online: <void Function()>[],
       WalletEvent.offline: <void Function()>[],
+      WalletEvent.historySynced: <void Function(int topoheight)>[],
     };
 
     _basicAuth = stringToBase64('$username:$password');
@@ -69,6 +70,10 @@ class WalletClient extends RpcClientRepository {
       case WalletEvent.offline:
         _logInfo('Offline event');
         _triggerCallbacks(event, null);
+      case WalletEvent.historySynced:
+        final topoheight = result['topoheight'];
+        _logInfo('History synced event: $topoheight');
+        _triggerCallbacks(event, topoheight);
     }
   }
 
