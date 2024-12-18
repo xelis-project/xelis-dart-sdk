@@ -1,3 +1,8 @@
+# 0.21.1
+
+## Wallet API upgrade :
+- fix typo in json key for historySynced event.
+
 # 0.21.0
 
 Wallet API upgrade :

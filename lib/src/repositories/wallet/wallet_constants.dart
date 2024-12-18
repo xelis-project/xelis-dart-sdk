@@ -151,7 +151,7 @@ enum WalletEvent implements XelisJsonKey {
         return WalletEvent.online;
       case 'offline':
         return WalletEvent.offline;
-      case 'history_ synced':
+      case 'history_synced':
         return WalletEvent.historySynced;
       default:
         throw Exception('Unknown event: $value');
