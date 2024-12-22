@@ -82,6 +82,9 @@ enum WalletMethod implements XelisJsonKey {
   getMatchingKeys('get_matching_keys'),
 
   /// TODO: implement
+  countMatchingEntries('count_matching_entries'),
+
+  /// TODO: implement
   getValueFromKey('get_value_from_key'),
 
   /// TODO: implement
@@ -89,6 +92,9 @@ enum WalletMethod implements XelisJsonKey {
 
   /// TODO: implement
   delete('delete'),
+
+  /// TODO: implement
+  deleteTreeEntries('delete_tree_entries'),
 
   /// TODO: implement
   hasKey('has_key'),

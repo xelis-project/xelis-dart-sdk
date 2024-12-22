@@ -23,7 +23,6 @@ DecryptExtraDataWalletParams _$DecryptExtraDataWalletParamsFromJson(
 mixin _$DecryptExtraDataWalletParams {
   @JsonKey(name: 'extra_data')
   dynamic get extraData => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'role')
   Role get role => throw _privateConstructorUsedError;
 
@@ -44,7 +43,6 @@ abstract class $DecryptExtraDataWalletParamsCopyWith<$Res> {
           $Res Function(DecryptExtraDataWalletParams) then) =
       _$DecryptExtraDataWalletParamsCopyWithImpl<$Res,
           DecryptExtraDataWalletParams>;
-
   @useResult
   $Res call(
       {@JsonKey(name: 'extra_data') dynamic extraData,
@@ -59,7 +57,6 @@ class _$DecryptExtraDataWalletParamsCopyWithImpl<$Res,
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -91,7 +88,6 @@ abstract class _$$DecryptExtraDataWalletParamsImplCopyWith<$Res>
           _$DecryptExtraDataWalletParamsImpl value,
           $Res Function(_$DecryptExtraDataWalletParamsImpl) then) =
       __$$DecryptExtraDataWalletParamsImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -199,7 +195,6 @@ abstract class _DecryptExtraDataWalletParams
   @override
   @JsonKey(name: 'extra_data')
   dynamic get extraData;
-
   @override
   @JsonKey(name: 'role')
   Role get role;
