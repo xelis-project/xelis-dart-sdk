@@ -133,6 +133,19 @@ extension WalletRpcMethodsExtension on WalletClient {
     return WalletTransactionResponse.fromJson(result as Map<String, dynamic>);
   }
 
+  /// Build a transaction offline in the wallet by providing directly exact balances and reference.
+  ///
+  /// It cannot be broadcasted to the network.
+  Future<WalletTransactionResponse> buildTransactionOffline(
+    BuildTransactionOfflineParams buildTransactionOfflineParams,
+  ) async {
+    final result = await sendRequest(
+      WalletMethod.buildTransactionOffline,
+      buildTransactionOfflineParams.toJson(),
+    );
+    return WalletTransactionResponse.fromJson(result as Map<String, dynamic>);
+  }
+
   /// Search for transactions based on various parameters.
   /// By default it accepts every TXs.
   Future<List<TransactionEntry>> listTransactions([

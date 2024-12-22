@@ -50,6 +50,11 @@ enum WalletMethod implements XelisJsonKey {
   /// represents 1 XELIS because of 5 decimals precision.
   buildTransaction('build_transaction'),
 
+  /// Build a transaction offline in the wallet by providing directly exact balances and reference.
+  ///
+  /// It cannot be broadcasted to the network.
+  buildTransactionOffline('build_transaction_offline'),
+
   /// Search for transactions based on various parameters.
   /// By default it accepts every TXs.
   listTransactions('list_transactions'),
