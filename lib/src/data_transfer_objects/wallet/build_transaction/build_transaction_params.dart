@@ -1,4 +1,4 @@
-// ignore_for_file: invalid_annotation_target, always_put_required_named_parameters_first
+// ignore_for_file: invalid_annotation_target
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:xelis_dart_sdk/xelis_dart_sdk.dart';
@@ -12,8 +12,11 @@ class BuildTransactionParams with _$BuildTransactionParams {
   const factory BuildTransactionParams({
     required TransactionType transactionType,
     FeeBuilder? feeBuilder,
-    required bool broadcast,
+    int? nonce,
+    int? txVersion,
+    bool? broadcast,
     bool? txAsHex,
+    List<SignerId>? signers,
   }) = _BuildTransactionParams;
 
   const BuildTransactionParams._();
@@ -23,14 +26,20 @@ class BuildTransactionParams with _$BuildTransactionParams {
         Transfers() => {
             ...transactionType.toJson(),
             if (feeBuilder != null) 'fee': feeBuilder,
-            'broadcast': broadcast,
+            if (nonce != null) 'nonce': nonce,
+            if (txVersion != null) 'tx_version': txVersion,
+            if (broadcast != null) 'broadcast': broadcast,
             if (txAsHex != null) 'tx_as_hex': txAsHex,
+            if (signers != null) 'signers': signers,
           },
         Burn() => {
             'burn': transactionType.toJson(),
             if (feeBuilder != null) 'fee': feeBuilder,
-            'broadcast': broadcast,
+            if (nonce != null) 'nonce': nonce,
+            if (txVersion != null) 'tx_version': txVersion,
+            if (broadcast != null) 'broadcast': broadcast,
             if (txAsHex != null) 'tx_as_hex': txAsHex,
+            if (signers != null) 'signers': signers,
           },
       };
 }

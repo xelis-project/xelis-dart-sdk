@@ -79,6 +79,7 @@ export 'versioned_balance/versioned_balance.dart';
 export 'wallet/balance_changed_event/balance_changed_event.dart';
 export 'wallet/build_transaction/build_transaction_params.dart';
 export 'wallet/build_transaction/fee_builder.dart';
+export 'wallet/build_transaction/signer_id.dart';
 export 'wallet/build_transaction/wallet_transaction_response.dart';
 export 'wallet/decrypt_extra_data/decrypt_extra_data_params.dart';
 export 'wallet/decrypt_extra_data/role.dart';

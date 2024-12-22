@@ -17,9 +17,18 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$BuildTransactionParams {
   TransactionType get transactionType => throw _privateConstructorUsedError;
+
   FeeBuilder? get feeBuilder => throw _privateConstructorUsedError;
-  bool get broadcast => throw _privateConstructorUsedError;
+
+  int? get nonce => throw _privateConstructorUsedError;
+
+  int? get txVersion => throw _privateConstructorUsedError;
+
+  bool? get broadcast => throw _privateConstructorUsedError;
+
   bool? get txAsHex => throw _privateConstructorUsedError;
+
+  List<SignerId>? get signers => throw _privateConstructorUsedError;
 
   /// Create a copy of BuildTransactionParams
   /// with the given fields replaced by the non-null parameter values.
@@ -33,14 +42,19 @@ abstract class $BuildTransactionParamsCopyWith<$Res> {
   factory $BuildTransactionParamsCopyWith(BuildTransactionParams value,
           $Res Function(BuildTransactionParams) then) =
       _$BuildTransactionParamsCopyWithImpl<$Res, BuildTransactionParams>;
+
   @useResult
   $Res call(
       {TransactionType transactionType,
       FeeBuilder? feeBuilder,
-      bool broadcast,
-      bool? txAsHex});
+      int? nonce,
+      int? txVersion,
+      bool? broadcast,
+      bool? txAsHex,
+      List<SignerId>? signers});
 
   $TransactionTypeCopyWith<$Res> get transactionType;
+
   $FeeBuilderCopyWith<$Res>? get feeBuilder;
 }
 
@@ -52,6 +66,7 @@ class _$BuildTransactionParamsCopyWithImpl<$Res,
 
   // ignore: unused_field
   final $Val _value;
+
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -62,8 +77,11 @@ class _$BuildTransactionParamsCopyWithImpl<$Res,
   $Res call({
     Object? transactionType = null,
     Object? feeBuilder = freezed,
-    Object? broadcast = null,
+    Object? nonce = freezed,
+    Object? txVersion = freezed,
+    Object? broadcast = freezed,
     Object? txAsHex = freezed,
+    Object? signers = freezed,
   }) {
     return _then(_value.copyWith(
       transactionType: null == transactionType
@@ -74,14 +92,26 @@ class _$BuildTransactionParamsCopyWithImpl<$Res,
           ? _value.feeBuilder
           : feeBuilder // ignore: cast_nullable_to_non_nullable
               as FeeBuilder?,
-      broadcast: null == broadcast
+      nonce: freezed == nonce
+          ? _value.nonce
+          : nonce // ignore: cast_nullable_to_non_nullable
+              as int?,
+      txVersion: freezed == txVersion
+          ? _value.txVersion
+          : txVersion // ignore: cast_nullable_to_non_nullable
+              as int?,
+      broadcast: freezed == broadcast
           ? _value.broadcast
           : broadcast // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       txAsHex: freezed == txAsHex
           ? _value.txAsHex
           : txAsHex // ignore: cast_nullable_to_non_nullable
               as bool?,
+      signers: freezed == signers
+          ? _value.signers
+          : signers // ignore: cast_nullable_to_non_nullable
+              as List<SignerId>?,
     ) as $Val);
   }
 
@@ -117,16 +147,21 @@ abstract class _$$BuildTransactionParamsImplCopyWith<$Res>
           _$BuildTransactionParamsImpl value,
           $Res Function(_$BuildTransactionParamsImpl) then) =
       __$$BuildTransactionParamsImplCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call(
       {TransactionType transactionType,
       FeeBuilder? feeBuilder,
-      bool broadcast,
-      bool? txAsHex});
+      int? nonce,
+      int? txVersion,
+      bool? broadcast,
+      bool? txAsHex,
+      List<SignerId>? signers});
 
   @override
   $TransactionTypeCopyWith<$Res> get transactionType;
+
   @override
   $FeeBuilderCopyWith<$Res>? get feeBuilder;
 }
@@ -148,8 +183,11 @@ class __$$BuildTransactionParamsImplCopyWithImpl<$Res>
   $Res call({
     Object? transactionType = null,
     Object? feeBuilder = freezed,
-    Object? broadcast = null,
+    Object? nonce = freezed,
+    Object? txVersion = freezed,
+    Object? broadcast = freezed,
     Object? txAsHex = freezed,
+    Object? signers = freezed,
   }) {
     return _then(_$BuildTransactionParamsImpl(
       transactionType: null == transactionType
@@ -160,14 +198,26 @@ class __$$BuildTransactionParamsImplCopyWithImpl<$Res>
           ? _value.feeBuilder
           : feeBuilder // ignore: cast_nullable_to_non_nullable
               as FeeBuilder?,
-      broadcast: null == broadcast
+      nonce: freezed == nonce
+          ? _value.nonce
+          : nonce // ignore: cast_nullable_to_non_nullable
+              as int?,
+      txVersion: freezed == txVersion
+          ? _value.txVersion
+          : txVersion // ignore: cast_nullable_to_non_nullable
+              as int?,
+      broadcast: freezed == broadcast
           ? _value.broadcast
           : broadcast // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       txAsHex: freezed == txAsHex
           ? _value.txAsHex
           : txAsHex // ignore: cast_nullable_to_non_nullable
               as bool?,
+      signers: freezed == signers
+          ? _value._signers
+          : signers // ignore: cast_nullable_to_non_nullable
+              as List<SignerId>?,
     ));
   }
 }
@@ -178,22 +228,40 @@ class _$BuildTransactionParamsImpl extends _BuildTransactionParams {
   const _$BuildTransactionParamsImpl(
       {required this.transactionType,
       this.feeBuilder,
-      required this.broadcast,
-      this.txAsHex})
-      : super._();
+      this.nonce,
+      this.txVersion,
+      this.broadcast,
+      this.txAsHex,
+      final List<SignerId>? signers})
+      : _signers = signers,
+        super._();
 
   @override
   final TransactionType transactionType;
   @override
   final FeeBuilder? feeBuilder;
   @override
-  final bool broadcast;
+  final int? nonce;
+  @override
+  final int? txVersion;
+  @override
+  final bool? broadcast;
   @override
   final bool? txAsHex;
+  final List<SignerId>? _signers;
+
+  @override
+  List<SignerId>? get signers {
+    final value = _signers;
+    if (value == null) return null;
+    if (_signers is EqualUnmodifiableListView) return _signers;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   String toString() {
-    return 'BuildTransactionParams(transactionType: $transactionType, feeBuilder: $feeBuilder, broadcast: $broadcast, txAsHex: $txAsHex)';
+    return 'BuildTransactionParams(transactionType: $transactionType, feeBuilder: $feeBuilder, nonce: $nonce, txVersion: $txVersion, broadcast: $broadcast, txAsHex: $txAsHex, signers: $signers)';
   }
 
   @override
@@ -205,14 +273,25 @@ class _$BuildTransactionParamsImpl extends _BuildTransactionParams {
                 other.transactionType == transactionType) &&
             (identical(other.feeBuilder, feeBuilder) ||
                 other.feeBuilder == feeBuilder) &&
+            (identical(other.nonce, nonce) || other.nonce == nonce) &&
+            (identical(other.txVersion, txVersion) ||
+                other.txVersion == txVersion) &&
             (identical(other.broadcast, broadcast) ||
                 other.broadcast == broadcast) &&
-            (identical(other.txAsHex, txAsHex) || other.txAsHex == txAsHex));
+            (identical(other.txAsHex, txAsHex) || other.txAsHex == txAsHex) &&
+            const DeepCollectionEquality().equals(other._signers, _signers));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, transactionType, feeBuilder, broadcast, txAsHex);
+  int get hashCode => Object.hash(
+      runtimeType,
+      transactionType,
+      feeBuilder,
+      nonce,
+      txVersion,
+      broadcast,
+      txAsHex,
+      const DeepCollectionEquality().hash(_signers));
 
   /// Create a copy of BuildTransactionParams
   /// with the given fields replaced by the non-null parameter values.
@@ -228,18 +307,34 @@ abstract class _BuildTransactionParams extends BuildTransactionParams {
   const factory _BuildTransactionParams(
       {required final TransactionType transactionType,
       final FeeBuilder? feeBuilder,
-      required final bool broadcast,
-      final bool? txAsHex}) = _$BuildTransactionParamsImpl;
+      final int? nonce,
+      final int? txVersion,
+      final bool? broadcast,
+      final bool? txAsHex,
+      final List<SignerId>? signers}) = _$BuildTransactionParamsImpl;
+
   const _BuildTransactionParams._() : super._();
 
   @override
   TransactionType get transactionType;
+
   @override
   FeeBuilder? get feeBuilder;
+
   @override
-  bool get broadcast;
+  int? get nonce;
+
+  @override
+  int? get txVersion;
+
+  @override
+  bool? get broadcast;
+
   @override
   bool? get txAsHex;
+
+  @override
+  List<SignerId>? get signers;
 
   /// Create a copy of BuildTransactionParams
   /// with the given fields replaced by the non-null parameter values.
