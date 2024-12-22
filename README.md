@@ -82,6 +82,8 @@ JSON-RPC Clients to interact with daemon and wallet API.
 - estimateFees
 - estimateExtraDataSize
 - clearTxCache
+- decryptExtraData
+- decryptCiphertext
 
 ### Websocket Events
 
@@ -113,6 +115,7 @@ Subscribe and listen to events.
 - rescan
 - Online
 - Offline
+- historySynced
 
 ## Usage
 

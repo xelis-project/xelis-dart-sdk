@@ -199,4 +199,26 @@ extension WalletRpcMethodsExtension on WalletClient {
     final result = await sendRequest(WalletMethod.clearTxCache);
     return result as bool;
   }
+
+  /// Decrypt extra data from a transaction.
+  Future<String> decryptExtraData(
+    DecryptExtraDataWalletParams decryptExtraDataParams,
+  ) async {
+    final result = await sendRequest(
+      WalletMethod.decryptExtraData,
+      decryptExtraDataParams.toJson(),
+    );
+
+    return result as String;
+  }
+
+  /// Decrypt a ciphertext from its compressed format.
+  Future<int> decryptCiphertext(dynamic ciphertext) async {
+    final result = await sendRequest(
+      WalletMethod.decryptCiphertext,
+      {'ciphertext': ciphertext},
+    );
+
+    return result as int;
+  }
 }

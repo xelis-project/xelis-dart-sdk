@@ -8,14 +8,14 @@ part 'decrypt_extra_data_params.g.dart';
 
 /// @nodoc
 @freezed
-class DecryptExtraDataParams with _$DecryptExtraDataParams {
+class DecryptExtraDataDaemonParams with _$DecryptExtraDataDaemonParams {
   /// @nodoc
-  const factory DecryptExtraDataParams({
+  const factory DecryptExtraDataDaemonParams({
     @JsonKey(name: 'extra_data') required dynamic extraData,
     @JsonKey(name: 'private_key') required String privateKey,
-  }) = _DecryptExtraDataParams;
+  }) = _DecryptExtraDataDaemonParams;
 
   /// @nodoc
-  factory DecryptExtraDataParams.fromJson(Map<String, dynamic> json) =>
-      _$DecryptExtraDataParamsFromJson(json);
+  factory DecryptExtraDataDaemonParams.fromJson(Map<String, dynamic> json) =>
+      _$DecryptExtraDataDaemonParamsFromJson(json);
 }

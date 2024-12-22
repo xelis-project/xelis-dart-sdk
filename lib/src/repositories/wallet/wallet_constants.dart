@@ -71,6 +71,12 @@ enum WalletMethod implements XelisJsonKey {
   /// you can erase the TX cache stored in the wallet.
   clearTxCache('clear_tx_cache'),
 
+  /// Decrypt extra data from a transaction.
+  decryptExtraData('decrypt_extra_data'),
+
+  /// Decrypt a ciphertext from its compressed format.
+  decryptCiphertext('decrypt_ciphertext'),
+
   //----------------------------------------------------------------------------
   /// TODO: implement
   getMatchingKeys('get_matching_keys'),

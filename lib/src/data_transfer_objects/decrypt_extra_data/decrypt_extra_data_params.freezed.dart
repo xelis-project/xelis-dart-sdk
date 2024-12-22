@@ -14,33 +14,37 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-DecryptExtraDataParams _$DecryptExtraDataParamsFromJson(
+DecryptExtraDataDaemonParams _$DecryptExtraDataDaemonParamsFromJson(
     Map<String, dynamic> json) {
-  return _DecryptExtraDataParams.fromJson(json);
+  return _DecryptExtraDataDaemonParams.fromJson(json);
 }
 
 /// @nodoc
-mixin _$DecryptExtraDataParams {
+mixin _$DecryptExtraDataDaemonParams {
   @JsonKey(name: 'extra_data')
   dynamic get extraData => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'private_key')
   String get privateKey => throw _privateConstructorUsedError;
 
-  /// Serializes this DecryptExtraDataParams to a JSON map.
+  /// Serializes this DecryptExtraDataDaemonParams to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-  /// Create a copy of DecryptExtraDataParams
+  /// Create a copy of DecryptExtraDataDaemonParams
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $DecryptExtraDataParamsCopyWith<DecryptExtraDataParams> get copyWith =>
-      throw _privateConstructorUsedError;
+  $DecryptExtraDataDaemonParamsCopyWith<DecryptExtraDataDaemonParams>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $DecryptExtraDataParamsCopyWith<$Res> {
-  factory $DecryptExtraDataParamsCopyWith(DecryptExtraDataParams value,
-          $Res Function(DecryptExtraDataParams) then) =
-      _$DecryptExtraDataParamsCopyWithImpl<$Res, DecryptExtraDataParams>;
+abstract class $DecryptExtraDataDaemonParamsCopyWith<$Res> {
+  factory $DecryptExtraDataDaemonParamsCopyWith(
+          DecryptExtraDataDaemonParams value,
+          $Res Function(DecryptExtraDataDaemonParams) then) =
+      _$DecryptExtraDataDaemonParamsCopyWithImpl<$Res,
+          DecryptExtraDataDaemonParams>;
+
   @useResult
   $Res call(
       {@JsonKey(name: 'extra_data') dynamic extraData,
@@ -48,17 +52,18 @@ abstract class $DecryptExtraDataParamsCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$DecryptExtraDataParamsCopyWithImpl<$Res,
-        $Val extends DecryptExtraDataParams>
-    implements $DecryptExtraDataParamsCopyWith<$Res> {
-  _$DecryptExtraDataParamsCopyWithImpl(this._value, this._then);
+class _$DecryptExtraDataDaemonParamsCopyWithImpl<$Res,
+        $Val extends DecryptExtraDataDaemonParams>
+    implements $DecryptExtraDataDaemonParamsCopyWith<$Res> {
+  _$DecryptExtraDataDaemonParamsCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
+
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of DecryptExtraDataParams
+  /// Create a copy of DecryptExtraDataDaemonParams
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -80,12 +85,13 @@ class _$DecryptExtraDataParamsCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$DecryptExtraDataParamsImplCopyWith<$Res>
-    implements $DecryptExtraDataParamsCopyWith<$Res> {
-  factory _$$DecryptExtraDataParamsImplCopyWith(
-          _$DecryptExtraDataParamsImpl value,
-          $Res Function(_$DecryptExtraDataParamsImpl) then) =
-      __$$DecryptExtraDataParamsImplCopyWithImpl<$Res>;
+abstract class _$$DecryptExtraDataDaemonParamsImplCopyWith<$Res>
+    implements $DecryptExtraDataDaemonParamsCopyWith<$Res> {
+  factory _$$DecryptExtraDataDaemonParamsImplCopyWith(
+          _$DecryptExtraDataDaemonParamsImpl value,
+          $Res Function(_$DecryptExtraDataDaemonParamsImpl) then) =
+      __$$DecryptExtraDataDaemonParamsImplCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call(
@@ -94,16 +100,16 @@ abstract class _$$DecryptExtraDataParamsImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$DecryptExtraDataParamsImplCopyWithImpl<$Res>
-    extends _$DecryptExtraDataParamsCopyWithImpl<$Res,
-        _$DecryptExtraDataParamsImpl>
-    implements _$$DecryptExtraDataParamsImplCopyWith<$Res> {
-  __$$DecryptExtraDataParamsImplCopyWithImpl(
-      _$DecryptExtraDataParamsImpl _value,
-      $Res Function(_$DecryptExtraDataParamsImpl) _then)
+class __$$DecryptExtraDataDaemonParamsImplCopyWithImpl<$Res>
+    extends _$DecryptExtraDataDaemonParamsCopyWithImpl<$Res,
+        _$DecryptExtraDataDaemonParamsImpl>
+    implements _$$DecryptExtraDataDaemonParamsImplCopyWith<$Res> {
+  __$$DecryptExtraDataDaemonParamsImplCopyWithImpl(
+      _$DecryptExtraDataDaemonParamsImpl _value,
+      $Res Function(_$DecryptExtraDataDaemonParamsImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of DecryptExtraDataParams
+  /// Create a copy of DecryptExtraDataDaemonParams
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -111,7 +117,7 @@ class __$$DecryptExtraDataParamsImplCopyWithImpl<$Res>
     Object? extraData = freezed,
     Object? privateKey = null,
   }) {
-    return _then(_$DecryptExtraDataParamsImpl(
+    return _then(_$DecryptExtraDataDaemonParamsImpl(
       extraData: freezed == extraData
           ? _value.extraData
           : extraData // ignore: cast_nullable_to_non_nullable
@@ -126,13 +132,15 @@ class __$$DecryptExtraDataParamsImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$DecryptExtraDataParamsImpl implements _DecryptExtraDataParams {
-  const _$DecryptExtraDataParamsImpl(
+class _$DecryptExtraDataDaemonParamsImpl
+    implements _DecryptExtraDataDaemonParams {
+  const _$DecryptExtraDataDaemonParamsImpl(
       {@JsonKey(name: 'extra_data') required this.extraData,
       @JsonKey(name: 'private_key') required this.privateKey});
 
-  factory _$DecryptExtraDataParamsImpl.fromJson(Map<String, dynamic> json) =>
-      _$$DecryptExtraDataParamsImplFromJson(json);
+  factory _$DecryptExtraDataDaemonParamsImpl.fromJson(
+          Map<String, dynamic> json) =>
+      _$$DecryptExtraDataDaemonParamsImplFromJson(json);
 
   @override
   @JsonKey(name: 'extra_data')
@@ -143,14 +151,14 @@ class _$DecryptExtraDataParamsImpl implements _DecryptExtraDataParams {
 
   @override
   String toString() {
-    return 'DecryptExtraDataParams(extraData: $extraData, privateKey: $privateKey)';
+    return 'DecryptExtraDataDaemonParams(extraData: $extraData, privateKey: $privateKey)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$DecryptExtraDataParamsImpl &&
+            other is _$DecryptExtraDataDaemonParamsImpl &&
             const DeepCollectionEquality().equals(other.extraData, extraData) &&
             (identical(other.privateKey, privateKey) ||
                 other.privateKey == privateKey));
@@ -161,43 +169,47 @@ class _$DecryptExtraDataParamsImpl implements _DecryptExtraDataParams {
   int get hashCode => Object.hash(
       runtimeType, const DeepCollectionEquality().hash(extraData), privateKey);
 
-  /// Create a copy of DecryptExtraDataParams
+  /// Create a copy of DecryptExtraDataDaemonParams
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$DecryptExtraDataParamsImplCopyWith<_$DecryptExtraDataParamsImpl>
-      get copyWith => __$$DecryptExtraDataParamsImplCopyWithImpl<
-          _$DecryptExtraDataParamsImpl>(this, _$identity);
+  _$$DecryptExtraDataDaemonParamsImplCopyWith<
+          _$DecryptExtraDataDaemonParamsImpl>
+      get copyWith => __$$DecryptExtraDataDaemonParamsImplCopyWithImpl<
+          _$DecryptExtraDataDaemonParamsImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$DecryptExtraDataParamsImplToJson(
+    return _$$DecryptExtraDataDaemonParamsImplToJson(
       this,
     );
   }
 }
 
-abstract class _DecryptExtraDataParams implements DecryptExtraDataParams {
-  const factory _DecryptExtraDataParams(
+abstract class _DecryptExtraDataDaemonParams
+    implements DecryptExtraDataDaemonParams {
+  const factory _DecryptExtraDataDaemonParams(
           {@JsonKey(name: 'extra_data') required final dynamic extraData,
           @JsonKey(name: 'private_key') required final String privateKey}) =
-      _$DecryptExtraDataParamsImpl;
+      _$DecryptExtraDataDaemonParamsImpl;
 
-  factory _DecryptExtraDataParams.fromJson(Map<String, dynamic> json) =
-      _$DecryptExtraDataParamsImpl.fromJson;
+  factory _DecryptExtraDataDaemonParams.fromJson(Map<String, dynamic> json) =
+      _$DecryptExtraDataDaemonParamsImpl.fromJson;
 
   @override
   @JsonKey(name: 'extra_data')
   dynamic get extraData;
+
   @override
   @JsonKey(name: 'private_key')
   String get privateKey;
 
-  /// Create a copy of DecryptExtraDataParams
+  /// Create a copy of DecryptExtraDataDaemonParams
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$DecryptExtraDataParamsImplCopyWith<_$DecryptExtraDataParamsImpl>
+  _$$DecryptExtraDataDaemonParamsImplCopyWith<
+          _$DecryptExtraDataDaemonParamsImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
