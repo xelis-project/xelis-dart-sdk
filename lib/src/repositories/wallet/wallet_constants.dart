@@ -55,6 +55,10 @@ enum WalletMethod implements XelisJsonKey {
   /// It cannot be broadcasted to the network.
   buildTransactionOffline('build_transaction_offline'),
 
+  /// Build a transaction without signing it.
+  /// This is useful in case of a MultiSig setup where you need to sign the transaction with other signers.
+  buildUnsignedTransaction('build_unsigned_transaction'),
+
   /// Search for transactions based on various parameters.
   /// By default it accepts every TXs.
   listTransactions('list_transactions'),

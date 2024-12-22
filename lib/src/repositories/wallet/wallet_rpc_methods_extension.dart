@@ -146,6 +146,18 @@ extension WalletRpcMethodsExtension on WalletClient {
     return WalletTransactionResponse.fromJson(result as Map<String, dynamic>);
   }
 
+  /// Build a transaction without signing it.
+  /// This is useful in case of a MultiSig setup where you need to sign the transaction with other signers.
+  Future<WalletTransactionResponse> buildUnsignedTransaction(
+    BuildUnsignedTransactionParams buildUnsignedTransactionParams,
+  ) async {
+    final result = await sendRequest(
+      WalletMethod.buildUnsignedTransaction,
+      buildUnsignedTransactionParams.toJson(),
+    );
+    return WalletTransactionResponse.fromJson(result as Map<String, dynamic>);
+  }
+
   /// Search for transactions based on various parameters.
   /// By default it accepts every TXs.
   Future<List<TransactionEntry>> listTransactions([

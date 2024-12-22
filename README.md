@@ -76,6 +76,8 @@ JSON-RPC Clients to interact with daemon and wallet API.
 - getAssetPrecision
 - getTransaction
 - buildTransaction
+- buildTransactionOffline
+- buildUnsignedTransaction
 - listTransactions
 - isOnline
 - signData

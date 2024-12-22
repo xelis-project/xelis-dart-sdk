@@ -83,6 +83,7 @@ export 'wallet/build_transaction/signer_id.dart';
 export 'wallet/build_transaction/wallet_transaction_response.dart';
 export 'wallet/build_transaction_offline/build_transaction_offline_params.dart';
 export 'wallet/build_transaction_offline/reference.dart';
+export 'wallet/build_unsigned_transaction/build_unsigned_transaction_params.dart';
 export 'wallet/decrypt_extra_data/decrypt_extra_data_params.dart';
 export 'wallet/decrypt_extra_data/role.dart';
 export 'wallet/estimate_extra_data_size/estimate_extra_data_size_params.dart';
