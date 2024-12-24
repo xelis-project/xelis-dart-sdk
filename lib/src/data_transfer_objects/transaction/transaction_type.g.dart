@@ -11,7 +11,7 @@ part of 'transaction_type.dart';
 _$TransfersImpl _$$TransfersImplFromJson(Map<String, dynamic> json) =>
     _$TransfersImpl(
       transfers: (json['transfers'] as List<dynamic>)
-          .map((e) => RPCTransferPayload.fromJson(e as Map<String, dynamic>))
+          .map((e) => TransferPayload.fromJson(e as Map<String, dynamic>))
           .toList(),
       $type: json['runtimeType'] as String?,
     );

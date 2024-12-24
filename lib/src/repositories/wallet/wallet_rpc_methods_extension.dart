@@ -123,39 +123,39 @@ extension WalletRpcMethodsExtension on WalletClient {
   ///
   /// NOTE: Amount set are in atomic units, for XELIS it would 100000 to
   /// represents 1 XELIS because of 5 decimals precision.
-  Future<WalletTransactionResponse> buildTransaction(
+  Future<TransactionWalletResponse> buildTransaction(
     BuildTransactionParams buildTransactionParams,
   ) async {
     final result = await sendRequest(
       WalletMethod.buildTransaction,
       buildTransactionParams.toJson(),
     );
-    return WalletTransactionResponse.fromJson(result as Map<String, dynamic>);
+    return TransactionWalletResponse.fromJson(result as Map<String, dynamic>);
   }
 
   /// Build a transaction offline in the wallet by providing directly exact balances and reference.
   ///
   /// It cannot be broadcasted to the network.
-  Future<WalletTransactionResponse> buildTransactionOffline(
+  Future<TransactionWalletResponse> buildTransactionOffline(
     BuildTransactionOfflineParams buildTransactionOfflineParams,
   ) async {
     final result = await sendRequest(
       WalletMethod.buildTransactionOffline,
       buildTransactionOfflineParams.toJson(),
     );
-    return WalletTransactionResponse.fromJson(result as Map<String, dynamic>);
+    return TransactionWalletResponse.fromJson(result as Map<String, dynamic>);
   }
 
   /// Build a transaction without signing it.
   /// This is useful in case of a MultiSig setup where you need to sign the transaction with other signers.
-  Future<WalletTransactionResponse> buildUnsignedTransaction(
+  Future<TransactionWalletResponse> buildUnsignedTransaction(
     BuildUnsignedTransactionParams buildUnsignedTransactionParams,
   ) async {
     final result = await sendRequest(
       WalletMethod.buildUnsignedTransaction,
       buildUnsignedTransactionParams.toJson(),
     );
-    return WalletTransactionResponse.fromJson(result as Map<String, dynamic>);
+    return TransactionWalletResponse.fromJson(result as Map<String, dynamic>);
   }
 
   /// Search for transactions based on various parameters.
@@ -197,10 +197,12 @@ extension WalletRpcMethodsExtension on WalletClient {
 
   /// Estimate the minimum required fees for a future transaction.
   /// Returned fees are in atomic units.
-  Future<int> estimateFees(TransactionType transactionType) async {
+  Future<int> estimateFees(
+    TransactionTypeBuilder transactionTypeBuilder,
+  ) async {
     final result = await sendRequest(
       WalletMethod.estimateFees,
-      transactionType.toJson(),
+      transactionTypeBuilder.toJson(),
     );
 
     return result as int;

@@ -10,7 +10,7 @@ part 'build_transaction_params.freezed.dart';
 class BuildTransactionParams with _$BuildTransactionParams {
   /// @nodoc
   const factory BuildTransactionParams({
-    required TransactionType transactionType,
+    required TransactionTypeBuilder transactionTypeBuilder,
     FeeBuilder? feeBuilder,
     int? nonce,
     int? txVersion,
@@ -22,9 +22,9 @@ class BuildTransactionParams with _$BuildTransactionParams {
   const BuildTransactionParams._();
 
   /// @nodoc
-  Map<String, dynamic> toJson() => switch (transactionType) {
-        Transfers() => {
-            ...transactionType.toJson(),
+  Map<String, dynamic> toJson() => switch (transactionTypeBuilder) {
+        TransfersBuilder() => {
+            ...transactionTypeBuilder.toJson(),
             if (feeBuilder != null) 'fee': feeBuilder,
             if (nonce != null) 'nonce': nonce,
             if (txVersion != null) 'tx_version': txVersion,
@@ -32,8 +32,8 @@ class BuildTransactionParams with _$BuildTransactionParams {
             if (txAsHex != null) 'tx_as_hex': txAsHex,
             if (signers != null) 'signers': signers,
           },
-        Burn() => {
-            'burn': transactionType.toJson(),
+        BurnBuilder() => {
+            'burn': transactionTypeBuilder.toJson(),
             if (feeBuilder != null) 'fee': feeBuilder,
             if (nonce != null) 'nonce': nonce,
             if (txVersion != null) 'tx_version': txVersion,

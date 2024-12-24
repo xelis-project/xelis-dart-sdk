@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'transaction_type.dart';
+part of 'transaction_type_builder.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,25 +14,12 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-TransactionType _$TransactionTypeFromJson(Map<String, dynamic> json) {
-  switch (json['runtimeType']) {
-    case 'transfers':
-      return Transfers.fromJson(json);
-    case 'burn':
-      return Burn.fromJson(json);
-
-    default:
-      throw CheckedFromJsonException(json, 'runtimeType', 'TransactionType',
-          'Invalid union type "${json['runtimeType']}"!');
-  }
-}
-
 /// @nodoc
-mixin _$TransactionType {
+mixin _$TransactionTypeBuilder {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            @JsonKey(name: 'transfers') List<TransferPayload> transfers)
+            @JsonKey(name: 'transfers') List<TransferBuilder> transfers)
         transfers,
     required TResult Function(@JsonKey(name: 'asset') String asset,
             @JsonKey(name: 'amount') int amount)
@@ -42,7 +29,7 @@ mixin _$TransactionType {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(
-            @JsonKey(name: 'transfers') List<TransferPayload> transfers)?
+            @JsonKey(name: 'transfers') List<TransferBuilder> transfers)?
         transfers,
     TResult? Function(@JsonKey(name: 'asset') String asset,
             @JsonKey(name: 'amount') int amount)?
@@ -52,7 +39,7 @@ mixin _$TransactionType {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
-            @JsonKey(name: 'transfers') List<TransferPayload> transfers)?
+            @JsonKey(name: 'transfers') List<TransferBuilder> transfers)?
         transfers,
     TResult Function(@JsonKey(name: 'asset') String asset,
             @JsonKey(name: 'amount') int amount)?
@@ -62,139 +49,130 @@ mixin _$TransactionType {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Transfers value) transfers,
-    required TResult Function(Burn value) burn,
+    required TResult Function(TransfersBuilder value) transfers,
+    required TResult Function(BurnBuilder value) burn,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Transfers value)? transfers,
-    TResult? Function(Burn value)? burn,
+    TResult? Function(TransfersBuilder value)? transfers,
+    TResult? Function(BurnBuilder value)? burn,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Transfers value)? transfers,
-    TResult Function(Burn value)? burn,
+    TResult Function(TransfersBuilder value)? transfers,
+    TResult Function(BurnBuilder value)? burn,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
-  /// Serializes this TransactionType to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $TransactionTypeCopyWith<$Res> {
-  factory $TransactionTypeCopyWith(
-          TransactionType value, $Res Function(TransactionType) then) =
-      _$TransactionTypeCopyWithImpl<$Res, TransactionType>;
+abstract class $TransactionTypeBuilderCopyWith<$Res> {
+  factory $TransactionTypeBuilderCopyWith(TransactionTypeBuilder value,
+          $Res Function(TransactionTypeBuilder) then) =
+      _$TransactionTypeBuilderCopyWithImpl<$Res, TransactionTypeBuilder>;
 }
 
 /// @nodoc
-class _$TransactionTypeCopyWithImpl<$Res, $Val extends TransactionType>
-    implements $TransactionTypeCopyWith<$Res> {
-  _$TransactionTypeCopyWithImpl(this._value, this._then);
+class _$TransactionTypeBuilderCopyWithImpl<$Res,
+        $Val extends TransactionTypeBuilder>
+    implements $TransactionTypeBuilderCopyWith<$Res> {
+  _$TransactionTypeBuilderCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of TransactionType
+  /// Create a copy of TransactionTypeBuilder
   /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
-abstract class _$$TransfersImplCopyWith<$Res> {
-  factory _$$TransfersImplCopyWith(
-          _$TransfersImpl value, $Res Function(_$TransfersImpl) then) =
-      __$$TransfersImplCopyWithImpl<$Res>;
+abstract class _$$TransfersBuilderImplCopyWith<$Res> {
+  factory _$$TransfersBuilderImplCopyWith(_$TransfersBuilderImpl value,
+          $Res Function(_$TransfersBuilderImpl) then) =
+      __$$TransfersBuilderImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({@JsonKey(name: 'transfers') List<TransferPayload> transfers});
+  $Res call({@JsonKey(name: 'transfers') List<TransferBuilder> transfers});
 }
 
 /// @nodoc
-class __$$TransfersImplCopyWithImpl<$Res>
-    extends _$TransactionTypeCopyWithImpl<$Res, _$TransfersImpl>
-    implements _$$TransfersImplCopyWith<$Res> {
-  __$$TransfersImplCopyWithImpl(
-      _$TransfersImpl _value, $Res Function(_$TransfersImpl) _then)
+class __$$TransfersBuilderImplCopyWithImpl<$Res>
+    extends _$TransactionTypeBuilderCopyWithImpl<$Res, _$TransfersBuilderImpl>
+    implements _$$TransfersBuilderImplCopyWith<$Res> {
+  __$$TransfersBuilderImplCopyWithImpl(_$TransfersBuilderImpl _value,
+      $Res Function(_$TransfersBuilderImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of TransactionType
+  /// Create a copy of TransactionTypeBuilder
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? transfers = null,
   }) {
-    return _then(_$TransfersImpl(
+    return _then(_$TransfersBuilderImpl(
       transfers: null == transfers
           ? _value._transfers
           : transfers // ignore: cast_nullable_to_non_nullable
-              as List<TransferPayload>,
+              as List<TransferBuilder>,
     ));
   }
 }
 
 /// @nodoc
-@JsonSerializable()
-class _$TransfersImpl implements Transfers {
-  const _$TransfersImpl(
+
+class _$TransfersBuilderImpl extends TransfersBuilder {
+  const _$TransfersBuilderImpl(
       {@JsonKey(name: 'transfers')
-      required final List<TransferPayload> transfers,
-      final String? $type})
+      required final List<TransferBuilder> transfers})
       : _transfers = transfers,
-        $type = $type ?? 'transfers';
+        super._();
 
-  factory _$TransfersImpl.fromJson(Map<String, dynamic> json) =>
-      _$$TransfersImplFromJson(json);
-
-  final List<TransferPayload> _transfers;
+  final List<TransferBuilder> _transfers;
   @override
   @JsonKey(name: 'transfers')
-  List<TransferPayload> get transfers {
+  List<TransferBuilder> get transfers {
     if (_transfers is EqualUnmodifiableListView) return _transfers;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_transfers);
   }
 
-  @JsonKey(name: 'runtimeType')
-  final String $type;
-
   @override
   String toString() {
-    return 'TransactionType.transfers(transfers: $transfers)';
+    return 'TransactionTypeBuilder.transfers(transfers: $transfers)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$TransfersImpl &&
+            other is _$TransfersBuilderImpl &&
             const DeepCollectionEquality()
                 .equals(other._transfers, _transfers));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(_transfers));
 
-  /// Create a copy of TransactionType
+  /// Create a copy of TransactionTypeBuilder
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$TransfersImplCopyWith<_$TransfersImpl> get copyWith =>
-      __$$TransfersImplCopyWithImpl<_$TransfersImpl>(this, _$identity);
+  _$$TransfersBuilderImplCopyWith<_$TransfersBuilderImpl> get copyWith =>
+      __$$TransfersBuilderImplCopyWithImpl<_$TransfersBuilderImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            @JsonKey(name: 'transfers') List<TransferPayload> transfers)
+            @JsonKey(name: 'transfers') List<TransferBuilder> transfers)
         transfers,
     required TResult Function(@JsonKey(name: 'asset') String asset,
             @JsonKey(name: 'amount') int amount)
@@ -207,7 +185,7 @@ class _$TransfersImpl implements Transfers {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(
-            @JsonKey(name: 'transfers') List<TransferPayload> transfers)?
+            @JsonKey(name: 'transfers') List<TransferBuilder> transfers)?
         transfers,
     TResult? Function(@JsonKey(name: 'asset') String asset,
             @JsonKey(name: 'amount') int amount)?
@@ -220,7 +198,7 @@ class _$TransfersImpl implements Transfers {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
-            @JsonKey(name: 'transfers') List<TransferPayload> transfers)?
+            @JsonKey(name: 'transfers') List<TransferBuilder> transfers)?
         transfers,
     TResult Function(@JsonKey(name: 'asset') String asset,
             @JsonKey(name: 'amount') int amount)?
@@ -236,8 +214,8 @@ class _$TransfersImpl implements Transfers {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Transfers value) transfers,
-    required TResult Function(Burn value) burn,
+    required TResult Function(TransfersBuilder value) transfers,
+    required TResult Function(BurnBuilder value) burn,
   }) {
     return transfers(this);
   }
@@ -245,8 +223,8 @@ class _$TransfersImpl implements Transfers {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Transfers value)? transfers,
-    TResult? Function(Burn value)? burn,
+    TResult? Function(TransfersBuilder value)? transfers,
+    TResult? Function(BurnBuilder value)? burn,
   }) {
     return transfers?.call(this);
   }
@@ -254,8 +232,8 @@ class _$TransfersImpl implements Transfers {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Transfers value)? transfers,
-    TResult Function(Burn value)? burn,
+    TResult Function(TransfersBuilder value)? transfers,
+    TResult Function(BurnBuilder value)? burn,
     required TResult orElse(),
   }) {
     if (transfers != null) {
@@ -263,38 +241,29 @@ class _$TransfersImpl implements Transfers {
     }
     return orElse();
   }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$TransfersImplToJson(
-      this,
-    );
-  }
 }
 
-abstract class Transfers implements TransactionType {
-  const factory Transfers(
+abstract class TransfersBuilder extends TransactionTypeBuilder {
+  const factory TransfersBuilder(
       {@JsonKey(name: 'transfers')
-      required final List<TransferPayload> transfers}) = _$TransfersImpl;
-
-  factory Transfers.fromJson(Map<String, dynamic> json) =
-      _$TransfersImpl.fromJson;
+      required final List<TransferBuilder> transfers}) = _$TransfersBuilderImpl;
+  const TransfersBuilder._() : super._();
 
   @JsonKey(name: 'transfers')
-  List<TransferPayload> get transfers;
+  List<TransferBuilder> get transfers;
 
-  /// Create a copy of TransactionType
+  /// Create a copy of TransactionTypeBuilder
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$TransfersImplCopyWith<_$TransfersImpl> get copyWith =>
+  _$$TransfersBuilderImplCopyWith<_$TransfersBuilderImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$BurnImplCopyWith<$Res> {
-  factory _$$BurnImplCopyWith(
-          _$BurnImpl value, $Res Function(_$BurnImpl) then) =
-      __$$BurnImplCopyWithImpl<$Res>;
+abstract class _$$BurnBuilderImplCopyWith<$Res> {
+  factory _$$BurnBuilderImplCopyWith(
+          _$BurnBuilderImpl value, $Res Function(_$BurnBuilderImpl) then) =
+      __$$BurnBuilderImplCopyWithImpl<$Res>;
   @useResult
   $Res call(
       {@JsonKey(name: 'asset') String asset,
@@ -302,13 +271,14 @@ abstract class _$$BurnImplCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$BurnImplCopyWithImpl<$Res>
-    extends _$TransactionTypeCopyWithImpl<$Res, _$BurnImpl>
-    implements _$$BurnImplCopyWith<$Res> {
-  __$$BurnImplCopyWithImpl(_$BurnImpl _value, $Res Function(_$BurnImpl) _then)
+class __$$BurnBuilderImplCopyWithImpl<$Res>
+    extends _$TransactionTypeBuilderCopyWithImpl<$Res, _$BurnBuilderImpl>
+    implements _$$BurnBuilderImplCopyWith<$Res> {
+  __$$BurnBuilderImplCopyWithImpl(
+      _$BurnBuilderImpl _value, $Res Function(_$BurnBuilderImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of TransactionType
+  /// Create a copy of TransactionTypeBuilder
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -316,7 +286,7 @@ class __$$BurnImplCopyWithImpl<$Res>
     Object? asset = null,
     Object? amount = null,
   }) {
-    return _then(_$BurnImpl(
+    return _then(_$BurnBuilderImpl(
       asset: null == asset
           ? _value.asset
           : asset // ignore: cast_nullable_to_non_nullable
@@ -330,16 +300,12 @@ class __$$BurnImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
-class _$BurnImpl implements Burn {
-  const _$BurnImpl(
-      {@JsonKey(name: 'asset') required this.asset,
-      @JsonKey(name: 'amount') required this.amount,
-      final String? $type})
-      : $type = $type ?? 'burn';
 
-  factory _$BurnImpl.fromJson(Map<String, dynamic> json) =>
-      _$$BurnImplFromJson(json);
+class _$BurnBuilderImpl extends BurnBuilder {
+  const _$BurnBuilderImpl(
+      {@JsonKey(name: 'asset') required this.asset,
+      @JsonKey(name: 'amount') required this.amount})
+      : super._();
 
   @override
   @JsonKey(name: 'asset')
@@ -348,40 +314,36 @@ class _$BurnImpl implements Burn {
   @JsonKey(name: 'amount')
   final int amount;
 
-  @JsonKey(name: 'runtimeType')
-  final String $type;
-
   @override
   String toString() {
-    return 'TransactionType.burn(asset: $asset, amount: $amount)';
+    return 'TransactionTypeBuilder.burn(asset: $asset, amount: $amount)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$BurnImpl &&
+            other is _$BurnBuilderImpl &&
             (identical(other.asset, asset) || other.asset == asset) &&
             (identical(other.amount, amount) || other.amount == amount));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, asset, amount);
 
-  /// Create a copy of TransactionType
+  /// Create a copy of TransactionTypeBuilder
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$BurnImplCopyWith<_$BurnImpl> get copyWith =>
-      __$$BurnImplCopyWithImpl<_$BurnImpl>(this, _$identity);
+  _$$BurnBuilderImplCopyWith<_$BurnBuilderImpl> get copyWith =>
+      __$$BurnBuilderImplCopyWithImpl<_$BurnBuilderImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            @JsonKey(name: 'transfers') List<TransferPayload> transfers)
+            @JsonKey(name: 'transfers') List<TransferBuilder> transfers)
         transfers,
     required TResult Function(@JsonKey(name: 'asset') String asset,
             @JsonKey(name: 'amount') int amount)
@@ -394,7 +356,7 @@ class _$BurnImpl implements Burn {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(
-            @JsonKey(name: 'transfers') List<TransferPayload> transfers)?
+            @JsonKey(name: 'transfers') List<TransferBuilder> transfers)?
         transfers,
     TResult? Function(@JsonKey(name: 'asset') String asset,
             @JsonKey(name: 'amount') int amount)?
@@ -407,7 +369,7 @@ class _$BurnImpl implements Burn {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
-            @JsonKey(name: 'transfers') List<TransferPayload> transfers)?
+            @JsonKey(name: 'transfers') List<TransferBuilder> transfers)?
         transfers,
     TResult Function(@JsonKey(name: 'asset') String asset,
             @JsonKey(name: 'amount') int amount)?
@@ -423,8 +385,8 @@ class _$BurnImpl implements Burn {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Transfers value) transfers,
-    required TResult Function(Burn value) burn,
+    required TResult Function(TransfersBuilder value) transfers,
+    required TResult Function(BurnBuilder value) burn,
   }) {
     return burn(this);
   }
@@ -432,8 +394,8 @@ class _$BurnImpl implements Burn {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Transfers value)? transfers,
-    TResult? Function(Burn value)? burn,
+    TResult? Function(TransfersBuilder value)? transfers,
+    TResult? Function(BurnBuilder value)? burn,
   }) {
     return burn?.call(this);
   }
@@ -441,8 +403,8 @@ class _$BurnImpl implements Burn {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Transfers value)? transfers,
-    TResult Function(Burn value)? burn,
+    TResult Function(TransfersBuilder value)? transfers,
+    TResult Function(BurnBuilder value)? burn,
     required TResult orElse(),
   }) {
     if (burn != null) {
@@ -450,30 +412,22 @@ class _$BurnImpl implements Burn {
     }
     return orElse();
   }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$BurnImplToJson(
-      this,
-    );
-  }
 }
 
-abstract class Burn implements TransactionType {
-  const factory Burn(
+abstract class BurnBuilder extends TransactionTypeBuilder {
+  const factory BurnBuilder(
       {@JsonKey(name: 'asset') required final String asset,
-      @JsonKey(name: 'amount') required final int amount}) = _$BurnImpl;
-
-  factory Burn.fromJson(Map<String, dynamic> json) = _$BurnImpl.fromJson;
+      @JsonKey(name: 'amount') required final int amount}) = _$BurnBuilderImpl;
+  const BurnBuilder._() : super._();
 
   @JsonKey(name: 'asset')
   String get asset;
   @JsonKey(name: 'amount')
   int get amount;
 
-  /// Create a copy of TransactionType
+  /// Create a copy of TransactionTypeBuilder
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$BurnImplCopyWith<_$BurnImpl> get copyWith =>
+  _$$BurnBuilderImplCopyWith<_$BurnBuilderImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

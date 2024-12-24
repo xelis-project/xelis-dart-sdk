@@ -10,7 +10,7 @@ part 'build_transaction_offline_params.freezed.dart';
 class BuildTransactionOfflineParams with _$BuildTransactionOfflineParams {
   /// @nodoc
   const factory BuildTransactionOfflineParams({
-    required TransactionType transactionType,
+    required TransactionTypeBuilder transactionTypeBuilder,
     required Map<String, dynamic> balances,
     required Reference reference,
     FeeBuilder? feeBuilder,
@@ -20,10 +20,12 @@ class BuildTransactionOfflineParams with _$BuildTransactionOfflineParams {
     List<SignerId>? signers,
   }) = _BuildTransactionOfflineParams;
 
+  const BuildTransactionOfflineParams._();
+
   /// @nodoc
-  Map<String, dynamic> toJson() => switch (transactionType) {
-        Transfers() => {
-            ...transactionType.toJson(),
+  Map<String, dynamic> toJson() => switch (transactionTypeBuilder) {
+        TransfersBuilder() => {
+            ...transactionTypeBuilder.toJson(),
             'balances': balances,
             'reference': reference.toJson(),
             if (feeBuilder != null) 'fee': feeBuilder,
@@ -32,8 +34,8 @@ class BuildTransactionOfflineParams with _$BuildTransactionOfflineParams {
             if (txAsHex != null) 'tx_as_hex': txAsHex,
             if (signers != null) 'signers': signers,
           },
-        Burn() => {
-            'burn': transactionType.toJson(),
+        BurnBuilder() => {
+            'burn': transactionTypeBuilder.toJson(),
             'balances': balances,
             'reference': reference.toJson(),
             if (feeBuilder != null) 'fee': feeBuilder,

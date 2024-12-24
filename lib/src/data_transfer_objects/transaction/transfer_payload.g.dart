@@ -2,15 +2,15 @@
 
 // ignore_for_file: package_api_docs, non_constant_identifier_names
 
-part of 'rpc_transfer_payload.dart';
+part of 'transfer_payload.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$RPCTransferPayloadImpl _$$RPCTransferPayloadImplFromJson(
+_$TransferPayloadImpl _$$TransferPayloadImplFromJson(
         Map<String, dynamic> json) =>
-    _$RPCTransferPayloadImpl(
+    _$TransferPayloadImpl(
       asset: json['asset'] as String,
       commitment: (json['commitment'] as List<dynamic>)
           .map((e) => (e as num).toInt())
@@ -26,8 +26,8 @@ _$RPCTransferPayloadImpl _$$RPCTransferPayloadImplFromJson(
       extraData: json['extra_data'],
     );
 
-Map<String, dynamic> _$$RPCTransferPayloadImplToJson(
-        _$RPCTransferPayloadImpl instance) =>
+Map<String, dynamic> _$$TransferPayloadImplToJson(
+        _$TransferPayloadImpl instance) =>
     <String, dynamic>{
       'asset': instance.asset,
       'commitment': instance.commitment,

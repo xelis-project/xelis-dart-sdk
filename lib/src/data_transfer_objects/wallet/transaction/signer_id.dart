@@ -4,6 +4,8 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'signer_id.freezed.dart';
 
+part 'signer_id.g.dart';
+
 /// @nodoc
 @freezed
 class SignerId with _$SignerId {

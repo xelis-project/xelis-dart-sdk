@@ -16,7 +16,8 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$BuildTransactionOfflineParams {
-  TransactionType get transactionType => throw _privateConstructorUsedError;
+  TransactionTypeBuilder get transactionTypeBuilder =>
+      throw _privateConstructorUsedError;
   Map<String, dynamic> get balances => throw _privateConstructorUsedError;
   Reference get reference => throw _privateConstructorUsedError;
   FeeBuilder? get feeBuilder => throw _privateConstructorUsedError;
@@ -41,7 +42,7 @@ abstract class $BuildTransactionOfflineParamsCopyWith<$Res> {
           BuildTransactionOfflineParams>;
   @useResult
   $Res call(
-      {TransactionType transactionType,
+      {TransactionTypeBuilder transactionTypeBuilder,
       Map<String, dynamic> balances,
       Reference reference,
       FeeBuilder? feeBuilder,
@@ -50,7 +51,7 @@ abstract class $BuildTransactionOfflineParamsCopyWith<$Res> {
       bool? txAsHex,
       List<SignerId>? signers});
 
-  $TransactionTypeCopyWith<$Res> get transactionType;
+  $TransactionTypeBuilderCopyWith<$Res> get transactionTypeBuilder;
   $ReferenceCopyWith<$Res> get reference;
   $FeeBuilderCopyWith<$Res>? get feeBuilder;
 }
@@ -71,7 +72,7 @@ class _$BuildTransactionOfflineParamsCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? transactionType = null,
+    Object? transactionTypeBuilder = null,
     Object? balances = null,
     Object? reference = null,
     Object? feeBuilder = freezed,
@@ -81,10 +82,10 @@ class _$BuildTransactionOfflineParamsCopyWithImpl<$Res,
     Object? signers = freezed,
   }) {
     return _then(_value.copyWith(
-      transactionType: null == transactionType
-          ? _value.transactionType
-          : transactionType // ignore: cast_nullable_to_non_nullable
-              as TransactionType,
+      transactionTypeBuilder: null == transactionTypeBuilder
+          ? _value.transactionTypeBuilder
+          : transactionTypeBuilder // ignore: cast_nullable_to_non_nullable
+              as TransactionTypeBuilder,
       balances: null == balances
           ? _value.balances
           : balances // ignore: cast_nullable_to_non_nullable
@@ -120,9 +121,10 @@ class _$BuildTransactionOfflineParamsCopyWithImpl<$Res,
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $TransactionTypeCopyWith<$Res> get transactionType {
-    return $TransactionTypeCopyWith<$Res>(_value.transactionType, (value) {
-      return _then(_value.copyWith(transactionType: value) as $Val);
+  $TransactionTypeBuilderCopyWith<$Res> get transactionTypeBuilder {
+    return $TransactionTypeBuilderCopyWith<$Res>(_value.transactionTypeBuilder,
+        (value) {
+      return _then(_value.copyWith(transactionTypeBuilder: value) as $Val);
     });
   }
 
@@ -161,7 +163,7 @@ abstract class _$$BuildTransactionOfflineParamsImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {TransactionType transactionType,
+      {TransactionTypeBuilder transactionTypeBuilder,
       Map<String, dynamic> balances,
       Reference reference,
       FeeBuilder? feeBuilder,
@@ -171,7 +173,7 @@ abstract class _$$BuildTransactionOfflineParamsImplCopyWith<$Res>
       List<SignerId>? signers});
 
   @override
-  $TransactionTypeCopyWith<$Res> get transactionType;
+  $TransactionTypeBuilderCopyWith<$Res> get transactionTypeBuilder;
   @override
   $ReferenceCopyWith<$Res> get reference;
   @override
@@ -193,7 +195,7 @@ class __$$BuildTransactionOfflineParamsImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? transactionType = null,
+    Object? transactionTypeBuilder = null,
     Object? balances = null,
     Object? reference = null,
     Object? feeBuilder = freezed,
@@ -203,10 +205,10 @@ class __$$BuildTransactionOfflineParamsImplCopyWithImpl<$Res>
     Object? signers = freezed,
   }) {
     return _then(_$BuildTransactionOfflineParamsImpl(
-      transactionType: null == transactionType
-          ? _value.transactionType
-          : transactionType // ignore: cast_nullable_to_non_nullable
-              as TransactionType,
+      transactionTypeBuilder: null == transactionTypeBuilder
+          ? _value.transactionTypeBuilder
+          : transactionTypeBuilder // ignore: cast_nullable_to_non_nullable
+              as TransactionTypeBuilder,
       balances: null == balances
           ? _value._balances
           : balances // ignore: cast_nullable_to_non_nullable
@@ -242,9 +244,9 @@ class __$$BuildTransactionOfflineParamsImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$BuildTransactionOfflineParamsImpl
-    implements _BuildTransactionOfflineParams {
+    extends _BuildTransactionOfflineParams {
   const _$BuildTransactionOfflineParamsImpl(
-      {required this.transactionType,
+      {required this.transactionTypeBuilder,
       required final Map<String, dynamic> balances,
       required this.reference,
       this.feeBuilder,
@@ -253,10 +255,11 @@ class _$BuildTransactionOfflineParamsImpl
       this.txAsHex,
       final List<SignerId>? signers})
       : _balances = balances,
-        _signers = signers;
+        _signers = signers,
+        super._();
 
   @override
-  final TransactionType transactionType;
+  final TransactionTypeBuilder transactionTypeBuilder;
   final Map<String, dynamic> _balances;
   @override
   Map<String, dynamic> get balances {
@@ -287,7 +290,7 @@ class _$BuildTransactionOfflineParamsImpl
 
   @override
   String toString() {
-    return 'BuildTransactionOfflineParams(transactionType: $transactionType, balances: $balances, reference: $reference, feeBuilder: $feeBuilder, nonce: $nonce, txVersion: $txVersion, txAsHex: $txAsHex, signers: $signers)';
+    return 'BuildTransactionOfflineParams(transactionTypeBuilder: $transactionTypeBuilder, balances: $balances, reference: $reference, feeBuilder: $feeBuilder, nonce: $nonce, txVersion: $txVersion, txAsHex: $txAsHex, signers: $signers)';
   }
 
   @override
@@ -295,8 +298,8 @@ class _$BuildTransactionOfflineParamsImpl
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$BuildTransactionOfflineParamsImpl &&
-            (identical(other.transactionType, transactionType) ||
-                other.transactionType == transactionType) &&
+            (identical(other.transactionTypeBuilder, transactionTypeBuilder) ||
+                other.transactionTypeBuilder == transactionTypeBuilder) &&
             const DeepCollectionEquality().equals(other._balances, _balances) &&
             (identical(other.reference, reference) ||
                 other.reference == reference) &&
@@ -312,7 +315,7 @@ class _$BuildTransactionOfflineParamsImpl
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      transactionType,
+      transactionTypeBuilder,
       const DeepCollectionEquality().hash(_balances),
       reference,
       feeBuilder,
@@ -333,9 +336,9 @@ class _$BuildTransactionOfflineParamsImpl
 }
 
 abstract class _BuildTransactionOfflineParams
-    implements BuildTransactionOfflineParams {
+    extends BuildTransactionOfflineParams {
   const factory _BuildTransactionOfflineParams(
-      {required final TransactionType transactionType,
+      {required final TransactionTypeBuilder transactionTypeBuilder,
       required final Map<String, dynamic> balances,
       required final Reference reference,
       final FeeBuilder? feeBuilder,
@@ -343,9 +346,10 @@ abstract class _BuildTransactionOfflineParams
       final int? txVersion,
       final bool? txAsHex,
       final List<SignerId>? signers}) = _$BuildTransactionOfflineParamsImpl;
+  const _BuildTransactionOfflineParams._() : super._();
 
   @override
-  TransactionType get transactionType;
+  TransactionTypeBuilder get transactionTypeBuilder;
   @override
   Map<String, dynamic> get balances;
   @override

@@ -22,6 +22,7 @@ SignerId _$SignerIdFromJson(Map<String, dynamic> json) {
 mixin _$SignerId {
   @JsonKey(name: 'id')
   int get id => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'public_key')
   String get publicKey => throw _privateConstructorUsedError;
 
@@ -39,6 +40,7 @@ mixin _$SignerId {
 abstract class $SignerIdCopyWith<$Res> {
   factory $SignerIdCopyWith(SignerId value, $Res Function(SignerId) then) =
       _$SignerIdCopyWithImpl<$Res, SignerId>;
+
   @useResult
   $Res call(
       {@JsonKey(name: 'id') int id,
@@ -52,6 +54,7 @@ class _$SignerIdCopyWithImpl<$Res, $Val extends SignerId>
 
   // ignore: unused_field
   final $Val _value;
+
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -82,6 +85,7 @@ abstract class _$$SignerIdImplCopyWith<$Res>
   factory _$$SignerIdImplCopyWith(
           _$SignerIdImpl value, $Res Function(_$SignerIdImpl) then) =
       __$$SignerIdImplCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call(
@@ -182,6 +186,7 @@ abstract class _SignerId implements SignerId {
   @override
   @JsonKey(name: 'id')
   int get id;
+
   @override
   @JsonKey(name: 'public_key')
   String get publicKey;

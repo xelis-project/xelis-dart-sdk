@@ -10,7 +10,7 @@ part 'build_unsigned_transaction_params.freezed.dart';
 class BuildUnsignedTransactionParams with _$BuildUnsignedTransactionParams {
   /// @nodoc
   const factory BuildUnsignedTransactionParams({
-    required TransactionType transactionType,
+    required TransactionTypeBuilder transactionTypeBuilder,
     FeeBuilder? feeBuilder,
     int? nonce,
     int? txVersion,
@@ -20,16 +20,16 @@ class BuildUnsignedTransactionParams with _$BuildUnsignedTransactionParams {
   const BuildUnsignedTransactionParams._();
 
   /// @nodoc
-  Map<String, dynamic> toJson() => switch (transactionType) {
-        Transfers() => {
-            ...transactionType.toJson(),
+  Map<String, dynamic> toJson() => switch (transactionTypeBuilder) {
+        TransfersBuilder() => {
+            ...transactionTypeBuilder.toJson(),
             if (feeBuilder != null) 'fee': feeBuilder,
             if (nonce != null) 'nonce': nonce,
             if (txVersion != null) 'tx_version': txVersion,
             if (txAsHex != null) 'tx_as_hex': txAsHex,
           },
-        Burn() => {
-            'burn': transactionType.toJson(),
+        BurnBuilder() => {
+            'burn': transactionTypeBuilder.toJson(),
             if (feeBuilder != null) 'fee': feeBuilder,
             if (nonce != null) 'nonce': nonce,
             if (txVersion != null) 'tx_version': txVersion,

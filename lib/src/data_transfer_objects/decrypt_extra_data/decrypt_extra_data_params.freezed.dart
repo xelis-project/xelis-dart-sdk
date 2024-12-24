@@ -23,7 +23,6 @@ DecryptExtraDataDaemonParams _$DecryptExtraDataDaemonParamsFromJson(
 mixin _$DecryptExtraDataDaemonParams {
   @JsonKey(name: 'extra_data')
   dynamic get extraData => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'private_key')
   String get privateKey => throw _privateConstructorUsedError;
 
@@ -44,7 +43,6 @@ abstract class $DecryptExtraDataDaemonParamsCopyWith<$Res> {
           $Res Function(DecryptExtraDataDaemonParams) then) =
       _$DecryptExtraDataDaemonParamsCopyWithImpl<$Res,
           DecryptExtraDataDaemonParams>;
-
   @useResult
   $Res call(
       {@JsonKey(name: 'extra_data') dynamic extraData,
@@ -59,7 +57,6 @@ class _$DecryptExtraDataDaemonParamsCopyWithImpl<$Res,
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -91,7 +88,6 @@ abstract class _$$DecryptExtraDataDaemonParamsImplCopyWith<$Res>
           _$DecryptExtraDataDaemonParamsImpl value,
           $Res Function(_$DecryptExtraDataDaemonParamsImpl) then) =
       __$$DecryptExtraDataDaemonParamsImplCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -200,7 +196,6 @@ abstract class _DecryptExtraDataDaemonParams
   @override
   @JsonKey(name: 'extra_data')
   dynamic get extraData;
-
   @override
   @JsonKey(name: 'private_key')
   String get privateKey;

@@ -12,7 +12,7 @@ part 'transaction_type.g.dart';
 sealed class TransactionType with _$TransactionType {
   /// @nodoc
   const factory TransactionType.transfers({
-    @JsonKey(name: 'transfers') required List<RPCTransferPayload> transfers,
+    @JsonKey(name: 'transfers') required List<TransferPayload> transfers,
   }) = Transfers;
 
   /// @nodoc

@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'wallet_transaction_response.dart';
+part of 'transaction_wallet_response.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$WalletTransactionResponse {
+mixin _$TransactionWalletResponse {
   String? get txAsHex => throw _privateConstructorUsedError;
   TransactionType get data => throw _privateConstructorUsedError;
   int get fee => throw _privateConstructorUsedError;
@@ -25,21 +25,22 @@ mixin _$WalletTransactionResponse {
   List<int> get rangeProof => throw _privateConstructorUsedError;
   List<Map<String, dynamic>> get sourceCommitments =>
       throw _privateConstructorUsedError;
-  Map<String, dynamic> get reference => throw _privateConstructorUsedError;
+  Reference get reference => throw _privateConstructorUsedError;
   String get signature => throw _privateConstructorUsedError;
+  Multisig? get multiSig => throw _privateConstructorUsedError;
 
-  /// Create a copy of WalletTransactionResponse
+  /// Create a copy of TransactionWalletResponse
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $WalletTransactionResponseCopyWith<WalletTransactionResponse> get copyWith =>
+  $TransactionWalletResponseCopyWith<TransactionWalletResponse> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $WalletTransactionResponseCopyWith<$Res> {
-  factory $WalletTransactionResponseCopyWith(WalletTransactionResponse value,
-          $Res Function(WalletTransactionResponse) then) =
-      _$WalletTransactionResponseCopyWithImpl<$Res, WalletTransactionResponse>;
+abstract class $TransactionWalletResponseCopyWith<$Res> {
+  factory $TransactionWalletResponseCopyWith(TransactionWalletResponse value,
+          $Res Function(TransactionWalletResponse) then) =
+      _$TransactionWalletResponseCopyWithImpl<$Res, TransactionWalletResponse>;
   @useResult
   $Res call(
       {String? txAsHex,
@@ -50,24 +51,27 @@ abstract class $WalletTransactionResponseCopyWith<$Res> {
       String source,
       List<int> rangeProof,
       List<Map<String, dynamic>> sourceCommitments,
-      Map<String, dynamic> reference,
-      String signature});
+      Reference reference,
+      String signature,
+      Multisig? multiSig});
 
   $TransactionTypeCopyWith<$Res> get data;
+  $ReferenceCopyWith<$Res> get reference;
+  $MultisigCopyWith<$Res>? get multiSig;
 }
 
 /// @nodoc
-class _$WalletTransactionResponseCopyWithImpl<$Res,
-        $Val extends WalletTransactionResponse>
-    implements $WalletTransactionResponseCopyWith<$Res> {
-  _$WalletTransactionResponseCopyWithImpl(this._value, this._then);
+class _$TransactionWalletResponseCopyWithImpl<$Res,
+        $Val extends TransactionWalletResponse>
+    implements $TransactionWalletResponseCopyWith<$Res> {
+  _$TransactionWalletResponseCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of WalletTransactionResponse
+  /// Create a copy of TransactionWalletResponse
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -82,6 +86,7 @@ class _$WalletTransactionResponseCopyWithImpl<$Res,
     Object? sourceCommitments = null,
     Object? reference = null,
     Object? signature = null,
+    Object? multiSig = freezed,
   }) {
     return _then(_value.copyWith(
       txAsHex: freezed == txAsHex
@@ -119,15 +124,19 @@ class _$WalletTransactionResponseCopyWithImpl<$Res,
       reference: null == reference
           ? _value.reference
           : reference // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
+              as Reference,
       signature: null == signature
           ? _value.signature
           : signature // ignore: cast_nullable_to_non_nullable
               as String,
+      multiSig: freezed == multiSig
+          ? _value.multiSig
+          : multiSig // ignore: cast_nullable_to_non_nullable
+              as Multisig?,
     ) as $Val);
   }
 
-  /// Create a copy of WalletTransactionResponse
+  /// Create a copy of TransactionWalletResponse
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
@@ -136,15 +145,39 @@ class _$WalletTransactionResponseCopyWithImpl<$Res,
       return _then(_value.copyWith(data: value) as $Val);
     });
   }
+
+  /// Create a copy of TransactionWalletResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ReferenceCopyWith<$Res> get reference {
+    return $ReferenceCopyWith<$Res>(_value.reference, (value) {
+      return _then(_value.copyWith(reference: value) as $Val);
+    });
+  }
+
+  /// Create a copy of TransactionWalletResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MultisigCopyWith<$Res>? get multiSig {
+    if (_value.multiSig == null) {
+      return null;
+    }
+
+    return $MultisigCopyWith<$Res>(_value.multiSig!, (value) {
+      return _then(_value.copyWith(multiSig: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
-abstract class _$$WalletTransactionResponseImplCopyWith<$Res>
-    implements $WalletTransactionResponseCopyWith<$Res> {
-  factory _$$WalletTransactionResponseImplCopyWith(
-          _$WalletTransactionResponseImpl value,
-          $Res Function(_$WalletTransactionResponseImpl) then) =
-      __$$WalletTransactionResponseImplCopyWithImpl<$Res>;
+abstract class _$$TransactionWalletResponseImplCopyWith<$Res>
+    implements $TransactionWalletResponseCopyWith<$Res> {
+  factory _$$TransactionWalletResponseImplCopyWith(
+          _$TransactionWalletResponseImpl value,
+          $Res Function(_$TransactionWalletResponseImpl) then) =
+      __$$TransactionWalletResponseImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -156,24 +189,29 @@ abstract class _$$WalletTransactionResponseImplCopyWith<$Res>
       String source,
       List<int> rangeProof,
       List<Map<String, dynamic>> sourceCommitments,
-      Map<String, dynamic> reference,
-      String signature});
+      Reference reference,
+      String signature,
+      Multisig? multiSig});
 
   @override
   $TransactionTypeCopyWith<$Res> get data;
+  @override
+  $ReferenceCopyWith<$Res> get reference;
+  @override
+  $MultisigCopyWith<$Res>? get multiSig;
 }
 
 /// @nodoc
-class __$$WalletTransactionResponseImplCopyWithImpl<$Res>
-    extends _$WalletTransactionResponseCopyWithImpl<$Res,
-        _$WalletTransactionResponseImpl>
-    implements _$$WalletTransactionResponseImplCopyWith<$Res> {
-  __$$WalletTransactionResponseImplCopyWithImpl(
-      _$WalletTransactionResponseImpl _value,
-      $Res Function(_$WalletTransactionResponseImpl) _then)
+class __$$TransactionWalletResponseImplCopyWithImpl<$Res>
+    extends _$TransactionWalletResponseCopyWithImpl<$Res,
+        _$TransactionWalletResponseImpl>
+    implements _$$TransactionWalletResponseImplCopyWith<$Res> {
+  __$$TransactionWalletResponseImplCopyWithImpl(
+      _$TransactionWalletResponseImpl _value,
+      $Res Function(_$TransactionWalletResponseImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of WalletTransactionResponse
+  /// Create a copy of TransactionWalletResponse
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -188,8 +226,9 @@ class __$$WalletTransactionResponseImplCopyWithImpl<$Res>
     Object? sourceCommitments = null,
     Object? reference = null,
     Object? signature = null,
+    Object? multiSig = freezed,
   }) {
-    return _then(_$WalletTransactionResponseImpl(
+    return _then(_$TransactionWalletResponseImpl(
       txAsHex: freezed == txAsHex
           ? _value.txAsHex
           : txAsHex // ignore: cast_nullable_to_non_nullable
@@ -223,21 +262,25 @@ class __$$WalletTransactionResponseImplCopyWithImpl<$Res>
           : sourceCommitments // ignore: cast_nullable_to_non_nullable
               as List<Map<String, dynamic>>,
       reference: null == reference
-          ? _value._reference
+          ? _value.reference
           : reference // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
+              as Reference,
       signature: null == signature
           ? _value.signature
           : signature // ignore: cast_nullable_to_non_nullable
               as String,
+      multiSig: freezed == multiSig
+          ? _value.multiSig
+          : multiSig // ignore: cast_nullable_to_non_nullable
+              as Multisig?,
     ));
   }
 }
 
 /// @nodoc
 
-class _$WalletTransactionResponseImpl implements _WalletTransactionResponse {
-  const _$WalletTransactionResponseImpl(
+class _$TransactionWalletResponseImpl implements _TransactionWalletResponse {
+  const _$TransactionWalletResponseImpl(
       {required this.txAsHex,
       required this.data,
       required this.fee,
@@ -246,11 +289,11 @@ class _$WalletTransactionResponseImpl implements _WalletTransactionResponse {
       required this.source,
       required final List<int> rangeProof,
       required final List<Map<String, dynamic>> sourceCommitments,
-      required final Map<String, dynamic> reference,
-      required this.signature})
+      required this.reference,
+      required this.signature,
+      this.multiSig})
       : _rangeProof = rangeProof,
-        _sourceCommitments = sourceCommitments,
-        _reference = reference;
+        _sourceCommitments = sourceCommitments;
 
   @override
   final String? txAsHex;
@@ -281,27 +324,23 @@ class _$WalletTransactionResponseImpl implements _WalletTransactionResponse {
     return EqualUnmodifiableListView(_sourceCommitments);
   }
 
-  final Map<String, dynamic> _reference;
   @override
-  Map<String, dynamic> get reference {
-    if (_reference is EqualUnmodifiableMapView) return _reference;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(_reference);
-  }
-
+  final Reference reference;
   @override
   final String signature;
+  @override
+  final Multisig? multiSig;
 
   @override
   String toString() {
-    return 'WalletTransactionResponse(txAsHex: $txAsHex, data: $data, fee: $fee, version: $version, nonce: $nonce, source: $source, rangeProof: $rangeProof, sourceCommitments: $sourceCommitments, reference: $reference, signature: $signature)';
+    return 'TransactionWalletResponse(txAsHex: $txAsHex, data: $data, fee: $fee, version: $version, nonce: $nonce, source: $source, rangeProof: $rangeProof, sourceCommitments: $sourceCommitments, reference: $reference, signature: $signature, multiSig: $multiSig)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$WalletTransactionResponseImpl &&
+            other is _$TransactionWalletResponseImpl &&
             (identical(other.txAsHex, txAsHex) || other.txAsHex == txAsHex) &&
             (identical(other.data, data) || other.data == data) &&
             (identical(other.fee, fee) || other.fee == fee) &&
@@ -312,10 +351,12 @@ class _$WalletTransactionResponseImpl implements _WalletTransactionResponse {
                 .equals(other._rangeProof, _rangeProof) &&
             const DeepCollectionEquality()
                 .equals(other._sourceCommitments, _sourceCommitments) &&
-            const DeepCollectionEquality()
-                .equals(other._reference, _reference) &&
+            (identical(other.reference, reference) ||
+                other.reference == reference) &&
             (identical(other.signature, signature) ||
-                other.signature == signature));
+                other.signature == signature) &&
+            (identical(other.multiSig, multiSig) ||
+                other.multiSig == multiSig));
   }
 
   @override
@@ -329,21 +370,22 @@ class _$WalletTransactionResponseImpl implements _WalletTransactionResponse {
       source,
       const DeepCollectionEquality().hash(_rangeProof),
       const DeepCollectionEquality().hash(_sourceCommitments),
-      const DeepCollectionEquality().hash(_reference),
-      signature);
+      reference,
+      signature,
+      multiSig);
 
-  /// Create a copy of WalletTransactionResponse
+  /// Create a copy of TransactionWalletResponse
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$WalletTransactionResponseImplCopyWith<_$WalletTransactionResponseImpl>
-      get copyWith => __$$WalletTransactionResponseImplCopyWithImpl<
-          _$WalletTransactionResponseImpl>(this, _$identity);
+  _$$TransactionWalletResponseImplCopyWith<_$TransactionWalletResponseImpl>
+      get copyWith => __$$TransactionWalletResponseImplCopyWithImpl<
+          _$TransactionWalletResponseImpl>(this, _$identity);
 }
 
-abstract class _WalletTransactionResponse implements WalletTransactionResponse {
-  const factory _WalletTransactionResponse(
+abstract class _TransactionWalletResponse implements TransactionWalletResponse {
+  const factory _TransactionWalletResponse(
       {required final String? txAsHex,
       required final TransactionType data,
       required final int fee,
@@ -352,8 +394,9 @@ abstract class _WalletTransactionResponse implements WalletTransactionResponse {
       required final String source,
       required final List<int> rangeProof,
       required final List<Map<String, dynamic>> sourceCommitments,
-      required final Map<String, dynamic> reference,
-      required final String signature}) = _$WalletTransactionResponseImpl;
+      required final Reference reference,
+      required final String signature,
+      final Multisig? multiSig}) = _$TransactionWalletResponseImpl;
 
   @override
   String? get txAsHex;
@@ -372,14 +415,16 @@ abstract class _WalletTransactionResponse implements WalletTransactionResponse {
   @override
   List<Map<String, dynamic>> get sourceCommitments;
   @override
-  Map<String, dynamic> get reference;
+  Reference get reference;
   @override
   String get signature;
+  @override
+  Multisig? get multiSig;
 
-  /// Create a copy of WalletTransactionResponse
+  /// Create a copy of TransactionWalletResponse
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$WalletTransactionResponseImplCopyWith<_$WalletTransactionResponseImpl>
+  _$$TransactionWalletResponseImplCopyWith<_$TransactionWalletResponseImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

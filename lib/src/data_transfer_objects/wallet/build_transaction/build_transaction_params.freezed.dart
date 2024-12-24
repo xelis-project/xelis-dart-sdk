@@ -16,7 +16,8 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$BuildTransactionParams {
-  TransactionType get transactionType => throw _privateConstructorUsedError;
+  TransactionTypeBuilder get transactionTypeBuilder =>
+      throw _privateConstructorUsedError;
   FeeBuilder? get feeBuilder => throw _privateConstructorUsedError;
   int? get nonce => throw _privateConstructorUsedError;
   int? get txVersion => throw _privateConstructorUsedError;
@@ -38,7 +39,7 @@ abstract class $BuildTransactionParamsCopyWith<$Res> {
       _$BuildTransactionParamsCopyWithImpl<$Res, BuildTransactionParams>;
   @useResult
   $Res call(
-      {TransactionType transactionType,
+      {TransactionTypeBuilder transactionTypeBuilder,
       FeeBuilder? feeBuilder,
       int? nonce,
       int? txVersion,
@@ -46,7 +47,7 @@ abstract class $BuildTransactionParamsCopyWith<$Res> {
       bool? txAsHex,
       List<SignerId>? signers});
 
-  $TransactionTypeCopyWith<$Res> get transactionType;
+  $TransactionTypeBuilderCopyWith<$Res> get transactionTypeBuilder;
   $FeeBuilderCopyWith<$Res>? get feeBuilder;
 }
 
@@ -66,7 +67,7 @@ class _$BuildTransactionParamsCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? transactionType = null,
+    Object? transactionTypeBuilder = null,
     Object? feeBuilder = freezed,
     Object? nonce = freezed,
     Object? txVersion = freezed,
@@ -75,10 +76,10 @@ class _$BuildTransactionParamsCopyWithImpl<$Res,
     Object? signers = freezed,
   }) {
     return _then(_value.copyWith(
-      transactionType: null == transactionType
-          ? _value.transactionType
-          : transactionType // ignore: cast_nullable_to_non_nullable
-              as TransactionType,
+      transactionTypeBuilder: null == transactionTypeBuilder
+          ? _value.transactionTypeBuilder
+          : transactionTypeBuilder // ignore: cast_nullable_to_non_nullable
+              as TransactionTypeBuilder,
       feeBuilder: freezed == feeBuilder
           ? _value.feeBuilder
           : feeBuilder // ignore: cast_nullable_to_non_nullable
@@ -110,9 +111,10 @@ class _$BuildTransactionParamsCopyWithImpl<$Res,
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $TransactionTypeCopyWith<$Res> get transactionType {
-    return $TransactionTypeCopyWith<$Res>(_value.transactionType, (value) {
-      return _then(_value.copyWith(transactionType: value) as $Val);
+  $TransactionTypeBuilderCopyWith<$Res> get transactionTypeBuilder {
+    return $TransactionTypeBuilderCopyWith<$Res>(_value.transactionTypeBuilder,
+        (value) {
+      return _then(_value.copyWith(transactionTypeBuilder: value) as $Val);
     });
   }
 
@@ -141,7 +143,7 @@ abstract class _$$BuildTransactionParamsImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {TransactionType transactionType,
+      {TransactionTypeBuilder transactionTypeBuilder,
       FeeBuilder? feeBuilder,
       int? nonce,
       int? txVersion,
@@ -150,7 +152,7 @@ abstract class _$$BuildTransactionParamsImplCopyWith<$Res>
       List<SignerId>? signers});
 
   @override
-  $TransactionTypeCopyWith<$Res> get transactionType;
+  $TransactionTypeBuilderCopyWith<$Res> get transactionTypeBuilder;
   @override
   $FeeBuilderCopyWith<$Res>? get feeBuilder;
 }
@@ -170,7 +172,7 @@ class __$$BuildTransactionParamsImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? transactionType = null,
+    Object? transactionTypeBuilder = null,
     Object? feeBuilder = freezed,
     Object? nonce = freezed,
     Object? txVersion = freezed,
@@ -179,10 +181,10 @@ class __$$BuildTransactionParamsImplCopyWithImpl<$Res>
     Object? signers = freezed,
   }) {
     return _then(_$BuildTransactionParamsImpl(
-      transactionType: null == transactionType
-          ? _value.transactionType
-          : transactionType // ignore: cast_nullable_to_non_nullable
-              as TransactionType,
+      transactionTypeBuilder: null == transactionTypeBuilder
+          ? _value.transactionTypeBuilder
+          : transactionTypeBuilder // ignore: cast_nullable_to_non_nullable
+              as TransactionTypeBuilder,
       feeBuilder: freezed == feeBuilder
           ? _value.feeBuilder
           : feeBuilder // ignore: cast_nullable_to_non_nullable
@@ -215,7 +217,7 @@ class __$$BuildTransactionParamsImplCopyWithImpl<$Res>
 
 class _$BuildTransactionParamsImpl extends _BuildTransactionParams {
   const _$BuildTransactionParamsImpl(
-      {required this.transactionType,
+      {required this.transactionTypeBuilder,
       this.feeBuilder,
       this.nonce,
       this.txVersion,
@@ -226,7 +228,7 @@ class _$BuildTransactionParamsImpl extends _BuildTransactionParams {
         super._();
 
   @override
-  final TransactionType transactionType;
+  final TransactionTypeBuilder transactionTypeBuilder;
   @override
   final FeeBuilder? feeBuilder;
   @override
@@ -249,7 +251,7 @@ class _$BuildTransactionParamsImpl extends _BuildTransactionParams {
 
   @override
   String toString() {
-    return 'BuildTransactionParams(transactionType: $transactionType, feeBuilder: $feeBuilder, nonce: $nonce, txVersion: $txVersion, broadcast: $broadcast, txAsHex: $txAsHex, signers: $signers)';
+    return 'BuildTransactionParams(transactionTypeBuilder: $transactionTypeBuilder, feeBuilder: $feeBuilder, nonce: $nonce, txVersion: $txVersion, broadcast: $broadcast, txAsHex: $txAsHex, signers: $signers)';
   }
 
   @override
@@ -257,8 +259,8 @@ class _$BuildTransactionParamsImpl extends _BuildTransactionParams {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$BuildTransactionParamsImpl &&
-            (identical(other.transactionType, transactionType) ||
-                other.transactionType == transactionType) &&
+            (identical(other.transactionTypeBuilder, transactionTypeBuilder) ||
+                other.transactionTypeBuilder == transactionTypeBuilder) &&
             (identical(other.feeBuilder, feeBuilder) ||
                 other.feeBuilder == feeBuilder) &&
             (identical(other.nonce, nonce) || other.nonce == nonce) &&
@@ -273,7 +275,7 @@ class _$BuildTransactionParamsImpl extends _BuildTransactionParams {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      transactionType,
+      transactionTypeBuilder,
       feeBuilder,
       nonce,
       txVersion,
@@ -293,7 +295,7 @@ class _$BuildTransactionParamsImpl extends _BuildTransactionParams {
 
 abstract class _BuildTransactionParams extends BuildTransactionParams {
   const factory _BuildTransactionParams(
-      {required final TransactionType transactionType,
+      {required final TransactionTypeBuilder transactionTypeBuilder,
       final FeeBuilder? feeBuilder,
       final int? nonce,
       final int? txVersion,
@@ -303,7 +305,7 @@ abstract class _BuildTransactionParams extends BuildTransactionParams {
   const _BuildTransactionParams._() : super._();
 
   @override
-  TransactionType get transactionType;
+  TransactionTypeBuilder get transactionTypeBuilder;
   @override
   FeeBuilder? get feeBuilder;
   @override

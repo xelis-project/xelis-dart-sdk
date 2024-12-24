@@ -2,15 +2,15 @@
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'rpc_transfer_payload.freezed.dart';
+part 'transfer_payload.freezed.dart';
 
-part 'rpc_transfer_payload.g.dart';
+part 'transfer_payload.g.dart';
 
 /// @nodoc
 @freezed
-class RPCTransferPayload with _$RPCTransferPayload {
+class TransferPayload with _$TransferPayload {
   /// @nodoc
-  const factory RPCTransferPayload({
+  const factory TransferPayload({
     @JsonKey(name: 'asset') required String asset,
     @JsonKey(name: 'commitment') required List<int> commitment,
     @JsonKey(name: 'ct_validity_proof')
@@ -19,9 +19,9 @@ class RPCTransferPayload with _$RPCTransferPayload {
     @JsonKey(name: 'receiver_handle') required List<int> receiverHandle,
     @JsonKey(name: 'sender_handle') required List<int> senderHandle,
     @JsonKey(name: 'extra_data') dynamic extraData,
-  }) = _RPCTransferPayload;
+  }) = _TransferPayload;
 
   /// @nodoc
-  factory RPCTransferPayload.fromJson(Map<String, dynamic> json) =>
-      _$RPCTransferPayloadFromJson(json);
+  factory TransferPayload.fromJson(Map<String, dynamic> json) =>
+      _$TransferPayloadFromJson(json);
 }
