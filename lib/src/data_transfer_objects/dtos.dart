@@ -85,6 +85,7 @@ export 'wallet/decrypt_extra_data/decrypt_extra_data_params.dart';
 export 'wallet/decrypt_extra_data/role.dart';
 export 'wallet/estimate_extra_data_size/estimate_extra_data_size_params.dart';
 export 'wallet/estimate_extra_data_size/estimate_extra_data_size_result.dart';
+export 'wallet/finalize_unsigned_transaction/finalize_unsigned_transaction_params.dart';
 export 'wallet/get_address/get_address_params.dart';
 export 'wallet/get_balance/get_wallet_balance_params.dart';
 export 'wallet/list_transactions/list_transactions_params.dart';

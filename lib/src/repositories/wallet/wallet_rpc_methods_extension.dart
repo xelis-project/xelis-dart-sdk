@@ -158,6 +158,18 @@ extension WalletRpcMethodsExtension on WalletClient {
     return TransactionWalletResponse.fromJson(result as Map<String, dynamic>);
   }
 
+  /// Finalize an unsigned transaction by signing it with the wallet key pair.
+  /// Once signed, the transaction can be broadcasted to the network.
+  Future<TransactionWalletResponse> finalizeUnsignedTransaction(
+    FinalizeUnsignedTransactionParams finalizeUnsignedTransactionParams,
+  ) async {
+    final result = await sendRequest(
+      WalletMethod.finalizeUnsignedTransaction,
+      finalizeUnsignedTransactionParams.toJson(),
+    );
+    return TransactionWalletResponse.fromJson(result as Map<String, dynamic>);
+  }
+
   /// Search for transactions based on various parameters.
   /// By default it accepts every TXs.
   Future<List<TransactionEntry>> listTransactions([
