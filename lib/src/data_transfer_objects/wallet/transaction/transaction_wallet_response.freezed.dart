@@ -19,9 +19,10 @@ mixin _$TransactionWalletResponse {
   String? get txAsHex => throw _privateConstructorUsedError;
   TransactionType get data => throw _privateConstructorUsedError;
   int get fee => throw _privateConstructorUsedError;
+  String get hash => throw _privateConstructorUsedError;
   int get version => throw _privateConstructorUsedError;
   int get nonce => throw _privateConstructorUsedError;
-  String get source => throw _privateConstructorUsedError;
+  List<int> get source => throw _privateConstructorUsedError;
   List<int> get rangeProof => throw _privateConstructorUsedError;
   List<Map<String, dynamic>> get sourceCommitments =>
       throw _privateConstructorUsedError;
@@ -46,9 +47,10 @@ abstract class $TransactionWalletResponseCopyWith<$Res> {
       {String? txAsHex,
       TransactionType data,
       int fee,
+      String hash,
       int version,
       int nonce,
-      String source,
+      List<int> source,
       List<int> rangeProof,
       List<Map<String, dynamic>> sourceCommitments,
       Reference reference,
@@ -79,6 +81,7 @@ class _$TransactionWalletResponseCopyWithImpl<$Res,
     Object? txAsHex = freezed,
     Object? data = null,
     Object? fee = null,
+    Object? hash = null,
     Object? version = null,
     Object? nonce = null,
     Object? source = null,
@@ -101,6 +104,10 @@ class _$TransactionWalletResponseCopyWithImpl<$Res,
           ? _value.fee
           : fee // ignore: cast_nullable_to_non_nullable
               as int,
+      hash: null == hash
+          ? _value.hash
+          : hash // ignore: cast_nullable_to_non_nullable
+              as String,
       version: null == version
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
@@ -112,7 +119,7 @@ class _$TransactionWalletResponseCopyWithImpl<$Res,
       source: null == source
           ? _value.source
           : source // ignore: cast_nullable_to_non_nullable
-              as String,
+              as List<int>,
       rangeProof: null == rangeProof
           ? _value.rangeProof
           : rangeProof // ignore: cast_nullable_to_non_nullable
@@ -184,9 +191,10 @@ abstract class _$$TransactionWalletResponseImplCopyWith<$Res>
       {String? txAsHex,
       TransactionType data,
       int fee,
+      String hash,
       int version,
       int nonce,
-      String source,
+      List<int> source,
       List<int> rangeProof,
       List<Map<String, dynamic>> sourceCommitments,
       Reference reference,
@@ -219,6 +227,7 @@ class __$$TransactionWalletResponseImplCopyWithImpl<$Res>
     Object? txAsHex = freezed,
     Object? data = null,
     Object? fee = null,
+    Object? hash = null,
     Object? version = null,
     Object? nonce = null,
     Object? source = null,
@@ -241,6 +250,10 @@ class __$$TransactionWalletResponseImplCopyWithImpl<$Res>
           ? _value.fee
           : fee // ignore: cast_nullable_to_non_nullable
               as int,
+      hash: null == hash
+          ? _value.hash
+          : hash // ignore: cast_nullable_to_non_nullable
+              as String,
       version: null == version
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
@@ -250,9 +263,9 @@ class __$$TransactionWalletResponseImplCopyWithImpl<$Res>
           : nonce // ignore: cast_nullable_to_non_nullable
               as int,
       source: null == source
-          ? _value.source
+          ? _value._source
           : source // ignore: cast_nullable_to_non_nullable
-              as String,
+              as List<int>,
       rangeProof: null == rangeProof
           ? _value._rangeProof
           : rangeProof // ignore: cast_nullable_to_non_nullable
@@ -284,15 +297,17 @@ class _$TransactionWalletResponseImpl implements _TransactionWalletResponse {
       {required this.txAsHex,
       required this.data,
       required this.fee,
+      required this.hash,
       required this.version,
       required this.nonce,
-      required this.source,
+      required final List<int> source,
       required final List<int> rangeProof,
       required final List<Map<String, dynamic>> sourceCommitments,
       required this.reference,
       required this.signature,
       this.multiSig})
-      : _rangeProof = rangeProof,
+      : _source = source,
+        _rangeProof = rangeProof,
         _sourceCommitments = sourceCommitments;
 
   @override
@@ -302,11 +317,19 @@ class _$TransactionWalletResponseImpl implements _TransactionWalletResponse {
   @override
   final int fee;
   @override
+  final String hash;
+  @override
   final int version;
   @override
   final int nonce;
+  final List<int> _source;
   @override
-  final String source;
+  List<int> get source {
+    if (_source is EqualUnmodifiableListView) return _source;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_source);
+  }
+
   final List<int> _rangeProof;
   @override
   List<int> get rangeProof {
@@ -333,7 +356,7 @@ class _$TransactionWalletResponseImpl implements _TransactionWalletResponse {
 
   @override
   String toString() {
-    return 'TransactionWalletResponse(txAsHex: $txAsHex, data: $data, fee: $fee, version: $version, nonce: $nonce, source: $source, rangeProof: $rangeProof, sourceCommitments: $sourceCommitments, reference: $reference, signature: $signature, multiSig: $multiSig)';
+    return 'TransactionWalletResponse(txAsHex: $txAsHex, data: $data, fee: $fee, hash: $hash, version: $version, nonce: $nonce, source: $source, rangeProof: $rangeProof, sourceCommitments: $sourceCommitments, reference: $reference, signature: $signature, multiSig: $multiSig)';
   }
 
   @override
@@ -344,9 +367,10 @@ class _$TransactionWalletResponseImpl implements _TransactionWalletResponse {
             (identical(other.txAsHex, txAsHex) || other.txAsHex == txAsHex) &&
             (identical(other.data, data) || other.data == data) &&
             (identical(other.fee, fee) || other.fee == fee) &&
+            (identical(other.hash, hash) || other.hash == hash) &&
             (identical(other.version, version) || other.version == version) &&
             (identical(other.nonce, nonce) || other.nonce == nonce) &&
-            (identical(other.source, source) || other.source == source) &&
+            const DeepCollectionEquality().equals(other._source, _source) &&
             const DeepCollectionEquality()
                 .equals(other._rangeProof, _rangeProof) &&
             const DeepCollectionEquality()
@@ -365,9 +389,10 @@ class _$TransactionWalletResponseImpl implements _TransactionWalletResponse {
       txAsHex,
       data,
       fee,
+      hash,
       version,
       nonce,
-      source,
+      const DeepCollectionEquality().hash(_source),
       const DeepCollectionEquality().hash(_rangeProof),
       const DeepCollectionEquality().hash(_sourceCommitments),
       reference,
@@ -389,9 +414,10 @@ abstract class _TransactionWalletResponse implements TransactionWalletResponse {
       {required final String? txAsHex,
       required final TransactionType data,
       required final int fee,
+      required final String hash,
       required final int version,
       required final int nonce,
-      required final String source,
+      required final List<int> source,
       required final List<int> rangeProof,
       required final List<Map<String, dynamic>> sourceCommitments,
       required final Reference reference,
@@ -405,11 +431,13 @@ abstract class _TransactionWalletResponse implements TransactionWalletResponse {
   @override
   int get fee;
   @override
+  String get hash;
+  @override
   int get version;
   @override
   int get nonce;
   @override
-  String get source;
+  List<int> get source;
   @override
   List<int> get rangeProof;
   @override

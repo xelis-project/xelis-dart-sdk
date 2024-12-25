@@ -16,7 +16,9 @@ _$TransferPayloadImpl _$$TransferPayloadImplFromJson(
           .map((e) => (e as num).toInt())
           .toList(),
       validityProof: json['ct_validity_proof'] as Map<String, dynamic>,
-      destination: json['destination'] as String,
+      destination: (json['destination'] as List<dynamic>)
+          .map((e) => (e as num).toInt())
+          .toList(),
       receiverHandle: (json['receiver_handle'] as List<dynamic>)
           .map((e) => (e as num).toInt())
           .toList(),
