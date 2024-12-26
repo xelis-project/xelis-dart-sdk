@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'signer_id.dart';
+part of 'signature_id.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,105 +14,106 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-SignerId _$SignerIdFromJson(Map<String, dynamic> json) {
-  return _SignerId.fromJson(json);
+SignatureId _$SignatureIdFromJson(Map<String, dynamic> json) {
+  return _SignatureId.fromJson(json);
 }
 
 /// @nodoc
-mixin _$SignerId {
+mixin _$SignatureId {
   @JsonKey(name: 'id')
   int get id => throw _privateConstructorUsedError;
-  @JsonKey(name: 'private_key')
-  String get privateKey => throw _privateConstructorUsedError;
+  @JsonKey(name: 'signature')
+  String get signature => throw _privateConstructorUsedError;
 
-  /// Serializes this SignerId to a JSON map.
+  /// Serializes this SignatureId to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-  /// Create a copy of SignerId
+  /// Create a copy of SignatureId
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $SignerIdCopyWith<SignerId> get copyWith =>
+  $SignatureIdCopyWith<SignatureId> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $SignerIdCopyWith<$Res> {
-  factory $SignerIdCopyWith(SignerId value, $Res Function(SignerId) then) =
-      _$SignerIdCopyWithImpl<$Res, SignerId>;
+abstract class $SignatureIdCopyWith<$Res> {
+  factory $SignatureIdCopyWith(
+          SignatureId value, $Res Function(SignatureId) then) =
+      _$SignatureIdCopyWithImpl<$Res, SignatureId>;
   @useResult
   $Res call(
       {@JsonKey(name: 'id') int id,
-      @JsonKey(name: 'private_key') String privateKey});
+      @JsonKey(name: 'signature') String signature});
 }
 
 /// @nodoc
-class _$SignerIdCopyWithImpl<$Res, $Val extends SignerId>
-    implements $SignerIdCopyWith<$Res> {
-  _$SignerIdCopyWithImpl(this._value, this._then);
+class _$SignatureIdCopyWithImpl<$Res, $Val extends SignatureId>
+    implements $SignatureIdCopyWith<$Res> {
+  _$SignatureIdCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of SignerId
+  /// Create a copy of SignatureId
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = null,
-    Object? privateKey = null,
+    Object? signature = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      privateKey: null == privateKey
-          ? _value.privateKey
-          : privateKey // ignore: cast_nullable_to_non_nullable
+      signature: null == signature
+          ? _value.signature
+          : signature // ignore: cast_nullable_to_non_nullable
               as String,
     ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$SignerIdImplCopyWith<$Res>
-    implements $SignerIdCopyWith<$Res> {
-  factory _$$SignerIdImplCopyWith(
-          _$SignerIdImpl value, $Res Function(_$SignerIdImpl) then) =
-      __$$SignerIdImplCopyWithImpl<$Res>;
+abstract class _$$SignatureIdImplCopyWith<$Res>
+    implements $SignatureIdCopyWith<$Res> {
+  factory _$$SignatureIdImplCopyWith(
+          _$SignatureIdImpl value, $Res Function(_$SignatureIdImpl) then) =
+      __$$SignatureIdImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
       {@JsonKey(name: 'id') int id,
-      @JsonKey(name: 'private_key') String privateKey});
+      @JsonKey(name: 'signature') String signature});
 }
 
 /// @nodoc
-class __$$SignerIdImplCopyWithImpl<$Res>
-    extends _$SignerIdCopyWithImpl<$Res, _$SignerIdImpl>
-    implements _$$SignerIdImplCopyWith<$Res> {
-  __$$SignerIdImplCopyWithImpl(
-      _$SignerIdImpl _value, $Res Function(_$SignerIdImpl) _then)
+class __$$SignatureIdImplCopyWithImpl<$Res>
+    extends _$SignatureIdCopyWithImpl<$Res, _$SignatureIdImpl>
+    implements _$$SignatureIdImplCopyWith<$Res> {
+  __$$SignatureIdImplCopyWithImpl(
+      _$SignatureIdImpl _value, $Res Function(_$SignatureIdImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of SignerId
+  /// Create a copy of SignatureId
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = null,
-    Object? privateKey = null,
+    Object? signature = null,
   }) {
-    return _then(_$SignerIdImpl(
+    return _then(_$SignatureIdImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      privateKey: null == privateKey
-          ? _value.privateKey
-          : privateKey // ignore: cast_nullable_to_non_nullable
+      signature: null == signature
+          ? _value.signature
+          : signature // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -120,76 +121,76 @@ class __$$SignerIdImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$SignerIdImpl implements _SignerId {
-  const _$SignerIdImpl(
+class _$SignatureIdImpl implements _SignatureId {
+  const _$SignatureIdImpl(
       {@JsonKey(name: 'id') required this.id,
-      @JsonKey(name: 'private_key') required this.privateKey});
+      @JsonKey(name: 'signature') required this.signature});
 
-  factory _$SignerIdImpl.fromJson(Map<String, dynamic> json) =>
-      _$$SignerIdImplFromJson(json);
+  factory _$SignatureIdImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SignatureIdImplFromJson(json);
 
   @override
   @JsonKey(name: 'id')
   final int id;
   @override
-  @JsonKey(name: 'private_key')
-  final String privateKey;
+  @JsonKey(name: 'signature')
+  final String signature;
 
   @override
   String toString() {
-    return 'SignerId(id: $id, privateKey: $privateKey)';
+    return 'SignatureId(id: $id, signature: $signature)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SignerIdImpl &&
+            other is _$SignatureIdImpl &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.privateKey, privateKey) ||
-                other.privateKey == privateKey));
+            (identical(other.signature, signature) ||
+                other.signature == signature));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, privateKey);
+  int get hashCode => Object.hash(runtimeType, id, signature);
 
-  /// Create a copy of SignerId
+  /// Create a copy of SignatureId
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$SignerIdImplCopyWith<_$SignerIdImpl> get copyWith =>
-      __$$SignerIdImplCopyWithImpl<_$SignerIdImpl>(this, _$identity);
+  _$$SignatureIdImplCopyWith<_$SignatureIdImpl> get copyWith =>
+      __$$SignatureIdImplCopyWithImpl<_$SignatureIdImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$SignerIdImplToJson(
+    return _$$SignatureIdImplToJson(
       this,
     );
   }
 }
 
-abstract class _SignerId implements SignerId {
-  const factory _SignerId(
+abstract class _SignatureId implements SignatureId {
+  const factory _SignatureId(
           {@JsonKey(name: 'id') required final int id,
-          @JsonKey(name: 'private_key') required final String privateKey}) =
-      _$SignerIdImpl;
+          @JsonKey(name: 'signature') required final String signature}) =
+      _$SignatureIdImpl;
 
-  factory _SignerId.fromJson(Map<String, dynamic> json) =
-      _$SignerIdImpl.fromJson;
+  factory _SignatureId.fromJson(Map<String, dynamic> json) =
+      _$SignatureIdImpl.fromJson;
 
   @override
   @JsonKey(name: 'id')
   int get id;
   @override
-  @JsonKey(name: 'private_key')
-  String get privateKey;
+  @JsonKey(name: 'signature')
+  String get signature;
 
-  /// Create a copy of SignerId
+  /// Create a copy of SignatureId
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$SignerIdImplCopyWith<_$SignerIdImpl> get copyWith =>
+  _$$SignatureIdImplCopyWith<_$SignatureIdImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

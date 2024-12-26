@@ -4,7 +4,6 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/dtos.dart';
 
 part 'multisig.freezed.dart';
-
 part 'multisig.g.dart';
 
 /// @nodoc
@@ -12,7 +11,7 @@ part 'multisig.g.dart';
 class Multisig with _$Multisig {
   /// @nodoc
   const factory Multisig({
-    @JsonKey(name: 'signatures') required List<SignerId> signatures,
+    @JsonKey(name: 'signatures') required List<SignatureId> signatures,
   }) = _Multisig;
 
   /// @nodoc

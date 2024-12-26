@@ -2,20 +2,20 @@
 
 // ignore_for_file: package_api_docs, non_constant_identifier_names
 
-part of 'signer_id.dart';
+part of 'signature_id.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$SignerIdImpl _$$SignerIdImplFromJson(Map<String, dynamic> json) =>
-    _$SignerIdImpl(
+_$SignatureIdImpl _$$SignatureIdImplFromJson(Map<String, dynamic> json) =>
+    _$SignatureIdImpl(
       id: (json['id'] as num).toInt(),
-      privateKey: json['private_key'] as String,
+      signature: json['signature'] as String,
     );
 
-Map<String, dynamic> _$$SignerIdImplToJson(_$SignerIdImpl instance) =>
+Map<String, dynamic> _$$SignatureIdImplToJson(_$SignatureIdImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'private_key': instance.privateKey,
+      'signature': instance.signature,
     };

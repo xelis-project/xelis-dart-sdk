@@ -14,7 +14,7 @@ _$FinalizeUnsignedTransactionParamsImpl
         _$FinalizeUnsignedTransactionParamsImpl(
           unsignedTransaction: json['unsigned'] as String,
           signatures: (json['signatures'] as List<dynamic>?)
-              ?.map((e) => SignerId.fromJson(e as Map<String, dynamic>))
+              ?.map((e) => SignatureId.fromJson(e as Map<String, dynamic>))
               .toList(),
           broadcast: json['broadcast'] as bool?,
           txAsHex: json['tx_as_hex'] as bool?,

@@ -3,7 +3,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'signer_id.freezed.dart';
-
 part 'signer_id.g.dart';
 
 /// @nodoc
@@ -12,7 +11,7 @@ class SignerId with _$SignerId {
   /// @nodoc
   const factory SignerId({
     @JsonKey(name: 'id') required int id,
-    @JsonKey(name: 'public_key') required String publicKey,
+    @JsonKey(name: 'private_key') required String privateKey,
   }) = _SignerId;
 
   /// @nodoc

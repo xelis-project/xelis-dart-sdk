@@ -63,6 +63,10 @@ enum WalletMethod implements XelisJsonKey {
   /// Once signed, the transaction can be broadcasted to the network.
   finalizeUnsignedTransaction('finalize_unsigned_transaction'),
 
+  /// Sign an unsigned transaction hash with the wallet key pair.
+  /// This is useful in case you are a part of the multisig of another wallet and you need to sign a transaction.
+  signUnsignedTransaction('sign_unsigned_transaction'),
+
   /// Search for transactions based on various parameters.
   /// By default it accepts every TXs.
   listTransactions('list_transactions'),

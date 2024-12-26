@@ -158,6 +158,19 @@ extension WalletRpcMethodsExtension on WalletClient {
     return UnsignedTransactionResponse.fromJson(result as Map<String, dynamic>);
   }
 
+  /// Sign an unsigned transaction hash with the wallet key pair.
+  /// This is useful in case you are a part of the multisig of another wallet and you need to sign a transaction.
+  Future<SignatureId> signUnsignedTransaction(
+    SignUnsignedTransactionParams signUnsignedTransactionParams,
+  ) async {
+    final result = await sendRequest(
+      WalletMethod.signUnsignedTransaction,
+      signUnsignedTransactionParams.toJson(),
+    );
+
+    return SignatureId.fromJson(result as Map<String, dynamic>);
+  }
+
   /// Finalize an unsigned transaction by signing it with the wallet key pair.
   /// Once signed, the transaction can be broadcasted to the network.
   Future<TransactionWalletResponse> finalizeUnsignedTransaction(

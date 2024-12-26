@@ -21,7 +21,7 @@ Multisig _$MultisigFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Multisig {
   @JsonKey(name: 'signatures')
-  List<SignerId> get signatures => throw _privateConstructorUsedError;
+  List<SignatureId> get signatures => throw _privateConstructorUsedError;
 
   /// Serializes this Multisig to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -38,7 +38,7 @@ abstract class $MultisigCopyWith<$Res> {
   factory $MultisigCopyWith(Multisig value, $Res Function(Multisig) then) =
       _$MultisigCopyWithImpl<$Res, Multisig>;
   @useResult
-  $Res call({@JsonKey(name: 'signatures') List<SignerId> signatures});
+  $Res call({@JsonKey(name: 'signatures') List<SignatureId> signatures});
 }
 
 /// @nodoc
@@ -62,7 +62,7 @@ class _$MultisigCopyWithImpl<$Res, $Val extends Multisig>
       signatures: null == signatures
           ? _value.signatures
           : signatures // ignore: cast_nullable_to_non_nullable
-              as List<SignerId>,
+              as List<SignatureId>,
     ) as $Val);
   }
 }
@@ -75,7 +75,7 @@ abstract class _$$MultisigImplCopyWith<$Res>
       __$$MultisigImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({@JsonKey(name: 'signatures') List<SignerId> signatures});
+  $Res call({@JsonKey(name: 'signatures') List<SignatureId> signatures});
 }
 
 /// @nodoc
@@ -97,7 +97,7 @@ class __$$MultisigImplCopyWithImpl<$Res>
       signatures: null == signatures
           ? _value._signatures
           : signatures // ignore: cast_nullable_to_non_nullable
-              as List<SignerId>,
+              as List<SignatureId>,
     ));
   }
 }
@@ -106,16 +106,17 @@ class __$$MultisigImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$MultisigImpl implements _Multisig {
   const _$MultisigImpl(
-      {@JsonKey(name: 'signatures') required final List<SignerId> signatures})
+      {@JsonKey(name: 'signatures')
+      required final List<SignatureId> signatures})
       : _signatures = signatures;
 
   factory _$MultisigImpl.fromJson(Map<String, dynamic> json) =>
       _$$MultisigImplFromJson(json);
 
-  final List<SignerId> _signatures;
+  final List<SignatureId> _signatures;
   @override
   @JsonKey(name: 'signatures')
-  List<SignerId> get signatures {
+  List<SignatureId> get signatures {
     if (_signatures is EqualUnmodifiableListView) return _signatures;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_signatures);
@@ -159,14 +160,14 @@ class _$MultisigImpl implements _Multisig {
 abstract class _Multisig implements Multisig {
   const factory _Multisig(
       {@JsonKey(name: 'signatures')
-      required final List<SignerId> signatures}) = _$MultisigImpl;
+      required final List<SignatureId> signatures}) = _$MultisigImpl;
 
   factory _Multisig.fromJson(Map<String, dynamic> json) =
       _$MultisigImpl.fromJson;
 
   @override
   @JsonKey(name: 'signatures')
-  List<SignerId> get signatures;
+  List<SignatureId> get signatures;
 
   /// Create a copy of Multisig
   /// with the given fields replaced by the non-null parameter values.

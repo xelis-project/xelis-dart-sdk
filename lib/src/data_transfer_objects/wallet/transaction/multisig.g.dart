@@ -11,7 +11,7 @@ part of 'multisig.dart';
 _$MultisigImpl _$$MultisigImplFromJson(Map<String, dynamic> json) =>
     _$MultisigImpl(
       signatures: (json['signatures'] as List<dynamic>)
-          .map((e) => SignerId.fromJson(e as Map<String, dynamic>))
+          .map((e) => SignatureId.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 

@@ -24,7 +24,7 @@ mixin _$FinalizeUnsignedTransactionParams {
   @JsonKey(name: 'unsigned')
   String get unsignedTransaction => throw _privateConstructorUsedError;
   @JsonKey(name: 'signatures')
-  List<SignerId>? get signatures => throw _privateConstructorUsedError;
+  List<SignatureId>? get signatures => throw _privateConstructorUsedError;
   @JsonKey(name: 'broadcast')
   bool? get broadcast => throw _privateConstructorUsedError;
   @JsonKey(name: 'tx_as_hex')
@@ -50,7 +50,7 @@ abstract class $FinalizeUnsignedTransactionParamsCopyWith<$Res> {
   @useResult
   $Res call(
       {@JsonKey(name: 'unsigned') String unsignedTransaction,
-      @JsonKey(name: 'signatures') List<SignerId>? signatures,
+      @JsonKey(name: 'signatures') List<SignatureId>? signatures,
       @JsonKey(name: 'broadcast') bool? broadcast,
       @JsonKey(name: 'tx_as_hex') bool? txAsHex});
 }
@@ -84,7 +84,7 @@ class _$FinalizeUnsignedTransactionParamsCopyWithImpl<$Res,
       signatures: freezed == signatures
           ? _value.signatures
           : signatures // ignore: cast_nullable_to_non_nullable
-              as List<SignerId>?,
+              as List<SignatureId>?,
       broadcast: freezed == broadcast
           ? _value.broadcast
           : broadcast // ignore: cast_nullable_to_non_nullable
@@ -108,7 +108,7 @@ abstract class _$$FinalizeUnsignedTransactionParamsImplCopyWith<$Res>
   @useResult
   $Res call(
       {@JsonKey(name: 'unsigned') String unsignedTransaction,
-      @JsonKey(name: 'signatures') List<SignerId>? signatures,
+      @JsonKey(name: 'signatures') List<SignatureId>? signatures,
       @JsonKey(name: 'broadcast') bool? broadcast,
       @JsonKey(name: 'tx_as_hex') bool? txAsHex});
 }
@@ -141,7 +141,7 @@ class __$$FinalizeUnsignedTransactionParamsImplCopyWithImpl<$Res>
       signatures: freezed == signatures
           ? _value._signatures
           : signatures // ignore: cast_nullable_to_non_nullable
-              as List<SignerId>?,
+              as List<SignatureId>?,
       broadcast: freezed == broadcast
           ? _value.broadcast
           : broadcast // ignore: cast_nullable_to_non_nullable
@@ -161,7 +161,7 @@ class _$FinalizeUnsignedTransactionParamsImpl
     implements _FinalizeUnsignedTransactionParams {
   const _$FinalizeUnsignedTransactionParamsImpl(
       {@JsonKey(name: 'unsigned') required this.unsignedTransaction,
-      @JsonKey(name: 'signatures') final List<SignerId>? signatures,
+      @JsonKey(name: 'signatures') final List<SignatureId>? signatures,
       @JsonKey(name: 'broadcast') this.broadcast,
       @JsonKey(name: 'tx_as_hex') this.txAsHex})
       : _signatures = signatures;
@@ -173,10 +173,10 @@ class _$FinalizeUnsignedTransactionParamsImpl
   @override
   @JsonKey(name: 'unsigned')
   final String unsignedTransaction;
-  final List<SignerId>? _signatures;
+  final List<SignatureId>? _signatures;
   @override
   @JsonKey(name: 'signatures')
-  List<SignerId>? get signatures {
+  List<SignatureId>? get signatures {
     final value = _signatures;
     if (value == null) return null;
     if (_signatures is EqualUnmodifiableListView) return _signatures;
@@ -237,7 +237,7 @@ abstract class _FinalizeUnsignedTransactionParams
     implements FinalizeUnsignedTransactionParams {
   const factory _FinalizeUnsignedTransactionParams(
           {@JsonKey(name: 'unsigned') required final String unsignedTransaction,
-          @JsonKey(name: 'signatures') final List<SignerId>? signatures,
+          @JsonKey(name: 'signatures') final List<SignatureId>? signatures,
           @JsonKey(name: 'broadcast') final bool? broadcast,
           @JsonKey(name: 'tx_as_hex') final bool? txAsHex}) =
       _$FinalizeUnsignedTransactionParamsImpl;
@@ -251,7 +251,7 @@ abstract class _FinalizeUnsignedTransactionParams
   String get unsignedTransaction;
   @override
   @JsonKey(name: 'signatures')
-  List<SignerId>? get signatures;
+  List<SignatureId>? get signatures;
   @override
   @JsonKey(name: 'broadcast')
   bool? get broadcast;
