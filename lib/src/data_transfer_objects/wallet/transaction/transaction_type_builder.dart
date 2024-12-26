@@ -19,6 +19,26 @@ sealed class TransactionTypeBuilder with _$TransactionTypeBuilder {
     @JsonKey(name: 'amount') required int amount,
   }) = BurnBuilder;
 
+  /// @nodoc
+  const factory TransactionTypeBuilder.multisig({
+    @JsonKey(name: 'threshold') required int threshold,
+    @JsonKey(name: 'participants') required List<String> participants,
+  }) = MultisigBuilder;
+
+  /// @nodoc
+  const factory TransactionTypeBuilder.invokeContract({
+    @JsonKey(name: 'contract') required String contract,
+    @JsonKey(name: 'max_gas') required int maxGas,
+    @JsonKey(name: 'chunk_id') required int chunkId,
+    @JsonKey(name: 'parameters') required dynamic parameters,
+    @JsonKey(name: 'deposits') required dynamic deposits,
+  }) = InvokeContractBuilder;
+
+  /// @nodoc
+  const factory TransactionTypeBuilder.deployContract({
+    @JsonKey(name: 'contract') required String contract,
+  }) = DeployContractBuilder;
+
   const TransactionTypeBuilder._();
 
   /// @nodoc
@@ -29,6 +49,20 @@ sealed class TransactionTypeBuilder with _$TransactionTypeBuilder {
         burn: (asset, amount) => {
           'asset': asset,
           'amount': amount,
+        },
+        multisig: (threshold, participants) => {
+          'threshold': threshold,
+          'participants': participants,
+        },
+        invokeContract: (contract, maxGas, chunkId, parameters, deposits) => {
+          'contract': contract,
+          'max_gas': maxGas,
+          'chunk_id': chunkId,
+          'parameters': parameters,
+          'deposits': deposits,
+        },
+        deployContract: (contract) => {
+          'contract': contract,
         },
       );
 }
