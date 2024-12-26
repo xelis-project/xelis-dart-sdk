@@ -170,7 +170,10 @@ enum DaemonMethod implements XelisJsonKey {
   makeIntegratedAddress('make_integrated_address'),
 
   /// Decrypt extra data from a transaction.
-  decryptExtraData('decrypt_extra_data');
+  decryptExtraData('decrypt_extra_data'),
+
+  /// Retrieve the latest multisig information for a specific address.
+  getMultisig('get_multisig');
 
   /// Creates a new [DaemonMethod] instance.
   const DaemonMethod(this.jsonKey);

@@ -524,4 +524,15 @@ extension DaemonRpcMethodsExtension on DaemonClient {
       decryptExtraDataParams.toJson(),
     );
   }
+
+  /// Retrieve the latest multisig information for a specific address.
+  Future<GetMultisigResult> getMultisig(
+    GetMultisigParams getMultisigParams,
+  ) async {
+    final result = await sendRequest(
+      DaemonMethod.getMultisig,
+      getMultisigParams.toJson(),
+    );
+    return GetMultisigResult.fromJson(result as Map<String, dynamic>);
+  }
 }

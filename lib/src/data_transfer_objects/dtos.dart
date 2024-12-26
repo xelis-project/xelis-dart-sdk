@@ -36,6 +36,8 @@ export 'get_mempool_cache/get_mempool_cache_params.dart';
 export 'get_mempool_cache/get_mempool_cache_result.dart';
 export 'get_miner_work/get_miner_work_params.dart';
 export 'get_miner_work/get_miner_work_result.dart';
+export 'get_multisig/get_multisig_params.dart';
+export 'get_multisig/get_multisig_result.dart';
 export 'get_nonce/get_nonce_params.dart';
 export 'get_nonce/get_nonce_result.dart';
 export 'get_nonce_at_topoheight/get_nonce_at_topoheight_params.dart';

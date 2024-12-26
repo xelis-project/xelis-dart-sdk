@@ -60,6 +60,9 @@ JSON-RPC Clients to interact with daemon and wallet API.
 - extractKeyFromAddress
 - getMinerWork
 - getHardForks
+- makeIntegratedAddress
+- decryptExtraData
+- getMultisig
 
 #### Wallet
 
@@ -79,6 +82,7 @@ JSON-RPC Clients to interact with daemon and wallet API.
 - buildTransactionOffline
 - buildUnsignedTransaction
 - finalizeUnsignedTransaction
+- signUnsignedTransaction
 - listTransactions
 - isOnline
 - signData
