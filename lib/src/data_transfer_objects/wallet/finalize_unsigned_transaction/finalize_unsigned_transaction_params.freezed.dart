@@ -155,7 +155,8 @@ class __$$FinalizeUnsignedTransactionParamsImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(includeIfNull: false)
 class _$FinalizeUnsignedTransactionParamsImpl
     implements _FinalizeUnsignedTransactionParams {
   const _$FinalizeUnsignedTransactionParamsImpl(

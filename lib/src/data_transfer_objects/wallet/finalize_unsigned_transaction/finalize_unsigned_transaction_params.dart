@@ -12,6 +12,7 @@ part 'finalize_unsigned_transaction_params.g.dart';
 class FinalizeUnsignedTransactionParams
     with _$FinalizeUnsignedTransactionParams {
   /// @nodoc
+  @JsonSerializable(includeIfNull: false)
   const factory FinalizeUnsignedTransactionParams({
     @JsonKey(name: 'unsigned') required String unsignedTransaction,
     @JsonKey(name: 'signatures') List<SignerId>? signatures,
@@ -21,6 +22,7 @@ class FinalizeUnsignedTransactionParams
 
   /// @nodoc
   factory FinalizeUnsignedTransactionParams.fromJson(
-          Map<String, dynamic> json) =>
+    Map<String, dynamic> json,
+  ) =>
       _$FinalizeUnsignedTransactionParamsFromJson(json);
 }

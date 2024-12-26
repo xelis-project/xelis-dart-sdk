@@ -148,14 +148,14 @@ extension WalletRpcMethodsExtension on WalletClient {
 
   /// Build a transaction without signing it.
   /// This is useful in case of a MultiSig setup where you need to sign the transaction with other signers.
-  Future<TransactionWalletResponse> buildUnsignedTransaction(
+  Future<UnsignedTransactionResponse> buildUnsignedTransaction(
     BuildUnsignedTransactionParams buildUnsignedTransactionParams,
   ) async {
     final result = await sendRequest(
       WalletMethod.buildUnsignedTransaction,
       buildUnsignedTransactionParams.toJson(),
     );
-    return TransactionWalletResponse.fromJson(result as Map<String, dynamic>);
+    return UnsignedTransactionResponse.fromJson(result as Map<String, dynamic>);
   }
 
   /// Finalize an unsigned transaction by signing it with the wallet key pair.

@@ -3,32 +3,33 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:xelis_dart_sdk/xelis_dart_sdk.dart';
 
-part 'transaction_wallet_response.freezed.dart';
+part 'unsigned_transaction_response.freezed.dart';
 
 /// @nodoc
 @freezed
-class TransactionWalletResponse with _$TransactionWalletResponse {
+class UnsignedTransactionResponse with _$UnsignedTransactionResponse {
   /// @nodoc
-  const factory TransactionWalletResponse({
-    required String? txAsHex,
+  const factory UnsignedTransactionResponse({
     required TransactionType data,
     required int fee,
-    required String hash,
     required int version,
     required int nonce,
     required List<int> source,
     required List<int> rangeProof,
     required List<Map<String, dynamic>> sourceCommitments,
     required Reference reference,
-    required String signature,
+    required String hash,
+    required int threshold,
     Multisig? multiSig,
-  }) = _TransactionWalletResponse;
+    String? txAsHex,
+  }) = _UnsignedTransactionResponse;
+
+  const UnsignedTransactionResponse._();
 
   /// @nodoc
-  factory TransactionWalletResponse.fromJson(Map<String, dynamic> json) {
+  factory UnsignedTransactionResponse.fromJson(Map<String, dynamic> json) {
     if (json
         case {
-          'tx_as_hex': final String? txAsHex,
           'data': final Map<String, dynamic> transfers,
           'fee': final int fee,
           'hash': final String hash,
@@ -38,10 +39,9 @@ class TransactionWalletResponse with _$TransactionWalletResponse {
           'range_proof': final List<dynamic> rangeProof,
           'source_commitments': final List<dynamic> sourceCommitments,
           'reference': final Map<String, dynamic> reference,
-          'signature': final String signature,
+          'threshold': final int threshold,
         }) {
-      return TransactionWalletResponse(
-        txAsHex: txAsHex,
+      return UnsignedTransactionResponse(
         data: Transfers.fromJson(transfers),
         fee: fee,
         hash: hash,
@@ -52,14 +52,15 @@ class TransactionWalletResponse with _$TransactionWalletResponse {
         sourceCommitments:
             sourceCommitments.map((e) => e as Map<String, dynamic>).toList(),
         reference: Reference.fromJson(reference),
-        signature: signature,
-        multiSig: json['multi_sig'] != null
+        threshold: threshold,
+        txAsHex:
+            (json['tx_as_hex'] != null) ? json['tx_as_hex'] as String : null,
+        multiSig: (json['multi_sig'] != null)
             ? Multisig.fromJson(json['multi_sig'] as Map<String, dynamic>)
             : null,
       );
     } else if (json
         case {
-          'tx_as_hex': final String? txAsHex,
           'data': {'burn': final Map<String, dynamic> burn},
           'fee': final int fee,
           'hash': final String hash,
@@ -69,10 +70,9 @@ class TransactionWalletResponse with _$TransactionWalletResponse {
           'range_proof': final List<dynamic> rangeProof,
           'source_commitments': final List<dynamic> sourceCommitments,
           'reference': final Map<String, dynamic> reference,
-          'signature': final String signature,
+          'threshold': final int threshold,
         }) {
-      return TransactionWalletResponse(
-        txAsHex: txAsHex,
+      return UnsignedTransactionResponse(
         data: Burn.fromJson(burn),
         fee: fee,
         hash: hash,
@@ -83,8 +83,10 @@ class TransactionWalletResponse with _$TransactionWalletResponse {
         sourceCommitments:
             sourceCommitments.map((e) => e as Map<String, dynamic>).toList(),
         reference: Reference.fromJson(reference),
-        signature: signature,
-        multiSig: json['multi_sig'] != null
+        threshold: threshold,
+        txAsHex:
+            (json['tx_as_hex'] != null) ? json['tx_as_hex'] as String : null,
+        multiSig: (json['multi_sig'] != null)
             ? Multisig.fromJson(json['multi_sig'] as Map<String, dynamic>)
             : null,
       );
