@@ -557,4 +557,10 @@ extension DaemonRpcMethodsExtension on DaemonClient {
     );
     return result as bool;
   }
+
+  /// Retrieve the number of contracts saved on disk.
+  Future<int> countContracts() async {
+    final result = await sendRequest(DaemonMethod.countContracts);
+    return result as int;
+  }
 }

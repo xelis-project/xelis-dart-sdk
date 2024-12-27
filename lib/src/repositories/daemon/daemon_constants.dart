@@ -179,7 +179,10 @@ enum DaemonMethod implements XelisJsonKey {
   getMultisigAtTopoheight('get_multisig_at_topoheight'),
 
   /// Verify if the address has a multisig setup.
-  hasMultisig('has_multisig');
+  hasMultisig('has_multisig'),
+
+  /// Retrieve the number of contracts saved on disk.
+  countContracts('count_contracts');
 
   /// Creates a new [DaemonMethod] instance.
   const DaemonMethod(this.jsonKey);
