@@ -171,7 +171,7 @@ extension DaemonRpcMethodsExtension on DaemonClient {
   }
 
   /// Get all assets available on network with its registered topoheight.
-  Future<List<AssetWithData>> getAssets([
+  Future<List<AssetData>> getAssets([
     GetAssetsParams? getAssetsParams,
   ]) async {
     final result = await sendRequest(
@@ -179,7 +179,7 @@ extension DaemonRpcMethodsExtension on DaemonClient {
       getAssetsParams?.toJson() ?? const GetAssetsParams().toJson(),
     );
     return (result as List)
-        .map((e) => AssetWithData.fromJson(e as Map<String, dynamic>))
+        .map((e) => AssetData.fromJson(e as Map<String, dynamic>))
         .toList();
   }
 

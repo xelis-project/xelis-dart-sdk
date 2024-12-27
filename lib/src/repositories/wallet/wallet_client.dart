@@ -15,7 +15,7 @@ class WalletClient extends RpcClientRepository {
   }) {
     eventsCallbacks = {
       WalletEvent.newTopoHeight: <void Function(int topoheight)>[],
-      WalletEvent.newAsset: <void Function(AssetWithData assetWithData)>[],
+      WalletEvent.newAsset: <void Function(AssetData assetWithData)>[],
       WalletEvent.newTransaction:
           <void Function(TransactionEntry transactionEntry)>[],
       WalletEvent.balanceChanged:
@@ -49,7 +49,7 @@ class WalletClient extends RpcClientRepository {
         _logInfo('New topoheight event: $topoheight');
         _triggerCallbacks(event, topoheight);
       case WalletEvent.newAsset:
-        final assetWithData = AssetWithData.fromJson(result);
+        final assetWithData = AssetData.fromJson(result);
         _logInfo('New asset event: $assetWithData');
         _triggerCallbacks(event, assetWithData);
       case WalletEvent.newTransaction:

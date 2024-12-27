@@ -20,10 +20,18 @@ AssetData _$AssetDataFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$AssetData {
+  @JsonKey(name: 'hash')
+  String get hash => throw _privateConstructorUsedError;
   @JsonKey(name: 'topoheight')
   int get topoheight => throw _privateConstructorUsedError;
   @JsonKey(name: 'decimals')
   int get decimals => throw _privateConstructorUsedError;
+  @JsonKey(name: 'name')
+  String get name => throw _privateConstructorUsedError;
+  @JsonKey(name: 'max_supply')
+  int? get maxSupply => throw _privateConstructorUsedError;
+  @JsonKey(name: 'contract')
+  String? get contract => throw _privateConstructorUsedError;
 
   /// Serializes this AssetData to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -41,8 +49,12 @@ abstract class $AssetDataCopyWith<$Res> {
       _$AssetDataCopyWithImpl<$Res, AssetData>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'topoheight') int topoheight,
-      @JsonKey(name: 'decimals') int decimals});
+      {@JsonKey(name: 'hash') String hash,
+      @JsonKey(name: 'topoheight') int topoheight,
+      @JsonKey(name: 'decimals') int decimals,
+      @JsonKey(name: 'name') String name,
+      @JsonKey(name: 'max_supply') int? maxSupply,
+      @JsonKey(name: 'contract') String? contract});
 }
 
 /// @nodoc
@@ -60,10 +72,18 @@ class _$AssetDataCopyWithImpl<$Res, $Val extends AssetData>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? hash = null,
     Object? topoheight = null,
     Object? decimals = null,
+    Object? name = null,
+    Object? maxSupply = freezed,
+    Object? contract = freezed,
   }) {
     return _then(_value.copyWith(
+      hash: null == hash
+          ? _value.hash
+          : hash // ignore: cast_nullable_to_non_nullable
+              as String,
       topoheight: null == topoheight
           ? _value.topoheight
           : topoheight // ignore: cast_nullable_to_non_nullable
@@ -72,6 +92,18 @@ class _$AssetDataCopyWithImpl<$Res, $Val extends AssetData>
           ? _value.decimals
           : decimals // ignore: cast_nullable_to_non_nullable
               as int,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      maxSupply: freezed == maxSupply
+          ? _value.maxSupply
+          : maxSupply // ignore: cast_nullable_to_non_nullable
+              as int?,
+      contract: freezed == contract
+          ? _value.contract
+          : contract // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -85,8 +117,12 @@ abstract class _$$AssetDataImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'topoheight') int topoheight,
-      @JsonKey(name: 'decimals') int decimals});
+      {@JsonKey(name: 'hash') String hash,
+      @JsonKey(name: 'topoheight') int topoheight,
+      @JsonKey(name: 'decimals') int decimals,
+      @JsonKey(name: 'name') String name,
+      @JsonKey(name: 'max_supply') int? maxSupply,
+      @JsonKey(name: 'contract') String? contract});
 }
 
 /// @nodoc
@@ -102,10 +138,18 @@ class __$$AssetDataImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? hash = null,
     Object? topoheight = null,
     Object? decimals = null,
+    Object? name = null,
+    Object? maxSupply = freezed,
+    Object? contract = freezed,
   }) {
     return _then(_$AssetDataImpl(
+      hash: null == hash
+          ? _value.hash
+          : hash // ignore: cast_nullable_to_non_nullable
+              as String,
       topoheight: null == topoheight
           ? _value.topoheight
           : topoheight // ignore: cast_nullable_to_non_nullable
@@ -114,6 +158,18 @@ class __$$AssetDataImplCopyWithImpl<$Res>
           ? _value.decimals
           : decimals // ignore: cast_nullable_to_non_nullable
               as int,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      maxSupply: freezed == maxSupply
+          ? _value.maxSupply
+          : maxSupply // ignore: cast_nullable_to_non_nullable
+              as int?,
+      contract: freezed == contract
+          ? _value.contract
+          : contract // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -122,22 +178,38 @@ class __$$AssetDataImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$AssetDataImpl implements _AssetData {
   const _$AssetDataImpl(
-      {@JsonKey(name: 'topoheight') required this.topoheight,
-      @JsonKey(name: 'decimals') required this.decimals});
+      {@JsonKey(name: 'hash') required this.hash,
+      @JsonKey(name: 'topoheight') required this.topoheight,
+      @JsonKey(name: 'decimals') required this.decimals,
+      @JsonKey(name: 'name') required this.name,
+      @JsonKey(name: 'max_supply') this.maxSupply,
+      @JsonKey(name: 'contract') this.contract});
 
   factory _$AssetDataImpl.fromJson(Map<String, dynamic> json) =>
       _$$AssetDataImplFromJson(json);
 
+  @override
+  @JsonKey(name: 'hash')
+  final String hash;
   @override
   @JsonKey(name: 'topoheight')
   final int topoheight;
   @override
   @JsonKey(name: 'decimals')
   final int decimals;
+  @override
+  @JsonKey(name: 'name')
+  final String name;
+  @override
+  @JsonKey(name: 'max_supply')
+  final int? maxSupply;
+  @override
+  @JsonKey(name: 'contract')
+  final String? contract;
 
   @override
   String toString() {
-    return 'AssetData(topoheight: $topoheight, decimals: $decimals)';
+    return 'AssetData(hash: $hash, topoheight: $topoheight, decimals: $decimals, name: $name, maxSupply: $maxSupply, contract: $contract)';
   }
 
   @override
@@ -145,15 +217,22 @@ class _$AssetDataImpl implements _AssetData {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AssetDataImpl &&
+            (identical(other.hash, hash) || other.hash == hash) &&
             (identical(other.topoheight, topoheight) ||
                 other.topoheight == topoheight) &&
             (identical(other.decimals, decimals) ||
-                other.decimals == decimals));
+                other.decimals == decimals) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.maxSupply, maxSupply) ||
+                other.maxSupply == maxSupply) &&
+            (identical(other.contract, contract) ||
+                other.contract == contract));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, topoheight, decimals);
+  int get hashCode => Object.hash(
+      runtimeType, hash, topoheight, decimals, name, maxSupply, contract);
 
   /// Create a copy of AssetData
   /// with the given fields replaced by the non-null parameter values.
@@ -173,19 +252,34 @@ class _$AssetDataImpl implements _AssetData {
 
 abstract class _AssetData implements AssetData {
   const factory _AssetData(
-          {@JsonKey(name: 'topoheight') required final int topoheight,
-          @JsonKey(name: 'decimals') required final int decimals}) =
-      _$AssetDataImpl;
+      {@JsonKey(name: 'hash') required final String hash,
+      @JsonKey(name: 'topoheight') required final int topoheight,
+      @JsonKey(name: 'decimals') required final int decimals,
+      @JsonKey(name: 'name') required final String name,
+      @JsonKey(name: 'max_supply') final int? maxSupply,
+      @JsonKey(name: 'contract') final String? contract}) = _$AssetDataImpl;
 
   factory _AssetData.fromJson(Map<String, dynamic> json) =
       _$AssetDataImpl.fromJson;
 
+  @override
+  @JsonKey(name: 'hash')
+  String get hash;
   @override
   @JsonKey(name: 'topoheight')
   int get topoheight;
   @override
   @JsonKey(name: 'decimals')
   int get decimals;
+  @override
+  @JsonKey(name: 'name')
+  String get name;
+  @override
+  @JsonKey(name: 'max_supply')
+  int? get maxSupply;
+  @override
+  @JsonKey(name: 'contract')
+  String? get contract;
 
   /// Create a copy of AssetData
   /// with the given fields replaced by the non-null parameter values.

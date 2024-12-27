@@ -1,5 +1,4 @@
 export 'asset/asset_data.dart';
-export 'asset/asset_with_data.dart';
 export 'block/block.dart';
 export 'block_ordered_event/block_ordered_event.dart';
 export 'block_orphaned_event/block_orphaned_event.dart';

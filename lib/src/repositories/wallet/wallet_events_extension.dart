@@ -15,7 +15,7 @@ extension WalletEventsExtension on WalletClient {
   }
 
   /// Registers a callback for NewAsset event.
-  void onNewAsset(void Function(AssetWithData assetWithData) callback) =>
+  void onNewAsset(void Function(AssetData assetWithData) callback) =>
       onEvent(WalletEvent.newAsset, callback);
 
   /// Unsubscribes from NewAsset event.
