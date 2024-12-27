@@ -173,7 +173,10 @@ enum DaemonMethod implements XelisJsonKey {
   decryptExtraData('decrypt_extra_data'),
 
   /// Retrieve the latest multisig information for a specific address.
-  getMultisig('get_multisig');
+  getMultisig('get_multisig'),
+
+  /// Retrieve the latest multisig information for a specific address at a specific topoheight.
+  getMultisigAtTopoheight('get_multisig_at_topoheight');
 
   /// Creates a new [DaemonMethod] instance.
   const DaemonMethod(this.jsonKey);

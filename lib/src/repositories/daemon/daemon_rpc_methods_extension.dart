@@ -535,4 +535,17 @@ extension DaemonRpcMethodsExtension on DaemonClient {
     );
     return GetMultisigResult.fromJson(result as Map<String, dynamic>);
   }
+
+  /// Retrieve the latest multisig information for a specific address at a specific topoheight.
+  Future<GetMultisigAtTopoheightResult> getMultisigAtTopoheight(
+    GetMultisigAtTopoheightParams getMultisigAtTopoheightParams,
+  ) async {
+    final result = await sendRequest(
+      DaemonMethod.getMultisigAtTopoheight,
+      getMultisigAtTopoheightParams.toJson(),
+    );
+    return GetMultisigAtTopoheightResult.fromJson(
+      result as Map<String, dynamic>,
+    );
+  }
 }

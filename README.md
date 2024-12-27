@@ -63,6 +63,7 @@ JSON-RPC Clients to interact with daemon and wallet API.
 - makeIntegratedAddress
 - decryptExtraData
 - getMultisig
+- getMultisigAtTopoheight
 
 #### Wallet
 
