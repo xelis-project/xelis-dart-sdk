@@ -182,7 +182,10 @@ enum DaemonMethod implements XelisJsonKey {
   hasMultisig('has_multisig'),
 
   /// Retrieve the number of contracts saved on disk.
-  countContracts('count_contracts');
+  countContracts('count_contracts'),
+
+  /// Get the estimated fee rates.
+  getEstimatedFeeRates('get_estimated_fee_rates');
 
   /// Creates a new [DaemonMethod] instance.
   const DaemonMethod(this.jsonKey);

@@ -563,4 +563,10 @@ extension DaemonRpcMethodsExtension on DaemonClient {
     final result = await sendRequest(DaemonMethod.countContracts);
     return result as int;
   }
+
+  /// Get estimated fee rates.
+  Future<FeeRatesEstimated> getEstimatedFeeRates() async {
+    final result = await sendRequest(DaemonMethod.getEstimatedFeeRates);
+    return FeeRatesEstimated.fromJson(result as Map<String, dynamic>);
+  }
 }
