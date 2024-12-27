@@ -1,9 +1,23 @@
-# 0.21.1
+## 0.22.0
 
-## Wallet API upgrade :
+Wallet API upgrade :
+
+- new RPC methods: buildTransactionOffline, buildUnsignedTransaction, finalizeUnsignedTransaction,
+  signUnsignedTransaction, decryptExtraData, decryptCiphertext.
+- new event: historySynced.
+
+Daemon API upgrade :
+
+- new RPC methods: getMultisig, getMultisigAtTopoheight, hasMultisig, countContracts,
+  getEstimatedFeeRates, getContractOutputs.
+
+## 0.21.1
+
+Wallet API upgrade :
+
 - fix typo in json key for historySynced event.
 
-# 0.21.0
+## 0.21.0
 
 Wallet API upgrade :
 
