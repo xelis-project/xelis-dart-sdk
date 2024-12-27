@@ -2,24 +2,22 @@
 
 // ignore_for_file: package_api_docs, non_constant_identifier_names
 
-part of 'has_balance_params.dart';
+part of 'has_multisig_params.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$HasBalanceParamsImpl _$$HasBalanceParamsImplFromJson(
+_$HasMultisigParamsImpl _$$HasMultisigParamsImplFromJson(
         Map<String, dynamic> json) =>
-    _$HasBalanceParamsImpl(
+    _$HasMultisigParamsImpl(
       address: json['address'] as String,
-      asset: json['asset'] as String,
       topoheight: (json['topoheight'] as num?)?.toInt(),
     );
 
-Map<String, dynamic> _$$HasBalanceParamsImplToJson(
-        _$HasBalanceParamsImpl instance) =>
+Map<String, dynamic> _$$HasMultisigParamsImplToJson(
+        _$HasMultisigParamsImpl instance) =>
     <String, dynamic>{
       'address': instance.address,
-      'asset': instance.asset,
       if (instance.topoheight case final value?) 'topoheight': value,
     };

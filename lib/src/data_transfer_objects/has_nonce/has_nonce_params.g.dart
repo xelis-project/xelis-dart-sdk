@@ -18,5 +18,5 @@ Map<String, dynamic> _$$HasNonceParamsImplToJson(
         _$HasNonceParamsImpl instance) =>
     <String, dynamic>{
       'address': instance.address,
-      'topoheight': instance.topoheight,
+      if (instance.topoheight case final value?) 'topoheight': value,
     };

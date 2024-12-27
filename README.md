@@ -64,6 +64,7 @@ JSON-RPC Clients to interact with daemon and wallet API.
 - decryptExtraData
 - getMultisig
 - getMultisigAtTopoheight
+- hasMultisig
 
 #### Wallet
 

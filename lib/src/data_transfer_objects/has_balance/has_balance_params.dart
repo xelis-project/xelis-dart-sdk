@@ -3,13 +3,13 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'has_balance_params.freezed.dart';
-
 part 'has_balance_params.g.dart';
 
 /// @nodoc
 @freezed
 class HasBalanceParams with _$HasBalanceParams {
   /// @nodoc
+  @JsonSerializable(includeIfNull: false)
   const factory HasBalanceParams({
     @JsonKey(name: 'address') required String address,
     @JsonKey(name: 'asset') required String asset,

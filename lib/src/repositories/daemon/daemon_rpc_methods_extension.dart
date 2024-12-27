@@ -548,4 +548,13 @@ extension DaemonRpcMethodsExtension on DaemonClient {
       result as Map<String, dynamic>,
     );
   }
+
+  /// Verify if the address has a multisig setup.
+  Future<bool> hasMultisig(HasMultisigParams hasMultisigParams) async {
+    final result = await sendRequest(
+      DaemonMethod.hasMultisig,
+      hasMultisigParams.toJson(),
+    );
+    return result as bool;
+  }
 }

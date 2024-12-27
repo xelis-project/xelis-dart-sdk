@@ -134,7 +134,8 @@ class __$$HasBalanceParamsImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(includeIfNull: false)
 class _$HasBalanceParamsImpl implements _HasBalanceParams {
   const _$HasBalanceParamsImpl(
       {@JsonKey(name: 'address') required this.address,
