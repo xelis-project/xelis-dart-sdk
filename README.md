@@ -68,6 +68,7 @@ JSON-RPC Clients to interact with daemon and wallet API.
 - hasMultisigAtTopoheight
 - countContracts
 - getEstimatedFeeRates
+- getContractOutputs
 
 #### Wallet
 
