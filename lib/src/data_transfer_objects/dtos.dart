@@ -58,6 +58,7 @@ export 'get_transactions/get_transactions_params.dart';
 export 'has_balance/has_balance_params.dart';
 export 'has_balance/has_balance_result.dart';
 export 'has_multisig/has_multisig_params.dart';
+export 'has_multisig_at_topoheight/has_multisig_at_topoheight_params.dart';
 export 'has_nonce/has_nonce_params.dart';
 export 'has_nonce/has_nonce_result.dart';
 export 'is_account_registered/is_account_registered_params.dart';

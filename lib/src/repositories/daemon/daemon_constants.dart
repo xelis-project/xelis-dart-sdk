@@ -181,6 +181,9 @@ enum DaemonMethod implements XelisJsonKey {
   /// Verify if the address has a multisig setup.
   hasMultisig('has_multisig'),
 
+  /// Verify if the address has a multisig setup at a specific topoheight.
+  hasMultisigAtTopoheight('has_multisig_at_topoheight'),
+
   /// Retrieve the number of contracts saved on disk.
   countContracts('count_contracts'),
 

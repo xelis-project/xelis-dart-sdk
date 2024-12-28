@@ -558,6 +558,17 @@ extension DaemonRpcMethodsExtension on DaemonClient {
     return result as bool;
   }
 
+  /// Verify if the address has a multisig setup at a specific topoheight.
+  Future<bool> hasMultisigAtTopoheight(
+    HasMultisigAtTopoheightParams hasMultisigAtTopoheightParams,
+  ) async {
+    final result = await sendRequest(
+      DaemonMethod.hasMultisigAtTopoheight,
+      hasMultisigAtTopoheightParams.toJson(),
+    );
+    return result as bool;
+  }
+
   /// Retrieve the number of contracts saved on disk.
   Future<int> countContracts() async {
     final result = await sendRequest(DaemonMethod.countContracts);
