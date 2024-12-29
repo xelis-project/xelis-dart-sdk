@@ -40,6 +40,7 @@ export 'get_miner_work/get_miner_work_params.dart';
 export 'get_miner_work/get_miner_work_result.dart';
 export 'get_multisig/get_multisig_params.dart';
 export 'get_multisig/get_multisig_result.dart';
+export 'get_multisig/multisig_state.dart';
 export 'get_multisig_at_topoheight/get_multisig_at_topoheight_params.dart';
 export 'get_multisig_at_topoheight/get_multisig_at_topoheight_result.dart';
 export 'get_nonce/get_nonce_params.dart';

@@ -14,18 +14,10 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-GetMultisigAtTopoheightResult _$GetMultisigAtTopoheightResultFromJson(
-    Map<String, dynamic> json) {
-  return _GetMultisigAtTopoheightResult.fromJson(json);
-}
-
 /// @nodoc
 mixin _$GetMultisigAtTopoheightResult {
   @JsonKey(name: 'state')
-  dynamic get state => throw _privateConstructorUsedError;
-
-  /// Serializes this GetMultisigAtTopoheightResult to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  MultisigState get state => throw _privateConstructorUsedError;
 
   /// Create a copy of GetMultisigAtTopoheightResult
   /// with the given fields replaced by the non-null parameter values.
@@ -42,7 +34,9 @@ abstract class $GetMultisigAtTopoheightResultCopyWith<$Res> {
       _$GetMultisigAtTopoheightResultCopyWithImpl<$Res,
           GetMultisigAtTopoheightResult>;
   @useResult
-  $Res call({@JsonKey(name: 'state') dynamic state});
+  $Res call({@JsonKey(name: 'state') MultisigState state});
+
+  $MultisigStateCopyWith<$Res> get state;
 }
 
 /// @nodoc
@@ -61,14 +55,24 @@ class _$GetMultisigAtTopoheightResultCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? state = freezed,
+    Object? state = null,
   }) {
     return _then(_value.copyWith(
-      state: freezed == state
+      state: null == state
           ? _value.state
           : state // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as MultisigState,
     ) as $Val);
+  }
+
+  /// Create a copy of GetMultisigAtTopoheightResult
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MultisigStateCopyWith<$Res> get state {
+    return $MultisigStateCopyWith<$Res>(_value.state, (value) {
+      return _then(_value.copyWith(state: value) as $Val);
+    });
   }
 }
 
@@ -81,7 +85,10 @@ abstract class _$$GetMultisigAtTopoheightResultImplCopyWith<$Res>
       __$$GetMultisigAtTopoheightResultImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({@JsonKey(name: 'state') dynamic state});
+  $Res call({@JsonKey(name: 'state') MultisigState state});
+
+  @override
+  $MultisigStateCopyWith<$Res> get state;
 }
 
 /// @nodoc
@@ -99,31 +106,27 @@ class __$$GetMultisigAtTopoheightResultImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? state = freezed,
+    Object? state = null,
   }) {
     return _then(_$GetMultisigAtTopoheightResultImpl(
-      state: freezed == state
+      state: null == state
           ? _value.state
           : state // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as MultisigState,
     ));
   }
 }
 
 /// @nodoc
-@JsonSerializable()
+
 class _$GetMultisigAtTopoheightResultImpl
     implements _GetMultisigAtTopoheightResult {
   const _$GetMultisigAtTopoheightResultImpl(
       {@JsonKey(name: 'state') required this.state});
 
-  factory _$GetMultisigAtTopoheightResultImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$GetMultisigAtTopoheightResultImplFromJson(json);
-
   @override
   @JsonKey(name: 'state')
-  final dynamic state;
+  final MultisigState state;
 
   @override
   String toString() {
@@ -135,13 +138,11 @@ class _$GetMultisigAtTopoheightResultImpl
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GetMultisigAtTopoheightResultImpl &&
-            const DeepCollectionEquality().equals(other.state, state));
+            (identical(other.state, state) || other.state == state));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(state));
+  int get hashCode => Object.hash(runtimeType, state);
 
   /// Create a copy of GetMultisigAtTopoheightResult
   /// with the given fields replaced by the non-null parameter values.
@@ -152,27 +153,17 @@ class _$GetMultisigAtTopoheightResultImpl
           _$GetMultisigAtTopoheightResultImpl>
       get copyWith => __$$GetMultisigAtTopoheightResultImplCopyWithImpl<
           _$GetMultisigAtTopoheightResultImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$GetMultisigAtTopoheightResultImplToJson(
-      this,
-    );
-  }
 }
 
 abstract class _GetMultisigAtTopoheightResult
     implements GetMultisigAtTopoheightResult {
   const factory _GetMultisigAtTopoheightResult(
-          {@JsonKey(name: 'state') required final dynamic state}) =
+          {@JsonKey(name: 'state') required final MultisigState state}) =
       _$GetMultisigAtTopoheightResultImpl;
-
-  factory _GetMultisigAtTopoheightResult.fromJson(Map<String, dynamic> json) =
-      _$GetMultisigAtTopoheightResultImpl.fromJson;
 
   @override
   @JsonKey(name: 'state')
-  dynamic get state;
+  MultisigState get state;
 
   /// Create a copy of GetMultisigAtTopoheightResult
   /// with the given fields replaced by the non-null parameter values.
