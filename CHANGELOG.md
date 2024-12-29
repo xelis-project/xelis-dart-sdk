@@ -1,3 +1,13 @@
+## 0.23.0
+
+Wallet API upgrade :
+
+- fix for transaction entry.
+
+Daemon API upgrade :
+
+- new RPC methods: hasMultisigAtTopoheight, getContractOutputs, getContractModule, getContractData.
+
 ## 0.22.0
 
 Wallet API upgrade :
