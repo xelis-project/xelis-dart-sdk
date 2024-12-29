@@ -27,7 +27,7 @@ mixin _$TransferOutEntry {
   @JsonKey(name: 'asset')
   String get asset => throw _privateConstructorUsedError;
   @JsonKey(name: 'extra_data')
-  ExtraData get extraData => throw _privateConstructorUsedError;
+  ExtraData? get extraData => throw _privateConstructorUsedError;
 
   /// Serializes this TransferOutEntry to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -49,9 +49,9 @@ abstract class $TransferOutEntryCopyWith<$Res> {
       {@JsonKey(name: 'destination') String destination,
       @JsonKey(name: 'amount') int amount,
       @JsonKey(name: 'asset') String asset,
-      @JsonKey(name: 'extra_data') ExtraData extraData});
+      @JsonKey(name: 'extra_data') ExtraData? extraData});
 
-  $ExtraDataCopyWith<$Res> get extraData;
+  $ExtraDataCopyWith<$Res>? get extraData;
 }
 
 /// @nodoc
@@ -72,7 +72,7 @@ class _$TransferOutEntryCopyWithImpl<$Res, $Val extends TransferOutEntry>
     Object? destination = null,
     Object? amount = null,
     Object? asset = null,
-    Object? extraData = null,
+    Object? extraData = freezed,
   }) {
     return _then(_value.copyWith(
       destination: null == destination
@@ -87,10 +87,10 @@ class _$TransferOutEntryCopyWithImpl<$Res, $Val extends TransferOutEntry>
           ? _value.asset
           : asset // ignore: cast_nullable_to_non_nullable
               as String,
-      extraData: null == extraData
+      extraData: freezed == extraData
           ? _value.extraData
           : extraData // ignore: cast_nullable_to_non_nullable
-              as ExtraData,
+              as ExtraData?,
     ) as $Val);
   }
 
@@ -98,8 +98,12 @@ class _$TransferOutEntryCopyWithImpl<$Res, $Val extends TransferOutEntry>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $ExtraDataCopyWith<$Res> get extraData {
-    return $ExtraDataCopyWith<$Res>(_value.extraData, (value) {
+  $ExtraDataCopyWith<$Res>? get extraData {
+    if (_value.extraData == null) {
+      return null;
+    }
+
+    return $ExtraDataCopyWith<$Res>(_value.extraData!, (value) {
       return _then(_value.copyWith(extraData: value) as $Val);
     });
   }
@@ -117,10 +121,10 @@ abstract class _$$TransferOutEntryImplCopyWith<$Res>
       {@JsonKey(name: 'destination') String destination,
       @JsonKey(name: 'amount') int amount,
       @JsonKey(name: 'asset') String asset,
-      @JsonKey(name: 'extra_data') ExtraData extraData});
+      @JsonKey(name: 'extra_data') ExtraData? extraData});
 
   @override
-  $ExtraDataCopyWith<$Res> get extraData;
+  $ExtraDataCopyWith<$Res>? get extraData;
 }
 
 /// @nodoc
@@ -139,7 +143,7 @@ class __$$TransferOutEntryImplCopyWithImpl<$Res>
     Object? destination = null,
     Object? amount = null,
     Object? asset = null,
-    Object? extraData = null,
+    Object? extraData = freezed,
   }) {
     return _then(_$TransferOutEntryImpl(
       destination: null == destination
@@ -154,10 +158,10 @@ class __$$TransferOutEntryImplCopyWithImpl<$Res>
           ? _value.asset
           : asset // ignore: cast_nullable_to_non_nullable
               as String,
-      extraData: null == extraData
+      extraData: freezed == extraData
           ? _value.extraData
           : extraData // ignore: cast_nullable_to_non_nullable
-              as ExtraData,
+              as ExtraData?,
     ));
   }
 }
@@ -169,7 +173,7 @@ class _$TransferOutEntryImpl implements _TransferOutEntry {
       {@JsonKey(name: 'destination') required this.destination,
       @JsonKey(name: 'amount') required this.amount,
       @JsonKey(name: 'asset') required this.asset,
-      @JsonKey(name: 'extra_data') required this.extraData});
+      @JsonKey(name: 'extra_data') this.extraData});
 
   factory _$TransferOutEntryImpl.fromJson(Map<String, dynamic> json) =>
       _$$TransferOutEntryImplFromJson(json);
@@ -185,7 +189,7 @@ class _$TransferOutEntryImpl implements _TransferOutEntry {
   final String asset;
   @override
   @JsonKey(name: 'extra_data')
-  final ExtraData extraData;
+  final ExtraData? extraData;
 
   @override
   String toString() {
@@ -232,7 +236,7 @@ abstract class _TransferOutEntry implements TransferOutEntry {
           {@JsonKey(name: 'destination') required final String destination,
           @JsonKey(name: 'amount') required final int amount,
           @JsonKey(name: 'asset') required final String asset,
-          @JsonKey(name: 'extra_data') required final ExtraData extraData}) =
+          @JsonKey(name: 'extra_data') final ExtraData? extraData}) =
       _$TransferOutEntryImpl;
 
   factory _TransferOutEntry.fromJson(Map<String, dynamic> json) =
@@ -249,7 +253,7 @@ abstract class _TransferOutEntry implements TransferOutEntry {
   String get asset;
   @override
   @JsonKey(name: 'extra_data')
-  ExtraData get extraData;
+  ExtraData? get extraData;
 
   /// Create a copy of TransferOutEntry
   /// with the given fields replaced by the non-null parameter values.

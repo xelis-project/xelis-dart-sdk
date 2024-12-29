@@ -13,7 +13,9 @@ _$TransferInEntryImpl _$$TransferInEntryImplFromJson(
     _$TransferInEntryImpl(
       amount: (json['amount'] as num).toInt(),
       asset: json['asset'] as String,
-      extraData: ExtraData.fromJson(json['extra_data'] as Map<String, dynamic>),
+      extraData: json['extra_data'] == null
+          ? null
+          : ExtraData.fromJson(json['extra_data'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$TransferInEntryImplToJson(

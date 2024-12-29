@@ -4,7 +4,6 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:xelis_dart_sdk/xelis_dart_sdk.dart';
 
 part 'transfer_out_entry.freezed.dart';
-
 part 'transfer_out_entry.g.dart';
 
 /// @nodoc
@@ -15,7 +14,7 @@ class TransferOutEntry with _$TransferOutEntry {
     @JsonKey(name: 'destination') required String destination,
     @JsonKey(name: 'amount') required int amount,
     @JsonKey(name: 'asset') required String asset,
-    @JsonKey(name: 'extra_data') required ExtraData extraData,
+    @JsonKey(name: 'extra_data') ExtraData? extraData,
   }) = _TransferOutEntry;
 
   /// @nodoc
