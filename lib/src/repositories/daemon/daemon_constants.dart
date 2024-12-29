@@ -196,7 +196,10 @@ enum DaemonMethod implements XelisJsonKey {
   getContractOutputs('get_contract_outputs'),
 
   /// TODO: Add documentation
-  getContractModule('get_contract_module');
+  getContractModule('get_contract_module'),
+
+  /// Retrieve the contract data with the requested key.
+  getContractData('get_contract_data');
 
   /// Creates a new [DaemonMethod] instance.
   const DaemonMethod(this.jsonKey);

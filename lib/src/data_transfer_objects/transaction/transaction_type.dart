@@ -1,10 +1,9 @@
 // ignore_for_file: invalid_annotation_target
 
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:xelis_dart_sdk/src/data_transfer_objects/dtos.dart';
+import 'package:xelis_dart_sdk/xelis_dart_sdk.dart';
 
 part 'transaction_type.freezed.dart';
-
 part 'transaction_type.g.dart';
 
 /// @nodoc

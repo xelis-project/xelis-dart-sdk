@@ -606,4 +606,15 @@ extension DaemonRpcMethodsExtension on DaemonClient {
 
     return result as Map<String, dynamic>;
   }
+
+  /// Retrieve the contract data with the requested key.
+  Future<GetContractDataResult> getContractData(
+      GetContractDataParams getContractDataParams) async {
+    final result = await sendRequest(
+      DaemonMethod.getContractData,
+      getContractDataParams.toJson(),
+    );
+
+    return GetContractDataResult.fromJson(result as Map<String, dynamic>);
+  }
 }
