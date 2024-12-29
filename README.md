@@ -69,6 +69,7 @@ JSON-RPC Clients to interact with daemon and wallet API.
 - countContracts
 - getEstimatedFeeRates
 - getContractOutputs
+- getContractModule
 
 #### Wallet
 

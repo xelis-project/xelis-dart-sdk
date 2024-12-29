@@ -27,6 +27,7 @@ export 'get_block_by_hash/get_block_by_hash_params.dart';
 export 'get_block_template/get_block_template_params.dart';
 export 'get_block_template/get_block_template_result.dart';
 export 'get_blocks_at_height/get_blocks_at_height_params.dart';
+export 'get_contract_module/get_contract_module_params.dart';
 export 'get_contract_outputs/contract_output.dart';
 export 'get_contract_outputs/get_contract_outputs_params.dart';
 export 'get_dev_fee_thresholds/get_dev_fee_threshold_result.dart';

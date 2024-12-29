@@ -584,15 +584,26 @@ extension DaemonRpcMethodsExtension on DaemonClient {
   /// Retrieve the contract outputs that have occurred in the requested transaction hash.
   ///
   /// It contains, the refunded gas amount, exit code and transfers.
-  Future<List<ContractOutput>> getContractOutputs(
+  Future<List<Map<String, dynamic>>> getContractOutputs(
     GetContractOutputsParams getContractOutputsParams,
   ) async {
     final result = await sendRequest(
       DaemonMethod.getContractOutputs,
       getContractOutputsParams.toJson(),
     );
-    return (result as List)
-        .map((e) => ContractOutput.fromJson(e as Map<String, dynamic>))
-        .toList();
+
+    return (result as List).map((e) => e as Map<String, dynamic>).toList();
+  }
+
+  /// TODO: Add documentation
+  Future<Map<String, dynamic>> getContractModule(
+    GetContractModuleParams getContractModuleParams,
+  ) async {
+    final result = await sendRequest(
+      DaemonMethod.getContractModule,
+      getContractModuleParams.toJson(),
+    );
+
+    return result as Map<String, dynamic>;
   }
 }

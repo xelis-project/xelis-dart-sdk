@@ -193,7 +193,10 @@ enum DaemonMethod implements XelisJsonKey {
   /// Retrieve the contract outputs that have occurred in the requested transaction hash.
   ///
   /// It contains, the refunded gas amount, exit code and transfers.
-  getContractOutputs('get_contract_outputs');
+  getContractOutputs('get_contract_outputs'),
+
+  /// TODO: Add documentation
+  getContractModule('get_contract_module');
 
   /// Creates a new [DaemonMethod] instance.
   const DaemonMethod(this.jsonKey);
