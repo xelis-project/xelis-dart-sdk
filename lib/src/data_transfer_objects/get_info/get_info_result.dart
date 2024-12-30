@@ -4,7 +4,6 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/network/network.dart';
 
 part 'get_info_result.freezed.dart';
-
 part 'get_info_result.g.dart';
 
 /// @nodoc
@@ -19,6 +18,8 @@ class GetInfoResult with _$GetInfoResult {
     @JsonKey(name: 'top_block_hash') required String topBlockHash,
     @JsonKey(name: 'circulating_supply') required int circulatingSupply,
     @JsonKey(name: 'maximum_supply') required int maximumSupply,
+    @JsonKey(name: 'burned_supply') required int burnedSupply,
+    @JsonKey(name: 'emitted_supply') required int emittedSupply,
     @JsonKey(name: 'difficulty') required String difficulty,
     @JsonKey(name: 'block_time_target') required int blockTimeTarget,
     @JsonKey(name: 'average_block_time') required int averageBlockTime,

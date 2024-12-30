@@ -34,6 +34,10 @@ mixin _$GetInfoResult {
   int get circulatingSupply => throw _privateConstructorUsedError;
   @JsonKey(name: 'maximum_supply')
   int get maximumSupply => throw _privateConstructorUsedError;
+  @JsonKey(name: 'burned_supply')
+  int get burnedSupply => throw _privateConstructorUsedError;
+  @JsonKey(name: 'emitted_supply')
+  int get emittedSupply => throw _privateConstructorUsedError;
   @JsonKey(name: 'difficulty')
   String get difficulty => throw _privateConstructorUsedError;
   @JsonKey(name: 'block_time_target')
@@ -77,6 +81,8 @@ abstract class $GetInfoResultCopyWith<$Res> {
       @JsonKey(name: 'top_block_hash') String topBlockHash,
       @JsonKey(name: 'circulating_supply') int circulatingSupply,
       @JsonKey(name: 'maximum_supply') int maximumSupply,
+      @JsonKey(name: 'burned_supply') int burnedSupply,
+      @JsonKey(name: 'emitted_supply') int emittedSupply,
       @JsonKey(name: 'difficulty') String difficulty,
       @JsonKey(name: 'block_time_target') int blockTimeTarget,
       @JsonKey(name: 'average_block_time') int averageBlockTime,
@@ -110,6 +116,8 @@ class _$GetInfoResultCopyWithImpl<$Res, $Val extends GetInfoResult>
     Object? topBlockHash = null,
     Object? circulatingSupply = null,
     Object? maximumSupply = null,
+    Object? burnedSupply = null,
+    Object? emittedSupply = null,
     Object? difficulty = null,
     Object? blockTimeTarget = null,
     Object? averageBlockTime = null,
@@ -148,6 +156,14 @@ class _$GetInfoResultCopyWithImpl<$Res, $Val extends GetInfoResult>
       maximumSupply: null == maximumSupply
           ? _value.maximumSupply
           : maximumSupply // ignore: cast_nullable_to_non_nullable
+              as int,
+      burnedSupply: null == burnedSupply
+          ? _value.burnedSupply
+          : burnedSupply // ignore: cast_nullable_to_non_nullable
+              as int,
+      emittedSupply: null == emittedSupply
+          ? _value.emittedSupply
+          : emittedSupply // ignore: cast_nullable_to_non_nullable
               as int,
       difficulty: null == difficulty
           ? _value.difficulty
@@ -205,6 +221,8 @@ abstract class _$$GetInfoResultImplCopyWith<$Res>
       @JsonKey(name: 'top_block_hash') String topBlockHash,
       @JsonKey(name: 'circulating_supply') int circulatingSupply,
       @JsonKey(name: 'maximum_supply') int maximumSupply,
+      @JsonKey(name: 'burned_supply') int burnedSupply,
+      @JsonKey(name: 'emitted_supply') int emittedSupply,
       @JsonKey(name: 'difficulty') String difficulty,
       @JsonKey(name: 'block_time_target') int blockTimeTarget,
       @JsonKey(name: 'average_block_time') int averageBlockTime,
@@ -236,6 +254,8 @@ class __$$GetInfoResultImplCopyWithImpl<$Res>
     Object? topBlockHash = null,
     Object? circulatingSupply = null,
     Object? maximumSupply = null,
+    Object? burnedSupply = null,
+    Object? emittedSupply = null,
     Object? difficulty = null,
     Object? blockTimeTarget = null,
     Object? averageBlockTime = null,
@@ -274,6 +294,14 @@ class __$$GetInfoResultImplCopyWithImpl<$Res>
       maximumSupply: null == maximumSupply
           ? _value.maximumSupply
           : maximumSupply // ignore: cast_nullable_to_non_nullable
+              as int,
+      burnedSupply: null == burnedSupply
+          ? _value.burnedSupply
+          : burnedSupply // ignore: cast_nullable_to_non_nullable
+              as int,
+      emittedSupply: null == emittedSupply
+          ? _value.emittedSupply
+          : emittedSupply // ignore: cast_nullable_to_non_nullable
               as int,
       difficulty: null == difficulty
           ? _value.difficulty
@@ -326,6 +354,8 @@ class _$GetInfoResultImpl implements _GetInfoResult {
       @JsonKey(name: 'top_block_hash') required this.topBlockHash,
       @JsonKey(name: 'circulating_supply') required this.circulatingSupply,
       @JsonKey(name: 'maximum_supply') required this.maximumSupply,
+      @JsonKey(name: 'burned_supply') required this.burnedSupply,
+      @JsonKey(name: 'emitted_supply') required this.emittedSupply,
       @JsonKey(name: 'difficulty') required this.difficulty,
       @JsonKey(name: 'block_time_target') required this.blockTimeTarget,
       @JsonKey(name: 'average_block_time') required this.averageBlockTime,
@@ -361,6 +391,12 @@ class _$GetInfoResultImpl implements _GetInfoResult {
   @JsonKey(name: 'maximum_supply')
   final int maximumSupply;
   @override
+  @JsonKey(name: 'burned_supply')
+  final int burnedSupply;
+  @override
+  @JsonKey(name: 'emitted_supply')
+  final int emittedSupply;
+  @override
   @JsonKey(name: 'difficulty')
   final String difficulty;
   @override
@@ -390,7 +426,7 @@ class _$GetInfoResultImpl implements _GetInfoResult {
 
   @override
   String toString() {
-    return 'GetInfoResult(height: $height, topoHeight: $topoHeight, stableHeight: $stableHeight, prunedTopoHeight: $prunedTopoHeight, topBlockHash: $topBlockHash, circulatingSupply: $circulatingSupply, maximumSupply: $maximumSupply, difficulty: $difficulty, blockTimeTarget: $blockTimeTarget, averageBlockTime: $averageBlockTime, blockReward: $blockReward, mempoolSize: $mempoolSize, version: $version, network: $network, minerReward: $minerReward, devReward: $devReward)';
+    return 'GetInfoResult(height: $height, topoHeight: $topoHeight, stableHeight: $stableHeight, prunedTopoHeight: $prunedTopoHeight, topBlockHash: $topBlockHash, circulatingSupply: $circulatingSupply, maximumSupply: $maximumSupply, burnedSupply: $burnedSupply, emittedSupply: $emittedSupply, difficulty: $difficulty, blockTimeTarget: $blockTimeTarget, averageBlockTime: $averageBlockTime, blockReward: $blockReward, mempoolSize: $mempoolSize, version: $version, network: $network, minerReward: $minerReward, devReward: $devReward)';
   }
 
   @override
@@ -411,6 +447,10 @@ class _$GetInfoResultImpl implements _GetInfoResult {
                 other.circulatingSupply == circulatingSupply) &&
             (identical(other.maximumSupply, maximumSupply) ||
                 other.maximumSupply == maximumSupply) &&
+            (identical(other.burnedSupply, burnedSupply) ||
+                other.burnedSupply == burnedSupply) &&
+            (identical(other.emittedSupply, emittedSupply) ||
+                other.emittedSupply == emittedSupply) &&
             (identical(other.difficulty, difficulty) ||
                 other.difficulty == difficulty) &&
             (identical(other.blockTimeTarget, blockTimeTarget) ||
@@ -440,6 +480,8 @@ class _$GetInfoResultImpl implements _GetInfoResult {
       topBlockHash,
       circulatingSupply,
       maximumSupply,
+      burnedSupply,
+      emittedSupply,
       difficulty,
       blockTimeTarget,
       averageBlockTime,
@@ -475,6 +517,8 @@ abstract class _GetInfoResult implements GetInfoResult {
       @JsonKey(name: 'top_block_hash') required final String topBlockHash,
       @JsonKey(name: 'circulating_supply') required final int circulatingSupply,
       @JsonKey(name: 'maximum_supply') required final int maximumSupply,
+      @JsonKey(name: 'burned_supply') required final int burnedSupply,
+      @JsonKey(name: 'emitted_supply') required final int emittedSupply,
       @JsonKey(name: 'difficulty') required final String difficulty,
       @JsonKey(name: 'block_time_target') required final int blockTimeTarget,
       @JsonKey(name: 'average_block_time') required final int averageBlockTime,
@@ -510,6 +554,12 @@ abstract class _GetInfoResult implements GetInfoResult {
   @override
   @JsonKey(name: 'maximum_supply')
   int get maximumSupply;
+  @override
+  @JsonKey(name: 'burned_supply')
+  int get burnedSupply;
+  @override
+  @JsonKey(name: 'emitted_supply')
+  int get emittedSupply;
   @override
   @JsonKey(name: 'difficulty')
   String get difficulty;

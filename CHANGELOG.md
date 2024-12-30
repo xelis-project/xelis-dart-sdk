@@ -1,3 +1,9 @@
+## 0.23.1
+
+Daemon API upgrade :
+
+- add burned_supply and emitted_supply to GetInfoResult.
+
 ## 0.23.0
 
 Wallet API upgrade :
