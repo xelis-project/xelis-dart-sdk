@@ -1,3 +1,9 @@
+## 0.23.2
+
+Wallet API upgrade :
+
+- add missing TransactionEntryType (Multisig, InvokeContract, DeployContract) in TransactionEntry.
+
 ## 0.23.1
 
 Daemon API upgrade :

@@ -24,6 +24,12 @@ TransactionEntryType _$TransactionEntryTypeFromJson(Map<String, dynamic> json) {
       return IncomingEntry.fromJson(json);
     case 'outgoing':
       return OutgoingEntry.fromJson(json);
+    case 'multisig':
+      return MultisigEntry.fromJson(json);
+    case 'invokeContract':
+      return InvokeContractEntry.fromJson(json);
+    case 'deployContract':
+      return DeployContractEntry.fromJson(json);
 
     default:
       throw CheckedFromJsonException(
@@ -53,6 +59,22 @@ mixin _$TransactionEntryType {
             @JsonKey(name: 'nonce') int nonce,
             @JsonKey(name: 'transfers') List<TransferOutEntry> transfers)
         outgoing,
+    required TResult Function(
+            @JsonKey(name: 'participants') List<String> participants,
+            @JsonKey(name: 'threshold') int threshold,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)
+        multisig,
+    required TResult Function(
+            @JsonKey(name: 'contract') String contract,
+            @JsonKey(name: 'deposits') Map<String, int> deposits,
+            @JsonKey(name: 'chunk_id') int chunkId,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)
+        invokeContract,
+    required TResult Function(
+            @JsonKey(name: 'fee') int fee, @JsonKey(name: 'nonce') int nonce)
+        deployContract,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -72,6 +94,22 @@ mixin _$TransactionEntryType {
             @JsonKey(name: 'nonce') int nonce,
             @JsonKey(name: 'transfers') List<TransferOutEntry> transfers)?
         outgoing,
+    TResult? Function(
+            @JsonKey(name: 'participants') List<String> participants,
+            @JsonKey(name: 'threshold') int threshold,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)?
+        multisig,
+    TResult? Function(
+            @JsonKey(name: 'contract') String contract,
+            @JsonKey(name: 'deposits') Map<String, int> deposits,
+            @JsonKey(name: 'chunk_id') int chunkId,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)?
+        invokeContract,
+    TResult? Function(
+            @JsonKey(name: 'fee') int fee, @JsonKey(name: 'nonce') int nonce)?
+        deployContract,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -91,6 +129,22 @@ mixin _$TransactionEntryType {
             @JsonKey(name: 'nonce') int nonce,
             @JsonKey(name: 'transfers') List<TransferOutEntry> transfers)?
         outgoing,
+    TResult Function(
+            @JsonKey(name: 'participants') List<String> participants,
+            @JsonKey(name: 'threshold') int threshold,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)?
+        multisig,
+    TResult Function(
+            @JsonKey(name: 'contract') String contract,
+            @JsonKey(name: 'deposits') Map<String, int> deposits,
+            @JsonKey(name: 'chunk_id') int chunkId,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)?
+        invokeContract,
+    TResult Function(
+            @JsonKey(name: 'fee') int fee, @JsonKey(name: 'nonce') int nonce)?
+        deployContract,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -100,6 +154,9 @@ mixin _$TransactionEntryType {
     required TResult Function(BurnEntry value) burn,
     required TResult Function(IncomingEntry value) incoming,
     required TResult Function(OutgoingEntry value) outgoing,
+    required TResult Function(MultisigEntry value) multisig,
+    required TResult Function(InvokeContractEntry value) invokeContract,
+    required TResult Function(DeployContractEntry value) deployContract,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -108,6 +165,9 @@ mixin _$TransactionEntryType {
     TResult? Function(BurnEntry value)? burn,
     TResult? Function(IncomingEntry value)? incoming,
     TResult? Function(OutgoingEntry value)? outgoing,
+    TResult? Function(MultisigEntry value)? multisig,
+    TResult? Function(InvokeContractEntry value)? invokeContract,
+    TResult? Function(DeployContractEntry value)? deployContract,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -116,6 +176,9 @@ mixin _$TransactionEntryType {
     TResult Function(BurnEntry value)? burn,
     TResult Function(IncomingEntry value)? incoming,
     TResult Function(OutgoingEntry value)? outgoing,
+    TResult Function(MultisigEntry value)? multisig,
+    TResult Function(InvokeContractEntry value)? invokeContract,
+    TResult Function(DeployContractEntry value)? deployContract,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -239,6 +302,22 @@ class _$CoinbaseEntryImpl implements CoinbaseEntry {
             @JsonKey(name: 'nonce') int nonce,
             @JsonKey(name: 'transfers') List<TransferOutEntry> transfers)
         outgoing,
+    required TResult Function(
+            @JsonKey(name: 'participants') List<String> participants,
+            @JsonKey(name: 'threshold') int threshold,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)
+        multisig,
+    required TResult Function(
+            @JsonKey(name: 'contract') String contract,
+            @JsonKey(name: 'deposits') Map<String, int> deposits,
+            @JsonKey(name: 'chunk_id') int chunkId,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)
+        invokeContract,
+    required TResult Function(
+            @JsonKey(name: 'fee') int fee, @JsonKey(name: 'nonce') int nonce)
+        deployContract,
   }) {
     return coinbase(reward);
   }
@@ -261,6 +340,22 @@ class _$CoinbaseEntryImpl implements CoinbaseEntry {
             @JsonKey(name: 'nonce') int nonce,
             @JsonKey(name: 'transfers') List<TransferOutEntry> transfers)?
         outgoing,
+    TResult? Function(
+            @JsonKey(name: 'participants') List<String> participants,
+            @JsonKey(name: 'threshold') int threshold,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)?
+        multisig,
+    TResult? Function(
+            @JsonKey(name: 'contract') String contract,
+            @JsonKey(name: 'deposits') Map<String, int> deposits,
+            @JsonKey(name: 'chunk_id') int chunkId,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)?
+        invokeContract,
+    TResult? Function(
+            @JsonKey(name: 'fee') int fee, @JsonKey(name: 'nonce') int nonce)?
+        deployContract,
   }) {
     return coinbase?.call(reward);
   }
@@ -283,6 +378,22 @@ class _$CoinbaseEntryImpl implements CoinbaseEntry {
             @JsonKey(name: 'nonce') int nonce,
             @JsonKey(name: 'transfers') List<TransferOutEntry> transfers)?
         outgoing,
+    TResult Function(
+            @JsonKey(name: 'participants') List<String> participants,
+            @JsonKey(name: 'threshold') int threshold,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)?
+        multisig,
+    TResult Function(
+            @JsonKey(name: 'contract') String contract,
+            @JsonKey(name: 'deposits') Map<String, int> deposits,
+            @JsonKey(name: 'chunk_id') int chunkId,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)?
+        invokeContract,
+    TResult Function(
+            @JsonKey(name: 'fee') int fee, @JsonKey(name: 'nonce') int nonce)?
+        deployContract,
     required TResult orElse(),
   }) {
     if (coinbase != null) {
@@ -298,6 +409,9 @@ class _$CoinbaseEntryImpl implements CoinbaseEntry {
     required TResult Function(BurnEntry value) burn,
     required TResult Function(IncomingEntry value) incoming,
     required TResult Function(OutgoingEntry value) outgoing,
+    required TResult Function(MultisigEntry value) multisig,
+    required TResult Function(InvokeContractEntry value) invokeContract,
+    required TResult Function(DeployContractEntry value) deployContract,
   }) {
     return coinbase(this);
   }
@@ -309,6 +423,9 @@ class _$CoinbaseEntryImpl implements CoinbaseEntry {
     TResult? Function(BurnEntry value)? burn,
     TResult? Function(IncomingEntry value)? incoming,
     TResult? Function(OutgoingEntry value)? outgoing,
+    TResult? Function(MultisigEntry value)? multisig,
+    TResult? Function(InvokeContractEntry value)? invokeContract,
+    TResult? Function(DeployContractEntry value)? deployContract,
   }) {
     return coinbase?.call(this);
   }
@@ -320,6 +437,9 @@ class _$CoinbaseEntryImpl implements CoinbaseEntry {
     TResult Function(BurnEntry value)? burn,
     TResult Function(IncomingEntry value)? incoming,
     TResult Function(OutgoingEntry value)? outgoing,
+    TResult Function(MultisigEntry value)? multisig,
+    TResult Function(InvokeContractEntry value)? invokeContract,
+    TResult Function(DeployContractEntry value)? deployContract,
     required TResult orElse(),
   }) {
     if (coinbase != null) {
@@ -482,6 +602,22 @@ class _$BurnEntryImpl implements BurnEntry {
             @JsonKey(name: 'nonce') int nonce,
             @JsonKey(name: 'transfers') List<TransferOutEntry> transfers)
         outgoing,
+    required TResult Function(
+            @JsonKey(name: 'participants') List<String> participants,
+            @JsonKey(name: 'threshold') int threshold,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)
+        multisig,
+    required TResult Function(
+            @JsonKey(name: 'contract') String contract,
+            @JsonKey(name: 'deposits') Map<String, int> deposits,
+            @JsonKey(name: 'chunk_id') int chunkId,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)
+        invokeContract,
+    required TResult Function(
+            @JsonKey(name: 'fee') int fee, @JsonKey(name: 'nonce') int nonce)
+        deployContract,
   }) {
     return burn(asset, amount, fee, nonce);
   }
@@ -504,6 +640,22 @@ class _$BurnEntryImpl implements BurnEntry {
             @JsonKey(name: 'nonce') int nonce,
             @JsonKey(name: 'transfers') List<TransferOutEntry> transfers)?
         outgoing,
+    TResult? Function(
+            @JsonKey(name: 'participants') List<String> participants,
+            @JsonKey(name: 'threshold') int threshold,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)?
+        multisig,
+    TResult? Function(
+            @JsonKey(name: 'contract') String contract,
+            @JsonKey(name: 'deposits') Map<String, int> deposits,
+            @JsonKey(name: 'chunk_id') int chunkId,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)?
+        invokeContract,
+    TResult? Function(
+            @JsonKey(name: 'fee') int fee, @JsonKey(name: 'nonce') int nonce)?
+        deployContract,
   }) {
     return burn?.call(asset, amount, fee, nonce);
   }
@@ -526,6 +678,22 @@ class _$BurnEntryImpl implements BurnEntry {
             @JsonKey(name: 'nonce') int nonce,
             @JsonKey(name: 'transfers') List<TransferOutEntry> transfers)?
         outgoing,
+    TResult Function(
+            @JsonKey(name: 'participants') List<String> participants,
+            @JsonKey(name: 'threshold') int threshold,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)?
+        multisig,
+    TResult Function(
+            @JsonKey(name: 'contract') String contract,
+            @JsonKey(name: 'deposits') Map<String, int> deposits,
+            @JsonKey(name: 'chunk_id') int chunkId,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)?
+        invokeContract,
+    TResult Function(
+            @JsonKey(name: 'fee') int fee, @JsonKey(name: 'nonce') int nonce)?
+        deployContract,
     required TResult orElse(),
   }) {
     if (burn != null) {
@@ -541,6 +709,9 @@ class _$BurnEntryImpl implements BurnEntry {
     required TResult Function(BurnEntry value) burn,
     required TResult Function(IncomingEntry value) incoming,
     required TResult Function(OutgoingEntry value) outgoing,
+    required TResult Function(MultisigEntry value) multisig,
+    required TResult Function(InvokeContractEntry value) invokeContract,
+    required TResult Function(DeployContractEntry value) deployContract,
   }) {
     return burn(this);
   }
@@ -552,6 +723,9 @@ class _$BurnEntryImpl implements BurnEntry {
     TResult? Function(BurnEntry value)? burn,
     TResult? Function(IncomingEntry value)? incoming,
     TResult? Function(OutgoingEntry value)? outgoing,
+    TResult? Function(MultisigEntry value)? multisig,
+    TResult? Function(InvokeContractEntry value)? invokeContract,
+    TResult? Function(DeployContractEntry value)? deployContract,
   }) {
     return burn?.call(this);
   }
@@ -563,6 +737,9 @@ class _$BurnEntryImpl implements BurnEntry {
     TResult Function(BurnEntry value)? burn,
     TResult Function(IncomingEntry value)? incoming,
     TResult Function(OutgoingEntry value)? outgoing,
+    TResult Function(MultisigEntry value)? multisig,
+    TResult Function(InvokeContractEntry value)? invokeContract,
+    TResult Function(DeployContractEntry value)? deployContract,
     required TResult orElse(),
   }) {
     if (burn != null) {
@@ -720,6 +897,22 @@ class _$IncomingEntryImpl implements IncomingEntry {
             @JsonKey(name: 'nonce') int nonce,
             @JsonKey(name: 'transfers') List<TransferOutEntry> transfers)
         outgoing,
+    required TResult Function(
+            @JsonKey(name: 'participants') List<String> participants,
+            @JsonKey(name: 'threshold') int threshold,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)
+        multisig,
+    required TResult Function(
+            @JsonKey(name: 'contract') String contract,
+            @JsonKey(name: 'deposits') Map<String, int> deposits,
+            @JsonKey(name: 'chunk_id') int chunkId,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)
+        invokeContract,
+    required TResult Function(
+            @JsonKey(name: 'fee') int fee, @JsonKey(name: 'nonce') int nonce)
+        deployContract,
   }) {
     return incoming(from, transfers);
   }
@@ -742,6 +935,22 @@ class _$IncomingEntryImpl implements IncomingEntry {
             @JsonKey(name: 'nonce') int nonce,
             @JsonKey(name: 'transfers') List<TransferOutEntry> transfers)?
         outgoing,
+    TResult? Function(
+            @JsonKey(name: 'participants') List<String> participants,
+            @JsonKey(name: 'threshold') int threshold,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)?
+        multisig,
+    TResult? Function(
+            @JsonKey(name: 'contract') String contract,
+            @JsonKey(name: 'deposits') Map<String, int> deposits,
+            @JsonKey(name: 'chunk_id') int chunkId,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)?
+        invokeContract,
+    TResult? Function(
+            @JsonKey(name: 'fee') int fee, @JsonKey(name: 'nonce') int nonce)?
+        deployContract,
   }) {
     return incoming?.call(from, transfers);
   }
@@ -764,6 +973,22 @@ class _$IncomingEntryImpl implements IncomingEntry {
             @JsonKey(name: 'nonce') int nonce,
             @JsonKey(name: 'transfers') List<TransferOutEntry> transfers)?
         outgoing,
+    TResult Function(
+            @JsonKey(name: 'participants') List<String> participants,
+            @JsonKey(name: 'threshold') int threshold,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)?
+        multisig,
+    TResult Function(
+            @JsonKey(name: 'contract') String contract,
+            @JsonKey(name: 'deposits') Map<String, int> deposits,
+            @JsonKey(name: 'chunk_id') int chunkId,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)?
+        invokeContract,
+    TResult Function(
+            @JsonKey(name: 'fee') int fee, @JsonKey(name: 'nonce') int nonce)?
+        deployContract,
     required TResult orElse(),
   }) {
     if (incoming != null) {
@@ -779,6 +1004,9 @@ class _$IncomingEntryImpl implements IncomingEntry {
     required TResult Function(BurnEntry value) burn,
     required TResult Function(IncomingEntry value) incoming,
     required TResult Function(OutgoingEntry value) outgoing,
+    required TResult Function(MultisigEntry value) multisig,
+    required TResult Function(InvokeContractEntry value) invokeContract,
+    required TResult Function(DeployContractEntry value) deployContract,
   }) {
     return incoming(this);
   }
@@ -790,6 +1018,9 @@ class _$IncomingEntryImpl implements IncomingEntry {
     TResult? Function(BurnEntry value)? burn,
     TResult? Function(IncomingEntry value)? incoming,
     TResult? Function(OutgoingEntry value)? outgoing,
+    TResult? Function(MultisigEntry value)? multisig,
+    TResult? Function(InvokeContractEntry value)? invokeContract,
+    TResult? Function(DeployContractEntry value)? deployContract,
   }) {
     return incoming?.call(this);
   }
@@ -801,6 +1032,9 @@ class _$IncomingEntryImpl implements IncomingEntry {
     TResult Function(BurnEntry value)? burn,
     TResult Function(IncomingEntry value)? incoming,
     TResult Function(OutgoingEntry value)? outgoing,
+    TResult Function(MultisigEntry value)? multisig,
+    TResult Function(InvokeContractEntry value)? invokeContract,
+    TResult Function(DeployContractEntry value)? deployContract,
     required TResult orElse(),
   }) {
     if (incoming != null) {
@@ -964,6 +1198,22 @@ class _$OutgoingEntryImpl implements OutgoingEntry {
             @JsonKey(name: 'nonce') int nonce,
             @JsonKey(name: 'transfers') List<TransferOutEntry> transfers)
         outgoing,
+    required TResult Function(
+            @JsonKey(name: 'participants') List<String> participants,
+            @JsonKey(name: 'threshold') int threshold,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)
+        multisig,
+    required TResult Function(
+            @JsonKey(name: 'contract') String contract,
+            @JsonKey(name: 'deposits') Map<String, int> deposits,
+            @JsonKey(name: 'chunk_id') int chunkId,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)
+        invokeContract,
+    required TResult Function(
+            @JsonKey(name: 'fee') int fee, @JsonKey(name: 'nonce') int nonce)
+        deployContract,
   }) {
     return outgoing(fee, nonce, transfers);
   }
@@ -986,6 +1236,22 @@ class _$OutgoingEntryImpl implements OutgoingEntry {
             @JsonKey(name: 'nonce') int nonce,
             @JsonKey(name: 'transfers') List<TransferOutEntry> transfers)?
         outgoing,
+    TResult? Function(
+            @JsonKey(name: 'participants') List<String> participants,
+            @JsonKey(name: 'threshold') int threshold,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)?
+        multisig,
+    TResult? Function(
+            @JsonKey(name: 'contract') String contract,
+            @JsonKey(name: 'deposits') Map<String, int> deposits,
+            @JsonKey(name: 'chunk_id') int chunkId,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)?
+        invokeContract,
+    TResult? Function(
+            @JsonKey(name: 'fee') int fee, @JsonKey(name: 'nonce') int nonce)?
+        deployContract,
   }) {
     return outgoing?.call(fee, nonce, transfers);
   }
@@ -1008,6 +1274,22 @@ class _$OutgoingEntryImpl implements OutgoingEntry {
             @JsonKey(name: 'nonce') int nonce,
             @JsonKey(name: 'transfers') List<TransferOutEntry> transfers)?
         outgoing,
+    TResult Function(
+            @JsonKey(name: 'participants') List<String> participants,
+            @JsonKey(name: 'threshold') int threshold,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)?
+        multisig,
+    TResult Function(
+            @JsonKey(name: 'contract') String contract,
+            @JsonKey(name: 'deposits') Map<String, int> deposits,
+            @JsonKey(name: 'chunk_id') int chunkId,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)?
+        invokeContract,
+    TResult Function(
+            @JsonKey(name: 'fee') int fee, @JsonKey(name: 'nonce') int nonce)?
+        deployContract,
     required TResult orElse(),
   }) {
     if (outgoing != null) {
@@ -1023,6 +1305,9 @@ class _$OutgoingEntryImpl implements OutgoingEntry {
     required TResult Function(BurnEntry value) burn,
     required TResult Function(IncomingEntry value) incoming,
     required TResult Function(OutgoingEntry value) outgoing,
+    required TResult Function(MultisigEntry value) multisig,
+    required TResult Function(InvokeContractEntry value) invokeContract,
+    required TResult Function(DeployContractEntry value) deployContract,
   }) {
     return outgoing(this);
   }
@@ -1034,6 +1319,9 @@ class _$OutgoingEntryImpl implements OutgoingEntry {
     TResult? Function(BurnEntry value)? burn,
     TResult? Function(IncomingEntry value)? incoming,
     TResult? Function(OutgoingEntry value)? outgoing,
+    TResult? Function(MultisigEntry value)? multisig,
+    TResult? Function(InvokeContractEntry value)? invokeContract,
+    TResult? Function(DeployContractEntry value)? deployContract,
   }) {
     return outgoing?.call(this);
   }
@@ -1045,6 +1333,9 @@ class _$OutgoingEntryImpl implements OutgoingEntry {
     TResult Function(BurnEntry value)? burn,
     TResult Function(IncomingEntry value)? incoming,
     TResult Function(OutgoingEntry value)? outgoing,
+    TResult Function(MultisigEntry value)? multisig,
+    TResult Function(InvokeContractEntry value)? invokeContract,
+    TResult Function(DeployContractEntry value)? deployContract,
     required TResult orElse(),
   }) {
     if (outgoing != null) {
@@ -1082,5 +1373,940 @@ abstract class OutgoingEntry implements TransactionEntryType {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$OutgoingEntryImplCopyWith<_$OutgoingEntryImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$MultisigEntryImplCopyWith<$Res> {
+  factory _$$MultisigEntryImplCopyWith(
+          _$MultisigEntryImpl value, $Res Function(_$MultisigEntryImpl) then) =
+      __$$MultisigEntryImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'participants') List<String> participants,
+      @JsonKey(name: 'threshold') int threshold,
+      @JsonKey(name: 'fee') int fee,
+      @JsonKey(name: 'nonce') int nonce});
+}
+
+/// @nodoc
+class __$$MultisigEntryImplCopyWithImpl<$Res>
+    extends _$TransactionEntryTypeCopyWithImpl<$Res, _$MultisigEntryImpl>
+    implements _$$MultisigEntryImplCopyWith<$Res> {
+  __$$MultisigEntryImplCopyWithImpl(
+      _$MultisigEntryImpl _value, $Res Function(_$MultisigEntryImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of TransactionEntryType
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? participants = null,
+    Object? threshold = null,
+    Object? fee = null,
+    Object? nonce = null,
+  }) {
+    return _then(_$MultisigEntryImpl(
+      participants: null == participants
+          ? _value._participants
+          : participants // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      threshold: null == threshold
+          ? _value.threshold
+          : threshold // ignore: cast_nullable_to_non_nullable
+              as int,
+      fee: null == fee
+          ? _value.fee
+          : fee // ignore: cast_nullable_to_non_nullable
+              as int,
+      nonce: null == nonce
+          ? _value.nonce
+          : nonce // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$MultisigEntryImpl implements MultisigEntry {
+  const _$MultisigEntryImpl(
+      {@JsonKey(name: 'participants') required final List<String> participants,
+      @JsonKey(name: 'threshold') required this.threshold,
+      @JsonKey(name: 'fee') required this.fee,
+      @JsonKey(name: 'nonce') required this.nonce,
+      final String? $type})
+      : _participants = participants,
+        $type = $type ?? 'multisig';
+
+  factory _$MultisigEntryImpl.fromJson(Map<String, dynamic> json) =>
+      _$$MultisigEntryImplFromJson(json);
+
+  final List<String> _participants;
+  @override
+  @JsonKey(name: 'participants')
+  List<String> get participants {
+    if (_participants is EqualUnmodifiableListView) return _participants;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_participants);
+  }
+
+  @override
+  @JsonKey(name: 'threshold')
+  final int threshold;
+  @override
+  @JsonKey(name: 'fee')
+  final int fee;
+  @override
+  @JsonKey(name: 'nonce')
+  final int nonce;
+
+  @JsonKey(name: 'runtimeType')
+  final String $type;
+
+  @override
+  String toString() {
+    return 'TransactionEntryType.multisig(participants: $participants, threshold: $threshold, fee: $fee, nonce: $nonce)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$MultisigEntryImpl &&
+            const DeepCollectionEquality()
+                .equals(other._participants, _participants) &&
+            (identical(other.threshold, threshold) ||
+                other.threshold == threshold) &&
+            (identical(other.fee, fee) || other.fee == fee) &&
+            (identical(other.nonce, nonce) || other.nonce == nonce));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_participants),
+      threshold,
+      fee,
+      nonce);
+
+  /// Create a copy of TransactionEntryType
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$MultisigEntryImplCopyWith<_$MultisigEntryImpl> get copyWith =>
+      __$$MultisigEntryImplCopyWithImpl<_$MultisigEntryImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(@JsonKey(name: 'reward') int reward) coinbase,
+    required TResult Function(
+            @JsonKey(name: 'asset') String asset,
+            @JsonKey(name: 'amount') int amount,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)
+        burn,
+    required TResult Function(@JsonKey(name: 'from') String from,
+            @JsonKey(name: 'transfers') List<TransferInEntry> transfers)
+        incoming,
+    required TResult Function(
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce,
+            @JsonKey(name: 'transfers') List<TransferOutEntry> transfers)
+        outgoing,
+    required TResult Function(
+            @JsonKey(name: 'participants') List<String> participants,
+            @JsonKey(name: 'threshold') int threshold,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)
+        multisig,
+    required TResult Function(
+            @JsonKey(name: 'contract') String contract,
+            @JsonKey(name: 'deposits') Map<String, int> deposits,
+            @JsonKey(name: 'chunk_id') int chunkId,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)
+        invokeContract,
+    required TResult Function(
+            @JsonKey(name: 'fee') int fee, @JsonKey(name: 'nonce') int nonce)
+        deployContract,
+  }) {
+    return multisig(participants, threshold, fee, nonce);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(@JsonKey(name: 'reward') int reward)? coinbase,
+    TResult? Function(
+            @JsonKey(name: 'asset') String asset,
+            @JsonKey(name: 'amount') int amount,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)?
+        burn,
+    TResult? Function(@JsonKey(name: 'from') String from,
+            @JsonKey(name: 'transfers') List<TransferInEntry> transfers)?
+        incoming,
+    TResult? Function(
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce,
+            @JsonKey(name: 'transfers') List<TransferOutEntry> transfers)?
+        outgoing,
+    TResult? Function(
+            @JsonKey(name: 'participants') List<String> participants,
+            @JsonKey(name: 'threshold') int threshold,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)?
+        multisig,
+    TResult? Function(
+            @JsonKey(name: 'contract') String contract,
+            @JsonKey(name: 'deposits') Map<String, int> deposits,
+            @JsonKey(name: 'chunk_id') int chunkId,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)?
+        invokeContract,
+    TResult? Function(
+            @JsonKey(name: 'fee') int fee, @JsonKey(name: 'nonce') int nonce)?
+        deployContract,
+  }) {
+    return multisig?.call(participants, threshold, fee, nonce);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(@JsonKey(name: 'reward') int reward)? coinbase,
+    TResult Function(
+            @JsonKey(name: 'asset') String asset,
+            @JsonKey(name: 'amount') int amount,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)?
+        burn,
+    TResult Function(@JsonKey(name: 'from') String from,
+            @JsonKey(name: 'transfers') List<TransferInEntry> transfers)?
+        incoming,
+    TResult Function(
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce,
+            @JsonKey(name: 'transfers') List<TransferOutEntry> transfers)?
+        outgoing,
+    TResult Function(
+            @JsonKey(name: 'participants') List<String> participants,
+            @JsonKey(name: 'threshold') int threshold,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)?
+        multisig,
+    TResult Function(
+            @JsonKey(name: 'contract') String contract,
+            @JsonKey(name: 'deposits') Map<String, int> deposits,
+            @JsonKey(name: 'chunk_id') int chunkId,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)?
+        invokeContract,
+    TResult Function(
+            @JsonKey(name: 'fee') int fee, @JsonKey(name: 'nonce') int nonce)?
+        deployContract,
+    required TResult orElse(),
+  }) {
+    if (multisig != null) {
+      return multisig(participants, threshold, fee, nonce);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(CoinbaseEntry value) coinbase,
+    required TResult Function(BurnEntry value) burn,
+    required TResult Function(IncomingEntry value) incoming,
+    required TResult Function(OutgoingEntry value) outgoing,
+    required TResult Function(MultisigEntry value) multisig,
+    required TResult Function(InvokeContractEntry value) invokeContract,
+    required TResult Function(DeployContractEntry value) deployContract,
+  }) {
+    return multisig(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(CoinbaseEntry value)? coinbase,
+    TResult? Function(BurnEntry value)? burn,
+    TResult? Function(IncomingEntry value)? incoming,
+    TResult? Function(OutgoingEntry value)? outgoing,
+    TResult? Function(MultisigEntry value)? multisig,
+    TResult? Function(InvokeContractEntry value)? invokeContract,
+    TResult? Function(DeployContractEntry value)? deployContract,
+  }) {
+    return multisig?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CoinbaseEntry value)? coinbase,
+    TResult Function(BurnEntry value)? burn,
+    TResult Function(IncomingEntry value)? incoming,
+    TResult Function(OutgoingEntry value)? outgoing,
+    TResult Function(MultisigEntry value)? multisig,
+    TResult Function(InvokeContractEntry value)? invokeContract,
+    TResult Function(DeployContractEntry value)? deployContract,
+    required TResult orElse(),
+  }) {
+    if (multisig != null) {
+      return multisig(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$MultisigEntryImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class MultisigEntry implements TransactionEntryType {
+  const factory MultisigEntry(
+      {@JsonKey(name: 'participants') required final List<String> participants,
+      @JsonKey(name: 'threshold') required final int threshold,
+      @JsonKey(name: 'fee') required final int fee,
+      @JsonKey(name: 'nonce') required final int nonce}) = _$MultisigEntryImpl;
+
+  factory MultisigEntry.fromJson(Map<String, dynamic> json) =
+      _$MultisigEntryImpl.fromJson;
+
+  @JsonKey(name: 'participants')
+  List<String> get participants;
+  @JsonKey(name: 'threshold')
+  int get threshold;
+  @JsonKey(name: 'fee')
+  int get fee;
+  @JsonKey(name: 'nonce')
+  int get nonce;
+
+  /// Create a copy of TransactionEntryType
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$MultisigEntryImplCopyWith<_$MultisigEntryImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$InvokeContractEntryImplCopyWith<$Res> {
+  factory _$$InvokeContractEntryImplCopyWith(_$InvokeContractEntryImpl value,
+          $Res Function(_$InvokeContractEntryImpl) then) =
+      __$$InvokeContractEntryImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'contract') String contract,
+      @JsonKey(name: 'deposits') Map<String, int> deposits,
+      @JsonKey(name: 'chunk_id') int chunkId,
+      @JsonKey(name: 'fee') int fee,
+      @JsonKey(name: 'nonce') int nonce});
+}
+
+/// @nodoc
+class __$$InvokeContractEntryImplCopyWithImpl<$Res>
+    extends _$TransactionEntryTypeCopyWithImpl<$Res, _$InvokeContractEntryImpl>
+    implements _$$InvokeContractEntryImplCopyWith<$Res> {
+  __$$InvokeContractEntryImplCopyWithImpl(_$InvokeContractEntryImpl _value,
+      $Res Function(_$InvokeContractEntryImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of TransactionEntryType
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? contract = null,
+    Object? deposits = null,
+    Object? chunkId = null,
+    Object? fee = null,
+    Object? nonce = null,
+  }) {
+    return _then(_$InvokeContractEntryImpl(
+      contract: null == contract
+          ? _value.contract
+          : contract // ignore: cast_nullable_to_non_nullable
+              as String,
+      deposits: null == deposits
+          ? _value._deposits
+          : deposits // ignore: cast_nullable_to_non_nullable
+              as Map<String, int>,
+      chunkId: null == chunkId
+          ? _value.chunkId
+          : chunkId // ignore: cast_nullable_to_non_nullable
+              as int,
+      fee: null == fee
+          ? _value.fee
+          : fee // ignore: cast_nullable_to_non_nullable
+              as int,
+      nonce: null == nonce
+          ? _value.nonce
+          : nonce // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$InvokeContractEntryImpl implements InvokeContractEntry {
+  const _$InvokeContractEntryImpl(
+      {@JsonKey(name: 'contract') required this.contract,
+      @JsonKey(name: 'deposits') required final Map<String, int> deposits,
+      @JsonKey(name: 'chunk_id') required this.chunkId,
+      @JsonKey(name: 'fee') required this.fee,
+      @JsonKey(name: 'nonce') required this.nonce,
+      final String? $type})
+      : _deposits = deposits,
+        $type = $type ?? 'invokeContract';
+
+  factory _$InvokeContractEntryImpl.fromJson(Map<String, dynamic> json) =>
+      _$$InvokeContractEntryImplFromJson(json);
+
+  @override
+  @JsonKey(name: 'contract')
+  final String contract;
+  final Map<String, int> _deposits;
+  @override
+  @JsonKey(name: 'deposits')
+  Map<String, int> get deposits {
+    if (_deposits is EqualUnmodifiableMapView) return _deposits;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_deposits);
+  }
+
+  @override
+  @JsonKey(name: 'chunk_id')
+  final int chunkId;
+  @override
+  @JsonKey(name: 'fee')
+  final int fee;
+  @override
+  @JsonKey(name: 'nonce')
+  final int nonce;
+
+  @JsonKey(name: 'runtimeType')
+  final String $type;
+
+  @override
+  String toString() {
+    return 'TransactionEntryType.invokeContract(contract: $contract, deposits: $deposits, chunkId: $chunkId, fee: $fee, nonce: $nonce)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$InvokeContractEntryImpl &&
+            (identical(other.contract, contract) ||
+                other.contract == contract) &&
+            const DeepCollectionEquality().equals(other._deposits, _deposits) &&
+            (identical(other.chunkId, chunkId) || other.chunkId == chunkId) &&
+            (identical(other.fee, fee) || other.fee == fee) &&
+            (identical(other.nonce, nonce) || other.nonce == nonce));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, contract,
+      const DeepCollectionEquality().hash(_deposits), chunkId, fee, nonce);
+
+  /// Create a copy of TransactionEntryType
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$InvokeContractEntryImplCopyWith<_$InvokeContractEntryImpl> get copyWith =>
+      __$$InvokeContractEntryImplCopyWithImpl<_$InvokeContractEntryImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(@JsonKey(name: 'reward') int reward) coinbase,
+    required TResult Function(
+            @JsonKey(name: 'asset') String asset,
+            @JsonKey(name: 'amount') int amount,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)
+        burn,
+    required TResult Function(@JsonKey(name: 'from') String from,
+            @JsonKey(name: 'transfers') List<TransferInEntry> transfers)
+        incoming,
+    required TResult Function(
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce,
+            @JsonKey(name: 'transfers') List<TransferOutEntry> transfers)
+        outgoing,
+    required TResult Function(
+            @JsonKey(name: 'participants') List<String> participants,
+            @JsonKey(name: 'threshold') int threshold,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)
+        multisig,
+    required TResult Function(
+            @JsonKey(name: 'contract') String contract,
+            @JsonKey(name: 'deposits') Map<String, int> deposits,
+            @JsonKey(name: 'chunk_id') int chunkId,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)
+        invokeContract,
+    required TResult Function(
+            @JsonKey(name: 'fee') int fee, @JsonKey(name: 'nonce') int nonce)
+        deployContract,
+  }) {
+    return invokeContract(contract, deposits, chunkId, fee, nonce);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(@JsonKey(name: 'reward') int reward)? coinbase,
+    TResult? Function(
+            @JsonKey(name: 'asset') String asset,
+            @JsonKey(name: 'amount') int amount,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)?
+        burn,
+    TResult? Function(@JsonKey(name: 'from') String from,
+            @JsonKey(name: 'transfers') List<TransferInEntry> transfers)?
+        incoming,
+    TResult? Function(
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce,
+            @JsonKey(name: 'transfers') List<TransferOutEntry> transfers)?
+        outgoing,
+    TResult? Function(
+            @JsonKey(name: 'participants') List<String> participants,
+            @JsonKey(name: 'threshold') int threshold,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)?
+        multisig,
+    TResult? Function(
+            @JsonKey(name: 'contract') String contract,
+            @JsonKey(name: 'deposits') Map<String, int> deposits,
+            @JsonKey(name: 'chunk_id') int chunkId,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)?
+        invokeContract,
+    TResult? Function(
+            @JsonKey(name: 'fee') int fee, @JsonKey(name: 'nonce') int nonce)?
+        deployContract,
+  }) {
+    return invokeContract?.call(contract, deposits, chunkId, fee, nonce);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(@JsonKey(name: 'reward') int reward)? coinbase,
+    TResult Function(
+            @JsonKey(name: 'asset') String asset,
+            @JsonKey(name: 'amount') int amount,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)?
+        burn,
+    TResult Function(@JsonKey(name: 'from') String from,
+            @JsonKey(name: 'transfers') List<TransferInEntry> transfers)?
+        incoming,
+    TResult Function(
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce,
+            @JsonKey(name: 'transfers') List<TransferOutEntry> transfers)?
+        outgoing,
+    TResult Function(
+            @JsonKey(name: 'participants') List<String> participants,
+            @JsonKey(name: 'threshold') int threshold,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)?
+        multisig,
+    TResult Function(
+            @JsonKey(name: 'contract') String contract,
+            @JsonKey(name: 'deposits') Map<String, int> deposits,
+            @JsonKey(name: 'chunk_id') int chunkId,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)?
+        invokeContract,
+    TResult Function(
+            @JsonKey(name: 'fee') int fee, @JsonKey(name: 'nonce') int nonce)?
+        deployContract,
+    required TResult orElse(),
+  }) {
+    if (invokeContract != null) {
+      return invokeContract(contract, deposits, chunkId, fee, nonce);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(CoinbaseEntry value) coinbase,
+    required TResult Function(BurnEntry value) burn,
+    required TResult Function(IncomingEntry value) incoming,
+    required TResult Function(OutgoingEntry value) outgoing,
+    required TResult Function(MultisigEntry value) multisig,
+    required TResult Function(InvokeContractEntry value) invokeContract,
+    required TResult Function(DeployContractEntry value) deployContract,
+  }) {
+    return invokeContract(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(CoinbaseEntry value)? coinbase,
+    TResult? Function(BurnEntry value)? burn,
+    TResult? Function(IncomingEntry value)? incoming,
+    TResult? Function(OutgoingEntry value)? outgoing,
+    TResult? Function(MultisigEntry value)? multisig,
+    TResult? Function(InvokeContractEntry value)? invokeContract,
+    TResult? Function(DeployContractEntry value)? deployContract,
+  }) {
+    return invokeContract?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CoinbaseEntry value)? coinbase,
+    TResult Function(BurnEntry value)? burn,
+    TResult Function(IncomingEntry value)? incoming,
+    TResult Function(OutgoingEntry value)? outgoing,
+    TResult Function(MultisigEntry value)? multisig,
+    TResult Function(InvokeContractEntry value)? invokeContract,
+    TResult Function(DeployContractEntry value)? deployContract,
+    required TResult orElse(),
+  }) {
+    if (invokeContract != null) {
+      return invokeContract(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$InvokeContractEntryImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class InvokeContractEntry implements TransactionEntryType {
+  const factory InvokeContractEntry(
+          {@JsonKey(name: 'contract') required final String contract,
+          @JsonKey(name: 'deposits') required final Map<String, int> deposits,
+          @JsonKey(name: 'chunk_id') required final int chunkId,
+          @JsonKey(name: 'fee') required final int fee,
+          @JsonKey(name: 'nonce') required final int nonce}) =
+      _$InvokeContractEntryImpl;
+
+  factory InvokeContractEntry.fromJson(Map<String, dynamic> json) =
+      _$InvokeContractEntryImpl.fromJson;
+
+  @JsonKey(name: 'contract')
+  String get contract;
+  @JsonKey(name: 'deposits')
+  Map<String, int> get deposits;
+  @JsonKey(name: 'chunk_id')
+  int get chunkId;
+  @JsonKey(name: 'fee')
+  int get fee;
+  @JsonKey(name: 'nonce')
+  int get nonce;
+
+  /// Create a copy of TransactionEntryType
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$InvokeContractEntryImplCopyWith<_$InvokeContractEntryImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$DeployContractEntryImplCopyWith<$Res> {
+  factory _$$DeployContractEntryImplCopyWith(_$DeployContractEntryImpl value,
+          $Res Function(_$DeployContractEntryImpl) then) =
+      __$$DeployContractEntryImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({@JsonKey(name: 'fee') int fee, @JsonKey(name: 'nonce') int nonce});
+}
+
+/// @nodoc
+class __$$DeployContractEntryImplCopyWithImpl<$Res>
+    extends _$TransactionEntryTypeCopyWithImpl<$Res, _$DeployContractEntryImpl>
+    implements _$$DeployContractEntryImplCopyWith<$Res> {
+  __$$DeployContractEntryImplCopyWithImpl(_$DeployContractEntryImpl _value,
+      $Res Function(_$DeployContractEntryImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of TransactionEntryType
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? fee = null,
+    Object? nonce = null,
+  }) {
+    return _then(_$DeployContractEntryImpl(
+      fee: null == fee
+          ? _value.fee
+          : fee // ignore: cast_nullable_to_non_nullable
+              as int,
+      nonce: null == nonce
+          ? _value.nonce
+          : nonce // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$DeployContractEntryImpl implements DeployContractEntry {
+  const _$DeployContractEntryImpl(
+      {@JsonKey(name: 'fee') required this.fee,
+      @JsonKey(name: 'nonce') required this.nonce,
+      final String? $type})
+      : $type = $type ?? 'deployContract';
+
+  factory _$DeployContractEntryImpl.fromJson(Map<String, dynamic> json) =>
+      _$$DeployContractEntryImplFromJson(json);
+
+  @override
+  @JsonKey(name: 'fee')
+  final int fee;
+  @override
+  @JsonKey(name: 'nonce')
+  final int nonce;
+
+  @JsonKey(name: 'runtimeType')
+  final String $type;
+
+  @override
+  String toString() {
+    return 'TransactionEntryType.deployContract(fee: $fee, nonce: $nonce)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeployContractEntryImpl &&
+            (identical(other.fee, fee) || other.fee == fee) &&
+            (identical(other.nonce, nonce) || other.nonce == nonce));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, fee, nonce);
+
+  /// Create a copy of TransactionEntryType
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DeployContractEntryImplCopyWith<_$DeployContractEntryImpl> get copyWith =>
+      __$$DeployContractEntryImplCopyWithImpl<_$DeployContractEntryImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(@JsonKey(name: 'reward') int reward) coinbase,
+    required TResult Function(
+            @JsonKey(name: 'asset') String asset,
+            @JsonKey(name: 'amount') int amount,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)
+        burn,
+    required TResult Function(@JsonKey(name: 'from') String from,
+            @JsonKey(name: 'transfers') List<TransferInEntry> transfers)
+        incoming,
+    required TResult Function(
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce,
+            @JsonKey(name: 'transfers') List<TransferOutEntry> transfers)
+        outgoing,
+    required TResult Function(
+            @JsonKey(name: 'participants') List<String> participants,
+            @JsonKey(name: 'threshold') int threshold,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)
+        multisig,
+    required TResult Function(
+            @JsonKey(name: 'contract') String contract,
+            @JsonKey(name: 'deposits') Map<String, int> deposits,
+            @JsonKey(name: 'chunk_id') int chunkId,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)
+        invokeContract,
+    required TResult Function(
+            @JsonKey(name: 'fee') int fee, @JsonKey(name: 'nonce') int nonce)
+        deployContract,
+  }) {
+    return deployContract(fee, nonce);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(@JsonKey(name: 'reward') int reward)? coinbase,
+    TResult? Function(
+            @JsonKey(name: 'asset') String asset,
+            @JsonKey(name: 'amount') int amount,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)?
+        burn,
+    TResult? Function(@JsonKey(name: 'from') String from,
+            @JsonKey(name: 'transfers') List<TransferInEntry> transfers)?
+        incoming,
+    TResult? Function(
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce,
+            @JsonKey(name: 'transfers') List<TransferOutEntry> transfers)?
+        outgoing,
+    TResult? Function(
+            @JsonKey(name: 'participants') List<String> participants,
+            @JsonKey(name: 'threshold') int threshold,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)?
+        multisig,
+    TResult? Function(
+            @JsonKey(name: 'contract') String contract,
+            @JsonKey(name: 'deposits') Map<String, int> deposits,
+            @JsonKey(name: 'chunk_id') int chunkId,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)?
+        invokeContract,
+    TResult? Function(
+            @JsonKey(name: 'fee') int fee, @JsonKey(name: 'nonce') int nonce)?
+        deployContract,
+  }) {
+    return deployContract?.call(fee, nonce);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(@JsonKey(name: 'reward') int reward)? coinbase,
+    TResult Function(
+            @JsonKey(name: 'asset') String asset,
+            @JsonKey(name: 'amount') int amount,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)?
+        burn,
+    TResult Function(@JsonKey(name: 'from') String from,
+            @JsonKey(name: 'transfers') List<TransferInEntry> transfers)?
+        incoming,
+    TResult Function(
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce,
+            @JsonKey(name: 'transfers') List<TransferOutEntry> transfers)?
+        outgoing,
+    TResult Function(
+            @JsonKey(name: 'participants') List<String> participants,
+            @JsonKey(name: 'threshold') int threshold,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)?
+        multisig,
+    TResult Function(
+            @JsonKey(name: 'contract') String contract,
+            @JsonKey(name: 'deposits') Map<String, int> deposits,
+            @JsonKey(name: 'chunk_id') int chunkId,
+            @JsonKey(name: 'fee') int fee,
+            @JsonKey(name: 'nonce') int nonce)?
+        invokeContract,
+    TResult Function(
+            @JsonKey(name: 'fee') int fee, @JsonKey(name: 'nonce') int nonce)?
+        deployContract,
+    required TResult orElse(),
+  }) {
+    if (deployContract != null) {
+      return deployContract(fee, nonce);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(CoinbaseEntry value) coinbase,
+    required TResult Function(BurnEntry value) burn,
+    required TResult Function(IncomingEntry value) incoming,
+    required TResult Function(OutgoingEntry value) outgoing,
+    required TResult Function(MultisigEntry value) multisig,
+    required TResult Function(InvokeContractEntry value) invokeContract,
+    required TResult Function(DeployContractEntry value) deployContract,
+  }) {
+    return deployContract(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(CoinbaseEntry value)? coinbase,
+    TResult? Function(BurnEntry value)? burn,
+    TResult? Function(IncomingEntry value)? incoming,
+    TResult? Function(OutgoingEntry value)? outgoing,
+    TResult? Function(MultisigEntry value)? multisig,
+    TResult? Function(InvokeContractEntry value)? invokeContract,
+    TResult? Function(DeployContractEntry value)? deployContract,
+  }) {
+    return deployContract?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CoinbaseEntry value)? coinbase,
+    TResult Function(BurnEntry value)? burn,
+    TResult Function(IncomingEntry value)? incoming,
+    TResult Function(OutgoingEntry value)? outgoing,
+    TResult Function(MultisigEntry value)? multisig,
+    TResult Function(InvokeContractEntry value)? invokeContract,
+    TResult Function(DeployContractEntry value)? deployContract,
+    required TResult orElse(),
+  }) {
+    if (deployContract != null) {
+      return deployContract(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$DeployContractEntryImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class DeployContractEntry implements TransactionEntryType {
+  const factory DeployContractEntry(
+          {@JsonKey(name: 'fee') required final int fee,
+          @JsonKey(name: 'nonce') required final int nonce}) =
+      _$DeployContractEntryImpl;
+
+  factory DeployContractEntry.fromJson(Map<String, dynamic> json) =
+      _$DeployContractEntryImpl.fromJson;
+
+  @JsonKey(name: 'fee')
+  int get fee;
+  @JsonKey(name: 'nonce')
+  int get nonce;
+
+  /// Create a copy of TransactionEntryType
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$DeployContractEntryImplCopyWith<_$DeployContractEntryImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -74,6 +74,48 @@ class TransactionEntry with _$TransactionEntry {
             ? DateTime.fromMillisecondsSinceEpoch(json['timestamp'] as int)
             : null,
       );
+    } else if (json
+        case {
+          'hash': final String hash,
+          'topoheight': final int topoHeight,
+          'multi_sig': final Map<String, dynamic> multisig,
+        }) {
+      return TransactionEntry(
+        hash: hash,
+        topoHeight: topoHeight,
+        txEntryType: MultisigEntry.fromJson(multisig),
+        timestamp: json['timestamp'] != null
+            ? DateTime.fromMillisecondsSinceEpoch(json['timestamp'] as int)
+            : null,
+      );
+    } else if (json
+        case {
+          'hash': final String hash,
+          'topoheight': final int topoHeight,
+          'invoke_contract': final Map<String, dynamic> invokeContract,
+        }) {
+      return TransactionEntry(
+        hash: hash,
+        topoHeight: topoHeight,
+        txEntryType: InvokeContractEntry.fromJson(invokeContract),
+        timestamp: json['timestamp'] != null
+            ? DateTime.fromMillisecondsSinceEpoch(json['timestamp'] as int)
+            : null,
+      );
+    } else if (json
+        case {
+          'hash': final String hash,
+          'topoheight': final int topoHeight,
+          'deploy_contract': final Map<String, dynamic> deployContract,
+        }) {
+      return TransactionEntry(
+        hash: hash,
+        topoHeight: topoHeight,
+        txEntryType: DeployContractEntry.fromJson(deployContract),
+        timestamp: json['timestamp'] != null
+            ? DateTime.fromMillisecondsSinceEpoch(json['timestamp'] as int)
+            : null,
+      );
     } else {
       throw Exception('Unknown type for this transaction entry: $json');
     }

@@ -36,6 +36,26 @@ sealed class TransactionEntryType with _$TransactionEntryType {
     @JsonKey(name: 'transfers') required List<TransferOutEntry> transfers,
   }) = OutgoingEntry;
 
+  const factory TransactionEntryType.multisig({
+    @JsonKey(name: 'participants') required List<String> participants,
+    @JsonKey(name: 'threshold') required int threshold,
+    @JsonKey(name: 'fee') required int fee,
+    @JsonKey(name: 'nonce') required int nonce,
+  }) = MultisigEntry;
+
+  const factory TransactionEntryType.invokeContract({
+    @JsonKey(name: 'contract') required String contract,
+    @JsonKey(name: 'deposits') required Map<String, int> deposits,
+    @JsonKey(name: 'chunk_id') required int chunkId,
+    @JsonKey(name: 'fee') required int fee,
+    @JsonKey(name: 'nonce') required int nonce,
+  }) = InvokeContractEntry;
+
+  const factory TransactionEntryType.deployContract({
+    @JsonKey(name: 'fee') required int fee,
+    @JsonKey(name: 'nonce') required int nonce,
+  }) = DeployContractEntry;
+
   /// @nodoc
   factory TransactionEntryType.fromJson(Map<String, dynamic> json) =>
       _$TransactionEntryTypeFromJson(json);

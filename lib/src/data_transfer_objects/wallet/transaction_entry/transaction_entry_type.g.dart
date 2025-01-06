@@ -71,3 +71,61 @@ Map<String, dynamic> _$$OutgoingEntryImplToJson(_$OutgoingEntryImpl instance) =>
       'transfers': instance.transfers,
       'runtimeType': instance.$type,
     };
+
+_$MultisigEntryImpl _$$MultisigEntryImplFromJson(Map<String, dynamic> json) =>
+    _$MultisigEntryImpl(
+      participants: (json['participants'] as List<dynamic>)
+          .map((e) => e as String)
+          .toList(),
+      threshold: (json['threshold'] as num).toInt(),
+      fee: (json['fee'] as num).toInt(),
+      nonce: (json['nonce'] as num).toInt(),
+      $type: json['runtimeType'] as String?,
+    );
+
+Map<String, dynamic> _$$MultisigEntryImplToJson(_$MultisigEntryImpl instance) =>
+    <String, dynamic>{
+      'participants': instance.participants,
+      'threshold': instance.threshold,
+      'fee': instance.fee,
+      'nonce': instance.nonce,
+      'runtimeType': instance.$type,
+    };
+
+_$InvokeContractEntryImpl _$$InvokeContractEntryImplFromJson(
+        Map<String, dynamic> json) =>
+    _$InvokeContractEntryImpl(
+      contract: json['contract'] as String,
+      deposits: Map<String, int>.from(json['deposits'] as Map),
+      chunkId: (json['chunk_id'] as num).toInt(),
+      fee: (json['fee'] as num).toInt(),
+      nonce: (json['nonce'] as num).toInt(),
+      $type: json['runtimeType'] as String?,
+    );
+
+Map<String, dynamic> _$$InvokeContractEntryImplToJson(
+        _$InvokeContractEntryImpl instance) =>
+    <String, dynamic>{
+      'contract': instance.contract,
+      'deposits': instance.deposits,
+      'chunk_id': instance.chunkId,
+      'fee': instance.fee,
+      'nonce': instance.nonce,
+      'runtimeType': instance.$type,
+    };
+
+_$DeployContractEntryImpl _$$DeployContractEntryImplFromJson(
+        Map<String, dynamic> json) =>
+    _$DeployContractEntryImpl(
+      fee: (json['fee'] as num).toInt(),
+      nonce: (json['nonce'] as num).toInt(),
+      $type: json['runtimeType'] as String?,
+    );
+
+Map<String, dynamic> _$$DeployContractEntryImplToJson(
+        _$DeployContractEntryImpl instance) =>
+    <String, dynamic>{
+      'fee': instance.fee,
+      'nonce': instance.nonce,
+      'runtimeType': instance.$type,
+    };
