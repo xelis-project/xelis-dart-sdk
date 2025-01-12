@@ -13,11 +13,17 @@ _$GetAssetsParamsImpl _$$GetAssetsParamsImplFromJson(
     _$GetAssetsParamsImpl(
       skip: (json['skip'] as num?)?.toInt(),
       maximum: (json['maximum'] as num?)?.toInt(),
+      minimumTopoheight: (json['minimum_topoheight'] as num?)?.toInt(),
+      maximumTopoheight: (json['maximum_topoheight'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$$GetAssetsParamsImplToJson(
         _$GetAssetsParamsImpl instance) =>
     <String, dynamic>{
-      'skip': instance.skip,
-      'maximum': instance.maximum,
+      if (instance.skip case final value?) 'skip': value,
+      if (instance.maximum case final value?) 'maximum': value,
+      if (instance.minimumTopoheight case final value?)
+        'minimum_topoheight': value,
+      if (instance.maximumTopoheight case final value?)
+        'maximum_topoheight': value,
     };

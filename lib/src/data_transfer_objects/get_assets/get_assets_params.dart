@@ -10,9 +10,12 @@ part 'get_assets_params.g.dart';
 @freezed
 class GetAssetsParams with _$GetAssetsParams {
   /// @nodoc
+  @JsonSerializable(includeIfNull: false)
   const factory GetAssetsParams({
     @JsonKey(name: 'skip') int? skip,
     @JsonKey(name: 'maximum') int? maximum,
+    @JsonKey(name: 'minimum_topoheight') int? minimumTopoheight,
+    @JsonKey(name: 'maximum_topoheight') int? maximumTopoheight,
   }) = _GetAssetsParams;
 
   /// @nodoc
