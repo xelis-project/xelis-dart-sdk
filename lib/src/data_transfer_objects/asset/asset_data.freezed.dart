@@ -20,8 +20,8 @@ AssetData _$AssetDataFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$AssetData {
-  @JsonKey(name: 'hash')
-  String get hash => throw _privateConstructorUsedError;
+  @JsonKey(name: 'asset')
+  String get asset => throw _privateConstructorUsedError;
   @JsonKey(name: 'topoheight')
   int get topoheight => throw _privateConstructorUsedError;
   @JsonKey(name: 'decimals')
@@ -49,7 +49,7 @@ abstract class $AssetDataCopyWith<$Res> {
       _$AssetDataCopyWithImpl<$Res, AssetData>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'hash') String hash,
+      {@JsonKey(name: 'asset') String asset,
       @JsonKey(name: 'topoheight') int topoheight,
       @JsonKey(name: 'decimals') int decimals,
       @JsonKey(name: 'name') String name,
@@ -72,7 +72,7 @@ class _$AssetDataCopyWithImpl<$Res, $Val extends AssetData>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? hash = null,
+    Object? asset = null,
     Object? topoheight = null,
     Object? decimals = null,
     Object? name = null,
@@ -80,9 +80,9 @@ class _$AssetDataCopyWithImpl<$Res, $Val extends AssetData>
     Object? contract = freezed,
   }) {
     return _then(_value.copyWith(
-      hash: null == hash
-          ? _value.hash
-          : hash // ignore: cast_nullable_to_non_nullable
+      asset: null == asset
+          ? _value.asset
+          : asset // ignore: cast_nullable_to_non_nullable
               as String,
       topoheight: null == topoheight
           ? _value.topoheight
@@ -117,7 +117,7 @@ abstract class _$$AssetDataImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'hash') String hash,
+      {@JsonKey(name: 'asset') String asset,
       @JsonKey(name: 'topoheight') int topoheight,
       @JsonKey(name: 'decimals') int decimals,
       @JsonKey(name: 'name') String name,
@@ -138,7 +138,7 @@ class __$$AssetDataImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? hash = null,
+    Object? asset = null,
     Object? topoheight = null,
     Object? decimals = null,
     Object? name = null,
@@ -146,9 +146,9 @@ class __$$AssetDataImplCopyWithImpl<$Res>
     Object? contract = freezed,
   }) {
     return _then(_$AssetDataImpl(
-      hash: null == hash
-          ? _value.hash
-          : hash // ignore: cast_nullable_to_non_nullable
+      asset: null == asset
+          ? _value.asset
+          : asset // ignore: cast_nullable_to_non_nullable
               as String,
       topoheight: null == topoheight
           ? _value.topoheight
@@ -178,7 +178,7 @@ class __$$AssetDataImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$AssetDataImpl implements _AssetData {
   const _$AssetDataImpl(
-      {@JsonKey(name: 'hash') required this.hash,
+      {@JsonKey(name: 'asset') required this.asset,
       @JsonKey(name: 'topoheight') required this.topoheight,
       @JsonKey(name: 'decimals') required this.decimals,
       @JsonKey(name: 'name') required this.name,
@@ -189,8 +189,8 @@ class _$AssetDataImpl implements _AssetData {
       _$$AssetDataImplFromJson(json);
 
   @override
-  @JsonKey(name: 'hash')
-  final String hash;
+  @JsonKey(name: 'asset')
+  final String asset;
   @override
   @JsonKey(name: 'topoheight')
   final int topoheight;
@@ -209,7 +209,7 @@ class _$AssetDataImpl implements _AssetData {
 
   @override
   String toString() {
-    return 'AssetData(hash: $hash, topoheight: $topoheight, decimals: $decimals, name: $name, maxSupply: $maxSupply, contract: $contract)';
+    return 'AssetData(asset: $asset, topoheight: $topoheight, decimals: $decimals, name: $name, maxSupply: $maxSupply, contract: $contract)';
   }
 
   @override
@@ -217,7 +217,7 @@ class _$AssetDataImpl implements _AssetData {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AssetDataImpl &&
-            (identical(other.hash, hash) || other.hash == hash) &&
+            (identical(other.asset, asset) || other.asset == asset) &&
             (identical(other.topoheight, topoheight) ||
                 other.topoheight == topoheight) &&
             (identical(other.decimals, decimals) ||
@@ -232,7 +232,7 @@ class _$AssetDataImpl implements _AssetData {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
-      runtimeType, hash, topoheight, decimals, name, maxSupply, contract);
+      runtimeType, asset, topoheight, decimals, name, maxSupply, contract);
 
   /// Create a copy of AssetData
   /// with the given fields replaced by the non-null parameter values.
@@ -252,7 +252,7 @@ class _$AssetDataImpl implements _AssetData {
 
 abstract class _AssetData implements AssetData {
   const factory _AssetData(
-      {@JsonKey(name: 'hash') required final String hash,
+      {@JsonKey(name: 'asset') required final String asset,
       @JsonKey(name: 'topoheight') required final int topoheight,
       @JsonKey(name: 'decimals') required final int decimals,
       @JsonKey(name: 'name') required final String name,
@@ -263,8 +263,8 @@ abstract class _AssetData implements AssetData {
       _$AssetDataImpl.fromJson;
 
   @override
-  @JsonKey(name: 'hash')
-  String get hash;
+  @JsonKey(name: 'asset')
+  String get asset;
   @override
   @JsonKey(name: 'topoheight')
   int get topoheight;

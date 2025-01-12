@@ -10,7 +10,7 @@ part of 'asset_data.dart';
 
 _$AssetDataImpl _$$AssetDataImplFromJson(Map<String, dynamic> json) =>
     _$AssetDataImpl(
-      hash: json['hash'] as String,
+      asset: json['asset'] as String,
       topoheight: (json['topoheight'] as num).toInt(),
       decimals: (json['decimals'] as num).toInt(),
       name: json['name'] as String,
@@ -20,7 +20,7 @@ _$AssetDataImpl _$$AssetDataImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$AssetDataImplToJson(_$AssetDataImpl instance) =>
     <String, dynamic>{
-      'hash': instance.hash,
+      'asset': instance.asset,
       'topoheight': instance.topoheight,
       'decimals': instance.decimals,
       'name': instance.name,
