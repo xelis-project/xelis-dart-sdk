@@ -10,12 +10,9 @@ part 'asset_data.g.dart';
 class AssetData with _$AssetData {
   /// @nodoc
   const factory AssetData({
-    @JsonKey(name: 'asset') required String asset,
-    @JsonKey(name: 'topoheight') required int topoheight,
     @JsonKey(name: 'decimals') required int decimals,
     @JsonKey(name: 'name') required String name,
     @JsonKey(name: 'max_supply') int? maxSupply,
-    @JsonKey(name: 'contract') String? contract,
   }) = _AssetData;
 
   /// @nodoc

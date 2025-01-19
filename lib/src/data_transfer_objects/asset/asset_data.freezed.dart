@@ -20,18 +20,12 @@ AssetData _$AssetDataFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$AssetData {
-  @JsonKey(name: 'asset')
-  String get asset => throw _privateConstructorUsedError;
-  @JsonKey(name: 'topoheight')
-  int get topoheight => throw _privateConstructorUsedError;
   @JsonKey(name: 'decimals')
   int get decimals => throw _privateConstructorUsedError;
   @JsonKey(name: 'name')
   String get name => throw _privateConstructorUsedError;
   @JsonKey(name: 'max_supply')
   int? get maxSupply => throw _privateConstructorUsedError;
-  @JsonKey(name: 'contract')
-  String? get contract => throw _privateConstructorUsedError;
 
   /// Serializes this AssetData to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -49,12 +43,9 @@ abstract class $AssetDataCopyWith<$Res> {
       _$AssetDataCopyWithImpl<$Res, AssetData>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'asset') String asset,
-      @JsonKey(name: 'topoheight') int topoheight,
-      @JsonKey(name: 'decimals') int decimals,
+      {@JsonKey(name: 'decimals') int decimals,
       @JsonKey(name: 'name') String name,
-      @JsonKey(name: 'max_supply') int? maxSupply,
-      @JsonKey(name: 'contract') String? contract});
+      @JsonKey(name: 'max_supply') int? maxSupply});
 }
 
 /// @nodoc
@@ -72,22 +63,11 @@ class _$AssetDataCopyWithImpl<$Res, $Val extends AssetData>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? asset = null,
-    Object? topoheight = null,
     Object? decimals = null,
     Object? name = null,
     Object? maxSupply = freezed,
-    Object? contract = freezed,
   }) {
     return _then(_value.copyWith(
-      asset: null == asset
-          ? _value.asset
-          : asset // ignore: cast_nullable_to_non_nullable
-              as String,
-      topoheight: null == topoheight
-          ? _value.topoheight
-          : topoheight // ignore: cast_nullable_to_non_nullable
-              as int,
       decimals: null == decimals
           ? _value.decimals
           : decimals // ignore: cast_nullable_to_non_nullable
@@ -100,10 +80,6 @@ class _$AssetDataCopyWithImpl<$Res, $Val extends AssetData>
           ? _value.maxSupply
           : maxSupply // ignore: cast_nullable_to_non_nullable
               as int?,
-      contract: freezed == contract
-          ? _value.contract
-          : contract // ignore: cast_nullable_to_non_nullable
-              as String?,
     ) as $Val);
   }
 }
@@ -117,12 +93,9 @@ abstract class _$$AssetDataImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'asset') String asset,
-      @JsonKey(name: 'topoheight') int topoheight,
-      @JsonKey(name: 'decimals') int decimals,
+      {@JsonKey(name: 'decimals') int decimals,
       @JsonKey(name: 'name') String name,
-      @JsonKey(name: 'max_supply') int? maxSupply,
-      @JsonKey(name: 'contract') String? contract});
+      @JsonKey(name: 'max_supply') int? maxSupply});
 }
 
 /// @nodoc
@@ -138,22 +111,11 @@ class __$$AssetDataImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? asset = null,
-    Object? topoheight = null,
     Object? decimals = null,
     Object? name = null,
     Object? maxSupply = freezed,
-    Object? contract = freezed,
   }) {
     return _then(_$AssetDataImpl(
-      asset: null == asset
-          ? _value.asset
-          : asset // ignore: cast_nullable_to_non_nullable
-              as String,
-      topoheight: null == topoheight
-          ? _value.topoheight
-          : topoheight // ignore: cast_nullable_to_non_nullable
-              as int,
       decimals: null == decimals
           ? _value.decimals
           : decimals // ignore: cast_nullable_to_non_nullable
@@ -166,10 +128,6 @@ class __$$AssetDataImplCopyWithImpl<$Res>
           ? _value.maxSupply
           : maxSupply // ignore: cast_nullable_to_non_nullable
               as int?,
-      contract: freezed == contract
-          ? _value.contract
-          : contract // ignore: cast_nullable_to_non_nullable
-              as String?,
     ));
   }
 }
@@ -178,22 +136,13 @@ class __$$AssetDataImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$AssetDataImpl implements _AssetData {
   const _$AssetDataImpl(
-      {@JsonKey(name: 'asset') required this.asset,
-      @JsonKey(name: 'topoheight') required this.topoheight,
-      @JsonKey(name: 'decimals') required this.decimals,
+      {@JsonKey(name: 'decimals') required this.decimals,
       @JsonKey(name: 'name') required this.name,
-      @JsonKey(name: 'max_supply') this.maxSupply,
-      @JsonKey(name: 'contract') this.contract});
+      @JsonKey(name: 'max_supply') this.maxSupply});
 
   factory _$AssetDataImpl.fromJson(Map<String, dynamic> json) =>
       _$$AssetDataImplFromJson(json);
 
-  @override
-  @JsonKey(name: 'asset')
-  final String asset;
-  @override
-  @JsonKey(name: 'topoheight')
-  final int topoheight;
   @override
   @JsonKey(name: 'decimals')
   final int decimals;
@@ -203,13 +152,10 @@ class _$AssetDataImpl implements _AssetData {
   @override
   @JsonKey(name: 'max_supply')
   final int? maxSupply;
-  @override
-  @JsonKey(name: 'contract')
-  final String? contract;
 
   @override
   String toString() {
-    return 'AssetData(asset: $asset, topoheight: $topoheight, decimals: $decimals, name: $name, maxSupply: $maxSupply, contract: $contract)';
+    return 'AssetData(decimals: $decimals, name: $name, maxSupply: $maxSupply)';
   }
 
   @override
@@ -217,22 +163,16 @@ class _$AssetDataImpl implements _AssetData {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AssetDataImpl &&
-            (identical(other.asset, asset) || other.asset == asset) &&
-            (identical(other.topoheight, topoheight) ||
-                other.topoheight == topoheight) &&
             (identical(other.decimals, decimals) ||
                 other.decimals == decimals) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.maxSupply, maxSupply) ||
-                other.maxSupply == maxSupply) &&
-            (identical(other.contract, contract) ||
-                other.contract == contract));
+                other.maxSupply == maxSupply));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, asset, topoheight, decimals, name, maxSupply, contract);
+  int get hashCode => Object.hash(runtimeType, decimals, name, maxSupply);
 
   /// Create a copy of AssetData
   /// with the given fields replaced by the non-null parameter values.
@@ -252,22 +192,13 @@ class _$AssetDataImpl implements _AssetData {
 
 abstract class _AssetData implements AssetData {
   const factory _AssetData(
-      {@JsonKey(name: 'asset') required final String asset,
-      @JsonKey(name: 'topoheight') required final int topoheight,
-      @JsonKey(name: 'decimals') required final int decimals,
+      {@JsonKey(name: 'decimals') required final int decimals,
       @JsonKey(name: 'name') required final String name,
-      @JsonKey(name: 'max_supply') final int? maxSupply,
-      @JsonKey(name: 'contract') final String? contract}) = _$AssetDataImpl;
+      @JsonKey(name: 'max_supply') final int? maxSupply}) = _$AssetDataImpl;
 
   factory _AssetData.fromJson(Map<String, dynamic> json) =
       _$AssetDataImpl.fromJson;
 
-  @override
-  @JsonKey(name: 'asset')
-  String get asset;
-  @override
-  @JsonKey(name: 'topoheight')
-  int get topoheight;
   @override
   @JsonKey(name: 'decimals')
   int get decimals;
@@ -277,9 +208,6 @@ abstract class _AssetData implements AssetData {
   @override
   @JsonKey(name: 'max_supply')
   int? get maxSupply;
-  @override
-  @JsonKey(name: 'contract')
-  String? get contract;
 
   /// Create a copy of AssetData
   /// with the given fields replaced by the non-null parameter values.

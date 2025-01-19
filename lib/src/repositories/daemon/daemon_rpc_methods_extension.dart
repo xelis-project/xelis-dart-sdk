@@ -164,14 +164,14 @@ extension DaemonRpcMethodsExtension on DaemonClient {
   }
 
   /// Get registered topoheight and decimals data from a specific asset.
-  Future<AssetData> getAsset(GetAssetParams getAssetParams) async {
+  Future<RPCAssetData> getAsset(GetAssetParams getAssetParams) async {
     final result =
         await sendRequest(DaemonMethod.getAsset, getAssetParams.toJson());
-    return AssetData.fromJson(result as Map<String, dynamic>);
+    return RPCAssetData.fromJson(result as Map<String, dynamic>);
   }
 
   /// Get all assets available on network with its registered topoheight.
-  Future<List<AssetData>> getAssets([
+  Future<List<RPCAssetData>> getAssets([
     GetAssetsParams? getAssetsParams,
   ]) async {
     final result = await sendRequest(
@@ -179,7 +179,7 @@ extension DaemonRpcMethodsExtension on DaemonClient {
       getAssetsParams?.toJson() ?? const GetAssetsParams().toJson(),
     );
     return (result as List)
-        .map((e) => AssetData.fromJson(e as Map<String, dynamic>))
+        .map((e) => RPCAssetData.fromJson(e as Map<String, dynamic>))
         .toList();
   }
 
