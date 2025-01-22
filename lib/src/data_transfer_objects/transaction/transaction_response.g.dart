@@ -15,7 +15,7 @@ _$TransactionResponseImpl _$$TransactionResponseImplFromJson(
           (json['blocks'] as List<dynamic>?)?.map((e) => e as String).toList(),
       executedInBlock: json['executed_in_block'] as String?,
       hash: json['hash'] as String,
-      data: Transfers.fromJson(json['data'] as Map<String, dynamic>),
+      data: TransfersPayload.fromJson(json['data'] as Map<String, dynamic>),
       fee: (json['fee'] as num).toInt(),
       version: (json['version'] as num).toInt(),
       inMempool: json['in_mempool'] as bool,

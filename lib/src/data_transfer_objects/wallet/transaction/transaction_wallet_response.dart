@@ -42,7 +42,7 @@ class TransactionWalletResponse with _$TransactionWalletResponse {
         }) {
       return TransactionWalletResponse(
         txAsHex: txAsHex,
-        data: Transfers.fromJson(transfers),
+        data: TransfersPayload.fromJson(transfers),
         fee: fee,
         hash: hash,
         version: version,
@@ -73,7 +73,7 @@ class TransactionWalletResponse with _$TransactionWalletResponse {
         }) {
       return TransactionWalletResponse(
         txAsHex: txAsHex,
-        data: Burn.fromJson(burn),
+        data: BurnPayload.fromJson(burn),
         fee: fee,
         hash: hash,
         version: version,

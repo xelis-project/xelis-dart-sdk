@@ -273,4 +273,37 @@ extension WalletRpcMethodsExtension on WalletClient {
 
     return result as int;
   }
+
+  /// Retrieve all assets tracked by the wallet.
+  Future<Map<String, AssetData>> getAssets() async {
+    final result = await sendRequest(WalletMethod.getAssets);
+    return (result as Map<String, dynamic>).map(
+      (key, value) => MapEntry(
+        key,
+        AssetData.fromJson(value as Map<String, dynamic>),
+      ),
+    );
+  }
+
+  /// Retrieve a specific asset tracked by the wallet.
+  Future<AssetData> getAsset(GetAssetParams getAssetParams) async {
+    final result = await sendRequest(
+      WalletMethod.getAsset,
+      getAssetParams.toJson(),
+    );
+
+    return AssetData.fromJson(result as Map<String, dynamic>);
+  }
+
+  /// Dump the TX in hex format.
+  Future<String> dumpTransaction(
+    GetTransactionParams getTransactionParams,
+  ) async {
+    final result = await sendRequest(
+      WalletMethod.dumpTransaction,
+      getTransactionParams.toJson(),
+    );
+
+    return result as String;
+  }
 }

@@ -12,13 +12,19 @@ sealed class TransactionType with _$TransactionType {
   /// @nodoc
   const factory TransactionType.transfers({
     @JsonKey(name: 'transfers') required List<TransferPayload> transfers,
-  }) = Transfers;
+  }) = TransfersPayload;
 
   /// @nodoc
   const factory TransactionType.burn({
     @JsonKey(name: 'asset') required String asset,
     @JsonKey(name: 'amount') required int amount,
-  }) = Burn;
+  }) = BurnPayload;
+
+  /// @nodoc
+  const factory TransactionType.multisig({
+    @JsonKey(name: 'participants') required List<dynamic> participants,
+    @JsonKey(name: 'threshold') required int threshold,
+  }) = MultisigPayload;
 
   /// @nodoc
   factory TransactionType.fromJson(Map<String, dynamic> json) =>

@@ -99,6 +99,9 @@ JSON-RPC Clients to interact with daemon and wallet API.
 - clearTxCache
 - decryptExtraData
 - decryptCiphertext
+- getAssets
+- getAsset
+- dumpTransaction
 
 ### Websocket Events
 

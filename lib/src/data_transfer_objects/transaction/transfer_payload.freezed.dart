@@ -27,7 +27,7 @@ mixin _$TransferPayload {
   @JsonKey(name: 'ct_validity_proof')
   Map<String, dynamic> get validityProof => throw _privateConstructorUsedError;
   @JsonKey(name: 'destination')
-  List<int> get destination => throw _privateConstructorUsedError;
+  dynamic get destination => throw _privateConstructorUsedError;
   @JsonKey(name: 'receiver_handle')
   List<int> get receiverHandle => throw _privateConstructorUsedError;
   @JsonKey(name: 'sender_handle')
@@ -55,7 +55,7 @@ abstract class $TransferPayloadCopyWith<$Res> {
       {@JsonKey(name: 'asset') String asset,
       @JsonKey(name: 'commitment') List<int> commitment,
       @JsonKey(name: 'ct_validity_proof') Map<String, dynamic> validityProof,
-      @JsonKey(name: 'destination') List<int> destination,
+      @JsonKey(name: 'destination') dynamic destination,
       @JsonKey(name: 'receiver_handle') List<int> receiverHandle,
       @JsonKey(name: 'sender_handle') List<int> senderHandle,
       @JsonKey(name: 'extra_data') dynamic extraData});
@@ -79,7 +79,7 @@ class _$TransferPayloadCopyWithImpl<$Res, $Val extends TransferPayload>
     Object? asset = null,
     Object? commitment = null,
     Object? validityProof = null,
-    Object? destination = null,
+    Object? destination = freezed,
     Object? receiverHandle = null,
     Object? senderHandle = null,
     Object? extraData = freezed,
@@ -97,10 +97,10 @@ class _$TransferPayloadCopyWithImpl<$Res, $Val extends TransferPayload>
           ? _value.validityProof
           : validityProof // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>,
-      destination: null == destination
+      destination: freezed == destination
           ? _value.destination
           : destination // ignore: cast_nullable_to_non_nullable
-              as List<int>,
+              as dynamic,
       receiverHandle: null == receiverHandle
           ? _value.receiverHandle
           : receiverHandle // ignore: cast_nullable_to_non_nullable
@@ -129,7 +129,7 @@ abstract class _$$TransferPayloadImplCopyWith<$Res>
       {@JsonKey(name: 'asset') String asset,
       @JsonKey(name: 'commitment') List<int> commitment,
       @JsonKey(name: 'ct_validity_proof') Map<String, dynamic> validityProof,
-      @JsonKey(name: 'destination') List<int> destination,
+      @JsonKey(name: 'destination') dynamic destination,
       @JsonKey(name: 'receiver_handle') List<int> receiverHandle,
       @JsonKey(name: 'sender_handle') List<int> senderHandle,
       @JsonKey(name: 'extra_data') dynamic extraData});
@@ -151,7 +151,7 @@ class __$$TransferPayloadImplCopyWithImpl<$Res>
     Object? asset = null,
     Object? commitment = null,
     Object? validityProof = null,
-    Object? destination = null,
+    Object? destination = freezed,
     Object? receiverHandle = null,
     Object? senderHandle = null,
     Object? extraData = freezed,
@@ -169,10 +169,10 @@ class __$$TransferPayloadImplCopyWithImpl<$Res>
           ? _value._validityProof
           : validityProof // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>,
-      destination: null == destination
-          ? _value._destination
+      destination: freezed == destination
+          ? _value.destination
           : destination // ignore: cast_nullable_to_non_nullable
-              as List<int>,
+              as dynamic,
       receiverHandle: null == receiverHandle
           ? _value._receiverHandle
           : receiverHandle // ignore: cast_nullable_to_non_nullable
@@ -197,13 +197,12 @@ class _$TransferPayloadImpl implements _TransferPayload {
       @JsonKey(name: 'commitment') required final List<int> commitment,
       @JsonKey(name: 'ct_validity_proof')
       required final Map<String, dynamic> validityProof,
-      @JsonKey(name: 'destination') required final List<int> destination,
+      @JsonKey(name: 'destination') required this.destination,
       @JsonKey(name: 'receiver_handle') required final List<int> receiverHandle,
       @JsonKey(name: 'sender_handle') required final List<int> senderHandle,
       @JsonKey(name: 'extra_data') this.extraData})
       : _commitment = commitment,
         _validityProof = validityProof,
-        _destination = destination,
         _receiverHandle = receiverHandle,
         _senderHandle = senderHandle;
 
@@ -231,15 +230,9 @@ class _$TransferPayloadImpl implements _TransferPayload {
     return EqualUnmodifiableMapView(_validityProof);
   }
 
-  final List<int> _destination;
   @override
   @JsonKey(name: 'destination')
-  List<int> get destination {
-    if (_destination is EqualUnmodifiableListView) return _destination;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_destination);
-  }
-
+  final dynamic destination;
   final List<int> _receiverHandle;
   @override
   @JsonKey(name: 'receiver_handle')
@@ -278,7 +271,7 @@ class _$TransferPayloadImpl implements _TransferPayload {
             const DeepCollectionEquality()
                 .equals(other._validityProof, _validityProof) &&
             const DeepCollectionEquality()
-                .equals(other._destination, _destination) &&
+                .equals(other.destination, destination) &&
             const DeepCollectionEquality()
                 .equals(other._receiverHandle, _receiverHandle) &&
             const DeepCollectionEquality()
@@ -293,7 +286,7 @@ class _$TransferPayloadImpl implements _TransferPayload {
       asset,
       const DeepCollectionEquality().hash(_commitment),
       const DeepCollectionEquality().hash(_validityProof),
-      const DeepCollectionEquality().hash(_destination),
+      const DeepCollectionEquality().hash(destination),
       const DeepCollectionEquality().hash(_receiverHandle),
       const DeepCollectionEquality().hash(_senderHandle),
       const DeepCollectionEquality().hash(extraData));
@@ -321,7 +314,7 @@ abstract class _TransferPayload implements TransferPayload {
       @JsonKey(name: 'commitment') required final List<int> commitment,
       @JsonKey(name: 'ct_validity_proof')
       required final Map<String, dynamic> validityProof,
-      @JsonKey(name: 'destination') required final List<int> destination,
+      @JsonKey(name: 'destination') required final dynamic destination,
       @JsonKey(name: 'receiver_handle') required final List<int> receiverHandle,
       @JsonKey(name: 'sender_handle') required final List<int> senderHandle,
       @JsonKey(name: 'extra_data')
@@ -341,7 +334,7 @@ abstract class _TransferPayload implements TransferPayload {
   Map<String, dynamic> get validityProof;
   @override
   @JsonKey(name: 'destination')
-  List<int> get destination;
+  dynamic get destination;
   @override
   @JsonKey(name: 'receiver_handle')
   List<int> get receiverHandle;

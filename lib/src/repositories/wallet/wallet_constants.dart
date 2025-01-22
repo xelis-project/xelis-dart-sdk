@@ -94,6 +94,15 @@ enum WalletMethod implements XelisJsonKey {
   /// Decrypt a ciphertext from its compressed format.
   decryptCiphertext('decrypt_ciphertext'),
 
+  /// Retrieve all assets tracked by the wallet.
+  getAssets('get_assets'),
+
+  /// Retrieve a specific asset tracked by the wallet.
+  getAsset('get_asset'),
+
+  /// Dump the TX in hex format.
+  dumpTransaction('dump_transaction'),
+
   //----------------------------------------------------------------------------
   /// TODO: implement
   getMatchingKeys('get_matching_keys'),

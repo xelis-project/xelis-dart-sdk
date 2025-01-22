@@ -15,7 +15,7 @@ class TransactionResponse with _$TransactionResponse {
     @JsonKey(name: 'blocks') List<String>? blocks,
     @JsonKey(name: 'executed_in_block') String? executedInBlock,
     @JsonKey(name: 'hash') required String hash,
-    @JsonKey(name: 'data') required Transfers data,
+    @JsonKey(name: 'data') required TransfersPayload data,
     @JsonKey(name: 'fee') required int fee,
     @JsonKey(name: 'version') required int version,
     @JsonKey(name: 'in_mempool') required bool inMempool,

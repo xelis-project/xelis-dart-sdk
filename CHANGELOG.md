@@ -1,3 +1,15 @@
+## 0.24.0
+
+Daemon API upgrade :
+
+- add multisig transaction type in TransactionType.
+- RPC Asset Data
+- missing fields in GetAssetsParams.
+
+Wallet API upgrade :
+
+- new RPC methods: getAssets, getAsset, dumpTransaction.
+
 ## 0.23.2
 
 Wallet API upgrade :

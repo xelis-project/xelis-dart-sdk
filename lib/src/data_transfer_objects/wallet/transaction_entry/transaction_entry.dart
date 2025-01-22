@@ -11,7 +11,7 @@ class TransactionEntry with _$TransactionEntry {
   /// @nodoc
   const factory TransactionEntry({
     required String hash,
-    required int topoHeight,
+    required int topoheight,
     required TransactionEntryType txEntryType,
     DateTime? timestamp,
   }) = _TransactionEntry;
@@ -21,12 +21,12 @@ class TransactionEntry with _$TransactionEntry {
     if (json
         case {
           'hash': final String hash,
-          'topoheight': final int topoHeight,
+          'topoheight': final int topoheight,
           'coinbase': final Map<String, dynamic> coinbase,
         }) {
       return TransactionEntry(
         hash: hash,
-        topoHeight: topoHeight,
+        topoheight: topoheight,
         txEntryType: CoinbaseEntry.fromJson(coinbase),
         timestamp: json['timestamp'] != null
             ? DateTime.fromMillisecondsSinceEpoch(json['timestamp'] as int)
@@ -35,12 +35,12 @@ class TransactionEntry with _$TransactionEntry {
     } else if (json
         case {
           'hash': final String hash,
-          'topoheight': final int topoHeight,
+          'topoheight': final int topoheight,
           'burn': final Map<String, dynamic> burn,
         }) {
       return TransactionEntry(
         hash: hash,
-        topoHeight: topoHeight,
+        topoheight: topoheight,
         txEntryType: BurnEntry.fromJson(burn),
         timestamp: json['timestamp'] != null
             ? DateTime.fromMillisecondsSinceEpoch(json['timestamp'] as int)
@@ -49,12 +49,12 @@ class TransactionEntry with _$TransactionEntry {
     } else if (json
         case {
           'hash': final String hash,
-          'topoheight': final int topoHeight,
+          'topoheight': final int topoheight,
           'incoming': final Map<String, dynamic> incoming,
         }) {
       return TransactionEntry(
         hash: hash,
-        topoHeight: topoHeight,
+        topoheight: topoheight,
         txEntryType: IncomingEntry.fromJson(incoming),
         timestamp: json['timestamp'] != null
             ? DateTime.fromMillisecondsSinceEpoch(json['timestamp'] as int)
@@ -63,12 +63,12 @@ class TransactionEntry with _$TransactionEntry {
     } else if (json
         case {
           'hash': final String hash,
-          'topoheight': final int topoHeight,
+          'topoheight': final int topoheight,
           'outgoing': final Map<String, dynamic> outgoing,
         }) {
       return TransactionEntry(
         hash: hash,
-        topoHeight: topoHeight,
+        topoheight: topoheight,
         txEntryType: OutgoingEntry.fromJson(outgoing),
         timestamp: json['timestamp'] != null
             ? DateTime.fromMillisecondsSinceEpoch(json['timestamp'] as int)
@@ -77,12 +77,12 @@ class TransactionEntry with _$TransactionEntry {
     } else if (json
         case {
           'hash': final String hash,
-          'topoheight': final int topoHeight,
+          'topoheight': final int topoheight,
           'multi_sig': final Map<String, dynamic> multisig,
         }) {
       return TransactionEntry(
         hash: hash,
-        topoHeight: topoHeight,
+        topoheight: topoheight,
         txEntryType: MultisigEntry.fromJson(multisig),
         timestamp: json['timestamp'] != null
             ? DateTime.fromMillisecondsSinceEpoch(json['timestamp'] as int)
@@ -91,12 +91,12 @@ class TransactionEntry with _$TransactionEntry {
     } else if (json
         case {
           'hash': final String hash,
-          'topoheight': final int topoHeight,
+          'topoheight': final int topoheight,
           'invoke_contract': final Map<String, dynamic> invokeContract,
         }) {
       return TransactionEntry(
         hash: hash,
-        topoHeight: topoHeight,
+        topoheight: topoheight,
         txEntryType: InvokeContractEntry.fromJson(invokeContract),
         timestamp: json['timestamp'] != null
             ? DateTime.fromMillisecondsSinceEpoch(json['timestamp'] as int)
@@ -105,12 +105,12 @@ class TransactionEntry with _$TransactionEntry {
     } else if (json
         case {
           'hash': final String hash,
-          'topoheight': final int topoHeight,
+          'topoheight': final int topoheight,
           'deploy_contract': final Map<String, dynamic> deployContract,
         }) {
       return TransactionEntry(
         hash: hash,
-        topoHeight: topoHeight,
+        topoheight: topoheight,
         txEntryType: DeployContractEntry.fromJson(deployContract),
         timestamp: json['timestamp'] != null
             ? DateTime.fromMillisecondsSinceEpoch(json['timestamp'] as int)

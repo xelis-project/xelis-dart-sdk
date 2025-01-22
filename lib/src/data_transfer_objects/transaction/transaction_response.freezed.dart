@@ -27,7 +27,7 @@ mixin _$TransactionResponse {
   @JsonKey(name: 'hash')
   String get hash => throw _privateConstructorUsedError;
   @JsonKey(name: 'data')
-  Transfers get data => throw _privateConstructorUsedError;
+  TransfersPayload get data => throw _privateConstructorUsedError;
   @JsonKey(name: 'fee')
   int get fee => throw _privateConstructorUsedError;
   @JsonKey(name: 'version')
@@ -71,7 +71,7 @@ abstract class $TransactionResponseCopyWith<$Res> {
       {@JsonKey(name: 'blocks') List<String>? blocks,
       @JsonKey(name: 'executed_in_block') String? executedInBlock,
       @JsonKey(name: 'hash') String hash,
-      @JsonKey(name: 'data') Transfers data,
+      @JsonKey(name: 'data') TransfersPayload data,
       @JsonKey(name: 'fee') int fee,
       @JsonKey(name: 'version') int version,
       @JsonKey(name: 'in_mempool') bool inMempool,
@@ -132,7 +132,7 @@ class _$TransactionResponseCopyWithImpl<$Res, $Val extends TransactionResponse>
       data: freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as Transfers,
+              as TransfersPayload,
       fee: null == fee
           ? _value.fee
           : fee // ignore: cast_nullable_to_non_nullable
@@ -193,7 +193,7 @@ abstract class _$$TransactionResponseImplCopyWith<$Res>
       {@JsonKey(name: 'blocks') List<String>? blocks,
       @JsonKey(name: 'executed_in_block') String? executedInBlock,
       @JsonKey(name: 'hash') String hash,
-      @JsonKey(name: 'data') Transfers data,
+      @JsonKey(name: 'data') TransfersPayload data,
       @JsonKey(name: 'fee') int fee,
       @JsonKey(name: 'version') int version,
       @JsonKey(name: 'in_mempool') bool inMempool,
@@ -252,7 +252,7 @@ class __$$TransactionResponseImplCopyWithImpl<$Res>
       data: freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as Transfers,
+              as TransfersPayload,
       fee: null == fee
           ? _value.fee
           : fee // ignore: cast_nullable_to_non_nullable
@@ -348,7 +348,7 @@ class _$TransactionResponseImpl implements _TransactionResponse {
   final String hash;
   @override
   @JsonKey(name: 'data')
-  final Transfers data;
+  final TransfersPayload data;
   @override
   @JsonKey(name: 'fee')
   final int fee;
@@ -478,7 +478,7 @@ abstract class _TransactionResponse implements TransactionResponse {
       {@JsonKey(name: 'blocks') final List<String>? blocks,
       @JsonKey(name: 'executed_in_block') final String? executedInBlock,
       @JsonKey(name: 'hash') required final String hash,
-      @JsonKey(name: 'data') required final Transfers data,
+      @JsonKey(name: 'data') required final TransfersPayload data,
       @JsonKey(name: 'fee') required final int fee,
       @JsonKey(name: 'version') required final int version,
       @JsonKey(name: 'in_mempool') required final bool inMempool,
@@ -507,7 +507,7 @@ abstract class _TransactionResponse implements TransactionResponse {
   String get hash;
   @override
   @JsonKey(name: 'data')
-  Transfers get data;
+  TransfersPayload get data;
   @override
   @JsonKey(name: 'fee')
   int get fee;
