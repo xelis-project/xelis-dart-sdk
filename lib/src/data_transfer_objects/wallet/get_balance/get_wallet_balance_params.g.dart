@@ -8,14 +8,14 @@ part of 'get_wallet_balance_params.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$GetWalletBalanceParamsImpl _$$GetWalletBalanceParamsImplFromJson(
+_GetWalletBalanceParams _$GetWalletBalanceParamsFromJson(
         Map<String, dynamic> json) =>
-    _$GetWalletBalanceParamsImpl(
+    _GetWalletBalanceParams(
       assetHash: json['asset'] as String?,
     );
 
-Map<String, dynamic> _$$GetWalletBalanceParamsImplToJson(
-        _$GetWalletBalanceParamsImpl instance) =>
+Map<String, dynamic> _$GetWalletBalanceParamsToJson(
+        _GetWalletBalanceParams instance) =>
     <String, dynamic>{
       'asset': instance.assetHash,
     };

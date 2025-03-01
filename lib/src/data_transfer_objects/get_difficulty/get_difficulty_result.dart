@@ -8,7 +8,7 @@ part 'get_difficulty_result.g.dart';
 
 /// @nodoc
 @freezed
-class GetDifficultyResult with _$GetDifficultyResult {
+abstract class GetDifficultyResult with _$GetDifficultyResult {
   /// @nodoc
   const factory GetDifficultyResult({
     @JsonKey(name: 'difficulty') required String difficulty,

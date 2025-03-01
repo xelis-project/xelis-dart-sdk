@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,89 +10,56 @@ part of 'split_address_result.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-SplitAddressResult _$SplitAddressResultFromJson(Map<String, dynamic> json) {
-  return _SplitAddressResult.fromJson(json);
-}
 
 /// @nodoc
 mixin _$SplitAddressResult {
   @JsonKey(name: 'address')
-  String get address => throw _privateConstructorUsedError;
+  String get address;
   @JsonKey(name: 'integrated_data')
-  Map<String, dynamic> get integratedData => throw _privateConstructorUsedError;
+  Map<String, dynamic> get integratedData;
   @JsonKey(name: 'size')
-  int get size => throw _privateConstructorUsedError;
-
-  /// Serializes this SplitAddressResult to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  int get size;
 
   /// Create a copy of SplitAddressResult
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $SplitAddressResultCopyWith<SplitAddressResult> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $SplitAddressResultCopyWith<$Res> {
-  factory $SplitAddressResultCopyWith(
-          SplitAddressResult value, $Res Function(SplitAddressResult) then) =
-      _$SplitAddressResultCopyWithImpl<$Res, SplitAddressResult>;
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'address') String address,
-      @JsonKey(name: 'integrated_data') Map<String, dynamic> integratedData,
-      @JsonKey(name: 'size') int size});
-}
-
-/// @nodoc
-class _$SplitAddressResultCopyWithImpl<$Res, $Val extends SplitAddressResult>
-    implements $SplitAddressResultCopyWith<$Res> {
-  _$SplitAddressResultCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of SplitAddressResult
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $SplitAddressResultCopyWith<SplitAddressResult> get copyWith =>
+      _$SplitAddressResultCopyWithImpl<SplitAddressResult>(
+          this as SplitAddressResult, _$identity);
+
+  /// Serializes this SplitAddressResult to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? address = null,
-    Object? integratedData = null,
-    Object? size = null,
-  }) {
-    return _then(_value.copyWith(
-      address: null == address
-          ? _value.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as String,
-      integratedData: null == integratedData
-          ? _value.integratedData
-          : integratedData // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
-      size: null == size
-          ? _value.size
-          : size // ignore: cast_nullable_to_non_nullable
-              as int,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is SplitAddressResult &&
+            (identical(other.address, address) || other.address == address) &&
+            const DeepCollectionEquality()
+                .equals(other.integratedData, integratedData) &&
+            (identical(other.size, size) || other.size == size));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, address,
+      const DeepCollectionEquality().hash(integratedData), size);
+
+  @override
+  String toString() {
+    return 'SplitAddressResult(address: $address, integratedData: $integratedData, size: $size)';
   }
 }
 
 /// @nodoc
-abstract class _$$SplitAddressResultImplCopyWith<$Res>
-    implements $SplitAddressResultCopyWith<$Res> {
-  factory _$$SplitAddressResultImplCopyWith(_$SplitAddressResultImpl value,
-          $Res Function(_$SplitAddressResultImpl) then) =
-      __$$SplitAddressResultImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $SplitAddressResultCopyWith<$Res> {
+  factory $SplitAddressResultCopyWith(
+          SplitAddressResult value, $Res Function(SplitAddressResult) _then) =
+      _$SplitAddressResultCopyWithImpl;
   @useResult
   $Res call(
       {@JsonKey(name: 'address') String address,
@@ -100,12 +68,12 @@ abstract class _$$SplitAddressResultImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$SplitAddressResultImplCopyWithImpl<$Res>
-    extends _$SplitAddressResultCopyWithImpl<$Res, _$SplitAddressResultImpl>
-    implements _$$SplitAddressResultImplCopyWith<$Res> {
-  __$$SplitAddressResultImplCopyWithImpl(_$SplitAddressResultImpl _value,
-      $Res Function(_$SplitAddressResultImpl) _then)
-      : super(_value, _then);
+class _$SplitAddressResultCopyWithImpl<$Res>
+    implements $SplitAddressResultCopyWith<$Res> {
+  _$SplitAddressResultCopyWithImpl(this._self, this._then);
+
+  final SplitAddressResult _self;
+  final $Res Function(SplitAddressResult) _then;
 
   /// Create a copy of SplitAddressResult
   /// with the given fields replaced by the non-null parameter values.
@@ -116,17 +84,17 @@ class __$$SplitAddressResultImplCopyWithImpl<$Res>
     Object? integratedData = null,
     Object? size = null,
   }) {
-    return _then(_$SplitAddressResultImpl(
+    return _then(_self.copyWith(
       address: null == address
-          ? _value.address
+          ? _self.address
           : address // ignore: cast_nullable_to_non_nullable
               as String,
       integratedData: null == integratedData
-          ? _value._integratedData
+          ? _self.integratedData
           : integratedData // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>,
       size: null == size
-          ? _value.size
+          ? _self.size
           : size // ignore: cast_nullable_to_non_nullable
               as int,
     ));
@@ -135,16 +103,15 @@ class __$$SplitAddressResultImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$SplitAddressResultImpl implements _SplitAddressResult {
-  const _$SplitAddressResultImpl(
+class _SplitAddressResult implements SplitAddressResult {
+  const _SplitAddressResult(
       {@JsonKey(name: 'address') required this.address,
       @JsonKey(name: 'integrated_data')
       required final Map<String, dynamic> integratedData,
       @JsonKey(name: 'size') required this.size})
       : _integratedData = integratedData;
-
-  factory _$SplitAddressResultImpl.fromJson(Map<String, dynamic> json) =>
-      _$$SplitAddressResultImplFromJson(json);
+  factory _SplitAddressResult.fromJson(Map<String, dynamic> json) =>
+      _$SplitAddressResultFromJson(json);
 
   @override
   @JsonKey(name: 'address')
@@ -162,16 +129,26 @@ class _$SplitAddressResultImpl implements _SplitAddressResult {
   @JsonKey(name: 'size')
   final int size;
 
+  /// Create a copy of SplitAddressResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'SplitAddressResult(address: $address, integratedData: $integratedData, size: $size)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$SplitAddressResultCopyWith<_SplitAddressResult> get copyWith =>
+      __$SplitAddressResultCopyWithImpl<_SplitAddressResult>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$SplitAddressResultToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SplitAddressResultImpl &&
+            other is _SplitAddressResult &&
             (identical(other.address, address) || other.address == address) &&
             const DeepCollectionEquality()
                 .equals(other._integratedData, _integratedData) &&
@@ -183,48 +160,58 @@ class _$SplitAddressResultImpl implements _SplitAddressResult {
   int get hashCode => Object.hash(runtimeType, address,
       const DeepCollectionEquality().hash(_integratedData), size);
 
-  /// Create a copy of SplitAddressResult
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$SplitAddressResultImplCopyWith<_$SplitAddressResultImpl> get copyWith =>
-      __$$SplitAddressResultImplCopyWithImpl<_$SplitAddressResultImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$SplitAddressResultImplToJson(
-      this,
-    );
+  String toString() {
+    return 'SplitAddressResult(address: $address, integratedData: $integratedData, size: $size)';
   }
 }
 
-abstract class _SplitAddressResult implements SplitAddressResult {
-  const factory _SplitAddressResult(
-          {@JsonKey(name: 'address') required final String address,
-          @JsonKey(name: 'integrated_data')
-          required final Map<String, dynamic> integratedData,
-          @JsonKey(name: 'size') required final int size}) =
-      _$SplitAddressResultImpl;
+/// @nodoc
+abstract mixin class _$SplitAddressResultCopyWith<$Res>
+    implements $SplitAddressResultCopyWith<$Res> {
+  factory _$SplitAddressResultCopyWith(
+          _SplitAddressResult value, $Res Function(_SplitAddressResult) _then) =
+      __$SplitAddressResultCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'address') String address,
+      @JsonKey(name: 'integrated_data') Map<String, dynamic> integratedData,
+      @JsonKey(name: 'size') int size});
+}
 
-  factory _SplitAddressResult.fromJson(Map<String, dynamic> json) =
-      _$SplitAddressResultImpl.fromJson;
+/// @nodoc
+class __$SplitAddressResultCopyWithImpl<$Res>
+    implements _$SplitAddressResultCopyWith<$Res> {
+  __$SplitAddressResultCopyWithImpl(this._self, this._then);
 
-  @override
-  @JsonKey(name: 'address')
-  String get address;
-  @override
-  @JsonKey(name: 'integrated_data')
-  Map<String, dynamic> get integratedData;
-  @override
-  @JsonKey(name: 'size')
-  int get size;
+  final _SplitAddressResult _self;
+  final $Res Function(_SplitAddressResult) _then;
 
   /// Create a copy of SplitAddressResult
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$SplitAddressResultImplCopyWith<_$SplitAddressResultImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? address = null,
+    Object? integratedData = null,
+    Object? size = null,
+  }) {
+    return _then(_SplitAddressResult(
+      address: null == address
+          ? _self.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as String,
+      integratedData: null == integratedData
+          ? _self._integratedData
+          : integratedData // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>,
+      size: null == size
+          ? _self.size
+          : size // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
 }
+
+// dart format on

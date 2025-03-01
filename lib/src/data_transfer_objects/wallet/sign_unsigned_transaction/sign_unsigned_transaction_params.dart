@@ -7,7 +7,8 @@ part 'sign_unsigned_transaction_params.g.dart';
 
 /// @nodoc
 @freezed
-class SignUnsignedTransactionParams with _$SignUnsignedTransactionParams {
+abstract class SignUnsignedTransactionParams
+    with _$SignUnsignedTransactionParams {
   /// @nodoc
   const factory SignUnsignedTransactionParams({
     @JsonKey(name: 'hash') required String hash,

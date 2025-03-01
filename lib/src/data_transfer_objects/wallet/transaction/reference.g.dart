@@ -8,13 +8,12 @@ part of 'reference.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ReferenceImpl _$$ReferenceImplFromJson(Map<String, dynamic> json) =>
-    _$ReferenceImpl(
+_Reference _$ReferenceFromJson(Map<String, dynamic> json) => _Reference(
       hash: json['hash'] as String,
       topoHeight: (json['topoheight'] as num).toInt(),
     );
 
-Map<String, dynamic> _$$ReferenceImplToJson(_$ReferenceImpl instance) =>
+Map<String, dynamic> _$ReferenceToJson(_Reference instance) =>
     <String, dynamic>{
       'hash': instance.hash,
       'topoheight': instance.topoHeight,

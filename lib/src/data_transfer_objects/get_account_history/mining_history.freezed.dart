@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,83 +10,59 @@ part of 'mining_history.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-MiningHistory _$MiningHistoryFromJson(Map<String, dynamic> json) {
-  return _MiningHistory.fromJson(json);
-}
 
 /// @nodoc
 mixin _$MiningHistory {
   @JsonKey(name: 'reward')
-  int get reward => throw _privateConstructorUsedError;
-
-  /// Serializes this MiningHistory to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  int get reward;
 
   /// Create a copy of MiningHistory
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $MiningHistoryCopyWith<MiningHistory> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $MiningHistoryCopyWith<$Res> {
-  factory $MiningHistoryCopyWith(
-          MiningHistory value, $Res Function(MiningHistory) then) =
-      _$MiningHistoryCopyWithImpl<$Res, MiningHistory>;
-  @useResult
-  $Res call({@JsonKey(name: 'reward') int reward});
-}
-
-/// @nodoc
-class _$MiningHistoryCopyWithImpl<$Res, $Val extends MiningHistory>
-    implements $MiningHistoryCopyWith<$Res> {
-  _$MiningHistoryCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of MiningHistory
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $MiningHistoryCopyWith<MiningHistory> get copyWith =>
+      _$MiningHistoryCopyWithImpl<MiningHistory>(
+          this as MiningHistory, _$identity);
+
+  /// Serializes this MiningHistory to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? reward = null,
-  }) {
-    return _then(_value.copyWith(
-      reward: null == reward
-          ? _value.reward
-          : reward // ignore: cast_nullable_to_non_nullable
-              as int,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is MiningHistory &&
+            (identical(other.reward, reward) || other.reward == reward));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, reward);
+
+  @override
+  String toString() {
+    return 'MiningHistory(reward: $reward)';
   }
 }
 
 /// @nodoc
-abstract class _$$MiningHistoryImplCopyWith<$Res>
-    implements $MiningHistoryCopyWith<$Res> {
-  factory _$$MiningHistoryImplCopyWith(
-          _$MiningHistoryImpl value, $Res Function(_$MiningHistoryImpl) then) =
-      __$$MiningHistoryImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $MiningHistoryCopyWith<$Res> {
+  factory $MiningHistoryCopyWith(
+          MiningHistory value, $Res Function(MiningHistory) _then) =
+      _$MiningHistoryCopyWithImpl;
   @useResult
   $Res call({@JsonKey(name: 'reward') int reward});
 }
 
 /// @nodoc
-class __$$MiningHistoryImplCopyWithImpl<$Res>
-    extends _$MiningHistoryCopyWithImpl<$Res, _$MiningHistoryImpl>
-    implements _$$MiningHistoryImplCopyWith<$Res> {
-  __$$MiningHistoryImplCopyWithImpl(
-      _$MiningHistoryImpl _value, $Res Function(_$MiningHistoryImpl) _then)
-      : super(_value, _then);
+class _$MiningHistoryCopyWithImpl<$Res>
+    implements $MiningHistoryCopyWith<$Res> {
+  _$MiningHistoryCopyWithImpl(this._self, this._then);
+
+  final MiningHistory _self;
+  final $Res Function(MiningHistory) _then;
 
   /// Create a copy of MiningHistory
   /// with the given fields replaced by the non-null parameter values.
@@ -94,9 +71,9 @@ class __$$MiningHistoryImplCopyWithImpl<$Res>
   $Res call({
     Object? reward = null,
   }) {
-    return _then(_$MiningHistoryImpl(
+    return _then(_self.copyWith(
       reward: null == reward
-          ? _value.reward
+          ? _self.reward
           : reward // ignore: cast_nullable_to_non_nullable
               as int,
     ));
@@ -105,26 +82,35 @@ class __$$MiningHistoryImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$MiningHistoryImpl implements _MiningHistory {
-  const _$MiningHistoryImpl({@JsonKey(name: 'reward') required this.reward});
-
-  factory _$MiningHistoryImpl.fromJson(Map<String, dynamic> json) =>
-      _$$MiningHistoryImplFromJson(json);
+class _MiningHistory implements MiningHistory {
+  const _MiningHistory({@JsonKey(name: 'reward') required this.reward});
+  factory _MiningHistory.fromJson(Map<String, dynamic> json) =>
+      _$MiningHistoryFromJson(json);
 
   @override
   @JsonKey(name: 'reward')
   final int reward;
 
+  /// Create a copy of MiningHistory
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'MiningHistory(reward: $reward)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$MiningHistoryCopyWith<_MiningHistory> get copyWith =>
+      __$MiningHistoryCopyWithImpl<_MiningHistory>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$MiningHistoryToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$MiningHistoryImpl &&
+            other is _MiningHistory &&
             (identical(other.reward, reward) || other.reward == reward));
   }
 
@@ -132,38 +118,45 @@ class _$MiningHistoryImpl implements _MiningHistory {
   @override
   int get hashCode => Object.hash(runtimeType, reward);
 
-  /// Create a copy of MiningHistory
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$MiningHistoryImplCopyWith<_$MiningHistoryImpl> get copyWith =>
-      __$$MiningHistoryImplCopyWithImpl<_$MiningHistoryImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$MiningHistoryImplToJson(
-      this,
-    );
+  String toString() {
+    return 'MiningHistory(reward: $reward)';
   }
 }
 
-abstract class _MiningHistory implements MiningHistory {
-  const factory _MiningHistory(
-          {@JsonKey(name: 'reward') required final int reward}) =
-      _$MiningHistoryImpl;
-
-  factory _MiningHistory.fromJson(Map<String, dynamic> json) =
-      _$MiningHistoryImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$MiningHistoryCopyWith<$Res>
+    implements $MiningHistoryCopyWith<$Res> {
+  factory _$MiningHistoryCopyWith(
+          _MiningHistory value, $Res Function(_MiningHistory) _then) =
+      __$MiningHistoryCopyWithImpl;
   @override
-  @JsonKey(name: 'reward')
-  int get reward;
+  @useResult
+  $Res call({@JsonKey(name: 'reward') int reward});
+}
+
+/// @nodoc
+class __$MiningHistoryCopyWithImpl<$Res>
+    implements _$MiningHistoryCopyWith<$Res> {
+  __$MiningHistoryCopyWithImpl(this._self, this._then);
+
+  final _MiningHistory _self;
+  final $Res Function(_MiningHistory) _then;
 
   /// Create a copy of MiningHistory
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$MiningHistoryImplCopyWith<_$MiningHistoryImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? reward = null,
+  }) {
+    return _then(_MiningHistory(
+      reward: null == reward
+          ? _self.reward
+          : reward // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
 }
+
+// dart format on

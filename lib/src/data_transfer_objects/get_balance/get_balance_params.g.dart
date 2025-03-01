@@ -8,15 +8,13 @@ part of 'get_balance_params.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$GetBalanceParamsImpl _$$GetBalanceParamsImplFromJson(
-        Map<String, dynamic> json) =>
-    _$GetBalanceParamsImpl(
+_GetBalanceParams _$GetBalanceParamsFromJson(Map<String, dynamic> json) =>
+    _GetBalanceParams(
       address: json['address'] as String,
       asset: json['asset'] as String,
     );
 
-Map<String, dynamic> _$$GetBalanceParamsImplToJson(
-        _$GetBalanceParamsImpl instance) =>
+Map<String, dynamic> _$GetBalanceParamsToJson(_GetBalanceParams instance) =>
     <String, dynamic>{
       'address': instance.address,
       'asset': instance.asset,

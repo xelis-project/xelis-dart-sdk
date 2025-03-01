@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,143 +10,32 @@ part of 'get_miner_work_params.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-GetMinerWorkParams _$GetMinerWorkParamsFromJson(Map<String, dynamic> json) {
-  return _GetMinerWorkParams.fromJson(json);
-}
 
 /// @nodoc
 mixin _$GetMinerWorkParams {
   @JsonKey(name: 'template')
-  String get template => throw _privateConstructorUsedError;
+  String get template;
   @JsonKey(name: 'address')
-  String get address => throw _privateConstructorUsedError;
-
-  /// Serializes this GetMinerWorkParams to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String get address;
 
   /// Create a copy of GetMinerWorkParams
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $GetMinerWorkParamsCopyWith<GetMinerWorkParams> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+      _$GetMinerWorkParamsCopyWithImpl<GetMinerWorkParams>(
+          this as GetMinerWorkParams, _$identity);
 
-/// @nodoc
-abstract class $GetMinerWorkParamsCopyWith<$Res> {
-  factory $GetMinerWorkParamsCopyWith(
-          GetMinerWorkParams value, $Res Function(GetMinerWorkParams) then) =
-      _$GetMinerWorkParamsCopyWithImpl<$Res, GetMinerWorkParams>;
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'template') String template,
-      @JsonKey(name: 'address') String address});
-}
-
-/// @nodoc
-class _$GetMinerWorkParamsCopyWithImpl<$Res, $Val extends GetMinerWorkParams>
-    implements $GetMinerWorkParamsCopyWith<$Res> {
-  _$GetMinerWorkParamsCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of GetMinerWorkParams
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? template = null,
-    Object? address = null,
-  }) {
-    return _then(_value.copyWith(
-      template: null == template
-          ? _value.template
-          : template // ignore: cast_nullable_to_non_nullable
-              as String,
-      address: null == address
-          ? _value.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$GetMinerWorkParamsImplCopyWith<$Res>
-    implements $GetMinerWorkParamsCopyWith<$Res> {
-  factory _$$GetMinerWorkParamsImplCopyWith(_$GetMinerWorkParamsImpl value,
-          $Res Function(_$GetMinerWorkParamsImpl) then) =
-      __$$GetMinerWorkParamsImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'template') String template,
-      @JsonKey(name: 'address') String address});
-}
-
-/// @nodoc
-class __$$GetMinerWorkParamsImplCopyWithImpl<$Res>
-    extends _$GetMinerWorkParamsCopyWithImpl<$Res, _$GetMinerWorkParamsImpl>
-    implements _$$GetMinerWorkParamsImplCopyWith<$Res> {
-  __$$GetMinerWorkParamsImplCopyWithImpl(_$GetMinerWorkParamsImpl _value,
-      $Res Function(_$GetMinerWorkParamsImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of GetMinerWorkParams
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? template = null,
-    Object? address = null,
-  }) {
-    return _then(_$GetMinerWorkParamsImpl(
-      template: null == template
-          ? _value.template
-          : template // ignore: cast_nullable_to_non_nullable
-              as String,
-      address: null == address
-          ? _value.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$GetMinerWorkParamsImpl implements _GetMinerWorkParams {
-  const _$GetMinerWorkParamsImpl(
-      {@JsonKey(name: 'template') required this.template,
-      @JsonKey(name: 'address') required this.address});
-
-  factory _$GetMinerWorkParamsImpl.fromJson(Map<String, dynamic> json) =>
-      _$$GetMinerWorkParamsImplFromJson(json);
-
-  @override
-  @JsonKey(name: 'template')
-  final String template;
-  @override
-  @JsonKey(name: 'address')
-  final String address;
-
-  @override
-  String toString() {
-    return 'GetMinerWorkParams(template: $template, address: $address)';
-  }
+  /// Serializes this GetMinerWorkParams to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetMinerWorkParamsImpl &&
+            other is GetMinerWorkParams &&
             (identical(other.template, template) ||
                 other.template == template) &&
             (identical(other.address, address) || other.address == address));
@@ -155,43 +45,143 @@ class _$GetMinerWorkParamsImpl implements _GetMinerWorkParams {
   @override
   int get hashCode => Object.hash(runtimeType, template, address);
 
-  /// Create a copy of GetMinerWorkParams
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$GetMinerWorkParamsImplCopyWith<_$GetMinerWorkParamsImpl> get copyWith =>
-      __$$GetMinerWorkParamsImplCopyWithImpl<_$GetMinerWorkParamsImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$GetMinerWorkParamsImplToJson(
-      this,
-    );
+  String toString() {
+    return 'GetMinerWorkParams(template: $template, address: $address)';
   }
 }
 
-abstract class _GetMinerWorkParams implements GetMinerWorkParams {
-  const factory _GetMinerWorkParams(
-          {@JsonKey(name: 'template') required final String template,
-          @JsonKey(name: 'address') required final String address}) =
-      _$GetMinerWorkParamsImpl;
+/// @nodoc
+abstract mixin class $GetMinerWorkParamsCopyWith<$Res> {
+  factory $GetMinerWorkParamsCopyWith(
+          GetMinerWorkParams value, $Res Function(GetMinerWorkParams) _then) =
+      _$GetMinerWorkParamsCopyWithImpl;
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'template') String template,
+      @JsonKey(name: 'address') String address});
+}
 
-  factory _GetMinerWorkParams.fromJson(Map<String, dynamic> json) =
-      _$GetMinerWorkParamsImpl.fromJson;
+/// @nodoc
+class _$GetMinerWorkParamsCopyWithImpl<$Res>
+    implements $GetMinerWorkParamsCopyWith<$Res> {
+  _$GetMinerWorkParamsCopyWithImpl(this._self, this._then);
+
+  final GetMinerWorkParams _self;
+  final $Res Function(GetMinerWorkParams) _then;
+
+  /// Create a copy of GetMinerWorkParams
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? template = null,
+    Object? address = null,
+  }) {
+    return _then(_self.copyWith(
+      template: null == template
+          ? _self.template
+          : template // ignore: cast_nullable_to_non_nullable
+              as String,
+      address: null == address
+          ? _self.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _GetMinerWorkParams implements GetMinerWorkParams {
+  const _GetMinerWorkParams(
+      {@JsonKey(name: 'template') required this.template,
+      @JsonKey(name: 'address') required this.address});
+  factory _GetMinerWorkParams.fromJson(Map<String, dynamic> json) =>
+      _$GetMinerWorkParamsFromJson(json);
 
   @override
   @JsonKey(name: 'template')
-  String get template;
+  final String template;
   @override
   @JsonKey(name: 'address')
-  String get address;
+  final String address;
 
   /// Create a copy of GetMinerWorkParams
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$GetMinerWorkParamsImplCopyWith<_$GetMinerWorkParamsImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  _$GetMinerWorkParamsCopyWith<_GetMinerWorkParams> get copyWith =>
+      __$GetMinerWorkParamsCopyWithImpl<_GetMinerWorkParams>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$GetMinerWorkParamsToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _GetMinerWorkParams &&
+            (identical(other.template, template) ||
+                other.template == template) &&
+            (identical(other.address, address) || other.address == address));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, template, address);
+
+  @override
+  String toString() {
+    return 'GetMinerWorkParams(template: $template, address: $address)';
+  }
 }
+
+/// @nodoc
+abstract mixin class _$GetMinerWorkParamsCopyWith<$Res>
+    implements $GetMinerWorkParamsCopyWith<$Res> {
+  factory _$GetMinerWorkParamsCopyWith(
+          _GetMinerWorkParams value, $Res Function(_GetMinerWorkParams) _then) =
+      __$GetMinerWorkParamsCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'template') String template,
+      @JsonKey(name: 'address') String address});
+}
+
+/// @nodoc
+class __$GetMinerWorkParamsCopyWithImpl<$Res>
+    implements _$GetMinerWorkParamsCopyWith<$Res> {
+  __$GetMinerWorkParamsCopyWithImpl(this._self, this._then);
+
+  final _GetMinerWorkParams _self;
+  final $Res Function(_GetMinerWorkParams) _then;
+
+  /// Create a copy of GetMinerWorkParams
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? template = null,
+    Object? address = null,
+  }) {
+    return _then(_GetMinerWorkParams(
+      template: null == template
+          ? _self.template
+          : template // ignore: cast_nullable_to_non_nullable
+              as String,
+      address: null == address
+          ? _self.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+// dart format on

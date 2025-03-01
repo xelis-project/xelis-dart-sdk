@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,83 +10,59 @@ part of 'split_address_params.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-SplitAddressParams _$SplitAddressParamsFromJson(Map<String, dynamic> json) {
-  return _SplitAddressParams.fromJson(json);
-}
 
 /// @nodoc
 mixin _$SplitAddressParams {
   @JsonKey(name: 'address')
-  String get address => throw _privateConstructorUsedError;
-
-  /// Serializes this SplitAddressParams to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String get address;
 
   /// Create a copy of SplitAddressParams
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $SplitAddressParamsCopyWith<SplitAddressParams> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $SplitAddressParamsCopyWith<$Res> {
-  factory $SplitAddressParamsCopyWith(
-          SplitAddressParams value, $Res Function(SplitAddressParams) then) =
-      _$SplitAddressParamsCopyWithImpl<$Res, SplitAddressParams>;
-  @useResult
-  $Res call({@JsonKey(name: 'address') String address});
-}
-
-/// @nodoc
-class _$SplitAddressParamsCopyWithImpl<$Res, $Val extends SplitAddressParams>
-    implements $SplitAddressParamsCopyWith<$Res> {
-  _$SplitAddressParamsCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of SplitAddressParams
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $SplitAddressParamsCopyWith<SplitAddressParams> get copyWith =>
+      _$SplitAddressParamsCopyWithImpl<SplitAddressParams>(
+          this as SplitAddressParams, _$identity);
+
+  /// Serializes this SplitAddressParams to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? address = null,
-  }) {
-    return _then(_value.copyWith(
-      address: null == address
-          ? _value.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is SplitAddressParams &&
+            (identical(other.address, address) || other.address == address));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, address);
+
+  @override
+  String toString() {
+    return 'SplitAddressParams(address: $address)';
   }
 }
 
 /// @nodoc
-abstract class _$$SplitAddressParamsImplCopyWith<$Res>
-    implements $SplitAddressParamsCopyWith<$Res> {
-  factory _$$SplitAddressParamsImplCopyWith(_$SplitAddressParamsImpl value,
-          $Res Function(_$SplitAddressParamsImpl) then) =
-      __$$SplitAddressParamsImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $SplitAddressParamsCopyWith<$Res> {
+  factory $SplitAddressParamsCopyWith(
+          SplitAddressParams value, $Res Function(SplitAddressParams) _then) =
+      _$SplitAddressParamsCopyWithImpl;
   @useResult
   $Res call({@JsonKey(name: 'address') String address});
 }
 
 /// @nodoc
-class __$$SplitAddressParamsImplCopyWithImpl<$Res>
-    extends _$SplitAddressParamsCopyWithImpl<$Res, _$SplitAddressParamsImpl>
-    implements _$$SplitAddressParamsImplCopyWith<$Res> {
-  __$$SplitAddressParamsImplCopyWithImpl(_$SplitAddressParamsImpl _value,
-      $Res Function(_$SplitAddressParamsImpl) _then)
-      : super(_value, _then);
+class _$SplitAddressParamsCopyWithImpl<$Res>
+    implements $SplitAddressParamsCopyWith<$Res> {
+  _$SplitAddressParamsCopyWithImpl(this._self, this._then);
+
+  final SplitAddressParams _self;
+  final $Res Function(SplitAddressParams) _then;
 
   /// Create a copy of SplitAddressParams
   /// with the given fields replaced by the non-null parameter values.
@@ -94,9 +71,9 @@ class __$$SplitAddressParamsImplCopyWithImpl<$Res>
   $Res call({
     Object? address = null,
   }) {
-    return _then(_$SplitAddressParamsImpl(
+    return _then(_self.copyWith(
       address: null == address
-          ? _value.address
+          ? _self.address
           : address // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -105,27 +82,35 @@ class __$$SplitAddressParamsImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$SplitAddressParamsImpl implements _SplitAddressParams {
-  const _$SplitAddressParamsImpl(
-      {@JsonKey(name: 'address') required this.address});
-
-  factory _$SplitAddressParamsImpl.fromJson(Map<String, dynamic> json) =>
-      _$$SplitAddressParamsImplFromJson(json);
+class _SplitAddressParams implements SplitAddressParams {
+  const _SplitAddressParams({@JsonKey(name: 'address') required this.address});
+  factory _SplitAddressParams.fromJson(Map<String, dynamic> json) =>
+      _$SplitAddressParamsFromJson(json);
 
   @override
   @JsonKey(name: 'address')
   final String address;
 
+  /// Create a copy of SplitAddressParams
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'SplitAddressParams(address: $address)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$SplitAddressParamsCopyWith<_SplitAddressParams> get copyWith =>
+      __$SplitAddressParamsCopyWithImpl<_SplitAddressParams>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$SplitAddressParamsToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SplitAddressParamsImpl &&
+            other is _SplitAddressParams &&
             (identical(other.address, address) || other.address == address));
   }
 
@@ -133,39 +118,45 @@ class _$SplitAddressParamsImpl implements _SplitAddressParams {
   @override
   int get hashCode => Object.hash(runtimeType, address);
 
-  /// Create a copy of SplitAddressParams
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$SplitAddressParamsImplCopyWith<_$SplitAddressParamsImpl> get copyWith =>
-      __$$SplitAddressParamsImplCopyWithImpl<_$SplitAddressParamsImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$SplitAddressParamsImplToJson(
-      this,
-    );
+  String toString() {
+    return 'SplitAddressParams(address: $address)';
   }
 }
 
-abstract class _SplitAddressParams implements SplitAddressParams {
-  const factory _SplitAddressParams(
-          {@JsonKey(name: 'address') required final String address}) =
-      _$SplitAddressParamsImpl;
-
-  factory _SplitAddressParams.fromJson(Map<String, dynamic> json) =
-      _$SplitAddressParamsImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$SplitAddressParamsCopyWith<$Res>
+    implements $SplitAddressParamsCopyWith<$Res> {
+  factory _$SplitAddressParamsCopyWith(
+          _SplitAddressParams value, $Res Function(_SplitAddressParams) _then) =
+      __$SplitAddressParamsCopyWithImpl;
   @override
-  @JsonKey(name: 'address')
-  String get address;
+  @useResult
+  $Res call({@JsonKey(name: 'address') String address});
+}
+
+/// @nodoc
+class __$SplitAddressParamsCopyWithImpl<$Res>
+    implements _$SplitAddressParamsCopyWith<$Res> {
+  __$SplitAddressParamsCopyWithImpl(this._self, this._then);
+
+  final _SplitAddressParams _self;
+  final $Res Function(_SplitAddressParams) _then;
 
   /// Create a copy of SplitAddressParams
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$SplitAddressParamsImplCopyWith<_$SplitAddressParamsImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? address = null,
+  }) {
+    return _then(_SplitAddressParams(
+      address: null == address
+          ? _self.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
+
+// dart format on

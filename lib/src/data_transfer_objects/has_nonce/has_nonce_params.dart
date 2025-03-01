@@ -7,7 +7,7 @@ part 'has_nonce_params.g.dart';
 
 /// @nodoc
 @freezed
-class HasNonceParams with _$HasNonceParams {
+abstract class HasNonceParams with _$HasNonceParams {
   /// @nodoc
   @JsonSerializable(includeIfNull: false)
   const factory HasNonceParams({

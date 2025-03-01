@@ -8,15 +8,13 @@ part of 'get_miner_work_params.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$GetMinerWorkParamsImpl _$$GetMinerWorkParamsImplFromJson(
-        Map<String, dynamic> json) =>
-    _$GetMinerWorkParamsImpl(
+_GetMinerWorkParams _$GetMinerWorkParamsFromJson(Map<String, dynamic> json) =>
+    _GetMinerWorkParams(
       template: json['template'] as String,
       address: json['address'] as String,
     );
 
-Map<String, dynamic> _$$GetMinerWorkParamsImplToJson(
-        _$GetMinerWorkParamsImpl instance) =>
+Map<String, dynamic> _$GetMinerWorkParamsToJson(_GetMinerWorkParams instance) =>
     <String, dynamic>{
       'template': instance.template,
       'address': instance.address,

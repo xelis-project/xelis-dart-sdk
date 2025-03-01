@@ -8,15 +8,15 @@ part of 'peer_peer_disconnected_event.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$PeerPeerDisconnectedEventImpl _$$PeerPeerDisconnectedEventImplFromJson(
+_PeerPeerDisconnectedEvent _$PeerPeerDisconnectedEventFromJson(
         Map<String, dynamic> json) =>
-    _$PeerPeerDisconnectedEventImpl(
+    _PeerPeerDisconnectedEvent(
       id: json['peer_id'] as num,
       address: json['peer_addr'] as String,
     );
 
-Map<String, dynamic> _$$PeerPeerDisconnectedEventImplToJson(
-        _$PeerPeerDisconnectedEventImpl instance) =>
+Map<String, dynamic> _$PeerPeerDisconnectedEventToJson(
+        _PeerPeerDisconnectedEvent instance) =>
     <String, dynamic>{
       'peer_id': instance.id,
       'peer_addr': instance.address,

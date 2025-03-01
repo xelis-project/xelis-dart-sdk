@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,90 +10,61 @@ part of 'estimate_extra_data_size_result.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-EstimateExtraDataSizeResult _$EstimateExtraDataSizeResultFromJson(
-    Map<String, dynamic> json) {
-  return _EstimateExtraDataSizeResult.fromJson(json);
-}
 
 /// @nodoc
 mixin _$EstimateExtraDataSizeResult {
   @JsonKey(name: 'size')
-  int get size => throw _privateConstructorUsedError;
-
-  /// Serializes this EstimateExtraDataSizeResult to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  int get size;
 
   /// Create a copy of EstimateExtraDataSizeResult
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $EstimateExtraDataSizeResultCopyWith<EstimateExtraDataSizeResult>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $EstimateExtraDataSizeResultCopyWith<$Res> {
-  factory $EstimateExtraDataSizeResultCopyWith(
-          EstimateExtraDataSizeResult value,
-          $Res Function(EstimateExtraDataSizeResult) then) =
-      _$EstimateExtraDataSizeResultCopyWithImpl<$Res,
-          EstimateExtraDataSizeResult>;
-  @useResult
-  $Res call({@JsonKey(name: 'size') int size});
-}
-
-/// @nodoc
-class _$EstimateExtraDataSizeResultCopyWithImpl<$Res,
-        $Val extends EstimateExtraDataSizeResult>
-    implements $EstimateExtraDataSizeResultCopyWith<$Res> {
-  _$EstimateExtraDataSizeResultCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of EstimateExtraDataSizeResult
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $EstimateExtraDataSizeResultCopyWith<EstimateExtraDataSizeResult>
+      get copyWith => _$EstimateExtraDataSizeResultCopyWithImpl<
+              EstimateExtraDataSizeResult>(
+          this as EstimateExtraDataSizeResult, _$identity);
+
+  /// Serializes this EstimateExtraDataSizeResult to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? size = null,
-  }) {
-    return _then(_value.copyWith(
-      size: null == size
-          ? _value.size
-          : size // ignore: cast_nullable_to_non_nullable
-              as int,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is EstimateExtraDataSizeResult &&
+            (identical(other.size, size) || other.size == size));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, size);
+
+  @override
+  String toString() {
+    return 'EstimateExtraDataSizeResult(size: $size)';
   }
 }
 
 /// @nodoc
-abstract class _$$EstimateExtraDataSizeResultImplCopyWith<$Res>
-    implements $EstimateExtraDataSizeResultCopyWith<$Res> {
-  factory _$$EstimateExtraDataSizeResultImplCopyWith(
-          _$EstimateExtraDataSizeResultImpl value,
-          $Res Function(_$EstimateExtraDataSizeResultImpl) then) =
-      __$$EstimateExtraDataSizeResultImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $EstimateExtraDataSizeResultCopyWith<$Res> {
+  factory $EstimateExtraDataSizeResultCopyWith(
+          EstimateExtraDataSizeResult value,
+          $Res Function(EstimateExtraDataSizeResult) _then) =
+      _$EstimateExtraDataSizeResultCopyWithImpl;
   @useResult
   $Res call({@JsonKey(name: 'size') int size});
 }
 
 /// @nodoc
-class __$$EstimateExtraDataSizeResultImplCopyWithImpl<$Res>
-    extends _$EstimateExtraDataSizeResultCopyWithImpl<$Res,
-        _$EstimateExtraDataSizeResultImpl>
-    implements _$$EstimateExtraDataSizeResultImplCopyWith<$Res> {
-  __$$EstimateExtraDataSizeResultImplCopyWithImpl(
-      _$EstimateExtraDataSizeResultImpl _value,
-      $Res Function(_$EstimateExtraDataSizeResultImpl) _then)
-      : super(_value, _then);
+class _$EstimateExtraDataSizeResultCopyWithImpl<$Res>
+    implements $EstimateExtraDataSizeResultCopyWith<$Res> {
+  _$EstimateExtraDataSizeResultCopyWithImpl(this._self, this._then);
+
+  final EstimateExtraDataSizeResult _self;
+  final $Res Function(EstimateExtraDataSizeResult) _then;
 
   /// Create a copy of EstimateExtraDataSizeResult
   /// with the given fields replaced by the non-null parameter values.
@@ -101,9 +73,9 @@ class __$$EstimateExtraDataSizeResultImplCopyWithImpl<$Res>
   $Res call({
     Object? size = null,
   }) {
-    return _then(_$EstimateExtraDataSizeResultImpl(
+    return _then(_self.copyWith(
       size: null == size
-          ? _value.size
+          ? _self.size
           : size // ignore: cast_nullable_to_non_nullable
               as int,
     ));
@@ -112,29 +84,37 @@ class __$$EstimateExtraDataSizeResultImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$EstimateExtraDataSizeResultImpl
-    implements _EstimateExtraDataSizeResult {
-  const _$EstimateExtraDataSizeResultImpl(
+class _EstimateExtraDataSizeResult implements EstimateExtraDataSizeResult {
+  const _EstimateExtraDataSizeResult(
       {@JsonKey(name: 'size') required this.size});
-
-  factory _$EstimateExtraDataSizeResultImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$EstimateExtraDataSizeResultImplFromJson(json);
+  factory _EstimateExtraDataSizeResult.fromJson(Map<String, dynamic> json) =>
+      _$EstimateExtraDataSizeResultFromJson(json);
 
   @override
   @JsonKey(name: 'size')
   final int size;
 
+  /// Create a copy of EstimateExtraDataSizeResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'EstimateExtraDataSizeResult(size: $size)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$EstimateExtraDataSizeResultCopyWith<_EstimateExtraDataSizeResult>
+      get copyWith => __$EstimateExtraDataSizeResultCopyWithImpl<
+          _EstimateExtraDataSizeResult>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$EstimateExtraDataSizeResultToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$EstimateExtraDataSizeResultImpl &&
+            other is _EstimateExtraDataSizeResult &&
             (identical(other.size, size) || other.size == size));
   }
 
@@ -142,40 +122,46 @@ class _$EstimateExtraDataSizeResultImpl
   @override
   int get hashCode => Object.hash(runtimeType, size);
 
-  /// Create a copy of EstimateExtraDataSizeResult
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$EstimateExtraDataSizeResultImplCopyWith<_$EstimateExtraDataSizeResultImpl>
-      get copyWith => __$$EstimateExtraDataSizeResultImplCopyWithImpl<
-          _$EstimateExtraDataSizeResultImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$EstimateExtraDataSizeResultImplToJson(
-      this,
-    );
+  String toString() {
+    return 'EstimateExtraDataSizeResult(size: $size)';
   }
 }
 
-abstract class _EstimateExtraDataSizeResult
-    implements EstimateExtraDataSizeResult {
-  const factory _EstimateExtraDataSizeResult(
-          {@JsonKey(name: 'size') required final int size}) =
-      _$EstimateExtraDataSizeResultImpl;
-
-  factory _EstimateExtraDataSizeResult.fromJson(Map<String, dynamic> json) =
-      _$EstimateExtraDataSizeResultImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$EstimateExtraDataSizeResultCopyWith<$Res>
+    implements $EstimateExtraDataSizeResultCopyWith<$Res> {
+  factory _$EstimateExtraDataSizeResultCopyWith(
+          _EstimateExtraDataSizeResult value,
+          $Res Function(_EstimateExtraDataSizeResult) _then) =
+      __$EstimateExtraDataSizeResultCopyWithImpl;
   @override
-  @JsonKey(name: 'size')
-  int get size;
+  @useResult
+  $Res call({@JsonKey(name: 'size') int size});
+}
+
+/// @nodoc
+class __$EstimateExtraDataSizeResultCopyWithImpl<$Res>
+    implements _$EstimateExtraDataSizeResultCopyWith<$Res> {
+  __$EstimateExtraDataSizeResultCopyWithImpl(this._self, this._then);
+
+  final _EstimateExtraDataSizeResult _self;
+  final $Res Function(_EstimateExtraDataSizeResult) _then;
 
   /// Create a copy of EstimateExtraDataSizeResult
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$EstimateExtraDataSizeResultImplCopyWith<_$EstimateExtraDataSizeResultImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? size = null,
+  }) {
+    return _then(_EstimateExtraDataSizeResult(
+      size: null == size
+          ? _self.size
+          : size // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
 }
+
+// dart format on

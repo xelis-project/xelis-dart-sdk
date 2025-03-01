@@ -8,7 +8,7 @@ part 'burn_history.g.dart';
 
 /// @nodoc
 @freezed
-class BurnHistory with _$BurnHistory {
+abstract class BurnHistory with _$BurnHistory {
   /// @nodoc
   const factory BurnHistory({
     @JsonKey(name: 'amount') required int amount,

@@ -7,7 +7,7 @@ part 'build_transaction_params.freezed.dart';
 
 /// @nodoc
 @freezed
-class BuildTransactionParams with _$BuildTransactionParams {
+abstract class BuildTransactionParams with _$BuildTransactionParams {
   /// @nodoc
   const factory BuildTransactionParams({
     required TransactionTypeBuilder transactionTypeBuilder,

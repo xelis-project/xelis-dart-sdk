@@ -8,15 +8,15 @@ part of 'get_nonce_at_topoheight_params.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$GetNonceAtTopoHeightParamsImpl _$$GetNonceAtTopoHeightParamsImplFromJson(
+_GetNonceAtTopoHeightParams _$GetNonceAtTopoHeightParamsFromJson(
         Map<String, dynamic> json) =>
-    _$GetNonceAtTopoHeightParamsImpl(
+    _GetNonceAtTopoHeightParams(
       address: json['address'] as String,
       topoheight: (json['topoheight'] as num).toInt(),
     );
 
-Map<String, dynamic> _$$GetNonceAtTopoHeightParamsImplToJson(
-        _$GetNonceAtTopoHeightParamsImpl instance) =>
+Map<String, dynamic> _$GetNonceAtTopoHeightParamsToJson(
+        _GetNonceAtTopoHeightParams instance) =>
     <String, dynamic>{
       'address': instance.address,
       'topoheight': instance.topoheight,

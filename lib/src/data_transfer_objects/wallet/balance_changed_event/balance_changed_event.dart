@@ -8,7 +8,7 @@ part 'balance_changed_event.g.dart';
 
 /// @nodoc
 @freezed
-class BalanceChangedEvent with _$BalanceChangedEvent {
+abstract class BalanceChangedEvent with _$BalanceChangedEvent {
   /// @nodoc
   const factory BalanceChangedEvent({
     @JsonKey(name: 'asset') required String assetHash,

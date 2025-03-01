@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,116 +10,68 @@ part of 'get_account_history_params.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-GetAccountHistoryParams _$GetAccountHistoryParamsFromJson(
-    Map<String, dynamic> json) {
-  return _GetAccountHistoryParams.fromJson(json);
-}
 
 /// @nodoc
 mixin _$GetAccountHistoryParams {
   @JsonKey(name: 'address')
-  String get address => throw _privateConstructorUsedError;
+  String get address;
   @JsonKey(name: 'asset')
-  String get asset => throw _privateConstructorUsedError;
+  String get asset;
   @JsonKey(name: 'incoming_flow')
-  bool get incomingFlow => throw _privateConstructorUsedError;
+  bool get incomingFlow;
   @JsonKey(name: 'outgoing_flow')
-  bool get outgoingFlow => throw _privateConstructorUsedError;
+  bool get outgoingFlow;
   @JsonKey(name: 'minimum_topoheight')
-  int? get minimumTopoheight => throw _privateConstructorUsedError;
+  int? get minimumTopoheight;
   @JsonKey(name: 'maximum_topoheight')
-  int? get maximumTopoheight => throw _privateConstructorUsedError;
-
-  /// Serializes this GetAccountHistoryParams to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  int? get maximumTopoheight;
 
   /// Create a copy of GetAccountHistoryParams
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $GetAccountHistoryParamsCopyWith<GetAccountHistoryParams> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $GetAccountHistoryParamsCopyWith<$Res> {
-  factory $GetAccountHistoryParamsCopyWith(GetAccountHistoryParams value,
-          $Res Function(GetAccountHistoryParams) then) =
-      _$GetAccountHistoryParamsCopyWithImpl<$Res, GetAccountHistoryParams>;
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'address') String address,
-      @JsonKey(name: 'asset') String asset,
-      @JsonKey(name: 'incoming_flow') bool incomingFlow,
-      @JsonKey(name: 'outgoing_flow') bool outgoingFlow,
-      @JsonKey(name: 'minimum_topoheight') int? minimumTopoheight,
-      @JsonKey(name: 'maximum_topoheight') int? maximumTopoheight});
-}
-
-/// @nodoc
-class _$GetAccountHistoryParamsCopyWithImpl<$Res,
-        $Val extends GetAccountHistoryParams>
-    implements $GetAccountHistoryParamsCopyWith<$Res> {
-  _$GetAccountHistoryParamsCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of GetAccountHistoryParams
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $GetAccountHistoryParamsCopyWith<GetAccountHistoryParams> get copyWith =>
+      _$GetAccountHistoryParamsCopyWithImpl<GetAccountHistoryParams>(
+          this as GetAccountHistoryParams, _$identity);
+
+  /// Serializes this GetAccountHistoryParams to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? address = null,
-    Object? asset = null,
-    Object? incomingFlow = null,
-    Object? outgoingFlow = null,
-    Object? minimumTopoheight = freezed,
-    Object? maximumTopoheight = freezed,
-  }) {
-    return _then(_value.copyWith(
-      address: null == address
-          ? _value.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as String,
-      asset: null == asset
-          ? _value.asset
-          : asset // ignore: cast_nullable_to_non_nullable
-              as String,
-      incomingFlow: null == incomingFlow
-          ? _value.incomingFlow
-          : incomingFlow // ignore: cast_nullable_to_non_nullable
-              as bool,
-      outgoingFlow: null == outgoingFlow
-          ? _value.outgoingFlow
-          : outgoingFlow // ignore: cast_nullable_to_non_nullable
-              as bool,
-      minimumTopoheight: freezed == minimumTopoheight
-          ? _value.minimumTopoheight
-          : minimumTopoheight // ignore: cast_nullable_to_non_nullable
-              as int?,
-      maximumTopoheight: freezed == maximumTopoheight
-          ? _value.maximumTopoheight
-          : maximumTopoheight // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is GetAccountHistoryParams &&
+            (identical(other.address, address) || other.address == address) &&
+            (identical(other.asset, asset) || other.asset == asset) &&
+            (identical(other.incomingFlow, incomingFlow) ||
+                other.incomingFlow == incomingFlow) &&
+            (identical(other.outgoingFlow, outgoingFlow) ||
+                other.outgoingFlow == outgoingFlow) &&
+            (identical(other.minimumTopoheight, minimumTopoheight) ||
+                other.minimumTopoheight == minimumTopoheight) &&
+            (identical(other.maximumTopoheight, maximumTopoheight) ||
+                other.maximumTopoheight == maximumTopoheight));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, address, asset, incomingFlow,
+      outgoingFlow, minimumTopoheight, maximumTopoheight);
+
+  @override
+  String toString() {
+    return 'GetAccountHistoryParams(address: $address, asset: $asset, incomingFlow: $incomingFlow, outgoingFlow: $outgoingFlow, minimumTopoheight: $minimumTopoheight, maximumTopoheight: $maximumTopoheight)';
   }
 }
 
 /// @nodoc
-abstract class _$$GetAccountHistoryParamsImplCopyWith<$Res>
-    implements $GetAccountHistoryParamsCopyWith<$Res> {
-  factory _$$GetAccountHistoryParamsImplCopyWith(
-          _$GetAccountHistoryParamsImpl value,
-          $Res Function(_$GetAccountHistoryParamsImpl) then) =
-      __$$GetAccountHistoryParamsImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $GetAccountHistoryParamsCopyWith<$Res> {
+  factory $GetAccountHistoryParamsCopyWith(GetAccountHistoryParams value,
+          $Res Function(GetAccountHistoryParams) _then) =
+      _$GetAccountHistoryParamsCopyWithImpl;
   @useResult
   $Res call(
       {@JsonKey(name: 'address') String address,
@@ -130,14 +83,12 @@ abstract class _$$GetAccountHistoryParamsImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$GetAccountHistoryParamsImplCopyWithImpl<$Res>
-    extends _$GetAccountHistoryParamsCopyWithImpl<$Res,
-        _$GetAccountHistoryParamsImpl>
-    implements _$$GetAccountHistoryParamsImplCopyWith<$Res> {
-  __$$GetAccountHistoryParamsImplCopyWithImpl(
-      _$GetAccountHistoryParamsImpl _value,
-      $Res Function(_$GetAccountHistoryParamsImpl) _then)
-      : super(_value, _then);
+class _$GetAccountHistoryParamsCopyWithImpl<$Res>
+    implements $GetAccountHistoryParamsCopyWith<$Res> {
+  _$GetAccountHistoryParamsCopyWithImpl(this._self, this._then);
+
+  final GetAccountHistoryParams _self;
+  final $Res Function(GetAccountHistoryParams) _then;
 
   /// Create a copy of GetAccountHistoryParams
   /// with the given fields replaced by the non-null parameter values.
@@ -151,29 +102,29 @@ class __$$GetAccountHistoryParamsImplCopyWithImpl<$Res>
     Object? minimumTopoheight = freezed,
     Object? maximumTopoheight = freezed,
   }) {
-    return _then(_$GetAccountHistoryParamsImpl(
+    return _then(_self.copyWith(
       address: null == address
-          ? _value.address
+          ? _self.address
           : address // ignore: cast_nullable_to_non_nullable
               as String,
       asset: null == asset
-          ? _value.asset
+          ? _self.asset
           : asset // ignore: cast_nullable_to_non_nullable
               as String,
       incomingFlow: null == incomingFlow
-          ? _value.incomingFlow
+          ? _self.incomingFlow
           : incomingFlow // ignore: cast_nullable_to_non_nullable
               as bool,
       outgoingFlow: null == outgoingFlow
-          ? _value.outgoingFlow
+          ? _self.outgoingFlow
           : outgoingFlow // ignore: cast_nullable_to_non_nullable
               as bool,
       minimumTopoheight: freezed == minimumTopoheight
-          ? _value.minimumTopoheight
+          ? _self.minimumTopoheight
           : minimumTopoheight // ignore: cast_nullable_to_non_nullable
               as int?,
       maximumTopoheight: freezed == maximumTopoheight
-          ? _value.maximumTopoheight
+          ? _self.maximumTopoheight
           : maximumTopoheight // ignore: cast_nullable_to_non_nullable
               as int?,
     ));
@@ -182,17 +133,16 @@ class __$$GetAccountHistoryParamsImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$GetAccountHistoryParamsImpl implements _GetAccountHistoryParams {
-  const _$GetAccountHistoryParamsImpl(
+class _GetAccountHistoryParams implements GetAccountHistoryParams {
+  const _GetAccountHistoryParams(
       {@JsonKey(name: 'address') required this.address,
       @JsonKey(name: 'asset') required this.asset,
       @JsonKey(name: 'incoming_flow') required this.incomingFlow,
       @JsonKey(name: 'outgoing_flow') required this.outgoingFlow,
       @JsonKey(name: 'minimum_topoheight') this.minimumTopoheight,
       @JsonKey(name: 'maximum_topoheight') this.maximumTopoheight});
-
-  factory _$GetAccountHistoryParamsImpl.fromJson(Map<String, dynamic> json) =>
-      _$$GetAccountHistoryParamsImplFromJson(json);
+  factory _GetAccountHistoryParams.fromJson(Map<String, dynamic> json) =>
+      _$GetAccountHistoryParamsFromJson(json);
 
   @override
   @JsonKey(name: 'address')
@@ -213,16 +163,27 @@ class _$GetAccountHistoryParamsImpl implements _GetAccountHistoryParams {
   @JsonKey(name: 'maximum_topoheight')
   final int? maximumTopoheight;
 
+  /// Create a copy of GetAccountHistoryParams
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'GetAccountHistoryParams(address: $address, asset: $asset, incomingFlow: $incomingFlow, outgoingFlow: $outgoingFlow, minimumTopoheight: $minimumTopoheight, maximumTopoheight: $maximumTopoheight)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$GetAccountHistoryParamsCopyWith<_GetAccountHistoryParams> get copyWith =>
+      __$GetAccountHistoryParamsCopyWithImpl<_GetAccountHistoryParams>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$GetAccountHistoryParamsToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetAccountHistoryParamsImpl &&
+            other is _GetAccountHistoryParams &&
             (identical(other.address, address) || other.address == address) &&
             (identical(other.asset, asset) || other.asset == asset) &&
             (identical(other.incomingFlow, incomingFlow) ||
@@ -240,59 +201,76 @@ class _$GetAccountHistoryParamsImpl implements _GetAccountHistoryParams {
   int get hashCode => Object.hash(runtimeType, address, asset, incomingFlow,
       outgoingFlow, minimumTopoheight, maximumTopoheight);
 
-  /// Create a copy of GetAccountHistoryParams
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$GetAccountHistoryParamsImplCopyWith<_$GetAccountHistoryParamsImpl>
-      get copyWith => __$$GetAccountHistoryParamsImplCopyWithImpl<
-          _$GetAccountHistoryParamsImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$GetAccountHistoryParamsImplToJson(
-      this,
-    );
+  String toString() {
+    return 'GetAccountHistoryParams(address: $address, asset: $asset, incomingFlow: $incomingFlow, outgoingFlow: $outgoingFlow, minimumTopoheight: $minimumTopoheight, maximumTopoheight: $maximumTopoheight)';
   }
 }
 
-abstract class _GetAccountHistoryParams implements GetAccountHistoryParams {
-  const factory _GetAccountHistoryParams(
-          {@JsonKey(name: 'address') required final String address,
-          @JsonKey(name: 'asset') required final String asset,
-          @JsonKey(name: 'incoming_flow') required final bool incomingFlow,
-          @JsonKey(name: 'outgoing_flow') required final bool outgoingFlow,
-          @JsonKey(name: 'minimum_topoheight') final int? minimumTopoheight,
-          @JsonKey(name: 'maximum_topoheight') final int? maximumTopoheight}) =
-      _$GetAccountHistoryParamsImpl;
+/// @nodoc
+abstract mixin class _$GetAccountHistoryParamsCopyWith<$Res>
+    implements $GetAccountHistoryParamsCopyWith<$Res> {
+  factory _$GetAccountHistoryParamsCopyWith(_GetAccountHistoryParams value,
+          $Res Function(_GetAccountHistoryParams) _then) =
+      __$GetAccountHistoryParamsCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'address') String address,
+      @JsonKey(name: 'asset') String asset,
+      @JsonKey(name: 'incoming_flow') bool incomingFlow,
+      @JsonKey(name: 'outgoing_flow') bool outgoingFlow,
+      @JsonKey(name: 'minimum_topoheight') int? minimumTopoheight,
+      @JsonKey(name: 'maximum_topoheight') int? maximumTopoheight});
+}
 
-  factory _GetAccountHistoryParams.fromJson(Map<String, dynamic> json) =
-      _$GetAccountHistoryParamsImpl.fromJson;
+/// @nodoc
+class __$GetAccountHistoryParamsCopyWithImpl<$Res>
+    implements _$GetAccountHistoryParamsCopyWith<$Res> {
+  __$GetAccountHistoryParamsCopyWithImpl(this._self, this._then);
 
-  @override
-  @JsonKey(name: 'address')
-  String get address;
-  @override
-  @JsonKey(name: 'asset')
-  String get asset;
-  @override
-  @JsonKey(name: 'incoming_flow')
-  bool get incomingFlow;
-  @override
-  @JsonKey(name: 'outgoing_flow')
-  bool get outgoingFlow;
-  @override
-  @JsonKey(name: 'minimum_topoheight')
-  int? get minimumTopoheight;
-  @override
-  @JsonKey(name: 'maximum_topoheight')
-  int? get maximumTopoheight;
+  final _GetAccountHistoryParams _self;
+  final $Res Function(_GetAccountHistoryParams) _then;
 
   /// Create a copy of GetAccountHistoryParams
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$GetAccountHistoryParamsImplCopyWith<_$GetAccountHistoryParamsImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? address = null,
+    Object? asset = null,
+    Object? incomingFlow = null,
+    Object? outgoingFlow = null,
+    Object? minimumTopoheight = freezed,
+    Object? maximumTopoheight = freezed,
+  }) {
+    return _then(_GetAccountHistoryParams(
+      address: null == address
+          ? _self.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as String,
+      asset: null == asset
+          ? _self.asset
+          : asset // ignore: cast_nullable_to_non_nullable
+              as String,
+      incomingFlow: null == incomingFlow
+          ? _self.incomingFlow
+          : incomingFlow // ignore: cast_nullable_to_non_nullable
+              as bool,
+      outgoingFlow: null == outgoingFlow
+          ? _self.outgoingFlow
+          : outgoingFlow // ignore: cast_nullable_to_non_nullable
+              as bool,
+      minimumTopoheight: freezed == minimumTopoheight
+          ? _self.minimumTopoheight
+          : minimumTopoheight // ignore: cast_nullable_to_non_nullable
+              as int?,
+      maximumTopoheight: freezed == maximumTopoheight
+          ? _self.maximumTopoheight
+          : maximumTopoheight // ignore: cast_nullable_to_non_nullable
+              as int?,
+    ));
+  }
 }
+
+// dart format on

@@ -8,7 +8,7 @@ part 'transfer_builder.g.dart';
 
 /// @nodoc
 @freezed
-class TransferBuilder with _$TransferBuilder {
+abstract class TransferBuilder with _$TransferBuilder {
   /// @nodoc
   @JsonSerializable(includeIfNull: false)
   const factory TransferBuilder({

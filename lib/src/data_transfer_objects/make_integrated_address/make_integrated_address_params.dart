@@ -8,7 +8,7 @@ part 'make_integrated_address_params.g.dart';
 
 /// @nodoc
 @freezed
-class MakeIntegratedAddressParams with _$MakeIntegratedAddressParams {
+abstract class MakeIntegratedAddressParams with _$MakeIntegratedAddressParams {
   /// @nodoc
   const factory MakeIntegratedAddressParams({
     @JsonKey(name: 'address') required String address,

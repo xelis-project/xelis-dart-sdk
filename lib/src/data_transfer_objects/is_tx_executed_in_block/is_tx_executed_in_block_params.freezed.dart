@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,148 +10,32 @@ part of 'is_tx_executed_in_block_params.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-IsTxExecutedInBlockParams _$IsTxExecutedInBlockParamsFromJson(
-    Map<String, dynamic> json) {
-  return _IsTxExecutedInBlockParams.fromJson(json);
-}
 
 /// @nodoc
 mixin _$IsTxExecutedInBlockParams {
   @JsonKey(name: 'tx_hash')
-  String get txHash => throw _privateConstructorUsedError;
+  String get txHash;
   @JsonKey(name: 'block_hash')
-  String get blockHash => throw _privateConstructorUsedError;
-
-  /// Serializes this IsTxExecutedInBlockParams to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String get blockHash;
 
   /// Create a copy of IsTxExecutedInBlockParams
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $IsTxExecutedInBlockParamsCopyWith<IsTxExecutedInBlockParams> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+      _$IsTxExecutedInBlockParamsCopyWithImpl<IsTxExecutedInBlockParams>(
+          this as IsTxExecutedInBlockParams, _$identity);
 
-/// @nodoc
-abstract class $IsTxExecutedInBlockParamsCopyWith<$Res> {
-  factory $IsTxExecutedInBlockParamsCopyWith(IsTxExecutedInBlockParams value,
-          $Res Function(IsTxExecutedInBlockParams) then) =
-      _$IsTxExecutedInBlockParamsCopyWithImpl<$Res, IsTxExecutedInBlockParams>;
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'tx_hash') String txHash,
-      @JsonKey(name: 'block_hash') String blockHash});
-}
-
-/// @nodoc
-class _$IsTxExecutedInBlockParamsCopyWithImpl<$Res,
-        $Val extends IsTxExecutedInBlockParams>
-    implements $IsTxExecutedInBlockParamsCopyWith<$Res> {
-  _$IsTxExecutedInBlockParamsCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of IsTxExecutedInBlockParams
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? txHash = null,
-    Object? blockHash = null,
-  }) {
-    return _then(_value.copyWith(
-      txHash: null == txHash
-          ? _value.txHash
-          : txHash // ignore: cast_nullable_to_non_nullable
-              as String,
-      blockHash: null == blockHash
-          ? _value.blockHash
-          : blockHash // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$IsTxExecutedInBlockParamsImplCopyWith<$Res>
-    implements $IsTxExecutedInBlockParamsCopyWith<$Res> {
-  factory _$$IsTxExecutedInBlockParamsImplCopyWith(
-          _$IsTxExecutedInBlockParamsImpl value,
-          $Res Function(_$IsTxExecutedInBlockParamsImpl) then) =
-      __$$IsTxExecutedInBlockParamsImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'tx_hash') String txHash,
-      @JsonKey(name: 'block_hash') String blockHash});
-}
-
-/// @nodoc
-class __$$IsTxExecutedInBlockParamsImplCopyWithImpl<$Res>
-    extends _$IsTxExecutedInBlockParamsCopyWithImpl<$Res,
-        _$IsTxExecutedInBlockParamsImpl>
-    implements _$$IsTxExecutedInBlockParamsImplCopyWith<$Res> {
-  __$$IsTxExecutedInBlockParamsImplCopyWithImpl(
-      _$IsTxExecutedInBlockParamsImpl _value,
-      $Res Function(_$IsTxExecutedInBlockParamsImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of IsTxExecutedInBlockParams
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? txHash = null,
-    Object? blockHash = null,
-  }) {
-    return _then(_$IsTxExecutedInBlockParamsImpl(
-      txHash: null == txHash
-          ? _value.txHash
-          : txHash // ignore: cast_nullable_to_non_nullable
-              as String,
-      blockHash: null == blockHash
-          ? _value.blockHash
-          : blockHash // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$IsTxExecutedInBlockParamsImpl implements _IsTxExecutedInBlockParams {
-  const _$IsTxExecutedInBlockParamsImpl(
-      {@JsonKey(name: 'tx_hash') required this.txHash,
-      @JsonKey(name: 'block_hash') required this.blockHash});
-
-  factory _$IsTxExecutedInBlockParamsImpl.fromJson(Map<String, dynamic> json) =>
-      _$$IsTxExecutedInBlockParamsImplFromJson(json);
-
-  @override
-  @JsonKey(name: 'tx_hash')
-  final String txHash;
-  @override
-  @JsonKey(name: 'block_hash')
-  final String blockHash;
-
-  @override
-  String toString() {
-    return 'IsTxExecutedInBlockParams(txHash: $txHash, blockHash: $blockHash)';
-  }
+  /// Serializes this IsTxExecutedInBlockParams to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$IsTxExecutedInBlockParamsImpl &&
+            other is IsTxExecutedInBlockParams &&
             (identical(other.txHash, txHash) || other.txHash == txHash) &&
             (identical(other.blockHash, blockHash) ||
                 other.blockHash == blockHash));
@@ -160,43 +45,145 @@ class _$IsTxExecutedInBlockParamsImpl implements _IsTxExecutedInBlockParams {
   @override
   int get hashCode => Object.hash(runtimeType, txHash, blockHash);
 
-  /// Create a copy of IsTxExecutedInBlockParams
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$IsTxExecutedInBlockParamsImplCopyWith<_$IsTxExecutedInBlockParamsImpl>
-      get copyWith => __$$IsTxExecutedInBlockParamsImplCopyWithImpl<
-          _$IsTxExecutedInBlockParamsImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$IsTxExecutedInBlockParamsImplToJson(
-      this,
-    );
+  String toString() {
+    return 'IsTxExecutedInBlockParams(txHash: $txHash, blockHash: $blockHash)';
   }
 }
 
-abstract class _IsTxExecutedInBlockParams implements IsTxExecutedInBlockParams {
-  const factory _IsTxExecutedInBlockParams(
-          {@JsonKey(name: 'tx_hash') required final String txHash,
-          @JsonKey(name: 'block_hash') required final String blockHash}) =
-      _$IsTxExecutedInBlockParamsImpl;
+/// @nodoc
+abstract mixin class $IsTxExecutedInBlockParamsCopyWith<$Res> {
+  factory $IsTxExecutedInBlockParamsCopyWith(IsTxExecutedInBlockParams value,
+          $Res Function(IsTxExecutedInBlockParams) _then) =
+      _$IsTxExecutedInBlockParamsCopyWithImpl;
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'tx_hash') String txHash,
+      @JsonKey(name: 'block_hash') String blockHash});
+}
 
-  factory _IsTxExecutedInBlockParams.fromJson(Map<String, dynamic> json) =
-      _$IsTxExecutedInBlockParamsImpl.fromJson;
+/// @nodoc
+class _$IsTxExecutedInBlockParamsCopyWithImpl<$Res>
+    implements $IsTxExecutedInBlockParamsCopyWith<$Res> {
+  _$IsTxExecutedInBlockParamsCopyWithImpl(this._self, this._then);
+
+  final IsTxExecutedInBlockParams _self;
+  final $Res Function(IsTxExecutedInBlockParams) _then;
+
+  /// Create a copy of IsTxExecutedInBlockParams
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? txHash = null,
+    Object? blockHash = null,
+  }) {
+    return _then(_self.copyWith(
+      txHash: null == txHash
+          ? _self.txHash
+          : txHash // ignore: cast_nullable_to_non_nullable
+              as String,
+      blockHash: null == blockHash
+          ? _self.blockHash
+          : blockHash // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _IsTxExecutedInBlockParams implements IsTxExecutedInBlockParams {
+  const _IsTxExecutedInBlockParams(
+      {@JsonKey(name: 'tx_hash') required this.txHash,
+      @JsonKey(name: 'block_hash') required this.blockHash});
+  factory _IsTxExecutedInBlockParams.fromJson(Map<String, dynamic> json) =>
+      _$IsTxExecutedInBlockParamsFromJson(json);
 
   @override
   @JsonKey(name: 'tx_hash')
-  String get txHash;
+  final String txHash;
   @override
   @JsonKey(name: 'block_hash')
-  String get blockHash;
+  final String blockHash;
 
   /// Create a copy of IsTxExecutedInBlockParams
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$IsTxExecutedInBlockParamsImplCopyWith<_$IsTxExecutedInBlockParamsImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  _$IsTxExecutedInBlockParamsCopyWith<_IsTxExecutedInBlockParams>
+      get copyWith =>
+          __$IsTxExecutedInBlockParamsCopyWithImpl<_IsTxExecutedInBlockParams>(
+              this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$IsTxExecutedInBlockParamsToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _IsTxExecutedInBlockParams &&
+            (identical(other.txHash, txHash) || other.txHash == txHash) &&
+            (identical(other.blockHash, blockHash) ||
+                other.blockHash == blockHash));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, txHash, blockHash);
+
+  @override
+  String toString() {
+    return 'IsTxExecutedInBlockParams(txHash: $txHash, blockHash: $blockHash)';
+  }
 }
+
+/// @nodoc
+abstract mixin class _$IsTxExecutedInBlockParamsCopyWith<$Res>
+    implements $IsTxExecutedInBlockParamsCopyWith<$Res> {
+  factory _$IsTxExecutedInBlockParamsCopyWith(_IsTxExecutedInBlockParams value,
+          $Res Function(_IsTxExecutedInBlockParams) _then) =
+      __$IsTxExecutedInBlockParamsCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'tx_hash') String txHash,
+      @JsonKey(name: 'block_hash') String blockHash});
+}
+
+/// @nodoc
+class __$IsTxExecutedInBlockParamsCopyWithImpl<$Res>
+    implements _$IsTxExecutedInBlockParamsCopyWith<$Res> {
+  __$IsTxExecutedInBlockParamsCopyWithImpl(this._self, this._then);
+
+  final _IsTxExecutedInBlockParams _self;
+  final $Res Function(_IsTxExecutedInBlockParams) _then;
+
+  /// Create a copy of IsTxExecutedInBlockParams
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? txHash = null,
+    Object? blockHash = null,
+  }) {
+    return _then(_IsTxExecutedInBlockParams(
+      txHash: null == txHash
+          ? _self.txHash
+          : txHash // ignore: cast_nullable_to_non_nullable
+              as String,
+      blockHash: null == blockHash
+          ? _self.blockHash
+          : blockHash // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+// dart format on

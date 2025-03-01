@@ -8,7 +8,7 @@ part 'get_assets_params.g.dart';
 
 /// @nodoc
 @freezed
-class GetAssetsParams with _$GetAssetsParams {
+abstract class GetAssetsParams with _$GetAssetsParams {
   /// @nodoc
   @JsonSerializable(includeIfNull: false)
   const factory GetAssetsParams({

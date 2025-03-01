@@ -8,7 +8,7 @@ part 'get_transaction_params.g.dart';
 
 /// @nodoc
 @freezed
-class GetTransactionParams with _$GetTransactionParams {
+abstract class GetTransactionParams with _$GetTransactionParams {
   /// @nodoc
   const factory GetTransactionParams({
     @JsonKey(name: 'hash') required String hash,

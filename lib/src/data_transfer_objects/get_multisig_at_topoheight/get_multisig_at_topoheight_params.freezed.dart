@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,152 +10,33 @@ part of 'get_multisig_at_topoheight_params.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-GetMultisigAtTopoheightParams _$GetMultisigAtTopoheightParamsFromJson(
-    Map<String, dynamic> json) {
-  return _GetMultisigAtTopoheightParams.fromJson(json);
-}
 
 /// @nodoc
 mixin _$GetMultisigAtTopoheightParams {
   @JsonKey(name: 'address')
-  String get address => throw _privateConstructorUsedError;
+  String get address;
   @JsonKey(name: 'topoheight')
-  int get topoheight => throw _privateConstructorUsedError;
-
-  /// Serializes this GetMultisigAtTopoheightParams to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  int get topoheight;
 
   /// Create a copy of GetMultisigAtTopoheightParams
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $GetMultisigAtTopoheightParamsCopyWith<GetMultisigAtTopoheightParams>
-      get copyWith => throw _privateConstructorUsedError;
-}
+      get copyWith => _$GetMultisigAtTopoheightParamsCopyWithImpl<
+              GetMultisigAtTopoheightParams>(
+          this as GetMultisigAtTopoheightParams, _$identity);
 
-/// @nodoc
-abstract class $GetMultisigAtTopoheightParamsCopyWith<$Res> {
-  factory $GetMultisigAtTopoheightParamsCopyWith(
-          GetMultisigAtTopoheightParams value,
-          $Res Function(GetMultisigAtTopoheightParams) then) =
-      _$GetMultisigAtTopoheightParamsCopyWithImpl<$Res,
-          GetMultisigAtTopoheightParams>;
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'address') String address,
-      @JsonKey(name: 'topoheight') int topoheight});
-}
-
-/// @nodoc
-class _$GetMultisigAtTopoheightParamsCopyWithImpl<$Res,
-        $Val extends GetMultisigAtTopoheightParams>
-    implements $GetMultisigAtTopoheightParamsCopyWith<$Res> {
-  _$GetMultisigAtTopoheightParamsCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of GetMultisigAtTopoheightParams
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? address = null,
-    Object? topoheight = null,
-  }) {
-    return _then(_value.copyWith(
-      address: null == address
-          ? _value.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as String,
-      topoheight: null == topoheight
-          ? _value.topoheight
-          : topoheight // ignore: cast_nullable_to_non_nullable
-              as int,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$GetMultisigAtTopoheightParamsImplCopyWith<$Res>
-    implements $GetMultisigAtTopoheightParamsCopyWith<$Res> {
-  factory _$$GetMultisigAtTopoheightParamsImplCopyWith(
-          _$GetMultisigAtTopoheightParamsImpl value,
-          $Res Function(_$GetMultisigAtTopoheightParamsImpl) then) =
-      __$$GetMultisigAtTopoheightParamsImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'address') String address,
-      @JsonKey(name: 'topoheight') int topoheight});
-}
-
-/// @nodoc
-class __$$GetMultisigAtTopoheightParamsImplCopyWithImpl<$Res>
-    extends _$GetMultisigAtTopoheightParamsCopyWithImpl<$Res,
-        _$GetMultisigAtTopoheightParamsImpl>
-    implements _$$GetMultisigAtTopoheightParamsImplCopyWith<$Res> {
-  __$$GetMultisigAtTopoheightParamsImplCopyWithImpl(
-      _$GetMultisigAtTopoheightParamsImpl _value,
-      $Res Function(_$GetMultisigAtTopoheightParamsImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of GetMultisigAtTopoheightParams
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? address = null,
-    Object? topoheight = null,
-  }) {
-    return _then(_$GetMultisigAtTopoheightParamsImpl(
-      address: null == address
-          ? _value.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as String,
-      topoheight: null == topoheight
-          ? _value.topoheight
-          : topoheight // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$GetMultisigAtTopoheightParamsImpl
-    implements _GetMultisigAtTopoheightParams {
-  const _$GetMultisigAtTopoheightParamsImpl(
-      {@JsonKey(name: 'address') required this.address,
-      @JsonKey(name: 'topoheight') required this.topoheight});
-
-  factory _$GetMultisigAtTopoheightParamsImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$GetMultisigAtTopoheightParamsImplFromJson(json);
-
-  @override
-  @JsonKey(name: 'address')
-  final String address;
-  @override
-  @JsonKey(name: 'topoheight')
-  final int topoheight;
-
-  @override
-  String toString() {
-    return 'GetMultisigAtTopoheightParams(address: $address, topoheight: $topoheight)';
-  }
+  /// Serializes this GetMultisigAtTopoheightParams to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetMultisigAtTopoheightParamsImpl &&
+            other is GetMultisigAtTopoheightParams &&
             (identical(other.address, address) || other.address == address) &&
             (identical(other.topoheight, topoheight) ||
                 other.topoheight == topoheight));
@@ -164,46 +46,146 @@ class _$GetMultisigAtTopoheightParamsImpl
   @override
   int get hashCode => Object.hash(runtimeType, address, topoheight);
 
-  /// Create a copy of GetMultisigAtTopoheightParams
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$GetMultisigAtTopoheightParamsImplCopyWith<
-          _$GetMultisigAtTopoheightParamsImpl>
-      get copyWith => __$$GetMultisigAtTopoheightParamsImplCopyWithImpl<
-          _$GetMultisigAtTopoheightParamsImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$GetMultisigAtTopoheightParamsImplToJson(
-      this,
-    );
+  String toString() {
+    return 'GetMultisigAtTopoheightParams(address: $address, topoheight: $topoheight)';
   }
 }
 
-abstract class _GetMultisigAtTopoheightParams
-    implements GetMultisigAtTopoheightParams {
-  const factory _GetMultisigAtTopoheightParams(
-          {@JsonKey(name: 'address') required final String address,
-          @JsonKey(name: 'topoheight') required final int topoheight}) =
-      _$GetMultisigAtTopoheightParamsImpl;
+/// @nodoc
+abstract mixin class $GetMultisigAtTopoheightParamsCopyWith<$Res> {
+  factory $GetMultisigAtTopoheightParamsCopyWith(
+          GetMultisigAtTopoheightParams value,
+          $Res Function(GetMultisigAtTopoheightParams) _then) =
+      _$GetMultisigAtTopoheightParamsCopyWithImpl;
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'address') String address,
+      @JsonKey(name: 'topoheight') int topoheight});
+}
 
-  factory _GetMultisigAtTopoheightParams.fromJson(Map<String, dynamic> json) =
-      _$GetMultisigAtTopoheightParamsImpl.fromJson;
+/// @nodoc
+class _$GetMultisigAtTopoheightParamsCopyWithImpl<$Res>
+    implements $GetMultisigAtTopoheightParamsCopyWith<$Res> {
+  _$GetMultisigAtTopoheightParamsCopyWithImpl(this._self, this._then);
+
+  final GetMultisigAtTopoheightParams _self;
+  final $Res Function(GetMultisigAtTopoheightParams) _then;
+
+  /// Create a copy of GetMultisigAtTopoheightParams
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? address = null,
+    Object? topoheight = null,
+  }) {
+    return _then(_self.copyWith(
+      address: null == address
+          ? _self.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as String,
+      topoheight: null == topoheight
+          ? _self.topoheight
+          : topoheight // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _GetMultisigAtTopoheightParams implements GetMultisigAtTopoheightParams {
+  const _GetMultisigAtTopoheightParams(
+      {@JsonKey(name: 'address') required this.address,
+      @JsonKey(name: 'topoheight') required this.topoheight});
+  factory _GetMultisigAtTopoheightParams.fromJson(Map<String, dynamic> json) =>
+      _$GetMultisigAtTopoheightParamsFromJson(json);
 
   @override
   @JsonKey(name: 'address')
-  String get address;
+  final String address;
   @override
   @JsonKey(name: 'topoheight')
-  int get topoheight;
+  final int topoheight;
 
   /// Create a copy of GetMultisigAtTopoheightParams
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$GetMultisigAtTopoheightParamsImplCopyWith<
-          _$GetMultisigAtTopoheightParamsImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  _$GetMultisigAtTopoheightParamsCopyWith<_GetMultisigAtTopoheightParams>
+      get copyWith => __$GetMultisigAtTopoheightParamsCopyWithImpl<
+          _GetMultisigAtTopoheightParams>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$GetMultisigAtTopoheightParamsToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _GetMultisigAtTopoheightParams &&
+            (identical(other.address, address) || other.address == address) &&
+            (identical(other.topoheight, topoheight) ||
+                other.topoheight == topoheight));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, address, topoheight);
+
+  @override
+  String toString() {
+    return 'GetMultisigAtTopoheightParams(address: $address, topoheight: $topoheight)';
+  }
 }
+
+/// @nodoc
+abstract mixin class _$GetMultisigAtTopoheightParamsCopyWith<$Res>
+    implements $GetMultisigAtTopoheightParamsCopyWith<$Res> {
+  factory _$GetMultisigAtTopoheightParamsCopyWith(
+          _GetMultisigAtTopoheightParams value,
+          $Res Function(_GetMultisigAtTopoheightParams) _then) =
+      __$GetMultisigAtTopoheightParamsCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'address') String address,
+      @JsonKey(name: 'topoheight') int topoheight});
+}
+
+/// @nodoc
+class __$GetMultisigAtTopoheightParamsCopyWithImpl<$Res>
+    implements _$GetMultisigAtTopoheightParamsCopyWith<$Res> {
+  __$GetMultisigAtTopoheightParamsCopyWithImpl(this._self, this._then);
+
+  final _GetMultisigAtTopoheightParams _self;
+  final $Res Function(_GetMultisigAtTopoheightParams) _then;
+
+  /// Create a copy of GetMultisigAtTopoheightParams
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? address = null,
+    Object? topoheight = null,
+  }) {
+    return _then(_GetMultisigAtTopoheightParams(
+      address: null == address
+          ? _self.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as String,
+      topoheight: null == topoheight
+          ? _self.topoheight
+          : topoheight // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+// dart format on

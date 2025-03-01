@@ -8,7 +8,7 @@ part 'peer_peer_list_updated_event.g.dart';
 
 /// @nodoc
 @freezed
-class PeerPeerListUpdatedEvent with _$PeerPeerListUpdatedEvent {
+abstract class PeerPeerListUpdatedEvent with _$PeerPeerListUpdatedEvent {
   /// @nodoc
   const factory PeerPeerListUpdatedEvent({
     @JsonKey(name: 'peer_id') required num id,

@@ -9,7 +9,7 @@ part 'unsigned_transaction.g.dart';
 
 /// @nodoc
 @freezed
-class UnsignedTransaction with _$UnsignedTransaction {
+abstract class UnsignedTransaction with _$UnsignedTransaction {
   /// @nodoc
   const factory UnsignedTransaction({
     required TransactionType data,

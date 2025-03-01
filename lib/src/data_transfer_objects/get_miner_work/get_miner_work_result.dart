@@ -8,7 +8,7 @@ part 'get_miner_work_result.g.dart';
 
 /// @nodoc
 @freezed
-class GetMinerWorkResult with _$GetMinerWorkResult {
+abstract class GetMinerWorkResult with _$GetMinerWorkResult {
   /// @nodoc
   const factory GetMinerWorkResult({
     @JsonKey(name: 'algorithm') required String algorithm,

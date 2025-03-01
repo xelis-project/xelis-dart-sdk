@@ -8,16 +8,16 @@ part of 'validate_address_params.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ValidateAddressParamsImpl _$$ValidateAddressParamsImplFromJson(
+_ValidateAddressParams _$ValidateAddressParamsFromJson(
         Map<String, dynamic> json) =>
-    _$ValidateAddressParamsImpl(
+    _ValidateAddressParams(
       address: json['address'] as String,
       allowIntegrated: json['allow_integrated'] as bool,
       maxIntegratedDataSize: json['max_integrated_data_size'] as String,
     );
 
-Map<String, dynamic> _$$ValidateAddressParamsImplToJson(
-        _$ValidateAddressParamsImpl instance) =>
+Map<String, dynamic> _$ValidateAddressParamsToJson(
+        _ValidateAddressParams instance) =>
     <String, dynamic>{
       'address': instance.address,
       'allow_integrated': instance.allowIntegrated,

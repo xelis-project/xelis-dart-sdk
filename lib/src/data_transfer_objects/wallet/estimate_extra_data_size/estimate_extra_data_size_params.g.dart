@@ -8,16 +8,16 @@ part of 'estimate_extra_data_size_params.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$EstimateExtraDataSizeParamsImpl _$$EstimateExtraDataSizeParamsImplFromJson(
+_EstimateExtraDataSizeParams _$EstimateExtraDataSizeParamsFromJson(
         Map<String, dynamic> json) =>
-    _$EstimateExtraDataSizeParamsImpl(
+    _EstimateExtraDataSizeParams(
       destinations: (json['destinations'] as List<dynamic>)
           .map((e) => e as String)
           .toList(),
     );
 
-Map<String, dynamic> _$$EstimateExtraDataSizeParamsImplToJson(
-        _$EstimateExtraDataSizeParamsImpl instance) =>
+Map<String, dynamic> _$EstimateExtraDataSizeParamsToJson(
+        _EstimateExtraDataSizeParams instance) =>
     <String, dynamic>{
       'destinations': instance.destinations,
     };

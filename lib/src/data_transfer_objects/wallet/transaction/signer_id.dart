@@ -7,7 +7,7 @@ part 'signer_id.g.dart';
 
 /// @nodoc
 @freezed
-class SignerId with _$SignerId {
+abstract class SignerId with _$SignerId {
   /// @nodoc
   const factory SignerId({
     @JsonKey(name: 'id') required int id,

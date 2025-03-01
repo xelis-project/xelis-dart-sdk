@@ -8,9 +8,8 @@ part of 'transaction_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$TransactionResponseImpl _$$TransactionResponseImplFromJson(
-        Map<String, dynamic> json) =>
-    _$TransactionResponseImpl(
+_TransactionResponse _$TransactionResponseFromJson(Map<String, dynamic> json) =>
+    _TransactionResponse(
       blocks:
           (json['blocks'] as List<dynamic>?)?.map((e) => e as String).toList(),
       executedInBlock: json['executed_in_block'] as String?,
@@ -29,8 +28,8 @@ _$TransactionResponseImpl _$$TransactionResponseImplFromJson(
       size: (json['size'] as num).toInt(),
     );
 
-Map<String, dynamic> _$$TransactionResponseImplToJson(
-        _$TransactionResponseImpl instance) =>
+Map<String, dynamic> _$TransactionResponseToJson(
+        _TransactionResponse instance) =>
     <String, dynamic>{
       'blocks': instance.blocks,
       'executed_in_block': instance.executedInBlock,

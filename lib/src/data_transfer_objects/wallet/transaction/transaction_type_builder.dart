@@ -42,27 +42,34 @@ sealed class TransactionTypeBuilder with _$TransactionTypeBuilder {
   const TransactionTypeBuilder._();
 
   /// @nodoc
-  Map<String, dynamic> toJson() => when(
-        transfers: (transfers) => {
-          'transfers': transfers.map((e) => e.toJson()).toList(),
-        },
-        burn: (asset, amount) => {
-          'asset': asset,
-          'amount': amount,
-        },
-        multisig: (threshold, participants) => {
-          'threshold': threshold,
-          'participants': participants,
-        },
-        invokeContract: (contract, maxGas, chunkId, parameters, deposits) => {
-          'contract': contract,
-          'max_gas': maxGas,
-          'chunk_id': chunkId,
-          'parameters': parameters,
-          'deposits': deposits,
-        },
-        deployContract: (contract) => {
-          'contract': contract,
-        },
-      );
+  Map<String, dynamic> toJson() => switch (this) {
+        TransfersBuilder(:final transfers) => {
+            'transfers': transfers.map((e) => e.toJson()).toList(),
+          },
+        BurnBuilder(:final asset, :final amount) => {
+            'asset': asset,
+            'amount': amount,
+          },
+        MultisigBuilder(:final threshold, :final participants) => {
+            'threshold': threshold,
+            'participants': participants,
+          },
+        InvokeContractBuilder(
+          :final contract,
+          :final maxGas,
+          :final chunkId,
+          :final parameters,
+          :final deposits
+        ) =>
+          {
+            'contract': contract,
+            'max_gas': maxGas,
+            'chunk_id': chunkId,
+            'parameters': parameters,
+            'deposits': deposits,
+          },
+        DeployContractBuilder(:final contract) => {
+            'contract': contract,
+          },
+      };
 }

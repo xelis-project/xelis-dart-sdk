@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,143 +10,32 @@ part of 'balance_changed_event.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-BalanceChangedEvent _$BalanceChangedEventFromJson(Map<String, dynamic> json) {
-  return _BalanceChangedEvent.fromJson(json);
-}
 
 /// @nodoc
 mixin _$BalanceChangedEvent {
   @JsonKey(name: 'asset')
-  String get assetHash => throw _privateConstructorUsedError;
+  String get assetHash;
   @JsonKey(name: 'balance')
-  int get balance => throw _privateConstructorUsedError;
-
-  /// Serializes this BalanceChangedEvent to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  int get balance;
 
   /// Create a copy of BalanceChangedEvent
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $BalanceChangedEventCopyWith<BalanceChangedEvent> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+      _$BalanceChangedEventCopyWithImpl<BalanceChangedEvent>(
+          this as BalanceChangedEvent, _$identity);
 
-/// @nodoc
-abstract class $BalanceChangedEventCopyWith<$Res> {
-  factory $BalanceChangedEventCopyWith(
-          BalanceChangedEvent value, $Res Function(BalanceChangedEvent) then) =
-      _$BalanceChangedEventCopyWithImpl<$Res, BalanceChangedEvent>;
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'asset') String assetHash,
-      @JsonKey(name: 'balance') int balance});
-}
-
-/// @nodoc
-class _$BalanceChangedEventCopyWithImpl<$Res, $Val extends BalanceChangedEvent>
-    implements $BalanceChangedEventCopyWith<$Res> {
-  _$BalanceChangedEventCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of BalanceChangedEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? assetHash = null,
-    Object? balance = null,
-  }) {
-    return _then(_value.copyWith(
-      assetHash: null == assetHash
-          ? _value.assetHash
-          : assetHash // ignore: cast_nullable_to_non_nullable
-              as String,
-      balance: null == balance
-          ? _value.balance
-          : balance // ignore: cast_nullable_to_non_nullable
-              as int,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$BalanceChangedEventImplCopyWith<$Res>
-    implements $BalanceChangedEventCopyWith<$Res> {
-  factory _$$BalanceChangedEventImplCopyWith(_$BalanceChangedEventImpl value,
-          $Res Function(_$BalanceChangedEventImpl) then) =
-      __$$BalanceChangedEventImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'asset') String assetHash,
-      @JsonKey(name: 'balance') int balance});
-}
-
-/// @nodoc
-class __$$BalanceChangedEventImplCopyWithImpl<$Res>
-    extends _$BalanceChangedEventCopyWithImpl<$Res, _$BalanceChangedEventImpl>
-    implements _$$BalanceChangedEventImplCopyWith<$Res> {
-  __$$BalanceChangedEventImplCopyWithImpl(_$BalanceChangedEventImpl _value,
-      $Res Function(_$BalanceChangedEventImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of BalanceChangedEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? assetHash = null,
-    Object? balance = null,
-  }) {
-    return _then(_$BalanceChangedEventImpl(
-      assetHash: null == assetHash
-          ? _value.assetHash
-          : assetHash // ignore: cast_nullable_to_non_nullable
-              as String,
-      balance: null == balance
-          ? _value.balance
-          : balance // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$BalanceChangedEventImpl implements _BalanceChangedEvent {
-  const _$BalanceChangedEventImpl(
-      {@JsonKey(name: 'asset') required this.assetHash,
-      @JsonKey(name: 'balance') required this.balance});
-
-  factory _$BalanceChangedEventImpl.fromJson(Map<String, dynamic> json) =>
-      _$$BalanceChangedEventImplFromJson(json);
-
-  @override
-  @JsonKey(name: 'asset')
-  final String assetHash;
-  @override
-  @JsonKey(name: 'balance')
-  final int balance;
-
-  @override
-  String toString() {
-    return 'BalanceChangedEvent(assetHash: $assetHash, balance: $balance)';
-  }
+  /// Serializes this BalanceChangedEvent to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$BalanceChangedEventImpl &&
+            other is BalanceChangedEvent &&
             (identical(other.assetHash, assetHash) ||
                 other.assetHash == assetHash) &&
             (identical(other.balance, balance) || other.balance == balance));
@@ -155,43 +45,144 @@ class _$BalanceChangedEventImpl implements _BalanceChangedEvent {
   @override
   int get hashCode => Object.hash(runtimeType, assetHash, balance);
 
+  @override
+  String toString() {
+    return 'BalanceChangedEvent(assetHash: $assetHash, balance: $balance)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $BalanceChangedEventCopyWith<$Res> {
+  factory $BalanceChangedEventCopyWith(
+          BalanceChangedEvent value, $Res Function(BalanceChangedEvent) _then) =
+      _$BalanceChangedEventCopyWithImpl;
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'asset') String assetHash,
+      @JsonKey(name: 'balance') int balance});
+}
+
+/// @nodoc
+class _$BalanceChangedEventCopyWithImpl<$Res>
+    implements $BalanceChangedEventCopyWith<$Res> {
+  _$BalanceChangedEventCopyWithImpl(this._self, this._then);
+
+  final BalanceChangedEvent _self;
+  final $Res Function(BalanceChangedEvent) _then;
+
   /// Create a copy of BalanceChangedEvent
   /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
   @pragma('vm:prefer-inline')
-  _$$BalanceChangedEventImplCopyWith<_$BalanceChangedEventImpl> get copyWith =>
-      __$$BalanceChangedEventImplCopyWithImpl<_$BalanceChangedEventImpl>(
+  @override
+  $Res call({
+    Object? assetHash = null,
+    Object? balance = null,
+  }) {
+    return _then(_self.copyWith(
+      assetHash: null == assetHash
+          ? _self.assetHash
+          : assetHash // ignore: cast_nullable_to_non_nullable
+              as String,
+      balance: null == balance
+          ? _self.balance
+          : balance // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _BalanceChangedEvent implements BalanceChangedEvent {
+  const _BalanceChangedEvent(
+      {@JsonKey(name: 'asset') required this.assetHash,
+      @JsonKey(name: 'balance') required this.balance});
+  factory _BalanceChangedEvent.fromJson(Map<String, dynamic> json) =>
+      _$BalanceChangedEventFromJson(json);
+
+  @override
+  @JsonKey(name: 'asset')
+  final String assetHash;
+  @override
+  @JsonKey(name: 'balance')
+  final int balance;
+
+  /// Create a copy of BalanceChangedEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$BalanceChangedEventCopyWith<_BalanceChangedEvent> get copyWith =>
+      __$BalanceChangedEventCopyWithImpl<_BalanceChangedEvent>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$BalanceChangedEventImplToJson(
+    return _$BalanceChangedEventToJson(
       this,
     );
   }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _BalanceChangedEvent &&
+            (identical(other.assetHash, assetHash) ||
+                other.assetHash == assetHash) &&
+            (identical(other.balance, balance) || other.balance == balance));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, assetHash, balance);
+
+  @override
+  String toString() {
+    return 'BalanceChangedEvent(assetHash: $assetHash, balance: $balance)';
+  }
 }
 
-abstract class _BalanceChangedEvent implements BalanceChangedEvent {
-  const factory _BalanceChangedEvent(
-          {@JsonKey(name: 'asset') required final String assetHash,
-          @JsonKey(name: 'balance') required final int balance}) =
-      _$BalanceChangedEventImpl;
-
-  factory _BalanceChangedEvent.fromJson(Map<String, dynamic> json) =
-      _$BalanceChangedEventImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$BalanceChangedEventCopyWith<$Res>
+    implements $BalanceChangedEventCopyWith<$Res> {
+  factory _$BalanceChangedEventCopyWith(_BalanceChangedEvent value,
+          $Res Function(_BalanceChangedEvent) _then) =
+      __$BalanceChangedEventCopyWithImpl;
   @override
-  @JsonKey(name: 'asset')
-  String get assetHash;
-  @override
-  @JsonKey(name: 'balance')
-  int get balance;
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'asset') String assetHash,
+      @JsonKey(name: 'balance') int balance});
+}
+
+/// @nodoc
+class __$BalanceChangedEventCopyWithImpl<$Res>
+    implements _$BalanceChangedEventCopyWith<$Res> {
+  __$BalanceChangedEventCopyWithImpl(this._self, this._then);
+
+  final _BalanceChangedEvent _self;
+  final $Res Function(_BalanceChangedEvent) _then;
 
   /// Create a copy of BalanceChangedEvent
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$BalanceChangedEventImplCopyWith<_$BalanceChangedEventImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? assetHash = null,
+    Object? balance = null,
+  }) {
+    return _then(_BalanceChangedEvent(
+      assetHash: null == assetHash
+          ? _self.assetHash
+          : assetHash // ignore: cast_nullable_to_non_nullable
+              as String,
+      balance: null == balance
+          ? _self.balance
+          : balance // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
 }
+
+// dart format on

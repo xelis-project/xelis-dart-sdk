@@ -8,7 +8,7 @@ part 'get_top_block_params.g.dart';
 
 /// @nodoc
 @freezed
-class GetTopBlockParams with _$GetTopBlockParams {
+abstract class GetTopBlockParams with _$GetTopBlockParams {
   /// @nodoc
   @JsonSerializable(includeIfNull: false)
   const factory GetTopBlockParams({

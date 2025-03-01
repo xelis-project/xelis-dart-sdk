@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,39 +10,83 @@ part of 'transaction_wallet_response.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$TransactionWalletResponse {
-  String? get txAsHex => throw _privateConstructorUsedError;
-  TransactionType get data => throw _privateConstructorUsedError;
-  int get fee => throw _privateConstructorUsedError;
-  String get hash => throw _privateConstructorUsedError;
-  int get version => throw _privateConstructorUsedError;
-  int get nonce => throw _privateConstructorUsedError;
-  List<int> get source => throw _privateConstructorUsedError;
-  List<int> get rangeProof => throw _privateConstructorUsedError;
-  List<Map<String, dynamic>> get sourceCommitments =>
-      throw _privateConstructorUsedError;
-  Reference get reference => throw _privateConstructorUsedError;
-  String get signature => throw _privateConstructorUsedError;
-  Multisig? get multiSig => throw _privateConstructorUsedError;
+  String? get txAsHex;
+  TransactionType get data;
+  int get fee;
+  String get hash;
+  int get version;
+  int get nonce;
+  List<int> get source;
+  List<int> get rangeProof;
+  List<Map<String, dynamic>> get sourceCommitments;
+  Reference get reference;
+  String get signature;
+  Multisig? get multiSig;
 
   /// Create a copy of TransactionWalletResponse
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $TransactionWalletResponseCopyWith<TransactionWalletResponse> get copyWith =>
-      throw _privateConstructorUsedError;
+      _$TransactionWalletResponseCopyWithImpl<TransactionWalletResponse>(
+          this as TransactionWalletResponse, _$identity);
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is TransactionWalletResponse &&
+            (identical(other.txAsHex, txAsHex) || other.txAsHex == txAsHex) &&
+            (identical(other.data, data) || other.data == data) &&
+            (identical(other.fee, fee) || other.fee == fee) &&
+            (identical(other.hash, hash) || other.hash == hash) &&
+            (identical(other.version, version) || other.version == version) &&
+            (identical(other.nonce, nonce) || other.nonce == nonce) &&
+            const DeepCollectionEquality().equals(other.source, source) &&
+            const DeepCollectionEquality()
+                .equals(other.rangeProof, rangeProof) &&
+            const DeepCollectionEquality()
+                .equals(other.sourceCommitments, sourceCommitments) &&
+            (identical(other.reference, reference) ||
+                other.reference == reference) &&
+            (identical(other.signature, signature) ||
+                other.signature == signature) &&
+            (identical(other.multiSig, multiSig) ||
+                other.multiSig == multiSig));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      txAsHex,
+      data,
+      fee,
+      hash,
+      version,
+      nonce,
+      const DeepCollectionEquality().hash(source),
+      const DeepCollectionEquality().hash(rangeProof),
+      const DeepCollectionEquality().hash(sourceCommitments),
+      reference,
+      signature,
+      multiSig);
+
+  @override
+  String toString() {
+    return 'TransactionWalletResponse(txAsHex: $txAsHex, data: $data, fee: $fee, hash: $hash, version: $version, nonce: $nonce, source: $source, rangeProof: $rangeProof, sourceCommitments: $sourceCommitments, reference: $reference, signature: $signature, multiSig: $multiSig)';
+  }
 }
 
 /// @nodoc
-abstract class $TransactionWalletResponseCopyWith<$Res> {
+abstract mixin class $TransactionWalletResponseCopyWith<$Res> {
   factory $TransactionWalletResponseCopyWith(TransactionWalletResponse value,
-          $Res Function(TransactionWalletResponse) then) =
-      _$TransactionWalletResponseCopyWithImpl<$Res, TransactionWalletResponse>;
+          $Res Function(TransactionWalletResponse) _then) =
+      _$TransactionWalletResponseCopyWithImpl;
   @useResult
   $Res call(
       {String? txAsHex,
@@ -63,15 +108,12 @@ abstract class $TransactionWalletResponseCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$TransactionWalletResponseCopyWithImpl<$Res,
-        $Val extends TransactionWalletResponse>
+class _$TransactionWalletResponseCopyWithImpl<$Res>
     implements $TransactionWalletResponseCopyWith<$Res> {
-  _$TransactionWalletResponseCopyWithImpl(this._value, this._then);
+  _$TransactionWalletResponseCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final TransactionWalletResponse _self;
+  final $Res Function(TransactionWalletResponse) _then;
 
   /// Create a copy of TransactionWalletResponse
   /// with the given fields replaced by the non-null parameter values.
@@ -91,56 +133,56 @@ class _$TransactionWalletResponseCopyWithImpl<$Res,
     Object? signature = null,
     Object? multiSig = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       txAsHex: freezed == txAsHex
-          ? _value.txAsHex
+          ? _self.txAsHex
           : txAsHex // ignore: cast_nullable_to_non_nullable
               as String?,
       data: null == data
-          ? _value.data
+          ? _self.data
           : data // ignore: cast_nullable_to_non_nullable
               as TransactionType,
       fee: null == fee
-          ? _value.fee
+          ? _self.fee
           : fee // ignore: cast_nullable_to_non_nullable
               as int,
       hash: null == hash
-          ? _value.hash
+          ? _self.hash
           : hash // ignore: cast_nullable_to_non_nullable
               as String,
       version: null == version
-          ? _value.version
+          ? _self.version
           : version // ignore: cast_nullable_to_non_nullable
               as int,
       nonce: null == nonce
-          ? _value.nonce
+          ? _self.nonce
           : nonce // ignore: cast_nullable_to_non_nullable
               as int,
       source: null == source
-          ? _value.source
+          ? _self.source
           : source // ignore: cast_nullable_to_non_nullable
               as List<int>,
       rangeProof: null == rangeProof
-          ? _value.rangeProof
+          ? _self.rangeProof
           : rangeProof // ignore: cast_nullable_to_non_nullable
               as List<int>,
       sourceCommitments: null == sourceCommitments
-          ? _value.sourceCommitments
+          ? _self.sourceCommitments
           : sourceCommitments // ignore: cast_nullable_to_non_nullable
               as List<Map<String, dynamic>>,
       reference: null == reference
-          ? _value.reference
+          ? _self.reference
           : reference // ignore: cast_nullable_to_non_nullable
               as Reference,
       signature: null == signature
-          ? _value.signature
+          ? _self.signature
           : signature // ignore: cast_nullable_to_non_nullable
               as String,
       multiSig: freezed == multiSig
-          ? _value.multiSig
+          ? _self.multiSig
           : multiSig // ignore: cast_nullable_to_non_nullable
               as Multisig?,
-    ) as $Val);
+    ));
   }
 
   /// Create a copy of TransactionWalletResponse
@@ -148,8 +190,8 @@ class _$TransactionWalletResponseCopyWithImpl<$Res,
   @override
   @pragma('vm:prefer-inline')
   $TransactionTypeCopyWith<$Res> get data {
-    return $TransactionTypeCopyWith<$Res>(_value.data, (value) {
-      return _then(_value.copyWith(data: value) as $Val);
+    return $TransactionTypeCopyWith<$Res>(_self.data, (value) {
+      return _then(_self.copyWith(data: value));
     });
   }
 
@@ -158,8 +200,8 @@ class _$TransactionWalletResponseCopyWithImpl<$Res,
   @override
   @pragma('vm:prefer-inline')
   $ReferenceCopyWith<$Res> get reference {
-    return $ReferenceCopyWith<$Res>(_value.reference, (value) {
-      return _then(_value.copyWith(reference: value) as $Val);
+    return $ReferenceCopyWith<$Res>(_self.reference, (value) {
+      return _then(_self.copyWith(reference: value));
     });
   }
 
@@ -168,132 +210,20 @@ class _$TransactionWalletResponseCopyWithImpl<$Res,
   @override
   @pragma('vm:prefer-inline')
   $MultisigCopyWith<$Res>? get multiSig {
-    if (_value.multiSig == null) {
+    if (_self.multiSig == null) {
       return null;
     }
 
-    return $MultisigCopyWith<$Res>(_value.multiSig!, (value) {
-      return _then(_value.copyWith(multiSig: value) as $Val);
+    return $MultisigCopyWith<$Res>(_self.multiSig!, (value) {
+      return _then(_self.copyWith(multiSig: value));
     });
   }
 }
 
 /// @nodoc
-abstract class _$$TransactionWalletResponseImplCopyWith<$Res>
-    implements $TransactionWalletResponseCopyWith<$Res> {
-  factory _$$TransactionWalletResponseImplCopyWith(
-          _$TransactionWalletResponseImpl value,
-          $Res Function(_$TransactionWalletResponseImpl) then) =
-      __$$TransactionWalletResponseImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String? txAsHex,
-      TransactionType data,
-      int fee,
-      String hash,
-      int version,
-      int nonce,
-      List<int> source,
-      List<int> rangeProof,
-      List<Map<String, dynamic>> sourceCommitments,
-      Reference reference,
-      String signature,
-      Multisig? multiSig});
 
-  @override
-  $TransactionTypeCopyWith<$Res> get data;
-  @override
-  $ReferenceCopyWith<$Res> get reference;
-  @override
-  $MultisigCopyWith<$Res>? get multiSig;
-}
-
-/// @nodoc
-class __$$TransactionWalletResponseImplCopyWithImpl<$Res>
-    extends _$TransactionWalletResponseCopyWithImpl<$Res,
-        _$TransactionWalletResponseImpl>
-    implements _$$TransactionWalletResponseImplCopyWith<$Res> {
-  __$$TransactionWalletResponseImplCopyWithImpl(
-      _$TransactionWalletResponseImpl _value,
-      $Res Function(_$TransactionWalletResponseImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of TransactionWalletResponse
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? txAsHex = freezed,
-    Object? data = null,
-    Object? fee = null,
-    Object? hash = null,
-    Object? version = null,
-    Object? nonce = null,
-    Object? source = null,
-    Object? rangeProof = null,
-    Object? sourceCommitments = null,
-    Object? reference = null,
-    Object? signature = null,
-    Object? multiSig = freezed,
-  }) {
-    return _then(_$TransactionWalletResponseImpl(
-      txAsHex: freezed == txAsHex
-          ? _value.txAsHex
-          : txAsHex // ignore: cast_nullable_to_non_nullable
-              as String?,
-      data: null == data
-          ? _value.data
-          : data // ignore: cast_nullable_to_non_nullable
-              as TransactionType,
-      fee: null == fee
-          ? _value.fee
-          : fee // ignore: cast_nullable_to_non_nullable
-              as int,
-      hash: null == hash
-          ? _value.hash
-          : hash // ignore: cast_nullable_to_non_nullable
-              as String,
-      version: null == version
-          ? _value.version
-          : version // ignore: cast_nullable_to_non_nullable
-              as int,
-      nonce: null == nonce
-          ? _value.nonce
-          : nonce // ignore: cast_nullable_to_non_nullable
-              as int,
-      source: null == source
-          ? _value._source
-          : source // ignore: cast_nullable_to_non_nullable
-              as List<int>,
-      rangeProof: null == rangeProof
-          ? _value._rangeProof
-          : rangeProof // ignore: cast_nullable_to_non_nullable
-              as List<int>,
-      sourceCommitments: null == sourceCommitments
-          ? _value._sourceCommitments
-          : sourceCommitments // ignore: cast_nullable_to_non_nullable
-              as List<Map<String, dynamic>>,
-      reference: null == reference
-          ? _value.reference
-          : reference // ignore: cast_nullable_to_non_nullable
-              as Reference,
-      signature: null == signature
-          ? _value.signature
-          : signature // ignore: cast_nullable_to_non_nullable
-              as String,
-      multiSig: freezed == multiSig
-          ? _value.multiSig
-          : multiSig // ignore: cast_nullable_to_non_nullable
-              as Multisig?,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$TransactionWalletResponseImpl implements _TransactionWalletResponse {
-  const _$TransactionWalletResponseImpl(
+class _TransactionWalletResponse implements TransactionWalletResponse {
+  const _TransactionWalletResponse(
       {required this.txAsHex,
       required this.data,
       required this.fee,
@@ -354,16 +284,21 @@ class _$TransactionWalletResponseImpl implements _TransactionWalletResponse {
   @override
   final Multisig? multiSig;
 
+  /// Create a copy of TransactionWalletResponse
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'TransactionWalletResponse(txAsHex: $txAsHex, data: $data, fee: $fee, hash: $hash, version: $version, nonce: $nonce, source: $source, rangeProof: $rangeProof, sourceCommitments: $sourceCommitments, reference: $reference, signature: $signature, multiSig: $multiSig)';
-  }
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$TransactionWalletResponseCopyWith<_TransactionWalletResponse>
+      get copyWith =>
+          __$TransactionWalletResponseCopyWithImpl<_TransactionWalletResponse>(
+              this, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$TransactionWalletResponseImpl &&
+            other is _TransactionWalletResponse &&
             (identical(other.txAsHex, txAsHex) || other.txAsHex == txAsHex) &&
             (identical(other.data, data) || other.data == data) &&
             (identical(other.fee, fee) || other.fee == fee) &&
@@ -399,60 +334,153 @@ class _$TransactionWalletResponseImpl implements _TransactionWalletResponse {
       signature,
       multiSig);
 
+  @override
+  String toString() {
+    return 'TransactionWalletResponse(txAsHex: $txAsHex, data: $data, fee: $fee, hash: $hash, version: $version, nonce: $nonce, source: $source, rangeProof: $rangeProof, sourceCommitments: $sourceCommitments, reference: $reference, signature: $signature, multiSig: $multiSig)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$TransactionWalletResponseCopyWith<$Res>
+    implements $TransactionWalletResponseCopyWith<$Res> {
+  factory _$TransactionWalletResponseCopyWith(_TransactionWalletResponse value,
+          $Res Function(_TransactionWalletResponse) _then) =
+      __$TransactionWalletResponseCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String? txAsHex,
+      TransactionType data,
+      int fee,
+      String hash,
+      int version,
+      int nonce,
+      List<int> source,
+      List<int> rangeProof,
+      List<Map<String, dynamic>> sourceCommitments,
+      Reference reference,
+      String signature,
+      Multisig? multiSig});
+
+  @override
+  $TransactionTypeCopyWith<$Res> get data;
+  @override
+  $ReferenceCopyWith<$Res> get reference;
+  @override
+  $MultisigCopyWith<$Res>? get multiSig;
+}
+
+/// @nodoc
+class __$TransactionWalletResponseCopyWithImpl<$Res>
+    implements _$TransactionWalletResponseCopyWith<$Res> {
+  __$TransactionWalletResponseCopyWithImpl(this._self, this._then);
+
+  final _TransactionWalletResponse _self;
+  final $Res Function(_TransactionWalletResponse) _then;
+
   /// Create a copy of TransactionWalletResponse
   /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$TransactionWalletResponseImplCopyWith<_$TransactionWalletResponseImpl>
-      get copyWith => __$$TransactionWalletResponseImplCopyWithImpl<
-          _$TransactionWalletResponseImpl>(this, _$identity);
-}
-
-abstract class _TransactionWalletResponse implements TransactionWalletResponse {
-  const factory _TransactionWalletResponse(
-      {required final String? txAsHex,
-      required final TransactionType data,
-      required final int fee,
-      required final String hash,
-      required final int version,
-      required final int nonce,
-      required final List<int> source,
-      required final List<int> rangeProof,
-      required final List<Map<String, dynamic>> sourceCommitments,
-      required final Reference reference,
-      required final String signature,
-      final Multisig? multiSig}) = _$TransactionWalletResponseImpl;
-
-  @override
-  String? get txAsHex;
-  @override
-  TransactionType get data;
-  @override
-  int get fee;
-  @override
-  String get hash;
-  @override
-  int get version;
-  @override
-  int get nonce;
-  @override
-  List<int> get source;
-  @override
-  List<int> get rangeProof;
-  @override
-  List<Map<String, dynamic>> get sourceCommitments;
-  @override
-  Reference get reference;
-  @override
-  String get signature;
-  @override
-  Multisig? get multiSig;
+  $Res call({
+    Object? txAsHex = freezed,
+    Object? data = null,
+    Object? fee = null,
+    Object? hash = null,
+    Object? version = null,
+    Object? nonce = null,
+    Object? source = null,
+    Object? rangeProof = null,
+    Object? sourceCommitments = null,
+    Object? reference = null,
+    Object? signature = null,
+    Object? multiSig = freezed,
+  }) {
+    return _then(_TransactionWalletResponse(
+      txAsHex: freezed == txAsHex
+          ? _self.txAsHex
+          : txAsHex // ignore: cast_nullable_to_non_nullable
+              as String?,
+      data: null == data
+          ? _self.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as TransactionType,
+      fee: null == fee
+          ? _self.fee
+          : fee // ignore: cast_nullable_to_non_nullable
+              as int,
+      hash: null == hash
+          ? _self.hash
+          : hash // ignore: cast_nullable_to_non_nullable
+              as String,
+      version: null == version
+          ? _self.version
+          : version // ignore: cast_nullable_to_non_nullable
+              as int,
+      nonce: null == nonce
+          ? _self.nonce
+          : nonce // ignore: cast_nullable_to_non_nullable
+              as int,
+      source: null == source
+          ? _self._source
+          : source // ignore: cast_nullable_to_non_nullable
+              as List<int>,
+      rangeProof: null == rangeProof
+          ? _self._rangeProof
+          : rangeProof // ignore: cast_nullable_to_non_nullable
+              as List<int>,
+      sourceCommitments: null == sourceCommitments
+          ? _self._sourceCommitments
+          : sourceCommitments // ignore: cast_nullable_to_non_nullable
+              as List<Map<String, dynamic>>,
+      reference: null == reference
+          ? _self.reference
+          : reference // ignore: cast_nullable_to_non_nullable
+              as Reference,
+      signature: null == signature
+          ? _self.signature
+          : signature // ignore: cast_nullable_to_non_nullable
+              as String,
+      multiSig: freezed == multiSig
+          ? _self.multiSig
+          : multiSig // ignore: cast_nullable_to_non_nullable
+              as Multisig?,
+    ));
+  }
 
   /// Create a copy of TransactionWalletResponse
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$TransactionWalletResponseImplCopyWith<_$TransactionWalletResponseImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $TransactionTypeCopyWith<$Res> get data {
+    return $TransactionTypeCopyWith<$Res>(_self.data, (value) {
+      return _then(_self.copyWith(data: value));
+    });
+  }
+
+  /// Create a copy of TransactionWalletResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ReferenceCopyWith<$Res> get reference {
+    return $ReferenceCopyWith<$Res>(_self.reference, (value) {
+      return _then(_self.copyWith(reference: value));
+    });
+  }
+
+  /// Create a copy of TransactionWalletResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MultisigCopyWith<$Res>? get multiSig {
+    if (_self.multiSig == null) {
+      return null;
+    }
+
+    return $MultisigCopyWith<$Res>(_self.multiSig!, (value) {
+      return _then(_self.copyWith(multiSig: value));
+    });
+  }
 }
+
+// dart format on

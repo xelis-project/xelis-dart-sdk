@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,90 +10,63 @@ part of 'estimate_extra_data_size_params.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-EstimateExtraDataSizeParams _$EstimateExtraDataSizeParamsFromJson(
-    Map<String, dynamic> json) {
-  return _EstimateExtraDataSizeParams.fromJson(json);
-}
 
 /// @nodoc
 mixin _$EstimateExtraDataSizeParams {
   @JsonKey(name: 'destinations')
-  List<String> get destinations => throw _privateConstructorUsedError;
-
-  /// Serializes this EstimateExtraDataSizeParams to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  List<String> get destinations;
 
   /// Create a copy of EstimateExtraDataSizeParams
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $EstimateExtraDataSizeParamsCopyWith<EstimateExtraDataSizeParams>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $EstimateExtraDataSizeParamsCopyWith<$Res> {
-  factory $EstimateExtraDataSizeParamsCopyWith(
-          EstimateExtraDataSizeParams value,
-          $Res Function(EstimateExtraDataSizeParams) then) =
-      _$EstimateExtraDataSizeParamsCopyWithImpl<$Res,
-          EstimateExtraDataSizeParams>;
-  @useResult
-  $Res call({@JsonKey(name: 'destinations') List<String> destinations});
-}
-
-/// @nodoc
-class _$EstimateExtraDataSizeParamsCopyWithImpl<$Res,
-        $Val extends EstimateExtraDataSizeParams>
-    implements $EstimateExtraDataSizeParamsCopyWith<$Res> {
-  _$EstimateExtraDataSizeParamsCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of EstimateExtraDataSizeParams
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $EstimateExtraDataSizeParamsCopyWith<EstimateExtraDataSizeParams>
+      get copyWith => _$EstimateExtraDataSizeParamsCopyWithImpl<
+              EstimateExtraDataSizeParams>(
+          this as EstimateExtraDataSizeParams, _$identity);
+
+  /// Serializes this EstimateExtraDataSizeParams to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? destinations = null,
-  }) {
-    return _then(_value.copyWith(
-      destinations: null == destinations
-          ? _value.destinations
-          : destinations // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is EstimateExtraDataSizeParams &&
+            const DeepCollectionEquality()
+                .equals(other.destinations, destinations));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(destinations));
+
+  @override
+  String toString() {
+    return 'EstimateExtraDataSizeParams(destinations: $destinations)';
   }
 }
 
 /// @nodoc
-abstract class _$$EstimateExtraDataSizeParamsImplCopyWith<$Res>
-    implements $EstimateExtraDataSizeParamsCopyWith<$Res> {
-  factory _$$EstimateExtraDataSizeParamsImplCopyWith(
-          _$EstimateExtraDataSizeParamsImpl value,
-          $Res Function(_$EstimateExtraDataSizeParamsImpl) then) =
-      __$$EstimateExtraDataSizeParamsImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $EstimateExtraDataSizeParamsCopyWith<$Res> {
+  factory $EstimateExtraDataSizeParamsCopyWith(
+          EstimateExtraDataSizeParams value,
+          $Res Function(EstimateExtraDataSizeParams) _then) =
+      _$EstimateExtraDataSizeParamsCopyWithImpl;
   @useResult
   $Res call({@JsonKey(name: 'destinations') List<String> destinations});
 }
 
 /// @nodoc
-class __$$EstimateExtraDataSizeParamsImplCopyWithImpl<$Res>
-    extends _$EstimateExtraDataSizeParamsCopyWithImpl<$Res,
-        _$EstimateExtraDataSizeParamsImpl>
-    implements _$$EstimateExtraDataSizeParamsImplCopyWith<$Res> {
-  __$$EstimateExtraDataSizeParamsImplCopyWithImpl(
-      _$EstimateExtraDataSizeParamsImpl _value,
-      $Res Function(_$EstimateExtraDataSizeParamsImpl) _then)
-      : super(_value, _then);
+class _$EstimateExtraDataSizeParamsCopyWithImpl<$Res>
+    implements $EstimateExtraDataSizeParamsCopyWith<$Res> {
+  _$EstimateExtraDataSizeParamsCopyWithImpl(this._self, this._then);
+
+  final EstimateExtraDataSizeParams _self;
+  final $Res Function(EstimateExtraDataSizeParams) _then;
 
   /// Create a copy of EstimateExtraDataSizeParams
   /// with the given fields replaced by the non-null parameter values.
@@ -101,9 +75,9 @@ class __$$EstimateExtraDataSizeParamsImplCopyWithImpl<$Res>
   $Res call({
     Object? destinations = null,
   }) {
-    return _then(_$EstimateExtraDataSizeParamsImpl(
+    return _then(_self.copyWith(
       destinations: null == destinations
-          ? _value._destinations
+          ? _self.destinations
           : destinations // ignore: cast_nullable_to_non_nullable
               as List<String>,
     ));
@@ -112,15 +86,12 @@ class __$$EstimateExtraDataSizeParamsImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$EstimateExtraDataSizeParamsImpl
-    implements _EstimateExtraDataSizeParams {
-  const _$EstimateExtraDataSizeParamsImpl(
+class _EstimateExtraDataSizeParams implements EstimateExtraDataSizeParams {
+  const _EstimateExtraDataSizeParams(
       {@JsonKey(name: 'destinations') required final List<String> destinations})
       : _destinations = destinations;
-
-  factory _$EstimateExtraDataSizeParamsImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$EstimateExtraDataSizeParamsImplFromJson(json);
+  factory _EstimateExtraDataSizeParams.fromJson(Map<String, dynamic> json) =>
+      _$EstimateExtraDataSizeParamsFromJson(json);
 
   final List<String> _destinations;
   @override
@@ -131,16 +102,27 @@ class _$EstimateExtraDataSizeParamsImpl
     return EqualUnmodifiableListView(_destinations);
   }
 
+  /// Create a copy of EstimateExtraDataSizeParams
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'EstimateExtraDataSizeParams(destinations: $destinations)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$EstimateExtraDataSizeParamsCopyWith<_EstimateExtraDataSizeParams>
+      get copyWith => __$EstimateExtraDataSizeParamsCopyWithImpl<
+          _EstimateExtraDataSizeParams>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$EstimateExtraDataSizeParamsToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$EstimateExtraDataSizeParamsImpl &&
+            other is _EstimateExtraDataSizeParams &&
             const DeepCollectionEquality()
                 .equals(other._destinations, _destinations));
   }
@@ -150,41 +132,46 @@ class _$EstimateExtraDataSizeParamsImpl
   int get hashCode => Object.hash(
       runtimeType, const DeepCollectionEquality().hash(_destinations));
 
-  /// Create a copy of EstimateExtraDataSizeParams
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$EstimateExtraDataSizeParamsImplCopyWith<_$EstimateExtraDataSizeParamsImpl>
-      get copyWith => __$$EstimateExtraDataSizeParamsImplCopyWithImpl<
-          _$EstimateExtraDataSizeParamsImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$EstimateExtraDataSizeParamsImplToJson(
-      this,
-    );
+  String toString() {
+    return 'EstimateExtraDataSizeParams(destinations: $destinations)';
   }
 }
 
-abstract class _EstimateExtraDataSizeParams
-    implements EstimateExtraDataSizeParams {
-  const factory _EstimateExtraDataSizeParams(
-          {@JsonKey(name: 'destinations')
-          required final List<String> destinations}) =
-      _$EstimateExtraDataSizeParamsImpl;
-
-  factory _EstimateExtraDataSizeParams.fromJson(Map<String, dynamic> json) =
-      _$EstimateExtraDataSizeParamsImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$EstimateExtraDataSizeParamsCopyWith<$Res>
+    implements $EstimateExtraDataSizeParamsCopyWith<$Res> {
+  factory _$EstimateExtraDataSizeParamsCopyWith(
+          _EstimateExtraDataSizeParams value,
+          $Res Function(_EstimateExtraDataSizeParams) _then) =
+      __$EstimateExtraDataSizeParamsCopyWithImpl;
   @override
-  @JsonKey(name: 'destinations')
-  List<String> get destinations;
+  @useResult
+  $Res call({@JsonKey(name: 'destinations') List<String> destinations});
+}
+
+/// @nodoc
+class __$EstimateExtraDataSizeParamsCopyWithImpl<$Res>
+    implements _$EstimateExtraDataSizeParamsCopyWith<$Res> {
+  __$EstimateExtraDataSizeParamsCopyWithImpl(this._self, this._then);
+
+  final _EstimateExtraDataSizeParams _self;
+  final $Res Function(_EstimateExtraDataSizeParams) _then;
 
   /// Create a copy of EstimateExtraDataSizeParams
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$EstimateExtraDataSizeParamsImplCopyWith<_$EstimateExtraDataSizeParamsImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? destinations = null,
+  }) {
+    return _then(_EstimateExtraDataSizeParams(
+      destinations: null == destinations
+          ? _self._destinations
+          : destinations // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+    ));
+  }
 }
+
+// dart format on

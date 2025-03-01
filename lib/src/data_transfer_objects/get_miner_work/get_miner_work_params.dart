@@ -8,7 +8,7 @@ part 'get_miner_work_params.g.dart';
 
 /// @nodoc
 @freezed
-class GetMinerWorkParams with _$GetMinerWorkParams {
+abstract class GetMinerWorkParams with _$GetMinerWorkParams {
   /// @nodoc
   const factory GetMinerWorkParams({
     @JsonKey(name: 'template') required String template,

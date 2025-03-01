@@ -8,7 +8,7 @@ part 'get_account_assets_params.g.dart';
 
 /// @nodoc
 @freezed
-class GetAccountAssetsParams with _$GetAccountAssetsParams {
+abstract class GetAccountAssetsParams with _$GetAccountAssetsParams {
   /// @nodoc
   const factory GetAccountAssetsParams({
     @JsonKey(name: 'address') required String address,

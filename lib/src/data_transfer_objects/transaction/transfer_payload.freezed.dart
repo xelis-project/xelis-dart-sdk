@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,121 +10,79 @@ part of 'transfer_payload.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-TransferPayload _$TransferPayloadFromJson(Map<String, dynamic> json) {
-  return _TransferPayload.fromJson(json);
-}
 
 /// @nodoc
 mixin _$TransferPayload {
   @JsonKey(name: 'asset')
-  String get asset => throw _privateConstructorUsedError;
+  String get asset;
   @JsonKey(name: 'commitment')
-  List<int> get commitment => throw _privateConstructorUsedError;
+  List<int> get commitment;
   @JsonKey(name: 'ct_validity_proof')
-  Map<String, dynamic> get validityProof => throw _privateConstructorUsedError;
+  Map<String, dynamic> get validityProof;
   @JsonKey(name: 'destination')
-  dynamic get destination => throw _privateConstructorUsedError;
+  dynamic get destination;
   @JsonKey(name: 'receiver_handle')
-  List<int> get receiverHandle => throw _privateConstructorUsedError;
+  List<int> get receiverHandle;
   @JsonKey(name: 'sender_handle')
-  List<int> get senderHandle => throw _privateConstructorUsedError;
+  List<int> get senderHandle;
   @JsonKey(name: 'extra_data')
-  dynamic get extraData => throw _privateConstructorUsedError;
-
-  /// Serializes this TransferPayload to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  dynamic get extraData;
 
   /// Create a copy of TransferPayload
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $TransferPayloadCopyWith<TransferPayload> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $TransferPayloadCopyWith<$Res> {
-  factory $TransferPayloadCopyWith(
-          TransferPayload value, $Res Function(TransferPayload) then) =
-      _$TransferPayloadCopyWithImpl<$Res, TransferPayload>;
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'asset') String asset,
-      @JsonKey(name: 'commitment') List<int> commitment,
-      @JsonKey(name: 'ct_validity_proof') Map<String, dynamic> validityProof,
-      @JsonKey(name: 'destination') dynamic destination,
-      @JsonKey(name: 'receiver_handle') List<int> receiverHandle,
-      @JsonKey(name: 'sender_handle') List<int> senderHandle,
-      @JsonKey(name: 'extra_data') dynamic extraData});
-}
-
-/// @nodoc
-class _$TransferPayloadCopyWithImpl<$Res, $Val extends TransferPayload>
-    implements $TransferPayloadCopyWith<$Res> {
-  _$TransferPayloadCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of TransferPayload
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $TransferPayloadCopyWith<TransferPayload> get copyWith =>
+      _$TransferPayloadCopyWithImpl<TransferPayload>(
+          this as TransferPayload, _$identity);
+
+  /// Serializes this TransferPayload to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? asset = null,
-    Object? commitment = null,
-    Object? validityProof = null,
-    Object? destination = freezed,
-    Object? receiverHandle = null,
-    Object? senderHandle = null,
-    Object? extraData = freezed,
-  }) {
-    return _then(_value.copyWith(
-      asset: null == asset
-          ? _value.asset
-          : asset // ignore: cast_nullable_to_non_nullable
-              as String,
-      commitment: null == commitment
-          ? _value.commitment
-          : commitment // ignore: cast_nullable_to_non_nullable
-              as List<int>,
-      validityProof: null == validityProof
-          ? _value.validityProof
-          : validityProof // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
-      destination: freezed == destination
-          ? _value.destination
-          : destination // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      receiverHandle: null == receiverHandle
-          ? _value.receiverHandle
-          : receiverHandle // ignore: cast_nullable_to_non_nullable
-              as List<int>,
-      senderHandle: null == senderHandle
-          ? _value.senderHandle
-          : senderHandle // ignore: cast_nullable_to_non_nullable
-              as List<int>,
-      extraData: freezed == extraData
-          ? _value.extraData
-          : extraData // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is TransferPayload &&
+            (identical(other.asset, asset) || other.asset == asset) &&
+            const DeepCollectionEquality()
+                .equals(other.commitment, commitment) &&
+            const DeepCollectionEquality()
+                .equals(other.validityProof, validityProof) &&
+            const DeepCollectionEquality()
+                .equals(other.destination, destination) &&
+            const DeepCollectionEquality()
+                .equals(other.receiverHandle, receiverHandle) &&
+            const DeepCollectionEquality()
+                .equals(other.senderHandle, senderHandle) &&
+            const DeepCollectionEquality().equals(other.extraData, extraData));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      asset,
+      const DeepCollectionEquality().hash(commitment),
+      const DeepCollectionEquality().hash(validityProof),
+      const DeepCollectionEquality().hash(destination),
+      const DeepCollectionEquality().hash(receiverHandle),
+      const DeepCollectionEquality().hash(senderHandle),
+      const DeepCollectionEquality().hash(extraData));
+
+  @override
+  String toString() {
+    return 'TransferPayload(asset: $asset, commitment: $commitment, validityProof: $validityProof, destination: $destination, receiverHandle: $receiverHandle, senderHandle: $senderHandle, extraData: $extraData)';
   }
 }
 
 /// @nodoc
-abstract class _$$TransferPayloadImplCopyWith<$Res>
-    implements $TransferPayloadCopyWith<$Res> {
-  factory _$$TransferPayloadImplCopyWith(_$TransferPayloadImpl value,
-          $Res Function(_$TransferPayloadImpl) then) =
-      __$$TransferPayloadImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $TransferPayloadCopyWith<$Res> {
+  factory $TransferPayloadCopyWith(
+          TransferPayload value, $Res Function(TransferPayload) _then) =
+      _$TransferPayloadCopyWithImpl;
   @useResult
   $Res call(
       {@JsonKey(name: 'asset') String asset,
@@ -136,12 +95,12 @@ abstract class _$$TransferPayloadImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$TransferPayloadImplCopyWithImpl<$Res>
-    extends _$TransferPayloadCopyWithImpl<$Res, _$TransferPayloadImpl>
-    implements _$$TransferPayloadImplCopyWith<$Res> {
-  __$$TransferPayloadImplCopyWithImpl(
-      _$TransferPayloadImpl _value, $Res Function(_$TransferPayloadImpl) _then)
-      : super(_value, _then);
+class _$TransferPayloadCopyWithImpl<$Res>
+    implements $TransferPayloadCopyWith<$Res> {
+  _$TransferPayloadCopyWithImpl(this._self, this._then);
+
+  final TransferPayload _self;
+  final $Res Function(TransferPayload) _then;
 
   /// Create a copy of TransferPayload
   /// with the given fields replaced by the non-null parameter values.
@@ -156,33 +115,33 @@ class __$$TransferPayloadImplCopyWithImpl<$Res>
     Object? senderHandle = null,
     Object? extraData = freezed,
   }) {
-    return _then(_$TransferPayloadImpl(
+    return _then(_self.copyWith(
       asset: null == asset
-          ? _value.asset
+          ? _self.asset
           : asset // ignore: cast_nullable_to_non_nullable
               as String,
       commitment: null == commitment
-          ? _value._commitment
+          ? _self.commitment
           : commitment // ignore: cast_nullable_to_non_nullable
               as List<int>,
       validityProof: null == validityProof
-          ? _value._validityProof
+          ? _self.validityProof
           : validityProof // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>,
       destination: freezed == destination
-          ? _value.destination
+          ? _self.destination
           : destination // ignore: cast_nullable_to_non_nullable
               as dynamic,
       receiverHandle: null == receiverHandle
-          ? _value._receiverHandle
+          ? _self.receiverHandle
           : receiverHandle // ignore: cast_nullable_to_non_nullable
               as List<int>,
       senderHandle: null == senderHandle
-          ? _value._senderHandle
+          ? _self.senderHandle
           : senderHandle // ignore: cast_nullable_to_non_nullable
               as List<int>,
       extraData: freezed == extraData
-          ? _value.extraData
+          ? _self.extraData
           : extraData // ignore: cast_nullable_to_non_nullable
               as dynamic,
     ));
@@ -191,8 +150,8 @@ class __$$TransferPayloadImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$TransferPayloadImpl implements _TransferPayload {
-  const _$TransferPayloadImpl(
+class _TransferPayload implements TransferPayload {
+  const _TransferPayload(
       {@JsonKey(name: 'asset') required this.asset,
       @JsonKey(name: 'commitment') required final List<int> commitment,
       @JsonKey(name: 'ct_validity_proof')
@@ -205,9 +164,8 @@ class _$TransferPayloadImpl implements _TransferPayload {
         _validityProof = validityProof,
         _receiverHandle = receiverHandle,
         _senderHandle = senderHandle;
-
-  factory _$TransferPayloadImpl.fromJson(Map<String, dynamic> json) =>
-      _$$TransferPayloadImplFromJson(json);
+  factory _TransferPayload.fromJson(Map<String, dynamic> json) =>
+      _$TransferPayloadFromJson(json);
 
   @override
   @JsonKey(name: 'asset')
@@ -255,16 +213,26 @@ class _$TransferPayloadImpl implements _TransferPayload {
   @JsonKey(name: 'extra_data')
   final dynamic extraData;
 
+  /// Create a copy of TransferPayload
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'TransferPayload(asset: $asset, commitment: $commitment, validityProof: $validityProof, destination: $destination, receiverHandle: $receiverHandle, senderHandle: $senderHandle, extraData: $extraData)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$TransferPayloadCopyWith<_TransferPayload> get copyWith =>
+      __$TransferPayloadCopyWithImpl<_TransferPayload>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$TransferPayloadToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$TransferPayloadImpl &&
+            other is _TransferPayload &&
             (identical(other.asset, asset) || other.asset == asset) &&
             const DeepCollectionEquality()
                 .equals(other._commitment, _commitment) &&
@@ -291,64 +259,82 @@ class _$TransferPayloadImpl implements _TransferPayload {
       const DeepCollectionEquality().hash(_senderHandle),
       const DeepCollectionEquality().hash(extraData));
 
-  /// Create a copy of TransferPayload
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$TransferPayloadImplCopyWith<_$TransferPayloadImpl> get copyWith =>
-      __$$TransferPayloadImplCopyWithImpl<_$TransferPayloadImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$TransferPayloadImplToJson(
-      this,
-    );
+  String toString() {
+    return 'TransferPayload(asset: $asset, commitment: $commitment, validityProof: $validityProof, destination: $destination, receiverHandle: $receiverHandle, senderHandle: $senderHandle, extraData: $extraData)';
   }
 }
 
-abstract class _TransferPayload implements TransferPayload {
-  const factory _TransferPayload(
-      {@JsonKey(name: 'asset') required final String asset,
-      @JsonKey(name: 'commitment') required final List<int> commitment,
-      @JsonKey(name: 'ct_validity_proof')
-      required final Map<String, dynamic> validityProof,
-      @JsonKey(name: 'destination') required final dynamic destination,
-      @JsonKey(name: 'receiver_handle') required final List<int> receiverHandle,
-      @JsonKey(name: 'sender_handle') required final List<int> senderHandle,
-      @JsonKey(name: 'extra_data')
-      final dynamic extraData}) = _$TransferPayloadImpl;
+/// @nodoc
+abstract mixin class _$TransferPayloadCopyWith<$Res>
+    implements $TransferPayloadCopyWith<$Res> {
+  factory _$TransferPayloadCopyWith(
+          _TransferPayload value, $Res Function(_TransferPayload) _then) =
+      __$TransferPayloadCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'asset') String asset,
+      @JsonKey(name: 'commitment') List<int> commitment,
+      @JsonKey(name: 'ct_validity_proof') Map<String, dynamic> validityProof,
+      @JsonKey(name: 'destination') dynamic destination,
+      @JsonKey(name: 'receiver_handle') List<int> receiverHandle,
+      @JsonKey(name: 'sender_handle') List<int> senderHandle,
+      @JsonKey(name: 'extra_data') dynamic extraData});
+}
 
-  factory _TransferPayload.fromJson(Map<String, dynamic> json) =
-      _$TransferPayloadImpl.fromJson;
+/// @nodoc
+class __$TransferPayloadCopyWithImpl<$Res>
+    implements _$TransferPayloadCopyWith<$Res> {
+  __$TransferPayloadCopyWithImpl(this._self, this._then);
 
-  @override
-  @JsonKey(name: 'asset')
-  String get asset;
-  @override
-  @JsonKey(name: 'commitment')
-  List<int> get commitment;
-  @override
-  @JsonKey(name: 'ct_validity_proof')
-  Map<String, dynamic> get validityProof;
-  @override
-  @JsonKey(name: 'destination')
-  dynamic get destination;
-  @override
-  @JsonKey(name: 'receiver_handle')
-  List<int> get receiverHandle;
-  @override
-  @JsonKey(name: 'sender_handle')
-  List<int> get senderHandle;
-  @override
-  @JsonKey(name: 'extra_data')
-  dynamic get extraData;
+  final _TransferPayload _self;
+  final $Res Function(_TransferPayload) _then;
 
   /// Create a copy of TransferPayload
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$TransferPayloadImplCopyWith<_$TransferPayloadImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? asset = null,
+    Object? commitment = null,
+    Object? validityProof = null,
+    Object? destination = freezed,
+    Object? receiverHandle = null,
+    Object? senderHandle = null,
+    Object? extraData = freezed,
+  }) {
+    return _then(_TransferPayload(
+      asset: null == asset
+          ? _self.asset
+          : asset // ignore: cast_nullable_to_non_nullable
+              as String,
+      commitment: null == commitment
+          ? _self._commitment
+          : commitment // ignore: cast_nullable_to_non_nullable
+              as List<int>,
+      validityProof: null == validityProof
+          ? _self._validityProof
+          : validityProof // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>,
+      destination: freezed == destination
+          ? _self.destination
+          : destination // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      receiverHandle: null == receiverHandle
+          ? _self._receiverHandle
+          : receiverHandle // ignore: cast_nullable_to_non_nullable
+              as List<int>,
+      senderHandle: null == senderHandle
+          ? _self._senderHandle
+          : senderHandle // ignore: cast_nullable_to_non_nullable
+              as List<int>,
+      extraData: freezed == extraData
+          ? _self.extraData
+          : extraData // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+    ));
+  }
 }
+
+// dart format on

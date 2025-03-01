@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,87 +10,60 @@ part of 'get_transactions_params.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-GetTransactionsParams _$GetTransactionsParamsFromJson(
-    Map<String, dynamic> json) {
-  return _GetTransactionsParams.fromJson(json);
-}
 
 /// @nodoc
 mixin _$GetTransactionsParams {
   @JsonKey(name: 'tx_hashes')
-  List<String> get txHashes => throw _privateConstructorUsedError;
-
-  /// Serializes this GetTransactionsParams to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  List<String> get txHashes;
 
   /// Create a copy of GetTransactionsParams
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $GetTransactionsParamsCopyWith<GetTransactionsParams> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $GetTransactionsParamsCopyWith<$Res> {
-  factory $GetTransactionsParamsCopyWith(GetTransactionsParams value,
-          $Res Function(GetTransactionsParams) then) =
-      _$GetTransactionsParamsCopyWithImpl<$Res, GetTransactionsParams>;
-  @useResult
-  $Res call({@JsonKey(name: 'tx_hashes') List<String> txHashes});
-}
-
-/// @nodoc
-class _$GetTransactionsParamsCopyWithImpl<$Res,
-        $Val extends GetTransactionsParams>
-    implements $GetTransactionsParamsCopyWith<$Res> {
-  _$GetTransactionsParamsCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of GetTransactionsParams
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $GetTransactionsParamsCopyWith<GetTransactionsParams> get copyWith =>
+      _$GetTransactionsParamsCopyWithImpl<GetTransactionsParams>(
+          this as GetTransactionsParams, _$identity);
+
+  /// Serializes this GetTransactionsParams to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? txHashes = null,
-  }) {
-    return _then(_value.copyWith(
-      txHashes: null == txHashes
-          ? _value.txHashes
-          : txHashes // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is GetTransactionsParams &&
+            const DeepCollectionEquality().equals(other.txHashes, txHashes));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(txHashes));
+
+  @override
+  String toString() {
+    return 'GetTransactionsParams(txHashes: $txHashes)';
   }
 }
 
 /// @nodoc
-abstract class _$$GetTransactionsParamsImplCopyWith<$Res>
-    implements $GetTransactionsParamsCopyWith<$Res> {
-  factory _$$GetTransactionsParamsImplCopyWith(
-          _$GetTransactionsParamsImpl value,
-          $Res Function(_$GetTransactionsParamsImpl) then) =
-      __$$GetTransactionsParamsImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $GetTransactionsParamsCopyWith<$Res> {
+  factory $GetTransactionsParamsCopyWith(GetTransactionsParams value,
+          $Res Function(GetTransactionsParams) _then) =
+      _$GetTransactionsParamsCopyWithImpl;
   @useResult
   $Res call({@JsonKey(name: 'tx_hashes') List<String> txHashes});
 }
 
 /// @nodoc
-class __$$GetTransactionsParamsImplCopyWithImpl<$Res>
-    extends _$GetTransactionsParamsCopyWithImpl<$Res,
-        _$GetTransactionsParamsImpl>
-    implements _$$GetTransactionsParamsImplCopyWith<$Res> {
-  __$$GetTransactionsParamsImplCopyWithImpl(_$GetTransactionsParamsImpl _value,
-      $Res Function(_$GetTransactionsParamsImpl) _then)
-      : super(_value, _then);
+class _$GetTransactionsParamsCopyWithImpl<$Res>
+    implements $GetTransactionsParamsCopyWith<$Res> {
+  _$GetTransactionsParamsCopyWithImpl(this._self, this._then);
+
+  final GetTransactionsParams _self;
+  final $Res Function(GetTransactionsParams) _then;
 
   /// Create a copy of GetTransactionsParams
   /// with the given fields replaced by the non-null parameter values.
@@ -98,9 +72,9 @@ class __$$GetTransactionsParamsImplCopyWithImpl<$Res>
   $Res call({
     Object? txHashes = null,
   }) {
-    return _then(_$GetTransactionsParamsImpl(
+    return _then(_self.copyWith(
       txHashes: null == txHashes
-          ? _value._txHashes
+          ? _self.txHashes
           : txHashes // ignore: cast_nullable_to_non_nullable
               as List<String>,
     ));
@@ -109,13 +83,12 @@ class __$$GetTransactionsParamsImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$GetTransactionsParamsImpl implements _GetTransactionsParams {
-  const _$GetTransactionsParamsImpl(
+class _GetTransactionsParams implements GetTransactionsParams {
+  const _GetTransactionsParams(
       {@JsonKey(name: 'tx_hashes') required final List<String> txHashes})
       : _txHashes = txHashes;
-
-  factory _$GetTransactionsParamsImpl.fromJson(Map<String, dynamic> json) =>
-      _$$GetTransactionsParamsImplFromJson(json);
+  factory _GetTransactionsParams.fromJson(Map<String, dynamic> json) =>
+      _$GetTransactionsParamsFromJson(json);
 
   final List<String> _txHashes;
   @override
@@ -126,16 +99,27 @@ class _$GetTransactionsParamsImpl implements _GetTransactionsParams {
     return EqualUnmodifiableListView(_txHashes);
   }
 
+  /// Create a copy of GetTransactionsParams
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'GetTransactionsParams(txHashes: $txHashes)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$GetTransactionsParamsCopyWith<_GetTransactionsParams> get copyWith =>
+      __$GetTransactionsParamsCopyWithImpl<_GetTransactionsParams>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$GetTransactionsParamsToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetTransactionsParamsImpl &&
+            other is _GetTransactionsParams &&
             const DeepCollectionEquality().equals(other._txHashes, _txHashes));
   }
 
@@ -144,39 +128,45 @@ class _$GetTransactionsParamsImpl implements _GetTransactionsParams {
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(_txHashes));
 
-  /// Create a copy of GetTransactionsParams
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$GetTransactionsParamsImplCopyWith<_$GetTransactionsParamsImpl>
-      get copyWith => __$$GetTransactionsParamsImplCopyWithImpl<
-          _$GetTransactionsParamsImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$GetTransactionsParamsImplToJson(
-      this,
-    );
+  String toString() {
+    return 'GetTransactionsParams(txHashes: $txHashes)';
   }
 }
 
-abstract class _GetTransactionsParams implements GetTransactionsParams {
-  const factory _GetTransactionsParams(
-          {@JsonKey(name: 'tx_hashes') required final List<String> txHashes}) =
-      _$GetTransactionsParamsImpl;
-
-  factory _GetTransactionsParams.fromJson(Map<String, dynamic> json) =
-      _$GetTransactionsParamsImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$GetTransactionsParamsCopyWith<$Res>
+    implements $GetTransactionsParamsCopyWith<$Res> {
+  factory _$GetTransactionsParamsCopyWith(_GetTransactionsParams value,
+          $Res Function(_GetTransactionsParams) _then) =
+      __$GetTransactionsParamsCopyWithImpl;
   @override
-  @JsonKey(name: 'tx_hashes')
-  List<String> get txHashes;
+  @useResult
+  $Res call({@JsonKey(name: 'tx_hashes') List<String> txHashes});
+}
+
+/// @nodoc
+class __$GetTransactionsParamsCopyWithImpl<$Res>
+    implements _$GetTransactionsParamsCopyWith<$Res> {
+  __$GetTransactionsParamsCopyWithImpl(this._self, this._then);
+
+  final _GetTransactionsParams _self;
+  final $Res Function(_GetTransactionsParams) _then;
 
   /// Create a copy of GetTransactionsParams
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$GetTransactionsParamsImplCopyWith<_$GetTransactionsParamsImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? txHashes = null,
+  }) {
+    return _then(_GetTransactionsParams(
+      txHashes: null == txHashes
+          ? _self._txHashes
+          : txHashes // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+    ));
+  }
 }
+
+// dart format on

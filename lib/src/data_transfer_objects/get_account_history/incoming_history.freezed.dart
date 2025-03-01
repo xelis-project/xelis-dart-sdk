@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,83 +10,59 @@ part of 'incoming_history.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-IncomingHistory _$IncomingHistoryFromJson(Map<String, dynamic> json) {
-  return _IncomingHistory.fromJson(json);
-}
 
 /// @nodoc
 mixin _$IncomingHistory {
   @JsonKey(name: 'from')
-  String get from => throw _privateConstructorUsedError;
-
-  /// Serializes this IncomingHistory to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String get from;
 
   /// Create a copy of IncomingHistory
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $IncomingHistoryCopyWith<IncomingHistory> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $IncomingHistoryCopyWith<$Res> {
-  factory $IncomingHistoryCopyWith(
-          IncomingHistory value, $Res Function(IncomingHistory) then) =
-      _$IncomingHistoryCopyWithImpl<$Res, IncomingHistory>;
-  @useResult
-  $Res call({@JsonKey(name: 'from') String from});
-}
-
-/// @nodoc
-class _$IncomingHistoryCopyWithImpl<$Res, $Val extends IncomingHistory>
-    implements $IncomingHistoryCopyWith<$Res> {
-  _$IncomingHistoryCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of IncomingHistory
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $IncomingHistoryCopyWith<IncomingHistory> get copyWith =>
+      _$IncomingHistoryCopyWithImpl<IncomingHistory>(
+          this as IncomingHistory, _$identity);
+
+  /// Serializes this IncomingHistory to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? from = null,
-  }) {
-    return _then(_value.copyWith(
-      from: null == from
-          ? _value.from
-          : from // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is IncomingHistory &&
+            (identical(other.from, from) || other.from == from));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, from);
+
+  @override
+  String toString() {
+    return 'IncomingHistory(from: $from)';
   }
 }
 
 /// @nodoc
-abstract class _$$IncomingHistoryImplCopyWith<$Res>
-    implements $IncomingHistoryCopyWith<$Res> {
-  factory _$$IncomingHistoryImplCopyWith(_$IncomingHistoryImpl value,
-          $Res Function(_$IncomingHistoryImpl) then) =
-      __$$IncomingHistoryImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $IncomingHistoryCopyWith<$Res> {
+  factory $IncomingHistoryCopyWith(
+          IncomingHistory value, $Res Function(IncomingHistory) _then) =
+      _$IncomingHistoryCopyWithImpl;
   @useResult
   $Res call({@JsonKey(name: 'from') String from});
 }
 
 /// @nodoc
-class __$$IncomingHistoryImplCopyWithImpl<$Res>
-    extends _$IncomingHistoryCopyWithImpl<$Res, _$IncomingHistoryImpl>
-    implements _$$IncomingHistoryImplCopyWith<$Res> {
-  __$$IncomingHistoryImplCopyWithImpl(
-      _$IncomingHistoryImpl _value, $Res Function(_$IncomingHistoryImpl) _then)
-      : super(_value, _then);
+class _$IncomingHistoryCopyWithImpl<$Res>
+    implements $IncomingHistoryCopyWith<$Res> {
+  _$IncomingHistoryCopyWithImpl(this._self, this._then);
+
+  final IncomingHistory _self;
+  final $Res Function(IncomingHistory) _then;
 
   /// Create a copy of IncomingHistory
   /// with the given fields replaced by the non-null parameter values.
@@ -94,9 +71,9 @@ class __$$IncomingHistoryImplCopyWithImpl<$Res>
   $Res call({
     Object? from = null,
   }) {
-    return _then(_$IncomingHistoryImpl(
+    return _then(_self.copyWith(
       from: null == from
-          ? _value.from
+          ? _self.from
           : from // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -105,26 +82,35 @@ class __$$IncomingHistoryImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$IncomingHistoryImpl implements _IncomingHistory {
-  const _$IncomingHistoryImpl({@JsonKey(name: 'from') required this.from});
-
-  factory _$IncomingHistoryImpl.fromJson(Map<String, dynamic> json) =>
-      _$$IncomingHistoryImplFromJson(json);
+class _IncomingHistory implements IncomingHistory {
+  const _IncomingHistory({@JsonKey(name: 'from') required this.from});
+  factory _IncomingHistory.fromJson(Map<String, dynamic> json) =>
+      _$IncomingHistoryFromJson(json);
 
   @override
   @JsonKey(name: 'from')
   final String from;
 
+  /// Create a copy of IncomingHistory
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'IncomingHistory(from: $from)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$IncomingHistoryCopyWith<_IncomingHistory> get copyWith =>
+      __$IncomingHistoryCopyWithImpl<_IncomingHistory>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$IncomingHistoryToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$IncomingHistoryImpl &&
+            other is _IncomingHistory &&
             (identical(other.from, from) || other.from == from));
   }
 
@@ -132,39 +118,45 @@ class _$IncomingHistoryImpl implements _IncomingHistory {
   @override
   int get hashCode => Object.hash(runtimeType, from);
 
-  /// Create a copy of IncomingHistory
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$IncomingHistoryImplCopyWith<_$IncomingHistoryImpl> get copyWith =>
-      __$$IncomingHistoryImplCopyWithImpl<_$IncomingHistoryImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$IncomingHistoryImplToJson(
-      this,
-    );
+  String toString() {
+    return 'IncomingHistory(from: $from)';
   }
 }
 
-abstract class _IncomingHistory implements IncomingHistory {
-  const factory _IncomingHistory(
-          {@JsonKey(name: 'from') required final String from}) =
-      _$IncomingHistoryImpl;
-
-  factory _IncomingHistory.fromJson(Map<String, dynamic> json) =
-      _$IncomingHistoryImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$IncomingHistoryCopyWith<$Res>
+    implements $IncomingHistoryCopyWith<$Res> {
+  factory _$IncomingHistoryCopyWith(
+          _IncomingHistory value, $Res Function(_IncomingHistory) _then) =
+      __$IncomingHistoryCopyWithImpl;
   @override
-  @JsonKey(name: 'from')
-  String get from;
+  @useResult
+  $Res call({@JsonKey(name: 'from') String from});
+}
+
+/// @nodoc
+class __$IncomingHistoryCopyWithImpl<$Res>
+    implements _$IncomingHistoryCopyWith<$Res> {
+  __$IncomingHistoryCopyWithImpl(this._self, this._then);
+
+  final _IncomingHistory _self;
+  final $Res Function(_IncomingHistory) _then;
 
   /// Create a copy of IncomingHistory
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$IncomingHistoryImplCopyWith<_$IncomingHistoryImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? from = null,
+  }) {
+    return _then(_IncomingHistory(
+      from: null == from
+          ? _self.from
+          : from // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
+
+// dart format on

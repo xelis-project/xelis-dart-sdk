@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,145 +10,32 @@ part of 'get_block_by_hash_params.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-GetBlockByHashParams _$GetBlockByHashParamsFromJson(Map<String, dynamic> json) {
-  return _GetBlockByHashParams.fromJson(json);
-}
 
 /// @nodoc
 mixin _$GetBlockByHashParams {
   @JsonKey(name: 'hash')
-  String get hash => throw _privateConstructorUsedError;
+  String get hash;
   @JsonKey(name: 'include_txs')
-  bool? get includeTxs => throw _privateConstructorUsedError;
-
-  /// Serializes this GetBlockByHashParams to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  bool? get includeTxs;
 
   /// Create a copy of GetBlockByHashParams
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $GetBlockByHashParamsCopyWith<GetBlockByHashParams> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+      _$GetBlockByHashParamsCopyWithImpl<GetBlockByHashParams>(
+          this as GetBlockByHashParams, _$identity);
 
-/// @nodoc
-abstract class $GetBlockByHashParamsCopyWith<$Res> {
-  factory $GetBlockByHashParamsCopyWith(GetBlockByHashParams value,
-          $Res Function(GetBlockByHashParams) then) =
-      _$GetBlockByHashParamsCopyWithImpl<$Res, GetBlockByHashParams>;
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'hash') String hash,
-      @JsonKey(name: 'include_txs') bool? includeTxs});
-}
-
-/// @nodoc
-class _$GetBlockByHashParamsCopyWithImpl<$Res,
-        $Val extends GetBlockByHashParams>
-    implements $GetBlockByHashParamsCopyWith<$Res> {
-  _$GetBlockByHashParamsCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of GetBlockByHashParams
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? hash = null,
-    Object? includeTxs = freezed,
-  }) {
-    return _then(_value.copyWith(
-      hash: null == hash
-          ? _value.hash
-          : hash // ignore: cast_nullable_to_non_nullable
-              as String,
-      includeTxs: freezed == includeTxs
-          ? _value.includeTxs
-          : includeTxs // ignore: cast_nullable_to_non_nullable
-              as bool?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$GetBlockByHashParamsImplCopyWith<$Res>
-    implements $GetBlockByHashParamsCopyWith<$Res> {
-  factory _$$GetBlockByHashParamsImplCopyWith(_$GetBlockByHashParamsImpl value,
-          $Res Function(_$GetBlockByHashParamsImpl) then) =
-      __$$GetBlockByHashParamsImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'hash') String hash,
-      @JsonKey(name: 'include_txs') bool? includeTxs});
-}
-
-/// @nodoc
-class __$$GetBlockByHashParamsImplCopyWithImpl<$Res>
-    extends _$GetBlockByHashParamsCopyWithImpl<$Res, _$GetBlockByHashParamsImpl>
-    implements _$$GetBlockByHashParamsImplCopyWith<$Res> {
-  __$$GetBlockByHashParamsImplCopyWithImpl(_$GetBlockByHashParamsImpl _value,
-      $Res Function(_$GetBlockByHashParamsImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of GetBlockByHashParams
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? hash = null,
-    Object? includeTxs = freezed,
-  }) {
-    return _then(_$GetBlockByHashParamsImpl(
-      hash: null == hash
-          ? _value.hash
-          : hash // ignore: cast_nullable_to_non_nullable
-              as String,
-      includeTxs: freezed == includeTxs
-          ? _value.includeTxs
-          : includeTxs // ignore: cast_nullable_to_non_nullable
-              as bool?,
-    ));
-  }
-}
-
-/// @nodoc
-
-@JsonSerializable(includeIfNull: false)
-class _$GetBlockByHashParamsImpl implements _GetBlockByHashParams {
-  const _$GetBlockByHashParamsImpl(
-      {@JsonKey(name: 'hash') required this.hash,
-      @JsonKey(name: 'include_txs') this.includeTxs});
-
-  factory _$GetBlockByHashParamsImpl.fromJson(Map<String, dynamic> json) =>
-      _$$GetBlockByHashParamsImplFromJson(json);
-
-  @override
-  @JsonKey(name: 'hash')
-  final String hash;
-  @override
-  @JsonKey(name: 'include_txs')
-  final bool? includeTxs;
-
-  @override
-  String toString() {
-    return 'GetBlockByHashParams(hash: $hash, includeTxs: $includeTxs)';
-  }
+  /// Serializes this GetBlockByHashParams to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetBlockByHashParamsImpl &&
+            other is GetBlockByHashParams &&
             (identical(other.hash, hash) || other.hash == hash) &&
             (identical(other.includeTxs, includeTxs) ||
                 other.includeTxs == includeTxs));
@@ -157,44 +45,145 @@ class _$GetBlockByHashParamsImpl implements _GetBlockByHashParams {
   @override
   int get hashCode => Object.hash(runtimeType, hash, includeTxs);
 
-  /// Create a copy of GetBlockByHashParams
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$GetBlockByHashParamsImplCopyWith<_$GetBlockByHashParamsImpl>
-      get copyWith =>
-          __$$GetBlockByHashParamsImplCopyWithImpl<_$GetBlockByHashParamsImpl>(
-              this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$GetBlockByHashParamsImplToJson(
-      this,
-    );
+  String toString() {
+    return 'GetBlockByHashParams(hash: $hash, includeTxs: $includeTxs)';
   }
 }
 
-abstract class _GetBlockByHashParams implements GetBlockByHashParams {
-  const factory _GetBlockByHashParams(
-          {@JsonKey(name: 'hash') required final String hash,
-          @JsonKey(name: 'include_txs') final bool? includeTxs}) =
-      _$GetBlockByHashParamsImpl;
+/// @nodoc
+abstract mixin class $GetBlockByHashParamsCopyWith<$Res> {
+  factory $GetBlockByHashParamsCopyWith(GetBlockByHashParams value,
+          $Res Function(GetBlockByHashParams) _then) =
+      _$GetBlockByHashParamsCopyWithImpl;
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'hash') String hash,
+      @JsonKey(name: 'include_txs') bool? includeTxs});
+}
 
-  factory _GetBlockByHashParams.fromJson(Map<String, dynamic> json) =
-      _$GetBlockByHashParamsImpl.fromJson;
+/// @nodoc
+class _$GetBlockByHashParamsCopyWithImpl<$Res>
+    implements $GetBlockByHashParamsCopyWith<$Res> {
+  _$GetBlockByHashParamsCopyWithImpl(this._self, this._then);
+
+  final GetBlockByHashParams _self;
+  final $Res Function(GetBlockByHashParams) _then;
+
+  /// Create a copy of GetBlockByHashParams
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? hash = null,
+    Object? includeTxs = freezed,
+  }) {
+    return _then(_self.copyWith(
+      hash: null == hash
+          ? _self.hash
+          : hash // ignore: cast_nullable_to_non_nullable
+              as String,
+      includeTxs: freezed == includeTxs
+          ? _self.includeTxs
+          : includeTxs // ignore: cast_nullable_to_non_nullable
+              as bool?,
+    ));
+  }
+}
+
+/// @nodoc
+
+@JsonSerializable(includeIfNull: false)
+class _GetBlockByHashParams implements GetBlockByHashParams {
+  const _GetBlockByHashParams(
+      {@JsonKey(name: 'hash') required this.hash,
+      @JsonKey(name: 'include_txs') this.includeTxs});
+  factory _GetBlockByHashParams.fromJson(Map<String, dynamic> json) =>
+      _$GetBlockByHashParamsFromJson(json);
 
   @override
   @JsonKey(name: 'hash')
-  String get hash;
+  final String hash;
   @override
   @JsonKey(name: 'include_txs')
-  bool? get includeTxs;
+  final bool? includeTxs;
 
   /// Create a copy of GetBlockByHashParams
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$GetBlockByHashParamsImplCopyWith<_$GetBlockByHashParamsImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  _$GetBlockByHashParamsCopyWith<_GetBlockByHashParams> get copyWith =>
+      __$GetBlockByHashParamsCopyWithImpl<_GetBlockByHashParams>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$GetBlockByHashParamsToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _GetBlockByHashParams &&
+            (identical(other.hash, hash) || other.hash == hash) &&
+            (identical(other.includeTxs, includeTxs) ||
+                other.includeTxs == includeTxs));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, hash, includeTxs);
+
+  @override
+  String toString() {
+    return 'GetBlockByHashParams(hash: $hash, includeTxs: $includeTxs)';
+  }
 }
+
+/// @nodoc
+abstract mixin class _$GetBlockByHashParamsCopyWith<$Res>
+    implements $GetBlockByHashParamsCopyWith<$Res> {
+  factory _$GetBlockByHashParamsCopyWith(_GetBlockByHashParams value,
+          $Res Function(_GetBlockByHashParams) _then) =
+      __$GetBlockByHashParamsCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'hash') String hash,
+      @JsonKey(name: 'include_txs') bool? includeTxs});
+}
+
+/// @nodoc
+class __$GetBlockByHashParamsCopyWithImpl<$Res>
+    implements _$GetBlockByHashParamsCopyWith<$Res> {
+  __$GetBlockByHashParamsCopyWithImpl(this._self, this._then);
+
+  final _GetBlockByHashParams _self;
+  final $Res Function(_GetBlockByHashParams) _then;
+
+  /// Create a copy of GetBlockByHashParams
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? hash = null,
+    Object? includeTxs = freezed,
+  }) {
+    return _then(_GetBlockByHashParams(
+      hash: null == hash
+          ? _self.hash
+          : hash // ignore: cast_nullable_to_non_nullable
+              as String,
+      includeTxs: freezed == includeTxs
+          ? _self.includeTxs
+          : includeTxs // ignore: cast_nullable_to_non_nullable
+              as bool?,
+    ));
+  }
+}
+
+// dart format on

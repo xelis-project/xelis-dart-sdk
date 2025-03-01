@@ -7,7 +7,8 @@ part 'build_transaction_offline_params.freezed.dart';
 
 /// @nodoc
 @freezed
-class BuildTransactionOfflineParams with _$BuildTransactionOfflineParams {
+abstract class BuildTransactionOfflineParams
+    with _$BuildTransactionOfflineParams {
   /// @nodoc
   const factory BuildTransactionOfflineParams({
     required TransactionTypeBuilder transactionTypeBuilder,

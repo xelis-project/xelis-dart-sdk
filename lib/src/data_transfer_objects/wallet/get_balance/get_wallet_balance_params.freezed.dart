@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,127 +10,30 @@ part of 'get_wallet_balance_params.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-GetWalletBalanceParams _$GetWalletBalanceParamsFromJson(
-    Map<String, dynamic> json) {
-  return _GetWalletBalanceParams.fromJson(json);
-}
 
 /// @nodoc
 mixin _$GetWalletBalanceParams {
   @JsonKey(name: 'asset')
-  String? get assetHash => throw _privateConstructorUsedError;
-
-  /// Serializes this GetWalletBalanceParams to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String? get assetHash;
 
   /// Create a copy of GetWalletBalanceParams
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $GetWalletBalanceParamsCopyWith<GetWalletBalanceParams> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+      _$GetWalletBalanceParamsCopyWithImpl<GetWalletBalanceParams>(
+          this as GetWalletBalanceParams, _$identity);
 
-/// @nodoc
-abstract class $GetWalletBalanceParamsCopyWith<$Res> {
-  factory $GetWalletBalanceParamsCopyWith(GetWalletBalanceParams value,
-          $Res Function(GetWalletBalanceParams) then) =
-      _$GetWalletBalanceParamsCopyWithImpl<$Res, GetWalletBalanceParams>;
-  @useResult
-  $Res call({@JsonKey(name: 'asset') String? assetHash});
-}
-
-/// @nodoc
-class _$GetWalletBalanceParamsCopyWithImpl<$Res,
-        $Val extends GetWalletBalanceParams>
-    implements $GetWalletBalanceParamsCopyWith<$Res> {
-  _$GetWalletBalanceParamsCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of GetWalletBalanceParams
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? assetHash = freezed,
-  }) {
-    return _then(_value.copyWith(
-      assetHash: freezed == assetHash
-          ? _value.assetHash
-          : assetHash // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$GetWalletBalanceParamsImplCopyWith<$Res>
-    implements $GetWalletBalanceParamsCopyWith<$Res> {
-  factory _$$GetWalletBalanceParamsImplCopyWith(
-          _$GetWalletBalanceParamsImpl value,
-          $Res Function(_$GetWalletBalanceParamsImpl) then) =
-      __$$GetWalletBalanceParamsImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({@JsonKey(name: 'asset') String? assetHash});
-}
-
-/// @nodoc
-class __$$GetWalletBalanceParamsImplCopyWithImpl<$Res>
-    extends _$GetWalletBalanceParamsCopyWithImpl<$Res,
-        _$GetWalletBalanceParamsImpl>
-    implements _$$GetWalletBalanceParamsImplCopyWith<$Res> {
-  __$$GetWalletBalanceParamsImplCopyWithImpl(
-      _$GetWalletBalanceParamsImpl _value,
-      $Res Function(_$GetWalletBalanceParamsImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of GetWalletBalanceParams
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? assetHash = freezed,
-  }) {
-    return _then(_$GetWalletBalanceParamsImpl(
-      assetHash: freezed == assetHash
-          ? _value.assetHash
-          : assetHash // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$GetWalletBalanceParamsImpl implements _GetWalletBalanceParams {
-  const _$GetWalletBalanceParamsImpl({@JsonKey(name: 'asset') this.assetHash});
-
-  factory _$GetWalletBalanceParamsImpl.fromJson(Map<String, dynamic> json) =>
-      _$$GetWalletBalanceParamsImplFromJson(json);
-
-  @override
-  @JsonKey(name: 'asset')
-  final String? assetHash;
-
-  @override
-  String toString() {
-    return 'GetWalletBalanceParams(assetHash: $assetHash)';
-  }
+  /// Serializes this GetWalletBalanceParams to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetWalletBalanceParamsImpl &&
+            other is GetWalletBalanceParams &&
             (identical(other.assetHash, assetHash) ||
                 other.assetHash == assetHash));
   }
@@ -138,39 +42,124 @@ class _$GetWalletBalanceParamsImpl implements _GetWalletBalanceParams {
   @override
   int get hashCode => Object.hash(runtimeType, assetHash);
 
-  /// Create a copy of GetWalletBalanceParams
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$GetWalletBalanceParamsImplCopyWith<_$GetWalletBalanceParamsImpl>
-      get copyWith => __$$GetWalletBalanceParamsImplCopyWithImpl<
-          _$GetWalletBalanceParamsImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$GetWalletBalanceParamsImplToJson(
-      this,
-    );
+  String toString() {
+    return 'GetWalletBalanceParams(assetHash: $assetHash)';
   }
 }
 
-abstract class _GetWalletBalanceParams implements GetWalletBalanceParams {
-  const factory _GetWalletBalanceParams(
-          {@JsonKey(name: 'asset') final String? assetHash}) =
-      _$GetWalletBalanceParamsImpl;
+/// @nodoc
+abstract mixin class $GetWalletBalanceParamsCopyWith<$Res> {
+  factory $GetWalletBalanceParamsCopyWith(GetWalletBalanceParams value,
+          $Res Function(GetWalletBalanceParams) _then) =
+      _$GetWalletBalanceParamsCopyWithImpl;
+  @useResult
+  $Res call({@JsonKey(name: 'asset') String? assetHash});
+}
 
-  factory _GetWalletBalanceParams.fromJson(Map<String, dynamic> json) =
-      _$GetWalletBalanceParamsImpl.fromJson;
+/// @nodoc
+class _$GetWalletBalanceParamsCopyWithImpl<$Res>
+    implements $GetWalletBalanceParamsCopyWith<$Res> {
+  _$GetWalletBalanceParamsCopyWithImpl(this._self, this._then);
+
+  final GetWalletBalanceParams _self;
+  final $Res Function(GetWalletBalanceParams) _then;
+
+  /// Create a copy of GetWalletBalanceParams
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? assetHash = freezed,
+  }) {
+    return _then(_self.copyWith(
+      assetHash: freezed == assetHash
+          ? _self.assetHash
+          : assetHash // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _GetWalletBalanceParams implements GetWalletBalanceParams {
+  const _GetWalletBalanceParams({@JsonKey(name: 'asset') this.assetHash});
+  factory _GetWalletBalanceParams.fromJson(Map<String, dynamic> json) =>
+      _$GetWalletBalanceParamsFromJson(json);
 
   @override
   @JsonKey(name: 'asset')
-  String? get assetHash;
+  final String? assetHash;
 
   /// Create a copy of GetWalletBalanceParams
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$GetWalletBalanceParamsImplCopyWith<_$GetWalletBalanceParamsImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  _$GetWalletBalanceParamsCopyWith<_GetWalletBalanceParams> get copyWith =>
+      __$GetWalletBalanceParamsCopyWithImpl<_GetWalletBalanceParams>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$GetWalletBalanceParamsToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _GetWalletBalanceParams &&
+            (identical(other.assetHash, assetHash) ||
+                other.assetHash == assetHash));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, assetHash);
+
+  @override
+  String toString() {
+    return 'GetWalletBalanceParams(assetHash: $assetHash)';
+  }
 }
+
+/// @nodoc
+abstract mixin class _$GetWalletBalanceParamsCopyWith<$Res>
+    implements $GetWalletBalanceParamsCopyWith<$Res> {
+  factory _$GetWalletBalanceParamsCopyWith(_GetWalletBalanceParams value,
+          $Res Function(_GetWalletBalanceParams) _then) =
+      __$GetWalletBalanceParamsCopyWithImpl;
+  @override
+  @useResult
+  $Res call({@JsonKey(name: 'asset') String? assetHash});
+}
+
+/// @nodoc
+class __$GetWalletBalanceParamsCopyWithImpl<$Res>
+    implements _$GetWalletBalanceParamsCopyWith<$Res> {
+  __$GetWalletBalanceParamsCopyWithImpl(this._self, this._then);
+
+  final _GetWalletBalanceParams _self;
+  final $Res Function(_GetWalletBalanceParams) _then;
+
+  /// Create a copy of GetWalletBalanceParams
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? assetHash = freezed,
+  }) {
+    return _then(_GetWalletBalanceParams(
+      assetHash: freezed == assetHash
+          ? _self.assetHash
+          : assetHash // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+// dart format on

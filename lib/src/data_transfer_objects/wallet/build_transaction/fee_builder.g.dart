@@ -8,13 +8,12 @@ part of 'fee_builder.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$FeeBuilderImpl _$$FeeBuilderImplFromJson(Map<String, dynamic> json) =>
-    _$FeeBuilderImpl(
+_FeeBuilder _$FeeBuilderFromJson(Map<String, dynamic> json) => _FeeBuilder(
       multiplier: (json['Multiplier'] as num?)?.toDouble(),
       value: (json['Value'] as num?)?.toInt(),
     );
 
-Map<String, dynamic> _$$FeeBuilderImplToJson(_$FeeBuilderImpl instance) =>
+Map<String, dynamic> _$FeeBuilderToJson(_FeeBuilder instance) =>
     <String, dynamic>{
       'Multiplier': instance.multiplier,
       'Value': instance.value,

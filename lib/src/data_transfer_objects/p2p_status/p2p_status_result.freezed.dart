@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,121 +10,72 @@ part of 'p2p_status_result.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-P2pStatusResult _$P2pStatusResultFromJson(Map<String, dynamic> json) {
-  return _P2pStatusResult.fromJson(json);
-}
 
 /// @nodoc
 mixin _$P2pStatusResult {
   @JsonKey(name: 'best_topoheight')
-  int get bestTopoHeight => throw _privateConstructorUsedError;
+  int get bestTopoHeight;
   @JsonKey(name: 'median_topoheight')
-  int get medianTopoHeight => throw _privateConstructorUsedError;
+  int get medianTopoHeight;
   @JsonKey(name: 'max_peers')
-  int get maxPeers => throw _privateConstructorUsedError;
+  int get maxPeers;
   @JsonKey(name: 'our_topoheight')
-  int get ourTopoHeight => throw _privateConstructorUsedError;
+  int get ourTopoHeight;
   @JsonKey(name: 'peer_count')
-  int get peerCount => throw _privateConstructorUsedError;
+  int get peerCount;
   @JsonKey(name: 'peer_id')
-  num get peerId => throw _privateConstructorUsedError;
+  num get peerId;
   @JsonKey(name: 'tag')
-  String? get tag => throw _privateConstructorUsedError;
-
-  /// Serializes this P2pStatusResult to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String? get tag;
 
   /// Create a copy of P2pStatusResult
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $P2pStatusResultCopyWith<P2pStatusResult> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $P2pStatusResultCopyWith<$Res> {
-  factory $P2pStatusResultCopyWith(
-          P2pStatusResult value, $Res Function(P2pStatusResult) then) =
-      _$P2pStatusResultCopyWithImpl<$Res, P2pStatusResult>;
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'best_topoheight') int bestTopoHeight,
-      @JsonKey(name: 'median_topoheight') int medianTopoHeight,
-      @JsonKey(name: 'max_peers') int maxPeers,
-      @JsonKey(name: 'our_topoheight') int ourTopoHeight,
-      @JsonKey(name: 'peer_count') int peerCount,
-      @JsonKey(name: 'peer_id') num peerId,
-      @JsonKey(name: 'tag') String? tag});
-}
-
-/// @nodoc
-class _$P2pStatusResultCopyWithImpl<$Res, $Val extends P2pStatusResult>
-    implements $P2pStatusResultCopyWith<$Res> {
-  _$P2pStatusResultCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of P2pStatusResult
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $P2pStatusResultCopyWith<P2pStatusResult> get copyWith =>
+      _$P2pStatusResultCopyWithImpl<P2pStatusResult>(
+          this as P2pStatusResult, _$identity);
+
+  /// Serializes this P2pStatusResult to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? bestTopoHeight = null,
-    Object? medianTopoHeight = null,
-    Object? maxPeers = null,
-    Object? ourTopoHeight = null,
-    Object? peerCount = null,
-    Object? peerId = null,
-    Object? tag = freezed,
-  }) {
-    return _then(_value.copyWith(
-      bestTopoHeight: null == bestTopoHeight
-          ? _value.bestTopoHeight
-          : bestTopoHeight // ignore: cast_nullable_to_non_nullable
-              as int,
-      medianTopoHeight: null == medianTopoHeight
-          ? _value.medianTopoHeight
-          : medianTopoHeight // ignore: cast_nullable_to_non_nullable
-              as int,
-      maxPeers: null == maxPeers
-          ? _value.maxPeers
-          : maxPeers // ignore: cast_nullable_to_non_nullable
-              as int,
-      ourTopoHeight: null == ourTopoHeight
-          ? _value.ourTopoHeight
-          : ourTopoHeight // ignore: cast_nullable_to_non_nullable
-              as int,
-      peerCount: null == peerCount
-          ? _value.peerCount
-          : peerCount // ignore: cast_nullable_to_non_nullable
-              as int,
-      peerId: null == peerId
-          ? _value.peerId
-          : peerId // ignore: cast_nullable_to_non_nullable
-              as num,
-      tag: freezed == tag
-          ? _value.tag
-          : tag // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is P2pStatusResult &&
+            (identical(other.bestTopoHeight, bestTopoHeight) ||
+                other.bestTopoHeight == bestTopoHeight) &&
+            (identical(other.medianTopoHeight, medianTopoHeight) ||
+                other.medianTopoHeight == medianTopoHeight) &&
+            (identical(other.maxPeers, maxPeers) ||
+                other.maxPeers == maxPeers) &&
+            (identical(other.ourTopoHeight, ourTopoHeight) ||
+                other.ourTopoHeight == ourTopoHeight) &&
+            (identical(other.peerCount, peerCount) ||
+                other.peerCount == peerCount) &&
+            (identical(other.peerId, peerId) || other.peerId == peerId) &&
+            (identical(other.tag, tag) || other.tag == tag));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, bestTopoHeight, medianTopoHeight,
+      maxPeers, ourTopoHeight, peerCount, peerId, tag);
+
+  @override
+  String toString() {
+    return 'P2pStatusResult(bestTopoHeight: $bestTopoHeight, medianTopoHeight: $medianTopoHeight, maxPeers: $maxPeers, ourTopoHeight: $ourTopoHeight, peerCount: $peerCount, peerId: $peerId, tag: $tag)';
   }
 }
 
 /// @nodoc
-abstract class _$$P2pStatusResultImplCopyWith<$Res>
-    implements $P2pStatusResultCopyWith<$Res> {
-  factory _$$P2pStatusResultImplCopyWith(_$P2pStatusResultImpl value,
-          $Res Function(_$P2pStatusResultImpl) then) =
-      __$$P2pStatusResultImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $P2pStatusResultCopyWith<$Res> {
+  factory $P2pStatusResultCopyWith(
+          P2pStatusResult value, $Res Function(P2pStatusResult) _then) =
+      _$P2pStatusResultCopyWithImpl;
   @useResult
   $Res call(
       {@JsonKey(name: 'best_topoheight') int bestTopoHeight,
@@ -136,12 +88,12 @@ abstract class _$$P2pStatusResultImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$P2pStatusResultImplCopyWithImpl<$Res>
-    extends _$P2pStatusResultCopyWithImpl<$Res, _$P2pStatusResultImpl>
-    implements _$$P2pStatusResultImplCopyWith<$Res> {
-  __$$P2pStatusResultImplCopyWithImpl(
-      _$P2pStatusResultImpl _value, $Res Function(_$P2pStatusResultImpl) _then)
-      : super(_value, _then);
+class _$P2pStatusResultCopyWithImpl<$Res>
+    implements $P2pStatusResultCopyWith<$Res> {
+  _$P2pStatusResultCopyWithImpl(this._self, this._then);
+
+  final P2pStatusResult _self;
+  final $Res Function(P2pStatusResult) _then;
 
   /// Create a copy of P2pStatusResult
   /// with the given fields replaced by the non-null parameter values.
@@ -156,33 +108,33 @@ class __$$P2pStatusResultImplCopyWithImpl<$Res>
     Object? peerId = null,
     Object? tag = freezed,
   }) {
-    return _then(_$P2pStatusResultImpl(
+    return _then(_self.copyWith(
       bestTopoHeight: null == bestTopoHeight
-          ? _value.bestTopoHeight
+          ? _self.bestTopoHeight
           : bestTopoHeight // ignore: cast_nullable_to_non_nullable
               as int,
       medianTopoHeight: null == medianTopoHeight
-          ? _value.medianTopoHeight
+          ? _self.medianTopoHeight
           : medianTopoHeight // ignore: cast_nullable_to_non_nullable
               as int,
       maxPeers: null == maxPeers
-          ? _value.maxPeers
+          ? _self.maxPeers
           : maxPeers // ignore: cast_nullable_to_non_nullable
               as int,
       ourTopoHeight: null == ourTopoHeight
-          ? _value.ourTopoHeight
+          ? _self.ourTopoHeight
           : ourTopoHeight // ignore: cast_nullable_to_non_nullable
               as int,
       peerCount: null == peerCount
-          ? _value.peerCount
+          ? _self.peerCount
           : peerCount // ignore: cast_nullable_to_non_nullable
               as int,
       peerId: null == peerId
-          ? _value.peerId
+          ? _self.peerId
           : peerId // ignore: cast_nullable_to_non_nullable
               as num,
       tag: freezed == tag
-          ? _value.tag
+          ? _self.tag
           : tag // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
@@ -191,8 +143,8 @@ class __$$P2pStatusResultImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$P2pStatusResultImpl implements _P2pStatusResult {
-  const _$P2pStatusResultImpl(
+class _P2pStatusResult implements P2pStatusResult {
+  const _P2pStatusResult(
       {@JsonKey(name: 'best_topoheight') required this.bestTopoHeight,
       @JsonKey(name: 'median_topoheight') required this.medianTopoHeight,
       @JsonKey(name: 'max_peers') required this.maxPeers,
@@ -200,9 +152,8 @@ class _$P2pStatusResultImpl implements _P2pStatusResult {
       @JsonKey(name: 'peer_count') required this.peerCount,
       @JsonKey(name: 'peer_id') required this.peerId,
       @JsonKey(name: 'tag') this.tag});
-
-  factory _$P2pStatusResultImpl.fromJson(Map<String, dynamic> json) =>
-      _$$P2pStatusResultImplFromJson(json);
+  factory _P2pStatusResult.fromJson(Map<String, dynamic> json) =>
+      _$P2pStatusResultFromJson(json);
 
   @override
   @JsonKey(name: 'best_topoheight')
@@ -226,16 +177,26 @@ class _$P2pStatusResultImpl implements _P2pStatusResult {
   @JsonKey(name: 'tag')
   final String? tag;
 
+  /// Create a copy of P2pStatusResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'P2pStatusResult(bestTopoHeight: $bestTopoHeight, medianTopoHeight: $medianTopoHeight, maxPeers: $maxPeers, ourTopoHeight: $ourTopoHeight, peerCount: $peerCount, peerId: $peerId, tag: $tag)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$P2pStatusResultCopyWith<_P2pStatusResult> get copyWith =>
+      __$P2pStatusResultCopyWithImpl<_P2pStatusResult>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$P2pStatusResultToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$P2pStatusResultImpl &&
+            other is _P2pStatusResult &&
             (identical(other.bestTopoHeight, bestTopoHeight) ||
                 other.bestTopoHeight == bestTopoHeight) &&
             (identical(other.medianTopoHeight, medianTopoHeight) ||
@@ -255,62 +216,82 @@ class _$P2pStatusResultImpl implements _P2pStatusResult {
   int get hashCode => Object.hash(runtimeType, bestTopoHeight, medianTopoHeight,
       maxPeers, ourTopoHeight, peerCount, peerId, tag);
 
-  /// Create a copy of P2pStatusResult
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$P2pStatusResultImplCopyWith<_$P2pStatusResultImpl> get copyWith =>
-      __$$P2pStatusResultImplCopyWithImpl<_$P2pStatusResultImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$P2pStatusResultImplToJson(
-      this,
-    );
+  String toString() {
+    return 'P2pStatusResult(bestTopoHeight: $bestTopoHeight, medianTopoHeight: $medianTopoHeight, maxPeers: $maxPeers, ourTopoHeight: $ourTopoHeight, peerCount: $peerCount, peerId: $peerId, tag: $tag)';
   }
 }
 
-abstract class _P2pStatusResult implements P2pStatusResult {
-  const factory _P2pStatusResult(
-      {@JsonKey(name: 'best_topoheight') required final int bestTopoHeight,
-      @JsonKey(name: 'median_topoheight') required final int medianTopoHeight,
-      @JsonKey(name: 'max_peers') required final int maxPeers,
-      @JsonKey(name: 'our_topoheight') required final int ourTopoHeight,
-      @JsonKey(name: 'peer_count') required final int peerCount,
-      @JsonKey(name: 'peer_id') required final num peerId,
-      @JsonKey(name: 'tag') final String? tag}) = _$P2pStatusResultImpl;
+/// @nodoc
+abstract mixin class _$P2pStatusResultCopyWith<$Res>
+    implements $P2pStatusResultCopyWith<$Res> {
+  factory _$P2pStatusResultCopyWith(
+          _P2pStatusResult value, $Res Function(_P2pStatusResult) _then) =
+      __$P2pStatusResultCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'best_topoheight') int bestTopoHeight,
+      @JsonKey(name: 'median_topoheight') int medianTopoHeight,
+      @JsonKey(name: 'max_peers') int maxPeers,
+      @JsonKey(name: 'our_topoheight') int ourTopoHeight,
+      @JsonKey(name: 'peer_count') int peerCount,
+      @JsonKey(name: 'peer_id') num peerId,
+      @JsonKey(name: 'tag') String? tag});
+}
 
-  factory _P2pStatusResult.fromJson(Map<String, dynamic> json) =
-      _$P2pStatusResultImpl.fromJson;
+/// @nodoc
+class __$P2pStatusResultCopyWithImpl<$Res>
+    implements _$P2pStatusResultCopyWith<$Res> {
+  __$P2pStatusResultCopyWithImpl(this._self, this._then);
 
-  @override
-  @JsonKey(name: 'best_topoheight')
-  int get bestTopoHeight;
-  @override
-  @JsonKey(name: 'median_topoheight')
-  int get medianTopoHeight;
-  @override
-  @JsonKey(name: 'max_peers')
-  int get maxPeers;
-  @override
-  @JsonKey(name: 'our_topoheight')
-  int get ourTopoHeight;
-  @override
-  @JsonKey(name: 'peer_count')
-  int get peerCount;
-  @override
-  @JsonKey(name: 'peer_id')
-  num get peerId;
-  @override
-  @JsonKey(name: 'tag')
-  String? get tag;
+  final _P2pStatusResult _self;
+  final $Res Function(_P2pStatusResult) _then;
 
   /// Create a copy of P2pStatusResult
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$P2pStatusResultImplCopyWith<_$P2pStatusResultImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? bestTopoHeight = null,
+    Object? medianTopoHeight = null,
+    Object? maxPeers = null,
+    Object? ourTopoHeight = null,
+    Object? peerCount = null,
+    Object? peerId = null,
+    Object? tag = freezed,
+  }) {
+    return _then(_P2pStatusResult(
+      bestTopoHeight: null == bestTopoHeight
+          ? _self.bestTopoHeight
+          : bestTopoHeight // ignore: cast_nullable_to_non_nullable
+              as int,
+      medianTopoHeight: null == medianTopoHeight
+          ? _self.medianTopoHeight
+          : medianTopoHeight // ignore: cast_nullable_to_non_nullable
+              as int,
+      maxPeers: null == maxPeers
+          ? _self.maxPeers
+          : maxPeers // ignore: cast_nullable_to_non_nullable
+              as int,
+      ourTopoHeight: null == ourTopoHeight
+          ? _self.ourTopoHeight
+          : ourTopoHeight // ignore: cast_nullable_to_non_nullable
+              as int,
+      peerCount: null == peerCount
+          ? _self.peerCount
+          : peerCount // ignore: cast_nullable_to_non_nullable
+              as int,
+      peerId: null == peerId
+          ? _self.peerId
+          : peerId // ignore: cast_nullable_to_non_nullable
+              as num,
+      tag: freezed == tag
+          ? _self.tag
+          : tag // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
 }
+
+// dart format on

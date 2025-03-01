@@ -7,7 +7,7 @@ part 'get_contract_module_params.g.dart';
 
 /// @nodoc
 @freezed
-class GetContractModuleParams with _$GetContractModuleParams {
+abstract class GetContractModuleParams with _$GetContractModuleParams {
   /// @nodoc
   const factory GetContractModuleParams({
     @JsonKey(name: 'contract') required String contractHash,

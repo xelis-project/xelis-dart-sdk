@@ -7,7 +7,7 @@ part 'get_contract_data_result.g.dart';
 
 /// @nodoc
 @freezed
-class GetContractDataResult with _$GetContractDataResult {
+abstract class GetContractDataResult with _$GetContractDataResult {
   /// @nodoc
   const factory GetContractDataResult({
     @JsonKey(name: 'topoheight') required int topoheight,

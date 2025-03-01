@@ -8,9 +8,9 @@ part of 'list_transactions_params.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ListTransactionsParamsImpl _$$ListTransactionsParamsImplFromJson(
+_ListTransactionsParams _$ListTransactionsParamsFromJson(
         Map<String, dynamic> json) =>
-    _$ListTransactionsParamsImpl(
+    _ListTransactionsParams(
       asset: json['asset'] as String?,
       minTopoHeight: (json['min_topoheight'] as num?)?.toInt(),
       maxTopoHeight: (json['max_topoheight'] as num?)?.toInt(),
@@ -22,8 +22,8 @@ _$ListTransactionsParamsImpl _$$ListTransactionsParamsImplFromJson(
       query: json['query'],
     );
 
-Map<String, dynamic> _$$ListTransactionsParamsImplToJson(
-        _$ListTransactionsParamsImpl instance) =>
+Map<String, dynamic> _$ListTransactionsParamsToJson(
+        _ListTransactionsParams instance) =>
     <String, dynamic>{
       if (instance.asset case final value?) 'asset': value,
       if (instance.minTopoHeight case final value?) 'min_topoheight': value,

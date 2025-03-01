@@ -8,14 +8,14 @@ part of 'get_mempool_cache_params.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$GetMempoolCacheParamsImpl _$$GetMempoolCacheParamsImplFromJson(
+_GetMempoolCacheParams _$GetMempoolCacheParamsFromJson(
         Map<String, dynamic> json) =>
-    _$GetMempoolCacheParamsImpl(
+    _GetMempoolCacheParams(
       address: json['address'] as String,
     );
 
-Map<String, dynamic> _$$GetMempoolCacheParamsImplToJson(
-        _$GetMempoolCacheParamsImpl instance) =>
+Map<String, dynamic> _$GetMempoolCacheParamsToJson(
+        _GetMempoolCacheParams instance) =>
     <String, dynamic>{
       'address': instance.address,
     };

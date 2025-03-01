@@ -8,14 +8,12 @@ part of 'get_top_block_params.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$GetTopBlockParamsImpl _$$GetTopBlockParamsImplFromJson(
-        Map<String, dynamic> json) =>
-    _$GetTopBlockParamsImpl(
+_GetTopBlockParams _$GetTopBlockParamsFromJson(Map<String, dynamic> json) =>
+    _GetTopBlockParams(
       includeTxs: json['include_txs'] as bool?,
     );
 
-Map<String, dynamic> _$$GetTopBlockParamsImplToJson(
-        _$GetTopBlockParamsImpl instance) =>
+Map<String, dynamic> _$GetTopBlockParamsToJson(_GetTopBlockParams instance) =>
     <String, dynamic>{
       if (instance.includeTxs case final value?) 'include_txs': value,
     };

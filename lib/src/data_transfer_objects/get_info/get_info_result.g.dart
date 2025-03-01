@@ -8,8 +8,8 @@ part of 'get_info_result.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$GetInfoResultImpl _$$GetInfoResultImplFromJson(Map<String, dynamic> json) =>
-    _$GetInfoResultImpl(
+_GetInfoResult _$GetInfoResultFromJson(Map<String, dynamic> json) =>
+    _GetInfoResult(
       height: (json['height'] as num).toInt(),
       topoHeight: (json['topoheight'] as num).toInt(),
       stableHeight: (json['stableheight'] as num).toInt(),
@@ -30,7 +30,7 @@ _$GetInfoResultImpl _$$GetInfoResultImplFromJson(Map<String, dynamic> json) =>
       devReward: (json['dev_reward'] as num).toInt(),
     );
 
-Map<String, dynamic> _$$GetInfoResultImplToJson(_$GetInfoResultImpl instance) =>
+Map<String, dynamic> _$GetInfoResultToJson(_GetInfoResult instance) =>
     <String, dynamic>{
       'height': instance.height,
       'topoheight': instance.topoHeight,

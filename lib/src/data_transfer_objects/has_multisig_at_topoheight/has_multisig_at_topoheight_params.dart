@@ -7,7 +7,8 @@ part 'has_multisig_at_topoheight_params.g.dart';
 
 /// @nodoc
 @freezed
-class HasMultisigAtTopoheightParams with _$HasMultisigAtTopoheightParams {
+abstract class HasMultisigAtTopoheightParams
+    with _$HasMultisigAtTopoheightParams {
   /// @nodoc
   const factory HasMultisigAtTopoheightParams({
     @JsonKey(name: 'address') required String address,

@@ -8,7 +8,7 @@ part 'is_account_registered_params.g.dart';
 
 /// @nodoc
 @freezed
-class IsAccountRegisteredParams with _$IsAccountRegisteredParams {
+abstract class IsAccountRegisteredParams with _$IsAccountRegisteredParams {
   /// @nodoc
   const factory IsAccountRegisteredParams({
     @JsonKey(name: 'address') required String address,

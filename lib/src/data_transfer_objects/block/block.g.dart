@@ -8,7 +8,7 @@ part of 'block.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$BlockImpl _$$BlockImplFromJson(Map<String, dynamic> json) => _$BlockImpl(
+_Block _$BlockFromJson(Map<String, dynamic> json) => _Block(
       blockType: json['block_type'] as String,
       cumulativeDifficulty: json['cumulative_difficulty'] as String,
       difficulty: json['difficulty'] as String,
@@ -35,8 +35,7 @@ _$BlockImpl _$$BlockImplFromJson(Map<String, dynamic> json) => _$BlockImpl(
           .toList(),
     );
 
-Map<String, dynamic> _$$BlockImplToJson(_$BlockImpl instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$BlockToJson(_Block instance) => <String, dynamic>{
       'block_type': instance.blockType,
       'cumulative_difficulty': instance.cumulativeDifficulty,
       'difficulty': instance.difficulty,

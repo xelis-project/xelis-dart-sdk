@@ -8,17 +8,15 @@ part of 'fee_rates_estimated.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$FeeRatesEstimatedImpl _$$FeeRatesEstimatedImplFromJson(
-        Map<String, dynamic> json) =>
-    _$FeeRatesEstimatedImpl(
+_FeeRatesEstimated _$FeeRatesEstimatedFromJson(Map<String, dynamic> json) =>
+    _FeeRatesEstimated(
       low: (json['low'] as num).toInt(),
       medium: (json['medium'] as num).toInt(),
       high: (json['high'] as num).toInt(),
       defaultFee: (json['default'] as num).toInt(),
     );
 
-Map<String, dynamic> _$$FeeRatesEstimatedImplToJson(
-        _$FeeRatesEstimatedImpl instance) =>
+Map<String, dynamic> _$FeeRatesEstimatedToJson(_FeeRatesEstimated instance) =>
     <String, dynamic>{
       'low': instance.low,
       'medium': instance.medium,

@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,41 +10,60 @@ part of 'transfer_out_entry.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-TransferOutEntry _$TransferOutEntryFromJson(Map<String, dynamic> json) {
-  return _TransferOutEntry.fromJson(json);
-}
 
 /// @nodoc
 mixin _$TransferOutEntry {
   @JsonKey(name: 'destination')
-  String get destination => throw _privateConstructorUsedError;
+  String get destination;
   @JsonKey(name: 'amount')
-  int get amount => throw _privateConstructorUsedError;
+  int get amount;
   @JsonKey(name: 'asset')
-  String get asset => throw _privateConstructorUsedError;
+  String get asset;
   @JsonKey(name: 'extra_data')
-  ExtraData? get extraData => throw _privateConstructorUsedError;
-
-  /// Serializes this TransferOutEntry to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  ExtraData? get extraData;
 
   /// Create a copy of TransferOutEntry
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $TransferOutEntryCopyWith<TransferOutEntry> get copyWith =>
-      throw _privateConstructorUsedError;
+      _$TransferOutEntryCopyWithImpl<TransferOutEntry>(
+          this as TransferOutEntry, _$identity);
+
+  /// Serializes this TransferOutEntry to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is TransferOutEntry &&
+            (identical(other.destination, destination) ||
+                other.destination == destination) &&
+            (identical(other.amount, amount) || other.amount == amount) &&
+            (identical(other.asset, asset) || other.asset == asset) &&
+            (identical(other.extraData, extraData) ||
+                other.extraData == extraData));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, destination, amount, asset, extraData);
+
+  @override
+  String toString() {
+    return 'TransferOutEntry(destination: $destination, amount: $amount, asset: $asset, extraData: $extraData)';
+  }
 }
 
 /// @nodoc
-abstract class $TransferOutEntryCopyWith<$Res> {
+abstract mixin class $TransferOutEntryCopyWith<$Res> {
   factory $TransferOutEntryCopyWith(
-          TransferOutEntry value, $Res Function(TransferOutEntry) then) =
-      _$TransferOutEntryCopyWithImpl<$Res, TransferOutEntry>;
+          TransferOutEntry value, $Res Function(TransferOutEntry) _then) =
+      _$TransferOutEntryCopyWithImpl;
   @useResult
   $Res call(
       {@JsonKey(name: 'destination') String destination,
@@ -55,14 +75,12 @@ abstract class $TransferOutEntryCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$TransferOutEntryCopyWithImpl<$Res, $Val extends TransferOutEntry>
+class _$TransferOutEntryCopyWithImpl<$Res>
     implements $TransferOutEntryCopyWith<$Res> {
-  _$TransferOutEntryCopyWithImpl(this._value, this._then);
+  _$TransferOutEntryCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final TransferOutEntry _self;
+  final $Res Function(TransferOutEntry) _then;
 
   /// Create a copy of TransferOutEntry
   /// with the given fields replaced by the non-null parameter values.
@@ -74,24 +92,24 @@ class _$TransferOutEntryCopyWithImpl<$Res, $Val extends TransferOutEntry>
     Object? asset = null,
     Object? extraData = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       destination: null == destination
-          ? _value.destination
+          ? _self.destination
           : destination // ignore: cast_nullable_to_non_nullable
               as String,
       amount: null == amount
-          ? _value.amount
+          ? _self.amount
           : amount // ignore: cast_nullable_to_non_nullable
               as int,
       asset: null == asset
-          ? _value.asset
+          ? _self.asset
           : asset // ignore: cast_nullable_to_non_nullable
               as String,
       extraData: freezed == extraData
-          ? _value.extraData
+          ? _self.extraData
           : extraData // ignore: cast_nullable_to_non_nullable
               as ExtraData?,
-    ) as $Val);
+    ));
   }
 
   /// Create a copy of TransferOutEntry
@@ -99,84 +117,26 @@ class _$TransferOutEntryCopyWithImpl<$Res, $Val extends TransferOutEntry>
   @override
   @pragma('vm:prefer-inline')
   $ExtraDataCopyWith<$Res>? get extraData {
-    if (_value.extraData == null) {
+    if (_self.extraData == null) {
       return null;
     }
 
-    return $ExtraDataCopyWith<$Res>(_value.extraData!, (value) {
-      return _then(_value.copyWith(extraData: value) as $Val);
+    return $ExtraDataCopyWith<$Res>(_self.extraData!, (value) {
+      return _then(_self.copyWith(extraData: value));
     });
   }
 }
 
 /// @nodoc
-abstract class _$$TransferOutEntryImplCopyWith<$Res>
-    implements $TransferOutEntryCopyWith<$Res> {
-  factory _$$TransferOutEntryImplCopyWith(_$TransferOutEntryImpl value,
-          $Res Function(_$TransferOutEntryImpl) then) =
-      __$$TransferOutEntryImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'destination') String destination,
-      @JsonKey(name: 'amount') int amount,
-      @JsonKey(name: 'asset') String asset,
-      @JsonKey(name: 'extra_data') ExtraData? extraData});
-
-  @override
-  $ExtraDataCopyWith<$Res>? get extraData;
-}
-
-/// @nodoc
-class __$$TransferOutEntryImplCopyWithImpl<$Res>
-    extends _$TransferOutEntryCopyWithImpl<$Res, _$TransferOutEntryImpl>
-    implements _$$TransferOutEntryImplCopyWith<$Res> {
-  __$$TransferOutEntryImplCopyWithImpl(_$TransferOutEntryImpl _value,
-      $Res Function(_$TransferOutEntryImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of TransferOutEntry
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? destination = null,
-    Object? amount = null,
-    Object? asset = null,
-    Object? extraData = freezed,
-  }) {
-    return _then(_$TransferOutEntryImpl(
-      destination: null == destination
-          ? _value.destination
-          : destination // ignore: cast_nullable_to_non_nullable
-              as String,
-      amount: null == amount
-          ? _value.amount
-          : amount // ignore: cast_nullable_to_non_nullable
-              as int,
-      asset: null == asset
-          ? _value.asset
-          : asset // ignore: cast_nullable_to_non_nullable
-              as String,
-      extraData: freezed == extraData
-          ? _value.extraData
-          : extraData // ignore: cast_nullable_to_non_nullable
-              as ExtraData?,
-    ));
-  }
-}
-
-/// @nodoc
 @JsonSerializable()
-class _$TransferOutEntryImpl implements _TransferOutEntry {
-  const _$TransferOutEntryImpl(
+class _TransferOutEntry implements TransferOutEntry {
+  const _TransferOutEntry(
       {@JsonKey(name: 'destination') required this.destination,
       @JsonKey(name: 'amount') required this.amount,
       @JsonKey(name: 'asset') required this.asset,
       @JsonKey(name: 'extra_data') this.extraData});
-
-  factory _$TransferOutEntryImpl.fromJson(Map<String, dynamic> json) =>
-      _$$TransferOutEntryImplFromJson(json);
+  factory _TransferOutEntry.fromJson(Map<String, dynamic> json) =>
+      _$TransferOutEntryFromJson(json);
 
   @override
   @JsonKey(name: 'destination')
@@ -191,16 +151,26 @@ class _$TransferOutEntryImpl implements _TransferOutEntry {
   @JsonKey(name: 'extra_data')
   final ExtraData? extraData;
 
+  /// Create a copy of TransferOutEntry
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'TransferOutEntry(destination: $destination, amount: $amount, asset: $asset, extraData: $extraData)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$TransferOutEntryCopyWith<_TransferOutEntry> get copyWith =>
+      __$TransferOutEntryCopyWithImpl<_TransferOutEntry>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$TransferOutEntryToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$TransferOutEntryImpl &&
+            other is _TransferOutEntry &&
             (identical(other.destination, destination) ||
                 other.destination == destination) &&
             (identical(other.amount, amount) || other.amount == amount) &&
@@ -214,51 +184,81 @@ class _$TransferOutEntryImpl implements _TransferOutEntry {
   int get hashCode =>
       Object.hash(runtimeType, destination, amount, asset, extraData);
 
-  /// Create a copy of TransferOutEntry
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$TransferOutEntryImplCopyWith<_$TransferOutEntryImpl> get copyWith =>
-      __$$TransferOutEntryImplCopyWithImpl<_$TransferOutEntryImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$TransferOutEntryImplToJson(
-      this,
-    );
+  String toString() {
+    return 'TransferOutEntry(destination: $destination, amount: $amount, asset: $asset, extraData: $extraData)';
   }
 }
 
-abstract class _TransferOutEntry implements TransferOutEntry {
-  const factory _TransferOutEntry(
-          {@JsonKey(name: 'destination') required final String destination,
-          @JsonKey(name: 'amount') required final int amount,
-          @JsonKey(name: 'asset') required final String asset,
-          @JsonKey(name: 'extra_data') final ExtraData? extraData}) =
-      _$TransferOutEntryImpl;
+/// @nodoc
+abstract mixin class _$TransferOutEntryCopyWith<$Res>
+    implements $TransferOutEntryCopyWith<$Res> {
+  factory _$TransferOutEntryCopyWith(
+          _TransferOutEntry value, $Res Function(_TransferOutEntry) _then) =
+      __$TransferOutEntryCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'destination') String destination,
+      @JsonKey(name: 'amount') int amount,
+      @JsonKey(name: 'asset') String asset,
+      @JsonKey(name: 'extra_data') ExtraData? extraData});
 
-  factory _TransferOutEntry.fromJson(Map<String, dynamic> json) =
-      _$TransferOutEntryImpl.fromJson;
+  @override
+  $ExtraDataCopyWith<$Res>? get extraData;
+}
 
-  @override
-  @JsonKey(name: 'destination')
-  String get destination;
-  @override
-  @JsonKey(name: 'amount')
-  int get amount;
-  @override
-  @JsonKey(name: 'asset')
-  String get asset;
-  @override
-  @JsonKey(name: 'extra_data')
-  ExtraData? get extraData;
+/// @nodoc
+class __$TransferOutEntryCopyWithImpl<$Res>
+    implements _$TransferOutEntryCopyWith<$Res> {
+  __$TransferOutEntryCopyWithImpl(this._self, this._then);
+
+  final _TransferOutEntry _self;
+  final $Res Function(_TransferOutEntry) _then;
 
   /// Create a copy of TransferOutEntry
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$TransferOutEntryImplCopyWith<_$TransferOutEntryImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? destination = null,
+    Object? amount = null,
+    Object? asset = null,
+    Object? extraData = freezed,
+  }) {
+    return _then(_TransferOutEntry(
+      destination: null == destination
+          ? _self.destination
+          : destination // ignore: cast_nullable_to_non_nullable
+              as String,
+      amount: null == amount
+          ? _self.amount
+          : amount // ignore: cast_nullable_to_non_nullable
+              as int,
+      asset: null == asset
+          ? _self.asset
+          : asset // ignore: cast_nullable_to_non_nullable
+              as String,
+      extraData: freezed == extraData
+          ? _self.extraData
+          : extraData // ignore: cast_nullable_to_non_nullable
+              as ExtraData?,
+    ));
+  }
+
+  /// Create a copy of TransferOutEntry
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ExtraDataCopyWith<$Res>? get extraData {
+    if (_self.extraData == null) {
+      return null;
+    }
+
+    return $ExtraDataCopyWith<$Res>(_self.extraData!, (value) {
+      return _then(_self.copyWith(extraData: value));
+    });
+  }
 }
+
+// dart format on

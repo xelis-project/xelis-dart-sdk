@@ -8,15 +8,14 @@ part of 'balance_changed_event.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$BalanceChangedEventImpl _$$BalanceChangedEventImplFromJson(
-        Map<String, dynamic> json) =>
-    _$BalanceChangedEventImpl(
+_BalanceChangedEvent _$BalanceChangedEventFromJson(Map<String, dynamic> json) =>
+    _BalanceChangedEvent(
       assetHash: json['asset'] as String,
       balance: (json['balance'] as num).toInt(),
     );
 
-Map<String, dynamic> _$$BalanceChangedEventImplToJson(
-        _$BalanceChangedEventImpl instance) =>
+Map<String, dynamic> _$BalanceChangedEventToJson(
+        _BalanceChangedEvent instance) =>
     <String, dynamic>{
       'asset': instance.assetHash,
       'balance': instance.balance,

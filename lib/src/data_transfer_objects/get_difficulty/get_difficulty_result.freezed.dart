@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,161 +10,34 @@ part of 'get_difficulty_result.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-GetDifficultyResult _$GetDifficultyResultFromJson(Map<String, dynamic> json) {
-  return _GetDifficultyResult.fromJson(json);
-}
 
 /// @nodoc
 mixin _$GetDifficultyResult {
   @JsonKey(name: 'difficulty')
-  String get difficulty => throw _privateConstructorUsedError;
+  String get difficulty;
   @JsonKey(name: 'hashrate')
-  String get hashrate => throw _privateConstructorUsedError;
+  String get hashrate;
   @JsonKey(name: 'hashrate_formatted')
-  String get hashrateFormatted => throw _privateConstructorUsedError;
-
-  /// Serializes this GetDifficultyResult to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String get hashrateFormatted;
 
   /// Create a copy of GetDifficultyResult
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $GetDifficultyResultCopyWith<GetDifficultyResult> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+      _$GetDifficultyResultCopyWithImpl<GetDifficultyResult>(
+          this as GetDifficultyResult, _$identity);
 
-/// @nodoc
-abstract class $GetDifficultyResultCopyWith<$Res> {
-  factory $GetDifficultyResultCopyWith(
-          GetDifficultyResult value, $Res Function(GetDifficultyResult) then) =
-      _$GetDifficultyResultCopyWithImpl<$Res, GetDifficultyResult>;
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'difficulty') String difficulty,
-      @JsonKey(name: 'hashrate') String hashrate,
-      @JsonKey(name: 'hashrate_formatted') String hashrateFormatted});
-}
-
-/// @nodoc
-class _$GetDifficultyResultCopyWithImpl<$Res, $Val extends GetDifficultyResult>
-    implements $GetDifficultyResultCopyWith<$Res> {
-  _$GetDifficultyResultCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of GetDifficultyResult
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? difficulty = null,
-    Object? hashrate = null,
-    Object? hashrateFormatted = null,
-  }) {
-    return _then(_value.copyWith(
-      difficulty: null == difficulty
-          ? _value.difficulty
-          : difficulty // ignore: cast_nullable_to_non_nullable
-              as String,
-      hashrate: null == hashrate
-          ? _value.hashrate
-          : hashrate // ignore: cast_nullable_to_non_nullable
-              as String,
-      hashrateFormatted: null == hashrateFormatted
-          ? _value.hashrateFormatted
-          : hashrateFormatted // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$GetDifficultyResultImplCopyWith<$Res>
-    implements $GetDifficultyResultCopyWith<$Res> {
-  factory _$$GetDifficultyResultImplCopyWith(_$GetDifficultyResultImpl value,
-          $Res Function(_$GetDifficultyResultImpl) then) =
-      __$$GetDifficultyResultImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'difficulty') String difficulty,
-      @JsonKey(name: 'hashrate') String hashrate,
-      @JsonKey(name: 'hashrate_formatted') String hashrateFormatted});
-}
-
-/// @nodoc
-class __$$GetDifficultyResultImplCopyWithImpl<$Res>
-    extends _$GetDifficultyResultCopyWithImpl<$Res, _$GetDifficultyResultImpl>
-    implements _$$GetDifficultyResultImplCopyWith<$Res> {
-  __$$GetDifficultyResultImplCopyWithImpl(_$GetDifficultyResultImpl _value,
-      $Res Function(_$GetDifficultyResultImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of GetDifficultyResult
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? difficulty = null,
-    Object? hashrate = null,
-    Object? hashrateFormatted = null,
-  }) {
-    return _then(_$GetDifficultyResultImpl(
-      difficulty: null == difficulty
-          ? _value.difficulty
-          : difficulty // ignore: cast_nullable_to_non_nullable
-              as String,
-      hashrate: null == hashrate
-          ? _value.hashrate
-          : hashrate // ignore: cast_nullable_to_non_nullable
-              as String,
-      hashrateFormatted: null == hashrateFormatted
-          ? _value.hashrateFormatted
-          : hashrateFormatted // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$GetDifficultyResultImpl implements _GetDifficultyResult {
-  const _$GetDifficultyResultImpl(
-      {@JsonKey(name: 'difficulty') required this.difficulty,
-      @JsonKey(name: 'hashrate') required this.hashrate,
-      @JsonKey(name: 'hashrate_formatted') required this.hashrateFormatted});
-
-  factory _$GetDifficultyResultImpl.fromJson(Map<String, dynamic> json) =>
-      _$$GetDifficultyResultImplFromJson(json);
-
-  @override
-  @JsonKey(name: 'difficulty')
-  final String difficulty;
-  @override
-  @JsonKey(name: 'hashrate')
-  final String hashrate;
-  @override
-  @JsonKey(name: 'hashrate_formatted')
-  final String hashrateFormatted;
-
-  @override
-  String toString() {
-    return 'GetDifficultyResult(difficulty: $difficulty, hashrate: $hashrate, hashrateFormatted: $hashrateFormatted)';
-  }
+  /// Serializes this GetDifficultyResult to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetDifficultyResultImpl &&
+            other is GetDifficultyResult &&
             (identical(other.difficulty, difficulty) ||
                 other.difficulty == difficulty) &&
             (identical(other.hashrate, hashrate) ||
@@ -177,47 +51,164 @@ class _$GetDifficultyResultImpl implements _GetDifficultyResult {
   int get hashCode =>
       Object.hash(runtimeType, difficulty, hashrate, hashrateFormatted);
 
+  @override
+  String toString() {
+    return 'GetDifficultyResult(difficulty: $difficulty, hashrate: $hashrate, hashrateFormatted: $hashrateFormatted)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $GetDifficultyResultCopyWith<$Res> {
+  factory $GetDifficultyResultCopyWith(
+          GetDifficultyResult value, $Res Function(GetDifficultyResult) _then) =
+      _$GetDifficultyResultCopyWithImpl;
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'difficulty') String difficulty,
+      @JsonKey(name: 'hashrate') String hashrate,
+      @JsonKey(name: 'hashrate_formatted') String hashrateFormatted});
+}
+
+/// @nodoc
+class _$GetDifficultyResultCopyWithImpl<$Res>
+    implements $GetDifficultyResultCopyWith<$Res> {
+  _$GetDifficultyResultCopyWithImpl(this._self, this._then);
+
+  final GetDifficultyResult _self;
+  final $Res Function(GetDifficultyResult) _then;
+
   /// Create a copy of GetDifficultyResult
   /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
   @pragma('vm:prefer-inline')
-  _$$GetDifficultyResultImplCopyWith<_$GetDifficultyResultImpl> get copyWith =>
-      __$$GetDifficultyResultImplCopyWithImpl<_$GetDifficultyResultImpl>(
+  @override
+  $Res call({
+    Object? difficulty = null,
+    Object? hashrate = null,
+    Object? hashrateFormatted = null,
+  }) {
+    return _then(_self.copyWith(
+      difficulty: null == difficulty
+          ? _self.difficulty
+          : difficulty // ignore: cast_nullable_to_non_nullable
+              as String,
+      hashrate: null == hashrate
+          ? _self.hashrate
+          : hashrate // ignore: cast_nullable_to_non_nullable
+              as String,
+      hashrateFormatted: null == hashrateFormatted
+          ? _self.hashrateFormatted
+          : hashrateFormatted // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _GetDifficultyResult implements GetDifficultyResult {
+  const _GetDifficultyResult(
+      {@JsonKey(name: 'difficulty') required this.difficulty,
+      @JsonKey(name: 'hashrate') required this.hashrate,
+      @JsonKey(name: 'hashrate_formatted') required this.hashrateFormatted});
+  factory _GetDifficultyResult.fromJson(Map<String, dynamic> json) =>
+      _$GetDifficultyResultFromJson(json);
+
+  @override
+  @JsonKey(name: 'difficulty')
+  final String difficulty;
+  @override
+  @JsonKey(name: 'hashrate')
+  final String hashrate;
+  @override
+  @JsonKey(name: 'hashrate_formatted')
+  final String hashrateFormatted;
+
+  /// Create a copy of GetDifficultyResult
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$GetDifficultyResultCopyWith<_GetDifficultyResult> get copyWith =>
+      __$GetDifficultyResultCopyWithImpl<_GetDifficultyResult>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$GetDifficultyResultImplToJson(
+    return _$GetDifficultyResultToJson(
       this,
     );
   }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _GetDifficultyResult &&
+            (identical(other.difficulty, difficulty) ||
+                other.difficulty == difficulty) &&
+            (identical(other.hashrate, hashrate) ||
+                other.hashrate == hashrate) &&
+            (identical(other.hashrateFormatted, hashrateFormatted) ||
+                other.hashrateFormatted == hashrateFormatted));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, difficulty, hashrate, hashrateFormatted);
+
+  @override
+  String toString() {
+    return 'GetDifficultyResult(difficulty: $difficulty, hashrate: $hashrate, hashrateFormatted: $hashrateFormatted)';
+  }
 }
 
-abstract class _GetDifficultyResult implements GetDifficultyResult {
-  const factory _GetDifficultyResult(
-      {@JsonKey(name: 'difficulty') required final String difficulty,
-      @JsonKey(name: 'hashrate') required final String hashrate,
-      @JsonKey(name: 'hashrate_formatted')
-      required final String hashrateFormatted}) = _$GetDifficultyResultImpl;
+/// @nodoc
+abstract mixin class _$GetDifficultyResultCopyWith<$Res>
+    implements $GetDifficultyResultCopyWith<$Res> {
+  factory _$GetDifficultyResultCopyWith(_GetDifficultyResult value,
+          $Res Function(_GetDifficultyResult) _then) =
+      __$GetDifficultyResultCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'difficulty') String difficulty,
+      @JsonKey(name: 'hashrate') String hashrate,
+      @JsonKey(name: 'hashrate_formatted') String hashrateFormatted});
+}
 
-  factory _GetDifficultyResult.fromJson(Map<String, dynamic> json) =
-      _$GetDifficultyResultImpl.fromJson;
+/// @nodoc
+class __$GetDifficultyResultCopyWithImpl<$Res>
+    implements _$GetDifficultyResultCopyWith<$Res> {
+  __$GetDifficultyResultCopyWithImpl(this._self, this._then);
 
-  @override
-  @JsonKey(name: 'difficulty')
-  String get difficulty;
-  @override
-  @JsonKey(name: 'hashrate')
-  String get hashrate;
-  @override
-  @JsonKey(name: 'hashrate_formatted')
-  String get hashrateFormatted;
+  final _GetDifficultyResult _self;
+  final $Res Function(_GetDifficultyResult) _then;
 
   /// Create a copy of GetDifficultyResult
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$GetDifficultyResultImplCopyWith<_$GetDifficultyResultImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? difficulty = null,
+    Object? hashrate = null,
+    Object? hashrateFormatted = null,
+  }) {
+    return _then(_GetDifficultyResult(
+      difficulty: null == difficulty
+          ? _self.difficulty
+          : difficulty // ignore: cast_nullable_to_non_nullable
+              as String,
+      hashrate: null == hashrate
+          ? _self.hashrate
+          : hashrate // ignore: cast_nullable_to_non_nullable
+              as String,
+      hashrateFormatted: null == hashrateFormatted
+          ? _self.hashrateFormatted
+          : hashrateFormatted // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
+
+// dart format on

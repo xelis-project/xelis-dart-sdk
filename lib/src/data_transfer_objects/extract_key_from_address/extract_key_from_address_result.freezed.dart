@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,151 +10,33 @@ part of 'extract_key_from_address_result.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-ExtractKeyFromAddressResult _$ExtractKeyFromAddressResultFromJson(
-    Map<String, dynamic> json) {
-  return _ExtractKeyFromAddressResult.fromJson(json);
-}
 
 /// @nodoc
 mixin _$ExtractKeyFromAddressResult {
   @JsonKey(name: 'bytes')
-  dynamic get bytes => throw _privateConstructorUsedError;
+  dynamic get bytes;
   @JsonKey(name: 'hex')
-  String? get hex => throw _privateConstructorUsedError;
-
-  /// Serializes this ExtractKeyFromAddressResult to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String? get hex;
 
   /// Create a copy of ExtractKeyFromAddressResult
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $ExtractKeyFromAddressResultCopyWith<ExtractKeyFromAddressResult>
-      get copyWith => throw _privateConstructorUsedError;
-}
+      get copyWith => _$ExtractKeyFromAddressResultCopyWithImpl<
+              ExtractKeyFromAddressResult>(
+          this as ExtractKeyFromAddressResult, _$identity);
 
-/// @nodoc
-abstract class $ExtractKeyFromAddressResultCopyWith<$Res> {
-  factory $ExtractKeyFromAddressResultCopyWith(
-          ExtractKeyFromAddressResult value,
-          $Res Function(ExtractKeyFromAddressResult) then) =
-      _$ExtractKeyFromAddressResultCopyWithImpl<$Res,
-          ExtractKeyFromAddressResult>;
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'bytes') dynamic bytes,
-      @JsonKey(name: 'hex') String? hex});
-}
-
-/// @nodoc
-class _$ExtractKeyFromAddressResultCopyWithImpl<$Res,
-        $Val extends ExtractKeyFromAddressResult>
-    implements $ExtractKeyFromAddressResultCopyWith<$Res> {
-  _$ExtractKeyFromAddressResultCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of ExtractKeyFromAddressResult
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? bytes = freezed,
-    Object? hex = freezed,
-  }) {
-    return _then(_value.copyWith(
-      bytes: freezed == bytes
-          ? _value.bytes
-          : bytes // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      hex: freezed == hex
-          ? _value.hex
-          : hex // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$ExtractKeyFromAddressResultImplCopyWith<$Res>
-    implements $ExtractKeyFromAddressResultCopyWith<$Res> {
-  factory _$$ExtractKeyFromAddressResultImplCopyWith(
-          _$ExtractKeyFromAddressResultImpl value,
-          $Res Function(_$ExtractKeyFromAddressResultImpl) then) =
-      __$$ExtractKeyFromAddressResultImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'bytes') dynamic bytes,
-      @JsonKey(name: 'hex') String? hex});
-}
-
-/// @nodoc
-class __$$ExtractKeyFromAddressResultImplCopyWithImpl<$Res>
-    extends _$ExtractKeyFromAddressResultCopyWithImpl<$Res,
-        _$ExtractKeyFromAddressResultImpl>
-    implements _$$ExtractKeyFromAddressResultImplCopyWith<$Res> {
-  __$$ExtractKeyFromAddressResultImplCopyWithImpl(
-      _$ExtractKeyFromAddressResultImpl _value,
-      $Res Function(_$ExtractKeyFromAddressResultImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of ExtractKeyFromAddressResult
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? bytes = freezed,
-    Object? hex = freezed,
-  }) {
-    return _then(_$ExtractKeyFromAddressResultImpl(
-      bytes: freezed == bytes
-          ? _value.bytes
-          : bytes // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      hex: freezed == hex
-          ? _value.hex
-          : hex // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$ExtractKeyFromAddressResultImpl
-    implements _ExtractKeyFromAddressResult {
-  const _$ExtractKeyFromAddressResultImpl(
-      {@JsonKey(name: 'bytes') this.bytes, @JsonKey(name: 'hex') this.hex});
-
-  factory _$ExtractKeyFromAddressResultImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$ExtractKeyFromAddressResultImplFromJson(json);
-
-  @override
-  @JsonKey(name: 'bytes')
-  final dynamic bytes;
-  @override
-  @JsonKey(name: 'hex')
-  final String? hex;
-
-  @override
-  String toString() {
-    return 'ExtractKeyFromAddressResult(bytes: $bytes, hex: $hex)';
-  }
+  /// Serializes this ExtractKeyFromAddressResult to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ExtractKeyFromAddressResultImpl &&
+            other is ExtractKeyFromAddressResult &&
             const DeepCollectionEquality().equals(other.bytes, bytes) &&
             (identical(other.hex, hex) || other.hex == hex));
   }
@@ -163,44 +46,145 @@ class _$ExtractKeyFromAddressResultImpl
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(bytes), hex);
 
-  /// Create a copy of ExtractKeyFromAddressResult
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$ExtractKeyFromAddressResultImplCopyWith<_$ExtractKeyFromAddressResultImpl>
-      get copyWith => __$$ExtractKeyFromAddressResultImplCopyWithImpl<
-          _$ExtractKeyFromAddressResultImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ExtractKeyFromAddressResultImplToJson(
-      this,
-    );
+  String toString() {
+    return 'ExtractKeyFromAddressResult(bytes: $bytes, hex: $hex)';
   }
 }
 
-abstract class _ExtractKeyFromAddressResult
-    implements ExtractKeyFromAddressResult {
-  const factory _ExtractKeyFromAddressResult(
-          {@JsonKey(name: 'bytes') final dynamic bytes,
-          @JsonKey(name: 'hex') final String? hex}) =
-      _$ExtractKeyFromAddressResultImpl;
+/// @nodoc
+abstract mixin class $ExtractKeyFromAddressResultCopyWith<$Res> {
+  factory $ExtractKeyFromAddressResultCopyWith(
+          ExtractKeyFromAddressResult value,
+          $Res Function(ExtractKeyFromAddressResult) _then) =
+      _$ExtractKeyFromAddressResultCopyWithImpl;
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'bytes') dynamic bytes,
+      @JsonKey(name: 'hex') String? hex});
+}
 
-  factory _ExtractKeyFromAddressResult.fromJson(Map<String, dynamic> json) =
-      _$ExtractKeyFromAddressResultImpl.fromJson;
+/// @nodoc
+class _$ExtractKeyFromAddressResultCopyWithImpl<$Res>
+    implements $ExtractKeyFromAddressResultCopyWith<$Res> {
+  _$ExtractKeyFromAddressResultCopyWithImpl(this._self, this._then);
+
+  final ExtractKeyFromAddressResult _self;
+  final $Res Function(ExtractKeyFromAddressResult) _then;
+
+  /// Create a copy of ExtractKeyFromAddressResult
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? bytes = freezed,
+    Object? hex = freezed,
+  }) {
+    return _then(_self.copyWith(
+      bytes: freezed == bytes
+          ? _self.bytes
+          : bytes // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      hex: freezed == hex
+          ? _self.hex
+          : hex // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _ExtractKeyFromAddressResult implements ExtractKeyFromAddressResult {
+  const _ExtractKeyFromAddressResult(
+      {@JsonKey(name: 'bytes') this.bytes, @JsonKey(name: 'hex') this.hex});
+  factory _ExtractKeyFromAddressResult.fromJson(Map<String, dynamic> json) =>
+      _$ExtractKeyFromAddressResultFromJson(json);
 
   @override
   @JsonKey(name: 'bytes')
-  dynamic get bytes;
+  final dynamic bytes;
   @override
   @JsonKey(name: 'hex')
-  String? get hex;
+  final String? hex;
 
   /// Create a copy of ExtractKeyFromAddressResult
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ExtractKeyFromAddressResultImplCopyWith<_$ExtractKeyFromAddressResultImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  _$ExtractKeyFromAddressResultCopyWith<_ExtractKeyFromAddressResult>
+      get copyWith => __$ExtractKeyFromAddressResultCopyWithImpl<
+          _ExtractKeyFromAddressResult>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ExtractKeyFromAddressResultToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _ExtractKeyFromAddressResult &&
+            const DeepCollectionEquality().equals(other.bytes, bytes) &&
+            (identical(other.hex, hex) || other.hex == hex));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(bytes), hex);
+
+  @override
+  String toString() {
+    return 'ExtractKeyFromAddressResult(bytes: $bytes, hex: $hex)';
+  }
 }
+
+/// @nodoc
+abstract mixin class _$ExtractKeyFromAddressResultCopyWith<$Res>
+    implements $ExtractKeyFromAddressResultCopyWith<$Res> {
+  factory _$ExtractKeyFromAddressResultCopyWith(
+          _ExtractKeyFromAddressResult value,
+          $Res Function(_ExtractKeyFromAddressResult) _then) =
+      __$ExtractKeyFromAddressResultCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'bytes') dynamic bytes,
+      @JsonKey(name: 'hex') String? hex});
+}
+
+/// @nodoc
+class __$ExtractKeyFromAddressResultCopyWithImpl<$Res>
+    implements _$ExtractKeyFromAddressResultCopyWith<$Res> {
+  __$ExtractKeyFromAddressResultCopyWithImpl(this._self, this._then);
+
+  final _ExtractKeyFromAddressResult _self;
+  final $Res Function(_ExtractKeyFromAddressResult) _then;
+
+  /// Create a copy of ExtractKeyFromAddressResult
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? bytes = freezed,
+    Object? hex = freezed,
+  }) {
+    return _then(_ExtractKeyFromAddressResult(
+      bytes: freezed == bytes
+          ? _self.bytes
+          : bytes // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      hex: freezed == hex
+          ? _self.hex
+          : hex // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+// dart format on

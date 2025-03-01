@@ -8,7 +8,7 @@ part 'get_accounts_params.g.dart';
 
 /// @nodoc
 @freezed
-class GetAccountsParams with _$GetAccountsParams {
+abstract class GetAccountsParams with _$GetAccountsParams {
   /// @nodoc
   const factory GetAccountsParams({
     @JsonKey(name: 'skip') int? skip,

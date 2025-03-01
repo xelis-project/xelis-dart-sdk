@@ -8,7 +8,7 @@ part 'get_nonce_params.g.dart';
 
 /// @nodoc
 @freezed
-class GetNonceParams with _$GetNonceParams {
+abstract class GetNonceParams with _$GetNonceParams {
   /// @nodoc
   const factory GetNonceParams({
     @JsonKey(name: 'address') required String address,

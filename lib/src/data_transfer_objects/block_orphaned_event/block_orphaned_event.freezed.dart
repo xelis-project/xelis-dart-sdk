@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,143 +10,32 @@ part of 'block_orphaned_event.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-BlockOrphanedEvent _$BlockOrphanedEventFromJson(Map<String, dynamic> json) {
-  return _BlockOrphanedEvent.fromJson(json);
-}
 
 /// @nodoc
 mixin _$BlockOrphanedEvent {
   @JsonKey(name: 'block_hash')
-  String get blockHash => throw _privateConstructorUsedError;
+  String get blockHash;
   @JsonKey(name: 'old_topoheight')
-  int get oldTopoHeight => throw _privateConstructorUsedError;
-
-  /// Serializes this BlockOrphanedEvent to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  int get oldTopoHeight;
 
   /// Create a copy of BlockOrphanedEvent
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $BlockOrphanedEventCopyWith<BlockOrphanedEvent> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+      _$BlockOrphanedEventCopyWithImpl<BlockOrphanedEvent>(
+          this as BlockOrphanedEvent, _$identity);
 
-/// @nodoc
-abstract class $BlockOrphanedEventCopyWith<$Res> {
-  factory $BlockOrphanedEventCopyWith(
-          BlockOrphanedEvent value, $Res Function(BlockOrphanedEvent) then) =
-      _$BlockOrphanedEventCopyWithImpl<$Res, BlockOrphanedEvent>;
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'block_hash') String blockHash,
-      @JsonKey(name: 'old_topoheight') int oldTopoHeight});
-}
-
-/// @nodoc
-class _$BlockOrphanedEventCopyWithImpl<$Res, $Val extends BlockOrphanedEvent>
-    implements $BlockOrphanedEventCopyWith<$Res> {
-  _$BlockOrphanedEventCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of BlockOrphanedEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? blockHash = null,
-    Object? oldTopoHeight = null,
-  }) {
-    return _then(_value.copyWith(
-      blockHash: null == blockHash
-          ? _value.blockHash
-          : blockHash // ignore: cast_nullable_to_non_nullable
-              as String,
-      oldTopoHeight: null == oldTopoHeight
-          ? _value.oldTopoHeight
-          : oldTopoHeight // ignore: cast_nullable_to_non_nullable
-              as int,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$BlockOrphanedEventImplCopyWith<$Res>
-    implements $BlockOrphanedEventCopyWith<$Res> {
-  factory _$$BlockOrphanedEventImplCopyWith(_$BlockOrphanedEventImpl value,
-          $Res Function(_$BlockOrphanedEventImpl) then) =
-      __$$BlockOrphanedEventImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'block_hash') String blockHash,
-      @JsonKey(name: 'old_topoheight') int oldTopoHeight});
-}
-
-/// @nodoc
-class __$$BlockOrphanedEventImplCopyWithImpl<$Res>
-    extends _$BlockOrphanedEventCopyWithImpl<$Res, _$BlockOrphanedEventImpl>
-    implements _$$BlockOrphanedEventImplCopyWith<$Res> {
-  __$$BlockOrphanedEventImplCopyWithImpl(_$BlockOrphanedEventImpl _value,
-      $Res Function(_$BlockOrphanedEventImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of BlockOrphanedEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? blockHash = null,
-    Object? oldTopoHeight = null,
-  }) {
-    return _then(_$BlockOrphanedEventImpl(
-      blockHash: null == blockHash
-          ? _value.blockHash
-          : blockHash // ignore: cast_nullable_to_non_nullable
-              as String,
-      oldTopoHeight: null == oldTopoHeight
-          ? _value.oldTopoHeight
-          : oldTopoHeight // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$BlockOrphanedEventImpl implements _BlockOrphanedEvent {
-  const _$BlockOrphanedEventImpl(
-      {@JsonKey(name: 'block_hash') required this.blockHash,
-      @JsonKey(name: 'old_topoheight') required this.oldTopoHeight});
-
-  factory _$BlockOrphanedEventImpl.fromJson(Map<String, dynamic> json) =>
-      _$$BlockOrphanedEventImplFromJson(json);
-
-  @override
-  @JsonKey(name: 'block_hash')
-  final String blockHash;
-  @override
-  @JsonKey(name: 'old_topoheight')
-  final int oldTopoHeight;
-
-  @override
-  String toString() {
-    return 'BlockOrphanedEvent(blockHash: $blockHash, oldTopoHeight: $oldTopoHeight)';
-  }
+  /// Serializes this BlockOrphanedEvent to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$BlockOrphanedEventImpl &&
+            other is BlockOrphanedEvent &&
             (identical(other.blockHash, blockHash) ||
                 other.blockHash == blockHash) &&
             (identical(other.oldTopoHeight, oldTopoHeight) ||
@@ -156,43 +46,144 @@ class _$BlockOrphanedEventImpl implements _BlockOrphanedEvent {
   @override
   int get hashCode => Object.hash(runtimeType, blockHash, oldTopoHeight);
 
-  /// Create a copy of BlockOrphanedEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$BlockOrphanedEventImplCopyWith<_$BlockOrphanedEventImpl> get copyWith =>
-      __$$BlockOrphanedEventImplCopyWithImpl<_$BlockOrphanedEventImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$BlockOrphanedEventImplToJson(
-      this,
-    );
+  String toString() {
+    return 'BlockOrphanedEvent(blockHash: $blockHash, oldTopoHeight: $oldTopoHeight)';
   }
 }
 
-abstract class _BlockOrphanedEvent implements BlockOrphanedEvent {
-  const factory _BlockOrphanedEvent(
-          {@JsonKey(name: 'block_hash') required final String blockHash,
-          @JsonKey(name: 'old_topoheight') required final int oldTopoHeight}) =
-      _$BlockOrphanedEventImpl;
+/// @nodoc
+abstract mixin class $BlockOrphanedEventCopyWith<$Res> {
+  factory $BlockOrphanedEventCopyWith(
+          BlockOrphanedEvent value, $Res Function(BlockOrphanedEvent) _then) =
+      _$BlockOrphanedEventCopyWithImpl;
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'block_hash') String blockHash,
+      @JsonKey(name: 'old_topoheight') int oldTopoHeight});
+}
 
-  factory _BlockOrphanedEvent.fromJson(Map<String, dynamic> json) =
-      _$BlockOrphanedEventImpl.fromJson;
+/// @nodoc
+class _$BlockOrphanedEventCopyWithImpl<$Res>
+    implements $BlockOrphanedEventCopyWith<$Res> {
+  _$BlockOrphanedEventCopyWithImpl(this._self, this._then);
+
+  final BlockOrphanedEvent _self;
+  final $Res Function(BlockOrphanedEvent) _then;
+
+  /// Create a copy of BlockOrphanedEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? blockHash = null,
+    Object? oldTopoHeight = null,
+  }) {
+    return _then(_self.copyWith(
+      blockHash: null == blockHash
+          ? _self.blockHash
+          : blockHash // ignore: cast_nullable_to_non_nullable
+              as String,
+      oldTopoHeight: null == oldTopoHeight
+          ? _self.oldTopoHeight
+          : oldTopoHeight // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _BlockOrphanedEvent implements BlockOrphanedEvent {
+  const _BlockOrphanedEvent(
+      {@JsonKey(name: 'block_hash') required this.blockHash,
+      @JsonKey(name: 'old_topoheight') required this.oldTopoHeight});
+  factory _BlockOrphanedEvent.fromJson(Map<String, dynamic> json) =>
+      _$BlockOrphanedEventFromJson(json);
 
   @override
   @JsonKey(name: 'block_hash')
-  String get blockHash;
+  final String blockHash;
   @override
   @JsonKey(name: 'old_topoheight')
-  int get oldTopoHeight;
+  final int oldTopoHeight;
 
   /// Create a copy of BlockOrphanedEvent
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$BlockOrphanedEventImplCopyWith<_$BlockOrphanedEventImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  _$BlockOrphanedEventCopyWith<_BlockOrphanedEvent> get copyWith =>
+      __$BlockOrphanedEventCopyWithImpl<_BlockOrphanedEvent>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$BlockOrphanedEventToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _BlockOrphanedEvent &&
+            (identical(other.blockHash, blockHash) ||
+                other.blockHash == blockHash) &&
+            (identical(other.oldTopoHeight, oldTopoHeight) ||
+                other.oldTopoHeight == oldTopoHeight));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, blockHash, oldTopoHeight);
+
+  @override
+  String toString() {
+    return 'BlockOrphanedEvent(blockHash: $blockHash, oldTopoHeight: $oldTopoHeight)';
+  }
 }
+
+/// @nodoc
+abstract mixin class _$BlockOrphanedEventCopyWith<$Res>
+    implements $BlockOrphanedEventCopyWith<$Res> {
+  factory _$BlockOrphanedEventCopyWith(
+          _BlockOrphanedEvent value, $Res Function(_BlockOrphanedEvent) _then) =
+      __$BlockOrphanedEventCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'block_hash') String blockHash,
+      @JsonKey(name: 'old_topoheight') int oldTopoHeight});
+}
+
+/// @nodoc
+class __$BlockOrphanedEventCopyWithImpl<$Res>
+    implements _$BlockOrphanedEventCopyWith<$Res> {
+  __$BlockOrphanedEventCopyWithImpl(this._self, this._then);
+
+  final _BlockOrphanedEvent _self;
+  final $Res Function(_BlockOrphanedEvent) _then;
+
+  /// Create a copy of BlockOrphanedEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? blockHash = null,
+    Object? oldTopoHeight = null,
+  }) {
+    return _then(_BlockOrphanedEvent(
+      blockHash: null == blockHash
+          ? _self.blockHash
+          : blockHash // ignore: cast_nullable_to_non_nullable
+              as String,
+      oldTopoHeight: null == oldTopoHeight
+          ? _self.oldTopoHeight
+          : oldTopoHeight // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+// dart format on

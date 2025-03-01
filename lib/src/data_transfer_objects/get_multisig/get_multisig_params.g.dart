@@ -8,14 +8,12 @@ part of 'get_multisig_params.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$GetMultisigParamsImpl _$$GetMultisigParamsImplFromJson(
-        Map<String, dynamic> json) =>
-    _$GetMultisigParamsImpl(
+_GetMultisigParams _$GetMultisigParamsFromJson(Map<String, dynamic> json) =>
+    _GetMultisigParams(
       address: json['address'] as String,
     );
 
-Map<String, dynamic> _$$GetMultisigParamsImplToJson(
-        _$GetMultisigParamsImpl instance) =>
+Map<String, dynamic> _$GetMultisigParamsToJson(_GetMultisigParams instance) =>
     <String, dynamic>{
       'address': instance.address,
     };

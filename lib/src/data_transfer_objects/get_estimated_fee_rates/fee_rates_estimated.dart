@@ -7,7 +7,7 @@ part 'fee_rates_estimated.g.dart';
 
 /// @nodoc
 @freezed
-class FeeRatesEstimated with _$FeeRatesEstimated {
+abstract class FeeRatesEstimated with _$FeeRatesEstimated {
   /// @nodoc
   const factory FeeRatesEstimated({
     @JsonKey(name: 'low') required int low,

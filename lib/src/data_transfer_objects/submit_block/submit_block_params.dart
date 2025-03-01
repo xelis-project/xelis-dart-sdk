@@ -8,7 +8,7 @@ part 'submit_block_params.g.dart';
 
 /// @nodoc
 @freezed
-class SubmitBlockParams with _$SubmitBlockParams {
+abstract class SubmitBlockParams with _$SubmitBlockParams {
   /// @nodoc
   const factory SubmitBlockParams({
     @JsonKey(name: 'block_template') required String blockTemplate,

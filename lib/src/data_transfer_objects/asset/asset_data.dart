@@ -7,7 +7,7 @@ part 'asset_data.g.dart';
 
 /// @nodoc
 @freezed
-class AssetData with _$AssetData {
+abstract class AssetData with _$AssetData {
   /// @nodoc
   const factory AssetData({
     @JsonKey(name: 'decimals') required int decimals,

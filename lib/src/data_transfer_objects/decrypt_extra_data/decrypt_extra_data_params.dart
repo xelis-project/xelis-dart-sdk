@@ -8,7 +8,8 @@ part 'decrypt_extra_data_params.g.dart';
 
 /// @nodoc
 @freezed
-class DecryptExtraDataDaemonParams with _$DecryptExtraDataDaemonParams {
+abstract class DecryptExtraDataDaemonParams
+    with _$DecryptExtraDataDaemonParams {
   /// @nodoc
   const factory DecryptExtraDataDaemonParams({
     @JsonKey(name: 'extra_data') required dynamic extraData,

@@ -8,15 +8,15 @@ part of 'make_integrated_address_params.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$MakeIntegratedAddressParamsImpl _$$MakeIntegratedAddressParamsImplFromJson(
+_MakeIntegratedAddressParams _$MakeIntegratedAddressParamsFromJson(
         Map<String, dynamic> json) =>
-    _$MakeIntegratedAddressParamsImpl(
+    _MakeIntegratedAddressParams(
       address: json['address'] as String,
       data: json['integrated_data'],
     );
 
-Map<String, dynamic> _$$MakeIntegratedAddressParamsImplToJson(
-        _$MakeIntegratedAddressParamsImpl instance) =>
+Map<String, dynamic> _$MakeIntegratedAddressParamsToJson(
+        _MakeIntegratedAddressParams instance) =>
     <String, dynamic>{
       'address': instance.address,
       'integrated_data': instance.data,

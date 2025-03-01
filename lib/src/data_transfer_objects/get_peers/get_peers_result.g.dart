@@ -8,8 +8,8 @@ part of 'get_peers_result.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$GetPeersResultImpl _$$GetPeersResultImplFromJson(Map<String, dynamic> json) =>
-    _$GetPeersResultImpl(
+_GetPeersResult _$GetPeersResultFromJson(Map<String, dynamic> json) =>
+    _GetPeersResult(
       peers: (json['peers'] as List<dynamic>)
           .map((e) => PeerEntry.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -17,8 +17,7 @@ _$GetPeersResultImpl _$$GetPeersResultImplFromJson(Map<String, dynamic> json) =>
       hiddenPeers: (json['hidden_peers'] as num).toInt(),
     );
 
-Map<String, dynamic> _$$GetPeersResultImplToJson(
-        _$GetPeersResultImpl instance) =>
+Map<String, dynamic> _$GetPeersResultToJson(_GetPeersResult instance) =>
     <String, dynamic>{
       'peers': instance.peers,
       'total_peers': instance.totalPeers,

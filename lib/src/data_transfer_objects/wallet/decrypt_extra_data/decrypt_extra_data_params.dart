@@ -9,7 +9,8 @@ part 'decrypt_extra_data_params.g.dart';
 
 /// @nodoc
 @freezed
-class DecryptExtraDataWalletParams with _$DecryptExtraDataWalletParams {
+abstract class DecryptExtraDataWalletParams
+    with _$DecryptExtraDataWalletParams {
   /// @nodoc
   const factory DecryptExtraDataWalletParams({
     @JsonKey(name: 'extra_data') required dynamic extraData,

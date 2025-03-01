@@ -8,7 +8,7 @@ part 'mining_history.g.dart';
 
 /// @nodoc
 @freezed
-class MiningHistory with _$MiningHistory {
+abstract class MiningHistory with _$MiningHistory {
   /// @nodoc
   const factory MiningHistory({
     @JsonKey(name: 'reward') required int reward,

@@ -8,7 +8,7 @@ part 'get_block_by_hash_params.g.dart';
 
 /// @nodoc
 @freezed
-class GetBlockByHashParams with _$GetBlockByHashParams {
+abstract class GetBlockByHashParams with _$GetBlockByHashParams {
   /// @nodoc
   @JsonSerializable(includeIfNull: false)
   const factory GetBlockByHashParams({

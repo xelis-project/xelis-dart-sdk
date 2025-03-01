@@ -8,7 +8,7 @@ part 'get_hard_forks_result.g.dart';
 
 /// @nodoc
 @freezed
-class GetHardForksResult with _$GetHardForksResult {
+abstract class GetHardForksResult with _$GetHardForksResult {
   /// @nodoc
   const factory GetHardForksResult({
     @JsonKey(name: 'height') required int height,

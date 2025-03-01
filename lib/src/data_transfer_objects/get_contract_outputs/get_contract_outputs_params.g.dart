@@ -8,14 +8,14 @@ part of 'get_contract_outputs_params.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$GetContractOutputsParamsImpl _$$GetContractOutputsParamsImplFromJson(
+_GetContractOutputsParams _$GetContractOutputsParamsFromJson(
         Map<String, dynamic> json) =>
-    _$GetContractOutputsParamsImpl(
+    _GetContractOutputsParams(
       txHash: json['transaction'] as String,
     );
 
-Map<String, dynamic> _$$GetContractOutputsParamsImplToJson(
-        _$GetContractOutputsParamsImpl instance) =>
+Map<String, dynamic> _$GetContractOutputsParamsToJson(
+        _GetContractOutputsParams instance) =>
     <String, dynamic>{
       'transaction': instance.txHash,
     };

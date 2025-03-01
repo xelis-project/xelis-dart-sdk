@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,161 +10,34 @@ part of 'get_nonce_result.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-GetNonceResult _$GetNonceResultFromJson(Map<String, dynamic> json) {
-  return _GetNonceResult.fromJson(json);
-}
 
 /// @nodoc
 mixin _$GetNonceResult {
   @JsonKey(name: 'topoheight')
-  int get topoHeight => throw _privateConstructorUsedError;
+  int get topoHeight;
   @JsonKey(name: 'nonce')
-  int get nonce => throw _privateConstructorUsedError;
+  int get nonce;
   @JsonKey(name: 'previous_topoheight')
-  int? get previousTopoHeight => throw _privateConstructorUsedError;
-
-  /// Serializes this GetNonceResult to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  int? get previousTopoHeight;
 
   /// Create a copy of GetNonceResult
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $GetNonceResultCopyWith<GetNonceResult> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+      _$GetNonceResultCopyWithImpl<GetNonceResult>(
+          this as GetNonceResult, _$identity);
 
-/// @nodoc
-abstract class $GetNonceResultCopyWith<$Res> {
-  factory $GetNonceResultCopyWith(
-          GetNonceResult value, $Res Function(GetNonceResult) then) =
-      _$GetNonceResultCopyWithImpl<$Res, GetNonceResult>;
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'topoheight') int topoHeight,
-      @JsonKey(name: 'nonce') int nonce,
-      @JsonKey(name: 'previous_topoheight') int? previousTopoHeight});
-}
-
-/// @nodoc
-class _$GetNonceResultCopyWithImpl<$Res, $Val extends GetNonceResult>
-    implements $GetNonceResultCopyWith<$Res> {
-  _$GetNonceResultCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of GetNonceResult
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? topoHeight = null,
-    Object? nonce = null,
-    Object? previousTopoHeight = freezed,
-  }) {
-    return _then(_value.copyWith(
-      topoHeight: null == topoHeight
-          ? _value.topoHeight
-          : topoHeight // ignore: cast_nullable_to_non_nullable
-              as int,
-      nonce: null == nonce
-          ? _value.nonce
-          : nonce // ignore: cast_nullable_to_non_nullable
-              as int,
-      previousTopoHeight: freezed == previousTopoHeight
-          ? _value.previousTopoHeight
-          : previousTopoHeight // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$GetNonceResultImplCopyWith<$Res>
-    implements $GetNonceResultCopyWith<$Res> {
-  factory _$$GetNonceResultImplCopyWith(_$GetNonceResultImpl value,
-          $Res Function(_$GetNonceResultImpl) then) =
-      __$$GetNonceResultImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'topoheight') int topoHeight,
-      @JsonKey(name: 'nonce') int nonce,
-      @JsonKey(name: 'previous_topoheight') int? previousTopoHeight});
-}
-
-/// @nodoc
-class __$$GetNonceResultImplCopyWithImpl<$Res>
-    extends _$GetNonceResultCopyWithImpl<$Res, _$GetNonceResultImpl>
-    implements _$$GetNonceResultImplCopyWith<$Res> {
-  __$$GetNonceResultImplCopyWithImpl(
-      _$GetNonceResultImpl _value, $Res Function(_$GetNonceResultImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of GetNonceResult
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? topoHeight = null,
-    Object? nonce = null,
-    Object? previousTopoHeight = freezed,
-  }) {
-    return _then(_$GetNonceResultImpl(
-      topoHeight: null == topoHeight
-          ? _value.topoHeight
-          : topoHeight // ignore: cast_nullable_to_non_nullable
-              as int,
-      nonce: null == nonce
-          ? _value.nonce
-          : nonce // ignore: cast_nullable_to_non_nullable
-              as int,
-      previousTopoHeight: freezed == previousTopoHeight
-          ? _value.previousTopoHeight
-          : previousTopoHeight // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$GetNonceResultImpl implements _GetNonceResult {
-  const _$GetNonceResultImpl(
-      {@JsonKey(name: 'topoheight') required this.topoHeight,
-      @JsonKey(name: 'nonce') required this.nonce,
-      @JsonKey(name: 'previous_topoheight') this.previousTopoHeight});
-
-  factory _$GetNonceResultImpl.fromJson(Map<String, dynamic> json) =>
-      _$$GetNonceResultImplFromJson(json);
-
-  @override
-  @JsonKey(name: 'topoheight')
-  final int topoHeight;
-  @override
-  @JsonKey(name: 'nonce')
-  final int nonce;
-  @override
-  @JsonKey(name: 'previous_topoheight')
-  final int? previousTopoHeight;
-
-  @override
-  String toString() {
-    return 'GetNonceResult(topoHeight: $topoHeight, nonce: $nonce, previousTopoHeight: $previousTopoHeight)';
-  }
+  /// Serializes this GetNonceResult to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetNonceResultImpl &&
+            other is GetNonceResult &&
             (identical(other.topoHeight, topoHeight) ||
                 other.topoHeight == topoHeight) &&
             (identical(other.nonce, nonce) || other.nonce == nonce) &&
@@ -176,47 +50,162 @@ class _$GetNonceResultImpl implements _GetNonceResult {
   int get hashCode =>
       Object.hash(runtimeType, topoHeight, nonce, previousTopoHeight);
 
-  /// Create a copy of GetNonceResult
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$GetNonceResultImplCopyWith<_$GetNonceResultImpl> get copyWith =>
-      __$$GetNonceResultImplCopyWithImpl<_$GetNonceResultImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$GetNonceResultImplToJson(
-      this,
-    );
+  String toString() {
+    return 'GetNonceResult(topoHeight: $topoHeight, nonce: $nonce, previousTopoHeight: $previousTopoHeight)';
   }
 }
 
-abstract class _GetNonceResult implements GetNonceResult {
-  const factory _GetNonceResult(
-      {@JsonKey(name: 'topoheight') required final int topoHeight,
-      @JsonKey(name: 'nonce') required final int nonce,
-      @JsonKey(name: 'previous_topoheight')
-      final int? previousTopoHeight}) = _$GetNonceResultImpl;
+/// @nodoc
+abstract mixin class $GetNonceResultCopyWith<$Res> {
+  factory $GetNonceResultCopyWith(
+          GetNonceResult value, $Res Function(GetNonceResult) _then) =
+      _$GetNonceResultCopyWithImpl;
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'topoheight') int topoHeight,
+      @JsonKey(name: 'nonce') int nonce,
+      @JsonKey(name: 'previous_topoheight') int? previousTopoHeight});
+}
 
-  factory _GetNonceResult.fromJson(Map<String, dynamic> json) =
-      _$GetNonceResultImpl.fromJson;
+/// @nodoc
+class _$GetNonceResultCopyWithImpl<$Res>
+    implements $GetNonceResultCopyWith<$Res> {
+  _$GetNonceResultCopyWithImpl(this._self, this._then);
+
+  final GetNonceResult _self;
+  final $Res Function(GetNonceResult) _then;
+
+  /// Create a copy of GetNonceResult
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? topoHeight = null,
+    Object? nonce = null,
+    Object? previousTopoHeight = freezed,
+  }) {
+    return _then(_self.copyWith(
+      topoHeight: null == topoHeight
+          ? _self.topoHeight
+          : topoHeight // ignore: cast_nullable_to_non_nullable
+              as int,
+      nonce: null == nonce
+          ? _self.nonce
+          : nonce // ignore: cast_nullable_to_non_nullable
+              as int,
+      previousTopoHeight: freezed == previousTopoHeight
+          ? _self.previousTopoHeight
+          : previousTopoHeight // ignore: cast_nullable_to_non_nullable
+              as int?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _GetNonceResult implements GetNonceResult {
+  const _GetNonceResult(
+      {@JsonKey(name: 'topoheight') required this.topoHeight,
+      @JsonKey(name: 'nonce') required this.nonce,
+      @JsonKey(name: 'previous_topoheight') this.previousTopoHeight});
+  factory _GetNonceResult.fromJson(Map<String, dynamic> json) =>
+      _$GetNonceResultFromJson(json);
 
   @override
   @JsonKey(name: 'topoheight')
-  int get topoHeight;
+  final int topoHeight;
   @override
   @JsonKey(name: 'nonce')
-  int get nonce;
+  final int nonce;
   @override
   @JsonKey(name: 'previous_topoheight')
-  int? get previousTopoHeight;
+  final int? previousTopoHeight;
 
   /// Create a copy of GetNonceResult
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$GetNonceResultImplCopyWith<_$GetNonceResultImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  _$GetNonceResultCopyWith<_GetNonceResult> get copyWith =>
+      __$GetNonceResultCopyWithImpl<_GetNonceResult>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$GetNonceResultToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _GetNonceResult &&
+            (identical(other.topoHeight, topoHeight) ||
+                other.topoHeight == topoHeight) &&
+            (identical(other.nonce, nonce) || other.nonce == nonce) &&
+            (identical(other.previousTopoHeight, previousTopoHeight) ||
+                other.previousTopoHeight == previousTopoHeight));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, topoHeight, nonce, previousTopoHeight);
+
+  @override
+  String toString() {
+    return 'GetNonceResult(topoHeight: $topoHeight, nonce: $nonce, previousTopoHeight: $previousTopoHeight)';
+  }
 }
+
+/// @nodoc
+abstract mixin class _$GetNonceResultCopyWith<$Res>
+    implements $GetNonceResultCopyWith<$Res> {
+  factory _$GetNonceResultCopyWith(
+          _GetNonceResult value, $Res Function(_GetNonceResult) _then) =
+      __$GetNonceResultCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'topoheight') int topoHeight,
+      @JsonKey(name: 'nonce') int nonce,
+      @JsonKey(name: 'previous_topoheight') int? previousTopoHeight});
+}
+
+/// @nodoc
+class __$GetNonceResultCopyWithImpl<$Res>
+    implements _$GetNonceResultCopyWith<$Res> {
+  __$GetNonceResultCopyWithImpl(this._self, this._then);
+
+  final _GetNonceResult _self;
+  final $Res Function(_GetNonceResult) _then;
+
+  /// Create a copy of GetNonceResult
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? topoHeight = null,
+    Object? nonce = null,
+    Object? previousTopoHeight = freezed,
+  }) {
+    return _then(_GetNonceResult(
+      topoHeight: null == topoHeight
+          ? _self.topoHeight
+          : topoHeight // ignore: cast_nullable_to_non_nullable
+              as int,
+      nonce: null == nonce
+          ? _self.nonce
+          : nonce // ignore: cast_nullable_to_non_nullable
+              as int,
+      previousTopoHeight: freezed == previousTopoHeight
+          ? _self.previousTopoHeight
+          : previousTopoHeight // ignore: cast_nullable_to_non_nullable
+              as int?,
+    ));
+  }
+}
+
+// dart format on

@@ -8,15 +8,15 @@ part of 'stable_height_changed_event.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$StableHeightChangedEventImpl _$$StableHeightChangedEventImplFromJson(
+_StableHeightChangedEvent _$StableHeightChangedEventFromJson(
         Map<String, dynamic> json) =>
-    _$StableHeightChangedEventImpl(
+    _StableHeightChangedEvent(
       previousStableHeight: (json['previous_stable_height'] as num).toInt(),
       newStableHeight: (json['new_stable_height'] as num).toInt(),
     );
 
-Map<String, dynamic> _$$StableHeightChangedEventImplToJson(
-        _$StableHeightChangedEventImpl instance) =>
+Map<String, dynamic> _$StableHeightChangedEventToJson(
+        _StableHeightChangedEvent instance) =>
     <String, dynamic>{
       'previous_stable_height': instance.previousStableHeight,
       'new_stable_height': instance.newStableHeight,

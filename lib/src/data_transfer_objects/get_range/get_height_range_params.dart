@@ -8,7 +8,7 @@ part 'get_height_range_params.g.dart';
 
 /// @nodoc
 @freezed
-class GetHeightRangeParams with _$GetHeightRangeParams {
+abstract class GetHeightRangeParams with _$GetHeightRangeParams {
   /// @nodoc
   @JsonSerializable(includeIfNull: false)
   const factory GetHeightRangeParams({

@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,83 +10,59 @@ part of 'has_balance_result.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-HasBalanceResult _$HasBalanceResultFromJson(Map<String, dynamic> json) {
-  return _HasBalanceResult.fromJson(json);
-}
 
 /// @nodoc
 mixin _$HasBalanceResult {
   @JsonKey(name: 'exist')
-  bool get exist => throw _privateConstructorUsedError;
-
-  /// Serializes this HasBalanceResult to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  bool get exist;
 
   /// Create a copy of HasBalanceResult
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $HasBalanceResultCopyWith<HasBalanceResult> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $HasBalanceResultCopyWith<$Res> {
-  factory $HasBalanceResultCopyWith(
-          HasBalanceResult value, $Res Function(HasBalanceResult) then) =
-      _$HasBalanceResultCopyWithImpl<$Res, HasBalanceResult>;
-  @useResult
-  $Res call({@JsonKey(name: 'exist') bool exist});
-}
-
-/// @nodoc
-class _$HasBalanceResultCopyWithImpl<$Res, $Val extends HasBalanceResult>
-    implements $HasBalanceResultCopyWith<$Res> {
-  _$HasBalanceResultCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of HasBalanceResult
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $HasBalanceResultCopyWith<HasBalanceResult> get copyWith =>
+      _$HasBalanceResultCopyWithImpl<HasBalanceResult>(
+          this as HasBalanceResult, _$identity);
+
+  /// Serializes this HasBalanceResult to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? exist = null,
-  }) {
-    return _then(_value.copyWith(
-      exist: null == exist
-          ? _value.exist
-          : exist // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is HasBalanceResult &&
+            (identical(other.exist, exist) || other.exist == exist));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, exist);
+
+  @override
+  String toString() {
+    return 'HasBalanceResult(exist: $exist)';
   }
 }
 
 /// @nodoc
-abstract class _$$HasBalanceResultImplCopyWith<$Res>
-    implements $HasBalanceResultCopyWith<$Res> {
-  factory _$$HasBalanceResultImplCopyWith(_$HasBalanceResultImpl value,
-          $Res Function(_$HasBalanceResultImpl) then) =
-      __$$HasBalanceResultImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $HasBalanceResultCopyWith<$Res> {
+  factory $HasBalanceResultCopyWith(
+          HasBalanceResult value, $Res Function(HasBalanceResult) _then) =
+      _$HasBalanceResultCopyWithImpl;
   @useResult
   $Res call({@JsonKey(name: 'exist') bool exist});
 }
 
 /// @nodoc
-class __$$HasBalanceResultImplCopyWithImpl<$Res>
-    extends _$HasBalanceResultCopyWithImpl<$Res, _$HasBalanceResultImpl>
-    implements _$$HasBalanceResultImplCopyWith<$Res> {
-  __$$HasBalanceResultImplCopyWithImpl(_$HasBalanceResultImpl _value,
-      $Res Function(_$HasBalanceResultImpl) _then)
-      : super(_value, _then);
+class _$HasBalanceResultCopyWithImpl<$Res>
+    implements $HasBalanceResultCopyWith<$Res> {
+  _$HasBalanceResultCopyWithImpl(this._self, this._then);
+
+  final HasBalanceResult _self;
+  final $Res Function(HasBalanceResult) _then;
 
   /// Create a copy of HasBalanceResult
   /// with the given fields replaced by the non-null parameter values.
@@ -94,9 +71,9 @@ class __$$HasBalanceResultImplCopyWithImpl<$Res>
   $Res call({
     Object? exist = null,
   }) {
-    return _then(_$HasBalanceResultImpl(
+    return _then(_self.copyWith(
       exist: null == exist
-          ? _value.exist
+          ? _self.exist
           : exist // ignore: cast_nullable_to_non_nullable
               as bool,
     ));
@@ -105,26 +82,35 @@ class __$$HasBalanceResultImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$HasBalanceResultImpl implements _HasBalanceResult {
-  const _$HasBalanceResultImpl({@JsonKey(name: 'exist') required this.exist});
-
-  factory _$HasBalanceResultImpl.fromJson(Map<String, dynamic> json) =>
-      _$$HasBalanceResultImplFromJson(json);
+class _HasBalanceResult implements HasBalanceResult {
+  const _HasBalanceResult({@JsonKey(name: 'exist') required this.exist});
+  factory _HasBalanceResult.fromJson(Map<String, dynamic> json) =>
+      _$HasBalanceResultFromJson(json);
 
   @override
   @JsonKey(name: 'exist')
   final bool exist;
 
+  /// Create a copy of HasBalanceResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'HasBalanceResult(exist: $exist)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$HasBalanceResultCopyWith<_HasBalanceResult> get copyWith =>
+      __$HasBalanceResultCopyWithImpl<_HasBalanceResult>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$HasBalanceResultToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$HasBalanceResultImpl &&
+            other is _HasBalanceResult &&
             (identical(other.exist, exist) || other.exist == exist));
   }
 
@@ -132,39 +118,45 @@ class _$HasBalanceResultImpl implements _HasBalanceResult {
   @override
   int get hashCode => Object.hash(runtimeType, exist);
 
-  /// Create a copy of HasBalanceResult
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$HasBalanceResultImplCopyWith<_$HasBalanceResultImpl> get copyWith =>
-      __$$HasBalanceResultImplCopyWithImpl<_$HasBalanceResultImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$HasBalanceResultImplToJson(
-      this,
-    );
+  String toString() {
+    return 'HasBalanceResult(exist: $exist)';
   }
 }
 
-abstract class _HasBalanceResult implements HasBalanceResult {
-  const factory _HasBalanceResult(
-          {@JsonKey(name: 'exist') required final bool exist}) =
-      _$HasBalanceResultImpl;
-
-  factory _HasBalanceResult.fromJson(Map<String, dynamic> json) =
-      _$HasBalanceResultImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$HasBalanceResultCopyWith<$Res>
+    implements $HasBalanceResultCopyWith<$Res> {
+  factory _$HasBalanceResultCopyWith(
+          _HasBalanceResult value, $Res Function(_HasBalanceResult) _then) =
+      __$HasBalanceResultCopyWithImpl;
   @override
-  @JsonKey(name: 'exist')
-  bool get exist;
+  @useResult
+  $Res call({@JsonKey(name: 'exist') bool exist});
+}
+
+/// @nodoc
+class __$HasBalanceResultCopyWithImpl<$Res>
+    implements _$HasBalanceResultCopyWith<$Res> {
+  __$HasBalanceResultCopyWithImpl(this._self, this._then);
+
+  final _HasBalanceResult _self;
+  final $Res Function(_HasBalanceResult) _then;
 
   /// Create a copy of HasBalanceResult
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$HasBalanceResultImplCopyWith<_$HasBalanceResultImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? exist = null,
+  }) {
+    return _then(_HasBalanceResult(
+      exist: null == exist
+          ? _self.exist
+          : exist // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
 }
+
+// dart format on

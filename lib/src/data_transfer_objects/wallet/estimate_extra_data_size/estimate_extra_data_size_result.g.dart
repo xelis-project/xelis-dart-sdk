@@ -8,14 +8,14 @@ part of 'estimate_extra_data_size_result.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$EstimateExtraDataSizeResultImpl _$$EstimateExtraDataSizeResultImplFromJson(
+_EstimateExtraDataSizeResult _$EstimateExtraDataSizeResultFromJson(
         Map<String, dynamic> json) =>
-    _$EstimateExtraDataSizeResultImpl(
+    _EstimateExtraDataSizeResult(
       size: (json['size'] as num).toInt(),
     );
 
-Map<String, dynamic> _$$EstimateExtraDataSizeResultImplToJson(
-        _$EstimateExtraDataSizeResultImpl instance) =>
+Map<String, dynamic> _$EstimateExtraDataSizeResultToJson(
+        _EstimateExtraDataSizeResult instance) =>
     <String, dynamic>{
       'size': instance.size,
     };

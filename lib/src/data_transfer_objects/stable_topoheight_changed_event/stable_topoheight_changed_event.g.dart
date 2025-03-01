@@ -8,16 +8,16 @@ part of 'stable_topoheight_changed_event.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$StableTopoheightChangedEventImpl _$$StableTopoheightChangedEventImplFromJson(
+_StableTopoheightChangedEvent _$StableTopoheightChangedEventFromJson(
         Map<String, dynamic> json) =>
-    _$StableTopoheightChangedEventImpl(
+    _StableTopoheightChangedEvent(
       previousStableTopoheight:
           (json['previous_stable_topoheight'] as num).toInt(),
       newStableTopoheight: (json['new_stable_topoheight'] as num).toInt(),
     );
 
-Map<String, dynamic> _$$StableTopoheightChangedEventImplToJson(
-        _$StableTopoheightChangedEventImpl instance) =>
+Map<String, dynamic> _$StableTopoheightChangedEventToJson(
+        _StableTopoheightChangedEvent instance) =>
     <String, dynamic>{
       'previous_stable_topoheight': instance.previousStableTopoheight,
       'new_stable_topoheight': instance.newStableTopoheight,

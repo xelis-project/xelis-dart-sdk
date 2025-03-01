@@ -8,7 +8,7 @@ part 'get_address_params.g.dart';
 
 /// @nodoc
 @freezed
-class GetAddressParams with _$GetAddressParams {
+abstract class GetAddressParams with _$GetAddressParams {
   /// @nodoc
   const factory GetAddressParams({
     @JsonKey(name: 'integrated_data') required dynamic integratedData,

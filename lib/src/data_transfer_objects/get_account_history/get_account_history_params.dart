@@ -8,7 +8,7 @@ part 'get_account_history_params.g.dart';
 
 /// @nodoc
 @freezed
-class GetAccountHistoryParams with _$GetAccountHistoryParams {
+abstract class GetAccountHistoryParams with _$GetAccountHistoryParams {
   /// @nodoc
   const factory GetAccountHistoryParams({
     @JsonKey(name: 'address') required String address,

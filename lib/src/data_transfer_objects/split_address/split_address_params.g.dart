@@ -8,14 +8,12 @@ part of 'split_address_params.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$SplitAddressParamsImpl _$$SplitAddressParamsImplFromJson(
-        Map<String, dynamic> json) =>
-    _$SplitAddressParamsImpl(
+_SplitAddressParams _$SplitAddressParamsFromJson(Map<String, dynamic> json) =>
+    _SplitAddressParams(
       address: json['address'] as String,
     );
 
-Map<String, dynamic> _$$SplitAddressParamsImplToJson(
-        _$SplitAddressParamsImpl instance) =>
+Map<String, dynamic> _$SplitAddressParamsToJson(_SplitAddressParams instance) =>
     <String, dynamic>{
       'address': instance.address,
     };

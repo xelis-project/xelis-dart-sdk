@@ -8,7 +8,7 @@ part 'finalize_unsigned_transaction_params.g.dart';
 
 /// @nodoc
 @freezed
-class FinalizeUnsignedTransactionParams
+abstract class FinalizeUnsignedTransactionParams
     with _$FinalizeUnsignedTransactionParams {
   /// @nodoc
   @JsonSerializable(includeIfNull: false)

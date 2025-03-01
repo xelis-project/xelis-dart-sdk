@@ -8,16 +8,15 @@ part of 'get_difficulty_result.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$GetDifficultyResultImpl _$$GetDifficultyResultImplFromJson(
-        Map<String, dynamic> json) =>
-    _$GetDifficultyResultImpl(
+_GetDifficultyResult _$GetDifficultyResultFromJson(Map<String, dynamic> json) =>
+    _GetDifficultyResult(
       difficulty: json['difficulty'] as String,
       hashrate: json['hashrate'] as String,
       hashrateFormatted: json['hashrate_formatted'] as String,
     );
 
-Map<String, dynamic> _$$GetDifficultyResultImplToJson(
-        _$GetDifficultyResultImpl instance) =>
+Map<String, dynamic> _$GetDifficultyResultToJson(
+        _GetDifficultyResult instance) =>
     <String, dynamic>{
       'difficulty': instance.difficulty,
       'hashrate': instance.hashrate,

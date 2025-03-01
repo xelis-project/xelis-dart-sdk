@@ -7,7 +7,7 @@ part 'block_orphaned_event.g.dart';
 
 /// @nodoc
 @freezed
-class BlockOrphanedEvent with _$BlockOrphanedEvent {
+abstract class BlockOrphanedEvent with _$BlockOrphanedEvent {
   /// @nodoc
   const factory BlockOrphanedEvent({
     @JsonKey(name: 'block_hash') required String blockHash,

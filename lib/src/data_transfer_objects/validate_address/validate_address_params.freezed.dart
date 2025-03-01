@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,166 +10,34 @@ part of 'validate_address_params.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-ValidateAddressParams _$ValidateAddressParamsFromJson(
-    Map<String, dynamic> json) {
-  return _ValidateAddressParams.fromJson(json);
-}
 
 /// @nodoc
 mixin _$ValidateAddressParams {
   @JsonKey(name: 'address')
-  String get address => throw _privateConstructorUsedError;
+  String get address;
   @JsonKey(name: 'allow_integrated')
-  bool get allowIntegrated => throw _privateConstructorUsedError;
+  bool get allowIntegrated;
   @JsonKey(name: 'max_integrated_data_size')
-  String get maxIntegratedDataSize => throw _privateConstructorUsedError;
-
-  /// Serializes this ValidateAddressParams to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String get maxIntegratedDataSize;
 
   /// Create a copy of ValidateAddressParams
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $ValidateAddressParamsCopyWith<ValidateAddressParams> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+      _$ValidateAddressParamsCopyWithImpl<ValidateAddressParams>(
+          this as ValidateAddressParams, _$identity);
 
-/// @nodoc
-abstract class $ValidateAddressParamsCopyWith<$Res> {
-  factory $ValidateAddressParamsCopyWith(ValidateAddressParams value,
-          $Res Function(ValidateAddressParams) then) =
-      _$ValidateAddressParamsCopyWithImpl<$Res, ValidateAddressParams>;
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'address') String address,
-      @JsonKey(name: 'allow_integrated') bool allowIntegrated,
-      @JsonKey(name: 'max_integrated_data_size') String maxIntegratedDataSize});
-}
-
-/// @nodoc
-class _$ValidateAddressParamsCopyWithImpl<$Res,
-        $Val extends ValidateAddressParams>
-    implements $ValidateAddressParamsCopyWith<$Res> {
-  _$ValidateAddressParamsCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of ValidateAddressParams
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? address = null,
-    Object? allowIntegrated = null,
-    Object? maxIntegratedDataSize = null,
-  }) {
-    return _then(_value.copyWith(
-      address: null == address
-          ? _value.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as String,
-      allowIntegrated: null == allowIntegrated
-          ? _value.allowIntegrated
-          : allowIntegrated // ignore: cast_nullable_to_non_nullable
-              as bool,
-      maxIntegratedDataSize: null == maxIntegratedDataSize
-          ? _value.maxIntegratedDataSize
-          : maxIntegratedDataSize // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$ValidateAddressParamsImplCopyWith<$Res>
-    implements $ValidateAddressParamsCopyWith<$Res> {
-  factory _$$ValidateAddressParamsImplCopyWith(
-          _$ValidateAddressParamsImpl value,
-          $Res Function(_$ValidateAddressParamsImpl) then) =
-      __$$ValidateAddressParamsImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'address') String address,
-      @JsonKey(name: 'allow_integrated') bool allowIntegrated,
-      @JsonKey(name: 'max_integrated_data_size') String maxIntegratedDataSize});
-}
-
-/// @nodoc
-class __$$ValidateAddressParamsImplCopyWithImpl<$Res>
-    extends _$ValidateAddressParamsCopyWithImpl<$Res,
-        _$ValidateAddressParamsImpl>
-    implements _$$ValidateAddressParamsImplCopyWith<$Res> {
-  __$$ValidateAddressParamsImplCopyWithImpl(_$ValidateAddressParamsImpl _value,
-      $Res Function(_$ValidateAddressParamsImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of ValidateAddressParams
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? address = null,
-    Object? allowIntegrated = null,
-    Object? maxIntegratedDataSize = null,
-  }) {
-    return _then(_$ValidateAddressParamsImpl(
-      address: null == address
-          ? _value.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as String,
-      allowIntegrated: null == allowIntegrated
-          ? _value.allowIntegrated
-          : allowIntegrated // ignore: cast_nullable_to_non_nullable
-              as bool,
-      maxIntegratedDataSize: null == maxIntegratedDataSize
-          ? _value.maxIntegratedDataSize
-          : maxIntegratedDataSize // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$ValidateAddressParamsImpl implements _ValidateAddressParams {
-  const _$ValidateAddressParamsImpl(
-      {@JsonKey(name: 'address') required this.address,
-      @JsonKey(name: 'allow_integrated') required this.allowIntegrated,
-      @JsonKey(name: 'max_integrated_data_size')
-      required this.maxIntegratedDataSize});
-
-  factory _$ValidateAddressParamsImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ValidateAddressParamsImplFromJson(json);
-
-  @override
-  @JsonKey(name: 'address')
-  final String address;
-  @override
-  @JsonKey(name: 'allow_integrated')
-  final bool allowIntegrated;
-  @override
-  @JsonKey(name: 'max_integrated_data_size')
-  final String maxIntegratedDataSize;
-
-  @override
-  String toString() {
-    return 'ValidateAddressParams(address: $address, allowIntegrated: $allowIntegrated, maxIntegratedDataSize: $maxIntegratedDataSize)';
-  }
+  /// Serializes this ValidateAddressParams to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ValidateAddressParamsImpl &&
+            other is ValidateAddressParams &&
             (identical(other.address, address) || other.address == address) &&
             (identical(other.allowIntegrated, allowIntegrated) ||
                 other.allowIntegrated == allowIntegrated) &&
@@ -181,48 +50,164 @@ class _$ValidateAddressParamsImpl implements _ValidateAddressParams {
   int get hashCode =>
       Object.hash(runtimeType, address, allowIntegrated, maxIntegratedDataSize);
 
-  /// Create a copy of ValidateAddressParams
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$ValidateAddressParamsImplCopyWith<_$ValidateAddressParamsImpl>
-      get copyWith => __$$ValidateAddressParamsImplCopyWithImpl<
-          _$ValidateAddressParamsImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ValidateAddressParamsImplToJson(
-      this,
-    );
+  String toString() {
+    return 'ValidateAddressParams(address: $address, allowIntegrated: $allowIntegrated, maxIntegratedDataSize: $maxIntegratedDataSize)';
   }
 }
 
-abstract class _ValidateAddressParams implements ValidateAddressParams {
-  const factory _ValidateAddressParams(
-      {@JsonKey(name: 'address') required final String address,
-      @JsonKey(name: 'allow_integrated') required final bool allowIntegrated,
-      @JsonKey(name: 'max_integrated_data_size')
-      required final String
-          maxIntegratedDataSize}) = _$ValidateAddressParamsImpl;
+/// @nodoc
+abstract mixin class $ValidateAddressParamsCopyWith<$Res> {
+  factory $ValidateAddressParamsCopyWith(ValidateAddressParams value,
+          $Res Function(ValidateAddressParams) _then) =
+      _$ValidateAddressParamsCopyWithImpl;
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'address') String address,
+      @JsonKey(name: 'allow_integrated') bool allowIntegrated,
+      @JsonKey(name: 'max_integrated_data_size') String maxIntegratedDataSize});
+}
 
-  factory _ValidateAddressParams.fromJson(Map<String, dynamic> json) =
-      _$ValidateAddressParamsImpl.fromJson;
+/// @nodoc
+class _$ValidateAddressParamsCopyWithImpl<$Res>
+    implements $ValidateAddressParamsCopyWith<$Res> {
+  _$ValidateAddressParamsCopyWithImpl(this._self, this._then);
+
+  final ValidateAddressParams _self;
+  final $Res Function(ValidateAddressParams) _then;
+
+  /// Create a copy of ValidateAddressParams
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? address = null,
+    Object? allowIntegrated = null,
+    Object? maxIntegratedDataSize = null,
+  }) {
+    return _then(_self.copyWith(
+      address: null == address
+          ? _self.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as String,
+      allowIntegrated: null == allowIntegrated
+          ? _self.allowIntegrated
+          : allowIntegrated // ignore: cast_nullable_to_non_nullable
+              as bool,
+      maxIntegratedDataSize: null == maxIntegratedDataSize
+          ? _self.maxIntegratedDataSize
+          : maxIntegratedDataSize // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _ValidateAddressParams implements ValidateAddressParams {
+  const _ValidateAddressParams(
+      {@JsonKey(name: 'address') required this.address,
+      @JsonKey(name: 'allow_integrated') required this.allowIntegrated,
+      @JsonKey(name: 'max_integrated_data_size')
+      required this.maxIntegratedDataSize});
+  factory _ValidateAddressParams.fromJson(Map<String, dynamic> json) =>
+      _$ValidateAddressParamsFromJson(json);
 
   @override
   @JsonKey(name: 'address')
-  String get address;
+  final String address;
   @override
   @JsonKey(name: 'allow_integrated')
-  bool get allowIntegrated;
+  final bool allowIntegrated;
   @override
   @JsonKey(name: 'max_integrated_data_size')
-  String get maxIntegratedDataSize;
+  final String maxIntegratedDataSize;
 
   /// Create a copy of ValidateAddressParams
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ValidateAddressParamsImplCopyWith<_$ValidateAddressParamsImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  _$ValidateAddressParamsCopyWith<_ValidateAddressParams> get copyWith =>
+      __$ValidateAddressParamsCopyWithImpl<_ValidateAddressParams>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ValidateAddressParamsToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _ValidateAddressParams &&
+            (identical(other.address, address) || other.address == address) &&
+            (identical(other.allowIntegrated, allowIntegrated) ||
+                other.allowIntegrated == allowIntegrated) &&
+            (identical(other.maxIntegratedDataSize, maxIntegratedDataSize) ||
+                other.maxIntegratedDataSize == maxIntegratedDataSize));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, address, allowIntegrated, maxIntegratedDataSize);
+
+  @override
+  String toString() {
+    return 'ValidateAddressParams(address: $address, allowIntegrated: $allowIntegrated, maxIntegratedDataSize: $maxIntegratedDataSize)';
+  }
 }
+
+/// @nodoc
+abstract mixin class _$ValidateAddressParamsCopyWith<$Res>
+    implements $ValidateAddressParamsCopyWith<$Res> {
+  factory _$ValidateAddressParamsCopyWith(_ValidateAddressParams value,
+          $Res Function(_ValidateAddressParams) _then) =
+      __$ValidateAddressParamsCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'address') String address,
+      @JsonKey(name: 'allow_integrated') bool allowIntegrated,
+      @JsonKey(name: 'max_integrated_data_size') String maxIntegratedDataSize});
+}
+
+/// @nodoc
+class __$ValidateAddressParamsCopyWithImpl<$Res>
+    implements _$ValidateAddressParamsCopyWith<$Res> {
+  __$ValidateAddressParamsCopyWithImpl(this._self, this._then);
+
+  final _ValidateAddressParams _self;
+  final $Res Function(_ValidateAddressParams) _then;
+
+  /// Create a copy of ValidateAddressParams
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? address = null,
+    Object? allowIntegrated = null,
+    Object? maxIntegratedDataSize = null,
+  }) {
+    return _then(_ValidateAddressParams(
+      address: null == address
+          ? _self.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as String,
+      allowIntegrated: null == allowIntegrated
+          ? _self.allowIntegrated
+          : allowIntegrated // ignore: cast_nullable_to_non_nullable
+              as bool,
+      maxIntegratedDataSize: null == maxIntegratedDataSize
+          ? _self.maxIntegratedDataSize
+          : maxIntegratedDataSize // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+// dart format on

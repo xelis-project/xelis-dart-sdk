@@ -7,7 +7,7 @@ part 'unsigned_transaction_response.freezed.dart';
 
 /// @nodoc
 @freezed
-class UnsignedTransactionResponse with _$UnsignedTransactionResponse {
+abstract class UnsignedTransactionResponse with _$UnsignedTransactionResponse {
   /// @nodoc
   const factory UnsignedTransactionResponse({
     required TransactionType data,

@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,83 +10,59 @@ part of 'dev_fee_history.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-DevFeeHistory _$DevFeeHistoryFromJson(Map<String, dynamic> json) {
-  return _DevFeeHistory.fromJson(json);
-}
 
 /// @nodoc
 mixin _$DevFeeHistory {
   @JsonKey(name: 'reward')
-  int get reward => throw _privateConstructorUsedError;
-
-  /// Serializes this DevFeeHistory to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  int get reward;
 
   /// Create a copy of DevFeeHistory
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $DevFeeHistoryCopyWith<DevFeeHistory> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $DevFeeHistoryCopyWith<$Res> {
-  factory $DevFeeHistoryCopyWith(
-          DevFeeHistory value, $Res Function(DevFeeHistory) then) =
-      _$DevFeeHistoryCopyWithImpl<$Res, DevFeeHistory>;
-  @useResult
-  $Res call({@JsonKey(name: 'reward') int reward});
-}
-
-/// @nodoc
-class _$DevFeeHistoryCopyWithImpl<$Res, $Val extends DevFeeHistory>
-    implements $DevFeeHistoryCopyWith<$Res> {
-  _$DevFeeHistoryCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of DevFeeHistory
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $DevFeeHistoryCopyWith<DevFeeHistory> get copyWith =>
+      _$DevFeeHistoryCopyWithImpl<DevFeeHistory>(
+          this as DevFeeHistory, _$identity);
+
+  /// Serializes this DevFeeHistory to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? reward = null,
-  }) {
-    return _then(_value.copyWith(
-      reward: null == reward
-          ? _value.reward
-          : reward // ignore: cast_nullable_to_non_nullable
-              as int,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is DevFeeHistory &&
+            (identical(other.reward, reward) || other.reward == reward));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, reward);
+
+  @override
+  String toString() {
+    return 'DevFeeHistory(reward: $reward)';
   }
 }
 
 /// @nodoc
-abstract class _$$DevFeeHistoryImplCopyWith<$Res>
-    implements $DevFeeHistoryCopyWith<$Res> {
-  factory _$$DevFeeHistoryImplCopyWith(
-          _$DevFeeHistoryImpl value, $Res Function(_$DevFeeHistoryImpl) then) =
-      __$$DevFeeHistoryImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $DevFeeHistoryCopyWith<$Res> {
+  factory $DevFeeHistoryCopyWith(
+          DevFeeHistory value, $Res Function(DevFeeHistory) _then) =
+      _$DevFeeHistoryCopyWithImpl;
   @useResult
   $Res call({@JsonKey(name: 'reward') int reward});
 }
 
 /// @nodoc
-class __$$DevFeeHistoryImplCopyWithImpl<$Res>
-    extends _$DevFeeHistoryCopyWithImpl<$Res, _$DevFeeHistoryImpl>
-    implements _$$DevFeeHistoryImplCopyWith<$Res> {
-  __$$DevFeeHistoryImplCopyWithImpl(
-      _$DevFeeHistoryImpl _value, $Res Function(_$DevFeeHistoryImpl) _then)
-      : super(_value, _then);
+class _$DevFeeHistoryCopyWithImpl<$Res>
+    implements $DevFeeHistoryCopyWith<$Res> {
+  _$DevFeeHistoryCopyWithImpl(this._self, this._then);
+
+  final DevFeeHistory _self;
+  final $Res Function(DevFeeHistory) _then;
 
   /// Create a copy of DevFeeHistory
   /// with the given fields replaced by the non-null parameter values.
@@ -94,9 +71,9 @@ class __$$DevFeeHistoryImplCopyWithImpl<$Res>
   $Res call({
     Object? reward = null,
   }) {
-    return _then(_$DevFeeHistoryImpl(
+    return _then(_self.copyWith(
       reward: null == reward
-          ? _value.reward
+          ? _self.reward
           : reward // ignore: cast_nullable_to_non_nullable
               as int,
     ));
@@ -105,26 +82,35 @@ class __$$DevFeeHistoryImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$DevFeeHistoryImpl implements _DevFeeHistory {
-  const _$DevFeeHistoryImpl({@JsonKey(name: 'reward') required this.reward});
-
-  factory _$DevFeeHistoryImpl.fromJson(Map<String, dynamic> json) =>
-      _$$DevFeeHistoryImplFromJson(json);
+class _DevFeeHistory implements DevFeeHistory {
+  const _DevFeeHistory({@JsonKey(name: 'reward') required this.reward});
+  factory _DevFeeHistory.fromJson(Map<String, dynamic> json) =>
+      _$DevFeeHistoryFromJson(json);
 
   @override
   @JsonKey(name: 'reward')
   final int reward;
 
+  /// Create a copy of DevFeeHistory
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'DevFeeHistory(reward: $reward)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$DevFeeHistoryCopyWith<_DevFeeHistory> get copyWith =>
+      __$DevFeeHistoryCopyWithImpl<_DevFeeHistory>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$DevFeeHistoryToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$DevFeeHistoryImpl &&
+            other is _DevFeeHistory &&
             (identical(other.reward, reward) || other.reward == reward));
   }
 
@@ -132,38 +118,45 @@ class _$DevFeeHistoryImpl implements _DevFeeHistory {
   @override
   int get hashCode => Object.hash(runtimeType, reward);
 
-  /// Create a copy of DevFeeHistory
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$DevFeeHistoryImplCopyWith<_$DevFeeHistoryImpl> get copyWith =>
-      __$$DevFeeHistoryImplCopyWithImpl<_$DevFeeHistoryImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$DevFeeHistoryImplToJson(
-      this,
-    );
+  String toString() {
+    return 'DevFeeHistory(reward: $reward)';
   }
 }
 
-abstract class _DevFeeHistory implements DevFeeHistory {
-  const factory _DevFeeHistory(
-          {@JsonKey(name: 'reward') required final int reward}) =
-      _$DevFeeHistoryImpl;
-
-  factory _DevFeeHistory.fromJson(Map<String, dynamic> json) =
-      _$DevFeeHistoryImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$DevFeeHistoryCopyWith<$Res>
+    implements $DevFeeHistoryCopyWith<$Res> {
+  factory _$DevFeeHistoryCopyWith(
+          _DevFeeHistory value, $Res Function(_DevFeeHistory) _then) =
+      __$DevFeeHistoryCopyWithImpl;
   @override
-  @JsonKey(name: 'reward')
-  int get reward;
+  @useResult
+  $Res call({@JsonKey(name: 'reward') int reward});
+}
+
+/// @nodoc
+class __$DevFeeHistoryCopyWithImpl<$Res>
+    implements _$DevFeeHistoryCopyWith<$Res> {
+  __$DevFeeHistoryCopyWithImpl(this._self, this._then);
+
+  final _DevFeeHistory _self;
+  final $Res Function(_DevFeeHistory) _then;
 
   /// Create a copy of DevFeeHistory
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$DevFeeHistoryImplCopyWith<_$DevFeeHistoryImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? reward = null,
+  }) {
+    return _then(_DevFeeHistory(
+      reward: null == reward
+          ? _self.reward
+          : reward // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
 }
+
+// dart format on

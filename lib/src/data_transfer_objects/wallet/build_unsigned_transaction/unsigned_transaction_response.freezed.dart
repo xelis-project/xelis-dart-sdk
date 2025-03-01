@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,41 +10,85 @@ part of 'unsigned_transaction_response.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$UnsignedTransactionResponse {
-  TransactionType get data => throw _privateConstructorUsedError;
-  int get fee => throw _privateConstructorUsedError;
-  int get version => throw _privateConstructorUsedError;
-  int get nonce => throw _privateConstructorUsedError;
-  List<int> get source => throw _privateConstructorUsedError;
-  List<int> get rangeProof => throw _privateConstructorUsedError;
-  List<Map<String, dynamic>> get sourceCommitments =>
-      throw _privateConstructorUsedError;
-  Reference get reference => throw _privateConstructorUsedError;
-  String get hash => throw _privateConstructorUsedError;
-  int get threshold => throw _privateConstructorUsedError;
-  Multisig? get multiSig => throw _privateConstructorUsedError;
-  String? get txAsHex => throw _privateConstructorUsedError;
+  TransactionType get data;
+  int get fee;
+  int get version;
+  int get nonce;
+  List<int> get source;
+  List<int> get rangeProof;
+  List<Map<String, dynamic>> get sourceCommitments;
+  Reference get reference;
+  String get hash;
+  int get threshold;
+  Multisig? get multiSig;
+  String? get txAsHex;
 
   /// Create a copy of UnsignedTransactionResponse
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $UnsignedTransactionResponseCopyWith<UnsignedTransactionResponse>
-      get copyWith => throw _privateConstructorUsedError;
+      get copyWith => _$UnsignedTransactionResponseCopyWithImpl<
+              UnsignedTransactionResponse>(
+          this as UnsignedTransactionResponse, _$identity);
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is UnsignedTransactionResponse &&
+            (identical(other.data, data) || other.data == data) &&
+            (identical(other.fee, fee) || other.fee == fee) &&
+            (identical(other.version, version) || other.version == version) &&
+            (identical(other.nonce, nonce) || other.nonce == nonce) &&
+            const DeepCollectionEquality().equals(other.source, source) &&
+            const DeepCollectionEquality()
+                .equals(other.rangeProof, rangeProof) &&
+            const DeepCollectionEquality()
+                .equals(other.sourceCommitments, sourceCommitments) &&
+            (identical(other.reference, reference) ||
+                other.reference == reference) &&
+            (identical(other.hash, hash) || other.hash == hash) &&
+            (identical(other.threshold, threshold) ||
+                other.threshold == threshold) &&
+            (identical(other.multiSig, multiSig) ||
+                other.multiSig == multiSig) &&
+            (identical(other.txAsHex, txAsHex) || other.txAsHex == txAsHex));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      data,
+      fee,
+      version,
+      nonce,
+      const DeepCollectionEquality().hash(source),
+      const DeepCollectionEquality().hash(rangeProof),
+      const DeepCollectionEquality().hash(sourceCommitments),
+      reference,
+      hash,
+      threshold,
+      multiSig,
+      txAsHex);
+
+  @override
+  String toString() {
+    return 'UnsignedTransactionResponse(data: $data, fee: $fee, version: $version, nonce: $nonce, source: $source, rangeProof: $rangeProof, sourceCommitments: $sourceCommitments, reference: $reference, hash: $hash, threshold: $threshold, multiSig: $multiSig, txAsHex: $txAsHex)';
+  }
 }
 
 /// @nodoc
-abstract class $UnsignedTransactionResponseCopyWith<$Res> {
+abstract mixin class $UnsignedTransactionResponseCopyWith<$Res> {
   factory $UnsignedTransactionResponseCopyWith(
           UnsignedTransactionResponse value,
-          $Res Function(UnsignedTransactionResponse) then) =
-      _$UnsignedTransactionResponseCopyWithImpl<$Res,
-          UnsignedTransactionResponse>;
+          $Res Function(UnsignedTransactionResponse) _then) =
+      _$UnsignedTransactionResponseCopyWithImpl;
   @useResult
   $Res call(
       {TransactionType data,
@@ -65,15 +110,12 @@ abstract class $UnsignedTransactionResponseCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$UnsignedTransactionResponseCopyWithImpl<$Res,
-        $Val extends UnsignedTransactionResponse>
+class _$UnsignedTransactionResponseCopyWithImpl<$Res>
     implements $UnsignedTransactionResponseCopyWith<$Res> {
-  _$UnsignedTransactionResponseCopyWithImpl(this._value, this._then);
+  _$UnsignedTransactionResponseCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final UnsignedTransactionResponse _self;
+  final $Res Function(UnsignedTransactionResponse) _then;
 
   /// Create a copy of UnsignedTransactionResponse
   /// with the given fields replaced by the non-null parameter values.
@@ -93,56 +135,56 @@ class _$UnsignedTransactionResponseCopyWithImpl<$Res,
     Object? multiSig = freezed,
     Object? txAsHex = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       data: null == data
-          ? _value.data
+          ? _self.data
           : data // ignore: cast_nullable_to_non_nullable
               as TransactionType,
       fee: null == fee
-          ? _value.fee
+          ? _self.fee
           : fee // ignore: cast_nullable_to_non_nullable
               as int,
       version: null == version
-          ? _value.version
+          ? _self.version
           : version // ignore: cast_nullable_to_non_nullable
               as int,
       nonce: null == nonce
-          ? _value.nonce
+          ? _self.nonce
           : nonce // ignore: cast_nullable_to_non_nullable
               as int,
       source: null == source
-          ? _value.source
+          ? _self.source
           : source // ignore: cast_nullable_to_non_nullable
               as List<int>,
       rangeProof: null == rangeProof
-          ? _value.rangeProof
+          ? _self.rangeProof
           : rangeProof // ignore: cast_nullable_to_non_nullable
               as List<int>,
       sourceCommitments: null == sourceCommitments
-          ? _value.sourceCommitments
+          ? _self.sourceCommitments
           : sourceCommitments // ignore: cast_nullable_to_non_nullable
               as List<Map<String, dynamic>>,
       reference: null == reference
-          ? _value.reference
+          ? _self.reference
           : reference // ignore: cast_nullable_to_non_nullable
               as Reference,
       hash: null == hash
-          ? _value.hash
+          ? _self.hash
           : hash // ignore: cast_nullable_to_non_nullable
               as String,
       threshold: null == threshold
-          ? _value.threshold
+          ? _self.threshold
           : threshold // ignore: cast_nullable_to_non_nullable
               as int,
       multiSig: freezed == multiSig
-          ? _value.multiSig
+          ? _self.multiSig
           : multiSig // ignore: cast_nullable_to_non_nullable
               as Multisig?,
       txAsHex: freezed == txAsHex
-          ? _value.txAsHex
+          ? _self.txAsHex
           : txAsHex // ignore: cast_nullable_to_non_nullable
               as String?,
-    ) as $Val);
+    ));
   }
 
   /// Create a copy of UnsignedTransactionResponse
@@ -150,8 +192,8 @@ class _$UnsignedTransactionResponseCopyWithImpl<$Res,
   @override
   @pragma('vm:prefer-inline')
   $TransactionTypeCopyWith<$Res> get data {
-    return $TransactionTypeCopyWith<$Res>(_value.data, (value) {
-      return _then(_value.copyWith(data: value) as $Val);
+    return $TransactionTypeCopyWith<$Res>(_self.data, (value) {
+      return _then(_self.copyWith(data: value));
     });
   }
 
@@ -160,8 +202,8 @@ class _$UnsignedTransactionResponseCopyWithImpl<$Res,
   @override
   @pragma('vm:prefer-inline')
   $ReferenceCopyWith<$Res> get reference {
-    return $ReferenceCopyWith<$Res>(_value.reference, (value) {
-      return _then(_value.copyWith(reference: value) as $Val);
+    return $ReferenceCopyWith<$Res>(_self.reference, (value) {
+      return _then(_self.copyWith(reference: value));
     });
   }
 
@@ -170,132 +212,20 @@ class _$UnsignedTransactionResponseCopyWithImpl<$Res,
   @override
   @pragma('vm:prefer-inline')
   $MultisigCopyWith<$Res>? get multiSig {
-    if (_value.multiSig == null) {
+    if (_self.multiSig == null) {
       return null;
     }
 
-    return $MultisigCopyWith<$Res>(_value.multiSig!, (value) {
-      return _then(_value.copyWith(multiSig: value) as $Val);
+    return $MultisigCopyWith<$Res>(_self.multiSig!, (value) {
+      return _then(_self.copyWith(multiSig: value));
     });
   }
 }
 
 /// @nodoc
-abstract class _$$UnsignedTransactionResponseImplCopyWith<$Res>
-    implements $UnsignedTransactionResponseCopyWith<$Res> {
-  factory _$$UnsignedTransactionResponseImplCopyWith(
-          _$UnsignedTransactionResponseImpl value,
-          $Res Function(_$UnsignedTransactionResponseImpl) then) =
-      __$$UnsignedTransactionResponseImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {TransactionType data,
-      int fee,
-      int version,
-      int nonce,
-      List<int> source,
-      List<int> rangeProof,
-      List<Map<String, dynamic>> sourceCommitments,
-      Reference reference,
-      String hash,
-      int threshold,
-      Multisig? multiSig,
-      String? txAsHex});
 
-  @override
-  $TransactionTypeCopyWith<$Res> get data;
-  @override
-  $ReferenceCopyWith<$Res> get reference;
-  @override
-  $MultisigCopyWith<$Res>? get multiSig;
-}
-
-/// @nodoc
-class __$$UnsignedTransactionResponseImplCopyWithImpl<$Res>
-    extends _$UnsignedTransactionResponseCopyWithImpl<$Res,
-        _$UnsignedTransactionResponseImpl>
-    implements _$$UnsignedTransactionResponseImplCopyWith<$Res> {
-  __$$UnsignedTransactionResponseImplCopyWithImpl(
-      _$UnsignedTransactionResponseImpl _value,
-      $Res Function(_$UnsignedTransactionResponseImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of UnsignedTransactionResponse
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? data = null,
-    Object? fee = null,
-    Object? version = null,
-    Object? nonce = null,
-    Object? source = null,
-    Object? rangeProof = null,
-    Object? sourceCommitments = null,
-    Object? reference = null,
-    Object? hash = null,
-    Object? threshold = null,
-    Object? multiSig = freezed,
-    Object? txAsHex = freezed,
-  }) {
-    return _then(_$UnsignedTransactionResponseImpl(
-      data: null == data
-          ? _value.data
-          : data // ignore: cast_nullable_to_non_nullable
-              as TransactionType,
-      fee: null == fee
-          ? _value.fee
-          : fee // ignore: cast_nullable_to_non_nullable
-              as int,
-      version: null == version
-          ? _value.version
-          : version // ignore: cast_nullable_to_non_nullable
-              as int,
-      nonce: null == nonce
-          ? _value.nonce
-          : nonce // ignore: cast_nullable_to_non_nullable
-              as int,
-      source: null == source
-          ? _value._source
-          : source // ignore: cast_nullable_to_non_nullable
-              as List<int>,
-      rangeProof: null == rangeProof
-          ? _value._rangeProof
-          : rangeProof // ignore: cast_nullable_to_non_nullable
-              as List<int>,
-      sourceCommitments: null == sourceCommitments
-          ? _value._sourceCommitments
-          : sourceCommitments // ignore: cast_nullable_to_non_nullable
-              as List<Map<String, dynamic>>,
-      reference: null == reference
-          ? _value.reference
-          : reference // ignore: cast_nullable_to_non_nullable
-              as Reference,
-      hash: null == hash
-          ? _value.hash
-          : hash // ignore: cast_nullable_to_non_nullable
-              as String,
-      threshold: null == threshold
-          ? _value.threshold
-          : threshold // ignore: cast_nullable_to_non_nullable
-              as int,
-      multiSig: freezed == multiSig
-          ? _value.multiSig
-          : multiSig // ignore: cast_nullable_to_non_nullable
-              as Multisig?,
-      txAsHex: freezed == txAsHex
-          ? _value.txAsHex
-          : txAsHex // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$UnsignedTransactionResponseImpl extends _UnsignedTransactionResponse {
-  const _$UnsignedTransactionResponseImpl(
+class _UnsignedTransactionResponse extends UnsignedTransactionResponse {
+  const _UnsignedTransactionResponse(
       {required this.data,
       required this.fee,
       required this.version,
@@ -357,16 +287,20 @@ class _$UnsignedTransactionResponseImpl extends _UnsignedTransactionResponse {
   @override
   final String? txAsHex;
 
+  /// Create a copy of UnsignedTransactionResponse
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'UnsignedTransactionResponse(data: $data, fee: $fee, version: $version, nonce: $nonce, source: $source, rangeProof: $rangeProof, sourceCommitments: $sourceCommitments, reference: $reference, hash: $hash, threshold: $threshold, multiSig: $multiSig, txAsHex: $txAsHex)';
-  }
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$UnsignedTransactionResponseCopyWith<_UnsignedTransactionResponse>
+      get copyWith => __$UnsignedTransactionResponseCopyWithImpl<
+          _UnsignedTransactionResponse>(this, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UnsignedTransactionResponseImpl &&
+            other is _UnsignedTransactionResponse &&
             (identical(other.data, data) || other.data == data) &&
             (identical(other.fee, fee) || other.fee == fee) &&
             (identical(other.version, version) || other.version == version) &&
@@ -402,62 +336,154 @@ class _$UnsignedTransactionResponseImpl extends _UnsignedTransactionResponse {
       multiSig,
       txAsHex);
 
+  @override
+  String toString() {
+    return 'UnsignedTransactionResponse(data: $data, fee: $fee, version: $version, nonce: $nonce, source: $source, rangeProof: $rangeProof, sourceCommitments: $sourceCommitments, reference: $reference, hash: $hash, threshold: $threshold, multiSig: $multiSig, txAsHex: $txAsHex)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$UnsignedTransactionResponseCopyWith<$Res>
+    implements $UnsignedTransactionResponseCopyWith<$Res> {
+  factory _$UnsignedTransactionResponseCopyWith(
+          _UnsignedTransactionResponse value,
+          $Res Function(_UnsignedTransactionResponse) _then) =
+      __$UnsignedTransactionResponseCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {TransactionType data,
+      int fee,
+      int version,
+      int nonce,
+      List<int> source,
+      List<int> rangeProof,
+      List<Map<String, dynamic>> sourceCommitments,
+      Reference reference,
+      String hash,
+      int threshold,
+      Multisig? multiSig,
+      String? txAsHex});
+
+  @override
+  $TransactionTypeCopyWith<$Res> get data;
+  @override
+  $ReferenceCopyWith<$Res> get reference;
+  @override
+  $MultisigCopyWith<$Res>? get multiSig;
+}
+
+/// @nodoc
+class __$UnsignedTransactionResponseCopyWithImpl<$Res>
+    implements _$UnsignedTransactionResponseCopyWith<$Res> {
+  __$UnsignedTransactionResponseCopyWithImpl(this._self, this._then);
+
+  final _UnsignedTransactionResponse _self;
+  final $Res Function(_UnsignedTransactionResponse) _then;
+
   /// Create a copy of UnsignedTransactionResponse
   /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$UnsignedTransactionResponseImplCopyWith<_$UnsignedTransactionResponseImpl>
-      get copyWith => __$$UnsignedTransactionResponseImplCopyWithImpl<
-          _$UnsignedTransactionResponseImpl>(this, _$identity);
-}
-
-abstract class _UnsignedTransactionResponse
-    extends UnsignedTransactionResponse {
-  const factory _UnsignedTransactionResponse(
-      {required final TransactionType data,
-      required final int fee,
-      required final int version,
-      required final int nonce,
-      required final List<int> source,
-      required final List<int> rangeProof,
-      required final List<Map<String, dynamic>> sourceCommitments,
-      required final Reference reference,
-      required final String hash,
-      required final int threshold,
-      final Multisig? multiSig,
-      final String? txAsHex}) = _$UnsignedTransactionResponseImpl;
-  const _UnsignedTransactionResponse._() : super._();
-
-  @override
-  TransactionType get data;
-  @override
-  int get fee;
-  @override
-  int get version;
-  @override
-  int get nonce;
-  @override
-  List<int> get source;
-  @override
-  List<int> get rangeProof;
-  @override
-  List<Map<String, dynamic>> get sourceCommitments;
-  @override
-  Reference get reference;
-  @override
-  String get hash;
-  @override
-  int get threshold;
-  @override
-  Multisig? get multiSig;
-  @override
-  String? get txAsHex;
+  $Res call({
+    Object? data = null,
+    Object? fee = null,
+    Object? version = null,
+    Object? nonce = null,
+    Object? source = null,
+    Object? rangeProof = null,
+    Object? sourceCommitments = null,
+    Object? reference = null,
+    Object? hash = null,
+    Object? threshold = null,
+    Object? multiSig = freezed,
+    Object? txAsHex = freezed,
+  }) {
+    return _then(_UnsignedTransactionResponse(
+      data: null == data
+          ? _self.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as TransactionType,
+      fee: null == fee
+          ? _self.fee
+          : fee // ignore: cast_nullable_to_non_nullable
+              as int,
+      version: null == version
+          ? _self.version
+          : version // ignore: cast_nullable_to_non_nullable
+              as int,
+      nonce: null == nonce
+          ? _self.nonce
+          : nonce // ignore: cast_nullable_to_non_nullable
+              as int,
+      source: null == source
+          ? _self._source
+          : source // ignore: cast_nullable_to_non_nullable
+              as List<int>,
+      rangeProof: null == rangeProof
+          ? _self._rangeProof
+          : rangeProof // ignore: cast_nullable_to_non_nullable
+              as List<int>,
+      sourceCommitments: null == sourceCommitments
+          ? _self._sourceCommitments
+          : sourceCommitments // ignore: cast_nullable_to_non_nullable
+              as List<Map<String, dynamic>>,
+      reference: null == reference
+          ? _self.reference
+          : reference // ignore: cast_nullable_to_non_nullable
+              as Reference,
+      hash: null == hash
+          ? _self.hash
+          : hash // ignore: cast_nullable_to_non_nullable
+              as String,
+      threshold: null == threshold
+          ? _self.threshold
+          : threshold // ignore: cast_nullable_to_non_nullable
+              as int,
+      multiSig: freezed == multiSig
+          ? _self.multiSig
+          : multiSig // ignore: cast_nullable_to_non_nullable
+              as Multisig?,
+      txAsHex: freezed == txAsHex
+          ? _self.txAsHex
+          : txAsHex // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
 
   /// Create a copy of UnsignedTransactionResponse
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$UnsignedTransactionResponseImplCopyWith<_$UnsignedTransactionResponseImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $TransactionTypeCopyWith<$Res> get data {
+    return $TransactionTypeCopyWith<$Res>(_self.data, (value) {
+      return _then(_self.copyWith(data: value));
+    });
+  }
+
+  /// Create a copy of UnsignedTransactionResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ReferenceCopyWith<$Res> get reference {
+    return $ReferenceCopyWith<$Res>(_self.reference, (value) {
+      return _then(_self.copyWith(reference: value));
+    });
+  }
+
+  /// Create a copy of UnsignedTransactionResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MultisigCopyWith<$Res>? get multiSig {
+    if (_self.multiSig == null) {
+      return null;
+    }
+
+    return $MultisigCopyWith<$Res>(_self.multiSig!, (value) {
+      return _then(_self.copyWith(multiSig: value));
+    });
+  }
 }
+
+// dart format on

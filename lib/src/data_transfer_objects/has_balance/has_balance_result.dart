@@ -8,7 +8,7 @@ part 'has_balance_result.g.dart';
 
 /// @nodoc
 @freezed
-class HasBalanceResult with _$HasBalanceResult {
+abstract class HasBalanceResult with _$HasBalanceResult {
   /// @nodoc
   const factory HasBalanceResult({
     @JsonKey(name: 'exist') required bool exist,

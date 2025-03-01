@@ -8,9 +8,9 @@ part of 'get_block_template_result.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$GetBlockTemplateResultImpl _$$GetBlockTemplateResultImplFromJson(
+_GetBlockTemplateResult _$GetBlockTemplateResultFromJson(
         Map<String, dynamic> json) =>
-    _$GetBlockTemplateResultImpl(
+    _GetBlockTemplateResult(
       difficulty: (json['difficulty'] as num).toInt(),
       height: (json['height'] as num).toInt(),
       topoheight: (json['topoheight'] as num).toInt(),
@@ -18,8 +18,8 @@ _$GetBlockTemplateResultImpl _$$GetBlockTemplateResultImplFromJson(
       algorithm: json['algorithm'] as String,
     );
 
-Map<String, dynamic> _$$GetBlockTemplateResultImplToJson(
-        _$GetBlockTemplateResultImpl instance) =>
+Map<String, dynamic> _$GetBlockTemplateResultToJson(
+        _GetBlockTemplateResult instance) =>
     <String, dynamic>{
       'difficulty': instance.difficulty,
       'height': instance.height,

@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,88 +10,59 @@ part of 'get_contract_outputs_params.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-GetContractOutputsParams _$GetContractOutputsParamsFromJson(
-    Map<String, dynamic> json) {
-  return _GetContractOutputsParams.fromJson(json);
-}
 
 /// @nodoc
 mixin _$GetContractOutputsParams {
   @JsonKey(name: 'transaction')
-  String get txHash => throw _privateConstructorUsedError;
-
-  /// Serializes this GetContractOutputsParams to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String get txHash;
 
   /// Create a copy of GetContractOutputsParams
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $GetContractOutputsParamsCopyWith<GetContractOutputsParams> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $GetContractOutputsParamsCopyWith<$Res> {
-  factory $GetContractOutputsParamsCopyWith(GetContractOutputsParams value,
-          $Res Function(GetContractOutputsParams) then) =
-      _$GetContractOutputsParamsCopyWithImpl<$Res, GetContractOutputsParams>;
-  @useResult
-  $Res call({@JsonKey(name: 'transaction') String txHash});
-}
-
-/// @nodoc
-class _$GetContractOutputsParamsCopyWithImpl<$Res,
-        $Val extends GetContractOutputsParams>
-    implements $GetContractOutputsParamsCopyWith<$Res> {
-  _$GetContractOutputsParamsCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of GetContractOutputsParams
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $GetContractOutputsParamsCopyWith<GetContractOutputsParams> get copyWith =>
+      _$GetContractOutputsParamsCopyWithImpl<GetContractOutputsParams>(
+          this as GetContractOutputsParams, _$identity);
+
+  /// Serializes this GetContractOutputsParams to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? txHash = null,
-  }) {
-    return _then(_value.copyWith(
-      txHash: null == txHash
-          ? _value.txHash
-          : txHash // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is GetContractOutputsParams &&
+            (identical(other.txHash, txHash) || other.txHash == txHash));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, txHash);
+
+  @override
+  String toString() {
+    return 'GetContractOutputsParams(txHash: $txHash)';
   }
 }
 
 /// @nodoc
-abstract class _$$GetContractOutputsParamsImplCopyWith<$Res>
-    implements $GetContractOutputsParamsCopyWith<$Res> {
-  factory _$$GetContractOutputsParamsImplCopyWith(
-          _$GetContractOutputsParamsImpl value,
-          $Res Function(_$GetContractOutputsParamsImpl) then) =
-      __$$GetContractOutputsParamsImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $GetContractOutputsParamsCopyWith<$Res> {
+  factory $GetContractOutputsParamsCopyWith(GetContractOutputsParams value,
+          $Res Function(GetContractOutputsParams) _then) =
+      _$GetContractOutputsParamsCopyWithImpl;
   @useResult
   $Res call({@JsonKey(name: 'transaction') String txHash});
 }
 
 /// @nodoc
-class __$$GetContractOutputsParamsImplCopyWithImpl<$Res>
-    extends _$GetContractOutputsParamsCopyWithImpl<$Res,
-        _$GetContractOutputsParamsImpl>
-    implements _$$GetContractOutputsParamsImplCopyWith<$Res> {
-  __$$GetContractOutputsParamsImplCopyWithImpl(
-      _$GetContractOutputsParamsImpl _value,
-      $Res Function(_$GetContractOutputsParamsImpl) _then)
-      : super(_value, _then);
+class _$GetContractOutputsParamsCopyWithImpl<$Res>
+    implements $GetContractOutputsParamsCopyWith<$Res> {
+  _$GetContractOutputsParamsCopyWithImpl(this._self, this._then);
+
+  final GetContractOutputsParams _self;
+  final $Res Function(GetContractOutputsParams) _then;
 
   /// Create a copy of GetContractOutputsParams
   /// with the given fields replaced by the non-null parameter values.
@@ -99,9 +71,9 @@ class __$$GetContractOutputsParamsImplCopyWithImpl<$Res>
   $Res call({
     Object? txHash = null,
   }) {
-    return _then(_$GetContractOutputsParamsImpl(
+    return _then(_self.copyWith(
       txHash: null == txHash
-          ? _value.txHash
+          ? _self.txHash
           : txHash // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -110,27 +82,37 @@ class __$$GetContractOutputsParamsImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$GetContractOutputsParamsImpl implements _GetContractOutputsParams {
-  const _$GetContractOutputsParamsImpl(
+class _GetContractOutputsParams implements GetContractOutputsParams {
+  const _GetContractOutputsParams(
       {@JsonKey(name: 'transaction') required this.txHash});
-
-  factory _$GetContractOutputsParamsImpl.fromJson(Map<String, dynamic> json) =>
-      _$$GetContractOutputsParamsImplFromJson(json);
+  factory _GetContractOutputsParams.fromJson(Map<String, dynamic> json) =>
+      _$GetContractOutputsParamsFromJson(json);
 
   @override
   @JsonKey(name: 'transaction')
   final String txHash;
 
+  /// Create a copy of GetContractOutputsParams
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'GetContractOutputsParams(txHash: $txHash)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$GetContractOutputsParamsCopyWith<_GetContractOutputsParams> get copyWith =>
+      __$GetContractOutputsParamsCopyWithImpl<_GetContractOutputsParams>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$GetContractOutputsParamsToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetContractOutputsParamsImpl &&
+            other is _GetContractOutputsParams &&
             (identical(other.txHash, txHash) || other.txHash == txHash));
   }
 
@@ -138,39 +120,45 @@ class _$GetContractOutputsParamsImpl implements _GetContractOutputsParams {
   @override
   int get hashCode => Object.hash(runtimeType, txHash);
 
-  /// Create a copy of GetContractOutputsParams
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$GetContractOutputsParamsImplCopyWith<_$GetContractOutputsParamsImpl>
-      get copyWith => __$$GetContractOutputsParamsImplCopyWithImpl<
-          _$GetContractOutputsParamsImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$GetContractOutputsParamsImplToJson(
-      this,
-    );
+  String toString() {
+    return 'GetContractOutputsParams(txHash: $txHash)';
   }
 }
 
-abstract class _GetContractOutputsParams implements GetContractOutputsParams {
-  const factory _GetContractOutputsParams(
-          {@JsonKey(name: 'transaction') required final String txHash}) =
-      _$GetContractOutputsParamsImpl;
-
-  factory _GetContractOutputsParams.fromJson(Map<String, dynamic> json) =
-      _$GetContractOutputsParamsImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$GetContractOutputsParamsCopyWith<$Res>
+    implements $GetContractOutputsParamsCopyWith<$Res> {
+  factory _$GetContractOutputsParamsCopyWith(_GetContractOutputsParams value,
+          $Res Function(_GetContractOutputsParams) _then) =
+      __$GetContractOutputsParamsCopyWithImpl;
   @override
-  @JsonKey(name: 'transaction')
-  String get txHash;
+  @useResult
+  $Res call({@JsonKey(name: 'transaction') String txHash});
+}
+
+/// @nodoc
+class __$GetContractOutputsParamsCopyWithImpl<$Res>
+    implements _$GetContractOutputsParamsCopyWith<$Res> {
+  __$GetContractOutputsParamsCopyWithImpl(this._self, this._then);
+
+  final _GetContractOutputsParams _self;
+  final $Res Function(_GetContractOutputsParams) _then;
 
   /// Create a copy of GetContractOutputsParams
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$GetContractOutputsParamsImplCopyWith<_$GetContractOutputsParamsImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? txHash = null,
+  }) {
+    return _then(_GetContractOutputsParams(
+      txHash: null == txHash
+          ? _self.txHash
+          : txHash // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
+
+// dart format on

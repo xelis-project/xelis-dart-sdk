@@ -8,14 +8,12 @@ part of 'submit_block_params.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$SubmitBlockParamsImpl _$$SubmitBlockParamsImplFromJson(
-        Map<String, dynamic> json) =>
-    _$SubmitBlockParamsImpl(
+_SubmitBlockParams _$SubmitBlockParamsFromJson(Map<String, dynamic> json) =>
+    _SubmitBlockParams(
       blockTemplate: json['block_template'] as String,
     );
 
-Map<String, dynamic> _$$SubmitBlockParamsImplToJson(
-        _$SubmitBlockParamsImpl instance) =>
+Map<String, dynamic> _$SubmitBlockParamsToJson(_SubmitBlockParams instance) =>
     <String, dynamic>{
       'block_template': instance.blockTemplate,
     };

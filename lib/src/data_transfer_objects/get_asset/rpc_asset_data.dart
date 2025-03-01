@@ -7,7 +7,7 @@ part 'rpc_asset_data.g.dart';
 
 /// @nodoc
 @freezed
-class RPCAssetData with _$RPCAssetData {
+abstract class RPCAssetData with _$RPCAssetData {
   /// @nodoc
   const factory RPCAssetData({
     @JsonKey(name: 'asset') required String asset,

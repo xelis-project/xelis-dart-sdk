@@ -8,16 +8,16 @@ part of 'get_balance_at_topoheight_params.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$GetBalanceAtTopoHeightParamsImpl _$$GetBalanceAtTopoHeightParamsImplFromJson(
+_GetBalanceAtTopoHeightParams _$GetBalanceAtTopoHeightParamsFromJson(
         Map<String, dynamic> json) =>
-    _$GetBalanceAtTopoHeightParamsImpl(
+    _GetBalanceAtTopoHeightParams(
       address: json['address'] as String,
       asset: json['asset'] as String,
       topoHeight: (json['topoheight'] as num).toInt(),
     );
 
-Map<String, dynamic> _$$GetBalanceAtTopoHeightParamsImplToJson(
-        _$GetBalanceAtTopoHeightParamsImpl instance) =>
+Map<String, dynamic> _$GetBalanceAtTopoHeightParamsToJson(
+        _GetBalanceAtTopoHeightParams instance) =>
     <String, dynamic>{
       'address': instance.address,
       'asset': instance.asset,

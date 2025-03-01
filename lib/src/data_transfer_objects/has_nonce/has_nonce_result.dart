@@ -8,7 +8,7 @@ part 'has_nonce_result.g.dart';
 
 /// @nodoc
 @freezed
-class HasNonceResult with _$HasNonceResult {
+abstract class HasNonceResult with _$HasNonceResult {
   /// @nodoc
   const factory HasNonceResult({
     @JsonKey(name: 'exist') required bool exist,

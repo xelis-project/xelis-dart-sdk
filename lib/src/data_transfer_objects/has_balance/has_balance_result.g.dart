@@ -8,14 +8,12 @@ part of 'has_balance_result.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$HasBalanceResultImpl _$$HasBalanceResultImplFromJson(
-        Map<String, dynamic> json) =>
-    _$HasBalanceResultImpl(
+_HasBalanceResult _$HasBalanceResultFromJson(Map<String, dynamic> json) =>
+    _HasBalanceResult(
       exist: json['exist'] as bool,
     );
 
-Map<String, dynamic> _$$HasBalanceResultImplToJson(
-        _$HasBalanceResultImpl instance) =>
+Map<String, dynamic> _$HasBalanceResultToJson(_HasBalanceResult instance) =>
     <String, dynamic>{
       'exist': instance.exist,
     };

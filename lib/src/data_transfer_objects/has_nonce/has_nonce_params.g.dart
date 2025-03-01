@@ -8,14 +8,13 @@ part of 'has_nonce_params.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$HasNonceParamsImpl _$$HasNonceParamsImplFromJson(Map<String, dynamic> json) =>
-    _$HasNonceParamsImpl(
+_HasNonceParams _$HasNonceParamsFromJson(Map<String, dynamic> json) =>
+    _HasNonceParams(
       address: json['address'] as String,
       topoheight: (json['topoheight'] as num?)?.toInt(),
     );
 
-Map<String, dynamic> _$$HasNonceParamsImplToJson(
-        _$HasNonceParamsImpl instance) =>
+Map<String, dynamic> _$HasNonceParamsToJson(_HasNonceParams instance) =>
     <String, dynamic>{
       'address': instance.address,
       if (instance.topoheight case final value?) 'topoheight': value,

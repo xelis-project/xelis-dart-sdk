@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,30 +10,48 @@ part of 'get_multisig_result.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$GetMultisigResult {
   @JsonKey(name: 'state')
-  MultisigState get state => throw _privateConstructorUsedError;
+  MultisigState get state;
   @JsonKey(name: 'topoheight')
-  int get topoheight => throw _privateConstructorUsedError;
+  int get topoheight;
 
   /// Create a copy of GetMultisigResult
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $GetMultisigResultCopyWith<GetMultisigResult> get copyWith =>
-      throw _privateConstructorUsedError;
+      _$GetMultisigResultCopyWithImpl<GetMultisigResult>(
+          this as GetMultisigResult, _$identity);
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is GetMultisigResult &&
+            (identical(other.state, state) || other.state == state) &&
+            (identical(other.topoheight, topoheight) ||
+                other.topoheight == topoheight));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, state, topoheight);
+
+  @override
+  String toString() {
+    return 'GetMultisigResult(state: $state, topoheight: $topoheight)';
+  }
 }
 
 /// @nodoc
-abstract class $GetMultisigResultCopyWith<$Res> {
+abstract mixin class $GetMultisigResultCopyWith<$Res> {
   factory $GetMultisigResultCopyWith(
-          GetMultisigResult value, $Res Function(GetMultisigResult) then) =
-      _$GetMultisigResultCopyWithImpl<$Res, GetMultisigResult>;
+          GetMultisigResult value, $Res Function(GetMultisigResult) _then) =
+      _$GetMultisigResultCopyWithImpl;
   @useResult
   $Res call(
       {@JsonKey(name: 'state') MultisigState state,
@@ -42,14 +61,12 @@ abstract class $GetMultisigResultCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$GetMultisigResultCopyWithImpl<$Res, $Val extends GetMultisigResult>
+class _$GetMultisigResultCopyWithImpl<$Res>
     implements $GetMultisigResultCopyWith<$Res> {
-  _$GetMultisigResultCopyWithImpl(this._value, this._then);
+  _$GetMultisigResultCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final GetMultisigResult _self;
+  final $Res Function(GetMultisigResult) _then;
 
   /// Create a copy of GetMultisigResult
   /// with the given fields replaced by the non-null parameter values.
@@ -59,16 +76,16 @@ class _$GetMultisigResultCopyWithImpl<$Res, $Val extends GetMultisigResult>
     Object? state = null,
     Object? topoheight = null,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       state: null == state
-          ? _value.state
+          ? _self.state
           : state // ignore: cast_nullable_to_non_nullable
               as MultisigState,
       topoheight: null == topoheight
-          ? _value.topoheight
+          ? _self.topoheight
           : topoheight // ignore: cast_nullable_to_non_nullable
               as int,
-    ) as $Val);
+    ));
   }
 
   /// Create a copy of GetMultisigResult
@@ -76,61 +93,16 @@ class _$GetMultisigResultCopyWithImpl<$Res, $Val extends GetMultisigResult>
   @override
   @pragma('vm:prefer-inline')
   $MultisigStateCopyWith<$Res> get state {
-    return $MultisigStateCopyWith<$Res>(_value.state, (value) {
-      return _then(_value.copyWith(state: value) as $Val);
+    return $MultisigStateCopyWith<$Res>(_self.state, (value) {
+      return _then(_self.copyWith(state: value));
     });
   }
 }
 
 /// @nodoc
-abstract class _$$GetMultisigResultImplCopyWith<$Res>
-    implements $GetMultisigResultCopyWith<$Res> {
-  factory _$$GetMultisigResultImplCopyWith(_$GetMultisigResultImpl value,
-          $Res Function(_$GetMultisigResultImpl) then) =
-      __$$GetMultisigResultImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'state') MultisigState state,
-      @JsonKey(name: 'topoheight') int topoheight});
 
-  @override
-  $MultisigStateCopyWith<$Res> get state;
-}
-
-/// @nodoc
-class __$$GetMultisigResultImplCopyWithImpl<$Res>
-    extends _$GetMultisigResultCopyWithImpl<$Res, _$GetMultisigResultImpl>
-    implements _$$GetMultisigResultImplCopyWith<$Res> {
-  __$$GetMultisigResultImplCopyWithImpl(_$GetMultisigResultImpl _value,
-      $Res Function(_$GetMultisigResultImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of GetMultisigResult
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? state = null,
-    Object? topoheight = null,
-  }) {
-    return _then(_$GetMultisigResultImpl(
-      state: null == state
-          ? _value.state
-          : state // ignore: cast_nullable_to_non_nullable
-              as MultisigState,
-      topoheight: null == topoheight
-          ? _value.topoheight
-          : topoheight // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$GetMultisigResultImpl implements _GetMultisigResult {
-  const _$GetMultisigResultImpl(
+class _GetMultisigResult implements GetMultisigResult {
+  const _GetMultisigResult(
       {@JsonKey(name: 'state') required this.state,
       @JsonKey(name: 'topoheight') required this.topoheight});
 
@@ -141,16 +113,19 @@ class _$GetMultisigResultImpl implements _GetMultisigResult {
   @JsonKey(name: 'topoheight')
   final int topoheight;
 
+  /// Create a copy of GetMultisigResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'GetMultisigResult(state: $state, topoheight: $topoheight)';
-  }
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$GetMultisigResultCopyWith<_GetMultisigResult> get copyWith =>
+      __$GetMultisigResultCopyWithImpl<_GetMultisigResult>(this, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetMultisigResultImpl &&
+            other is _GetMultisigResult &&
             (identical(other.state, state) || other.state == state) &&
             (identical(other.topoheight, topoheight) ||
                 other.topoheight == topoheight));
@@ -159,33 +134,65 @@ class _$GetMultisigResultImpl implements _GetMultisigResult {
   @override
   int get hashCode => Object.hash(runtimeType, state, topoheight);
 
+  @override
+  String toString() {
+    return 'GetMultisigResult(state: $state, topoheight: $topoheight)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$GetMultisigResultCopyWith<$Res>
+    implements $GetMultisigResultCopyWith<$Res> {
+  factory _$GetMultisigResultCopyWith(
+          _GetMultisigResult value, $Res Function(_GetMultisigResult) _then) =
+      __$GetMultisigResultCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'state') MultisigState state,
+      @JsonKey(name: 'topoheight') int topoheight});
+
+  @override
+  $MultisigStateCopyWith<$Res> get state;
+}
+
+/// @nodoc
+class __$GetMultisigResultCopyWithImpl<$Res>
+    implements _$GetMultisigResultCopyWith<$Res> {
+  __$GetMultisigResultCopyWithImpl(this._self, this._then);
+
+  final _GetMultisigResult _self;
+  final $Res Function(_GetMultisigResult) _then;
+
   /// Create a copy of GetMultisigResult
   /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$GetMultisigResultImplCopyWith<_$GetMultisigResultImpl> get copyWith =>
-      __$$GetMultisigResultImplCopyWithImpl<_$GetMultisigResultImpl>(
-          this, _$identity);
-}
-
-abstract class _GetMultisigResult implements GetMultisigResult {
-  const factory _GetMultisigResult(
-          {@JsonKey(name: 'state') required final MultisigState state,
-          @JsonKey(name: 'topoheight') required final int topoheight}) =
-      _$GetMultisigResultImpl;
-
-  @override
-  @JsonKey(name: 'state')
-  MultisigState get state;
-  @override
-  @JsonKey(name: 'topoheight')
-  int get topoheight;
+  $Res call({
+    Object? state = null,
+    Object? topoheight = null,
+  }) {
+    return _then(_GetMultisigResult(
+      state: null == state
+          ? _self.state
+          : state // ignore: cast_nullable_to_non_nullable
+              as MultisigState,
+      topoheight: null == topoheight
+          ? _self.topoheight
+          : topoheight // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
 
   /// Create a copy of GetMultisigResult
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$GetMultisigResultImplCopyWith<_$GetMultisigResultImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $MultisigStateCopyWith<$Res> get state {
+    return $MultisigStateCopyWith<$Res>(_self.state, (value) {
+      return _then(_self.copyWith(state: value));
+    });
+  }
 }
+
+// dart format on

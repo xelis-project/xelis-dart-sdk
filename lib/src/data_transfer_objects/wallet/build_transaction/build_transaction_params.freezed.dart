@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,34 +10,67 @@ part of 'build_transaction_params.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$BuildTransactionParams {
-  TransactionTypeBuilder get transactionTypeBuilder =>
-      throw _privateConstructorUsedError;
-  FeeBuilder? get feeBuilder => throw _privateConstructorUsedError;
-  int? get nonce => throw _privateConstructorUsedError;
-  int? get txVersion => throw _privateConstructorUsedError;
-  bool? get broadcast => throw _privateConstructorUsedError;
-  bool? get txAsHex => throw _privateConstructorUsedError;
-  List<SignerId>? get signers => throw _privateConstructorUsedError;
+  TransactionTypeBuilder get transactionTypeBuilder;
+  FeeBuilder? get feeBuilder;
+  int? get nonce;
+  int? get txVersion;
+  bool? get broadcast;
+  bool? get txAsHex;
+  List<SignerId>? get signers;
 
   /// Create a copy of BuildTransactionParams
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $BuildTransactionParamsCopyWith<BuildTransactionParams> get copyWith =>
-      throw _privateConstructorUsedError;
+      _$BuildTransactionParamsCopyWithImpl<BuildTransactionParams>(
+          this as BuildTransactionParams, _$identity);
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is BuildTransactionParams &&
+            (identical(other.transactionTypeBuilder, transactionTypeBuilder) ||
+                other.transactionTypeBuilder == transactionTypeBuilder) &&
+            (identical(other.feeBuilder, feeBuilder) ||
+                other.feeBuilder == feeBuilder) &&
+            (identical(other.nonce, nonce) || other.nonce == nonce) &&
+            (identical(other.txVersion, txVersion) ||
+                other.txVersion == txVersion) &&
+            (identical(other.broadcast, broadcast) ||
+                other.broadcast == broadcast) &&
+            (identical(other.txAsHex, txAsHex) || other.txAsHex == txAsHex) &&
+            const DeepCollectionEquality().equals(other.signers, signers));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      transactionTypeBuilder,
+      feeBuilder,
+      nonce,
+      txVersion,
+      broadcast,
+      txAsHex,
+      const DeepCollectionEquality().hash(signers));
+
+  @override
+  String toString() {
+    return 'BuildTransactionParams(transactionTypeBuilder: $transactionTypeBuilder, feeBuilder: $feeBuilder, nonce: $nonce, txVersion: $txVersion, broadcast: $broadcast, txAsHex: $txAsHex, signers: $signers)';
+  }
 }
 
 /// @nodoc
-abstract class $BuildTransactionParamsCopyWith<$Res> {
+abstract mixin class $BuildTransactionParamsCopyWith<$Res> {
   factory $BuildTransactionParamsCopyWith(BuildTransactionParams value,
-          $Res Function(BuildTransactionParams) then) =
-      _$BuildTransactionParamsCopyWithImpl<$Res, BuildTransactionParams>;
+          $Res Function(BuildTransactionParams) _then) =
+      _$BuildTransactionParamsCopyWithImpl;
   @useResult
   $Res call(
       {TransactionTypeBuilder transactionTypeBuilder,
@@ -52,15 +86,12 @@ abstract class $BuildTransactionParamsCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$BuildTransactionParamsCopyWithImpl<$Res,
-        $Val extends BuildTransactionParams>
+class _$BuildTransactionParamsCopyWithImpl<$Res>
     implements $BuildTransactionParamsCopyWith<$Res> {
-  _$BuildTransactionParamsCopyWithImpl(this._value, this._then);
+  _$BuildTransactionParamsCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final BuildTransactionParams _self;
+  final $Res Function(BuildTransactionParams) _then;
 
   /// Create a copy of BuildTransactionParams
   /// with the given fields replaced by the non-null parameter values.
@@ -75,36 +106,36 @@ class _$BuildTransactionParamsCopyWithImpl<$Res,
     Object? txAsHex = freezed,
     Object? signers = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       transactionTypeBuilder: null == transactionTypeBuilder
-          ? _value.transactionTypeBuilder
+          ? _self.transactionTypeBuilder
           : transactionTypeBuilder // ignore: cast_nullable_to_non_nullable
               as TransactionTypeBuilder,
       feeBuilder: freezed == feeBuilder
-          ? _value.feeBuilder
+          ? _self.feeBuilder
           : feeBuilder // ignore: cast_nullable_to_non_nullable
               as FeeBuilder?,
       nonce: freezed == nonce
-          ? _value.nonce
+          ? _self.nonce
           : nonce // ignore: cast_nullable_to_non_nullable
               as int?,
       txVersion: freezed == txVersion
-          ? _value.txVersion
+          ? _self.txVersion
           : txVersion // ignore: cast_nullable_to_non_nullable
               as int?,
       broadcast: freezed == broadcast
-          ? _value.broadcast
+          ? _self.broadcast
           : broadcast // ignore: cast_nullable_to_non_nullable
               as bool?,
       txAsHex: freezed == txAsHex
-          ? _value.txAsHex
+          ? _self.txAsHex
           : txAsHex // ignore: cast_nullable_to_non_nullable
               as bool?,
       signers: freezed == signers
-          ? _value.signers
+          ? _self.signers
           : signers // ignore: cast_nullable_to_non_nullable
               as List<SignerId>?,
-    ) as $Val);
+    ));
   }
 
   /// Create a copy of BuildTransactionParams
@@ -112,9 +143,9 @@ class _$BuildTransactionParamsCopyWithImpl<$Res,
   @override
   @pragma('vm:prefer-inline')
   $TransactionTypeBuilderCopyWith<$Res> get transactionTypeBuilder {
-    return $TransactionTypeBuilderCopyWith<$Res>(_value.transactionTypeBuilder,
+    return $TransactionTypeBuilderCopyWith<$Res>(_self.transactionTypeBuilder,
         (value) {
-      return _then(_value.copyWith(transactionTypeBuilder: value) as $Val);
+      return _then(_self.copyWith(transactionTypeBuilder: value));
     });
   }
 
@@ -123,100 +154,20 @@ class _$BuildTransactionParamsCopyWithImpl<$Res,
   @override
   @pragma('vm:prefer-inline')
   $FeeBuilderCopyWith<$Res>? get feeBuilder {
-    if (_value.feeBuilder == null) {
+    if (_self.feeBuilder == null) {
       return null;
     }
 
-    return $FeeBuilderCopyWith<$Res>(_value.feeBuilder!, (value) {
-      return _then(_value.copyWith(feeBuilder: value) as $Val);
+    return $FeeBuilderCopyWith<$Res>(_self.feeBuilder!, (value) {
+      return _then(_self.copyWith(feeBuilder: value));
     });
   }
 }
 
 /// @nodoc
-abstract class _$$BuildTransactionParamsImplCopyWith<$Res>
-    implements $BuildTransactionParamsCopyWith<$Res> {
-  factory _$$BuildTransactionParamsImplCopyWith(
-          _$BuildTransactionParamsImpl value,
-          $Res Function(_$BuildTransactionParamsImpl) then) =
-      __$$BuildTransactionParamsImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {TransactionTypeBuilder transactionTypeBuilder,
-      FeeBuilder? feeBuilder,
-      int? nonce,
-      int? txVersion,
-      bool? broadcast,
-      bool? txAsHex,
-      List<SignerId>? signers});
 
-  @override
-  $TransactionTypeBuilderCopyWith<$Res> get transactionTypeBuilder;
-  @override
-  $FeeBuilderCopyWith<$Res>? get feeBuilder;
-}
-
-/// @nodoc
-class __$$BuildTransactionParamsImplCopyWithImpl<$Res>
-    extends _$BuildTransactionParamsCopyWithImpl<$Res,
-        _$BuildTransactionParamsImpl>
-    implements _$$BuildTransactionParamsImplCopyWith<$Res> {
-  __$$BuildTransactionParamsImplCopyWithImpl(
-      _$BuildTransactionParamsImpl _value,
-      $Res Function(_$BuildTransactionParamsImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of BuildTransactionParams
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? transactionTypeBuilder = null,
-    Object? feeBuilder = freezed,
-    Object? nonce = freezed,
-    Object? txVersion = freezed,
-    Object? broadcast = freezed,
-    Object? txAsHex = freezed,
-    Object? signers = freezed,
-  }) {
-    return _then(_$BuildTransactionParamsImpl(
-      transactionTypeBuilder: null == transactionTypeBuilder
-          ? _value.transactionTypeBuilder
-          : transactionTypeBuilder // ignore: cast_nullable_to_non_nullable
-              as TransactionTypeBuilder,
-      feeBuilder: freezed == feeBuilder
-          ? _value.feeBuilder
-          : feeBuilder // ignore: cast_nullable_to_non_nullable
-              as FeeBuilder?,
-      nonce: freezed == nonce
-          ? _value.nonce
-          : nonce // ignore: cast_nullable_to_non_nullable
-              as int?,
-      txVersion: freezed == txVersion
-          ? _value.txVersion
-          : txVersion // ignore: cast_nullable_to_non_nullable
-              as int?,
-      broadcast: freezed == broadcast
-          ? _value.broadcast
-          : broadcast // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      txAsHex: freezed == txAsHex
-          ? _value.txAsHex
-          : txAsHex // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      signers: freezed == signers
-          ? _value._signers
-          : signers // ignore: cast_nullable_to_non_nullable
-              as List<SignerId>?,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$BuildTransactionParamsImpl extends _BuildTransactionParams {
-  const _$BuildTransactionParamsImpl(
+class _BuildTransactionParams extends BuildTransactionParams {
+  const _BuildTransactionParams(
       {required this.transactionTypeBuilder,
       this.feeBuilder,
       this.nonce,
@@ -249,16 +200,20 @@ class _$BuildTransactionParamsImpl extends _BuildTransactionParams {
     return EqualUnmodifiableListView(value);
   }
 
+  /// Create a copy of BuildTransactionParams
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'BuildTransactionParams(transactionTypeBuilder: $transactionTypeBuilder, feeBuilder: $feeBuilder, nonce: $nonce, txVersion: $txVersion, broadcast: $broadcast, txAsHex: $txAsHex, signers: $signers)';
-  }
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$BuildTransactionParamsCopyWith<_BuildTransactionParams> get copyWith =>
+      __$BuildTransactionParamsCopyWithImpl<_BuildTransactionParams>(
+          this, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$BuildTransactionParamsImpl &&
+            other is _BuildTransactionParams &&
             (identical(other.transactionTypeBuilder, transactionTypeBuilder) ||
                 other.transactionTypeBuilder == transactionTypeBuilder) &&
             (identical(other.feeBuilder, feeBuilder) ||
@@ -283,46 +238,112 @@ class _$BuildTransactionParamsImpl extends _BuildTransactionParams {
       txAsHex,
       const DeepCollectionEquality().hash(_signers));
 
+  @override
+  String toString() {
+    return 'BuildTransactionParams(transactionTypeBuilder: $transactionTypeBuilder, feeBuilder: $feeBuilder, nonce: $nonce, txVersion: $txVersion, broadcast: $broadcast, txAsHex: $txAsHex, signers: $signers)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$BuildTransactionParamsCopyWith<$Res>
+    implements $BuildTransactionParamsCopyWith<$Res> {
+  factory _$BuildTransactionParamsCopyWith(_BuildTransactionParams value,
+          $Res Function(_BuildTransactionParams) _then) =
+      __$BuildTransactionParamsCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {TransactionTypeBuilder transactionTypeBuilder,
+      FeeBuilder? feeBuilder,
+      int? nonce,
+      int? txVersion,
+      bool? broadcast,
+      bool? txAsHex,
+      List<SignerId>? signers});
+
+  @override
+  $TransactionTypeBuilderCopyWith<$Res> get transactionTypeBuilder;
+  @override
+  $FeeBuilderCopyWith<$Res>? get feeBuilder;
+}
+
+/// @nodoc
+class __$BuildTransactionParamsCopyWithImpl<$Res>
+    implements _$BuildTransactionParamsCopyWith<$Res> {
+  __$BuildTransactionParamsCopyWithImpl(this._self, this._then);
+
+  final _BuildTransactionParams _self;
+  final $Res Function(_BuildTransactionParams) _then;
+
   /// Create a copy of BuildTransactionParams
   /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$BuildTransactionParamsImplCopyWith<_$BuildTransactionParamsImpl>
-      get copyWith => __$$BuildTransactionParamsImplCopyWithImpl<
-          _$BuildTransactionParamsImpl>(this, _$identity);
-}
-
-abstract class _BuildTransactionParams extends BuildTransactionParams {
-  const factory _BuildTransactionParams(
-      {required final TransactionTypeBuilder transactionTypeBuilder,
-      final FeeBuilder? feeBuilder,
-      final int? nonce,
-      final int? txVersion,
-      final bool? broadcast,
-      final bool? txAsHex,
-      final List<SignerId>? signers}) = _$BuildTransactionParamsImpl;
-  const _BuildTransactionParams._() : super._();
-
-  @override
-  TransactionTypeBuilder get transactionTypeBuilder;
-  @override
-  FeeBuilder? get feeBuilder;
-  @override
-  int? get nonce;
-  @override
-  int? get txVersion;
-  @override
-  bool? get broadcast;
-  @override
-  bool? get txAsHex;
-  @override
-  List<SignerId>? get signers;
+  $Res call({
+    Object? transactionTypeBuilder = null,
+    Object? feeBuilder = freezed,
+    Object? nonce = freezed,
+    Object? txVersion = freezed,
+    Object? broadcast = freezed,
+    Object? txAsHex = freezed,
+    Object? signers = freezed,
+  }) {
+    return _then(_BuildTransactionParams(
+      transactionTypeBuilder: null == transactionTypeBuilder
+          ? _self.transactionTypeBuilder
+          : transactionTypeBuilder // ignore: cast_nullable_to_non_nullable
+              as TransactionTypeBuilder,
+      feeBuilder: freezed == feeBuilder
+          ? _self.feeBuilder
+          : feeBuilder // ignore: cast_nullable_to_non_nullable
+              as FeeBuilder?,
+      nonce: freezed == nonce
+          ? _self.nonce
+          : nonce // ignore: cast_nullable_to_non_nullable
+              as int?,
+      txVersion: freezed == txVersion
+          ? _self.txVersion
+          : txVersion // ignore: cast_nullable_to_non_nullable
+              as int?,
+      broadcast: freezed == broadcast
+          ? _self.broadcast
+          : broadcast // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      txAsHex: freezed == txAsHex
+          ? _self.txAsHex
+          : txAsHex // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      signers: freezed == signers
+          ? _self._signers
+          : signers // ignore: cast_nullable_to_non_nullable
+              as List<SignerId>?,
+    ));
+  }
 
   /// Create a copy of BuildTransactionParams
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$BuildTransactionParamsImplCopyWith<_$BuildTransactionParamsImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $TransactionTypeBuilderCopyWith<$Res> get transactionTypeBuilder {
+    return $TransactionTypeBuilderCopyWith<$Res>(_self.transactionTypeBuilder,
+        (value) {
+      return _then(_self.copyWith(transactionTypeBuilder: value));
+    });
+  }
+
+  /// Create a copy of BuildTransactionParams
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $FeeBuilderCopyWith<$Res>? get feeBuilder {
+    if (_self.feeBuilder == null) {
+      return null;
+    }
+
+    return $FeeBuilderCopyWith<$Res>(_self.feeBuilder!, (value) {
+      return _then(_self.copyWith(feeBuilder: value));
+    });
+  }
 }
+
+// dart format on

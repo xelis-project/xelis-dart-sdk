@@ -8,7 +8,7 @@ part 'extract_key_from_address_params.g.dart';
 
 /// @nodoc
 @freezed
-class ExtractKeyFromAddressParams with _$ExtractKeyFromAddressParams {
+abstract class ExtractKeyFromAddressParams with _$ExtractKeyFromAddressParams {
   /// @nodoc
   const factory ExtractKeyFromAddressParams({
     @JsonKey(name: 'address') required String address,

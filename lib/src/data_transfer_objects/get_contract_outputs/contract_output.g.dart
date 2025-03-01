@@ -8,53 +8,46 @@ part of 'contract_output.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$RefundGasImpl _$$RefundGasImplFromJson(Map<String, dynamic> json) =>
-    _$RefundGasImpl(
+RefundGas _$RefundGasFromJson(Map<String, dynamic> json) => RefundGas(
       amount: (json['amount'] as num).toInt(),
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$RefundGasImplToJson(_$RefundGasImpl instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$RefundGasToJson(RefundGas instance) => <String, dynamic>{
       'amount': instance.amount,
       'runtimeType': instance.$type,
     };
 
-_$TransferImpl _$$TransferImplFromJson(Map<String, dynamic> json) =>
-    _$TransferImpl(
+Transfer _$TransferFromJson(Map<String, dynamic> json) => Transfer(
       amount: (json['amount'] as num).toInt(),
       asset: json['asset'] as String,
       destination: json['destination'] as String,
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$TransferImplToJson(_$TransferImpl instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$TransferToJson(Transfer instance) => <String, dynamic>{
       'amount': instance.amount,
       'asset': instance.asset,
       'destination': instance.destination,
       'runtimeType': instance.$type,
     };
 
-_$ExitCodeImpl _$$ExitCodeImplFromJson(Map<String, dynamic> json) =>
-    _$ExitCodeImpl(
+ExitCode _$ExitCodeFromJson(Map<String, dynamic> json) => ExitCode(
       exitCode: (json['exit_code'] as num).toInt(),
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$ExitCodeImplToJson(_$ExitCodeImpl instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$ExitCodeToJson(ExitCode instance) => <String, dynamic>{
       'exit_code': instance.exitCode,
       'runtimeType': instance.$type,
     };
 
-_$RefundDepositsImpl _$$RefundDepositsImplFromJson(Map<String, dynamic> json) =>
-    _$RefundDepositsImpl(
+RefundDeposits _$RefundDepositsFromJson(Map<String, dynamic> json) =>
+    RefundDeposits(
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$RefundDepositsImplToJson(
-        _$RefundDepositsImpl instance) =>
+Map<String, dynamic> _$RefundDepositsToJson(RefundDeposits instance) =>
     <String, dynamic>{
       'runtimeType': instance.$type,
     };

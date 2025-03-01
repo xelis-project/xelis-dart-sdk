@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,75 +10,56 @@ part of 'get_accounts_result.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$GetAccountsResult {
-  List<String> get publicKeys => throw _privateConstructorUsedError;
+  List<String> get publicKeys;
 
   /// Create a copy of GetAccountsResult
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $GetAccountsResultCopyWith<GetAccountsResult> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $GetAccountsResultCopyWith<$Res> {
-  factory $GetAccountsResultCopyWith(
-          GetAccountsResult value, $Res Function(GetAccountsResult) then) =
-      _$GetAccountsResultCopyWithImpl<$Res, GetAccountsResult>;
-  @useResult
-  $Res call({List<String> publicKeys});
-}
-
-/// @nodoc
-class _$GetAccountsResultCopyWithImpl<$Res, $Val extends GetAccountsResult>
-    implements $GetAccountsResultCopyWith<$Res> {
-  _$GetAccountsResultCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of GetAccountsResult
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $GetAccountsResultCopyWith<GetAccountsResult> get copyWith =>
+      _$GetAccountsResultCopyWithImpl<GetAccountsResult>(
+          this as GetAccountsResult, _$identity);
+
   @override
-  $Res call({
-    Object? publicKeys = null,
-  }) {
-    return _then(_value.copyWith(
-      publicKeys: null == publicKeys
-          ? _value.publicKeys
-          : publicKeys // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is GetAccountsResult &&
+            const DeepCollectionEquality()
+                .equals(other.publicKeys, publicKeys));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(publicKeys));
+
+  @override
+  String toString() {
+    return 'GetAccountsResult(publicKeys: $publicKeys)';
   }
 }
 
 /// @nodoc
-abstract class _$$GetAccountsResultImplCopyWith<$Res>
-    implements $GetAccountsResultCopyWith<$Res> {
-  factory _$$GetAccountsResultImplCopyWith(_$GetAccountsResultImpl value,
-          $Res Function(_$GetAccountsResultImpl) then) =
-      __$$GetAccountsResultImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $GetAccountsResultCopyWith<$Res> {
+  factory $GetAccountsResultCopyWith(
+          GetAccountsResult value, $Res Function(GetAccountsResult) _then) =
+      _$GetAccountsResultCopyWithImpl;
   @useResult
   $Res call({List<String> publicKeys});
 }
 
 /// @nodoc
-class __$$GetAccountsResultImplCopyWithImpl<$Res>
-    extends _$GetAccountsResultCopyWithImpl<$Res, _$GetAccountsResultImpl>
-    implements _$$GetAccountsResultImplCopyWith<$Res> {
-  __$$GetAccountsResultImplCopyWithImpl(_$GetAccountsResultImpl _value,
-      $Res Function(_$GetAccountsResultImpl) _then)
-      : super(_value, _then);
+class _$GetAccountsResultCopyWithImpl<$Res>
+    implements $GetAccountsResultCopyWith<$Res> {
+  _$GetAccountsResultCopyWithImpl(this._self, this._then);
+
+  final GetAccountsResult _self;
+  final $Res Function(GetAccountsResult) _then;
 
   /// Create a copy of GetAccountsResult
   /// with the given fields replaced by the non-null parameter values.
@@ -86,9 +68,9 @@ class __$$GetAccountsResultImplCopyWithImpl<$Res>
   $Res call({
     Object? publicKeys = null,
   }) {
-    return _then(_$GetAccountsResultImpl(
+    return _then(_self.copyWith(
       publicKeys: null == publicKeys
-          ? _value._publicKeys
+          ? _self.publicKeys
           : publicKeys // ignore: cast_nullable_to_non_nullable
               as List<String>,
     ));
@@ -97,8 +79,8 @@ class __$$GetAccountsResultImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$GetAccountsResultImpl implements _GetAccountsResult {
-  const _$GetAccountsResultImpl({required final List<String> publicKeys})
+class _GetAccountsResult implements GetAccountsResult {
+  const _GetAccountsResult({required final List<String> publicKeys})
       : _publicKeys = publicKeys;
 
   final List<String> _publicKeys;
@@ -109,16 +91,19 @@ class _$GetAccountsResultImpl implements _GetAccountsResult {
     return EqualUnmodifiableListView(_publicKeys);
   }
 
+  /// Create a copy of GetAccountsResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'GetAccountsResult(publicKeys: $publicKeys)';
-  }
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$GetAccountsResultCopyWith<_GetAccountsResult> get copyWith =>
+      __$GetAccountsResultCopyWithImpl<_GetAccountsResult>(this, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetAccountsResultImpl &&
+            other is _GetAccountsResult &&
             const DeepCollectionEquality()
                 .equals(other._publicKeys, _publicKeys));
   }
@@ -127,27 +112,45 @@ class _$GetAccountsResultImpl implements _GetAccountsResult {
   int get hashCode => Object.hash(
       runtimeType, const DeepCollectionEquality().hash(_publicKeys));
 
+  @override
+  String toString() {
+    return 'GetAccountsResult(publicKeys: $publicKeys)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$GetAccountsResultCopyWith<$Res>
+    implements $GetAccountsResultCopyWith<$Res> {
+  factory _$GetAccountsResultCopyWith(
+          _GetAccountsResult value, $Res Function(_GetAccountsResult) _then) =
+      __$GetAccountsResultCopyWithImpl;
+  @override
+  @useResult
+  $Res call({List<String> publicKeys});
+}
+
+/// @nodoc
+class __$GetAccountsResultCopyWithImpl<$Res>
+    implements _$GetAccountsResultCopyWith<$Res> {
+  __$GetAccountsResultCopyWithImpl(this._self, this._then);
+
+  final _GetAccountsResult _self;
+  final $Res Function(_GetAccountsResult) _then;
+
   /// Create a copy of GetAccountsResult
   /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$GetAccountsResultImplCopyWith<_$GetAccountsResultImpl> get copyWith =>
-      __$$GetAccountsResultImplCopyWithImpl<_$GetAccountsResultImpl>(
-          this, _$identity);
+  $Res call({
+    Object? publicKeys = null,
+  }) {
+    return _then(_GetAccountsResult(
+      publicKeys: null == publicKeys
+          ? _self._publicKeys
+          : publicKeys // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+    ));
+  }
 }
 
-abstract class _GetAccountsResult implements GetAccountsResult {
-  const factory _GetAccountsResult({required final List<String> publicKeys}) =
-      _$GetAccountsResultImpl;
-
-  @override
-  List<String> get publicKeys;
-
-  /// Create a copy of GetAccountsResult
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$GetAccountsResultImplCopyWith<_$GetAccountsResultImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+// dart format on

@@ -8,15 +8,15 @@ part of 'validate_address_result.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ValidateAddressResultImpl _$$ValidateAddressResultImplFromJson(
+_ValidateAddressResult _$ValidateAddressResultFromJson(
         Map<String, dynamic> json) =>
-    _$ValidateAddressResultImpl(
+    _ValidateAddressResult(
       isValid: json['is_valid'] as bool,
       isIntegrated: json['is_integrated'] as bool,
     );
 
-Map<String, dynamic> _$$ValidateAddressResultImplToJson(
-        _$ValidateAddressResultImpl instance) =>
+Map<String, dynamic> _$ValidateAddressResultToJson(
+        _ValidateAddressResult instance) =>
     <String, dynamic>{
       'is_valid': instance.isValid,
       'is_integrated': instance.isIntegrated,

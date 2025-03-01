@@ -7,7 +7,7 @@ part 'dev_fee_history.g.dart';
 
 /// @nodoc
 @freezed
-class DevFeeHistory with _$DevFeeHistory {
+abstract class DevFeeHistory with _$DevFeeHistory {
   /// @nodoc
   const factory DevFeeHistory({
     @JsonKey(name: 'reward') required int reward,

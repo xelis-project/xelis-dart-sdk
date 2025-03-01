@@ -8,7 +8,8 @@ part 'stable_topoheight_changed_event.g.dart';
 
 /// @nodoc
 @freezed
-class StableTopoheightChangedEvent with _$StableTopoheightChangedEvent {
+abstract class StableTopoheightChangedEvent
+    with _$StableTopoheightChangedEvent {
   /// @nodoc
   const factory StableTopoheightChangedEvent({
     @JsonKey(name: 'previous_stable_topoheight')

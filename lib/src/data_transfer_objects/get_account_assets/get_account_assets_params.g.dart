@@ -8,14 +8,14 @@ part of 'get_account_assets_params.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$GetAccountAssetsParamsImpl _$$GetAccountAssetsParamsImplFromJson(
+_GetAccountAssetsParams _$GetAccountAssetsParamsFromJson(
         Map<String, dynamic> json) =>
-    _$GetAccountAssetsParamsImpl(
+    _GetAccountAssetsParams(
       address: json['address'] as String,
     );
 
-Map<String, dynamic> _$$GetAccountAssetsParamsImplToJson(
-        _$GetAccountAssetsParamsImpl instance) =>
+Map<String, dynamic> _$GetAccountAssetsParamsToJson(
+        _GetAccountAssetsParams instance) =>
     <String, dynamic>{
       'address': instance.address,
     };

@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,123 +10,30 @@ part of 'get_address_params.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-GetAddressParams _$GetAddressParamsFromJson(Map<String, dynamic> json) {
-  return _GetAddressParams.fromJson(json);
-}
 
 /// @nodoc
 mixin _$GetAddressParams {
   @JsonKey(name: 'integrated_data')
-  dynamic get integratedData => throw _privateConstructorUsedError;
-
-  /// Serializes this GetAddressParams to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  dynamic get integratedData;
 
   /// Create a copy of GetAddressParams
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $GetAddressParamsCopyWith<GetAddressParams> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+      _$GetAddressParamsCopyWithImpl<GetAddressParams>(
+          this as GetAddressParams, _$identity);
 
-/// @nodoc
-abstract class $GetAddressParamsCopyWith<$Res> {
-  factory $GetAddressParamsCopyWith(
-          GetAddressParams value, $Res Function(GetAddressParams) then) =
-      _$GetAddressParamsCopyWithImpl<$Res, GetAddressParams>;
-  @useResult
-  $Res call({@JsonKey(name: 'integrated_data') dynamic integratedData});
-}
-
-/// @nodoc
-class _$GetAddressParamsCopyWithImpl<$Res, $Val extends GetAddressParams>
-    implements $GetAddressParamsCopyWith<$Res> {
-  _$GetAddressParamsCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of GetAddressParams
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? integratedData = freezed,
-  }) {
-    return _then(_value.copyWith(
-      integratedData: freezed == integratedData
-          ? _value.integratedData
-          : integratedData // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$GetAddressParamsImplCopyWith<$Res>
-    implements $GetAddressParamsCopyWith<$Res> {
-  factory _$$GetAddressParamsImplCopyWith(_$GetAddressParamsImpl value,
-          $Res Function(_$GetAddressParamsImpl) then) =
-      __$$GetAddressParamsImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({@JsonKey(name: 'integrated_data') dynamic integratedData});
-}
-
-/// @nodoc
-class __$$GetAddressParamsImplCopyWithImpl<$Res>
-    extends _$GetAddressParamsCopyWithImpl<$Res, _$GetAddressParamsImpl>
-    implements _$$GetAddressParamsImplCopyWith<$Res> {
-  __$$GetAddressParamsImplCopyWithImpl(_$GetAddressParamsImpl _value,
-      $Res Function(_$GetAddressParamsImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of GetAddressParams
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? integratedData = freezed,
-  }) {
-    return _then(_$GetAddressParamsImpl(
-      integratedData: freezed == integratedData
-          ? _value.integratedData
-          : integratedData // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$GetAddressParamsImpl implements _GetAddressParams {
-  const _$GetAddressParamsImpl(
-      {@JsonKey(name: 'integrated_data') required this.integratedData});
-
-  factory _$GetAddressParamsImpl.fromJson(Map<String, dynamic> json) =>
-      _$$GetAddressParamsImplFromJson(json);
-
-  @override
-  @JsonKey(name: 'integrated_data')
-  final dynamic integratedData;
-
-  @override
-  String toString() {
-    return 'GetAddressParams(integratedData: $integratedData)';
-  }
+  /// Serializes this GetAddressParams to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetAddressParamsImpl &&
+            other is GetAddressParams &&
             const DeepCollectionEquality()
                 .equals(other.integratedData, integratedData));
   }
@@ -135,39 +43,125 @@ class _$GetAddressParamsImpl implements _GetAddressParams {
   int get hashCode => Object.hash(
       runtimeType, const DeepCollectionEquality().hash(integratedData));
 
-  /// Create a copy of GetAddressParams
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$GetAddressParamsImplCopyWith<_$GetAddressParamsImpl> get copyWith =>
-      __$$GetAddressParamsImplCopyWithImpl<_$GetAddressParamsImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$GetAddressParamsImplToJson(
-      this,
-    );
+  String toString() {
+    return 'GetAddressParams(integratedData: $integratedData)';
   }
 }
 
-abstract class _GetAddressParams implements GetAddressParams {
-  const factory _GetAddressParams(
-      {@JsonKey(name: 'integrated_data')
-      required final dynamic integratedData}) = _$GetAddressParamsImpl;
+/// @nodoc
+abstract mixin class $GetAddressParamsCopyWith<$Res> {
+  factory $GetAddressParamsCopyWith(
+          GetAddressParams value, $Res Function(GetAddressParams) _then) =
+      _$GetAddressParamsCopyWithImpl;
+  @useResult
+  $Res call({@JsonKey(name: 'integrated_data') dynamic integratedData});
+}
 
-  factory _GetAddressParams.fromJson(Map<String, dynamic> json) =
-      _$GetAddressParamsImpl.fromJson;
+/// @nodoc
+class _$GetAddressParamsCopyWithImpl<$Res>
+    implements $GetAddressParamsCopyWith<$Res> {
+  _$GetAddressParamsCopyWithImpl(this._self, this._then);
+
+  final GetAddressParams _self;
+  final $Res Function(GetAddressParams) _then;
+
+  /// Create a copy of GetAddressParams
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? integratedData = freezed,
+  }) {
+    return _then(_self.copyWith(
+      integratedData: freezed == integratedData
+          ? _self.integratedData
+          : integratedData // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _GetAddressParams implements GetAddressParams {
+  const _GetAddressParams(
+      {@JsonKey(name: 'integrated_data') required this.integratedData});
+  factory _GetAddressParams.fromJson(Map<String, dynamic> json) =>
+      _$GetAddressParamsFromJson(json);
 
   @override
   @JsonKey(name: 'integrated_data')
-  dynamic get integratedData;
+  final dynamic integratedData;
 
   /// Create a copy of GetAddressParams
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$GetAddressParamsImplCopyWith<_$GetAddressParamsImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  _$GetAddressParamsCopyWith<_GetAddressParams> get copyWith =>
+      __$GetAddressParamsCopyWithImpl<_GetAddressParams>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$GetAddressParamsToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _GetAddressParams &&
+            const DeepCollectionEquality()
+                .equals(other.integratedData, integratedData));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(integratedData));
+
+  @override
+  String toString() {
+    return 'GetAddressParams(integratedData: $integratedData)';
+  }
 }
+
+/// @nodoc
+abstract mixin class _$GetAddressParamsCopyWith<$Res>
+    implements $GetAddressParamsCopyWith<$Res> {
+  factory _$GetAddressParamsCopyWith(
+          _GetAddressParams value, $Res Function(_GetAddressParams) _then) =
+      __$GetAddressParamsCopyWithImpl;
+  @override
+  @useResult
+  $Res call({@JsonKey(name: 'integrated_data') dynamic integratedData});
+}
+
+/// @nodoc
+class __$GetAddressParamsCopyWithImpl<$Res>
+    implements _$GetAddressParamsCopyWith<$Res> {
+  __$GetAddressParamsCopyWithImpl(this._self, this._then);
+
+  final _GetAddressParams _self;
+  final $Res Function(_GetAddressParams) _then;
+
+  /// Create a copy of GetAddressParams
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? integratedData = freezed,
+  }) {
+    return _then(_GetAddressParams(
+      integratedData: freezed == integratedData
+          ? _self.integratedData
+          : integratedData // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+    ));
+  }
+}
+
+// dart format on

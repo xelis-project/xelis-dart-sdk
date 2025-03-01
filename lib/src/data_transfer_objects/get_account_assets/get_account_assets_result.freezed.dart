@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,87 +10,59 @@ part of 'get_account_assets_result.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-GetAccountAssetsResult _$GetAccountAssetsResultFromJson(
-    Map<String, dynamic> json) {
-  return _GetAccountAssetsResult.fromJson(json);
-}
 
 /// @nodoc
 mixin _$GetAccountAssetsResult {
-  List<String> get assets => throw _privateConstructorUsedError;
-
-  /// Serializes this GetAccountAssetsResult to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  List<String> get assets;
 
   /// Create a copy of GetAccountAssetsResult
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $GetAccountAssetsResultCopyWith<GetAccountAssetsResult> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $GetAccountAssetsResultCopyWith<$Res> {
-  factory $GetAccountAssetsResultCopyWith(GetAccountAssetsResult value,
-          $Res Function(GetAccountAssetsResult) then) =
-      _$GetAccountAssetsResultCopyWithImpl<$Res, GetAccountAssetsResult>;
-  @useResult
-  $Res call({List<String> assets});
-}
-
-/// @nodoc
-class _$GetAccountAssetsResultCopyWithImpl<$Res,
-        $Val extends GetAccountAssetsResult>
-    implements $GetAccountAssetsResultCopyWith<$Res> {
-  _$GetAccountAssetsResultCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of GetAccountAssetsResult
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $GetAccountAssetsResultCopyWith<GetAccountAssetsResult> get copyWith =>
+      _$GetAccountAssetsResultCopyWithImpl<GetAccountAssetsResult>(
+          this as GetAccountAssetsResult, _$identity);
+
+  /// Serializes this GetAccountAssetsResult to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? assets = null,
-  }) {
-    return _then(_value.copyWith(
-      assets: null == assets
-          ? _value.assets
-          : assets // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is GetAccountAssetsResult &&
+            const DeepCollectionEquality().equals(other.assets, assets));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(assets));
+
+  @override
+  String toString() {
+    return 'GetAccountAssetsResult(assets: $assets)';
   }
 }
 
 /// @nodoc
-abstract class _$$GetAccountAssetsResultImplCopyWith<$Res>
-    implements $GetAccountAssetsResultCopyWith<$Res> {
-  factory _$$GetAccountAssetsResultImplCopyWith(
-          _$GetAccountAssetsResultImpl value,
-          $Res Function(_$GetAccountAssetsResultImpl) then) =
-      __$$GetAccountAssetsResultImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $GetAccountAssetsResultCopyWith<$Res> {
+  factory $GetAccountAssetsResultCopyWith(GetAccountAssetsResult value,
+          $Res Function(GetAccountAssetsResult) _then) =
+      _$GetAccountAssetsResultCopyWithImpl;
   @useResult
   $Res call({List<String> assets});
 }
 
 /// @nodoc
-class __$$GetAccountAssetsResultImplCopyWithImpl<$Res>
-    extends _$GetAccountAssetsResultCopyWithImpl<$Res,
-        _$GetAccountAssetsResultImpl>
-    implements _$$GetAccountAssetsResultImplCopyWith<$Res> {
-  __$$GetAccountAssetsResultImplCopyWithImpl(
-      _$GetAccountAssetsResultImpl _value,
-      $Res Function(_$GetAccountAssetsResultImpl) _then)
-      : super(_value, _then);
+class _$GetAccountAssetsResultCopyWithImpl<$Res>
+    implements $GetAccountAssetsResultCopyWith<$Res> {
+  _$GetAccountAssetsResultCopyWithImpl(this._self, this._then);
+
+  final GetAccountAssetsResult _self;
+  final $Res Function(GetAccountAssetsResult) _then;
 
   /// Create a copy of GetAccountAssetsResult
   /// with the given fields replaced by the non-null parameter values.
@@ -98,9 +71,9 @@ class __$$GetAccountAssetsResultImplCopyWithImpl<$Res>
   $Res call({
     Object? assets = null,
   }) {
-    return _then(_$GetAccountAssetsResultImpl(
+    return _then(_self.copyWith(
       assets: null == assets
-          ? _value._assets
+          ? _self.assets
           : assets // ignore: cast_nullable_to_non_nullable
               as List<String>,
     ));
@@ -109,12 +82,11 @@ class __$$GetAccountAssetsResultImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$GetAccountAssetsResultImpl implements _GetAccountAssetsResult {
-  const _$GetAccountAssetsResultImpl({required final List<String> assets})
+class _GetAccountAssetsResult implements GetAccountAssetsResult {
+  const _GetAccountAssetsResult({required final List<String> assets})
       : _assets = assets;
-
-  factory _$GetAccountAssetsResultImpl.fromJson(Map<String, dynamic> json) =>
-      _$$GetAccountAssetsResultImplFromJson(json);
+  factory _GetAccountAssetsResult.fromJson(Map<String, dynamic> json) =>
+      _$GetAccountAssetsResultFromJson(json);
 
   final List<String> _assets;
   @override
@@ -124,16 +96,27 @@ class _$GetAccountAssetsResultImpl implements _GetAccountAssetsResult {
     return EqualUnmodifiableListView(_assets);
   }
 
+  /// Create a copy of GetAccountAssetsResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'GetAccountAssetsResult(assets: $assets)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$GetAccountAssetsResultCopyWith<_GetAccountAssetsResult> get copyWith =>
+      __$GetAccountAssetsResultCopyWithImpl<_GetAccountAssetsResult>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$GetAccountAssetsResultToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetAccountAssetsResultImpl &&
+            other is _GetAccountAssetsResult &&
             const DeepCollectionEquality().equals(other._assets, _assets));
   }
 
@@ -142,37 +125,45 @@ class _$GetAccountAssetsResultImpl implements _GetAccountAssetsResult {
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(_assets));
 
-  /// Create a copy of GetAccountAssetsResult
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$GetAccountAssetsResultImplCopyWith<_$GetAccountAssetsResultImpl>
-      get copyWith => __$$GetAccountAssetsResultImplCopyWithImpl<
-          _$GetAccountAssetsResultImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$GetAccountAssetsResultImplToJson(
-      this,
-    );
+  String toString() {
+    return 'GetAccountAssetsResult(assets: $assets)';
   }
 }
 
-abstract class _GetAccountAssetsResult implements GetAccountAssetsResult {
-  const factory _GetAccountAssetsResult({required final List<String> assets}) =
-      _$GetAccountAssetsResultImpl;
-
-  factory _GetAccountAssetsResult.fromJson(Map<String, dynamic> json) =
-      _$GetAccountAssetsResultImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$GetAccountAssetsResultCopyWith<$Res>
+    implements $GetAccountAssetsResultCopyWith<$Res> {
+  factory _$GetAccountAssetsResultCopyWith(_GetAccountAssetsResult value,
+          $Res Function(_GetAccountAssetsResult) _then) =
+      __$GetAccountAssetsResultCopyWithImpl;
   @override
-  List<String> get assets;
+  @useResult
+  $Res call({List<String> assets});
+}
+
+/// @nodoc
+class __$GetAccountAssetsResultCopyWithImpl<$Res>
+    implements _$GetAccountAssetsResultCopyWith<$Res> {
+  __$GetAccountAssetsResultCopyWithImpl(this._self, this._then);
+
+  final _GetAccountAssetsResult _self;
+  final $Res Function(_GetAccountAssetsResult) _then;
 
   /// Create a copy of GetAccountAssetsResult
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$GetAccountAssetsResultImplCopyWith<_$GetAccountAssetsResultImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? assets = null,
+  }) {
+    return _then(_GetAccountAssetsResult(
+      assets: null == assets
+          ? _self._assets
+          : assets // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+    ));
+  }
 }
+
+// dart format on

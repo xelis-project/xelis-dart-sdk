@@ -8,7 +8,7 @@ part 'outgoing_history.g.dart';
 
 /// @nodoc
 @freezed
-class OutgoingHistory with _$OutgoingHistory {
+abstract class OutgoingHistory with _$OutgoingHistory {
   /// @nodoc
   const factory OutgoingHistory({
     @JsonKey(name: 'to') required String to,

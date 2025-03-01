@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,156 +10,33 @@ part of 'stable_topoheight_changed_event.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-StableTopoheightChangedEvent _$StableTopoheightChangedEventFromJson(
-    Map<String, dynamic> json) {
-  return _StableTopoheightChangedEvent.fromJson(json);
-}
 
 /// @nodoc
 mixin _$StableTopoheightChangedEvent {
   @JsonKey(name: 'previous_stable_topoheight')
-  int get previousStableTopoheight => throw _privateConstructorUsedError;
+  int get previousStableTopoheight;
   @JsonKey(name: 'new_stable_topoheight')
-  int get newStableTopoheight => throw _privateConstructorUsedError;
-
-  /// Serializes this StableTopoheightChangedEvent to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  int get newStableTopoheight;
 
   /// Create a copy of StableTopoheightChangedEvent
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $StableTopoheightChangedEventCopyWith<StableTopoheightChangedEvent>
-      get copyWith => throw _privateConstructorUsedError;
-}
+      get copyWith => _$StableTopoheightChangedEventCopyWithImpl<
+              StableTopoheightChangedEvent>(
+          this as StableTopoheightChangedEvent, _$identity);
 
-/// @nodoc
-abstract class $StableTopoheightChangedEventCopyWith<$Res> {
-  factory $StableTopoheightChangedEventCopyWith(
-          StableTopoheightChangedEvent value,
-          $Res Function(StableTopoheightChangedEvent) then) =
-      _$StableTopoheightChangedEventCopyWithImpl<$Res,
-          StableTopoheightChangedEvent>;
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'previous_stable_topoheight')
-      int previousStableTopoheight,
-      @JsonKey(name: 'new_stable_topoheight') int newStableTopoheight});
-}
-
-/// @nodoc
-class _$StableTopoheightChangedEventCopyWithImpl<$Res,
-        $Val extends StableTopoheightChangedEvent>
-    implements $StableTopoheightChangedEventCopyWith<$Res> {
-  _$StableTopoheightChangedEventCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of StableTopoheightChangedEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? previousStableTopoheight = null,
-    Object? newStableTopoheight = null,
-  }) {
-    return _then(_value.copyWith(
-      previousStableTopoheight: null == previousStableTopoheight
-          ? _value.previousStableTopoheight
-          : previousStableTopoheight // ignore: cast_nullable_to_non_nullable
-              as int,
-      newStableTopoheight: null == newStableTopoheight
-          ? _value.newStableTopoheight
-          : newStableTopoheight // ignore: cast_nullable_to_non_nullable
-              as int,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$StableTopoheightChangedEventImplCopyWith<$Res>
-    implements $StableTopoheightChangedEventCopyWith<$Res> {
-  factory _$$StableTopoheightChangedEventImplCopyWith(
-          _$StableTopoheightChangedEventImpl value,
-          $Res Function(_$StableTopoheightChangedEventImpl) then) =
-      __$$StableTopoheightChangedEventImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'previous_stable_topoheight')
-      int previousStableTopoheight,
-      @JsonKey(name: 'new_stable_topoheight') int newStableTopoheight});
-}
-
-/// @nodoc
-class __$$StableTopoheightChangedEventImplCopyWithImpl<$Res>
-    extends _$StableTopoheightChangedEventCopyWithImpl<$Res,
-        _$StableTopoheightChangedEventImpl>
-    implements _$$StableTopoheightChangedEventImplCopyWith<$Res> {
-  __$$StableTopoheightChangedEventImplCopyWithImpl(
-      _$StableTopoheightChangedEventImpl _value,
-      $Res Function(_$StableTopoheightChangedEventImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of StableTopoheightChangedEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? previousStableTopoheight = null,
-    Object? newStableTopoheight = null,
-  }) {
-    return _then(_$StableTopoheightChangedEventImpl(
-      previousStableTopoheight: null == previousStableTopoheight
-          ? _value.previousStableTopoheight
-          : previousStableTopoheight // ignore: cast_nullable_to_non_nullable
-              as int,
-      newStableTopoheight: null == newStableTopoheight
-          ? _value.newStableTopoheight
-          : newStableTopoheight // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$StableTopoheightChangedEventImpl
-    implements _StableTopoheightChangedEvent {
-  const _$StableTopoheightChangedEventImpl(
-      {@JsonKey(name: 'previous_stable_topoheight')
-      required this.previousStableTopoheight,
-      @JsonKey(name: 'new_stable_topoheight')
-      required this.newStableTopoheight});
-
-  factory _$StableTopoheightChangedEventImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$StableTopoheightChangedEventImplFromJson(json);
-
-  @override
-  @JsonKey(name: 'previous_stable_topoheight')
-  final int previousStableTopoheight;
-  @override
-  @JsonKey(name: 'new_stable_topoheight')
-  final int newStableTopoheight;
-
-  @override
-  String toString() {
-    return 'StableTopoheightChangedEvent(previousStableTopoheight: $previousStableTopoheight, newStableTopoheight: $newStableTopoheight)';
-  }
+  /// Serializes this StableTopoheightChangedEvent to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$StableTopoheightChangedEventImpl &&
+            other is StableTopoheightChangedEvent &&
             (identical(
                     other.previousStableTopoheight, previousStableTopoheight) ||
                 other.previousStableTopoheight == previousStableTopoheight) &&
@@ -171,48 +49,153 @@ class _$StableTopoheightChangedEventImpl
   int get hashCode =>
       Object.hash(runtimeType, previousStableTopoheight, newStableTopoheight);
 
-  /// Create a copy of StableTopoheightChangedEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$StableTopoheightChangedEventImplCopyWith<
-          _$StableTopoheightChangedEventImpl>
-      get copyWith => __$$StableTopoheightChangedEventImplCopyWithImpl<
-          _$StableTopoheightChangedEventImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$StableTopoheightChangedEventImplToJson(
-      this,
-    );
+  String toString() {
+    return 'StableTopoheightChangedEvent(previousStableTopoheight: $previousStableTopoheight, newStableTopoheight: $newStableTopoheight)';
   }
 }
 
-abstract class _StableTopoheightChangedEvent
-    implements StableTopoheightChangedEvent {
-  const factory _StableTopoheightChangedEvent(
-          {@JsonKey(name: 'previous_stable_topoheight')
-          required final int previousStableTopoheight,
-          @JsonKey(name: 'new_stable_topoheight')
-          required final int newStableTopoheight}) =
-      _$StableTopoheightChangedEventImpl;
+/// @nodoc
+abstract mixin class $StableTopoheightChangedEventCopyWith<$Res> {
+  factory $StableTopoheightChangedEventCopyWith(
+          StableTopoheightChangedEvent value,
+          $Res Function(StableTopoheightChangedEvent) _then) =
+      _$StableTopoheightChangedEventCopyWithImpl;
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'previous_stable_topoheight')
+      int previousStableTopoheight,
+      @JsonKey(name: 'new_stable_topoheight') int newStableTopoheight});
+}
 
-  factory _StableTopoheightChangedEvent.fromJson(Map<String, dynamic> json) =
-      _$StableTopoheightChangedEventImpl.fromJson;
+/// @nodoc
+class _$StableTopoheightChangedEventCopyWithImpl<$Res>
+    implements $StableTopoheightChangedEventCopyWith<$Res> {
+  _$StableTopoheightChangedEventCopyWithImpl(this._self, this._then);
+
+  final StableTopoheightChangedEvent _self;
+  final $Res Function(StableTopoheightChangedEvent) _then;
+
+  /// Create a copy of StableTopoheightChangedEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? previousStableTopoheight = null,
+    Object? newStableTopoheight = null,
+  }) {
+    return _then(_self.copyWith(
+      previousStableTopoheight: null == previousStableTopoheight
+          ? _self.previousStableTopoheight
+          : previousStableTopoheight // ignore: cast_nullable_to_non_nullable
+              as int,
+      newStableTopoheight: null == newStableTopoheight
+          ? _self.newStableTopoheight
+          : newStableTopoheight // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _StableTopoheightChangedEvent implements StableTopoheightChangedEvent {
+  const _StableTopoheightChangedEvent(
+      {@JsonKey(name: 'previous_stable_topoheight')
+      required this.previousStableTopoheight,
+      @JsonKey(name: 'new_stable_topoheight')
+      required this.newStableTopoheight});
+  factory _StableTopoheightChangedEvent.fromJson(Map<String, dynamic> json) =>
+      _$StableTopoheightChangedEventFromJson(json);
 
   @override
   @JsonKey(name: 'previous_stable_topoheight')
-  int get previousStableTopoheight;
+  final int previousStableTopoheight;
   @override
   @JsonKey(name: 'new_stable_topoheight')
-  int get newStableTopoheight;
+  final int newStableTopoheight;
 
   /// Create a copy of StableTopoheightChangedEvent
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$StableTopoheightChangedEventImplCopyWith<
-          _$StableTopoheightChangedEventImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  _$StableTopoheightChangedEventCopyWith<_StableTopoheightChangedEvent>
+      get copyWith => __$StableTopoheightChangedEventCopyWithImpl<
+          _StableTopoheightChangedEvent>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$StableTopoheightChangedEventToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _StableTopoheightChangedEvent &&
+            (identical(
+                    other.previousStableTopoheight, previousStableTopoheight) ||
+                other.previousStableTopoheight == previousStableTopoheight) &&
+            (identical(other.newStableTopoheight, newStableTopoheight) ||
+                other.newStableTopoheight == newStableTopoheight));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, previousStableTopoheight, newStableTopoheight);
+
+  @override
+  String toString() {
+    return 'StableTopoheightChangedEvent(previousStableTopoheight: $previousStableTopoheight, newStableTopoheight: $newStableTopoheight)';
+  }
 }
+
+/// @nodoc
+abstract mixin class _$StableTopoheightChangedEventCopyWith<$Res>
+    implements $StableTopoheightChangedEventCopyWith<$Res> {
+  factory _$StableTopoheightChangedEventCopyWith(
+          _StableTopoheightChangedEvent value,
+          $Res Function(_StableTopoheightChangedEvent) _then) =
+      __$StableTopoheightChangedEventCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'previous_stable_topoheight')
+      int previousStableTopoheight,
+      @JsonKey(name: 'new_stable_topoheight') int newStableTopoheight});
+}
+
+/// @nodoc
+class __$StableTopoheightChangedEventCopyWithImpl<$Res>
+    implements _$StableTopoheightChangedEventCopyWith<$Res> {
+  __$StableTopoheightChangedEventCopyWithImpl(this._self, this._then);
+
+  final _StableTopoheightChangedEvent _self;
+  final $Res Function(_StableTopoheightChangedEvent) _then;
+
+  /// Create a copy of StableTopoheightChangedEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? previousStableTopoheight = null,
+    Object? newStableTopoheight = null,
+  }) {
+    return _then(_StableTopoheightChangedEvent(
+      previousStableTopoheight: null == previousStableTopoheight
+          ? _self.previousStableTopoheight
+          : previousStableTopoheight // ignore: cast_nullable_to_non_nullable
+              as int,
+      newStableTopoheight: null == newStableTopoheight
+          ? _self.newStableTopoheight
+          : newStableTopoheight // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+// dart format on

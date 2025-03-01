@@ -7,7 +7,7 @@ part 'get_multisig_result.freezed.dart';
 
 /// @nodoc
 @freezed
-class GetMultisigResult with _$GetMultisigResult {
+abstract class GetMultisigResult with _$GetMultisigResult {
   /// @nodoc
   const factory GetMultisigResult({
     @JsonKey(name: 'state') required MultisigState state,

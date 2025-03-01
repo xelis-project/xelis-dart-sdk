@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,87 +10,59 @@ part of 'get_mempool_cache_params.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-GetMempoolCacheParams _$GetMempoolCacheParamsFromJson(
-    Map<String, dynamic> json) {
-  return _GetMempoolCacheParams.fromJson(json);
-}
 
 /// @nodoc
 mixin _$GetMempoolCacheParams {
   @JsonKey(name: 'address')
-  String get address => throw _privateConstructorUsedError;
-
-  /// Serializes this GetMempoolCacheParams to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String get address;
 
   /// Create a copy of GetMempoolCacheParams
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $GetMempoolCacheParamsCopyWith<GetMempoolCacheParams> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $GetMempoolCacheParamsCopyWith<$Res> {
-  factory $GetMempoolCacheParamsCopyWith(GetMempoolCacheParams value,
-          $Res Function(GetMempoolCacheParams) then) =
-      _$GetMempoolCacheParamsCopyWithImpl<$Res, GetMempoolCacheParams>;
-  @useResult
-  $Res call({@JsonKey(name: 'address') String address});
-}
-
-/// @nodoc
-class _$GetMempoolCacheParamsCopyWithImpl<$Res,
-        $Val extends GetMempoolCacheParams>
-    implements $GetMempoolCacheParamsCopyWith<$Res> {
-  _$GetMempoolCacheParamsCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of GetMempoolCacheParams
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $GetMempoolCacheParamsCopyWith<GetMempoolCacheParams> get copyWith =>
+      _$GetMempoolCacheParamsCopyWithImpl<GetMempoolCacheParams>(
+          this as GetMempoolCacheParams, _$identity);
+
+  /// Serializes this GetMempoolCacheParams to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? address = null,
-  }) {
-    return _then(_value.copyWith(
-      address: null == address
-          ? _value.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is GetMempoolCacheParams &&
+            (identical(other.address, address) || other.address == address));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, address);
+
+  @override
+  String toString() {
+    return 'GetMempoolCacheParams(address: $address)';
   }
 }
 
 /// @nodoc
-abstract class _$$GetMempoolCacheParamsImplCopyWith<$Res>
-    implements $GetMempoolCacheParamsCopyWith<$Res> {
-  factory _$$GetMempoolCacheParamsImplCopyWith(
-          _$GetMempoolCacheParamsImpl value,
-          $Res Function(_$GetMempoolCacheParamsImpl) then) =
-      __$$GetMempoolCacheParamsImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $GetMempoolCacheParamsCopyWith<$Res> {
+  factory $GetMempoolCacheParamsCopyWith(GetMempoolCacheParams value,
+          $Res Function(GetMempoolCacheParams) _then) =
+      _$GetMempoolCacheParamsCopyWithImpl;
   @useResult
   $Res call({@JsonKey(name: 'address') String address});
 }
 
 /// @nodoc
-class __$$GetMempoolCacheParamsImplCopyWithImpl<$Res>
-    extends _$GetMempoolCacheParamsCopyWithImpl<$Res,
-        _$GetMempoolCacheParamsImpl>
-    implements _$$GetMempoolCacheParamsImplCopyWith<$Res> {
-  __$$GetMempoolCacheParamsImplCopyWithImpl(_$GetMempoolCacheParamsImpl _value,
-      $Res Function(_$GetMempoolCacheParamsImpl) _then)
-      : super(_value, _then);
+class _$GetMempoolCacheParamsCopyWithImpl<$Res>
+    implements $GetMempoolCacheParamsCopyWith<$Res> {
+  _$GetMempoolCacheParamsCopyWithImpl(this._self, this._then);
+
+  final GetMempoolCacheParams _self;
+  final $Res Function(GetMempoolCacheParams) _then;
 
   /// Create a copy of GetMempoolCacheParams
   /// with the given fields replaced by the non-null parameter values.
@@ -98,9 +71,9 @@ class __$$GetMempoolCacheParamsImplCopyWithImpl<$Res>
   $Res call({
     Object? address = null,
   }) {
-    return _then(_$GetMempoolCacheParamsImpl(
+    return _then(_self.copyWith(
       address: null == address
-          ? _value.address
+          ? _self.address
           : address // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -109,27 +82,37 @@ class __$$GetMempoolCacheParamsImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$GetMempoolCacheParamsImpl implements _GetMempoolCacheParams {
-  const _$GetMempoolCacheParamsImpl(
+class _GetMempoolCacheParams implements GetMempoolCacheParams {
+  const _GetMempoolCacheParams(
       {@JsonKey(name: 'address') required this.address});
-
-  factory _$GetMempoolCacheParamsImpl.fromJson(Map<String, dynamic> json) =>
-      _$$GetMempoolCacheParamsImplFromJson(json);
+  factory _GetMempoolCacheParams.fromJson(Map<String, dynamic> json) =>
+      _$GetMempoolCacheParamsFromJson(json);
 
   @override
   @JsonKey(name: 'address')
   final String address;
 
+  /// Create a copy of GetMempoolCacheParams
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'GetMempoolCacheParams(address: $address)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$GetMempoolCacheParamsCopyWith<_GetMempoolCacheParams> get copyWith =>
+      __$GetMempoolCacheParamsCopyWithImpl<_GetMempoolCacheParams>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$GetMempoolCacheParamsToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetMempoolCacheParamsImpl &&
+            other is _GetMempoolCacheParams &&
             (identical(other.address, address) || other.address == address));
   }
 
@@ -137,39 +120,45 @@ class _$GetMempoolCacheParamsImpl implements _GetMempoolCacheParams {
   @override
   int get hashCode => Object.hash(runtimeType, address);
 
-  /// Create a copy of GetMempoolCacheParams
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$GetMempoolCacheParamsImplCopyWith<_$GetMempoolCacheParamsImpl>
-      get copyWith => __$$GetMempoolCacheParamsImplCopyWithImpl<
-          _$GetMempoolCacheParamsImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$GetMempoolCacheParamsImplToJson(
-      this,
-    );
+  String toString() {
+    return 'GetMempoolCacheParams(address: $address)';
   }
 }
 
-abstract class _GetMempoolCacheParams implements GetMempoolCacheParams {
-  const factory _GetMempoolCacheParams(
-          {@JsonKey(name: 'address') required final String address}) =
-      _$GetMempoolCacheParamsImpl;
-
-  factory _GetMempoolCacheParams.fromJson(Map<String, dynamic> json) =
-      _$GetMempoolCacheParamsImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$GetMempoolCacheParamsCopyWith<$Res>
+    implements $GetMempoolCacheParamsCopyWith<$Res> {
+  factory _$GetMempoolCacheParamsCopyWith(_GetMempoolCacheParams value,
+          $Res Function(_GetMempoolCacheParams) _then) =
+      __$GetMempoolCacheParamsCopyWithImpl;
   @override
-  @JsonKey(name: 'address')
-  String get address;
+  @useResult
+  $Res call({@JsonKey(name: 'address') String address});
+}
+
+/// @nodoc
+class __$GetMempoolCacheParamsCopyWithImpl<$Res>
+    implements _$GetMempoolCacheParamsCopyWith<$Res> {
+  __$GetMempoolCacheParamsCopyWithImpl(this._self, this._then);
+
+  final _GetMempoolCacheParams _self;
+  final $Res Function(_GetMempoolCacheParams) _then;
 
   /// Create a copy of GetMempoolCacheParams
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$GetMempoolCacheParamsImplCopyWith<_$GetMempoolCacheParamsImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? address = null,
+  }) {
+    return _then(_GetMempoolCacheParams(
+      address: null == address
+          ? _self.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
+
+// dart format on

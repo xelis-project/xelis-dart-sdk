@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,82 +10,58 @@ part of 'multisig.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-Multisig _$MultisigFromJson(Map<String, dynamic> json) {
-  return _Multisig.fromJson(json);
-}
 
 /// @nodoc
 mixin _$Multisig {
   @JsonKey(name: 'signatures')
-  List<SignatureId> get signatures => throw _privateConstructorUsedError;
-
-  /// Serializes this Multisig to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  List<SignatureId> get signatures;
 
   /// Create a copy of Multisig
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $MultisigCopyWith<Multisig> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $MultisigCopyWith<$Res> {
-  factory $MultisigCopyWith(Multisig value, $Res Function(Multisig) then) =
-      _$MultisigCopyWithImpl<$Res, Multisig>;
-  @useResult
-  $Res call({@JsonKey(name: 'signatures') List<SignatureId> signatures});
-}
-
-/// @nodoc
-class _$MultisigCopyWithImpl<$Res, $Val extends Multisig>
-    implements $MultisigCopyWith<$Res> {
-  _$MultisigCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of Multisig
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $MultisigCopyWith<Multisig> get copyWith =>
+      _$MultisigCopyWithImpl<Multisig>(this as Multisig, _$identity);
+
+  /// Serializes this Multisig to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? signatures = null,
-  }) {
-    return _then(_value.copyWith(
-      signatures: null == signatures
-          ? _value.signatures
-          : signatures // ignore: cast_nullable_to_non_nullable
-              as List<SignatureId>,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is Multisig &&
+            const DeepCollectionEquality()
+                .equals(other.signatures, signatures));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(signatures));
+
+  @override
+  String toString() {
+    return 'Multisig(signatures: $signatures)';
   }
 }
 
 /// @nodoc
-abstract class _$$MultisigImplCopyWith<$Res>
-    implements $MultisigCopyWith<$Res> {
-  factory _$$MultisigImplCopyWith(
-          _$MultisigImpl value, $Res Function(_$MultisigImpl) then) =
-      __$$MultisigImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $MultisigCopyWith<$Res> {
+  factory $MultisigCopyWith(Multisig value, $Res Function(Multisig) _then) =
+      _$MultisigCopyWithImpl;
   @useResult
   $Res call({@JsonKey(name: 'signatures') List<SignatureId> signatures});
 }
 
 /// @nodoc
-class __$$MultisigImplCopyWithImpl<$Res>
-    extends _$MultisigCopyWithImpl<$Res, _$MultisigImpl>
-    implements _$$MultisigImplCopyWith<$Res> {
-  __$$MultisigImplCopyWithImpl(
-      _$MultisigImpl _value, $Res Function(_$MultisigImpl) _then)
-      : super(_value, _then);
+class _$MultisigCopyWithImpl<$Res> implements $MultisigCopyWith<$Res> {
+  _$MultisigCopyWithImpl(this._self, this._then);
+
+  final Multisig _self;
+  final $Res Function(Multisig) _then;
 
   /// Create a copy of Multisig
   /// with the given fields replaced by the non-null parameter values.
@@ -93,9 +70,9 @@ class __$$MultisigImplCopyWithImpl<$Res>
   $Res call({
     Object? signatures = null,
   }) {
-    return _then(_$MultisigImpl(
+    return _then(_self.copyWith(
       signatures: null == signatures
-          ? _value._signatures
+          ? _self.signatures
           : signatures // ignore: cast_nullable_to_non_nullable
               as List<SignatureId>,
     ));
@@ -104,14 +81,13 @@ class __$$MultisigImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$MultisigImpl implements _Multisig {
-  const _$MultisigImpl(
+class _Multisig implements Multisig {
+  const _Multisig(
       {@JsonKey(name: 'signatures')
       required final List<SignatureId> signatures})
       : _signatures = signatures;
-
-  factory _$MultisigImpl.fromJson(Map<String, dynamic> json) =>
-      _$$MultisigImplFromJson(json);
+  factory _Multisig.fromJson(Map<String, dynamic> json) =>
+      _$MultisigFromJson(json);
 
   final List<SignatureId> _signatures;
   @override
@@ -122,16 +98,26 @@ class _$MultisigImpl implements _Multisig {
     return EqualUnmodifiableListView(_signatures);
   }
 
+  /// Create a copy of Multisig
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'Multisig(signatures: $signatures)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$MultisigCopyWith<_Multisig> get copyWith =>
+      __$MultisigCopyWithImpl<_Multisig>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$MultisigToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$MultisigImpl &&
+            other is _Multisig &&
             const DeepCollectionEquality()
                 .equals(other._signatures, _signatures));
   }
@@ -141,38 +127,43 @@ class _$MultisigImpl implements _Multisig {
   int get hashCode => Object.hash(
       runtimeType, const DeepCollectionEquality().hash(_signatures));
 
-  /// Create a copy of Multisig
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$MultisigImplCopyWith<_$MultisigImpl> get copyWith =>
-      __$$MultisigImplCopyWithImpl<_$MultisigImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$MultisigImplToJson(
-      this,
-    );
+  String toString() {
+    return 'Multisig(signatures: $signatures)';
   }
 }
 
-abstract class _Multisig implements Multisig {
-  const factory _Multisig(
-      {@JsonKey(name: 'signatures')
-      required final List<SignatureId> signatures}) = _$MultisigImpl;
-
-  factory _Multisig.fromJson(Map<String, dynamic> json) =
-      _$MultisigImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$MultisigCopyWith<$Res>
+    implements $MultisigCopyWith<$Res> {
+  factory _$MultisigCopyWith(_Multisig value, $Res Function(_Multisig) _then) =
+      __$MultisigCopyWithImpl;
   @override
-  @JsonKey(name: 'signatures')
-  List<SignatureId> get signatures;
+  @useResult
+  $Res call({@JsonKey(name: 'signatures') List<SignatureId> signatures});
+}
+
+/// @nodoc
+class __$MultisigCopyWithImpl<$Res> implements _$MultisigCopyWith<$Res> {
+  __$MultisigCopyWithImpl(this._self, this._then);
+
+  final _Multisig _self;
+  final $Res Function(_Multisig) _then;
 
   /// Create a copy of Multisig
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$MultisigImplCopyWith<_$MultisigImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? signatures = null,
+  }) {
+    return _then(_Multisig(
+      signatures: null == signatures
+          ? _self._signatures
+          : signatures // ignore: cast_nullable_to_non_nullable
+              as List<SignatureId>,
+    ));
+  }
 }
+
+// dart format on

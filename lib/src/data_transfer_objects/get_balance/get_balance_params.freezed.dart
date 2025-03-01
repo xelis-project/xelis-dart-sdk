@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,143 +10,32 @@ part of 'get_balance_params.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-GetBalanceParams _$GetBalanceParamsFromJson(Map<String, dynamic> json) {
-  return _GetBalanceParams.fromJson(json);
-}
 
 /// @nodoc
 mixin _$GetBalanceParams {
   @JsonKey(name: 'address')
-  String get address => throw _privateConstructorUsedError;
+  String get address;
   @JsonKey(name: 'asset')
-  String get asset => throw _privateConstructorUsedError;
-
-  /// Serializes this GetBalanceParams to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String get asset;
 
   /// Create a copy of GetBalanceParams
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $GetBalanceParamsCopyWith<GetBalanceParams> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+      _$GetBalanceParamsCopyWithImpl<GetBalanceParams>(
+          this as GetBalanceParams, _$identity);
 
-/// @nodoc
-abstract class $GetBalanceParamsCopyWith<$Res> {
-  factory $GetBalanceParamsCopyWith(
-          GetBalanceParams value, $Res Function(GetBalanceParams) then) =
-      _$GetBalanceParamsCopyWithImpl<$Res, GetBalanceParams>;
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'address') String address,
-      @JsonKey(name: 'asset') String asset});
-}
-
-/// @nodoc
-class _$GetBalanceParamsCopyWithImpl<$Res, $Val extends GetBalanceParams>
-    implements $GetBalanceParamsCopyWith<$Res> {
-  _$GetBalanceParamsCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of GetBalanceParams
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? address = null,
-    Object? asset = null,
-  }) {
-    return _then(_value.copyWith(
-      address: null == address
-          ? _value.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as String,
-      asset: null == asset
-          ? _value.asset
-          : asset // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$GetBalanceParamsImplCopyWith<$Res>
-    implements $GetBalanceParamsCopyWith<$Res> {
-  factory _$$GetBalanceParamsImplCopyWith(_$GetBalanceParamsImpl value,
-          $Res Function(_$GetBalanceParamsImpl) then) =
-      __$$GetBalanceParamsImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'address') String address,
-      @JsonKey(name: 'asset') String asset});
-}
-
-/// @nodoc
-class __$$GetBalanceParamsImplCopyWithImpl<$Res>
-    extends _$GetBalanceParamsCopyWithImpl<$Res, _$GetBalanceParamsImpl>
-    implements _$$GetBalanceParamsImplCopyWith<$Res> {
-  __$$GetBalanceParamsImplCopyWithImpl(_$GetBalanceParamsImpl _value,
-      $Res Function(_$GetBalanceParamsImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of GetBalanceParams
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? address = null,
-    Object? asset = null,
-  }) {
-    return _then(_$GetBalanceParamsImpl(
-      address: null == address
-          ? _value.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as String,
-      asset: null == asset
-          ? _value.asset
-          : asset // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$GetBalanceParamsImpl implements _GetBalanceParams {
-  const _$GetBalanceParamsImpl(
-      {@JsonKey(name: 'address') required this.address,
-      @JsonKey(name: 'asset') required this.asset});
-
-  factory _$GetBalanceParamsImpl.fromJson(Map<String, dynamic> json) =>
-      _$$GetBalanceParamsImplFromJson(json);
-
-  @override
-  @JsonKey(name: 'address')
-  final String address;
-  @override
-  @JsonKey(name: 'asset')
-  final String asset;
-
-  @override
-  String toString() {
-    return 'GetBalanceParams(address: $address, asset: $asset)';
-  }
+  /// Serializes this GetBalanceParams to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetBalanceParamsImpl &&
+            other is GetBalanceParams &&
             (identical(other.address, address) || other.address == address) &&
             (identical(other.asset, asset) || other.asset == asset));
   }
@@ -154,43 +44,142 @@ class _$GetBalanceParamsImpl implements _GetBalanceParams {
   @override
   int get hashCode => Object.hash(runtimeType, address, asset);
 
-  /// Create a copy of GetBalanceParams
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$GetBalanceParamsImplCopyWith<_$GetBalanceParamsImpl> get copyWith =>
-      __$$GetBalanceParamsImplCopyWithImpl<_$GetBalanceParamsImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$GetBalanceParamsImplToJson(
-      this,
-    );
+  String toString() {
+    return 'GetBalanceParams(address: $address, asset: $asset)';
   }
 }
 
-abstract class _GetBalanceParams implements GetBalanceParams {
-  const factory _GetBalanceParams(
-          {@JsonKey(name: 'address') required final String address,
-          @JsonKey(name: 'asset') required final String asset}) =
-      _$GetBalanceParamsImpl;
+/// @nodoc
+abstract mixin class $GetBalanceParamsCopyWith<$Res> {
+  factory $GetBalanceParamsCopyWith(
+          GetBalanceParams value, $Res Function(GetBalanceParams) _then) =
+      _$GetBalanceParamsCopyWithImpl;
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'address') String address,
+      @JsonKey(name: 'asset') String asset});
+}
 
-  factory _GetBalanceParams.fromJson(Map<String, dynamic> json) =
-      _$GetBalanceParamsImpl.fromJson;
+/// @nodoc
+class _$GetBalanceParamsCopyWithImpl<$Res>
+    implements $GetBalanceParamsCopyWith<$Res> {
+  _$GetBalanceParamsCopyWithImpl(this._self, this._then);
+
+  final GetBalanceParams _self;
+  final $Res Function(GetBalanceParams) _then;
+
+  /// Create a copy of GetBalanceParams
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? address = null,
+    Object? asset = null,
+  }) {
+    return _then(_self.copyWith(
+      address: null == address
+          ? _self.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as String,
+      asset: null == asset
+          ? _self.asset
+          : asset // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _GetBalanceParams implements GetBalanceParams {
+  const _GetBalanceParams(
+      {@JsonKey(name: 'address') required this.address,
+      @JsonKey(name: 'asset') required this.asset});
+  factory _GetBalanceParams.fromJson(Map<String, dynamic> json) =>
+      _$GetBalanceParamsFromJson(json);
 
   @override
   @JsonKey(name: 'address')
-  String get address;
+  final String address;
   @override
   @JsonKey(name: 'asset')
-  String get asset;
+  final String asset;
 
   /// Create a copy of GetBalanceParams
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$GetBalanceParamsImplCopyWith<_$GetBalanceParamsImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  _$GetBalanceParamsCopyWith<_GetBalanceParams> get copyWith =>
+      __$GetBalanceParamsCopyWithImpl<_GetBalanceParams>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$GetBalanceParamsToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _GetBalanceParams &&
+            (identical(other.address, address) || other.address == address) &&
+            (identical(other.asset, asset) || other.asset == asset));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, address, asset);
+
+  @override
+  String toString() {
+    return 'GetBalanceParams(address: $address, asset: $asset)';
+  }
 }
+
+/// @nodoc
+abstract mixin class _$GetBalanceParamsCopyWith<$Res>
+    implements $GetBalanceParamsCopyWith<$Res> {
+  factory _$GetBalanceParamsCopyWith(
+          _GetBalanceParams value, $Res Function(_GetBalanceParams) _then) =
+      __$GetBalanceParamsCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'address') String address,
+      @JsonKey(name: 'asset') String asset});
+}
+
+/// @nodoc
+class __$GetBalanceParamsCopyWithImpl<$Res>
+    implements _$GetBalanceParamsCopyWith<$Res> {
+  __$GetBalanceParamsCopyWithImpl(this._self, this._then);
+
+  final _GetBalanceParams _self;
+  final $Res Function(_GetBalanceParams) _then;
+
+  /// Create a copy of GetBalanceParams
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? address = null,
+    Object? asset = null,
+  }) {
+    return _then(_GetBalanceParams(
+      address: null == address
+          ? _self.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as String,
+      asset: null == asset
+          ? _self.asset
+          : asset // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+// dart format on

@@ -8,7 +8,7 @@ part 'is_tx_executed_in_block_params.g.dart';
 
 /// @nodoc
 @freezed
-class IsTxExecutedInBlockParams with _$IsTxExecutedInBlockParams {
+abstract class IsTxExecutedInBlockParams with _$IsTxExecutedInBlockParams {
   /// @nodoc
   const factory IsTxExecutedInBlockParams({
     @JsonKey(name: 'tx_hash') required String txHash,

@@ -10,7 +10,7 @@ part 'get_balance_result.g.dart';
 
 /// @nodoc
 @freezed
-class GetBalanceResult with _$GetBalanceResult {
+abstract class GetBalanceResult with _$GetBalanceResult {
   /// @nodoc
   const factory GetBalanceResult({
     @JsonKey(name: 'version') required VersionedBalance versionedBalance,

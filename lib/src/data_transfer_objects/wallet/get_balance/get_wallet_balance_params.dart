@@ -8,7 +8,7 @@ part 'get_wallet_balance_params.g.dart';
 
 /// @nodoc
 @freezed
-class GetWalletBalanceParams with _$GetWalletBalanceParams {
+abstract class GetWalletBalanceParams with _$GetWalletBalanceParams {
   /// @nodoc
   const factory GetWalletBalanceParams({
     @JsonKey(name: 'asset') String? assetHash,

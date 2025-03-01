@@ -7,7 +7,7 @@ part 'has_balance_params.g.dart';
 
 /// @nodoc
 @freezed
-class HasBalanceParams with _$HasBalanceParams {
+abstract class HasBalanceParams with _$HasBalanceParams {
   /// @nodoc
   @JsonSerializable(includeIfNull: false)
   const factory HasBalanceParams({

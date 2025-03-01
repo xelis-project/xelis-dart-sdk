@@ -8,7 +8,8 @@ part 'get_balance_at_topoheight_params.g.dart';
 
 /// @nodoc
 @freezed
-class GetBalanceAtTopoHeightParams with _$GetBalanceAtTopoHeightParams {
+abstract class GetBalanceAtTopoHeightParams
+    with _$GetBalanceAtTopoHeightParams {
   /// @nodoc
   const factory GetBalanceAtTopoHeightParams({
     @JsonKey(name: 'address') required String address,

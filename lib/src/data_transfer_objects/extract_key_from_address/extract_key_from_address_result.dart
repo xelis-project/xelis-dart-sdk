@@ -8,7 +8,7 @@ part 'extract_key_from_address_result.g.dart';
 
 /// @nodoc
 @freezed
-class ExtractKeyFromAddressResult with _$ExtractKeyFromAddressResult {
+abstract class ExtractKeyFromAddressResult with _$ExtractKeyFromAddressResult {
   /// @nodoc
   const factory ExtractKeyFromAddressResult({
     @JsonKey(name: 'bytes') dynamic bytes,

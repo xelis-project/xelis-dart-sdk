@@ -8,7 +8,7 @@ part 'get_block_at_topoheight_params.g.dart';
 
 /// @nodoc
 @freezed
-class GetBlockAtTopoHeightParams with _$GetBlockAtTopoHeightParams {
+abstract class GetBlockAtTopoHeightParams with _$GetBlockAtTopoHeightParams {
   /// @nodoc
   @JsonSerializable(includeIfNull: false)
   const factory GetBlockAtTopoHeightParams({

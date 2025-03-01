@@ -8,7 +8,7 @@ part 'get_info_result.g.dart';
 
 /// @nodoc
 @freezed
-class GetInfoResult with _$GetInfoResult {
+abstract class GetInfoResult with _$GetInfoResult {
   /// @nodoc
   const factory GetInfoResult({
     @JsonKey(name: 'height') required int height,

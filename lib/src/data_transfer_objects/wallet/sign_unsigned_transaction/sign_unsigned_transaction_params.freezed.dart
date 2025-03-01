@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,152 +10,33 @@ part of 'sign_unsigned_transaction_params.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-SignUnsignedTransactionParams _$SignUnsignedTransactionParamsFromJson(
-    Map<String, dynamic> json) {
-  return _SignUnsignedTransactionParams.fromJson(json);
-}
 
 /// @nodoc
 mixin _$SignUnsignedTransactionParams {
   @JsonKey(name: 'hash')
-  String get hash => throw _privateConstructorUsedError;
+  String get hash;
   @JsonKey(name: 'signer_id')
-  int get signerId => throw _privateConstructorUsedError;
-
-  /// Serializes this SignUnsignedTransactionParams to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  int get signerId;
 
   /// Create a copy of SignUnsignedTransactionParams
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $SignUnsignedTransactionParamsCopyWith<SignUnsignedTransactionParams>
-      get copyWith => throw _privateConstructorUsedError;
-}
+      get copyWith => _$SignUnsignedTransactionParamsCopyWithImpl<
+              SignUnsignedTransactionParams>(
+          this as SignUnsignedTransactionParams, _$identity);
 
-/// @nodoc
-abstract class $SignUnsignedTransactionParamsCopyWith<$Res> {
-  factory $SignUnsignedTransactionParamsCopyWith(
-          SignUnsignedTransactionParams value,
-          $Res Function(SignUnsignedTransactionParams) then) =
-      _$SignUnsignedTransactionParamsCopyWithImpl<$Res,
-          SignUnsignedTransactionParams>;
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'hash') String hash,
-      @JsonKey(name: 'signer_id') int signerId});
-}
-
-/// @nodoc
-class _$SignUnsignedTransactionParamsCopyWithImpl<$Res,
-        $Val extends SignUnsignedTransactionParams>
-    implements $SignUnsignedTransactionParamsCopyWith<$Res> {
-  _$SignUnsignedTransactionParamsCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of SignUnsignedTransactionParams
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? hash = null,
-    Object? signerId = null,
-  }) {
-    return _then(_value.copyWith(
-      hash: null == hash
-          ? _value.hash
-          : hash // ignore: cast_nullable_to_non_nullable
-              as String,
-      signerId: null == signerId
-          ? _value.signerId
-          : signerId // ignore: cast_nullable_to_non_nullable
-              as int,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$SignUnsignedTransactionParamsImplCopyWith<$Res>
-    implements $SignUnsignedTransactionParamsCopyWith<$Res> {
-  factory _$$SignUnsignedTransactionParamsImplCopyWith(
-          _$SignUnsignedTransactionParamsImpl value,
-          $Res Function(_$SignUnsignedTransactionParamsImpl) then) =
-      __$$SignUnsignedTransactionParamsImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'hash') String hash,
-      @JsonKey(name: 'signer_id') int signerId});
-}
-
-/// @nodoc
-class __$$SignUnsignedTransactionParamsImplCopyWithImpl<$Res>
-    extends _$SignUnsignedTransactionParamsCopyWithImpl<$Res,
-        _$SignUnsignedTransactionParamsImpl>
-    implements _$$SignUnsignedTransactionParamsImplCopyWith<$Res> {
-  __$$SignUnsignedTransactionParamsImplCopyWithImpl(
-      _$SignUnsignedTransactionParamsImpl _value,
-      $Res Function(_$SignUnsignedTransactionParamsImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of SignUnsignedTransactionParams
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? hash = null,
-    Object? signerId = null,
-  }) {
-    return _then(_$SignUnsignedTransactionParamsImpl(
-      hash: null == hash
-          ? _value.hash
-          : hash // ignore: cast_nullable_to_non_nullable
-              as String,
-      signerId: null == signerId
-          ? _value.signerId
-          : signerId // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$SignUnsignedTransactionParamsImpl
-    implements _SignUnsignedTransactionParams {
-  const _$SignUnsignedTransactionParamsImpl(
-      {@JsonKey(name: 'hash') required this.hash,
-      @JsonKey(name: 'signer_id') required this.signerId});
-
-  factory _$SignUnsignedTransactionParamsImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$SignUnsignedTransactionParamsImplFromJson(json);
-
-  @override
-  @JsonKey(name: 'hash')
-  final String hash;
-  @override
-  @JsonKey(name: 'signer_id')
-  final int signerId;
-
-  @override
-  String toString() {
-    return 'SignUnsignedTransactionParams(hash: $hash, signerId: $signerId)';
-  }
+  /// Serializes this SignUnsignedTransactionParams to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SignUnsignedTransactionParamsImpl &&
+            other is SignUnsignedTransactionParams &&
             (identical(other.hash, hash) || other.hash == hash) &&
             (identical(other.signerId, signerId) ||
                 other.signerId == signerId));
@@ -164,46 +46,146 @@ class _$SignUnsignedTransactionParamsImpl
   @override
   int get hashCode => Object.hash(runtimeType, hash, signerId);
 
-  /// Create a copy of SignUnsignedTransactionParams
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$SignUnsignedTransactionParamsImplCopyWith<
-          _$SignUnsignedTransactionParamsImpl>
-      get copyWith => __$$SignUnsignedTransactionParamsImplCopyWithImpl<
-          _$SignUnsignedTransactionParamsImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$SignUnsignedTransactionParamsImplToJson(
-      this,
-    );
+  String toString() {
+    return 'SignUnsignedTransactionParams(hash: $hash, signerId: $signerId)';
   }
 }
 
-abstract class _SignUnsignedTransactionParams
-    implements SignUnsignedTransactionParams {
-  const factory _SignUnsignedTransactionParams(
-          {@JsonKey(name: 'hash') required final String hash,
-          @JsonKey(name: 'signer_id') required final int signerId}) =
-      _$SignUnsignedTransactionParamsImpl;
+/// @nodoc
+abstract mixin class $SignUnsignedTransactionParamsCopyWith<$Res> {
+  factory $SignUnsignedTransactionParamsCopyWith(
+          SignUnsignedTransactionParams value,
+          $Res Function(SignUnsignedTransactionParams) _then) =
+      _$SignUnsignedTransactionParamsCopyWithImpl;
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'hash') String hash,
+      @JsonKey(name: 'signer_id') int signerId});
+}
 
-  factory _SignUnsignedTransactionParams.fromJson(Map<String, dynamic> json) =
-      _$SignUnsignedTransactionParamsImpl.fromJson;
+/// @nodoc
+class _$SignUnsignedTransactionParamsCopyWithImpl<$Res>
+    implements $SignUnsignedTransactionParamsCopyWith<$Res> {
+  _$SignUnsignedTransactionParamsCopyWithImpl(this._self, this._then);
+
+  final SignUnsignedTransactionParams _self;
+  final $Res Function(SignUnsignedTransactionParams) _then;
+
+  /// Create a copy of SignUnsignedTransactionParams
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? hash = null,
+    Object? signerId = null,
+  }) {
+    return _then(_self.copyWith(
+      hash: null == hash
+          ? _self.hash
+          : hash // ignore: cast_nullable_to_non_nullable
+              as String,
+      signerId: null == signerId
+          ? _self.signerId
+          : signerId // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _SignUnsignedTransactionParams implements SignUnsignedTransactionParams {
+  const _SignUnsignedTransactionParams(
+      {@JsonKey(name: 'hash') required this.hash,
+      @JsonKey(name: 'signer_id') required this.signerId});
+  factory _SignUnsignedTransactionParams.fromJson(Map<String, dynamic> json) =>
+      _$SignUnsignedTransactionParamsFromJson(json);
 
   @override
   @JsonKey(name: 'hash')
-  String get hash;
+  final String hash;
   @override
   @JsonKey(name: 'signer_id')
-  int get signerId;
+  final int signerId;
 
   /// Create a copy of SignUnsignedTransactionParams
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$SignUnsignedTransactionParamsImplCopyWith<
-          _$SignUnsignedTransactionParamsImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  _$SignUnsignedTransactionParamsCopyWith<_SignUnsignedTransactionParams>
+      get copyWith => __$SignUnsignedTransactionParamsCopyWithImpl<
+          _SignUnsignedTransactionParams>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$SignUnsignedTransactionParamsToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _SignUnsignedTransactionParams &&
+            (identical(other.hash, hash) || other.hash == hash) &&
+            (identical(other.signerId, signerId) ||
+                other.signerId == signerId));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, hash, signerId);
+
+  @override
+  String toString() {
+    return 'SignUnsignedTransactionParams(hash: $hash, signerId: $signerId)';
+  }
 }
+
+/// @nodoc
+abstract mixin class _$SignUnsignedTransactionParamsCopyWith<$Res>
+    implements $SignUnsignedTransactionParamsCopyWith<$Res> {
+  factory _$SignUnsignedTransactionParamsCopyWith(
+          _SignUnsignedTransactionParams value,
+          $Res Function(_SignUnsignedTransactionParams) _then) =
+      __$SignUnsignedTransactionParamsCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'hash') String hash,
+      @JsonKey(name: 'signer_id') int signerId});
+}
+
+/// @nodoc
+class __$SignUnsignedTransactionParamsCopyWithImpl<$Res>
+    implements _$SignUnsignedTransactionParamsCopyWith<$Res> {
+  __$SignUnsignedTransactionParamsCopyWithImpl(this._self, this._then);
+
+  final _SignUnsignedTransactionParams _self;
+  final $Res Function(_SignUnsignedTransactionParams) _then;
+
+  /// Create a copy of SignUnsignedTransactionParams
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? hash = null,
+    Object? signerId = null,
+  }) {
+    return _then(_SignUnsignedTransactionParams(
+      hash: null == hash
+          ? _self.hash
+          : hash // ignore: cast_nullable_to_non_nullable
+              as String,
+      signerId: null == signerId
+          ? _self.signerId
+          : signerId // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+// dart format on

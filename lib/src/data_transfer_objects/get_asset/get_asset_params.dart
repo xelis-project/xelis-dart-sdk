@@ -8,7 +8,7 @@ part 'get_asset_params.g.dart';
 
 /// @nodoc
 @freezed
-class GetAssetParams with _$GetAssetParams {
+abstract class GetAssetParams with _$GetAssetParams {
   /// @nodoc
   const factory GetAssetParams({
     @JsonKey(name: 'asset') required String asset,

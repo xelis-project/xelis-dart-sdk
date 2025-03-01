@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,166 +10,34 @@ part of 'transaction_executed_event.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-TransactionExecutedEvent _$TransactionExecutedEventFromJson(
-    Map<String, dynamic> json) {
-  return _TransactionExecutedEvent.fromJson(json);
-}
 
 /// @nodoc
 mixin _$TransactionExecutedEvent {
   @JsonKey(name: 'block_hash')
-  String get blockHash => throw _privateConstructorUsedError;
+  String get blockHash;
   @JsonKey(name: 'tx_hash')
-  String get txHash => throw _privateConstructorUsedError;
+  String get txHash;
   @JsonKey(name: 'topoheight')
-  int get topoHeight => throw _privateConstructorUsedError;
-
-  /// Serializes this TransactionExecutedEvent to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  int get topoHeight;
 
   /// Create a copy of TransactionExecutedEvent
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $TransactionExecutedEventCopyWith<TransactionExecutedEvent> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+      _$TransactionExecutedEventCopyWithImpl<TransactionExecutedEvent>(
+          this as TransactionExecutedEvent, _$identity);
 
-/// @nodoc
-abstract class $TransactionExecutedEventCopyWith<$Res> {
-  factory $TransactionExecutedEventCopyWith(TransactionExecutedEvent value,
-          $Res Function(TransactionExecutedEvent) then) =
-      _$TransactionExecutedEventCopyWithImpl<$Res, TransactionExecutedEvent>;
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'block_hash') String blockHash,
-      @JsonKey(name: 'tx_hash') String txHash,
-      @JsonKey(name: 'topoheight') int topoHeight});
-}
-
-/// @nodoc
-class _$TransactionExecutedEventCopyWithImpl<$Res,
-        $Val extends TransactionExecutedEvent>
-    implements $TransactionExecutedEventCopyWith<$Res> {
-  _$TransactionExecutedEventCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of TransactionExecutedEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? blockHash = null,
-    Object? txHash = null,
-    Object? topoHeight = null,
-  }) {
-    return _then(_value.copyWith(
-      blockHash: null == blockHash
-          ? _value.blockHash
-          : blockHash // ignore: cast_nullable_to_non_nullable
-              as String,
-      txHash: null == txHash
-          ? _value.txHash
-          : txHash // ignore: cast_nullable_to_non_nullable
-              as String,
-      topoHeight: null == topoHeight
-          ? _value.topoHeight
-          : topoHeight // ignore: cast_nullable_to_non_nullable
-              as int,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$TransactionExecutedEventImplCopyWith<$Res>
-    implements $TransactionExecutedEventCopyWith<$Res> {
-  factory _$$TransactionExecutedEventImplCopyWith(
-          _$TransactionExecutedEventImpl value,
-          $Res Function(_$TransactionExecutedEventImpl) then) =
-      __$$TransactionExecutedEventImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'block_hash') String blockHash,
-      @JsonKey(name: 'tx_hash') String txHash,
-      @JsonKey(name: 'topoheight') int topoHeight});
-}
-
-/// @nodoc
-class __$$TransactionExecutedEventImplCopyWithImpl<$Res>
-    extends _$TransactionExecutedEventCopyWithImpl<$Res,
-        _$TransactionExecutedEventImpl>
-    implements _$$TransactionExecutedEventImplCopyWith<$Res> {
-  __$$TransactionExecutedEventImplCopyWithImpl(
-      _$TransactionExecutedEventImpl _value,
-      $Res Function(_$TransactionExecutedEventImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of TransactionExecutedEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? blockHash = null,
-    Object? txHash = null,
-    Object? topoHeight = null,
-  }) {
-    return _then(_$TransactionExecutedEventImpl(
-      blockHash: null == blockHash
-          ? _value.blockHash
-          : blockHash // ignore: cast_nullable_to_non_nullable
-              as String,
-      txHash: null == txHash
-          ? _value.txHash
-          : txHash // ignore: cast_nullable_to_non_nullable
-              as String,
-      topoHeight: null == topoHeight
-          ? _value.topoHeight
-          : topoHeight // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$TransactionExecutedEventImpl implements _TransactionExecutedEvent {
-  const _$TransactionExecutedEventImpl(
-      {@JsonKey(name: 'block_hash') required this.blockHash,
-      @JsonKey(name: 'tx_hash') required this.txHash,
-      @JsonKey(name: 'topoheight') required this.topoHeight});
-
-  factory _$TransactionExecutedEventImpl.fromJson(Map<String, dynamic> json) =>
-      _$$TransactionExecutedEventImplFromJson(json);
-
-  @override
-  @JsonKey(name: 'block_hash')
-  final String blockHash;
-  @override
-  @JsonKey(name: 'tx_hash')
-  final String txHash;
-  @override
-  @JsonKey(name: 'topoheight')
-  final int topoHeight;
-
-  @override
-  String toString() {
-    return 'TransactionExecutedEvent(blockHash: $blockHash, txHash: $txHash, topoHeight: $topoHeight)';
-  }
+  /// Serializes this TransactionExecutedEvent to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$TransactionExecutedEventImpl &&
+            other is TransactionExecutedEvent &&
             (identical(other.blockHash, blockHash) ||
                 other.blockHash == blockHash) &&
             (identical(other.txHash, txHash) || other.txHash == txHash) &&
@@ -180,47 +49,162 @@ class _$TransactionExecutedEventImpl implements _TransactionExecutedEvent {
   @override
   int get hashCode => Object.hash(runtimeType, blockHash, txHash, topoHeight);
 
-  /// Create a copy of TransactionExecutedEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$TransactionExecutedEventImplCopyWith<_$TransactionExecutedEventImpl>
-      get copyWith => __$$TransactionExecutedEventImplCopyWithImpl<
-          _$TransactionExecutedEventImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$TransactionExecutedEventImplToJson(
-      this,
-    );
+  String toString() {
+    return 'TransactionExecutedEvent(blockHash: $blockHash, txHash: $txHash, topoHeight: $topoHeight)';
   }
 }
 
-abstract class _TransactionExecutedEvent implements TransactionExecutedEvent {
-  const factory _TransactionExecutedEvent(
-          {@JsonKey(name: 'block_hash') required final String blockHash,
-          @JsonKey(name: 'tx_hash') required final String txHash,
-          @JsonKey(name: 'topoheight') required final int topoHeight}) =
-      _$TransactionExecutedEventImpl;
+/// @nodoc
+abstract mixin class $TransactionExecutedEventCopyWith<$Res> {
+  factory $TransactionExecutedEventCopyWith(TransactionExecutedEvent value,
+          $Res Function(TransactionExecutedEvent) _then) =
+      _$TransactionExecutedEventCopyWithImpl;
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'block_hash') String blockHash,
+      @JsonKey(name: 'tx_hash') String txHash,
+      @JsonKey(name: 'topoheight') int topoHeight});
+}
 
-  factory _TransactionExecutedEvent.fromJson(Map<String, dynamic> json) =
-      _$TransactionExecutedEventImpl.fromJson;
+/// @nodoc
+class _$TransactionExecutedEventCopyWithImpl<$Res>
+    implements $TransactionExecutedEventCopyWith<$Res> {
+  _$TransactionExecutedEventCopyWithImpl(this._self, this._then);
+
+  final TransactionExecutedEvent _self;
+  final $Res Function(TransactionExecutedEvent) _then;
+
+  /// Create a copy of TransactionExecutedEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? blockHash = null,
+    Object? txHash = null,
+    Object? topoHeight = null,
+  }) {
+    return _then(_self.copyWith(
+      blockHash: null == blockHash
+          ? _self.blockHash
+          : blockHash // ignore: cast_nullable_to_non_nullable
+              as String,
+      txHash: null == txHash
+          ? _self.txHash
+          : txHash // ignore: cast_nullable_to_non_nullable
+              as String,
+      topoHeight: null == topoHeight
+          ? _self.topoHeight
+          : topoHeight // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _TransactionExecutedEvent implements TransactionExecutedEvent {
+  const _TransactionExecutedEvent(
+      {@JsonKey(name: 'block_hash') required this.blockHash,
+      @JsonKey(name: 'tx_hash') required this.txHash,
+      @JsonKey(name: 'topoheight') required this.topoHeight});
+  factory _TransactionExecutedEvent.fromJson(Map<String, dynamic> json) =>
+      _$TransactionExecutedEventFromJson(json);
 
   @override
   @JsonKey(name: 'block_hash')
-  String get blockHash;
+  final String blockHash;
   @override
   @JsonKey(name: 'tx_hash')
-  String get txHash;
+  final String txHash;
   @override
   @JsonKey(name: 'topoheight')
-  int get topoHeight;
+  final int topoHeight;
 
   /// Create a copy of TransactionExecutedEvent
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$TransactionExecutedEventImplCopyWith<_$TransactionExecutedEventImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  _$TransactionExecutedEventCopyWith<_TransactionExecutedEvent> get copyWith =>
+      __$TransactionExecutedEventCopyWithImpl<_TransactionExecutedEvent>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$TransactionExecutedEventToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _TransactionExecutedEvent &&
+            (identical(other.blockHash, blockHash) ||
+                other.blockHash == blockHash) &&
+            (identical(other.txHash, txHash) || other.txHash == txHash) &&
+            (identical(other.topoHeight, topoHeight) ||
+                other.topoHeight == topoHeight));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, blockHash, txHash, topoHeight);
+
+  @override
+  String toString() {
+    return 'TransactionExecutedEvent(blockHash: $blockHash, txHash: $txHash, topoHeight: $topoHeight)';
+  }
 }
+
+/// @nodoc
+abstract mixin class _$TransactionExecutedEventCopyWith<$Res>
+    implements $TransactionExecutedEventCopyWith<$Res> {
+  factory _$TransactionExecutedEventCopyWith(_TransactionExecutedEvent value,
+          $Res Function(_TransactionExecutedEvent) _then) =
+      __$TransactionExecutedEventCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'block_hash') String blockHash,
+      @JsonKey(name: 'tx_hash') String txHash,
+      @JsonKey(name: 'topoheight') int topoHeight});
+}
+
+/// @nodoc
+class __$TransactionExecutedEventCopyWithImpl<$Res>
+    implements _$TransactionExecutedEventCopyWith<$Res> {
+  __$TransactionExecutedEventCopyWithImpl(this._self, this._then);
+
+  final _TransactionExecutedEvent _self;
+  final $Res Function(_TransactionExecutedEvent) _then;
+
+  /// Create a copy of TransactionExecutedEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? blockHash = null,
+    Object? txHash = null,
+    Object? topoHeight = null,
+  }) {
+    return _then(_TransactionExecutedEvent(
+      blockHash: null == blockHash
+          ? _self.blockHash
+          : blockHash // ignore: cast_nullable_to_non_nullable
+              as String,
+      txHash: null == txHash
+          ? _self.txHash
+          : txHash // ignore: cast_nullable_to_non_nullable
+              as String,
+      topoHeight: null == topoHeight
+          ? _self.topoHeight
+          : topoHeight // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+// dart format on

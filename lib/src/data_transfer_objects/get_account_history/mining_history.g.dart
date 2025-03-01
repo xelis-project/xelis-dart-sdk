@@ -8,12 +8,12 @@ part of 'mining_history.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$MiningHistoryImpl _$$MiningHistoryImplFromJson(Map<String, dynamic> json) =>
-    _$MiningHistoryImpl(
+_MiningHistory _$MiningHistoryFromJson(Map<String, dynamic> json) =>
+    _MiningHistory(
       reward: (json['reward'] as num).toInt(),
     );
 
-Map<String, dynamic> _$$MiningHistoryImplToJson(_$MiningHistoryImpl instance) =>
+Map<String, dynamic> _$MiningHistoryToJson(_MiningHistory instance) =>
     <String, dynamic>{
       'reward': instance.reward,
     };

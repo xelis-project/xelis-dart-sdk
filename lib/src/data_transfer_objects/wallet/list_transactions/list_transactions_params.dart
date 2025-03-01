@@ -8,7 +8,7 @@ part 'list_transactions_params.g.dart';
 
 /// @nodoc
 @freezed
-class ListTransactionsParams with _$ListTransactionsParams {
+abstract class ListTransactionsParams with _$ListTransactionsParams {
   /// @nodoc
   @JsonSerializable(includeIfNull: false)
   const factory ListTransactionsParams({

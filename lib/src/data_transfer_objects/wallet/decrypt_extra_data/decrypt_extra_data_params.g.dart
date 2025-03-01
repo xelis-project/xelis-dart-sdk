@@ -8,15 +8,15 @@ part of 'decrypt_extra_data_params.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$DecryptExtraDataWalletParamsImpl _$$DecryptExtraDataWalletParamsImplFromJson(
+_DecryptExtraDataWalletParams _$DecryptExtraDataWalletParamsFromJson(
         Map<String, dynamic> json) =>
-    _$DecryptExtraDataWalletParamsImpl(
+    _DecryptExtraDataWalletParams(
       extraData: json['extra_data'],
       role: $enumDecode(_$RoleEnumMap, json['role']),
     );
 
-Map<String, dynamic> _$$DecryptExtraDataWalletParamsImplToJson(
-        _$DecryptExtraDataWalletParamsImpl instance) =>
+Map<String, dynamic> _$DecryptExtraDataWalletParamsToJson(
+        _DecryptExtraDataWalletParams instance) =>
     <String, dynamic>{
       'extra_data': instance.extraData,
       'role': _$RoleEnumMap[instance.role]!,

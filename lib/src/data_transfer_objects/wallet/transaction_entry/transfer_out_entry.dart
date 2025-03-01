@@ -8,7 +8,7 @@ part 'transfer_out_entry.g.dart';
 
 /// @nodoc
 @freezed
-class TransferOutEntry with _$TransferOutEntry {
+abstract class TransferOutEntry with _$TransferOutEntry {
   /// @nodoc
   const factory TransferOutEntry({
     @JsonKey(name: 'destination') required String destination,

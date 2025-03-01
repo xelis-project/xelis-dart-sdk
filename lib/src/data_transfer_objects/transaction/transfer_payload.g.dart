@@ -8,9 +8,8 @@ part of 'transfer_payload.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$TransferPayloadImpl _$$TransferPayloadImplFromJson(
-        Map<String, dynamic> json) =>
-    _$TransferPayloadImpl(
+_TransferPayload _$TransferPayloadFromJson(Map<String, dynamic> json) =>
+    _TransferPayload(
       asset: json['asset'] as String,
       commitment: (json['commitment'] as List<dynamic>)
           .map((e) => (e as num).toInt())
@@ -26,8 +25,7 @@ _$TransferPayloadImpl _$$TransferPayloadImplFromJson(
       extraData: json['extra_data'],
     );
 
-Map<String, dynamic> _$$TransferPayloadImplToJson(
-        _$TransferPayloadImpl instance) =>
+Map<String, dynamic> _$TransferPayloadToJson(_TransferPayload instance) =>
     <String, dynamic>{
       'asset': instance.asset,
       'commitment': instance.commitment,

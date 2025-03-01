@@ -8,7 +8,7 @@ part 'submit_transaction_params.g.dart';
 
 /// @nodoc
 @freezed
-class SubmitTransactionParams with _$SubmitTransactionParams {
+abstract class SubmitTransactionParams with _$SubmitTransactionParams {
   /// @nodoc
   const factory SubmitTransactionParams({
     @JsonKey(name: 'data') required String hex,

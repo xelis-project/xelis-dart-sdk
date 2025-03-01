@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,143 +10,32 @@ part of 'get_size_on_disk_result.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-GetSizeOnDiskResult _$GetSizeOnDiskResultFromJson(Map<String, dynamic> json) {
-  return _GetSizeOnDiskResult.fromJson(json);
-}
 
 /// @nodoc
 mixin _$GetSizeOnDiskResult {
   @JsonKey(name: 'size_bytes')
-  int get sizeBytes => throw _privateConstructorUsedError;
+  int get sizeBytes;
   @JsonKey(name: 'size_formatted')
-  String get sizeFormatted => throw _privateConstructorUsedError;
-
-  /// Serializes this GetSizeOnDiskResult to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String get sizeFormatted;
 
   /// Create a copy of GetSizeOnDiskResult
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $GetSizeOnDiskResultCopyWith<GetSizeOnDiskResult> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+      _$GetSizeOnDiskResultCopyWithImpl<GetSizeOnDiskResult>(
+          this as GetSizeOnDiskResult, _$identity);
 
-/// @nodoc
-abstract class $GetSizeOnDiskResultCopyWith<$Res> {
-  factory $GetSizeOnDiskResultCopyWith(
-          GetSizeOnDiskResult value, $Res Function(GetSizeOnDiskResult) then) =
-      _$GetSizeOnDiskResultCopyWithImpl<$Res, GetSizeOnDiskResult>;
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'size_bytes') int sizeBytes,
-      @JsonKey(name: 'size_formatted') String sizeFormatted});
-}
-
-/// @nodoc
-class _$GetSizeOnDiskResultCopyWithImpl<$Res, $Val extends GetSizeOnDiskResult>
-    implements $GetSizeOnDiskResultCopyWith<$Res> {
-  _$GetSizeOnDiskResultCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of GetSizeOnDiskResult
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? sizeBytes = null,
-    Object? sizeFormatted = null,
-  }) {
-    return _then(_value.copyWith(
-      sizeBytes: null == sizeBytes
-          ? _value.sizeBytes
-          : sizeBytes // ignore: cast_nullable_to_non_nullable
-              as int,
-      sizeFormatted: null == sizeFormatted
-          ? _value.sizeFormatted
-          : sizeFormatted // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$GetSizeOnDiskResultImplCopyWith<$Res>
-    implements $GetSizeOnDiskResultCopyWith<$Res> {
-  factory _$$GetSizeOnDiskResultImplCopyWith(_$GetSizeOnDiskResultImpl value,
-          $Res Function(_$GetSizeOnDiskResultImpl) then) =
-      __$$GetSizeOnDiskResultImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'size_bytes') int sizeBytes,
-      @JsonKey(name: 'size_formatted') String sizeFormatted});
-}
-
-/// @nodoc
-class __$$GetSizeOnDiskResultImplCopyWithImpl<$Res>
-    extends _$GetSizeOnDiskResultCopyWithImpl<$Res, _$GetSizeOnDiskResultImpl>
-    implements _$$GetSizeOnDiskResultImplCopyWith<$Res> {
-  __$$GetSizeOnDiskResultImplCopyWithImpl(_$GetSizeOnDiskResultImpl _value,
-      $Res Function(_$GetSizeOnDiskResultImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of GetSizeOnDiskResult
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? sizeBytes = null,
-    Object? sizeFormatted = null,
-  }) {
-    return _then(_$GetSizeOnDiskResultImpl(
-      sizeBytes: null == sizeBytes
-          ? _value.sizeBytes
-          : sizeBytes // ignore: cast_nullable_to_non_nullable
-              as int,
-      sizeFormatted: null == sizeFormatted
-          ? _value.sizeFormatted
-          : sizeFormatted // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$GetSizeOnDiskResultImpl implements _GetSizeOnDiskResult {
-  const _$GetSizeOnDiskResultImpl(
-      {@JsonKey(name: 'size_bytes') required this.sizeBytes,
-      @JsonKey(name: 'size_formatted') required this.sizeFormatted});
-
-  factory _$GetSizeOnDiskResultImpl.fromJson(Map<String, dynamic> json) =>
-      _$$GetSizeOnDiskResultImplFromJson(json);
-
-  @override
-  @JsonKey(name: 'size_bytes')
-  final int sizeBytes;
-  @override
-  @JsonKey(name: 'size_formatted')
-  final String sizeFormatted;
-
-  @override
-  String toString() {
-    return 'GetSizeOnDiskResult(sizeBytes: $sizeBytes, sizeFormatted: $sizeFormatted)';
-  }
+  /// Serializes this GetSizeOnDiskResult to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetSizeOnDiskResultImpl &&
+            other is GetSizeOnDiskResult &&
             (identical(other.sizeBytes, sizeBytes) ||
                 other.sizeBytes == sizeBytes) &&
             (identical(other.sizeFormatted, sizeFormatted) ||
@@ -156,43 +46,145 @@ class _$GetSizeOnDiskResultImpl implements _GetSizeOnDiskResult {
   @override
   int get hashCode => Object.hash(runtimeType, sizeBytes, sizeFormatted);
 
+  @override
+  String toString() {
+    return 'GetSizeOnDiskResult(sizeBytes: $sizeBytes, sizeFormatted: $sizeFormatted)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $GetSizeOnDiskResultCopyWith<$Res> {
+  factory $GetSizeOnDiskResultCopyWith(
+          GetSizeOnDiskResult value, $Res Function(GetSizeOnDiskResult) _then) =
+      _$GetSizeOnDiskResultCopyWithImpl;
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'size_bytes') int sizeBytes,
+      @JsonKey(name: 'size_formatted') String sizeFormatted});
+}
+
+/// @nodoc
+class _$GetSizeOnDiskResultCopyWithImpl<$Res>
+    implements $GetSizeOnDiskResultCopyWith<$Res> {
+  _$GetSizeOnDiskResultCopyWithImpl(this._self, this._then);
+
+  final GetSizeOnDiskResult _self;
+  final $Res Function(GetSizeOnDiskResult) _then;
+
   /// Create a copy of GetSizeOnDiskResult
   /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
   @pragma('vm:prefer-inline')
-  _$$GetSizeOnDiskResultImplCopyWith<_$GetSizeOnDiskResultImpl> get copyWith =>
-      __$$GetSizeOnDiskResultImplCopyWithImpl<_$GetSizeOnDiskResultImpl>(
+  @override
+  $Res call({
+    Object? sizeBytes = null,
+    Object? sizeFormatted = null,
+  }) {
+    return _then(_self.copyWith(
+      sizeBytes: null == sizeBytes
+          ? _self.sizeBytes
+          : sizeBytes // ignore: cast_nullable_to_non_nullable
+              as int,
+      sizeFormatted: null == sizeFormatted
+          ? _self.sizeFormatted
+          : sizeFormatted // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _GetSizeOnDiskResult implements GetSizeOnDiskResult {
+  const _GetSizeOnDiskResult(
+      {@JsonKey(name: 'size_bytes') required this.sizeBytes,
+      @JsonKey(name: 'size_formatted') required this.sizeFormatted});
+  factory _GetSizeOnDiskResult.fromJson(Map<String, dynamic> json) =>
+      _$GetSizeOnDiskResultFromJson(json);
+
+  @override
+  @JsonKey(name: 'size_bytes')
+  final int sizeBytes;
+  @override
+  @JsonKey(name: 'size_formatted')
+  final String sizeFormatted;
+
+  /// Create a copy of GetSizeOnDiskResult
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$GetSizeOnDiskResultCopyWith<_GetSizeOnDiskResult> get copyWith =>
+      __$GetSizeOnDiskResultCopyWithImpl<_GetSizeOnDiskResult>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$GetSizeOnDiskResultImplToJson(
+    return _$GetSizeOnDiskResultToJson(
       this,
     );
   }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _GetSizeOnDiskResult &&
+            (identical(other.sizeBytes, sizeBytes) ||
+                other.sizeBytes == sizeBytes) &&
+            (identical(other.sizeFormatted, sizeFormatted) ||
+                other.sizeFormatted == sizeFormatted));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, sizeBytes, sizeFormatted);
+
+  @override
+  String toString() {
+    return 'GetSizeOnDiskResult(sizeBytes: $sizeBytes, sizeFormatted: $sizeFormatted)';
+  }
 }
 
-abstract class _GetSizeOnDiskResult implements GetSizeOnDiskResult {
-  const factory _GetSizeOnDiskResult(
-      {@JsonKey(name: 'size_bytes') required final int sizeBytes,
-      @JsonKey(name: 'size_formatted')
-      required final String sizeFormatted}) = _$GetSizeOnDiskResultImpl;
-
-  factory _GetSizeOnDiskResult.fromJson(Map<String, dynamic> json) =
-      _$GetSizeOnDiskResultImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$GetSizeOnDiskResultCopyWith<$Res>
+    implements $GetSizeOnDiskResultCopyWith<$Res> {
+  factory _$GetSizeOnDiskResultCopyWith(_GetSizeOnDiskResult value,
+          $Res Function(_GetSizeOnDiskResult) _then) =
+      __$GetSizeOnDiskResultCopyWithImpl;
   @override
-  @JsonKey(name: 'size_bytes')
-  int get sizeBytes;
-  @override
-  @JsonKey(name: 'size_formatted')
-  String get sizeFormatted;
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'size_bytes') int sizeBytes,
+      @JsonKey(name: 'size_formatted') String sizeFormatted});
+}
+
+/// @nodoc
+class __$GetSizeOnDiskResultCopyWithImpl<$Res>
+    implements _$GetSizeOnDiskResultCopyWith<$Res> {
+  __$GetSizeOnDiskResultCopyWithImpl(this._self, this._then);
+
+  final _GetSizeOnDiskResult _self;
+  final $Res Function(_GetSizeOnDiskResult) _then;
 
   /// Create a copy of GetSizeOnDiskResult
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$GetSizeOnDiskResultImplCopyWith<_$GetSizeOnDiskResultImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? sizeBytes = null,
+    Object? sizeFormatted = null,
+  }) {
+    return _then(_GetSizeOnDiskResult(
+      sizeBytes: null == sizeBytes
+          ? _self.sizeBytes
+          : sizeBytes // ignore: cast_nullable_to_non_nullable
+              as int,
+      sizeFormatted: null == sizeFormatted
+          ? _self.sizeFormatted
+          : sizeFormatted // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
+
+// dart format on

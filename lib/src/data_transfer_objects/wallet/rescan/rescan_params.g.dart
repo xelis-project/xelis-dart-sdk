@@ -8,12 +8,12 @@ part of 'rescan_params.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$RescanParamsImpl _$$RescanParamsImplFromJson(Map<String, dynamic> json) =>
-    _$RescanParamsImpl(
+_RescanParams _$RescanParamsFromJson(Map<String, dynamic> json) =>
+    _RescanParams(
       untilTopoheight: (json['until_topoheight'] as num).toInt(),
     );
 
-Map<String, dynamic> _$$RescanParamsImplToJson(_$RescanParamsImpl instance) =>
+Map<String, dynamic> _$RescanParamsToJson(_RescanParams instance) =>
     <String, dynamic>{
       'until_topoheight': instance.untilTopoheight,
     };

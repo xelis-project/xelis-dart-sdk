@@ -8,8 +8,7 @@ part of 'peer_entry.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$PeerEntryImpl _$$PeerEntryImplFromJson(Map<String, dynamic> json) =>
-    _$PeerEntryImpl(
+_PeerEntry _$PeerEntryFromJson(Map<String, dynamic> json) => _PeerEntry(
       address: json['addr'] as String,
       cumulativeDifficulty: (json['cumulative_difficulty'] as num).toInt(),
       height: (json['height'] as num).toInt(),
@@ -29,7 +28,7 @@ _$PeerEntryImpl _$$PeerEntryImplFromJson(Map<String, dynamic> json) =>
       bytesRecv: (json['bytes_recv'] as num).toInt(),
     );
 
-Map<String, dynamic> _$$PeerEntryImplToJson(_$PeerEntryImpl instance) =>
+Map<String, dynamic> _$PeerEntryToJson(_PeerEntry instance) =>
     <String, dynamic>{
       'addr': instance.address,
       'cumulative_difficulty': instance.cumulativeDifficulty,

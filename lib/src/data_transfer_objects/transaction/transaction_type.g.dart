@@ -8,46 +8,41 @@ part of 'transaction_type.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$TransfersPayloadImpl _$$TransfersPayloadImplFromJson(
-        Map<String, dynamic> json) =>
-    _$TransfersPayloadImpl(
+TransfersPayload _$TransfersPayloadFromJson(Map<String, dynamic> json) =>
+    TransfersPayload(
       transfers: (json['transfers'] as List<dynamic>)
           .map((e) => TransferPayload.fromJson(e as Map<String, dynamic>))
           .toList(),
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$TransfersPayloadImplToJson(
-        _$TransfersPayloadImpl instance) =>
+Map<String, dynamic> _$TransfersPayloadToJson(TransfersPayload instance) =>
     <String, dynamic>{
       'transfers': instance.transfers,
       'runtimeType': instance.$type,
     };
 
-_$BurnPayloadImpl _$$BurnPayloadImplFromJson(Map<String, dynamic> json) =>
-    _$BurnPayloadImpl(
+BurnPayload _$BurnPayloadFromJson(Map<String, dynamic> json) => BurnPayload(
       asset: json['asset'] as String,
       amount: (json['amount'] as num).toInt(),
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$BurnPayloadImplToJson(_$BurnPayloadImpl instance) =>
+Map<String, dynamic> _$BurnPayloadToJson(BurnPayload instance) =>
     <String, dynamic>{
       'asset': instance.asset,
       'amount': instance.amount,
       'runtimeType': instance.$type,
     };
 
-_$MultisigPayloadImpl _$$MultisigPayloadImplFromJson(
-        Map<String, dynamic> json) =>
-    _$MultisigPayloadImpl(
+MultisigPayload _$MultisigPayloadFromJson(Map<String, dynamic> json) =>
+    MultisigPayload(
       participants: json['participants'] as List<dynamic>,
       threshold: (json['threshold'] as num).toInt(),
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$MultisigPayloadImplToJson(
-        _$MultisigPayloadImpl instance) =>
+Map<String, dynamic> _$MultisigPayloadToJson(MultisigPayload instance) =>
     <String, dynamic>{
       'participants': instance.participants,
       'threshold': instance.threshold,

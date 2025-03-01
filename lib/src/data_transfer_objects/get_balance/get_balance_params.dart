@@ -8,7 +8,7 @@ part 'get_balance_params.g.dart';
 
 /// @nodoc
 @freezed
-class GetBalanceParams with _$GetBalanceParams {
+abstract class GetBalanceParams with _$GetBalanceParams {
   /// @nodoc
   const factory GetBalanceParams({
     @JsonKey(name: 'address') required String address,

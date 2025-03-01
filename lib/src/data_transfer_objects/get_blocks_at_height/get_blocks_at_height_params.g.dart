@@ -8,15 +8,15 @@ part of 'get_blocks_at_height_params.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$GetBlocksAtHeightParamsImpl _$$GetBlocksAtHeightParamsImplFromJson(
+_GetBlocksAtHeightParams _$GetBlocksAtHeightParamsFromJson(
         Map<String, dynamic> json) =>
-    _$GetBlocksAtHeightParamsImpl(
+    _GetBlocksAtHeightParams(
       height: (json['height'] as num).toInt(),
       includeTxs: json['include_txs'] as bool?,
     );
 
-Map<String, dynamic> _$$GetBlocksAtHeightParamsImplToJson(
-        _$GetBlocksAtHeightParamsImpl instance) =>
+Map<String, dynamic> _$GetBlocksAtHeightParamsToJson(
+        _GetBlocksAtHeightParams instance) =>
     <String, dynamic>{
       'height': instance.height,
       if (instance.includeTxs case final value?) 'include_txs': value,

@@ -8,20 +8,19 @@ part of 'finalize_unsigned_transaction_params.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$FinalizeUnsignedTransactionParamsImpl
-    _$$FinalizeUnsignedTransactionParamsImplFromJson(
-            Map<String, dynamic> json) =>
-        _$FinalizeUnsignedTransactionParamsImpl(
-          unsignedTransaction: json['unsigned'] as String,
-          signatures: (json['signatures'] as List<dynamic>?)
-              ?.map((e) => SignatureId.fromJson(e as Map<String, dynamic>))
-              .toList(),
-          broadcast: json['broadcast'] as bool?,
-          txAsHex: json['tx_as_hex'] as bool?,
-        );
+_FinalizeUnsignedTransactionParams _$FinalizeUnsignedTransactionParamsFromJson(
+        Map<String, dynamic> json) =>
+    _FinalizeUnsignedTransactionParams(
+      unsignedTransaction: json['unsigned'] as String,
+      signatures: (json['signatures'] as List<dynamic>?)
+          ?.map((e) => SignatureId.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      broadcast: json['broadcast'] as bool?,
+      txAsHex: json['tx_as_hex'] as bool?,
+    );
 
-Map<String, dynamic> _$$FinalizeUnsignedTransactionParamsImplToJson(
-        _$FinalizeUnsignedTransactionParamsImpl instance) =>
+Map<String, dynamic> _$FinalizeUnsignedTransactionParamsToJson(
+        _FinalizeUnsignedTransactionParams instance) =>
     <String, dynamic>{
       'unsigned': instance.unsignedTransaction,
       if (instance.signatures case final value?) 'signatures': value,

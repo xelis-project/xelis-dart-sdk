@@ -7,7 +7,8 @@ part 'get_multisig_at_topoheight_result.freezed.dart';
 
 /// @nodoc
 @freezed
-class GetMultisigAtTopoheightResult with _$GetMultisigAtTopoheightResult {
+abstract class GetMultisigAtTopoheightResult
+    with _$GetMultisigAtTopoheightResult {
   /// @nodoc
   const factory GetMultisigAtTopoheightResult({
     @JsonKey(name: 'state') required MultisigState state,

@@ -8,7 +8,7 @@ part 'extra_data.g.dart';
 
 /// @nodoc
 @freezed
-class ExtraData with _$ExtraData {
+abstract class ExtraData with _$ExtraData {
   /// @nodoc
   const factory ExtraData({
     @JsonKey(name: 'data') required dynamic data,

@@ -8,15 +8,15 @@ part of 'get_contract_data_params.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$GetContractDataParamsImpl _$$GetContractDataParamsImplFromJson(
+_GetContractDataParams _$GetContractDataParamsFromJson(
         Map<String, dynamic> json) =>
-    _$GetContractDataParamsImpl(
+    _GetContractDataParams(
       contractHash: json['contract'] as String,
       key: json['key'] as Map<String, dynamic>,
     );
 
-Map<String, dynamic> _$$GetContractDataParamsImplToJson(
-        _$GetContractDataParamsImpl instance) =>
+Map<String, dynamic> _$GetContractDataParamsToJson(
+        _GetContractDataParams instance) =>
     <String, dynamic>{
       'contract': instance.contractHash,
       'key': instance.key,

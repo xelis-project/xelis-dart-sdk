@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,102 +10,63 @@ part of 'finalize_unsigned_transaction_params.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-FinalizeUnsignedTransactionParams _$FinalizeUnsignedTransactionParamsFromJson(
-    Map<String, dynamic> json) {
-  return _FinalizeUnsignedTransactionParams.fromJson(json);
-}
 
 /// @nodoc
 mixin _$FinalizeUnsignedTransactionParams {
   @JsonKey(name: 'unsigned')
-  String get unsignedTransaction => throw _privateConstructorUsedError;
+  String get unsignedTransaction;
   @JsonKey(name: 'signatures')
-  List<SignatureId>? get signatures => throw _privateConstructorUsedError;
+  List<SignatureId>? get signatures;
   @JsonKey(name: 'broadcast')
-  bool? get broadcast => throw _privateConstructorUsedError;
+  bool? get broadcast;
   @JsonKey(name: 'tx_as_hex')
-  bool? get txAsHex => throw _privateConstructorUsedError;
-
-  /// Serializes this FinalizeUnsignedTransactionParams to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  bool? get txAsHex;
 
   /// Create a copy of FinalizeUnsignedTransactionParams
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $FinalizeUnsignedTransactionParamsCopyWith<FinalizeUnsignedTransactionParams>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $FinalizeUnsignedTransactionParamsCopyWith<$Res> {
-  factory $FinalizeUnsignedTransactionParamsCopyWith(
-          FinalizeUnsignedTransactionParams value,
-          $Res Function(FinalizeUnsignedTransactionParams) then) =
-      _$FinalizeUnsignedTransactionParamsCopyWithImpl<$Res,
-          FinalizeUnsignedTransactionParams>;
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'unsigned') String unsignedTransaction,
-      @JsonKey(name: 'signatures') List<SignatureId>? signatures,
-      @JsonKey(name: 'broadcast') bool? broadcast,
-      @JsonKey(name: 'tx_as_hex') bool? txAsHex});
-}
-
-/// @nodoc
-class _$FinalizeUnsignedTransactionParamsCopyWithImpl<$Res,
-        $Val extends FinalizeUnsignedTransactionParams>
-    implements $FinalizeUnsignedTransactionParamsCopyWith<$Res> {
-  _$FinalizeUnsignedTransactionParamsCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of FinalizeUnsignedTransactionParams
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $FinalizeUnsignedTransactionParamsCopyWith<FinalizeUnsignedTransactionParams>
+      get copyWith => _$FinalizeUnsignedTransactionParamsCopyWithImpl<
+              FinalizeUnsignedTransactionParams>(
+          this as FinalizeUnsignedTransactionParams, _$identity);
+
+  /// Serializes this FinalizeUnsignedTransactionParams to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? unsignedTransaction = null,
-    Object? signatures = freezed,
-    Object? broadcast = freezed,
-    Object? txAsHex = freezed,
-  }) {
-    return _then(_value.copyWith(
-      unsignedTransaction: null == unsignedTransaction
-          ? _value.unsignedTransaction
-          : unsignedTransaction // ignore: cast_nullable_to_non_nullable
-              as String,
-      signatures: freezed == signatures
-          ? _value.signatures
-          : signatures // ignore: cast_nullable_to_non_nullable
-              as List<SignatureId>?,
-      broadcast: freezed == broadcast
-          ? _value.broadcast
-          : broadcast // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      txAsHex: freezed == txAsHex
-          ? _value.txAsHex
-          : txAsHex // ignore: cast_nullable_to_non_nullable
-              as bool?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is FinalizeUnsignedTransactionParams &&
+            (identical(other.unsignedTransaction, unsignedTransaction) ||
+                other.unsignedTransaction == unsignedTransaction) &&
+            const DeepCollectionEquality()
+                .equals(other.signatures, signatures) &&
+            (identical(other.broadcast, broadcast) ||
+                other.broadcast == broadcast) &&
+            (identical(other.txAsHex, txAsHex) || other.txAsHex == txAsHex));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, unsignedTransaction,
+      const DeepCollectionEquality().hash(signatures), broadcast, txAsHex);
+
+  @override
+  String toString() {
+    return 'FinalizeUnsignedTransactionParams(unsignedTransaction: $unsignedTransaction, signatures: $signatures, broadcast: $broadcast, txAsHex: $txAsHex)';
   }
 }
 
 /// @nodoc
-abstract class _$$FinalizeUnsignedTransactionParamsImplCopyWith<$Res>
-    implements $FinalizeUnsignedTransactionParamsCopyWith<$Res> {
-  factory _$$FinalizeUnsignedTransactionParamsImplCopyWith(
-          _$FinalizeUnsignedTransactionParamsImpl value,
-          $Res Function(_$FinalizeUnsignedTransactionParamsImpl) then) =
-      __$$FinalizeUnsignedTransactionParamsImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $FinalizeUnsignedTransactionParamsCopyWith<$Res> {
+  factory $FinalizeUnsignedTransactionParamsCopyWith(
+          FinalizeUnsignedTransactionParams value,
+          $Res Function(FinalizeUnsignedTransactionParams) _then) =
+      _$FinalizeUnsignedTransactionParamsCopyWithImpl;
   @useResult
   $Res call(
       {@JsonKey(name: 'unsigned') String unsignedTransaction,
@@ -114,14 +76,12 @@ abstract class _$$FinalizeUnsignedTransactionParamsImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$FinalizeUnsignedTransactionParamsImplCopyWithImpl<$Res>
-    extends _$FinalizeUnsignedTransactionParamsCopyWithImpl<$Res,
-        _$FinalizeUnsignedTransactionParamsImpl>
-    implements _$$FinalizeUnsignedTransactionParamsImplCopyWith<$Res> {
-  __$$FinalizeUnsignedTransactionParamsImplCopyWithImpl(
-      _$FinalizeUnsignedTransactionParamsImpl _value,
-      $Res Function(_$FinalizeUnsignedTransactionParamsImpl) _then)
-      : super(_value, _then);
+class _$FinalizeUnsignedTransactionParamsCopyWithImpl<$Res>
+    implements $FinalizeUnsignedTransactionParamsCopyWith<$Res> {
+  _$FinalizeUnsignedTransactionParamsCopyWithImpl(this._self, this._then);
+
+  final FinalizeUnsignedTransactionParams _self;
+  final $Res Function(FinalizeUnsignedTransactionParams) _then;
 
   /// Create a copy of FinalizeUnsignedTransactionParams
   /// with the given fields replaced by the non-null parameter values.
@@ -133,21 +93,21 @@ class __$$FinalizeUnsignedTransactionParamsImplCopyWithImpl<$Res>
     Object? broadcast = freezed,
     Object? txAsHex = freezed,
   }) {
-    return _then(_$FinalizeUnsignedTransactionParamsImpl(
+    return _then(_self.copyWith(
       unsignedTransaction: null == unsignedTransaction
-          ? _value.unsignedTransaction
+          ? _self.unsignedTransaction
           : unsignedTransaction // ignore: cast_nullable_to_non_nullable
               as String,
       signatures: freezed == signatures
-          ? _value._signatures
+          ? _self.signatures
           : signatures // ignore: cast_nullable_to_non_nullable
               as List<SignatureId>?,
       broadcast: freezed == broadcast
-          ? _value.broadcast
+          ? _self.broadcast
           : broadcast // ignore: cast_nullable_to_non_nullable
               as bool?,
       txAsHex: freezed == txAsHex
-          ? _value.txAsHex
+          ? _self.txAsHex
           : txAsHex // ignore: cast_nullable_to_non_nullable
               as bool?,
     ));
@@ -157,18 +117,17 @@ class __$$FinalizeUnsignedTransactionParamsImplCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$FinalizeUnsignedTransactionParamsImpl
-    implements _FinalizeUnsignedTransactionParams {
-  const _$FinalizeUnsignedTransactionParamsImpl(
+class _FinalizeUnsignedTransactionParams
+    implements FinalizeUnsignedTransactionParams {
+  const _FinalizeUnsignedTransactionParams(
       {@JsonKey(name: 'unsigned') required this.unsignedTransaction,
       @JsonKey(name: 'signatures') final List<SignatureId>? signatures,
       @JsonKey(name: 'broadcast') this.broadcast,
       @JsonKey(name: 'tx_as_hex') this.txAsHex})
       : _signatures = signatures;
-
-  factory _$FinalizeUnsignedTransactionParamsImpl.fromJson(
+  factory _FinalizeUnsignedTransactionParams.fromJson(
           Map<String, dynamic> json) =>
-      _$$FinalizeUnsignedTransactionParamsImplFromJson(json);
+      _$FinalizeUnsignedTransactionParamsFromJson(json);
 
   @override
   @JsonKey(name: 'unsigned')
@@ -191,16 +150,28 @@ class _$FinalizeUnsignedTransactionParamsImpl
   @JsonKey(name: 'tx_as_hex')
   final bool? txAsHex;
 
+  /// Create a copy of FinalizeUnsignedTransactionParams
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'FinalizeUnsignedTransactionParams(unsignedTransaction: $unsignedTransaction, signatures: $signatures, broadcast: $broadcast, txAsHex: $txAsHex)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$FinalizeUnsignedTransactionParamsCopyWith<
+          _FinalizeUnsignedTransactionParams>
+      get copyWith => __$FinalizeUnsignedTransactionParamsCopyWithImpl<
+          _FinalizeUnsignedTransactionParams>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$FinalizeUnsignedTransactionParamsToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FinalizeUnsignedTransactionParamsImpl &&
+            other is _FinalizeUnsignedTransactionParams &&
             (identical(other.unsignedTransaction, unsignedTransaction) ||
                 other.unsignedTransaction == unsignedTransaction) &&
             const DeepCollectionEquality()
@@ -215,55 +186,65 @@ class _$FinalizeUnsignedTransactionParamsImpl
   int get hashCode => Object.hash(runtimeType, unsignedTransaction,
       const DeepCollectionEquality().hash(_signatures), broadcast, txAsHex);
 
-  /// Create a copy of FinalizeUnsignedTransactionParams
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$FinalizeUnsignedTransactionParamsImplCopyWith<
-          _$FinalizeUnsignedTransactionParamsImpl>
-      get copyWith => __$$FinalizeUnsignedTransactionParamsImplCopyWithImpl<
-          _$FinalizeUnsignedTransactionParamsImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$FinalizeUnsignedTransactionParamsImplToJson(
-      this,
-    );
+  String toString() {
+    return 'FinalizeUnsignedTransactionParams(unsignedTransaction: $unsignedTransaction, signatures: $signatures, broadcast: $broadcast, txAsHex: $txAsHex)';
   }
 }
 
-abstract class _FinalizeUnsignedTransactionParams
-    implements FinalizeUnsignedTransactionParams {
-  const factory _FinalizeUnsignedTransactionParams(
-          {@JsonKey(name: 'unsigned') required final String unsignedTransaction,
-          @JsonKey(name: 'signatures') final List<SignatureId>? signatures,
-          @JsonKey(name: 'broadcast') final bool? broadcast,
-          @JsonKey(name: 'tx_as_hex') final bool? txAsHex}) =
-      _$FinalizeUnsignedTransactionParamsImpl;
+/// @nodoc
+abstract mixin class _$FinalizeUnsignedTransactionParamsCopyWith<$Res>
+    implements $FinalizeUnsignedTransactionParamsCopyWith<$Res> {
+  factory _$FinalizeUnsignedTransactionParamsCopyWith(
+          _FinalizeUnsignedTransactionParams value,
+          $Res Function(_FinalizeUnsignedTransactionParams) _then) =
+      __$FinalizeUnsignedTransactionParamsCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'unsigned') String unsignedTransaction,
+      @JsonKey(name: 'signatures') List<SignatureId>? signatures,
+      @JsonKey(name: 'broadcast') bool? broadcast,
+      @JsonKey(name: 'tx_as_hex') bool? txAsHex});
+}
 
-  factory _FinalizeUnsignedTransactionParams.fromJson(
-          Map<String, dynamic> json) =
-      _$FinalizeUnsignedTransactionParamsImpl.fromJson;
+/// @nodoc
+class __$FinalizeUnsignedTransactionParamsCopyWithImpl<$Res>
+    implements _$FinalizeUnsignedTransactionParamsCopyWith<$Res> {
+  __$FinalizeUnsignedTransactionParamsCopyWithImpl(this._self, this._then);
 
-  @override
-  @JsonKey(name: 'unsigned')
-  String get unsignedTransaction;
-  @override
-  @JsonKey(name: 'signatures')
-  List<SignatureId>? get signatures;
-  @override
-  @JsonKey(name: 'broadcast')
-  bool? get broadcast;
-  @override
-  @JsonKey(name: 'tx_as_hex')
-  bool? get txAsHex;
+  final _FinalizeUnsignedTransactionParams _self;
+  final $Res Function(_FinalizeUnsignedTransactionParams) _then;
 
   /// Create a copy of FinalizeUnsignedTransactionParams
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$FinalizeUnsignedTransactionParamsImplCopyWith<
-          _$FinalizeUnsignedTransactionParamsImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? unsignedTransaction = null,
+    Object? signatures = freezed,
+    Object? broadcast = freezed,
+    Object? txAsHex = freezed,
+  }) {
+    return _then(_FinalizeUnsignedTransactionParams(
+      unsignedTransaction: null == unsignedTransaction
+          ? _self.unsignedTransaction
+          : unsignedTransaction // ignore: cast_nullable_to_non_nullable
+              as String,
+      signatures: freezed == signatures
+          ? _self._signatures
+          : signatures // ignore: cast_nullable_to_non_nullable
+              as List<SignatureId>?,
+      broadcast: freezed == broadcast
+          ? _self.broadcast
+          : broadcast // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      txAsHex: freezed == txAsHex
+          ? _self.txAsHex
+          : txAsHex // ignore: cast_nullable_to_non_nullable
+              as bool?,
+    ));
+  }
 }
+
+// dart format on

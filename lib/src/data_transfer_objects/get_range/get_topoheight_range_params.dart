@@ -8,7 +8,7 @@ part 'get_topoheight_range_params.g.dart';
 
 /// @nodoc
 @freezed
-class GetTopoHeightRangeParams with _$GetTopoHeightRangeParams {
+abstract class GetTopoHeightRangeParams with _$GetTopoHeightRangeParams {
   /// @nodoc
   @JsonSerializable(includeIfNull: false)
   const factory GetTopoHeightRangeParams({

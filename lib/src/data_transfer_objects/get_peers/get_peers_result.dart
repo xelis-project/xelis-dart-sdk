@@ -9,7 +9,7 @@ part 'get_peers_result.g.dart';
 
 /// @nodoc
 @freezed
-class GetPeersResult with _$GetPeersResult {
+abstract class GetPeersResult with _$GetPeersResult {
   /// @nodoc
   const factory GetPeersResult({
     @JsonKey(name: 'peers') required List<PeerEntry> peers,

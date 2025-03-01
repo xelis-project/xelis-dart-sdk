@@ -8,15 +8,15 @@ part of 'is_tx_executed_in_block_params.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$IsTxExecutedInBlockParamsImpl _$$IsTxExecutedInBlockParamsImplFromJson(
+_IsTxExecutedInBlockParams _$IsTxExecutedInBlockParamsFromJson(
         Map<String, dynamic> json) =>
-    _$IsTxExecutedInBlockParamsImpl(
+    _IsTxExecutedInBlockParams(
       txHash: json['tx_hash'] as String,
       blockHash: json['block_hash'] as String,
     );
 
-Map<String, dynamic> _$$IsTxExecutedInBlockParamsImplToJson(
-        _$IsTxExecutedInBlockParamsImpl instance) =>
+Map<String, dynamic> _$IsTxExecutedInBlockParamsToJson(
+        _IsTxExecutedInBlockParams instance) =>
     <String, dynamic>{
       'tx_hash': instance.txHash,
       'block_hash': instance.blockHash,

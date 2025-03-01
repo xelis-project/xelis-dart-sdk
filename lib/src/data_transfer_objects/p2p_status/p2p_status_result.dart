@@ -8,7 +8,7 @@ part 'p2p_status_result.g.dart';
 
 /// @nodoc
 @freezed
-class P2pStatusResult with _$P2pStatusResult {
+abstract class P2pStatusResult with _$P2pStatusResult {
   /// @nodoc
   const factory P2pStatusResult({
     @JsonKey(name: 'best_topoheight') required int bestTopoHeight,

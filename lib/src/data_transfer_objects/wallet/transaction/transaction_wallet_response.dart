@@ -7,7 +7,7 @@ part 'transaction_wallet_response.freezed.dart';
 
 /// @nodoc
 @freezed
-class TransactionWalletResponse with _$TransactionWalletResponse {
+abstract class TransactionWalletResponse with _$TransactionWalletResponse {
   /// @nodoc
   const factory TransactionWalletResponse({
     required String? txAsHex,

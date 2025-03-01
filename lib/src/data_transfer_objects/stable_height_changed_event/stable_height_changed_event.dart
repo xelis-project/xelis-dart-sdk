@@ -8,7 +8,7 @@ part 'stable_height_changed_event.g.dart';
 
 /// @nodoc
 @freezed
-class StableHeightChangedEvent with _$StableHeightChangedEvent {
+abstract class StableHeightChangedEvent with _$StableHeightChangedEvent {
   /// @nodoc
   const factory StableHeightChangedEvent({
     @JsonKey(name: 'previous_stable_height') required int previousStableHeight,

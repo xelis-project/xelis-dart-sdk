@@ -8,7 +8,7 @@ part 'split_address_result.g.dart';
 
 /// @nodoc
 @freezed
-class SplitAddressResult with _$SplitAddressResult {
+abstract class SplitAddressResult with _$SplitAddressResult {
   /// @nodoc
   const factory SplitAddressResult({
     @JsonKey(name: 'address') required String address,

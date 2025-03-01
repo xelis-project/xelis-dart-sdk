@@ -8,9 +8,8 @@ part of 'transfer_in_entry.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$TransferInEntryImpl _$$TransferInEntryImplFromJson(
-        Map<String, dynamic> json) =>
-    _$TransferInEntryImpl(
+_TransferInEntry _$TransferInEntryFromJson(Map<String, dynamic> json) =>
+    _TransferInEntry(
       amount: (json['amount'] as num).toInt(),
       asset: json['asset'] as String,
       extraData: json['extra_data'] == null
@@ -18,8 +17,7 @@ _$TransferInEntryImpl _$$TransferInEntryImplFromJson(
           : ExtraData.fromJson(json['extra_data'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$TransferInEntryImplToJson(
-        _$TransferInEntryImpl instance) =>
+Map<String, dynamic> _$TransferInEntryToJson(_TransferInEntry instance) =>
     <String, dynamic>{
       'amount': instance.amount,
       'asset': instance.asset,

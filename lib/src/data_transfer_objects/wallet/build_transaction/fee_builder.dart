@@ -8,7 +8,7 @@ part 'fee_builder.g.dart';
 
 /// @nodoc
 @freezed
-class FeeBuilder with _$FeeBuilder {
+abstract class FeeBuilder with _$FeeBuilder {
   /// @nodoc
   const factory FeeBuilder({
     @JsonKey(name: 'Multiplier') double? multiplier,

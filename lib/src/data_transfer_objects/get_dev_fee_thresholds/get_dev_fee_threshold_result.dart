@@ -8,7 +8,7 @@ part 'get_dev_fee_threshold_result.g.dart';
 
 /// @nodoc
 @freezed
-class DevFeeThresholds with _$DevFeeThresholds {
+abstract class DevFeeThresholds with _$DevFeeThresholds {
   /// @nodoc
   const factory DevFeeThresholds({
     @JsonKey(name: 'height') required int height,

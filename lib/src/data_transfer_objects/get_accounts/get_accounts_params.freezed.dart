@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,97 +10,60 @@ part of 'get_accounts_params.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-GetAccountsParams _$GetAccountsParamsFromJson(Map<String, dynamic> json) {
-  return _GetAccountsParams.fromJson(json);
-}
 
 /// @nodoc
 mixin _$GetAccountsParams {
   @JsonKey(name: 'skip')
-  int? get skip => throw _privateConstructorUsedError;
+  int? get skip;
   @JsonKey(name: 'maximum')
-  int? get maximum => throw _privateConstructorUsedError;
+  int? get maximum;
   @JsonKey(name: 'minimum_topoheight')
-  int? get minTopoHeight => throw _privateConstructorUsedError;
+  int? get minTopoHeight;
   @JsonKey(name: 'maximum_topoheight')
-  int? get maxTopoHeight => throw _privateConstructorUsedError;
-
-  /// Serializes this GetAccountsParams to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  int? get maxTopoHeight;
 
   /// Create a copy of GetAccountsParams
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $GetAccountsParamsCopyWith<GetAccountsParams> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $GetAccountsParamsCopyWith<$Res> {
-  factory $GetAccountsParamsCopyWith(
-          GetAccountsParams value, $Res Function(GetAccountsParams) then) =
-      _$GetAccountsParamsCopyWithImpl<$Res, GetAccountsParams>;
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'skip') int? skip,
-      @JsonKey(name: 'maximum') int? maximum,
-      @JsonKey(name: 'minimum_topoheight') int? minTopoHeight,
-      @JsonKey(name: 'maximum_topoheight') int? maxTopoHeight});
-}
-
-/// @nodoc
-class _$GetAccountsParamsCopyWithImpl<$Res, $Val extends GetAccountsParams>
-    implements $GetAccountsParamsCopyWith<$Res> {
-  _$GetAccountsParamsCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of GetAccountsParams
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $GetAccountsParamsCopyWith<GetAccountsParams> get copyWith =>
+      _$GetAccountsParamsCopyWithImpl<GetAccountsParams>(
+          this as GetAccountsParams, _$identity);
+
+  /// Serializes this GetAccountsParams to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? skip = freezed,
-    Object? maximum = freezed,
-    Object? minTopoHeight = freezed,
-    Object? maxTopoHeight = freezed,
-  }) {
-    return _then(_value.copyWith(
-      skip: freezed == skip
-          ? _value.skip
-          : skip // ignore: cast_nullable_to_non_nullable
-              as int?,
-      maximum: freezed == maximum
-          ? _value.maximum
-          : maximum // ignore: cast_nullable_to_non_nullable
-              as int?,
-      minTopoHeight: freezed == minTopoHeight
-          ? _value.minTopoHeight
-          : minTopoHeight // ignore: cast_nullable_to_non_nullable
-              as int?,
-      maxTopoHeight: freezed == maxTopoHeight
-          ? _value.maxTopoHeight
-          : maxTopoHeight // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is GetAccountsParams &&
+            (identical(other.skip, skip) || other.skip == skip) &&
+            (identical(other.maximum, maximum) || other.maximum == maximum) &&
+            (identical(other.minTopoHeight, minTopoHeight) ||
+                other.minTopoHeight == minTopoHeight) &&
+            (identical(other.maxTopoHeight, maxTopoHeight) ||
+                other.maxTopoHeight == maxTopoHeight));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, skip, maximum, minTopoHeight, maxTopoHeight);
+
+  @override
+  String toString() {
+    return 'GetAccountsParams(skip: $skip, maximum: $maximum, minTopoHeight: $minTopoHeight, maxTopoHeight: $maxTopoHeight)';
   }
 }
 
 /// @nodoc
-abstract class _$$GetAccountsParamsImplCopyWith<$Res>
-    implements $GetAccountsParamsCopyWith<$Res> {
-  factory _$$GetAccountsParamsImplCopyWith(_$GetAccountsParamsImpl value,
-          $Res Function(_$GetAccountsParamsImpl) then) =
-      __$$GetAccountsParamsImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $GetAccountsParamsCopyWith<$Res> {
+  factory $GetAccountsParamsCopyWith(
+          GetAccountsParams value, $Res Function(GetAccountsParams) _then) =
+      _$GetAccountsParamsCopyWithImpl;
   @useResult
   $Res call(
       {@JsonKey(name: 'skip') int? skip,
@@ -109,12 +73,12 @@ abstract class _$$GetAccountsParamsImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$GetAccountsParamsImplCopyWithImpl<$Res>
-    extends _$GetAccountsParamsCopyWithImpl<$Res, _$GetAccountsParamsImpl>
-    implements _$$GetAccountsParamsImplCopyWith<$Res> {
-  __$$GetAccountsParamsImplCopyWithImpl(_$GetAccountsParamsImpl _value,
-      $Res Function(_$GetAccountsParamsImpl) _then)
-      : super(_value, _then);
+class _$GetAccountsParamsCopyWithImpl<$Res>
+    implements $GetAccountsParamsCopyWith<$Res> {
+  _$GetAccountsParamsCopyWithImpl(this._self, this._then);
+
+  final GetAccountsParams _self;
+  final $Res Function(GetAccountsParams) _then;
 
   /// Create a copy of GetAccountsParams
   /// with the given fields replaced by the non-null parameter values.
@@ -126,21 +90,21 @@ class __$$GetAccountsParamsImplCopyWithImpl<$Res>
     Object? minTopoHeight = freezed,
     Object? maxTopoHeight = freezed,
   }) {
-    return _then(_$GetAccountsParamsImpl(
+    return _then(_self.copyWith(
       skip: freezed == skip
-          ? _value.skip
+          ? _self.skip
           : skip // ignore: cast_nullable_to_non_nullable
               as int?,
       maximum: freezed == maximum
-          ? _value.maximum
+          ? _self.maximum
           : maximum // ignore: cast_nullable_to_non_nullable
               as int?,
       minTopoHeight: freezed == minTopoHeight
-          ? _value.minTopoHeight
+          ? _self.minTopoHeight
           : minTopoHeight // ignore: cast_nullable_to_non_nullable
               as int?,
       maxTopoHeight: freezed == maxTopoHeight
-          ? _value.maxTopoHeight
+          ? _self.maxTopoHeight
           : maxTopoHeight // ignore: cast_nullable_to_non_nullable
               as int?,
     ));
@@ -149,15 +113,14 @@ class __$$GetAccountsParamsImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$GetAccountsParamsImpl implements _GetAccountsParams {
-  const _$GetAccountsParamsImpl(
+class _GetAccountsParams implements GetAccountsParams {
+  const _GetAccountsParams(
       {@JsonKey(name: 'skip') this.skip,
       @JsonKey(name: 'maximum') this.maximum,
       @JsonKey(name: 'minimum_topoheight') this.minTopoHeight,
       @JsonKey(name: 'maximum_topoheight') this.maxTopoHeight});
-
-  factory _$GetAccountsParamsImpl.fromJson(Map<String, dynamic> json) =>
-      _$$GetAccountsParamsImplFromJson(json);
+  factory _GetAccountsParams.fromJson(Map<String, dynamic> json) =>
+      _$GetAccountsParamsFromJson(json);
 
   @override
   @JsonKey(name: 'skip')
@@ -172,16 +135,26 @@ class _$GetAccountsParamsImpl implements _GetAccountsParams {
   @JsonKey(name: 'maximum_topoheight')
   final int? maxTopoHeight;
 
+  /// Create a copy of GetAccountsParams
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'GetAccountsParams(skip: $skip, maximum: $maximum, minTopoHeight: $minTopoHeight, maxTopoHeight: $maxTopoHeight)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$GetAccountsParamsCopyWith<_GetAccountsParams> get copyWith =>
+      __$GetAccountsParamsCopyWithImpl<_GetAccountsParams>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$GetAccountsParamsToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetAccountsParamsImpl &&
+            other is _GetAccountsParams &&
             (identical(other.skip, skip) || other.skip == skip) &&
             (identical(other.maximum, maximum) || other.maximum == maximum) &&
             (identical(other.minTopoHeight, minTopoHeight) ||
@@ -195,51 +168,64 @@ class _$GetAccountsParamsImpl implements _GetAccountsParams {
   int get hashCode =>
       Object.hash(runtimeType, skip, maximum, minTopoHeight, maxTopoHeight);
 
-  /// Create a copy of GetAccountsParams
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$GetAccountsParamsImplCopyWith<_$GetAccountsParamsImpl> get copyWith =>
-      __$$GetAccountsParamsImplCopyWithImpl<_$GetAccountsParamsImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$GetAccountsParamsImplToJson(
-      this,
-    );
+  String toString() {
+    return 'GetAccountsParams(skip: $skip, maximum: $maximum, minTopoHeight: $minTopoHeight, maxTopoHeight: $maxTopoHeight)';
   }
 }
 
-abstract class _GetAccountsParams implements GetAccountsParams {
-  const factory _GetAccountsParams(
-          {@JsonKey(name: 'skip') final int? skip,
-          @JsonKey(name: 'maximum') final int? maximum,
-          @JsonKey(name: 'minimum_topoheight') final int? minTopoHeight,
-          @JsonKey(name: 'maximum_topoheight') final int? maxTopoHeight}) =
-      _$GetAccountsParamsImpl;
+/// @nodoc
+abstract mixin class _$GetAccountsParamsCopyWith<$Res>
+    implements $GetAccountsParamsCopyWith<$Res> {
+  factory _$GetAccountsParamsCopyWith(
+          _GetAccountsParams value, $Res Function(_GetAccountsParams) _then) =
+      __$GetAccountsParamsCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'skip') int? skip,
+      @JsonKey(name: 'maximum') int? maximum,
+      @JsonKey(name: 'minimum_topoheight') int? minTopoHeight,
+      @JsonKey(name: 'maximum_topoheight') int? maxTopoHeight});
+}
 
-  factory _GetAccountsParams.fromJson(Map<String, dynamic> json) =
-      _$GetAccountsParamsImpl.fromJson;
+/// @nodoc
+class __$GetAccountsParamsCopyWithImpl<$Res>
+    implements _$GetAccountsParamsCopyWith<$Res> {
+  __$GetAccountsParamsCopyWithImpl(this._self, this._then);
 
-  @override
-  @JsonKey(name: 'skip')
-  int? get skip;
-  @override
-  @JsonKey(name: 'maximum')
-  int? get maximum;
-  @override
-  @JsonKey(name: 'minimum_topoheight')
-  int? get minTopoHeight;
-  @override
-  @JsonKey(name: 'maximum_topoheight')
-  int? get maxTopoHeight;
+  final _GetAccountsParams _self;
+  final $Res Function(_GetAccountsParams) _then;
 
   /// Create a copy of GetAccountsParams
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$GetAccountsParamsImplCopyWith<_$GetAccountsParamsImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? skip = freezed,
+    Object? maximum = freezed,
+    Object? minTopoHeight = freezed,
+    Object? maxTopoHeight = freezed,
+  }) {
+    return _then(_GetAccountsParams(
+      skip: freezed == skip
+          ? _self.skip
+          : skip // ignore: cast_nullable_to_non_nullable
+              as int?,
+      maximum: freezed == maximum
+          ? _self.maximum
+          : maximum // ignore: cast_nullable_to_non_nullable
+              as int?,
+      minTopoHeight: freezed == minTopoHeight
+          ? _self.minTopoHeight
+          : minTopoHeight // ignore: cast_nullable_to_non_nullable
+              as int?,
+      maxTopoHeight: freezed == maxTopoHeight
+          ? _self.maxTopoHeight
+          : maxTopoHeight // ignore: cast_nullable_to_non_nullable
+              as int?,
+    ));
+  }
 }
+
+// dart format on

@@ -8,17 +8,15 @@ part of 'transfer_builder.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$TransferBuilderImpl _$$TransferBuilderImplFromJson(
-        Map<String, dynamic> json) =>
-    _$TransferBuilderImpl(
+_TransferBuilder _$TransferBuilderFromJson(Map<String, dynamic> json) =>
+    _TransferBuilder(
       asset: json['asset'] as String,
       amount: (json['amount'] as num).toInt(),
       destination: json['destination'] as String,
       extraData: json['extra_data'],
     );
 
-Map<String, dynamic> _$$TransferBuilderImplToJson(
-        _$TransferBuilderImpl instance) =>
+Map<String, dynamic> _$TransferBuilderToJson(_TransferBuilder instance) =>
     <String, dynamic>{
       'asset': instance.asset,
       'amount': instance.amount,

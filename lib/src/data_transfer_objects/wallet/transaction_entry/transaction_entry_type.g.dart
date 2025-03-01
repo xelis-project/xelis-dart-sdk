@@ -8,20 +8,19 @@ part of 'transaction_entry_type.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$CoinbaseEntryImpl _$$CoinbaseEntryImplFromJson(Map<String, dynamic> json) =>
-    _$CoinbaseEntryImpl(
+CoinbaseEntry _$CoinbaseEntryFromJson(Map<String, dynamic> json) =>
+    CoinbaseEntry(
       reward: (json['reward'] as num).toInt(),
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$CoinbaseEntryImplToJson(_$CoinbaseEntryImpl instance) =>
+Map<String, dynamic> _$CoinbaseEntryToJson(CoinbaseEntry instance) =>
     <String, dynamic>{
       'reward': instance.reward,
       'runtimeType': instance.$type,
     };
 
-_$BurnEntryImpl _$$BurnEntryImplFromJson(Map<String, dynamic> json) =>
-    _$BurnEntryImpl(
+BurnEntry _$BurnEntryFromJson(Map<String, dynamic> json) => BurnEntry(
       asset: json['asset'] as String,
       amount: (json['amount'] as num).toInt(),
       fee: (json['fee'] as num).toInt(),
@@ -29,8 +28,7 @@ _$BurnEntryImpl _$$BurnEntryImplFromJson(Map<String, dynamic> json) =>
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$BurnEntryImplToJson(_$BurnEntryImpl instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$BurnEntryToJson(BurnEntry instance) => <String, dynamic>{
       'asset': instance.asset,
       'amount': instance.amount,
       'fee': instance.fee,
@@ -38,8 +36,8 @@ Map<String, dynamic> _$$BurnEntryImplToJson(_$BurnEntryImpl instance) =>
       'runtimeType': instance.$type,
     };
 
-_$IncomingEntryImpl _$$IncomingEntryImplFromJson(Map<String, dynamic> json) =>
-    _$IncomingEntryImpl(
+IncomingEntry _$IncomingEntryFromJson(Map<String, dynamic> json) =>
+    IncomingEntry(
       from: json['from'] as String,
       transfers: (json['transfers'] as List<dynamic>)
           .map((e) => TransferInEntry.fromJson(e as Map<String, dynamic>))
@@ -47,15 +45,15 @@ _$IncomingEntryImpl _$$IncomingEntryImplFromJson(Map<String, dynamic> json) =>
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$IncomingEntryImplToJson(_$IncomingEntryImpl instance) =>
+Map<String, dynamic> _$IncomingEntryToJson(IncomingEntry instance) =>
     <String, dynamic>{
       'from': instance.from,
       'transfers': instance.transfers,
       'runtimeType': instance.$type,
     };
 
-_$OutgoingEntryImpl _$$OutgoingEntryImplFromJson(Map<String, dynamic> json) =>
-    _$OutgoingEntryImpl(
+OutgoingEntry _$OutgoingEntryFromJson(Map<String, dynamic> json) =>
+    OutgoingEntry(
       fee: (json['fee'] as num).toInt(),
       nonce: (json['nonce'] as num).toInt(),
       transfers: (json['transfers'] as List<dynamic>)
@@ -64,7 +62,7 @@ _$OutgoingEntryImpl _$$OutgoingEntryImplFromJson(Map<String, dynamic> json) =>
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$OutgoingEntryImplToJson(_$OutgoingEntryImpl instance) =>
+Map<String, dynamic> _$OutgoingEntryToJson(OutgoingEntry instance) =>
     <String, dynamic>{
       'fee': instance.fee,
       'nonce': instance.nonce,
@@ -72,8 +70,8 @@ Map<String, dynamic> _$$OutgoingEntryImplToJson(_$OutgoingEntryImpl instance) =>
       'runtimeType': instance.$type,
     };
 
-_$MultisigEntryImpl _$$MultisigEntryImplFromJson(Map<String, dynamic> json) =>
-    _$MultisigEntryImpl(
+MultisigEntry _$MultisigEntryFromJson(Map<String, dynamic> json) =>
+    MultisigEntry(
       participants: (json['participants'] as List<dynamic>)
           .map((e) => e as String)
           .toList(),
@@ -83,7 +81,7 @@ _$MultisigEntryImpl _$$MultisigEntryImplFromJson(Map<String, dynamic> json) =>
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$MultisigEntryImplToJson(_$MultisigEntryImpl instance) =>
+Map<String, dynamic> _$MultisigEntryToJson(MultisigEntry instance) =>
     <String, dynamic>{
       'participants': instance.participants,
       'threshold': instance.threshold,
@@ -92,9 +90,8 @@ Map<String, dynamic> _$$MultisigEntryImplToJson(_$MultisigEntryImpl instance) =>
       'runtimeType': instance.$type,
     };
 
-_$InvokeContractEntryImpl _$$InvokeContractEntryImplFromJson(
-        Map<String, dynamic> json) =>
-    _$InvokeContractEntryImpl(
+InvokeContractEntry _$InvokeContractEntryFromJson(Map<String, dynamic> json) =>
+    InvokeContractEntry(
       contract: json['contract'] as String,
       deposits: Map<String, int>.from(json['deposits'] as Map),
       chunkId: (json['chunk_id'] as num).toInt(),
@@ -103,8 +100,8 @@ _$InvokeContractEntryImpl _$$InvokeContractEntryImplFromJson(
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$InvokeContractEntryImplToJson(
-        _$InvokeContractEntryImpl instance) =>
+Map<String, dynamic> _$InvokeContractEntryToJson(
+        InvokeContractEntry instance) =>
     <String, dynamic>{
       'contract': instance.contract,
       'deposits': instance.deposits,
@@ -114,16 +111,15 @@ Map<String, dynamic> _$$InvokeContractEntryImplToJson(
       'runtimeType': instance.$type,
     };
 
-_$DeployContractEntryImpl _$$DeployContractEntryImplFromJson(
-        Map<String, dynamic> json) =>
-    _$DeployContractEntryImpl(
+DeployContractEntry _$DeployContractEntryFromJson(Map<String, dynamic> json) =>
+    DeployContractEntry(
       fee: (json['fee'] as num).toInt(),
       nonce: (json['nonce'] as num).toInt(),
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$DeployContractEntryImplToJson(
-        _$DeployContractEntryImpl instance) =>
+Map<String, dynamic> _$DeployContractEntryToJson(
+        DeployContractEntry instance) =>
     <String, dynamic>{
       'fee': instance.fee,
       'nonce': instance.nonce,

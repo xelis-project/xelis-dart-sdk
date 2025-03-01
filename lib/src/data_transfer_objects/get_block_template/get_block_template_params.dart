@@ -8,7 +8,7 @@ part 'get_block_template_params.g.dart';
 
 /// @nodoc
 @freezed
-class GetBlockTemplateParams with _$GetBlockTemplateParams {
+abstract class GetBlockTemplateParams with _$GetBlockTemplateParams {
   /// @nodoc
   const factory GetBlockTemplateParams({
     @JsonKey(name: 'address') required String address,

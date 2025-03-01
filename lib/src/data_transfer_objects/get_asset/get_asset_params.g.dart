@@ -8,13 +8,12 @@ part of 'get_asset_params.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$GetAssetParamsImpl _$$GetAssetParamsImplFromJson(Map<String, dynamic> json) =>
-    _$GetAssetParamsImpl(
+_GetAssetParams _$GetAssetParamsFromJson(Map<String, dynamic> json) =>
+    _GetAssetParams(
       asset: json['asset'] as String,
     );
 
-Map<String, dynamic> _$$GetAssetParamsImplToJson(
-        _$GetAssetParamsImpl instance) =>
+Map<String, dynamic> _$GetAssetParamsToJson(_GetAssetParams instance) =>
     <String, dynamic>{
       'asset': instance.asset,
     };

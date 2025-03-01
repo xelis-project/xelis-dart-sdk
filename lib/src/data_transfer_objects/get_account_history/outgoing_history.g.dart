@@ -8,14 +8,12 @@ part of 'outgoing_history.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$OutgoingHistoryImpl _$$OutgoingHistoryImplFromJson(
-        Map<String, dynamic> json) =>
-    _$OutgoingHistoryImpl(
+_OutgoingHistory _$OutgoingHistoryFromJson(Map<String, dynamic> json) =>
+    _OutgoingHistory(
       to: json['to'] as String,
     );
 
-Map<String, dynamic> _$$OutgoingHistoryImplToJson(
-        _$OutgoingHistoryImpl instance) =>
+Map<String, dynamic> _$OutgoingHistoryToJson(_OutgoingHistory instance) =>
     <String, dynamic>{
       'to': instance.to,
     };

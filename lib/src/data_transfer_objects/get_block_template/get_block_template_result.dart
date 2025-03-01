@@ -8,7 +8,7 @@ part 'get_block_template_result.g.dart';
 
 /// @nodoc
 @freezed
-class GetBlockTemplateResult with _$GetBlockTemplateResult {
+abstract class GetBlockTemplateResult with _$GetBlockTemplateResult {
   /// @nodoc
   const factory GetBlockTemplateResult({
     @JsonKey(name: 'difficulty') required int difficulty,

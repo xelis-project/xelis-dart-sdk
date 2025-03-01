@@ -8,13 +8,12 @@ part of 'signature_id.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$SignatureIdImpl _$$SignatureIdImplFromJson(Map<String, dynamic> json) =>
-    _$SignatureIdImpl(
+_SignatureId _$SignatureIdFromJson(Map<String, dynamic> json) => _SignatureId(
       id: (json['id'] as num).toInt(),
       signature: json['signature'] as String,
     );
 
-Map<String, dynamic> _$$SignatureIdImplToJson(_$SignatureIdImpl instance) =>
+Map<String, dynamic> _$SignatureIdToJson(_SignatureId instance) =>
     <String, dynamic>{
       'id': instance.id,
       'signature': instance.signature,

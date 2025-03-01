@@ -8,15 +8,13 @@ part of 'get_dev_fee_threshold_result.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$DevFeeThresholdsImpl _$$DevFeeThresholdsImplFromJson(
-        Map<String, dynamic> json) =>
-    _$DevFeeThresholdsImpl(
+_DevFeeThresholds _$DevFeeThresholdsFromJson(Map<String, dynamic> json) =>
+    _DevFeeThresholds(
       height: (json['height'] as num).toInt(),
       feePercentage: (json['fee_percentage'] as num).toInt(),
     );
 
-Map<String, dynamic> _$$DevFeeThresholdsImplToJson(
-        _$DevFeeThresholdsImpl instance) =>
+Map<String, dynamic> _$DevFeeThresholdsToJson(_DevFeeThresholds instance) =>
     <String, dynamic>{
       'height': instance.height,
       'fee_percentage': instance.feePercentage,

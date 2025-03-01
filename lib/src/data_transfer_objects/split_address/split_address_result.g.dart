@@ -8,16 +8,14 @@ part of 'split_address_result.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$SplitAddressResultImpl _$$SplitAddressResultImplFromJson(
-        Map<String, dynamic> json) =>
-    _$SplitAddressResultImpl(
+_SplitAddressResult _$SplitAddressResultFromJson(Map<String, dynamic> json) =>
+    _SplitAddressResult(
       address: json['address'] as String,
       integratedData: json['integrated_data'] as Map<String, dynamic>,
       size: (json['size'] as num).toInt(),
     );
 
-Map<String, dynamic> _$$SplitAddressResultImplToJson(
-        _$SplitAddressResultImpl instance) =>
+Map<String, dynamic> _$SplitAddressResultToJson(_SplitAddressResult instance) =>
     <String, dynamic>{
       'address': instance.address,
       'integrated_data': instance.integratedData,

@@ -8,17 +8,17 @@ part of 'get_stable_balance_result.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$GetStableBalanceResultImpl _$$GetStableBalanceResultImplFromJson(
+_GetStableBalanceResult _$GetStableBalanceResultFromJson(
         Map<String, dynamic> json) =>
-    _$GetStableBalanceResultImpl(
+    _GetStableBalanceResult(
       versionedBalance:
           VersionedBalance.fromJson(json['version'] as Map<String, dynamic>),
       stableTopoheight: (json['stable_topoheight'] as num).toInt(),
       stableBlockHash: json['stable_block_hash'] as String,
     );
 
-Map<String, dynamic> _$$GetStableBalanceResultImplToJson(
-        _$GetStableBalanceResultImpl instance) =>
+Map<String, dynamic> _$GetStableBalanceResultToJson(
+        _GetStableBalanceResult instance) =>
     <String, dynamic>{
       'version': instance.versionedBalance,
       'stable_topoheight': instance.stableTopoheight,

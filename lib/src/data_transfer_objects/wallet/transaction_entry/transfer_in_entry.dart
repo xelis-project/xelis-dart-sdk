@@ -8,7 +8,7 @@ part 'transfer_in_entry.g.dart';
 
 /// @nodoc
 @freezed
-class TransferInEntry with _$TransferInEntry {
+abstract class TransferInEntry with _$TransferInEntry {
   /// @nodoc
   const factory TransferInEntry({
     @JsonKey(name: 'amount') required int amount,

@@ -8,14 +8,12 @@ part of 'multisig.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$MultisigImpl _$$MultisigImplFromJson(Map<String, dynamic> json) =>
-    _$MultisigImpl(
+_Multisig _$MultisigFromJson(Map<String, dynamic> json) => _Multisig(
       signatures: (json['signatures'] as List<dynamic>)
           .map((e) => SignatureId.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
-Map<String, dynamic> _$$MultisigImplToJson(_$MultisigImpl instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$MultisigToJson(_Multisig instance) => <String, dynamic>{
       'signatures': instance.signatures,
     };

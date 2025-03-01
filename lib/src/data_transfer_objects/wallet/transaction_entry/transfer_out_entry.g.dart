@@ -8,9 +8,8 @@ part of 'transfer_out_entry.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$TransferOutEntryImpl _$$TransferOutEntryImplFromJson(
-        Map<String, dynamic> json) =>
-    _$TransferOutEntryImpl(
+_TransferOutEntry _$TransferOutEntryFromJson(Map<String, dynamic> json) =>
+    _TransferOutEntry(
       destination: json['destination'] as String,
       amount: (json['amount'] as num).toInt(),
       asset: json['asset'] as String,
@@ -19,8 +18,7 @@ _$TransferOutEntryImpl _$$TransferOutEntryImplFromJson(
           : ExtraData.fromJson(json['extra_data'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$TransferOutEntryImplToJson(
-        _$TransferOutEntryImpl instance) =>
+Map<String, dynamic> _$TransferOutEntryToJson(_TransferOutEntry instance) =>
     <String, dynamic>{
       'destination': instance.destination,
       'amount': instance.amount,

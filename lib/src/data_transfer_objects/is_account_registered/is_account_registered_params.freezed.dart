@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,148 +10,32 @@ part of 'is_account_registered_params.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-IsAccountRegisteredParams _$IsAccountRegisteredParamsFromJson(
-    Map<String, dynamic> json) {
-  return _IsAccountRegisteredParams.fromJson(json);
-}
 
 /// @nodoc
 mixin _$IsAccountRegisteredParams {
   @JsonKey(name: 'address')
-  String get address => throw _privateConstructorUsedError;
+  String get address;
   @JsonKey(name: 'in_stable_height')
-  bool get inStableHeight => throw _privateConstructorUsedError;
-
-  /// Serializes this IsAccountRegisteredParams to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  bool get inStableHeight;
 
   /// Create a copy of IsAccountRegisteredParams
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $IsAccountRegisteredParamsCopyWith<IsAccountRegisteredParams> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+      _$IsAccountRegisteredParamsCopyWithImpl<IsAccountRegisteredParams>(
+          this as IsAccountRegisteredParams, _$identity);
 
-/// @nodoc
-abstract class $IsAccountRegisteredParamsCopyWith<$Res> {
-  factory $IsAccountRegisteredParamsCopyWith(IsAccountRegisteredParams value,
-          $Res Function(IsAccountRegisteredParams) then) =
-      _$IsAccountRegisteredParamsCopyWithImpl<$Res, IsAccountRegisteredParams>;
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'address') String address,
-      @JsonKey(name: 'in_stable_height') bool inStableHeight});
-}
-
-/// @nodoc
-class _$IsAccountRegisteredParamsCopyWithImpl<$Res,
-        $Val extends IsAccountRegisteredParams>
-    implements $IsAccountRegisteredParamsCopyWith<$Res> {
-  _$IsAccountRegisteredParamsCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of IsAccountRegisteredParams
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? address = null,
-    Object? inStableHeight = null,
-  }) {
-    return _then(_value.copyWith(
-      address: null == address
-          ? _value.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as String,
-      inStableHeight: null == inStableHeight
-          ? _value.inStableHeight
-          : inStableHeight // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$IsAccountRegisteredParamsImplCopyWith<$Res>
-    implements $IsAccountRegisteredParamsCopyWith<$Res> {
-  factory _$$IsAccountRegisteredParamsImplCopyWith(
-          _$IsAccountRegisteredParamsImpl value,
-          $Res Function(_$IsAccountRegisteredParamsImpl) then) =
-      __$$IsAccountRegisteredParamsImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'address') String address,
-      @JsonKey(name: 'in_stable_height') bool inStableHeight});
-}
-
-/// @nodoc
-class __$$IsAccountRegisteredParamsImplCopyWithImpl<$Res>
-    extends _$IsAccountRegisteredParamsCopyWithImpl<$Res,
-        _$IsAccountRegisteredParamsImpl>
-    implements _$$IsAccountRegisteredParamsImplCopyWith<$Res> {
-  __$$IsAccountRegisteredParamsImplCopyWithImpl(
-      _$IsAccountRegisteredParamsImpl _value,
-      $Res Function(_$IsAccountRegisteredParamsImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of IsAccountRegisteredParams
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? address = null,
-    Object? inStableHeight = null,
-  }) {
-    return _then(_$IsAccountRegisteredParamsImpl(
-      address: null == address
-          ? _value.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as String,
-      inStableHeight: null == inStableHeight
-          ? _value.inStableHeight
-          : inStableHeight // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$IsAccountRegisteredParamsImpl implements _IsAccountRegisteredParams {
-  const _$IsAccountRegisteredParamsImpl(
-      {@JsonKey(name: 'address') required this.address,
-      @JsonKey(name: 'in_stable_height') required this.inStableHeight});
-
-  factory _$IsAccountRegisteredParamsImpl.fromJson(Map<String, dynamic> json) =>
-      _$$IsAccountRegisteredParamsImplFromJson(json);
-
-  @override
-  @JsonKey(name: 'address')
-  final String address;
-  @override
-  @JsonKey(name: 'in_stable_height')
-  final bool inStableHeight;
-
-  @override
-  String toString() {
-    return 'IsAccountRegisteredParams(address: $address, inStableHeight: $inStableHeight)';
-  }
+  /// Serializes this IsAccountRegisteredParams to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$IsAccountRegisteredParamsImpl &&
+            other is IsAccountRegisteredParams &&
             (identical(other.address, address) || other.address == address) &&
             (identical(other.inStableHeight, inStableHeight) ||
                 other.inStableHeight == inStableHeight));
@@ -160,43 +45,145 @@ class _$IsAccountRegisteredParamsImpl implements _IsAccountRegisteredParams {
   @override
   int get hashCode => Object.hash(runtimeType, address, inStableHeight);
 
-  /// Create a copy of IsAccountRegisteredParams
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$IsAccountRegisteredParamsImplCopyWith<_$IsAccountRegisteredParamsImpl>
-      get copyWith => __$$IsAccountRegisteredParamsImplCopyWithImpl<
-          _$IsAccountRegisteredParamsImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$IsAccountRegisteredParamsImplToJson(
-      this,
-    );
+  String toString() {
+    return 'IsAccountRegisteredParams(address: $address, inStableHeight: $inStableHeight)';
   }
 }
 
-abstract class _IsAccountRegisteredParams implements IsAccountRegisteredParams {
-  const factory _IsAccountRegisteredParams(
-      {@JsonKey(name: 'address') required final String address,
-      @JsonKey(name: 'in_stable_height')
-      required final bool inStableHeight}) = _$IsAccountRegisteredParamsImpl;
+/// @nodoc
+abstract mixin class $IsAccountRegisteredParamsCopyWith<$Res> {
+  factory $IsAccountRegisteredParamsCopyWith(IsAccountRegisteredParams value,
+          $Res Function(IsAccountRegisteredParams) _then) =
+      _$IsAccountRegisteredParamsCopyWithImpl;
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'address') String address,
+      @JsonKey(name: 'in_stable_height') bool inStableHeight});
+}
 
-  factory _IsAccountRegisteredParams.fromJson(Map<String, dynamic> json) =
-      _$IsAccountRegisteredParamsImpl.fromJson;
+/// @nodoc
+class _$IsAccountRegisteredParamsCopyWithImpl<$Res>
+    implements $IsAccountRegisteredParamsCopyWith<$Res> {
+  _$IsAccountRegisteredParamsCopyWithImpl(this._self, this._then);
+
+  final IsAccountRegisteredParams _self;
+  final $Res Function(IsAccountRegisteredParams) _then;
+
+  /// Create a copy of IsAccountRegisteredParams
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? address = null,
+    Object? inStableHeight = null,
+  }) {
+    return _then(_self.copyWith(
+      address: null == address
+          ? _self.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as String,
+      inStableHeight: null == inStableHeight
+          ? _self.inStableHeight
+          : inStableHeight // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _IsAccountRegisteredParams implements IsAccountRegisteredParams {
+  const _IsAccountRegisteredParams(
+      {@JsonKey(name: 'address') required this.address,
+      @JsonKey(name: 'in_stable_height') required this.inStableHeight});
+  factory _IsAccountRegisteredParams.fromJson(Map<String, dynamic> json) =>
+      _$IsAccountRegisteredParamsFromJson(json);
 
   @override
   @JsonKey(name: 'address')
-  String get address;
+  final String address;
   @override
   @JsonKey(name: 'in_stable_height')
-  bool get inStableHeight;
+  final bool inStableHeight;
 
   /// Create a copy of IsAccountRegisteredParams
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$IsAccountRegisteredParamsImplCopyWith<_$IsAccountRegisteredParamsImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  _$IsAccountRegisteredParamsCopyWith<_IsAccountRegisteredParams>
+      get copyWith =>
+          __$IsAccountRegisteredParamsCopyWithImpl<_IsAccountRegisteredParams>(
+              this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$IsAccountRegisteredParamsToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _IsAccountRegisteredParams &&
+            (identical(other.address, address) || other.address == address) &&
+            (identical(other.inStableHeight, inStableHeight) ||
+                other.inStableHeight == inStableHeight));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, address, inStableHeight);
+
+  @override
+  String toString() {
+    return 'IsAccountRegisteredParams(address: $address, inStableHeight: $inStableHeight)';
+  }
 }
+
+/// @nodoc
+abstract mixin class _$IsAccountRegisteredParamsCopyWith<$Res>
+    implements $IsAccountRegisteredParamsCopyWith<$Res> {
+  factory _$IsAccountRegisteredParamsCopyWith(_IsAccountRegisteredParams value,
+          $Res Function(_IsAccountRegisteredParams) _then) =
+      __$IsAccountRegisteredParamsCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'address') String address,
+      @JsonKey(name: 'in_stable_height') bool inStableHeight});
+}
+
+/// @nodoc
+class __$IsAccountRegisteredParamsCopyWithImpl<$Res>
+    implements _$IsAccountRegisteredParamsCopyWith<$Res> {
+  __$IsAccountRegisteredParamsCopyWithImpl(this._self, this._then);
+
+  final _IsAccountRegisteredParams _self;
+  final $Res Function(_IsAccountRegisteredParams) _then;
+
+  /// Create a copy of IsAccountRegisteredParams
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? address = null,
+    Object? inStableHeight = null,
+  }) {
+    return _then(_IsAccountRegisteredParams(
+      address: null == address
+          ? _self.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as String,
+      inStableHeight: null == inStableHeight
+          ? _self.inStableHeight
+          : inStableHeight // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+// dart format on

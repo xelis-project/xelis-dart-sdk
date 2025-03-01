@@ -8,7 +8,7 @@ part 'transfer_payload.g.dart';
 
 /// @nodoc
 @freezed
-class TransferPayload with _$TransferPayload {
+abstract class TransferPayload with _$TransferPayload {
   /// @nodoc
   const factory TransferPayload({
     @JsonKey(name: 'asset') required String asset,

@@ -8,7 +8,7 @@ part 'get_nonce_at_topoheight_params.g.dart';
 
 /// @nodoc
 @freezed
-class GetNonceAtTopoHeightParams with _$GetNonceAtTopoHeightParams {
+abstract class GetNonceAtTopoHeightParams with _$GetNonceAtTopoHeightParams {
   /// @nodoc
   const factory GetNonceAtTopoHeightParams({
     @JsonKey(name: 'address') required String address,

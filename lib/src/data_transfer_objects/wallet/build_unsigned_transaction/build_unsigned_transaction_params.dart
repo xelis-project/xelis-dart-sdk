@@ -7,7 +7,8 @@ part 'build_unsigned_transaction_params.freezed.dart';
 
 /// @nodoc
 @freezed
-class BuildUnsignedTransactionParams with _$BuildUnsignedTransactionParams {
+abstract class BuildUnsignedTransactionParams
+    with _$BuildUnsignedTransactionParams {
   /// @nodoc
   const factory BuildUnsignedTransactionParams({
     required TransactionTypeBuilder transactionTypeBuilder,

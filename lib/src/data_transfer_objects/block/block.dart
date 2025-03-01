@@ -9,7 +9,7 @@ part 'block.g.dart';
 
 /// @nodoc
 @freezed
-class Block with _$Block {
+abstract class Block with _$Block {
   /// @nodoc
   const factory Block({
     @JsonKey(name: 'block_type') required String blockType,

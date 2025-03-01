@@ -8,13 +8,12 @@ part of 'has_nonce_result.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$HasNonceResultImpl _$$HasNonceResultImplFromJson(Map<String, dynamic> json) =>
-    _$HasNonceResultImpl(
+_HasNonceResult _$HasNonceResultFromJson(Map<String, dynamic> json) =>
+    _HasNonceResult(
       exist: json['exist'] as bool,
     );
 
-Map<String, dynamic> _$$HasNonceResultImplToJson(
-        _$HasNonceResultImpl instance) =>
+Map<String, dynamic> _$HasNonceResultToJson(_HasNonceResult instance) =>
     <String, dynamic>{
       'exist': instance.exist,
     };

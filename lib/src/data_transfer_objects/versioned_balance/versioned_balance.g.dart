@@ -8,17 +8,15 @@ part of 'versioned_balance.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$VersionedBalanceImpl _$$VersionedBalanceImplFromJson(
-        Map<String, dynamic> json) =>
-    _$VersionedBalanceImpl(
+_VersionedBalance _$VersionedBalanceFromJson(Map<String, dynamic> json) =>
+    _VersionedBalance(
       balanceType: json['balance_type'] as String,
       finalBalance: json['final_balance'] as Map<String, dynamic>,
       previousTopoheight: (json['previous_topoheight'] as num).toInt(),
       outputBalance: json['output_balance'],
     );
 
-Map<String, dynamic> _$$VersionedBalanceImplToJson(
-        _$VersionedBalanceImpl instance) =>
+Map<String, dynamic> _$VersionedBalanceToJson(_VersionedBalance instance) =>
     <String, dynamic>{
       'balance_type': instance.balanceType,
       'final_balance': instance.finalBalance,

@@ -8,7 +8,7 @@ part 'get_size_on_disk_result.g.dart';
 
 /// @nodoc
 @freezed
-class GetSizeOnDiskResult with _$GetSizeOnDiskResult {
+abstract class GetSizeOnDiskResult with _$GetSizeOnDiskResult {
   /// @nodoc
   const factory GetSizeOnDiskResult({
     @JsonKey(name: 'size_bytes') required int sizeBytes,

@@ -8,7 +8,7 @@ part 'get_account_registration_topoheight_params.g.dart';
 
 /// @nodoc
 @freezed
-class GetAccountRegistrationTopoheightParams
+abstract class GetAccountRegistrationTopoheightParams
     with _$GetAccountRegistrationTopoheightParams {
   /// @nodoc
   const factory GetAccountRegistrationTopoheightParams({

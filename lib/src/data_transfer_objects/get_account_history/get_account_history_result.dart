@@ -10,7 +10,7 @@ part 'get_account_history_result.g.dart';
 
 /// @nodoc
 @freezed
-class GetAccountHistoryResult with _$GetAccountHistoryResult {
+abstract class GetAccountHistoryResult with _$GetAccountHistoryResult {
   /// @nodoc
   const factory GetAccountHistoryResult({
     @JsonKey(name: 'topoheight') required int topoheight,

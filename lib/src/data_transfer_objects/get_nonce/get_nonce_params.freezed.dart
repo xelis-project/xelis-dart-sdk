@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,143 +10,32 @@ part of 'get_nonce_params.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-GetNonceParams _$GetNonceParamsFromJson(Map<String, dynamic> json) {
-  return _GetNonceParams.fromJson(json);
-}
 
 /// @nodoc
 mixin _$GetNonceParams {
   @JsonKey(name: 'address')
-  String get address => throw _privateConstructorUsedError;
+  String get address;
   @JsonKey(name: 'topoheight')
-  int? get topoHeight => throw _privateConstructorUsedError;
-
-  /// Serializes this GetNonceParams to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  int? get topoHeight;
 
   /// Create a copy of GetNonceParams
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $GetNonceParamsCopyWith<GetNonceParams> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+      _$GetNonceParamsCopyWithImpl<GetNonceParams>(
+          this as GetNonceParams, _$identity);
 
-/// @nodoc
-abstract class $GetNonceParamsCopyWith<$Res> {
-  factory $GetNonceParamsCopyWith(
-          GetNonceParams value, $Res Function(GetNonceParams) then) =
-      _$GetNonceParamsCopyWithImpl<$Res, GetNonceParams>;
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'address') String address,
-      @JsonKey(name: 'topoheight') int? topoHeight});
-}
-
-/// @nodoc
-class _$GetNonceParamsCopyWithImpl<$Res, $Val extends GetNonceParams>
-    implements $GetNonceParamsCopyWith<$Res> {
-  _$GetNonceParamsCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of GetNonceParams
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? address = null,
-    Object? topoHeight = freezed,
-  }) {
-    return _then(_value.copyWith(
-      address: null == address
-          ? _value.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as String,
-      topoHeight: freezed == topoHeight
-          ? _value.topoHeight
-          : topoHeight // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$GetNonceParamsImplCopyWith<$Res>
-    implements $GetNonceParamsCopyWith<$Res> {
-  factory _$$GetNonceParamsImplCopyWith(_$GetNonceParamsImpl value,
-          $Res Function(_$GetNonceParamsImpl) then) =
-      __$$GetNonceParamsImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'address') String address,
-      @JsonKey(name: 'topoheight') int? topoHeight});
-}
-
-/// @nodoc
-class __$$GetNonceParamsImplCopyWithImpl<$Res>
-    extends _$GetNonceParamsCopyWithImpl<$Res, _$GetNonceParamsImpl>
-    implements _$$GetNonceParamsImplCopyWith<$Res> {
-  __$$GetNonceParamsImplCopyWithImpl(
-      _$GetNonceParamsImpl _value, $Res Function(_$GetNonceParamsImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of GetNonceParams
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? address = null,
-    Object? topoHeight = freezed,
-  }) {
-    return _then(_$GetNonceParamsImpl(
-      address: null == address
-          ? _value.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as String,
-      topoHeight: freezed == topoHeight
-          ? _value.topoHeight
-          : topoHeight // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$GetNonceParamsImpl implements _GetNonceParams {
-  const _$GetNonceParamsImpl(
-      {@JsonKey(name: 'address') required this.address,
-      @JsonKey(name: 'topoheight') this.topoHeight});
-
-  factory _$GetNonceParamsImpl.fromJson(Map<String, dynamic> json) =>
-      _$$GetNonceParamsImplFromJson(json);
-
-  @override
-  @JsonKey(name: 'address')
-  final String address;
-  @override
-  @JsonKey(name: 'topoheight')
-  final int? topoHeight;
-
-  @override
-  String toString() {
-    return 'GetNonceParams(address: $address, topoHeight: $topoHeight)';
-  }
+  /// Serializes this GetNonceParams to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetNonceParamsImpl &&
+            other is GetNonceParams &&
             (identical(other.address, address) || other.address == address) &&
             (identical(other.topoHeight, topoHeight) ||
                 other.topoHeight == topoHeight));
@@ -155,43 +45,143 @@ class _$GetNonceParamsImpl implements _GetNonceParams {
   @override
   int get hashCode => Object.hash(runtimeType, address, topoHeight);
 
-  /// Create a copy of GetNonceParams
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$GetNonceParamsImplCopyWith<_$GetNonceParamsImpl> get copyWith =>
-      __$$GetNonceParamsImplCopyWithImpl<_$GetNonceParamsImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$GetNonceParamsImplToJson(
-      this,
-    );
+  String toString() {
+    return 'GetNonceParams(address: $address, topoHeight: $topoHeight)';
   }
 }
 
-abstract class _GetNonceParams implements GetNonceParams {
-  const factory _GetNonceParams(
-          {@JsonKey(name: 'address') required final String address,
-          @JsonKey(name: 'topoheight') final int? topoHeight}) =
-      _$GetNonceParamsImpl;
+/// @nodoc
+abstract mixin class $GetNonceParamsCopyWith<$Res> {
+  factory $GetNonceParamsCopyWith(
+          GetNonceParams value, $Res Function(GetNonceParams) _then) =
+      _$GetNonceParamsCopyWithImpl;
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'address') String address,
+      @JsonKey(name: 'topoheight') int? topoHeight});
+}
 
-  factory _GetNonceParams.fromJson(Map<String, dynamic> json) =
-      _$GetNonceParamsImpl.fromJson;
+/// @nodoc
+class _$GetNonceParamsCopyWithImpl<$Res>
+    implements $GetNonceParamsCopyWith<$Res> {
+  _$GetNonceParamsCopyWithImpl(this._self, this._then);
+
+  final GetNonceParams _self;
+  final $Res Function(GetNonceParams) _then;
+
+  /// Create a copy of GetNonceParams
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? address = null,
+    Object? topoHeight = freezed,
+  }) {
+    return _then(_self.copyWith(
+      address: null == address
+          ? _self.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as String,
+      topoHeight: freezed == topoHeight
+          ? _self.topoHeight
+          : topoHeight // ignore: cast_nullable_to_non_nullable
+              as int?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _GetNonceParams implements GetNonceParams {
+  const _GetNonceParams(
+      {@JsonKey(name: 'address') required this.address,
+      @JsonKey(name: 'topoheight') this.topoHeight});
+  factory _GetNonceParams.fromJson(Map<String, dynamic> json) =>
+      _$GetNonceParamsFromJson(json);
 
   @override
   @JsonKey(name: 'address')
-  String get address;
+  final String address;
   @override
   @JsonKey(name: 'topoheight')
-  int? get topoHeight;
+  final int? topoHeight;
 
   /// Create a copy of GetNonceParams
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$GetNonceParamsImplCopyWith<_$GetNonceParamsImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  _$GetNonceParamsCopyWith<_GetNonceParams> get copyWith =>
+      __$GetNonceParamsCopyWithImpl<_GetNonceParams>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$GetNonceParamsToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _GetNonceParams &&
+            (identical(other.address, address) || other.address == address) &&
+            (identical(other.topoHeight, topoHeight) ||
+                other.topoHeight == topoHeight));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, address, topoHeight);
+
+  @override
+  String toString() {
+    return 'GetNonceParams(address: $address, topoHeight: $topoHeight)';
+  }
 }
+
+/// @nodoc
+abstract mixin class _$GetNonceParamsCopyWith<$Res>
+    implements $GetNonceParamsCopyWith<$Res> {
+  factory _$GetNonceParamsCopyWith(
+          _GetNonceParams value, $Res Function(_GetNonceParams) _then) =
+      __$GetNonceParamsCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'address') String address,
+      @JsonKey(name: 'topoheight') int? topoHeight});
+}
+
+/// @nodoc
+class __$GetNonceParamsCopyWithImpl<$Res>
+    implements _$GetNonceParamsCopyWith<$Res> {
+  __$GetNonceParamsCopyWithImpl(this._self, this._then);
+
+  final _GetNonceParams _self;
+  final $Res Function(_GetNonceParams) _then;
+
+  /// Create a copy of GetNonceParams
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? address = null,
+    Object? topoHeight = freezed,
+  }) {
+    return _then(_GetNonceParams(
+      address: null == address
+          ? _self.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as String,
+      topoHeight: freezed == topoHeight
+          ? _self.topoHeight
+          : topoHeight // ignore: cast_nullable_to_non_nullable
+              as int?,
+    ));
+  }
+}
+
+// dart format on

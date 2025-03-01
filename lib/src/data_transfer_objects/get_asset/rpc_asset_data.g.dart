@@ -8,8 +8,8 @@ part of 'rpc_asset_data.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$RPCAssetDataImpl _$$RPCAssetDataImplFromJson(Map<String, dynamic> json) =>
-    _$RPCAssetDataImpl(
+_RPCAssetData _$RPCAssetDataFromJson(Map<String, dynamic> json) =>
+    _RPCAssetData(
       asset: json['asset'] as String,
       topoheight: (json['topoheight'] as num).toInt(),
       decimals: (json['decimals'] as num).toInt(),
@@ -18,7 +18,7 @@ _$RPCAssetDataImpl _$$RPCAssetDataImplFromJson(Map<String, dynamic> json) =>
       contract: json['contract'] as String?,
     );
 
-Map<String, dynamic> _$$RPCAssetDataImplToJson(_$RPCAssetDataImpl instance) =>
+Map<String, dynamic> _$RPCAssetDataToJson(_RPCAssetData instance) =>
     <String, dynamic>{
       'asset': instance.asset,
       'topoheight': instance.topoheight,

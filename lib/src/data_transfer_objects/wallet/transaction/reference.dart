@@ -8,7 +8,7 @@ part 'reference.g.dart';
 
 /// @nodoc
 @freezed
-class Reference with _$Reference {
+abstract class Reference with _$Reference {
   /// @nodoc
   const factory Reference({
     @JsonKey(name: 'hash') required String hash,

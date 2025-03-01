@@ -8,7 +8,7 @@ part 'get_account_assets_result.g.dart';
 
 /// @nodoc
 @freezed
-class GetAccountAssetsResult with _$GetAccountAssetsResult {
+abstract class GetAccountAssetsResult with _$GetAccountAssetsResult {
   /// @nodoc
   const factory GetAccountAssetsResult({
     required List<String> assets,

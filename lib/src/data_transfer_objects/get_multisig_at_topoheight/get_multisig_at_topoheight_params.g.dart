@@ -8,15 +8,15 @@ part of 'get_multisig_at_topoheight_params.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$GetMultisigAtTopoheightParamsImpl
-    _$$GetMultisigAtTopoheightParamsImplFromJson(Map<String, dynamic> json) =>
-        _$GetMultisigAtTopoheightParamsImpl(
-          address: json['address'] as String,
-          topoheight: (json['topoheight'] as num).toInt(),
-        );
+_GetMultisigAtTopoheightParams _$GetMultisigAtTopoheightParamsFromJson(
+        Map<String, dynamic> json) =>
+    _GetMultisigAtTopoheightParams(
+      address: json['address'] as String,
+      topoheight: (json['topoheight'] as num).toInt(),
+    );
 
-Map<String, dynamic> _$$GetMultisigAtTopoheightParamsImplToJson(
-        _$GetMultisigAtTopoheightParamsImpl instance) =>
+Map<String, dynamic> _$GetMultisigAtTopoheightParamsToJson(
+        _GetMultisigAtTopoheightParams instance) =>
     <String, dynamic>{
       'address': instance.address,
       'topoheight': instance.topoheight,

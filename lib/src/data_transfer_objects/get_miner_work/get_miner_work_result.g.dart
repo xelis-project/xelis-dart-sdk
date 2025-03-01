@@ -8,9 +8,8 @@ part of 'get_miner_work_result.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$GetMinerWorkResultImpl _$$GetMinerWorkResultImplFromJson(
-        Map<String, dynamic> json) =>
-    _$GetMinerWorkResultImpl(
+_GetMinerWorkResult _$GetMinerWorkResultFromJson(Map<String, dynamic> json) =>
+    _GetMinerWorkResult(
       algorithm: json['algorithm'] as String,
       minerWork: json['miner_work'] as String,
       height: (json['height'] as num).toInt(),
@@ -18,8 +17,7 @@ _$GetMinerWorkResultImpl _$$GetMinerWorkResultImplFromJson(
       topoheight: (json['topoheight'] as num).toInt(),
     );
 
-Map<String, dynamic> _$$GetMinerWorkResultImplToJson(
-        _$GetMinerWorkResultImpl instance) =>
+Map<String, dynamic> _$GetMinerWorkResultToJson(_GetMinerWorkResult instance) =>
     <String, dynamic>{
       'algorithm': instance.algorithm,
       'miner_work': instance.minerWork,

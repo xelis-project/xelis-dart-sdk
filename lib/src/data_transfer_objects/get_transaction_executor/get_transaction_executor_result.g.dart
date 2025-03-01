@@ -8,15 +8,15 @@ part of 'get_transaction_executor_result.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$GetTransactionExecutorResultImpl _$$GetTransactionExecutorResultImplFromJson(
+_GetTransactionExecutorResult _$GetTransactionExecutorResultFromJson(
         Map<String, dynamic> json) =>
-    _$GetTransactionExecutorResultImpl(
+    _GetTransactionExecutorResult(
       blockTopoheight: (json['block_topoheight'] as num).toInt(),
       blockHash: json['block_hash'] as String,
     );
 
-Map<String, dynamic> _$$GetTransactionExecutorResultImplToJson(
-        _$GetTransactionExecutorResultImpl instance) =>
+Map<String, dynamic> _$GetTransactionExecutorResultToJson(
+        _GetTransactionExecutorResult instance) =>
     <String, dynamic>{
       'block_topoheight': instance.blockTopoheight,
       'block_hash': instance.blockHash,

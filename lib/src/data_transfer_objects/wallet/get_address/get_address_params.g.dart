@@ -8,14 +8,12 @@ part of 'get_address_params.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$GetAddressParamsImpl _$$GetAddressParamsImplFromJson(
-        Map<String, dynamic> json) =>
-    _$GetAddressParamsImpl(
+_GetAddressParams _$GetAddressParamsFromJson(Map<String, dynamic> json) =>
+    _GetAddressParams(
       integratedData: json['integrated_data'],
     );
 
-Map<String, dynamic> _$$GetAddressParamsImplToJson(
-        _$GetAddressParamsImpl instance) =>
+Map<String, dynamic> _$GetAddressParamsToJson(_GetAddressParams instance) =>
     <String, dynamic>{
       'integrated_data': instance.integratedData,
     };

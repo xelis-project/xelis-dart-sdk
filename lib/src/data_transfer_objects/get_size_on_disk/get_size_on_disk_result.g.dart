@@ -8,15 +8,14 @@ part of 'get_size_on_disk_result.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$GetSizeOnDiskResultImpl _$$GetSizeOnDiskResultImplFromJson(
-        Map<String, dynamic> json) =>
-    _$GetSizeOnDiskResultImpl(
+_GetSizeOnDiskResult _$GetSizeOnDiskResultFromJson(Map<String, dynamic> json) =>
+    _GetSizeOnDiskResult(
       sizeBytes: (json['size_bytes'] as num).toInt(),
       sizeFormatted: json['size_formatted'] as String,
     );
 
-Map<String, dynamic> _$$GetSizeOnDiskResultImplToJson(
-        _$GetSizeOnDiskResultImpl instance) =>
+Map<String, dynamic> _$GetSizeOnDiskResultToJson(
+        _GetSizeOnDiskResult instance) =>
     <String, dynamic>{
       'size_bytes': instance.sizeBytes,
       'size_formatted': instance.sizeFormatted,

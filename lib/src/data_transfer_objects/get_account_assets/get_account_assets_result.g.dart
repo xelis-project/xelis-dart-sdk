@@ -8,15 +8,15 @@ part of 'get_account_assets_result.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$GetAccountAssetsResultImpl _$$GetAccountAssetsResultImplFromJson(
+_GetAccountAssetsResult _$GetAccountAssetsResultFromJson(
         Map<String, dynamic> json) =>
-    _$GetAccountAssetsResultImpl(
+    _GetAccountAssetsResult(
       assets:
           (json['assets'] as List<dynamic>).map((e) => e as String).toList(),
     );
 
-Map<String, dynamic> _$$GetAccountAssetsResultImplToJson(
-        _$GetAccountAssetsResultImpl instance) =>
+Map<String, dynamic> _$GetAccountAssetsResultToJson(
+        _GetAccountAssetsResult instance) =>
     <String, dynamic>{
       'assets': instance.assets,
     };

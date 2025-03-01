@@ -8,9 +8,9 @@ part of 'get_account_history_params.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$GetAccountHistoryParamsImpl _$$GetAccountHistoryParamsImplFromJson(
+_GetAccountHistoryParams _$GetAccountHistoryParamsFromJson(
         Map<String, dynamic> json) =>
-    _$GetAccountHistoryParamsImpl(
+    _GetAccountHistoryParams(
       address: json['address'] as String,
       asset: json['asset'] as String,
       incomingFlow: json['incoming_flow'] as bool,
@@ -19,8 +19,8 @@ _$GetAccountHistoryParamsImpl _$$GetAccountHistoryParamsImplFromJson(
       maximumTopoheight: (json['maximum_topoheight'] as num?)?.toInt(),
     );
 
-Map<String, dynamic> _$$GetAccountHistoryParamsImplToJson(
-        _$GetAccountHistoryParamsImpl instance) =>
+Map<String, dynamic> _$GetAccountHistoryParamsToJson(
+        _GetAccountHistoryParams instance) =>
     <String, dynamic>{
       'address': instance.address,
       'asset': instance.asset,

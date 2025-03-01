@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,83 +10,57 @@ part of 'burn_history.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-BurnHistory _$BurnHistoryFromJson(Map<String, dynamic> json) {
-  return _BurnHistory.fromJson(json);
-}
 
 /// @nodoc
 mixin _$BurnHistory {
   @JsonKey(name: 'amount')
-  int get amount => throw _privateConstructorUsedError;
-
-  /// Serializes this BurnHistory to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  int get amount;
 
   /// Create a copy of BurnHistory
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $BurnHistoryCopyWith<BurnHistory> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $BurnHistoryCopyWith<$Res> {
-  factory $BurnHistoryCopyWith(
-          BurnHistory value, $Res Function(BurnHistory) then) =
-      _$BurnHistoryCopyWithImpl<$Res, BurnHistory>;
-  @useResult
-  $Res call({@JsonKey(name: 'amount') int amount});
-}
-
-/// @nodoc
-class _$BurnHistoryCopyWithImpl<$Res, $Val extends BurnHistory>
-    implements $BurnHistoryCopyWith<$Res> {
-  _$BurnHistoryCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of BurnHistory
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $BurnHistoryCopyWith<BurnHistory> get copyWith =>
+      _$BurnHistoryCopyWithImpl<BurnHistory>(this as BurnHistory, _$identity);
+
+  /// Serializes this BurnHistory to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? amount = null,
-  }) {
-    return _then(_value.copyWith(
-      amount: null == amount
-          ? _value.amount
-          : amount // ignore: cast_nullable_to_non_nullable
-              as int,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is BurnHistory &&
+            (identical(other.amount, amount) || other.amount == amount));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, amount);
+
+  @override
+  String toString() {
+    return 'BurnHistory(amount: $amount)';
   }
 }
 
 /// @nodoc
-abstract class _$$BurnHistoryImplCopyWith<$Res>
-    implements $BurnHistoryCopyWith<$Res> {
-  factory _$$BurnHistoryImplCopyWith(
-          _$BurnHistoryImpl value, $Res Function(_$BurnHistoryImpl) then) =
-      __$$BurnHistoryImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $BurnHistoryCopyWith<$Res> {
+  factory $BurnHistoryCopyWith(
+          BurnHistory value, $Res Function(BurnHistory) _then) =
+      _$BurnHistoryCopyWithImpl;
   @useResult
   $Res call({@JsonKey(name: 'amount') int amount});
 }
 
 /// @nodoc
-class __$$BurnHistoryImplCopyWithImpl<$Res>
-    extends _$BurnHistoryCopyWithImpl<$Res, _$BurnHistoryImpl>
-    implements _$$BurnHistoryImplCopyWith<$Res> {
-  __$$BurnHistoryImplCopyWithImpl(
-      _$BurnHistoryImpl _value, $Res Function(_$BurnHistoryImpl) _then)
-      : super(_value, _then);
+class _$BurnHistoryCopyWithImpl<$Res> implements $BurnHistoryCopyWith<$Res> {
+  _$BurnHistoryCopyWithImpl(this._self, this._then);
+
+  final BurnHistory _self;
+  final $Res Function(BurnHistory) _then;
 
   /// Create a copy of BurnHistory
   /// with the given fields replaced by the non-null parameter values.
@@ -94,9 +69,9 @@ class __$$BurnHistoryImplCopyWithImpl<$Res>
   $Res call({
     Object? amount = null,
   }) {
-    return _then(_$BurnHistoryImpl(
+    return _then(_self.copyWith(
       amount: null == amount
-          ? _value.amount
+          ? _self.amount
           : amount // ignore: cast_nullable_to_non_nullable
               as int,
     ));
@@ -105,26 +80,35 @@ class __$$BurnHistoryImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$BurnHistoryImpl implements _BurnHistory {
-  const _$BurnHistoryImpl({@JsonKey(name: 'amount') required this.amount});
-
-  factory _$BurnHistoryImpl.fromJson(Map<String, dynamic> json) =>
-      _$$BurnHistoryImplFromJson(json);
+class _BurnHistory implements BurnHistory {
+  const _BurnHistory({@JsonKey(name: 'amount') required this.amount});
+  factory _BurnHistory.fromJson(Map<String, dynamic> json) =>
+      _$BurnHistoryFromJson(json);
 
   @override
   @JsonKey(name: 'amount')
   final int amount;
 
+  /// Create a copy of BurnHistory
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'BurnHistory(amount: $amount)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$BurnHistoryCopyWith<_BurnHistory> get copyWith =>
+      __$BurnHistoryCopyWithImpl<_BurnHistory>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$BurnHistoryToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$BurnHistoryImpl &&
+            other is _BurnHistory &&
             (identical(other.amount, amount) || other.amount == amount));
   }
 
@@ -132,37 +116,44 @@ class _$BurnHistoryImpl implements _BurnHistory {
   @override
   int get hashCode => Object.hash(runtimeType, amount);
 
-  /// Create a copy of BurnHistory
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$BurnHistoryImplCopyWith<_$BurnHistoryImpl> get copyWith =>
-      __$$BurnHistoryImplCopyWithImpl<_$BurnHistoryImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$BurnHistoryImplToJson(
-      this,
-    );
+  String toString() {
+    return 'BurnHistory(amount: $amount)';
   }
 }
 
-abstract class _BurnHistory implements BurnHistory {
-  const factory _BurnHistory(
-      {@JsonKey(name: 'amount') required final int amount}) = _$BurnHistoryImpl;
-
-  factory _BurnHistory.fromJson(Map<String, dynamic> json) =
-      _$BurnHistoryImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$BurnHistoryCopyWith<$Res>
+    implements $BurnHistoryCopyWith<$Res> {
+  factory _$BurnHistoryCopyWith(
+          _BurnHistory value, $Res Function(_BurnHistory) _then) =
+      __$BurnHistoryCopyWithImpl;
   @override
-  @JsonKey(name: 'amount')
-  int get amount;
+  @useResult
+  $Res call({@JsonKey(name: 'amount') int amount});
+}
+
+/// @nodoc
+class __$BurnHistoryCopyWithImpl<$Res> implements _$BurnHistoryCopyWith<$Res> {
+  __$BurnHistoryCopyWithImpl(this._self, this._then);
+
+  final _BurnHistory _self;
+  final $Res Function(_BurnHistory) _then;
 
   /// Create a copy of BurnHistory
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$BurnHistoryImplCopyWith<_$BurnHistoryImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? amount = null,
+  }) {
+    return _then(_BurnHistory(
+      amount: null == amount
+          ? _self.amount
+          : amount // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
 }
+
+// dart format on

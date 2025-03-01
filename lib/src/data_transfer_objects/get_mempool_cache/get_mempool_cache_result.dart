@@ -8,7 +8,7 @@ part 'get_mempool_cache_result.g.dart';
 
 /// @nodoc
 @freezed
-class GetMempoolCacheResult with _$GetMempoolCacheResult {
+abstract class GetMempoolCacheResult with _$GetMempoolCacheResult {
   /// @nodoc
   const factory GetMempoolCacheResult({
     @JsonKey(name: 'balances') required Map<String, dynamic> balances,

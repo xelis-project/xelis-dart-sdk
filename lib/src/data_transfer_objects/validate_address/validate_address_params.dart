@@ -8,7 +8,7 @@ part 'validate_address_params.g.dart';
 
 /// @nodoc
 @freezed
-class ValidateAddressParams with _$ValidateAddressParams {
+abstract class ValidateAddressParams with _$ValidateAddressParams {
   /// @nodoc
   const factory ValidateAddressParams({
     @JsonKey(name: 'address') required String address,

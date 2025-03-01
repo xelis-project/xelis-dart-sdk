@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,84 +10,53 @@ part of 'get_contract_data_params.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-GetContractDataParams _$GetContractDataParamsFromJson(
-    Map<String, dynamic> json) {
-  return _GetContractDataParams.fromJson(json);
-}
 
 /// @nodoc
 mixin _$GetContractDataParams {
   @JsonKey(name: 'contract')
-  String get contractHash => throw _privateConstructorUsedError;
+  String get contractHash;
   @JsonKey(name: 'key')
-  Map<String, dynamic> get key => throw _privateConstructorUsedError;
-
-  /// Serializes this GetContractDataParams to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  Map<String, dynamic> get key;
 
   /// Create a copy of GetContractDataParams
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $GetContractDataParamsCopyWith<GetContractDataParams> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $GetContractDataParamsCopyWith<$Res> {
-  factory $GetContractDataParamsCopyWith(GetContractDataParams value,
-          $Res Function(GetContractDataParams) then) =
-      _$GetContractDataParamsCopyWithImpl<$Res, GetContractDataParams>;
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'contract') String contractHash,
-      @JsonKey(name: 'key') Map<String, dynamic> key});
-}
-
-/// @nodoc
-class _$GetContractDataParamsCopyWithImpl<$Res,
-        $Val extends GetContractDataParams>
-    implements $GetContractDataParamsCopyWith<$Res> {
-  _$GetContractDataParamsCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of GetContractDataParams
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $GetContractDataParamsCopyWith<GetContractDataParams> get copyWith =>
+      _$GetContractDataParamsCopyWithImpl<GetContractDataParams>(
+          this as GetContractDataParams, _$identity);
+
+  /// Serializes this GetContractDataParams to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? contractHash = null,
-    Object? key = null,
-  }) {
-    return _then(_value.copyWith(
-      contractHash: null == contractHash
-          ? _value.contractHash
-          : contractHash // ignore: cast_nullable_to_non_nullable
-              as String,
-      key: null == key
-          ? _value.key
-          : key // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is GetContractDataParams &&
+            (identical(other.contractHash, contractHash) ||
+                other.contractHash == contractHash) &&
+            const DeepCollectionEquality().equals(other.key, key));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, contractHash, const DeepCollectionEquality().hash(key));
+
+  @override
+  String toString() {
+    return 'GetContractDataParams(contractHash: $contractHash, key: $key)';
   }
 }
 
 /// @nodoc
-abstract class _$$GetContractDataParamsImplCopyWith<$Res>
-    implements $GetContractDataParamsCopyWith<$Res> {
-  factory _$$GetContractDataParamsImplCopyWith(
-          _$GetContractDataParamsImpl value,
-          $Res Function(_$GetContractDataParamsImpl) then) =
-      __$$GetContractDataParamsImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $GetContractDataParamsCopyWith<$Res> {
+  factory $GetContractDataParamsCopyWith(GetContractDataParams value,
+          $Res Function(GetContractDataParams) _then) =
+      _$GetContractDataParamsCopyWithImpl;
   @useResult
   $Res call(
       {@JsonKey(name: 'contract') String contractHash,
@@ -94,13 +64,12 @@ abstract class _$$GetContractDataParamsImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$GetContractDataParamsImplCopyWithImpl<$Res>
-    extends _$GetContractDataParamsCopyWithImpl<$Res,
-        _$GetContractDataParamsImpl>
-    implements _$$GetContractDataParamsImplCopyWith<$Res> {
-  __$$GetContractDataParamsImplCopyWithImpl(_$GetContractDataParamsImpl _value,
-      $Res Function(_$GetContractDataParamsImpl) _then)
-      : super(_value, _then);
+class _$GetContractDataParamsCopyWithImpl<$Res>
+    implements $GetContractDataParamsCopyWith<$Res> {
+  _$GetContractDataParamsCopyWithImpl(this._self, this._then);
+
+  final GetContractDataParams _self;
+  final $Res Function(GetContractDataParams) _then;
 
   /// Create a copy of GetContractDataParams
   /// with the given fields replaced by the non-null parameter values.
@@ -110,13 +79,13 @@ class __$$GetContractDataParamsImplCopyWithImpl<$Res>
     Object? contractHash = null,
     Object? key = null,
   }) {
-    return _then(_$GetContractDataParamsImpl(
+    return _then(_self.copyWith(
       contractHash: null == contractHash
-          ? _value.contractHash
+          ? _self.contractHash
           : contractHash // ignore: cast_nullable_to_non_nullable
               as String,
       key: null == key
-          ? _value._key
+          ? _self.key
           : key // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>,
     ));
@@ -125,14 +94,13 @@ class __$$GetContractDataParamsImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$GetContractDataParamsImpl implements _GetContractDataParams {
-  const _$GetContractDataParamsImpl(
+class _GetContractDataParams implements GetContractDataParams {
+  const _GetContractDataParams(
       {@JsonKey(name: 'contract') required this.contractHash,
       @JsonKey(name: 'key') required final Map<String, dynamic> key})
       : _key = key;
-
-  factory _$GetContractDataParamsImpl.fromJson(Map<String, dynamic> json) =>
-      _$$GetContractDataParamsImplFromJson(json);
+  factory _GetContractDataParams.fromJson(Map<String, dynamic> json) =>
+      _$GetContractDataParamsFromJson(json);
 
   @override
   @JsonKey(name: 'contract')
@@ -146,16 +114,27 @@ class _$GetContractDataParamsImpl implements _GetContractDataParams {
     return EqualUnmodifiableMapView(_key);
   }
 
+  /// Create a copy of GetContractDataParams
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'GetContractDataParams(contractHash: $contractHash, key: $key)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$GetContractDataParamsCopyWith<_GetContractDataParams> get copyWith =>
+      __$GetContractDataParamsCopyWithImpl<_GetContractDataParams>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$GetContractDataParamsToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetContractDataParamsImpl &&
+            other is _GetContractDataParams &&
             (identical(other.contractHash, contractHash) ||
                 other.contractHash == contractHash) &&
             const DeepCollectionEquality().equals(other._key, _key));
@@ -166,43 +145,52 @@ class _$GetContractDataParamsImpl implements _GetContractDataParams {
   int get hashCode => Object.hash(
       runtimeType, contractHash, const DeepCollectionEquality().hash(_key));
 
-  /// Create a copy of GetContractDataParams
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$GetContractDataParamsImplCopyWith<_$GetContractDataParamsImpl>
-      get copyWith => __$$GetContractDataParamsImplCopyWithImpl<
-          _$GetContractDataParamsImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$GetContractDataParamsImplToJson(
-      this,
-    );
+  String toString() {
+    return 'GetContractDataParams(contractHash: $contractHash, key: $key)';
   }
 }
 
-abstract class _GetContractDataParams implements GetContractDataParams {
-  const factory _GetContractDataParams(
-          {@JsonKey(name: 'contract') required final String contractHash,
-          @JsonKey(name: 'key') required final Map<String, dynamic> key}) =
-      _$GetContractDataParamsImpl;
-
-  factory _GetContractDataParams.fromJson(Map<String, dynamic> json) =
-      _$GetContractDataParamsImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$GetContractDataParamsCopyWith<$Res>
+    implements $GetContractDataParamsCopyWith<$Res> {
+  factory _$GetContractDataParamsCopyWith(_GetContractDataParams value,
+          $Res Function(_GetContractDataParams) _then) =
+      __$GetContractDataParamsCopyWithImpl;
   @override
-  @JsonKey(name: 'contract')
-  String get contractHash;
-  @override
-  @JsonKey(name: 'key')
-  Map<String, dynamic> get key;
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'contract') String contractHash,
+      @JsonKey(name: 'key') Map<String, dynamic> key});
+}
+
+/// @nodoc
+class __$GetContractDataParamsCopyWithImpl<$Res>
+    implements _$GetContractDataParamsCopyWith<$Res> {
+  __$GetContractDataParamsCopyWithImpl(this._self, this._then);
+
+  final _GetContractDataParams _self;
+  final $Res Function(_GetContractDataParams) _then;
 
   /// Create a copy of GetContractDataParams
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$GetContractDataParamsImplCopyWith<_$GetContractDataParamsImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? contractHash = null,
+    Object? key = null,
+  }) {
+    return _then(_GetContractDataParams(
+      contractHash: null == contractHash
+          ? _self.contractHash
+          : contractHash // ignore: cast_nullable_to_non_nullable
+              as String,
+      key: null == key
+          ? _self._key
+          : key // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>,
+    ));
+  }
 }
+
+// dart format on

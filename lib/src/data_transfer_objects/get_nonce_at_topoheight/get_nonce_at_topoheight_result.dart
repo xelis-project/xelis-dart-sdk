@@ -8,7 +8,7 @@ part 'get_nonce_at_topoheight_result.g.dart';
 
 /// @nodoc
 @freezed
-class GetNonceAtTopoHeightResult with _$GetNonceAtTopoHeightResult {
+abstract class GetNonceAtTopoHeightResult with _$GetNonceAtTopoHeightResult {
   /// @nodoc
   const factory GetNonceAtTopoHeightResult({
     @JsonKey(name: 'nonce') required int nonce,

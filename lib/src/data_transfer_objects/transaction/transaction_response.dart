@@ -9,7 +9,7 @@ part 'transaction_response.g.dart';
 
 /// @nodoc
 @freezed
-class TransactionResponse with _$TransactionResponse {
+abstract class TransactionResponse with _$TransactionResponse {
   /// @nodoc
   const factory TransactionResponse({
     @JsonKey(name: 'blocks') List<String>? blocks,

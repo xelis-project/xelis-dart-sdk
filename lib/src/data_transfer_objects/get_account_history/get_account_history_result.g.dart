@@ -8,9 +8,9 @@ part of 'get_account_history_result.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$GetAccountHistoryResultImpl _$$GetAccountHistoryResultImplFromJson(
+_GetAccountHistoryResult _$GetAccountHistoryResultFromJson(
         Map<String, dynamic> json) =>
-    _$GetAccountHistoryResultImpl(
+    _GetAccountHistoryResult(
       topoheight: (json['topoheight'] as num).toInt(),
       hash: json['hash'] as String,
       blockTimestamp: (json['block_timestamp'] as num).toInt(),
@@ -31,8 +31,8 @@ _$GetAccountHistoryResultImpl _$$GetAccountHistoryResultImplFromJson(
           : DevFeeHistory.fromJson(json['dev_fee'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$GetAccountHistoryResultImplToJson(
-        _$GetAccountHistoryResultImpl instance) =>
+Map<String, dynamic> _$GetAccountHistoryResultToJson(
+        _GetAccountHistoryResult instance) =>
     <String, dynamic>{
       'topoheight': instance.topoheight,
       'hash': instance.hash,

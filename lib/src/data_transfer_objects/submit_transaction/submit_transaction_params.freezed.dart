@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,88 +10,59 @@ part of 'submit_transaction_params.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-SubmitTransactionParams _$SubmitTransactionParamsFromJson(
-    Map<String, dynamic> json) {
-  return _SubmitTransactionParams.fromJson(json);
-}
 
 /// @nodoc
 mixin _$SubmitTransactionParams {
   @JsonKey(name: 'data')
-  String get hex => throw _privateConstructorUsedError;
-
-  /// Serializes this SubmitTransactionParams to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String get hex;
 
   /// Create a copy of SubmitTransactionParams
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $SubmitTransactionParamsCopyWith<SubmitTransactionParams> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $SubmitTransactionParamsCopyWith<$Res> {
-  factory $SubmitTransactionParamsCopyWith(SubmitTransactionParams value,
-          $Res Function(SubmitTransactionParams) then) =
-      _$SubmitTransactionParamsCopyWithImpl<$Res, SubmitTransactionParams>;
-  @useResult
-  $Res call({@JsonKey(name: 'data') String hex});
-}
-
-/// @nodoc
-class _$SubmitTransactionParamsCopyWithImpl<$Res,
-        $Val extends SubmitTransactionParams>
-    implements $SubmitTransactionParamsCopyWith<$Res> {
-  _$SubmitTransactionParamsCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of SubmitTransactionParams
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $SubmitTransactionParamsCopyWith<SubmitTransactionParams> get copyWith =>
+      _$SubmitTransactionParamsCopyWithImpl<SubmitTransactionParams>(
+          this as SubmitTransactionParams, _$identity);
+
+  /// Serializes this SubmitTransactionParams to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? hex = null,
-  }) {
-    return _then(_value.copyWith(
-      hex: null == hex
-          ? _value.hex
-          : hex // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is SubmitTransactionParams &&
+            (identical(other.hex, hex) || other.hex == hex));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, hex);
+
+  @override
+  String toString() {
+    return 'SubmitTransactionParams(hex: $hex)';
   }
 }
 
 /// @nodoc
-abstract class _$$SubmitTransactionParamsImplCopyWith<$Res>
-    implements $SubmitTransactionParamsCopyWith<$Res> {
-  factory _$$SubmitTransactionParamsImplCopyWith(
-          _$SubmitTransactionParamsImpl value,
-          $Res Function(_$SubmitTransactionParamsImpl) then) =
-      __$$SubmitTransactionParamsImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $SubmitTransactionParamsCopyWith<$Res> {
+  factory $SubmitTransactionParamsCopyWith(SubmitTransactionParams value,
+          $Res Function(SubmitTransactionParams) _then) =
+      _$SubmitTransactionParamsCopyWithImpl;
   @useResult
   $Res call({@JsonKey(name: 'data') String hex});
 }
 
 /// @nodoc
-class __$$SubmitTransactionParamsImplCopyWithImpl<$Res>
-    extends _$SubmitTransactionParamsCopyWithImpl<$Res,
-        _$SubmitTransactionParamsImpl>
-    implements _$$SubmitTransactionParamsImplCopyWith<$Res> {
-  __$$SubmitTransactionParamsImplCopyWithImpl(
-      _$SubmitTransactionParamsImpl _value,
-      $Res Function(_$SubmitTransactionParamsImpl) _then)
-      : super(_value, _then);
+class _$SubmitTransactionParamsCopyWithImpl<$Res>
+    implements $SubmitTransactionParamsCopyWith<$Res> {
+  _$SubmitTransactionParamsCopyWithImpl(this._self, this._then);
+
+  final SubmitTransactionParams _self;
+  final $Res Function(SubmitTransactionParams) _then;
 
   /// Create a copy of SubmitTransactionParams
   /// with the given fields replaced by the non-null parameter values.
@@ -99,9 +71,9 @@ class __$$SubmitTransactionParamsImplCopyWithImpl<$Res>
   $Res call({
     Object? hex = null,
   }) {
-    return _then(_$SubmitTransactionParamsImpl(
+    return _then(_self.copyWith(
       hex: null == hex
-          ? _value.hex
+          ? _self.hex
           : hex // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -110,27 +82,36 @@ class __$$SubmitTransactionParamsImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$SubmitTransactionParamsImpl implements _SubmitTransactionParams {
-  const _$SubmitTransactionParamsImpl(
-      {@JsonKey(name: 'data') required this.hex});
-
-  factory _$SubmitTransactionParamsImpl.fromJson(Map<String, dynamic> json) =>
-      _$$SubmitTransactionParamsImplFromJson(json);
+class _SubmitTransactionParams implements SubmitTransactionParams {
+  const _SubmitTransactionParams({@JsonKey(name: 'data') required this.hex});
+  factory _SubmitTransactionParams.fromJson(Map<String, dynamic> json) =>
+      _$SubmitTransactionParamsFromJson(json);
 
   @override
   @JsonKey(name: 'data')
   final String hex;
 
+  /// Create a copy of SubmitTransactionParams
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'SubmitTransactionParams(hex: $hex)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$SubmitTransactionParamsCopyWith<_SubmitTransactionParams> get copyWith =>
+      __$SubmitTransactionParamsCopyWithImpl<_SubmitTransactionParams>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$SubmitTransactionParamsToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SubmitTransactionParamsImpl &&
+            other is _SubmitTransactionParams &&
             (identical(other.hex, hex) || other.hex == hex));
   }
 
@@ -138,39 +119,45 @@ class _$SubmitTransactionParamsImpl implements _SubmitTransactionParams {
   @override
   int get hashCode => Object.hash(runtimeType, hex);
 
-  /// Create a copy of SubmitTransactionParams
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$SubmitTransactionParamsImplCopyWith<_$SubmitTransactionParamsImpl>
-      get copyWith => __$$SubmitTransactionParamsImplCopyWithImpl<
-          _$SubmitTransactionParamsImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$SubmitTransactionParamsImplToJson(
-      this,
-    );
+  String toString() {
+    return 'SubmitTransactionParams(hex: $hex)';
   }
 }
 
-abstract class _SubmitTransactionParams implements SubmitTransactionParams {
-  const factory _SubmitTransactionParams(
-          {@JsonKey(name: 'data') required final String hex}) =
-      _$SubmitTransactionParamsImpl;
-
-  factory _SubmitTransactionParams.fromJson(Map<String, dynamic> json) =
-      _$SubmitTransactionParamsImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$SubmitTransactionParamsCopyWith<$Res>
+    implements $SubmitTransactionParamsCopyWith<$Res> {
+  factory _$SubmitTransactionParamsCopyWith(_SubmitTransactionParams value,
+          $Res Function(_SubmitTransactionParams) _then) =
+      __$SubmitTransactionParamsCopyWithImpl;
   @override
-  @JsonKey(name: 'data')
-  String get hex;
+  @useResult
+  $Res call({@JsonKey(name: 'data') String hex});
+}
+
+/// @nodoc
+class __$SubmitTransactionParamsCopyWithImpl<$Res>
+    implements _$SubmitTransactionParamsCopyWith<$Res> {
+  __$SubmitTransactionParamsCopyWithImpl(this._self, this._then);
+
+  final _SubmitTransactionParams _self;
+  final $Res Function(_SubmitTransactionParams) _then;
 
   /// Create a copy of SubmitTransactionParams
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$SubmitTransactionParamsImplCopyWith<_$SubmitTransactionParamsImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? hex = null,
+  }) {
+    return _then(_SubmitTransactionParams(
+      hex: null == hex
+          ? _self.hex
+          : hex // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
+
+// dart format on

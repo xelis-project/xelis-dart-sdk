@@ -7,7 +7,7 @@ part 'get_contract_outputs_params.g.dart';
 
 /// @nodoc
 @freezed
-class GetContractOutputsParams with _$GetContractOutputsParams {
+abstract class GetContractOutputsParams with _$GetContractOutputsParams {
   /// @nodoc
   const factory GetContractOutputsParams({
     @JsonKey(name: 'transaction') required String txHash,

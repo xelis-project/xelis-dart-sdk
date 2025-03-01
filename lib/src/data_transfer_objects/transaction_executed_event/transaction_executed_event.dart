@@ -8,7 +8,7 @@ part 'transaction_executed_event.g.dart';
 
 /// @nodoc
 @freezed
-class TransactionExecutedEvent with _$TransactionExecutedEvent {
+abstract class TransactionExecutedEvent with _$TransactionExecutedEvent {
   /// @nodoc
   const factory TransactionExecutedEvent({
     @JsonKey(name: 'block_hash') required String blockHash,

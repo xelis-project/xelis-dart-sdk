@@ -7,7 +7,7 @@ part 'estimate_extra_data_size_result.g.dart';
 
 /// @nodoc
 @freezed
-class EstimateExtraDataSizeResult with _$EstimateExtraDataSizeResult {
+abstract class EstimateExtraDataSizeResult with _$EstimateExtraDataSizeResult {
   /// @nodoc
   const factory EstimateExtraDataSizeResult({
     @JsonKey(name: 'size') required int size,

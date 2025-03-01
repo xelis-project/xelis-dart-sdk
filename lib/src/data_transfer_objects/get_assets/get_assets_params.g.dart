@@ -8,17 +8,15 @@ part of 'get_assets_params.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$GetAssetsParamsImpl _$$GetAssetsParamsImplFromJson(
-        Map<String, dynamic> json) =>
-    _$GetAssetsParamsImpl(
+_GetAssetsParams _$GetAssetsParamsFromJson(Map<String, dynamic> json) =>
+    _GetAssetsParams(
       skip: (json['skip'] as num?)?.toInt(),
       maximum: (json['maximum'] as num?)?.toInt(),
       minimumTopoheight: (json['minimum_topoheight'] as num?)?.toInt(),
       maximumTopoheight: (json['maximum_topoheight'] as num?)?.toInt(),
     );
 
-Map<String, dynamic> _$$GetAssetsParamsImplToJson(
-        _$GetAssetsParamsImpl instance) =>
+Map<String, dynamic> _$GetAssetsParamsToJson(_GetAssetsParams instance) =>
     <String, dynamic>{
       if (instance.skip case final value?) 'skip': value,
       if (instance.maximum case final value?) 'maximum': value,

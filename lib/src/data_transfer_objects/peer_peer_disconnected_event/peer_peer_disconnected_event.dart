@@ -8,7 +8,7 @@ part 'peer_peer_disconnected_event.g.dart';
 
 /// @nodoc
 @freezed
-class PeerPeerDisconnectedEvent with _$PeerPeerDisconnectedEvent {
+abstract class PeerPeerDisconnectedEvent with _$PeerPeerDisconnectedEvent {
   /// @nodoc
   const factory PeerPeerDisconnectedEvent({
     @JsonKey(name: 'peer_id') required num id,

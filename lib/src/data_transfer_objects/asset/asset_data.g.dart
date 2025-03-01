@@ -8,14 +8,13 @@ part of 'asset_data.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$AssetDataImpl _$$AssetDataImplFromJson(Map<String, dynamic> json) =>
-    _$AssetDataImpl(
+_AssetData _$AssetDataFromJson(Map<String, dynamic> json) => _AssetData(
       decimals: (json['decimals'] as num).toInt(),
       name: json['name'] as String,
       maxSupply: (json['max_supply'] as num?)?.toInt(),
     );
 
-Map<String, dynamic> _$$AssetDataImplToJson(_$AssetDataImpl instance) =>
+Map<String, dynamic> _$AssetDataToJson(_AssetData instance) =>
     <String, dynamic>{
       'decimals': instance.decimals,
       'name': instance.name,

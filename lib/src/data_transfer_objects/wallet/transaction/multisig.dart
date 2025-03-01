@@ -8,7 +8,7 @@ part 'multisig.g.dart';
 
 /// @nodoc
 @freezed
-class Multisig with _$Multisig {
+abstract class Multisig with _$Multisig {
   /// @nodoc
   const factory Multisig({
     @JsonKey(name: 'signatures') required List<SignatureId> signatures,

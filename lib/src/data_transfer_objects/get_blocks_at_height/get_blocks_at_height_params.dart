@@ -8,7 +8,7 @@ part 'get_blocks_at_height_params.g.dart';
 
 /// @nodoc
 @freezed
-class GetBlocksAtHeightParams with _$GetBlocksAtHeightParams {
+abstract class GetBlocksAtHeightParams with _$GetBlocksAtHeightParams {
   /// @nodoc
   @JsonSerializable(includeIfNull: false)
   const factory GetBlocksAtHeightParams({

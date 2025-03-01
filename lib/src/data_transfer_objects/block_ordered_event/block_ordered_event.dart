@@ -8,7 +8,7 @@ part 'block_ordered_event.g.dart';
 
 /// @nodoc
 @freezed
-class BlockOrderedEvent with _$BlockOrderedEvent {
+abstract class BlockOrderedEvent with _$BlockOrderedEvent {
   /// @nodoc
   const factory BlockOrderedEvent({
     @JsonKey(name: 'block_hash') required String blockHash,

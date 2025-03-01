@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,151 +10,33 @@ part of 'get_block_at_topoheight_params.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-GetBlockAtTopoHeightParams _$GetBlockAtTopoHeightParamsFromJson(
-    Map<String, dynamic> json) {
-  return _GetBlockAtTopoHeightParams.fromJson(json);
-}
 
 /// @nodoc
 mixin _$GetBlockAtTopoHeightParams {
   @JsonKey(name: 'topoheight')
-  int get topoHeight => throw _privateConstructorUsedError;
+  int get topoHeight;
   @JsonKey(name: 'include_txs')
-  bool? get includeTxs => throw _privateConstructorUsedError;
-
-  /// Serializes this GetBlockAtTopoHeightParams to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  bool? get includeTxs;
 
   /// Create a copy of GetBlockAtTopoHeightParams
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $GetBlockAtTopoHeightParamsCopyWith<GetBlockAtTopoHeightParams>
-      get copyWith => throw _privateConstructorUsedError;
-}
+      get copyWith =>
+          _$GetBlockAtTopoHeightParamsCopyWithImpl<GetBlockAtTopoHeightParams>(
+              this as GetBlockAtTopoHeightParams, _$identity);
 
-/// @nodoc
-abstract class $GetBlockAtTopoHeightParamsCopyWith<$Res> {
-  factory $GetBlockAtTopoHeightParamsCopyWith(GetBlockAtTopoHeightParams value,
-          $Res Function(GetBlockAtTopoHeightParams) then) =
-      _$GetBlockAtTopoHeightParamsCopyWithImpl<$Res,
-          GetBlockAtTopoHeightParams>;
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'topoheight') int topoHeight,
-      @JsonKey(name: 'include_txs') bool? includeTxs});
-}
-
-/// @nodoc
-class _$GetBlockAtTopoHeightParamsCopyWithImpl<$Res,
-        $Val extends GetBlockAtTopoHeightParams>
-    implements $GetBlockAtTopoHeightParamsCopyWith<$Res> {
-  _$GetBlockAtTopoHeightParamsCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of GetBlockAtTopoHeightParams
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? topoHeight = null,
-    Object? includeTxs = freezed,
-  }) {
-    return _then(_value.copyWith(
-      topoHeight: null == topoHeight
-          ? _value.topoHeight
-          : topoHeight // ignore: cast_nullable_to_non_nullable
-              as int,
-      includeTxs: freezed == includeTxs
-          ? _value.includeTxs
-          : includeTxs // ignore: cast_nullable_to_non_nullable
-              as bool?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$GetBlockAtTopoHeightParamsImplCopyWith<$Res>
-    implements $GetBlockAtTopoHeightParamsCopyWith<$Res> {
-  factory _$$GetBlockAtTopoHeightParamsImplCopyWith(
-          _$GetBlockAtTopoHeightParamsImpl value,
-          $Res Function(_$GetBlockAtTopoHeightParamsImpl) then) =
-      __$$GetBlockAtTopoHeightParamsImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'topoheight') int topoHeight,
-      @JsonKey(name: 'include_txs') bool? includeTxs});
-}
-
-/// @nodoc
-class __$$GetBlockAtTopoHeightParamsImplCopyWithImpl<$Res>
-    extends _$GetBlockAtTopoHeightParamsCopyWithImpl<$Res,
-        _$GetBlockAtTopoHeightParamsImpl>
-    implements _$$GetBlockAtTopoHeightParamsImplCopyWith<$Res> {
-  __$$GetBlockAtTopoHeightParamsImplCopyWithImpl(
-      _$GetBlockAtTopoHeightParamsImpl _value,
-      $Res Function(_$GetBlockAtTopoHeightParamsImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of GetBlockAtTopoHeightParams
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? topoHeight = null,
-    Object? includeTxs = freezed,
-  }) {
-    return _then(_$GetBlockAtTopoHeightParamsImpl(
-      topoHeight: null == topoHeight
-          ? _value.topoHeight
-          : topoHeight // ignore: cast_nullable_to_non_nullable
-              as int,
-      includeTxs: freezed == includeTxs
-          ? _value.includeTxs
-          : includeTxs // ignore: cast_nullable_to_non_nullable
-              as bool?,
-    ));
-  }
-}
-
-/// @nodoc
-
-@JsonSerializable(includeIfNull: false)
-class _$GetBlockAtTopoHeightParamsImpl implements _GetBlockAtTopoHeightParams {
-  const _$GetBlockAtTopoHeightParamsImpl(
-      {@JsonKey(name: 'topoheight') required this.topoHeight,
-      @JsonKey(name: 'include_txs') this.includeTxs});
-
-  factory _$GetBlockAtTopoHeightParamsImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$GetBlockAtTopoHeightParamsImplFromJson(json);
-
-  @override
-  @JsonKey(name: 'topoheight')
-  final int topoHeight;
-  @override
-  @JsonKey(name: 'include_txs')
-  final bool? includeTxs;
-
-  @override
-  String toString() {
-    return 'GetBlockAtTopoHeightParams(topoHeight: $topoHeight, includeTxs: $includeTxs)';
-  }
+  /// Serializes this GetBlockAtTopoHeightParams to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetBlockAtTopoHeightParamsImpl &&
+            other is GetBlockAtTopoHeightParams &&
             (identical(other.topoHeight, topoHeight) ||
                 other.topoHeight == topoHeight) &&
             (identical(other.includeTxs, includeTxs) ||
@@ -164,44 +47,147 @@ class _$GetBlockAtTopoHeightParamsImpl implements _GetBlockAtTopoHeightParams {
   @override
   int get hashCode => Object.hash(runtimeType, topoHeight, includeTxs);
 
-  /// Create a copy of GetBlockAtTopoHeightParams
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$GetBlockAtTopoHeightParamsImplCopyWith<_$GetBlockAtTopoHeightParamsImpl>
-      get copyWith => __$$GetBlockAtTopoHeightParamsImplCopyWithImpl<
-          _$GetBlockAtTopoHeightParamsImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$GetBlockAtTopoHeightParamsImplToJson(
-      this,
-    );
+  String toString() {
+    return 'GetBlockAtTopoHeightParams(topoHeight: $topoHeight, includeTxs: $includeTxs)';
   }
 }
 
-abstract class _GetBlockAtTopoHeightParams
-    implements GetBlockAtTopoHeightParams {
-  const factory _GetBlockAtTopoHeightParams(
-          {@JsonKey(name: 'topoheight') required final int topoHeight,
-          @JsonKey(name: 'include_txs') final bool? includeTxs}) =
-      _$GetBlockAtTopoHeightParamsImpl;
+/// @nodoc
+abstract mixin class $GetBlockAtTopoHeightParamsCopyWith<$Res> {
+  factory $GetBlockAtTopoHeightParamsCopyWith(GetBlockAtTopoHeightParams value,
+          $Res Function(GetBlockAtTopoHeightParams) _then) =
+      _$GetBlockAtTopoHeightParamsCopyWithImpl;
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'topoheight') int topoHeight,
+      @JsonKey(name: 'include_txs') bool? includeTxs});
+}
 
-  factory _GetBlockAtTopoHeightParams.fromJson(Map<String, dynamic> json) =
-      _$GetBlockAtTopoHeightParamsImpl.fromJson;
+/// @nodoc
+class _$GetBlockAtTopoHeightParamsCopyWithImpl<$Res>
+    implements $GetBlockAtTopoHeightParamsCopyWith<$Res> {
+  _$GetBlockAtTopoHeightParamsCopyWithImpl(this._self, this._then);
+
+  final GetBlockAtTopoHeightParams _self;
+  final $Res Function(GetBlockAtTopoHeightParams) _then;
+
+  /// Create a copy of GetBlockAtTopoHeightParams
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? topoHeight = null,
+    Object? includeTxs = freezed,
+  }) {
+    return _then(_self.copyWith(
+      topoHeight: null == topoHeight
+          ? _self.topoHeight
+          : topoHeight // ignore: cast_nullable_to_non_nullable
+              as int,
+      includeTxs: freezed == includeTxs
+          ? _self.includeTxs
+          : includeTxs // ignore: cast_nullable_to_non_nullable
+              as bool?,
+    ));
+  }
+}
+
+/// @nodoc
+
+@JsonSerializable(includeIfNull: false)
+class _GetBlockAtTopoHeightParams implements GetBlockAtTopoHeightParams {
+  const _GetBlockAtTopoHeightParams(
+      {@JsonKey(name: 'topoheight') required this.topoHeight,
+      @JsonKey(name: 'include_txs') this.includeTxs});
+  factory _GetBlockAtTopoHeightParams.fromJson(Map<String, dynamic> json) =>
+      _$GetBlockAtTopoHeightParamsFromJson(json);
 
   @override
   @JsonKey(name: 'topoheight')
-  int get topoHeight;
+  final int topoHeight;
   @override
   @JsonKey(name: 'include_txs')
-  bool? get includeTxs;
+  final bool? includeTxs;
 
   /// Create a copy of GetBlockAtTopoHeightParams
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$GetBlockAtTopoHeightParamsImplCopyWith<_$GetBlockAtTopoHeightParamsImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  _$GetBlockAtTopoHeightParamsCopyWith<_GetBlockAtTopoHeightParams>
+      get copyWith => __$GetBlockAtTopoHeightParamsCopyWithImpl<
+          _GetBlockAtTopoHeightParams>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$GetBlockAtTopoHeightParamsToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _GetBlockAtTopoHeightParams &&
+            (identical(other.topoHeight, topoHeight) ||
+                other.topoHeight == topoHeight) &&
+            (identical(other.includeTxs, includeTxs) ||
+                other.includeTxs == includeTxs));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, topoHeight, includeTxs);
+
+  @override
+  String toString() {
+    return 'GetBlockAtTopoHeightParams(topoHeight: $topoHeight, includeTxs: $includeTxs)';
+  }
 }
+
+/// @nodoc
+abstract mixin class _$GetBlockAtTopoHeightParamsCopyWith<$Res>
+    implements $GetBlockAtTopoHeightParamsCopyWith<$Res> {
+  factory _$GetBlockAtTopoHeightParamsCopyWith(
+          _GetBlockAtTopoHeightParams value,
+          $Res Function(_GetBlockAtTopoHeightParams) _then) =
+      __$GetBlockAtTopoHeightParamsCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'topoheight') int topoHeight,
+      @JsonKey(name: 'include_txs') bool? includeTxs});
+}
+
+/// @nodoc
+class __$GetBlockAtTopoHeightParamsCopyWithImpl<$Res>
+    implements _$GetBlockAtTopoHeightParamsCopyWith<$Res> {
+  __$GetBlockAtTopoHeightParamsCopyWithImpl(this._self, this._then);
+
+  final _GetBlockAtTopoHeightParams _self;
+  final $Res Function(_GetBlockAtTopoHeightParams) _then;
+
+  /// Create a copy of GetBlockAtTopoHeightParams
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? topoHeight = null,
+    Object? includeTxs = freezed,
+  }) {
+    return _then(_GetBlockAtTopoHeightParams(
+      topoHeight: null == topoHeight
+          ? _self.topoHeight
+          : topoHeight // ignore: cast_nullable_to_non_nullable
+              as int,
+      includeTxs: freezed == includeTxs
+          ? _self.includeTxs
+          : includeTxs // ignore: cast_nullable_to_non_nullable
+              as bool?,
+    ));
+  }
+}
+
+// dart format on

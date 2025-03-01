@@ -8,16 +8,14 @@ part of 'get_balance_result.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$GetBalanceResultImpl _$$GetBalanceResultImplFromJson(
-        Map<String, dynamic> json) =>
-    _$GetBalanceResultImpl(
+_GetBalanceResult _$GetBalanceResultFromJson(Map<String, dynamic> json) =>
+    _GetBalanceResult(
       versionedBalance:
           VersionedBalance.fromJson(json['version'] as Map<String, dynamic>),
       topoheight: (json['topoheight'] as num).toInt(),
     );
 
-Map<String, dynamic> _$$GetBalanceResultImplToJson(
-        _$GetBalanceResultImpl instance) =>
+Map<String, dynamic> _$GetBalanceResultToJson(_GetBalanceResult instance) =>
     <String, dynamic>{
       'version': instance.versionedBalance,
       'topoheight': instance.topoheight,

@@ -8,16 +8,14 @@ part of 'block_ordered_event.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$BlockOrderedEventImpl _$$BlockOrderedEventImplFromJson(
-        Map<String, dynamic> json) =>
-    _$BlockOrderedEventImpl(
+_BlockOrderedEvent _$BlockOrderedEventFromJson(Map<String, dynamic> json) =>
+    _BlockOrderedEvent(
       blockHash: json['block_hash'] as String,
       blockType: json['block_type'] as String,
       topoHeight: (json['topoheight'] as num).toInt(),
     );
 
-Map<String, dynamic> _$$BlockOrderedEventImplToJson(
-        _$BlockOrderedEventImpl instance) =>
+Map<String, dynamic> _$BlockOrderedEventToJson(_BlockOrderedEvent instance) =>
     <String, dynamic>{
       'block_hash': instance.blockHash,
       'block_type': instance.blockType,

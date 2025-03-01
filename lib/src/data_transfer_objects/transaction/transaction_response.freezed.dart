@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,185 +10,112 @@ part of 'transaction_response.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-TransactionResponse _$TransactionResponseFromJson(Map<String, dynamic> json) {
-  return _TransactionResponse.fromJson(json);
-}
 
 /// @nodoc
 mixin _$TransactionResponse {
   @JsonKey(name: 'blocks')
-  List<String>? get blocks => throw _privateConstructorUsedError;
+  List<String>? get blocks;
   @JsonKey(name: 'executed_in_block')
-  String? get executedInBlock => throw _privateConstructorUsedError;
+  String? get executedInBlock;
   @JsonKey(name: 'hash')
-  String get hash => throw _privateConstructorUsedError;
+  String get hash;
   @JsonKey(name: 'data')
-  TransfersPayload get data => throw _privateConstructorUsedError;
+  TransfersPayload get data;
   @JsonKey(name: 'fee')
-  int get fee => throw _privateConstructorUsedError;
+  int get fee;
   @JsonKey(name: 'version')
-  int get version => throw _privateConstructorUsedError;
+  int get version;
   @JsonKey(name: 'in_mempool')
-  bool get inMempool => throw _privateConstructorUsedError;
+  bool get inMempool;
   @JsonKey(name: 'first_seen')
-  int? get firstSeen => throw _privateConstructorUsedError;
+  int? get firstSeen;
   @JsonKey(name: 'nonce')
-  int get nonce => throw _privateConstructorUsedError;
+  int get nonce;
   @JsonKey(name: 'source')
-  String get source => throw _privateConstructorUsedError;
+  String get source;
   @JsonKey(name: 'range_proof')
-  List<dynamic> get rangeProof => throw _privateConstructorUsedError;
+  List<dynamic> get rangeProof;
   @JsonKey(name: 'source_commitments')
-  List<dynamic> get sourceCommitments => throw _privateConstructorUsedError;
+  List<dynamic> get sourceCommitments;
   @JsonKey(name: 'reference')
-  Map<String, dynamic> get reference => throw _privateConstructorUsedError;
+  Map<String, dynamic> get reference;
   @JsonKey(name: 'signature')
-  String get signature => throw _privateConstructorUsedError;
+  String get signature;
   @JsonKey(name: 'size')
-  int get size => throw _privateConstructorUsedError;
-
-  /// Serializes this TransactionResponse to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  int get size;
 
   /// Create a copy of TransactionResponse
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $TransactionResponseCopyWith<TransactionResponse> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $TransactionResponseCopyWith<$Res> {
-  factory $TransactionResponseCopyWith(
-          TransactionResponse value, $Res Function(TransactionResponse) then) =
-      _$TransactionResponseCopyWithImpl<$Res, TransactionResponse>;
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'blocks') List<String>? blocks,
-      @JsonKey(name: 'executed_in_block') String? executedInBlock,
-      @JsonKey(name: 'hash') String hash,
-      @JsonKey(name: 'data') TransfersPayload data,
-      @JsonKey(name: 'fee') int fee,
-      @JsonKey(name: 'version') int version,
-      @JsonKey(name: 'in_mempool') bool inMempool,
-      @JsonKey(name: 'first_seen') int? firstSeen,
-      @JsonKey(name: 'nonce') int nonce,
-      @JsonKey(name: 'source') String source,
-      @JsonKey(name: 'range_proof') List<dynamic> rangeProof,
-      @JsonKey(name: 'source_commitments') List<dynamic> sourceCommitments,
-      @JsonKey(name: 'reference') Map<String, dynamic> reference,
-      @JsonKey(name: 'signature') String signature,
-      @JsonKey(name: 'size') int size});
-}
-
-/// @nodoc
-class _$TransactionResponseCopyWithImpl<$Res, $Val extends TransactionResponse>
-    implements $TransactionResponseCopyWith<$Res> {
-  _$TransactionResponseCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of TransactionResponse
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $TransactionResponseCopyWith<TransactionResponse> get copyWith =>
+      _$TransactionResponseCopyWithImpl<TransactionResponse>(
+          this as TransactionResponse, _$identity);
+
+  /// Serializes this TransactionResponse to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? blocks = freezed,
-    Object? executedInBlock = freezed,
-    Object? hash = null,
-    Object? data = freezed,
-    Object? fee = null,
-    Object? version = null,
-    Object? inMempool = null,
-    Object? firstSeen = freezed,
-    Object? nonce = null,
-    Object? source = null,
-    Object? rangeProof = null,
-    Object? sourceCommitments = null,
-    Object? reference = null,
-    Object? signature = null,
-    Object? size = null,
-  }) {
-    return _then(_value.copyWith(
-      blocks: freezed == blocks
-          ? _value.blocks
-          : blocks // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      executedInBlock: freezed == executedInBlock
-          ? _value.executedInBlock
-          : executedInBlock // ignore: cast_nullable_to_non_nullable
-              as String?,
-      hash: null == hash
-          ? _value.hash
-          : hash // ignore: cast_nullable_to_non_nullable
-              as String,
-      data: freezed == data
-          ? _value.data
-          : data // ignore: cast_nullable_to_non_nullable
-              as TransfersPayload,
-      fee: null == fee
-          ? _value.fee
-          : fee // ignore: cast_nullable_to_non_nullable
-              as int,
-      version: null == version
-          ? _value.version
-          : version // ignore: cast_nullable_to_non_nullable
-              as int,
-      inMempool: null == inMempool
-          ? _value.inMempool
-          : inMempool // ignore: cast_nullable_to_non_nullable
-              as bool,
-      firstSeen: freezed == firstSeen
-          ? _value.firstSeen
-          : firstSeen // ignore: cast_nullable_to_non_nullable
-              as int?,
-      nonce: null == nonce
-          ? _value.nonce
-          : nonce // ignore: cast_nullable_to_non_nullable
-              as int,
-      source: null == source
-          ? _value.source
-          : source // ignore: cast_nullable_to_non_nullable
-              as String,
-      rangeProof: null == rangeProof
-          ? _value.rangeProof
-          : rangeProof // ignore: cast_nullable_to_non_nullable
-              as List<dynamic>,
-      sourceCommitments: null == sourceCommitments
-          ? _value.sourceCommitments
-          : sourceCommitments // ignore: cast_nullable_to_non_nullable
-              as List<dynamic>,
-      reference: null == reference
-          ? _value.reference
-          : reference // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
-      signature: null == signature
-          ? _value.signature
-          : signature // ignore: cast_nullable_to_non_nullable
-              as String,
-      size: null == size
-          ? _value.size
-          : size // ignore: cast_nullable_to_non_nullable
-              as int,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is TransactionResponse &&
+            const DeepCollectionEquality().equals(other.blocks, blocks) &&
+            (identical(other.executedInBlock, executedInBlock) ||
+                other.executedInBlock == executedInBlock) &&
+            (identical(other.hash, hash) || other.hash == hash) &&
+            const DeepCollectionEquality().equals(other.data, data) &&
+            (identical(other.fee, fee) || other.fee == fee) &&
+            (identical(other.version, version) || other.version == version) &&
+            (identical(other.inMempool, inMempool) ||
+                other.inMempool == inMempool) &&
+            (identical(other.firstSeen, firstSeen) ||
+                other.firstSeen == firstSeen) &&
+            (identical(other.nonce, nonce) || other.nonce == nonce) &&
+            (identical(other.source, source) || other.source == source) &&
+            const DeepCollectionEquality()
+                .equals(other.rangeProof, rangeProof) &&
+            const DeepCollectionEquality()
+                .equals(other.sourceCommitments, sourceCommitments) &&
+            const DeepCollectionEquality().equals(other.reference, reference) &&
+            (identical(other.signature, signature) ||
+                other.signature == signature) &&
+            (identical(other.size, size) || other.size == size));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(blocks),
+      executedInBlock,
+      hash,
+      const DeepCollectionEquality().hash(data),
+      fee,
+      version,
+      inMempool,
+      firstSeen,
+      nonce,
+      source,
+      const DeepCollectionEquality().hash(rangeProof),
+      const DeepCollectionEquality().hash(sourceCommitments),
+      const DeepCollectionEquality().hash(reference),
+      signature,
+      size);
+
+  @override
+  String toString() {
+    return 'TransactionResponse(blocks: $blocks, executedInBlock: $executedInBlock, hash: $hash, data: $data, fee: $fee, version: $version, inMempool: $inMempool, firstSeen: $firstSeen, nonce: $nonce, source: $source, rangeProof: $rangeProof, sourceCommitments: $sourceCommitments, reference: $reference, signature: $signature, size: $size)';
   }
 }
 
 /// @nodoc
-abstract class _$$TransactionResponseImplCopyWith<$Res>
-    implements $TransactionResponseCopyWith<$Res> {
-  factory _$$TransactionResponseImplCopyWith(_$TransactionResponseImpl value,
-          $Res Function(_$TransactionResponseImpl) then) =
-      __$$TransactionResponseImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $TransactionResponseCopyWith<$Res> {
+  factory $TransactionResponseCopyWith(
+          TransactionResponse value, $Res Function(TransactionResponse) _then) =
+      _$TransactionResponseCopyWithImpl;
   @useResult
   $Res call(
       {@JsonKey(name: 'blocks') List<String>? blocks,
@@ -208,12 +136,12 @@ abstract class _$$TransactionResponseImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$TransactionResponseImplCopyWithImpl<$Res>
-    extends _$TransactionResponseCopyWithImpl<$Res, _$TransactionResponseImpl>
-    implements _$$TransactionResponseImplCopyWith<$Res> {
-  __$$TransactionResponseImplCopyWithImpl(_$TransactionResponseImpl _value,
-      $Res Function(_$TransactionResponseImpl) _then)
-      : super(_value, _then);
+class _$TransactionResponseCopyWithImpl<$Res>
+    implements $TransactionResponseCopyWith<$Res> {
+  _$TransactionResponseCopyWithImpl(this._self, this._then);
+
+  final TransactionResponse _self;
+  final $Res Function(TransactionResponse) _then;
 
   /// Create a copy of TransactionResponse
   /// with the given fields replaced by the non-null parameter values.
@@ -236,65 +164,65 @@ class __$$TransactionResponseImplCopyWithImpl<$Res>
     Object? signature = null,
     Object? size = null,
   }) {
-    return _then(_$TransactionResponseImpl(
+    return _then(_self.copyWith(
       blocks: freezed == blocks
-          ? _value._blocks
+          ? _self.blocks
           : blocks // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       executedInBlock: freezed == executedInBlock
-          ? _value.executedInBlock
+          ? _self.executedInBlock
           : executedInBlock // ignore: cast_nullable_to_non_nullable
               as String?,
       hash: null == hash
-          ? _value.hash
+          ? _self.hash
           : hash // ignore: cast_nullable_to_non_nullable
               as String,
       data: freezed == data
-          ? _value.data
+          ? _self.data
           : data // ignore: cast_nullable_to_non_nullable
               as TransfersPayload,
       fee: null == fee
-          ? _value.fee
+          ? _self.fee
           : fee // ignore: cast_nullable_to_non_nullable
               as int,
       version: null == version
-          ? _value.version
+          ? _self.version
           : version // ignore: cast_nullable_to_non_nullable
               as int,
       inMempool: null == inMempool
-          ? _value.inMempool
+          ? _self.inMempool
           : inMempool // ignore: cast_nullable_to_non_nullable
               as bool,
       firstSeen: freezed == firstSeen
-          ? _value.firstSeen
+          ? _self.firstSeen
           : firstSeen // ignore: cast_nullable_to_non_nullable
               as int?,
       nonce: null == nonce
-          ? _value.nonce
+          ? _self.nonce
           : nonce // ignore: cast_nullable_to_non_nullable
               as int,
       source: null == source
-          ? _value.source
+          ? _self.source
           : source // ignore: cast_nullable_to_non_nullable
               as String,
       rangeProof: null == rangeProof
-          ? _value._rangeProof
+          ? _self.rangeProof
           : rangeProof // ignore: cast_nullable_to_non_nullable
               as List<dynamic>,
       sourceCommitments: null == sourceCommitments
-          ? _value._sourceCommitments
+          ? _self.sourceCommitments
           : sourceCommitments // ignore: cast_nullable_to_non_nullable
               as List<dynamic>,
       reference: null == reference
-          ? _value._reference
+          ? _self.reference
           : reference // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>,
       signature: null == signature
-          ? _value.signature
+          ? _self.signature
           : signature // ignore: cast_nullable_to_non_nullable
               as String,
       size: null == size
-          ? _value.size
+          ? _self.size
           : size // ignore: cast_nullable_to_non_nullable
               as int,
     ));
@@ -303,8 +231,8 @@ class __$$TransactionResponseImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$TransactionResponseImpl implements _TransactionResponse {
-  const _$TransactionResponseImpl(
+class _TransactionResponse implements TransactionResponse {
+  const _TransactionResponse(
       {@JsonKey(name: 'blocks') final List<String>? blocks,
       @JsonKey(name: 'executed_in_block') this.executedInBlock,
       @JsonKey(name: 'hash') required this.hash,
@@ -325,9 +253,8 @@ class _$TransactionResponseImpl implements _TransactionResponse {
         _rangeProof = rangeProof,
         _sourceCommitments = sourceCommitments,
         _reference = reference;
-
-  factory _$TransactionResponseImpl.fromJson(Map<String, dynamic> json) =>
-      _$$TransactionResponseImplFromJson(json);
+  factory _TransactionResponse.fromJson(Map<String, dynamic> json) =>
+      _$TransactionResponseFromJson(json);
 
   final List<String>? _blocks;
   @override
@@ -402,16 +329,27 @@ class _$TransactionResponseImpl implements _TransactionResponse {
   @JsonKey(name: 'size')
   final int size;
 
+  /// Create a copy of TransactionResponse
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'TransactionResponse(blocks: $blocks, executedInBlock: $executedInBlock, hash: $hash, data: $data, fee: $fee, version: $version, inMempool: $inMempool, firstSeen: $firstSeen, nonce: $nonce, source: $source, rangeProof: $rangeProof, sourceCommitments: $sourceCommitments, reference: $reference, signature: $signature, size: $size)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$TransactionResponseCopyWith<_TransactionResponse> get copyWith =>
+      __$TransactionResponseCopyWithImpl<_TransactionResponse>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$TransactionResponseToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$TransactionResponseImpl &&
+            other is _TransactionResponse &&
             const DeepCollectionEquality().equals(other._blocks, _blocks) &&
             (identical(other.executedInBlock, executedInBlock) ||
                 other.executedInBlock == executedInBlock) &&
@@ -456,96 +394,130 @@ class _$TransactionResponseImpl implements _TransactionResponse {
       signature,
       size);
 
-  /// Create a copy of TransactionResponse
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$TransactionResponseImplCopyWith<_$TransactionResponseImpl> get copyWith =>
-      __$$TransactionResponseImplCopyWithImpl<_$TransactionResponseImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$TransactionResponseImplToJson(
-      this,
-    );
+  String toString() {
+    return 'TransactionResponse(blocks: $blocks, executedInBlock: $executedInBlock, hash: $hash, data: $data, fee: $fee, version: $version, inMempool: $inMempool, firstSeen: $firstSeen, nonce: $nonce, source: $source, rangeProof: $rangeProof, sourceCommitments: $sourceCommitments, reference: $reference, signature: $signature, size: $size)';
   }
 }
 
-abstract class _TransactionResponse implements TransactionResponse {
-  const factory _TransactionResponse(
-      {@JsonKey(name: 'blocks') final List<String>? blocks,
-      @JsonKey(name: 'executed_in_block') final String? executedInBlock,
-      @JsonKey(name: 'hash') required final String hash,
-      @JsonKey(name: 'data') required final TransfersPayload data,
-      @JsonKey(name: 'fee') required final int fee,
-      @JsonKey(name: 'version') required final int version,
-      @JsonKey(name: 'in_mempool') required final bool inMempool,
-      @JsonKey(name: 'first_seen') final int? firstSeen,
-      @JsonKey(name: 'nonce') required final int nonce,
-      @JsonKey(name: 'source') required final String source,
-      @JsonKey(name: 'range_proof') required final List<dynamic> rangeProof,
-      @JsonKey(name: 'source_commitments')
-      required final List<dynamic> sourceCommitments,
-      @JsonKey(name: 'reference') required final Map<String, dynamic> reference,
-      @JsonKey(name: 'signature') required final String signature,
-      @JsonKey(name: 'size')
-      required final int size}) = _$TransactionResponseImpl;
+/// @nodoc
+abstract mixin class _$TransactionResponseCopyWith<$Res>
+    implements $TransactionResponseCopyWith<$Res> {
+  factory _$TransactionResponseCopyWith(_TransactionResponse value,
+          $Res Function(_TransactionResponse) _then) =
+      __$TransactionResponseCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'blocks') List<String>? blocks,
+      @JsonKey(name: 'executed_in_block') String? executedInBlock,
+      @JsonKey(name: 'hash') String hash,
+      @JsonKey(name: 'data') TransfersPayload data,
+      @JsonKey(name: 'fee') int fee,
+      @JsonKey(name: 'version') int version,
+      @JsonKey(name: 'in_mempool') bool inMempool,
+      @JsonKey(name: 'first_seen') int? firstSeen,
+      @JsonKey(name: 'nonce') int nonce,
+      @JsonKey(name: 'source') String source,
+      @JsonKey(name: 'range_proof') List<dynamic> rangeProof,
+      @JsonKey(name: 'source_commitments') List<dynamic> sourceCommitments,
+      @JsonKey(name: 'reference') Map<String, dynamic> reference,
+      @JsonKey(name: 'signature') String signature,
+      @JsonKey(name: 'size') int size});
+}
 
-  factory _TransactionResponse.fromJson(Map<String, dynamic> json) =
-      _$TransactionResponseImpl.fromJson;
+/// @nodoc
+class __$TransactionResponseCopyWithImpl<$Res>
+    implements _$TransactionResponseCopyWith<$Res> {
+  __$TransactionResponseCopyWithImpl(this._self, this._then);
 
-  @override
-  @JsonKey(name: 'blocks')
-  List<String>? get blocks;
-  @override
-  @JsonKey(name: 'executed_in_block')
-  String? get executedInBlock;
-  @override
-  @JsonKey(name: 'hash')
-  String get hash;
-  @override
-  @JsonKey(name: 'data')
-  TransfersPayload get data;
-  @override
-  @JsonKey(name: 'fee')
-  int get fee;
-  @override
-  @JsonKey(name: 'version')
-  int get version;
-  @override
-  @JsonKey(name: 'in_mempool')
-  bool get inMempool;
-  @override
-  @JsonKey(name: 'first_seen')
-  int? get firstSeen;
-  @override
-  @JsonKey(name: 'nonce')
-  int get nonce;
-  @override
-  @JsonKey(name: 'source')
-  String get source;
-  @override
-  @JsonKey(name: 'range_proof')
-  List<dynamic> get rangeProof;
-  @override
-  @JsonKey(name: 'source_commitments')
-  List<dynamic> get sourceCommitments;
-  @override
-  @JsonKey(name: 'reference')
-  Map<String, dynamic> get reference;
-  @override
-  @JsonKey(name: 'signature')
-  String get signature;
-  @override
-  @JsonKey(name: 'size')
-  int get size;
+  final _TransactionResponse _self;
+  final $Res Function(_TransactionResponse) _then;
 
   /// Create a copy of TransactionResponse
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$TransactionResponseImplCopyWith<_$TransactionResponseImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? blocks = freezed,
+    Object? executedInBlock = freezed,
+    Object? hash = null,
+    Object? data = freezed,
+    Object? fee = null,
+    Object? version = null,
+    Object? inMempool = null,
+    Object? firstSeen = freezed,
+    Object? nonce = null,
+    Object? source = null,
+    Object? rangeProof = null,
+    Object? sourceCommitments = null,
+    Object? reference = null,
+    Object? signature = null,
+    Object? size = null,
+  }) {
+    return _then(_TransactionResponse(
+      blocks: freezed == blocks
+          ? _self._blocks
+          : blocks // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      executedInBlock: freezed == executedInBlock
+          ? _self.executedInBlock
+          : executedInBlock // ignore: cast_nullable_to_non_nullable
+              as String?,
+      hash: null == hash
+          ? _self.hash
+          : hash // ignore: cast_nullable_to_non_nullable
+              as String,
+      data: freezed == data
+          ? _self.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as TransfersPayload,
+      fee: null == fee
+          ? _self.fee
+          : fee // ignore: cast_nullable_to_non_nullable
+              as int,
+      version: null == version
+          ? _self.version
+          : version // ignore: cast_nullable_to_non_nullable
+              as int,
+      inMempool: null == inMempool
+          ? _self.inMempool
+          : inMempool // ignore: cast_nullable_to_non_nullable
+              as bool,
+      firstSeen: freezed == firstSeen
+          ? _self.firstSeen
+          : firstSeen // ignore: cast_nullable_to_non_nullable
+              as int?,
+      nonce: null == nonce
+          ? _self.nonce
+          : nonce // ignore: cast_nullable_to_non_nullable
+              as int,
+      source: null == source
+          ? _self.source
+          : source // ignore: cast_nullable_to_non_nullable
+              as String,
+      rangeProof: null == rangeProof
+          ? _self._rangeProof
+          : rangeProof // ignore: cast_nullable_to_non_nullable
+              as List<dynamic>,
+      sourceCommitments: null == sourceCommitments
+          ? _self._sourceCommitments
+          : sourceCommitments // ignore: cast_nullable_to_non_nullable
+              as List<dynamic>,
+      reference: null == reference
+          ? _self._reference
+          : reference // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>,
+      signature: null == signature
+          ? _self.signature
+          : signature // ignore: cast_nullable_to_non_nullable
+              as String,
+      size: null == size
+          ? _self.size
+          : size // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
 }
+
+// dart format on

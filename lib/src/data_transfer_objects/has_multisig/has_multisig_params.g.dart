@@ -8,15 +8,13 @@ part of 'has_multisig_params.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$HasMultisigParamsImpl _$$HasMultisigParamsImplFromJson(
-        Map<String, dynamic> json) =>
-    _$HasMultisigParamsImpl(
+_HasMultisigParams _$HasMultisigParamsFromJson(Map<String, dynamic> json) =>
+    _HasMultisigParams(
       address: json['address'] as String,
       topoheight: (json['topoheight'] as num?)?.toInt(),
     );
 
-Map<String, dynamic> _$$HasMultisigParamsImplToJson(
-        _$HasMultisigParamsImpl instance) =>
+Map<String, dynamic> _$HasMultisigParamsToJson(_HasMultisigParams instance) =>
     <String, dynamic>{
       'address': instance.address,
       if (instance.topoheight case final value?) 'topoheight': value,

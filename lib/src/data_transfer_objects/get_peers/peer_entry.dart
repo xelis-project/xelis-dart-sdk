@@ -9,7 +9,7 @@ part 'peer_entry.g.dart';
 
 /// @nodoc
 @freezed
-class PeerEntry with _$PeerEntry {
+abstract class PeerEntry with _$PeerEntry {
   /// @nodoc
   const factory PeerEntry({
     @JsonKey(name: 'addr') required String address,

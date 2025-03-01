@@ -8,15 +8,15 @@ part of 'get_account_registration_topoheight_params.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$GetAccountRegistrationTopoheightParamsImpl
-    _$$GetAccountRegistrationTopoheightParamsImplFromJson(
+_GetAccountRegistrationTopoheightParams
+    _$GetAccountRegistrationTopoheightParamsFromJson(
             Map<String, dynamic> json) =>
-        _$GetAccountRegistrationTopoheightParamsImpl(
+        _GetAccountRegistrationTopoheightParams(
           address: json['address'] as String,
         );
 
-Map<String, dynamic> _$$GetAccountRegistrationTopoheightParamsImplToJson(
-        _$GetAccountRegistrationTopoheightParamsImpl instance) =>
+Map<String, dynamic> _$GetAccountRegistrationTopoheightParamsToJson(
+        _GetAccountRegistrationTopoheightParams instance) =>
     <String, dynamic>{
       'address': instance.address,
     };

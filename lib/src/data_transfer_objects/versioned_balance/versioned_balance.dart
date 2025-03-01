@@ -8,7 +8,7 @@ part 'versioned_balance.g.dart';
 
 /// @nodoc
 @freezed
-class VersionedBalance with _$VersionedBalance {
+abstract class VersionedBalance with _$VersionedBalance {
   /// @nodoc
   const factory VersionedBalance({
     @JsonKey(name: 'balance_type') required String balanceType,

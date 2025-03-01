@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,84 +10,52 @@ part of 'peer_peer_list_updated_event.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-PeerPeerListUpdatedEvent _$PeerPeerListUpdatedEventFromJson(
-    Map<String, dynamic> json) {
-  return _PeerPeerListUpdatedEvent.fromJson(json);
-}
 
 /// @nodoc
 mixin _$PeerPeerListUpdatedEvent {
   @JsonKey(name: 'peer_id')
-  num get id => throw _privateConstructorUsedError;
+  num get id;
   @JsonKey(name: 'peerlist')
-  List<String> get peerList => throw _privateConstructorUsedError;
-
-  /// Serializes this PeerPeerListUpdatedEvent to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  List<String> get peerList;
 
   /// Create a copy of PeerPeerListUpdatedEvent
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $PeerPeerListUpdatedEventCopyWith<PeerPeerListUpdatedEvent> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $PeerPeerListUpdatedEventCopyWith<$Res> {
-  factory $PeerPeerListUpdatedEventCopyWith(PeerPeerListUpdatedEvent value,
-          $Res Function(PeerPeerListUpdatedEvent) then) =
-      _$PeerPeerListUpdatedEventCopyWithImpl<$Res, PeerPeerListUpdatedEvent>;
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'peer_id') num id,
-      @JsonKey(name: 'peerlist') List<String> peerList});
-}
-
-/// @nodoc
-class _$PeerPeerListUpdatedEventCopyWithImpl<$Res,
-        $Val extends PeerPeerListUpdatedEvent>
-    implements $PeerPeerListUpdatedEventCopyWith<$Res> {
-  _$PeerPeerListUpdatedEventCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of PeerPeerListUpdatedEvent
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $PeerPeerListUpdatedEventCopyWith<PeerPeerListUpdatedEvent> get copyWith =>
+      _$PeerPeerListUpdatedEventCopyWithImpl<PeerPeerListUpdatedEvent>(
+          this as PeerPeerListUpdatedEvent, _$identity);
+
+  /// Serializes this PeerPeerListUpdatedEvent to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? id = null,
-    Object? peerList = null,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as num,
-      peerList: null == peerList
-          ? _value.peerList
-          : peerList // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is PeerPeerListUpdatedEvent &&
+            (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality().equals(other.peerList, peerList));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, id, const DeepCollectionEquality().hash(peerList));
+
+  @override
+  String toString() {
+    return 'PeerPeerListUpdatedEvent(id: $id, peerList: $peerList)';
   }
 }
 
 /// @nodoc
-abstract class _$$PeerPeerListUpdatedEventImplCopyWith<$Res>
-    implements $PeerPeerListUpdatedEventCopyWith<$Res> {
-  factory _$$PeerPeerListUpdatedEventImplCopyWith(
-          _$PeerPeerListUpdatedEventImpl value,
-          $Res Function(_$PeerPeerListUpdatedEventImpl) then) =
-      __$$PeerPeerListUpdatedEventImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $PeerPeerListUpdatedEventCopyWith<$Res> {
+  factory $PeerPeerListUpdatedEventCopyWith(PeerPeerListUpdatedEvent value,
+          $Res Function(PeerPeerListUpdatedEvent) _then) =
+      _$PeerPeerListUpdatedEventCopyWithImpl;
   @useResult
   $Res call(
       {@JsonKey(name: 'peer_id') num id,
@@ -94,14 +63,12 @@ abstract class _$$PeerPeerListUpdatedEventImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$PeerPeerListUpdatedEventImplCopyWithImpl<$Res>
-    extends _$PeerPeerListUpdatedEventCopyWithImpl<$Res,
-        _$PeerPeerListUpdatedEventImpl>
-    implements _$$PeerPeerListUpdatedEventImplCopyWith<$Res> {
-  __$$PeerPeerListUpdatedEventImplCopyWithImpl(
-      _$PeerPeerListUpdatedEventImpl _value,
-      $Res Function(_$PeerPeerListUpdatedEventImpl) _then)
-      : super(_value, _then);
+class _$PeerPeerListUpdatedEventCopyWithImpl<$Res>
+    implements $PeerPeerListUpdatedEventCopyWith<$Res> {
+  _$PeerPeerListUpdatedEventCopyWithImpl(this._self, this._then);
+
+  final PeerPeerListUpdatedEvent _self;
+  final $Res Function(PeerPeerListUpdatedEvent) _then;
 
   /// Create a copy of PeerPeerListUpdatedEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -111,13 +78,13 @@ class __$$PeerPeerListUpdatedEventImplCopyWithImpl<$Res>
     Object? id = null,
     Object? peerList = null,
   }) {
-    return _then(_$PeerPeerListUpdatedEventImpl(
+    return _then(_self.copyWith(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as num,
       peerList: null == peerList
-          ? _value._peerList
+          ? _self.peerList
           : peerList // ignore: cast_nullable_to_non_nullable
               as List<String>,
     ));
@@ -126,14 +93,13 @@ class __$$PeerPeerListUpdatedEventImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$PeerPeerListUpdatedEventImpl implements _PeerPeerListUpdatedEvent {
-  const _$PeerPeerListUpdatedEventImpl(
+class _PeerPeerListUpdatedEvent implements PeerPeerListUpdatedEvent {
+  const _PeerPeerListUpdatedEvent(
       {@JsonKey(name: 'peer_id') required this.id,
       @JsonKey(name: 'peerlist') required final List<String> peerList})
       : _peerList = peerList;
-
-  factory _$PeerPeerListUpdatedEventImpl.fromJson(Map<String, dynamic> json) =>
-      _$$PeerPeerListUpdatedEventImplFromJson(json);
+  factory _PeerPeerListUpdatedEvent.fromJson(Map<String, dynamic> json) =>
+      _$PeerPeerListUpdatedEventFromJson(json);
 
   @override
   @JsonKey(name: 'peer_id')
@@ -147,16 +113,27 @@ class _$PeerPeerListUpdatedEventImpl implements _PeerPeerListUpdatedEvent {
     return EqualUnmodifiableListView(_peerList);
   }
 
+  /// Create a copy of PeerPeerListUpdatedEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'PeerPeerListUpdatedEvent(id: $id, peerList: $peerList)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$PeerPeerListUpdatedEventCopyWith<_PeerPeerListUpdatedEvent> get copyWith =>
+      __$PeerPeerListUpdatedEventCopyWithImpl<_PeerPeerListUpdatedEvent>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$PeerPeerListUpdatedEventToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$PeerPeerListUpdatedEventImpl &&
+            other is _PeerPeerListUpdatedEvent &&
             (identical(other.id, id) || other.id == id) &&
             const DeepCollectionEquality().equals(other._peerList, _peerList));
   }
@@ -166,43 +143,52 @@ class _$PeerPeerListUpdatedEventImpl implements _PeerPeerListUpdatedEvent {
   int get hashCode => Object.hash(
       runtimeType, id, const DeepCollectionEquality().hash(_peerList));
 
-  /// Create a copy of PeerPeerListUpdatedEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$PeerPeerListUpdatedEventImplCopyWith<_$PeerPeerListUpdatedEventImpl>
-      get copyWith => __$$PeerPeerListUpdatedEventImplCopyWithImpl<
-          _$PeerPeerListUpdatedEventImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$PeerPeerListUpdatedEventImplToJson(
-      this,
-    );
+  String toString() {
+    return 'PeerPeerListUpdatedEvent(id: $id, peerList: $peerList)';
   }
 }
 
-abstract class _PeerPeerListUpdatedEvent implements PeerPeerListUpdatedEvent {
-  const factory _PeerPeerListUpdatedEvent(
-          {@JsonKey(name: 'peer_id') required final num id,
-          @JsonKey(name: 'peerlist') required final List<String> peerList}) =
-      _$PeerPeerListUpdatedEventImpl;
-
-  factory _PeerPeerListUpdatedEvent.fromJson(Map<String, dynamic> json) =
-      _$PeerPeerListUpdatedEventImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$PeerPeerListUpdatedEventCopyWith<$Res>
+    implements $PeerPeerListUpdatedEventCopyWith<$Res> {
+  factory _$PeerPeerListUpdatedEventCopyWith(_PeerPeerListUpdatedEvent value,
+          $Res Function(_PeerPeerListUpdatedEvent) _then) =
+      __$PeerPeerListUpdatedEventCopyWithImpl;
   @override
-  @JsonKey(name: 'peer_id')
-  num get id;
-  @override
-  @JsonKey(name: 'peerlist')
-  List<String> get peerList;
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'peer_id') num id,
+      @JsonKey(name: 'peerlist') List<String> peerList});
+}
+
+/// @nodoc
+class __$PeerPeerListUpdatedEventCopyWithImpl<$Res>
+    implements _$PeerPeerListUpdatedEventCopyWith<$Res> {
+  __$PeerPeerListUpdatedEventCopyWithImpl(this._self, this._then);
+
+  final _PeerPeerListUpdatedEvent _self;
+  final $Res Function(_PeerPeerListUpdatedEvent) _then;
 
   /// Create a copy of PeerPeerListUpdatedEvent
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$PeerPeerListUpdatedEventImplCopyWith<_$PeerPeerListUpdatedEventImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = null,
+    Object? peerList = null,
+  }) {
+    return _then(_PeerPeerListUpdatedEvent(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as num,
+      peerList: null == peerList
+          ? _self._peerList
+          : peerList // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+    ));
+  }
 }
+
+// dart format on

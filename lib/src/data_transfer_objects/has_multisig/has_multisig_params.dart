@@ -7,7 +7,7 @@ part 'has_multisig_params.g.dart';
 
 /// @nodoc
 @freezed
-class HasMultisigParams with _$HasMultisigParams {
+abstract class HasMultisigParams with _$HasMultisigParams {
   /// @nodoc
   @JsonSerializable(includeIfNull: false)
   const factory HasMultisigParams({

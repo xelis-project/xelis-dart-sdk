@@ -8,7 +8,7 @@ part 'estimate_extra_data_size_params.g.dart';
 
 /// @nodoc
 @freezed
-class EstimateExtraDataSizeParams with _$EstimateExtraDataSizeParams {
+abstract class EstimateExtraDataSizeParams with _$EstimateExtraDataSizeParams {
   /// @nodoc
   const factory EstimateExtraDataSizeParams({
     @JsonKey(name: 'destinations') required List<String> destinations,

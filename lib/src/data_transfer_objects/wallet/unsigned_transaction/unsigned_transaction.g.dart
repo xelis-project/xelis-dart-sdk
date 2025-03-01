@@ -8,9 +8,8 @@ part of 'unsigned_transaction.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$UnsignedTransactionImpl _$$UnsignedTransactionImplFromJson(
-        Map<String, dynamic> json) =>
-    _$UnsignedTransactionImpl(
+_UnsignedTransaction _$UnsignedTransactionFromJson(Map<String, dynamic> json) =>
+    _UnsignedTransaction(
       data: TransactionType.fromJson(json['data'] as Map<String, dynamic>),
       fee: (json['fee'] as num).toInt(),
       version: (json['version'] as num).toInt(),
@@ -30,8 +29,8 @@ _$UnsignedTransactionImpl _$$UnsignedTransactionImplFromJson(
           : Multisig.fromJson(json['multiSig'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$UnsignedTransactionImplToJson(
-        _$UnsignedTransactionImpl instance) =>
+Map<String, dynamic> _$UnsignedTransactionToJson(
+        _UnsignedTransaction instance) =>
     <String, dynamic>{
       'data': instance.data,
       'fee': instance.fee,

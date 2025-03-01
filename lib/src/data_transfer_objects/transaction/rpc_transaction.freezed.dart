@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,48 +10,89 @@ part of 'rpc_transaction.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$RPCTransaction {
   @JsonKey(name: 'hash')
-  String get hash => throw _privateConstructorUsedError;
+  String get hash;
   @JsonKey(name: 'data')
-  TransactionType get data => throw _privateConstructorUsedError;
+  TransactionType get data;
   @JsonKey(name: 'fee')
-  int get fee => throw _privateConstructorUsedError;
+  int get fee;
   @JsonKey(name: 'version')
-  int get version => throw _privateConstructorUsedError;
+  int get version;
   @JsonKey(name: 'nonce')
-  int get nonce => throw _privateConstructorUsedError;
+  int get nonce;
   @JsonKey(name: 'source')
-  String get source => throw _privateConstructorUsedError;
+  String get source;
   @JsonKey(name: 'range_proof')
-  List<dynamic> get rangeProof => throw _privateConstructorUsedError;
+  List<dynamic> get rangeProof;
   @JsonKey(name: 'source_commitments')
-  List<dynamic> get sourceCommitments => throw _privateConstructorUsedError;
+  List<dynamic> get sourceCommitments;
   @JsonKey(name: 'reference')
-  Map<String, dynamic> get reference => throw _privateConstructorUsedError;
+  Map<String, dynamic> get reference;
   @JsonKey(name: 'signature')
-  String get signature => throw _privateConstructorUsedError;
+  String get signature;
   @JsonKey(name: 'size')
-  int get size => throw _privateConstructorUsedError;
+  int get size;
 
   /// Create a copy of RPCTransaction
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $RPCTransactionCopyWith<RPCTransaction> get copyWith =>
-      throw _privateConstructorUsedError;
+      _$RPCTransactionCopyWithImpl<RPCTransaction>(
+          this as RPCTransaction, _$identity);
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is RPCTransaction &&
+            (identical(other.hash, hash) || other.hash == hash) &&
+            (identical(other.data, data) || other.data == data) &&
+            (identical(other.fee, fee) || other.fee == fee) &&
+            (identical(other.version, version) || other.version == version) &&
+            (identical(other.nonce, nonce) || other.nonce == nonce) &&
+            (identical(other.source, source) || other.source == source) &&
+            const DeepCollectionEquality()
+                .equals(other.rangeProof, rangeProof) &&
+            const DeepCollectionEquality()
+                .equals(other.sourceCommitments, sourceCommitments) &&
+            const DeepCollectionEquality().equals(other.reference, reference) &&
+            (identical(other.signature, signature) ||
+                other.signature == signature) &&
+            (identical(other.size, size) || other.size == size));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      hash,
+      data,
+      fee,
+      version,
+      nonce,
+      source,
+      const DeepCollectionEquality().hash(rangeProof),
+      const DeepCollectionEquality().hash(sourceCommitments),
+      const DeepCollectionEquality().hash(reference),
+      signature,
+      size);
+
+  @override
+  String toString() {
+    return 'RPCTransaction(hash: $hash, data: $data, fee: $fee, version: $version, nonce: $nonce, source: $source, rangeProof: $rangeProof, sourceCommitments: $sourceCommitments, reference: $reference, signature: $signature, size: $size)';
+  }
 }
 
 /// @nodoc
-abstract class $RPCTransactionCopyWith<$Res> {
+abstract mixin class $RPCTransactionCopyWith<$Res> {
   factory $RPCTransactionCopyWith(
-          RPCTransaction value, $Res Function(RPCTransaction) then) =
-      _$RPCTransactionCopyWithImpl<$Res, RPCTransaction>;
+          RPCTransaction value, $Res Function(RPCTransaction) _then) =
+      _$RPCTransactionCopyWithImpl;
   @useResult
   $Res call(
       {@JsonKey(name: 'hash') String hash,
@@ -69,14 +111,12 @@ abstract class $RPCTransactionCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$RPCTransactionCopyWithImpl<$Res, $Val extends RPCTransaction>
+class _$RPCTransactionCopyWithImpl<$Res>
     implements $RPCTransactionCopyWith<$Res> {
-  _$RPCTransactionCopyWithImpl(this._value, this._then);
+  _$RPCTransactionCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final RPCTransaction _self;
+  final $Res Function(RPCTransaction) _then;
 
   /// Create a copy of RPCTransaction
   /// with the given fields replaced by the non-null parameter values.
@@ -95,52 +135,52 @@ class _$RPCTransactionCopyWithImpl<$Res, $Val extends RPCTransaction>
     Object? signature = null,
     Object? size = null,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       hash: null == hash
-          ? _value.hash
+          ? _self.hash
           : hash // ignore: cast_nullable_to_non_nullable
               as String,
       data: null == data
-          ? _value.data
+          ? _self.data
           : data // ignore: cast_nullable_to_non_nullable
               as TransactionType,
       fee: null == fee
-          ? _value.fee
+          ? _self.fee
           : fee // ignore: cast_nullable_to_non_nullable
               as int,
       version: null == version
-          ? _value.version
+          ? _self.version
           : version // ignore: cast_nullable_to_non_nullable
               as int,
       nonce: null == nonce
-          ? _value.nonce
+          ? _self.nonce
           : nonce // ignore: cast_nullable_to_non_nullable
               as int,
       source: null == source
-          ? _value.source
+          ? _self.source
           : source // ignore: cast_nullable_to_non_nullable
               as String,
       rangeProof: null == rangeProof
-          ? _value.rangeProof
+          ? _self.rangeProof
           : rangeProof // ignore: cast_nullable_to_non_nullable
               as List<dynamic>,
       sourceCommitments: null == sourceCommitments
-          ? _value.sourceCommitments
+          ? _self.sourceCommitments
           : sourceCommitments // ignore: cast_nullable_to_non_nullable
               as List<dynamic>,
       reference: null == reference
-          ? _value.reference
+          ? _self.reference
           : reference // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>,
       signature: null == signature
-          ? _value.signature
+          ? _self.signature
           : signature // ignore: cast_nullable_to_non_nullable
               as String,
       size: null == size
-          ? _value.size
+          ? _self.size
           : size // ignore: cast_nullable_to_non_nullable
               as int,
-    ) as $Val);
+    ));
   }
 
   /// Create a copy of RPCTransaction
@@ -148,115 +188,16 @@ class _$RPCTransactionCopyWithImpl<$Res, $Val extends RPCTransaction>
   @override
   @pragma('vm:prefer-inline')
   $TransactionTypeCopyWith<$Res> get data {
-    return $TransactionTypeCopyWith<$Res>(_value.data, (value) {
-      return _then(_value.copyWith(data: value) as $Val);
+    return $TransactionTypeCopyWith<$Res>(_self.data, (value) {
+      return _then(_self.copyWith(data: value));
     });
   }
 }
 
 /// @nodoc
-abstract class _$$RPCTransactionImplCopyWith<$Res>
-    implements $RPCTransactionCopyWith<$Res> {
-  factory _$$RPCTransactionImplCopyWith(_$RPCTransactionImpl value,
-          $Res Function(_$RPCTransactionImpl) then) =
-      __$$RPCTransactionImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'hash') String hash,
-      @JsonKey(name: 'data') TransactionType data,
-      @JsonKey(name: 'fee') int fee,
-      @JsonKey(name: 'version') int version,
-      @JsonKey(name: 'nonce') int nonce,
-      @JsonKey(name: 'source') String source,
-      @JsonKey(name: 'range_proof') List<dynamic> rangeProof,
-      @JsonKey(name: 'source_commitments') List<dynamic> sourceCommitments,
-      @JsonKey(name: 'reference') Map<String, dynamic> reference,
-      @JsonKey(name: 'signature') String signature,
-      @JsonKey(name: 'size') int size});
 
-  @override
-  $TransactionTypeCopyWith<$Res> get data;
-}
-
-/// @nodoc
-class __$$RPCTransactionImplCopyWithImpl<$Res>
-    extends _$RPCTransactionCopyWithImpl<$Res, _$RPCTransactionImpl>
-    implements _$$RPCTransactionImplCopyWith<$Res> {
-  __$$RPCTransactionImplCopyWithImpl(
-      _$RPCTransactionImpl _value, $Res Function(_$RPCTransactionImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of RPCTransaction
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? hash = null,
-    Object? data = null,
-    Object? fee = null,
-    Object? version = null,
-    Object? nonce = null,
-    Object? source = null,
-    Object? rangeProof = null,
-    Object? sourceCommitments = null,
-    Object? reference = null,
-    Object? signature = null,
-    Object? size = null,
-  }) {
-    return _then(_$RPCTransactionImpl(
-      hash: null == hash
-          ? _value.hash
-          : hash // ignore: cast_nullable_to_non_nullable
-              as String,
-      data: null == data
-          ? _value.data
-          : data // ignore: cast_nullable_to_non_nullable
-              as TransactionType,
-      fee: null == fee
-          ? _value.fee
-          : fee // ignore: cast_nullable_to_non_nullable
-              as int,
-      version: null == version
-          ? _value.version
-          : version // ignore: cast_nullable_to_non_nullable
-              as int,
-      nonce: null == nonce
-          ? _value.nonce
-          : nonce // ignore: cast_nullable_to_non_nullable
-              as int,
-      source: null == source
-          ? _value.source
-          : source // ignore: cast_nullable_to_non_nullable
-              as String,
-      rangeProof: null == rangeProof
-          ? _value._rangeProof
-          : rangeProof // ignore: cast_nullable_to_non_nullable
-              as List<dynamic>,
-      sourceCommitments: null == sourceCommitments
-          ? _value._sourceCommitments
-          : sourceCommitments // ignore: cast_nullable_to_non_nullable
-              as List<dynamic>,
-      reference: null == reference
-          ? _value._reference
-          : reference // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
-      signature: null == signature
-          ? _value.signature
-          : signature // ignore: cast_nullable_to_non_nullable
-              as String,
-      size: null == size
-          ? _value.size
-          : size // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$RPCTransactionImpl extends _RPCTransaction {
-  _$RPCTransactionImpl(
+class _RPCTransaction extends RPCTransaction {
+  _RPCTransaction(
       {@JsonKey(name: 'hash') required this.hash,
       @JsonKey(name: 'data') required this.data,
       @JsonKey(name: 'fee') required this.fee,
@@ -327,16 +268,19 @@ class _$RPCTransactionImpl extends _RPCTransaction {
   @JsonKey(name: 'size')
   final int size;
 
+  /// Create a copy of RPCTransaction
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'RPCTransaction(hash: $hash, data: $data, fee: $fee, version: $version, nonce: $nonce, source: $source, rangeProof: $rangeProof, sourceCommitments: $sourceCommitments, reference: $reference, signature: $signature, size: $size)';
-  }
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$RPCTransactionCopyWith<_RPCTransaction> get copyWith =>
+      __$RPCTransactionCopyWithImpl<_RPCTransaction>(this, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RPCTransactionImpl &&
+            other is _RPCTransaction &&
             (identical(other.hash, hash) || other.hash == hash) &&
             (identical(other.data, data) || other.data == data) &&
             (identical(other.fee, fee) || other.fee == fee) &&
@@ -369,70 +313,119 @@ class _$RPCTransactionImpl extends _RPCTransaction {
       signature,
       size);
 
+  @override
+  String toString() {
+    return 'RPCTransaction(hash: $hash, data: $data, fee: $fee, version: $version, nonce: $nonce, source: $source, rangeProof: $rangeProof, sourceCommitments: $sourceCommitments, reference: $reference, signature: $signature, size: $size)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$RPCTransactionCopyWith<$Res>
+    implements $RPCTransactionCopyWith<$Res> {
+  factory _$RPCTransactionCopyWith(
+          _RPCTransaction value, $Res Function(_RPCTransaction) _then) =
+      __$RPCTransactionCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'hash') String hash,
+      @JsonKey(name: 'data') TransactionType data,
+      @JsonKey(name: 'fee') int fee,
+      @JsonKey(name: 'version') int version,
+      @JsonKey(name: 'nonce') int nonce,
+      @JsonKey(name: 'source') String source,
+      @JsonKey(name: 'range_proof') List<dynamic> rangeProof,
+      @JsonKey(name: 'source_commitments') List<dynamic> sourceCommitments,
+      @JsonKey(name: 'reference') Map<String, dynamic> reference,
+      @JsonKey(name: 'signature') String signature,
+      @JsonKey(name: 'size') int size});
+
+  @override
+  $TransactionTypeCopyWith<$Res> get data;
+}
+
+/// @nodoc
+class __$RPCTransactionCopyWithImpl<$Res>
+    implements _$RPCTransactionCopyWith<$Res> {
+  __$RPCTransactionCopyWithImpl(this._self, this._then);
+
+  final _RPCTransaction _self;
+  final $Res Function(_RPCTransaction) _then;
+
   /// Create a copy of RPCTransaction
   /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$RPCTransactionImplCopyWith<_$RPCTransactionImpl> get copyWith =>
-      __$$RPCTransactionImplCopyWithImpl<_$RPCTransactionImpl>(
-          this, _$identity);
-}
-
-abstract class _RPCTransaction extends RPCTransaction {
-  factory _RPCTransaction(
-      {@JsonKey(name: 'hash') required final String hash,
-      @JsonKey(name: 'data') required final TransactionType data,
-      @JsonKey(name: 'fee') required final int fee,
-      @JsonKey(name: 'version') required final int version,
-      @JsonKey(name: 'nonce') required final int nonce,
-      @JsonKey(name: 'source') required final String source,
-      @JsonKey(name: 'range_proof') required final List<dynamic> rangeProof,
-      @JsonKey(name: 'source_commitments')
-      required final List<dynamic> sourceCommitments,
-      @JsonKey(name: 'reference') required final Map<String, dynamic> reference,
-      @JsonKey(name: 'signature') required final String signature,
-      @JsonKey(name: 'size') required final int size}) = _$RPCTransactionImpl;
-  _RPCTransaction._() : super._();
-
-  @override
-  @JsonKey(name: 'hash')
-  String get hash;
-  @override
-  @JsonKey(name: 'data')
-  TransactionType get data;
-  @override
-  @JsonKey(name: 'fee')
-  int get fee;
-  @override
-  @JsonKey(name: 'version')
-  int get version;
-  @override
-  @JsonKey(name: 'nonce')
-  int get nonce;
-  @override
-  @JsonKey(name: 'source')
-  String get source;
-  @override
-  @JsonKey(name: 'range_proof')
-  List<dynamic> get rangeProof;
-  @override
-  @JsonKey(name: 'source_commitments')
-  List<dynamic> get sourceCommitments;
-  @override
-  @JsonKey(name: 'reference')
-  Map<String, dynamic> get reference;
-  @override
-  @JsonKey(name: 'signature')
-  String get signature;
-  @override
-  @JsonKey(name: 'size')
-  int get size;
+  $Res call({
+    Object? hash = null,
+    Object? data = null,
+    Object? fee = null,
+    Object? version = null,
+    Object? nonce = null,
+    Object? source = null,
+    Object? rangeProof = null,
+    Object? sourceCommitments = null,
+    Object? reference = null,
+    Object? signature = null,
+    Object? size = null,
+  }) {
+    return _then(_RPCTransaction(
+      hash: null == hash
+          ? _self.hash
+          : hash // ignore: cast_nullable_to_non_nullable
+              as String,
+      data: null == data
+          ? _self.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as TransactionType,
+      fee: null == fee
+          ? _self.fee
+          : fee // ignore: cast_nullable_to_non_nullable
+              as int,
+      version: null == version
+          ? _self.version
+          : version // ignore: cast_nullable_to_non_nullable
+              as int,
+      nonce: null == nonce
+          ? _self.nonce
+          : nonce // ignore: cast_nullable_to_non_nullable
+              as int,
+      source: null == source
+          ? _self.source
+          : source // ignore: cast_nullable_to_non_nullable
+              as String,
+      rangeProof: null == rangeProof
+          ? _self._rangeProof
+          : rangeProof // ignore: cast_nullable_to_non_nullable
+              as List<dynamic>,
+      sourceCommitments: null == sourceCommitments
+          ? _self._sourceCommitments
+          : sourceCommitments // ignore: cast_nullable_to_non_nullable
+              as List<dynamic>,
+      reference: null == reference
+          ? _self._reference
+          : reference // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>,
+      signature: null == signature
+          ? _self.signature
+          : signature // ignore: cast_nullable_to_non_nullable
+              as String,
+      size: null == size
+          ? _self.size
+          : size // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
 
   /// Create a copy of RPCTransaction
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$RPCTransactionImplCopyWith<_$RPCTransactionImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $TransactionTypeCopyWith<$Res> get data {
+    return $TransactionTypeCopyWith<$Res>(_self.data, (value) {
+      return _then(_self.copyWith(data: value));
+    });
+  }
 }
+
+// dart format on

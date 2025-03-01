@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,30 +10,53 @@ part of 'transaction_entry.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$TransactionEntry {
-  String get hash => throw _privateConstructorUsedError;
-  int get topoheight => throw _privateConstructorUsedError;
-  TransactionEntryType get txEntryType => throw _privateConstructorUsedError;
-  DateTime? get timestamp => throw _privateConstructorUsedError;
+  String get hash;
+  int get topoheight;
+  TransactionEntryType get txEntryType;
+  DateTime? get timestamp;
 
   /// Create a copy of TransactionEntry
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $TransactionEntryCopyWith<TransactionEntry> get copyWith =>
-      throw _privateConstructorUsedError;
+      _$TransactionEntryCopyWithImpl<TransactionEntry>(
+          this as TransactionEntry, _$identity);
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is TransactionEntry &&
+            (identical(other.hash, hash) || other.hash == hash) &&
+            (identical(other.topoheight, topoheight) ||
+                other.topoheight == topoheight) &&
+            (identical(other.txEntryType, txEntryType) ||
+                other.txEntryType == txEntryType) &&
+            (identical(other.timestamp, timestamp) ||
+                other.timestamp == timestamp));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, hash, topoheight, txEntryType, timestamp);
+
+  @override
+  String toString() {
+    return 'TransactionEntry(hash: $hash, topoheight: $topoheight, txEntryType: $txEntryType, timestamp: $timestamp)';
+  }
 }
 
 /// @nodoc
-abstract class $TransactionEntryCopyWith<$Res> {
+abstract mixin class $TransactionEntryCopyWith<$Res> {
   factory $TransactionEntryCopyWith(
-          TransactionEntry value, $Res Function(TransactionEntry) then) =
-      _$TransactionEntryCopyWithImpl<$Res, TransactionEntry>;
+          TransactionEntry value, $Res Function(TransactionEntry) _then) =
+      _$TransactionEntryCopyWithImpl;
   @useResult
   $Res call(
       {String hash,
@@ -44,14 +68,12 @@ abstract class $TransactionEntryCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$TransactionEntryCopyWithImpl<$Res, $Val extends TransactionEntry>
+class _$TransactionEntryCopyWithImpl<$Res>
     implements $TransactionEntryCopyWith<$Res> {
-  _$TransactionEntryCopyWithImpl(this._value, this._then);
+  _$TransactionEntryCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final TransactionEntry _self;
+  final $Res Function(TransactionEntry) _then;
 
   /// Create a copy of TransactionEntry
   /// with the given fields replaced by the non-null parameter values.
@@ -63,24 +85,24 @@ class _$TransactionEntryCopyWithImpl<$Res, $Val extends TransactionEntry>
     Object? txEntryType = null,
     Object? timestamp = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       hash: null == hash
-          ? _value.hash
+          ? _self.hash
           : hash // ignore: cast_nullable_to_non_nullable
               as String,
       topoheight: null == topoheight
-          ? _value.topoheight
+          ? _self.topoheight
           : topoheight // ignore: cast_nullable_to_non_nullable
               as int,
       txEntryType: null == txEntryType
-          ? _value.txEntryType
+          ? _self.txEntryType
           : txEntryType // ignore: cast_nullable_to_non_nullable
               as TransactionEntryType,
       timestamp: freezed == timestamp
-          ? _value.timestamp
+          ? _self.timestamp
           : timestamp // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-    ) as $Val);
+    ));
   }
 
   /// Create a copy of TransactionEntry
@@ -88,73 +110,16 @@ class _$TransactionEntryCopyWithImpl<$Res, $Val extends TransactionEntry>
   @override
   @pragma('vm:prefer-inline')
   $TransactionEntryTypeCopyWith<$Res> get txEntryType {
-    return $TransactionEntryTypeCopyWith<$Res>(_value.txEntryType, (value) {
-      return _then(_value.copyWith(txEntryType: value) as $Val);
+    return $TransactionEntryTypeCopyWith<$Res>(_self.txEntryType, (value) {
+      return _then(_self.copyWith(txEntryType: value));
     });
   }
 }
 
 /// @nodoc
-abstract class _$$TransactionEntryImplCopyWith<$Res>
-    implements $TransactionEntryCopyWith<$Res> {
-  factory _$$TransactionEntryImplCopyWith(_$TransactionEntryImpl value,
-          $Res Function(_$TransactionEntryImpl) then) =
-      __$$TransactionEntryImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String hash,
-      int topoheight,
-      TransactionEntryType txEntryType,
-      DateTime? timestamp});
 
-  @override
-  $TransactionEntryTypeCopyWith<$Res> get txEntryType;
-}
-
-/// @nodoc
-class __$$TransactionEntryImplCopyWithImpl<$Res>
-    extends _$TransactionEntryCopyWithImpl<$Res, _$TransactionEntryImpl>
-    implements _$$TransactionEntryImplCopyWith<$Res> {
-  __$$TransactionEntryImplCopyWithImpl(_$TransactionEntryImpl _value,
-      $Res Function(_$TransactionEntryImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of TransactionEntry
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? hash = null,
-    Object? topoheight = null,
-    Object? txEntryType = null,
-    Object? timestamp = freezed,
-  }) {
-    return _then(_$TransactionEntryImpl(
-      hash: null == hash
-          ? _value.hash
-          : hash // ignore: cast_nullable_to_non_nullable
-              as String,
-      topoheight: null == topoheight
-          ? _value.topoheight
-          : topoheight // ignore: cast_nullable_to_non_nullable
-              as int,
-      txEntryType: null == txEntryType
-          ? _value.txEntryType
-          : txEntryType // ignore: cast_nullable_to_non_nullable
-              as TransactionEntryType,
-      timestamp: freezed == timestamp
-          ? _value.timestamp
-          : timestamp // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$TransactionEntryImpl implements _TransactionEntry {
-  const _$TransactionEntryImpl(
+class _TransactionEntry implements TransactionEntry {
+  const _TransactionEntry(
       {required this.hash,
       required this.topoheight,
       required this.txEntryType,
@@ -169,16 +134,19 @@ class _$TransactionEntryImpl implements _TransactionEntry {
   @override
   final DateTime? timestamp;
 
+  /// Create a copy of TransactionEntry
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'TransactionEntry(hash: $hash, topoheight: $topoheight, txEntryType: $txEntryType, timestamp: $timestamp)';
-  }
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$TransactionEntryCopyWith<_TransactionEntry> get copyWith =>
+      __$TransactionEntryCopyWithImpl<_TransactionEntry>(this, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$TransactionEntryImpl &&
+            other is _TransactionEntry &&
             (identical(other.hash, hash) || other.hash == hash) &&
             (identical(other.topoheight, topoheight) ||
                 other.topoheight == topoheight) &&
@@ -192,36 +160,77 @@ class _$TransactionEntryImpl implements _TransactionEntry {
   int get hashCode =>
       Object.hash(runtimeType, hash, topoheight, txEntryType, timestamp);
 
+  @override
+  String toString() {
+    return 'TransactionEntry(hash: $hash, topoheight: $topoheight, txEntryType: $txEntryType, timestamp: $timestamp)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$TransactionEntryCopyWith<$Res>
+    implements $TransactionEntryCopyWith<$Res> {
+  factory _$TransactionEntryCopyWith(
+          _TransactionEntry value, $Res Function(_TransactionEntry) _then) =
+      __$TransactionEntryCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String hash,
+      int topoheight,
+      TransactionEntryType txEntryType,
+      DateTime? timestamp});
+
+  @override
+  $TransactionEntryTypeCopyWith<$Res> get txEntryType;
+}
+
+/// @nodoc
+class __$TransactionEntryCopyWithImpl<$Res>
+    implements _$TransactionEntryCopyWith<$Res> {
+  __$TransactionEntryCopyWithImpl(this._self, this._then);
+
+  final _TransactionEntry _self;
+  final $Res Function(_TransactionEntry) _then;
+
   /// Create a copy of TransactionEntry
   /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$TransactionEntryImplCopyWith<_$TransactionEntryImpl> get copyWith =>
-      __$$TransactionEntryImplCopyWithImpl<_$TransactionEntryImpl>(
-          this, _$identity);
-}
-
-abstract class _TransactionEntry implements TransactionEntry {
-  const factory _TransactionEntry(
-      {required final String hash,
-      required final int topoheight,
-      required final TransactionEntryType txEntryType,
-      final DateTime? timestamp}) = _$TransactionEntryImpl;
-
-  @override
-  String get hash;
-  @override
-  int get topoheight;
-  @override
-  TransactionEntryType get txEntryType;
-  @override
-  DateTime? get timestamp;
+  $Res call({
+    Object? hash = null,
+    Object? topoheight = null,
+    Object? txEntryType = null,
+    Object? timestamp = freezed,
+  }) {
+    return _then(_TransactionEntry(
+      hash: null == hash
+          ? _self.hash
+          : hash // ignore: cast_nullable_to_non_nullable
+              as String,
+      topoheight: null == topoheight
+          ? _self.topoheight
+          : topoheight // ignore: cast_nullable_to_non_nullable
+              as int,
+      txEntryType: null == txEntryType
+          ? _self.txEntryType
+          : txEntryType // ignore: cast_nullable_to_non_nullable
+              as TransactionEntryType,
+      timestamp: freezed == timestamp
+          ? _self.timestamp
+          : timestamp // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+    ));
+  }
 
   /// Create a copy of TransactionEntry
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$TransactionEntryImplCopyWith<_$TransactionEntryImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $TransactionEntryTypeCopyWith<$Res> get txEntryType {
+    return $TransactionEntryTypeCopyWith<$Res>(_self.txEntryType, (value) {
+      return _then(_self.copyWith(txEntryType: value));
+    });
+  }
 }
+
+// dart format on

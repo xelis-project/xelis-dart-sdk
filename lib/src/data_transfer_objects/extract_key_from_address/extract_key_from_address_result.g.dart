@@ -8,15 +8,15 @@ part of 'extract_key_from_address_result.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ExtractKeyFromAddressResultImpl _$$ExtractKeyFromAddressResultImplFromJson(
+_ExtractKeyFromAddressResult _$ExtractKeyFromAddressResultFromJson(
         Map<String, dynamic> json) =>
-    _$ExtractKeyFromAddressResultImpl(
+    _ExtractKeyFromAddressResult(
       bytes: json['bytes'],
       hex: json['hex'] as String?,
     );
 
-Map<String, dynamic> _$$ExtractKeyFromAddressResultImplToJson(
-        _$ExtractKeyFromAddressResultImpl instance) =>
+Map<String, dynamic> _$ExtractKeyFromAddressResultToJson(
+        _ExtractKeyFromAddressResult instance) =>
     <String, dynamic>{
       'bytes': instance.bytes,
       'hex': instance.hex,

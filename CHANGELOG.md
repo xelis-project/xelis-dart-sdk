@@ -1,3 +1,7 @@
+## 0.24.1
+
+chore: update Freezed to v3.
+
 ## 0.24.0
 
 Daemon API upgrade :

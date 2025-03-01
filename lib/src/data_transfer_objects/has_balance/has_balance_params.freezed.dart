@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,89 +10,55 @@ part of 'has_balance_params.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-HasBalanceParams _$HasBalanceParamsFromJson(Map<String, dynamic> json) {
-  return _HasBalanceParams.fromJson(json);
-}
 
 /// @nodoc
 mixin _$HasBalanceParams {
   @JsonKey(name: 'address')
-  String get address => throw _privateConstructorUsedError;
+  String get address;
   @JsonKey(name: 'asset')
-  String get asset => throw _privateConstructorUsedError;
+  String get asset;
   @JsonKey(name: 'topoheight')
-  int? get topoheight => throw _privateConstructorUsedError;
-
-  /// Serializes this HasBalanceParams to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  int? get topoheight;
 
   /// Create a copy of HasBalanceParams
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $HasBalanceParamsCopyWith<HasBalanceParams> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $HasBalanceParamsCopyWith<$Res> {
-  factory $HasBalanceParamsCopyWith(
-          HasBalanceParams value, $Res Function(HasBalanceParams) then) =
-      _$HasBalanceParamsCopyWithImpl<$Res, HasBalanceParams>;
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'address') String address,
-      @JsonKey(name: 'asset') String asset,
-      @JsonKey(name: 'topoheight') int? topoheight});
-}
-
-/// @nodoc
-class _$HasBalanceParamsCopyWithImpl<$Res, $Val extends HasBalanceParams>
-    implements $HasBalanceParamsCopyWith<$Res> {
-  _$HasBalanceParamsCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of HasBalanceParams
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $HasBalanceParamsCopyWith<HasBalanceParams> get copyWith =>
+      _$HasBalanceParamsCopyWithImpl<HasBalanceParams>(
+          this as HasBalanceParams, _$identity);
+
+  /// Serializes this HasBalanceParams to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? address = null,
-    Object? asset = null,
-    Object? topoheight = freezed,
-  }) {
-    return _then(_value.copyWith(
-      address: null == address
-          ? _value.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as String,
-      asset: null == asset
-          ? _value.asset
-          : asset // ignore: cast_nullable_to_non_nullable
-              as String,
-      topoheight: freezed == topoheight
-          ? _value.topoheight
-          : topoheight // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is HasBalanceParams &&
+            (identical(other.address, address) || other.address == address) &&
+            (identical(other.asset, asset) || other.asset == asset) &&
+            (identical(other.topoheight, topoheight) ||
+                other.topoheight == topoheight));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, address, asset, topoheight);
+
+  @override
+  String toString() {
+    return 'HasBalanceParams(address: $address, asset: $asset, topoheight: $topoheight)';
   }
 }
 
 /// @nodoc
-abstract class _$$HasBalanceParamsImplCopyWith<$Res>
-    implements $HasBalanceParamsCopyWith<$Res> {
-  factory _$$HasBalanceParamsImplCopyWith(_$HasBalanceParamsImpl value,
-          $Res Function(_$HasBalanceParamsImpl) then) =
-      __$$HasBalanceParamsImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $HasBalanceParamsCopyWith<$Res> {
+  factory $HasBalanceParamsCopyWith(
+          HasBalanceParams value, $Res Function(HasBalanceParams) _then) =
+      _$HasBalanceParamsCopyWithImpl;
   @useResult
   $Res call(
       {@JsonKey(name: 'address') String address,
@@ -100,12 +67,12 @@ abstract class _$$HasBalanceParamsImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$HasBalanceParamsImplCopyWithImpl<$Res>
-    extends _$HasBalanceParamsCopyWithImpl<$Res, _$HasBalanceParamsImpl>
-    implements _$$HasBalanceParamsImplCopyWith<$Res> {
-  __$$HasBalanceParamsImplCopyWithImpl(_$HasBalanceParamsImpl _value,
-      $Res Function(_$HasBalanceParamsImpl) _then)
-      : super(_value, _then);
+class _$HasBalanceParamsCopyWithImpl<$Res>
+    implements $HasBalanceParamsCopyWith<$Res> {
+  _$HasBalanceParamsCopyWithImpl(this._self, this._then);
+
+  final HasBalanceParams _self;
+  final $Res Function(HasBalanceParams) _then;
 
   /// Create a copy of HasBalanceParams
   /// with the given fields replaced by the non-null parameter values.
@@ -116,17 +83,17 @@ class __$$HasBalanceParamsImplCopyWithImpl<$Res>
     Object? asset = null,
     Object? topoheight = freezed,
   }) {
-    return _then(_$HasBalanceParamsImpl(
+    return _then(_self.copyWith(
       address: null == address
-          ? _value.address
+          ? _self.address
           : address // ignore: cast_nullable_to_non_nullable
               as String,
       asset: null == asset
-          ? _value.asset
+          ? _self.asset
           : asset // ignore: cast_nullable_to_non_nullable
               as String,
       topoheight: freezed == topoheight
-          ? _value.topoheight
+          ? _self.topoheight
           : topoheight // ignore: cast_nullable_to_non_nullable
               as int?,
     ));
@@ -136,14 +103,13 @@ class __$$HasBalanceParamsImplCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$HasBalanceParamsImpl implements _HasBalanceParams {
-  const _$HasBalanceParamsImpl(
+class _HasBalanceParams implements HasBalanceParams {
+  const _HasBalanceParams(
       {@JsonKey(name: 'address') required this.address,
       @JsonKey(name: 'asset') required this.asset,
       @JsonKey(name: 'topoheight') this.topoheight});
-
-  factory _$HasBalanceParamsImpl.fromJson(Map<String, dynamic> json) =>
-      _$$HasBalanceParamsImplFromJson(json);
+  factory _HasBalanceParams.fromJson(Map<String, dynamic> json) =>
+      _$HasBalanceParamsFromJson(json);
 
   @override
   @JsonKey(name: 'address')
@@ -155,16 +121,26 @@ class _$HasBalanceParamsImpl implements _HasBalanceParams {
   @JsonKey(name: 'topoheight')
   final int? topoheight;
 
+  /// Create a copy of HasBalanceParams
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'HasBalanceParams(address: $address, asset: $asset, topoheight: $topoheight)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$HasBalanceParamsCopyWith<_HasBalanceParams> get copyWith =>
+      __$HasBalanceParamsCopyWithImpl<_HasBalanceParams>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$HasBalanceParamsToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$HasBalanceParamsImpl &&
+            other is _HasBalanceParams &&
             (identical(other.address, address) || other.address == address) &&
             (identical(other.asset, asset) || other.asset == asset) &&
             (identical(other.topoheight, topoheight) ||
@@ -175,47 +151,58 @@ class _$HasBalanceParamsImpl implements _HasBalanceParams {
   @override
   int get hashCode => Object.hash(runtimeType, address, asset, topoheight);
 
-  /// Create a copy of HasBalanceParams
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$HasBalanceParamsImplCopyWith<_$HasBalanceParamsImpl> get copyWith =>
-      __$$HasBalanceParamsImplCopyWithImpl<_$HasBalanceParamsImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$HasBalanceParamsImplToJson(
-      this,
-    );
+  String toString() {
+    return 'HasBalanceParams(address: $address, asset: $asset, topoheight: $topoheight)';
   }
 }
 
-abstract class _HasBalanceParams implements HasBalanceParams {
-  const factory _HasBalanceParams(
-          {@JsonKey(name: 'address') required final String address,
-          @JsonKey(name: 'asset') required final String asset,
-          @JsonKey(name: 'topoheight') final int? topoheight}) =
-      _$HasBalanceParamsImpl;
+/// @nodoc
+abstract mixin class _$HasBalanceParamsCopyWith<$Res>
+    implements $HasBalanceParamsCopyWith<$Res> {
+  factory _$HasBalanceParamsCopyWith(
+          _HasBalanceParams value, $Res Function(_HasBalanceParams) _then) =
+      __$HasBalanceParamsCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'address') String address,
+      @JsonKey(name: 'asset') String asset,
+      @JsonKey(name: 'topoheight') int? topoheight});
+}
 
-  factory _HasBalanceParams.fromJson(Map<String, dynamic> json) =
-      _$HasBalanceParamsImpl.fromJson;
+/// @nodoc
+class __$HasBalanceParamsCopyWithImpl<$Res>
+    implements _$HasBalanceParamsCopyWith<$Res> {
+  __$HasBalanceParamsCopyWithImpl(this._self, this._then);
 
-  @override
-  @JsonKey(name: 'address')
-  String get address;
-  @override
-  @JsonKey(name: 'asset')
-  String get asset;
-  @override
-  @JsonKey(name: 'topoheight')
-  int? get topoheight;
+  final _HasBalanceParams _self;
+  final $Res Function(_HasBalanceParams) _then;
 
   /// Create a copy of HasBalanceParams
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$HasBalanceParamsImplCopyWith<_$HasBalanceParamsImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? address = null,
+    Object? asset = null,
+    Object? topoheight = freezed,
+  }) {
+    return _then(_HasBalanceParams(
+      address: null == address
+          ? _self.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as String,
+      asset: null == asset
+          ? _self.asset
+          : asset // ignore: cast_nullable_to_non_nullable
+              as String,
+      topoheight: freezed == topoheight
+          ? _self.topoheight
+          : topoheight // ignore: cast_nullable_to_non_nullable
+              as int?,
+    ));
+  }
 }
+
+// dart format on

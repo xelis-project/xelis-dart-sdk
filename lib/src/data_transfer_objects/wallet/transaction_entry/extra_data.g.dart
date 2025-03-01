@@ -8,13 +8,12 @@ part of 'extra_data.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ExtraDataImpl _$$ExtraDataImplFromJson(Map<String, dynamic> json) =>
-    _$ExtraDataImpl(
+_ExtraData _$ExtraDataFromJson(Map<String, dynamic> json) => _ExtraData(
       data: json['data'],
       sharedKey: json['shared_key'] as String,
     );
 
-Map<String, dynamic> _$$ExtraDataImplToJson(_$ExtraDataImpl instance) =>
+Map<String, dynamic> _$ExtraDataToJson(_ExtraData instance) =>
     <String, dynamic>{
       'data': instance.data,
       'shared_key': instance.sharedKey,

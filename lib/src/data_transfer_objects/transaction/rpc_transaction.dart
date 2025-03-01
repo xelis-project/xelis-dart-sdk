@@ -7,7 +7,7 @@ part 'rpc_transaction.freezed.dart';
 
 /// @nodoc
 @Freezed(toJson: false)
-class RPCTransaction with _$RPCTransaction {
+abstract class RPCTransaction with _$RPCTransaction {
   /// @nodoc
   factory RPCTransaction({
     @JsonKey(name: 'hash') required String hash,

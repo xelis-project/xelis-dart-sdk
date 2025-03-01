@@ -7,7 +7,7 @@ part 'transaction_entry.freezed.dart';
 
 /// @nodoc
 @freezed
-class TransactionEntry with _$TransactionEntry {
+abstract class TransactionEntry with _$TransactionEntry {
   /// @nodoc
   const factory TransactionEntry({
     required String hash,

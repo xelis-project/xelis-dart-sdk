@@ -8,7 +8,7 @@ part 'validate_address_result.g.dart';
 
 /// @nodoc
 @freezed
-class ValidateAddressResult with _$ValidateAddressResult {
+abstract class ValidateAddressResult with _$ValidateAddressResult {
   /// @nodoc
   const factory ValidateAddressResult({
     @JsonKey(name: 'is_valid') required bool isValid,

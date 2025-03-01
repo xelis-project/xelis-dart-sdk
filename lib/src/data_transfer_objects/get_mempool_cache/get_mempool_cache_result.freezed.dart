@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,100 +10,62 @@ part of 'get_mempool_cache_result.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-GetMempoolCacheResult _$GetMempoolCacheResultFromJson(
-    Map<String, dynamic> json) {
-  return _GetMempoolCacheResult.fromJson(json);
-}
 
 /// @nodoc
 mixin _$GetMempoolCacheResult {
   @JsonKey(name: 'balances')
-  Map<String, dynamic> get balances => throw _privateConstructorUsedError;
+  Map<String, dynamic> get balances;
   @JsonKey(name: 'max')
-  int get max => throw _privateConstructorUsedError;
+  int get max;
   @JsonKey(name: 'min')
-  int get min => throw _privateConstructorUsedError;
+  int get min;
   @JsonKey(name: 'txs')
-  List<String> get txs => throw _privateConstructorUsedError;
-
-  /// Serializes this GetMempoolCacheResult to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  List<String> get txs;
 
   /// Create a copy of GetMempoolCacheResult
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $GetMempoolCacheResultCopyWith<GetMempoolCacheResult> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $GetMempoolCacheResultCopyWith<$Res> {
-  factory $GetMempoolCacheResultCopyWith(GetMempoolCacheResult value,
-          $Res Function(GetMempoolCacheResult) then) =
-      _$GetMempoolCacheResultCopyWithImpl<$Res, GetMempoolCacheResult>;
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'balances') Map<String, dynamic> balances,
-      @JsonKey(name: 'max') int max,
-      @JsonKey(name: 'min') int min,
-      @JsonKey(name: 'txs') List<String> txs});
-}
-
-/// @nodoc
-class _$GetMempoolCacheResultCopyWithImpl<$Res,
-        $Val extends GetMempoolCacheResult>
-    implements $GetMempoolCacheResultCopyWith<$Res> {
-  _$GetMempoolCacheResultCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of GetMempoolCacheResult
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $GetMempoolCacheResultCopyWith<GetMempoolCacheResult> get copyWith =>
+      _$GetMempoolCacheResultCopyWithImpl<GetMempoolCacheResult>(
+          this as GetMempoolCacheResult, _$identity);
+
+  /// Serializes this GetMempoolCacheResult to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? balances = null,
-    Object? max = null,
-    Object? min = null,
-    Object? txs = null,
-  }) {
-    return _then(_value.copyWith(
-      balances: null == balances
-          ? _value.balances
-          : balances // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
-      max: null == max
-          ? _value.max
-          : max // ignore: cast_nullable_to_non_nullable
-              as int,
-      min: null == min
-          ? _value.min
-          : min // ignore: cast_nullable_to_non_nullable
-              as int,
-      txs: null == txs
-          ? _value.txs
-          : txs // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is GetMempoolCacheResult &&
+            const DeepCollectionEquality().equals(other.balances, balances) &&
+            (identical(other.max, max) || other.max == max) &&
+            (identical(other.min, min) || other.min == min) &&
+            const DeepCollectionEquality().equals(other.txs, txs));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(balances),
+      max,
+      min,
+      const DeepCollectionEquality().hash(txs));
+
+  @override
+  String toString() {
+    return 'GetMempoolCacheResult(balances: $balances, max: $max, min: $min, txs: $txs)';
   }
 }
 
 /// @nodoc
-abstract class _$$GetMempoolCacheResultImplCopyWith<$Res>
-    implements $GetMempoolCacheResultCopyWith<$Res> {
-  factory _$$GetMempoolCacheResultImplCopyWith(
-          _$GetMempoolCacheResultImpl value,
-          $Res Function(_$GetMempoolCacheResultImpl) then) =
-      __$$GetMempoolCacheResultImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $GetMempoolCacheResultCopyWith<$Res> {
+  factory $GetMempoolCacheResultCopyWith(GetMempoolCacheResult value,
+          $Res Function(GetMempoolCacheResult) _then) =
+      _$GetMempoolCacheResultCopyWithImpl;
   @useResult
   $Res call(
       {@JsonKey(name: 'balances') Map<String, dynamic> balances,
@@ -112,13 +75,12 @@ abstract class _$$GetMempoolCacheResultImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$GetMempoolCacheResultImplCopyWithImpl<$Res>
-    extends _$GetMempoolCacheResultCopyWithImpl<$Res,
-        _$GetMempoolCacheResultImpl>
-    implements _$$GetMempoolCacheResultImplCopyWith<$Res> {
-  __$$GetMempoolCacheResultImplCopyWithImpl(_$GetMempoolCacheResultImpl _value,
-      $Res Function(_$GetMempoolCacheResultImpl) _then)
-      : super(_value, _then);
+class _$GetMempoolCacheResultCopyWithImpl<$Res>
+    implements $GetMempoolCacheResultCopyWith<$Res> {
+  _$GetMempoolCacheResultCopyWithImpl(this._self, this._then);
+
+  final GetMempoolCacheResult _self;
+  final $Res Function(GetMempoolCacheResult) _then;
 
   /// Create a copy of GetMempoolCacheResult
   /// with the given fields replaced by the non-null parameter values.
@@ -130,21 +92,21 @@ class __$$GetMempoolCacheResultImplCopyWithImpl<$Res>
     Object? min = null,
     Object? txs = null,
   }) {
-    return _then(_$GetMempoolCacheResultImpl(
+    return _then(_self.copyWith(
       balances: null == balances
-          ? _value._balances
+          ? _self.balances
           : balances // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>,
       max: null == max
-          ? _value.max
+          ? _self.max
           : max // ignore: cast_nullable_to_non_nullable
               as int,
       min: null == min
-          ? _value.min
+          ? _self.min
           : min // ignore: cast_nullable_to_non_nullable
               as int,
       txs: null == txs
-          ? _value._txs
+          ? _self.txs
           : txs // ignore: cast_nullable_to_non_nullable
               as List<String>,
     ));
@@ -153,17 +115,16 @@ class __$$GetMempoolCacheResultImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$GetMempoolCacheResultImpl implements _GetMempoolCacheResult {
-  const _$GetMempoolCacheResultImpl(
+class _GetMempoolCacheResult implements GetMempoolCacheResult {
+  const _GetMempoolCacheResult(
       {@JsonKey(name: 'balances') required final Map<String, dynamic> balances,
       @JsonKey(name: 'max') required this.max,
       @JsonKey(name: 'min') required this.min,
       @JsonKey(name: 'txs') required final List<String> txs})
       : _balances = balances,
         _txs = txs;
-
-  factory _$GetMempoolCacheResultImpl.fromJson(Map<String, dynamic> json) =>
-      _$$GetMempoolCacheResultImplFromJson(json);
+  factory _GetMempoolCacheResult.fromJson(Map<String, dynamic> json) =>
+      _$GetMempoolCacheResultFromJson(json);
 
   final Map<String, dynamic> _balances;
   @override
@@ -189,16 +150,27 @@ class _$GetMempoolCacheResultImpl implements _GetMempoolCacheResult {
     return EqualUnmodifiableListView(_txs);
   }
 
+  /// Create a copy of GetMempoolCacheResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'GetMempoolCacheResult(balances: $balances, max: $max, min: $min, txs: $txs)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$GetMempoolCacheResultCopyWith<_GetMempoolCacheResult> get copyWith =>
+      __$GetMempoolCacheResultCopyWithImpl<_GetMempoolCacheResult>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$GetMempoolCacheResultToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetMempoolCacheResultImpl &&
+            other is _GetMempoolCacheResult &&
             const DeepCollectionEquality().equals(other._balances, _balances) &&
             (identical(other.max, max) || other.max == max) &&
             (identical(other.min, min) || other.min == min) &&
@@ -214,51 +186,64 @@ class _$GetMempoolCacheResultImpl implements _GetMempoolCacheResult {
       min,
       const DeepCollectionEquality().hash(_txs));
 
-  /// Create a copy of GetMempoolCacheResult
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$GetMempoolCacheResultImplCopyWith<_$GetMempoolCacheResultImpl>
-      get copyWith => __$$GetMempoolCacheResultImplCopyWithImpl<
-          _$GetMempoolCacheResultImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$GetMempoolCacheResultImplToJson(
-      this,
-    );
+  String toString() {
+    return 'GetMempoolCacheResult(balances: $balances, max: $max, min: $min, txs: $txs)';
   }
 }
 
-abstract class _GetMempoolCacheResult implements GetMempoolCacheResult {
-  const factory _GetMempoolCacheResult(
-      {@JsonKey(name: 'balances') required final Map<String, dynamic> balances,
-      @JsonKey(name: 'max') required final int max,
-      @JsonKey(name: 'min') required final int min,
-      @JsonKey(name: 'txs')
-      required final List<String> txs}) = _$GetMempoolCacheResultImpl;
+/// @nodoc
+abstract mixin class _$GetMempoolCacheResultCopyWith<$Res>
+    implements $GetMempoolCacheResultCopyWith<$Res> {
+  factory _$GetMempoolCacheResultCopyWith(_GetMempoolCacheResult value,
+          $Res Function(_GetMempoolCacheResult) _then) =
+      __$GetMempoolCacheResultCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'balances') Map<String, dynamic> balances,
+      @JsonKey(name: 'max') int max,
+      @JsonKey(name: 'min') int min,
+      @JsonKey(name: 'txs') List<String> txs});
+}
 
-  factory _GetMempoolCacheResult.fromJson(Map<String, dynamic> json) =
-      _$GetMempoolCacheResultImpl.fromJson;
+/// @nodoc
+class __$GetMempoolCacheResultCopyWithImpl<$Res>
+    implements _$GetMempoolCacheResultCopyWith<$Res> {
+  __$GetMempoolCacheResultCopyWithImpl(this._self, this._then);
 
-  @override
-  @JsonKey(name: 'balances')
-  Map<String, dynamic> get balances;
-  @override
-  @JsonKey(name: 'max')
-  int get max;
-  @override
-  @JsonKey(name: 'min')
-  int get min;
-  @override
-  @JsonKey(name: 'txs')
-  List<String> get txs;
+  final _GetMempoolCacheResult _self;
+  final $Res Function(_GetMempoolCacheResult) _then;
 
   /// Create a copy of GetMempoolCacheResult
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$GetMempoolCacheResultImplCopyWith<_$GetMempoolCacheResultImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? balances = null,
+    Object? max = null,
+    Object? min = null,
+    Object? txs = null,
+  }) {
+    return _then(_GetMempoolCacheResult(
+      balances: null == balances
+          ? _self._balances
+          : balances // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>,
+      max: null == max
+          ? _self.max
+          : max // ignore: cast_nullable_to_non_nullable
+              as int,
+      min: null == min
+          ? _self.min
+          : min // ignore: cast_nullable_to_non_nullable
+              as int,
+      txs: null == txs
+          ? _self._txs
+          : txs // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+    ));
+  }
 }
+
+// dart format on

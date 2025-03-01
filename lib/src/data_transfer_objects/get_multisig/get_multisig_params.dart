@@ -7,7 +7,7 @@ part 'get_multisig_params.g.dart';
 
 /// @nodoc
 @freezed
-class GetMultisigParams with _$GetMultisigParams {
+abstract class GetMultisigParams with _$GetMultisigParams {
   /// @nodoc
   const factory GetMultisigParams({
     @JsonKey(name: 'address') required String address,

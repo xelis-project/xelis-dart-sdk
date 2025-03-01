@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,83 +10,60 @@ part of 'get_top_block_params.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-GetTopBlockParams _$GetTopBlockParamsFromJson(Map<String, dynamic> json) {
-  return _GetTopBlockParams.fromJson(json);
-}
 
 /// @nodoc
 mixin _$GetTopBlockParams {
   @JsonKey(name: 'include_txs')
-  bool? get includeTxs => throw _privateConstructorUsedError;
-
-  /// Serializes this GetTopBlockParams to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  bool? get includeTxs;
 
   /// Create a copy of GetTopBlockParams
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $GetTopBlockParamsCopyWith<GetTopBlockParams> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $GetTopBlockParamsCopyWith<$Res> {
-  factory $GetTopBlockParamsCopyWith(
-          GetTopBlockParams value, $Res Function(GetTopBlockParams) then) =
-      _$GetTopBlockParamsCopyWithImpl<$Res, GetTopBlockParams>;
-  @useResult
-  $Res call({@JsonKey(name: 'include_txs') bool? includeTxs});
-}
-
-/// @nodoc
-class _$GetTopBlockParamsCopyWithImpl<$Res, $Val extends GetTopBlockParams>
-    implements $GetTopBlockParamsCopyWith<$Res> {
-  _$GetTopBlockParamsCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of GetTopBlockParams
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $GetTopBlockParamsCopyWith<GetTopBlockParams> get copyWith =>
+      _$GetTopBlockParamsCopyWithImpl<GetTopBlockParams>(
+          this as GetTopBlockParams, _$identity);
+
+  /// Serializes this GetTopBlockParams to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? includeTxs = freezed,
-  }) {
-    return _then(_value.copyWith(
-      includeTxs: freezed == includeTxs
-          ? _value.includeTxs
-          : includeTxs // ignore: cast_nullable_to_non_nullable
-              as bool?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is GetTopBlockParams &&
+            (identical(other.includeTxs, includeTxs) ||
+                other.includeTxs == includeTxs));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, includeTxs);
+
+  @override
+  String toString() {
+    return 'GetTopBlockParams(includeTxs: $includeTxs)';
   }
 }
 
 /// @nodoc
-abstract class _$$GetTopBlockParamsImplCopyWith<$Res>
-    implements $GetTopBlockParamsCopyWith<$Res> {
-  factory _$$GetTopBlockParamsImplCopyWith(_$GetTopBlockParamsImpl value,
-          $Res Function(_$GetTopBlockParamsImpl) then) =
-      __$$GetTopBlockParamsImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $GetTopBlockParamsCopyWith<$Res> {
+  factory $GetTopBlockParamsCopyWith(
+          GetTopBlockParams value, $Res Function(GetTopBlockParams) _then) =
+      _$GetTopBlockParamsCopyWithImpl;
   @useResult
   $Res call({@JsonKey(name: 'include_txs') bool? includeTxs});
 }
 
 /// @nodoc
-class __$$GetTopBlockParamsImplCopyWithImpl<$Res>
-    extends _$GetTopBlockParamsCopyWithImpl<$Res, _$GetTopBlockParamsImpl>
-    implements _$$GetTopBlockParamsImplCopyWith<$Res> {
-  __$$GetTopBlockParamsImplCopyWithImpl(_$GetTopBlockParamsImpl _value,
-      $Res Function(_$GetTopBlockParamsImpl) _then)
-      : super(_value, _then);
+class _$GetTopBlockParamsCopyWithImpl<$Res>
+    implements $GetTopBlockParamsCopyWith<$Res> {
+  _$GetTopBlockParamsCopyWithImpl(this._self, this._then);
+
+  final GetTopBlockParams _self;
+  final $Res Function(GetTopBlockParams) _then;
 
   /// Create a copy of GetTopBlockParams
   /// with the given fields replaced by the non-null parameter values.
@@ -94,9 +72,9 @@ class __$$GetTopBlockParamsImplCopyWithImpl<$Res>
   $Res call({
     Object? includeTxs = freezed,
   }) {
-    return _then(_$GetTopBlockParamsImpl(
+    return _then(_self.copyWith(
       includeTxs: freezed == includeTxs
-          ? _value.includeTxs
+          ? _self.includeTxs
           : includeTxs // ignore: cast_nullable_to_non_nullable
               as bool?,
     ));
@@ -106,27 +84,35 @@ class __$$GetTopBlockParamsImplCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$GetTopBlockParamsImpl implements _GetTopBlockParams {
-  const _$GetTopBlockParamsImpl(
-      {@JsonKey(name: 'include_txs') this.includeTxs});
-
-  factory _$GetTopBlockParamsImpl.fromJson(Map<String, dynamic> json) =>
-      _$$GetTopBlockParamsImplFromJson(json);
+class _GetTopBlockParams implements GetTopBlockParams {
+  const _GetTopBlockParams({@JsonKey(name: 'include_txs') this.includeTxs});
+  factory _GetTopBlockParams.fromJson(Map<String, dynamic> json) =>
+      _$GetTopBlockParamsFromJson(json);
 
   @override
   @JsonKey(name: 'include_txs')
   final bool? includeTxs;
 
+  /// Create a copy of GetTopBlockParams
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'GetTopBlockParams(includeTxs: $includeTxs)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$GetTopBlockParamsCopyWith<_GetTopBlockParams> get copyWith =>
+      __$GetTopBlockParamsCopyWithImpl<_GetTopBlockParams>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$GetTopBlockParamsToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetTopBlockParamsImpl &&
+            other is _GetTopBlockParams &&
             (identical(other.includeTxs, includeTxs) ||
                 other.includeTxs == includeTxs));
   }
@@ -135,39 +121,45 @@ class _$GetTopBlockParamsImpl implements _GetTopBlockParams {
   @override
   int get hashCode => Object.hash(runtimeType, includeTxs);
 
-  /// Create a copy of GetTopBlockParams
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$GetTopBlockParamsImplCopyWith<_$GetTopBlockParamsImpl> get copyWith =>
-      __$$GetTopBlockParamsImplCopyWithImpl<_$GetTopBlockParamsImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$GetTopBlockParamsImplToJson(
-      this,
-    );
+  String toString() {
+    return 'GetTopBlockParams(includeTxs: $includeTxs)';
   }
 }
 
-abstract class _GetTopBlockParams implements GetTopBlockParams {
-  const factory _GetTopBlockParams(
-          {@JsonKey(name: 'include_txs') final bool? includeTxs}) =
-      _$GetTopBlockParamsImpl;
-
-  factory _GetTopBlockParams.fromJson(Map<String, dynamic> json) =
-      _$GetTopBlockParamsImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$GetTopBlockParamsCopyWith<$Res>
+    implements $GetTopBlockParamsCopyWith<$Res> {
+  factory _$GetTopBlockParamsCopyWith(
+          _GetTopBlockParams value, $Res Function(_GetTopBlockParams) _then) =
+      __$GetTopBlockParamsCopyWithImpl;
   @override
-  @JsonKey(name: 'include_txs')
-  bool? get includeTxs;
+  @useResult
+  $Res call({@JsonKey(name: 'include_txs') bool? includeTxs});
+}
+
+/// @nodoc
+class __$GetTopBlockParamsCopyWithImpl<$Res>
+    implements _$GetTopBlockParamsCopyWith<$Res> {
+  __$GetTopBlockParamsCopyWithImpl(this._self, this._then);
+
+  final _GetTopBlockParams _self;
+  final $Res Function(_GetTopBlockParams) _then;
 
   /// Create a copy of GetTopBlockParams
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$GetTopBlockParamsImplCopyWith<_$GetTopBlockParamsImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? includeTxs = freezed,
+  }) {
+    return _then(_GetTopBlockParams(
+      includeTxs: freezed == includeTxs
+          ? _self.includeTxs
+          : includeTxs // ignore: cast_nullable_to_non_nullable
+              as bool?,
+    ));
+  }
 }
+
+// dart format on

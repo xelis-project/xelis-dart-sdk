@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,92 +10,62 @@ part of 'get_account_registration_topoheight_params.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-GetAccountRegistrationTopoheightParams
-    _$GetAccountRegistrationTopoheightParamsFromJson(
-        Map<String, dynamic> json) {
-  return _GetAccountRegistrationTopoheightParams.fromJson(json);
-}
 
 /// @nodoc
 mixin _$GetAccountRegistrationTopoheightParams {
   @JsonKey(name: 'address')
-  String get address => throw _privateConstructorUsedError;
-
-  /// Serializes this GetAccountRegistrationTopoheightParams to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String get address;
 
   /// Create a copy of GetAccountRegistrationTopoheightParams
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $GetAccountRegistrationTopoheightParamsCopyWith<
           GetAccountRegistrationTopoheightParams>
-      get copyWith => throw _privateConstructorUsedError;
-}
+      get copyWith => _$GetAccountRegistrationTopoheightParamsCopyWithImpl<
+              GetAccountRegistrationTopoheightParams>(
+          this as GetAccountRegistrationTopoheightParams, _$identity);
 
-/// @nodoc
-abstract class $GetAccountRegistrationTopoheightParamsCopyWith<$Res> {
-  factory $GetAccountRegistrationTopoheightParamsCopyWith(
-          GetAccountRegistrationTopoheightParams value,
-          $Res Function(GetAccountRegistrationTopoheightParams) then) =
-      _$GetAccountRegistrationTopoheightParamsCopyWithImpl<$Res,
-          GetAccountRegistrationTopoheightParams>;
-  @useResult
-  $Res call({@JsonKey(name: 'address') String address});
-}
+  /// Serializes this GetAccountRegistrationTopoheightParams to a JSON map.
+  Map<String, dynamic> toJson();
 
-/// @nodoc
-class _$GetAccountRegistrationTopoheightParamsCopyWithImpl<$Res,
-        $Val extends GetAccountRegistrationTopoheightParams>
-    implements $GetAccountRegistrationTopoheightParamsCopyWith<$Res> {
-  _$GetAccountRegistrationTopoheightParamsCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of GetAccountRegistrationTopoheightParams
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? address = null,
-  }) {
-    return _then(_value.copyWith(
-      address: null == address
-          ? _value.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is GetAccountRegistrationTopoheightParams &&
+            (identical(other.address, address) || other.address == address));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, address);
+
+  @override
+  String toString() {
+    return 'GetAccountRegistrationTopoheightParams(address: $address)';
   }
 }
 
 /// @nodoc
-abstract class _$$GetAccountRegistrationTopoheightParamsImplCopyWith<$Res>
-    implements $GetAccountRegistrationTopoheightParamsCopyWith<$Res> {
-  factory _$$GetAccountRegistrationTopoheightParamsImplCopyWith(
-          _$GetAccountRegistrationTopoheightParamsImpl value,
-          $Res Function(_$GetAccountRegistrationTopoheightParamsImpl) then) =
-      __$$GetAccountRegistrationTopoheightParamsImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $GetAccountRegistrationTopoheightParamsCopyWith<$Res> {
+  factory $GetAccountRegistrationTopoheightParamsCopyWith(
+          GetAccountRegistrationTopoheightParams value,
+          $Res Function(GetAccountRegistrationTopoheightParams) _then) =
+      _$GetAccountRegistrationTopoheightParamsCopyWithImpl;
   @useResult
   $Res call({@JsonKey(name: 'address') String address});
 }
 
 /// @nodoc
-class __$$GetAccountRegistrationTopoheightParamsImplCopyWithImpl<$Res>
-    extends _$GetAccountRegistrationTopoheightParamsCopyWithImpl<$Res,
-        _$GetAccountRegistrationTopoheightParamsImpl>
-    implements _$$GetAccountRegistrationTopoheightParamsImplCopyWith<$Res> {
-  __$$GetAccountRegistrationTopoheightParamsImplCopyWithImpl(
-      _$GetAccountRegistrationTopoheightParamsImpl _value,
-      $Res Function(_$GetAccountRegistrationTopoheightParamsImpl) _then)
-      : super(_value, _then);
+class _$GetAccountRegistrationTopoheightParamsCopyWithImpl<$Res>
+    implements $GetAccountRegistrationTopoheightParamsCopyWith<$Res> {
+  _$GetAccountRegistrationTopoheightParamsCopyWithImpl(this._self, this._then);
+
+  final GetAccountRegistrationTopoheightParams _self;
+  final $Res Function(GetAccountRegistrationTopoheightParams) _then;
 
   /// Create a copy of GetAccountRegistrationTopoheightParams
   /// with the given fields replaced by the non-null parameter values.
@@ -103,9 +74,9 @@ class __$$GetAccountRegistrationTopoheightParamsImplCopyWithImpl<$Res>
   $Res call({
     Object? address = null,
   }) {
-    return _then(_$GetAccountRegistrationTopoheightParamsImpl(
+    return _then(_self.copyWith(
       address: null == address
-          ? _value.address
+          ? _self.address
           : address // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -114,29 +85,40 @@ class __$$GetAccountRegistrationTopoheightParamsImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$GetAccountRegistrationTopoheightParamsImpl
-    implements _GetAccountRegistrationTopoheightParams {
-  const _$GetAccountRegistrationTopoheightParamsImpl(
+class _GetAccountRegistrationTopoheightParams
+    implements GetAccountRegistrationTopoheightParams {
+  const _GetAccountRegistrationTopoheightParams(
       {@JsonKey(name: 'address') required this.address});
-
-  factory _$GetAccountRegistrationTopoheightParamsImpl.fromJson(
+  factory _GetAccountRegistrationTopoheightParams.fromJson(
           Map<String, dynamic> json) =>
-      _$$GetAccountRegistrationTopoheightParamsImplFromJson(json);
+      _$GetAccountRegistrationTopoheightParamsFromJson(json);
 
   @override
   @JsonKey(name: 'address')
   final String address;
 
+  /// Create a copy of GetAccountRegistrationTopoheightParams
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'GetAccountRegistrationTopoheightParams(address: $address)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$GetAccountRegistrationTopoheightParamsCopyWith<
+          _GetAccountRegistrationTopoheightParams>
+      get copyWith => __$GetAccountRegistrationTopoheightParamsCopyWithImpl<
+          _GetAccountRegistrationTopoheightParams>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$GetAccountRegistrationTopoheightParamsToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetAccountRegistrationTopoheightParamsImpl &&
+            other is _GetAccountRegistrationTopoheightParams &&
             (identical(other.address, address) || other.address == address));
   }
 
@@ -144,44 +126,46 @@ class _$GetAccountRegistrationTopoheightParamsImpl
   @override
   int get hashCode => Object.hash(runtimeType, address);
 
-  /// Create a copy of GetAccountRegistrationTopoheightParams
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$GetAccountRegistrationTopoheightParamsImplCopyWith<
-          _$GetAccountRegistrationTopoheightParamsImpl>
-      get copyWith =>
-          __$$GetAccountRegistrationTopoheightParamsImplCopyWithImpl<
-              _$GetAccountRegistrationTopoheightParamsImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$GetAccountRegistrationTopoheightParamsImplToJson(
-      this,
-    );
+  String toString() {
+    return 'GetAccountRegistrationTopoheightParams(address: $address)';
   }
 }
 
-abstract class _GetAccountRegistrationTopoheightParams
-    implements GetAccountRegistrationTopoheightParams {
-  const factory _GetAccountRegistrationTopoheightParams(
-          {@JsonKey(name: 'address') required final String address}) =
-      _$GetAccountRegistrationTopoheightParamsImpl;
-
-  factory _GetAccountRegistrationTopoheightParams.fromJson(
-          Map<String, dynamic> json) =
-      _$GetAccountRegistrationTopoheightParamsImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$GetAccountRegistrationTopoheightParamsCopyWith<$Res>
+    implements $GetAccountRegistrationTopoheightParamsCopyWith<$Res> {
+  factory _$GetAccountRegistrationTopoheightParamsCopyWith(
+          _GetAccountRegistrationTopoheightParams value,
+          $Res Function(_GetAccountRegistrationTopoheightParams) _then) =
+      __$GetAccountRegistrationTopoheightParamsCopyWithImpl;
   @override
-  @JsonKey(name: 'address')
-  String get address;
+  @useResult
+  $Res call({@JsonKey(name: 'address') String address});
+}
+
+/// @nodoc
+class __$GetAccountRegistrationTopoheightParamsCopyWithImpl<$Res>
+    implements _$GetAccountRegistrationTopoheightParamsCopyWith<$Res> {
+  __$GetAccountRegistrationTopoheightParamsCopyWithImpl(this._self, this._then);
+
+  final _GetAccountRegistrationTopoheightParams _self;
+  final $Res Function(_GetAccountRegistrationTopoheightParams) _then;
 
   /// Create a copy of GetAccountRegistrationTopoheightParams
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$GetAccountRegistrationTopoheightParamsImplCopyWith<
-          _$GetAccountRegistrationTopoheightParamsImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? address = null,
+  }) {
+    return _then(_GetAccountRegistrationTopoheightParams(
+      address: null == address
+          ? _self.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
+
+// dart format on

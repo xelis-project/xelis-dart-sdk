@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,83 +10,59 @@ part of 'has_nonce_result.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-HasNonceResult _$HasNonceResultFromJson(Map<String, dynamic> json) {
-  return _HasNonceResult.fromJson(json);
-}
 
 /// @nodoc
 mixin _$HasNonceResult {
   @JsonKey(name: 'exist')
-  bool get exist => throw _privateConstructorUsedError;
-
-  /// Serializes this HasNonceResult to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  bool get exist;
 
   /// Create a copy of HasNonceResult
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $HasNonceResultCopyWith<HasNonceResult> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $HasNonceResultCopyWith<$Res> {
-  factory $HasNonceResultCopyWith(
-          HasNonceResult value, $Res Function(HasNonceResult) then) =
-      _$HasNonceResultCopyWithImpl<$Res, HasNonceResult>;
-  @useResult
-  $Res call({@JsonKey(name: 'exist') bool exist});
-}
-
-/// @nodoc
-class _$HasNonceResultCopyWithImpl<$Res, $Val extends HasNonceResult>
-    implements $HasNonceResultCopyWith<$Res> {
-  _$HasNonceResultCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of HasNonceResult
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $HasNonceResultCopyWith<HasNonceResult> get copyWith =>
+      _$HasNonceResultCopyWithImpl<HasNonceResult>(
+          this as HasNonceResult, _$identity);
+
+  /// Serializes this HasNonceResult to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? exist = null,
-  }) {
-    return _then(_value.copyWith(
-      exist: null == exist
-          ? _value.exist
-          : exist // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is HasNonceResult &&
+            (identical(other.exist, exist) || other.exist == exist));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, exist);
+
+  @override
+  String toString() {
+    return 'HasNonceResult(exist: $exist)';
   }
 }
 
 /// @nodoc
-abstract class _$$HasNonceResultImplCopyWith<$Res>
-    implements $HasNonceResultCopyWith<$Res> {
-  factory _$$HasNonceResultImplCopyWith(_$HasNonceResultImpl value,
-          $Res Function(_$HasNonceResultImpl) then) =
-      __$$HasNonceResultImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $HasNonceResultCopyWith<$Res> {
+  factory $HasNonceResultCopyWith(
+          HasNonceResult value, $Res Function(HasNonceResult) _then) =
+      _$HasNonceResultCopyWithImpl;
   @useResult
   $Res call({@JsonKey(name: 'exist') bool exist});
 }
 
 /// @nodoc
-class __$$HasNonceResultImplCopyWithImpl<$Res>
-    extends _$HasNonceResultCopyWithImpl<$Res, _$HasNonceResultImpl>
-    implements _$$HasNonceResultImplCopyWith<$Res> {
-  __$$HasNonceResultImplCopyWithImpl(
-      _$HasNonceResultImpl _value, $Res Function(_$HasNonceResultImpl) _then)
-      : super(_value, _then);
+class _$HasNonceResultCopyWithImpl<$Res>
+    implements $HasNonceResultCopyWith<$Res> {
+  _$HasNonceResultCopyWithImpl(this._self, this._then);
+
+  final HasNonceResult _self;
+  final $Res Function(HasNonceResult) _then;
 
   /// Create a copy of HasNonceResult
   /// with the given fields replaced by the non-null parameter values.
@@ -94,9 +71,9 @@ class __$$HasNonceResultImplCopyWithImpl<$Res>
   $Res call({
     Object? exist = null,
   }) {
-    return _then(_$HasNonceResultImpl(
+    return _then(_self.copyWith(
       exist: null == exist
-          ? _value.exist
+          ? _self.exist
           : exist // ignore: cast_nullable_to_non_nullable
               as bool,
     ));
@@ -105,26 +82,35 @@ class __$$HasNonceResultImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$HasNonceResultImpl implements _HasNonceResult {
-  const _$HasNonceResultImpl({@JsonKey(name: 'exist') required this.exist});
-
-  factory _$HasNonceResultImpl.fromJson(Map<String, dynamic> json) =>
-      _$$HasNonceResultImplFromJson(json);
+class _HasNonceResult implements HasNonceResult {
+  const _HasNonceResult({@JsonKey(name: 'exist') required this.exist});
+  factory _HasNonceResult.fromJson(Map<String, dynamic> json) =>
+      _$HasNonceResultFromJson(json);
 
   @override
   @JsonKey(name: 'exist')
   final bool exist;
 
+  /// Create a copy of HasNonceResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'HasNonceResult(exist: $exist)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$HasNonceResultCopyWith<_HasNonceResult> get copyWith =>
+      __$HasNonceResultCopyWithImpl<_HasNonceResult>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$HasNonceResultToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$HasNonceResultImpl &&
+            other is _HasNonceResult &&
             (identical(other.exist, exist) || other.exist == exist));
   }
 
@@ -132,39 +118,45 @@ class _$HasNonceResultImpl implements _HasNonceResult {
   @override
   int get hashCode => Object.hash(runtimeType, exist);
 
-  /// Create a copy of HasNonceResult
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$HasNonceResultImplCopyWith<_$HasNonceResultImpl> get copyWith =>
-      __$$HasNonceResultImplCopyWithImpl<_$HasNonceResultImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$HasNonceResultImplToJson(
-      this,
-    );
+  String toString() {
+    return 'HasNonceResult(exist: $exist)';
   }
 }
 
-abstract class _HasNonceResult implements HasNonceResult {
-  const factory _HasNonceResult(
-          {@JsonKey(name: 'exist') required final bool exist}) =
-      _$HasNonceResultImpl;
-
-  factory _HasNonceResult.fromJson(Map<String, dynamic> json) =
-      _$HasNonceResultImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$HasNonceResultCopyWith<$Res>
+    implements $HasNonceResultCopyWith<$Res> {
+  factory _$HasNonceResultCopyWith(
+          _HasNonceResult value, $Res Function(_HasNonceResult) _then) =
+      __$HasNonceResultCopyWithImpl;
   @override
-  @JsonKey(name: 'exist')
-  bool get exist;
+  @useResult
+  $Res call({@JsonKey(name: 'exist') bool exist});
+}
+
+/// @nodoc
+class __$HasNonceResultCopyWithImpl<$Res>
+    implements _$HasNonceResultCopyWith<$Res> {
+  __$HasNonceResultCopyWithImpl(this._self, this._then);
+
+  final _HasNonceResult _self;
+  final $Res Function(_HasNonceResult) _then;
 
   /// Create a copy of HasNonceResult
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$HasNonceResultImplCopyWith<_$HasNonceResultImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? exist = null,
+  }) {
+    return _then(_HasNonceResult(
+      exist: null == exist
+          ? _self.exist
+          : exist // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
 }
+
+// dart format on

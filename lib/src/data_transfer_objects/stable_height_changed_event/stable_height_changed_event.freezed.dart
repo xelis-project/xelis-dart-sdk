@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,149 +10,32 @@ part of 'stable_height_changed_event.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-StableHeightChangedEvent _$StableHeightChangedEventFromJson(
-    Map<String, dynamic> json) {
-  return _StableHeightChangedEvent.fromJson(json);
-}
 
 /// @nodoc
 mixin _$StableHeightChangedEvent {
   @JsonKey(name: 'previous_stable_height')
-  int get previousStableHeight => throw _privateConstructorUsedError;
+  int get previousStableHeight;
   @JsonKey(name: 'new_stable_height')
-  int get newStableHeight => throw _privateConstructorUsedError;
-
-  /// Serializes this StableHeightChangedEvent to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  int get newStableHeight;
 
   /// Create a copy of StableHeightChangedEvent
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $StableHeightChangedEventCopyWith<StableHeightChangedEvent> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+      _$StableHeightChangedEventCopyWithImpl<StableHeightChangedEvent>(
+          this as StableHeightChangedEvent, _$identity);
 
-/// @nodoc
-abstract class $StableHeightChangedEventCopyWith<$Res> {
-  factory $StableHeightChangedEventCopyWith(StableHeightChangedEvent value,
-          $Res Function(StableHeightChangedEvent) then) =
-      _$StableHeightChangedEventCopyWithImpl<$Res, StableHeightChangedEvent>;
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'previous_stable_height') int previousStableHeight,
-      @JsonKey(name: 'new_stable_height') int newStableHeight});
-}
-
-/// @nodoc
-class _$StableHeightChangedEventCopyWithImpl<$Res,
-        $Val extends StableHeightChangedEvent>
-    implements $StableHeightChangedEventCopyWith<$Res> {
-  _$StableHeightChangedEventCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of StableHeightChangedEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? previousStableHeight = null,
-    Object? newStableHeight = null,
-  }) {
-    return _then(_value.copyWith(
-      previousStableHeight: null == previousStableHeight
-          ? _value.previousStableHeight
-          : previousStableHeight // ignore: cast_nullable_to_non_nullable
-              as int,
-      newStableHeight: null == newStableHeight
-          ? _value.newStableHeight
-          : newStableHeight // ignore: cast_nullable_to_non_nullable
-              as int,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$StableHeightChangedEventImplCopyWith<$Res>
-    implements $StableHeightChangedEventCopyWith<$Res> {
-  factory _$$StableHeightChangedEventImplCopyWith(
-          _$StableHeightChangedEventImpl value,
-          $Res Function(_$StableHeightChangedEventImpl) then) =
-      __$$StableHeightChangedEventImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'previous_stable_height') int previousStableHeight,
-      @JsonKey(name: 'new_stable_height') int newStableHeight});
-}
-
-/// @nodoc
-class __$$StableHeightChangedEventImplCopyWithImpl<$Res>
-    extends _$StableHeightChangedEventCopyWithImpl<$Res,
-        _$StableHeightChangedEventImpl>
-    implements _$$StableHeightChangedEventImplCopyWith<$Res> {
-  __$$StableHeightChangedEventImplCopyWithImpl(
-      _$StableHeightChangedEventImpl _value,
-      $Res Function(_$StableHeightChangedEventImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of StableHeightChangedEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? previousStableHeight = null,
-    Object? newStableHeight = null,
-  }) {
-    return _then(_$StableHeightChangedEventImpl(
-      previousStableHeight: null == previousStableHeight
-          ? _value.previousStableHeight
-          : previousStableHeight // ignore: cast_nullable_to_non_nullable
-              as int,
-      newStableHeight: null == newStableHeight
-          ? _value.newStableHeight
-          : newStableHeight // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$StableHeightChangedEventImpl implements _StableHeightChangedEvent {
-  const _$StableHeightChangedEventImpl(
-      {@JsonKey(name: 'previous_stable_height')
-      required this.previousStableHeight,
-      @JsonKey(name: 'new_stable_height') required this.newStableHeight});
-
-  factory _$StableHeightChangedEventImpl.fromJson(Map<String, dynamic> json) =>
-      _$$StableHeightChangedEventImplFromJson(json);
-
-  @override
-  @JsonKey(name: 'previous_stable_height')
-  final int previousStableHeight;
-  @override
-  @JsonKey(name: 'new_stable_height')
-  final int newStableHeight;
-
-  @override
-  String toString() {
-    return 'StableHeightChangedEvent(previousStableHeight: $previousStableHeight, newStableHeight: $newStableHeight)';
-  }
+  /// Serializes this StableHeightChangedEvent to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$StableHeightChangedEventImpl &&
+            other is StableHeightChangedEvent &&
             (identical(other.previousStableHeight, previousStableHeight) ||
                 other.previousStableHeight == previousStableHeight) &&
             (identical(other.newStableHeight, newStableHeight) ||
@@ -163,44 +47,147 @@ class _$StableHeightChangedEventImpl implements _StableHeightChangedEvent {
   int get hashCode =>
       Object.hash(runtimeType, previousStableHeight, newStableHeight);
 
-  /// Create a copy of StableHeightChangedEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$StableHeightChangedEventImplCopyWith<_$StableHeightChangedEventImpl>
-      get copyWith => __$$StableHeightChangedEventImplCopyWithImpl<
-          _$StableHeightChangedEventImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$StableHeightChangedEventImplToJson(
-      this,
-    );
+  String toString() {
+    return 'StableHeightChangedEvent(previousStableHeight: $previousStableHeight, newStableHeight: $newStableHeight)';
   }
 }
 
-abstract class _StableHeightChangedEvent implements StableHeightChangedEvent {
-  const factory _StableHeightChangedEvent(
-      {@JsonKey(name: 'previous_stable_height')
-      required final int previousStableHeight,
-      @JsonKey(name: 'new_stable_height')
-      required final int newStableHeight}) = _$StableHeightChangedEventImpl;
+/// @nodoc
+abstract mixin class $StableHeightChangedEventCopyWith<$Res> {
+  factory $StableHeightChangedEventCopyWith(StableHeightChangedEvent value,
+          $Res Function(StableHeightChangedEvent) _then) =
+      _$StableHeightChangedEventCopyWithImpl;
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'previous_stable_height') int previousStableHeight,
+      @JsonKey(name: 'new_stable_height') int newStableHeight});
+}
 
-  factory _StableHeightChangedEvent.fromJson(Map<String, dynamic> json) =
-      _$StableHeightChangedEventImpl.fromJson;
+/// @nodoc
+class _$StableHeightChangedEventCopyWithImpl<$Res>
+    implements $StableHeightChangedEventCopyWith<$Res> {
+  _$StableHeightChangedEventCopyWithImpl(this._self, this._then);
+
+  final StableHeightChangedEvent _self;
+  final $Res Function(StableHeightChangedEvent) _then;
+
+  /// Create a copy of StableHeightChangedEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? previousStableHeight = null,
+    Object? newStableHeight = null,
+  }) {
+    return _then(_self.copyWith(
+      previousStableHeight: null == previousStableHeight
+          ? _self.previousStableHeight
+          : previousStableHeight // ignore: cast_nullable_to_non_nullable
+              as int,
+      newStableHeight: null == newStableHeight
+          ? _self.newStableHeight
+          : newStableHeight // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _StableHeightChangedEvent implements StableHeightChangedEvent {
+  const _StableHeightChangedEvent(
+      {@JsonKey(name: 'previous_stable_height')
+      required this.previousStableHeight,
+      @JsonKey(name: 'new_stable_height') required this.newStableHeight});
+  factory _StableHeightChangedEvent.fromJson(Map<String, dynamic> json) =>
+      _$StableHeightChangedEventFromJson(json);
 
   @override
   @JsonKey(name: 'previous_stable_height')
-  int get previousStableHeight;
+  final int previousStableHeight;
   @override
   @JsonKey(name: 'new_stable_height')
-  int get newStableHeight;
+  final int newStableHeight;
 
   /// Create a copy of StableHeightChangedEvent
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$StableHeightChangedEventImplCopyWith<_$StableHeightChangedEventImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  _$StableHeightChangedEventCopyWith<_StableHeightChangedEvent> get copyWith =>
+      __$StableHeightChangedEventCopyWithImpl<_StableHeightChangedEvent>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$StableHeightChangedEventToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _StableHeightChangedEvent &&
+            (identical(other.previousStableHeight, previousStableHeight) ||
+                other.previousStableHeight == previousStableHeight) &&
+            (identical(other.newStableHeight, newStableHeight) ||
+                other.newStableHeight == newStableHeight));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, previousStableHeight, newStableHeight);
+
+  @override
+  String toString() {
+    return 'StableHeightChangedEvent(previousStableHeight: $previousStableHeight, newStableHeight: $newStableHeight)';
+  }
 }
+
+/// @nodoc
+abstract mixin class _$StableHeightChangedEventCopyWith<$Res>
+    implements $StableHeightChangedEventCopyWith<$Res> {
+  factory _$StableHeightChangedEventCopyWith(_StableHeightChangedEvent value,
+          $Res Function(_StableHeightChangedEvent) _then) =
+      __$StableHeightChangedEventCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'previous_stable_height') int previousStableHeight,
+      @JsonKey(name: 'new_stable_height') int newStableHeight});
+}
+
+/// @nodoc
+class __$StableHeightChangedEventCopyWithImpl<$Res>
+    implements _$StableHeightChangedEventCopyWith<$Res> {
+  __$StableHeightChangedEventCopyWithImpl(this._self, this._then);
+
+  final _StableHeightChangedEvent _self;
+  final $Res Function(_StableHeightChangedEvent) _then;
+
+  /// Create a copy of StableHeightChangedEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? previousStableHeight = null,
+    Object? newStableHeight = null,
+  }) {
+    return _then(_StableHeightChangedEvent(
+      previousStableHeight: null == previousStableHeight
+          ? _self.previousStableHeight
+          : previousStableHeight // ignore: cast_nullable_to_non_nullable
+              as int,
+      newStableHeight: null == newStableHeight
+          ? _self.newStableHeight
+          : newStableHeight // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+// dart format on

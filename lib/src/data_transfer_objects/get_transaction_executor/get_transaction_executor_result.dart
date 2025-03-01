@@ -7,7 +7,8 @@ part 'get_transaction_executor_result.g.dart';
 
 /// @nodoc
 @freezed
-class GetTransactionExecutorResult with _$GetTransactionExecutorResult {
+abstract class GetTransactionExecutorResult
+    with _$GetTransactionExecutorResult {
   /// @nodoc
   const factory GetTransactionExecutorResult({
     @JsonKey(name: 'block_topoheight') required int blockTopoheight,

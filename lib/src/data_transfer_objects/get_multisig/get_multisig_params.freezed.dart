@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,83 +10,59 @@ part of 'get_multisig_params.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-GetMultisigParams _$GetMultisigParamsFromJson(Map<String, dynamic> json) {
-  return _GetMultisigParams.fromJson(json);
-}
 
 /// @nodoc
 mixin _$GetMultisigParams {
   @JsonKey(name: 'address')
-  String get address => throw _privateConstructorUsedError;
-
-  /// Serializes this GetMultisigParams to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String get address;
 
   /// Create a copy of GetMultisigParams
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $GetMultisigParamsCopyWith<GetMultisigParams> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $GetMultisigParamsCopyWith<$Res> {
-  factory $GetMultisigParamsCopyWith(
-          GetMultisigParams value, $Res Function(GetMultisigParams) then) =
-      _$GetMultisigParamsCopyWithImpl<$Res, GetMultisigParams>;
-  @useResult
-  $Res call({@JsonKey(name: 'address') String address});
-}
-
-/// @nodoc
-class _$GetMultisigParamsCopyWithImpl<$Res, $Val extends GetMultisigParams>
-    implements $GetMultisigParamsCopyWith<$Res> {
-  _$GetMultisigParamsCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of GetMultisigParams
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $GetMultisigParamsCopyWith<GetMultisigParams> get copyWith =>
+      _$GetMultisigParamsCopyWithImpl<GetMultisigParams>(
+          this as GetMultisigParams, _$identity);
+
+  /// Serializes this GetMultisigParams to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? address = null,
-  }) {
-    return _then(_value.copyWith(
-      address: null == address
-          ? _value.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is GetMultisigParams &&
+            (identical(other.address, address) || other.address == address));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, address);
+
+  @override
+  String toString() {
+    return 'GetMultisigParams(address: $address)';
   }
 }
 
 /// @nodoc
-abstract class _$$GetMultisigParamsImplCopyWith<$Res>
-    implements $GetMultisigParamsCopyWith<$Res> {
-  factory _$$GetMultisigParamsImplCopyWith(_$GetMultisigParamsImpl value,
-          $Res Function(_$GetMultisigParamsImpl) then) =
-      __$$GetMultisigParamsImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $GetMultisigParamsCopyWith<$Res> {
+  factory $GetMultisigParamsCopyWith(
+          GetMultisigParams value, $Res Function(GetMultisigParams) _then) =
+      _$GetMultisigParamsCopyWithImpl;
   @useResult
   $Res call({@JsonKey(name: 'address') String address});
 }
 
 /// @nodoc
-class __$$GetMultisigParamsImplCopyWithImpl<$Res>
-    extends _$GetMultisigParamsCopyWithImpl<$Res, _$GetMultisigParamsImpl>
-    implements _$$GetMultisigParamsImplCopyWith<$Res> {
-  __$$GetMultisigParamsImplCopyWithImpl(_$GetMultisigParamsImpl _value,
-      $Res Function(_$GetMultisigParamsImpl) _then)
-      : super(_value, _then);
+class _$GetMultisigParamsCopyWithImpl<$Res>
+    implements $GetMultisigParamsCopyWith<$Res> {
+  _$GetMultisigParamsCopyWithImpl(this._self, this._then);
+
+  final GetMultisigParams _self;
+  final $Res Function(GetMultisigParams) _then;
 
   /// Create a copy of GetMultisigParams
   /// with the given fields replaced by the non-null parameter values.
@@ -94,9 +71,9 @@ class __$$GetMultisigParamsImplCopyWithImpl<$Res>
   $Res call({
     Object? address = null,
   }) {
-    return _then(_$GetMultisigParamsImpl(
+    return _then(_self.copyWith(
       address: null == address
-          ? _value.address
+          ? _self.address
           : address // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -105,27 +82,35 @@ class __$$GetMultisigParamsImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$GetMultisigParamsImpl implements _GetMultisigParams {
-  const _$GetMultisigParamsImpl(
-      {@JsonKey(name: 'address') required this.address});
-
-  factory _$GetMultisigParamsImpl.fromJson(Map<String, dynamic> json) =>
-      _$$GetMultisigParamsImplFromJson(json);
+class _GetMultisigParams implements GetMultisigParams {
+  const _GetMultisigParams({@JsonKey(name: 'address') required this.address});
+  factory _GetMultisigParams.fromJson(Map<String, dynamic> json) =>
+      _$GetMultisigParamsFromJson(json);
 
   @override
   @JsonKey(name: 'address')
   final String address;
 
+  /// Create a copy of GetMultisigParams
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'GetMultisigParams(address: $address)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$GetMultisigParamsCopyWith<_GetMultisigParams> get copyWith =>
+      __$GetMultisigParamsCopyWithImpl<_GetMultisigParams>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$GetMultisigParamsToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetMultisigParamsImpl &&
+            other is _GetMultisigParams &&
             (identical(other.address, address) || other.address == address));
   }
 
@@ -133,39 +118,45 @@ class _$GetMultisigParamsImpl implements _GetMultisigParams {
   @override
   int get hashCode => Object.hash(runtimeType, address);
 
-  /// Create a copy of GetMultisigParams
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$GetMultisigParamsImplCopyWith<_$GetMultisigParamsImpl> get copyWith =>
-      __$$GetMultisigParamsImplCopyWithImpl<_$GetMultisigParamsImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$GetMultisigParamsImplToJson(
-      this,
-    );
+  String toString() {
+    return 'GetMultisigParams(address: $address)';
   }
 }
 
-abstract class _GetMultisigParams implements GetMultisigParams {
-  const factory _GetMultisigParams(
-          {@JsonKey(name: 'address') required final String address}) =
-      _$GetMultisigParamsImpl;
-
-  factory _GetMultisigParams.fromJson(Map<String, dynamic> json) =
-      _$GetMultisigParamsImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$GetMultisigParamsCopyWith<$Res>
+    implements $GetMultisigParamsCopyWith<$Res> {
+  factory _$GetMultisigParamsCopyWith(
+          _GetMultisigParams value, $Res Function(_GetMultisigParams) _then) =
+      __$GetMultisigParamsCopyWithImpl;
   @override
-  @JsonKey(name: 'address')
-  String get address;
+  @useResult
+  $Res call({@JsonKey(name: 'address') String address});
+}
+
+/// @nodoc
+class __$GetMultisigParamsCopyWithImpl<$Res>
+    implements _$GetMultisigParamsCopyWith<$Res> {
+  __$GetMultisigParamsCopyWithImpl(this._self, this._then);
+
+  final _GetMultisigParams _self;
+  final $Res Function(_GetMultisigParams) _then;
 
   /// Create a copy of GetMultisigParams
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$GetMultisigParamsImplCopyWith<_$GetMultisigParamsImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? address = null,
+  }) {
+    return _then(_GetMultisigParams(
+      address: null == address
+          ? _self.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
+
+// dart format on

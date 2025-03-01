@@ -8,12 +8,12 @@ part of 'dev_fee_history.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$DevFeeHistoryImpl _$$DevFeeHistoryImplFromJson(Map<String, dynamic> json) =>
-    _$DevFeeHistoryImpl(
+_DevFeeHistory _$DevFeeHistoryFromJson(Map<String, dynamic> json) =>
+    _DevFeeHistory(
       reward: (json['reward'] as num).toInt(),
     );
 
-Map<String, dynamic> _$$DevFeeHistoryImplToJson(_$DevFeeHistoryImpl instance) =>
+Map<String, dynamic> _$DevFeeHistoryToJson(_DevFeeHistory instance) =>
     <String, dynamic>{
       'reward': instance.reward,
     };
