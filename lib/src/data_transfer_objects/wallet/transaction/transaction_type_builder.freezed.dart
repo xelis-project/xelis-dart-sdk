@@ -12,15 +12,41 @@ part of 'transaction_type_builder.dart';
 
 // dart format off
 T _$identity<T>(T value) => value;
+TransactionTypeBuilder _$TransactionTypeBuilderFromJson(
+    Map<String, dynamic> json) {
+  switch (json['runtimeType']) {
+    case 'transfers':
+      return TransfersBuilder.fromJson(json);
+    case 'burn':
+      return BurnBuilder.fromJson(json);
+    case 'multisig':
+      return MultisigBuilder.fromJson(json);
+    case 'invokeContract':
+      return InvokeContractBuilder.fromJson(json);
+    case 'deployContract':
+      return DeployContractBuilder.fromJson(json);
+
+    default:
+      throw CheckedFromJsonException(
+          json,
+          'runtimeType',
+          'TransactionTypeBuilder',
+          'Invalid union type "${json['runtimeType']}"!');
+  }
+}
 
 /// @nodoc
 mixin _$TransactionTypeBuilder {
+  /// Serializes this TransactionTypeBuilder to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType && other is TransactionTypeBuilder);
   }
 
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => runtimeType.hashCode;
 
@@ -37,13 +63,17 @@ class $TransactionTypeBuilderCopyWith<$Res> {
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class TransfersBuilder extends TransactionTypeBuilder {
   const TransfersBuilder(
       {@JsonKey(name: 'transfers')
-      required final List<TransferBuilder> transfers})
+      required final List<TransferBuilder> transfers,
+      final String? $type})
       : _transfers = transfers,
+        $type = $type ?? 'transfers',
         super._();
+  factory TransfersBuilder.fromJson(Map<String, dynamic> json) =>
+      _$TransfersBuilderFromJson(json);
 
   final List<TransferBuilder> _transfers;
   @JsonKey(name: 'transfers')
@@ -53,12 +83,22 @@ class TransfersBuilder extends TransactionTypeBuilder {
     return EqualUnmodifiableListView(_transfers);
   }
 
+  @JsonKey(name: 'runtimeType')
+  final String $type;
+
   /// Create a copy of TransactionTypeBuilder
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   $TransfersBuilderCopyWith<TransfersBuilder> get copyWith =>
       _$TransfersBuilderCopyWithImpl<TransfersBuilder>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$TransfersBuilderToJson(
+      this,
+    );
+  }
 
   @override
   bool operator ==(Object other) {
@@ -69,6 +109,7 @@ class TransfersBuilder extends TransactionTypeBuilder {
                 .equals(other._transfers, _transfers));
   }
 
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(_transfers));
@@ -113,17 +154,24 @@ class _$TransfersBuilderCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class BurnBuilder extends TransactionTypeBuilder {
   const BurnBuilder(
       {@JsonKey(name: 'asset') required this.asset,
-      @JsonKey(name: 'amount') required this.amount})
-      : super._();
+      @JsonKey(name: 'amount') required this.amount,
+      final String? $type})
+      : $type = $type ?? 'burn',
+        super._();
+  factory BurnBuilder.fromJson(Map<String, dynamic> json) =>
+      _$BurnBuilderFromJson(json);
 
   @JsonKey(name: 'asset')
   final String asset;
   @JsonKey(name: 'amount')
   final int amount;
+
+  @JsonKey(name: 'runtimeType')
+  final String $type;
 
   /// Create a copy of TransactionTypeBuilder
   /// with the given fields replaced by the non-null parameter values.
@@ -131,6 +179,13 @@ class BurnBuilder extends TransactionTypeBuilder {
   @pragma('vm:prefer-inline')
   $BurnBuilderCopyWith<BurnBuilder> get copyWith =>
       _$BurnBuilderCopyWithImpl<BurnBuilder>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$BurnBuilderToJson(
+      this,
+    );
+  }
 
   @override
   bool operator ==(Object other) {
@@ -141,6 +196,7 @@ class BurnBuilder extends TransactionTypeBuilder {
             (identical(other.amount, amount) || other.amount == amount));
   }
 
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, asset, amount);
 
@@ -190,13 +246,17 @@ class _$BurnBuilderCopyWithImpl<$Res> implements $BurnBuilderCopyWith<$Res> {
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class MultisigBuilder extends TransactionTypeBuilder {
   const MultisigBuilder(
       {@JsonKey(name: 'threshold') required this.threshold,
-      @JsonKey(name: 'participants') required final List<String> participants})
+      @JsonKey(name: 'participants') required final List<String> participants,
+      final String? $type})
       : _participants = participants,
+        $type = $type ?? 'multisig',
         super._();
+  factory MultisigBuilder.fromJson(Map<String, dynamic> json) =>
+      _$MultisigBuilderFromJson(json);
 
   @JsonKey(name: 'threshold')
   final int threshold;
@@ -208,12 +268,22 @@ class MultisigBuilder extends TransactionTypeBuilder {
     return EqualUnmodifiableListView(_participants);
   }
 
+  @JsonKey(name: 'runtimeType')
+  final String $type;
+
   /// Create a copy of TransactionTypeBuilder
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
   $MultisigBuilderCopyWith<MultisigBuilder> get copyWith =>
       _$MultisigBuilderCopyWithImpl<MultisigBuilder>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$MultisigBuilderToJson(
+      this,
+    );
+  }
 
   @override
   bool operator ==(Object other) {
@@ -226,6 +296,7 @@ class MultisigBuilder extends TransactionTypeBuilder {
                 .equals(other._participants, _participants));
   }
 
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, threshold,
       const DeepCollectionEquality().hash(_participants));
@@ -277,15 +348,19 @@ class _$MultisigBuilderCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class InvokeContractBuilder extends TransactionTypeBuilder {
   const InvokeContractBuilder(
       {@JsonKey(name: 'contract') required this.contract,
       @JsonKey(name: 'max_gas') required this.maxGas,
       @JsonKey(name: 'chunk_id') required this.chunkId,
       @JsonKey(name: 'parameters') required this.parameters,
-      @JsonKey(name: 'deposits') required this.deposits})
-      : super._();
+      @JsonKey(name: 'deposits') required this.deposits,
+      final String? $type})
+      : $type = $type ?? 'invokeContract',
+        super._();
+  factory InvokeContractBuilder.fromJson(Map<String, dynamic> json) =>
+      _$InvokeContractBuilderFromJson(json);
 
   @JsonKey(name: 'contract')
   final String contract;
@@ -298,6 +373,9 @@ class InvokeContractBuilder extends TransactionTypeBuilder {
   @JsonKey(name: 'deposits')
   final dynamic deposits;
 
+  @JsonKey(name: 'runtimeType')
+  final String $type;
+
   /// Create a copy of TransactionTypeBuilder
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -305,6 +383,13 @@ class InvokeContractBuilder extends TransactionTypeBuilder {
   $InvokeContractBuilderCopyWith<InvokeContractBuilder> get copyWith =>
       _$InvokeContractBuilderCopyWithImpl<InvokeContractBuilder>(
           this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$InvokeContractBuilderToJson(
+      this,
+    );
+  }
 
   @override
   bool operator ==(Object other) {
@@ -320,6 +405,7 @@ class InvokeContractBuilder extends TransactionTypeBuilder {
             const DeepCollectionEquality().equals(other.deposits, deposits));
   }
 
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -394,14 +480,20 @@ class _$InvokeContractBuilderCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class DeployContractBuilder extends TransactionTypeBuilder {
   const DeployContractBuilder(
-      {@JsonKey(name: 'contract') required this.contract})
-      : super._();
+      {@JsonKey(name: 'contract') required this.contract, final String? $type})
+      : $type = $type ?? 'deployContract',
+        super._();
+  factory DeployContractBuilder.fromJson(Map<String, dynamic> json) =>
+      _$DeployContractBuilderFromJson(json);
 
   @JsonKey(name: 'contract')
   final String contract;
+
+  @JsonKey(name: 'runtimeType')
+  final String $type;
 
   /// Create a copy of TransactionTypeBuilder
   /// with the given fields replaced by the non-null parameter values.
@@ -412,6 +504,13 @@ class DeployContractBuilder extends TransactionTypeBuilder {
           this, _$identity);
 
   @override
+  Map<String, dynamic> toJson() {
+    return _$DeployContractBuilderToJson(
+      this,
+    );
+  }
+
+  @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
@@ -420,6 +519,7 @@ class DeployContractBuilder extends TransactionTypeBuilder {
                 other.contract == contract));
   }
 
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, contract);
 

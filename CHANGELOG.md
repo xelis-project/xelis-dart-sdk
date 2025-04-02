@@ -1,3 +1,7 @@
+## 0.24.2
+
+refactor: modularize BuildTransactionParams JSON (de)serialization
+
 ## 0.24.1
 
 chore: update Freezed to v3.

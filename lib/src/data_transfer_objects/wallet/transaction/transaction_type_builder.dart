@@ -4,6 +4,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/dtos.dart';
 
 part 'transaction_type_builder.freezed.dart';
+part 'transaction_type_builder.g.dart';
 
 /// @nodoc
 @freezed
@@ -42,34 +43,6 @@ sealed class TransactionTypeBuilder with _$TransactionTypeBuilder {
   const TransactionTypeBuilder._();
 
   /// @nodoc
-  Map<String, dynamic> toJson() => switch (this) {
-        TransfersBuilder(:final transfers) => {
-            'transfers': transfers.map((e) => e.toJson()).toList(),
-          },
-        BurnBuilder(:final asset, :final amount) => {
-            'asset': asset,
-            'amount': amount,
-          },
-        MultisigBuilder(:final threshold, :final participants) => {
-            'threshold': threshold,
-            'participants': participants,
-          },
-        InvokeContractBuilder(
-          :final contract,
-          :final maxGas,
-          :final chunkId,
-          :final parameters,
-          :final deposits
-        ) =>
-          {
-            'contract': contract,
-            'max_gas': maxGas,
-            'chunk_id': chunkId,
-            'parameters': parameters,
-            'deposits': deposits,
-          },
-        DeployContractBuilder(:final contract) => {
-            'contract': contract,
-          },
-      };
+  factory TransactionTypeBuilder.fromJson(Map<String, dynamic> json) =>
+      _$TransactionTypeBuilderFromJson(json);
 }
