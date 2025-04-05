@@ -354,10 +354,13 @@ class InvokeContractBuilder extends TransactionTypeBuilder {
       {@JsonKey(name: 'contract') required this.contract,
       @JsonKey(name: 'max_gas') required this.maxGas,
       @JsonKey(name: 'chunk_id') required this.chunkId,
-      @JsonKey(name: 'parameters') required this.parameters,
-      @JsonKey(name: 'deposits') required this.deposits,
+      @JsonKey(name: 'parameters') required final List<dynamic> parameters,
+      @JsonKey(name: 'deposits')
+      required final Map<String, ContractDepositBuilder> deposits,
       final String? $type})
-      : $type = $type ?? 'invokeContract',
+      : _parameters = parameters,
+        _deposits = deposits,
+        $type = $type ?? 'invokeContract',
         super._();
   factory InvokeContractBuilder.fromJson(Map<String, dynamic> json) =>
       _$InvokeContractBuilderFromJson(json);
@@ -368,10 +371,21 @@ class InvokeContractBuilder extends TransactionTypeBuilder {
   final int maxGas;
   @JsonKey(name: 'chunk_id')
   final int chunkId;
+  final List<dynamic> _parameters;
   @JsonKey(name: 'parameters')
-  final dynamic parameters;
+  List<dynamic> get parameters {
+    if (_parameters is EqualUnmodifiableListView) return _parameters;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_parameters);
+  }
+
+  final Map<String, ContractDepositBuilder> _deposits;
   @JsonKey(name: 'deposits')
-  final dynamic deposits;
+  Map<String, ContractDepositBuilder> get deposits {
+    if (_deposits is EqualUnmodifiableMapView) return _deposits;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_deposits);
+  }
 
   @JsonKey(name: 'runtimeType')
   final String $type;
@@ -401,8 +415,8 @@ class InvokeContractBuilder extends TransactionTypeBuilder {
             (identical(other.maxGas, maxGas) || other.maxGas == maxGas) &&
             (identical(other.chunkId, chunkId) || other.chunkId == chunkId) &&
             const DeepCollectionEquality()
-                .equals(other.parameters, parameters) &&
-            const DeepCollectionEquality().equals(other.deposits, deposits));
+                .equals(other._parameters, _parameters) &&
+            const DeepCollectionEquality().equals(other._deposits, _deposits));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -412,8 +426,8 @@ class InvokeContractBuilder extends TransactionTypeBuilder {
       contract,
       maxGas,
       chunkId,
-      const DeepCollectionEquality().hash(parameters),
-      const DeepCollectionEquality().hash(deposits));
+      const DeepCollectionEquality().hash(_parameters),
+      const DeepCollectionEquality().hash(_deposits));
 
   @override
   String toString() {
@@ -432,8 +446,8 @@ abstract mixin class $InvokeContractBuilderCopyWith<$Res>
       {@JsonKey(name: 'contract') String contract,
       @JsonKey(name: 'max_gas') int maxGas,
       @JsonKey(name: 'chunk_id') int chunkId,
-      @JsonKey(name: 'parameters') dynamic parameters,
-      @JsonKey(name: 'deposits') dynamic deposits});
+      @JsonKey(name: 'parameters') List<dynamic> parameters,
+      @JsonKey(name: 'deposits') Map<String, ContractDepositBuilder> deposits});
 }
 
 /// @nodoc
@@ -451,8 +465,8 @@ class _$InvokeContractBuilderCopyWithImpl<$Res>
     Object? contract = null,
     Object? maxGas = null,
     Object? chunkId = null,
-    Object? parameters = freezed,
-    Object? deposits = freezed,
+    Object? parameters = null,
+    Object? deposits = null,
   }) {
     return _then(InvokeContractBuilder(
       contract: null == contract
@@ -467,14 +481,14 @@ class _$InvokeContractBuilderCopyWithImpl<$Res>
           ? _self.chunkId
           : chunkId // ignore: cast_nullable_to_non_nullable
               as int,
-      parameters: freezed == parameters
-          ? _self.parameters
+      parameters: null == parameters
+          ? _self._parameters
           : parameters // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      deposits: freezed == deposits
-          ? _self.deposits
+              as List<dynamic>,
+      deposits: null == deposits
+          ? _self._deposits
           : deposits // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as Map<String, ContractDepositBuilder>,
     ));
   }
 }
@@ -483,14 +497,18 @@ class _$InvokeContractBuilderCopyWithImpl<$Res>
 @JsonSerializable()
 class DeployContractBuilder extends TransactionTypeBuilder {
   const DeployContractBuilder(
-      {@JsonKey(name: 'contract') required this.contract, final String? $type})
+      {@JsonKey(name: 'module') required this.module,
+      @JsonKey(name: 'invoke') this.invoke,
+      final String? $type})
       : $type = $type ?? 'deployContract',
         super._();
   factory DeployContractBuilder.fromJson(Map<String, dynamic> json) =>
       _$DeployContractBuilderFromJson(json);
 
-  @JsonKey(name: 'contract')
-  final String contract;
+  @JsonKey(name: 'module')
+  final String module;
+  @JsonKey(name: 'invoke')
+  final DeployContractInvokeBuilder? invoke;
 
   @JsonKey(name: 'runtimeType')
   final String $type;
@@ -515,17 +533,17 @@ class DeployContractBuilder extends TransactionTypeBuilder {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is DeployContractBuilder &&
-            (identical(other.contract, contract) ||
-                other.contract == contract));
+            (identical(other.module, module) || other.module == module) &&
+            (identical(other.invoke, invoke) || other.invoke == invoke));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, contract);
+  int get hashCode => Object.hash(runtimeType, module, invoke);
 
   @override
   String toString() {
-    return 'TransactionTypeBuilder.deployContract(contract: $contract)';
+    return 'TransactionTypeBuilder.deployContract(module: $module, invoke: $invoke)';
   }
 }
 
@@ -536,7 +554,11 @@ abstract mixin class $DeployContractBuilderCopyWith<$Res>
           $Res Function(DeployContractBuilder) _then) =
       _$DeployContractBuilderCopyWithImpl;
   @useResult
-  $Res call({@JsonKey(name: 'contract') String contract});
+  $Res call(
+      {@JsonKey(name: 'module') String module,
+      @JsonKey(name: 'invoke') DeployContractInvokeBuilder? invoke});
+
+  $DeployContractInvokeBuilderCopyWith<$Res>? get invoke;
 }
 
 /// @nodoc
@@ -551,14 +573,33 @@ class _$DeployContractBuilderCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? contract = null,
+    Object? module = null,
+    Object? invoke = freezed,
   }) {
     return _then(DeployContractBuilder(
-      contract: null == contract
-          ? _self.contract
-          : contract // ignore: cast_nullable_to_non_nullable
+      module: null == module
+          ? _self.module
+          : module // ignore: cast_nullable_to_non_nullable
               as String,
+      invoke: freezed == invoke
+          ? _self.invoke
+          : invoke // ignore: cast_nullable_to_non_nullable
+              as DeployContractInvokeBuilder?,
     ));
+  }
+
+  /// Create a copy of TransactionTypeBuilder
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $DeployContractInvokeBuilderCopyWith<$Res>? get invoke {
+    if (_self.invoke == null) {
+      return null;
+    }
+
+    return $DeployContractInvokeBuilderCopyWith<$Res>(_self.invoke!, (value) {
+      return _then(_self.copyWith(invoke: value));
+    });
   }
 }
 

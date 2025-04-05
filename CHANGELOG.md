@@ -1,3 +1,7 @@
+## 0.24.3
+
+fix: update invokeContract and deployContract Builders.
+
 ## 0.24.2
 
 refactor: modularize BuildTransactionParams JSON (de)serialization

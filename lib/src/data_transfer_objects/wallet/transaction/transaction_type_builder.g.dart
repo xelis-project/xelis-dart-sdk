@@ -57,8 +57,11 @@ InvokeContractBuilder _$InvokeContractBuilderFromJson(
       contract: json['contract'] as String,
       maxGas: (json['max_gas'] as num).toInt(),
       chunkId: (json['chunk_id'] as num).toInt(),
-      parameters: json['parameters'],
-      deposits: json['deposits'],
+      parameters: json['parameters'] as List<dynamic>,
+      deposits: (json['deposits'] as Map<String, dynamic>).map(
+        (k, e) => MapEntry(
+            k, ContractDepositBuilder.fromJson(e as Map<String, dynamic>)),
+      ),
       $type: json['runtimeType'] as String?,
     );
 
@@ -76,13 +79,18 @@ Map<String, dynamic> _$InvokeContractBuilderToJson(
 DeployContractBuilder _$DeployContractBuilderFromJson(
         Map<String, dynamic> json) =>
     DeployContractBuilder(
-      contract: json['contract'] as String,
+      module: json['module'] as String,
+      invoke: json['invoke'] == null
+          ? null
+          : DeployContractInvokeBuilder.fromJson(
+              json['invoke'] as Map<String, dynamic>),
       $type: json['runtimeType'] as String?,
     );
 
 Map<String, dynamic> _$DeployContractBuilderToJson(
         DeployContractBuilder instance) =>
     <String, dynamic>{
-      'contract': instance.contract,
+      'module': instance.module,
+      'invoke': instance.invoke,
       'runtimeType': instance.$type,
     };

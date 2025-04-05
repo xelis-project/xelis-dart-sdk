@@ -105,6 +105,8 @@ export 'wallet/get_balance/get_wallet_balance_params.dart';
 export 'wallet/list_transactions/list_transactions_params.dart';
 export 'wallet/rescan/rescan_params.dart';
 export 'wallet/sign_unsigned_transaction/sign_unsigned_transaction_params.dart';
+export 'wallet/transaction/contract_deposit_builder.dart';
+export 'wallet/transaction/deploy_contract_invoke_builder.dart';
 export 'wallet/transaction/multisig.dart';
 export 'wallet/transaction/reference.dart';
 export 'wallet/transaction/signature_id.dart';
