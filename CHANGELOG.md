@@ -1,3 +1,7 @@
+## 0.24.5
+
+- fix(BuildTransactionParams): fix JSON serialization
+
 ## 0.24.4
 
 - feat(transfer): add encryptExtraData field to TransferBuilder
