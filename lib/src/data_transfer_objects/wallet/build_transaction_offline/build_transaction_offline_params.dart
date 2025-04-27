@@ -24,56 +24,24 @@ abstract class BuildTransactionOfflineParams
   const BuildTransactionOfflineParams._();
 
   /// @nodoc
-  Map<String, dynamic> toJson() => switch (transactionTypeBuilder) {
-        TransfersBuilder() => {
-            ...transactionTypeBuilder.toJson(),
-            'balances': balances,
-            'reference': reference.toJson(),
-            if (feeBuilder != null) 'fee': feeBuilder,
-            if (nonce != null) 'nonce': nonce,
-            if (txVersion != null) 'tx_version': txVersion,
-            if (txAsHex != null) 'tx_as_hex': txAsHex,
-            if (signers != null) 'signers': signers,
-          },
-        BurnBuilder() => {
-            ...transactionTypeBuilder.toJson(),
-            'balances': balances,
-            'reference': reference.toJson(),
-            if (feeBuilder != null) 'fee': feeBuilder,
-            if (nonce != null) 'nonce': nonce,
-            if (txVersion != null) 'tx_version': txVersion,
-            if (txAsHex != null) 'tx_as_hex': txAsHex,
-            if (signers != null) 'signers': signers,
-          },
-        MultisigBuilder() => {
-            ...transactionTypeBuilder.toJson(),
-            'balances': balances,
-            'reference': reference.toJson(),
-            if (feeBuilder != null) 'fee': feeBuilder,
-            if (nonce != null) 'nonce': nonce,
-            if (txVersion != null) 'tx_version': txVersion,
-            if (txAsHex != null) 'tx_as_hex': txAsHex,
-            if (signers != null) 'signers': signers,
-          },
-        InvokeContractBuilder() => {
-            ...transactionTypeBuilder.toJson(),
-            'balances': balances,
-            'reference': reference.toJson(),
-            if (feeBuilder != null) 'fee': feeBuilder,
-            if (nonce != null) 'nonce': nonce,
-            if (txVersion != null) 'tx_version': txVersion,
-            if (txAsHex != null) 'tx_as_hex': txAsHex,
-            if (signers != null) 'signers': signers,
-          },
-        DeployContractBuilder() => {
-            ...transactionTypeBuilder.toJson(),
-            'balances': balances,
-            'reference': reference.toJson(),
-            if (feeBuilder != null) 'fee': feeBuilder,
-            if (nonce != null) 'nonce': nonce,
-            if (txVersion != null) 'tx_version': txVersion,
-            if (txAsHex != null) 'tx_as_hex': txAsHex,
-            if (signers != null) 'signers': signers,
-          },
-      };
+  Map<String, dynamic> toJson() {
+    final txJson = transactionTypeBuilder.toJson();
+    final commonJson = _serializeCommonFields();
+    return {
+      ...txJson,
+      ...commonJson,
+    };
+  }
+
+  Map<String, dynamic> _serializeCommonFields() {
+    return {
+      'balances': balances,
+      'reference': reference.toJson(),
+      if (feeBuilder != null) 'fee': feeBuilder!.toJson(),
+      if (nonce != null) 'nonce': nonce,
+      if (txVersion != null) 'tx_version': txVersion,
+      if (txAsHex != null) 'tx_as_hex': txAsHex,
+      if (signers != null) 'signers': signers!.map((e) => e.toJson()).toList(),
+    };
+  }
 }
