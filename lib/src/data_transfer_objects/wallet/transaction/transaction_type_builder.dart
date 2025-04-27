@@ -49,3 +49,41 @@ sealed class TransactionTypeBuilder with _$TransactionTypeBuilder {
   factory TransactionTypeBuilder.fromJson(Map<String, dynamic> json) =>
       _$TransactionTypeBuilderFromJson(json);
 }
+
+/// @nodoc
+extension TransactionTypeBuilderSafe on TransactionTypeBuilder {
+  /// @nodoc
+  static TransactionTypeBuilder safeFromJson(Map<String, dynamic> json) {
+    final preparedJson = prepareTransactionJson(json);
+    return TransactionTypeBuilder.fromJson(preparedJson);
+  }
+}
+
+/// @nodoc
+Map<String, dynamic> prepareTransactionJson(Map<String, dynamic> json) {
+  if (json case {'runtimeType': String _}) {
+    return json;
+  }
+
+  switch (json) {
+    case {'transfers': List<dynamic> _}:
+      return {...json, 'runtimeType': 'transfers'};
+
+    case {'burn': final Map<String, dynamic> burn}:
+      return {...burn, 'runtimeType': 'burn'};
+
+    case {'multi_sig': final Map<String, dynamic> multisig}:
+      return {...multisig, 'runtimeType': 'multisig'};
+
+    case {'invoke_contract': final Map<String, dynamic> invokeContract}:
+      return {...invokeContract, 'runtimeType': 'invokeContract'};
+
+    case {'deploy_contract': final Map<String, dynamic> deployContract}:
+      return {...deployContract, 'runtimeType': 'deployContract'};
+
+    default:
+      throw FormatException(
+        'Unable to determine TransactionTypeBuilder from JSON: $json',
+      );
+  }
+}
