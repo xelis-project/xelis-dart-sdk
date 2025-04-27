@@ -1,3 +1,9 @@
+## 0.24.4
+
+- feat(transfer): add encryptExtraData field to TransferBuilder
+- feat(TransactionTypeBuilder): add safeFromJson method and prepareTransactionJson utility
+- refactor(BuildTransactionParams): simplify JSON serialization by extracting common fields
+
 ## 0.24.3
 
 fix: update invokeContract and deployContract Builders.
