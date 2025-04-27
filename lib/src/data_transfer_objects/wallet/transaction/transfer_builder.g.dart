@@ -13,6 +13,7 @@ _TransferBuilder _$TransferBuilderFromJson(Map<String, dynamic> json) =>
       asset: json['asset'] as String,
       amount: (json['amount'] as num).toInt(),
       destination: json['destination'] as String,
+      encryptExtraData: json['encrypt_extra_data'] as bool,
       extraData: json['extra_data'],
     );
 
@@ -21,5 +22,6 @@ Map<String, dynamic> _$TransferBuilderToJson(_TransferBuilder instance) =>
       'asset': instance.asset,
       'amount': instance.amount,
       'destination': instance.destination,
+      'encrypt_extra_data': instance.encryptExtraData,
       if (instance.extraData case final value?) 'extra_data': value,
     };

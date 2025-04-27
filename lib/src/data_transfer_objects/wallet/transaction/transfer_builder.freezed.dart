@@ -21,6 +21,8 @@ mixin _$TransferBuilder {
   int get amount;
   @JsonKey(name: 'destination')
   String get destination;
+  @JsonKey(name: 'encrypt_extra_data')
+  bool get encryptExtraData;
   @JsonKey(name: 'extra_data')
   dynamic get extraData;
 
@@ -44,17 +46,19 @@ mixin _$TransferBuilder {
             (identical(other.amount, amount) || other.amount == amount) &&
             (identical(other.destination, destination) ||
                 other.destination == destination) &&
+            (identical(other.encryptExtraData, encryptExtraData) ||
+                other.encryptExtraData == encryptExtraData) &&
             const DeepCollectionEquality().equals(other.extraData, extraData));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, asset, amount, destination,
-      const DeepCollectionEquality().hash(extraData));
+      encryptExtraData, const DeepCollectionEquality().hash(extraData));
 
   @override
   String toString() {
-    return 'TransferBuilder(asset: $asset, amount: $amount, destination: $destination, extraData: $extraData)';
+    return 'TransferBuilder(asset: $asset, amount: $amount, destination: $destination, encryptExtraData: $encryptExtraData, extraData: $extraData)';
   }
 }
 
@@ -68,6 +72,7 @@ abstract mixin class $TransferBuilderCopyWith<$Res> {
       {@JsonKey(name: 'asset') String asset,
       @JsonKey(name: 'amount') int amount,
       @JsonKey(name: 'destination') String destination,
+      @JsonKey(name: 'encrypt_extra_data') bool encryptExtraData,
       @JsonKey(name: 'extra_data') dynamic extraData});
 }
 
@@ -87,6 +92,7 @@ class _$TransferBuilderCopyWithImpl<$Res>
     Object? asset = null,
     Object? amount = null,
     Object? destination = null,
+    Object? encryptExtraData = null,
     Object? extraData = freezed,
   }) {
     return _then(_self.copyWith(
@@ -102,6 +108,10 @@ class _$TransferBuilderCopyWithImpl<$Res>
           ? _self.destination
           : destination // ignore: cast_nullable_to_non_nullable
               as String,
+      encryptExtraData: null == encryptExtraData
+          ? _self.encryptExtraData
+          : encryptExtraData // ignore: cast_nullable_to_non_nullable
+              as bool,
       extraData: freezed == extraData
           ? _self.extraData
           : extraData // ignore: cast_nullable_to_non_nullable
@@ -118,6 +128,7 @@ class _TransferBuilder implements TransferBuilder {
       {@JsonKey(name: 'asset') required this.asset,
       @JsonKey(name: 'amount') required this.amount,
       @JsonKey(name: 'destination') required this.destination,
+      @JsonKey(name: 'encrypt_extra_data') required this.encryptExtraData,
       @JsonKey(name: 'extra_data') this.extraData});
   factory _TransferBuilder.fromJson(Map<String, dynamic> json) =>
       _$TransferBuilderFromJson(json);
@@ -131,6 +142,9 @@ class _TransferBuilder implements TransferBuilder {
   @override
   @JsonKey(name: 'destination')
   final String destination;
+  @override
+  @JsonKey(name: 'encrypt_extra_data')
+  final bool encryptExtraData;
   @override
   @JsonKey(name: 'extra_data')
   final dynamic extraData;
@@ -159,17 +173,19 @@ class _TransferBuilder implements TransferBuilder {
             (identical(other.amount, amount) || other.amount == amount) &&
             (identical(other.destination, destination) ||
                 other.destination == destination) &&
+            (identical(other.encryptExtraData, encryptExtraData) ||
+                other.encryptExtraData == encryptExtraData) &&
             const DeepCollectionEquality().equals(other.extraData, extraData));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, asset, amount, destination,
-      const DeepCollectionEquality().hash(extraData));
+      encryptExtraData, const DeepCollectionEquality().hash(extraData));
 
   @override
   String toString() {
-    return 'TransferBuilder(asset: $asset, amount: $amount, destination: $destination, extraData: $extraData)';
+    return 'TransferBuilder(asset: $asset, amount: $amount, destination: $destination, encryptExtraData: $encryptExtraData, extraData: $extraData)';
   }
 }
 
@@ -185,6 +201,7 @@ abstract mixin class _$TransferBuilderCopyWith<$Res>
       {@JsonKey(name: 'asset') String asset,
       @JsonKey(name: 'amount') int amount,
       @JsonKey(name: 'destination') String destination,
+      @JsonKey(name: 'encrypt_extra_data') bool encryptExtraData,
       @JsonKey(name: 'extra_data') dynamic extraData});
 }
 
@@ -204,6 +221,7 @@ class __$TransferBuilderCopyWithImpl<$Res>
     Object? asset = null,
     Object? amount = null,
     Object? destination = null,
+    Object? encryptExtraData = null,
     Object? extraData = freezed,
   }) {
     return _then(_TransferBuilder(
@@ -219,6 +237,10 @@ class __$TransferBuilderCopyWithImpl<$Res>
           ? _self.destination
           : destination // ignore: cast_nullable_to_non_nullable
               as String,
+      encryptExtraData: null == encryptExtraData
+          ? _self.encryptExtraData
+          : encryptExtraData // ignore: cast_nullable_to_non_nullable
+              as bool,
       extraData: freezed == extraData
           ? _self.extraData
           : extraData // ignore: cast_nullable_to_non_nullable

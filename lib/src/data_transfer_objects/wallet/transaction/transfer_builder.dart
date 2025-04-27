@@ -15,6 +15,7 @@ abstract class TransferBuilder with _$TransferBuilder {
     @JsonKey(name: 'asset') required String asset,
     @JsonKey(name: 'amount') required int amount,
     @JsonKey(name: 'destination') required String destination,
+    @JsonKey(name: 'encrypt_extra_data') required bool encryptExtraData,
     @JsonKey(name: 'extra_data') dynamic extraData,
   }) = _TransferBuilder;
 
