@@ -14,8 +14,11 @@ _RPCAssetData _$RPCAssetDataFromJson(Map<String, dynamic> json) =>
       topoheight: (json['topoheight'] as num).toInt(),
       decimals: (json['decimals'] as num).toInt(),
       name: json['name'] as String,
+      ticker: json['ticker'] as String,
       maxSupply: (json['max_supply'] as num?)?.toInt(),
-      contract: json['contract'] as String?,
+      owner: json['owner'] == null
+          ? null
+          : AssetOwner.fromJson(json['owner'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$RPCAssetDataToJson(_RPCAssetData instance) =>
@@ -24,6 +27,7 @@ Map<String, dynamic> _$RPCAssetDataToJson(_RPCAssetData instance) =>
       'topoheight': instance.topoheight,
       'decimals': instance.decimals,
       'name': instance.name,
+      'ticker': instance.ticker,
       'max_supply': instance.maxSupply,
-      'contract': instance.contract,
+      'owner': instance.owner,
     };

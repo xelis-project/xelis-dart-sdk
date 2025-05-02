@@ -123,7 +123,7 @@ extension DaemonEventsExtension on DaemonClient {
   /// Registers a callback for NewAsset event.
   ///
   /// Note: It is called when a new asset is added to the chain.
-  void onNewAsset(void Function(dynamic rawNewAsset) callback) =>
+  void onNewAsset(void Function(NewAssetEvent newAssetEvent) callback) =>
       onEvent(DaemonEvent.newAsset, callback);
 
   /// Unsubscribes from NewAsset event.

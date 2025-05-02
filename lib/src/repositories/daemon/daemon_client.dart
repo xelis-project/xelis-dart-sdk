@@ -24,8 +24,7 @@ class DaemonClient extends RpcClientRepository {
       // TODO: define rawTransactionSCResult type
       DaemonEvent.transactionSCResult:
           <void Function(dynamic rawTransactionSCResult)>[],
-      // TODO: define rawNewAsset type
-      DaemonEvent.newAsset: <void Function(dynamic rawNewAsset)>[],
+      DaemonEvent.newAsset: <void Function(NewAssetEvent newAssetEvent)>[],
       DaemonEvent.peerConnected: <void Function(PeerEntry peer)>[],
       DaemonEvent.peerDisconnected: <void Function(PeerEntry peer)>[],
       DaemonEvent.peerPeerListUpdated:
@@ -82,8 +81,9 @@ class DaemonClient extends RpcClientRepository {
         _logInfo('Smart Contract transaction: $result');
         _triggerCallbacks(event, result);
       case DaemonEvent.newAsset:
-        _logInfo('New asset: $result');
-        _triggerCallbacks(event, result);
+        final newAsset = NewAssetEvent.fromJson(result);
+        _logInfo('New asset: $newAsset');
+        _triggerCallbacks(event, newAsset);
       case DaemonEvent.peerConnected:
         final peerConnected = PeerEntry.fromJson(result);
         _logInfo('Peer connected: $peerConnected');
