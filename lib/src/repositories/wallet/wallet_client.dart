@@ -74,6 +74,10 @@ class WalletClient extends RpcClientRepository {
         final topoheight = result['topoheight'];
         _logInfo('History synced event: $topoheight');
         _triggerCallbacks(event, topoheight);
+      case WalletEvent.syncError:
+        final message = result['message'];
+        _logInfo('Sync error event: $message');
+        _triggerCallbacks(event, message);
     }
   }
 

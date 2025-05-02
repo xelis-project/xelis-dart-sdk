@@ -1,3 +1,9 @@
+## 0.25.0
+
+Wallet API upgrade :
+
+- add syncError event.
+
 ## 0.24.5
 
 - fix(BuildTransactionParams): fix JSON serialization

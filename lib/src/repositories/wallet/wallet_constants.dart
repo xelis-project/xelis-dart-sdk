@@ -167,7 +167,10 @@ enum WalletEvent implements XelisJsonKey {
 
   /// When the history has been synced again
   /// Contains current topoheight as value
-  historySynced('history_synced');
+  historySynced('history_synced'),
+
+  /// When a synchronization error occurs.
+  syncError('sync_error');
 
   /// Creates a new [WalletEvent] instance.
   const WalletEvent(this.jsonKey);
@@ -191,6 +194,8 @@ enum WalletEvent implements XelisJsonKey {
         return WalletEvent.offline;
       case 'history_synced':
         return WalletEvent.historySynced;
+      case 'sync_error':
+        return WalletEvent.syncError;
       default:
         throw Exception('Unknown event: $value');
     }

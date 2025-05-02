@@ -87,6 +87,15 @@ extension WalletEventsExtension on WalletClient {
     unawaited(unsubscribeFrom(WalletEvent.historySynced));
   }
 
+  /// Registers a callback for SyncError event.
+  void onSyncError(void Function(String message) callback) =>
+      onEvent(WalletEvent.syncError, callback);
+
+  /// Unsubscribes from SyncError event.
+  void unsubscribeFromSyncError() {
+    unawaited(unsubscribeFrom(WalletEvent.syncError));
+  }
+
   /// Unsubscribes from all events.
   void unsubscribeFromAll() {
     unsubscribeFromNewTopoHeight();
@@ -97,5 +106,6 @@ extension WalletEventsExtension on WalletClient {
     unsubscribeFromOnline();
     unsubscribeFromOffline();
     unsubscribeFromHistorySynced();
+    unsubscribeFromSyncError();
   }
 }

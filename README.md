@@ -134,6 +134,7 @@ Subscribe and listen to events.
 - Online
 - Offline
 - historySynced
+- syncError
 
 ## Usage
 
