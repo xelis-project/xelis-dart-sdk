@@ -21,9 +21,6 @@ class DaemonClient extends RpcClientRepository {
           <void Function(TransactionResponse transaction)>[],
       DaemonEvent.transactionExecuted:
           <void Function(TransactionExecutedEvent transactionExecutedEvent)>[],
-      // TODO: define rawTransactionSCResult type
-      DaemonEvent.transactionSCResult:
-          <void Function(dynamic rawTransactionSCResult)>[],
       DaemonEvent.newAsset: <void Function(NewAssetEvent newAssetEvent)>[],
       DaemonEvent.peerConnected: <void Function(PeerEntry peer)>[],
       DaemonEvent.peerDisconnected: <void Function(PeerEntry peer)>[],
@@ -37,6 +34,13 @@ class DaemonClient extends RpcClientRepository {
           <void Function(BlockOrphanedEvent blockOrphanedEvent)>[],
       DaemonEvent.transactionOrphaned:
           <void Function(TransactionResponse transactionResponse)>[],
+      DaemonEvent.invokeContract:
+          <void Function(InvokeContractEvent invokeContractEvent)>[],
+      DaemonEvent.contractTransfer:
+          <void Function(ContractTransferEvent contractTransferEvent)>[],
+      DaemonEvent.contractEvent: <void Function(ContractEvent contractEvent)>[],
+      DaemonEvent.deployContract:
+          <void Function(NewContractEvent newContractEvent)>[],
     };
   }
 
@@ -77,9 +81,6 @@ class DaemonClient extends RpcClientRepository {
         final transactionExecuted = TransactionExecutedEvent.fromJson(result);
         _logInfo('Transaction executed: $transactionExecuted');
         _triggerCallbacks(event, transactionExecuted);
-      case DaemonEvent.transactionSCResult:
-        _logInfo('Smart Contract transaction: $result');
-        _triggerCallbacks(event, result);
       case DaemonEvent.newAsset:
         final newAsset = NewAssetEvent.fromJson(result);
         _logInfo('New asset: $newAsset');
@@ -112,6 +113,22 @@ class DaemonClient extends RpcClientRepository {
         final transactionResponse = TransactionResponse.fromJson(result);
         _logInfo('Transaction orphaned: $transactionResponse');
         _triggerCallbacks(event, transactionResponse);
+      case DaemonEvent.invokeContract:
+        final invokeContractEvent = InvokeContractEvent.fromJson(result);
+        _logInfo('Invoke contract event: $invokeContractEvent');
+        _triggerCallbacks(event, invokeContractEvent);
+      case DaemonEvent.contractTransfer:
+        final contractTransferEvent = ContractTransferEvent.fromJson(result);
+        _logInfo('Contract transfer event: $contractTransferEvent');
+        _triggerCallbacks(event, contractTransferEvent);
+      case DaemonEvent.contractEvent:
+        final contractEvent = ContractEvent.fromJson(result);
+        _logInfo('Contract event: $contractEvent');
+        _triggerCallbacks(event, contractEvent);
+      case DaemonEvent.deployContract:
+        final newContractEvent = NewContractEvent.fromJson(result);
+        _logInfo('Deploy contract event: $newContractEvent');
+        _triggerCallbacks(event, newContractEvent);
     }
   }
 

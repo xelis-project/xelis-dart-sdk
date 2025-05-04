@@ -229,9 +229,6 @@ enum DaemonEvent implements XelisJsonKey {
   /// Transaction executed event.
   transactionExecuted('transaction_executed'),
 
-  /// Transaction smart contract result event.
-  transactionSCResult('transaction_sc_result'),
-
   /// New asset event.
   newAsset('new_asset'),
 
@@ -257,7 +254,20 @@ enum DaemonEvent implements XelisJsonKey {
   /// When a transaction that was executed in a block is not reintroduced
   /// in mempool.
   /// It contains TransactionOrphanedEvent as value.
-  transactionOrphaned('transaction_orphaned');
+  transactionOrphaned('transaction_orphaned'),
+
+  /// When the contract has been invoked,
+  /// this allows to track all the contract invocations
+  invokeContract('invoke_contract'),
+
+  /// When a contract has transferred any token to the receiver address.
+  contractTransfer('contract_transfer'),
+
+  /// When a contract fire an event.
+  contractEvent('contract_event'),
+
+  /// When a contract has been deployed.
+  deployContract('deploy_contract');
 
   /// Creates a new [DaemonEvent] instance.
   const DaemonEvent(this.jsonKey);
@@ -275,8 +285,6 @@ enum DaemonEvent implements XelisJsonKey {
         return DaemonEvent.transactionAddedInMempool;
       case 'transaction_executed':
         return DaemonEvent.transactionExecuted;
-      case 'transaction_sc_result':
-        return DaemonEvent.transactionSCResult;
       case 'new_asset':
         return DaemonEvent.newAsset;
       case 'peer_connected':
@@ -293,6 +301,14 @@ enum DaemonEvent implements XelisJsonKey {
         return DaemonEvent.blockOrphaned;
       case 'transaction_orphaned':
         return DaemonEvent.transactionOrphaned;
+      case 'invoke_contract':
+        return DaemonEvent.invokeContract;
+      case 'contract_transfer':
+        return DaemonEvent.contractTransfer;
+      case 'contract_event':
+        return DaemonEvent.contractEvent;
+      case 'deploy_contract':
+        return DaemonEvent.deployContract;
       default:
         throw Exception('Unknown event: $value');
     }

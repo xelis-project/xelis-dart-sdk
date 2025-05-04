@@ -13,7 +13,7 @@ abstract class NewAssetEvent with _$NewAssetEvent {
     @JsonKey(name: 'asset') required String asset,
     @JsonKey(name: 'block_hash') required String blockHash,
     @JsonKey(name: 'topoheight') required int topoheight,
-}) = _NewAssetEvent;
+  }) = _NewAssetEvent;
 
   /// @nodoc
   factory NewAssetEvent.fromJson(Map<String, dynamic> json) =>

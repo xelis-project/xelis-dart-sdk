@@ -37,7 +37,7 @@ extension DaemonEventsExtension on DaemonClient {
       onEvent(DaemonEvent.blockOrphaned, callback);
 
   /// Unsubscribes from BlockOrphaned event.
-  void unsubscribeOnBlockOrphaned() {
+  void unsubscribeFromBlockOrphaned() {
     unawaited(unsubscribeFrom(DaemonEvent.blockOrphaned));
   }
 
@@ -103,21 +103,8 @@ extension DaemonEventsExtension on DaemonClient {
       onEvent(DaemonEvent.transactionOrphaned, callback);
 
   /// Unsubscribes from TransactionOrphaned event.
-  void unsubscribeOnTransactionOrphaned() {
+  void unsubscribeFromTransactionOrphaned() {
     unawaited(unsubscribeFrom(DaemonEvent.transactionOrphaned));
-  }
-
-  /// Registers a callback for TransactionSCResult event.
-  ///
-  /// Note: It is called when a transaction SC result is received.
-  void onTransactionSCResult(
-    void Function(dynamic rawTransactionSCResult) callback,
-  ) =>
-      onEvent(DaemonEvent.transactionSCResult, callback);
-
-  /// Unsubscribes from TransactionSCResult event.
-  void unsubscribeFromTransactionSCResult() {
-    unawaited(unsubscribeFrom(DaemonEvent.transactionSCResult));
   }
 
   /// Registers a callback for NewAsset event.
@@ -184,18 +171,63 @@ extension DaemonEventsExtension on DaemonClient {
     unawaited(unsubscribeFrom(DaemonEvent.peerPeerDisconnected));
   }
 
+  /// Registers a callback for InvokeContract event.
+  void onInvokeContract(void Function(InvokeContractEvent event) callback) =>
+      onEvent(DaemonEvent.invokeContract, callback);
+
+  /// Unsubscribes from InvokeContract event.
+  void unsubscribeFromInvokeContract() {
+    unawaited(unsubscribeFrom(DaemonEvent.invokeContract));
+  }
+
+  /// Registers a callback for ContractTransfer event.
+  void onContractTransfer(
+    void Function(ContractTransferEvent event) callback,
+  ) =>
+      onEvent(DaemonEvent.contractTransfer, callback);
+
+  /// Unsubscribes from ContractTransfer event.
+  void unsubscribeFromContractTransfer() {
+    unawaited(unsubscribeFrom(DaemonEvent.contractTransfer));
+  }
+
+  /// Registers a callback for ContractEvent event.
+  void onContractEvent(void Function(ContractEvent event) callback) =>
+      onEvent(DaemonEvent.contractEvent, callback);
+
+  /// Unsubscribes from ContractEvent event.
+  void unsubscribeFromContractEvent() {
+    unawaited(unsubscribeFrom(DaemonEvent.contractEvent));
+  }
+
+  /// Registers a callback for DeployContract event.
+  void onDeployContract(void Function(NewContractEvent event) callback) =>
+      onEvent(DaemonEvent.deployContract, callback);
+
+  /// Unsubscribes from DeployContract event.
+  void unsubscribeFromDeployContract() {
+    unawaited(unsubscribeFrom(DaemonEvent.deployContract));
+  }
+
   /// Unsubscribes from all events.
   void unsubscribeFromAll() {
     unsubscribeFromNewBlock();
     unsubscribeFromBlockOrdered();
     unsubscribeFromTransactionAddedInMempool();
     unsubscribeFromTransactionExecuted();
-    unsubscribeFromTransactionSCResult();
     unsubscribeFromNewAsset();
     unsubscribeFromPeerConnected();
     unsubscribeFromPeerDisconnected();
     unsubscribeFromPeerPeerListUpdated();
     unsubscribeFromPeerStateUpdated();
     unsubscribeFromPeerPeerDisconnected();
+    unsubscribeFromStableHeightChanged();
+    unsubscribeFromStableTopoHeightChanged();
+    unsubscribeFromBlockOrphaned();
+    unsubscribeFromTransactionOrphaned();
+    unsubscribeFromInvokeContract();
+    unsubscribeFromContractTransfer();
+    unsubscribeFromContractEvent();
+    unsubscribeFromDeployContract();
   }
 }

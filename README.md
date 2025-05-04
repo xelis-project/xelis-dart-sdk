@@ -116,13 +116,16 @@ Subscribe and listen to events.
 - transactionAddedInMempool
 - transactionExecuted
 - transactionOrphaned
-- transactionSCResult
 - newAsset
 - peerConnected
 - peerDisconnected
 - peerPeerListUpdated
 - peerStateUpdated
 - peerPeerDisconnected
+- invokeContract
+- contractTransfer
+- contractEvent
+- deployContract
 
 #### Wallet
 
