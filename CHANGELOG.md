@@ -1,3 +1,14 @@
+## 0.26.0
+
+Daemon API upgrade :
+- invokeContract event.
+- deployContract event.
+- contractTransfer event.
+- contractEvent event.
+
+Wallet API upgrade :
+- RPCAssetData for NewAsset event.
+
 ## 0.25.0
 
 Wallet API upgrade :
