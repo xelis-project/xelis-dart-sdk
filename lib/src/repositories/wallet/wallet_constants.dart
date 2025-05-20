@@ -170,7 +170,13 @@ enum WalletEvent implements XelisJsonKey {
   historySynced('history_synced'),
 
   /// When a synchronization error occurs.
-  syncError('sync_error');
+  syncError('sync_error'),
+
+  /// When a asset is tracked by the wallet.
+  trackAsset('track_asset'),
+
+  /// When a asset is untracked by the wallet.
+  untrackAsset('untrack_asset');
 
   /// Creates a new [WalletEvent] instance.
   const WalletEvent(this.jsonKey);
@@ -196,6 +202,10 @@ enum WalletEvent implements XelisJsonKey {
         return WalletEvent.historySynced;
       case 'sync_error':
         return WalletEvent.syncError;
+      case 'track_asset':
+        return WalletEvent.trackAsset;
+      case 'untrack_asset':
+        return WalletEvent.untrackAsset;
       default:
         throw Exception('Unknown event: $value');
     }

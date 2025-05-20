@@ -25,6 +25,8 @@ class WalletClient extends RpcClientRepository {
       WalletEvent.offline: <void Function()>[],
       WalletEvent.historySynced: <void Function(int topoheight)>[],
       WalletEvent.syncError: <void Function(String message)>[],
+      WalletEvent.trackAsset: <void Function(String asset)>[],
+      WalletEvent.untrackAsset: <void Function(String asset)>[],
     };
 
     _basicAuth = stringToBase64('$username:$password');
@@ -79,6 +81,14 @@ class WalletClient extends RpcClientRepository {
         final message = result['message'];
         _logInfo('Sync error event: $message');
         _triggerCallbacks(event, message);
+      case WalletEvent.trackAsset:
+        final asset = result['asset'];
+        _logInfo('Track asset event: $asset');
+        _triggerCallbacks(event, asset);
+      case WalletEvent.untrackAsset:
+        final asset = result['asset'];
+        _logInfo('Untrack asset event: $asset');
+        _triggerCallbacks(event, asset);
     }
   }
 

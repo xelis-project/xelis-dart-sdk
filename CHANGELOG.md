@@ -1,3 +1,9 @@
+## 0.27.0
+
+Wallet API upgrade :
+- TrackAsset event.
+- UntrackAsset event.
+
 ## 0.26.0
 
 Daemon API upgrade :

@@ -96,6 +96,24 @@ extension WalletEventsExtension on WalletClient {
     unawaited(unsubscribeFrom(WalletEvent.syncError));
   }
 
+  /// Registers a callback for TrackAsset event.
+  void onTrackAsset(void Function(String asset) callback) =>
+      onEvent(WalletEvent.trackAsset, callback);
+
+  /// Unsubscribes from TrackAsset event.
+  void unsubscribeFromTrackAsset() {
+    unawaited(unsubscribeFrom(WalletEvent.trackAsset));
+  }
+
+  /// Registers a callback for UntrackAsset event.
+  void onUntrackAsset(void Function(String asset) callback) =>
+      onEvent(WalletEvent.untrackAsset, callback);
+
+  /// Unsubscribes from UntrackAsset event.
+  void unsubscribeFromUntrackAsset() {
+    unawaited(unsubscribeFrom(WalletEvent.untrackAsset));
+  }
+
   /// Unsubscribes from all events.
   void unsubscribeFromAll() {
     unsubscribeFromNewTopoHeight();
@@ -107,5 +125,7 @@ extension WalletEventsExtension on WalletClient {
     unsubscribeFromOffline();
     unsubscribeFromHistorySynced();
     unsubscribeFromSyncError();
+    unsubscribeFromTrackAsset();
+    unsubscribeFromUntrackAsset();
   }
 }
