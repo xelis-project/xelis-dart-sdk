@@ -54,6 +54,7 @@ sealed class TransactionEntryType with _$TransactionEntryType {
   const factory TransactionEntryType.deployContract({
     @JsonKey(name: 'fee') required int fee,
     @JsonKey(name: 'nonce') required int nonce,
+    @JsonKey(name: 'invoke') DeployInvoke? invoke,
   }) = DeployContractEntry;
 
   /// @nodoc

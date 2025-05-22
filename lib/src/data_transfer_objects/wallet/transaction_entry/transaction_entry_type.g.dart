@@ -115,6 +115,9 @@ DeployContractEntry _$DeployContractEntryFromJson(Map<String, dynamic> json) =>
     DeployContractEntry(
       fee: (json['fee'] as num).toInt(),
       nonce: (json['nonce'] as num).toInt(),
+      invoke: json['invoke'] == null
+          ? null
+          : DeployInvoke.fromJson(json['invoke'] as Map<String, dynamic>),
       $type: json['runtimeType'] as String?,
     );
 
@@ -123,5 +126,6 @@ Map<String, dynamic> _$DeployContractEntryToJson(
     <String, dynamic>{
       'fee': instance.fee,
       'nonce': instance.nonce,
+      'invoke': instance.invoke,
       'runtimeType': instance.$type,
     };

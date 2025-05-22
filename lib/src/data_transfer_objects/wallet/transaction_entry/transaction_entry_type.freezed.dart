@@ -730,6 +730,7 @@ class DeployContractEntry implements TransactionEntryType {
   const DeployContractEntry(
       {@JsonKey(name: 'fee') required this.fee,
       @JsonKey(name: 'nonce') required this.nonce,
+      @JsonKey(name: 'invoke') this.invoke,
       final String? $type})
       : $type = $type ?? 'deployContract';
   factory DeployContractEntry.fromJson(Map<String, dynamic> json) =>
@@ -739,6 +740,8 @@ class DeployContractEntry implements TransactionEntryType {
   final int fee;
   @JsonKey(name: 'nonce')
   final int nonce;
+  @JsonKey(name: 'invoke')
+  final DeployInvoke? invoke;
 
   @JsonKey(name: 'runtimeType')
   final String $type;
@@ -763,16 +766,17 @@ class DeployContractEntry implements TransactionEntryType {
         (other.runtimeType == runtimeType &&
             other is DeployContractEntry &&
             (identical(other.fee, fee) || other.fee == fee) &&
-            (identical(other.nonce, nonce) || other.nonce == nonce));
+            (identical(other.nonce, nonce) || other.nonce == nonce) &&
+            (identical(other.invoke, invoke) || other.invoke == invoke));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, fee, nonce);
+  int get hashCode => Object.hash(runtimeType, fee, nonce, invoke);
 
   @override
   String toString() {
-    return 'TransactionEntryType.deployContract(fee: $fee, nonce: $nonce)';
+    return 'TransactionEntryType.deployContract(fee: $fee, nonce: $nonce, invoke: $invoke)';
   }
 }
 
@@ -783,7 +787,12 @@ abstract mixin class $DeployContractEntryCopyWith<$Res>
           DeployContractEntry value, $Res Function(DeployContractEntry) _then) =
       _$DeployContractEntryCopyWithImpl;
   @useResult
-  $Res call({@JsonKey(name: 'fee') int fee, @JsonKey(name: 'nonce') int nonce});
+  $Res call(
+      {@JsonKey(name: 'fee') int fee,
+      @JsonKey(name: 'nonce') int nonce,
+      @JsonKey(name: 'invoke') DeployInvoke? invoke});
+
+  $DeployInvokeCopyWith<$Res>? get invoke;
 }
 
 /// @nodoc
@@ -800,6 +809,7 @@ class _$DeployContractEntryCopyWithImpl<$Res>
   $Res call({
     Object? fee = null,
     Object? nonce = null,
+    Object? invoke = freezed,
   }) {
     return _then(DeployContractEntry(
       fee: null == fee
@@ -810,7 +820,25 @@ class _$DeployContractEntryCopyWithImpl<$Res>
           ? _self.nonce
           : nonce // ignore: cast_nullable_to_non_nullable
               as int,
+      invoke: freezed == invoke
+          ? _self.invoke
+          : invoke // ignore: cast_nullable_to_non_nullable
+              as DeployInvoke?,
     ));
+  }
+
+  /// Create a copy of TransactionEntryType
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $DeployInvokeCopyWith<$Res>? get invoke {
+    if (_self.invoke == null) {
+      return null;
+    }
+
+    return $DeployInvokeCopyWith<$Res>(_self.invoke!, (value) {
+      return _then(_self.copyWith(invoke: value));
+    });
   }
 }
 

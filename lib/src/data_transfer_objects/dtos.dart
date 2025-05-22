@@ -120,6 +120,7 @@ export 'wallet/transaction/signer_id.dart';
 export 'wallet/transaction/transaction_type_builder.dart';
 export 'wallet/transaction/transaction_wallet_response.dart';
 export 'wallet/transaction/transfer_builder.dart';
+export 'wallet/transaction_entry/deploy_invoke.dart';
 export 'wallet/transaction_entry/extra_data.dart';
 export 'wallet/transaction_entry/transaction_entry.dart';
 export 'wallet/transaction_entry/transaction_entry_type.dart';
