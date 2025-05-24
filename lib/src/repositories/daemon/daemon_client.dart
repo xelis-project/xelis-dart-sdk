@@ -17,8 +17,9 @@ class DaemonClient extends RpcClientRepository {
           <void Function(BlockOrderedEvent blockOrderEvent)>[],
       DaemonEvent.stableHeightChanged:
           <void Function(StableHeightChangedEvent stableHeightChangedEvent)>[],
-      DaemonEvent.transactionAddedInMempool:
-          <void Function(TransactionResponse transaction)>[],
+      DaemonEvent.transactionAddedInMempool: <void Function(
+        MempoolTransactionSummary mempoolTransactionSummary,
+      )>[],
       DaemonEvent.transactionExecuted:
           <void Function(TransactionExecutedEvent transactionExecutedEvent)>[],
       DaemonEvent.newAsset: <void Function(NewAssetEvent newAssetEvent)>[],
@@ -74,7 +75,7 @@ class DaemonClient extends RpcClientRepository {
         _logInfo('Stable topo height changed: $stableTopoHeightChanged');
         _triggerCallbacks(event, stableTopoHeightChanged);
       case DaemonEvent.transactionAddedInMempool:
-        final transaction = TransactionResponse.fromJson(result);
+        final transaction = MempoolTransactionSummary.fromJson(result);
         _logInfo('Transaction added in mempool: $transaction');
         _triggerCallbacks(event, transaction);
       case DaemonEvent.transactionExecuted:

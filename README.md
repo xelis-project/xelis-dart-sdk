@@ -38,6 +38,7 @@ JSON-RPC Clients to interact with daemon and wallet API.
 - getTransaction
 - getTransactions
 - getMempool
+- getMempoolSummary
 - submitBlock
 - getBlocksRangeByTopoHeight
 - getBlocksRangeByHeight
@@ -138,6 +139,8 @@ Subscribe and listen to events.
 - Offline
 - historySynced
 - syncError
+- TrackAsset
+- UntrackAsset
 
 ## Usage
 

@@ -1,3 +1,10 @@
+## 0.28.0
+
+Daemon API upgrade :
+- getMempool RPC method updated.
+- new getMempoolSummary RPC method.
+- MempoolTransactionSummary dto used in TransactionAddedInMempool event.
+
 ## 0.27.0
 
 Wallet API upgrade :

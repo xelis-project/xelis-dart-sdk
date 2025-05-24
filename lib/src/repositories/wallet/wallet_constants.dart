@@ -50,13 +50,15 @@ enum WalletMethod implements XelisJsonKey {
   /// represents 1 XELIS because of 5 decimals precision.
   buildTransaction('build_transaction'),
 
-  /// Build a transaction offline in the wallet by providing directly exact balances and reference.
+  /// Build a transaction offline in the wallet
+  /// by providing directly exact balances and reference.
   ///
   /// It cannot be broadcasted to the network.
   buildTransactionOffline('build_transaction_offline'),
 
   /// Build a transaction without signing it.
-  /// This is useful in case of a MultiSig setup where you need to sign the transaction with other signers.
+  /// This is useful in case of a MultiSig setup where
+  /// you need to sign the transaction with other signers.
   buildUnsignedTransaction('build_unsigned_transaction'),
 
   /// Finalize an unsigned transaction by signing it with the wallet key pair.
@@ -64,7 +66,8 @@ enum WalletMethod implements XelisJsonKey {
   finalizeUnsignedTransaction('finalize_unsigned_transaction'),
 
   /// Sign an unsigned transaction hash with the wallet key pair.
-  /// This is useful in case you are a part of the multisig of another wallet and you need to sign a transaction.
+  /// This is useful in case you are a part of the multisig of another wallet
+  /// and you need to sign a transaction.
   signUnsignedTransaction('sign_unsigned_transaction'),
 
   /// Search for transactions based on various parameters.
@@ -156,7 +159,8 @@ enum WalletEvent implements XelisJsonKey {
   balanceChanged('balance_changed'),
 
   /// When a rescan happened on the wallet.
-  /// Contains a topoheight as value to indicate until which topoheight transactions got deleted.
+  /// Contains a topoheight as value to indicate until which topoheight
+  /// transactions got deleted.
   rescan('rescan'),
 
   /// When network state changed to Online.

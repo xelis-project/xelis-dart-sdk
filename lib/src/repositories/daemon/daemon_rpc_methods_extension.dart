@@ -260,13 +260,27 @@ extension DaemonRpcMethodsExtension on DaemonClient {
   }
 
   /// Fetch all transactions presents in the mempool.
-  Future<List<TransactionResponse>> getMempool() async {
+  Future<GetMempoolResult> getMempool(
+    GetMempoolParams getMempoolParams,
+  ) async {
     final result = await sendRequest(
       DaemonMethod.getMempool,
+      getMempoolParams.toJson(),
     );
-    return (result as List)
-        .map((e) => TransactionResponse.fromJson(e as Map<String, dynamic>))
-        .toList();
+    return GetMempoolResult.fromJson(result as Map<String, dynamic>);
+  }
+
+  /// Fetch transactions summary presents in the mempool.
+  Future<GetMempoolSummaryResult> getMempoolSummary(
+    GetMempoolParams getMempoolParams,
+  ) async {
+    final result = await sendRequest(
+      DaemonMethod.getMempoolSummary,
+      getMempoolParams.toJson(),
+    );
+    return GetMempoolSummaryResult.fromJson(
+      result as Map<String, dynamic>,
+    );
   }
 
   /// Fetch transactions by theirs hashes from daemon and keep
