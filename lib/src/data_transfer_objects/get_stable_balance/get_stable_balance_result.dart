@@ -12,7 +12,7 @@ part 'get_stable_balance_result.g.dart';
 abstract class GetStableBalanceResult with _$GetStableBalanceResult {
   /// @nodoc
   const factory GetStableBalanceResult({
-    @JsonKey(name: 'version') required VersionedBalance versionedBalance,
+    @JsonKey(name: 'version') required BalanceVersion versionedBalance,
     @JsonKey(name: 'stable_topoheight') required int stableTopoheight,
     @JsonKey(name: 'stable_block_hash') required String stableBlockHash,
   }) = _GetStableBalanceResult;

@@ -2,22 +2,22 @@
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'versioned_balance.freezed.dart';
+part 'balance_version.freezed.dart';
 
-part 'versioned_balance.g.dart';
+part 'balance_version.g.dart';
 
 /// @nodoc
 @freezed
-abstract class VersionedBalance with _$VersionedBalance {
+abstract class BalanceVersion with _$BalanceVersion {
   /// @nodoc
-  const factory VersionedBalance({
+  const factory BalanceVersion({
     @JsonKey(name: 'balance_type') required String balanceType,
     @JsonKey(name: 'final_balance') required Map<String, dynamic> finalBalance,
-    @JsonKey(name: 'output_balance') required dynamic outputBalance,
+    @JsonKey(name: 'output_balance') Map<String, dynamic>? outputBalance,
     @JsonKey(name: 'previous_topoheight') int? previousTopoheight,
-  }) = _VersionedBalance;
+  }) = _BalanceVersion;
 
   /// @nodoc
-  factory VersionedBalance.fromJson(Map<String, dynamic> json) =>
-      _$VersionedBalanceFromJson(json);
+  factory BalanceVersion.fromJson(Map<String, dynamic> json) =>
+      _$BalanceVersionFromJson(json);
 }

@@ -153,14 +153,14 @@ extension DaemonRpcMethodsExtension on DaemonClient {
   /// Returns asset's balance from address at exact topo height.
   ///
   /// NOTE: Balance is returned in atomic units
-  Future<VersionedBalance> getBalanceAtTopoHeight(
+  Future<BalanceVersion> getBalanceAtTopoHeight(
     GetBalanceAtTopoHeightParams getBalanceAtTopoHeightParams,
   ) async {
     final result = await sendRequest(
       DaemonMethod.getBalanceAtTopoHeight,
       getBalanceAtTopoHeightParams.toJson(),
     );
-    return VersionedBalance.fromJson(result as Map<String, dynamic>);
+    return BalanceVersion.fromJson(result as Map<String, dynamic>);
   }
 
   /// Get registered topoheight and decimals data from a specific asset.

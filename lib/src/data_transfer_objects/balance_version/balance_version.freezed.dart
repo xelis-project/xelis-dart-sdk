@@ -4,7 +4,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'versioned_balance.dart';
+part of 'balance_version.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,40 +14,40 @@ part of 'versioned_balance.dart';
 T _$identity<T>(T value) => value;
 
 /// @nodoc
-mixin _$VersionedBalance {
+mixin _$BalanceVersion {
   @JsonKey(name: 'balance_type')
   String get balanceType;
   @JsonKey(name: 'final_balance')
   Map<String, dynamic> get finalBalance;
+  @JsonKey(name: 'output_balance')
+  Map<String, dynamic>? get outputBalance;
   @JsonKey(name: 'previous_topoheight')
   int? get previousTopoheight;
-  @JsonKey(name: 'output_balance')
-  dynamic get outputBalance;
 
-  /// Create a copy of VersionedBalance
+  /// Create a copy of BalanceVersion
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  $VersionedBalanceCopyWith<VersionedBalance> get copyWith =>
-      _$VersionedBalanceCopyWithImpl<VersionedBalance>(
-          this as VersionedBalance, _$identity);
+  $BalanceVersionCopyWith<BalanceVersion> get copyWith =>
+      _$BalanceVersionCopyWithImpl<BalanceVersion>(
+          this as BalanceVersion, _$identity);
 
-  /// Serializes this VersionedBalance to a JSON map.
+  /// Serializes this BalanceVersion to a JSON map.
   Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is VersionedBalance &&
+            other is BalanceVersion &&
             (identical(other.balanceType, balanceType) ||
                 other.balanceType == balanceType) &&
             const DeepCollectionEquality()
                 .equals(other.finalBalance, finalBalance) &&
-            (identical(other.previousTopoheight, previousTopoheight) ||
-                other.previousTopoheight == previousTopoheight) &&
             const DeepCollectionEquality()
-                .equals(other.outputBalance, outputBalance));
+                .equals(other.outputBalance, outputBalance) &&
+            (identical(other.previousTopoheight, previousTopoheight) ||
+                other.previousTopoheight == previousTopoheight));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -56,45 +56,45 @@ mixin _$VersionedBalance {
       runtimeType,
       balanceType,
       const DeepCollectionEquality().hash(finalBalance),
-      previousTopoheight,
-      const DeepCollectionEquality().hash(outputBalance));
+      const DeepCollectionEquality().hash(outputBalance),
+      previousTopoheight);
 
   @override
   String toString() {
-    return 'VersionedBalance(balanceType: $balanceType, finalBalance: $finalBalance, previousTopoheight: $previousTopoheight, outputBalance: $outputBalance)';
+    return 'BalanceVersion(balanceType: $balanceType, finalBalance: $finalBalance, outputBalance: $outputBalance, previousTopoheight: $previousTopoheight)';
   }
 }
 
 /// @nodoc
-abstract mixin class $VersionedBalanceCopyWith<$Res> {
-  factory $VersionedBalanceCopyWith(
-          VersionedBalance value, $Res Function(VersionedBalance) _then) =
-      _$VersionedBalanceCopyWithImpl;
+abstract mixin class $BalanceVersionCopyWith<$Res> {
+  factory $BalanceVersionCopyWith(
+          BalanceVersion value, $Res Function(BalanceVersion) _then) =
+      _$BalanceVersionCopyWithImpl;
   @useResult
   $Res call(
       {@JsonKey(name: 'balance_type') String balanceType,
       @JsonKey(name: 'final_balance') Map<String, dynamic> finalBalance,
-      @JsonKey(name: 'previous_topoheight') int? previousTopoheight,
-      @JsonKey(name: 'output_balance') dynamic outputBalance});
+      @JsonKey(name: 'output_balance') Map<String, dynamic>? outputBalance,
+      @JsonKey(name: 'previous_topoheight') int? previousTopoheight});
 }
 
 /// @nodoc
-class _$VersionedBalanceCopyWithImpl<$Res>
-    implements $VersionedBalanceCopyWith<$Res> {
-  _$VersionedBalanceCopyWithImpl(this._self, this._then);
+class _$BalanceVersionCopyWithImpl<$Res>
+    implements $BalanceVersionCopyWith<$Res> {
+  _$BalanceVersionCopyWithImpl(this._self, this._then);
 
-  final VersionedBalance _self;
-  final $Res Function(VersionedBalance) _then;
+  final BalanceVersion _self;
+  final $Res Function(BalanceVersion) _then;
 
-  /// Create a copy of VersionedBalance
+  /// Create a copy of BalanceVersion
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? balanceType = null,
     Object? finalBalance = null,
-    Object? previousTopoheight = freezed,
     Object? outputBalance = freezed,
+    Object? previousTopoheight = freezed,
   }) {
     return _then(_self.copyWith(
       balanceType: null == balanceType
@@ -105,30 +105,32 @@ class _$VersionedBalanceCopyWithImpl<$Res>
           ? _self.finalBalance
           : finalBalance // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>,
+      outputBalance: freezed == outputBalance
+          ? _self.outputBalance
+          : outputBalance // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
       previousTopoheight: freezed == previousTopoheight
           ? _self.previousTopoheight
           : previousTopoheight // ignore: cast_nullable_to_non_nullable
               as int?,
-      outputBalance: freezed == outputBalance
-          ? _self.outputBalance
-          : outputBalance // ignore: cast_nullable_to_non_nullable
-              as dynamic,
     ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _VersionedBalance implements VersionedBalance {
-  const _VersionedBalance(
+class _BalanceVersion implements BalanceVersion {
+  const _BalanceVersion(
       {@JsonKey(name: 'balance_type') required this.balanceType,
       @JsonKey(name: 'final_balance')
       required final Map<String, dynamic> finalBalance,
-      @JsonKey(name: 'previous_topoheight') this.previousTopoheight,
-      @JsonKey(name: 'output_balance') required this.outputBalance})
-      : _finalBalance = finalBalance;
-  factory _VersionedBalance.fromJson(Map<String, dynamic> json) =>
-      _$VersionedBalanceFromJson(json);
+      @JsonKey(name: 'output_balance')
+      final Map<String, dynamic>? outputBalance,
+      @JsonKey(name: 'previous_topoheight') this.previousTopoheight})
+      : _finalBalance = finalBalance,
+        _outputBalance = outputBalance;
+  factory _BalanceVersion.fromJson(Map<String, dynamic> json) =>
+      _$BalanceVersionFromJson(json);
 
   @override
   @JsonKey(name: 'balance_type')
@@ -142,24 +144,32 @@ class _VersionedBalance implements VersionedBalance {
     return EqualUnmodifiableMapView(_finalBalance);
   }
 
+  final Map<String, dynamic>? _outputBalance;
+  @override
+  @JsonKey(name: 'output_balance')
+  Map<String, dynamic>? get outputBalance {
+    final value = _outputBalance;
+    if (value == null) return null;
+    if (_outputBalance is EqualUnmodifiableMapView) return _outputBalance;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
   @override
   @JsonKey(name: 'previous_topoheight')
   final int? previousTopoheight;
-  @override
-  @JsonKey(name: 'output_balance')
-  final dynamic outputBalance;
 
-  /// Create a copy of VersionedBalance
+  /// Create a copy of BalanceVersion
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  _$VersionedBalanceCopyWith<_VersionedBalance> get copyWith =>
-      __$VersionedBalanceCopyWithImpl<_VersionedBalance>(this, _$identity);
+  _$BalanceVersionCopyWith<_BalanceVersion> get copyWith =>
+      __$BalanceVersionCopyWithImpl<_BalanceVersion>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$VersionedBalanceToJson(
+    return _$BalanceVersionToJson(
       this,
     );
   }
@@ -168,15 +178,15 @@ class _VersionedBalance implements VersionedBalance {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _VersionedBalance &&
+            other is _BalanceVersion &&
             (identical(other.balanceType, balanceType) ||
                 other.balanceType == balanceType) &&
             const DeepCollectionEquality()
                 .equals(other._finalBalance, _finalBalance) &&
-            (identical(other.previousTopoheight, previousTopoheight) ||
-                other.previousTopoheight == previousTopoheight) &&
             const DeepCollectionEquality()
-                .equals(other.outputBalance, outputBalance));
+                .equals(other._outputBalance, _outputBalance) &&
+            (identical(other.previousTopoheight, previousTopoheight) ||
+                other.previousTopoheight == previousTopoheight));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -185,49 +195,49 @@ class _VersionedBalance implements VersionedBalance {
       runtimeType,
       balanceType,
       const DeepCollectionEquality().hash(_finalBalance),
-      previousTopoheight,
-      const DeepCollectionEquality().hash(outputBalance));
+      const DeepCollectionEquality().hash(_outputBalance),
+      previousTopoheight);
 
   @override
   String toString() {
-    return 'VersionedBalance(balanceType: $balanceType, finalBalance: $finalBalance, previousTopoheight: $previousTopoheight, outputBalance: $outputBalance)';
+    return 'BalanceVersion(balanceType: $balanceType, finalBalance: $finalBalance, outputBalance: $outputBalance, previousTopoheight: $previousTopoheight)';
   }
 }
 
 /// @nodoc
-abstract mixin class _$VersionedBalanceCopyWith<$Res>
-    implements $VersionedBalanceCopyWith<$Res> {
-  factory _$VersionedBalanceCopyWith(
-          _VersionedBalance value, $Res Function(_VersionedBalance) _then) =
-      __$VersionedBalanceCopyWithImpl;
+abstract mixin class _$BalanceVersionCopyWith<$Res>
+    implements $BalanceVersionCopyWith<$Res> {
+  factory _$BalanceVersionCopyWith(
+          _BalanceVersion value, $Res Function(_BalanceVersion) _then) =
+      __$BalanceVersionCopyWithImpl;
   @override
   @useResult
   $Res call(
       {@JsonKey(name: 'balance_type') String balanceType,
       @JsonKey(name: 'final_balance') Map<String, dynamic> finalBalance,
-      @JsonKey(name: 'previous_topoheight') int? previousTopoheight,
-      @JsonKey(name: 'output_balance') dynamic outputBalance});
+      @JsonKey(name: 'output_balance') Map<String, dynamic>? outputBalance,
+      @JsonKey(name: 'previous_topoheight') int? previousTopoheight});
 }
 
 /// @nodoc
-class __$VersionedBalanceCopyWithImpl<$Res>
-    implements _$VersionedBalanceCopyWith<$Res> {
-  __$VersionedBalanceCopyWithImpl(this._self, this._then);
+class __$BalanceVersionCopyWithImpl<$Res>
+    implements _$BalanceVersionCopyWith<$Res> {
+  __$BalanceVersionCopyWithImpl(this._self, this._then);
 
-  final _VersionedBalance _self;
-  final $Res Function(_VersionedBalance) _then;
+  final _BalanceVersion _self;
+  final $Res Function(_BalanceVersion) _then;
 
-  /// Create a copy of VersionedBalance
+  /// Create a copy of BalanceVersion
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $Res call({
     Object? balanceType = null,
     Object? finalBalance = null,
-    Object? previousTopoheight = freezed,
     Object? outputBalance = freezed,
+    Object? previousTopoheight = freezed,
   }) {
-    return _then(_VersionedBalance(
+    return _then(_BalanceVersion(
       balanceType: null == balanceType
           ? _self.balanceType
           : balanceType // ignore: cast_nullable_to_non_nullable
@@ -236,14 +246,14 @@ class __$VersionedBalanceCopyWithImpl<$Res>
           ? _self._finalBalance
           : finalBalance // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>,
+      outputBalance: freezed == outputBalance
+          ? _self._outputBalance
+          : outputBalance // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
       previousTopoheight: freezed == previousTopoheight
           ? _self.previousTopoheight
           : previousTopoheight // ignore: cast_nullable_to_non_nullable
               as int?,
-      outputBalance: freezed == outputBalance
-          ? _self.outputBalance
-          : outputBalance // ignore: cast_nullable_to_non_nullable
-              as dynamic,
     ));
   }
 }

@@ -12,7 +12,7 @@ _GetStableBalanceResult _$GetStableBalanceResultFromJson(
         Map<String, dynamic> json) =>
     _GetStableBalanceResult(
       versionedBalance:
-          VersionedBalance.fromJson(json['version'] as Map<String, dynamic>),
+          BalanceVersion.fromJson(json['version'] as Map<String, dynamic>),
       stableTopoheight: (json['stable_topoheight'] as num).toInt(),
       stableBlockHash: json['stable_block_hash'] as String,
     );

@@ -1,4 +1,5 @@
 export 'asset/asset_data.dart';
+export 'balance_version/balance_version.dart';
 export 'block/block.dart';
 export 'block_ordered_event/block_ordered_event.dart';
 export 'block_orphaned_event/block_orphaned_event.dart';
@@ -98,7 +99,6 @@ export 'transaction/transfer_payload.dart';
 export 'transaction_executed_event/transaction_executed_event.dart';
 export 'validate_address/validate_address_params.dart';
 export 'validate_address/validate_address_result.dart';
-export 'versioned_balance/versioned_balance.dart';
 export 'wallet/balance_changed_event/balance_changed_event.dart';
 export 'wallet/build_transaction/build_transaction_params.dart';
 export 'wallet/build_transaction/fee_builder.dart';

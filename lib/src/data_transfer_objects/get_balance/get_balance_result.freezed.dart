@@ -16,7 +16,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$GetBalanceResult {
   @JsonKey(name: 'version')
-  VersionedBalance get versionedBalance;
+  BalanceVersion get versionedBalance;
   @JsonKey(name: 'topoheight')
   int get topoheight;
 
@@ -59,10 +59,10 @@ abstract mixin class $GetBalanceResultCopyWith<$Res> {
       _$GetBalanceResultCopyWithImpl;
   @useResult
   $Res call(
-      {@JsonKey(name: 'version') VersionedBalance versionedBalance,
+      {@JsonKey(name: 'version') BalanceVersion versionedBalance,
       @JsonKey(name: 'topoheight') int topoheight});
 
-  $VersionedBalanceCopyWith<$Res> get versionedBalance;
+  $BalanceVersionCopyWith<$Res> get versionedBalance;
 }
 
 /// @nodoc
@@ -85,7 +85,7 @@ class _$GetBalanceResultCopyWithImpl<$Res>
       versionedBalance: null == versionedBalance
           ? _self.versionedBalance
           : versionedBalance // ignore: cast_nullable_to_non_nullable
-              as VersionedBalance,
+              as BalanceVersion,
       topoheight: null == topoheight
           ? _self.topoheight
           : topoheight // ignore: cast_nullable_to_non_nullable
@@ -97,8 +97,8 @@ class _$GetBalanceResultCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $VersionedBalanceCopyWith<$Res> get versionedBalance {
-    return $VersionedBalanceCopyWith<$Res>(_self.versionedBalance, (value) {
+  $BalanceVersionCopyWith<$Res> get versionedBalance {
+    return $BalanceVersionCopyWith<$Res>(_self.versionedBalance, (value) {
       return _then(_self.copyWith(versionedBalance: value));
     });
   }
@@ -115,7 +115,7 @@ class _GetBalanceResult implements GetBalanceResult {
 
   @override
   @JsonKey(name: 'version')
-  final VersionedBalance versionedBalance;
+  final BalanceVersion versionedBalance;
   @override
   @JsonKey(name: 'topoheight')
   final int topoheight;
@@ -165,11 +165,11 @@ abstract mixin class _$GetBalanceResultCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'version') VersionedBalance versionedBalance,
+      {@JsonKey(name: 'version') BalanceVersion versionedBalance,
       @JsonKey(name: 'topoheight') int topoheight});
 
   @override
-  $VersionedBalanceCopyWith<$Res> get versionedBalance;
+  $BalanceVersionCopyWith<$Res> get versionedBalance;
 }
 
 /// @nodoc
@@ -192,7 +192,7 @@ class __$GetBalanceResultCopyWithImpl<$Res>
       versionedBalance: null == versionedBalance
           ? _self.versionedBalance
           : versionedBalance // ignore: cast_nullable_to_non_nullable
-              as VersionedBalance,
+              as BalanceVersion,
       topoheight: null == topoheight
           ? _self.topoheight
           : topoheight // ignore: cast_nullable_to_non_nullable
@@ -204,8 +204,8 @@ class __$GetBalanceResultCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $VersionedBalanceCopyWith<$Res> get versionedBalance {
-    return $VersionedBalanceCopyWith<$Res>(_self.versionedBalance, (value) {
+  $BalanceVersionCopyWith<$Res> get versionedBalance {
+    return $BalanceVersionCopyWith<$Res>(_self.versionedBalance, (value) {
       return _then(_self.copyWith(versionedBalance: value));
     });
   }

@@ -13,7 +13,7 @@ part 'get_balance_result.g.dart';
 abstract class GetBalanceResult with _$GetBalanceResult {
   /// @nodoc
   const factory GetBalanceResult({
-    @JsonKey(name: 'version') required VersionedBalance versionedBalance,
+    @JsonKey(name: 'version') required BalanceVersion versionedBalance,
     @JsonKey(name: 'topoheight') required int topoheight,
   }) = _GetBalanceResult;
 

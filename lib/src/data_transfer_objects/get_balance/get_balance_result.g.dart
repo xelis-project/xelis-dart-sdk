@@ -11,7 +11,7 @@ part of 'get_balance_result.dart';
 _GetBalanceResult _$GetBalanceResultFromJson(Map<String, dynamic> json) =>
     _GetBalanceResult(
       versionedBalance:
-          VersionedBalance.fromJson(json['version'] as Map<String, dynamic>),
+          BalanceVersion.fromJson(json['version'] as Map<String, dynamic>),
       topoheight: (json['topoheight'] as num).toInt(),
     );
 
