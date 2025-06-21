@@ -12,7 +12,7 @@ _VersionedBalance _$VersionedBalanceFromJson(Map<String, dynamic> json) =>
     _VersionedBalance(
       balanceType: json['balance_type'] as String,
       finalBalance: json['final_balance'] as Map<String, dynamic>,
-      previousTopoheight: (json['previous_topoheight'] as num).toInt(),
+      previousTopoheight: (json['previous_topoheight'] as num?)?.toInt(),
       outputBalance: json['output_balance'],
     );
 

@@ -20,7 +20,7 @@ mixin _$VersionedBalance {
   @JsonKey(name: 'final_balance')
   Map<String, dynamic> get finalBalance;
   @JsonKey(name: 'previous_topoheight')
-  int get previousTopoheight;
+  int? get previousTopoheight;
   @JsonKey(name: 'output_balance')
   dynamic get outputBalance;
 
@@ -74,7 +74,7 @@ abstract mixin class $VersionedBalanceCopyWith<$Res> {
   $Res call(
       {@JsonKey(name: 'balance_type') String balanceType,
       @JsonKey(name: 'final_balance') Map<String, dynamic> finalBalance,
-      @JsonKey(name: 'previous_topoheight') int previousTopoheight,
+      @JsonKey(name: 'previous_topoheight') int? previousTopoheight,
       @JsonKey(name: 'output_balance') dynamic outputBalance});
 }
 
@@ -93,7 +93,7 @@ class _$VersionedBalanceCopyWithImpl<$Res>
   $Res call({
     Object? balanceType = null,
     Object? finalBalance = null,
-    Object? previousTopoheight = null,
+    Object? previousTopoheight = freezed,
     Object? outputBalance = freezed,
   }) {
     return _then(_self.copyWith(
@@ -105,10 +105,10 @@ class _$VersionedBalanceCopyWithImpl<$Res>
           ? _self.finalBalance
           : finalBalance // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>,
-      previousTopoheight: null == previousTopoheight
+      previousTopoheight: freezed == previousTopoheight
           ? _self.previousTopoheight
           : previousTopoheight // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       outputBalance: freezed == outputBalance
           ? _self.outputBalance
           : outputBalance // ignore: cast_nullable_to_non_nullable
@@ -124,7 +124,7 @@ class _VersionedBalance implements VersionedBalance {
       {@JsonKey(name: 'balance_type') required this.balanceType,
       @JsonKey(name: 'final_balance')
       required final Map<String, dynamic> finalBalance,
-      @JsonKey(name: 'previous_topoheight') required this.previousTopoheight,
+      @JsonKey(name: 'previous_topoheight') this.previousTopoheight,
       @JsonKey(name: 'output_balance') required this.outputBalance})
       : _finalBalance = finalBalance;
   factory _VersionedBalance.fromJson(Map<String, dynamic> json) =>
@@ -144,7 +144,7 @@ class _VersionedBalance implements VersionedBalance {
 
   @override
   @JsonKey(name: 'previous_topoheight')
-  final int previousTopoheight;
+  final int? previousTopoheight;
   @override
   @JsonKey(name: 'output_balance')
   final dynamic outputBalance;
@@ -205,7 +205,7 @@ abstract mixin class _$VersionedBalanceCopyWith<$Res>
   $Res call(
       {@JsonKey(name: 'balance_type') String balanceType,
       @JsonKey(name: 'final_balance') Map<String, dynamic> finalBalance,
-      @JsonKey(name: 'previous_topoheight') int previousTopoheight,
+      @JsonKey(name: 'previous_topoheight') int? previousTopoheight,
       @JsonKey(name: 'output_balance') dynamic outputBalance});
 }
 
@@ -224,7 +224,7 @@ class __$VersionedBalanceCopyWithImpl<$Res>
   $Res call({
     Object? balanceType = null,
     Object? finalBalance = null,
-    Object? previousTopoheight = null,
+    Object? previousTopoheight = freezed,
     Object? outputBalance = freezed,
   }) {
     return _then(_VersionedBalance(
@@ -236,10 +236,10 @@ class __$VersionedBalanceCopyWithImpl<$Res>
           ? _self._finalBalance
           : finalBalance // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>,
-      previousTopoheight: null == previousTopoheight
+      previousTopoheight: freezed == previousTopoheight
           ? _self.previousTopoheight
           : previousTopoheight // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       outputBalance: freezed == outputBalance
           ? _self.outputBalance
           : outputBalance // ignore: cast_nullable_to_non_nullable
