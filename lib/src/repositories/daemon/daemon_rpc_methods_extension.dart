@@ -359,6 +359,7 @@ extension DaemonRpcMethodsExtension on DaemonClient {
   /// Retrieve all peers connected
   Future<GetPeersResult> getPeers() async {
     final result = await sendRequest(DaemonMethod.getPeers);
+    print(result);
     return GetPeersResult.fromJson(result as Map<String, dynamic>);
   }
 
