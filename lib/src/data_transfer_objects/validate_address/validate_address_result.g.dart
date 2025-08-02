@@ -9,15 +9,15 @@ part of 'validate_address_result.dart';
 // **************************************************************************
 
 _ValidateAddressResult _$ValidateAddressResultFromJson(
-        Map<String, dynamic> json) =>
-    _ValidateAddressResult(
-      isValid: json['is_valid'] as bool,
-      isIntegrated: json['is_integrated'] as bool,
-    );
+  Map<String, dynamic> json,
+) => _ValidateAddressResult(
+  isValid: json['is_valid'] as bool,
+  isIntegrated: json['is_integrated'] as bool,
+);
 
 Map<String, dynamic> _$ValidateAddressResultToJson(
-        _ValidateAddressResult instance) =>
-    <String, dynamic>{
-      'is_valid': instance.isValid,
-      'is_integrated': instance.isIntegrated,
-    };
+  _ValidateAddressResult instance,
+) => <String, dynamic>{
+  'is_valid': instance.isValid,
+  'is_integrated': instance.isIntegrated,
+};

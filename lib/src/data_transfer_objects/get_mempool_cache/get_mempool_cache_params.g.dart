@@ -9,13 +9,9 @@ part of 'get_mempool_cache_params.dart';
 // **************************************************************************
 
 _GetMempoolCacheParams _$GetMempoolCacheParamsFromJson(
-        Map<String, dynamic> json) =>
-    _GetMempoolCacheParams(
-      address: json['address'] as String,
-    );
+  Map<String, dynamic> json,
+) => _GetMempoolCacheParams(address: json['address'] as String);
 
 Map<String, dynamic> _$GetMempoolCacheParamsToJson(
-        _GetMempoolCacheParams instance) =>
-    <String, dynamic>{
-      'address': instance.address,
-    };
+  _GetMempoolCacheParams instance,
+) => <String, dynamic>{'address': instance.address};

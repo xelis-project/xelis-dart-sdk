@@ -9,15 +9,12 @@ part of 'extract_key_from_address_result.dart';
 // **************************************************************************
 
 _ExtractKeyFromAddressResult _$ExtractKeyFromAddressResultFromJson(
-        Map<String, dynamic> json) =>
-    _ExtractKeyFromAddressResult(
-      bytes: json['bytes'],
-      hex: json['hex'] as String?,
-    );
+  Map<String, dynamic> json,
+) => _ExtractKeyFromAddressResult(
+  bytes: json['bytes'],
+  hex: json['hex'] as String?,
+);
 
 Map<String, dynamic> _$ExtractKeyFromAddressResultToJson(
-        _ExtractKeyFromAddressResult instance) =>
-    <String, dynamic>{
-      'bytes': instance.bytes,
-      'hex': instance.hex,
-    };
+  _ExtractKeyFromAddressResult instance,
+) => <String, dynamic>{'bytes': instance.bytes, 'hex': instance.hex};

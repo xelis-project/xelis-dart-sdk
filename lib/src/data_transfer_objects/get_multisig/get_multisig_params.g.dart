@@ -9,11 +9,7 @@ part of 'get_multisig_params.dart';
 // **************************************************************************
 
 _GetMultisigParams _$GetMultisigParamsFromJson(Map<String, dynamic> json) =>
-    _GetMultisigParams(
-      address: json['address'] as String,
-    );
+    _GetMultisigParams(address: json['address'] as String);
 
 Map<String, dynamic> _$GetMultisigParamsToJson(_GetMultisigParams instance) =>
-    <String, dynamic>{
-      'address': instance.address,
-    };
+    <String, dynamic>{'address': instance.address};

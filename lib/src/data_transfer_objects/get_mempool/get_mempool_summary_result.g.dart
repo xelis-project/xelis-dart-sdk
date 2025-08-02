@@ -9,18 +9,17 @@ part of 'get_mempool_summary_result.dart';
 // **************************************************************************
 
 _GetMempoolSummaryResult _$GetMempoolSummaryResultFromJson(
-        Map<String, dynamic> json) =>
-    _GetMempoolSummaryResult(
-      transactions: (json['transactions'] as List<dynamic>)
-          .map((e) =>
-              MempoolTransactionSummary.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      total: (json['total'] as num).toInt(),
-    );
+  Map<String, dynamic> json,
+) => _GetMempoolSummaryResult(
+  transactions: (json['transactions'] as List<dynamic>)
+      .map((e) => MempoolTransactionSummary.fromJson(e as Map<String, dynamic>))
+      .toList(),
+  total: (json['total'] as num).toInt(),
+);
 
 Map<String, dynamic> _$GetMempoolSummaryResultToJson(
-        _GetMempoolSummaryResult instance) =>
-    <String, dynamic>{
-      'transactions': instance.transactions,
-      'total': instance.total,
-    };
+  _GetMempoolSummaryResult instance,
+) => <String, dynamic>{
+  'transactions': instance.transactions,
+  'total': instance.total,
+};

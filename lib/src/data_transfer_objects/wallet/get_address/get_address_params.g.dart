@@ -9,11 +9,7 @@ part of 'get_address_params.dart';
 // **************************************************************************
 
 _GetAddressParams _$GetAddressParamsFromJson(Map<String, dynamic> json) =>
-    _GetAddressParams(
-      integratedData: json['integrated_data'],
-    );
+    _GetAddressParams(integratedData: json['integrated_data']);
 
 Map<String, dynamic> _$GetAddressParamsToJson(_GetAddressParams instance) =>
-    <String, dynamic>{
-      'integrated_data': instance.integratedData,
-    };
+    <String, dynamic>{'integrated_data': instance.integratedData};

@@ -23,10 +23,10 @@ Map<String, dynamic> _$TransfersBuilderToJson(TransfersBuilder instance) =>
     };
 
 BurnBuilder _$BurnBuilderFromJson(Map<String, dynamic> json) => BurnBuilder(
-      asset: json['asset'] as String,
-      amount: (json['amount'] as num).toInt(),
-      $type: json['runtimeType'] as String?,
-    );
+  asset: json['asset'] as String,
+  amount: (json['amount'] as num).toInt(),
+  $type: json['runtimeType'] as String?,
+);
 
 Map<String, dynamic> _$BurnBuilderToJson(BurnBuilder instance) =>
     <String, dynamic>{
@@ -52,45 +52,46 @@ Map<String, dynamic> _$MultisigBuilderToJson(MultisigBuilder instance) =>
     };
 
 InvokeContractBuilder _$InvokeContractBuilderFromJson(
-        Map<String, dynamic> json) =>
-    InvokeContractBuilder(
-      contract: json['contract'] as String,
-      maxGas: (json['max_gas'] as num).toInt(),
-      chunkId: (json['chunk_id'] as num).toInt(),
-      parameters: json['parameters'] as List<dynamic>,
-      deposits: (json['deposits'] as Map<String, dynamic>).map(
-        (k, e) => MapEntry(
-            k, ContractDepositBuilder.fromJson(e as Map<String, dynamic>)),
-      ),
-      $type: json['runtimeType'] as String?,
-    );
+  Map<String, dynamic> json,
+) => InvokeContractBuilder(
+  contract: json['contract'] as String,
+  maxGas: (json['max_gas'] as num).toInt(),
+  chunkId: (json['chunk_id'] as num).toInt(),
+  parameters: json['parameters'] as List<dynamic>,
+  deposits: (json['deposits'] as Map<String, dynamic>).map(
+    (k, e) =>
+        MapEntry(k, ContractDepositBuilder.fromJson(e as Map<String, dynamic>)),
+  ),
+  $type: json['runtimeType'] as String?,
+);
 
 Map<String, dynamic> _$InvokeContractBuilderToJson(
-        InvokeContractBuilder instance) =>
-    <String, dynamic>{
-      'contract': instance.contract,
-      'max_gas': instance.maxGas,
-      'chunk_id': instance.chunkId,
-      'parameters': instance.parameters,
-      'deposits': instance.deposits,
-      'runtimeType': instance.$type,
-    };
+  InvokeContractBuilder instance,
+) => <String, dynamic>{
+  'contract': instance.contract,
+  'max_gas': instance.maxGas,
+  'chunk_id': instance.chunkId,
+  'parameters': instance.parameters,
+  'deposits': instance.deposits,
+  'runtimeType': instance.$type,
+};
 
 DeployContractBuilder _$DeployContractBuilderFromJson(
-        Map<String, dynamic> json) =>
-    DeployContractBuilder(
-      module: json['module'] as String,
-      invoke: json['invoke'] == null
-          ? null
-          : DeployContractInvokeBuilder.fromJson(
-              json['invoke'] as Map<String, dynamic>),
-      $type: json['runtimeType'] as String?,
-    );
+  Map<String, dynamic> json,
+) => DeployContractBuilder(
+  module: json['module'] as String,
+  invoke: json['invoke'] == null
+      ? null
+      : DeployContractInvokeBuilder.fromJson(
+          json['invoke'] as Map<String, dynamic>,
+        ),
+  $type: json['runtimeType'] as String?,
+);
 
 Map<String, dynamic> _$DeployContractBuilderToJson(
-        DeployContractBuilder instance) =>
-    <String, dynamic>{
-      'module': instance.module,
-      'invoke': instance.invoke,
-      'runtimeType': instance.$type,
-    };
+  DeployContractBuilder instance,
+) => <String, dynamic>{
+  'module': instance.module,
+  'invoke': instance.invoke,
+  'runtimeType': instance.$type,
+};

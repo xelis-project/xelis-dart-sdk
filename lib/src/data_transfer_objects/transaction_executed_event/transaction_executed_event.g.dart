@@ -9,17 +9,17 @@ part of 'transaction_executed_event.dart';
 // **************************************************************************
 
 _TransactionExecutedEvent _$TransactionExecutedEventFromJson(
-        Map<String, dynamic> json) =>
-    _TransactionExecutedEvent(
-      blockHash: json['block_hash'] as String,
-      txHash: json['tx_hash'] as String,
-      topoHeight: (json['topoheight'] as num).toInt(),
-    );
+  Map<String, dynamic> json,
+) => _TransactionExecutedEvent(
+  blockHash: json['block_hash'] as String,
+  txHash: json['tx_hash'] as String,
+  topoHeight: (json['topoheight'] as num).toInt(),
+);
 
 Map<String, dynamic> _$TransactionExecutedEventToJson(
-        _TransactionExecutedEvent instance) =>
-    <String, dynamic>{
-      'block_hash': instance.blockHash,
-      'tx_hash': instance.txHash,
-      'topoheight': instance.topoHeight,
-    };
+  _TransactionExecutedEvent instance,
+) => <String, dynamic>{
+  'block_hash': instance.blockHash,
+  'tx_hash': instance.txHash,
+  'topoheight': instance.topoHeight,
+};

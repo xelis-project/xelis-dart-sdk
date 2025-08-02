@@ -1,6 +1,5 @@
-// dart format width=80
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -15,47 +14,47 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$SubmitTransactionParams {
-  @JsonKey(name: 'data')
-  String get hex;
 
-  /// Create a copy of SubmitTransactionParams
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $SubmitTransactionParamsCopyWith<SubmitTransactionParams> get copyWith =>
-      _$SubmitTransactionParamsCopyWithImpl<SubmitTransactionParams>(
-          this as SubmitTransactionParams, _$identity);
+@JsonKey(name: 'data') String get hex;
+/// Create a copy of SubmitTransactionParams
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$SubmitTransactionParamsCopyWith<SubmitTransactionParams> get copyWith => _$SubmitTransactionParamsCopyWithImpl<SubmitTransactionParams>(this as SubmitTransactionParams, _$identity);
 
   /// Serializes this SubmitTransactionParams to a JSON map.
   Map<String, dynamic> toJson();
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is SubmitTransactionParams &&
-            (identical(other.hex, hex) || other.hex == hex));
-  }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, hex);
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is SubmitTransactionParams&&(identical(other.hex, hex) || other.hex == hex));
+}
 
-  @override
-  String toString() {
-    return 'SubmitTransactionParams(hex: $hex)';
-  }
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,hex);
+
+@override
+String toString() {
+  return 'SubmitTransactionParams(hex: $hex)';
+}
+
+
 }
 
 /// @nodoc
-abstract mixin class $SubmitTransactionParamsCopyWith<$Res> {
-  factory $SubmitTransactionParamsCopyWith(SubmitTransactionParams value,
-          $Res Function(SubmitTransactionParams) _then) =
-      _$SubmitTransactionParamsCopyWithImpl;
-  @useResult
-  $Res call({@JsonKey(name: 'data') String hex});
-}
+abstract mixin class $SubmitTransactionParamsCopyWith<$Res>  {
+  factory $SubmitTransactionParamsCopyWith(SubmitTransactionParams value, $Res Function(SubmitTransactionParams) _then) = _$SubmitTransactionParamsCopyWithImpl;
+@useResult
+$Res call({
+@JsonKey(name: 'data') String hex
+});
 
+
+
+
+}
 /// @nodoc
 class _$SubmitTransactionParamsCopyWithImpl<$Res>
     implements $SubmitTransactionParamsCopyWith<$Res> {
@@ -64,78 +63,197 @@ class _$SubmitTransactionParamsCopyWithImpl<$Res>
   final SubmitTransactionParams _self;
   final $Res Function(SubmitTransactionParams) _then;
 
-  /// Create a copy of SubmitTransactionParams
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? hex = null,
-  }) {
-    return _then(_self.copyWith(
-      hex: null == hex
-          ? _self.hex
-          : hex // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
+/// Create a copy of SubmitTransactionParams
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? hex = null,}) {
+  return _then(_self.copyWith(
+hex: null == hex ? _self.hex : hex // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [SubmitTransactionParams].
+extension SubmitTransactionParamsPatterns on SubmitTransactionParams {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _SubmitTransactionParams value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _SubmitTransactionParams() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _SubmitTransactionParams value)  $default,){
+final _that = this;
+switch (_that) {
+case _SubmitTransactionParams():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _SubmitTransactionParams value)?  $default,){
+final _that = this;
+switch (_that) {
+case _SubmitTransactionParams() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'data')  String hex)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _SubmitTransactionParams() when $default != null:
+return $default(_that.hex);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'data')  String hex)  $default,) {final _that = this;
+switch (_that) {
+case _SubmitTransactionParams():
+return $default(_that.hex);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'data')  String hex)?  $default,) {final _that = this;
+switch (_that) {
+case _SubmitTransactionParams() when $default != null:
+return $default(_that.hex);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
 @JsonSerializable()
+
 class _SubmitTransactionParams implements SubmitTransactionParams {
   const _SubmitTransactionParams({@JsonKey(name: 'data') required this.hex});
-  factory _SubmitTransactionParams.fromJson(Map<String, dynamic> json) =>
-      _$SubmitTransactionParamsFromJson(json);
+  factory _SubmitTransactionParams.fromJson(Map<String, dynamic> json) => _$SubmitTransactionParamsFromJson(json);
 
-  @override
-  @JsonKey(name: 'data')
-  final String hex;
+@override@JsonKey(name: 'data') final  String hex;
 
-  /// Create a copy of SubmitTransactionParams
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$SubmitTransactionParamsCopyWith<_SubmitTransactionParams> get copyWith =>
-      __$SubmitTransactionParamsCopyWithImpl<_SubmitTransactionParams>(
-          this, _$identity);
+/// Create a copy of SubmitTransactionParams
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$SubmitTransactionParamsCopyWith<_SubmitTransactionParams> get copyWith => __$SubmitTransactionParamsCopyWithImpl<_SubmitTransactionParams>(this, _$identity);
 
-  @override
-  Map<String, dynamic> toJson() {
-    return _$SubmitTransactionParamsToJson(
-      this,
-    );
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$SubmitTransactionParamsToJson(this, );
+}
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _SubmitTransactionParams &&
-            (identical(other.hex, hex) || other.hex == hex));
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _SubmitTransactionParams&&(identical(other.hex, hex) || other.hex == hex));
+}
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, hex);
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,hex);
 
-  @override
-  String toString() {
-    return 'SubmitTransactionParams(hex: $hex)';
-  }
+@override
+String toString() {
+  return 'SubmitTransactionParams(hex: $hex)';
+}
+
+
 }
 
 /// @nodoc
-abstract mixin class _$SubmitTransactionParamsCopyWith<$Res>
-    implements $SubmitTransactionParamsCopyWith<$Res> {
-  factory _$SubmitTransactionParamsCopyWith(_SubmitTransactionParams value,
-          $Res Function(_SubmitTransactionParams) _then) =
-      __$SubmitTransactionParamsCopyWithImpl;
-  @override
-  @useResult
-  $Res call({@JsonKey(name: 'data') String hex});
-}
+abstract mixin class _$SubmitTransactionParamsCopyWith<$Res> implements $SubmitTransactionParamsCopyWith<$Res> {
+  factory _$SubmitTransactionParamsCopyWith(_SubmitTransactionParams value, $Res Function(_SubmitTransactionParams) _then) = __$SubmitTransactionParamsCopyWithImpl;
+@override @useResult
+$Res call({
+@JsonKey(name: 'data') String hex
+});
 
+
+
+
+}
 /// @nodoc
 class __$SubmitTransactionParamsCopyWithImpl<$Res>
     implements _$SubmitTransactionParamsCopyWith<$Res> {
@@ -144,20 +262,16 @@ class __$SubmitTransactionParamsCopyWithImpl<$Res>
   final _SubmitTransactionParams _self;
   final $Res Function(_SubmitTransactionParams) _then;
 
-  /// Create a copy of SubmitTransactionParams
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? hex = null,
-  }) {
-    return _then(_SubmitTransactionParams(
-      hex: null == hex
-          ? _self.hex
-          : hex // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
+/// Create a copy of SubmitTransactionParams
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? hex = null,}) {
+  return _then(_SubmitTransactionParams(
+hex: null == hex ? _self.hex : hex // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
 }
 
 // dart format on

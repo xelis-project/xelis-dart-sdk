@@ -30,15 +30,15 @@ _UnsignedTransaction _$UnsignedTransactionFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$UnsignedTransactionToJson(
-        _UnsignedTransaction instance) =>
-    <String, dynamic>{
-      'data': instance.data,
-      'fee': instance.fee,
-      'version': instance.version,
-      'nonce': instance.nonce,
-      'source': instance.source,
-      'rangeProof': instance.rangeProof,
-      'sourceCommitments': instance.sourceCommitments,
-      'reference': instance.reference,
-      'multiSig': instance.multiSig,
-    };
+  _UnsignedTransaction instance,
+) => <String, dynamic>{
+  'data': instance.data,
+  'fee': instance.fee,
+  'version': instance.version,
+  'nonce': instance.nonce,
+  'source': instance.source,
+  'rangeProof': instance.rangeProof,
+  'sourceCommitments': instance.sourceCommitments,
+  'reference': instance.reference,
+  'multiSig': instance.multiSig,
+};

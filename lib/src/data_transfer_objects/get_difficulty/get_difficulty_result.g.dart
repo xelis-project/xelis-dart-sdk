@@ -16,9 +16,9 @@ _GetDifficultyResult _$GetDifficultyResultFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$GetDifficultyResultToJson(
-        _GetDifficultyResult instance) =>
-    <String, dynamic>{
-      'difficulty': instance.difficulty,
-      'hashrate': instance.hashrate,
-      'hashrate_formatted': instance.hashrateFormatted,
-    };
+  _GetDifficultyResult instance,
+) => <String, dynamic>{
+  'difficulty': instance.difficulty,
+  'hashrate': instance.hashrate,
+  'hashrate_formatted': instance.hashrateFormatted,
+};

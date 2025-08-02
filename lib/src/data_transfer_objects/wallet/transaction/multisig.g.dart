@@ -9,11 +9,11 @@ part of 'multisig.dart';
 // **************************************************************************
 
 _Multisig _$MultisigFromJson(Map<String, dynamic> json) => _Multisig(
-      signatures: (json['signatures'] as List<dynamic>)
-          .map((e) => SignatureId.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
+  signatures: (json['signatures'] as List<dynamic>)
+      .map((e) => SignatureId.fromJson(e as Map<String, dynamic>))
+      .toList(),
+);
 
 Map<String, dynamic> _$MultisigToJson(_Multisig instance) => <String, dynamic>{
-      'signatures': instance.signatures,
-    };
+  'signatures': instance.signatures,
+};

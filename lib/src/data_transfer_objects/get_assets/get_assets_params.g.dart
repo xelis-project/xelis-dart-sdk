@@ -18,10 +18,8 @@ _GetAssetsParams _$GetAssetsParamsFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$GetAssetsParamsToJson(_GetAssetsParams instance) =>
     <String, dynamic>{
-      if (instance.skip case final value?) 'skip': value,
-      if (instance.maximum case final value?) 'maximum': value,
-      if (instance.minimumTopoheight case final value?)
-        'minimum_topoheight': value,
-      if (instance.maximumTopoheight case final value?)
-        'maximum_topoheight': value,
+      'skip': ?instance.skip,
+      'maximum': ?instance.maximum,
+      'minimum_topoheight': ?instance.minimumTopoheight,
+      'maximum_topoheight': ?instance.maximumTopoheight,
     };

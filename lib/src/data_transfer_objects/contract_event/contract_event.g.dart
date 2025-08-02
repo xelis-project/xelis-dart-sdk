@@ -9,11 +9,7 @@ part of 'contract_event.dart';
 // **************************************************************************
 
 _ContractEvent _$ContractEventFromJson(Map<String, dynamic> json) =>
-    _ContractEvent(
-      data: json['data'],
-    );
+    _ContractEvent(data: json['data']);
 
 Map<String, dynamic> _$ContractEventToJson(_ContractEvent instance) =>
-    <String, dynamic>{
-      'data': instance.data,
-    };
+    <String, dynamic>{'data': instance.data};

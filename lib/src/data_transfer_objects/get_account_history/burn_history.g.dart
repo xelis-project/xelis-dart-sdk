@@ -8,11 +8,8 @@ part of 'burn_history.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_BurnHistory _$BurnHistoryFromJson(Map<String, dynamic> json) => _BurnHistory(
-      amount: (json['amount'] as num).toInt(),
-    );
+_BurnHistory _$BurnHistoryFromJson(Map<String, dynamic> json) =>
+    _BurnHistory(amount: (json['amount'] as num).toInt());
 
 Map<String, dynamic> _$BurnHistoryToJson(_BurnHistory instance) =>
-    <String, dynamic>{
-      'amount': instance.amount,
-    };
+    <String, dynamic>{'amount': instance.amount};

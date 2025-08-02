@@ -9,16 +9,14 @@ part of 'peer_peer_list_updated_event.dart';
 // **************************************************************************
 
 _PeerPeerListUpdatedEvent _$PeerPeerListUpdatedEventFromJson(
-        Map<String, dynamic> json) =>
-    _PeerPeerListUpdatedEvent(
-      id: json['peer_id'] as num,
-      peerList:
-          (json['peerlist'] as List<dynamic>).map((e) => e as String).toList(),
-    );
+  Map<String, dynamic> json,
+) => _PeerPeerListUpdatedEvent(
+  id: json['peer_id'] as num,
+  peerList: (json['peerlist'] as List<dynamic>)
+      .map((e) => e as String)
+      .toList(),
+);
 
 Map<String, dynamic> _$PeerPeerListUpdatedEventToJson(
-        _PeerPeerListUpdatedEvent instance) =>
-    <String, dynamic>{
-      'peer_id': instance.id,
-      'peerlist': instance.peerList,
-    };
+  _PeerPeerListUpdatedEvent instance,
+) => <String, dynamic>{'peer_id': instance.id, 'peerlist': instance.peerList};

@@ -1,6 +1,5 @@
-// dart format width=80
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -15,48 +14,47 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$GetContractModuleParams {
-  @JsonKey(name: 'contract')
-  String get contractHash;
 
-  /// Create a copy of GetContractModuleParams
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $GetContractModuleParamsCopyWith<GetContractModuleParams> get copyWith =>
-      _$GetContractModuleParamsCopyWithImpl<GetContractModuleParams>(
-          this as GetContractModuleParams, _$identity);
+@JsonKey(name: 'contract') String get contractHash;
+/// Create a copy of GetContractModuleParams
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$GetContractModuleParamsCopyWith<GetContractModuleParams> get copyWith => _$GetContractModuleParamsCopyWithImpl<GetContractModuleParams>(this as GetContractModuleParams, _$identity);
 
   /// Serializes this GetContractModuleParams to a JSON map.
   Map<String, dynamic> toJson();
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is GetContractModuleParams &&
-            (identical(other.contractHash, contractHash) ||
-                other.contractHash == contractHash));
-  }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, contractHash);
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetContractModuleParams&&(identical(other.contractHash, contractHash) || other.contractHash == contractHash));
+}
 
-  @override
-  String toString() {
-    return 'GetContractModuleParams(contractHash: $contractHash)';
-  }
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,contractHash);
+
+@override
+String toString() {
+  return 'GetContractModuleParams(contractHash: $contractHash)';
+}
+
+
 }
 
 /// @nodoc
-abstract mixin class $GetContractModuleParamsCopyWith<$Res> {
-  factory $GetContractModuleParamsCopyWith(GetContractModuleParams value,
-          $Res Function(GetContractModuleParams) _then) =
-      _$GetContractModuleParamsCopyWithImpl;
-  @useResult
-  $Res call({@JsonKey(name: 'contract') String contractHash});
-}
+abstract mixin class $GetContractModuleParamsCopyWith<$Res>  {
+  factory $GetContractModuleParamsCopyWith(GetContractModuleParams value, $Res Function(GetContractModuleParams) _then) = _$GetContractModuleParamsCopyWithImpl;
+@useResult
+$Res call({
+@JsonKey(name: 'contract') String contractHash
+});
 
+
+
+
+}
 /// @nodoc
 class _$GetContractModuleParamsCopyWithImpl<$Res>
     implements $GetContractModuleParamsCopyWith<$Res> {
@@ -65,80 +63,197 @@ class _$GetContractModuleParamsCopyWithImpl<$Res>
   final GetContractModuleParams _self;
   final $Res Function(GetContractModuleParams) _then;
 
-  /// Create a copy of GetContractModuleParams
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? contractHash = null,
-  }) {
-    return _then(_self.copyWith(
-      contractHash: null == contractHash
-          ? _self.contractHash
-          : contractHash // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
+/// Create a copy of GetContractModuleParams
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? contractHash = null,}) {
+  return _then(_self.copyWith(
+contractHash: null == contractHash ? _self.contractHash : contractHash // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [GetContractModuleParams].
+extension GetContractModuleParamsPatterns on GetContractModuleParams {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _GetContractModuleParams value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _GetContractModuleParams() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _GetContractModuleParams value)  $default,){
+final _that = this;
+switch (_that) {
+case _GetContractModuleParams():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _GetContractModuleParams value)?  $default,){
+final _that = this;
+switch (_that) {
+case _GetContractModuleParams() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'contract')  String contractHash)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _GetContractModuleParams() when $default != null:
+return $default(_that.contractHash);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'contract')  String contractHash)  $default,) {final _that = this;
+switch (_that) {
+case _GetContractModuleParams():
+return $default(_that.contractHash);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'contract')  String contractHash)?  $default,) {final _that = this;
+switch (_that) {
+case _GetContractModuleParams() when $default != null:
+return $default(_that.contractHash);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
 @JsonSerializable()
+
 class _GetContractModuleParams implements GetContractModuleParams {
-  const _GetContractModuleParams(
-      {@JsonKey(name: 'contract') required this.contractHash});
-  factory _GetContractModuleParams.fromJson(Map<String, dynamic> json) =>
-      _$GetContractModuleParamsFromJson(json);
+  const _GetContractModuleParams({@JsonKey(name: 'contract') required this.contractHash});
+  factory _GetContractModuleParams.fromJson(Map<String, dynamic> json) => _$GetContractModuleParamsFromJson(json);
 
-  @override
-  @JsonKey(name: 'contract')
-  final String contractHash;
+@override@JsonKey(name: 'contract') final  String contractHash;
 
-  /// Create a copy of GetContractModuleParams
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$GetContractModuleParamsCopyWith<_GetContractModuleParams> get copyWith =>
-      __$GetContractModuleParamsCopyWithImpl<_GetContractModuleParams>(
-          this, _$identity);
+/// Create a copy of GetContractModuleParams
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$GetContractModuleParamsCopyWith<_GetContractModuleParams> get copyWith => __$GetContractModuleParamsCopyWithImpl<_GetContractModuleParams>(this, _$identity);
 
-  @override
-  Map<String, dynamic> toJson() {
-    return _$GetContractModuleParamsToJson(
-      this,
-    );
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$GetContractModuleParamsToJson(this, );
+}
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _GetContractModuleParams &&
-            (identical(other.contractHash, contractHash) ||
-                other.contractHash == contractHash));
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetContractModuleParams&&(identical(other.contractHash, contractHash) || other.contractHash == contractHash));
+}
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, contractHash);
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,contractHash);
 
-  @override
-  String toString() {
-    return 'GetContractModuleParams(contractHash: $contractHash)';
-  }
+@override
+String toString() {
+  return 'GetContractModuleParams(contractHash: $contractHash)';
+}
+
+
 }
 
 /// @nodoc
-abstract mixin class _$GetContractModuleParamsCopyWith<$Res>
-    implements $GetContractModuleParamsCopyWith<$Res> {
-  factory _$GetContractModuleParamsCopyWith(_GetContractModuleParams value,
-          $Res Function(_GetContractModuleParams) _then) =
-      __$GetContractModuleParamsCopyWithImpl;
-  @override
-  @useResult
-  $Res call({@JsonKey(name: 'contract') String contractHash});
-}
+abstract mixin class _$GetContractModuleParamsCopyWith<$Res> implements $GetContractModuleParamsCopyWith<$Res> {
+  factory _$GetContractModuleParamsCopyWith(_GetContractModuleParams value, $Res Function(_GetContractModuleParams) _then) = __$GetContractModuleParamsCopyWithImpl;
+@override @useResult
+$Res call({
+@JsonKey(name: 'contract') String contractHash
+});
 
+
+
+
+}
 /// @nodoc
 class __$GetContractModuleParamsCopyWithImpl<$Res>
     implements _$GetContractModuleParamsCopyWith<$Res> {
@@ -147,20 +262,16 @@ class __$GetContractModuleParamsCopyWithImpl<$Res>
   final _GetContractModuleParams _self;
   final $Res Function(_GetContractModuleParams) _then;
 
-  /// Create a copy of GetContractModuleParams
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? contractHash = null,
-  }) {
-    return _then(_GetContractModuleParams(
-      contractHash: null == contractHash
-          ? _self.contractHash
-          : contractHash // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
+/// Create a copy of GetContractModuleParams
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? contractHash = null,}) {
+  return _then(_GetContractModuleParams(
+contractHash: null == contractHash ? _self.contractHash : contractHash // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
 }
 
 // dart format on

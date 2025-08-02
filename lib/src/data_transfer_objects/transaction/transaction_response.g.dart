@@ -10,8 +10,9 @@ part of 'transaction_response.dart';
 
 _TransactionResponse _$TransactionResponseFromJson(Map<String, dynamic> json) =>
     _TransactionResponse(
-      blocks:
-          (json['blocks'] as List<dynamic>?)?.map((e) => e as String).toList(),
+      blocks: (json['blocks'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       executedInBlock: json['executed_in_block'] as String?,
       hash: json['hash'] as String,
       data: TransfersPayload.fromJson(json['data'] as Map<String, dynamic>),
@@ -29,21 +30,21 @@ _TransactionResponse _$TransactionResponseFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$TransactionResponseToJson(
-        _TransactionResponse instance) =>
-    <String, dynamic>{
-      'blocks': instance.blocks,
-      'executed_in_block': instance.executedInBlock,
-      'hash': instance.hash,
-      'data': instance.data,
-      'fee': instance.fee,
-      'version': instance.version,
-      'in_mempool': instance.inMempool,
-      'first_seen': instance.firstSeen,
-      'nonce': instance.nonce,
-      'source': instance.source,
-      'range_proof': instance.rangeProof,
-      'source_commitments': instance.sourceCommitments,
-      'reference': instance.reference,
-      'signature': instance.signature,
-      'size': instance.size,
-    };
+  _TransactionResponse instance,
+) => <String, dynamic>{
+  'blocks': instance.blocks,
+  'executed_in_block': instance.executedInBlock,
+  'hash': instance.hash,
+  'data': instance.data,
+  'fee': instance.fee,
+  'version': instance.version,
+  'in_mempool': instance.inMempool,
+  'first_seen': instance.firstSeen,
+  'nonce': instance.nonce,
+  'source': instance.source,
+  'range_proof': instance.rangeProof,
+  'source_commitments': instance.sourceCommitments,
+  'reference': instance.reference,
+  'signature': instance.signature,
+  'size': instance.size,
+};

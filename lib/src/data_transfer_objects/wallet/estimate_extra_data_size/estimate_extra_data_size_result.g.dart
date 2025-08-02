@@ -9,13 +9,9 @@ part of 'estimate_extra_data_size_result.dart';
 // **************************************************************************
 
 _EstimateExtraDataSizeResult _$EstimateExtraDataSizeResultFromJson(
-        Map<String, dynamic> json) =>
-    _EstimateExtraDataSizeResult(
-      size: (json['size'] as num).toInt(),
-    );
+  Map<String, dynamic> json,
+) => _EstimateExtraDataSizeResult(size: (json['size'] as num).toInt());
 
 Map<String, dynamic> _$EstimateExtraDataSizeResultToJson(
-        _EstimateExtraDataSizeResult instance) =>
-    <String, dynamic>{
-      'size': instance.size,
-    };
+  _EstimateExtraDataSizeResult instance,
+) => <String, dynamic>{'size': instance.size};

@@ -9,11 +9,7 @@ part of 'has_balance_result.dart';
 // **************************************************************************
 
 _HasBalanceResult _$HasBalanceResultFromJson(Map<String, dynamic> json) =>
-    _HasBalanceResult(
-      exist: json['exist'] as bool,
-    );
+    _HasBalanceResult(exist: json['exist'] as bool);
 
 Map<String, dynamic> _$HasBalanceResultToJson(_HasBalanceResult instance) =>
-    <String, dynamic>{
-      'exist': instance.exist,
-    };
+    <String, dynamic>{'exist': instance.exist};

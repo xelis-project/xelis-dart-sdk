@@ -9,15 +9,15 @@ part of 'get_height_range_params.dart';
 // **************************************************************************
 
 _GetHeightRangeParams _$GetHeightRangeParamsFromJson(
-        Map<String, dynamic> json) =>
-    _GetHeightRangeParams(
-      startHeight: (json['start_height'] as num?)?.toInt(),
-      endHeight: (json['end_height'] as num?)?.toInt(),
-    );
+  Map<String, dynamic> json,
+) => _GetHeightRangeParams(
+  startHeight: (json['start_height'] as num?)?.toInt(),
+  endHeight: (json['end_height'] as num?)?.toInt(),
+);
 
 Map<String, dynamic> _$GetHeightRangeParamsToJson(
-        _GetHeightRangeParams instance) =>
-    <String, dynamic>{
-      if (instance.startHeight case final value?) 'start_height': value,
-      if (instance.endHeight case final value?) 'end_height': value,
-    };
+  _GetHeightRangeParams instance,
+) => <String, dynamic>{
+  'start_height': ?instance.startHeight,
+  'end_height': ?instance.endHeight,
+};

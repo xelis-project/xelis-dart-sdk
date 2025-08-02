@@ -9,13 +9,9 @@ part of 'get_wallet_balance_params.dart';
 // **************************************************************************
 
 _GetWalletBalanceParams _$GetWalletBalanceParamsFromJson(
-        Map<String, dynamic> json) =>
-    _GetWalletBalanceParams(
-      assetHash: json['asset'] as String?,
-    );
+  Map<String, dynamic> json,
+) => _GetWalletBalanceParams(assetHash: json['asset'] as String?);
 
 Map<String, dynamic> _$GetWalletBalanceParamsToJson(
-        _GetWalletBalanceParams instance) =>
-    <String, dynamic>{
-      'asset': instance.assetHash,
-    };
+  _GetWalletBalanceParams instance,
+) => <String, dynamic>{'asset': instance.assetHash};

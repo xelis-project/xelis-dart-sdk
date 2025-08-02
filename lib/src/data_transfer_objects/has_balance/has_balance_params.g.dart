@@ -19,5 +19,5 @@ Map<String, dynamic> _$HasBalanceParamsToJson(_HasBalanceParams instance) =>
     <String, dynamic>{
       'address': instance.address,
       'asset': instance.asset,
-      if (instance.topoheight case final value?) 'topoheight': value,
+      'topoheight': ?instance.topoheight,
     };

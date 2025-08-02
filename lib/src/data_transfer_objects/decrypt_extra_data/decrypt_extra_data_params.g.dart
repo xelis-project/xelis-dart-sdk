@@ -9,15 +9,15 @@ part of 'decrypt_extra_data_params.dart';
 // **************************************************************************
 
 _DecryptExtraDataDaemonParams _$DecryptExtraDataDaemonParamsFromJson(
-        Map<String, dynamic> json) =>
-    _DecryptExtraDataDaemonParams(
-      extraData: json['extra_data'],
-      privateKey: json['private_key'] as String,
-    );
+  Map<String, dynamic> json,
+) => _DecryptExtraDataDaemonParams(
+  extraData: json['extra_data'],
+  privateKey: json['private_key'] as String,
+);
 
 Map<String, dynamic> _$DecryptExtraDataDaemonParamsToJson(
-        _DecryptExtraDataDaemonParams instance) =>
-    <String, dynamic>{
-      'extra_data': instance.extraData,
-      'private_key': instance.privateKey,
-    };
+  _DecryptExtraDataDaemonParams instance,
+) => <String, dynamic>{
+  'extra_data': instance.extraData,
+  'private_key': instance.privateKey,
+};

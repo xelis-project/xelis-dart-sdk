@@ -17,5 +17,5 @@ _HasMultisigParams _$HasMultisigParamsFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$HasMultisigParamsToJson(_HasMultisigParams instance) =>
     <String, dynamic>{
       'address': instance.address,
-      if (instance.topoheight case final value?) 'topoheight': value,
+      'topoheight': ?instance.topoheight,
     };

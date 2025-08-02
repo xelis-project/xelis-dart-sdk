@@ -23,5 +23,5 @@ Map<String, dynamic> _$TransferBuilderToJson(_TransferBuilder instance) =>
       'amount': instance.amount,
       'destination': instance.destination,
       'encrypt_extra_data': instance.encryptExtraData,
-      if (instance.extraData case final value?) 'extra_data': value,
+      'extra_data': ?instance.extraData,
     };

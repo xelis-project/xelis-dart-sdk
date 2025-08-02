@@ -9,13 +9,9 @@ part of 'get_transaction_params.dart';
 // **************************************************************************
 
 _GetTransactionParams _$GetTransactionParamsFromJson(
-        Map<String, dynamic> json) =>
-    _GetTransactionParams(
-      hash: json['hash'] as String,
-    );
+  Map<String, dynamic> json,
+) => _GetTransactionParams(hash: json['hash'] as String);
 
 Map<String, dynamic> _$GetTransactionParamsToJson(
-        _GetTransactionParams instance) =>
-    <String, dynamic>{
-      'hash': instance.hash,
-    };
+  _GetTransactionParams instance,
+) => <String, dynamic>{'hash': instance.hash};

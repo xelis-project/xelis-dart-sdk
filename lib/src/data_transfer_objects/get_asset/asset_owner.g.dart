@@ -9,12 +9,9 @@ part of 'asset_owner.dart';
 // **************************************************************************
 
 _AssetOwner _$AssetOwnerFromJson(Map<String, dynamic> json) => _AssetOwner(
-      contract: json['contract'] as String,
-      id: (json['id'] as num).toInt(),
-    );
+  contract: json['contract'] as String,
+  id: (json['id'] as num).toInt(),
+);
 
 Map<String, dynamic> _$AssetOwnerToJson(_AssetOwner instance) =>
-    <String, dynamic>{
-      'contract': instance.contract,
-      'id': instance.id,
-    };
+    <String, dynamic>{'contract': instance.contract, 'id': instance.id};

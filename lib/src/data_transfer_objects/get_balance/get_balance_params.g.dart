@@ -15,7 +15,4 @@ _GetBalanceParams _$GetBalanceParamsFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$GetBalanceParamsToJson(_GetBalanceParams instance) =>
-    <String, dynamic>{
-      'address': instance.address,
-      'asset': instance.asset,
-    };
+    <String, dynamic>{'address': instance.address, 'asset': instance.asset};

@@ -15,8 +15,8 @@ _BalanceChangedEvent _$BalanceChangedEventFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$BalanceChangedEventToJson(
-        _BalanceChangedEvent instance) =>
-    <String, dynamic>{
-      'asset': instance.assetHash,
-      'balance': instance.balance,
-    };
+  _BalanceChangedEvent instance,
+) => <String, dynamic>{
+  'asset': instance.assetHash,
+  'balance': instance.balance,
+};

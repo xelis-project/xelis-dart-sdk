@@ -8,24 +8,23 @@ part of 'multisig_state.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-Deleted _$DeletedFromJson(Map<String, dynamic> json) => Deleted(
-      $type: json['runtimeType'] as String?,
-    );
+Deleted _$DeletedFromJson(Map<String, dynamic> json) =>
+    Deleted($type: json['runtimeType'] as String?);
 
 Map<String, dynamic> _$DeletedToJson(Deleted instance) => <String, dynamic>{
-      'runtimeType': instance.$type,
-    };
+  'runtimeType': instance.$type,
+};
 
 Active _$ActiveFromJson(Map<String, dynamic> json) => Active(
-      participants: (json['participants'] as List<dynamic>)
-          .map((e) => e as String)
-          .toList(),
-      threshold: (json['threshold'] as num).toInt(),
-      $type: json['runtimeType'] as String?,
-    );
+  participants: (json['participants'] as List<dynamic>)
+      .map((e) => e as String)
+      .toList(),
+  threshold: (json['threshold'] as num).toInt(),
+  $type: json['runtimeType'] as String?,
+);
 
 Map<String, dynamic> _$ActiveToJson(Active instance) => <String, dynamic>{
-      'participants': instance.participants,
-      'threshold': instance.threshold,
-      'runtimeType': instance.$type,
-    };
+  'participants': instance.participants,
+  'threshold': instance.threshold,
+  'runtimeType': instance.$type,
+};

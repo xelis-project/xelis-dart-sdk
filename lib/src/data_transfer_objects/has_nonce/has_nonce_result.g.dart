@@ -9,11 +9,7 @@ part of 'has_nonce_result.dart';
 // **************************************************************************
 
 _HasNonceResult _$HasNonceResultFromJson(Map<String, dynamic> json) =>
-    _HasNonceResult(
-      exist: json['exist'] as bool,
-    );
+    _HasNonceResult(exist: json['exist'] as bool);
 
 Map<String, dynamic> _$HasNonceResultToJson(_HasNonceResult instance) =>
-    <String, dynamic>{
-      'exist': instance.exist,
-    };
+    <String, dynamic>{'exist': instance.exist};

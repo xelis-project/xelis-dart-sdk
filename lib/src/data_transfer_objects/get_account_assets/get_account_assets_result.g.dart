@@ -9,14 +9,11 @@ part of 'get_account_assets_result.dart';
 // **************************************************************************
 
 _GetAccountAssetsResult _$GetAccountAssetsResultFromJson(
-        Map<String, dynamic> json) =>
-    _GetAccountAssetsResult(
-      assets:
-          (json['assets'] as List<dynamic>).map((e) => e as String).toList(),
-    );
+  Map<String, dynamic> json,
+) => _GetAccountAssetsResult(
+  assets: (json['assets'] as List<dynamic>).map((e) => e as String).toList(),
+);
 
 Map<String, dynamic> _$GetAccountAssetsResultToJson(
-        _GetAccountAssetsResult instance) =>
-    <String, dynamic>{
-      'assets': instance.assets,
-    };
+  _GetAccountAssetsResult instance,
+) => <String, dynamic>{'assets': instance.assets};

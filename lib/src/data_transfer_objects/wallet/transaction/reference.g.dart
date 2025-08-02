@@ -9,12 +9,9 @@ part of 'reference.dart';
 // **************************************************************************
 
 _Reference _$ReferenceFromJson(Map<String, dynamic> json) => _Reference(
-      hash: json['hash'] as String,
-      topoHeight: (json['topoheight'] as num).toInt(),
-    );
+  hash: json['hash'] as String,
+  topoHeight: (json['topoheight'] as num).toInt(),
+);
 
 Map<String, dynamic> _$ReferenceToJson(_Reference instance) =>
-    <String, dynamic>{
-      'hash': instance.hash,
-      'topoheight': instance.topoHeight,
-    };
+    <String, dynamic>{'hash': instance.hash, 'topoheight': instance.topoHeight};

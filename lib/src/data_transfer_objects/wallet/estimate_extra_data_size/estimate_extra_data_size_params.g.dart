@@ -9,15 +9,13 @@ part of 'estimate_extra_data_size_params.dart';
 // **************************************************************************
 
 _EstimateExtraDataSizeParams _$EstimateExtraDataSizeParamsFromJson(
-        Map<String, dynamic> json) =>
-    _EstimateExtraDataSizeParams(
-      destinations: (json['destinations'] as List<dynamic>)
-          .map((e) => e as String)
-          .toList(),
-    );
+  Map<String, dynamic> json,
+) => _EstimateExtraDataSizeParams(
+  destinations: (json['destinations'] as List<dynamic>)
+      .map((e) => e as String)
+      .toList(),
+);
 
 Map<String, dynamic> _$EstimateExtraDataSizeParamsToJson(
-        _EstimateExtraDataSizeParams instance) =>
-    <String, dynamic>{
-      'destinations': instance.destinations,
-    };
+  _EstimateExtraDataSizeParams instance,
+) => <String, dynamic>{'destinations': instance.destinations};

@@ -9,11 +9,7 @@ part of 'dev_fee_history.dart';
 // **************************************************************************
 
 _DevFeeHistory _$DevFeeHistoryFromJson(Map<String, dynamic> json) =>
-    _DevFeeHistory(
-      reward: (json['reward'] as num).toInt(),
-    );
+    _DevFeeHistory(reward: (json['reward'] as num).toInt());
 
 Map<String, dynamic> _$DevFeeHistoryToJson(_DevFeeHistory instance) =>
-    <String, dynamic>{
-      'reward': instance.reward,
-    };
+    <String, dynamic>{'reward': instance.reward};

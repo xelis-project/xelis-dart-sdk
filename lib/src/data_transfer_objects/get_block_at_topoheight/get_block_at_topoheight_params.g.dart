@@ -9,15 +9,15 @@ part of 'get_block_at_topoheight_params.dart';
 // **************************************************************************
 
 _GetBlockAtTopoHeightParams _$GetBlockAtTopoHeightParamsFromJson(
-        Map<String, dynamic> json) =>
-    _GetBlockAtTopoHeightParams(
-      topoHeight: (json['topoheight'] as num).toInt(),
-      includeTxs: json['include_txs'] as bool?,
-    );
+  Map<String, dynamic> json,
+) => _GetBlockAtTopoHeightParams(
+  topoHeight: (json['topoheight'] as num).toInt(),
+  includeTxs: json['include_txs'] as bool?,
+);
 
 Map<String, dynamic> _$GetBlockAtTopoHeightParamsToJson(
-        _GetBlockAtTopoHeightParams instance) =>
-    <String, dynamic>{
-      'topoheight': instance.topoHeight,
-      if (instance.includeTxs case final value?) 'include_txs': value,
-    };
+  _GetBlockAtTopoHeightParams instance,
+) => <String, dynamic>{
+  'topoheight': instance.topoHeight,
+  'include_txs': ?instance.includeTxs,
+};

@@ -9,15 +9,15 @@ part of 'get_nonce_at_topoheight_params.dart';
 // **************************************************************************
 
 _GetNonceAtTopoHeightParams _$GetNonceAtTopoHeightParamsFromJson(
-        Map<String, dynamic> json) =>
-    _GetNonceAtTopoHeightParams(
-      address: json['address'] as String,
-      topoheight: (json['topoheight'] as num).toInt(),
-    );
+  Map<String, dynamic> json,
+) => _GetNonceAtTopoHeightParams(
+  address: json['address'] as String,
+  topoheight: (json['topoheight'] as num).toInt(),
+);
 
 Map<String, dynamic> _$GetNonceAtTopoHeightParamsToJson(
-        _GetNonceAtTopoHeightParams instance) =>
-    <String, dynamic>{
-      'address': instance.address,
-      'topoheight': instance.topoheight,
-    };
+  _GetNonceAtTopoHeightParams instance,
+) => <String, dynamic>{
+  'address': instance.address,
+  'topoheight': instance.topoheight,
+};

@@ -15,8 +15,8 @@ _GetSizeOnDiskResult _$GetSizeOnDiskResultFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$GetSizeOnDiskResultToJson(
-        _GetSizeOnDiskResult instance) =>
-    <String, dynamic>{
-      'size_bytes': instance.sizeBytes,
-      'size_formatted': instance.sizeFormatted,
-    };
+  _GetSizeOnDiskResult instance,
+) => <String, dynamic>{
+  'size_bytes': instance.sizeBytes,
+  'size_formatted': instance.sizeFormatted,
+};

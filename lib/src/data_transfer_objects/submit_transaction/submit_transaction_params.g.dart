@@ -9,13 +9,9 @@ part of 'submit_transaction_params.dart';
 // **************************************************************************
 
 _SubmitTransactionParams _$SubmitTransactionParamsFromJson(
-        Map<String, dynamic> json) =>
-    _SubmitTransactionParams(
-      hex: json['data'] as String,
-    );
+  Map<String, dynamic> json,
+) => _SubmitTransactionParams(hex: json['data'] as String);
 
 Map<String, dynamic> _$SubmitTransactionParamsToJson(
-        _SubmitTransactionParams instance) =>
-    <String, dynamic>{
-      'data': instance.hex,
-    };
+  _SubmitTransactionParams instance,
+) => <String, dynamic>{'data': instance.hex};

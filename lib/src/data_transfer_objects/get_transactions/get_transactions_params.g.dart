@@ -9,14 +9,13 @@ part of 'get_transactions_params.dart';
 // **************************************************************************
 
 _GetTransactionsParams _$GetTransactionsParamsFromJson(
-        Map<String, dynamic> json) =>
-    _GetTransactionsParams(
-      txHashes:
-          (json['tx_hashes'] as List<dynamic>).map((e) => e as String).toList(),
-    );
+  Map<String, dynamic> json,
+) => _GetTransactionsParams(
+  txHashes: (json['tx_hashes'] as List<dynamic>)
+      .map((e) => e as String)
+      .toList(),
+);
 
 Map<String, dynamic> _$GetTransactionsParamsToJson(
-        _GetTransactionsParams instance) =>
-    <String, dynamic>{
-      'tx_hashes': instance.txHashes,
-    };
+  _GetTransactionsParams instance,
+) => <String, dynamic>{'tx_hashes': instance.txHashes};

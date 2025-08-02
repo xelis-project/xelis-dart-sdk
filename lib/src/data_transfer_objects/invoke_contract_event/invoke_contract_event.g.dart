@@ -19,10 +19,10 @@ _InvokeContractEvent _$InvokeContractEventFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$InvokeContractEventToJson(
-        _InvokeContractEvent instance) =>
-    <String, dynamic>{
-      'block_hash': instance.blockHash,
-      'tx_hash': instance.txHash,
-      'topoheight': instance.topoHeight,
-      'contract_outputs': instance.contractOutputs,
-    };
+  _InvokeContractEvent instance,
+) => <String, dynamic>{
+  'block_hash': instance.blockHash,
+  'tx_hash': instance.txHash,
+  'topoheight': instance.topoHeight,
+  'contract_outputs': instance.contractOutputs,
+};

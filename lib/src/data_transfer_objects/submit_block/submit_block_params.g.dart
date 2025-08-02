@@ -9,11 +9,7 @@ part of 'submit_block_params.dart';
 // **************************************************************************
 
 _SubmitBlockParams _$SubmitBlockParamsFromJson(Map<String, dynamic> json) =>
-    _SubmitBlockParams(
-      blockTemplate: json['block_template'] as String,
-    );
+    _SubmitBlockParams(blockTemplate: json['block_template'] as String);
 
 Map<String, dynamic> _$SubmitBlockParamsToJson(_SubmitBlockParams instance) =>
-    <String, dynamic>{
-      'block_template': instance.blockTemplate,
-    };
+    <String, dynamic>{'block_template': instance.blockTemplate};

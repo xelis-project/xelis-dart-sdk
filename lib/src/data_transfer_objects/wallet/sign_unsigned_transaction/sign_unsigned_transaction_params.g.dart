@@ -9,15 +9,12 @@ part of 'sign_unsigned_transaction_params.dart';
 // **************************************************************************
 
 _SignUnsignedTransactionParams _$SignUnsignedTransactionParamsFromJson(
-        Map<String, dynamic> json) =>
-    _SignUnsignedTransactionParams(
-      hash: json['hash'] as String,
-      signerId: (json['signer_id'] as num).toInt(),
-    );
+  Map<String, dynamic> json,
+) => _SignUnsignedTransactionParams(
+  hash: json['hash'] as String,
+  signerId: (json['signer_id'] as num).toInt(),
+);
 
 Map<String, dynamic> _$SignUnsignedTransactionParamsToJson(
-        _SignUnsignedTransactionParams instance) =>
-    <String, dynamic>{
-      'hash': instance.hash,
-      'signer_id': instance.signerId,
-    };
+  _SignUnsignedTransactionParams instance,
+) => <String, dynamic>{'hash': instance.hash, 'signer_id': instance.signerId};

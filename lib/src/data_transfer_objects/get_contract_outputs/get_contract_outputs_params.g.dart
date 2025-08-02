@@ -9,13 +9,9 @@ part of 'get_contract_outputs_params.dart';
 // **************************************************************************
 
 _GetContractOutputsParams _$GetContractOutputsParamsFromJson(
-        Map<String, dynamic> json) =>
-    _GetContractOutputsParams(
-      txHash: json['transaction'] as String,
-    );
+  Map<String, dynamic> json,
+) => _GetContractOutputsParams(txHash: json['transaction'] as String);
 
 Map<String, dynamic> _$GetContractOutputsParamsToJson(
-        _GetContractOutputsParams instance) =>
-    <String, dynamic>{
-      'transaction': instance.txHash,
-    };
+  _GetContractOutputsParams instance,
+) => <String, dynamic>{'transaction': instance.txHash};

@@ -9,11 +9,7 @@ part of 'get_asset_params.dart';
 // **************************************************************************
 
 _GetAssetParams _$GetAssetParamsFromJson(Map<String, dynamic> json) =>
-    _GetAssetParams(
-      asset: json['asset'] as String,
-    );
+    _GetAssetParams(asset: json['asset'] as String);
 
 Map<String, dynamic> _$GetAssetParamsToJson(_GetAssetParams instance) =>
-    <String, dynamic>{
-      'asset': instance.asset,
-    };
+    <String, dynamic>{'asset': instance.asset};

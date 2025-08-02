@@ -15,26 +15,23 @@ CoinbaseEntry _$CoinbaseEntryFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$CoinbaseEntryToJson(CoinbaseEntry instance) =>
-    <String, dynamic>{
-      'reward': instance.reward,
-      'runtimeType': instance.$type,
-    };
+    <String, dynamic>{'reward': instance.reward, 'runtimeType': instance.$type};
 
 BurnEntry _$BurnEntryFromJson(Map<String, dynamic> json) => BurnEntry(
-      asset: json['asset'] as String,
-      amount: (json['amount'] as num).toInt(),
-      fee: (json['fee'] as num).toInt(),
-      nonce: (json['nonce'] as num).toInt(),
-      $type: json['runtimeType'] as String?,
-    );
+  asset: json['asset'] as String,
+  amount: (json['amount'] as num).toInt(),
+  fee: (json['fee'] as num).toInt(),
+  nonce: (json['nonce'] as num).toInt(),
+  $type: json['runtimeType'] as String?,
+);
 
 Map<String, dynamic> _$BurnEntryToJson(BurnEntry instance) => <String, dynamic>{
-      'asset': instance.asset,
-      'amount': instance.amount,
-      'fee': instance.fee,
-      'nonce': instance.nonce,
-      'runtimeType': instance.$type,
-    };
+  'asset': instance.asset,
+  'amount': instance.amount,
+  'fee': instance.fee,
+  'nonce': instance.nonce,
+  'runtimeType': instance.$type,
+};
 
 IncomingEntry _$IncomingEntryFromJson(Map<String, dynamic> json) =>
     IncomingEntry(
@@ -101,15 +98,15 @@ InvokeContractEntry _$InvokeContractEntryFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$InvokeContractEntryToJson(
-        InvokeContractEntry instance) =>
-    <String, dynamic>{
-      'contract': instance.contract,
-      'deposits': instance.deposits,
-      'chunk_id': instance.chunkId,
-      'fee': instance.fee,
-      'nonce': instance.nonce,
-      'runtimeType': instance.$type,
-    };
+  InvokeContractEntry instance,
+) => <String, dynamic>{
+  'contract': instance.contract,
+  'deposits': instance.deposits,
+  'chunk_id': instance.chunkId,
+  'fee': instance.fee,
+  'nonce': instance.nonce,
+  'runtimeType': instance.$type,
+};
 
 DeployContractEntry _$DeployContractEntryFromJson(Map<String, dynamic> json) =>
     DeployContractEntry(
@@ -122,10 +119,10 @@ DeployContractEntry _$DeployContractEntryFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$DeployContractEntryToJson(
-        DeployContractEntry instance) =>
-    <String, dynamic>{
-      'fee': instance.fee,
-      'nonce': instance.nonce,
-      'invoke': instance.invoke,
-      'runtimeType': instance.$type,
-    };
+  DeployContractEntry instance,
+) => <String, dynamic>{
+  'fee': instance.fee,
+  'nonce': instance.nonce,
+  'invoke': instance.invoke,
+  'runtimeType': instance.$type,
+};

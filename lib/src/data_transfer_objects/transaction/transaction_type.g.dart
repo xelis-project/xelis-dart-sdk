@@ -23,10 +23,10 @@ Map<String, dynamic> _$TransfersPayloadToJson(TransfersPayload instance) =>
     };
 
 BurnPayload _$BurnPayloadFromJson(Map<String, dynamic> json) => BurnPayload(
-      asset: json['asset'] as String,
-      amount: (json['amount'] as num).toInt(),
-      $type: json['runtimeType'] as String?,
-    );
+  asset: json['asset'] as String,
+  amount: (json['amount'] as num).toInt(),
+  $type: json['runtimeType'] as String?,
+);
 
 Map<String, dynamic> _$BurnPayloadToJson(BurnPayload instance) =>
     <String, dynamic>{

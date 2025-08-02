@@ -9,11 +9,7 @@ part of 'mining_history.dart';
 // **************************************************************************
 
 _MiningHistory _$MiningHistoryFromJson(Map<String, dynamic> json) =>
-    _MiningHistory(
-      reward: (json['reward'] as num).toInt(),
-    );
+    _MiningHistory(reward: (json['reward'] as num).toInt());
 
 Map<String, dynamic> _$MiningHistoryToJson(_MiningHistory instance) =>
-    <String, dynamic>{
-      'reward': instance.reward,
-    };
+    <String, dynamic>{'reward': instance.reward};

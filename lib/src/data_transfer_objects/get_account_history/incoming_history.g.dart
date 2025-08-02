@@ -9,11 +9,7 @@ part of 'incoming_history.dart';
 // **************************************************************************
 
 _IncomingHistory _$IncomingHistoryFromJson(Map<String, dynamic> json) =>
-    _IncomingHistory(
-      from: json['from'] as String,
-    );
+    _IncomingHistory(from: json['from'] as String);
 
 Map<String, dynamic> _$IncomingHistoryToJson(_IncomingHistory instance) =>
-    <String, dynamic>{
-      'from': instance.from,
-    };
+    <String, dynamic>{'from': instance.from};

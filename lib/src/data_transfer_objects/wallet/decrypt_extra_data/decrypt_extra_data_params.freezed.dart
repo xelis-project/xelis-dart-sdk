@@ -1,6 +1,5 @@
-// dart format width=80
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -15,55 +14,47 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$DecryptExtraDataWalletParams {
-  @JsonKey(name: 'extra_data')
-  dynamic get extraData;
-  @JsonKey(name: 'role')
-  Role get role;
 
-  /// Create a copy of DecryptExtraDataWalletParams
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $DecryptExtraDataWalletParamsCopyWith<DecryptExtraDataWalletParams>
-      get copyWith => _$DecryptExtraDataWalletParamsCopyWithImpl<
-              DecryptExtraDataWalletParams>(
-          this as DecryptExtraDataWalletParams, _$identity);
+@JsonKey(name: 'extra_data') dynamic get extraData;@JsonKey(name: 'role') Role get role;
+/// Create a copy of DecryptExtraDataWalletParams
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$DecryptExtraDataWalletParamsCopyWith<DecryptExtraDataWalletParams> get copyWith => _$DecryptExtraDataWalletParamsCopyWithImpl<DecryptExtraDataWalletParams>(this as DecryptExtraDataWalletParams, _$identity);
 
   /// Serializes this DecryptExtraDataWalletParams to a JSON map.
   Map<String, dynamic> toJson();
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is DecryptExtraDataWalletParams &&
-            const DeepCollectionEquality().equals(other.extraData, extraData) &&
-            (identical(other.role, role) || other.role == role));
-  }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(extraData), role);
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is DecryptExtraDataWalletParams&&const DeepCollectionEquality().equals(other.extraData, extraData)&&(identical(other.role, role) || other.role == role));
+}
 
-  @override
-  String toString() {
-    return 'DecryptExtraDataWalletParams(extraData: $extraData, role: $role)';
-  }
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(extraData),role);
+
+@override
+String toString() {
+  return 'DecryptExtraDataWalletParams(extraData: $extraData, role: $role)';
+}
+
+
 }
 
 /// @nodoc
-abstract mixin class $DecryptExtraDataWalletParamsCopyWith<$Res> {
-  factory $DecryptExtraDataWalletParamsCopyWith(
-          DecryptExtraDataWalletParams value,
-          $Res Function(DecryptExtraDataWalletParams) _then) =
-      _$DecryptExtraDataWalletParamsCopyWithImpl;
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'extra_data') dynamic extraData,
-      @JsonKey(name: 'role') Role role});
-}
+abstract mixin class $DecryptExtraDataWalletParamsCopyWith<$Res>  {
+  factory $DecryptExtraDataWalletParamsCopyWith(DecryptExtraDataWalletParams value, $Res Function(DecryptExtraDataWalletParams) _then) = _$DecryptExtraDataWalletParamsCopyWithImpl;
+@useResult
+$Res call({
+@JsonKey(name: 'extra_data') dynamic extraData,@JsonKey(name: 'role') Role role
+});
 
+
+
+
+}
 /// @nodoc
 class _$DecryptExtraDataWalletParamsCopyWithImpl<$Res>
     implements $DecryptExtraDataWalletParamsCopyWith<$Res> {
@@ -72,93 +63,199 @@ class _$DecryptExtraDataWalletParamsCopyWithImpl<$Res>
   final DecryptExtraDataWalletParams _self;
   final $Res Function(DecryptExtraDataWalletParams) _then;
 
-  /// Create a copy of DecryptExtraDataWalletParams
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? extraData = freezed,
-    Object? role = null,
-  }) {
-    return _then(_self.copyWith(
-      extraData: freezed == extraData
-          ? _self.extraData
-          : extraData // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      role: null == role
-          ? _self.role
-          : role // ignore: cast_nullable_to_non_nullable
-              as Role,
-    ));
-  }
+/// Create a copy of DecryptExtraDataWalletParams
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? extraData = freezed,Object? role = null,}) {
+  return _then(_self.copyWith(
+extraData: freezed == extraData ? _self.extraData : extraData // ignore: cast_nullable_to_non_nullable
+as dynamic,role: null == role ? _self.role : role // ignore: cast_nullable_to_non_nullable
+as Role,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [DecryptExtraDataWalletParams].
+extension DecryptExtraDataWalletParamsPatterns on DecryptExtraDataWalletParams {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _DecryptExtraDataWalletParams value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _DecryptExtraDataWalletParams() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _DecryptExtraDataWalletParams value)  $default,){
+final _that = this;
+switch (_that) {
+case _DecryptExtraDataWalletParams():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _DecryptExtraDataWalletParams value)?  $default,){
+final _that = this;
+switch (_that) {
+case _DecryptExtraDataWalletParams() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'extra_data')  dynamic extraData, @JsonKey(name: 'role')  Role role)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _DecryptExtraDataWalletParams() when $default != null:
+return $default(_that.extraData,_that.role);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'extra_data')  dynamic extraData, @JsonKey(name: 'role')  Role role)  $default,) {final _that = this;
+switch (_that) {
+case _DecryptExtraDataWalletParams():
+return $default(_that.extraData,_that.role);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'extra_data')  dynamic extraData, @JsonKey(name: 'role')  Role role)?  $default,) {final _that = this;
+switch (_that) {
+case _DecryptExtraDataWalletParams() when $default != null:
+return $default(_that.extraData,_that.role);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
 @JsonSerializable()
+
 class _DecryptExtraDataWalletParams implements DecryptExtraDataWalletParams {
-  const _DecryptExtraDataWalletParams(
-      {@JsonKey(name: 'extra_data') required this.extraData,
-      @JsonKey(name: 'role') required this.role});
-  factory _DecryptExtraDataWalletParams.fromJson(Map<String, dynamic> json) =>
-      _$DecryptExtraDataWalletParamsFromJson(json);
+  const _DecryptExtraDataWalletParams({@JsonKey(name: 'extra_data') required this.extraData, @JsonKey(name: 'role') required this.role});
+  factory _DecryptExtraDataWalletParams.fromJson(Map<String, dynamic> json) => _$DecryptExtraDataWalletParamsFromJson(json);
 
-  @override
-  @JsonKey(name: 'extra_data')
-  final dynamic extraData;
-  @override
-  @JsonKey(name: 'role')
-  final Role role;
+@override@JsonKey(name: 'extra_data') final  dynamic extraData;
+@override@JsonKey(name: 'role') final  Role role;
 
-  /// Create a copy of DecryptExtraDataWalletParams
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$DecryptExtraDataWalletParamsCopyWith<_DecryptExtraDataWalletParams>
-      get copyWith => __$DecryptExtraDataWalletParamsCopyWithImpl<
-          _DecryptExtraDataWalletParams>(this, _$identity);
+/// Create a copy of DecryptExtraDataWalletParams
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$DecryptExtraDataWalletParamsCopyWith<_DecryptExtraDataWalletParams> get copyWith => __$DecryptExtraDataWalletParamsCopyWithImpl<_DecryptExtraDataWalletParams>(this, _$identity);
 
-  @override
-  Map<String, dynamic> toJson() {
-    return _$DecryptExtraDataWalletParamsToJson(
-      this,
-    );
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$DecryptExtraDataWalletParamsToJson(this, );
+}
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _DecryptExtraDataWalletParams &&
-            const DeepCollectionEquality().equals(other.extraData, extraData) &&
-            (identical(other.role, role) || other.role == role));
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _DecryptExtraDataWalletParams&&const DeepCollectionEquality().equals(other.extraData, extraData)&&(identical(other.role, role) || other.role == role));
+}
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(extraData), role);
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(extraData),role);
 
-  @override
-  String toString() {
-    return 'DecryptExtraDataWalletParams(extraData: $extraData, role: $role)';
-  }
+@override
+String toString() {
+  return 'DecryptExtraDataWalletParams(extraData: $extraData, role: $role)';
+}
+
+
 }
 
 /// @nodoc
-abstract mixin class _$DecryptExtraDataWalletParamsCopyWith<$Res>
-    implements $DecryptExtraDataWalletParamsCopyWith<$Res> {
-  factory _$DecryptExtraDataWalletParamsCopyWith(
-          _DecryptExtraDataWalletParams value,
-          $Res Function(_DecryptExtraDataWalletParams) _then) =
-      __$DecryptExtraDataWalletParamsCopyWithImpl;
-  @override
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'extra_data') dynamic extraData,
-      @JsonKey(name: 'role') Role role});
-}
+abstract mixin class _$DecryptExtraDataWalletParamsCopyWith<$Res> implements $DecryptExtraDataWalletParamsCopyWith<$Res> {
+  factory _$DecryptExtraDataWalletParamsCopyWith(_DecryptExtraDataWalletParams value, $Res Function(_DecryptExtraDataWalletParams) _then) = __$DecryptExtraDataWalletParamsCopyWithImpl;
+@override @useResult
+$Res call({
+@JsonKey(name: 'extra_data') dynamic extraData,@JsonKey(name: 'role') Role role
+});
 
+
+
+
+}
 /// @nodoc
 class __$DecryptExtraDataWalletParamsCopyWithImpl<$Res>
     implements _$DecryptExtraDataWalletParamsCopyWith<$Res> {
@@ -167,25 +264,17 @@ class __$DecryptExtraDataWalletParamsCopyWithImpl<$Res>
   final _DecryptExtraDataWalletParams _self;
   final $Res Function(_DecryptExtraDataWalletParams) _then;
 
-  /// Create a copy of DecryptExtraDataWalletParams
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? extraData = freezed,
-    Object? role = null,
-  }) {
-    return _then(_DecryptExtraDataWalletParams(
-      extraData: freezed == extraData
-          ? _self.extraData
-          : extraData // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      role: null == role
-          ? _self.role
-          : role // ignore: cast_nullable_to_non_nullable
-              as Role,
-    ));
-  }
+/// Create a copy of DecryptExtraDataWalletParams
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? extraData = freezed,Object? role = null,}) {
+  return _then(_DecryptExtraDataWalletParams(
+extraData: freezed == extraData ? _self.extraData : extraData // ignore: cast_nullable_to_non_nullable
+as dynamic,role: null == role ? _self.role : role // ignore: cast_nullable_to_non_nullable
+as Role,
+  ));
+}
+
+
 }
 
 // dart format on

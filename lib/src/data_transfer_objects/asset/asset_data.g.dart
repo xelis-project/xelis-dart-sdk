@@ -9,14 +9,14 @@ part of 'asset_data.dart';
 // **************************************************************************
 
 _AssetData _$AssetDataFromJson(Map<String, dynamic> json) => _AssetData(
-      decimals: (json['decimals'] as num).toInt(),
-      name: json['name'] as String,
-      ticker: json['ticker'] as String,
-      maxSupply: (json['max_supply'] as num?)?.toInt(),
-      owner: json['owner'] == null
-          ? null
-          : AssetOwner.fromJson(json['owner'] as Map<String, dynamic>),
-    );
+  decimals: (json['decimals'] as num).toInt(),
+  name: json['name'] as String,
+  ticker: json['ticker'] as String,
+  maxSupply: (json['max_supply'] as num?)?.toInt(),
+  owner: json['owner'] == null
+      ? null
+      : AssetOwner.fromJson(json['owner'] as Map<String, dynamic>),
+);
 
 Map<String, dynamic> _$AssetDataToJson(_AssetData instance) =>
     <String, dynamic>{

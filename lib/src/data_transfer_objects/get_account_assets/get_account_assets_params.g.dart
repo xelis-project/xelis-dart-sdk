@@ -9,13 +9,9 @@ part of 'get_account_assets_params.dart';
 // **************************************************************************
 
 _GetAccountAssetsParams _$GetAccountAssetsParamsFromJson(
-        Map<String, dynamic> json) =>
-    _GetAccountAssetsParams(
-      address: json['address'] as String,
-    );
+  Map<String, dynamic> json,
+) => _GetAccountAssetsParams(address: json['address'] as String);
 
 Map<String, dynamic> _$GetAccountAssetsParamsToJson(
-        _GetAccountAssetsParams instance) =>
-    <String, dynamic>{
-      'address': instance.address,
-    };
+  _GetAccountAssetsParams instance,
+) => <String, dynamic>{'address': instance.address};

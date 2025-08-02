@@ -15,7 +15,4 @@ _GetMempoolParams _$GetMempoolParamsFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$GetMempoolParamsToJson(_GetMempoolParams instance) =>
-    <String, dynamic>{
-      'maximum': instance.maximum,
-      'skip': instance.skip,
-    };
+    <String, dynamic>{'maximum': instance.maximum, 'skip': instance.skip};

@@ -9,15 +9,15 @@ part of 'get_block_by_hash_params.dart';
 // **************************************************************************
 
 _GetBlockByHashParams _$GetBlockByHashParamsFromJson(
-        Map<String, dynamic> json) =>
-    _GetBlockByHashParams(
-      hash: json['hash'] as String,
-      includeTxs: json['include_txs'] as bool?,
-    );
+  Map<String, dynamic> json,
+) => _GetBlockByHashParams(
+  hash: json['hash'] as String,
+  includeTxs: json['include_txs'] as bool?,
+);
 
 Map<String, dynamic> _$GetBlockByHashParamsToJson(
-        _GetBlockByHashParams instance) =>
-    <String, dynamic>{
-      'hash': instance.hash,
-      if (instance.includeTxs case final value?) 'include_txs': value,
-    };
+  _GetBlockByHashParams instance,
+) => <String, dynamic>{
+  'hash': instance.hash,
+  'include_txs': ?instance.includeTxs,
+};

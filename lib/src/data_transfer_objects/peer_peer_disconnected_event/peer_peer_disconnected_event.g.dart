@@ -9,15 +9,12 @@ part of 'peer_peer_disconnected_event.dart';
 // **************************************************************************
 
 _PeerPeerDisconnectedEvent _$PeerPeerDisconnectedEventFromJson(
-        Map<String, dynamic> json) =>
-    _PeerPeerDisconnectedEvent(
-      id: json['peer_id'] as num,
-      address: json['peer_addr'] as String,
-    );
+  Map<String, dynamic> json,
+) => _PeerPeerDisconnectedEvent(
+  id: json['peer_id'] as num,
+  address: json['peer_addr'] as String,
+);
 
 Map<String, dynamic> _$PeerPeerDisconnectedEventToJson(
-        _PeerPeerDisconnectedEvent instance) =>
-    <String, dynamic>{
-      'peer_id': instance.id,
-      'peer_addr': instance.address,
-    };
+  _PeerPeerDisconnectedEvent instance,
+) => <String, dynamic>{'peer_id': instance.id, 'peer_addr': instance.address};

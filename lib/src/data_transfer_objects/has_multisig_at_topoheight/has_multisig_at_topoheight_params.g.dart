@@ -9,15 +9,15 @@ part of 'has_multisig_at_topoheight_params.dart';
 // **************************************************************************
 
 _HasMultisigAtTopoheightParams _$HasMultisigAtTopoheightParamsFromJson(
-        Map<String, dynamic> json) =>
-    _HasMultisigAtTopoheightParams(
-      address: json['address'] as String,
-      topoheight: (json['topoheight'] as num).toInt(),
-    );
+  Map<String, dynamic> json,
+) => _HasMultisigAtTopoheightParams(
+  address: json['address'] as String,
+  topoheight: (json['topoheight'] as num).toInt(),
+);
 
 Map<String, dynamic> _$HasMultisigAtTopoheightParamsToJson(
-        _HasMultisigAtTopoheightParams instance) =>
-    <String, dynamic>{
-      'address': instance.address,
-      'topoheight': instance.topoheight,
-    };
+  _HasMultisigAtTopoheightParams instance,
+) => <String, dynamic>{
+  'address': instance.address,
+  'topoheight': instance.topoheight,
+};

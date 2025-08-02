@@ -9,11 +9,7 @@ part of 'split_address_params.dart';
 // **************************************************************************
 
 _SplitAddressParams _$SplitAddressParamsFromJson(Map<String, dynamic> json) =>
-    _SplitAddressParams(
-      address: json['address'] as String,
-    );
+    _SplitAddressParams(address: json['address'] as String);
 
 Map<String, dynamic> _$SplitAddressParamsToJson(_SplitAddressParams instance) =>
-    <String, dynamic>{
-      'address': instance.address,
-    };
+    <String, dynamic>{'address': instance.address};

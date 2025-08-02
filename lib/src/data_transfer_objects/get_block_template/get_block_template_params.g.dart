@@ -9,13 +9,9 @@ part of 'get_block_template_params.dart';
 // **************************************************************************
 
 _GetBlockTemplateParams _$GetBlockTemplateParamsFromJson(
-        Map<String, dynamic> json) =>
-    _GetBlockTemplateParams(
-      address: json['address'] as String,
-    );
+  Map<String, dynamic> json,
+) => _GetBlockTemplateParams(address: json['address'] as String);
 
 Map<String, dynamic> _$GetBlockTemplateParamsToJson(
-        _GetBlockTemplateParams instance) =>
-    <String, dynamic>{
-      'address': instance.address,
-    };
+  _GetBlockTemplateParams instance,
+) => <String, dynamic>{'address': instance.address};
