@@ -11,8 +11,12 @@ enum Network {
   testnet,
 
   /// @nodoc
-  @JsonValue('Dev')
-  dev;
+  @JsonValue('Devnet')
+  devnet,
+
+  /// @nodoc
+  @JsonValue('Stagenet')
+  stagenet;
 
   /// Converts json value into Network enum.
   factory Network.fromStr(String value) {
@@ -21,8 +25,10 @@ enum Network {
         return Network.mainnet;
       case 'Testnet':
         return Network.testnet;
-      case 'Dev':
-        return Network.dev;
+      case 'Devnet':
+        return Network.devnet;
+      case 'Stagenet':
+        return Network.stagenet;
       default:
         throw Exception('Unknown network: $value');
     }
