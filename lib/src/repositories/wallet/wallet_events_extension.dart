@@ -26,8 +26,7 @@ extension WalletEventsExtension on WalletClient {
   /// Registers a callback for NewTransaction event.
   void onNewTransaction(
     void Function(TransactionEntry transactionEntry) callback,
-  ) =>
-      onEvent(WalletEvent.newTransaction, callback);
+  ) => onEvent(WalletEvent.newTransaction, callback);
 
   /// Unsubscribes from NewTransaction event.
   void unsubscribeFromNewTransaction() {
@@ -37,8 +36,7 @@ extension WalletEventsExtension on WalletClient {
   /// Registers a callback for BalanceChanged event.
   void onBalanceChanged(
     void Function(BalanceChangedEvent balanceChangedEvent) callback,
-  ) =>
-      onEvent(WalletEvent.balanceChanged, callback);
+  ) => onEvent(WalletEvent.balanceChanged, callback);
 
   /// Unsubscribes from BalanceChanged event.
   void unsubscribeFromBalanceChanged() {
@@ -48,8 +46,7 @@ extension WalletEventsExtension on WalletClient {
   /// Registers a callback for Rescan event.
   void onRescan(
     void Function(int topoheight) callback,
-  ) =>
-      onEvent(WalletEvent.rescan, callback);
+  ) => onEvent(WalletEvent.rescan, callback);
 
   /// Unsubscribes from Rescan event.
   void unsubscribeFromRescan() {
@@ -59,8 +56,7 @@ extension WalletEventsExtension on WalletClient {
   /// Registers a callback for Online event.
   void onOnline(
     void Function() callback,
-  ) =>
-      onEvent(WalletEvent.online, callback);
+  ) => onEvent(WalletEvent.online, callback);
 
   /// Unsubscribes from Online event.
   void unsubscribeFromOnline() {
@@ -70,8 +66,7 @@ extension WalletEventsExtension on WalletClient {
   /// Registers a callback for Offline event.
   void onOffline(
     void Function() callback,
-  ) =>
-      onEvent(WalletEvent.offline, callback);
+  ) => onEvent(WalletEvent.offline, callback);
 
   /// Unsubscribes from Offline event.
   void unsubscribeFromOffline() {

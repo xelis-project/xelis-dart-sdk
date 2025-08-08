@@ -16,7 +16,7 @@ abstract class InvokeContractEvent with _$InvokeContractEvent {
     @JsonKey(name: 'topoheight') required int topoHeight,
     @JsonKey(name: 'contract_outputs')
     required List<Map<String, dynamic>>
-        contractOutputs, // TODO: change to ContractOutput
+    contractOutputs, // TODO: change to ContractOutput
   }) = _InvokeContractEvent;
 
   /// @nodoc

@@ -28,20 +28,19 @@ abstract class RPCTransaction with _$RPCTransaction {
 
   /// @nodoc
   factory RPCTransaction.fromJson(Map<String, dynamic> json) {
-    if (json
-        case {
-          'hash': final String hash,
-          'data': {'burn': final Map<String, dynamic> burn},
-          'fee': final int fee,
-          'version': final int version,
-          'nonce': final int nonce,
-          'source': final String source,
-          'range_proof': final List<dynamic> rangeProof,
-          'source_commitments': final List<dynamic> sourceCommitments,
-          'reference': final Map<String, dynamic> reference,
-          'signature': final String signature,
-          'size': final int size,
-        }) {
+    if (json case {
+      'hash': final String hash,
+      'data': {'burn': final Map<String, dynamic> burn},
+      'fee': final int fee,
+      'version': final int version,
+      'nonce': final int nonce,
+      'source': final String source,
+      'range_proof': final List<dynamic> rangeProof,
+      'source_commitments': final List<dynamic> sourceCommitments,
+      'reference': final Map<String, dynamic> reference,
+      'signature': final String signature,
+      'size': final int size,
+    }) {
       return RPCTransaction(
         hash: hash,
         data: BurnPayload.fromJson(burn),
@@ -55,20 +54,19 @@ abstract class RPCTransaction with _$RPCTransaction {
         signature: signature,
         size: size,
       );
-    } else if (json
-        case {
-          'hash': final String hash,
-          'data': {'multi_sig': final Map<String, dynamic> multiSig},
-          'fee': final int fee,
-          'version': final int version,
-          'nonce': final int nonce,
-          'source': final String source,
-          'range_proof': final List<dynamic> rangeProof,
-          'source_commitments': final List<dynamic> sourceCommitments,
-          'reference': final Map<String, dynamic> reference,
-          'signature': final String signature,
-          'size': final int size,
-        }) {
+    } else if (json case {
+      'hash': final String hash,
+      'data': {'multi_sig': final Map<String, dynamic> multiSig},
+      'fee': final int fee,
+      'version': final int version,
+      'nonce': final int nonce,
+      'source': final String source,
+      'range_proof': final List<dynamic> rangeProof,
+      'source_commitments': final List<dynamic> sourceCommitments,
+      'reference': final Map<String, dynamic> reference,
+      'signature': final String signature,
+      'size': final int size,
+    }) {
       return RPCTransaction(
         hash: hash,
         data: MultisigPayload.fromJson(multiSig),
@@ -82,20 +80,19 @@ abstract class RPCTransaction with _$RPCTransaction {
         signature: signature,
         size: size,
       );
-    } else if (json
-        case {
-          'hash': final String hash,
-          'data': final Map<String, dynamic> transfers,
-          'fee': final int fee,
-          'version': final int version,
-          'nonce': final int nonce,
-          'source': final String source,
-          'range_proof': final List<dynamic> rangeProof,
-          'source_commitments': final List<dynamic> sourceCommitments,
-          'reference': final Map<String, dynamic> reference,
-          'signature': final String signature,
-          'size': final int size,
-        }) {
+    } else if (json case {
+      'hash': final String hash,
+      'data': final Map<String, dynamic> transfers,
+      'fee': final int fee,
+      'version': final int version,
+      'nonce': final int nonce,
+      'source': final String source,
+      'range_proof': final List<dynamic> rangeProof,
+      'source_commitments': final List<dynamic> sourceCommitments,
+      'reference': final Map<String, dynamic> reference,
+      'signature': final String signature,
+      'size': final int size,
+    }) {
       return RPCTransaction(
         hash: hash,
         data: TransfersPayload.fromJson(transfers),

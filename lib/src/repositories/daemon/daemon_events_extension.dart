@@ -21,8 +21,7 @@ extension DaemonEventsExtension on DaemonClient {
   /// Note: It is called when a block is ordered.
   void onBlockOrdered(
     void Function(BlockOrderedEvent blockOrderEvent) callback,
-  ) =>
-      onEvent(DaemonEvent.blockOrdered, callback);
+  ) => onEvent(DaemonEvent.blockOrdered, callback);
 
   /// Unsubscribes from BlockOrdered event.
   void unsubscribeFromBlockOrdered() {
@@ -33,8 +32,7 @@ extension DaemonEventsExtension on DaemonClient {
   /// It contains BlockOrphanedEvent that got orphaned.
   void onBlockOrphaned(
     void Function(BlockOrphanedEvent blockOrphanedEvent) callback,
-  ) =>
-      onEvent(DaemonEvent.blockOrphaned, callback);
+  ) => onEvent(DaemonEvent.blockOrphaned, callback);
 
   /// Unsubscribes from BlockOrphaned event.
   void unsubscribeFromBlockOrphaned() {
@@ -46,8 +44,7 @@ extension DaemonEventsExtension on DaemonClient {
   /// When stable height has changed (different than the previous one).
   void onStableHeightChanged(
     void Function(StableHeightChangedEvent stableHeightChangedEvent) callback,
-  ) =>
-      onEvent(DaemonEvent.stableHeightChanged, callback);
+  ) => onEvent(DaemonEvent.stableHeightChanged, callback);
 
   /// Unsubscribes from StableHeightChanged event.
   void unsubscribeFromStableHeightChanged() {
@@ -59,9 +56,8 @@ extension DaemonEventsExtension on DaemonClient {
   /// When stable topoheight has changed (different than the previous one).
   void onStableTopoHeightChanged(
     void Function(StableTopoheightChangedEvent stableTopoheightChangedEvent)
-        callback,
-  ) =>
-      onEvent(DaemonEvent.stableTopoHeightChanged, callback);
+    callback,
+  ) => onEvent(DaemonEvent.stableTopoHeightChanged, callback);
 
   /// Unsubscribes from StableTopoHeightChanged event.
   void unsubscribeFromStableTopoHeightChanged() {
@@ -73,8 +69,7 @@ extension DaemonEventsExtension on DaemonClient {
   /// Note: It is called when a transaction is added to the mempool.
   void onTransactionAddedInMempool(
     void Function(MempoolTransactionSummary mempoolTransactionSummary) callback,
-  ) =>
-      onEvent(DaemonEvent.transactionAddedInMempool, callback);
+  ) => onEvent(DaemonEvent.transactionAddedInMempool, callback);
 
   /// Unsubscribes from TransactionAddedInMempool event.
   void unsubscribeFromTransactionAddedInMempool() {
@@ -86,8 +81,7 @@ extension DaemonEventsExtension on DaemonClient {
   /// Note: It is called when a transaction is executed.
   void onTransactionExecuted(
     void Function(TransactionExecutedEvent transactionExecutedEvent) callback,
-  ) =>
-      onEvent(DaemonEvent.transactionExecuted, callback);
+  ) => onEvent(DaemonEvent.transactionExecuted, callback);
 
   /// Unsubscribes from TransactionExecuted event.
   void unsubscribeFromTransactionExecuted() {
@@ -99,8 +93,7 @@ extension DaemonEventsExtension on DaemonClient {
   /// It contains TransactionOrphanedEvent as value.
   void onTransactionOrphaned(
     void Function(TransactionResponse transactionResponse) callback,
-  ) =>
-      onEvent(DaemonEvent.transactionOrphaned, callback);
+  ) => onEvent(DaemonEvent.transactionOrphaned, callback);
 
   /// Unsubscribes from TransactionOrphaned event.
   void unsubscribeFromTransactionOrphaned() {
@@ -130,8 +123,7 @@ extension DaemonEventsExtension on DaemonClient {
   /// Registers a callback for PeerDisconnected event.
   void onPeerDisconnected(
     void Function(PeerEntry peerDisconnected) callback,
-  ) =>
-      onEvent(DaemonEvent.peerDisconnected, callback);
+  ) => onEvent(DaemonEvent.peerDisconnected, callback);
 
   /// Unsubscribes from PeerDisconnected event.
   void unsubscribeFromPeerDisconnected() {
@@ -141,8 +133,7 @@ extension DaemonEventsExtension on DaemonClient {
   /// Registers a callback for PeerPeerListUpdated event.
   void onPeerPeerListUpdated(
     void Function(PeerPeerListUpdatedEvent peerPeerListUpdatedEvent) callback,
-  ) =>
-      onEvent(DaemonEvent.peerPeerListUpdated, callback);
+  ) => onEvent(DaemonEvent.peerPeerListUpdated, callback);
 
   /// Unsubscribes from PeerPeerListUpdated event.
   void unsubscribeFromPeerPeerListUpdated() {
@@ -152,8 +143,7 @@ extension DaemonEventsExtension on DaemonClient {
   /// Registers a callback for PeerStateUpdated event.
   void onPeerStateUpdated(
     void Function(PeerEntry peerUpdated) callback,
-  ) =>
-      onEvent(DaemonEvent.peerStateUpdated, callback);
+  ) => onEvent(DaemonEvent.peerStateUpdated, callback);
 
   /// Unsubscribes from PeerStateUpdated event.
   void unsubscribeFromPeerStateUpdated() {
@@ -163,8 +153,7 @@ extension DaemonEventsExtension on DaemonClient {
   /// Registers a callback for PeerPeerDisconnected event.
   void onPeerPeerDisconnected(
     void Function(PeerEntry peerDisconnected) callback,
-  ) =>
-      onEvent(DaemonEvent.peerPeerDisconnected, callback);
+  ) => onEvent(DaemonEvent.peerPeerDisconnected, callback);
 
   /// Unsubscribes from PeerPeerDisconnected event.
   void unsubscribeFromPeerPeerDisconnected() {
@@ -183,8 +172,7 @@ extension DaemonEventsExtension on DaemonClient {
   /// Registers a callback for ContractTransfer event.
   void onContractTransfer(
     void Function(ContractTransferEvent event) callback,
-  ) =>
-      onEvent(DaemonEvent.contractTransfer, callback);
+  ) => onEvent(DaemonEvent.contractTransfer, callback);
 
   /// Unsubscribes from ContractTransfer event.
   void unsubscribeFromContractTransfer() {

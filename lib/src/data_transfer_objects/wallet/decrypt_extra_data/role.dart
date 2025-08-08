@@ -8,5 +8,5 @@ enum Role {
 
   /// @nodoc
   @JsonValue('receiver')
-  receiver
+  receiver,
 }

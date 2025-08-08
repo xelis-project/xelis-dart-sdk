@@ -18,6 +18,5 @@ abstract class GetMultisigAtTopoheightParams
   /// @nodoc
   factory GetMultisigAtTopoheightParams.fromJson(
     Map<String, dynamic> json,
-  ) =>
-      _$GetMultisigAtTopoheightParamsFromJson(json);
+  ) => _$GetMultisigAtTopoheightParamsFromJson(json);
 }

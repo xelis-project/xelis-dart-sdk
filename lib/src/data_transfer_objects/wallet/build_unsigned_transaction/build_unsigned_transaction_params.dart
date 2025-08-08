@@ -22,40 +22,40 @@ abstract class BuildUnsignedTransactionParams
 
   /// @nodoc
   Map<String, dynamic> toJson() => switch (transactionTypeBuilder) {
-        TransfersBuilder() => {
-            ...transactionTypeBuilder.toJson(),
-            if (feeBuilder != null) 'fee': feeBuilder,
-            if (nonce != null) 'nonce': nonce,
-            if (txVersion != null) 'tx_version': txVersion,
-            if (txAsHex != null) 'tx_as_hex': txAsHex,
-          },
-        BurnBuilder() => {
-            ...transactionTypeBuilder.toJson(),
-            if (feeBuilder != null) 'fee': feeBuilder,
-            if (nonce != null) 'nonce': nonce,
-            if (txVersion != null) 'tx_version': txVersion,
-            if (txAsHex != null) 'tx_as_hex': txAsHex,
-          },
-        MultisigBuilder() => {
-            ...transactionTypeBuilder.toJson(),
-            if (feeBuilder != null) 'fee': feeBuilder,
-            if (nonce != null) 'nonce': nonce,
-            if (txVersion != null) 'tx_version': txVersion,
-            if (txAsHex != null) 'tx_as_hex': txAsHex,
-          },
-        InvokeContractBuilder() => {
-            ...transactionTypeBuilder.toJson(),
-            if (feeBuilder != null) 'fee': feeBuilder,
-            if (nonce != null) 'nonce': nonce,
-            if (txVersion != null) 'tx_version': txVersion,
-            if (txAsHex != null) 'tx_as_hex': txAsHex,
-          },
-        DeployContractBuilder() => {
-            ...transactionTypeBuilder.toJson(),
-            if (feeBuilder != null) 'fee': feeBuilder,
-            if (nonce != null) 'nonce': nonce,
-            if (txVersion != null) 'tx_version': txVersion,
-            if (txAsHex != null) 'tx_as_hex': txAsHex,
-          },
-      };
+    TransfersBuilder() => {
+      ...transactionTypeBuilder.toJson(),
+      if (feeBuilder != null) 'fee': feeBuilder,
+      if (nonce != null) 'nonce': nonce,
+      if (txVersion != null) 'tx_version': txVersion,
+      if (txAsHex != null) 'tx_as_hex': txAsHex,
+    },
+    BurnBuilder() => {
+      ...transactionTypeBuilder.toJson(),
+      if (feeBuilder != null) 'fee': feeBuilder,
+      if (nonce != null) 'nonce': nonce,
+      if (txVersion != null) 'tx_version': txVersion,
+      if (txAsHex != null) 'tx_as_hex': txAsHex,
+    },
+    MultisigBuilder() => {
+      ...transactionTypeBuilder.toJson(),
+      if (feeBuilder != null) 'fee': feeBuilder,
+      if (nonce != null) 'nonce': nonce,
+      if (txVersion != null) 'tx_version': txVersion,
+      if (txAsHex != null) 'tx_as_hex': txAsHex,
+    },
+    InvokeContractBuilder() => {
+      ...transactionTypeBuilder.toJson(),
+      if (feeBuilder != null) 'fee': feeBuilder,
+      if (nonce != null) 'nonce': nonce,
+      if (txVersion != null) 'tx_version': txVersion,
+      if (txAsHex != null) 'tx_as_hex': txAsHex,
+    },
+    DeployContractBuilder() => {
+      ...transactionTypeBuilder.toJson(),
+      if (feeBuilder != null) 'fee': feeBuilder,
+      if (nonce != null) 'nonce': nonce,
+      if (txVersion != null) 'tx_version': txVersion,
+      if (txAsHex != null) 'tx_as_hex': txAsHex,
+    },
+  };
 }

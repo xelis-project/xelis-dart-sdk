@@ -26,14 +26,14 @@ abstract class TransactionEntry with _$TransactionEntry {
 
     final entryTypeConstructors =
         <String, TransactionEntryType Function(Map<String, dynamic>)>{
-      'coinbase': CoinbaseEntry.fromJson,
-      'burn': BurnEntry.fromJson,
-      'incoming': IncomingEntry.fromJson,
-      'outgoing': OutgoingEntry.fromJson,
-      'multi_sig': MultisigEntry.fromJson,
-      'invoke_contract': InvokeContractEntry.fromJson,
-      'deploy_contract': DeployContractEntry.fromJson,
-    };
+          'coinbase': CoinbaseEntry.fromJson,
+          'burn': BurnEntry.fromJson,
+          'incoming': IncomingEntry.fromJson,
+          'outgoing': OutgoingEntry.fromJson,
+          'multi_sig': MultisigEntry.fromJson,
+          'invoke_contract': InvokeContractEntry.fromJson,
+          'deploy_contract': DeployContractEntry.fromJson,
+        };
 
     for (final entry in entryTypeConstructors.entries) {
       if (json.containsKey(entry.key)) {

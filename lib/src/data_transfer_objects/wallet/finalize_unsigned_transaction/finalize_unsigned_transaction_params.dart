@@ -22,6 +22,5 @@ abstract class FinalizeUnsignedTransactionParams
   /// @nodoc
   factory FinalizeUnsignedTransactionParams.fromJson(
     Map<String, dynamic> json,
-  ) =>
-      _$FinalizeUnsignedTransactionParamsFromJson(json);
+  ) => _$FinalizeUnsignedTransactionParamsFromJson(json);
 }

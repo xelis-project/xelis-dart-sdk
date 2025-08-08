@@ -20,6 +20,5 @@ sealed class MultisigState with _$MultisigState {
   /// @nodoc
   factory MultisigState.fromJson(
     Map<String, dynamic> json,
-  ) =>
-      _$MultisigStateFromJson(json);
+  ) => _$MultisigStateFromJson(json);
 }

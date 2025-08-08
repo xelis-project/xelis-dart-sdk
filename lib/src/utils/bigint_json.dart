@@ -47,7 +47,7 @@ String serializeBigIntJson(Object? value, {String? indent}) {
 base class _BigIntJsonWriter
     extends JsonSinkProcessor<JsonReader<Object?>, JsonWriter<String>> {
   _BigIntJsonWriter(StringSink sink, String? indent)
-      : super(jsonStringWriter(sink, indent: indent));
+    : super(jsonStringWriter(sink, indent: indent));
 
   @override
   void processUnknown(JsonReader<Object?> reader, String? key) {
@@ -65,7 +65,7 @@ base class _BigIntJsonWriter
 base class _BigIntJsonReader
     extends JsonSinkProcessor<JsonReader<StringSlice>, JsonWriter<Object?>> {
   _BigIntJsonReader(void Function(Object?) resultCallback)
-      : super(jsonObjectWriter(resultCallback));
+    : super(jsonObjectWriter(resultCallback));
 
   @override
   void processNum(JsonReader<StringSlice> reader, String? key) {

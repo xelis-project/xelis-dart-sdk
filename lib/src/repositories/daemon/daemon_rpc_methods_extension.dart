@@ -101,8 +101,10 @@ extension DaemonRpcMethodsExtension on DaemonClient {
   /// If no nonce is found for this address and its valid, value start at 0.
   /// Each nonce represents how many TX has been made by this address.
   Future<GetNonceResult> getNonce(GetNonceParams getNonceParams) async {
-    final result =
-        await sendRequest(DaemonMethod.getNonce, getNonceParams.toJson());
+    final result = await sendRequest(
+      DaemonMethod.getNonce,
+      getNonceParams.toJson(),
+    );
     return GetNonceResult.fromJson(result as Map<String, dynamic>);
   }
 
@@ -119,8 +121,10 @@ extension DaemonRpcMethodsExtension on DaemonClient {
 
   /// Verify if address has a balance on-chain registered for requested asset.
   Future<HasBalanceResult> hasBalance(HasBalanceParams hasBalanceParams) async {
-    final result =
-        await sendRequest(DaemonMethod.hasBalance, hasBalanceParams.toJson());
+    final result = await sendRequest(
+      DaemonMethod.hasBalance,
+      hasBalanceParams.toJson(),
+    );
     return HasBalanceResult.fromJson(result as Map<String, dynamic>);
   }
 
@@ -165,8 +169,10 @@ extension DaemonRpcMethodsExtension on DaemonClient {
 
   /// Get registered topoheight and decimals data from a specific asset.
   Future<RPCAssetData> getAsset(GetAssetParams getAssetParams) async {
-    final result =
-        await sendRequest(DaemonMethod.getAsset, getAssetParams.toJson());
+    final result = await sendRequest(
+      DaemonMethod.getAsset,
+      getAssetParams.toJson(),
+    );
     return RPCAssetData.fromJson(result as Map<String, dynamic>);
   }
 
@@ -407,7 +413,7 @@ extension DaemonRpcMethodsExtension on DaemonClient {
   /// This is like its "first time" doing an action on the chain.
   Future<int> getAccountRegistrationTopoheight(
     GetAccountRegistrationTopoheightParams
-        getAccountRegistrationTopoheightParams,
+    getAccountRegistrationTopoheightParams,
   ) async {
     final result = await sendRequest(
       DaemonMethod.getAccountRegistrationTopoheight,
@@ -418,8 +424,10 @@ extension DaemonRpcMethodsExtension on DaemonClient {
 
   /// Verify if address has a nonce on-chain registered
   Future<HasNonceResult> hasNonce(HasNonceParams hasNonceParams) async {
-    final result =
-        await sendRequest(DaemonMethod.hasNonce, hasNonceParams.toJson());
+    final result = await sendRequest(
+      DaemonMethod.hasNonce,
+      hasNonceParams.toJson(),
+    );
     return HasNonceResult.fromJson(result as Map<String, dynamic>);
   }
 

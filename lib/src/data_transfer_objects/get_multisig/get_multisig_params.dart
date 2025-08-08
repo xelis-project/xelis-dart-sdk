@@ -16,6 +16,5 @@ abstract class GetMultisigParams with _$GetMultisigParams {
   /// @nodoc
   factory GetMultisigParams.fromJson(
     Map<String, dynamic> json,
-  ) =>
-      _$GetMultisigParamsFromJson(json);
+  ) => _$GetMultisigParamsFromJson(json);
 }

@@ -17,9 +17,12 @@ class DaemonClient extends RpcClientRepository {
           <void Function(BlockOrderedEvent blockOrderEvent)>[],
       DaemonEvent.stableHeightChanged:
           <void Function(StableHeightChangedEvent stableHeightChangedEvent)>[],
-      DaemonEvent.transactionAddedInMempool: <void Function(
-        MempoolTransactionSummary mempoolTransactionSummary,
-      )>[],
+      DaemonEvent.transactionAddedInMempool:
+          <
+            void Function(
+              MempoolTransactionSummary mempoolTransactionSummary,
+            )
+          >[],
       DaemonEvent.transactionExecuted:
           <void Function(TransactionExecutedEvent transactionExecutedEvent)>[],
       DaemonEvent.newAsset: <void Function(NewAssetEvent newAssetEvent)>[],
@@ -28,9 +31,12 @@ class DaemonClient extends RpcClientRepository {
       DaemonEvent.peerPeerListUpdated:
           <void Function(PeerPeerListUpdatedEvent peerPeerListUpdated)>[],
       DaemonEvent.peerStateUpdated: <void Function(PeerEntry peer)>[],
-      DaemonEvent.peerPeerDisconnected: <void Function(
-        PeerPeerDisconnectedEvent peerPeerDisconnectedEvent,
-      )>[],
+      DaemonEvent.peerPeerDisconnected:
+          <
+            void Function(
+              PeerPeerDisconnectedEvent peerPeerDisconnectedEvent,
+            )
+          >[],
       DaemonEvent.blockOrphaned:
           <void Function(BlockOrphanedEvent blockOrphanedEvent)>[],
       DaemonEvent.transactionOrphaned:
@@ -70,8 +76,9 @@ class DaemonClient extends RpcClientRepository {
         _logInfo('Stable height changed: $stableHeightChanged');
         _triggerCallbacks(event, stableHeightChanged);
       case DaemonEvent.stableTopoHeightChanged:
-        final stableTopoHeightChanged =
-            StableTopoheightChangedEvent.fromJson(result);
+        final stableTopoHeightChanged = StableTopoheightChangedEvent.fromJson(
+          result,
+        );
         _logInfo('Stable topo height changed: $stableTopoHeightChanged');
         _triggerCallbacks(event, stableTopoHeightChanged);
       case DaemonEvent.transactionAddedInMempool:

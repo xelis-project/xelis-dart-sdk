@@ -23,8 +23,9 @@ abstract class GetMultisigResult with _$GetMultisigResult {
         state: const MultisigState.deleted(),
         topoheight: json['topoheight'] as int,
       );
-    } else if (json
-        case {'state': {'active': final Map<String, dynamic> state}}) {
+    } else if (json case {
+      'state': {'active': final Map<String, dynamic> state},
+    }) {
       return GetMultisigResult(
         state: Active.fromJson(state),
         topoheight: json['topoheight'] as int,

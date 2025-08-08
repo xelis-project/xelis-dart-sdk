@@ -20,9 +20,9 @@ sealed class RpcClientRepository {
     bool secureWebSocket = true,
     int timeout = 60000,
     Logger? logger,
-  })  : _uri = setUpUri(endPoint, secureWebSocket: secureWebSocket),
-        _channelTimeout = timeout,
-        log = logger;
+  }) : _uri = setUpUri(endPoint, secureWebSocket: secureWebSocket),
+       _channelTimeout = timeout,
+       log = logger;
 
   // Websocket URI
   final Uri _uri;
@@ -159,8 +159,9 @@ sealed class RpcClientRepository {
       throw Exception('trying to send request when socket is disconnected');
     }
     // Wait until a connection has been established.
-    await socket?.connection
-        .firstWhere((state) => state is Connected || state is Reconnected);
+    await socket?.connection.firstWhere(
+      (state) => state is Connected || state is Reconnected,
+    );
 
     _send(method, params);
     final completer = Completer<dynamic>.sync();
@@ -172,8 +173,9 @@ sealed class RpcClientRepository {
   Future<void> subscribeTo(XelisJsonKey event) async {
     _logInfo('subscribing to ${event.jsonKey}...');
     // Wait until a connection has been established.
-    await socket?.connection
-        .firstWhere((state) => state is Connected || state is Reconnected);
+    await socket?.connection.firstWhere(
+      (state) => state is Connected || state is Reconnected,
+    );
     _send(XelisSubscription.subscribe, {'notify': event.jsonKey});
   }
 
@@ -181,8 +183,9 @@ sealed class RpcClientRepository {
   Future<void> unsubscribeFrom(XelisJsonKey event) async {
     _logInfo('unsubscribing from ${event.jsonKey}...');
     // Wait until a connection has been established.
-    await socket?.connection
-        .firstWhere((state) => state is Connected || state is Reconnected);
+    await socket?.connection.firstWhere(
+      (state) => state is Connected || state is Reconnected,
+    );
     _send(XelisSubscription.unsubscribe, {'notify': event.jsonKey});
     eventsCallbacks[event]!.clear();
   }
@@ -213,42 +216,39 @@ sealed class RpcClientRepository {
   /// Handle data received from server.
   void _handleData(dynamic rawData) {
     final json = jsonDecode(rawData as String);
-    if (json
-        case {
-          'id': final int id,
-          'jsonrpc': '2.0',
-          'result': final Map<String, dynamic> result
-        }) {
+    if (json case {
+      'id': final int id,
+      'jsonrpc': '2.0',
+      'result': final Map<String, dynamic> result,
+    }) {
       if (result case {'event': final String eventJsonKey}) {
         _handleEvent(eventJsonKey, result);
       } else {
         _processMethodResult(id, result);
       }
-    } else if (json
-        case {
-          'id': final int id,
-          'jsonrpc': '2.0',
-          'result': final dynamic result
-        }) {
+    } else if (json case {
+      'id': final int id,
+      'jsonrpc': '2.0',
+      'result': final dynamic result,
+    }) {
       _processMethodResult(id, result);
-    } else if (json
-        case {
-          'id': final int id,
-          'jsonrpc': '2.0',
-          'error': {
-            'code': final int code,
-            'message': final String message,
-            // 'json': final dynamic data
-          }
-        }) {
+    } else if (json case {
+      'id': final int id,
+      'jsonrpc': '2.0',
+      'error': {
+        'code': final int code,
+        'message': final String message,
+        // 'json': final dynamic data
+      },
+    }) {
       if (_pendingRequests[id] != null) {
         _pendingRequests[id]!.completer.completeError(
-              json_rpc_2.RpcException(
-                code,
-                message,
-                // data: data,
-              ),
-            );
+          json_rpc_2.RpcException(
+            code,
+            message,
+            // data: data,
+          ),
+        );
         _pendingRequests.remove(id);
       }
     }
@@ -320,11 +320,11 @@ sealed class RpcClientRepository {
   }
 
   /// @nodoc
-// void _logWarning(String message) {
-//   if (log != null) {
-//     log!.warning(message);
-//   }
-// }
+  // void _logWarning(String message) {
+  //   if (log != null) {
+  //     log!.warning(message);
+  //   }
+  // }
 }
 
 /// A pending request to the server.

@@ -22,8 +22,9 @@ abstract class GetMultisigAtTopoheightResult
       return const GetMultisigAtTopoheightResult(
         state: MultisigState.deleted(),
       );
-    } else if (json
-        case {'state': {'active': final Map<String, dynamic> state}}) {
+    } else if (json case {
+      'state': {'active': final Map<String, dynamic> state},
+    }) {
       return GetMultisigAtTopoheightResult(
         state: Active.fromJson(state),
       );

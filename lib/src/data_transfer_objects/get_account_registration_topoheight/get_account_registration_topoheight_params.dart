@@ -18,6 +18,5 @@ abstract class GetAccountRegistrationTopoheightParams
   /// @nodoc
   factory GetAccountRegistrationTopoheightParams.fromJson(
     Map<String, dynamic> json,
-  ) =>
-      _$GetAccountRegistrationTopoheightParamsFromJson(json);
+  ) => _$GetAccountRegistrationTopoheightParamsFromJson(json);
 }
