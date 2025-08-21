@@ -55,6 +55,6 @@ Map<String, dynamic> _$GetInfoResultToJson(_GetInfoResult instance) =>
 const _$NetworkEnumMap = {
   Network.mainnet: 'Mainnet',
   Network.testnet: 'Testnet',
-  Network.devnet: 'Devnet',
+  Network.devnet: 'Dev',
   Network.stagenet: 'Stagenet',
 };

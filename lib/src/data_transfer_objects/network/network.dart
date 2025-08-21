@@ -11,7 +11,7 @@ enum Network {
   testnet,
 
   /// @nodoc
-  @JsonValue('Devnet')
+  @JsonValue('Dev')
   devnet,
 
   /// @nodoc
