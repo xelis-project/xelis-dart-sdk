@@ -3,8 +3,22 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'extra_data.freezed.dart';
-
 part 'extra_data.g.dart';
+
+/// @nodoc
+enum Flag {
+  /// @nodoc
+  private,
+
+  /// @nodoc
+  public,
+
+  /// @nodoc
+  proprietary,
+
+  /// @nodoc
+  failed,
+}
 
 /// @nodoc
 @freezed
@@ -12,7 +26,8 @@ abstract class ExtraData with _$ExtraData {
   /// @nodoc
   const factory ExtraData({
     @JsonKey(name: 'data') required dynamic data,
-    @JsonKey(name: 'shared_key') required String sharedKey,
+    @JsonKey(name: 'flag') required Flag flag,
+    @JsonKey(name: 'shared_key') dynamic sharedKey,
   }) = _ExtraData;
 
   /// @nodoc

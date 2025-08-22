@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$ExtraData {
 
-@JsonKey(name: 'data') dynamic get data;@JsonKey(name: 'shared_key') String get sharedKey;
+@JsonKey(name: 'data') dynamic get data;@JsonKey(name: 'flag') Flag get flag;@JsonKey(name: 'shared_key') dynamic get sharedKey;
 /// Create a copy of ExtraData
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,16 +28,16 @@ $ExtraDataCopyWith<ExtraData> get copyWith => _$ExtraDataCopyWithImpl<ExtraData>
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ExtraData&&const DeepCollectionEquality().equals(other.data, data)&&(identical(other.sharedKey, sharedKey) || other.sharedKey == sharedKey));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ExtraData&&const DeepCollectionEquality().equals(other.data, data)&&(identical(other.flag, flag) || other.flag == flag)&&const DeepCollectionEquality().equals(other.sharedKey, sharedKey));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(data),sharedKey);
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(data),flag,const DeepCollectionEquality().hash(sharedKey));
 
 @override
 String toString() {
-  return 'ExtraData(data: $data, sharedKey: $sharedKey)';
+  return 'ExtraData(data: $data, flag: $flag, sharedKey: $sharedKey)';
 }
 
 
@@ -48,7 +48,7 @@ abstract mixin class $ExtraDataCopyWith<$Res>  {
   factory $ExtraDataCopyWith(ExtraData value, $Res Function(ExtraData) _then) = _$ExtraDataCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(name: 'data') dynamic data,@JsonKey(name: 'shared_key') String sharedKey
+@JsonKey(name: 'data') dynamic data,@JsonKey(name: 'flag') Flag flag,@JsonKey(name: 'shared_key') dynamic sharedKey
 });
 
 
@@ -65,11 +65,12 @@ class _$ExtraDataCopyWithImpl<$Res>
 
 /// Create a copy of ExtraData
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? data = freezed,Object? sharedKey = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? data = freezed,Object? flag = null,Object? sharedKey = freezed,}) {
   return _then(_self.copyWith(
 data: freezed == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as dynamic,sharedKey: null == sharedKey ? _self.sharedKey : sharedKey // ignore: cast_nullable_to_non_nullable
-as String,
+as dynamic,flag: null == flag ? _self.flag : flag // ignore: cast_nullable_to_non_nullable
+as Flag,sharedKey: freezed == sharedKey ? _self.sharedKey : sharedKey // ignore: cast_nullable_to_non_nullable
+as dynamic,
   ));
 }
 
@@ -154,10 +155,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'data')  dynamic data, @JsonKey(name: 'shared_key')  String sharedKey)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'data')  dynamic data, @JsonKey(name: 'flag')  Flag flag, @JsonKey(name: 'shared_key')  dynamic sharedKey)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ExtraData() when $default != null:
-return $default(_that.data,_that.sharedKey);case _:
+return $default(_that.data,_that.flag,_that.sharedKey);case _:
   return orElse();
 
 }
@@ -175,10 +176,10 @@ return $default(_that.data,_that.sharedKey);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'data')  dynamic data, @JsonKey(name: 'shared_key')  String sharedKey)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'data')  dynamic data, @JsonKey(name: 'flag')  Flag flag, @JsonKey(name: 'shared_key')  dynamic sharedKey)  $default,) {final _that = this;
 switch (_that) {
 case _ExtraData():
-return $default(_that.data,_that.sharedKey);case _:
+return $default(_that.data,_that.flag,_that.sharedKey);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -195,10 +196,10 @@ return $default(_that.data,_that.sharedKey);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'data')  dynamic data, @JsonKey(name: 'shared_key')  String sharedKey)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'data')  dynamic data, @JsonKey(name: 'flag')  Flag flag, @JsonKey(name: 'shared_key')  dynamic sharedKey)?  $default,) {final _that = this;
 switch (_that) {
 case _ExtraData() when $default != null:
-return $default(_that.data,_that.sharedKey);case _:
+return $default(_that.data,_that.flag,_that.sharedKey);case _:
   return null;
 
 }
@@ -210,11 +211,12 @@ return $default(_that.data,_that.sharedKey);case _:
 @JsonSerializable()
 
 class _ExtraData implements ExtraData {
-  const _ExtraData({@JsonKey(name: 'data') required this.data, @JsonKey(name: 'shared_key') required this.sharedKey});
+  const _ExtraData({@JsonKey(name: 'data') required this.data, @JsonKey(name: 'flag') required this.flag, @JsonKey(name: 'shared_key') this.sharedKey});
   factory _ExtraData.fromJson(Map<String, dynamic> json) => _$ExtraDataFromJson(json);
 
 @override@JsonKey(name: 'data') final  dynamic data;
-@override@JsonKey(name: 'shared_key') final  String sharedKey;
+@override@JsonKey(name: 'flag') final  Flag flag;
+@override@JsonKey(name: 'shared_key') final  dynamic sharedKey;
 
 /// Create a copy of ExtraData
 /// with the given fields replaced by the non-null parameter values.
@@ -229,16 +231,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ExtraData&&const DeepCollectionEquality().equals(other.data, data)&&(identical(other.sharedKey, sharedKey) || other.sharedKey == sharedKey));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ExtraData&&const DeepCollectionEquality().equals(other.data, data)&&(identical(other.flag, flag) || other.flag == flag)&&const DeepCollectionEquality().equals(other.sharedKey, sharedKey));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(data),sharedKey);
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(data),flag,const DeepCollectionEquality().hash(sharedKey));
 
 @override
 String toString() {
-  return 'ExtraData(data: $data, sharedKey: $sharedKey)';
+  return 'ExtraData(data: $data, flag: $flag, sharedKey: $sharedKey)';
 }
 
 
@@ -249,7 +251,7 @@ abstract mixin class _$ExtraDataCopyWith<$Res> implements $ExtraDataCopyWith<$Re
   factory _$ExtraDataCopyWith(_ExtraData value, $Res Function(_ExtraData) _then) = __$ExtraDataCopyWithImpl;
 @override @useResult
 $Res call({
-@JsonKey(name: 'data') dynamic data,@JsonKey(name: 'shared_key') String sharedKey
+@JsonKey(name: 'data') dynamic data,@JsonKey(name: 'flag') Flag flag,@JsonKey(name: 'shared_key') dynamic sharedKey
 });
 
 
@@ -266,11 +268,12 @@ class __$ExtraDataCopyWithImpl<$Res>
 
 /// Create a copy of ExtraData
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? data = freezed,Object? sharedKey = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? data = freezed,Object? flag = null,Object? sharedKey = freezed,}) {
   return _then(_ExtraData(
 data: freezed == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as dynamic,sharedKey: null == sharedKey ? _self.sharedKey : sharedKey // ignore: cast_nullable_to_non_nullable
-as String,
+as dynamic,flag: null == flag ? _self.flag : flag // ignore: cast_nullable_to_non_nullable
+as Flag,sharedKey: freezed == sharedKey ? _self.sharedKey : sharedKey // ignore: cast_nullable_to_non_nullable
+as dynamic,
   ));
 }
 
