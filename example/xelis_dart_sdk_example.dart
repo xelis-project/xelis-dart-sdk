@@ -21,13 +21,11 @@ Future<void> main() async {
       ..onNewBlock((block) {
         print('new block: $block');
       })
-
       // You can add multiple callbacks for the same event.
       // They will be called in the order they were added.
       ..onNewBlock((block) {
         print('another callback for new block: $block');
       })
-
       // Here with another events.
       ..onBlockOrdered((block) {
         print('block ordered: $block');
@@ -38,14 +36,11 @@ Future<void> main() async {
       ..onTransactionExecuted((tx) {
         print('tx executed: $tx');
       })
-
       // You can also unsubscribe from the events.
       // This will remove all the callbacks for the event.
       ..unsubscribeFromNewBlock()
-
       // You can unsubscribe from all the events at once.
       ..unsubscribeFromAll()
-
       // You can also add callbacks for the connection events ...
       ..onOpen(() {
         print('channel opened');

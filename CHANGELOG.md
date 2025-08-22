@@ -1,6 +1,13 @@
+## 0.29.0
+
+Wallet API upgrade :
+
+- add Flag enum and update ExtraData structure.
+
 ## 0.28.0
 
 Daemon API upgrade :
+
 - getMempool RPC method updated.
 - new getMempoolSummary RPC method.
 - MempoolTransactionSummary dto used in TransactionAddedInMempool event.
@@ -8,18 +15,21 @@ Daemon API upgrade :
 ## 0.27.0
 
 Wallet API upgrade :
+
 - TrackAsset event.
 - UntrackAsset event.
 
 ## 0.26.0
 
 Daemon API upgrade :
+
 - invokeContract event.
 - deployContract event.
 - contractTransfer event.
 - contractEvent event.
 
 Wallet API upgrade :
+
 - RPCAssetData for NewAsset event.
 
 ## 0.25.0
