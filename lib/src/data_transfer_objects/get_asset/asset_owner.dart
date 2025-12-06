@@ -67,4 +67,40 @@ sealed class AssetOwner with _$AssetOwner {
       },
     );
   }
+
+  /// Returns the origin contract hash
+  /// For Creator variants, returns the contract
+  /// For Owner variants, returns the origin
+  /// For None variants, returns null
+  String? get originContract {
+    return when(
+      none: () => null,
+      creator: (contract, _) => contract,
+      owner: (origin, _, _) => origin,
+    );
+  }
+
+  /// Returns the contract hash (only for Creator variants)
+  String? get contract {
+    return maybeWhen(
+      creator: (contract, _) => contract,
+      orElse: () => null,
+    );
+  }
+
+  /// Returns the id (only for Creator variants)
+  int? get id {
+    return maybeWhen(
+      creator: (_, id) => id,
+      orElse: () => null,
+    );
+  }
+
+  /// Returns true if this is an Owner variant
+  bool get isOwner {
+    return maybeWhen(
+      owner: (_, _, _) => true,
+      orElse: () => false,
+    );
+  }
 }
