@@ -1,3 +1,10 @@
+## 0.30.4
+
+- fix AssetData serialization
+
+## 0.30.3
+- fix RPCAssetData serialization
+
 ## 0.30.2
 
 - fix(AssetOwner): add missing isCreator and isNone getters
