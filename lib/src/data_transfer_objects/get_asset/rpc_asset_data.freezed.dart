@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$RPCAssetData {
 
-@JsonKey(name: 'asset') String get asset;@JsonKey(name: 'topoheight') int get topoheight;@JsonKey(name: 'decimals') int get decimals;@JsonKey(name: 'name') String get name;@JsonKey(name: 'ticker') String get ticker;@JsonKey(name: 'max_supply') int? get maxSupply;@JsonKey(name: 'owner') AssetOwner? get owner;
+@JsonKey(name: 'asset') String get asset;@JsonKey(name: 'topoheight') int get topoheight;@JsonKey(name: 'decimals') int get decimals;@JsonKey(name: 'name') String get name;@JsonKey(name: 'ticker') String get ticker;@JsonKey(name: 'max_supply') MaxSupplyMode get maxSupply;@JsonKey(name: 'owner') AssetOwner get owner;
 /// Create a copy of RPCAssetData
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,11 +48,11 @@ abstract mixin class $RPCAssetDataCopyWith<$Res>  {
   factory $RPCAssetDataCopyWith(RPCAssetData value, $Res Function(RPCAssetData) _then) = _$RPCAssetDataCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(name: 'asset') String asset,@JsonKey(name: 'topoheight') int topoheight,@JsonKey(name: 'decimals') int decimals,@JsonKey(name: 'name') String name,@JsonKey(name: 'ticker') String ticker,@JsonKey(name: 'max_supply') int? maxSupply,@JsonKey(name: 'owner') AssetOwner? owner
+@JsonKey(name: 'asset') String asset,@JsonKey(name: 'topoheight') int topoheight,@JsonKey(name: 'decimals') int decimals,@JsonKey(name: 'name') String name,@JsonKey(name: 'ticker') String ticker,@JsonKey(name: 'max_supply') MaxSupplyMode maxSupply,@JsonKey(name: 'owner') AssetOwner owner
 });
 
 
-$AssetOwnerCopyWith<$Res>? get owner;
+$MaxSupplyModeCopyWith<$Res> get maxSupply;$AssetOwnerCopyWith<$Res> get owner;
 
 }
 /// @nodoc
@@ -65,28 +65,34 @@ class _$RPCAssetDataCopyWithImpl<$Res>
 
 /// Create a copy of RPCAssetData
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? asset = null,Object? topoheight = null,Object? decimals = null,Object? name = null,Object? ticker = null,Object? maxSupply = freezed,Object? owner = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? asset = null,Object? topoheight = null,Object? decimals = null,Object? name = null,Object? ticker = null,Object? maxSupply = null,Object? owner = null,}) {
   return _then(_self.copyWith(
 asset: null == asset ? _self.asset : asset // ignore: cast_nullable_to_non_nullable
 as String,topoheight: null == topoheight ? _self.topoheight : topoheight // ignore: cast_nullable_to_non_nullable
 as int,decimals: null == decimals ? _self.decimals : decimals // ignore: cast_nullable_to_non_nullable
 as int,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,ticker: null == ticker ? _self.ticker : ticker // ignore: cast_nullable_to_non_nullable
-as String,maxSupply: freezed == maxSupply ? _self.maxSupply : maxSupply // ignore: cast_nullable_to_non_nullable
-as int?,owner: freezed == owner ? _self.owner : owner // ignore: cast_nullable_to_non_nullable
-as AssetOwner?,
+as String,maxSupply: null == maxSupply ? _self.maxSupply : maxSupply // ignore: cast_nullable_to_non_nullable
+as MaxSupplyMode,owner: null == owner ? _self.owner : owner // ignore: cast_nullable_to_non_nullable
+as AssetOwner,
   ));
 }
 /// Create a copy of RPCAssetData
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
-$AssetOwnerCopyWith<$Res>? get owner {
-    if (_self.owner == null) {
-    return null;
-  }
-
-  return $AssetOwnerCopyWith<$Res>(_self.owner!, (value) {
+$MaxSupplyModeCopyWith<$Res> get maxSupply {
+  
+  return $MaxSupplyModeCopyWith<$Res>(_self.maxSupply, (value) {
+    return _then(_self.copyWith(maxSupply: value));
+  });
+}/// Create a copy of RPCAssetData
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$AssetOwnerCopyWith<$Res> get owner {
+  
+  return $AssetOwnerCopyWith<$Res>(_self.owner, (value) {
     return _then(_self.copyWith(owner: value));
   });
 }
@@ -171,7 +177,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'asset')  String asset, @JsonKey(name: 'topoheight')  int topoheight, @JsonKey(name: 'decimals')  int decimals, @JsonKey(name: 'name')  String name, @JsonKey(name: 'ticker')  String ticker, @JsonKey(name: 'max_supply')  int? maxSupply, @JsonKey(name: 'owner')  AssetOwner? owner)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'asset')  String asset, @JsonKey(name: 'topoheight')  int topoheight, @JsonKey(name: 'decimals')  int decimals, @JsonKey(name: 'name')  String name, @JsonKey(name: 'ticker')  String ticker, @JsonKey(name: 'max_supply')  MaxSupplyMode maxSupply, @JsonKey(name: 'owner')  AssetOwner owner)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _RPCAssetData() when $default != null:
 return $default(_that.asset,_that.topoheight,_that.decimals,_that.name,_that.ticker,_that.maxSupply,_that.owner);case _:
@@ -192,7 +198,7 @@ return $default(_that.asset,_that.topoheight,_that.decimals,_that.name,_that.tic
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'asset')  String asset, @JsonKey(name: 'topoheight')  int topoheight, @JsonKey(name: 'decimals')  int decimals, @JsonKey(name: 'name')  String name, @JsonKey(name: 'ticker')  String ticker, @JsonKey(name: 'max_supply')  int? maxSupply, @JsonKey(name: 'owner')  AssetOwner? owner)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'asset')  String asset, @JsonKey(name: 'topoheight')  int topoheight, @JsonKey(name: 'decimals')  int decimals, @JsonKey(name: 'name')  String name, @JsonKey(name: 'ticker')  String ticker, @JsonKey(name: 'max_supply')  MaxSupplyMode maxSupply, @JsonKey(name: 'owner')  AssetOwner owner)  $default,) {final _that = this;
 switch (_that) {
 case _RPCAssetData():
 return $default(_that.asset,_that.topoheight,_that.decimals,_that.name,_that.ticker,_that.maxSupply,_that.owner);case _:
@@ -212,7 +218,7 @@ return $default(_that.asset,_that.topoheight,_that.decimals,_that.name,_that.tic
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'asset')  String asset, @JsonKey(name: 'topoheight')  int topoheight, @JsonKey(name: 'decimals')  int decimals, @JsonKey(name: 'name')  String name, @JsonKey(name: 'ticker')  String ticker, @JsonKey(name: 'max_supply')  int? maxSupply, @JsonKey(name: 'owner')  AssetOwner? owner)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'asset')  String asset, @JsonKey(name: 'topoheight')  int topoheight, @JsonKey(name: 'decimals')  int decimals, @JsonKey(name: 'name')  String name, @JsonKey(name: 'ticker')  String ticker, @JsonKey(name: 'max_supply')  MaxSupplyMode maxSupply, @JsonKey(name: 'owner')  AssetOwner owner)?  $default,) {final _that = this;
 switch (_that) {
 case _RPCAssetData() when $default != null:
 return $default(_that.asset,_that.topoheight,_that.decimals,_that.name,_that.ticker,_that.maxSupply,_that.owner);case _:
@@ -227,7 +233,7 @@ return $default(_that.asset,_that.topoheight,_that.decimals,_that.name,_that.tic
 @JsonSerializable()
 
 class _RPCAssetData implements RPCAssetData {
-  const _RPCAssetData({@JsonKey(name: 'asset') required this.asset, @JsonKey(name: 'topoheight') required this.topoheight, @JsonKey(name: 'decimals') required this.decimals, @JsonKey(name: 'name') required this.name, @JsonKey(name: 'ticker') required this.ticker, @JsonKey(name: 'max_supply') this.maxSupply, @JsonKey(name: 'owner') this.owner});
+  const _RPCAssetData({@JsonKey(name: 'asset') required this.asset, @JsonKey(name: 'topoheight') required this.topoheight, @JsonKey(name: 'decimals') required this.decimals, @JsonKey(name: 'name') required this.name, @JsonKey(name: 'ticker') required this.ticker, @JsonKey(name: 'max_supply') required this.maxSupply, @JsonKey(name: 'owner') required this.owner});
   factory _RPCAssetData.fromJson(Map<String, dynamic> json) => _$RPCAssetDataFromJson(json);
 
 @override@JsonKey(name: 'asset') final  String asset;
@@ -235,8 +241,8 @@ class _RPCAssetData implements RPCAssetData {
 @override@JsonKey(name: 'decimals') final  int decimals;
 @override@JsonKey(name: 'name') final  String name;
 @override@JsonKey(name: 'ticker') final  String ticker;
-@override@JsonKey(name: 'max_supply') final  int? maxSupply;
-@override@JsonKey(name: 'owner') final  AssetOwner? owner;
+@override@JsonKey(name: 'max_supply') final  MaxSupplyMode maxSupply;
+@override@JsonKey(name: 'owner') final  AssetOwner owner;
 
 /// Create a copy of RPCAssetData
 /// with the given fields replaced by the non-null parameter values.
@@ -271,11 +277,11 @@ abstract mixin class _$RPCAssetDataCopyWith<$Res> implements $RPCAssetDataCopyWi
   factory _$RPCAssetDataCopyWith(_RPCAssetData value, $Res Function(_RPCAssetData) _then) = __$RPCAssetDataCopyWithImpl;
 @override @useResult
 $Res call({
-@JsonKey(name: 'asset') String asset,@JsonKey(name: 'topoheight') int topoheight,@JsonKey(name: 'decimals') int decimals,@JsonKey(name: 'name') String name,@JsonKey(name: 'ticker') String ticker,@JsonKey(name: 'max_supply') int? maxSupply,@JsonKey(name: 'owner') AssetOwner? owner
+@JsonKey(name: 'asset') String asset,@JsonKey(name: 'topoheight') int topoheight,@JsonKey(name: 'decimals') int decimals,@JsonKey(name: 'name') String name,@JsonKey(name: 'ticker') String ticker,@JsonKey(name: 'max_supply') MaxSupplyMode maxSupply,@JsonKey(name: 'owner') AssetOwner owner
 });
 
 
-@override $AssetOwnerCopyWith<$Res>? get owner;
+@override $MaxSupplyModeCopyWith<$Res> get maxSupply;@override $AssetOwnerCopyWith<$Res> get owner;
 
 }
 /// @nodoc
@@ -288,16 +294,16 @@ class __$RPCAssetDataCopyWithImpl<$Res>
 
 /// Create a copy of RPCAssetData
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? asset = null,Object? topoheight = null,Object? decimals = null,Object? name = null,Object? ticker = null,Object? maxSupply = freezed,Object? owner = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? asset = null,Object? topoheight = null,Object? decimals = null,Object? name = null,Object? ticker = null,Object? maxSupply = null,Object? owner = null,}) {
   return _then(_RPCAssetData(
 asset: null == asset ? _self.asset : asset // ignore: cast_nullable_to_non_nullable
 as String,topoheight: null == topoheight ? _self.topoheight : topoheight // ignore: cast_nullable_to_non_nullable
 as int,decimals: null == decimals ? _self.decimals : decimals // ignore: cast_nullable_to_non_nullable
 as int,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,ticker: null == ticker ? _self.ticker : ticker // ignore: cast_nullable_to_non_nullable
-as String,maxSupply: freezed == maxSupply ? _self.maxSupply : maxSupply // ignore: cast_nullable_to_non_nullable
-as int?,owner: freezed == owner ? _self.owner : owner // ignore: cast_nullable_to_non_nullable
-as AssetOwner?,
+as String,maxSupply: null == maxSupply ? _self.maxSupply : maxSupply // ignore: cast_nullable_to_non_nullable
+as MaxSupplyMode,owner: null == owner ? _self.owner : owner // ignore: cast_nullable_to_non_nullable
+as AssetOwner,
   ));
 }
 
@@ -305,12 +311,18 @@ as AssetOwner?,
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
-$AssetOwnerCopyWith<$Res>? get owner {
-    if (_self.owner == null) {
-    return null;
-  }
-
-  return $AssetOwnerCopyWith<$Res>(_self.owner!, (value) {
+$MaxSupplyModeCopyWith<$Res> get maxSupply {
+  
+  return $MaxSupplyModeCopyWith<$Res>(_self.maxSupply, (value) {
+    return _then(_self.copyWith(maxSupply: value));
+  });
+}/// Create a copy of RPCAssetData
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$AssetOwnerCopyWith<$Res> get owner {
+  
+  return $AssetOwnerCopyWith<$Res>(_self.owner, (value) {
     return _then(_self.copyWith(owner: value));
   });
 }

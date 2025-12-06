@@ -22,6 +22,7 @@ export 'get_accounts/get_accounts_params.dart';
 export 'get_accounts/get_accounts_result.dart';
 export 'get_asset/asset_owner.dart';
 export 'get_asset/get_asset_params.dart';
+export 'get_asset/max_supply_mode.dart';
 export 'get_asset/rpc_asset_data.dart';
 export 'get_assets/get_assets_params.dart';
 export 'get_balance/get_balance_params.dart';

@@ -15,10 +15,10 @@ _RPCAssetData _$RPCAssetDataFromJson(Map<String, dynamic> json) =>
       decimals: (json['decimals'] as num).toInt(),
       name: json['name'] as String,
       ticker: json['ticker'] as String,
-      maxSupply: (json['max_supply'] as num?)?.toInt(),
-      owner: json['owner'] == null
-          ? null
-          : AssetOwner.fromJson(json['owner'] as Map<String, dynamic>),
+      maxSupply: MaxSupplyMode.fromJson(
+        json['max_supply'] as Map<String, dynamic>,
+      ),
+      owner: AssetOwner.fromJson(json['owner'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$RPCAssetDataToJson(_RPCAssetData instance) =>

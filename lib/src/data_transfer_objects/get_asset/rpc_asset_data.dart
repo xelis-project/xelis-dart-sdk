@@ -17,8 +17,8 @@ abstract class RPCAssetData with _$RPCAssetData {
     @JsonKey(name: 'decimals') required int decimals,
     @JsonKey(name: 'name') required String name,
     @JsonKey(name: 'ticker') required String ticker,
-    @JsonKey(name: 'max_supply') int? maxSupply,
-    @JsonKey(name: 'owner') AssetOwner? owner,
+    @JsonKey(name: 'max_supply') required MaxSupplyMode maxSupply,
+    @JsonKey(name: 'owner') required AssetOwner owner,
   }) = _RPCAssetData;
 
   /// @nodoc
