@@ -88,10 +88,11 @@ sealed class AssetOwner with _$AssetOwner {
     );
   }
 
-  /// Returns the id (only for Creator variants)
+  /// Returns the id used to create the asset
   int? get id {
     return maybeWhen(
       creator: (_, id) => id,
+      owner: (_, originId, _) => originId,
       orElse: () => null,
     );
   }
@@ -100,6 +101,22 @@ sealed class AssetOwner with _$AssetOwner {
   bool get isOwner {
     return maybeWhen(
       owner: (_, _, _) => true,
+      orElse: () => false,
+    );
+  }
+
+  /// Returns true if this is a Creator variant
+  bool get isCreator {
+    return maybeWhen(
+      creator: (_, _) => true,
+      orElse: () => false,
+    );
+  }
+
+  /// Returns true if this is a None variant
+  bool get isNone {
+    return maybeWhen(
+      none: () => true,
       orElse: () => false,
     );
   }

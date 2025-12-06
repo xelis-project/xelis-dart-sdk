@@ -1,3 +1,11 @@
+## 0.30.2
+
+- fix(AssetOwner): add missing isCreator and isNone getters
+
+## 0.30.1
+
+- fix(AssetOwner): add missing getters
+
 ## 0.30.0
 
 Daemon API upgrade :
