@@ -3,31 +3,31 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 /// Version of the blockchain network
 enum Network {
   /// @nodoc
-  @JsonValue('Mainnet')
+  @JsonValue('mainnet')
   mainnet,
 
   /// @nodoc
-  @JsonValue('Testnet')
+  @JsonValue('tstnet')
   testnet,
 
   /// @nodoc
-  @JsonValue('Dev')
+  @JsonValue('dev')
   devnet,
 
   /// @nodoc
-  @JsonValue('Stagenet')
+  @JsonValue('stagenet')
   stagenet;
 
   /// Converts json value into Network enum.
   factory Network.fromStr(String value) {
     switch (value) {
-      case 'Mainnet':
+      case 'mainnet':
         return Network.mainnet;
-      case 'Testnet':
+      case 'testnet':
         return Network.testnet;
-      case 'Devnet':
+      case 'devnet':
         return Network.devnet;
-      case 'Stagenet':
+      case 'stagenet':
         return Network.stagenet;
       default:
         throw Exception('Unknown network: $value');
