@@ -7,7 +7,7 @@ enum Network {
   mainnet,
 
   /// @nodoc
-  @JsonValue('tstnet')
+  @JsonValue('testnet')
   testnet,
 
   /// @nodoc
@@ -20,7 +20,7 @@ enum Network {
 
   /// Converts json value into Network enum.
   factory Network.fromStr(String value) {
-    switch (value) {
+    switch (value.toLowerCase()) {
       case 'mainnet':
         return Network.mainnet;
       case 'testnet':
