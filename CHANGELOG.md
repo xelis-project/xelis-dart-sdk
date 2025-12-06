@@ -1,3 +1,9 @@
+## 0.30.0
+
+Daemon API upgrade :
+- AssetOwner reworked
+- Network enum updated (support mixed case)
+
 ## 0.29.0
 
 Wallet API upgrade :
