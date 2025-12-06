@@ -12,10 +12,8 @@ _AssetData _$AssetDataFromJson(Map<String, dynamic> json) => _AssetData(
   decimals: (json['decimals'] as num).toInt(),
   name: json['name'] as String,
   ticker: json['ticker'] as String,
-  maxSupply: (json['max_supply'] as num?)?.toInt(),
-  owner: json['owner'] == null
-      ? null
-      : AssetOwner.fromJson(json['owner'] as Map<String, dynamic>),
+  maxSupply: _maxSupplyFromJson(json['max_supply'] as Map<String, dynamic>),
+  owner: _assetOwnerFromJson(json['owner'] as Map<String, dynamic>),
 );
 
 Map<String, dynamic> _$AssetDataToJson(_AssetData instance) =>
@@ -23,6 +21,6 @@ Map<String, dynamic> _$AssetDataToJson(_AssetData instance) =>
       'decimals': instance.decimals,
       'name': instance.name,
       'ticker': instance.ticker,
-      'max_supply': instance.maxSupply,
-      'owner': instance.owner,
+      'max_supply': _maxSupplyToJson(instance.maxSupply),
+      'owner': _assetOwnerToJson(instance.owner),
     };

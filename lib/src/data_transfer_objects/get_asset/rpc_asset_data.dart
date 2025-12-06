@@ -17,11 +17,32 @@ abstract class RPCAssetData with _$RPCAssetData {
     @JsonKey(name: 'decimals') required int decimals,
     @JsonKey(name: 'name') required String name,
     @JsonKey(name: 'ticker') required String ticker,
-    @JsonKey(name: 'max_supply') required MaxSupplyMode maxSupply,
-    @JsonKey(name: 'owner') required AssetOwner owner,
+    @JsonKey(
+      name: 'max_supply',
+      fromJson: _maxSupplyFromJson,
+      toJson: _maxSupplyToJson,
+    )
+    required MaxSupplyMode maxSupply,
+    @JsonKey(
+      name: 'owner',
+      fromJson: _assetOwnerFromJson,
+      toJson: _assetOwnerToJson,
+    )
+    required AssetOwner owner,
   }) = _RPCAssetData;
 
   /// @nodoc
   factory RPCAssetData.fromJson(Map<String, dynamic> json) =>
       _$RPCAssetDataFromJson(json);
 }
+
+MaxSupplyMode _maxSupplyFromJson(Map<String, dynamic> json) =>
+    MaxSupplyMode.fromJson(json);
+
+Map<String, dynamic> _maxSupplyToJson(MaxSupplyMode maxSupply) =>
+    maxSupply.toJson();
+
+AssetOwner _assetOwnerFromJson(Map<String, dynamic> json) =>
+    AssetOwner.fromJson(json);
+
+Map<String, dynamic> _assetOwnerToJson(AssetOwner owner) => owner.toJson();
