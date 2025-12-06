@@ -11,68 +11,33 @@ part of 'asset_owner.dart';
 
 // dart format off
 T _$identity<T>(T value) => value;
-
 /// @nodoc
 mixin _$AssetOwner {
 
-@JsonKey(name: 'contract') String get contract;@JsonKey(name: 'id') int get id;
-/// Create a copy of AssetOwner
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$AssetOwnerCopyWith<AssetOwner> get copyWith => _$AssetOwnerCopyWithImpl<AssetOwner>(this as AssetOwner, _$identity);
 
-  /// Serializes this AssetOwner to a JSON map.
-  Map<String, dynamic> toJson();
+
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AssetOwner&&(identical(other.contract, contract) || other.contract == contract)&&(identical(other.id, id) || other.id == id));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AssetOwner);
 }
 
-@JsonKey(includeFromJson: false, includeToJson: false)
+
 @override
-int get hashCode => Object.hash(runtimeType,contract,id);
+int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'AssetOwner(contract: $contract, id: $id)';
+  return 'AssetOwner()';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class $AssetOwnerCopyWith<$Res>  {
-  factory $AssetOwnerCopyWith(AssetOwner value, $Res Function(AssetOwner) _then) = _$AssetOwnerCopyWithImpl;
-@useResult
-$Res call({
-@JsonKey(name: 'contract') String contract,@JsonKey(name: 'id') int id
-});
-
-
-
-
-}
-/// @nodoc
-class _$AssetOwnerCopyWithImpl<$Res>
-    implements $AssetOwnerCopyWith<$Res> {
-  _$AssetOwnerCopyWithImpl(this._self, this._then);
-
-  final AssetOwner _self;
-  final $Res Function(AssetOwner) _then;
-
-/// Create a copy of AssetOwner
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? contract = null,Object? id = null,}) {
-  return _then(_self.copyWith(
-contract: null == contract ? _self.contract : contract // ignore: cast_nullable_to_non_nullable
-as String,id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as int,
-  ));
-}
-
+class $AssetOwnerCopyWith<$Res>  {
+$AssetOwnerCopyWith(AssetOwner _, $Res Function(AssetOwner) __);
 }
 
 
@@ -90,11 +55,13 @@ extension AssetOwnerPatterns on AssetOwner {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _AssetOwner value)?  $default,{required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _None value)?  none,TResult Function( _Creator value)?  creator,TResult Function( _Owner value)?  owner,required TResult orElse(),}){
 final _that = this;
 switch (_that) {
-case _AssetOwner() when $default != null:
-return $default(_that);case _:
+case _None() when none != null:
+return none(_that);case _Creator() when creator != null:
+return creator(_that);case _Owner() when owner != null:
+return owner(_that);case _:
   return orElse();
 
 }
@@ -112,14 +79,13 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _AssetOwner value)  $default,){
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _None value)  none,required TResult Function( _Creator value)  creator,required TResult Function( _Owner value)  owner,}){
 final _that = this;
 switch (_that) {
-case _AssetOwner():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
+case _None():
+return none(_that);case _Creator():
+return creator(_that);case _Owner():
+return owner(_that);}
 }
 /// A variant of `map` that fallback to returning `null`.
 ///
@@ -133,11 +99,13 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _AssetOwner value)?  $default,){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _None value)?  none,TResult? Function( _Creator value)?  creator,TResult? Function( _Owner value)?  owner,}){
 final _that = this;
 switch (_that) {
-case _AssetOwner() when $default != null:
-return $default(_that);case _:
+case _None() when none != null:
+return none(_that);case _Creator() when creator != null:
+return creator(_that);case _Owner() when owner != null:
+return owner(_that);case _:
   return null;
 
 }
@@ -154,10 +122,12 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'contract')  String contract, @JsonKey(name: 'id')  int id)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  none,TResult Function( String contract,  int id)?  creator,TResult Function( String origin,  int originId,  String owner)?  owner,required TResult orElse(),}) {final _that = this;
 switch (_that) {
-case _AssetOwner() when $default != null:
-return $default(_that.contract,_that.id);case _:
+case _None() when none != null:
+return none();case _Creator() when creator != null:
+return creator(_that.contract,_that.id);case _Owner() when owner != null:
+return owner(_that.origin,_that.originId,_that.owner);case _:
   return orElse();
 
 }
@@ -175,13 +145,12 @@ return $default(_that.contract,_that.id);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'contract')  String contract, @JsonKey(name: 'id')  int id)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  none,required TResult Function( String contract,  int id)  creator,required TResult Function( String origin,  int originId,  String owner)  owner,}) {final _that = this;
 switch (_that) {
-case _AssetOwner():
-return $default(_that.contract,_that.id);case _:
-  throw StateError('Unexpected subclass');
-
-}
+case _None():
+return none();case _Creator():
+return creator(_that.contract,_that.id);case _Owner():
+return owner(_that.origin,_that.originId,_that.owner);}
 }
 /// A variant of `when` that fallback to returning `null`
 ///
@@ -195,10 +164,12 @@ return $default(_that.contract,_that.id);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'contract')  String contract, @JsonKey(name: 'id')  int id)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  none,TResult? Function( String contract,  int id)?  creator,TResult? Function( String origin,  int originId,  String owner)?  owner,}) {final _that = this;
 switch (_that) {
-case _AssetOwner() when $default != null:
-return $default(_that.contract,_that.id);case _:
+case _None() when none != null:
+return none();case _Creator() when creator != null:
+return creator(_that.contract,_that.id);case _Owner() when owner != null:
+return owner(_that.origin,_that.originId,_that.owner);case _:
   return null;
 
 }
@@ -207,49 +178,78 @@ return $default(_that.contract,_that.id);case _:
 }
 
 /// @nodoc
-@JsonSerializable()
 
-class _AssetOwner implements AssetOwner {
-  const _AssetOwner({@JsonKey(name: 'contract') required this.contract, @JsonKey(name: 'id') required this.id});
-  factory _AssetOwner.fromJson(Map<String, dynamic> json) => _$AssetOwnerFromJson(json);
 
-@override@JsonKey(name: 'contract') final  String contract;
-@override@JsonKey(name: 'id') final  int id;
+class _None extends AssetOwner {
+  const _None(): super._();
+  
 
-/// Create a copy of AssetOwner
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$AssetOwnerCopyWith<_AssetOwner> get copyWith => __$AssetOwnerCopyWithImpl<_AssetOwner>(this, _$identity);
 
-@override
-Map<String, dynamic> toJson() {
-  return _$AssetOwnerToJson(this, );
-}
+
+
+
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AssetOwner&&(identical(other.contract, contract) || other.contract == contract)&&(identical(other.id, id) || other.id == id));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _None);
 }
 
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'AssetOwner.none()';
+}
+
+
+}
+
+
+
+
+/// @nodoc
+
+
+class _Creator extends AssetOwner {
+  const _Creator({required this.contract, required this.id}): super._();
+  
+
+ final  String contract;
+ final  int id;
+
+/// Create a copy of AssetOwner
+/// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$CreatorCopyWith<_Creator> get copyWith => __$CreatorCopyWithImpl<_Creator>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Creator&&(identical(other.contract, contract) || other.contract == contract)&&(identical(other.id, id) || other.id == id));
+}
+
+
 @override
 int get hashCode => Object.hash(runtimeType,contract,id);
 
 @override
 String toString() {
-  return 'AssetOwner(contract: $contract, id: $id)';
+  return 'AssetOwner.creator(contract: $contract, id: $id)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class _$AssetOwnerCopyWith<$Res> implements $AssetOwnerCopyWith<$Res> {
-  factory _$AssetOwnerCopyWith(_AssetOwner value, $Res Function(_AssetOwner) _then) = __$AssetOwnerCopyWithImpl;
-@override @useResult
+abstract mixin class _$CreatorCopyWith<$Res> implements $AssetOwnerCopyWith<$Res> {
+  factory _$CreatorCopyWith(_Creator value, $Res Function(_Creator) _then) = __$CreatorCopyWithImpl;
+@useResult
 $Res call({
-@JsonKey(name: 'contract') String contract,@JsonKey(name: 'id') int id
+ String contract, int id
 });
 
 
@@ -257,20 +257,90 @@ $Res call({
 
 }
 /// @nodoc
-class __$AssetOwnerCopyWithImpl<$Res>
-    implements _$AssetOwnerCopyWith<$Res> {
-  __$AssetOwnerCopyWithImpl(this._self, this._then);
+class __$CreatorCopyWithImpl<$Res>
+    implements _$CreatorCopyWith<$Res> {
+  __$CreatorCopyWithImpl(this._self, this._then);
 
-  final _AssetOwner _self;
-  final $Res Function(_AssetOwner) _then;
+  final _Creator _self;
+  final $Res Function(_Creator) _then;
 
 /// Create a copy of AssetOwner
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? contract = null,Object? id = null,}) {
-  return _then(_AssetOwner(
+@pragma('vm:prefer-inline') $Res call({Object? contract = null,Object? id = null,}) {
+  return _then(_Creator(
 contract: null == contract ? _self.contract : contract // ignore: cast_nullable_to_non_nullable
 as String,id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as int,
+  ));
+}
+
+
+}
+
+/// @nodoc
+
+
+class _Owner extends AssetOwner {
+  const _Owner({required this.origin, required this.originId, required this.owner}): super._();
+  
+
+ final  String origin;
+ final  int originId;
+ final  String owner;
+
+/// Create a copy of AssetOwner
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$OwnerCopyWith<_Owner> get copyWith => __$OwnerCopyWithImpl<_Owner>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Owner&&(identical(other.origin, origin) || other.origin == origin)&&(identical(other.originId, originId) || other.originId == originId)&&(identical(other.owner, owner) || other.owner == owner));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,origin,originId,owner);
+
+@override
+String toString() {
+  return 'AssetOwner.owner(origin: $origin, originId: $originId, owner: $owner)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$OwnerCopyWith<$Res> implements $AssetOwnerCopyWith<$Res> {
+  factory _$OwnerCopyWith(_Owner value, $Res Function(_Owner) _then) = __$OwnerCopyWithImpl;
+@useResult
+$Res call({
+ String origin, int originId, String owner
+});
+
+
+
+
+}
+/// @nodoc
+class __$OwnerCopyWithImpl<$Res>
+    implements _$OwnerCopyWith<$Res> {
+  __$OwnerCopyWithImpl(this._self, this._then);
+
+  final _Owner _self;
+  final $Res Function(_Owner) _then;
+
+/// Create a copy of AssetOwner
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? origin = null,Object? originId = null,Object? owner = null,}) {
+  return _then(_Owner(
+origin: null == origin ? _self.origin : origin // ignore: cast_nullable_to_non_nullable
+as String,originId: null == originId ? _self.originId : originId // ignore: cast_nullable_to_non_nullable
+as int,owner: null == owner ? _self.owner : owner // ignore: cast_nullable_to_non_nullable
+as String,
   ));
 }
 

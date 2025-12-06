@@ -1,28 +1,70 @@
-// ignore_for_file: invalid_annotation_target
-
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'asset_owner.freezed.dart';
-part 'asset_owner.g.dart';
 
-@Freezed(unionKey: 'type', unionValueCase: FreezedUnionCase.snake)
-class AssetOwner with _$AssetOwner {
+/// @nodoc
+@Freezed(unionKey: 'type', unionValueCase: FreezedUnionCase.none)
+sealed class AssetOwner with _$AssetOwner {
+  const AssetOwner._();
+
+  /// @nodoc
+  @FreezedUnionValue('None')
   const factory AssetOwner.none() = _None;
 
+  /// @nodoc
+  @FreezedUnionValue('Creator')
   const factory AssetOwner.creator({
-    @JsonKey(name: 'contract') required String contract,
-
-    @JsonKey(name: 'id') required int id,
+    required String contract,
+    required int id,
   }) = _Creator;
 
+  /// @nodoc
+  @FreezedUnionValue('Owner')
   const factory AssetOwner.owner({
-    @JsonKey(name: 'origin') required String origin,
-
-    @JsonKey(name: 'origin_id') required int originId,
-
-    @JsonKey(name: 'owner') required String owner,
+    required String origin,
+    required int originId,
+    required String owner,
   }) = _Owner;
 
-  factory AssetOwner.fromJson(Map<String, dynamic> json) =>
-      _$AssetOwnerFromJson(json);
+  /// @nodoc
+  factory AssetOwner.fromJson(Map<String, dynamic> json) {
+    // Handle Rust's externally tagged enum format with snake_case
+    if (json.containsKey('none')) {
+      return const AssetOwner.none();
+    } else if (json.containsKey('creator')) {
+      final data = json['creator'] as Map<String, dynamic>;
+      return AssetOwner.creator(
+        contract: data['contract'] as String,
+        id: data['id'] as int,
+      );
+    } else if (json.containsKey('owner')) {
+      final data = json['owner'] as Map<String, dynamic>;
+      return AssetOwner.owner(
+        origin: data['origin'] as String,
+        originId: data['origin_id'] as int,
+        owner: data['owner'] as String,
+      );
+    }
+    throw ArgumentError('Unknown AssetOwner type: ${json.keys.join(', ')}');
+  }
+
+  /// @nodoc
+  Map<String, dynamic> toJson() {
+    return when(
+      none: () => {'none': null},
+      creator: (contract, id) => {
+        'creator': {
+          'contract': contract,
+          'id': id,
+        },
+      },
+      owner: (origin, originId, ownerHash) => {
+        'owner': {
+          'origin': origin,
+          'origin_id': originId,
+          'owner': ownerHash,
+        },
+      },
+    );
+  }
 }
