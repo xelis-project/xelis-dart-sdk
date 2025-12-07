@@ -13,7 +13,7 @@ _AssetData _$AssetDataFromJson(Map<String, dynamic> json) => _AssetData(
   name: json['name'] as String,
   ticker: json['ticker'] as String,
   maxSupply: _maxSupplyFromJson(json['max_supply'] as Map<String, dynamic>),
-  owner: _assetOwnerFromJson(json['owner'] as Map<String, dynamic>),
+  owner: _assetOwnerFromJson(json['owner']),
 );
 
 Map<String, dynamic> _$AssetDataToJson(_AssetData instance) =>

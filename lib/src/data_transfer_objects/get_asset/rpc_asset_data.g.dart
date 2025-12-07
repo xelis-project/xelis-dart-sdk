@@ -16,7 +16,7 @@ _RPCAssetData _$RPCAssetDataFromJson(Map<String, dynamic> json) =>
       name: json['name'] as String,
       ticker: json['ticker'] as String,
       maxSupply: _maxSupplyFromJson(json['max_supply'] as Map<String, dynamic>),
-      owner: _assetOwnerFromJson(json['owner'] as Map<String, dynamic>),
+      owner: _assetOwnerFromJson(json['owner']),
     );
 
 Map<String, dynamic> _$RPCAssetDataToJson(_RPCAssetData instance) =>

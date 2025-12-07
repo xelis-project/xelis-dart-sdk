@@ -39,7 +39,15 @@ MaxSupplyMode _maxSupplyFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _maxSupplyToJson(MaxSupplyMode maxSupply) =>
     maxSupply.toJson();
 
-AssetOwner _assetOwnerFromJson(Map<String, dynamic> json) =>
-    AssetOwner.fromJson(json);
+AssetOwner _assetOwnerFromJson(dynamic json) {
+  if (json is String) {
+    // Handle string format like 'owner': 'none'
+    if (json == 'none') {
+      return const AssetOwner.none();
+    }
+    throw ArgumentError('Unknown AssetOwner string value: $json');
+  }
+  return AssetOwner.fromJson(json as Map<String, dynamic>);
+}
 
-Map<String, dynamic> _assetOwnerToJson(AssetOwner owner) => owner.toJson();
+dynamic _assetOwnerToJson(AssetOwner owner) => owner.toJson();
