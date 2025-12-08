@@ -1,3 +1,11 @@
+## 0.30.6
+
+- add currentOwner getter to AssetOwner
+
+## 0.30.5
+
+- fix AssetOwner serialization
+
 ## 0.30.4
 
 - fix AssetData serialization

@@ -120,4 +120,13 @@ sealed class AssetOwner with _$AssetOwner {
       orElse: () => false,
     );
   }
+
+  /// Returns the contract hash that currently owns the asset
+  String? get currentOwner {
+    return maybeWhen(
+      creator: (creator, _) => creator,
+      owner: (_, _, ownerHash) => ownerHash,
+      orElse: () => null,
+    );
+  }
 }
