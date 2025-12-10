@@ -3,25 +3,23 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'max_supply_mode.freezed.dart';
 
 /// @nodoc
-@Freezed(unionKey: 'type', unionValueCase: FreezedUnionCase.none)
+@freezed
 sealed class MaxSupplyMode with _$MaxSupplyMode {
   const MaxSupplyMode._();
 
   /// @nodoc
-  @FreezedUnionValue('None')
   const factory MaxSupplyMode.none() = _None;
 
   /// @nodoc
-  @FreezedUnionValue('Fixed')
   const factory MaxSupplyMode.fixed(int value) = _Fixed;
 
   /// @nodoc
-  @FreezedUnionValue('Mintable')
   const factory MaxSupplyMode.mintable(int value) = _Mintable;
 
   /// @nodoc
   factory MaxSupplyMode.fromJson(Map<String, dynamic> json) {
-    // Handle Rust's externally tagged enum format with snake_case
+    // Handle Rust's externally tagged enum-style format:
+    // { "none": null }, { "fixed": 123 }, { "mintable": 123 }
     if (json.containsKey('none')) {
       return const MaxSupplyMode.none();
     } else if (json.containsKey('fixed')) {
@@ -34,6 +32,7 @@ sealed class MaxSupplyMode with _$MaxSupplyMode {
 
   /// @nodoc
   Map<String, dynamic> toJson() {
+    // Emit the same externally tagged-style shape we read in
     return when(
       none: () => {'none': null},
       fixed: (value) => {'fixed': value},
@@ -57,7 +56,7 @@ sealed class MaxSupplyMode with _$MaxSupplyMode {
       fixed: (_) => false,
       mintable: (max) {
         final newSupply = currentSupply + amount;
-        return newSupply <= max && newSupply >= currentSupply; // Check overflow
+        return newSupply <= max && newSupply >= currentSupply; // check overflow
       },
     );
   }
