@@ -38,6 +38,14 @@ sealed class AssetOwner with _$AssetOwner {
         orElse: () => null,
       );
 
+  String? get currentOwner {
+    return when(
+      none: () => null,
+      creator: (contract, _) => contract,
+      owner: (_, __, ownerHash) => ownerHash,
+    );
+  }
+
   int? get id => maybeWhen(
         creator: (_, id) => id,
         owner: (_, originId, __) => originId,
