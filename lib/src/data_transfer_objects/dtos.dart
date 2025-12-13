@@ -4,7 +4,7 @@ export 'block/block.dart';
 export 'block_ordered_event/block_ordered_event.dart';
 export 'block_orphaned_event/block_orphaned_event.dart';
 export 'contract_event/contract_event.dart';
-export 'contract_transfer_event/contract_transfer_event.dart';
+export 'contract_transfers_event/contract_transfers_event.dart';
 export 'decrypt_extra_data/decrypt_extra_data_params.dart';
 export 'extract_key_from_address/extract_key_from_address_params.dart';
 export 'extract_key_from_address/extract_key_from_address_result.dart';
