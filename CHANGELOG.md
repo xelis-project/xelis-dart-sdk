@@ -1,3 +1,16 @@
+## 0.30.7
+
+- fix devnet enum map
+- rename contract_transfer to contract_transfers
+
+## 0.30.6
+
+- add currentOwner getter to AssetOwner
+
+## 0.30.5
+
+- fix AssetOwner serialization
+
 ## 0.30.4
 
 - fix AssetData serialization
