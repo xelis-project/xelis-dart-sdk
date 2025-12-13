@@ -265,7 +265,7 @@ enum DaemonEvent implements XelisJsonKey {
   invokeContract('invoke_contract'),
 
   /// When a contract has transferred any token to the receiver address.
-  contractTransfer('contract_transfer'),
+  contractTransfers('contract_transfers'),
 
   /// When a contract fire an event.
   contractEvent('contract_event'),
@@ -307,8 +307,8 @@ enum DaemonEvent implements XelisJsonKey {
         return DaemonEvent.transactionOrphaned;
       case 'invoke_contract':
         return DaemonEvent.invokeContract;
-      case 'contract_transfer':
-        return DaemonEvent.contractTransfer;
+      case 'contract_transfers':
+        return DaemonEvent.contractTransfers;
       case 'contract_event':
         return DaemonEvent.contractEvent;
       case 'deploy_contract':

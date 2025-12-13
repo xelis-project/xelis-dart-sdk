@@ -43,8 +43,8 @@ class DaemonClient extends RpcClientRepository {
           <void Function(TransactionResponse transactionResponse)>[],
       DaemonEvent.invokeContract:
           <void Function(InvokeContractEvent invokeContractEvent)>[],
-      DaemonEvent.contractTransfer:
-          <void Function(ContractTransferEvent contractTransferEvent)>[],
+      DaemonEvent.contractTransfers:
+          <void Function(ContractTransfersEvent contractTransfersEvent)>[],
       DaemonEvent.contractEvent: <void Function(ContractEvent contractEvent)>[],
       DaemonEvent.deployContract:
           <void Function(NewContractEvent newContractEvent)>[],
@@ -125,8 +125,8 @@ class DaemonClient extends RpcClientRepository {
         final invokeContractEvent = InvokeContractEvent.fromJson(result);
         _logInfo('Invoke contract event: $invokeContractEvent');
         _triggerCallbacks(event, invokeContractEvent);
-      case DaemonEvent.contractTransfer:
-        final contractTransferEvent = ContractTransferEvent.fromJson(result);
+      case DaemonEvent.contractTransfers:
+        final contractTransferEvent = ContractTransfersEvent.fromJson(result);
         _logInfo('Contract transfer event: $contractTransferEvent');
         _triggerCallbacks(event, contractTransferEvent);
       case DaemonEvent.contractEvent:

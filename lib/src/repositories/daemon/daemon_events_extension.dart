@@ -169,14 +169,14 @@ extension DaemonEventsExtension on DaemonClient {
     unawaited(unsubscribeFrom(DaemonEvent.invokeContract));
   }
 
-  /// Registers a callback for ContractTransfer event.
-  void onContractTransfer(
-    void Function(ContractTransferEvent event) callback,
-  ) => onEvent(DaemonEvent.contractTransfer, callback);
+  /// Registers a callback for ContractTransfers event.
+  void onContractTransfers(
+    void Function(ContractTransfersEvent event) callback,
+  ) => onEvent(DaemonEvent.contractTransfers, callback);
 
-  /// Unsubscribes from ContractTransfer event.
-  void unsubscribeFromContractTransfer() {
-    unawaited(unsubscribeFrom(DaemonEvent.contractTransfer));
+  /// Unsubscribes from ContractTransfers event.
+  void unsubscribeFromContractTransfers() {
+    unawaited(unsubscribeFrom(DaemonEvent.contractTransfers));
   }
 
   /// Registers a callback for ContractEvent event.
@@ -214,7 +214,7 @@ extension DaemonEventsExtension on DaemonClient {
     unsubscribeFromBlockOrphaned();
     unsubscribeFromTransactionOrphaned();
     unsubscribeFromInvokeContract();
-    unsubscribeFromContractTransfer();
+    unsubscribeFromContractTransfers();
     unsubscribeFromContractEvent();
     unsubscribeFromDeployContract();
   }
