@@ -20,11 +20,16 @@ sealed class MaxSupplyMode with _$MaxSupplyMode {
   const factory MaxSupplyMode.mintable(int value) = _Mintable;
 
   /// @nodoc
-  factory MaxSupplyMode.fromJson(Map<String, dynamic> json) {
-    // Handle Rust's externally tagged enum format with snake_case
-    if (json.containsKey('none')) {
-      return const MaxSupplyMode.none();
-    } else if (json.containsKey('fixed')) {
+  factory MaxSupplyMode.fromJson(dynamic json) {
+    if (json is String) {
+      if (json == 'none') {
+        return const MaxSupplyMode.none();
+      }
+      throw ArgumentError('Unknown MaxSupplyMode string value: $json');
+    }
+
+    json as Map<String, dynamic>;
+    if (json.containsKey('fixed')) {
       return MaxSupplyMode.fixed(json['fixed'] as int);
     } else if (json.containsKey('mintable')) {
       return MaxSupplyMode.mintable(json['mintable'] as int);
@@ -33,9 +38,9 @@ sealed class MaxSupplyMode with _$MaxSupplyMode {
   }
 
   /// @nodoc
-  Map<String, dynamic> toJson() {
+  dynamic toJson() {
     return when(
-      none: () => {'none': null},
+      none: () => 'none',
       fixed: (value) => {'fixed': value},
       mintable: (value) => {'mintable': value},
     );
