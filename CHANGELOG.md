@@ -1,3 +1,6 @@
+## 0.30.8
+- fix AssetData, AssetOwner, MaxSupplyMode serialization
+
 ## 0.30.7
 
 - fix devnet enum map

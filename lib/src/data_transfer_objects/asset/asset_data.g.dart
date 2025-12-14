@@ -12,7 +12,7 @@ _AssetData _$AssetDataFromJson(Map<String, dynamic> json) => _AssetData(
   decimals: (json['decimals'] as num).toInt(),
   name: json['name'] as String,
   ticker: json['ticker'] as String,
-  maxSupply: _maxSupplyFromJson(json['max_supply'] as Map<String, dynamic>),
+  maxSupply: _maxSupplyFromJson(json['max_supply']),
   owner: _assetOwnerFromJson(json['owner']),
 );
 

@@ -33,21 +33,10 @@ abstract class AssetData with _$AssetData {
       _$AssetDataFromJson(json);
 }
 
-MaxSupplyMode _maxSupplyFromJson(Map<String, dynamic> json) =>
-    MaxSupplyMode.fromJson(json);
+MaxSupplyMode _maxSupplyFromJson(dynamic json) => MaxSupplyMode.fromJson(json);
 
-Map<String, dynamic> _maxSupplyToJson(MaxSupplyMode maxSupply) =>
-    maxSupply.toJson();
+dynamic _maxSupplyToJson(MaxSupplyMode maxSupply) => maxSupply.toJson();
 
-AssetOwner _assetOwnerFromJson(dynamic json) {
-  if (json is String) {
-    // Handle string format like 'owner': 'none'
-    if (json == 'none') {
-      return const AssetOwner.none();
-    }
-    throw ArgumentError('Unknown AssetOwner string value: $json');
-  }
-  return AssetOwner.fromJson(json as Map<String, dynamic>);
-}
+AssetOwner _assetOwnerFromJson(dynamic json) => AssetOwner.fromJson(json);
 
 dynamic _assetOwnerToJson(AssetOwner owner) => owner.toJson();
