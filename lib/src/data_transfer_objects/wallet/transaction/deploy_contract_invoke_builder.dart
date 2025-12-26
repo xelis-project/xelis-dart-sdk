@@ -13,10 +13,6 @@ sealed class DeployContractInvokeBuilder with _$DeployContractInvokeBuilder {
   /// @nodoc
   const factory DeployContractInvokeBuilder({
     @JsonKey(name: 'max_gas') required int maxGas,
-    @JsonKey(name: 'chunk_id') required int chunkId,
-    @JsonKey(name: 'parameters') required List<dynamic> parameters,
-    @JsonKey(name: 'deposits')
-    required Map<String, ContractDepositBuilder> deposits,
   }) = _DeployContractInvokeBuilder;
 
   /// @nodoc
