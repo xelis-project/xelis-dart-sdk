@@ -46,7 +46,7 @@ sealed class TransactionEntryType with _$TransactionEntryType {
   const factory TransactionEntryType.invokeContract({
     @JsonKey(name: 'contract') required String contract,
     @JsonKey(name: 'deposits') required Map<String, int> deposits,
-    @JsonKey(name: 'chunk_id') required int chunkId,
+    @JsonKey(name: 'entry_id') required int entryId,
     @JsonKey(name: 'fee') required int fee,
     @JsonKey(name: 'nonce') required int nonce,
   }) = InvokeContractEntry;

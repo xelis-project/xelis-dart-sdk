@@ -31,7 +31,7 @@ sealed class TransactionTypeBuilder with _$TransactionTypeBuilder {
   const factory TransactionTypeBuilder.invokeContract({
     @JsonKey(name: 'contract') required String contract,
     @JsonKey(name: 'max_gas') required int maxGas,
-    @JsonKey(name: 'chunk_id') required int chunkId,
+    @JsonKey(name: 'entry_id') required int entryId,
     @JsonKey(name: 'parameters') required List<dynamic> parameters,
     @JsonKey(name: 'deposits')
     required Map<String, ContractDepositBuilder> deposits,

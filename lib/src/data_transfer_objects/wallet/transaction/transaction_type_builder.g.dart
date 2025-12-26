@@ -56,7 +56,7 @@ InvokeContractBuilder _$InvokeContractBuilderFromJson(
 ) => InvokeContractBuilder(
   contract: json['contract'] as String,
   maxGas: (json['max_gas'] as num).toInt(),
-  chunkId: (json['chunk_id'] as num).toInt(),
+  entryId: (json['entry_id'] as num).toInt(),
   parameters: json['parameters'] as List<dynamic>,
   deposits: (json['deposits'] as Map<String, dynamic>).map(
     (k, e) =>
@@ -70,7 +70,7 @@ Map<String, dynamic> _$InvokeContractBuilderToJson(
 ) => <String, dynamic>{
   'contract': instance.contract,
   'max_gas': instance.maxGas,
-  'chunk_id': instance.chunkId,
+  'entry_id': instance.entryId,
   'parameters': instance.parameters,
   'deposits': instance.deposits,
   'runtimeType': instance.$type,
