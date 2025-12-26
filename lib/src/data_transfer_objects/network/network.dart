@@ -12,7 +12,7 @@ enum Network {
 
   /// @nodoc
   @JsonValue('dev')
-  dev,
+  devnet,
 
   /// @nodoc
   @JsonValue('stagenet')
@@ -25,8 +25,8 @@ enum Network {
         return Network.mainnet;
       case 'testnet':
         return Network.testnet;
-      case 'dev':
-        return Network.dev;
+      case 'devnet':
+        return Network.devnet;
       case 'stagenet':
         return Network.stagenet;
       default:
