@@ -1,7 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'asset_owner.freezed.dart';
-part 'asset_owner.g.dart';
 
 /// @nodoc
 @freezed
