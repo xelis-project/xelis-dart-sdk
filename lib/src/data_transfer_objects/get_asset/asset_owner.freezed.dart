@@ -11,41 +11,11 @@ part of 'asset_owner.dart';
 
 // dart format off
 T _$identity<T>(T value) => value;
-AssetOwner _$AssetOwnerFromJson(
-  Map<String, dynamic> json
-) {
-        switch (json['runtimeType']) {
-                  case 'none':
-          return _None.fromJson(
-            json
-          );
-                case 'creator':
-          return _Creator.fromJson(
-            json
-          );
-                case 'owner':
-          return _Owner.fromJson(
-            json
-          );
-        
-          default:
-            throw CheckedFromJsonException(
-  json,
-  'runtimeType',
-  'AssetOwner',
-  'Invalid union type "${json['runtimeType']}"!'
-);
-        }
-      
-}
-
 /// @nodoc
 mixin _$AssetOwner {
 
 
 
-  /// Serializes this AssetOwner to a JSON map.
-  Map<String, dynamic> toJson();
 
 
 @override
@@ -53,7 +23,7 @@ bool operator ==(Object other) {
   return identical(this, other) || (other.runtimeType == runtimeType&&other is AssetOwner);
 }
 
-@JsonKey(includeFromJson: false, includeToJson: false)
+
 @override
 int get hashCode => runtimeType.hashCode;
 
@@ -208,30 +178,23 @@ return owner(_that.origin,_that.originId,_that.owner);case _:
 }
 
 /// @nodoc
-@JsonSerializable()
+
 
 class _None extends AssetOwner {
-  const _None({final  String? $type}): $type = $type ?? 'none',super._();
-  factory _None.fromJson(Map<String, dynamic> json) => _$NoneFromJson(json);
+  const _None(): super._();
+  
 
 
 
-@JsonKey(name: 'runtimeType')
-final String $type;
 
 
-
-@override
-Map<String, dynamic> toJson() {
-  return _$NoneToJson(this, );
-}
 
 @override
 bool operator ==(Object other) {
   return identical(this, other) || (other.runtimeType == runtimeType&&other is _None);
 }
 
-@JsonKey(includeFromJson: false, includeToJson: false)
+
 @override
 int get hashCode => runtimeType.hashCode;
 
@@ -247,18 +210,14 @@ String toString() {
 
 
 /// @nodoc
-@JsonSerializable()
+
 
 class _Creator extends AssetOwner {
-  const _Creator({@JsonKey(name: 'contract') required this.contract, @JsonKey(name: 'id') required this.id, final  String? $type}): $type = $type ?? 'creator',super._();
-  factory _Creator.fromJson(Map<String, dynamic> json) => _$CreatorFromJson(json);
+  const _Creator({@JsonKey(name: 'contract') required this.contract, @JsonKey(name: 'id') required this.id}): super._();
+  
 
 @JsonKey(name: 'contract') final  String contract;
 @JsonKey(name: 'id') final  int id;
-
-@JsonKey(name: 'runtimeType')
-final String $type;
-
 
 /// Create a copy of AssetOwner
 /// with the given fields replaced by the non-null parameter values.
@@ -266,17 +225,14 @@ final String $type;
 @pragma('vm:prefer-inline')
 _$CreatorCopyWith<_Creator> get copyWith => __$CreatorCopyWithImpl<_Creator>(this, _$identity);
 
-@override
-Map<String, dynamic> toJson() {
-  return _$CreatorToJson(this, );
-}
+
 
 @override
 bool operator ==(Object other) {
   return identical(this, other) || (other.runtimeType == runtimeType&&other is _Creator&&(identical(other.contract, contract) || other.contract == contract)&&(identical(other.id, id) || other.id == id));
 }
 
-@JsonKey(includeFromJson: false, includeToJson: false)
+
 @override
 int get hashCode => Object.hash(runtimeType,contract,id);
 
@@ -322,19 +278,15 @@ as int,
 }
 
 /// @nodoc
-@JsonSerializable()
+
 
 class _Owner extends AssetOwner {
-  const _Owner({@JsonKey(name: 'origin') required this.origin, @JsonKey(name: 'origin_id') required this.originId, @JsonKey(name: 'owner') required this.owner, final  String? $type}): $type = $type ?? 'owner',super._();
-  factory _Owner.fromJson(Map<String, dynamic> json) => _$OwnerFromJson(json);
+  const _Owner({@JsonKey(name: 'origin') required this.origin, @JsonKey(name: 'origin_id') required this.originId, @JsonKey(name: 'owner') required this.owner}): super._();
+  
 
 @JsonKey(name: 'origin') final  String origin;
 @JsonKey(name: 'origin_id') final  int originId;
 @JsonKey(name: 'owner') final  String owner;
-
-@JsonKey(name: 'runtimeType')
-final String $type;
-
 
 /// Create a copy of AssetOwner
 /// with the given fields replaced by the non-null parameter values.
@@ -342,17 +294,14 @@ final String $type;
 @pragma('vm:prefer-inline')
 _$OwnerCopyWith<_Owner> get copyWith => __$OwnerCopyWithImpl<_Owner>(this, _$identity);
 
-@override
-Map<String, dynamic> toJson() {
-  return _$OwnerToJson(this, );
-}
+
 
 @override
 bool operator ==(Object other) {
   return identical(this, other) || (other.runtimeType == runtimeType&&other is _Owner&&(identical(other.origin, origin) || other.origin == origin)&&(identical(other.originId, originId) || other.originId == originId)&&(identical(other.owner, owner) || other.owner == owner));
 }
 
-@JsonKey(includeFromJson: false, includeToJson: false)
+
 @override
 int get hashCode => Object.hash(runtimeType,origin,originId,owner);
 

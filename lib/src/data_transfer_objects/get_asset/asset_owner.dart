@@ -24,8 +24,29 @@ sealed class AssetOwner with _$AssetOwner {
     @JsonKey(name: 'owner') required String owner,
   }) = _Owner;
 
-  factory AssetOwner.fromJson(Map<String, dynamic> json) =>
-      _$AssetOwnerFromJson(json);
+  factory AssetOwner.fromJson(Map<String, dynamic> json) {
+    // Handle Rust's externally tagged enum-style format:
+    // { "none": null }, { "creator": {...} }, { "owner": {...} }
+    if (json.containsKey('none')) {
+      return const AssetOwner.none();
+    } else if (json.containsKey('creator')) {
+      final data = json['creator'] as Map<String, dynamic>;
+      return AssetOwner.creator(
+        contract: data['contract'] as String,
+        id: data['id'] as int,
+      );
+    } else if (json.containsKey('owner')) {
+      final data = json['owner'] as Map<String, dynamic>;
+      return AssetOwner.owner(
+        origin: data['origin'] as String,
+        originId: data['origin_id'] as int,
+        owner: data['owner'] as String,
+      );
+    }
+
+    // Fallback to generated fromJson for other formats
+    return _$AssetOwnerFromJson(json);
+  }
 
   String? get originContract => when(
         none: () => null,
