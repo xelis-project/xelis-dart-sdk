@@ -43,8 +43,24 @@ sealed class AssetOwner with _$AssetOwner {
       );
     }
 
-    // Fallback to generated fromJson for other formats
-    return _$AssetOwnerFromJson(json);
+    throw ArgumentError('Unknown AssetOwner type: ${json.keys.join(', ')}');
+  }
+
+  Map<String, dynamic> toJson() {
+    // Emit Rust's externally tagged enum-style format
+    return when(
+      none: () => {'none': null},
+      creator: (contract, id) => {
+        'creator': {'contract': contract, 'id': id}
+      },
+      owner: (origin, originId, ownerHash) => {
+        'owner': {
+          'origin': origin,
+          'origin_id': originId,
+          'owner': ownerHash,
+        }
+      },
+    );
   }
 
   String? get originContract => when(
