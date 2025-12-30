@@ -53,7 +53,7 @@ sealed class AssetOwner with _$AssetOwner {
   }
 
   /// @nodoc
-  Map<String, dynamic> toJson() {
+  dynamic toJson() {
     return when(
       none: () => 'none',
       creator: (contract, id) => {
