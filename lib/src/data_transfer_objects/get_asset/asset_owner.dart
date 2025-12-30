@@ -12,15 +12,15 @@ sealed class AssetOwner with _$AssetOwner {
 
   /// @nodoc
   const factory AssetOwner.creator({
-    @JsonKey(name: 'contract') required String contract,
-    @JsonKey(name: 'id') required int id,
+    required String contract,
+    required int id,
   }) = _Creator;
 
   /// @nodoc
   const factory AssetOwner.owner({
-    @JsonKey(name: 'origin') required String origin,
-    @JsonKey(name: 'origin_id') required int originId,
-    @JsonKey(name: 'owner') required String owner,
+    required String origin,
+    required int originId,
+    required String owner,
   }) = _Owner;
 
   factory AssetOwner.fromJson(Map<String, dynamic> json) {
