@@ -52,12 +52,15 @@ sealed class AssetOwner with _$AssetOwner {
     throw ArgumentError('Unknown AssetOwner type: ${json.keys.join(', ')}');
   }
 
+  /// @nodoc
   Map<String, dynamic> toJson() {
-    // Emit Rust's externally tagged enum-style format
     return when(
-      none: () => {'none': null},
+      none: () => 'none',
       creator: (contract, id) => {
-        'creator': {'contract': contract, 'id': id},
+        'creator': {
+          'contract': contract,
+          'id': id,
+        },
       },
       owner: (origin, originId, ownerHash) => {
         'owner': {
