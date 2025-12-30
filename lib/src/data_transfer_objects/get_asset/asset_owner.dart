@@ -51,28 +51,28 @@ sealed class AssetOwner with _$AssetOwner {
     return when(
       none: () => {'none': null},
       creator: (contract, id) => {
-        'creator': {'contract': contract, 'id': id}
+        'creator': {'contract': contract, 'id': id},
       },
       owner: (origin, originId, ownerHash) => {
         'owner': {
           'origin': origin,
           'origin_id': originId,
           'owner': ownerHash,
-        }
+        },
       },
     );
   }
 
   String? get originContract => when(
-        none: () => null,
-        creator: (contract, _) => contract,
-        owner: (origin, _, __) => origin,
-      );
+    none: () => null,
+    creator: (contract, _) => contract,
+    owner: (origin, _, __) => origin,
+  );
 
   String? get contract => maybeWhen(
-        creator: (contract, _) => contract,
-        orElse: () => null,
-      );
+    creator: (contract, _) => contract,
+    orElse: () => null,
+  );
 
   String? get currentOwner {
     return when(
@@ -83,23 +83,23 @@ sealed class AssetOwner with _$AssetOwner {
   }
 
   int? get id => maybeWhen(
-        creator: (_, id) => id,
-        owner: (_, originId, __) => originId,
-        orElse: () => null,
-      );
+    creator: (_, id) => id,
+    owner: (_, originId, __) => originId,
+    orElse: () => null,
+  );
 
   bool get isOwner => maybeWhen(
-        owner: (_, __, ___) => true,
-        orElse: () => false,
-      );
+    owner: (_, __, ___) => true,
+    orElse: () => false,
+  );
 
   bool get isCreator => maybeWhen(
-        creator: (_, __) => true,
-        orElse: () => false,
-      );
+    creator: (_, __) => true,
+    orElse: () => false,
+  );
 
   bool get isNone => maybeWhen(
-        none: () => true,
-        orElse: () => false,
-      );
+    none: () => true,
+    orElse: () => false,
+  );
 }
