@@ -166,13 +166,13 @@ return deployContract(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function(@JsonKey(name: 'transfers')  List<TransferBuilder> transfers)?  transfers,TResult Function(@JsonKey(name: 'asset')  String asset, @JsonKey(name: 'amount')  int amount)?  burn,TResult Function(@JsonKey(name: 'threshold')  int threshold, @JsonKey(name: 'participants')  List<String> participants)?  multisig,TResult Function(@JsonKey(name: 'contract')  String contract, @JsonKey(name: 'max_gas')  int maxGas, @JsonKey(name: 'chunk_id')  int chunkId, @JsonKey(name: 'parameters')  List<dynamic> parameters, @JsonKey(name: 'deposits')  Map<String, ContractDepositBuilder> deposits)?  invokeContract,TResult Function(@JsonKey(name: 'module')  String module, @JsonKey(name: 'invoke')  DeployContractInvokeBuilder? invoke)?  deployContract,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function(@JsonKey(name: 'transfers')  List<TransferBuilder> transfers)?  transfers,TResult Function(@JsonKey(name: 'asset')  String asset, @JsonKey(name: 'amount')  int amount)?  burn,TResult Function(@JsonKey(name: 'threshold')  int threshold, @JsonKey(name: 'participants')  List<String> participants)?  multisig,TResult Function(@JsonKey(name: 'contract')  String contract, @JsonKey(name: 'max_gas')  int maxGas, @JsonKey(name: 'entry_id')  int entryId, @JsonKey(name: 'parameters')  List<dynamic> parameters, @JsonKey(name: 'deposits')  Map<String, ContractDepositBuilder> deposits)?  invokeContract,TResult Function(@JsonKey(name: 'module')  String module, @JsonKey(name: 'invoke')  DeployContractInvokeBuilder? invoke)?  deployContract,required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case TransfersBuilder() when transfers != null:
 return transfers(_that.transfers);case BurnBuilder() when burn != null:
 return burn(_that.asset,_that.amount);case MultisigBuilder() when multisig != null:
 return multisig(_that.threshold,_that.participants);case InvokeContractBuilder() when invokeContract != null:
-return invokeContract(_that.contract,_that.maxGas,_that.chunkId,_that.parameters,_that.deposits);case DeployContractBuilder() when deployContract != null:
+return invokeContract(_that.contract,_that.maxGas,_that.entryId,_that.parameters,_that.deposits);case DeployContractBuilder() when deployContract != null:
 return deployContract(_that.module,_that.invoke);case _:
   return orElse();
 
@@ -191,13 +191,13 @@ return deployContract(_that.module,_that.invoke);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function(@JsonKey(name: 'transfers')  List<TransferBuilder> transfers)  transfers,required TResult Function(@JsonKey(name: 'asset')  String asset, @JsonKey(name: 'amount')  int amount)  burn,required TResult Function(@JsonKey(name: 'threshold')  int threshold, @JsonKey(name: 'participants')  List<String> participants)  multisig,required TResult Function(@JsonKey(name: 'contract')  String contract, @JsonKey(name: 'max_gas')  int maxGas, @JsonKey(name: 'chunk_id')  int chunkId, @JsonKey(name: 'parameters')  List<dynamic> parameters, @JsonKey(name: 'deposits')  Map<String, ContractDepositBuilder> deposits)  invokeContract,required TResult Function(@JsonKey(name: 'module')  String module, @JsonKey(name: 'invoke')  DeployContractInvokeBuilder? invoke)  deployContract,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function(@JsonKey(name: 'transfers')  List<TransferBuilder> transfers)  transfers,required TResult Function(@JsonKey(name: 'asset')  String asset, @JsonKey(name: 'amount')  int amount)  burn,required TResult Function(@JsonKey(name: 'threshold')  int threshold, @JsonKey(name: 'participants')  List<String> participants)  multisig,required TResult Function(@JsonKey(name: 'contract')  String contract, @JsonKey(name: 'max_gas')  int maxGas, @JsonKey(name: 'entry_id')  int entryId, @JsonKey(name: 'parameters')  List<dynamic> parameters, @JsonKey(name: 'deposits')  Map<String, ContractDepositBuilder> deposits)  invokeContract,required TResult Function(@JsonKey(name: 'module')  String module, @JsonKey(name: 'invoke')  DeployContractInvokeBuilder? invoke)  deployContract,}) {final _that = this;
 switch (_that) {
 case TransfersBuilder():
 return transfers(_that.transfers);case BurnBuilder():
 return burn(_that.asset,_that.amount);case MultisigBuilder():
 return multisig(_that.threshold,_that.participants);case InvokeContractBuilder():
-return invokeContract(_that.contract,_that.maxGas,_that.chunkId,_that.parameters,_that.deposits);case DeployContractBuilder():
+return invokeContract(_that.contract,_that.maxGas,_that.entryId,_that.parameters,_that.deposits);case DeployContractBuilder():
 return deployContract(_that.module,_that.invoke);}
 }
 /// A variant of `when` that fallback to returning `null`
@@ -212,13 +212,13 @@ return deployContract(_that.module,_that.invoke);}
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function(@JsonKey(name: 'transfers')  List<TransferBuilder> transfers)?  transfers,TResult? Function(@JsonKey(name: 'asset')  String asset, @JsonKey(name: 'amount')  int amount)?  burn,TResult? Function(@JsonKey(name: 'threshold')  int threshold, @JsonKey(name: 'participants')  List<String> participants)?  multisig,TResult? Function(@JsonKey(name: 'contract')  String contract, @JsonKey(name: 'max_gas')  int maxGas, @JsonKey(name: 'chunk_id')  int chunkId, @JsonKey(name: 'parameters')  List<dynamic> parameters, @JsonKey(name: 'deposits')  Map<String, ContractDepositBuilder> deposits)?  invokeContract,TResult? Function(@JsonKey(name: 'module')  String module, @JsonKey(name: 'invoke')  DeployContractInvokeBuilder? invoke)?  deployContract,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function(@JsonKey(name: 'transfers')  List<TransferBuilder> transfers)?  transfers,TResult? Function(@JsonKey(name: 'asset')  String asset, @JsonKey(name: 'amount')  int amount)?  burn,TResult? Function(@JsonKey(name: 'threshold')  int threshold, @JsonKey(name: 'participants')  List<String> participants)?  multisig,TResult? Function(@JsonKey(name: 'contract')  String contract, @JsonKey(name: 'max_gas')  int maxGas, @JsonKey(name: 'entry_id')  int entryId, @JsonKey(name: 'parameters')  List<dynamic> parameters, @JsonKey(name: 'deposits')  Map<String, ContractDepositBuilder> deposits)?  invokeContract,TResult? Function(@JsonKey(name: 'module')  String module, @JsonKey(name: 'invoke')  DeployContractInvokeBuilder? invoke)?  deployContract,}) {final _that = this;
 switch (_that) {
 case TransfersBuilder() when transfers != null:
 return transfers(_that.transfers);case BurnBuilder() when burn != null:
 return burn(_that.asset,_that.amount);case MultisigBuilder() when multisig != null:
 return multisig(_that.threshold,_that.participants);case InvokeContractBuilder() when invokeContract != null:
-return invokeContract(_that.contract,_that.maxGas,_that.chunkId,_that.parameters,_that.deposits);case DeployContractBuilder() when deployContract != null:
+return invokeContract(_that.contract,_that.maxGas,_that.entryId,_that.parameters,_that.deposits);case DeployContractBuilder() when deployContract != null:
 return deployContract(_that.module,_that.invoke);case _:
   return null;
 
@@ -466,12 +466,12 @@ as List<String>,
 @JsonSerializable()
 
 class InvokeContractBuilder extends TransactionTypeBuilder {
-  const InvokeContractBuilder({@JsonKey(name: 'contract') required this.contract, @JsonKey(name: 'max_gas') required this.maxGas, @JsonKey(name: 'chunk_id') required this.chunkId, @JsonKey(name: 'parameters') required final  List<dynamic> parameters, @JsonKey(name: 'deposits') required final  Map<String, ContractDepositBuilder> deposits, final  String? $type}): _parameters = parameters,_deposits = deposits,$type = $type ?? 'invokeContract',super._();
+  const InvokeContractBuilder({@JsonKey(name: 'contract') required this.contract, @JsonKey(name: 'max_gas') required this.maxGas, @JsonKey(name: 'entry_id') required this.entryId, @JsonKey(name: 'parameters') required final  List<dynamic> parameters, @JsonKey(name: 'deposits') required final  Map<String, ContractDepositBuilder> deposits, final  String? $type}): _parameters = parameters,_deposits = deposits,$type = $type ?? 'invokeContract',super._();
   factory InvokeContractBuilder.fromJson(Map<String, dynamic> json) => _$InvokeContractBuilderFromJson(json);
 
 @JsonKey(name: 'contract') final  String contract;
 @JsonKey(name: 'max_gas') final  int maxGas;
-@JsonKey(name: 'chunk_id') final  int chunkId;
+@JsonKey(name: 'entry_id') final  int entryId;
  final  List<dynamic> _parameters;
 @JsonKey(name: 'parameters') List<dynamic> get parameters {
   if (_parameters is EqualUnmodifiableListView) return _parameters;
@@ -504,16 +504,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is InvokeContractBuilder&&(identical(other.contract, contract) || other.contract == contract)&&(identical(other.maxGas, maxGas) || other.maxGas == maxGas)&&(identical(other.chunkId, chunkId) || other.chunkId == chunkId)&&const DeepCollectionEquality().equals(other._parameters, _parameters)&&const DeepCollectionEquality().equals(other._deposits, _deposits));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is InvokeContractBuilder&&(identical(other.contract, contract) || other.contract == contract)&&(identical(other.maxGas, maxGas) || other.maxGas == maxGas)&&(identical(other.entryId, entryId) || other.entryId == entryId)&&const DeepCollectionEquality().equals(other._parameters, _parameters)&&const DeepCollectionEquality().equals(other._deposits, _deposits));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,contract,maxGas,chunkId,const DeepCollectionEquality().hash(_parameters),const DeepCollectionEquality().hash(_deposits));
+int get hashCode => Object.hash(runtimeType,contract,maxGas,entryId,const DeepCollectionEquality().hash(_parameters),const DeepCollectionEquality().hash(_deposits));
 
 @override
 String toString() {
-  return 'TransactionTypeBuilder.invokeContract(contract: $contract, maxGas: $maxGas, chunkId: $chunkId, parameters: $parameters, deposits: $deposits)';
+  return 'TransactionTypeBuilder.invokeContract(contract: $contract, maxGas: $maxGas, entryId: $entryId, parameters: $parameters, deposits: $deposits)';
 }
 
 
@@ -524,7 +524,7 @@ abstract mixin class $InvokeContractBuilderCopyWith<$Res> implements $Transactio
   factory $InvokeContractBuilderCopyWith(InvokeContractBuilder value, $Res Function(InvokeContractBuilder) _then) = _$InvokeContractBuilderCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(name: 'contract') String contract,@JsonKey(name: 'max_gas') int maxGas,@JsonKey(name: 'chunk_id') int chunkId,@JsonKey(name: 'parameters') List<dynamic> parameters,@JsonKey(name: 'deposits') Map<String, ContractDepositBuilder> deposits
+@JsonKey(name: 'contract') String contract,@JsonKey(name: 'max_gas') int maxGas,@JsonKey(name: 'entry_id') int entryId,@JsonKey(name: 'parameters') List<dynamic> parameters,@JsonKey(name: 'deposits') Map<String, ContractDepositBuilder> deposits
 });
 
 
@@ -541,11 +541,11 @@ class _$InvokeContractBuilderCopyWithImpl<$Res>
 
 /// Create a copy of TransactionTypeBuilder
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? contract = null,Object? maxGas = null,Object? chunkId = null,Object? parameters = null,Object? deposits = null,}) {
+@pragma('vm:prefer-inline') $Res call({Object? contract = null,Object? maxGas = null,Object? entryId = null,Object? parameters = null,Object? deposits = null,}) {
   return _then(InvokeContractBuilder(
 contract: null == contract ? _self.contract : contract // ignore: cast_nullable_to_non_nullable
 as String,maxGas: null == maxGas ? _self.maxGas : maxGas // ignore: cast_nullable_to_non_nullable
-as int,chunkId: null == chunkId ? _self.chunkId : chunkId // ignore: cast_nullable_to_non_nullable
+as int,entryId: null == entryId ? _self.entryId : entryId // ignore: cast_nullable_to_non_nullable
 as int,parameters: null == parameters ? _self._parameters : parameters // ignore: cast_nullable_to_non_nullable
 as List<dynamic>,deposits: null == deposits ? _self._deposits : deposits // ignore: cast_nullable_to_non_nullable
 as Map<String, ContractDepositBuilder>,

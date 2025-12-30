@@ -3,23 +3,20 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'asset_owner.freezed.dart';
 
 /// @nodoc
-@Freezed(unionKey: 'type', unionValueCase: FreezedUnionCase.none)
+@freezed
 sealed class AssetOwner with _$AssetOwner {
   const AssetOwner._();
 
   /// @nodoc
-  @FreezedUnionValue('None')
   const factory AssetOwner.none() = _None;
 
   /// @nodoc
-  @FreezedUnionValue('Creator')
   const factory AssetOwner.creator({
     required String contract,
     required int id,
   }) = _Creator;
 
   /// @nodoc
-  @FreezedUnionValue('Owner')
   const factory AssetOwner.owner({
     required String origin,
     required int originId,
@@ -51,6 +48,7 @@ sealed class AssetOwner with _$AssetOwner {
         owner: data['owner'] as String,
       );
     }
+
     throw ArgumentError('Unknown AssetOwner type: ${json.keys.join(', ')}');
   }
 
@@ -74,56 +72,43 @@ sealed class AssetOwner with _$AssetOwner {
     );
   }
 
-  /// Returns the origin contract hash
-  /// For Creator variants, returns the contract
-  /// For Owner variants, returns the origin
-  /// For None variants, returns null
-  String? get originContract {
+  String? get originContract => when(
+    none: () => null,
+    creator: (contract, _) => contract,
+    owner: (origin, _, __) => origin,
+  );
+
+  String? get contract => maybeWhen(
+    creator: (contract, _) => contract,
+    orElse: () => null,
+  );
+
+  String? get currentOwner {
     return when(
       none: () => null,
       creator: (contract, _) => contract,
-      owner: (origin, _, _) => origin,
+      owner: (_, __, ownerHash) => ownerHash,
     );
   }
 
-  /// Returns the contract hash (only for Creator variants)
-  String? get contract {
-    return maybeWhen(
-      creator: (contract, _) => contract,
-      orElse: () => null,
-    );
-  }
+  int? get id => maybeWhen(
+    creator: (_, id) => id,
+    owner: (_, originId, __) => originId,
+    orElse: () => null,
+  );
 
-  /// Returns the id used to create the asset
-  int? get id {
-    return maybeWhen(
-      creator: (_, id) => id,
-      owner: (_, originId, _) => originId,
-      orElse: () => null,
-    );
-  }
+  bool get isOwner => maybeWhen(
+    owner: (_, __, ___) => true,
+    orElse: () => false,
+  );
 
-  /// Returns true if this is an Owner variant
-  bool get isOwner {
-    return maybeWhen(
-      owner: (_, _, _) => true,
-      orElse: () => false,
-    );
-  }
+  bool get isCreator => maybeWhen(
+    creator: (_, __) => true,
+    orElse: () => false,
+  );
 
-  /// Returns true if this is a Creator variant
-  bool get isCreator {
-    return maybeWhen(
-      creator: (_, _) => true,
-      orElse: () => false,
-    );
-  }
-
-  /// Returns true if this is a None variant
-  bool get isNone {
-    return maybeWhen(
-      none: () => true,
-      orElse: () => false,
-    );
-  }
+  bool get isNone => maybeWhen(
+    none: () => true,
+    orElse: () => false,
+  );
 }

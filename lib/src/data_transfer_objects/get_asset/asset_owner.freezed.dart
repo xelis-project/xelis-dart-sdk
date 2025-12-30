@@ -122,7 +122,7 @@ return owner(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  none,TResult Function( String contract,  int id)?  creator,TResult Function( String origin,  int originId,  String owner)?  owner,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  none,TResult Function(@JsonKey(name: 'contract')  String contract, @JsonKey(name: 'id')  int id)?  creator,TResult Function(@JsonKey(name: 'origin')  String origin, @JsonKey(name: 'origin_id')  int originId, @JsonKey(name: 'owner')  String owner)?  owner,required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _None() when none != null:
 return none();case _Creator() when creator != null:
@@ -145,7 +145,7 @@ return owner(_that.origin,_that.originId,_that.owner);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  none,required TResult Function( String contract,  int id)  creator,required TResult Function( String origin,  int originId,  String owner)  owner,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  none,required TResult Function(@JsonKey(name: 'contract')  String contract, @JsonKey(name: 'id')  int id)  creator,required TResult Function(@JsonKey(name: 'origin')  String origin, @JsonKey(name: 'origin_id')  int originId, @JsonKey(name: 'owner')  String owner)  owner,}) {final _that = this;
 switch (_that) {
 case _None():
 return none();case _Creator():
@@ -164,7 +164,7 @@ return owner(_that.origin,_that.originId,_that.owner);}
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  none,TResult? Function( String contract,  int id)?  creator,TResult? Function( String origin,  int originId,  String owner)?  owner,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  none,TResult? Function(@JsonKey(name: 'contract')  String contract, @JsonKey(name: 'id')  int id)?  creator,TResult? Function(@JsonKey(name: 'origin')  String origin, @JsonKey(name: 'origin_id')  int originId, @JsonKey(name: 'owner')  String owner)?  owner,}) {final _that = this;
 switch (_that) {
 case _None() when none != null:
 return none();case _Creator() when creator != null:
@@ -213,11 +213,11 @@ String toString() {
 
 
 class _Creator extends AssetOwner {
-  const _Creator({required this.contract, required this.id}): super._();
+  const _Creator({@JsonKey(name: 'contract') required this.contract, @JsonKey(name: 'id') required this.id}): super._();
   
 
- final  String contract;
- final  int id;
+@JsonKey(name: 'contract') final  String contract;
+@JsonKey(name: 'id') final  int id;
 
 /// Create a copy of AssetOwner
 /// with the given fields replaced by the non-null parameter values.
@@ -249,7 +249,7 @@ abstract mixin class _$CreatorCopyWith<$Res> implements $AssetOwnerCopyWith<$Res
   factory _$CreatorCopyWith(_Creator value, $Res Function(_Creator) _then) = __$CreatorCopyWithImpl;
 @useResult
 $Res call({
- String contract, int id
+@JsonKey(name: 'contract') String contract,@JsonKey(name: 'id') int id
 });
 
 
@@ -281,12 +281,12 @@ as int,
 
 
 class _Owner extends AssetOwner {
-  const _Owner({required this.origin, required this.originId, required this.owner}): super._();
+  const _Owner({@JsonKey(name: 'origin') required this.origin, @JsonKey(name: 'origin_id') required this.originId, @JsonKey(name: 'owner') required this.owner}): super._();
   
 
- final  String origin;
- final  int originId;
- final  String owner;
+@JsonKey(name: 'origin') final  String origin;
+@JsonKey(name: 'origin_id') final  int originId;
+@JsonKey(name: 'owner') final  String owner;
 
 /// Create a copy of AssetOwner
 /// with the given fields replaced by the non-null parameter values.
@@ -318,7 +318,7 @@ abstract mixin class _$OwnerCopyWith<$Res> implements $AssetOwnerCopyWith<$Res> 
   factory _$OwnerCopyWith(_Owner value, $Res Function(_Owner) _then) = __$OwnerCopyWithImpl;
 @useResult
 $Res call({
- String origin, int originId, String owner
+@JsonKey(name: 'origin') String origin,@JsonKey(name: 'origin_id') int originId,@JsonKey(name: 'owner') String owner
 });
 
 
