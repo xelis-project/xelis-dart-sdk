@@ -1,4 +1,14 @@
+## 0.30.9
+
+- update contract deploy structure
+- fix chunk_id -> entry_id
+- restore currentOwner getter in AssetOwner
+- fix toJson serialization in AssetOwner
+- make new SDK objects match existing freezed conventions
+- misc cleanup
+
 ## 0.30.8
+
 - fix AssetData, AssetOwner, MaxSupplyMode serialization
 
 ## 0.30.7
