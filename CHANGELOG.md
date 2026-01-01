@@ -1,3 +1,7 @@
+## 0.30.10
+
+- added xvm_serializer
+
 ## 0.30.9
 
 - update contract deploy structure
