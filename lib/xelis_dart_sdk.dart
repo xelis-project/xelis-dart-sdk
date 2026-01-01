@@ -1,6 +1,7 @@
 /// Software Development Kit in Dart for Xelis Blockchain.
 library;
 
+export 'src/contract/xvm_serializer.dart';
 export 'src/data_transfer_objects/dtos.dart';
 export 'src/repositories/common/client_state.dart' show ClientState;
 export 'src/repositories/common/xelis_constants.dart';
