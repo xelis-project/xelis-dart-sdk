@@ -834,7 +834,7 @@ dynamic parseValueCell(dynamic data, [ParseContext? context]) {
 
     for (final entry in data.entries) {
       final subContext = context?.copyWith(
-        path: [...context?.path ?? [], entry.key],
+        path: [...context.path, entry.key],
       );
 
       result[entry.key] = parseValueCell(entry.value, subContext);
@@ -860,7 +860,7 @@ dynamic parseValueCell(dynamic data, [ParseContext? context]) {
             ? {'type': 'array', 'value': parsedArray}
             : parsedArray;
       }
-      return [];
+      return <dynamic>[];
 
     case 'object':
       if (value is List) {
@@ -869,7 +869,7 @@ dynamic parseValueCell(dynamic data, [ParseContext? context]) {
             ? {'type': 'object', 'value': parsedObject}
             : parsedObject;
       }
-      return [];
+      return <dynamic>[];
 
     case 'option':
       final parsedOption = value != null
@@ -983,10 +983,10 @@ abstract class ParsedValue {
   bool get isOption => type == 'option';
 
   /// Safe type conversions
-  String? get asString => value is String ? value : null;
-  int? get asInt => value is int ? value : null;
-  BigInt? get asBigInt => value is BigInt ? value : null;
-  bool? get asBool => value is bool ? value : null;
+  String? get asString => value is String ? value as String : null;
+  int? get asInt => value is int ? value as int : null;
+  BigInt? get asBigInt => value is BigInt ? value as BigInt : null;
+  bool? get asBool => value is bool ? value as bool : null;
   List<ParsedValue>? get asList =>
       this is ParsedArray ? (this as ParsedArray).items : null;
   Map<String, dynamic>? get asMap =>
@@ -1038,16 +1038,16 @@ class ParsedPrimitive implements ParsedValue {
   bool get isOption => false;
 
   @override
-  String? get asString => value is String ? value : null;
+  String? get asString => value is String ? value as String : null;
 
   @override
-  int? get asInt => value is int ? value : null;
+  int? get asInt => value is int ? value as int : null;
 
   @override
-  BigInt? get asBigInt => value is BigInt ? value : null;
+  BigInt? get asBigInt => value is BigInt ? value as BigInt : null;
 
   @override
-  bool? get asBool => value is bool ? value : null;
+  bool? get asBool => value is bool ? value as bool : null;
 
   @override
   List<ParsedValue>? get asList => null;
@@ -1392,7 +1392,6 @@ ParsedValue _deserializePrimitive(dynamic value) {
   // Handle opaque types
   if (type == 'opaque' && primitiveValue is Map<String, dynamic>) {
     final opaqueType = primitiveValue['type'] as String?;
-    final opaqueValue = primitiveValue['value'];
     final parsed = parseValueCell({'type': 'primitive', 'value': value});
     return ParsedPrimitive(type: opaqueType ?? 'unknown', value: parsed);
   }
