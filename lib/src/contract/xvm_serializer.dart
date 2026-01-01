@@ -16,9 +16,9 @@ class VMParameter {
   });
 
   Map<String, dynamic> toJson() => {
-        'type': type,
-        'value': value,
-      };
+    'type': type,
+    'value': value,
+  };
 
   factory VMParameter.fromJson(Map<String, dynamic> json) {
     return VMParameter(
@@ -145,7 +145,9 @@ VMParameter createVMPrimitive(
     try {
       processedValue = _typeValidators[type]!(value);
     } catch (error) {
-      throw ArgumentError('Failed to create VM parameter for type $type: $error');
+      throw ArgumentError(
+        'Failed to create VM parameter for type $type: $error',
+      );
     }
   }
 
@@ -175,7 +177,9 @@ VMParameter createVMPrimitive(
 
 /// Serialize an array of values
 VMParameter serializeArray(List<dynamic> items, String itemType) {
-  final serializedItems = items.map((item) => createVMParameter(item, itemType)).toList();
+  final serializedItems = items
+      .map((item) => createVMParameter(item, itemType))
+      .toList();
 
   return VMParameter(
     type: 'array',
@@ -221,8 +225,10 @@ VMParameter serializeOptional(dynamic value, String innerType) {
 /// Convenience functions for common types
 abstract class VMParam {
   static VMParameter hash(String value) => createVMPrimitive(value, 'Hash');
-  static VMParameter address(String value) => createVMPrimitive(value, 'Address');
-  static VMParameter publicKey(String value) => createVMPrimitive(value, 'PublicKey');
+  static VMParameter address(String value) =>
+      createVMPrimitive(value, 'Address');
+  static VMParameter publicKey(String value) =>
+      createVMPrimitive(value, 'PublicKey');
   static VMParameter blob(String value) => createVMPrimitive(value, 'Blob');
 
   static VMParameter u256(dynamic value) => createVMPrimitive(value, 'u256');
@@ -363,7 +369,9 @@ class StructType implements SerializableType {
     for (final fieldSchema in fields) {
       final fieldValue = value[fieldSchema.name];
       if (fieldValue == null) {
-        throw ArgumentError("Missing field '${fieldSchema.name}' for struct '$name'");
+        throw ArgumentError(
+          "Missing field '${fieldSchema.name}' for struct '$name'",
+        );
       }
       params.add(createVMParameter(fieldValue, fieldSchema.type).toJson());
     }
@@ -404,7 +412,9 @@ VMParameter createVMParameter(
     return value;
   }
 
-  if (value is Map<String, dynamic> && value.containsKey('type') && value.containsKey('value')) {
+  if (value is Map<String, dynamic> &&
+      value.containsKey('type') &&
+      value.containsKey('value')) {
     return VMParameter.fromJson(value);
   }
 
@@ -412,7 +422,9 @@ VMParameter createVMParameter(
   if (type.endsWith('[]')) {
     final innerType = type.substring(0, type.length - 2);
     if (value is! List) {
-      throw ArgumentError('Expected List for type $type, got ${value.runtimeType}');
+      throw ArgumentError(
+        'Expected List for type $type, got ${value.runtimeType}',
+      );
     }
     return serializeArray(value, innerType);
   }
@@ -429,13 +441,18 @@ VMParameter createVMParameter(
     final keyType = mapMatch.group(1)!.trim();
     final valueType = mapMatch.group(2)!.trim();
     if (value is! Map) {
-      throw ArgumentError('Expected Map for type $type, got ${value.runtimeType}');
+      throw ArgumentError(
+        'Expected Map for type $type, got ${value.runtimeType}',
+      );
     }
     return serializeMap(value, keyType, valueType);
   }
 
   // Generic enum/struct notations: enum<Foo>, struct<Bar>
-  final enumGeneric = RegExp(r'^enum<\s*([^>]+)\s*>$', caseSensitive: false).firstMatch(type);
+  final enumGeneric = RegExp(
+    r'^enum<\s*([^>]+)\s*>$',
+    caseSensitive: false,
+  ).firstMatch(type);
   if (enumGeneric != null) {
     final realType = enumGeneric.group(1)!.trim();
     final custom = typeRegistry.get(realType);
@@ -445,7 +462,10 @@ VMParameter createVMParameter(
     return custom.toVMParameter(value);
   }
 
-  final structGeneric = RegExp(r'^struct<\s*([^>]+)\s*>$', caseSensitive: false).firstMatch(type);
+  final structGeneric = RegExp(
+    r'^struct<\s*([^>]+)\s*>$',
+    caseSensitive: false,
+  ).firstMatch(type);
   if (structGeneric != null) {
     final realType = structGeneric.group(1)!.trim();
     final custom = typeRegistry.get(realType);
@@ -462,7 +482,9 @@ VMParameter createVMParameter(
   }
 
   // Fix for ABI that says literally "enum"/"struct"
-  if (type == 'enum' && value is Map<String, dynamic> && value.containsKey('type')) {
+  if (type == 'enum' &&
+      value is Map<String, dynamic> &&
+      value.containsKey('type')) {
     final variantName = value['type'] as String;
     for (final t in typeRegistry.all) {
       if (t is EnumType && t.hasVariant(variantName)) {
@@ -475,7 +497,9 @@ VMParameter createVMParameter(
   }
 
   if (type == 'struct') {
-    throw ArgumentError('Unknown struct subtype; ABI must specify struct<Foo> or a named type');
+    throw ArgumentError(
+      'Unknown struct subtype; ABI must specify struct<Foo> or a named type',
+    );
   }
 
   // Primitive fallback
@@ -491,7 +515,9 @@ VMParameter createVMParameter(
 // ============================================================================
 
 /// Creates a deposits object for contract calls
-Map<String, Map<String, dynamic>> createDeposits(Map<String, dynamic> deposits) {
+Map<String, Map<String, dynamic>> createDeposits(
+  Map<String, dynamic> deposits,
+) {
   final result = <String, Map<String, dynamic>>{};
 
   for (final entry in deposits.entries) {
@@ -537,7 +563,7 @@ Map<String, dynamic> createContractInvocation(ContractInvocationParams params) {
       'entry_id': params.entryId,
       'permission': params.permission,
       'parameters': params.parameters.map((p) => p.toJson()).toList(),
-    }
+    },
   };
 
   if (params.deposits != null && params.deposits!.isNotEmpty) {
@@ -565,7 +591,7 @@ Map<String, dynamic> createContractDeployment(ContractDeploymentParams params) {
   final result = <String, dynamic>{
     'deploy_contract': {
       'module': params.bytecode,
-    }
+    },
   };
 
   if (params.hasConstructor) {
@@ -622,8 +648,8 @@ class ParseContext {
     List<({String path, Exception error})>? errors,
     this.preserveTypes = false,
     this.inMap = false,
-  })  : unknownTypes = unknownTypes ?? <String>{},
-        errors = errors ?? [];
+  }) : unknownTypes = unknownTypes ?? <String>{},
+       errors = errors ?? [];
 
   ParseContext copyWith({
     List<String>? path,
@@ -653,7 +679,10 @@ class ParseContext {
     current = current['value'];
   }
 
-  return (type: finalType.isEmpty ? current.runtimeType.toString() : finalType, value: current);
+  return (
+    type: finalType.isEmpty ? current.runtimeType.toString() : finalType,
+    value: current,
+  );
 }
 
 /// Parse typed value with conversion to native Dart types
@@ -721,7 +750,8 @@ dynamic _parseMap(List<dynamic> mapData, [ParseContext? context]) {
   }
 
   // Parse all entries - mark that we're in a map
-  final mapContext = context?.copyWith(inMap: true) ??
+  final mapContext =
+      context?.copyWith(inMap: true) ??
       ParseContext(
         path: const [],
         unknownTypes: <String>{},
@@ -842,7 +872,9 @@ dynamic parseValueCell(dynamic data, [ParseContext? context]) {
       return [];
 
     case 'option':
-      final parsedOption = value != null ? parseValueCell(value, context) : null;
+      final parsedOption = value != null
+          ? parseValueCell(value, context)
+          : null;
       return context != null && context.preserveTypes && !context.inMap
           ? {'type': 'option', 'value': parsedOption}
           : parsedOption;
@@ -871,7 +903,8 @@ dynamic parseValueCell(dynamic data, [ParseContext? context]) {
 }
 
 /// Deep transform function with type preservation option
-({T parsed, ParseMetadata metadata}) deepTransform<T extends Map<String, dynamic>>(
+({T parsed, ParseMetadata metadata})
+deepTransform<T extends Map<String, dynamic>>(
   T data, {
   bool preserveTypes = false,
 }) {
@@ -943,7 +976,8 @@ abstract class ParsedValue {
   bool get isBlob => type == 'Blob';
   bool get isString => type == 'string';
   bool get isBool => type == 'boolean';
-  bool get isNumber => const ['u8', 'u16', 'u32', 'u64', 'u128', 'u256'].contains(type);
+  bool get isNumber =>
+      const ['u8', 'u16', 'u32', 'u64', 'u128', 'u256'].contains(type);
   bool get isArray => type == 'array' || type == 'object';
   bool get isMap => type == 'map';
   bool get isOption => type == 'option';
@@ -953,8 +987,10 @@ abstract class ParsedValue {
   int? get asInt => value is int ? value : null;
   BigInt? get asBigInt => value is BigInt ? value : null;
   bool? get asBool => value is bool ? value : null;
-  List<ParsedValue>? get asList => this is ParsedArray ? (this as ParsedArray).items : null;
-  Map<String, dynamic>? get asMap => value is Map ? value as Map<String, dynamic> : null;
+  List<ParsedValue>? get asList =>
+      this is ParsedArray ? (this as ParsedArray).items : null;
+  Map<String, dynamic>? get asMap =>
+      value is Map ? value as Map<String, dynamic> : null;
 }
 
 /// Primitive value (numbers, strings, hashes, etc.)
@@ -989,7 +1025,8 @@ class ParsedPrimitive implements ParsedValue {
   bool get isBool => type == 'boolean';
 
   @override
-  bool get isNumber => const ['u8', 'u16', 'u32', 'u64', 'u128', 'u256'].contains(type);
+  bool get isNumber =>
+      const ['u8', 'u16', 'u32', 'u64', 'u128', 'u256'].contains(type);
 
   @override
   bool get isArray => false;
@@ -1086,7 +1123,8 @@ class ParsedArray implements ParsedValue {
   Map<String, dynamic>? get asMap => null;
 
   /// Get item at index
-  ParsedValue? operator [](int index) => index < items.length ? items[index] : null;
+  ParsedValue? operator [](int index) =>
+      index < items.length ? items[index] : null;
 
   /// Get length
   int get length => items.length;
@@ -1317,9 +1355,17 @@ ParsedValue deserializeValueCell(dynamic json) {
           }
         }
 
-        return ParsedMap(entries: entries, keyType: keyType, valueType: valueType);
+        return ParsedMap(
+          entries: entries,
+          keyType: keyType,
+          valueType: valueType,
+        );
       }
-      return const ParsedMap(entries: {}, keyType: 'unknown', valueType: 'unknown');
+      return const ParsedMap(
+        entries: {},
+        keyType: 'unknown',
+        valueType: 'unknown',
+      );
 
     case 'option':
       if (value == null) {
