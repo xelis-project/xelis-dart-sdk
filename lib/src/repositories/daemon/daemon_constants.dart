@@ -194,9 +194,10 @@ enum DaemonMethod implements XelisJsonKey {
   /// Get the estimated fee rates.
   getEstimatedFeeRates('get_estimated_fee_rates'),
 
-  /// Retrieve the contract outputs that have occurred in the requested transaction hash.
-  ///
-  /// It contains, the refunded gas amount, exit code and transfers.
+  /// Retrieve the contract logs that occurred in the requested transaction hash.
+  getContractLogs('get_contract_logs'),
+
+  @Deprecated('Use getContractLogs instead')
   getContractOutputs('get_contract_outputs'),
 
   /// TODO: Add documentation

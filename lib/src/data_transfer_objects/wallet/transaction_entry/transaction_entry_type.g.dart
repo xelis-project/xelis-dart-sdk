@@ -91,8 +91,10 @@ InvokeContractEntry _$InvokeContractEntryFromJson(Map<String, dynamic> json) =>
     InvokeContractEntry(
       contract: json['contract'] as String,
       deposits: Map<String, int>.from(json['deposits'] as Map),
-      entryId: (json['entry_id'] as num).toInt(),
+      received: Map<String, int>.from(json['received'] as Map),
+      chunkId: (json['chunk_id'] as num).toInt(),
       fee: (json['fee'] as num).toInt(),
+      maxGas: (json['max_gas'] as num).toInt(),
       nonce: (json['nonce'] as num).toInt(),
       $type: json['runtimeType'] as String?,
     );
@@ -102,8 +104,10 @@ Map<String, dynamic> _$InvokeContractEntryToJson(
 ) => <String, dynamic>{
   'contract': instance.contract,
   'deposits': instance.deposits,
-  'entry_id': instance.entryId,
+  'received': instance.received,
+  'chunk_id': instance.chunkId,
   'fee': instance.fee,
+  'max_gas': instance.maxGas,
   'nonce': instance.nonce,
   'runtimeType': instance.$type,
 };
@@ -124,5 +128,19 @@ Map<String, dynamic> _$DeployContractEntryToJson(
   'fee': instance.fee,
   'nonce': instance.nonce,
   'invoke': instance.invoke,
+  'runtimeType': instance.$type,
+};
+
+IncomingContractEntry _$IncomingContractEntryFromJson(
+  Map<String, dynamic> json,
+) => IncomingContractEntry(
+  transfers: Map<String, int>.from(json['transfers'] as Map),
+  $type: json['runtimeType'] as String?,
+);
+
+Map<String, dynamic> _$IncomingContractEntryToJson(
+  IncomingContractEntry instance,
+) => <String, dynamic>{
+  'transfers': instance.transfers,
   'runtimeType': instance.$type,
 };

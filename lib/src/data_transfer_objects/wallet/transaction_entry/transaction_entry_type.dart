@@ -46,8 +46,10 @@ sealed class TransactionEntryType with _$TransactionEntryType {
   const factory TransactionEntryType.invokeContract({
     @JsonKey(name: 'contract') required String contract,
     @JsonKey(name: 'deposits') required Map<String, int> deposits,
-    @JsonKey(name: 'entry_id') required int entryId,
+    @JsonKey(name: 'received') required Map<String, int> received,
+    @JsonKey(name: 'chunk_id') required int chunkId,
     @JsonKey(name: 'fee') required int fee,
+    @JsonKey(name: 'max_gas') required int maxGas,
     @JsonKey(name: 'nonce') required int nonce,
   }) = InvokeContractEntry;
 
@@ -56,6 +58,10 @@ sealed class TransactionEntryType with _$TransactionEntryType {
     @JsonKey(name: 'nonce') required int nonce,
     @JsonKey(name: 'invoke') DeployInvoke? invoke,
   }) = DeployContractEntry;
+
+  const factory TransactionEntryType.incomingContract({
+    @JsonKey(name: 'transfers') required Map<String, int> transfers,
+  }) = IncomingContractEntry;
 
   /// @nodoc
   factory TransactionEntryType.fromJson(Map<String, dynamic> json) =>

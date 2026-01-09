@@ -36,7 +36,7 @@ abstract class RPCAssetData with _$RPCAssetData {
       _$RPCAssetDataFromJson(json);
 }
 
-MaxSupplyMode _maxSupplyFromJson(Map<String, dynamic> json) =>
+MaxSupplyMode _maxSupplyFromJson(dynamic json) =>
     MaxSupplyMode.fromJson(json);
 
 dynamic _maxSupplyToJson(MaxSupplyMode maxSupply) => maxSupply.toJson();
