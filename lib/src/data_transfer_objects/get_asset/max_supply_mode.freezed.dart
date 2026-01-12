@@ -122,7 +122,7 @@ return mintable(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  none,TResult Function( int value)?  fixed,TResult Function( int value)?  mintable,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  none,TResult Function( BigInt value)?  fixed,TResult Function( BigInt value)?  mintable,required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _None() when none != null:
 return none();case _Fixed() when fixed != null:
@@ -145,7 +145,7 @@ return mintable(_that.value);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  none,required TResult Function( int value)  fixed,required TResult Function( int value)  mintable,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  none,required TResult Function( BigInt value)  fixed,required TResult Function( BigInt value)  mintable,}) {final _that = this;
 switch (_that) {
 case _None():
 return none();case _Fixed():
@@ -164,7 +164,7 @@ return mintable(_that.value);}
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  none,TResult? Function( int value)?  fixed,TResult? Function( int value)?  mintable,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  none,TResult? Function( BigInt value)?  fixed,TResult? Function( BigInt value)?  mintable,}) {final _that = this;
 switch (_that) {
 case _None() when none != null:
 return none();case _Fixed() when fixed != null:
@@ -216,7 +216,7 @@ class _Fixed extends MaxSupplyMode {
   const _Fixed(this.value): super._();
   
 
- final  int value;
+ final  BigInt value;
 
 /// Create a copy of MaxSupplyMode
 /// with the given fields replaced by the non-null parameter values.
@@ -248,7 +248,7 @@ abstract mixin class _$FixedCopyWith<$Res> implements $MaxSupplyModeCopyWith<$Re
   factory _$FixedCopyWith(_Fixed value, $Res Function(_Fixed) _then) = __$FixedCopyWithImpl;
 @useResult
 $Res call({
- int value
+ BigInt value
 });
 
 
@@ -268,7 +268,7 @@ class __$FixedCopyWithImpl<$Res>
 @pragma('vm:prefer-inline') $Res call({Object? value = null,}) {
   return _then(_Fixed(
 null == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
-as int,
+as BigInt,
   ));
 }
 
@@ -282,7 +282,7 @@ class _Mintable extends MaxSupplyMode {
   const _Mintable(this.value): super._();
   
 
- final  int value;
+ final  BigInt value;
 
 /// Create a copy of MaxSupplyMode
 /// with the given fields replaced by the non-null parameter values.
@@ -314,7 +314,7 @@ abstract mixin class _$MintableCopyWith<$Res> implements $MaxSupplyModeCopyWith<
   factory _$MintableCopyWith(_Mintable value, $Res Function(_Mintable) _then) = __$MintableCopyWithImpl;
 @useResult
 $Res call({
- int value
+ BigInt value
 });
 
 
@@ -334,7 +334,7 @@ class __$MintableCopyWithImpl<$Res>
 @pragma('vm:prefer-inline') $Res call({Object? value = null,}) {
   return _then(_Mintable(
 null == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
-as int,
+as BigInt,
   ));
 }
 

@@ -11,10 +11,10 @@ sealed class MaxSupplyMode with _$MaxSupplyMode {
   const factory MaxSupplyMode.none() = _None;
 
   /// @nodoc
-  const factory MaxSupplyMode.fixed(int value) = _Fixed;
+  const factory MaxSupplyMode.fixed(BigInt value) = _Fixed;
 
   /// @nodoc
-  const factory MaxSupplyMode.mintable(int value) = _Mintable;
+  const factory MaxSupplyMode.mintable(BigInt value) = _Mintable;
 
   /// @nodoc
   factory MaxSupplyMode.fromJson(dynamic json) {
@@ -27,9 +27,9 @@ sealed class MaxSupplyMode with _$MaxSupplyMode {
 
     json as Map<String, dynamic>;
     if (json.containsKey('fixed')) {
-      return MaxSupplyMode.fixed(json['fixed'] as int);
+      return MaxSupplyMode.fixed(json['fixed'] as BigInt);
     } else if (json.containsKey('mintable')) {
-      return MaxSupplyMode.mintable(json['mintable'] as int);
+      return MaxSupplyMode.mintable(json['mintable'] as BigInt);
     }
     throw ArgumentError('Unknown MaxSupplyMode type: ${json.keys.join(', ')}');
   }
@@ -44,7 +44,7 @@ sealed class MaxSupplyMode with _$MaxSupplyMode {
   }
 
   /// Returns the max supply value if set
-  int? getMax() {
+  BigInt? getMax() {
     return maybeWhen(
       fixed: (value) => value,
       mintable: (value) => value,
@@ -53,7 +53,7 @@ sealed class MaxSupplyMode with _$MaxSupplyMode {
   }
 
   /// Checks if minting the given amount is allowed with the current supply
-  bool allowMinting(int currentSupply, int amount) {
+  bool allowMinting(BigInt currentSupply, BigInt amount) {
     return when(
       none: () => true,
       fixed: (_) => false,
