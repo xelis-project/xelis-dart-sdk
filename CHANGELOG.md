@@ -1,3 +1,7 @@
+## 0.30.11
+
+- use BigInt for MaxSupplyMode DTO
+
 ## 0.30.10
 
 - added xvm_serializer
