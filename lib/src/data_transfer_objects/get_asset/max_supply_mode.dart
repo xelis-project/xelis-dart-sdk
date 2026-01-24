@@ -27,9 +27,9 @@ sealed class MaxSupplyMode with _$MaxSupplyMode {
 
     json as Map<String, dynamic>;
     if (json.containsKey('fixed')) {
-      return MaxSupplyMode.fixed(json['fixed'] as BigInt);
+      return MaxSupplyMode.fixed(BigInt.from(json['fixed'] as num));
     } else if (json.containsKey('mintable')) {
-      return MaxSupplyMode.mintable(json['mintable'] as BigInt);
+      return MaxSupplyMode.mintable(BigInt.from(json['mintable'] as num));
     }
     throw ArgumentError('Unknown MaxSupplyMode type: ${json.keys.join(', ')}');
   }
