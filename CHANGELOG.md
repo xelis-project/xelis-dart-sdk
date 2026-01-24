@@ -1,3 +1,7 @@
+## 0.30.12
+
+- ensure proper conversion of JSON values to BigInt in MaxSupplyMode 
+
 ## 0.30.11
 
 - use BigInt for MaxSupplyMode DTO
