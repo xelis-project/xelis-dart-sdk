@@ -5,6 +5,9 @@
 ## 0.30.10
 
 - added xvm_serializer
+- new getContractLogs (deprecated getContractOutputs)
+- fix InvokeContract properties
+- add missing IncomingContract
 
 ## 0.30.9
 
