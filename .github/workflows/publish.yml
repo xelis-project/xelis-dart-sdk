@@ -2,12 +2,16 @@ name: Publish to pub.dev
 
 on:
   push:
+    branches:
+      - main
     tags:
       - 'v[0-9]+.[0-9]+.[0-9]+*'
 
 # Publish using custom workflow
 jobs:
   publish:
+    # This workflow can be triggered by pushes to main and by version tags; only publish on tags.
+    if: github.ref_type == 'tag'
     permissions:
       id-token: write # This is required for authentication using OIDC
     runs-on: ubuntu-latest
