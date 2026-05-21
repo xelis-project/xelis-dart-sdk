@@ -129,7 +129,8 @@ enum WalletMethod implements XelisJsonKey {
   hasKey('has_key'),
 
   /// TODO: implement
-  queryDB('query_db');
+  queryDB('query_db')
+  ;
   //----------------------------------------------------------------------------
 
   /// Creates a new [WalletMethod] instance.
@@ -180,7 +181,8 @@ enum WalletEvent implements XelisJsonKey {
   trackAsset('track_asset'),
 
   /// When a asset is untracked by the wallet.
-  untrackAsset('untrack_asset');
+  untrackAsset('untrack_asset')
+  ;
 
   /// Creates a new [WalletEvent] instance.
   const WalletEvent(this.jsonKey);

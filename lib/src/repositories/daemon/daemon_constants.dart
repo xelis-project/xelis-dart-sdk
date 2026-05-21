@@ -203,7 +203,8 @@ enum DaemonMethod implements XelisJsonKey {
   getContractModule('get_contract_module'),
 
   /// Retrieve the contract data with the requested key.
-  getContractData('get_contract_data');
+  getContractData('get_contract_data')
+  ;
 
   /// Creates a new [DaemonMethod] instance.
   const DaemonMethod(this.jsonKey);
@@ -271,7 +272,8 @@ enum DaemonEvent implements XelisJsonKey {
   contractEvent('contract_event'),
 
   /// When a contract has been deployed.
-  deployContract('deploy_contract');
+  deployContract('deploy_contract')
+  ;
 
   /// Creates a new [DaemonEvent] instance.
   const DaemonEvent(this.jsonKey);

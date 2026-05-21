@@ -18,7 +18,8 @@ enum ClientState {
   reconnected,
 
   /// @nodoc
-  reconnecting;
+  reconnecting
+  ;
 
   /// @nodoc
   factory ClientState.fromConnectionState(ConnectionState connectionState) {

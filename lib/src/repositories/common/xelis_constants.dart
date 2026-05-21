@@ -13,7 +13,8 @@ enum XelisSubscription implements XelisJsonKey {
   subscribe('subscribe'),
 
   /// Unsubscribe to an event.
-  unsubscribe('unsubscribe');
+  unsubscribe('unsubscribe')
+  ;
 
   /// @nodoc
   const XelisSubscription(this.jsonKey);
