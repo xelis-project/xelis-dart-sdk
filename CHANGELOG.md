@@ -1,3 +1,8 @@
+## 0.29.1
+
+- fix(network): standardize Network enum values to lowercase (`mainnet`, `testnet`, `devnet`, `stagenet`).
+- chore: update SDK and dependencies to latest versions.
+
 ## 0.29.0
 
 Wallet API upgrade :
