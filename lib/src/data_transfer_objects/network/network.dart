@@ -16,8 +16,7 @@ enum Network {
 
   /// @nodoc
   @JsonValue('stagenet')
-  stagenet
-  ;
+  stagenet;
 
   /// Converts json value into Network enum.
   factory Network.fromStr(String value) {
