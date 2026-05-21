@@ -1,64 +1,7 @@
-## 0.30.12
+## 0.29.1
 
-- ensure proper conversion of JSON values to BigInt in MaxSupplyMode 
-
-## 0.30.11
-
-- use BigInt for MaxSupplyMode DTO
-
-## 0.30.10
-
-- added xvm_serializer
-- new getContractLogs (deprecated getContractOutputs)
-- fix InvokeContract properties
-- add missing IncomingContract
-
-## 0.30.9
-
-- update contract deploy structure
-- fix chunk_id -> entry_id
-- restore currentOwner getter in AssetOwner
-- fix toJson serialization in AssetOwner
-- make new SDK objects match existing freezed conventions
-- misc cleanup
-
-## 0.30.8
-
-- fix AssetData, AssetOwner, MaxSupplyMode serialization
-
-## 0.30.7
-
-- fix devnet enum map
-- rename contract_transfer to contract_transfers
-
-## 0.30.6
-
-- add currentOwner getter to AssetOwner
-
-## 0.30.5
-
-- fix AssetOwner serialization
-
-## 0.30.4
-
-- fix AssetData serialization
-
-## 0.30.3
-- fix RPCAssetData serialization
-
-## 0.30.2
-
-- fix(AssetOwner): add missing isCreator and isNone getters
-
-## 0.30.1
-
-- fix(AssetOwner): add missing getters
-
-## 0.30.0
-
-Daemon API upgrade :
-- AssetOwner reworked
-- Network enum updated (support mixed case)
+- fix(network): standardize Network enum values to lowercase (`mainnet`, `testnet`, `devnet`, `stagenet`).
+- chore: update SDK and dependencies to latest versions.
 
 ## 0.29.0
 
