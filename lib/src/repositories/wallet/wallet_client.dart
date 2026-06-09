@@ -35,8 +35,8 @@ class WalletClient extends RpcClientRepository {
   late final String _basicAuth;
 
   @override
-  WebSocket _initWebSocket() {
-    return WebSocket(
+  RpcWebSocketTransport _initWebSocket() {
+    return WebSocketClientTransport(
       _uri,
       timeout: Duration(milliseconds: _channelTimeout),
       headers: {'Authorization': 'Basic $_basicAuth'},

@@ -3,7 +3,7 @@ import 'dart:convert';
 
 import 'package:json_rpc_2/json_rpc_2.dart' as json_rpc_2;
 import 'package:logging/logging.dart';
-import 'package:web_socket_client/web_socket_client.dart';
+import 'package:xelis_dart_sdk/src/repositories/common/rpc_web_socket_transport.dart';
 import 'package:xelis_dart_sdk/xelis_dart_sdk.dart';
 
 part 'daemon/daemon_client.dart';
@@ -28,7 +28,7 @@ sealed class RpcClientRepository {
   final Uri _uri;
 
   /// Websocket client
-  WebSocket? socket;
+  RpcWebSocketTransport? _transport;
 
   /// Channel timeout
   ///
@@ -47,7 +47,7 @@ sealed class RpcClientRepository {
   /// state change callbacks
   ///
   /// Note: It is used to store the callbacks for state changes.
-  final Map<String, List<Function>> _stateChangeCallbacks = {
+  final Map<String, List<void Function(Object?)>> _stateChangeCallbacks = {
     'open': [],
     'close': [],
     'error': [],
@@ -67,30 +67,29 @@ sealed class RpcClientRepository {
 
   /// get client state
   Stream<ClientState> get state async* {
-    if (socket == null) {
+    final transport = _transport;
+    if (transport == null) {
       yield* const Stream.empty();
     } else {
-      await for (final state in socket!.connection) {
-        yield ClientState.fromConnectionState(state);
-      }
+      yield* transport.states;
     }
   }
 
   /// Initialize the websocket for specific target.
   ///
   /// Note: must be implemented.
-  WebSocket _initWebSocket();
+  RpcWebSocketTransport _initWebSocket();
 
-  /// Initialize the websocket to communicate with RPC server and start listening.
+  /// Initialize the websocket to communicate with RPC server and start
+  /// listening.
   ///
   /// Note: It has to be called first.
   void connect() {
-    socket = _initWebSocket();
+    _transport = _initWebSocket();
 
-    socket?.connection.listen(
+    _transport?.states.listen(
       (state) {
-        final clientState = ClientState.fromConnectionState(state);
-        switch (clientState) {
+        switch (state) {
           case ClientState.connected:
             _logInfo('connected to $_uri...');
             _onConnOpen();
@@ -103,8 +102,12 @@ sealed class RpcClientRepository {
             _logInfo('disconnecting from $_uri...');
           case ClientState.reconnected:
             _logInfo('reconnected to $_uri...');
+            _completePendingRequestsWithError(
+              const RpcConnectionException(
+                'WebSocket reconnected before the RPC response was received.',
+              ),
+            );
             _restoreSubscriptions();
-            _pendingRequests.clear();
             _onConnOpen();
           case ClientState.reconnecting:
             _logInfo('reconnecting to $_uri...');
@@ -113,28 +116,28 @@ sealed class RpcClientRepository {
       onError: _onConnError,
     );
 
-    socket?.messages.listen(_handleData, onError: _onConnError);
+    _transport?.messages.listen(_handleData, onError: _onConnError);
   }
 
   /// Close the websocket channel.
   ///
   /// Note: It is called automatically when the channel is lost.
   void disconnect() {
-    socket?.close(1000, 'CLOSE_NORMAL');
+    _transport?.close(1000, 'CLOSE_NORMAL');
   }
 
   /// Registers a callbacks for connection state change events.
   ///
   /// Note: It is called when the channel is opened.
   void onOpen(void Function() callback) {
-    _stateChangeCallbacks['open']!.add(callback);
+    _stateChangeCallbacks['open']!.add((_) => callback());
   }
 
   /// Registers a callbacks for connection state change events.
   ///
   /// Note: It is called when the channel is closed.
   void onClose(void Function() callback) {
-    _stateChangeCallbacks['close']!.add(callback);
+    _stateChangeCallbacks['close']!.add((_) => callback());
   }
 
   /// Registers a callbacks for connection state change events.
@@ -149,44 +152,42 @@ sealed class RpcClientRepository {
     XelisJsonKey method, [
     Map<String, dynamic>? params,
   ]) async {
-    if (socket == null) {
-      _logInfo('trying to send request when socket is null');
-      throw Exception('trying to send request when socket is null');
-    }
+    final transport = _requireTransport();
 
-    if (socket?.connection.state is Disconnected) {
+    if (transport.currentState == ClientState.disconnected) {
       _logInfo('trying to send request when socket is disconnected');
       throw Exception('trying to send request when socket is disconnected');
     }
     // Wait until a connection has been established.
-    await socket?.connection.firstWhere(
-      (state) => state is Connected || state is Reconnected,
-    );
+    await transport.waitUntilConnected();
 
-    _send(method, params);
+    final id = ++_id;
     final completer = Completer<dynamic>.sync();
-    _pendingRequests[_id] = _Request(method.jsonKey, completer, params);
+    _pendingRequests[id] = _Request(method.jsonKey, completer, params);
+    _send(transport, id, method, params);
     return completer.future;
   }
 
   /// Subscribe to a xelis event.
   Future<void> subscribeTo(XelisJsonKey event) async {
+    final transport = _requireTransport();
     _logInfo('subscribing to ${event.jsonKey}...');
     // Wait until a connection has been established.
-    await socket?.connection.firstWhere(
-      (state) => state is Connected || state is Reconnected,
-    );
-    _send(XelisSubscription.subscribe, {'notify': event.jsonKey});
+    await transport.waitUntilConnected();
+    _send(transport, ++_id, XelisSubscription.subscribe, {
+      'notify': event.jsonKey,
+    });
   }
 
   /// Unsubscribe from a xelis event.
   Future<void> unsubscribeFrom(XelisJsonKey event) async {
+    final transport = _requireTransport();
     _logInfo('unsubscribing from ${event.jsonKey}...');
     // Wait until a connection has been established.
-    await socket?.connection.firstWhere(
-      (state) => state is Connected || state is Reconnected,
-    );
-    _send(XelisSubscription.unsubscribe, {'notify': event.jsonKey});
+    await transport.waitUntilConnected();
+    _send(transport, ++_id, XelisSubscription.unsubscribe, {
+      'notify': event.jsonKey,
+    });
     eventsCallbacks[event]!.clear();
   }
 
@@ -198,10 +199,15 @@ sealed class RpcClientRepository {
 
   /// Subscribe and add callback to a specific event.
   void onEvent(XelisJsonKey event, Function callback) {
-    if (eventsCallbacks[event]!.isEmpty) {
-      subscribeTo(event).then((_) => registerCallback(event, callback));
-    } else {
-      registerCallback(event, callback);
+    final callbacks = eventsCallbacks[event]!;
+    final shouldSubscribe = callbacks.isEmpty;
+    if (shouldSubscribe) {
+      _requireTransport();
+    }
+
+    registerCallback(event, callback);
+    if (shouldSubscribe) {
+      unawaited(subscribeTo(event));
     }
   }
 
@@ -209,7 +215,9 @@ sealed class RpcClientRepository {
   void _restoreSubscriptions() {
     _logInfo('restoring subscriptions if any...');
     for (final eventCallbacks in eventsCallbacks.entries) {
-      if (eventCallbacks.value.isNotEmpty) subscribeTo(eventCallbacks.key);
+      if (eventCallbacks.value.isNotEmpty) {
+        unawaited(subscribeTo(eventCallbacks.key));
+      }
     }
   }
 
@@ -261,29 +269,45 @@ sealed class RpcClientRepository {
 
   // Calls all callbacks for a given connection state.
   void _onConnOpen() {
-    // ignore: avoid_dynamic_calls
-    _stateChangeCallbacks['open']!.map((callback) => callback());
+    for (final callback in _stateChangeCallbacks['open']!) {
+      callback(null);
+    }
   }
 
   // Calls all callbacks for a given connection state.
   void _onConnClose() {
-    // ignore: avoid_dynamic_calls
-    _stateChangeCallbacks['close']!.map((callback) => callback());
+    for (final callback in _stateChangeCallbacks['close']!) {
+      callback(null);
+    }
   }
 
   // Calls all callbacks for a given connection state.
   void _onConnError(dynamic error) {
     _logInfo('error connecting to Xelis: $error');
-    // ignore: avoid_dynamic_calls
-    _stateChangeCallbacks['error']!.map((callback) => callback());
+    for (final callback in _stateChangeCallbacks['error']!) {
+      callback(error);
+    }
+  }
+
+  RpcWebSocketTransport _requireTransport() {
+    final transport = _transport;
+    if (transport == null) {
+      _logInfo('trying to send request when socket is null');
+      throw Exception('trying to send request when socket is null');
+    }
+    return transport;
   }
 
   // Sends request through the websocket connection.
-  void _send(XelisJsonKey method, [Map<String, dynamic>? params]) {
-    _id++;
-    final request = _jsonRequest(method, params);
+  void _send(
+    RpcWebSocketTransport transport,
+    int id,
+    XelisJsonKey method, [
+    Map<String, dynamic>? params,
+  ]) {
+    final request = _jsonRequest(id, method, params);
     _logInfo('sending request: $request');
-    socket?.send(request);
+    transport.send(request);
   }
 
   // Processes result of the pending request.
@@ -294,12 +318,25 @@ sealed class RpcClientRepository {
     }
   }
 
+  void _completePendingRequestsWithError(Object error) {
+    for (final request in _pendingRequests.values) {
+      if (!request.completer.isCompleted) {
+        request.completer.completeError(error);
+      }
+    }
+    _pendingRequests.clear();
+  }
+
   // Creates a JSON-RPC request.
-  String _jsonRequest(XelisJsonKey method, [Map<String, dynamic>? params]) {
+  String _jsonRequest(
+    int id,
+    XelisJsonKey method, [
+    Map<String, dynamic>? params,
+  ]) {
     if (params != null) {
       return jsonEncode(
         {
-          'id': _id,
+          'id': id,
           'jsonrpc': '2.0',
           'method': method.jsonKey,
           'params': params,
@@ -307,7 +344,7 @@ sealed class RpcClientRepository {
       );
     } else {
       return jsonEncode(
-        {'id': _id, 'jsonrpc': '2.0', 'method': method.jsonKey},
+        {'id': id, 'jsonrpc': '2.0', 'method': method.jsonKey},
       );
     }
   }

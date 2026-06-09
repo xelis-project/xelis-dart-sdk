@@ -4,6 +4,7 @@ library;
 export 'src/contract/xvm_serializer.dart';
 export 'src/data_transfer_objects/dtos.dart';
 export 'src/repositories/common/client_state.dart' show ClientState;
+export 'src/repositories/common/rpc_connection_exception.dart';
 export 'src/repositories/common/xelis_constants.dart';
 export 'src/repositories/daemon/daemon_constants.dart';
 export 'src/repositories/daemon/daemon_events_extension.dart';
