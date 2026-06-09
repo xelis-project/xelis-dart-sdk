@@ -63,6 +63,10 @@ sealed class TransactionEntryType with _$TransactionEntryType {
     @JsonKey(name: 'transfers') required Map<String, int> transfers,
   }) = IncomingContractEntry;
 
+  const factory TransactionEntryType.blob({
+    @JsonKey(name: 'data') required ExtraData data,
+  }) = BlobEntry;
+
   /// @nodoc
   factory TransactionEntryType.fromJson(Map<String, dynamic> json) =>
       _$TransactionEntryTypeFromJson(json);
