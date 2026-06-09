@@ -204,7 +204,7 @@ extension WalletRpcMethodsExtension on WalletClient {
   /// Checks if the wallet is in online mode.
   Future<bool> isOnline() async {
     final result = await sendRequest(
-      WalletMethod.rescan,
+      WalletMethod.isOnline,
     );
 
     return result as bool;

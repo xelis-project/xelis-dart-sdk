@@ -286,6 +286,8 @@ enum DaemonEvent implements XelisJsonKey {
         return DaemonEvent.blockOrdered;
       case 'stable_height_changed':
         return DaemonEvent.stableHeightChanged;
+      case 'stable_topoheight_changed':
+        return DaemonEvent.stableTopoHeightChanged;
       case 'transaction_added_in_mempool':
         return DaemonEvent.transactionAddedInMempool;
       case 'transaction_executed':
