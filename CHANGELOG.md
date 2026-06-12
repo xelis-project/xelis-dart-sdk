@@ -1,3 +1,12 @@
+## 0.31.0
+
+- breaking: hide the concrete WebSocket client behind an internal RPC transport
+  abstraction.
+- complete pending RPC requests with a connection error when the WebSocket
+  reconnects.
+- add Blob transaction entry support.
+- deserialize incoming_contract transaction entries.
+
 ## 0.30.13
 
 - fix(network): standardize Network enum values to lowercase (`mainnet`, `testnet`, `devnet`, `stagenet`).
@@ -5,7 +14,9 @@
 
 ## 0.30.12
 
-- ensure proper conversion of JSON values to BigInt in MaxSupplyMode
+- ensure proper conversion of JSON values to BigInt in MaxSupplyMode.
+- bump dependencies.
+- update workflow triggers to only run on the main branch.
 
 ## 0.30.11
 

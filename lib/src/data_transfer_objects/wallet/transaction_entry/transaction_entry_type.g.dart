@@ -144,3 +144,13 @@ Map<String, dynamic> _$IncomingContractEntryToJson(
   'transfers': instance.transfers,
   'runtimeType': instance.$type,
 };
+
+BlobEntry _$BlobEntryFromJson(Map<String, dynamic> json) => BlobEntry(
+  data: ExtraData.fromJson(json['data'] as Map<String, dynamic>),
+  $type: json['runtimeType'] as String?,
+);
+
+Map<String, dynamic> _$BlobEntryToJson(BlobEntry instance) => <String, dynamic>{
+  'data': instance.data,
+  'runtimeType': instance.$type,
+};

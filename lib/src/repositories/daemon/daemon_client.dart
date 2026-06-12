@@ -52,8 +52,8 @@ class DaemonClient extends RpcClientRepository {
   }
 
   @override
-  WebSocket _initWebSocket() {
-    return WebSocket(
+  RpcWebSocketTransport _initWebSocket() {
+    return WebSocketClientTransport(
       _uri,
       timeout: Duration(milliseconds: _channelTimeout),
     );

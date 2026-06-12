@@ -33,6 +33,8 @@ abstract class TransactionEntry with _$TransactionEntry {
           'multi_sig': MultisigEntry.fromJson,
           'invoke_contract': InvokeContractEntry.fromJson,
           'deploy_contract': DeployContractEntry.fromJson,
+          'incoming_contract': IncomingContractEntry.fromJson,
+          'blob': BlobEntry.fromJson,
         };
 
     for (final entry in entryTypeConstructors.entries) {
