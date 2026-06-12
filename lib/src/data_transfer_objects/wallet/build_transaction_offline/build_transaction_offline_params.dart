@@ -25,7 +25,7 @@ abstract class BuildTransactionOfflineParams
 
   /// @nodoc
   Map<String, dynamic> toJson() {
-    final txJson = transactionTypeBuilder.toJson();
+    final txJson = transactionTypeBuilder.toRpcJson();
     final commonJson = _serializeCommonFields();
     return {
       ...txJson,

@@ -35,6 +35,10 @@ TransactionTypeBuilder _$TransactionTypeBuilderFromJson(
           return DeployContractBuilder.fromJson(
             json
           );
+                case 'blob':
+          return BlobBuilder.fromJson(
+            json
+          );
         
           default:
             throw CheckedFromJsonException(
@@ -93,7 +97,7 @@ extension TransactionTypeBuilderPatterns on TransactionTypeBuilder {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( TransfersBuilder value)?  transfers,TResult Function( BurnBuilder value)?  burn,TResult Function( MultisigBuilder value)?  multisig,TResult Function( InvokeContractBuilder value)?  invokeContract,TResult Function( DeployContractBuilder value)?  deployContract,required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( TransfersBuilder value)?  transfers,TResult Function( BurnBuilder value)?  burn,TResult Function( MultisigBuilder value)?  multisig,TResult Function( InvokeContractBuilder value)?  invokeContract,TResult Function( DeployContractBuilder value)?  deployContract,TResult Function( BlobBuilder value)?  blob,required TResult orElse(),}){
 final _that = this;
 switch (_that) {
 case TransfersBuilder() when transfers != null:
@@ -101,7 +105,8 @@ return transfers(_that);case BurnBuilder() when burn != null:
 return burn(_that);case MultisigBuilder() when multisig != null:
 return multisig(_that);case InvokeContractBuilder() when invokeContract != null:
 return invokeContract(_that);case DeployContractBuilder() when deployContract != null:
-return deployContract(_that);case _:
+return deployContract(_that);case BlobBuilder() when blob != null:
+return blob(_that);case _:
   return orElse();
 
 }
@@ -119,7 +124,7 @@ return deployContract(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( TransfersBuilder value)  transfers,required TResult Function( BurnBuilder value)  burn,required TResult Function( MultisigBuilder value)  multisig,required TResult Function( InvokeContractBuilder value)  invokeContract,required TResult Function( DeployContractBuilder value)  deployContract,}){
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( TransfersBuilder value)  transfers,required TResult Function( BurnBuilder value)  burn,required TResult Function( MultisigBuilder value)  multisig,required TResult Function( InvokeContractBuilder value)  invokeContract,required TResult Function( DeployContractBuilder value)  deployContract,required TResult Function( BlobBuilder value)  blob,}){
 final _that = this;
 switch (_that) {
 case TransfersBuilder():
@@ -127,7 +132,8 @@ return transfers(_that);case BurnBuilder():
 return burn(_that);case MultisigBuilder():
 return multisig(_that);case InvokeContractBuilder():
 return invokeContract(_that);case DeployContractBuilder():
-return deployContract(_that);}
+return deployContract(_that);case BlobBuilder():
+return blob(_that);}
 }
 /// A variant of `map` that fallback to returning `null`.
 ///
@@ -141,7 +147,7 @@ return deployContract(_that);}
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( TransfersBuilder value)?  transfers,TResult? Function( BurnBuilder value)?  burn,TResult? Function( MultisigBuilder value)?  multisig,TResult? Function( InvokeContractBuilder value)?  invokeContract,TResult? Function( DeployContractBuilder value)?  deployContract,}){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( TransfersBuilder value)?  transfers,TResult? Function( BurnBuilder value)?  burn,TResult? Function( MultisigBuilder value)?  multisig,TResult? Function( InvokeContractBuilder value)?  invokeContract,TResult? Function( DeployContractBuilder value)?  deployContract,TResult? Function( BlobBuilder value)?  blob,}){
 final _that = this;
 switch (_that) {
 case TransfersBuilder() when transfers != null:
@@ -149,7 +155,8 @@ return transfers(_that);case BurnBuilder() when burn != null:
 return burn(_that);case MultisigBuilder() when multisig != null:
 return multisig(_that);case InvokeContractBuilder() when invokeContract != null:
 return invokeContract(_that);case DeployContractBuilder() when deployContract != null:
-return deployContract(_that);case _:
+return deployContract(_that);case BlobBuilder() when blob != null:
+return blob(_that);case _:
   return null;
 
 }
@@ -166,14 +173,15 @@ return deployContract(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function(@JsonKey(name: 'transfers')  List<TransferBuilder> transfers)?  transfers,TResult Function(@JsonKey(name: 'asset')  String asset, @JsonKey(name: 'amount')  int amount)?  burn,TResult Function(@JsonKey(name: 'threshold')  int threshold, @JsonKey(name: 'participants')  List<String> participants)?  multisig,TResult Function(@JsonKey(name: 'contract')  String contract, @JsonKey(name: 'max_gas')  int maxGas, @JsonKey(name: 'entry_id')  int entryId, @JsonKey(name: 'parameters')  List<dynamic> parameters, @JsonKey(name: 'deposits')  Map<String, ContractDepositBuilder> deposits)?  invokeContract,TResult Function(@JsonKey(name: 'module')  String module, @JsonKey(name: 'invoke')  DeployContractInvokeBuilder? invoke)?  deployContract,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function(@JsonKey(name: 'transfers')  List<TransferBuilder> transfers)?  transfers,TResult Function(@JsonKey(name: 'asset')  String asset, @JsonKey(name: 'amount')  int amount)?  burn,TResult Function(@JsonKey(name: 'threshold')  int threshold, @JsonKey(name: 'participants')  List<String> participants)?  multisig,TResult Function(@JsonKey(name: 'contract')  String contract, @JsonKey(name: 'max_gas')  int maxGas, @JsonKey(name: 'entry_id')  int entryId, @JsonKey(name: 'parameters')  List<dynamic> parameters, @JsonKey(name: 'deposits')  Map<String, ContractDepositBuilder> deposits, @JsonKey(name: 'permission')  dynamic permission)?  invokeContract,TResult Function(@JsonKey(name: 'module')  String module, @JsonKey(name: 'contract_version')  String contractVersion, @JsonKey(name: 'invoke')  DeployContractInvokeBuilder? invoke)?  deployContract,TResult Function(@JsonKey(name: 'data')  dynamic data, @JsonKey(name: 'destinations')  List<String> destinations, @JsonKey(name: 'encrypt')  bool encrypt)?  blob,required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case TransfersBuilder() when transfers != null:
 return transfers(_that.transfers);case BurnBuilder() when burn != null:
 return burn(_that.asset,_that.amount);case MultisigBuilder() when multisig != null:
 return multisig(_that.threshold,_that.participants);case InvokeContractBuilder() when invokeContract != null:
-return invokeContract(_that.contract,_that.maxGas,_that.entryId,_that.parameters,_that.deposits);case DeployContractBuilder() when deployContract != null:
-return deployContract(_that.module,_that.invoke);case _:
+return invokeContract(_that.contract,_that.maxGas,_that.entryId,_that.parameters,_that.deposits,_that.permission);case DeployContractBuilder() when deployContract != null:
+return deployContract(_that.module,_that.contractVersion,_that.invoke);case BlobBuilder() when blob != null:
+return blob(_that.data,_that.destinations,_that.encrypt);case _:
   return orElse();
 
 }
@@ -191,14 +199,15 @@ return deployContract(_that.module,_that.invoke);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function(@JsonKey(name: 'transfers')  List<TransferBuilder> transfers)  transfers,required TResult Function(@JsonKey(name: 'asset')  String asset, @JsonKey(name: 'amount')  int amount)  burn,required TResult Function(@JsonKey(name: 'threshold')  int threshold, @JsonKey(name: 'participants')  List<String> participants)  multisig,required TResult Function(@JsonKey(name: 'contract')  String contract, @JsonKey(name: 'max_gas')  int maxGas, @JsonKey(name: 'entry_id')  int entryId, @JsonKey(name: 'parameters')  List<dynamic> parameters, @JsonKey(name: 'deposits')  Map<String, ContractDepositBuilder> deposits)  invokeContract,required TResult Function(@JsonKey(name: 'module')  String module, @JsonKey(name: 'invoke')  DeployContractInvokeBuilder? invoke)  deployContract,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function(@JsonKey(name: 'transfers')  List<TransferBuilder> transfers)  transfers,required TResult Function(@JsonKey(name: 'asset')  String asset, @JsonKey(name: 'amount')  int amount)  burn,required TResult Function(@JsonKey(name: 'threshold')  int threshold, @JsonKey(name: 'participants')  List<String> participants)  multisig,required TResult Function(@JsonKey(name: 'contract')  String contract, @JsonKey(name: 'max_gas')  int maxGas, @JsonKey(name: 'entry_id')  int entryId, @JsonKey(name: 'parameters')  List<dynamic> parameters, @JsonKey(name: 'deposits')  Map<String, ContractDepositBuilder> deposits, @JsonKey(name: 'permission')  dynamic permission)  invokeContract,required TResult Function(@JsonKey(name: 'module')  String module, @JsonKey(name: 'contract_version')  String contractVersion, @JsonKey(name: 'invoke')  DeployContractInvokeBuilder? invoke)  deployContract,required TResult Function(@JsonKey(name: 'data')  dynamic data, @JsonKey(name: 'destinations')  List<String> destinations, @JsonKey(name: 'encrypt')  bool encrypt)  blob,}) {final _that = this;
 switch (_that) {
 case TransfersBuilder():
 return transfers(_that.transfers);case BurnBuilder():
 return burn(_that.asset,_that.amount);case MultisigBuilder():
 return multisig(_that.threshold,_that.participants);case InvokeContractBuilder():
-return invokeContract(_that.contract,_that.maxGas,_that.entryId,_that.parameters,_that.deposits);case DeployContractBuilder():
-return deployContract(_that.module,_that.invoke);}
+return invokeContract(_that.contract,_that.maxGas,_that.entryId,_that.parameters,_that.deposits,_that.permission);case DeployContractBuilder():
+return deployContract(_that.module,_that.contractVersion,_that.invoke);case BlobBuilder():
+return blob(_that.data,_that.destinations,_that.encrypt);}
 }
 /// A variant of `when` that fallback to returning `null`
 ///
@@ -212,14 +221,15 @@ return deployContract(_that.module,_that.invoke);}
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function(@JsonKey(name: 'transfers')  List<TransferBuilder> transfers)?  transfers,TResult? Function(@JsonKey(name: 'asset')  String asset, @JsonKey(name: 'amount')  int amount)?  burn,TResult? Function(@JsonKey(name: 'threshold')  int threshold, @JsonKey(name: 'participants')  List<String> participants)?  multisig,TResult? Function(@JsonKey(name: 'contract')  String contract, @JsonKey(name: 'max_gas')  int maxGas, @JsonKey(name: 'entry_id')  int entryId, @JsonKey(name: 'parameters')  List<dynamic> parameters, @JsonKey(name: 'deposits')  Map<String, ContractDepositBuilder> deposits)?  invokeContract,TResult? Function(@JsonKey(name: 'module')  String module, @JsonKey(name: 'invoke')  DeployContractInvokeBuilder? invoke)?  deployContract,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function(@JsonKey(name: 'transfers')  List<TransferBuilder> transfers)?  transfers,TResult? Function(@JsonKey(name: 'asset')  String asset, @JsonKey(name: 'amount')  int amount)?  burn,TResult? Function(@JsonKey(name: 'threshold')  int threshold, @JsonKey(name: 'participants')  List<String> participants)?  multisig,TResult? Function(@JsonKey(name: 'contract')  String contract, @JsonKey(name: 'max_gas')  int maxGas, @JsonKey(name: 'entry_id')  int entryId, @JsonKey(name: 'parameters')  List<dynamic> parameters, @JsonKey(name: 'deposits')  Map<String, ContractDepositBuilder> deposits, @JsonKey(name: 'permission')  dynamic permission)?  invokeContract,TResult? Function(@JsonKey(name: 'module')  String module, @JsonKey(name: 'contract_version')  String contractVersion, @JsonKey(name: 'invoke')  DeployContractInvokeBuilder? invoke)?  deployContract,TResult? Function(@JsonKey(name: 'data')  dynamic data, @JsonKey(name: 'destinations')  List<String> destinations, @JsonKey(name: 'encrypt')  bool encrypt)?  blob,}) {final _that = this;
 switch (_that) {
 case TransfersBuilder() when transfers != null:
 return transfers(_that.transfers);case BurnBuilder() when burn != null:
 return burn(_that.asset,_that.amount);case MultisigBuilder() when multisig != null:
 return multisig(_that.threshold,_that.participants);case InvokeContractBuilder() when invokeContract != null:
-return invokeContract(_that.contract,_that.maxGas,_that.entryId,_that.parameters,_that.deposits);case DeployContractBuilder() when deployContract != null:
-return deployContract(_that.module,_that.invoke);case _:
+return invokeContract(_that.contract,_that.maxGas,_that.entryId,_that.parameters,_that.deposits,_that.permission);case DeployContractBuilder() when deployContract != null:
+return deployContract(_that.module,_that.contractVersion,_that.invoke);case BlobBuilder() when blob != null:
+return blob(_that.data,_that.destinations,_that.encrypt);case _:
   return null;
 
 }
@@ -228,8 +238,8 @@ return deployContract(_that.module,_that.invoke);case _:
 }
 
 /// @nodoc
-@JsonSerializable()
 
+@JsonSerializable(explicitToJson: true)
 class TransfersBuilder extends TransactionTypeBuilder {
   const TransfersBuilder({@JsonKey(name: 'transfers') required final  List<TransferBuilder> transfers, final  String? $type}): _transfers = transfers,$type = $type ?? 'transfers',super._();
   factory TransfersBuilder.fromJson(Map<String, dynamic> json) => _$TransfersBuilderFromJson(json);
@@ -463,10 +473,10 @@ as List<String>,
 }
 
 /// @nodoc
-@JsonSerializable()
 
+@JsonSerializable(explicitToJson: true)
 class InvokeContractBuilder extends TransactionTypeBuilder {
-  const InvokeContractBuilder({@JsonKey(name: 'contract') required this.contract, @JsonKey(name: 'max_gas') required this.maxGas, @JsonKey(name: 'entry_id') required this.entryId, @JsonKey(name: 'parameters') required final  List<dynamic> parameters, @JsonKey(name: 'deposits') required final  Map<String, ContractDepositBuilder> deposits, final  String? $type}): _parameters = parameters,_deposits = deposits,$type = $type ?? 'invokeContract',super._();
+  const InvokeContractBuilder({@JsonKey(name: 'contract') required this.contract, @JsonKey(name: 'max_gas') required this.maxGas, @JsonKey(name: 'entry_id') required this.entryId, @JsonKey(name: 'parameters') required final  List<dynamic> parameters, @JsonKey(name: 'deposits') final  Map<String, ContractDepositBuilder> deposits = const <String, ContractDepositBuilder>{}, @JsonKey(name: 'permission') this.permission = 'none', final  String? $type}): _parameters = parameters,_deposits = deposits,$type = $type ?? 'invokeContract',super._();
   factory InvokeContractBuilder.fromJson(Map<String, dynamic> json) => _$InvokeContractBuilderFromJson(json);
 
 @JsonKey(name: 'contract') final  String contract;
@@ -486,6 +496,7 @@ class InvokeContractBuilder extends TransactionTypeBuilder {
   return EqualUnmodifiableMapView(_deposits);
 }
 
+@JsonKey(name: 'permission') final  dynamic permission;
 
 @JsonKey(name: 'runtimeType')
 final String $type;
@@ -504,16 +515,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is InvokeContractBuilder&&(identical(other.contract, contract) || other.contract == contract)&&(identical(other.maxGas, maxGas) || other.maxGas == maxGas)&&(identical(other.entryId, entryId) || other.entryId == entryId)&&const DeepCollectionEquality().equals(other._parameters, _parameters)&&const DeepCollectionEquality().equals(other._deposits, _deposits));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is InvokeContractBuilder&&(identical(other.contract, contract) || other.contract == contract)&&(identical(other.maxGas, maxGas) || other.maxGas == maxGas)&&(identical(other.entryId, entryId) || other.entryId == entryId)&&const DeepCollectionEquality().equals(other._parameters, _parameters)&&const DeepCollectionEquality().equals(other._deposits, _deposits)&&const DeepCollectionEquality().equals(other.permission, permission));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,contract,maxGas,entryId,const DeepCollectionEquality().hash(_parameters),const DeepCollectionEquality().hash(_deposits));
+int get hashCode => Object.hash(runtimeType,contract,maxGas,entryId,const DeepCollectionEquality().hash(_parameters),const DeepCollectionEquality().hash(_deposits),const DeepCollectionEquality().hash(permission));
 
 @override
 String toString() {
-  return 'TransactionTypeBuilder.invokeContract(contract: $contract, maxGas: $maxGas, entryId: $entryId, parameters: $parameters, deposits: $deposits)';
+  return 'TransactionTypeBuilder.invokeContract(contract: $contract, maxGas: $maxGas, entryId: $entryId, parameters: $parameters, deposits: $deposits, permission: $permission)';
 }
 
 
@@ -524,7 +535,7 @@ abstract mixin class $InvokeContractBuilderCopyWith<$Res> implements $Transactio
   factory $InvokeContractBuilderCopyWith(InvokeContractBuilder value, $Res Function(InvokeContractBuilder) _then) = _$InvokeContractBuilderCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(name: 'contract') String contract,@JsonKey(name: 'max_gas') int maxGas,@JsonKey(name: 'entry_id') int entryId,@JsonKey(name: 'parameters') List<dynamic> parameters,@JsonKey(name: 'deposits') Map<String, ContractDepositBuilder> deposits
+@JsonKey(name: 'contract') String contract,@JsonKey(name: 'max_gas') int maxGas,@JsonKey(name: 'entry_id') int entryId,@JsonKey(name: 'parameters') List<dynamic> parameters,@JsonKey(name: 'deposits') Map<String, ContractDepositBuilder> deposits,@JsonKey(name: 'permission') dynamic permission
 });
 
 
@@ -541,14 +552,15 @@ class _$InvokeContractBuilderCopyWithImpl<$Res>
 
 /// Create a copy of TransactionTypeBuilder
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? contract = null,Object? maxGas = null,Object? entryId = null,Object? parameters = null,Object? deposits = null,}) {
+@pragma('vm:prefer-inline') $Res call({Object? contract = null,Object? maxGas = null,Object? entryId = null,Object? parameters = null,Object? deposits = null,Object? permission = freezed,}) {
   return _then(InvokeContractBuilder(
 contract: null == contract ? _self.contract : contract // ignore: cast_nullable_to_non_nullable
 as String,maxGas: null == maxGas ? _self.maxGas : maxGas // ignore: cast_nullable_to_non_nullable
 as int,entryId: null == entryId ? _self.entryId : entryId // ignore: cast_nullable_to_non_nullable
 as int,parameters: null == parameters ? _self._parameters : parameters // ignore: cast_nullable_to_non_nullable
 as List<dynamic>,deposits: null == deposits ? _self._deposits : deposits // ignore: cast_nullable_to_non_nullable
-as Map<String, ContractDepositBuilder>,
+as Map<String, ContractDepositBuilder>,permission: freezed == permission ? _self.permission : permission // ignore: cast_nullable_to_non_nullable
+as dynamic,
   ));
 }
 
@@ -556,13 +568,14 @@ as Map<String, ContractDepositBuilder>,
 }
 
 /// @nodoc
-@JsonSerializable()
 
+@JsonSerializable(explicitToJson: true)
 class DeployContractBuilder extends TransactionTypeBuilder {
-  const DeployContractBuilder({@JsonKey(name: 'module') required this.module, @JsonKey(name: 'invoke') this.invoke, final  String? $type}): $type = $type ?? 'deployContract',super._();
+  const DeployContractBuilder({@JsonKey(name: 'module') required this.module, @JsonKey(name: 'contract_version') this.contractVersion = 'v0', @JsonKey(name: 'invoke') this.invoke, final  String? $type}): $type = $type ?? 'deployContract',super._();
   factory DeployContractBuilder.fromJson(Map<String, dynamic> json) => _$DeployContractBuilderFromJson(json);
 
 @JsonKey(name: 'module') final  String module;
+@JsonKey(name: 'contract_version') final  String contractVersion;
 @JsonKey(name: 'invoke') final  DeployContractInvokeBuilder? invoke;
 
 @JsonKey(name: 'runtimeType')
@@ -582,16 +595,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is DeployContractBuilder&&(identical(other.module, module) || other.module == module)&&(identical(other.invoke, invoke) || other.invoke == invoke));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is DeployContractBuilder&&(identical(other.module, module) || other.module == module)&&(identical(other.contractVersion, contractVersion) || other.contractVersion == contractVersion)&&(identical(other.invoke, invoke) || other.invoke == invoke));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,module,invoke);
+int get hashCode => Object.hash(runtimeType,module,contractVersion,invoke);
 
 @override
 String toString() {
-  return 'TransactionTypeBuilder.deployContract(module: $module, invoke: $invoke)';
+  return 'TransactionTypeBuilder.deployContract(module: $module, contractVersion: $contractVersion, invoke: $invoke)';
 }
 
 
@@ -602,7 +615,7 @@ abstract mixin class $DeployContractBuilderCopyWith<$Res> implements $Transactio
   factory $DeployContractBuilderCopyWith(DeployContractBuilder value, $Res Function(DeployContractBuilder) _then) = _$DeployContractBuilderCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(name: 'module') String module,@JsonKey(name: 'invoke') DeployContractInvokeBuilder? invoke
+@JsonKey(name: 'module') String module,@JsonKey(name: 'contract_version') String contractVersion,@JsonKey(name: 'invoke') DeployContractInvokeBuilder? invoke
 });
 
 
@@ -619,9 +632,10 @@ class _$DeployContractBuilderCopyWithImpl<$Res>
 
 /// Create a copy of TransactionTypeBuilder
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? module = null,Object? invoke = freezed,}) {
+@pragma('vm:prefer-inline') $Res call({Object? module = null,Object? contractVersion = null,Object? invoke = freezed,}) {
   return _then(DeployContractBuilder(
 module: null == module ? _self.module : module // ignore: cast_nullable_to_non_nullable
+as String,contractVersion: null == contractVersion ? _self.contractVersion : contractVersion // ignore: cast_nullable_to_non_nullable
 as String,invoke: freezed == invoke ? _self.invoke : invoke // ignore: cast_nullable_to_non_nullable
 as DeployContractInvokeBuilder?,
   ));
@@ -640,6 +654,89 @@ $DeployContractInvokeBuilderCopyWith<$Res>? get invoke {
     return _then(_self.copyWith(invoke: value));
   });
 }
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class BlobBuilder extends TransactionTypeBuilder {
+  const BlobBuilder({@JsonKey(name: 'data') required this.data, @JsonKey(name: 'destinations') required final  List<String> destinations, @JsonKey(name: 'encrypt') this.encrypt = true, final  String? $type}): _destinations = destinations,$type = $type ?? 'blob',super._();
+  factory BlobBuilder.fromJson(Map<String, dynamic> json) => _$BlobBuilderFromJson(json);
+
+@JsonKey(name: 'data') final  dynamic data;
+ final  List<String> _destinations;
+@JsonKey(name: 'destinations') List<String> get destinations {
+  if (_destinations is EqualUnmodifiableListView) return _destinations;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_destinations);
+}
+
+@JsonKey(name: 'encrypt') final  bool encrypt;
+
+@JsonKey(name: 'runtimeType')
+final String $type;
+
+
+/// Create a copy of TransactionTypeBuilder
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$BlobBuilderCopyWith<BlobBuilder> get copyWith => _$BlobBuilderCopyWithImpl<BlobBuilder>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$BlobBuilderToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is BlobBuilder&&const DeepCollectionEquality().equals(other.data, data)&&const DeepCollectionEquality().equals(other._destinations, _destinations)&&(identical(other.encrypt, encrypt) || other.encrypt == encrypt));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(data),const DeepCollectionEquality().hash(_destinations),encrypt);
+
+@override
+String toString() {
+  return 'TransactionTypeBuilder.blob(data: $data, destinations: $destinations, encrypt: $encrypt)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $BlobBuilderCopyWith<$Res> implements $TransactionTypeBuilderCopyWith<$Res> {
+  factory $BlobBuilderCopyWith(BlobBuilder value, $Res Function(BlobBuilder) _then) = _$BlobBuilderCopyWithImpl;
+@useResult
+$Res call({
+@JsonKey(name: 'data') dynamic data,@JsonKey(name: 'destinations') List<String> destinations,@JsonKey(name: 'encrypt') bool encrypt
+});
+
+
+
+
+}
+/// @nodoc
+class _$BlobBuilderCopyWithImpl<$Res>
+    implements $BlobBuilderCopyWith<$Res> {
+  _$BlobBuilderCopyWithImpl(this._self, this._then);
+
+  final BlobBuilder _self;
+  final $Res Function(BlobBuilder) _then;
+
+/// Create a copy of TransactionTypeBuilder
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? data = freezed,Object? destinations = null,Object? encrypt = null,}) {
+  return _then(BlobBuilder(
+data: freezed == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
+as dynamic,destinations: null == destinations ? _self._destinations : destinations // ignore: cast_nullable_to_non_nullable
+as List<String>,encrypt: null == encrypt ? _self.encrypt : encrypt // ignore: cast_nullable_to_non_nullable
+as bool,
+  ));
+}
+
+
 }
 
 // dart format on

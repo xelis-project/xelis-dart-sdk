@@ -48,3 +48,60 @@ Map<String, dynamic> _$MultisigPayloadToJson(MultisigPayload instance) =>
       'threshold': instance.threshold,
       'runtimeType': instance.$type,
     };
+
+InvokeContractPayload _$InvokeContractPayloadFromJson(
+  Map<String, dynamic> json,
+) => InvokeContractPayload(
+  contract: json['contract'] as String,
+  deposits: json['deposits'],
+  entryId: (json['entry_id'] as num).toInt(),
+  maxGas: (json['max_gas'] as num).toInt(),
+  parameters: json['parameters'] as List<dynamic>,
+  permission: json['permission'] ?? 'none',
+  $type: json['runtimeType'] as String?,
+);
+
+Map<String, dynamic> _$InvokeContractPayloadToJson(
+  InvokeContractPayload instance,
+) => <String, dynamic>{
+  'contract': instance.contract,
+  'deposits': instance.deposits,
+  'entry_id': instance.entryId,
+  'max_gas': instance.maxGas,
+  'parameters': instance.parameters,
+  'permission': instance.permission,
+  'runtimeType': instance.$type,
+};
+
+DeployContractPayload _$DeployContractPayloadFromJson(
+  Map<String, dynamic> json,
+) => DeployContractPayload(
+  version: json['version'],
+  module: json['module'],
+  invoke: json['invoke'],
+  $type: json['runtimeType'] as String?,
+);
+
+Map<String, dynamic> _$DeployContractPayloadToJson(
+  DeployContractPayload instance,
+) => <String, dynamic>{
+  'version': instance.version,
+  'module': instance.module,
+  'invoke': instance.invoke,
+  'runtimeType': instance.$type,
+};
+
+BlobPayload _$BlobPayloadFromJson(Map<String, dynamic> json) => BlobPayload(
+  data: json['data'],
+  destinations: (json['destinations'] as List<dynamic>)
+      .map((e) => e as String)
+      .toList(),
+  $type: json['runtimeType'] as String?,
+);
+
+Map<String, dynamic> _$BlobPayloadToJson(BlobPayload instance) =>
+    <String, dynamic>{
+      'data': instance.data,
+      'destinations': instance.destinations,
+      'runtimeType': instance.$type,
+    };

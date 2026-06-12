@@ -11,6 +11,7 @@ part 'transaction_type_builder.g.dart';
 @freezed
 sealed class TransactionTypeBuilder with _$TransactionTypeBuilder {
   /// @nodoc
+  @JsonSerializable(explicitToJson: true)
   const factory TransactionTypeBuilder.transfers({
     @JsonKey(name: 'transfers') required List<TransferBuilder> transfers,
   }) = TransfersBuilder;
@@ -28,39 +29,62 @@ sealed class TransactionTypeBuilder with _$TransactionTypeBuilder {
   }) = MultisigBuilder;
 
   /// @nodoc
+  @JsonSerializable(explicitToJson: true)
   const factory TransactionTypeBuilder.invokeContract({
     @JsonKey(name: 'contract') required String contract,
     @JsonKey(name: 'max_gas') required int maxGas,
     @JsonKey(name: 'entry_id') required int entryId,
     @JsonKey(name: 'parameters') required List<dynamic> parameters,
     @JsonKey(name: 'deposits')
-    required Map<String, ContractDepositBuilder> deposits,
+    @Default(<String, ContractDepositBuilder>{})
+    Map<String, ContractDepositBuilder> deposits,
+    @JsonKey(name: 'permission') @Default('none') dynamic permission,
   }) = InvokeContractBuilder;
 
   /// @nodoc
+  @JsonSerializable(explicitToJson: true)
   const factory TransactionTypeBuilder.deployContract({
     @JsonKey(name: 'module') required String module,
+    @JsonKey(name: 'contract_version') @Default('v0') String contractVersion,
     @JsonKey(name: 'invoke') DeployContractInvokeBuilder? invoke,
   }) = DeployContractBuilder;
+
+  /// @nodoc
+  const factory TransactionTypeBuilder.blob({
+    @JsonKey(name: 'data') required dynamic data,
+    @JsonKey(name: 'destinations') required List<String> destinations,
+    @JsonKey(name: 'encrypt') @Default(true) bool encrypt,
+  }) = BlobBuilder;
 
   const TransactionTypeBuilder._();
 
   /// @nodoc
   factory TransactionTypeBuilder.fromJson(Map<String, dynamic> json) =>
       _$TransactionTypeBuilderFromJson(json);
-}
 
-/// @nodoc
-extension TransactionTypeBuilderSafe on TransactionTypeBuilder {
   /// @nodoc
-  static TransactionTypeBuilder safeFromJson(Map<String, dynamic> json) {
-    final preparedJson = prepareTransactionJson(json);
+  factory TransactionTypeBuilder.fromRpcJson(Map<String, dynamic> json) {
+    final preparedJson = _prepareRpcJson(json);
     return TransactionTypeBuilder.fromJson(preparedJson);
+  }
+
+  /// @nodoc
+  Map<String, dynamic> toRpcJson() {
+    final json = toJson()..remove('runtimeType');
+
+    return switch (this) {
+      TransfersBuilder() => json,
+      BurnBuilder() => {'burn': json},
+      MultisigBuilder() => {'multi_sig': json},
+      InvokeContractBuilder() => {'invoke_contract': json},
+      DeployContractBuilder() => {'deploy_contract': json},
+      BlobBuilder() => {'blob': json},
+    };
   }
 }
 
 /// @nodoc
-Map<String, dynamic> prepareTransactionJson(Map<String, dynamic> json) {
+Map<String, dynamic> _prepareRpcJson(Map<String, dynamic> json) {
   if (json case {'runtimeType': String _}) {
     return json;
   }
@@ -80,6 +104,9 @@ Map<String, dynamic> prepareTransactionJson(Map<String, dynamic> json) {
 
     case {'deploy_contract': final Map<String, dynamic> deployContract}:
       return {...deployContract, 'runtimeType': 'deployContract'};
+
+    case {'blob': final Map<String, dynamic> blob}:
+      return {...blob, 'runtimeType': 'blob'};
 
     default:
       throw FormatException(

@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$DeployContractInvokeBuilder {
 
-@JsonKey(name: 'max_gas') int get maxGas;
+@JsonKey(name: 'max_gas') int get maxGas;@JsonKey(name: 'deposits') Map<String, ContractDepositBuilder> get deposits;
 /// Create a copy of DeployContractInvokeBuilder
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,16 +28,16 @@ $DeployContractInvokeBuilderCopyWith<DeployContractInvokeBuilder> get copyWith =
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is DeployContractInvokeBuilder&&(identical(other.maxGas, maxGas) || other.maxGas == maxGas));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is DeployContractInvokeBuilder&&(identical(other.maxGas, maxGas) || other.maxGas == maxGas)&&const DeepCollectionEquality().equals(other.deposits, deposits));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,maxGas);
+int get hashCode => Object.hash(runtimeType,maxGas,const DeepCollectionEquality().hash(deposits));
 
 @override
 String toString() {
-  return 'DeployContractInvokeBuilder(maxGas: $maxGas)';
+  return 'DeployContractInvokeBuilder(maxGas: $maxGas, deposits: $deposits)';
 }
 
 
@@ -48,7 +48,7 @@ abstract mixin class $DeployContractInvokeBuilderCopyWith<$Res>  {
   factory $DeployContractInvokeBuilderCopyWith(DeployContractInvokeBuilder value, $Res Function(DeployContractInvokeBuilder) _then) = _$DeployContractInvokeBuilderCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(name: 'max_gas') int maxGas
+@JsonKey(name: 'max_gas') int maxGas,@JsonKey(name: 'deposits') Map<String, ContractDepositBuilder> deposits
 });
 
 
@@ -65,10 +65,11 @@ class _$DeployContractInvokeBuilderCopyWithImpl<$Res>
 
 /// Create a copy of DeployContractInvokeBuilder
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? maxGas = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? maxGas = null,Object? deposits = null,}) {
   return _then(_self.copyWith(
 maxGas: null == maxGas ? _self.maxGas : maxGas // ignore: cast_nullable_to_non_nullable
-as int,
+as int,deposits: null == deposits ? _self.deposits : deposits // ignore: cast_nullable_to_non_nullable
+as Map<String, ContractDepositBuilder>,
   ));
 }
 
@@ -150,10 +151,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'max_gas')  int maxGas)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'max_gas')  int maxGas, @JsonKey(name: 'deposits')  Map<String, ContractDepositBuilder> deposits)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _DeployContractInvokeBuilder() when $default != null:
-return $default(_that.maxGas);case _:
+return $default(_that.maxGas,_that.deposits);case _:
   return orElse();
 
 }
@@ -171,10 +172,10 @@ return $default(_that.maxGas);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'max_gas')  int maxGas)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'max_gas')  int maxGas, @JsonKey(name: 'deposits')  Map<String, ContractDepositBuilder> deposits)  $default,) {final _that = this;
 switch (_that) {
 case _DeployContractInvokeBuilder():
-return $default(_that.maxGas);}
+return $default(_that.maxGas,_that.deposits);}
 }
 /// A variant of `when` that fallback to returning `null`
 ///
@@ -188,10 +189,10 @@ return $default(_that.maxGas);}
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'max_gas')  int maxGas)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'max_gas')  int maxGas, @JsonKey(name: 'deposits')  Map<String, ContractDepositBuilder> deposits)?  $default,) {final _that = this;
 switch (_that) {
 case _DeployContractInvokeBuilder() when $default != null:
-return $default(_that.maxGas);case _:
+return $default(_that.maxGas,_that.deposits);case _:
   return null;
 
 }
@@ -200,13 +201,20 @@ return $default(_that.maxGas);case _:
 }
 
 /// @nodoc
-@JsonSerializable()
 
+@JsonSerializable(explicitToJson: true)
 class _DeployContractInvokeBuilder implements DeployContractInvokeBuilder {
-  const _DeployContractInvokeBuilder({@JsonKey(name: 'max_gas') required this.maxGas});
+  const _DeployContractInvokeBuilder({@JsonKey(name: 'max_gas') required this.maxGas, @JsonKey(name: 'deposits') final  Map<String, ContractDepositBuilder> deposits = const <String, ContractDepositBuilder>{}}): _deposits = deposits;
   factory _DeployContractInvokeBuilder.fromJson(Map<String, dynamic> json) => _$DeployContractInvokeBuilderFromJson(json);
 
 @override@JsonKey(name: 'max_gas') final  int maxGas;
+ final  Map<String, ContractDepositBuilder> _deposits;
+@override@JsonKey(name: 'deposits') Map<String, ContractDepositBuilder> get deposits {
+  if (_deposits is EqualUnmodifiableMapView) return _deposits;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableMapView(_deposits);
+}
+
 
 /// Create a copy of DeployContractInvokeBuilder
 /// with the given fields replaced by the non-null parameter values.
@@ -221,16 +229,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _DeployContractInvokeBuilder&&(identical(other.maxGas, maxGas) || other.maxGas == maxGas));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _DeployContractInvokeBuilder&&(identical(other.maxGas, maxGas) || other.maxGas == maxGas)&&const DeepCollectionEquality().equals(other._deposits, _deposits));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,maxGas);
+int get hashCode => Object.hash(runtimeType,maxGas,const DeepCollectionEquality().hash(_deposits));
 
 @override
 String toString() {
-  return 'DeployContractInvokeBuilder(maxGas: $maxGas)';
+  return 'DeployContractInvokeBuilder(maxGas: $maxGas, deposits: $deposits)';
 }
 
 
@@ -241,7 +249,7 @@ abstract mixin class _$DeployContractInvokeBuilderCopyWith<$Res> implements $Dep
   factory _$DeployContractInvokeBuilderCopyWith(_DeployContractInvokeBuilder value, $Res Function(_DeployContractInvokeBuilder) _then) = __$DeployContractInvokeBuilderCopyWithImpl;
 @override @useResult
 $Res call({
-@JsonKey(name: 'max_gas') int maxGas
+@JsonKey(name: 'max_gas') int maxGas,@JsonKey(name: 'deposits') Map<String, ContractDepositBuilder> deposits
 });
 
 
@@ -258,10 +266,11 @@ class __$DeployContractInvokeBuilderCopyWithImpl<$Res>
 
 /// Create a copy of DeployContractInvokeBuilder
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? maxGas = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? maxGas = null,Object? deposits = null,}) {
   return _then(_DeployContractInvokeBuilder(
 maxGas: null == maxGas ? _self.maxGas : maxGas // ignore: cast_nullable_to_non_nullable
-as int,
+as int,deposits: null == deposits ? _self._deposits : deposits // ignore: cast_nullable_to_non_nullable
+as Map<String, ContractDepositBuilder>,
   ));
 }
 
