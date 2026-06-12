@@ -13,7 +13,7 @@ _TransferBuilder _$TransferBuilderFromJson(Map<String, dynamic> json) =>
       asset: json['asset'] as String,
       amount: (json['amount'] as num).toInt(),
       destination: json['destination'] as String,
-      encryptExtraData: json['encrypt_extra_data'] as bool,
+      encryptExtraData: json['encrypt_extra_data'] as bool? ?? true,
       extraData: json['extra_data'],
     );
 

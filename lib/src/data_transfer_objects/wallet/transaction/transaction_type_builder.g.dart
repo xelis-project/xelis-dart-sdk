@@ -18,7 +18,7 @@ TransfersBuilder _$TransfersBuilderFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$TransfersBuilderToJson(TransfersBuilder instance) =>
     <String, dynamic>{
-      'transfers': instance.transfers,
+      'transfers': instance.transfers.map((e) => e.toJson()).toList(),
       'runtimeType': instance.$type,
     };
 
@@ -58,10 +58,15 @@ InvokeContractBuilder _$InvokeContractBuilderFromJson(
   maxGas: (json['max_gas'] as num).toInt(),
   entryId: (json['entry_id'] as num).toInt(),
   parameters: json['parameters'] as List<dynamic>,
-  deposits: (json['deposits'] as Map<String, dynamic>).map(
-    (k, e) =>
-        MapEntry(k, ContractDepositBuilder.fromJson(e as Map<String, dynamic>)),
-  ),
+  deposits:
+      (json['deposits'] as Map<String, dynamic>?)?.map(
+        (k, e) => MapEntry(
+          k,
+          ContractDepositBuilder.fromJson(e as Map<String, dynamic>),
+        ),
+      ) ??
+      const <String, ContractDepositBuilder>{},
+  permission: json['permission'] ?? 'none',
   $type: json['runtimeType'] as String?,
 );
 
@@ -72,7 +77,8 @@ Map<String, dynamic> _$InvokeContractBuilderToJson(
   'max_gas': instance.maxGas,
   'entry_id': instance.entryId,
   'parameters': instance.parameters,
-  'deposits': instance.deposits,
+  'deposits': instance.deposits.map((k, e) => MapEntry(k, e.toJson())),
+  'permission': instance.permission,
   'runtimeType': instance.$type,
 };
 
@@ -80,6 +86,7 @@ DeployContractBuilder _$DeployContractBuilderFromJson(
   Map<String, dynamic> json,
 ) => DeployContractBuilder(
   module: json['module'] as String,
+  contractVersion: json['contract_version'] as String? ?? 'v0',
   invoke: json['invoke'] == null
       ? null
       : DeployContractInvokeBuilder.fromJson(
@@ -92,6 +99,24 @@ Map<String, dynamic> _$DeployContractBuilderToJson(
   DeployContractBuilder instance,
 ) => <String, dynamic>{
   'module': instance.module,
-  'invoke': instance.invoke,
+  'contract_version': instance.contractVersion,
+  'invoke': instance.invoke?.toJson(),
   'runtimeType': instance.$type,
 };
+
+BlobBuilder _$BlobBuilderFromJson(Map<String, dynamic> json) => BlobBuilder(
+  data: json['data'],
+  destinations: (json['destinations'] as List<dynamic>)
+      .map((e) => e as String)
+      .toList(),
+  encrypt: json['encrypt'] as bool? ?? true,
+  $type: json['runtimeType'] as String?,
+);
+
+Map<String, dynamic> _$BlobBuilderToJson(BlobBuilder instance) =>
+    <String, dynamic>{
+      'data': instance.data,
+      'destinations': instance.destinations,
+      'encrypt': instance.encrypt,
+      'runtimeType': instance.$type,
+    };

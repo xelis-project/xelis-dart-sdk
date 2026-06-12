@@ -1,3 +1,15 @@
+## 0.32.0
+
+- breaking: replace `TransactionTypeBuilderSafe.safeFromJson` with
+  `TransactionTypeBuilder.fromRpcJson`.
+- add Blob transaction builder and transaction payload support.
+- align transaction type serialization with Rust RPC variants for transfers,
+  burn, multi_sig, invoke_contract, deploy_contract, and blob.
+- add Rust-compatible defaults for transfer extra-data encryption, contract
+  deposits, invoke permissions, and contract version.
+- add transaction type coverage for wallet builders, daemon RPC transactions,
+  and wallet transaction responses.
+
 ## 0.31.0
 
 - breaking: hide the concrete WebSocket client behind an internal RPC transport

@@ -213,7 +213,7 @@ return $default(_that.asset,_that.amount,_that.destination,_that.encryptExtraDat
 
 @JsonSerializable(includeIfNull: false)
 class _TransferBuilder implements TransferBuilder {
-  const _TransferBuilder({@JsonKey(name: 'asset') required this.asset, @JsonKey(name: 'amount') required this.amount, @JsonKey(name: 'destination') required this.destination, @JsonKey(name: 'encrypt_extra_data') required this.encryptExtraData, @JsonKey(name: 'extra_data') this.extraData});
+  const _TransferBuilder({@JsonKey(name: 'asset') required this.asset, @JsonKey(name: 'amount') required this.amount, @JsonKey(name: 'destination') required this.destination, @JsonKey(name: 'encrypt_extra_data') this.encryptExtraData = true, @JsonKey(name: 'extra_data') this.extraData});
   factory _TransferBuilder.fromJson(Map<String, dynamic> json) => _$TransferBuilderFromJson(json);
 
 @override@JsonKey(name: 'asset') final  String asset;

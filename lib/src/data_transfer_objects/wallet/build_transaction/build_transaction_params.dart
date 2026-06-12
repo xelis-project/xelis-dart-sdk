@@ -23,15 +23,8 @@ abstract class BuildTransactionParams with _$BuildTransactionParams {
 
   /// @nodoc
   factory BuildTransactionParams.fromJson(Map<String, dynamic> json) {
-    final txBuilder = _resolveTransactionBuilder(json);
-    if (txBuilder == null) {
-      throw FormatException(
-        'Unsupported or missing transaction type: ${json.keys}',
-      );
-    }
-
     return BuildTransactionParams(
-      transactionTypeBuilder: txBuilder,
+      transactionTypeBuilder: TransactionTypeBuilder.fromRpcJson(json),
       feeBuilder: json['fee'] != null
           ? FeeBuilder.fromJson(json['fee'] as Map<String, dynamic>)
           : null,
@@ -46,34 +39,9 @@ abstract class BuildTransactionParams with _$BuildTransactionParams {
     );
   }
 
-  static TransactionTypeBuilder? _resolveTransactionBuilder(
-    Map<String, dynamic> json,
-  ) {
-    if (json.containsKey('transfers')) {
-      return TransfersBuilder.fromJson(
-        {'transfers': json['transfers']},
-      );
-    } else if (json.containsKey('burn')) {
-      return BurnBuilder.fromJson(json['burn'] as Map<String, dynamic>);
-    } else if (json.containsKey('multi_sig')) {
-      return MultisigBuilder.fromJson(
-        json['multi_sig'] as Map<String, dynamic>,
-      );
-    } else if (json.containsKey('invoke_contract')) {
-      return InvokeContractBuilder.fromJson(
-        json['invoke_contract'] as Map<String, dynamic>,
-      );
-    } else if (json.containsKey('deploy_contract')) {
-      return DeployContractBuilder.fromJson(
-        json['deploy_contract'] as Map<String, dynamic>,
-      );
-    }
-    return null;
-  }
-
   /// @nodoc
   Map<String, dynamic> toJson() {
-    final txJson = transactionTypeBuilder.toJson();
+    final txJson = transactionTypeBuilder.toRpcJson();
     final commonJson = _serializeCommonFields();
     return {
       ...txJson,

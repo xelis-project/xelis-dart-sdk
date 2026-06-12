@@ -227,7 +227,7 @@ extension WalletRpcMethodsExtension on WalletClient {
   ) async {
     final result = await sendRequest(
       WalletMethod.estimateFees,
-      transactionTypeBuilder.toJson(),
+      transactionTypeBuilder.toRpcJson(),
     );
 
     return result as int;
