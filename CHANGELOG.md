@@ -7,6 +7,11 @@
 - add Blob transaction entry support.
 - deserialize incoming_contract transaction entries.
 
+## 0.30.13
+
+- fix(network): standardize Network enum values to lowercase (`mainnet`, `testnet`, `devnet`, `stagenet`).
+- chore: update SDK and dependencies to latest versions.
+
 ## 0.30.12
 
 - ensure proper conversion of JSON values to BigInt in MaxSupplyMode.
@@ -55,6 +60,7 @@
 - fix AssetData serialization
 
 ## 0.30.3
+
 - fix RPCAssetData serialization
 
 ## 0.30.2
