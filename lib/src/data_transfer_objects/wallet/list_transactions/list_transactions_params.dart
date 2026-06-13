@@ -1,4 +1,5 @@
-// ignore_for_file: invalid_annotation_target, always_put_required_named_parameters_first
+// JsonSerializable config is forwarded to the generated Freezed class.
+// ignore_for_file: invalid_annotation_target
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 
