@@ -1,5 +1,3 @@
-// ignore_for_file: invalid_annotation_target
-
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:xelis_dart_sdk/xelis_dart_sdk.dart';
 
@@ -22,7 +20,12 @@ sealed class TransactionType with _$TransactionType {
 
   /// @nodoc
   const factory TransactionType.multisig({
-    @JsonKey(name: 'participants') required List<dynamic> participants,
+    @JsonKey(
+      name: 'participants',
+      fromJson: AddressOrPublicKey.listFromJson,
+      toJson: AddressOrPublicKey.listToJson,
+    )
+    required List<AddressOrPublicKey> participants,
     @JsonKey(name: 'threshold') required int threshold,
   }) = MultisigPayload;
 
@@ -46,7 +49,12 @@ sealed class TransactionType with _$TransactionType {
   /// @nodoc
   const factory TransactionType.blob({
     @JsonKey(name: 'data') required dynamic data,
-    @JsonKey(name: 'destinations') required List<String> destinations,
+    @JsonKey(
+      name: 'destinations',
+      fromJson: AddressOrPublicKey.listFromJson,
+      toJson: AddressOrPublicKey.listToJson,
+    )
+    required List<AddressOrPublicKey> destinations,
   }) = BlobPayload;
 
   /// @nodoc

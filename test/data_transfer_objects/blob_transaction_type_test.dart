@@ -61,18 +61,38 @@ void main() {
     test('parses transaction payload JSON', () {
       final transactionType = TransactionType.fromJson({
         'blob': {
-          'data': {'Public': 'hello'},
-          'destinations': ['xel-address'],
+          'data': [1, 2, 3],
+          'destinations': [
+            [4, 5, 6],
+          ],
         },
       });
 
       expect(
         transactionType,
         isA<BlobPayload>()
-            .having((blob) => blob.data, 'data', {'Public': 'hello'})
+            .having((blob) => blob.data, 'data', [1, 2, 3])
             .having((blob) => blob.destinations, 'destinations', [
-              'xel-address',
+              const AddressOrPublicKey.publicKey([4, 5, 6]),
             ]),
+      );
+    });
+
+    test('parses RPC transaction payload JSON with address destinations', () {
+      final transactionType = TransactionType.fromJson({
+        'blob': {
+          'data': [1, 2, 3],
+          'destinations': ['xel-address'],
+        },
+      });
+
+      expect(
+        transactionType,
+        isA<BlobPayload>().having(
+          (blob) => blob.destinations,
+          'destinations',
+          [const AddressOrPublicKey.address('xel-address')],
+        ),
       );
     });
 
@@ -80,30 +100,36 @@ void main() {
       final response = TransactionWalletResponse.fromJson({
         'data': {
           'blob': {
-            'data': {'Public': 'hello'},
+            'data': [1, 2, 3],
             'destinations': ['xel-address'],
           },
         },
         'fee': 10,
+        'fee_limit': 20,
         'hash': 'tx-hash',
         'version': 3,
         'nonce': 1,
-        'source': [1, 2, 3],
+        'source': 'source-address',
         'range_proof': [4, 5, 6],
         'source_commitments': <Map<String, dynamic>>[
           {'asset': 'xelis'},
         ],
         'reference': {'hash': 'ref-hash', 'topoheight': 42},
+        'multisig': null,
         'signature': 'signature',
+        'size': 123,
       });
 
       expect(response.txAsHex, isNull);
+      expect(response.source, 'source-address');
+      expect(response.feeLimit, 20);
+      expect(response.size, 123);
       expect(
         response.data,
         isA<BlobPayload>()
-            .having((blob) => blob.data, 'data', {'Public': 'hello'})
+            .having((blob) => blob.data, 'data', [1, 2, 3])
             .having((blob) => blob.destinations, 'destinations', [
-              'xel-address',
+              const AddressOrPublicKey.address('xel-address'),
             ]),
       );
     });

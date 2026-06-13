@@ -93,6 +93,7 @@ export 'stable_topoheight_changed_event/stable_topoheight_changed_event.dart';
 export 'submit_block/submit_block_params.dart';
 export 'submit_transaction/submit_transaction_params.dart';
 export 'transaction/rpc_transaction.dart';
+export 'transaction/address_or_public_key.dart';
 export 'transaction/transaction_response.dart';
 export 'transaction/transaction_type.dart';
 export 'transaction/transfer_payload.dart';

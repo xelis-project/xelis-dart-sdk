@@ -15,7 +15,7 @@ _TransferPayload _$TransferPayloadFromJson(Map<String, dynamic> json) =>
           .map((e) => (e as num).toInt())
           .toList(),
       validityProof: json['ct_validity_proof'] as Map<String, dynamic>,
-      destination: json['destination'],
+      destination: AddressOrPublicKey.fromJson(json['destination']),
       receiverHandle: (json['receiver_handle'] as List<dynamic>)
           .map((e) => (e as num).toInt())
           .toList(),
@@ -30,7 +30,7 @@ Map<String, dynamic> _$TransferPayloadToJson(_TransferPayload instance) =>
       'asset': instance.asset,
       'commitment': instance.commitment,
       'ct_validity_proof': instance.validityProof,
-      'destination': instance.destination,
+      'destination': AddressOrPublicKey.toJsonValue(instance.destination),
       'receiver_handle': instance.receiverHandle,
       'sender_handle': instance.senderHandle,
       'extra_data': instance.extraData,

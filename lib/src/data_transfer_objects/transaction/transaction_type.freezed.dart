@@ -173,7 +173,7 @@ return blob(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function(@JsonKey(name: 'transfers')  List<TransferPayload> transfers)?  transfers,TResult Function(@JsonKey(name: 'asset')  String asset, @JsonKey(name: 'amount')  int amount)?  burn,TResult Function(@JsonKey(name: 'participants')  List<dynamic> participants, @JsonKey(name: 'threshold')  int threshold)?  multisig,TResult Function(@JsonKey(name: 'contract')  String contract, @JsonKey(name: 'deposits')  dynamic deposits, @JsonKey(name: 'entry_id')  int entryId, @JsonKey(name: 'max_gas')  int maxGas, @JsonKey(name: 'parameters')  List<dynamic> parameters, @JsonKey(name: 'permission')  dynamic permission)?  invokeContract,TResult Function(@JsonKey(name: 'version')  dynamic version, @JsonKey(name: 'module')  dynamic module, @JsonKey(name: 'invoke')  dynamic invoke)?  deployContract,TResult Function(@JsonKey(name: 'data')  dynamic data, @JsonKey(name: 'destinations')  List<String> destinations)?  blob,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function(@JsonKey(name: 'transfers')  List<TransferPayload> transfers)?  transfers,TResult Function(@JsonKey(name: 'asset')  String asset, @JsonKey(name: 'amount')  int amount)?  burn,TResult Function(@JsonKey(name: 'participants', fromJson: AddressOrPublicKey.listFromJson, toJson: AddressOrPublicKey.listToJson)  List<AddressOrPublicKey> participants, @JsonKey(name: 'threshold')  int threshold)?  multisig,TResult Function(@JsonKey(name: 'contract')  String contract, @JsonKey(name: 'deposits')  dynamic deposits, @JsonKey(name: 'entry_id')  int entryId, @JsonKey(name: 'max_gas')  int maxGas, @JsonKey(name: 'parameters')  List<dynamic> parameters, @JsonKey(name: 'permission')  dynamic permission)?  invokeContract,TResult Function(@JsonKey(name: 'version')  dynamic version, @JsonKey(name: 'module')  dynamic module, @JsonKey(name: 'invoke')  dynamic invoke)?  deployContract,TResult Function(@JsonKey(name: 'data')  dynamic data, @JsonKey(name: 'destinations', fromJson: AddressOrPublicKey.listFromJson, toJson: AddressOrPublicKey.listToJson)  List<AddressOrPublicKey> destinations)?  blob,required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case TransfersPayload() when transfers != null:
 return transfers(_that.transfers);case BurnPayload() when burn != null:
@@ -199,7 +199,7 @@ return blob(_that.data,_that.destinations);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function(@JsonKey(name: 'transfers')  List<TransferPayload> transfers)  transfers,required TResult Function(@JsonKey(name: 'asset')  String asset, @JsonKey(name: 'amount')  int amount)  burn,required TResult Function(@JsonKey(name: 'participants')  List<dynamic> participants, @JsonKey(name: 'threshold')  int threshold)  multisig,required TResult Function(@JsonKey(name: 'contract')  String contract, @JsonKey(name: 'deposits')  dynamic deposits, @JsonKey(name: 'entry_id')  int entryId, @JsonKey(name: 'max_gas')  int maxGas, @JsonKey(name: 'parameters')  List<dynamic> parameters, @JsonKey(name: 'permission')  dynamic permission)  invokeContract,required TResult Function(@JsonKey(name: 'version')  dynamic version, @JsonKey(name: 'module')  dynamic module, @JsonKey(name: 'invoke')  dynamic invoke)  deployContract,required TResult Function(@JsonKey(name: 'data')  dynamic data, @JsonKey(name: 'destinations')  List<String> destinations)  blob,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function(@JsonKey(name: 'transfers')  List<TransferPayload> transfers)  transfers,required TResult Function(@JsonKey(name: 'asset')  String asset, @JsonKey(name: 'amount')  int amount)  burn,required TResult Function(@JsonKey(name: 'participants', fromJson: AddressOrPublicKey.listFromJson, toJson: AddressOrPublicKey.listToJson)  List<AddressOrPublicKey> participants, @JsonKey(name: 'threshold')  int threshold)  multisig,required TResult Function(@JsonKey(name: 'contract')  String contract, @JsonKey(name: 'deposits')  dynamic deposits, @JsonKey(name: 'entry_id')  int entryId, @JsonKey(name: 'max_gas')  int maxGas, @JsonKey(name: 'parameters')  List<dynamic> parameters, @JsonKey(name: 'permission')  dynamic permission)  invokeContract,required TResult Function(@JsonKey(name: 'version')  dynamic version, @JsonKey(name: 'module')  dynamic module, @JsonKey(name: 'invoke')  dynamic invoke)  deployContract,required TResult Function(@JsonKey(name: 'data')  dynamic data, @JsonKey(name: 'destinations', fromJson: AddressOrPublicKey.listFromJson, toJson: AddressOrPublicKey.listToJson)  List<AddressOrPublicKey> destinations)  blob,}) {final _that = this;
 switch (_that) {
 case TransfersPayload():
 return transfers(_that.transfers);case BurnPayload():
@@ -221,7 +221,7 @@ return blob(_that.data,_that.destinations);}
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function(@JsonKey(name: 'transfers')  List<TransferPayload> transfers)?  transfers,TResult? Function(@JsonKey(name: 'asset')  String asset, @JsonKey(name: 'amount')  int amount)?  burn,TResult? Function(@JsonKey(name: 'participants')  List<dynamic> participants, @JsonKey(name: 'threshold')  int threshold)?  multisig,TResult? Function(@JsonKey(name: 'contract')  String contract, @JsonKey(name: 'deposits')  dynamic deposits, @JsonKey(name: 'entry_id')  int entryId, @JsonKey(name: 'max_gas')  int maxGas, @JsonKey(name: 'parameters')  List<dynamic> parameters, @JsonKey(name: 'permission')  dynamic permission)?  invokeContract,TResult? Function(@JsonKey(name: 'version')  dynamic version, @JsonKey(name: 'module')  dynamic module, @JsonKey(name: 'invoke')  dynamic invoke)?  deployContract,TResult? Function(@JsonKey(name: 'data')  dynamic data, @JsonKey(name: 'destinations')  List<String> destinations)?  blob,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function(@JsonKey(name: 'transfers')  List<TransferPayload> transfers)?  transfers,TResult? Function(@JsonKey(name: 'asset')  String asset, @JsonKey(name: 'amount')  int amount)?  burn,TResult? Function(@JsonKey(name: 'participants', fromJson: AddressOrPublicKey.listFromJson, toJson: AddressOrPublicKey.listToJson)  List<AddressOrPublicKey> participants, @JsonKey(name: 'threshold')  int threshold)?  multisig,TResult? Function(@JsonKey(name: 'contract')  String contract, @JsonKey(name: 'deposits')  dynamic deposits, @JsonKey(name: 'entry_id')  int entryId, @JsonKey(name: 'max_gas')  int maxGas, @JsonKey(name: 'parameters')  List<dynamic> parameters, @JsonKey(name: 'permission')  dynamic permission)?  invokeContract,TResult? Function(@JsonKey(name: 'version')  dynamic version, @JsonKey(name: 'module')  dynamic module, @JsonKey(name: 'invoke')  dynamic invoke)?  deployContract,TResult? Function(@JsonKey(name: 'data')  dynamic data, @JsonKey(name: 'destinations', fromJson: AddressOrPublicKey.listFromJson, toJson: AddressOrPublicKey.listToJson)  List<AddressOrPublicKey> destinations)?  blob,}) {final _that = this;
 switch (_that) {
 case TransfersPayload() when transfers != null:
 return transfers(_that.transfers);case BurnPayload() when burn != null:
@@ -395,11 +395,11 @@ as int,
 @JsonSerializable()
 
 class MultisigPayload implements TransactionType {
-  const MultisigPayload({@JsonKey(name: 'participants') required final  List<dynamic> participants, @JsonKey(name: 'threshold') required this.threshold, final  String? $type}): _participants = participants,$type = $type ?? 'multisig';
+  const MultisigPayload({@JsonKey(name: 'participants', fromJson: AddressOrPublicKey.listFromJson, toJson: AddressOrPublicKey.listToJson) required final  List<AddressOrPublicKey> participants, @JsonKey(name: 'threshold') required this.threshold, final  String? $type}): _participants = participants,$type = $type ?? 'multisig';
   factory MultisigPayload.fromJson(Map<String, dynamic> json) => _$MultisigPayloadFromJson(json);
 
- final  List<dynamic> _participants;
-@JsonKey(name: 'participants') List<dynamic> get participants {
+ final  List<AddressOrPublicKey> _participants;
+@JsonKey(name: 'participants', fromJson: AddressOrPublicKey.listFromJson, toJson: AddressOrPublicKey.listToJson) List<AddressOrPublicKey> get participants {
   if (_participants is EqualUnmodifiableListView) return _participants;
   // ignore: implicit_dynamic_type
   return EqualUnmodifiableListView(_participants);
@@ -444,7 +444,7 @@ abstract mixin class $MultisigPayloadCopyWith<$Res> implements $TransactionTypeC
   factory $MultisigPayloadCopyWith(MultisigPayload value, $Res Function(MultisigPayload) _then) = _$MultisigPayloadCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(name: 'participants') List<dynamic> participants,@JsonKey(name: 'threshold') int threshold
+@JsonKey(name: 'participants', fromJson: AddressOrPublicKey.listFromJson, toJson: AddressOrPublicKey.listToJson) List<AddressOrPublicKey> participants,@JsonKey(name: 'threshold') int threshold
 });
 
 
@@ -464,7 +464,7 @@ class _$MultisigPayloadCopyWithImpl<$Res>
 @pragma('vm:prefer-inline') $Res call({Object? participants = null,Object? threshold = null,}) {
   return _then(MultisigPayload(
 participants: null == participants ? _self._participants : participants // ignore: cast_nullable_to_non_nullable
-as List<dynamic>,threshold: null == threshold ? _self.threshold : threshold // ignore: cast_nullable_to_non_nullable
+as List<AddressOrPublicKey>,threshold: null == threshold ? _self.threshold : threshold // ignore: cast_nullable_to_non_nullable
 as int,
   ));
 }
@@ -642,12 +642,12 @@ as dynamic,
 @JsonSerializable()
 
 class BlobPayload implements TransactionType {
-  const BlobPayload({@JsonKey(name: 'data') required this.data, @JsonKey(name: 'destinations') required final  List<String> destinations, final  String? $type}): _destinations = destinations,$type = $type ?? 'blob';
+  const BlobPayload({@JsonKey(name: 'data') required this.data, @JsonKey(name: 'destinations', fromJson: AddressOrPublicKey.listFromJson, toJson: AddressOrPublicKey.listToJson) required final  List<AddressOrPublicKey> destinations, final  String? $type}): _destinations = destinations,$type = $type ?? 'blob';
   factory BlobPayload.fromJson(Map<String, dynamic> json) => _$BlobPayloadFromJson(json);
 
 @JsonKey(name: 'data') final  dynamic data;
- final  List<String> _destinations;
-@JsonKey(name: 'destinations') List<String> get destinations {
+ final  List<AddressOrPublicKey> _destinations;
+@JsonKey(name: 'destinations', fromJson: AddressOrPublicKey.listFromJson, toJson: AddressOrPublicKey.listToJson) List<AddressOrPublicKey> get destinations {
   if (_destinations is EqualUnmodifiableListView) return _destinations;
   // ignore: implicit_dynamic_type
   return EqualUnmodifiableListView(_destinations);
@@ -691,7 +691,7 @@ abstract mixin class $BlobPayloadCopyWith<$Res> implements $TransactionTypeCopyW
   factory $BlobPayloadCopyWith(BlobPayload value, $Res Function(BlobPayload) _then) = _$BlobPayloadCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(name: 'data') dynamic data,@JsonKey(name: 'destinations') List<String> destinations
+@JsonKey(name: 'data') dynamic data,@JsonKey(name: 'destinations', fromJson: AddressOrPublicKey.listFromJson, toJson: AddressOrPublicKey.listToJson) List<AddressOrPublicKey> destinations
 });
 
 
@@ -712,7 +712,7 @@ class _$BlobPayloadCopyWithImpl<$Res>
   return _then(BlobPayload(
 data: freezed == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
 as dynamic,destinations: null == destinations ? _self._destinations : destinations // ignore: cast_nullable_to_non_nullable
-as List<String>,
+as List<AddressOrPublicKey>,
   ));
 }
 

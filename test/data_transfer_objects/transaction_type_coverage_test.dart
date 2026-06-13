@@ -6,8 +6,10 @@ typedef _TransactionTypeCase = ({
   TransactionTypeBuilder builder,
   Map<String, dynamic> builderRpcJson,
   Map<String, dynamic> payloadRpcJson,
+  Map<String, dynamic> rawPayloadJson,
   Matcher builderMatcher,
   Matcher payloadMatcher,
+  Matcher rawPayloadMatcher,
 });
 
 void main() {
@@ -64,20 +66,37 @@ void main() {
           );
         });
 
+        test('parses raw transaction payloads from public-key bytes', () {
+          expect(
+            TransactionType.fromJson(txCase.rawPayloadJson),
+            txCase.rawPayloadMatcher,
+          );
+        });
+
         test('parses daemon RPC transactions from the Rust RPC tag', () {
           final transaction = RPCTransaction.fromJson(
             _rpcTransactionJson(txCase.payloadRpcJson),
           );
 
           expect(transaction.data, txCase.payloadMatcher);
+          expect(transaction.feeLimit, 20);
+          expect(transaction.feePaid, 7);
+          expect(transaction.feeRefund, 3);
+          expect(transaction.toJson()['size'], 123);
         });
 
-        test('parses wallet transaction responses from the Rust RPC tag', () {
+        test('parses wallet transaction responses from RPC transactions', () {
           final response = TransactionWalletResponse.fromJson(
             _walletTransactionJson(txCase.payloadRpcJson),
           );
 
           expect(response.data, txCase.payloadMatcher);
+          expect(response.source, 'source-address');
+          expect(response.feeLimit, 20);
+          expect(response.feePaid, isNull);
+          expect(response.feeRefund, isNull);
+          expect(response.size, 123);
+          expect(response.txAsHex, 'tx-hex');
         });
       });
     }
@@ -120,6 +139,19 @@ _TransactionTypeCase _transfersCase() {
       },
     ],
   };
+  final rawPayloadJson = <String, dynamic>{
+    'transfers': <Map<String, dynamic>>[
+      <String, dynamic>{
+        'asset': 'asset-hash',
+        'commitment': <int>[1, 2, 3],
+        'ct_validity_proof': <String, dynamic>{'proof': 'valid'},
+        'destination': <int>[8, 9, 10],
+        'receiver_handle': <int>[4, 5],
+        'sender_handle': <int>[6, 7],
+        'extra_data': <int>[1, 2, 3],
+      },
+    ],
+  };
 
   return (
     name: 'transfers',
@@ -136,15 +168,27 @@ _TransactionTypeCase _transfersCase() {
     ),
     builderRpcJson: builderRpcJson,
     payloadRpcJson: payloadRpcJson,
+    rawPayloadJson: rawPayloadJson,
     builderMatcher: isA<TransfersBuilder>().having(
       (builder) => builder.transfers.single.amount,
       'amount',
       42,
     ),
-    payloadMatcher: isA<TransfersPayload>().having(
-      (payload) => payload.transfers.single.extraData,
-      'extraData',
-      <String, dynamic>{'Public': 'memo'},
+    payloadMatcher: isA<TransfersPayload>()
+        .having(
+          (payload) => payload.transfers.single.destination,
+          'destination',
+          const AddressOrPublicKey.address('xel-address'),
+        )
+        .having(
+          (payload) => payload.transfers.single.extraData,
+          'extraData',
+          <String, dynamic>{'Public': 'memo'},
+        ),
+    rawPayloadMatcher: isA<TransfersPayload>().having(
+      (payload) => payload.transfers.single.destination,
+      'destination',
+      const AddressOrPublicKey.publicKey(<int>[8, 9, 10]),
     ),
   );
 }
@@ -165,12 +209,18 @@ _TransactionTypeCase _burnCase() {
     ),
     builderRpcJson: rpcJson,
     payloadRpcJson: rpcJson,
+    rawPayloadJson: rpcJson,
     builderMatcher: isA<BurnBuilder>().having(
       (builder) => builder.amount,
       'amount',
       42,
     ),
     payloadMatcher: isA<BurnPayload>().having(
+      (payload) => payload.asset,
+      'asset',
+      'asset-hash',
+    ),
+    rawPayloadMatcher: isA<BurnPayload>().having(
       (payload) => payload.asset,
       'asset',
       'asset-hash',
@@ -185,6 +235,15 @@ _TransactionTypeCase _multiSigCase() {
       'threshold': 2,
     },
   };
+  final rawPayloadJson = <String, dynamic>{
+    'multi_sig': <String, dynamic>{
+      'participants': <List<int>>[
+        <int>[1, 2, 3],
+        <int>[4, 5, 6],
+      ],
+      'threshold': 2,
+    },
+  };
 
   return (
     name: 'multi_sig',
@@ -194,16 +253,32 @@ _TransactionTypeCase _multiSigCase() {
     ),
     builderRpcJson: rpcJson,
     payloadRpcJson: rpcJson,
+    rawPayloadJson: rawPayloadJson,
     builderMatcher: isA<MultisigBuilder>().having(
       (builder) => builder.participants,
       'participants',
       <String>['xel-address-a', 'xel-address-b'],
     ),
-    payloadMatcher: isA<MultisigPayload>().having(
-      (payload) => payload.threshold,
-      'threshold',
-      2,
-    ),
+    payloadMatcher: isA<MultisigPayload>()
+        .having((payload) => payload.threshold, 'threshold', 2)
+        .having(
+          (payload) => payload.participants,
+          'participants',
+          <AddressOrPublicKey>[
+            const AddressOrPublicKey.address('xel-address-a'),
+            const AddressOrPublicKey.address('xel-address-b'),
+          ],
+        ),
+    rawPayloadMatcher: isA<MultisigPayload>()
+        .having((payload) => payload.threshold, 'threshold', 2)
+        .having(
+          (payload) => payload.participants,
+          'participants',
+          <AddressOrPublicKey>[
+            const AddressOrPublicKey.publicKey(<int>[1, 2, 3]),
+            const AddressOrPublicKey.publicKey(<int>[4, 5, 6]),
+          ],
+        ),
   );
 }
 
@@ -259,12 +334,18 @@ _TransactionTypeCase _invokeContractCase() {
     ),
     builderRpcJson: builderRpcJson,
     payloadRpcJson: payloadRpcJson,
+    rawPayloadJson: payloadRpcJson,
     builderMatcher: isA<InvokeContractBuilder>().having(
       (builder) => builder.permission,
       'permission',
       'all',
     ),
     payloadMatcher: isA<InvokeContractPayload>().having(
+      (payload) => payload.entryId,
+      'entryId',
+      7,
+    ),
+    rawPayloadMatcher: isA<InvokeContractPayload>().having(
       (payload) => payload.entryId,
       'entryId',
       7,
@@ -315,12 +396,18 @@ _TransactionTypeCase _deployContractCase() {
     ),
     builderRpcJson: builderRpcJson,
     payloadRpcJson: payloadRpcJson,
+    rawPayloadJson: payloadRpcJson,
     builderMatcher: isA<DeployContractBuilder>().having(
       (builder) => builder.contractVersion,
       'contractVersion',
       'v1',
     ),
     payloadMatcher: isA<DeployContractPayload>().having(
+      (payload) => payload.version,
+      'version',
+      'v1',
+    ),
+    rawPayloadMatcher: isA<DeployContractPayload>().having(
       (payload) => payload.version,
       'version',
       'v1',
@@ -338,8 +425,16 @@ _TransactionTypeCase _blobCase() {
   };
   final payloadRpcJson = <String, dynamic>{
     'blob': <String, dynamic>{
-      'data': <String, dynamic>{'Public': 'hello'},
+      'data': <int>[1, 2, 3],
       'destinations': <String>['xel-address'],
+    },
+  };
+  final rawPayloadJson = <String, dynamic>{
+    'blob': <String, dynamic>{
+      'data': <int>[1, 2, 3],
+      'destinations': <List<int>>[
+        <int>[4, 5, 6],
+      ],
     },
   };
 
@@ -352,6 +447,7 @@ _TransactionTypeCase _blobCase() {
     ),
     builderRpcJson: builderRpcJson,
     payloadRpcJson: payloadRpcJson,
+    rawPayloadJson: rawPayloadJson,
     builderMatcher: isA<BlobBuilder>().having(
       (builder) => builder.encrypt,
       'encrypt',
@@ -360,7 +456,14 @@ _TransactionTypeCase _blobCase() {
     payloadMatcher: isA<BlobPayload>().having(
       (payload) => payload.destinations,
       'destinations',
-      <String>['xel-address'],
+      <AddressOrPublicKey>[const AddressOrPublicKey.address('xel-address')],
+    ),
+    rawPayloadMatcher: isA<BlobPayload>().having(
+      (payload) => payload.destinations,
+      'destinations',
+      <AddressOrPublicKey>[
+        const AddressOrPublicKey.publicKey(<int>[4, 5, 6]),
+      ],
     ),
   );
 }
@@ -370,6 +473,9 @@ Map<String, dynamic> _rpcTransactionJson(Map<String, dynamic> data) {
     'hash': 'tx-hash',
     'data': data,
     'fee': 10,
+    'fee_limit': 20,
+    'fee_paid': 7,
+    'fee_refund': 3,
     'version': 3,
     'nonce': 1,
     'source': 'source-address',
@@ -378,6 +484,7 @@ Map<String, dynamic> _rpcTransactionJson(Map<String, dynamic> data) {
       <String, dynamic>{'asset': 'xelis'},
     ],
     'reference': <String, dynamic>{'hash': 'ref-hash', 'topoheight': 42},
+    'multisig': null,
     'signature': 'signature',
     'size': 123,
   };
@@ -387,15 +494,19 @@ Map<String, dynamic> _walletTransactionJson(Map<String, dynamic> data) {
   return <String, dynamic>{
     'data': data,
     'fee': 10,
+    'fee_limit': 20,
     'hash': 'tx-hash',
     'version': 3,
     'nonce': 1,
-    'source': <int>[1, 2, 3],
-    'range_proof': <int>[4, 5, 6],
-    'source_commitments': <Map<String, dynamic>>[
+    'source': 'source-address',
+    'range_proof': <dynamic>[4, 5, 6],
+    'source_commitments': <dynamic>[
       <String, dynamic>{'asset': 'xelis'},
     ],
     'reference': <String, dynamic>{'hash': 'ref-hash', 'topoheight': 42},
+    'multisig': null,
     'signature': 'signature',
+    'size': 123,
+    'tx_as_hex': 'tx-hex',
   };
 }

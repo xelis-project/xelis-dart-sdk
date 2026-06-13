@@ -37,14 +37,16 @@ Map<String, dynamic> _$BurnPayloadToJson(BurnPayload instance) =>
 
 MultisigPayload _$MultisigPayloadFromJson(Map<String, dynamic> json) =>
     MultisigPayload(
-      participants: json['participants'] as List<dynamic>,
+      participants: AddressOrPublicKey.listFromJson(
+        json['participants'] as List,
+      ),
       threshold: (json['threshold'] as num).toInt(),
       $type: json['runtimeType'] as String?,
     );
 
 Map<String, dynamic> _$MultisigPayloadToJson(MultisigPayload instance) =>
     <String, dynamic>{
-      'participants': instance.participants,
+      'participants': AddressOrPublicKey.listToJson(instance.participants),
       'threshold': instance.threshold,
       'runtimeType': instance.$type,
     };
@@ -93,15 +95,13 @@ Map<String, dynamic> _$DeployContractPayloadToJson(
 
 BlobPayload _$BlobPayloadFromJson(Map<String, dynamic> json) => BlobPayload(
   data: json['data'],
-  destinations: (json['destinations'] as List<dynamic>)
-      .map((e) => e as String)
-      .toList(),
+  destinations: AddressOrPublicKey.listFromJson(json['destinations'] as List),
   $type: json['runtimeType'] as String?,
 );
 
 Map<String, dynamic> _$BlobPayloadToJson(BlobPayload instance) =>
     <String, dynamic>{
       'data': instance.data,
-      'destinations': instance.destinations,
+      'destinations': AddressOrPublicKey.listToJson(instance.destinations),
       'runtimeType': instance.$type,
     };
