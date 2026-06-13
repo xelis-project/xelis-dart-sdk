@@ -1,4 +1,4 @@
-## Unreleased
+## 0.33.0
 
 - breaking: align finalized wallet transaction responses with the
   `RPCTransaction` shape returned by the XELIS wallet API.

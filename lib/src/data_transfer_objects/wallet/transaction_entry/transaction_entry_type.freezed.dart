@@ -1008,6 +1008,7 @@ as ExtraData,
 @override
 @pragma('vm:prefer-inline')
 $ExtraDataCopyWith<$Res> get data {
+  
   return $ExtraDataCopyWith<$Res>(_self.data, (value) {
     return _then(_self.copyWith(data: value));
   });
