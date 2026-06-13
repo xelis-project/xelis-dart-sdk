@@ -1,3 +1,14 @@
+## Unreleased
+
+- breaking: align finalized wallet transaction responses with the
+  `RPCTransaction` shape returned by the XELIS wallet API.
+- breaking: represent transaction endpoints as `AddressOrPublicKey` so payloads
+  can parse both address strings and raw compressed public-key bytes.
+- add `fee_limit`, optional fee usage, multisig metadata, and transaction size
+  support to transaction response DTOs.
+- add wallet `list_transactions` filters for timestamp ranges, blob entries,
+  pagination limit, and skip.
+
 ## 0.32.1
 
 - downgrade `json_annotation` to `^4.11.0` for Genesix wallet compatibility.
