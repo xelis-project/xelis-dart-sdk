@@ -15,13 +15,18 @@ abstract class ListTransactionsParams with _$ListTransactionsParams {
     @JsonKey(name: 'asset') String? asset,
     @JsonKey(name: 'min_topoheight') int? minTopoHeight,
     @JsonKey(name: 'max_topoheight') int? maxTopoHeight,
+    @JsonKey(name: 'min_timestamp') int? minTimestamp,
+    @JsonKey(name: 'max_timestamp') int? maxTimestamp,
     @JsonKey(name: 'address') String? address,
     @JsonKey(name: 'accept_incoming') bool? acceptIncoming,
     @JsonKey(name: 'accept_outgoing') bool? acceptOutgoing,
     @JsonKey(name: 'accept_coinbase') bool? acceptCoinbase,
     @JsonKey(name: 'accept_burn') bool? acceptBurn,
+    @JsonKey(name: 'accept_blob') bool? acceptBlob,
     // TODO
     @JsonKey(name: 'query') dynamic query,
+    @JsonKey(name: 'limit') int? limit,
+    @JsonKey(name: 'skip') int? skip,
   }) = _ListTransactionsParams;
 
   /// @nodoc
