@@ -1,3 +1,7 @@
+## 0.32.1
+
+- downgrade `json_annotation` to `^4.11.0` for Genesix wallet compatibility.
+
 ## 0.32.0
 
 - breaking: replace `TransactionTypeBuilderSafe.safeFromJson` with
