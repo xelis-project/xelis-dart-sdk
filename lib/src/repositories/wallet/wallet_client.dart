@@ -27,6 +27,8 @@ class WalletClient extends RpcClientRepository {
       WalletEvent.syncError: <void Function(String message)>[],
       WalletEvent.trackAsset: <void Function(String asset)>[],
       WalletEvent.untrackAsset: <void Function(String asset)>[],
+      WalletEvent.newPendingTransaction:
+          <void Function(TransactionPending transactionPending)>[],
     };
 
     _basicAuth = stringToBase64('$username:$password');
@@ -89,6 +91,10 @@ class WalletClient extends RpcClientRepository {
         final asset = result['asset'];
         _logInfo('Untrack asset event: $asset');
         _triggerCallbacks(event, asset);
+      case WalletEvent.newPendingTransaction:
+        final transactionPending = TransactionPending.fromJson(result);
+        _logInfo('New pending transaction: $transactionPending');
+        _triggerCallbacks(event, transactionPending);
     }
   }
 
@@ -96,9 +102,11 @@ class WalletClient extends RpcClientRepository {
   void _triggerCallbacks(XelisJsonKey event, dynamic parameter) {
     for (final callback in eventsCallbacks[event]!) {
       if (parameter != null) {
+        // Event callbacks have heterogeneous payload types keyed by event.
         // ignore: avoid_dynamic_calls
         callback(parameter);
       } else {
+        // Some events intentionally have no payload.
         // ignore: avoid_dynamic_calls
         callback();
       }

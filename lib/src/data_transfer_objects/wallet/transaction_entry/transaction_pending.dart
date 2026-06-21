@@ -2,30 +2,27 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/wallet/transaction_entry/transaction_entry_type.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/wallet/transaction_entry/transaction_entry_type_parser.dart';
 
-part 'transaction_entry.freezed.dart';
+part 'transaction_pending.freezed.dart';
 
 /// @nodoc
 @freezed
-abstract class TransactionEntry with _$TransactionEntry {
+abstract class TransactionPending with _$TransactionPending {
   /// @nodoc
-  const factory TransactionEntry({
+  const factory TransactionPending({
     required String hash,
-    required int topoheight,
     required TransactionEntryType txEntryType,
     DateTime? timestamp,
-  }) = _TransactionEntry;
+  }) = _TransactionPending;
 
   /// @nodoc
-  factory TransactionEntry.fromJson(Map<String, dynamic> json) {
+  factory TransactionPending.fromJson(Map<String, dynamic> json) {
     final hash = json['hash'] as String;
-    final topoheight = json['topoheight'] as int;
     final timestamp = json['timestamp'] != null
         ? DateTime.fromMillisecondsSinceEpoch(json['timestamp'] as int)
         : null;
 
-    return TransactionEntry(
+    return TransactionPending(
       hash: hash,
-      topoheight: topoheight,
       txEntryType: transactionEntryTypeFromJson(json),
       timestamp: timestamp,
     );
