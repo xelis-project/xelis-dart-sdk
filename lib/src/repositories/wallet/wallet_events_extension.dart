@@ -33,6 +33,16 @@ extension WalletEventsExtension on WalletClient {
     unawaited(unsubscribeFrom(WalletEvent.newTransaction));
   }
 
+  /// Registers a callback for NewPendingTransaction event.
+  void onNewPendingTransaction(
+    void Function(TransactionPending transactionPending) callback,
+  ) => onEvent(WalletEvent.newPendingTransaction, callback);
+
+  /// Unsubscribes from NewPendingTransaction event.
+  void unsubscribeFromNewPendingTransaction() {
+    unawaited(unsubscribeFrom(WalletEvent.newPendingTransaction));
+  }
+
   /// Registers a callback for BalanceChanged event.
   void onBalanceChanged(
     void Function(BalanceChangedEvent balanceChangedEvent) callback,
@@ -114,6 +124,7 @@ extension WalletEventsExtension on WalletClient {
     unsubscribeFromNewTopoHeight();
     unsubscribeFromNewAsset();
     unsubscribeFromNewTransaction();
+    unsubscribeFromNewPendingTransaction();
     unsubscribeFromBalanceChanged();
     unsubscribeFromRescan();
     unsubscribeFromOnline();

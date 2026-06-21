@@ -433,6 +433,53 @@ void main() {
 
       expect(await eventCompleter.future.timeout(_timeout), 42);
     });
+
+    test('dispatches new pending transaction events', () async {
+      final server = await RpcTestServer.start();
+      final client = _walletClient(server);
+      addTearDown(() async {
+        client.disconnect();
+        await server.close();
+      });
+
+      final eventCompleter = Completer<TransactionPending>();
+      client
+        ..connect()
+        ..registerCallback(
+          WalletEvent.newPendingTransaction,
+          eventCompleter.complete,
+        );
+
+      await server.waitForSocket();
+      server.send({
+        'id': 7,
+        'jsonrpc': '2.0',
+        'result': {
+          'event': 'new_pending_transaction',
+          'hash': 'tx_hash',
+          'timestamp': 1710000000000,
+          'incoming': {
+            'from': 'sender_address',
+            'transfers': [
+              {'asset': 'asset_hash', 'amount': 42},
+            ],
+          },
+        },
+      });
+
+      final event = await eventCompleter.future.timeout(_timeout);
+      expect(event.hash, 'tx_hash');
+      expect(
+        event.timestamp,
+        DateTime.fromMillisecondsSinceEpoch(1710000000000),
+      );
+      expect(event.txEntryType, isA<IncomingEntry>());
+
+      final incoming = event.txEntryType as IncomingEntry;
+      expect(incoming.from, 'sender_address');
+      expect(incoming.transfers.single.asset, 'asset_hash');
+      expect(incoming.transfers.single.amount, 42);
+    });
   });
 }
 

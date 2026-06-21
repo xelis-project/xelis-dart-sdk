@@ -180,7 +180,11 @@ enum WalletEvent implements XelisJsonKey {
   trackAsset('track_asset'),
 
   /// When a asset is untracked by the wallet.
-  untrackAsset('untrack_asset');
+  untrackAsset('untrack_asset'),
+
+  /// When a new pending transaction is added to wallet.
+  /// Contains TransactionPending struct as value
+  newPendingTransaction('new_pending_transaction');
 
   /// Creates a new [WalletEvent] instance.
   const WalletEvent(this.jsonKey);
@@ -210,6 +214,8 @@ enum WalletEvent implements XelisJsonKey {
         return WalletEvent.trackAsset;
       case 'untrack_asset':
         return WalletEvent.untrackAsset;
+      case 'new_pending_transaction':
+        return WalletEvent.newPendingTransaction;
       default:
         throw Exception('Unknown event: $value');
     }

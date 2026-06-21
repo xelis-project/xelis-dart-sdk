@@ -129,6 +129,7 @@ export 'wallet/transaction_entry/deploy_invoke.dart';
 export 'wallet/transaction_entry/extra_data.dart';
 export 'wallet/transaction_entry/transaction_entry.dart';
 export 'wallet/transaction_entry/transaction_entry_type.dart';
+export 'wallet/transaction_entry/transaction_pending.dart';
 export 'wallet/transaction_entry/transfer_in_entry.dart';
 export 'wallet/transaction_entry/transfer_out_entry.dart';
 export 'wallet/unsigned_transaction/unsigned_transaction.dart';
