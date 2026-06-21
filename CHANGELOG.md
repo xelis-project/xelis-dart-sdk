@@ -1,3 +1,10 @@
+## 0.34.0
+
+Wallet API upgrade :
+
+- add NewPendingTransaction wallet event.
+- add TransactionPending DTO for pending wallet transactions.
+
 ## 0.33.0
 
 - breaking: align finalized wallet transaction responses with the
