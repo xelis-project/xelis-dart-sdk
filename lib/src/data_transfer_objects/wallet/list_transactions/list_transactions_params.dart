@@ -19,6 +19,7 @@ abstract class ListTransactionsParams with _$ListTransactionsParams {
     @JsonKey(name: 'min_timestamp') int? minTimestamp,
     @JsonKey(name: 'max_timestamp') int? maxTimestamp,
     @JsonKey(name: 'address') String? address,
+    @JsonKey(name: 'contract') String? contract,
     @JsonKey(name: 'accept_incoming') bool? acceptIncoming,
     @JsonKey(name: 'accept_outgoing') bool? acceptOutgoing,
     @JsonKey(name: 'accept_coinbase') bool? acceptCoinbase,

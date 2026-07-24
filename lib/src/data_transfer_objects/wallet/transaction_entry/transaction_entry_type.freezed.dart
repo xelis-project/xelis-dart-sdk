@@ -47,8 +47,12 @@ TransactionEntryType _$TransactionEntryTypeFromJson(
           return IncomingContractEntry.fromJson(
             json
           );
-                case 'blob':
-          return BlobEntry.fromJson(
+                case 'outgoingBlob':
+          return OutgoingBlobEntry.fromJson(
+            json
+          );
+                case 'incomingBlob':
+          return IncomingBlobEntry.fromJson(
             json
           );
         
@@ -109,7 +113,7 @@ extension TransactionEntryTypePatterns on TransactionEntryType {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( CoinbaseEntry value)?  coinbase,TResult Function( BurnEntry value)?  burn,TResult Function( IncomingEntry value)?  incoming,TResult Function( OutgoingEntry value)?  outgoing,TResult Function( MultisigEntry value)?  multisig,TResult Function( InvokeContractEntry value)?  invokeContract,TResult Function( DeployContractEntry value)?  deployContract,TResult Function( IncomingContractEntry value)?  incomingContract,TResult Function( BlobEntry value)?  blob,required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( CoinbaseEntry value)?  coinbase,TResult Function( BurnEntry value)?  burn,TResult Function( IncomingEntry value)?  incoming,TResult Function( OutgoingEntry value)?  outgoing,TResult Function( MultisigEntry value)?  multisig,TResult Function( InvokeContractEntry value)?  invokeContract,TResult Function( DeployContractEntry value)?  deployContract,TResult Function( IncomingContractEntry value)?  incomingContract,TResult Function( OutgoingBlobEntry value)?  outgoingBlob,TResult Function( IncomingBlobEntry value)?  incomingBlob,required TResult orElse(),}){
 final _that = this;
 switch (_that) {
 case CoinbaseEntry() when coinbase != null:
@@ -120,8 +124,9 @@ return outgoing(_that);case MultisigEntry() when multisig != null:
 return multisig(_that);case InvokeContractEntry() when invokeContract != null:
 return invokeContract(_that);case DeployContractEntry() when deployContract != null:
 return deployContract(_that);case IncomingContractEntry() when incomingContract != null:
-return incomingContract(_that);case BlobEntry() when blob != null:
-return blob(_that);case _:
+return incomingContract(_that);case OutgoingBlobEntry() when outgoingBlob != null:
+return outgoingBlob(_that);case IncomingBlobEntry() when incomingBlob != null:
+return incomingBlob(_that);case _:
   return orElse();
 
 }
@@ -139,7 +144,7 @@ return blob(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( CoinbaseEntry value)  coinbase,required TResult Function( BurnEntry value)  burn,required TResult Function( IncomingEntry value)  incoming,required TResult Function( OutgoingEntry value)  outgoing,required TResult Function( MultisigEntry value)  multisig,required TResult Function( InvokeContractEntry value)  invokeContract,required TResult Function( DeployContractEntry value)  deployContract,required TResult Function( IncomingContractEntry value)  incomingContract,required TResult Function( BlobEntry value)  blob,}){
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( CoinbaseEntry value)  coinbase,required TResult Function( BurnEntry value)  burn,required TResult Function( IncomingEntry value)  incoming,required TResult Function( OutgoingEntry value)  outgoing,required TResult Function( MultisigEntry value)  multisig,required TResult Function( InvokeContractEntry value)  invokeContract,required TResult Function( DeployContractEntry value)  deployContract,required TResult Function( IncomingContractEntry value)  incomingContract,required TResult Function( OutgoingBlobEntry value)  outgoingBlob,required TResult Function( IncomingBlobEntry value)  incomingBlob,}){
 final _that = this;
 switch (_that) {
 case CoinbaseEntry():
@@ -150,8 +155,9 @@ return outgoing(_that);case MultisigEntry():
 return multisig(_that);case InvokeContractEntry():
 return invokeContract(_that);case DeployContractEntry():
 return deployContract(_that);case IncomingContractEntry():
-return incomingContract(_that);case BlobEntry():
-return blob(_that);}
+return incomingContract(_that);case OutgoingBlobEntry():
+return outgoingBlob(_that);case IncomingBlobEntry():
+return incomingBlob(_that);}
 }
 /// A variant of `map` that fallback to returning `null`.
 ///
@@ -165,7 +171,7 @@ return blob(_that);}
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( CoinbaseEntry value)?  coinbase,TResult? Function( BurnEntry value)?  burn,TResult? Function( IncomingEntry value)?  incoming,TResult? Function( OutgoingEntry value)?  outgoing,TResult? Function( MultisigEntry value)?  multisig,TResult? Function( InvokeContractEntry value)?  invokeContract,TResult? Function( DeployContractEntry value)?  deployContract,TResult? Function( IncomingContractEntry value)?  incomingContract,TResult? Function( BlobEntry value)?  blob,}){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( CoinbaseEntry value)?  coinbase,TResult? Function( BurnEntry value)?  burn,TResult? Function( IncomingEntry value)?  incoming,TResult? Function( OutgoingEntry value)?  outgoing,TResult? Function( MultisigEntry value)?  multisig,TResult? Function( InvokeContractEntry value)?  invokeContract,TResult? Function( DeployContractEntry value)?  deployContract,TResult? Function( IncomingContractEntry value)?  incomingContract,TResult? Function( OutgoingBlobEntry value)?  outgoingBlob,TResult? Function( IncomingBlobEntry value)?  incomingBlob,}){
 final _that = this;
 switch (_that) {
 case CoinbaseEntry() when coinbase != null:
@@ -176,8 +182,9 @@ return outgoing(_that);case MultisigEntry() when multisig != null:
 return multisig(_that);case InvokeContractEntry() when invokeContract != null:
 return invokeContract(_that);case DeployContractEntry() when deployContract != null:
 return deployContract(_that);case IncomingContractEntry() when incomingContract != null:
-return incomingContract(_that);case BlobEntry() when blob != null:
-return blob(_that);case _:
+return incomingContract(_that);case OutgoingBlobEntry() when outgoingBlob != null:
+return outgoingBlob(_that);case IncomingBlobEntry() when incomingBlob != null:
+return incomingBlob(_that);case _:
   return null;
 
 }
@@ -194,7 +201,7 @@ return blob(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function(@JsonKey(name: 'reward')  int reward)?  coinbase,TResult Function(@JsonKey(name: 'asset')  String asset, @JsonKey(name: 'amount')  int amount, @JsonKey(name: 'fee')  int fee, @JsonKey(name: 'nonce')  int nonce)?  burn,TResult Function(@JsonKey(name: 'from')  String from, @JsonKey(name: 'transfers')  List<TransferInEntry> transfers)?  incoming,TResult Function(@JsonKey(name: 'fee')  int fee, @JsonKey(name: 'nonce')  int nonce, @JsonKey(name: 'transfers')  List<TransferOutEntry> transfers)?  outgoing,TResult Function(@JsonKey(name: 'participants')  List<String> participants, @JsonKey(name: 'threshold')  int threshold, @JsonKey(name: 'fee')  int fee, @JsonKey(name: 'nonce')  int nonce)?  multisig,TResult Function(@JsonKey(name: 'contract')  String contract, @JsonKey(name: 'deposits')  Map<String, int> deposits, @JsonKey(name: 'received')  Map<String, int> received, @JsonKey(name: 'chunk_id')  int chunkId, @JsonKey(name: 'fee')  int fee, @JsonKey(name: 'max_gas')  int maxGas, @JsonKey(name: 'nonce')  int nonce)?  invokeContract,TResult Function(@JsonKey(name: 'fee')  int fee, @JsonKey(name: 'nonce')  int nonce, @JsonKey(name: 'invoke')  DeployInvoke? invoke)?  deployContract,TResult Function(@JsonKey(name: 'transfers')  Map<String, int> transfers)?  incomingContract,TResult Function(@JsonKey(name: 'data')  ExtraData data)?  blob,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function(@JsonKey(name: 'reward')  int reward)?  coinbase,TResult Function(@JsonKey(name: 'asset')  String asset, @JsonKey(name: 'amount')  int amount, @JsonKey(name: 'fee')  int fee, @JsonKey(name: 'nonce')  int nonce)?  burn,TResult Function(@JsonKey(name: 'from')  String from, @JsonKey(name: 'transfers')  List<TransferInEntry> transfers)?  incoming,TResult Function(@JsonKey(name: 'fee')  int fee, @JsonKey(name: 'nonce')  int nonce, @JsonKey(name: 'transfers')  List<TransferOutEntry> transfers)?  outgoing,TResult Function(@JsonKey(name: 'participants')  List<String> participants, @JsonKey(name: 'threshold')  int threshold, @JsonKey(name: 'fee')  int fee, @JsonKey(name: 'nonce')  int nonce)?  multisig,TResult Function(@JsonKey(name: 'contract')  String contract, @JsonKey(name: 'deposits')  Map<String, int> deposits, @JsonKey(name: 'received')  Map<String, Map<String, int>> received, @JsonKey(name: 'chunk_id')  int chunkId, @JsonKey(name: 'fee')  int fee, @JsonKey(name: 'max_gas')  int maxGas, @JsonKey(name: 'nonce')  int nonce)?  invokeContract,TResult Function(@JsonKey(name: 'fee')  int fee, @JsonKey(name: 'nonce')  int nonce, @JsonKey(name: 'invoke')  DeployInvoke? invoke)?  deployContract,TResult Function(@JsonKey(name: 'transfers')  Map<String, Map<String, int>> transfers)?  incomingContract,TResult Function(@JsonKey(name: 'destinations')  List<String> destinations, @JsonKey(name: 'fee')  int fee, @JsonKey(name: 'nonce')  int nonce, @JsonKey(name: 'data')  ExtraData data)?  outgoingBlob,TResult Function(@JsonKey(name: 'from')  String from, @JsonKey(name: 'destinations')  List<String> destinations, @JsonKey(name: 'data')  ExtraData data)?  incomingBlob,required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case CoinbaseEntry() when coinbase != null:
 return coinbase(_that.reward);case BurnEntry() when burn != null:
@@ -204,8 +211,9 @@ return outgoing(_that.fee,_that.nonce,_that.transfers);case MultisigEntry() when
 return multisig(_that.participants,_that.threshold,_that.fee,_that.nonce);case InvokeContractEntry() when invokeContract != null:
 return invokeContract(_that.contract,_that.deposits,_that.received,_that.chunkId,_that.fee,_that.maxGas,_that.nonce);case DeployContractEntry() when deployContract != null:
 return deployContract(_that.fee,_that.nonce,_that.invoke);case IncomingContractEntry() when incomingContract != null:
-return incomingContract(_that.transfers);case BlobEntry() when blob != null:
-return blob(_that.data);case _:
+return incomingContract(_that.transfers);case OutgoingBlobEntry() when outgoingBlob != null:
+return outgoingBlob(_that.destinations,_that.fee,_that.nonce,_that.data);case IncomingBlobEntry() when incomingBlob != null:
+return incomingBlob(_that.from,_that.destinations,_that.data);case _:
   return orElse();
 
 }
@@ -223,7 +231,7 @@ return blob(_that.data);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function(@JsonKey(name: 'reward')  int reward)  coinbase,required TResult Function(@JsonKey(name: 'asset')  String asset, @JsonKey(name: 'amount')  int amount, @JsonKey(name: 'fee')  int fee, @JsonKey(name: 'nonce')  int nonce)  burn,required TResult Function(@JsonKey(name: 'from')  String from, @JsonKey(name: 'transfers')  List<TransferInEntry> transfers)  incoming,required TResult Function(@JsonKey(name: 'fee')  int fee, @JsonKey(name: 'nonce')  int nonce, @JsonKey(name: 'transfers')  List<TransferOutEntry> transfers)  outgoing,required TResult Function(@JsonKey(name: 'participants')  List<String> participants, @JsonKey(name: 'threshold')  int threshold, @JsonKey(name: 'fee')  int fee, @JsonKey(name: 'nonce')  int nonce)  multisig,required TResult Function(@JsonKey(name: 'contract')  String contract, @JsonKey(name: 'deposits')  Map<String, int> deposits, @JsonKey(name: 'received')  Map<String, int> received, @JsonKey(name: 'chunk_id')  int chunkId, @JsonKey(name: 'fee')  int fee, @JsonKey(name: 'max_gas')  int maxGas, @JsonKey(name: 'nonce')  int nonce)  invokeContract,required TResult Function(@JsonKey(name: 'fee')  int fee, @JsonKey(name: 'nonce')  int nonce, @JsonKey(name: 'invoke')  DeployInvoke? invoke)  deployContract,required TResult Function(@JsonKey(name: 'transfers')  Map<String, int> transfers)  incomingContract,required TResult Function(@JsonKey(name: 'data')  ExtraData data)  blob,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function(@JsonKey(name: 'reward')  int reward)  coinbase,required TResult Function(@JsonKey(name: 'asset')  String asset, @JsonKey(name: 'amount')  int amount, @JsonKey(name: 'fee')  int fee, @JsonKey(name: 'nonce')  int nonce)  burn,required TResult Function(@JsonKey(name: 'from')  String from, @JsonKey(name: 'transfers')  List<TransferInEntry> transfers)  incoming,required TResult Function(@JsonKey(name: 'fee')  int fee, @JsonKey(name: 'nonce')  int nonce, @JsonKey(name: 'transfers')  List<TransferOutEntry> transfers)  outgoing,required TResult Function(@JsonKey(name: 'participants')  List<String> participants, @JsonKey(name: 'threshold')  int threshold, @JsonKey(name: 'fee')  int fee, @JsonKey(name: 'nonce')  int nonce)  multisig,required TResult Function(@JsonKey(name: 'contract')  String contract, @JsonKey(name: 'deposits')  Map<String, int> deposits, @JsonKey(name: 'received')  Map<String, Map<String, int>> received, @JsonKey(name: 'chunk_id')  int chunkId, @JsonKey(name: 'fee')  int fee, @JsonKey(name: 'max_gas')  int maxGas, @JsonKey(name: 'nonce')  int nonce)  invokeContract,required TResult Function(@JsonKey(name: 'fee')  int fee, @JsonKey(name: 'nonce')  int nonce, @JsonKey(name: 'invoke')  DeployInvoke? invoke)  deployContract,required TResult Function(@JsonKey(name: 'transfers')  Map<String, Map<String, int>> transfers)  incomingContract,required TResult Function(@JsonKey(name: 'destinations')  List<String> destinations, @JsonKey(name: 'fee')  int fee, @JsonKey(name: 'nonce')  int nonce, @JsonKey(name: 'data')  ExtraData data)  outgoingBlob,required TResult Function(@JsonKey(name: 'from')  String from, @JsonKey(name: 'destinations')  List<String> destinations, @JsonKey(name: 'data')  ExtraData data)  incomingBlob,}) {final _that = this;
 switch (_that) {
 case CoinbaseEntry():
 return coinbase(_that.reward);case BurnEntry():
@@ -233,8 +241,9 @@ return outgoing(_that.fee,_that.nonce,_that.transfers);case MultisigEntry():
 return multisig(_that.participants,_that.threshold,_that.fee,_that.nonce);case InvokeContractEntry():
 return invokeContract(_that.contract,_that.deposits,_that.received,_that.chunkId,_that.fee,_that.maxGas,_that.nonce);case DeployContractEntry():
 return deployContract(_that.fee,_that.nonce,_that.invoke);case IncomingContractEntry():
-return incomingContract(_that.transfers);case BlobEntry():
-return blob(_that.data);}
+return incomingContract(_that.transfers);case OutgoingBlobEntry():
+return outgoingBlob(_that.destinations,_that.fee,_that.nonce,_that.data);case IncomingBlobEntry():
+return incomingBlob(_that.from,_that.destinations,_that.data);}
 }
 /// A variant of `when` that fallback to returning `null`
 ///
@@ -248,7 +257,7 @@ return blob(_that.data);}
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function(@JsonKey(name: 'reward')  int reward)?  coinbase,TResult? Function(@JsonKey(name: 'asset')  String asset, @JsonKey(name: 'amount')  int amount, @JsonKey(name: 'fee')  int fee, @JsonKey(name: 'nonce')  int nonce)?  burn,TResult? Function(@JsonKey(name: 'from')  String from, @JsonKey(name: 'transfers')  List<TransferInEntry> transfers)?  incoming,TResult? Function(@JsonKey(name: 'fee')  int fee, @JsonKey(name: 'nonce')  int nonce, @JsonKey(name: 'transfers')  List<TransferOutEntry> transfers)?  outgoing,TResult? Function(@JsonKey(name: 'participants')  List<String> participants, @JsonKey(name: 'threshold')  int threshold, @JsonKey(name: 'fee')  int fee, @JsonKey(name: 'nonce')  int nonce)?  multisig,TResult? Function(@JsonKey(name: 'contract')  String contract, @JsonKey(name: 'deposits')  Map<String, int> deposits, @JsonKey(name: 'received')  Map<String, int> received, @JsonKey(name: 'chunk_id')  int chunkId, @JsonKey(name: 'fee')  int fee, @JsonKey(name: 'max_gas')  int maxGas, @JsonKey(name: 'nonce')  int nonce)?  invokeContract,TResult? Function(@JsonKey(name: 'fee')  int fee, @JsonKey(name: 'nonce')  int nonce, @JsonKey(name: 'invoke')  DeployInvoke? invoke)?  deployContract,TResult? Function(@JsonKey(name: 'transfers')  Map<String, int> transfers)?  incomingContract,TResult? Function(@JsonKey(name: 'data')  ExtraData data)?  blob,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function(@JsonKey(name: 'reward')  int reward)?  coinbase,TResult? Function(@JsonKey(name: 'asset')  String asset, @JsonKey(name: 'amount')  int amount, @JsonKey(name: 'fee')  int fee, @JsonKey(name: 'nonce')  int nonce)?  burn,TResult? Function(@JsonKey(name: 'from')  String from, @JsonKey(name: 'transfers')  List<TransferInEntry> transfers)?  incoming,TResult? Function(@JsonKey(name: 'fee')  int fee, @JsonKey(name: 'nonce')  int nonce, @JsonKey(name: 'transfers')  List<TransferOutEntry> transfers)?  outgoing,TResult? Function(@JsonKey(name: 'participants')  List<String> participants, @JsonKey(name: 'threshold')  int threshold, @JsonKey(name: 'fee')  int fee, @JsonKey(name: 'nonce')  int nonce)?  multisig,TResult? Function(@JsonKey(name: 'contract')  String contract, @JsonKey(name: 'deposits')  Map<String, int> deposits, @JsonKey(name: 'received')  Map<String, Map<String, int>> received, @JsonKey(name: 'chunk_id')  int chunkId, @JsonKey(name: 'fee')  int fee, @JsonKey(name: 'max_gas')  int maxGas, @JsonKey(name: 'nonce')  int nonce)?  invokeContract,TResult? Function(@JsonKey(name: 'fee')  int fee, @JsonKey(name: 'nonce')  int nonce, @JsonKey(name: 'invoke')  DeployInvoke? invoke)?  deployContract,TResult? Function(@JsonKey(name: 'transfers')  Map<String, Map<String, int>> transfers)?  incomingContract,TResult? Function(@JsonKey(name: 'destinations')  List<String> destinations, @JsonKey(name: 'fee')  int fee, @JsonKey(name: 'nonce')  int nonce, @JsonKey(name: 'data')  ExtraData data)?  outgoingBlob,TResult? Function(@JsonKey(name: 'from')  String from, @JsonKey(name: 'destinations')  List<String> destinations, @JsonKey(name: 'data')  ExtraData data)?  incomingBlob,}) {final _that = this;
 switch (_that) {
 case CoinbaseEntry() when coinbase != null:
 return coinbase(_that.reward);case BurnEntry() when burn != null:
@@ -258,8 +267,9 @@ return outgoing(_that.fee,_that.nonce,_that.transfers);case MultisigEntry() when
 return multisig(_that.participants,_that.threshold,_that.fee,_that.nonce);case InvokeContractEntry() when invokeContract != null:
 return invokeContract(_that.contract,_that.deposits,_that.received,_that.chunkId,_that.fee,_that.maxGas,_that.nonce);case DeployContractEntry() when deployContract != null:
 return deployContract(_that.fee,_that.nonce,_that.invoke);case IncomingContractEntry() when incomingContract != null:
-return incomingContract(_that.transfers);case BlobEntry() when blob != null:
-return blob(_that.data);case _:
+return incomingContract(_that.transfers);case OutgoingBlobEntry() when outgoingBlob != null:
+return outgoingBlob(_that.destinations,_that.fee,_that.nonce,_that.data);case IncomingBlobEntry() when incomingBlob != null:
+return incomingBlob(_that.from,_that.destinations,_that.data);case _:
   return null;
 
 }
@@ -672,7 +682,7 @@ as int,
 @JsonSerializable()
 
 class InvokeContractEntry implements TransactionEntryType {
-  const InvokeContractEntry({@JsonKey(name: 'contract') required this.contract, @JsonKey(name: 'deposits') required final  Map<String, int> deposits, @JsonKey(name: 'received') required final  Map<String, int> received, @JsonKey(name: 'chunk_id') required this.chunkId, @JsonKey(name: 'fee') required this.fee, @JsonKey(name: 'max_gas') required this.maxGas, @JsonKey(name: 'nonce') required this.nonce, final  String? $type}): _deposits = deposits,_received = received,$type = $type ?? 'invokeContract';
+  const InvokeContractEntry({@JsonKey(name: 'contract') required this.contract, @JsonKey(name: 'deposits') required final  Map<String, int> deposits, @JsonKey(name: 'received') required final  Map<String, Map<String, int>> received, @JsonKey(name: 'chunk_id') required this.chunkId, @JsonKey(name: 'fee') required this.fee, @JsonKey(name: 'max_gas') required this.maxGas, @JsonKey(name: 'nonce') required this.nonce, final  String? $type}): _deposits = deposits,_received = received,$type = $type ?? 'invokeContract';
   factory InvokeContractEntry.fromJson(Map<String, dynamic> json) => _$InvokeContractEntryFromJson(json);
 
 @JsonKey(name: 'contract') final  String contract;
@@ -683,8 +693,8 @@ class InvokeContractEntry implements TransactionEntryType {
   return EqualUnmodifiableMapView(_deposits);
 }
 
- final  Map<String, int> _received;
-@JsonKey(name: 'received') Map<String, int> get received {
+ final  Map<String, Map<String, int>> _received;
+@JsonKey(name: 'received') Map<String, Map<String, int>> get received {
   if (_received is EqualUnmodifiableMapView) return _received;
   // ignore: implicit_dynamic_type
   return EqualUnmodifiableMapView(_received);
@@ -732,7 +742,7 @@ abstract mixin class $InvokeContractEntryCopyWith<$Res> implements $TransactionE
   factory $InvokeContractEntryCopyWith(InvokeContractEntry value, $Res Function(InvokeContractEntry) _then) = _$InvokeContractEntryCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(name: 'contract') String contract,@JsonKey(name: 'deposits') Map<String, int> deposits,@JsonKey(name: 'received') Map<String, int> received,@JsonKey(name: 'chunk_id') int chunkId,@JsonKey(name: 'fee') int fee,@JsonKey(name: 'max_gas') int maxGas,@JsonKey(name: 'nonce') int nonce
+@JsonKey(name: 'contract') String contract,@JsonKey(name: 'deposits') Map<String, int> deposits,@JsonKey(name: 'received') Map<String, Map<String, int>> received,@JsonKey(name: 'chunk_id') int chunkId,@JsonKey(name: 'fee') int fee,@JsonKey(name: 'max_gas') int maxGas,@JsonKey(name: 'nonce') int nonce
 });
 
 
@@ -754,7 +764,7 @@ class _$InvokeContractEntryCopyWithImpl<$Res>
 contract: null == contract ? _self.contract : contract // ignore: cast_nullable_to_non_nullable
 as String,deposits: null == deposits ? _self._deposits : deposits // ignore: cast_nullable_to_non_nullable
 as Map<String, int>,received: null == received ? _self._received : received // ignore: cast_nullable_to_non_nullable
-as Map<String, int>,chunkId: null == chunkId ? _self.chunkId : chunkId // ignore: cast_nullable_to_non_nullable
+as Map<String, Map<String, int>>,chunkId: null == chunkId ? _self.chunkId : chunkId // ignore: cast_nullable_to_non_nullable
 as int,fee: null == fee ? _self.fee : fee // ignore: cast_nullable_to_non_nullable
 as int,maxGas: null == maxGas ? _self.maxGas : maxGas // ignore: cast_nullable_to_non_nullable
 as int,nonce: null == nonce ? _self.nonce : nonce // ignore: cast_nullable_to_non_nullable
@@ -858,11 +868,11 @@ $DeployInvokeCopyWith<$Res>? get invoke {
 @JsonSerializable()
 
 class IncomingContractEntry implements TransactionEntryType {
-  const IncomingContractEntry({@JsonKey(name: 'transfers') required final  Map<String, int> transfers, final  String? $type}): _transfers = transfers,$type = $type ?? 'incomingContract';
+  const IncomingContractEntry({@JsonKey(name: 'transfers') required final  Map<String, Map<String, int>> transfers, final  String? $type}): _transfers = transfers,$type = $type ?? 'incomingContract';
   factory IncomingContractEntry.fromJson(Map<String, dynamic> json) => _$IncomingContractEntryFromJson(json);
 
- final  Map<String, int> _transfers;
-@JsonKey(name: 'transfers') Map<String, int> get transfers {
+ final  Map<String, Map<String, int>> _transfers;
+@JsonKey(name: 'transfers') Map<String, Map<String, int>> get transfers {
   if (_transfers is EqualUnmodifiableMapView) return _transfers;
   // ignore: implicit_dynamic_type
   return EqualUnmodifiableMapView(_transfers);
@@ -906,7 +916,7 @@ abstract mixin class $IncomingContractEntryCopyWith<$Res> implements $Transactio
   factory $IncomingContractEntryCopyWith(IncomingContractEntry value, $Res Function(IncomingContractEntry) _then) = _$IncomingContractEntryCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(name: 'transfers') Map<String, int> transfers
+@JsonKey(name: 'transfers') Map<String, Map<String, int>> transfers
 });
 
 
@@ -926,7 +936,7 @@ class _$IncomingContractEntryCopyWithImpl<$Res>
 @pragma('vm:prefer-inline') $Res call({Object? transfers = null,}) {
   return _then(IncomingContractEntry(
 transfers: null == transfers ? _self._transfers : transfers // ignore: cast_nullable_to_non_nullable
-as Map<String, int>,
+as Map<String, Map<String, int>>,
   ));
 }
 
@@ -936,9 +946,111 @@ as Map<String, int>,
 /// @nodoc
 @JsonSerializable()
 
-class BlobEntry implements TransactionEntryType {
-  const BlobEntry({@JsonKey(name: 'data') required this.data, final  String? $type}): $type = $type ?? 'blob';
-  factory BlobEntry.fromJson(Map<String, dynamic> json) => _$BlobEntryFromJson(json);
+class OutgoingBlobEntry implements TransactionEntryType {
+  const OutgoingBlobEntry({@JsonKey(name: 'destinations') required final  List<String> destinations, @JsonKey(name: 'fee') required this.fee, @JsonKey(name: 'nonce') required this.nonce, @JsonKey(name: 'data') required this.data, final  String? $type}): _destinations = destinations,$type = $type ?? 'outgoingBlob';
+  factory OutgoingBlobEntry.fromJson(Map<String, dynamic> json) => _$OutgoingBlobEntryFromJson(json);
+
+ final  List<String> _destinations;
+@JsonKey(name: 'destinations') List<String> get destinations {
+  if (_destinations is EqualUnmodifiableListView) return _destinations;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_destinations);
+}
+
+@JsonKey(name: 'fee') final  int fee;
+@JsonKey(name: 'nonce') final  int nonce;
+@JsonKey(name: 'data') final  ExtraData data;
+
+@JsonKey(name: 'runtimeType')
+final String $type;
+
+
+/// Create a copy of TransactionEntryType
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$OutgoingBlobEntryCopyWith<OutgoingBlobEntry> get copyWith => _$OutgoingBlobEntryCopyWithImpl<OutgoingBlobEntry>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$OutgoingBlobEntryToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is OutgoingBlobEntry&&const DeepCollectionEquality().equals(other._destinations, _destinations)&&(identical(other.fee, fee) || other.fee == fee)&&(identical(other.nonce, nonce) || other.nonce == nonce)&&(identical(other.data, data) || other.data == data));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_destinations),fee,nonce,data);
+
+@override
+String toString() {
+  return 'TransactionEntryType.outgoingBlob(destinations: $destinations, fee: $fee, nonce: $nonce, data: $data)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $OutgoingBlobEntryCopyWith<$Res> implements $TransactionEntryTypeCopyWith<$Res> {
+  factory $OutgoingBlobEntryCopyWith(OutgoingBlobEntry value, $Res Function(OutgoingBlobEntry) _then) = _$OutgoingBlobEntryCopyWithImpl;
+@useResult
+$Res call({
+@JsonKey(name: 'destinations') List<String> destinations,@JsonKey(name: 'fee') int fee,@JsonKey(name: 'nonce') int nonce,@JsonKey(name: 'data') ExtraData data
+});
+
+
+$ExtraDataCopyWith<$Res> get data;
+
+}
+/// @nodoc
+class _$OutgoingBlobEntryCopyWithImpl<$Res>
+    implements $OutgoingBlobEntryCopyWith<$Res> {
+  _$OutgoingBlobEntryCopyWithImpl(this._self, this._then);
+
+  final OutgoingBlobEntry _self;
+  final $Res Function(OutgoingBlobEntry) _then;
+
+/// Create a copy of TransactionEntryType
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? destinations = null,Object? fee = null,Object? nonce = null,Object? data = null,}) {
+  return _then(OutgoingBlobEntry(
+destinations: null == destinations ? _self._destinations : destinations // ignore: cast_nullable_to_non_nullable
+as List<String>,fee: null == fee ? _self.fee : fee // ignore: cast_nullable_to_non_nullable
+as int,nonce: null == nonce ? _self.nonce : nonce // ignore: cast_nullable_to_non_nullable
+as int,data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
+as ExtraData,
+  ));
+}
+
+/// Create a copy of TransactionEntryType
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$ExtraDataCopyWith<$Res> get data {
+
+  return $ExtraDataCopyWith<$Res>(_self.data, (value) {
+    return _then(_self.copyWith(data: value));
+  });
+}
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class IncomingBlobEntry implements TransactionEntryType {
+  const IncomingBlobEntry({@JsonKey(name: 'from') required this.from, @JsonKey(name: 'destinations') required final  List<String> destinations, @JsonKey(name: 'data') required this.data, final  String? $type}): _destinations = destinations,$type = $type ?? 'incomingBlob';
+  factory IncomingBlobEntry.fromJson(Map<String, dynamic> json) => _$IncomingBlobEntryFromJson(json);
+
+@JsonKey(name: 'from') final  String from;
+ final  List<String> _destinations;
+@JsonKey(name: 'destinations') List<String> get destinations {
+  if (_destinations is EqualUnmodifiableListView) return _destinations;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_destinations);
+}
 
 @JsonKey(name: 'data') final  ExtraData data;
 
@@ -950,36 +1062,36 @@ final String $type;
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-$BlobEntryCopyWith<BlobEntry> get copyWith => _$BlobEntryCopyWithImpl<BlobEntry>(this, _$identity);
+$IncomingBlobEntryCopyWith<IncomingBlobEntry> get copyWith => _$IncomingBlobEntryCopyWithImpl<IncomingBlobEntry>(this, _$identity);
 
 @override
 Map<String, dynamic> toJson() {
-  return _$BlobEntryToJson(this, );
+  return _$IncomingBlobEntryToJson(this, );
 }
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is BlobEntry&&(identical(other.data, data) || other.data == data));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is IncomingBlobEntry&&(identical(other.from, from) || other.from == from)&&const DeepCollectionEquality().equals(other._destinations, _destinations)&&(identical(other.data, data) || other.data == data));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,data);
+int get hashCode => Object.hash(runtimeType,from,const DeepCollectionEquality().hash(_destinations),data);
 
 @override
 String toString() {
-  return 'TransactionEntryType.blob(data: $data)';
+  return 'TransactionEntryType.incomingBlob(from: $from, destinations: $destinations, data: $data)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class $BlobEntryCopyWith<$Res> implements $TransactionEntryTypeCopyWith<$Res> {
-  factory $BlobEntryCopyWith(BlobEntry value, $Res Function(BlobEntry) _then) = _$BlobEntryCopyWithImpl;
+abstract mixin class $IncomingBlobEntryCopyWith<$Res> implements $TransactionEntryTypeCopyWith<$Res> {
+  factory $IncomingBlobEntryCopyWith(IncomingBlobEntry value, $Res Function(IncomingBlobEntry) _then) = _$IncomingBlobEntryCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(name: 'data') ExtraData data
+@JsonKey(name: 'from') String from,@JsonKey(name: 'destinations') List<String> destinations,@JsonKey(name: 'data') ExtraData data
 });
 
 
@@ -987,18 +1099,20 @@ $ExtraDataCopyWith<$Res> get data;
 
 }
 /// @nodoc
-class _$BlobEntryCopyWithImpl<$Res>
-    implements $BlobEntryCopyWith<$Res> {
-  _$BlobEntryCopyWithImpl(this._self, this._then);
+class _$IncomingBlobEntryCopyWithImpl<$Res>
+    implements $IncomingBlobEntryCopyWith<$Res> {
+  _$IncomingBlobEntryCopyWithImpl(this._self, this._then);
 
-  final BlobEntry _self;
-  final $Res Function(BlobEntry) _then;
+  final IncomingBlobEntry _self;
+  final $Res Function(IncomingBlobEntry) _then;
 
 /// Create a copy of TransactionEntryType
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
-  return _then(BlobEntry(
-data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
+@pragma('vm:prefer-inline') $Res call({Object? from = null,Object? destinations = null,Object? data = null,}) {
+  return _then(IncomingBlobEntry(
+from: null == from ? _self.from : from // ignore: cast_nullable_to_non_nullable
+as String,destinations: null == destinations ? _self._destinations : destinations // ignore: cast_nullable_to_non_nullable
+as List<String>,data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
 as ExtraData,
   ));
 }

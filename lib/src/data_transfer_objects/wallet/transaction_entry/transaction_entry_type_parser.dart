@@ -13,7 +13,8 @@ TransactionEntryType transactionEntryTypeFromJson(Map<String, dynamic> json) {
         'invoke_contract': InvokeContractEntry.fromJson,
         'deploy_contract': DeployContractEntry.fromJson,
         'incoming_contract': IncomingContractEntry.fromJson,
-        'blob': BlobEntry.fromJson,
+        'outgoing_blob': OutgoingBlobEntry.fromJson,
+        'incoming_blob': IncomingBlobEntry.fromJson,
       };
 
   for (final entry in entryTypeConstructors.entries) {

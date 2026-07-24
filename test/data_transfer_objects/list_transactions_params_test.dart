@@ -11,6 +11,7 @@ void main() {
         minTimestamp: 1000,
         maxTimestamp: 2000,
         address: 'xel-address',
+        contract: 'contract-hash',
         acceptIncoming: true,
         acceptOutgoing: false,
         acceptCoinbase: true,
@@ -28,6 +29,7 @@ void main() {
         'min_timestamp': 1000,
         'max_timestamp': 2000,
         'address': 'xel-address',
+        'contract': 'contract-hash',
         'accept_incoming': true,
         'accept_outgoing': false,
         'accept_coinbase': true,
@@ -47,6 +49,7 @@ void main() {
       final params = ListTransactionsParams.fromJson({
         'min_timestamp': 1000,
         'max_timestamp': 2000,
+        'contract': 'contract-hash',
         'accept_blob': false,
         'limit': 25,
         'skip': 5,
@@ -54,6 +57,7 @@ void main() {
 
       expect(params.minTimestamp, 1000);
       expect(params.maxTimestamp, 2000);
+      expect(params.contract, 'contract-hash');
       expect(params.acceptBlob, isFalse);
       expect(params.limit, 25);
       expect(params.skip, 5);

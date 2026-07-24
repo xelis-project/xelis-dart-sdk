@@ -46,7 +46,7 @@ sealed class TransactionEntryType with _$TransactionEntryType {
   const factory TransactionEntryType.invokeContract({
     @JsonKey(name: 'contract') required String contract,
     @JsonKey(name: 'deposits') required Map<String, int> deposits,
-    @JsonKey(name: 'received') required Map<String, int> received,
+    @JsonKey(name: 'received') required Map<String, Map<String, int>> received,
     @JsonKey(name: 'chunk_id') required int chunkId,
     @JsonKey(name: 'fee') required int fee,
     @JsonKey(name: 'max_gas') required int maxGas,
@@ -60,12 +60,22 @@ sealed class TransactionEntryType with _$TransactionEntryType {
   }) = DeployContractEntry;
 
   const factory TransactionEntryType.incomingContract({
-    @JsonKey(name: 'transfers') required Map<String, int> transfers,
+    @JsonKey(name: 'transfers')
+    required Map<String, Map<String, int>> transfers,
   }) = IncomingContractEntry;
 
-  const factory TransactionEntryType.blob({
+  const factory TransactionEntryType.outgoingBlob({
+    @JsonKey(name: 'destinations') required List<String> destinations,
+    @JsonKey(name: 'fee') required int fee,
+    @JsonKey(name: 'nonce') required int nonce,
     @JsonKey(name: 'data') required ExtraData data,
-  }) = BlobEntry;
+  }) = OutgoingBlobEntry;
+
+  const factory TransactionEntryType.incomingBlob({
+    @JsonKey(name: 'from') required String from,
+    @JsonKey(name: 'destinations') required List<String> destinations,
+    @JsonKey(name: 'data') required ExtraData data,
+  }) = IncomingBlobEntry;
 
   /// @nodoc
   factory TransactionEntryType.fromJson(Map<String, dynamic> json) =>
