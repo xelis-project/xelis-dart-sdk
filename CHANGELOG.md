@@ -1,3 +1,10 @@
+## 0.35.0
+
+- replace the legacy Blob wallet entry with incoming and outgoing entries.
+- group contract transaction outputs by contract and asset.
+- add the contract filter to wallet transaction listing.
+- update `json_annotation`, `json_serializable`, and `very_good_analysis`.
+
 ## 0.34.0
 
 Wallet API upgrade :

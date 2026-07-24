@@ -91,7 +91,9 @@ InvokeContractEntry _$InvokeContractEntryFromJson(Map<String, dynamic> json) =>
     InvokeContractEntry(
       contract: json['contract'] as String,
       deposits: Map<String, int>.from(json['deposits'] as Map),
-      received: Map<String, int>.from(json['received'] as Map),
+      received: (json['received'] as Map<String, dynamic>).map(
+        (k, e) => MapEntry(k, Map<String, int>.from(e as Map)),
+      ),
       chunkId: (json['chunk_id'] as num).toInt(),
       fee: (json['fee'] as num).toInt(),
       maxGas: (json['max_gas'] as num).toInt(),
@@ -134,7 +136,9 @@ Map<String, dynamic> _$DeployContractEntryToJson(
 IncomingContractEntry _$IncomingContractEntryFromJson(
   Map<String, dynamic> json,
 ) => IncomingContractEntry(
-  transfers: Map<String, int>.from(json['transfers'] as Map),
+  transfers: (json['transfers'] as Map<String, dynamic>).map(
+    (k, e) => MapEntry(k, Map<String, int>.from(e as Map)),
+  ),
   $type: json['runtimeType'] as String?,
 );
 
@@ -145,12 +149,40 @@ Map<String, dynamic> _$IncomingContractEntryToJson(
   'runtimeType': instance.$type,
 };
 
-BlobEntry _$BlobEntryFromJson(Map<String, dynamic> json) => BlobEntry(
-  data: ExtraData.fromJson(json['data'] as Map<String, dynamic>),
-  $type: json['runtimeType'] as String?,
-);
+OutgoingBlobEntry _$OutgoingBlobEntryFromJson(Map<String, dynamic> json) =>
+    OutgoingBlobEntry(
+      destinations: (json['destinations'] as List<dynamic>)
+          .map((e) => e as String)
+          .toList(),
+      fee: (json['fee'] as num).toInt(),
+      nonce: (json['nonce'] as num).toInt(),
+      data: ExtraData.fromJson(json['data'] as Map<String, dynamic>),
+      $type: json['runtimeType'] as String?,
+    );
 
-Map<String, dynamic> _$BlobEntryToJson(BlobEntry instance) => <String, dynamic>{
-  'data': instance.data,
-  'runtimeType': instance.$type,
-};
+Map<String, dynamic> _$OutgoingBlobEntryToJson(OutgoingBlobEntry instance) =>
+    <String, dynamic>{
+      'destinations': instance.destinations,
+      'fee': instance.fee,
+      'nonce': instance.nonce,
+      'data': instance.data,
+      'runtimeType': instance.$type,
+    };
+
+IncomingBlobEntry _$IncomingBlobEntryFromJson(Map<String, dynamic> json) =>
+    IncomingBlobEntry(
+      from: json['from'] as String,
+      destinations: (json['destinations'] as List<dynamic>)
+          .map((e) => e as String)
+          .toList(),
+      data: ExtraData.fromJson(json['data'] as Map<String, dynamic>),
+      $type: json['runtimeType'] as String?,
+    );
+
+Map<String, dynamic> _$IncomingBlobEntryToJson(IncomingBlobEntry instance) =>
+    <String, dynamic>{
+      'from': instance.from,
+      'destinations': instance.destinations,
+      'data': instance.data,
+      'runtimeType': instance.$type,
+    };
