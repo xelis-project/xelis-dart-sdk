@@ -1,3 +1,7 @@
+## 0.35.1
+
+- downgrade `json_annotation` to `^4.11.0` for Genesix wallet compatibility.
+
 ## 0.35.0
 
 - replace the legacy Blob wallet entry with incoming and outgoing entries.
