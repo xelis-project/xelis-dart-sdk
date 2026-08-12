@@ -1,3 +1,44 @@
+## 0.36.0
+
+- replace the default JSON codec with an exact `BigInt` RPC codec and add typed transport, timeout, remote, compatibility, and deserialization errors; all typed daemon and wallet methods now normalize decoding failures with the RPC method, field path when known, and a lossless raw payload.
+- expose RPC schema/capability discovery, parameterized subscriptions, request timeouts, safe pending-request cleanup, and redacted transport logs.
+- align wallet transaction builders with the XELIS `v1.24.0` fee, base-fee,
+  fee-limit, signer, XVM permission and `module + contract_version + invoke`
+  deployment wire formats.
+- replace legacy contract outputs with all 14 current `RpcContractLog` variants plus a lossless redacted unknown variant.
+- realign contract invocation, deployment, transfer, and event notifications and add new topoheight/block-template events.
+- add the missing daemon and wallet RPC surfaces, isolate daemon administration behind `DaemonAdmin`, and implement the eight wallet storage methods.
+- add strict versioned XSWD permission manifests and normalized daemon/wallet
+  schema snapshots generated from `v1.24.0`.
+- migrate critical amounts, fees, gas, nonces, heights, supplies, and timestamps to exact `BigInt` values and correct nullable/result fields.
+- correct `decrypt_extra_data` to use typed encrypted bytes, the daemon's validated 32-byte hexadecimal `shared_key`, and a typed `DataElement` result.
+- remove `RpcWireValue`, `VMParameter`, obsolete XVM tags and deprecated compatibility aliases; add canonical `RpcJsonValue`, `RpcValueCell`, typed transaction payloads, additive `RpcExtraFields`, raw RPC access and `RpcCallOutcome`.
+- type integrated-address/signing data, wallet transaction queries, mempool ciphertexts, peer directions, asset ownership and supply variants against the current Rust wire, with exact integers and redacted future-variant fallbacks.
+- realign `get_account_history` with its Rust array result and all ten flattened `AccountHistoryType` variants, including additive fields and a lossless unknown variant; remove the five obsolete partial history DTOs.
+- preserve additive fields across assets, balances, nonce, mempool, P2P and daemon/wallet event DTOs; restore missing stable-balance topoheight and transaction-executor timestamp fields, and make remaining P2P/mempool counters Web-safe `BigInt` values.
+- align daemon difficulty, hashrate, block/transaction/disk sizes, fee-rate and multisig DTOs with their current Rust types; model source commitments and equality proofs explicitly, restore the unsigned transaction `fee_limit`, use the current `multisig` wire field, and keep only genuinely unknown additive fields in `RpcExtraFields`.
+- correct `get_estimated_fee_per_kb` to return the current Rust object containing both `fee_per_kb` and `predicated_fee_per_kb`, instead of attempting to decode that object as a scalar.
+- complete the wallet contract audit: `get_assets` now accepts wallet pagination and returns `List<WalletAssetEntry>`, `estimate_fees` sends its fee and base-fee policies, offline builders use the Rust `Option<u64>` base fee, `decrypt_ciphertext` is fully typed with `max_supply`, and wallet `decrypt_extra_data` returns the complete plaintext envelope.
+- enforce the Rust distinction between the `multi_sig` transaction/action tag and the `multisig` transaction-signature field; remove cross-spelling fallbacks that never belonged to either supported contract.
+- keep wallet storage counts and pagination lossless, reject malformed storage-key arrays instead of silently dropping entries, and prevent the event protocol's `event` field from leaking into payload `RpcExtraFields`.
+- replace `DataQuery.length(DataQuery)` with the numeric `QueryNumber` union,
+  replace `Flag` with extensible `PlaintextExtraDataFlag`, expose
+  `WalletEventsExtension`, and preserve unknown daemon/wallet events without
+  disrupting pending requests.
+- expose the upstream `batch_limit` builtin losslessly and split the additional
+  daemon façade into chain/block, contract and network/P2P extensions.
+
+- reorganize public DTO sources into core/shared/daemon/wallet/XSWD domains,
+  remove DTO declarations and barrel imports from repositories, and add an
+  automated architecture gate for file naming, generated parts, exports and
+  removed symbols.
+- rename `RPCTransaction` to canonical `RpcTransaction` and `RPCAssetData` to
+  `RpcAssetData`; remove `TransactionResponse` and compose flattened wallet and
+  unsigned-transaction responses around their canonical transaction objects.
+- standardize the Dart spelling `topoheight`/`Topoheight`, split the daemon,
+  wallet, storage, balance, schema and RPC-error model groups into focused
+  files, and convert `DataElement` plus new immutable unions to Freezed.
+
 ## 0.35.1
 
 - downgrade `json_annotation` to `^4.11.0` for Genesix wallet compatibility.

@@ -1,58 +1,61 @@
+import 'dart:io';
+
 import 'package:xelis_dart_sdk/xelis_dart_sdk.dart';
 
 Future<void> main() async {
+  final daemon = DaemonClient(
+    endPoint: localhostAddress,
+    secureWebSocket: false,
+  );
+  final wallet = WalletClient(
+    endPoint: '127.0.0.1:8081',
+    username: 'user',
+    password: 'password',
+    secureWebSocket: false,
+  );
+
+  daemon.connect();
+  wallet.connect();
   try {
-    // Create a daemon client repository which will be used
-    // to interact with a Xelis node.
-    final daemonClient = DaemonClient(
-      endPoint: localhostAddress,
-      secureWebSocket: false,
-    );
-
-    // You must initiate the connection first.
-    daemonClient.connect();
-
-    // You can use the repository to make requests to the daemon.
-    final res = await daemonClient.getInfo();
-    print('result: $res');
-
-    // You can also use the repository to listen to events.
-    daemonClient
-      ..onNewBlock((block) {
-        print('new block: $block');
-      })
-      // You can add multiple callbacks for the same event.
-      // They will be called in the order they were added.
-      ..onNewBlock((block) {
-        print('another callback for new block: $block');
-      })
-      // Here with another events.
-      ..onBlockOrdered((block) {
-        print('block ordered: $block');
-      })
-      ..onTransactionAddedInMempool((tx) {
-        print('tx added in mempool: $tx');
-      })
-      ..onTransactionExecuted((tx) {
-        print('tx executed: $tx');
-      })
-      // You can also unsubscribe from the events.
-      // This will remove all the callbacks for the event.
-      ..unsubscribeFromNewBlock()
-      // You can unsubscribe from all the events at once.
-      ..unsubscribeFromAll()
-      // You can also add callbacks for the connection events ...
-      ..onOpen(() {
-        print('channel opened');
-      })
-      ..onClose(() {
-        print('channel closed');
-      })
-      ..onError((error) {
-        print('channel error: $error');
-      });
-  } catch (e) {
-    print(e);
+    final info = await daemon.getInfo();
+    final address = await wallet.getAddress();
+    stdout
+      ..writeln('network: ${info.network}')
+      ..writeln('wallet: $address');
+  } on RpcException catch (error) {
+    stderr.writeln(error);
+  } finally {
+    daemon.disconnect();
+    wallet.disconnect();
   }
-  // exit(0);
 }
+
+/// Constructs a transfer request accepted by XELIS v1.24.0.
+BuildTransactionParams transferRequest({
+  required String asset,
+  required String destination,
+  required BigInt amount,
+}) => BuildTransactionParams(
+  transactionTypeBuilder: TransactionTypeBuilder.transfers(
+    transfers: [
+      TransferBuilder(
+        asset: asset,
+        destination: destination,
+        amount: amount,
+      ),
+    ],
+  ),
+  fee: const FeeBuilder.extra(),
+  baseFee: const BaseFeeMode.none(),
+);
+
+/// Constructs the stable `module + contract_version + invoke` deployment.
+BuildTransactionParams deploymentRequest(String xvmModuleHex) =>
+    BuildTransactionParams(
+      transactionTypeBuilder: TransactionTypeBuilder.deployContract(
+        module: xvmModuleHex,
+        contractVersion: ContractVersion.v0,
+      ),
+      fee: const FeeBuilder.extra(),
+      baseFee: const BaseFeeMode.none(),
+    );
