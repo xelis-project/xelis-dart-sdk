@@ -22,10 +22,10 @@ void main() {
       expect(entry.txEntryType, isA<OutgoingBlobEntry>());
       final blob = entry.txEntryType as OutgoingBlobEntry;
       expect(blob.destinations, ['xel-destination-1', 'xel-destination-2']);
-      expect(blob.fee, 100);
-      expect(blob.nonce, 7);
-      expect(blob.data.flag, Flag.public);
-      expect(blob.data.data, {'message': 'hello'});
+      expect(blob.fee, BigInt.from(100));
+      expect(blob.nonce, BigInt.from(7));
+      expect(blob.data.flag, const PlaintextExtraDataFlag.public());
+      expect(blob.data.data?.toJson(), {'message': 'hello'});
     });
 
     test('parses incoming blob entries', () {
@@ -39,7 +39,8 @@ void main() {
           'data': {
             'data': 'hello',
             'flag': 'private',
-            'shared_key': 'shared-key',
+            'shared_key':
+                '0707070707070707070707070707070707070707070707070707070707070707',
           },
         },
       });
@@ -48,8 +49,11 @@ void main() {
       final blob = entry.txEntryType as IncomingBlobEntry;
       expect(blob.from, 'xel-sender');
       expect(blob.destinations, ['xel-destination']);
-      expect(blob.data.flag, Flag.private);
-      expect(blob.data.sharedKey, 'shared-key');
+      expect(blob.data.flag, const PlaintextExtraDataFlag.private());
+      expect(
+        blob.data.sharedKey?.hex,
+        '0707070707070707070707070707070707070707070707070707070707070707',
+      );
     });
 
     test('parses contract outputs grouped by contract and asset', () {
@@ -74,8 +78,11 @@ void main() {
       expect(entry.txEntryType, isA<InvokeContractEntry>());
       final invoke = entry.txEntryType as InvokeContractEntry;
       expect(invoke.received, {
-        'source-contract-1': {'asset-1': 20, 'asset-2': 30},
-        'source-contract-2': {'asset-1': 40},
+        'source-contract-1': {
+          'asset-1': BigInt.from(20),
+          'asset-2': BigInt.from(30),
+        },
+        'source-contract-2': {'asset-1': BigInt.from(40)},
       });
     });
 
@@ -96,9 +103,65 @@ void main() {
         expect(entry.txEntryType, isA<IncomingContractEntry>());
         final incoming = entry.txEntryType as IncomingContractEntry;
         expect(incoming.transfers, {
-          'source-contract': {'asset-1': 20, 'asset-2': 30},
+          'source-contract': {
+            'asset-1': BigInt.from(20),
+            'asset-2': BigInt.from(30),
+          },
         });
       },
     );
+
+    test('preserves additive fields at envelope and variant levels', () {
+      final entry = TransactionEntry.fromJson({
+        'hash': 'tx-hash',
+        'topoheight': 42,
+        'timestamp': 1710000000000,
+        'future_envelope_field': {
+          'height': BigInt.parse('9007199254740993'),
+        },
+        'coinbase': {'reward': 10, 'future_reward_field': true},
+      });
+
+      expect(
+        entry.extraFields['future_envelope_field']?.toJson(),
+        {'height': BigInt.parse('9007199254740993')},
+      );
+      final coinbase = entry.txEntryType as CoinbaseEntry;
+      expect(coinbase.extraFields['future_reward_field']?.toJson(), isTrue);
+      expect(entry.toWireJson(), isNot(contains('future_envelope_field')));
+      expect(
+        entry.toWireJson(includeExtraFields: true),
+        contains('future_envelope_field'),
+      );
+      expect(
+        (entry.toWireJson(includeExtraFields: true)['coinbase'] as Map),
+        contains('future_reward_field'),
+      );
+    });
+
+    test('preserves a future entry variant without exposing its payload', () {
+      final entry = TransactionEntry.fromJson({
+        'hash': 'tx-hash',
+        'topoheight': 42,
+        'timestamp': 1710000000000,
+        'future_contract_action': {
+          'secret': 'payload',
+          'amount': BigInt.parse('9007199254740993'),
+        },
+      });
+
+      expect(entry.txEntryType, isA<UnknownTransactionEntryType>());
+      final unknown = entry.txEntryType as UnknownTransactionEntryType;
+      expect(unknown.type, 'future_contract_action');
+      expect(unknown.wireValue.toJson(), {
+        'secret': 'payload',
+        'amount': BigInt.parse('9007199254740993'),
+      });
+      expect(unknown.toString(), isNot(contains('payload')));
+      expect(entry.toWireJson()['future_contract_action'], {
+        'secret': 'payload',
+        'amount': BigInt.parse('9007199254740993'),
+      });
+    });
   });
 }

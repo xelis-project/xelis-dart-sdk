@@ -1,0 +1,9 @@
+{
+  "reference": "xelis-blockchain/v1.24.0@e8d7625a05ced6f9144d6abc9ecc278b8cab661c",
+  "daemon_registration": {
+    "allow_mining_methods": true,
+    "allow_private_methods": true,
+    "allow_contract_vm_executions": true
+  },
+  "source": "RPCHandler.schema"
+}

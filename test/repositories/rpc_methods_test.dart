@@ -12,13 +12,51 @@ void main() {
       expect(client.lastMethod, WalletMethod.isOnline);
       expect(client.lastParams, isNull);
     });
+
+    test('signData sends the exact untagged DataElement value', () async {
+      final client = _FakeWalletClient()..response = 'signature';
+      final data = DataValue(
+        RpcJsonValue.integer(BigInt.parse('9007199254740993')),
+      );
+
+      final signature = await client.signData(data);
+
+      expect(signature, 'signature');
+      expect(client.lastMethod, WalletMethod.signData);
+      expect(client.lastParams, BigInt.parse('9007199254740993'));
+    });
+
+    test('estimateFees returns an exact u64 value', () async {
+      final maximum = BigInt.parse('18446744073709551615');
+      final client = _FakeWalletClient()..response = maximum;
+
+      final fee = await client.estimateFees(
+        const EstimateWalletFeesParams(
+          transactionTypeBuilder: TransactionTypeBuilder.blob(
+            data: DataValue(RpcJsonValue.string('payload')),
+            destinations: <String>[],
+          ),
+        ),
+      );
+
+      expect(fee, maximum);
+      expect(client.lastParams, {
+        'blob': {
+          'data': 'payload',
+          'destinations': <String>[],
+          'encrypt': true,
+        },
+        'fee': {'extra': 'none'},
+        'base_fee': 'none',
+      });
+    });
   });
 
   group('Daemon events', () {
     test('maps stable_topoheight_changed to its enum value', () {
       expect(
         DaemonEvent.fromStr('stable_topoheight_changed'),
-        DaemonEvent.stableTopoHeightChanged,
+        DaemonEvent.stableTopoheightChanged,
       );
     });
   });
@@ -34,15 +72,16 @@ class _FakeWalletClient extends WalletClient {
       );
 
   XelisJsonKey? lastMethod;
-  Map<String, dynamic>? lastParams;
+  Object? lastParams;
+  Object? response = true;
 
   @override
-  Future<dynamic> sendRequest(
+  Future<Object?> sendRequest(
     XelisJsonKey method, [
-    Map<String, dynamic>? params,
+    Object? params,
   ]) async {
     lastMethod = method;
     lastParams = params;
-    return true;
+    return response;
   }
 }

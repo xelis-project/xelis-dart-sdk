@@ -1,0 +1,7248 @@
+{
+  "$defs": {
+    "AccountHistoryEntry": {
+      "oneOf": [
+        {
+          "properties": {
+            "dev_fee": {
+              "properties": {
+                "reward": {
+                  "format": "uint64",
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "reward"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "dev_fee"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "mining": {
+              "properties": {
+                "reward": {
+                  "format": "uint64",
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "reward"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "mining"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "burn": {
+              "properties": {
+                "amount": {
+                  "format": "uint64",
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "asset": {
+                  "$ref": "#/$defs/Hash"
+                }
+              },
+              "required": [
+                "asset",
+                "amount"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "burn"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "outgoing": {
+              "properties": {
+                "asset": {
+                  "$ref": "#/$defs/Hash"
+                },
+                "to": {
+                  "$ref": "#/$defs/Address"
+                }
+              },
+              "required": [
+                "asset",
+                "to"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "outgoing"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "incoming": {
+              "properties": {
+                "asset": {
+                  "$ref": "#/$defs/Hash"
+                },
+                "from": {
+                  "$ref": "#/$defs/Address"
+                }
+              },
+              "required": [
+                "asset",
+                "from"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "incoming"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "multi_sig": {
+              "properties": {
+                "participants": {
+                  "items": {
+                    "$ref": "#/$defs/Address"
+                  },
+                  "type": "array"
+                },
+                "threshold": {
+                  "format": "uint8",
+                  "maximum": 255,
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "participants",
+                "threshold"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "multi_sig"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "invoke_contract": {
+              "properties": {
+                "contract": {
+                  "$ref": "#/$defs/Hash"
+                },
+                "deposits": {
+                  "items": {
+                    "$ref": "#/$defs/Hash"
+                  },
+                  "type": "array",
+                  "uniqueItems": true
+                },
+                "entry_id": {
+                  "format": "uint16",
+                  "maximum": 65535,
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "contract",
+                "entry_id",
+                "deposits"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "invoke_contract"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "deploy_contract": {
+              "properties": {
+                "deposits": {
+                  "items": {
+                    "$ref": "#/$defs/Hash"
+                  },
+                  "type": [
+                    "array",
+                    "null"
+                  ],
+                  "uniqueItems": true
+                }
+              },
+              "type": "object"
+            }
+          },
+          "required": [
+            "deploy_contract"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "from_contract": {
+              "properties": {
+                "amount": {
+                  "format": "uint64",
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "asset": {
+                  "$ref": "#/$defs/Hash"
+                },
+                "contract": {
+                  "$ref": "#/$defs/Hash"
+                }
+              },
+              "required": [
+                "contract",
+                "asset",
+                "amount"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "from_contract"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "blob": {
+              "type": "null"
+            }
+          },
+          "required": [
+            "blob"
+          ],
+          "type": "object"
+        }
+      ],
+      "properties": {
+        "block_timestamp": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "hash": {
+          "$ref": "#/$defs/Hash"
+        },
+        "topoheight": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "topoheight",
+        "hash",
+        "block_timestamp"
+      ],
+      "type": "object"
+    },
+    "Address": {
+      "type": "string"
+    },
+    "Algorithm": {
+      "enum": [
+        "V1",
+        "V2",
+        "V3"
+      ],
+      "type": "string"
+    },
+    "AssetOwner": {
+      "oneOf": [
+        {
+          "enum": [
+            "none"
+          ],
+          "type": "string"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "creator": {
+              "properties": {
+                "contract": {
+                  "$ref": "#/$defs/Hash"
+                },
+                "id": {
+                  "format": "uint64",
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "contract",
+                "id"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "creator"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "owner": {
+              "properties": {
+                "origin": {
+                  "$ref": "#/$defs/Hash"
+                },
+                "origin_id": {
+                  "format": "uint64",
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "owner": {
+                  "$ref": "#/$defs/Hash"
+                }
+              },
+              "required": [
+                "origin",
+                "origin_id",
+                "owner"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "owner"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "BalanceType": {
+      "enum": [
+        "input",
+        "output",
+        "both"
+      ],
+      "type": "string"
+    },
+    "BlockType": {
+      "enum": [
+        "Sync",
+        "Side",
+        "Orphaned",
+        "Normal"
+      ],
+      "type": "string"
+    },
+    "BlockVersion": {
+      "enum": [
+        "V0",
+        "V1",
+        "V2",
+        "V3",
+        "V4",
+        "V5",
+        "V6",
+        "V7"
+      ],
+      "type": "string"
+    },
+    "BurnPayload": {
+      "properties": {
+        "amount": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "asset": {
+          "$ref": "#/$defs/Hash"
+        }
+      },
+      "required": [
+        "asset",
+        "amount"
+      ],
+      "type": "object"
+    },
+    "CiphertextCache": {
+      "oneOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "Compressed": {
+              "$ref": "#/$defs/CompressedCiphertext"
+            }
+          },
+          "required": [
+            "Compressed"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "CiphertextValidityProof": {
+      "properties": {
+        "Y_0": {
+          "items": {
+            "format": "uint8",
+            "maximum": 255,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "type": "array"
+        },
+        "Y_1": {
+          "items": {
+            "format": "uint8",
+            "maximum": 255,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "type": "array"
+        },
+        "Y_2": {
+          "items": {
+            "format": "uint8",
+            "maximum": 255,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "type": [
+            "array",
+            "null"
+          ]
+        },
+        "z_r": {
+          "items": {
+            "format": "uint8",
+            "maximum": 255,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "type": "array"
+        },
+        "z_x": {
+          "items": {
+            "format": "uint8",
+            "maximum": 255,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "Y_0",
+        "Y_1",
+        "z_r",
+        "z_x"
+      ],
+      "type": "object"
+    },
+    "CommitmentEqProof": {
+      "properties": {
+        "Y_0": {
+          "items": {
+            "format": "uint8",
+            "maximum": 255,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "type": "array"
+        },
+        "Y_1": {
+          "items": {
+            "format": "uint8",
+            "maximum": 255,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "type": "array"
+        },
+        "Y_2": {
+          "items": {
+            "format": "uint8",
+            "maximum": 255,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "type": "array"
+        },
+        "z_r": {
+          "items": {
+            "format": "uint8",
+            "maximum": 255,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "type": "array"
+        },
+        "z_s": {
+          "items": {
+            "format": "uint8",
+            "maximum": 255,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "type": "array"
+        },
+        "z_x": {
+          "items": {
+            "format": "uint8",
+            "maximum": 255,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "Y_0",
+        "Y_1",
+        "Y_2",
+        "z_s",
+        "z_x",
+        "z_r"
+      ],
+      "type": "object"
+    },
+    "CompressedCiphertext": {
+      "items": {
+        "format": "uint8",
+        "maximum": 255,
+        "minimum": 0,
+        "type": "integer"
+      },
+      "type": "array"
+    },
+    "CompressedCommitment": {
+      "items": {
+        "format": "uint8",
+        "maximum": 255,
+        "minimum": 0,
+        "type": "integer"
+      },
+      "type": "array"
+    },
+    "CompressedHandle": {
+      "items": {
+        "format": "uint8",
+        "maximum": 255,
+        "minimum": 0,
+        "type": "integer"
+      },
+      "type": "array"
+    },
+    "CompressedPublicKey": {
+      "items": {
+        "format": "uint8",
+        "maximum": 255,
+        "minimum": 0,
+        "type": "integer"
+      },
+      "type": "array"
+    },
+    "ContractCall": {
+      "properties": {
+        "chunk": {
+          "$ref": "#/$defs/ContractCallChunk"
+        },
+        "contract": {
+          "$ref": "#/$defs/Hash"
+        }
+      },
+      "required": [
+        "contract",
+        "chunk"
+      ],
+      "type": "object"
+    },
+    "ContractCallChunk": {
+      "oneOf": [
+        {
+          "enum": [
+            "all"
+          ],
+          "type": "string"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "specific": {
+              "items": {
+                "format": "uint16",
+                "maximum": 65535,
+                "minimum": 0,
+                "type": "integer"
+              },
+              "type": "array",
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "specific"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "exclude": {
+              "items": {
+                "format": "uint16",
+                "maximum": 65535,
+                "minimum": 0,
+                "type": "integer"
+              },
+              "type": "array",
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "exclude"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "ContractDataEntry": {
+      "properties": {
+        "key": {
+          "$ref": "#/$defs/ValueCell"
+        },
+        "value": {
+          "$ref": "#/$defs/ValueCell"
+        }
+      },
+      "required": [
+        "key",
+        "value"
+      ],
+      "type": "object"
+    },
+    "ContractDeposit": {
+      "oneOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "public": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "public"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "private": {
+              "properties": {
+                "commitment": {
+                  "$ref": "#/$defs/CompressedCommitment"
+                },
+                "ct_validity_proof": {
+                  "$ref": "#/$defs/CiphertextValidityProof"
+                },
+                "receiver_handle": {
+                  "$ref": "#/$defs/CompressedHandle"
+                },
+                "sender_handle": {
+                  "$ref": "#/$defs/CompressedHandle"
+                }
+              },
+              "required": [
+                "commitment",
+                "sender_handle",
+                "receiver_handle",
+                "ct_validity_proof"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "private"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "ContractTransfersEntry": {
+      "properties": {
+        "transfers": {
+          "additionalProperties": {
+            "format": "uint64",
+            "minimum": 0,
+            "type": "integer"
+          },
+          "type": "object"
+        }
+      },
+      "required": [
+        "transfers"
+      ],
+      "type": "object"
+    },
+    "ContractTransfersEntryKey": {
+      "properties": {
+        "caller": {
+          "$ref": "#/$defs/Hash"
+        },
+        "contract": {
+          "$ref": "#/$defs/Hash"
+        }
+      },
+      "required": [
+        "contract",
+        "caller"
+      ],
+      "type": "object"
+    },
+    "ContractVersion": {
+      "enum": [
+        "v0",
+        "v1"
+      ],
+      "type": "string"
+    },
+    "DataElement": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/DataValue"
+        },
+        {
+          "items": {
+            "$ref": "#/$defs/DataElement"
+          },
+          "type": "array"
+        },
+        {
+          "additionalProperties": {
+            "$ref": "#/$defs/DataElement"
+          },
+          "patternProperties": {
+            "^\\d+$": {
+              "$ref": "#/$defs/DataElement"
+            }
+          },
+          "type": "object"
+        }
+      ]
+    },
+    "DataValue": {
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "format": "uint8",
+          "maximum": 255,
+          "minimum": 0,
+          "type": "integer"
+        },
+        {
+          "format": "uint16",
+          "maximum": 65535,
+          "minimum": 0,
+          "type": "integer"
+        },
+        {
+          "format": "uint32",
+          "minimum": 0,
+          "type": "integer"
+        },
+        {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        {
+          "format": "uint128",
+          "minimum": 0,
+          "type": "integer"
+        },
+        {
+          "$ref": "#/$defs/Hash"
+        },
+        {
+          "items": {
+            "format": "uint8",
+            "maximum": 255,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "type": "array"
+        }
+      ]
+    },
+    "DeployContractPayload": {
+      "properties": {
+        "invoke": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/InvokeConstructorPayload"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "module": {
+          "$ref": "#/$defs/Module"
+        },
+        "version": {
+          "$ref": "#/$defs/ContractVersion"
+        }
+      },
+      "required": [
+        "version",
+        "module"
+      ],
+      "type": "object"
+    },
+    "Deposits": {
+      "additionalProperties": {
+        "$ref": "#/$defs/ContractDeposit"
+      },
+      "type": "object"
+    },
+    "DevFeeThreshold": {
+      "properties": {
+        "fee_percentage": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "height": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "height",
+        "fee_percentage"
+      ],
+      "type": "object"
+    },
+    "ExecutionResult": {
+      "properties": {
+        "burned_gas": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "exit_value": {
+          "$ref": "#/$defs/ExitValue"
+        },
+        "fee_gas": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "used_gas": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "vm_max_gas": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "used_gas",
+        "burned_gas",
+        "fee_gas",
+        "vm_max_gas",
+        "exit_value"
+      ],
+      "type": "object"
+    },
+    "ExitError": {
+      "$ref": "#/$defs/ExitErrorWireSchema"
+    },
+    "ExitErrorCodeSchema": {
+      "enum": [
+        "INVALID_ENTRY_PAYLOAD_RETURN",
+        "UNKNOWN_HOOK",
+        "INVALID_ENTRY",
+        "MISSING_ENTRY_EXIT_CODE",
+        "ILLEGAL_STATE",
+        "DIVISION_BY_ZERO",
+        "ASSERTION_FAILED",
+        "OUT_OF_BOUNDS",
+        "OUT_OF_MEMORY",
+        "NOT_ENOUGH_GAS",
+        "GAS_OVERFLOW",
+        "RUNTIME_ERROR"
+      ],
+      "type": "string"
+    },
+    "ExitErrorWireSchema": {
+      "properties": {
+        "code": {
+          "$ref": "#/$defs/ExitErrorCodeSchema"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "code",
+        "message"
+      ],
+      "type": "object"
+    },
+    "ExitValue": {
+      "oneOf": [
+        {
+          "properties": {
+            "type": {
+              "const": "Error",
+              "type": "string"
+            },
+            "value": {
+              "$ref": "#/$defs/ExitError"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "ExitCode",
+              "type": "string"
+            },
+            "value": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "Payload",
+              "type": "string"
+            },
+            "value": {
+              "$ref": "#/$defs/ValueCell"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "GetTransactionResult": {
+      "properties": {
+        "blocks": {
+          "items": {
+            "$ref": "#/$defs/Hash"
+          },
+          "type": [
+            "array",
+            "null"
+          ],
+          "uniqueItems": true
+        },
+        "data": {
+          "$ref": "#/$defs/RPCTransactionType"
+        },
+        "executed_in_block": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Hash"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "fee": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "fee_limit": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "fee_paid": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "fee_refund": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "first_seen": {
+          "default": null,
+          "format": "uint64",
+          "minimum": 0,
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "hash": {
+          "$ref": "#/$defs/Hash"
+        },
+        "in_mempool": {
+          "type": "boolean"
+        },
+        "multisig": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/MultiSig"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "nonce": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "range_proof": {
+          "items": {
+            "format": "uint8",
+            "maximum": 255,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "type": "array"
+        },
+        "reference": {
+          "$ref": "#/$defs/Reference"
+        },
+        "signature": {
+          "$ref": "#/$defs/Signature"
+        },
+        "size": {
+          "format": "uint",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "source": {
+          "$ref": "#/$defs/Address"
+        },
+        "source_commitments": {
+          "items": {
+            "$ref": "#/$defs/SourceCommitment"
+          },
+          "type": "array"
+        },
+        "version": {
+          "$ref": "#/$defs/TxVersion"
+        }
+      },
+      "required": [
+        "in_mempool",
+        "hash",
+        "version",
+        "source",
+        "data",
+        "fee",
+        "fee_limit",
+        "nonce",
+        "source_commitments",
+        "range_proof",
+        "reference",
+        "signature",
+        "size"
+      ],
+      "type": "object"
+    },
+    "HardFork": {
+      "properties": {
+        "changelog": {
+          "type": "string"
+        },
+        "height": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "version": {
+          "$ref": "#/$defs/BlockVersion"
+        },
+        "version_requirement": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "height",
+        "version",
+        "changelog"
+      ],
+      "type": "object"
+    },
+    "Hash": {
+      "type": "string"
+    },
+    "Immutable": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Hash"
+        },
+        {
+          "$ref": "#/$defs/Hash"
+        }
+      ]
+    },
+    "InterContractPermission": {
+      "oneOf": [
+        {
+          "enum": [
+            "none",
+            "all"
+          ],
+          "type": "string"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "specific": {
+              "items": {
+                "$ref": "#/$defs/ContractCall"
+              },
+              "type": "array",
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "specific"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "exclude": {
+              "items": {
+                "$ref": "#/$defs/ContractCall"
+              },
+              "type": "array",
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "exclude"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "InvokeConstructorPayload": {
+      "properties": {
+        "deposits": {
+          "$ref": "#/$defs/Deposits"
+        },
+        "max_gas": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "max_gas",
+        "deposits"
+      ],
+      "type": "object"
+    },
+    "InvokeContractPayload": {
+      "properties": {
+        "contract": {
+          "$ref": "#/$defs/Hash"
+        },
+        "deposits": {
+          "$ref": "#/$defs/Deposits"
+        },
+        "entry_id": {
+          "format": "uint16",
+          "maximum": 65535,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "max_gas": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "parameters": {
+          "items": {
+            "$ref": "#/$defs/ValueCell"
+          },
+          "type": "array"
+        },
+        "permission": {
+          "$ref": "#/$defs/InterContractPermission",
+          "default": "none"
+        }
+      },
+      "required": [
+        "contract",
+        "deposits",
+        "entry_id",
+        "max_gas",
+        "parameters"
+      ],
+      "type": "object"
+    },
+    "KV": {
+      "properties": {
+        "key": {
+          "$ref": "#/$defs/ContractTransfersEntryKey"
+        },
+        "value": {
+          "$ref": "#/$defs/ContractTransfersEntry"
+        }
+      },
+      "required": [
+        "key",
+        "value"
+      ],
+      "type": "object"
+    },
+    "MaxSupplyMode": {
+      "oneOf": [
+        {
+          "enum": [
+            "none"
+          ],
+          "type": "string"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "fixed": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "fixed"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "mintable": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "mintable"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "MempoolTransactionSummary": {
+      "properties": {
+        "fee": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "fee_per_kb": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "first_seen": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "hash": {
+          "$ref": "#/$defs/Hash"
+        },
+        "size": {
+          "format": "uint",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "source": {
+          "$ref": "#/$defs/Address"
+        }
+      },
+      "required": [
+        "hash",
+        "source",
+        "fee",
+        "first_seen",
+        "size",
+        "fee_per_kb"
+      ],
+      "type": "object"
+    },
+    "Module": {
+      "properties": {
+        "chunks": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/ModuleChunk"
+          },
+          "type": "array"
+        },
+        "constants": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/ValueCell"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "hook_chunk_ids": {
+          "additionalProperties": false,
+          "default": [],
+          "patternProperties": {
+            "^\\d+$": {
+              "format": "uint",
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
+    "ModuleChunk": {
+      "oneOf": [
+        {
+          "properties": {
+            "type": {
+              "const": "all",
+              "type": "string"
+            },
+            "value": {
+              "properties": {
+                "parameters": {
+                  "items": {
+                    "$ref": "#/$defs/TypePacked"
+                  },
+                  "type": [
+                    "array",
+                    "null"
+                  ]
+                }
+              },
+              "type": "object"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "internal",
+              "type": "string"
+            }
+          },
+          "required": [
+            "type"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "hook",
+              "type": "string"
+            },
+            "value": {
+              "properties": {
+                "id": {
+                  "format": "uint8",
+                  "maximum": 255,
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "id"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "entry",
+              "type": "string"
+            },
+            "value": {
+              "properties": {
+                "parameters": {
+                  "items": {
+                    "$ref": "#/$defs/TypePacked"
+                  },
+                  "type": [
+                    "array",
+                    "null"
+                  ]
+                }
+              },
+              "type": "object"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        }
+      ],
+      "properties": {
+        "instructions": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "instructions"
+      ],
+      "type": "object"
+    },
+    "MultiSig": {
+      "properties": {
+        "signatures": {
+          "items": {
+            "$ref": "#/$defs/SignatureId"
+          },
+          "type": "array",
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "signatures"
+      ],
+      "type": "object"
+    },
+    "MultiSigPayload": {
+      "properties": {
+        "participants": {
+          "items": {
+            "$ref": "#/$defs/CompressedPublicKey"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "threshold": {
+          "format": "uint8",
+          "maximum": 255,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "threshold",
+        "participants"
+      ],
+      "type": "object"
+    },
+    "MultisigState": {
+      "oneOf": [
+        {
+          "const": "deleted",
+          "type": "string"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "active": {
+              "properties": {
+                "participants": {
+                  "items": {
+                    "$ref": "#/$defs/Address"
+                  },
+                  "type": "array"
+                },
+                "threshold": {
+                  "format": "uint8",
+                  "maximum": 255,
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "participants",
+                "threshold"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "active"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "Network": {
+      "enum": [
+        "Mainnet",
+        "Testnet",
+        "Stagenet",
+        "Devnet"
+      ],
+      "type": "string"
+    },
+    "NumberType": {
+      "enum": [
+        "u8",
+        "u16",
+        "u32",
+        "u64",
+        "u128",
+        "u256"
+      ],
+      "type": "string"
+    },
+    "OpaqueWrapper": {
+      "type": "object"
+    },
+    "PeerEntry": {
+      "properties": {
+        "addr": {
+          "type": "string"
+        },
+        "bytes_recv": {
+          "format": "uint",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "bytes_sent": {
+          "format": "uint",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "connected_on": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "cumulative_difficulty": {
+          "$ref": "#/$defs/VarUint"
+        },
+        "height": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "id": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "last_ping": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "local_port": {
+          "format": "uint16",
+          "maximum": 65535,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "peers": {
+          "additionalProperties": {
+            "$ref": "#/$defs/TimedDirection"
+          },
+          "type": "object"
+        },
+        "pruned_topoheight": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "tag": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "top_block_hash": {
+          "$ref": "#/$defs/Hash"
+        },
+        "topoheight": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "version": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "addr",
+        "local_port",
+        "version",
+        "top_block_hash",
+        "topoheight",
+        "height",
+        "last_ping",
+        "peers",
+        "cumulative_difficulty",
+        "connected_on",
+        "bytes_sent",
+        "bytes_recv"
+      ],
+      "type": "object"
+    },
+    "Primitive": {
+      "oneOf": [
+        {
+          "properties": {
+            "type": {
+              "const": "null",
+              "type": "string"
+            }
+          },
+          "required": [
+            "type"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "boolean",
+              "type": "string"
+            },
+            "value": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "u8",
+              "type": "string"
+            },
+            "value": {
+              "format": "uint8",
+              "maximum": 255,
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "u16",
+              "type": "string"
+            },
+            "value": {
+              "format": "uint16",
+              "maximum": 65535,
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "u32",
+              "type": "string"
+            },
+            "value": {
+              "format": "uint32",
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "u64",
+              "type": "string"
+            },
+            "value": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "u128",
+              "type": "string"
+            },
+            "value": {
+              "format": "uint128",
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "u256",
+              "type": "string"
+            },
+            "value": {
+              "$ref": "#/$defs/U256"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "string",
+              "type": "string"
+            },
+            "value": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "range",
+              "type": "string"
+            },
+            "value": {
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "$ref": "#/$defs/Primitive"
+                },
+                {
+                  "$ref": "#/$defs/Primitive"
+                }
+              ],
+              "type": "array"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "opaque",
+              "type": "string"
+            },
+            "value": {
+              "$ref": "#/$defs/OpaqueWrapper"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "RPCAssetData": {
+      "properties": {
+        "asset": {
+          "$ref": "#/$defs/Hash"
+        },
+        "decimals": {
+          "format": "uint8",
+          "maximum": 255,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "max_supply": {
+          "$ref": "#/$defs/MaxSupplyMode"
+        },
+        "name": {
+          "type": "string"
+        },
+        "owner": {
+          "$ref": "#/$defs/AssetOwner"
+        },
+        "ticker": {
+          "type": "string"
+        },
+        "topoheight": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "asset",
+        "topoheight",
+        "decimals",
+        "name",
+        "ticker",
+        "max_supply",
+        "owner"
+      ],
+      "type": "object"
+    },
+    "RPCBlobPayload": {
+      "properties": {
+        "data": {
+          "$ref": "#/$defs/UnknownExtraDataFormat"
+        },
+        "destinations": {
+          "items": {
+            "$ref": "#/$defs/Address"
+          },
+          "type": "array",
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "data",
+        "destinations"
+      ],
+      "type": "object"
+    },
+    "RPCBlockHeaderResponse": {
+      "properties": {
+        "block_type": {
+          "$ref": "#/$defs/BlockType"
+        },
+        "cumulative_difficulty": {
+          "$ref": "#/$defs/VarUint"
+        },
+        "dev_reward": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "difficulty": {
+          "$ref": "#/$defs/VarUint"
+        },
+        "extra_nonce": {
+          "type": "string"
+        },
+        "hash": {
+          "$ref": "#/$defs/Hash"
+        },
+        "height": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "miner": {
+          "$ref": "#/$defs/Address"
+        },
+        "miner_reward": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "nonce": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "reward": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "supply": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "timestamp": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "tips": {
+          "items": {
+            "$ref": "#/$defs/Hash"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "topoheight": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "total_fees": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "total_fees_burned": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "total_size_in_bytes": {
+          "format": "uint",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "txs_hashes": {
+          "items": {
+            "$ref": "#/$defs/Hash"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "version": {
+          "$ref": "#/$defs/BlockVersion"
+        }
+      },
+      "required": [
+        "hash",
+        "block_type",
+        "difficulty",
+        "cumulative_difficulty",
+        "total_size_in_bytes",
+        "version",
+        "tips",
+        "timestamp",
+        "height",
+        "nonce",
+        "extra_nonce",
+        "miner",
+        "txs_hashes"
+      ],
+      "type": "object"
+    },
+    "RPCBlockResponse": {
+      "properties": {
+        "block_type": {
+          "$ref": "#/$defs/BlockType"
+        },
+        "cumulative_difficulty": {
+          "$ref": "#/$defs/VarUint"
+        },
+        "dev_reward": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "difficulty": {
+          "$ref": "#/$defs/VarUint"
+        },
+        "extra_nonce": {
+          "type": "string"
+        },
+        "hash": {
+          "$ref": "#/$defs/Hash"
+        },
+        "height": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "miner": {
+          "$ref": "#/$defs/Address"
+        },
+        "miner_reward": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "nonce": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "reward": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "supply": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "timestamp": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "tips": {
+          "items": {
+            "$ref": "#/$defs/Hash"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "topoheight": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "total_fees": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "total_fees_burned": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "total_size_in_bytes": {
+          "format": "uint",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "transactions": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/RPCTransaction"
+          },
+          "type": "array"
+        },
+        "txs_hashes": {
+          "items": {
+            "$ref": "#/$defs/Hash"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "version": {
+          "$ref": "#/$defs/BlockVersion"
+        }
+      },
+      "required": [
+        "hash",
+        "block_type",
+        "difficulty",
+        "cumulative_difficulty",
+        "total_size_in_bytes",
+        "version",
+        "tips",
+        "timestamp",
+        "height",
+        "nonce",
+        "extra_nonce",
+        "miner",
+        "txs_hashes"
+      ],
+      "type": "object"
+    },
+    "RPCContractLog": {
+      "oneOf": [
+        {
+          "properties": {
+            "type": {
+              "const": "refund_gas",
+              "type": "string"
+            },
+            "value": {
+              "properties": {
+                "amount": {
+                  "format": "uint64",
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "amount"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "transfer",
+              "type": "string"
+            },
+            "value": {
+              "properties": {
+                "amount": {
+                  "format": "uint64",
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "asset": {
+                  "$ref": "#/$defs/Hash"
+                },
+                "contract": {
+                  "$ref": "#/$defs/Hash"
+                },
+                "destination": {
+                  "$ref": "#/$defs/Address"
+                }
+              },
+              "required": [
+                "contract",
+                "amount",
+                "asset",
+                "destination"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "transfer_contract",
+              "type": "string"
+            },
+            "value": {
+              "properties": {
+                "amount": {
+                  "format": "uint64",
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "asset": {
+                  "$ref": "#/$defs/Hash"
+                },
+                "contract": {
+                  "$ref": "#/$defs/Hash"
+                },
+                "destination": {
+                  "$ref": "#/$defs/Hash"
+                }
+              },
+              "required": [
+                "contract",
+                "amount",
+                "asset",
+                "destination"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "mint",
+              "type": "string"
+            },
+            "value": {
+              "properties": {
+                "amount": {
+                  "format": "uint64",
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "asset": {
+                  "$ref": "#/$defs/Hash"
+                },
+                "contract": {
+                  "$ref": "#/$defs/Hash"
+                }
+              },
+              "required": [
+                "contract",
+                "asset",
+                "amount"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "burn",
+              "type": "string"
+            },
+            "value": {
+              "properties": {
+                "amount": {
+                  "format": "uint64",
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "asset": {
+                  "$ref": "#/$defs/Hash"
+                },
+                "contract": {
+                  "$ref": "#/$defs/Hash"
+                }
+              },
+              "required": [
+                "contract",
+                "asset",
+                "amount"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "new_asset",
+              "type": "string"
+            },
+            "value": {
+              "properties": {
+                "asset": {
+                  "$ref": "#/$defs/Hash"
+                },
+                "contract": {
+                  "$ref": "#/$defs/Hash"
+                }
+              },
+              "required": [
+                "contract",
+                "asset"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "exit_code",
+              "type": "string"
+            },
+            "value": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "refund_deposits",
+              "type": "string"
+            }
+          },
+          "required": [
+            "type"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "gas_injection",
+              "type": "string"
+            },
+            "value": {
+              "properties": {
+                "amount": {
+                  "format": "uint64",
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "contract": {
+                  "$ref": "#/$defs/Hash"
+                }
+              },
+              "required": [
+                "contract",
+                "amount"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "scheduled_execution",
+              "type": "string"
+            },
+            "value": {
+              "properties": {
+                "contract": {
+                  "$ref": "#/$defs/Hash"
+                },
+                "hash": {
+                  "$ref": "#/$defs/Hash"
+                },
+                "kind": {
+                  "$ref": "#/$defs/ScheduledExecutionKindLog"
+                }
+              },
+              "required": [
+                "contract",
+                "hash",
+                "kind"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "exit_payload",
+              "type": "string"
+            },
+            "value": {
+              "properties": {
+                "payload": {
+                  "$ref": "#/$defs/ValueCell"
+                }
+              },
+              "required": [
+                "payload"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "transfer_payload",
+              "type": "string"
+            },
+            "value": {
+              "properties": {
+                "amount": {
+                  "format": "uint64",
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "asset": {
+                  "$ref": "#/$defs/Hash"
+                },
+                "contract": {
+                  "$ref": "#/$defs/Hash"
+                },
+                "destination": {
+                  "$ref": "#/$defs/Address"
+                },
+                "payload": {
+                  "$ref": "#/$defs/ValueCell"
+                }
+              },
+              "required": [
+                "contract",
+                "amount",
+                "asset",
+                "destination",
+                "payload"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "exit_error",
+              "type": "string"
+            },
+            "value": {
+              "properties": {
+                "err": {
+                  "$ref": "#/$defs/ExitError"
+                }
+              },
+              "required": [
+                "err"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "event",
+              "type": "string"
+            },
+            "value": {
+              "properties": {
+                "contract": {
+                  "$ref": "#/$defs/Hash"
+                },
+                "event_id": {
+                  "format": "uint64",
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "contract",
+                "event_id"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "RPCTransaction": {
+      "properties": {
+        "data": {
+          "$ref": "#/$defs/RPCTransactionType"
+        },
+        "fee": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "fee_limit": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "fee_paid": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "fee_refund": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "hash": {
+          "$ref": "#/$defs/Hash"
+        },
+        "multisig": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/MultiSig"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "nonce": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "range_proof": {
+          "items": {
+            "format": "uint8",
+            "maximum": 255,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "type": "array"
+        },
+        "reference": {
+          "$ref": "#/$defs/Reference"
+        },
+        "signature": {
+          "$ref": "#/$defs/Signature"
+        },
+        "size": {
+          "format": "uint",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "source": {
+          "$ref": "#/$defs/Address"
+        },
+        "source_commitments": {
+          "items": {
+            "$ref": "#/$defs/SourceCommitment"
+          },
+          "type": "array"
+        },
+        "version": {
+          "$ref": "#/$defs/TxVersion"
+        }
+      },
+      "required": [
+        "hash",
+        "version",
+        "source",
+        "data",
+        "fee",
+        "fee_limit",
+        "nonce",
+        "source_commitments",
+        "range_proof",
+        "reference",
+        "signature",
+        "size"
+      ],
+      "type": "object"
+    },
+    "RPCTransactionType": {
+      "oneOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "transfers": {
+              "items": {
+                "$ref": "#/$defs/RPCTransferPayload"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "transfers"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "burn": {
+              "$ref": "#/$defs/BurnPayload"
+            }
+          },
+          "required": [
+            "burn"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "multi_sig": {
+              "$ref": "#/$defs/MultiSigPayload"
+            }
+          },
+          "required": [
+            "multi_sig"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "invoke_contract": {
+              "$ref": "#/$defs/InvokeContractPayload"
+            }
+          },
+          "required": [
+            "invoke_contract"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "deploy_contract": {
+              "$ref": "#/$defs/DeployContractPayload"
+            }
+          },
+          "required": [
+            "deploy_contract"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "blob": {
+              "$ref": "#/$defs/RPCBlobPayload"
+            }
+          },
+          "required": [
+            "blob"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "RPCTransferPayload": {
+      "properties": {
+        "asset": {
+          "$ref": "#/$defs/Hash"
+        },
+        "commitment": {
+          "$ref": "#/$defs/CompressedCommitment"
+        },
+        "ct_validity_proof": {
+          "$ref": "#/$defs/CiphertextValidityProof"
+        },
+        "destination": {
+          "$ref": "#/$defs/Address"
+        },
+        "extra_data": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/UnknownExtraDataFormat"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "receiver_handle": {
+          "$ref": "#/$defs/CompressedHandle"
+        },
+        "sender_handle": {
+          "$ref": "#/$defs/CompressedHandle"
+        }
+      },
+      "required": [
+        "asset",
+        "destination",
+        "commitment",
+        "sender_handle",
+        "receiver_handle",
+        "ct_validity_proof"
+      ],
+      "type": "object"
+    },
+    "RPCVersioned": {
+      "properties": {
+        "balance_type": {
+          "$ref": "#/$defs/BalanceType"
+        },
+        "final_balance": {
+          "$ref": "#/$defs/CiphertextCache"
+        },
+        "output_balance": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/CiphertextCache"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "previous_topoheight": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "topoheight": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "topoheight",
+        "final_balance",
+        "balance_type"
+      ],
+      "type": "object"
+    },
+    "Reference": {
+      "properties": {
+        "hash": {
+          "$ref": "#/$defs/Hash"
+        },
+        "topoheight": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "hash",
+        "topoheight"
+      ],
+      "type": "object"
+    },
+    "RegisteredExecution": {
+      "properties": {
+        "execution_contract": {
+          "$ref": "#/$defs/Hash"
+        },
+        "execution_hash": {
+          "$ref": "#/$defs/Hash"
+        },
+        "execution_topoheight": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "execution_hash",
+        "execution_contract",
+        "execution_topoheight"
+      ],
+      "type": "object"
+    },
+    "RpcMethodInfo": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "schema": {
+          "$ref": "#/$defs/RpcSchema"
+        }
+      },
+      "required": [
+        "name",
+        "schema"
+      ],
+      "type": "object"
+    },
+    "RpcSchema": {
+      "properties": {
+        "params_schema": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Schema"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "returns_schema": {
+          "$ref": "#/$defs/Schema"
+        }
+      },
+      "required": [
+        "returns_schema"
+      ],
+      "type": "object"
+    },
+    "ScheduledExecution": {
+      "properties": {
+        "chunk_id": {
+          "format": "uint16",
+          "maximum": 65535,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "contract": {
+          "$ref": "#/$defs/Hash"
+        },
+        "gas_sources": {
+          "additionalProperties": {
+            "format": "uint64",
+            "minimum": 0,
+            "type": "integer"
+          },
+          "type": "object"
+        },
+        "hash": {
+          "$ref": "#/$defs/Hash"
+        },
+        "kind": {
+          "$ref": "#/$defs/ScheduledExecutionKind"
+        },
+        "max_gas": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "params": {
+          "items": {
+            "$ref": "#/$defs/ValueCell"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "hash",
+        "contract",
+        "chunk_id",
+        "params",
+        "max_gas",
+        "kind",
+        "gas_sources"
+      ],
+      "type": "object"
+    },
+    "ScheduledExecutionKind": {
+      "oneOf": [
+        {
+          "enum": [
+            "block_end"
+          ],
+          "type": "string"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "topo_height": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "topo_height"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "ScheduledExecutionKindLog": {
+      "oneOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "topo_height": {
+              "properties": {
+                "topoheight": {
+                  "format": "uint64",
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "topoheight"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "topo_height"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "block_end": {
+              "properties": {
+                "chunk_id": {
+                  "format": "uint16",
+                  "maximum": 65535,
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "max_gas": {
+                  "format": "uint64",
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "params": {
+                  "items": {
+                    "$ref": "#/$defs/ValueCell"
+                  },
+                  "type": "array"
+                }
+              },
+              "required": [
+                "chunk_id",
+                "max_gas",
+                "params"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "block_end"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "Schema": {
+      "type": [
+        "object",
+        "boolean"
+      ]
+    },
+    "SharedKey": {
+      "type": "string"
+    },
+    "Signature": {
+      "type": "string"
+    },
+    "SignatureId": {
+      "properties": {
+        "id": {
+          "format": "uint8",
+          "maximum": 255,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "signature": {
+          "$ref": "#/$defs/Signature"
+        }
+      },
+      "required": [
+        "id",
+        "signature"
+      ],
+      "type": "object"
+    },
+    "SourceCommitment": {
+      "properties": {
+        "asset": {
+          "$ref": "#/$defs/Hash"
+        },
+        "commitment": {
+          "$ref": "#/$defs/CompressedCommitment"
+        },
+        "proof": {
+          "$ref": "#/$defs/CommitmentEqProof"
+        }
+      },
+      "required": [
+        "commitment",
+        "proof",
+        "asset"
+      ],
+      "type": "object"
+    },
+    "TimedDirection": {
+      "oneOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "in": {
+              "properties": {
+                "received_at": {
+                  "format": "uint64",
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "received_at"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "in"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "out": {
+              "properties": {
+                "sent_at": {
+                  "format": "uint64",
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "sent_at"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "out"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "both": {
+              "properties": {
+                "received_at": {
+                  "format": "uint64",
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "sent_at": {
+                  "format": "uint64",
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "received_at",
+                "sent_at"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "both"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "TransactionSummary": {
+      "properties": {
+        "fee": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "hash": {
+          "$ref": "#/$defs/Hash"
+        },
+        "size": {
+          "format": "uint",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "source": {
+          "$ref": "#/$defs/Address"
+        }
+      },
+      "required": [
+        "hash",
+        "source",
+        "fee",
+        "size"
+      ],
+      "type": "object"
+    },
+    "TxVersion": {
+      "enum": [
+        "V0",
+        "V1",
+        "V2",
+        "V3"
+      ],
+      "type": "string"
+    },
+    "TypePacked": {
+      "oneOf": [
+        {
+          "properties": {
+            "type": {
+              "const": "any",
+              "type": "string"
+            }
+          },
+          "required": [
+            "type"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "optional",
+              "type": "string"
+            },
+            "value": {
+              "$ref": "#/$defs/TypePacked"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "number",
+              "type": "string"
+            },
+            "value": {
+              "$ref": "#/$defs/NumberType"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "string",
+              "type": "string"
+            }
+          },
+          "required": [
+            "type"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "bool",
+              "type": "string"
+            }
+          },
+          "required": [
+            "type"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "bytes",
+              "type": "string"
+            }
+          },
+          "required": [
+            "type"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "opaque",
+              "type": "string"
+            },
+            "value": {
+              "format": "uint16",
+              "maximum": 65535,
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "array",
+              "type": "string"
+            },
+            "value": {
+              "$ref": "#/$defs/TypePacked"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "tuples",
+              "type": "string"
+            },
+            "value": {
+              "items": {
+                "$ref": "#/$defs/TypePacked"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "range",
+              "type": "string"
+            },
+            "value": {
+              "$ref": "#/$defs/NumberType"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "map",
+              "type": "string"
+            },
+            "value": {
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "$ref": "#/$defs/TypePacked"
+                },
+                {
+                  "$ref": "#/$defs/TypePacked"
+                }
+              ],
+              "type": "array"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "one_of",
+              "type": "string"
+            },
+            "value": {
+              "items": {
+                "items": {
+                  "$ref": "#/$defs/TypePacked"
+                },
+                "type": "array"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "U256": {
+      "type": "string"
+    },
+    "UnknownExtraDataFormat": {
+      "items": {
+        "format": "uint8",
+        "maximum": 255,
+        "minimum": 0,
+        "type": "integer"
+      },
+      "type": "array"
+    },
+    "ValueCell": {
+      "oneOf": [
+        {
+          "properties": {
+            "type": {
+              "const": "primitive",
+              "type": "string"
+            },
+            "value": {
+              "$ref": "#/$defs/Primitive"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "bytes",
+              "type": "string"
+            },
+            "value": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "object",
+              "type": "string"
+            },
+            "value": {
+              "items": {
+                "$ref": "#/$defs/ValueCell"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "map",
+              "type": "string"
+            },
+            "value": {
+              "items": {
+                "maxItems": 2,
+                "minItems": 2,
+                "prefixItems": [
+                  {
+                    "$ref": "#/$defs/ValueCell"
+                  },
+                  {
+                    "$ref": "#/$defs/ValueCell"
+                  }
+                ],
+                "type": "array"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "VarUint": {
+      "type": "string"
+    },
+    "VersionedBalance": {
+      "properties": {
+        "balance_type": {
+          "$ref": "#/$defs/BalanceType"
+        },
+        "final_balance": {
+          "$ref": "#/$defs/CiphertextCache"
+        },
+        "output_balance": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/CiphertextCache"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "previous_topoheight": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": [
+            "integer",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "final_balance",
+        "balance_type"
+      ],
+      "type": "object"
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "methods": [
+    {
+      "name": "batch_limit",
+      "schema": {
+        "params_schema": null,
+        "returns_schema": {
+          "format": "uint",
+          "minimum": 0,
+          "type": [
+            "integer",
+            "null"
+          ]
+        }
+      }
+    },
+    {
+      "name": "clear_caches",
+      "schema": {
+        "params_schema": null,
+        "returns_schema": {
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "count_accounts",
+      "schema": {
+        "params_schema": null,
+        "returns_schema": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        }
+      }
+    },
+    {
+      "name": "count_assets",
+      "schema": {
+        "params_schema": null,
+        "returns_schema": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        }
+      }
+    },
+    {
+      "name": "count_contracts",
+      "schema": {
+        "params_schema": null,
+        "returns_schema": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        }
+      }
+    },
+    {
+      "name": "count_transactions",
+      "schema": {
+        "params_schema": null,
+        "returns_schema": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        }
+      }
+    },
+    {
+      "name": "decrypt_extra_data",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "extra_data": {
+              "$ref": "#/$defs/UnknownExtraDataFormat"
+            },
+            "shared_key": {
+              "$ref": "#/$defs/SharedKey"
+            }
+          },
+          "required": [
+            "shared_key",
+            "extra_data"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/DataValue"
+            },
+            {
+              "items": {
+                "$ref": "#"
+              },
+              "type": "array"
+            },
+            {
+              "additionalProperties": {
+                "$ref": "#"
+              },
+              "patternProperties": {
+                "^\\d+$": {
+                  "$ref": "#"
+                }
+              },
+              "type": "object"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "extract_key_from_address",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "address": {
+              "$ref": "#/$defs/Address"
+            },
+            "as_hex": {
+              "default": false,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "address"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "oneOf": [
+            {
+              "additionalProperties": false,
+              "properties": {
+                "bytes": {
+                  "items": {
+                    "format": "uint8",
+                    "maximum": 255,
+                    "minimum": 0,
+                    "type": "integer"
+                  },
+                  "type": "array"
+                }
+              },
+              "required": [
+                "bytes"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "hex": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "hex"
+              ],
+              "type": "object"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "get_account_assets",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "address": {
+              "$ref": "#/$defs/Address"
+            },
+            "maximum": {
+              "format": "uint",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "skip": {
+              "format": "uint",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "address"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "items": {
+            "$ref": "#/$defs/Hash"
+          },
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "get_account_history",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "address": {
+              "$ref": "#/$defs/Address"
+            },
+            "asset": {
+              "$ref": "#/$defs/Hash",
+              "default": "0000000000000000000000000000000000000000000000000000000000000000"
+            },
+            "incoming_flow": {
+              "default": true,
+              "type": "boolean"
+            },
+            "maximum_topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "minimum_topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "outgoing_flow": {
+              "default": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "address"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "items": {
+            "$ref": "#/$defs/AccountHistoryEntry"
+          },
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "get_account_registration_topoheight",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "address": {
+              "$ref": "#/$defs/Address"
+            }
+          },
+          "required": [
+            "address"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        }
+      }
+    },
+    {
+      "name": "get_accounts",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "maximum": {
+              "format": "uint",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "maximum_topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "minimum_topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "skip": {
+              "format": "uint",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            }
+          },
+          "type": "object"
+        },
+        "returns_schema": {
+          "items": {
+            "$ref": "#/$defs/Address"
+          },
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "get_asset",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "asset": {
+              "$ref": "#/$defs/Hash"
+            }
+          },
+          "required": [
+            "asset"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "properties": {
+            "asset": {
+              "$ref": "#/$defs/Hash"
+            },
+            "decimals": {
+              "format": "uint8",
+              "maximum": 255,
+              "minimum": 0,
+              "type": "integer"
+            },
+            "max_supply": {
+              "$ref": "#/$defs/MaxSupplyMode"
+            },
+            "name": {
+              "type": "string"
+            },
+            "owner": {
+              "$ref": "#/$defs/AssetOwner"
+            },
+            "ticker": {
+              "type": "string"
+            },
+            "topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "asset",
+            "topoheight",
+            "decimals",
+            "name",
+            "ticker",
+            "max_supply",
+            "owner"
+          ],
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "get_asset_supply",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "asset": {
+              "$ref": "#/$defs/Hash"
+            }
+          },
+          "required": [
+            "asset"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "properties": {
+            "data": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "previous_topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "topoheight",
+            "data"
+          ],
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "get_asset_supply_at_topoheight",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "asset": {
+              "$ref": "#/$defs/Hash"
+            },
+            "topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "asset",
+            "topoheight"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "properties": {
+            "data": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "previous_topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "data"
+          ],
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "get_assets",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "maximum": {
+              "format": "uint",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "maximum_topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "minimum_topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "skip": {
+              "format": "uint",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            }
+          },
+          "type": "object"
+        },
+        "returns_schema": {
+          "items": {
+            "$ref": "#/$defs/RPCAssetData"
+          },
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "get_balance",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "address": {
+              "$ref": "#/$defs/Address"
+            },
+            "asset": {
+              "$ref": "#/$defs/Hash"
+            }
+          },
+          "required": [
+            "address",
+            "asset"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "properties": {
+            "topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "version": {
+              "$ref": "#/$defs/VersionedBalance"
+            }
+          },
+          "required": [
+            "version",
+            "topoheight"
+          ],
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "get_balance_at_topoheight",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "address": {
+              "$ref": "#/$defs/Address"
+            },
+            "asset": {
+              "$ref": "#/$defs/Hash"
+            },
+            "topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "address",
+            "asset",
+            "topoheight"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "properties": {
+            "balance_type": {
+              "$ref": "#/$defs/BalanceType"
+            },
+            "final_balance": {
+              "$ref": "#/$defs/CiphertextCache"
+            },
+            "output_balance": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/CiphertextCache"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "previous_topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "final_balance",
+            "balance_type"
+          ],
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "get_balances_at_maximum_topoheight",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "address": {
+              "$ref": "#/$defs/Address"
+            },
+            "assets": {
+              "items": {
+                "$ref": "#/$defs/Hash"
+              },
+              "type": "array",
+              "uniqueItems": true
+            },
+            "maximum_topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "address",
+            "assets",
+            "maximum_topoheight"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/RPCVersioned"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "get_block_at_topoheight",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "include_txs": {
+              "default": false,
+              "type": "boolean"
+            },
+            "topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "topoheight"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "properties": {
+            "block_type": {
+              "$ref": "#/$defs/BlockType"
+            },
+            "cumulative_difficulty": {
+              "$ref": "#/$defs/VarUint"
+            },
+            "dev_reward": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "difficulty": {
+              "$ref": "#/$defs/VarUint"
+            },
+            "extra_nonce": {
+              "type": "string"
+            },
+            "hash": {
+              "$ref": "#/$defs/Hash"
+            },
+            "height": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "miner": {
+              "$ref": "#/$defs/Address"
+            },
+            "miner_reward": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "nonce": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "reward": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "supply": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "timestamp": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "tips": {
+              "items": {
+                "$ref": "#/$defs/Hash"
+              },
+              "type": "array",
+              "uniqueItems": true
+            },
+            "topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "total_fees": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "total_fees_burned": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "total_size_in_bytes": {
+              "format": "uint",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "transactions": {
+              "default": [],
+              "items": {
+                "$ref": "#/$defs/RPCTransaction"
+              },
+              "type": "array"
+            },
+            "txs_hashes": {
+              "items": {
+                "$ref": "#/$defs/Hash"
+              },
+              "type": "array",
+              "uniqueItems": true
+            },
+            "version": {
+              "$ref": "#/$defs/BlockVersion"
+            }
+          },
+          "required": [
+            "hash",
+            "block_type",
+            "difficulty",
+            "cumulative_difficulty",
+            "total_size_in_bytes",
+            "version",
+            "tips",
+            "timestamp",
+            "height",
+            "nonce",
+            "extra_nonce",
+            "miner",
+            "txs_hashes"
+          ],
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "get_block_base_fee_by_hash",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "block_hash": {
+              "$ref": "#/$defs/Hash"
+            }
+          },
+          "required": [
+            "block_hash"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "properties": {
+            "block_size_ema": {
+              "format": "uint",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "fee_per_kb": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "fee_per_kb",
+            "block_size_ema"
+          ],
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "get_block_by_hash",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "hash": {
+              "$ref": "#/$defs/Hash"
+            },
+            "include_txs": {
+              "default": false,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "hash"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "properties": {
+            "block_type": {
+              "$ref": "#/$defs/BlockType"
+            },
+            "cumulative_difficulty": {
+              "$ref": "#/$defs/VarUint"
+            },
+            "dev_reward": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "difficulty": {
+              "$ref": "#/$defs/VarUint"
+            },
+            "extra_nonce": {
+              "type": "string"
+            },
+            "hash": {
+              "$ref": "#/$defs/Hash"
+            },
+            "height": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "miner": {
+              "$ref": "#/$defs/Address"
+            },
+            "miner_reward": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "nonce": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "reward": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "supply": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "timestamp": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "tips": {
+              "items": {
+                "$ref": "#/$defs/Hash"
+              },
+              "type": "array",
+              "uniqueItems": true
+            },
+            "topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "total_fees": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "total_fees_burned": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "total_size_in_bytes": {
+              "format": "uint",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "transactions": {
+              "default": [],
+              "items": {
+                "$ref": "#/$defs/RPCTransaction"
+              },
+              "type": "array"
+            },
+            "txs_hashes": {
+              "items": {
+                "$ref": "#/$defs/Hash"
+              },
+              "type": "array",
+              "uniqueItems": true
+            },
+            "version": {
+              "$ref": "#/$defs/BlockVersion"
+            }
+          },
+          "required": [
+            "hash",
+            "block_type",
+            "difficulty",
+            "cumulative_difficulty",
+            "total_size_in_bytes",
+            "version",
+            "tips",
+            "timestamp",
+            "height",
+            "nonce",
+            "extra_nonce",
+            "miner",
+            "txs_hashes"
+          ],
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "get_block_difficulty_by_hash",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "block_hash": {
+              "$ref": "#/$defs/Hash"
+            }
+          },
+          "required": [
+            "block_hash"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "properties": {
+            "difficulty": {
+              "$ref": "#/$defs/VarUint"
+            },
+            "hashrate": {
+              "$ref": "#/$defs/VarUint"
+            },
+            "hashrate_formatted": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "difficulty",
+            "hashrate",
+            "hashrate_formatted"
+          ],
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "get_block_summary_at_topoheight",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "topoheight"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "properties": {
+            "block_hash": {
+              "$ref": "#/$defs/Hash"
+            },
+            "block_type": {
+              "$ref": "#/$defs/BlockType"
+            },
+            "cumulative_difficulty": {
+              "$ref": "#/$defs/VarUint"
+            },
+            "dev_reward": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "difficulty": {
+              "$ref": "#/$defs/VarUint"
+            },
+            "height": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "miner": {
+              "$ref": "#/$defs/Address"
+            },
+            "miner_reward": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "reward": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "supply": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "timestamp": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "total_fees": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "total_fees_burned": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "transactions": {
+              "items": {
+                "$ref": "#/$defs/TransactionSummary"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "block_hash",
+            "height",
+            "timestamp",
+            "miner",
+            "transactions",
+            "block_type",
+            "difficulty",
+            "cumulative_difficulty"
+          ],
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "get_block_summary_by_hash",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "hash": {
+              "$ref": "#/$defs/Hash"
+            }
+          },
+          "required": [
+            "hash"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "properties": {
+            "block_hash": {
+              "$ref": "#/$defs/Hash"
+            },
+            "block_type": {
+              "$ref": "#/$defs/BlockType"
+            },
+            "cumulative_difficulty": {
+              "$ref": "#/$defs/VarUint"
+            },
+            "dev_reward": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "difficulty": {
+              "$ref": "#/$defs/VarUint"
+            },
+            "height": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "miner": {
+              "$ref": "#/$defs/Address"
+            },
+            "miner_reward": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "reward": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "supply": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "timestamp": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "total_fees": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "total_fees_burned": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "transactions": {
+              "items": {
+                "$ref": "#/$defs/TransactionSummary"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "block_hash",
+            "height",
+            "timestamp",
+            "miner",
+            "transactions",
+            "block_type",
+            "difficulty",
+            "cumulative_difficulty"
+          ],
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "get_block_template",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "address": {
+              "$ref": "#/$defs/Address"
+            }
+          },
+          "required": [
+            "address"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "properties": {
+            "algorithm": {
+              "$ref": "#/$defs/Algorithm"
+            },
+            "difficulty": {
+              "$ref": "#/$defs/VarUint"
+            },
+            "height": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "template": {
+              "type": "string"
+            },
+            "topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "template",
+            "algorithm",
+            "height",
+            "topoheight",
+            "difficulty"
+          ],
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "get_blocks_at_height",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "height": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "include_txs": {
+              "default": false,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "height"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "items": {
+            "$ref": "#/$defs/RPCBlockResponse"
+          },
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "get_blocks_range_by_height",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "end_height": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "start_height": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            }
+          },
+          "type": "object"
+        },
+        "returns_schema": {
+          "items": {
+            "$ref": "#/$defs/RPCBlockHeaderResponse"
+          },
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "get_blocks_range_by_topoheight",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "end_topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "start_topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            }
+          },
+          "type": "object"
+        },
+        "returns_schema": {
+          "items": {
+            "$ref": "#/$defs/RPCBlockHeaderResponse"
+          },
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "get_contract_assets",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "contract": {
+              "$ref": "#/$defs/Hash"
+            },
+            "maximum": {
+              "format": "uint",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "skip": {
+              "format": "uint",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "contract"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "items": {
+            "$ref": "#/$defs/Hash"
+          },
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "get_contract_balance",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "asset": {
+              "$ref": "#/$defs/Hash"
+            },
+            "contract": {
+              "$ref": "#/$defs/Hash"
+            }
+          },
+          "required": [
+            "contract",
+            "asset"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "properties": {
+            "data": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "previous_topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "topoheight",
+            "data"
+          ],
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "get_contract_balance_at_topoheight",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "asset": {
+              "$ref": "#/$defs/Hash"
+            },
+            "contract": {
+              "$ref": "#/$defs/Hash"
+            },
+            "topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "contract",
+            "asset",
+            "topoheight"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "properties": {
+            "data": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "previous_topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "data"
+          ],
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "get_contract_data",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "contract": {
+              "$ref": "#/$defs/Hash"
+            },
+            "key": {
+              "$ref": "#/$defs/ValueCell"
+            }
+          },
+          "required": [
+            "contract",
+            "key"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "properties": {
+            "data": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/ValueCell"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "previous_topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "topoheight"
+          ],
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "get_contract_data_at_topoheight",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "contract": {
+              "$ref": "#/$defs/Hash"
+            },
+            "key": {
+              "$ref": "#/$defs/ValueCell"
+            },
+            "topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "contract",
+            "key",
+            "topoheight"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "properties": {
+            "data": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/ValueCell"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "previous_topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            }
+          },
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "get_contract_data_entries",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "contract": {
+              "$ref": "#/$defs/Hash"
+            },
+            "maximum": {
+              "format": "uint",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "maximum_topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "minimum_topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "skip": {
+              "format": "uint",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "contract"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "items": {
+            "$ref": "#/$defs/ContractDataEntry"
+          },
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "get_contract_logs",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "caller": {
+              "$ref": "#/$defs/Hash"
+            }
+          },
+          "required": [
+            "caller"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "items": {
+            "$ref": "#/$defs/RPCContractLog"
+          },
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "get_contract_module",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "contract": {
+              "$ref": "#/$defs/Hash"
+            }
+          },
+          "required": [
+            "contract"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "properties": {
+            "data": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/Module"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "previous_topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "topoheight"
+          ],
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "get_contract_registered_executions_at_topoheight",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "max": {
+              "format": "uint",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "skip": {
+              "format": "uint",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "topoheight"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "items": {
+            "$ref": "#/$defs/RegisteredExecution"
+          },
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "get_contract_scheduled_executions_at_topoheight",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "max": {
+              "format": "uint",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "skip": {
+              "format": "uint",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "topoheight"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "items": {
+            "$ref": "#/$defs/ScheduledExecution"
+          },
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "get_contract_transactions",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "contract": {
+              "$ref": "#/$defs/Hash"
+            },
+            "maximum": {
+              "format": "uint",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "maximum_topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "minimum_topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "skip": {
+              "format": "uint",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "contract"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "items": {
+            "$ref": "#/$defs/Hash"
+          },
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "get_contracts",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "maximum": {
+              "format": "uint",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "maximum_topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "minimum_topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "skip": {
+              "format": "uint",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            }
+          },
+          "type": "object"
+        },
+        "returns_schema": {
+          "items": {
+            "$ref": "#/$defs/Hash"
+          },
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "get_contracts_outputs",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "address": {
+              "$ref": "#/$defs/Address"
+            },
+            "topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "address",
+            "topoheight"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "properties": {
+            "executions": {
+              "items": {
+                "$ref": "#/$defs/KV"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "executions"
+          ],
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "get_dag_order",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "end_topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "start_topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            }
+          },
+          "type": "object"
+        },
+        "returns_schema": {
+          "items": {
+            "$ref": "#/$defs/Hash"
+          },
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "get_dev_fee_thresholds",
+      "schema": {
+        "params_schema": null,
+        "returns_schema": {
+          "items": {
+            "$ref": "#/$defs/DevFeeThreshold"
+          },
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "get_difficulty",
+      "schema": {
+        "params_schema": null,
+        "returns_schema": {
+          "properties": {
+            "difficulty": {
+              "$ref": "#/$defs/VarUint"
+            },
+            "hashrate": {
+              "$ref": "#/$defs/VarUint"
+            },
+            "hashrate_formatted": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "difficulty",
+            "hashrate",
+            "hashrate_formatted"
+          ],
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "get_estimated_fee_per_kb",
+      "schema": {
+        "params_schema": null,
+        "returns_schema": {
+          "properties": {
+            "fee_per_kb": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "predicated_fee_per_kb": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "fee_per_kb",
+            "predicated_fee_per_kb"
+          ],
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "get_estimated_fee_rates",
+      "schema": {
+        "params_schema": null,
+        "returns_schema": {
+          "properties": {
+            "default": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "high": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "low": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "medium": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "low",
+            "medium",
+            "high",
+            "default"
+          ],
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "get_hard_forks",
+      "schema": {
+        "params_schema": null,
+        "returns_schema": {
+          "items": {
+            "$ref": "#/$defs/HardFork"
+          },
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "get_height",
+      "schema": {
+        "params_schema": null,
+        "returns_schema": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        }
+      }
+    },
+    {
+      "name": "get_info",
+      "schema": {
+        "params_schema": null,
+        "returns_schema": {
+          "properties": {
+            "average_block_time": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "block_reward": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "block_time_target": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "block_version": {
+              "$ref": "#/$defs/BlockVersion"
+            },
+            "burned_supply": {
+              "default": 0,
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "circulating_supply": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "dev_reward": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "difficulty": {
+              "$ref": "#/$defs/VarUint"
+            },
+            "emitted_supply": {
+              "default": 0,
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "height": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "maximum_supply": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "mempool_size": {
+              "format": "uint",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "miner_reward": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "network": {
+              "$ref": "#/$defs/Network"
+            },
+            "pruned_topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "stable_topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "stableheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "top_block_hash": {
+              "$ref": "#/$defs/Hash"
+            },
+            "topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "version": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "height",
+            "topoheight",
+            "stableheight",
+            "stable_topoheight",
+            "top_block_hash",
+            "circulating_supply",
+            "maximum_supply",
+            "difficulty",
+            "block_time_target",
+            "average_block_time",
+            "block_reward",
+            "dev_reward",
+            "miner_reward",
+            "mempool_size",
+            "version",
+            "network",
+            "block_version"
+          ],
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "get_mempool",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "maximum": {
+              "format": "uint",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "skip": {
+              "format": "uint",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            }
+          },
+          "type": "object"
+        },
+        "returns_schema": {
+          "properties": {
+            "total": {
+              "format": "uint",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "transactions": {
+              "items": {
+                "$ref": "#/$defs/GetTransactionResult"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "transactions",
+            "total"
+          ],
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "get_mempool_cache",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "address": {
+              "$ref": "#/$defs/Address"
+            }
+          },
+          "required": [
+            "address"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "properties": {
+            "balances": {
+              "additionalProperties": {
+                "$ref": "#/$defs/CompressedCiphertext"
+              },
+              "type": "object"
+            },
+            "max": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "min": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "multisig": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/MultiSigPayload"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "txs": {
+              "items": {
+                "$ref": "#/$defs/Hash"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "min",
+            "max",
+            "txs",
+            "balances"
+          ],
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "get_mempool_summary",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "maximum": {
+              "format": "uint",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "skip": {
+              "format": "uint",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            }
+          },
+          "type": "object"
+        },
+        "returns_schema": {
+          "properties": {
+            "total": {
+              "format": "uint",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "transactions": {
+              "items": {
+                "$ref": "#/$defs/MempoolTransactionSummary"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "transactions",
+            "total"
+          ],
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "get_miner_work",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "address": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/Address"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "template": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "template"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "properties": {
+            "algorithm": {
+              "$ref": "#/$defs/Algorithm"
+            },
+            "difficulty": {
+              "$ref": "#/$defs/VarUint"
+            },
+            "height": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "miner_work": {
+              "type": "string"
+            },
+            "topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "algorithm",
+            "miner_work",
+            "height",
+            "difficulty",
+            "topoheight"
+          ],
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "get_multisig",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "address": {
+              "$ref": "#/$defs/Address"
+            }
+          },
+          "required": [
+            "address"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "properties": {
+            "state": {
+              "$ref": "#/$defs/MultisigState"
+            },
+            "topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "state",
+            "topoheight"
+          ],
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "get_multisig_at_topoheight",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "address": {
+              "$ref": "#/$defs/Address"
+            },
+            "topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "address",
+            "topoheight"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "properties": {
+            "state": {
+              "$ref": "#/$defs/MultisigState"
+            }
+          },
+          "required": [
+            "state"
+          ],
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "get_nonce",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "address": {
+              "$ref": "#/$defs/Address"
+            }
+          },
+          "required": [
+            "address"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "properties": {
+            "nonce": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "previous_topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "topoheight",
+            "nonce"
+          ],
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "get_nonce_at_topoheight",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "address": {
+              "$ref": "#/$defs/Address"
+            },
+            "topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "address",
+            "topoheight"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "properties": {
+            "nonce": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "previous_topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "nonce"
+          ],
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "get_p2p_block_propagation",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "hash": {
+              "$ref": "#/$defs/Hash"
+            },
+            "incoming": {
+              "default": true,
+              "type": "boolean"
+            },
+            "outgoing": {
+              "default": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "hash"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "properties": {
+            "first_seen": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "peers": {
+              "additionalProperties": false,
+              "patternProperties": {
+                "^\\d+$": {
+                  "$ref": "#/$defs/TimedDirection"
+                }
+              },
+              "type": "object"
+            },
+            "processing_at": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "peers"
+          ],
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "get_peers",
+      "schema": {
+        "params_schema": null,
+        "returns_schema": {
+          "items": {
+            "$ref": "#/$defs/PeerEntry"
+          },
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "get_pruned_topoheight",
+      "schema": {
+        "params_schema": null,
+        "returns_schema": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": [
+            "integer",
+            "null"
+          ]
+        }
+      }
+    },
+    {
+      "name": "get_size_on_disk",
+      "schema": {
+        "params_schema": null,
+        "returns_schema": {
+          "properties": {
+            "size_bytes": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "size_formatted": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "size_bytes",
+            "size_formatted"
+          ],
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "get_stable_balance",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "address": {
+              "$ref": "#/$defs/Address"
+            },
+            "asset": {
+              "$ref": "#/$defs/Hash"
+            }
+          },
+          "required": [
+            "address",
+            "asset"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "properties": {
+            "stable_block_hash": {
+              "$ref": "#/$defs/Hash"
+            },
+            "stable_topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "version": {
+              "$ref": "#/$defs/VersionedBalance"
+            }
+          },
+          "required": [
+            "version",
+            "topoheight",
+            "stable_topoheight",
+            "stable_block_hash"
+          ],
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "get_stable_height",
+      "schema": {
+        "params_schema": null,
+        "returns_schema": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        }
+      }
+    },
+    {
+      "name": "get_stable_topoheight",
+      "schema": {
+        "params_schema": null,
+        "returns_schema": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        }
+      }
+    },
+    {
+      "name": "get_stableheight",
+      "schema": {
+        "params_schema": null,
+        "returns_schema": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        }
+      }
+    },
+    {
+      "name": "get_tips",
+      "schema": {
+        "params_schema": null,
+        "returns_schema": {
+          "items": {
+            "$ref": "#/$defs/Hash"
+          },
+          "type": "array",
+          "uniqueItems": true
+        }
+      }
+    },
+    {
+      "name": "get_top_block",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "include_txs": {
+              "default": false,
+              "type": "boolean"
+            }
+          },
+          "type": "object"
+        },
+        "returns_schema": {
+          "properties": {
+            "block_type": {
+              "$ref": "#/$defs/BlockType"
+            },
+            "cumulative_difficulty": {
+              "$ref": "#/$defs/VarUint"
+            },
+            "dev_reward": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "difficulty": {
+              "$ref": "#/$defs/VarUint"
+            },
+            "extra_nonce": {
+              "type": "string"
+            },
+            "hash": {
+              "$ref": "#/$defs/Hash"
+            },
+            "height": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "miner": {
+              "$ref": "#/$defs/Address"
+            },
+            "miner_reward": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "nonce": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "reward": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "supply": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "timestamp": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "tips": {
+              "items": {
+                "$ref": "#/$defs/Hash"
+              },
+              "type": "array",
+              "uniqueItems": true
+            },
+            "topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "total_fees": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "total_fees_burned": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "total_size_in_bytes": {
+              "format": "uint",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "transactions": {
+              "default": [],
+              "items": {
+                "$ref": "#/$defs/RPCTransaction"
+              },
+              "type": "array"
+            },
+            "txs_hashes": {
+              "items": {
+                "$ref": "#/$defs/Hash"
+              },
+              "type": "array",
+              "uniqueItems": true
+            },
+            "version": {
+              "$ref": "#/$defs/BlockVersion"
+            }
+          },
+          "required": [
+            "hash",
+            "block_type",
+            "difficulty",
+            "cumulative_difficulty",
+            "total_size_in_bytes",
+            "version",
+            "tips",
+            "timestamp",
+            "height",
+            "nonce",
+            "extra_nonce",
+            "miner",
+            "txs_hashes"
+          ],
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "get_topoheight",
+      "schema": {
+        "params_schema": null,
+        "returns_schema": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        }
+      }
+    },
+    {
+      "name": "get_transaction",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "hash": {
+              "$ref": "#/$defs/Hash"
+            }
+          },
+          "required": [
+            "hash"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "properties": {
+            "blocks": {
+              "items": {
+                "$ref": "#/$defs/Hash"
+              },
+              "type": [
+                "array",
+                "null"
+              ],
+              "uniqueItems": true
+            },
+            "data": {
+              "$ref": "#/$defs/RPCTransactionType"
+            },
+            "executed_in_block": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/Hash"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "fee": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "fee_limit": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "fee_paid": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "fee_refund": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "first_seen": {
+              "default": null,
+              "format": "uint64",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "hash": {
+              "$ref": "#/$defs/Hash"
+            },
+            "in_mempool": {
+              "type": "boolean"
+            },
+            "multisig": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/MultiSig"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "nonce": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "range_proof": {
+              "items": {
+                "format": "uint8",
+                "maximum": 255,
+                "minimum": 0,
+                "type": "integer"
+              },
+              "type": "array"
+            },
+            "reference": {
+              "$ref": "#/$defs/Reference"
+            },
+            "signature": {
+              "$ref": "#/$defs/Signature"
+            },
+            "size": {
+              "format": "uint",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "source": {
+              "$ref": "#/$defs/Address"
+            },
+            "source_commitments": {
+              "items": {
+                "$ref": "#/$defs/SourceCommitment"
+              },
+              "type": "array"
+            },
+            "version": {
+              "$ref": "#/$defs/TxVersion"
+            }
+          },
+          "required": [
+            "in_mempool",
+            "hash",
+            "version",
+            "source",
+            "data",
+            "fee",
+            "fee_limit",
+            "nonce",
+            "source_commitments",
+            "range_proof",
+            "reference",
+            "signature",
+            "size"
+          ],
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "get_transaction_executor",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "hash": {
+              "$ref": "#/$defs/Hash"
+            }
+          },
+          "required": [
+            "hash"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "properties": {
+            "block_hash": {
+              "$ref": "#/$defs/Hash"
+            },
+            "block_timestamp": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "block_topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "block_topoheight",
+            "block_timestamp",
+            "block_hash"
+          ],
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "get_transactions",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "tx_hashes": {
+              "items": {
+                "$ref": "#/$defs/Hash"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "tx_hashes"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/GetTransactionResult"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "get_transactions_summary",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "tx_hashes": {
+              "items": {
+                "$ref": "#/$defs/Hash"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "tx_hashes"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/TransactionSummary"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "get_version",
+      "schema": {
+        "params_schema": null,
+        "returns_schema": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "name": "has_balance",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "address": {
+              "$ref": "#/$defs/Address"
+            },
+            "asset": {
+              "$ref": "#/$defs/Hash"
+            },
+            "topoheight": {
+              "default": null,
+              "format": "uint64",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "address",
+            "asset"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "properties": {
+            "exist": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "exist"
+          ],
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "has_multisig",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "address": {
+              "$ref": "#/$defs/Address"
+            }
+          },
+          "required": [
+            "address"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "type": "boolean"
+        }
+      }
+    },
+    {
+      "name": "has_multisig_at_topoheight",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "address": {
+              "$ref": "#/$defs/Address"
+            },
+            "topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "address",
+            "topoheight"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "type": "boolean"
+        }
+      }
+    },
+    {
+      "name": "has_nonce",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "address": {
+              "$ref": "#/$defs/Address"
+            },
+            "topoheight": {
+              "default": null,
+              "format": "uint64",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "address"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "properties": {
+            "exist": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "exist"
+          ],
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "is_account_registered",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "address": {
+              "$ref": "#/$defs/Address"
+            },
+            "in_stable_height": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "address",
+            "in_stable_height"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "type": "boolean"
+        }
+      }
+    },
+    {
+      "name": "is_tx_executed_in_block",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "block_hash": {
+              "$ref": "#/$defs/Hash"
+            },
+            "tx_hash": {
+              "$ref": "#/$defs/Hash"
+            }
+          },
+          "required": [
+            "tx_hash",
+            "block_hash"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "type": "boolean"
+        }
+      }
+    },
+    {
+      "name": "key_to_address",
+      "schema": {
+        "params_schema": {
+          "oneOf": [
+            {
+              "additionalProperties": false,
+              "properties": {
+                "bytes": {
+                  "items": {
+                    "format": "uint8",
+                    "maximum": 255,
+                    "minimum": 0,
+                    "type": "integer"
+                  },
+                  "maxItems": 32,
+                  "minItems": 32,
+                  "type": "array"
+                }
+              },
+              "required": [
+                "bytes"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "hex": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "hex"
+              ],
+              "type": "object"
+            }
+          ]
+        },
+        "returns_schema": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "name": "make_integrated_address",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "address": {
+              "$ref": "#/$defs/Address"
+            },
+            "integrated_data": {
+              "$ref": "#/$defs/DataElement"
+            }
+          },
+          "required": [
+            "address",
+            "integrated_data"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "name": "p2p_status",
+      "schema": {
+        "params_schema": null,
+        "returns_schema": {
+          "properties": {
+            "best_topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "max_peers": {
+              "format": "uint",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "median_topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "our_topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "peer_count": {
+              "format": "uint",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "peer_id": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "tag": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "peer_count",
+            "max_peers",
+            "our_topoheight",
+            "best_topoheight",
+            "median_topoheight",
+            "peer_id"
+          ],
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "prune_chain",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "topoheight"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "properties": {
+            "pruned_topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "pruned_topoheight"
+          ],
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "rewind_chain",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "count": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "until_stable_height": {
+              "default": false,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "count"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "properties": {
+            "topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "txs": {
+              "items": {
+                "$ref": "#/$defs/Immutable"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "topoheight",
+            "txs"
+          ],
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "schema",
+      "schema": {
+        "params_schema": null,
+        "returns_schema": {
+          "properties": {
+            "$defs": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "$schema": {
+              "type": "string"
+            },
+            "methods": {
+              "items": {
+                "$ref": "#/$defs/RpcMethodInfo"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "$schema",
+            "$defs",
+            "methods"
+          ],
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "simulate_contract_invoke",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "contract": {
+              "$ref": "#/$defs/Hash"
+            },
+            "deposits": {
+              "$ref": "#/$defs/Deposits"
+            },
+            "entry_id": {
+              "format": "uint16",
+              "maximum": 65535,
+              "minimum": 0,
+              "type": "integer"
+            },
+            "parameters": {
+              "items": {
+                "$ref": "#/$defs/ValueCell"
+              },
+              "type": "array"
+            },
+            "permission": {
+              "$ref": "#/$defs/InterContractPermission",
+              "default": "none"
+            },
+            "source": {
+              "$ref": "#/$defs/Address"
+            }
+          },
+          "required": [
+            "source",
+            "contract",
+            "deposits",
+            "entry_id",
+            "parameters"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "properties": {
+            "base_fee": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "block_hash": {
+              "$ref": "#/$defs/Hash"
+            },
+            "result": {
+              "$ref": "#/$defs/ExecutionResult"
+            },
+            "topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "base_fee",
+            "result",
+            "block_hash",
+            "topoheight"
+          ],
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "split_address",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "address": {
+              "$ref": "#/$defs/Address"
+            }
+          },
+          "required": [
+            "address"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "properties": {
+            "address": {
+              "$ref": "#/$defs/Address"
+            },
+            "integrated_data": {
+              "$ref": "#/$defs/DataElement"
+            },
+            "size": {
+              "format": "uint",
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "address",
+            "integrated_data",
+            "size"
+          ],
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "submit_block",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "block_template": {
+              "type": "string"
+            },
+            "miner_work": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "block_template"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "type": "boolean"
+        }
+      }
+    },
+    {
+      "name": "submit_transaction",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "data": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "data"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "type": "boolean"
+        }
+      }
+    },
+    {
+      "name": "validate_address",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "address": {
+              "$ref": "#/$defs/Address"
+            },
+            "allow_integrated": {
+              "default": false,
+              "type": "boolean"
+            },
+            "max_integrated_data_size": {
+              "default": null,
+              "format": "uint",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "address"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "properties": {
+            "is_integrated": {
+              "type": "boolean"
+            },
+            "is_valid": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "is_valid",
+            "is_integrated"
+          ],
+          "type": "object"
+        }
+      }
+    }
+  ]
+}

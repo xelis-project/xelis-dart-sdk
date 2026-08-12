@@ -35,7 +35,15 @@ void main() {
               transactionTypeBuilder: txCase.builder,
               txVersion: 3,
             ).toJson(),
-            <String, dynamic>{...txCase.builderRpcJson, 'tx_version': 3},
+            <String, dynamic>{
+              ...txCase.builderRpcJson,
+              'fee': {'extra': 'none'},
+              'base_fee': 'none',
+              'tx_version': 3,
+              'broadcast': true,
+              'tx_as_hex': false,
+              'signers': <dynamic>[],
+            },
           );
 
           expect(
@@ -43,7 +51,13 @@ void main() {
               transactionTypeBuilder: txCase.builder,
               txVersion: 3,
             ).toJson(),
-            <String, dynamic>{...txCase.builderRpcJson, 'tx_version': 3},
+            <String, dynamic>{
+              ...txCase.builderRpcJson,
+              'fee': {'extra': 'none'},
+              'base_fee': 'none',
+              'tx_version': 3,
+              'tx_as_hex': false,
+            },
           );
         });
 
@@ -55,7 +69,15 @@ void main() {
           expect(params.transactionTypeBuilder, txCase.builderMatcher);
           expect(
             params.toJson(),
-            <String, dynamic>{...txCase.builderRpcJson, 'tx_version': 3},
+            <String, dynamic>{
+              ...txCase.builderRpcJson,
+              'fee': {'extra': 'none'},
+              'base_fee': 'none',
+              'tx_version': 3,
+              'broadcast': true,
+              'tx_as_hex': false,
+              'signers': <dynamic>[],
+            },
           );
         });
 
@@ -74,28 +96,28 @@ void main() {
         });
 
         test('parses daemon RPC transactions from the Rust RPC tag', () {
-          final transaction = RPCTransaction.fromJson(
+          final transaction = RpcTransaction.fromJson(
             _rpcTransactionJson(txCase.payloadRpcJson),
           );
 
           expect(transaction.data, txCase.payloadMatcher);
-          expect(transaction.feeLimit, 20);
-          expect(transaction.feePaid, 7);
-          expect(transaction.feeRefund, 3);
-          expect(transaction.toJson()['size'], 123);
+          expect(transaction.feeLimit, BigInt.from(20));
+          expect(transaction.feePaid, BigInt.from(7));
+          expect(transaction.feeRefund, BigInt.from(3));
+          expect(transaction.toJson()['size'], BigInt.from(123));
         });
 
         test('parses wallet transaction responses from RPC transactions', () {
-          final response = TransactionWalletResponse.fromJson(
+          final response = WalletTransactionResponse.fromJson(
             _walletTransactionJson(txCase.payloadRpcJson),
           );
 
-          expect(response.data, txCase.payloadMatcher);
-          expect(response.source, 'source-address');
-          expect(response.feeLimit, 20);
-          expect(response.feePaid, isNull);
-          expect(response.feeRefund, isNull);
-          expect(response.size, 123);
+          expect(response.transaction.data, txCase.payloadMatcher);
+          expect(response.transaction.source, 'source-address');
+          expect(response.transaction.feeLimit, BigInt.from(20));
+          expect(response.transaction.feePaid, isNull);
+          expect(response.transaction.feeRefund, isNull);
+          expect(response.transaction.size, BigInt.from(123));
           expect(response.txAsHex, 'tx-hex');
         });
       });
@@ -119,7 +141,7 @@ _TransactionTypeCase _transfersCase() {
     'transfers': <Map<String, dynamic>>[
       <String, dynamic>{
         'asset': 'asset-hash',
-        'amount': 42,
+        'amount': BigInt.from(42),
         'destination': 'xel-address',
         'encrypt_extra_data': false,
         'extra_data': <String, dynamic>{'value': 'memo'},
@@ -155,14 +177,16 @@ _TransactionTypeCase _transfersCase() {
 
   return (
     name: 'transfers',
-    builder: const TransactionTypeBuilder.transfers(
+    builder: TransactionTypeBuilder.transfers(
       transfers: <TransferBuilder>[
         TransferBuilder(
           asset: 'asset-hash',
-          amount: 42,
+          amount: BigInt.from(42),
           destination: 'xel-address',
           encryptExtraData: false,
-          extraData: <String, dynamic>{'value': 'memo'},
+          extraData: DataElement.fromJson(<String, dynamic>{
+            'value': 'memo',
+          }),
         ),
       ],
     ),
@@ -172,7 +196,7 @@ _TransactionTypeCase _transfersCase() {
     builderMatcher: isA<TransfersBuilder>().having(
       (builder) => builder.transfers.single.amount,
       'amount',
-      42,
+      BigInt.from(42),
     ),
     payloadMatcher: isA<TransfersPayload>()
         .having(
@@ -181,7 +205,7 @@ _TransactionTypeCase _transfersCase() {
           const AddressOrPublicKey.address('xel-address'),
         )
         .having(
-          (payload) => payload.transfers.single.extraData,
+          (payload) => payload.transfers.single.extraData?.toJson(),
           'extraData',
           <String, dynamic>{'Public': 'memo'},
         ),
@@ -194,26 +218,29 @@ _TransactionTypeCase _transfersCase() {
 }
 
 _TransactionTypeCase _burnCase() {
-  final rpcJson = <String, dynamic>{
+  final builderRpcJson = <String, dynamic>{
     'burn': <String, dynamic>{
       'asset': 'asset-hash',
-      'amount': 42,
+      'amount': BigInt.from(42),
     },
+  };
+  final payloadRpcJson = <String, dynamic>{
+    'burn': <String, dynamic>{'asset': 'asset-hash', 'amount': 42},
   };
 
   return (
     name: 'burn',
-    builder: const TransactionTypeBuilder.burn(
+    builder: TransactionTypeBuilder.burn(
       asset: 'asset-hash',
-      amount: 42,
+      amount: BigInt.from(42),
     ),
-    builderRpcJson: rpcJson,
-    payloadRpcJson: rpcJson,
-    rawPayloadJson: rpcJson,
+    builderRpcJson: builderRpcJson,
+    payloadRpcJson: payloadRpcJson,
+    rawPayloadJson: payloadRpcJson,
     builderMatcher: isA<BurnBuilder>().having(
       (builder) => builder.amount,
       'amount',
-      42,
+      BigInt.from(42),
     ),
     payloadMatcher: isA<BurnPayload>().having(
       (payload) => payload.asset,
@@ -286,14 +313,17 @@ _TransactionTypeCase _invokeContractCase() {
   final builderRpcJson = <String, dynamic>{
     'invoke_contract': <String, dynamic>{
       'contract': 'contract-hash',
-      'max_gas': 1000,
+      'max_gas': BigInt.from(1000),
       'entry_id': 7,
       'parameters': <dynamic>[
-        <String, dynamic>{'type': 'u64', 'value': 100},
+        <String, dynamic>{
+          'type': 'primitive',
+          'value': <String, dynamic>{'type': 'u64', 'value': '100'},
+        },
       ],
       'deposits': <String, dynamic>{
         'asset-hash': <String, dynamic>{
-          'amount': 5,
+          'amount': BigInt.from(5),
           'private': true,
         },
       },
@@ -307,9 +337,12 @@ _TransactionTypeCase _invokeContractCase() {
         'asset-hash': <String, dynamic>{'amount': 5},
       },
       'entry_id': 7,
-      'max_gas': 1000,
+      'max_gas': BigInt.from(1000),
       'parameters': <dynamic>[
-        <String, dynamic>{'type': 'u64', 'value': 100},
+        <String, dynamic>{
+          'type': 'primitive',
+          'value': <String, dynamic>{'type': 'u64', 'value': '100'},
+        },
       ],
       'permission': 'all',
     },
@@ -317,20 +350,20 @@ _TransactionTypeCase _invokeContractCase() {
 
   return (
     name: 'invoke_contract',
-    builder: const TransactionTypeBuilder.invokeContract(
+    builder: TransactionTypeBuilder.invokeContract(
       contract: 'contract-hash',
-      maxGas: 1000,
+      maxGas: BigInt.from(1000),
       entryId: 7,
-      parameters: <dynamic>[
-        <String, dynamic>{'type': 'u64', 'value': 100},
+      parameters: <RpcValueCell>[
+        RpcValueCell.primitive(RpcPrimitive.u64(BigInt.from(100))),
       ],
       deposits: <String, ContractDepositBuilder>{
         'asset-hash': ContractDepositBuilder(
-          amount: 5,
+          amount: BigInt.from(5),
           private: true,
         ),
       },
-      permission: 'all',
+      permission: const InterContractPermission.all(),
     ),
     builderRpcJson: builderRpcJson,
     payloadRpcJson: payloadRpcJson,
@@ -338,7 +371,7 @@ _TransactionTypeCase _invokeContractCase() {
     builderMatcher: isA<InvokeContractBuilder>().having(
       (builder) => builder.permission,
       'permission',
-      'all',
+      isA<AllInterContractPermission>(),
     ),
     payloadMatcher: isA<InvokeContractPayload>().having(
       (payload) => payload.entryId,
@@ -356,13 +389,13 @@ _TransactionTypeCase _invokeContractCase() {
 _TransactionTypeCase _deployContractCase() {
   final builderRpcJson = <String, dynamic>{
     'deploy_contract': <String, dynamic>{
-      'module': 'module-hex',
+      'module': '00ab',
       'contract_version': 'v1',
       'invoke': <String, dynamic>{
-        'max_gas': 500,
+        'max_gas': BigInt.from(500),
         'deposits': <String, dynamic>{
           'asset-hash': <String, dynamic>{
-            'amount': 3,
+            'amount': BigInt.from(3),
             'private': false,
           },
         },
@@ -376,7 +409,7 @@ _TransactionTypeCase _deployContractCase() {
       'invoke': <String, dynamic>{
         'max_gas': 500,
         'deposits': <String, dynamic>{
-          'asset-hash': <String, dynamic>{'amount': 3},
+          'asset-hash': <String, dynamic>{'public': 3},
         },
       },
     },
@@ -384,13 +417,13 @@ _TransactionTypeCase _deployContractCase() {
 
   return (
     name: 'deploy_contract',
-    builder: const TransactionTypeBuilder.deployContract(
-      module: 'module-hex',
-      contractVersion: 'v1',
+    builder: TransactionTypeBuilder.deployContract(
+      module: '00ab',
+      contractVersion: ContractVersion.v1,
       invoke: DeployContractInvokeBuilder(
-        maxGas: 500,
+        maxGas: BigInt.from(500),
         deposits: <String, ContractDepositBuilder>{
-          'asset-hash': ContractDepositBuilder(amount: 3),
+          'asset-hash': ContractDepositBuilder(amount: BigInt.from(3)),
         },
       ),
     ),
@@ -398,19 +431,19 @@ _TransactionTypeCase _deployContractCase() {
     payloadRpcJson: payloadRpcJson,
     rawPayloadJson: payloadRpcJson,
     builderMatcher: isA<DeployContractBuilder>().having(
-      (builder) => builder.contractVersion,
-      'contractVersion',
-      'v1',
+      (builder) => builder.module,
+      'module',
+      '00ab',
     ),
     payloadMatcher: isA<DeployContractPayload>().having(
       (payload) => payload.version,
       'version',
-      'v1',
+      isA<RpcContractVersionV1>(),
     ),
     rawPayloadMatcher: isA<DeployContractPayload>().having(
       (payload) => payload.version,
       'version',
-      'v1',
+      isA<RpcContractVersionV1>(),
     ),
   );
 }
@@ -440,8 +473,10 @@ _TransactionTypeCase _blobCase() {
 
   return (
     name: 'blob',
-    builder: const TransactionTypeBuilder.blob(
-      data: <String, dynamic>{'value': 'hello public blob'},
+    builder: TransactionTypeBuilder.blob(
+      data: DataElement.fromJson(<String, dynamic>{
+        'value': 'hello public blob',
+      }),
       destinations: <String>['xel-address'],
       encrypt: false,
     ),
@@ -481,7 +516,7 @@ Map<String, dynamic> _rpcTransactionJson(Map<String, dynamic> data) {
     'source': 'source-address',
     'range_proof': <dynamic>[4, 5, 6],
     'source_commitments': <dynamic>[
-      <String, dynamic>{'asset': 'xelis'},
+      _sourceCommitmentJson(),
     ],
     'reference': <String, dynamic>{'hash': 'ref-hash', 'topoheight': 42},
     'multisig': null,
@@ -501,7 +536,7 @@ Map<String, dynamic> _walletTransactionJson(Map<String, dynamic> data) {
     'source': 'source-address',
     'range_proof': <dynamic>[4, 5, 6],
     'source_commitments': <dynamic>[
-      <String, dynamic>{'asset': 'xelis'},
+      _sourceCommitmentJson(),
     ],
     'reference': <String, dynamic>{'hash': 'ref-hash', 'topoheight': 42},
     'multisig': null,
@@ -510,3 +545,16 @@ Map<String, dynamic> _walletTransactionJson(Map<String, dynamic> data) {
     'tx_as_hex': 'tx-hex',
   };
 }
+
+Map<String, dynamic> _sourceCommitmentJson() => {
+  'commitment': List<int>.filled(32, 1),
+  'proof': {
+    'Y_0': List<int>.filled(32, 2),
+    'Y_1': List<int>.filled(32, 3),
+    'Y_2': List<int>.filled(32, 4),
+    'z_s': List<int>.filled(32, 5),
+    'z_x': List<int>.filled(32, 6),
+    'z_r': List<int>.filled(32, 7),
+  },
+  'asset': 'xelis',
+};

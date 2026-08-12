@@ -4,8 +4,8 @@ import 'package:xelis_dart_sdk/xelis_dart_sdk.dart';
 void main() {
   group('Blob transaction type', () {
     test('serializes builder using the RPC transaction tag', () {
-      const builder = TransactionTypeBuilder.blob(
-        data: {'value': 'hello public blob'},
+      final builder = TransactionTypeBuilder.blob(
+        data: DataElement.fromJson({'value': 'hello public blob'}),
         destinations: ['xel-address'],
         encrypt: false,
       );
@@ -20,12 +20,12 @@ void main() {
     });
 
     test('serializes build transaction params with blob data', () {
-      const builder = TransactionTypeBuilder.blob(
-        data: {'value': 'hello public blob'},
+      final builder = TransactionTypeBuilder.blob(
+        data: DataElement.fromJson({'value': 'hello public blob'}),
         destinations: ['xel-address'],
         encrypt: false,
       );
-      const params = BuildTransactionParams(
+      final params = BuildTransactionParams(
         transactionTypeBuilder: builder,
         txVersion: 3,
       );
@@ -36,7 +36,12 @@ void main() {
           'destinations': ['xel-address'],
           'encrypt': false,
         },
+        'fee': {'extra': 'none'},
+        'base_fee': 'none',
         'tx_version': 3,
+        'broadcast': true,
+        'tx_as_hex': false,
+        'signers': <dynamic>[],
       });
     });
 
@@ -71,7 +76,11 @@ void main() {
       expect(
         transactionType,
         isA<BlobPayload>()
-            .having((blob) => blob.data, 'data', [1, 2, 3])
+            .having(
+              (blob) => blob.data.toJson(),
+              'data',
+              [BigInt.one, BigInt.from(2), BigInt.from(3)],
+            )
             .having((blob) => blob.destinations, 'destinations', [
               const AddressOrPublicKey.publicKey([4, 5, 6]),
             ]),
@@ -97,7 +106,7 @@ void main() {
     });
 
     test('parses wallet responses with blob data', () {
-      final response = TransactionWalletResponse.fromJson({
+      final response = WalletTransactionResponse.fromJson({
         'data': {
           'blob': {
             'data': [1, 2, 3],
@@ -112,7 +121,18 @@ void main() {
         'source': 'source-address',
         'range_proof': [4, 5, 6],
         'source_commitments': <Map<String, dynamic>>[
-          {'asset': 'xelis'},
+          {
+            'commitment': List<int>.filled(32, 1),
+            'proof': {
+              'Y_0': List<int>.filled(32, 2),
+              'Y_1': List<int>.filled(32, 3),
+              'Y_2': List<int>.filled(32, 4),
+              'z_s': List<int>.filled(32, 5),
+              'z_x': List<int>.filled(32, 6),
+              'z_r': List<int>.filled(32, 7),
+            },
+            'asset': 'xelis',
+          },
         ],
         'reference': {'hash': 'ref-hash', 'topoheight': 42},
         'multisig': null,
@@ -121,13 +141,17 @@ void main() {
       });
 
       expect(response.txAsHex, isNull);
-      expect(response.source, 'source-address');
-      expect(response.feeLimit, 20);
-      expect(response.size, 123);
+      expect(response.transaction.source, 'source-address');
+      expect(response.transaction.feeLimit, BigInt.from(20));
+      expect(response.transaction.size, BigInt.from(123));
       expect(
-        response.data,
+        response.transaction.data,
         isA<BlobPayload>()
-            .having((blob) => blob.data, 'data', [1, 2, 3])
+            .having(
+              (blob) => blob.data.toJson(),
+              'data',
+              [BigInt.one, BigInt.from(2), BigInt.from(3)],
+            )
             .having((blob) => blob.destinations, 'destinations', [
               const AddressOrPublicKey.address('xel-address'),
             ]),
@@ -137,9 +161,9 @@ void main() {
 
   group('Transaction type alignment', () {
     test('uses Rust builder defaults for transfers', () {
-      const transfer = TransferBuilder(
+      final transfer = TransferBuilder(
         asset: 'asset-hash',
-        amount: 42,
+        amount: BigInt.from(42),
         destination: 'xel-address',
       );
 
@@ -147,17 +171,17 @@ void main() {
     });
 
     test('uses Rust builder defaults for invoke contracts', () {
-      const builder = TransactionTypeBuilder.invokeContract(
+      final builder = TransactionTypeBuilder.invokeContract(
         contract: 'contract-hash',
-        maxGas: 1000,
+        maxGas: BigInt.from(1000),
         entryId: 7,
-        parameters: <dynamic>[],
+        parameters: const <RpcValueCell>[],
       );
 
       expect(builder.toRpcJson(), {
         'invoke_contract': {
           'contract': 'contract-hash',
-          'max_gas': 1000,
+          'max_gas': BigInt.from(1000),
           'entry_id': 7,
           'parameters': <dynamic>[],
           'deposits': <String, dynamic>{},
@@ -167,13 +191,13 @@ void main() {
     });
 
     test('uses Rust builder defaults for deploy contracts', () {
-      const builder = TransactionTypeBuilder.deployContract(
-        module: 'module-hex',
+      final builder = TransactionTypeBuilder.deployContract(
+        module: '00ab',
       );
 
       expect(builder.toRpcJson(), {
         'deploy_contract': {
-          'module': 'module-hex',
+          'module': '00ab',
           'contract_version': 'v0',
           'invoke': null,
         },
@@ -181,10 +205,10 @@ void main() {
     });
 
     test('uses Rust builder defaults for constructor deposits', () {
-      const invoke = DeployContractInvokeBuilder(maxGas: 1000);
+      final invoke = DeployContractInvokeBuilder(maxGas: BigInt.from(1000));
 
       expect(invoke.toJson(), {
-        'max_gas': 1000,
+        'max_gas': BigInt.from(1000),
         'deposits': <String, dynamic>{},
       });
     });
@@ -212,7 +236,7 @@ void main() {
         isA<InvokeContractPayload>().having(
           (payload) => payload.permission,
           'permission',
-          'none',
+          isA<NoInterContractPermission>(),
         ),
       );
       expect(
@@ -220,7 +244,7 @@ void main() {
         isA<DeployContractPayload>().having(
           (payload) => payload.version,
           'version',
-          'v0',
+          isA<RpcContractVersionV0>(),
         ),
       );
     });

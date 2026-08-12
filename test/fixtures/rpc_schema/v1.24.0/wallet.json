@@ -1,0 +1,6093 @@
+{
+  "$defs": {
+    "Address": {
+      "type": "string"
+    },
+    "AssetData": {
+      "properties": {
+        "decimals": {
+          "format": "uint8",
+          "maximum": 255,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "max_supply": {
+          "$ref": "#/$defs/MaxSupplyMode"
+        },
+        "name": {
+          "type": "string"
+        },
+        "owner": {
+          "$ref": "#/$defs/AssetOwner"
+        },
+        "ticker": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "decimals",
+        "name",
+        "ticker",
+        "max_supply",
+        "owner"
+      ],
+      "type": "object"
+    },
+    "AssetOwner": {
+      "oneOf": [
+        {
+          "enum": [
+            "none"
+          ],
+          "type": "string"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "creator": {
+              "properties": {
+                "contract": {
+                  "$ref": "#/$defs/Hash"
+                },
+                "id": {
+                  "format": "uint64",
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "contract",
+                "id"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "creator"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "owner": {
+              "properties": {
+                "origin": {
+                  "$ref": "#/$defs/Hash"
+                },
+                "origin_id": {
+                  "format": "uint64",
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "owner": {
+                  "$ref": "#/$defs/Hash"
+                }
+              },
+              "required": [
+                "origin",
+                "origin_id",
+                "owner"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "owner"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "BaseFeeMode": {
+      "oneOf": [
+        {
+          "enum": [
+            "none"
+          ],
+          "type": "string"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "fixed": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "fixed"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "cap": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "cap"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "BlobPayload": {
+      "properties": {
+        "data": {
+          "$ref": "#/$defs/UnknownExtraDataFormat"
+        },
+        "destinations": {
+          "items": {
+            "$ref": "#/$defs/CompressedPublicKey"
+          },
+          "type": "array",
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "data",
+        "destinations"
+      ],
+      "type": "object"
+    },
+    "BlobPayloadBuilder": {
+      "properties": {
+        "data": {
+          "$ref": "#/$defs/DataElement"
+        },
+        "destinations": {
+          "items": {
+            "$ref": "#/$defs/Address"
+          },
+          "type": "array"
+        },
+        "encrypt": {
+          "default": true,
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "data",
+        "destinations"
+      ],
+      "type": "object"
+    },
+    "BlockVersion": {
+      "enum": [
+        "V0",
+        "V1",
+        "V2",
+        "V3",
+        "V4",
+        "V5",
+        "V6",
+        "V7"
+      ],
+      "type": "string"
+    },
+    "BurnPayload": {
+      "properties": {
+        "amount": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "asset": {
+          "$ref": "#/$defs/Hash"
+        }
+      },
+      "required": [
+        "asset",
+        "amount"
+      ],
+      "type": "object"
+    },
+    "CiphertextCache": {
+      "oneOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "Compressed": {
+              "$ref": "#/$defs/CompressedCiphertext"
+            }
+          },
+          "required": [
+            "Compressed"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "CiphertextValidityProof": {
+      "properties": {
+        "Y_0": {
+          "items": {
+            "format": "uint8",
+            "maximum": 255,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "type": "array"
+        },
+        "Y_1": {
+          "items": {
+            "format": "uint8",
+            "maximum": 255,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "type": "array"
+        },
+        "Y_2": {
+          "items": {
+            "format": "uint8",
+            "maximum": 255,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "type": [
+            "array",
+            "null"
+          ]
+        },
+        "z_r": {
+          "items": {
+            "format": "uint8",
+            "maximum": 255,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "type": "array"
+        },
+        "z_x": {
+          "items": {
+            "format": "uint8",
+            "maximum": 255,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "Y_0",
+        "Y_1",
+        "z_r",
+        "z_x"
+      ],
+      "type": "object"
+    },
+    "CommitmentEqProof": {
+      "properties": {
+        "Y_0": {
+          "items": {
+            "format": "uint8",
+            "maximum": 255,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "type": "array"
+        },
+        "Y_1": {
+          "items": {
+            "format": "uint8",
+            "maximum": 255,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "type": "array"
+        },
+        "Y_2": {
+          "items": {
+            "format": "uint8",
+            "maximum": 255,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "type": "array"
+        },
+        "z_r": {
+          "items": {
+            "format": "uint8",
+            "maximum": 255,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "type": "array"
+        },
+        "z_s": {
+          "items": {
+            "format": "uint8",
+            "maximum": 255,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "type": "array"
+        },
+        "z_x": {
+          "items": {
+            "format": "uint8",
+            "maximum": 255,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "Y_0",
+        "Y_1",
+        "Y_2",
+        "z_s",
+        "z_x",
+        "z_r"
+      ],
+      "type": "object"
+    },
+    "CompressedCiphertext": {
+      "items": {
+        "format": "uint8",
+        "maximum": 255,
+        "minimum": 0,
+        "type": "integer"
+      },
+      "type": "array"
+    },
+    "CompressedCommitment": {
+      "items": {
+        "format": "uint8",
+        "maximum": 255,
+        "minimum": 0,
+        "type": "integer"
+      },
+      "type": "array"
+    },
+    "CompressedHandle": {
+      "items": {
+        "format": "uint8",
+        "maximum": 255,
+        "minimum": 0,
+        "type": "integer"
+      },
+      "type": "array"
+    },
+    "CompressedPublicKey": {
+      "items": {
+        "format": "uint8",
+        "maximum": 255,
+        "minimum": 0,
+        "type": "integer"
+      },
+      "type": "array"
+    },
+    "ContractCall": {
+      "properties": {
+        "chunk": {
+          "$ref": "#/$defs/ContractCallChunk"
+        },
+        "contract": {
+          "$ref": "#/$defs/Hash"
+        }
+      },
+      "required": [
+        "contract",
+        "chunk"
+      ],
+      "type": "object"
+    },
+    "ContractCallChunk": {
+      "oneOf": [
+        {
+          "enum": [
+            "all"
+          ],
+          "type": "string"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "specific": {
+              "items": {
+                "format": "uint16",
+                "maximum": 65535,
+                "minimum": 0,
+                "type": "integer"
+              },
+              "type": "array",
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "specific"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "exclude": {
+              "items": {
+                "format": "uint16",
+                "maximum": 65535,
+                "minimum": 0,
+                "type": "integer"
+              },
+              "type": "array",
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "exclude"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "ContractDeposit": {
+      "oneOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "public": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "public"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "private": {
+              "properties": {
+                "commitment": {
+                  "$ref": "#/$defs/CompressedCommitment"
+                },
+                "ct_validity_proof": {
+                  "$ref": "#/$defs/CiphertextValidityProof"
+                },
+                "receiver_handle": {
+                  "$ref": "#/$defs/CompressedHandle"
+                },
+                "sender_handle": {
+                  "$ref": "#/$defs/CompressedHandle"
+                }
+              },
+              "required": [
+                "commitment",
+                "sender_handle",
+                "receiver_handle",
+                "ct_validity_proof"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "private"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "ContractDepositBuilder": {
+      "properties": {
+        "amount": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "private": {
+          "default": false,
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "amount"
+      ],
+      "type": "object"
+    },
+    "ContractVersion": {
+      "enum": [
+        "v0",
+        "v1"
+      ],
+      "type": "string"
+    },
+    "DataElement": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/DataValue"
+        },
+        {
+          "items": {
+            "$ref": "#/$defs/DataElement"
+          },
+          "type": "array"
+        },
+        {
+          "additionalProperties": {
+            "$ref": "#/$defs/DataElement"
+          },
+          "patternProperties": {
+            "^\\d+$": {
+              "$ref": "#/$defs/DataElement"
+            }
+          },
+          "type": "object"
+        }
+      ]
+    },
+    "DataValue": {
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "format": "uint8",
+          "maximum": 255,
+          "minimum": 0,
+          "type": "integer"
+        },
+        {
+          "format": "uint16",
+          "maximum": 65535,
+          "minimum": 0,
+          "type": "integer"
+        },
+        {
+          "format": "uint32",
+          "minimum": 0,
+          "type": "integer"
+        },
+        {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        {
+          "format": "uint128",
+          "minimum": 0,
+          "type": "integer"
+        },
+        {
+          "$ref": "#/$defs/Hash"
+        },
+        {
+          "items": {
+            "format": "uint8",
+            "maximum": 255,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "type": "array"
+        }
+      ]
+    },
+    "DeployContractBuilder": {
+      "properties": {
+        "contract_version": {
+          "$ref": "#/$defs/ContractVersion",
+          "default": "v0"
+        },
+        "invoke": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/DeployContractInvokeBuilder"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "module": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "module"
+      ],
+      "type": "object"
+    },
+    "DeployContractInvokeBuilder": {
+      "properties": {
+        "deposits": {
+          "additionalProperties": {
+            "$ref": "#/$defs/ContractDepositBuilder"
+          },
+          "default": {},
+          "type": "object"
+        },
+        "max_gas": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "max_gas"
+      ],
+      "type": "object"
+    },
+    "DeployContractPayload": {
+      "properties": {
+        "invoke": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/InvokeConstructorPayload"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "module": {
+          "$ref": "#/$defs/Module"
+        },
+        "version": {
+          "$ref": "#/$defs/ContractVersion"
+        }
+      },
+      "required": [
+        "version",
+        "module"
+      ],
+      "type": "object"
+    },
+    "DeployInvoke": {
+      "properties": {
+        "deposits": {
+          "additionalProperties": {
+            "format": "uint64",
+            "minimum": 0,
+            "type": "integer"
+          },
+          "type": "object"
+        },
+        "max_gas": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "max_gas",
+        "deposits"
+      ],
+      "type": "object"
+    },
+    "Deposits": {
+      "additionalProperties": {
+        "$ref": "#/$defs/ContractDeposit"
+      },
+      "type": "object"
+    },
+    "ElementType": {
+      "oneOf": [
+        {
+          "enum": [
+            "Array",
+            "Fields"
+          ],
+          "type": "string"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "Value": {
+              "$ref": "#/$defs/ValueType"
+            }
+          },
+          "required": [
+            "Value"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "ExtraFeeMode": {
+      "oneOf": [
+        {
+          "enum": [
+            "none"
+          ],
+          "type": "string"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "tip": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "tip"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "multiplier": {
+              "format": "double",
+              "type": "number"
+            }
+          },
+          "required": [
+            "multiplier"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "FeeBuilder": {
+      "oneOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "fixed": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "fixed"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "extra": {
+              "$ref": "#/$defs/ExtraFeeMode"
+            }
+          },
+          "required": [
+            "extra"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "GetAssetsEntry": {
+      "properties": {
+        "asset": {
+          "$ref": "#/$defs/Hash"
+        },
+        "data": {
+          "$ref": "#/$defs/AssetData"
+        }
+      },
+      "required": [
+        "asset",
+        "data"
+      ],
+      "type": "object"
+    },
+    "Hash": {
+      "type": "string"
+    },
+    "Hexable": {
+      "$ref": "#/$defs/UnsignedTransaction"
+    },
+    "HumanReadableProof": {
+      "type": "string"
+    },
+    "InterContractPermission": {
+      "oneOf": [
+        {
+          "enum": [
+            "none",
+            "all"
+          ],
+          "type": "string"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "specific": {
+              "items": {
+                "$ref": "#/$defs/ContractCall"
+              },
+              "type": "array",
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "specific"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "exclude": {
+              "items": {
+                "$ref": "#/$defs/ContractCall"
+              },
+              "type": "array",
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "exclude"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "InvokeConstructorPayload": {
+      "properties": {
+        "deposits": {
+          "$ref": "#/$defs/Deposits"
+        },
+        "max_gas": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "max_gas",
+        "deposits"
+      ],
+      "type": "object"
+    },
+    "InvokeContractBuilder": {
+      "properties": {
+        "contract": {
+          "$ref": "#/$defs/Hash"
+        },
+        "deposits": {
+          "additionalProperties": {
+            "$ref": "#/$defs/ContractDepositBuilder"
+          },
+          "default": {},
+          "type": "object"
+        },
+        "entry_id": {
+          "format": "uint16",
+          "maximum": 65535,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "max_gas": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "parameters": {
+          "items": {
+            "$ref": "#/$defs/ValueCell"
+          },
+          "type": "array"
+        },
+        "permission": {
+          "$ref": "#/$defs/InterContractPermission"
+        }
+      },
+      "required": [
+        "contract",
+        "max_gas",
+        "entry_id",
+        "parameters",
+        "permission"
+      ],
+      "type": "object"
+    },
+    "InvokeContractPayload": {
+      "properties": {
+        "contract": {
+          "$ref": "#/$defs/Hash"
+        },
+        "deposits": {
+          "$ref": "#/$defs/Deposits"
+        },
+        "entry_id": {
+          "format": "uint16",
+          "maximum": 65535,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "max_gas": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "parameters": {
+          "items": {
+            "$ref": "#/$defs/ValueCell"
+          },
+          "type": "array"
+        },
+        "permission": {
+          "$ref": "#/$defs/InterContractPermission",
+          "default": "none"
+        }
+      },
+      "required": [
+        "contract",
+        "deposits",
+        "entry_id",
+        "max_gas",
+        "parameters"
+      ],
+      "type": "object"
+    },
+    "MaxSupplyMode": {
+      "oneOf": [
+        {
+          "enum": [
+            "none"
+          ],
+          "type": "string"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "fixed": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "fixed"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "mintable": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "mintable"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "Module": {
+      "properties": {
+        "chunks": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/ModuleChunk"
+          },
+          "type": "array"
+        },
+        "constants": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/ValueCell"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "hook_chunk_ids": {
+          "additionalProperties": false,
+          "default": [],
+          "patternProperties": {
+            "^\\d+$": {
+              "format": "uint",
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
+    "ModuleChunk": {
+      "oneOf": [
+        {
+          "properties": {
+            "type": {
+              "const": "all",
+              "type": "string"
+            },
+            "value": {
+              "properties": {
+                "parameters": {
+                  "items": {
+                    "$ref": "#/$defs/TypePacked"
+                  },
+                  "type": [
+                    "array",
+                    "null"
+                  ]
+                }
+              },
+              "type": "object"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "internal",
+              "type": "string"
+            }
+          },
+          "required": [
+            "type"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "hook",
+              "type": "string"
+            },
+            "value": {
+              "properties": {
+                "id": {
+                  "format": "uint8",
+                  "maximum": 255,
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "id"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "entry",
+              "type": "string"
+            },
+            "value": {
+              "properties": {
+                "parameters": {
+                  "items": {
+                    "$ref": "#/$defs/TypePacked"
+                  },
+                  "type": [
+                    "array",
+                    "null"
+                  ]
+                }
+              },
+              "type": "object"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        }
+      ],
+      "properties": {
+        "instructions": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "instructions"
+      ],
+      "type": "object"
+    },
+    "MultiSig": {
+      "properties": {
+        "signatures": {
+          "items": {
+            "$ref": "#/$defs/SignatureId"
+          },
+          "type": "array",
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "signatures"
+      ],
+      "type": "object"
+    },
+    "MultiSigBuilder": {
+      "properties": {
+        "participants": {
+          "items": {
+            "$ref": "#/$defs/Address"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "threshold": {
+          "format": "uint8",
+          "maximum": 255,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "participants",
+        "threshold"
+      ],
+      "type": "object"
+    },
+    "MultiSigPayload": {
+      "properties": {
+        "participants": {
+          "items": {
+            "$ref": "#/$defs/CompressedPublicKey"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "threshold": {
+          "format": "uint8",
+          "maximum": 255,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "threshold",
+        "participants"
+      ],
+      "type": "object"
+    },
+    "Network": {
+      "enum": [
+        "Mainnet",
+        "Testnet",
+        "Stagenet",
+        "Devnet"
+      ],
+      "type": "string"
+    },
+    "NumberType": {
+      "enum": [
+        "u8",
+        "u16",
+        "u32",
+        "u64",
+        "u128",
+        "u256"
+      ],
+      "type": "string"
+    },
+    "OpaqueWrapper": {
+      "type": "object"
+    },
+    "PlaintextExtraData": {
+      "properties": {
+        "data": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/DataElement"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "flag": {
+          "$ref": "#/$defs/PlaintextFlag"
+        },
+        "shared_key": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/SharedKey"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "flag"
+      ],
+      "type": "object"
+    },
+    "PlaintextFlag": {
+      "enum": [
+        "private",
+        "public",
+        "proprietary",
+        "failed"
+      ],
+      "type": "string"
+    },
+    "Primitive": {
+      "oneOf": [
+        {
+          "properties": {
+            "type": {
+              "const": "null",
+              "type": "string"
+            }
+          },
+          "required": [
+            "type"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "boolean",
+              "type": "string"
+            },
+            "value": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "u8",
+              "type": "string"
+            },
+            "value": {
+              "format": "uint8",
+              "maximum": 255,
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "u16",
+              "type": "string"
+            },
+            "value": {
+              "format": "uint16",
+              "maximum": 65535,
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "u32",
+              "type": "string"
+            },
+            "value": {
+              "format": "uint32",
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "u64",
+              "type": "string"
+            },
+            "value": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "u128",
+              "type": "string"
+            },
+            "value": {
+              "format": "uint128",
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "u256",
+              "type": "string"
+            },
+            "value": {
+              "$ref": "#/$defs/U256"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "string",
+              "type": "string"
+            },
+            "value": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "range",
+              "type": "string"
+            },
+            "value": {
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "$ref": "#/$defs/Primitive"
+                },
+                {
+                  "$ref": "#/$defs/Primitive"
+                }
+              ],
+              "type": "array"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "opaque",
+              "type": "string"
+            },
+            "value": {
+              "$ref": "#/$defs/OpaqueWrapper"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "PrivateKey": {
+      "type": "string"
+    },
+    "Query": {
+      "anyOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "not": {
+              "$ref": "#/$defs/Query"
+            }
+          },
+          "required": [
+            "not"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "and": {
+              "items": {
+                "$ref": "#/$defs/Query"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "and"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "or": {
+              "items": {
+                "$ref": "#/$defs/Query"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "or"
+          ],
+          "type": "object"
+        },
+        {
+          "$ref": "#/$defs/QueryElement"
+        },
+        {
+          "$ref": "#/$defs/QueryValue"
+        }
+      ]
+    },
+    "QueryElement": {
+      "oneOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "has_key": {
+              "properties": {
+                "key": {
+                  "$ref": "#/$defs/DataValue"
+                },
+                "query": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/$defs/Query"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "key"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "has_key"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "at_key": {
+              "properties": {
+                "key": {
+                  "$ref": "#/$defs/DataValue"
+                },
+                "query": {
+                  "$ref": "#/$defs/Query"
+                }
+              },
+              "required": [
+                "key",
+                "query"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "at_key"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "len": {
+              "$ref": "#/$defs/QueryNumber"
+            }
+          },
+          "required": [
+            "len"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "contains_element": {
+              "$ref": "#/$defs/DataElement"
+            }
+          },
+          "required": [
+            "contains_element"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "at_position": {
+              "properties": {
+                "position": {
+                  "format": "uint",
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "query": {
+                  "$ref": "#/$defs/Query"
+                }
+              },
+              "required": [
+                "position",
+                "query"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "at_position"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "type": {
+              "$ref": "#/$defs/ElementType"
+            }
+          },
+          "required": [
+            "type"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "QueryNumber": {
+      "oneOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "greater": {
+              "format": "uint",
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "greater"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "greater_or_equal": {
+              "format": "uint",
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "greater_or_equal"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "lesser": {
+              "format": "uint",
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "lesser"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "lesser_or_equal": {
+              "format": "uint",
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "lesser_or_equal"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "QueryValue": {
+      "anyOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "equal": {
+              "$ref": "#/$defs/DataValue"
+            }
+          },
+          "required": [
+            "equal"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "starts_with": {
+              "$ref": "#/$defs/DataValue"
+            }
+          },
+          "required": [
+            "starts_with"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "ends_with": {
+              "$ref": "#/$defs/DataValue"
+            }
+          },
+          "required": [
+            "ends_with"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "contains_value": {
+              "$ref": "#/$defs/DataValue"
+            }
+          },
+          "required": [
+            "contains_value"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "is_of_type": {
+              "$ref": "#/$defs/ValueType"
+            }
+          },
+          "required": [
+            "is_of_type"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "matches": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "matches"
+          ],
+          "type": "object"
+        },
+        {
+          "$ref": "#/$defs/QueryNumber"
+        }
+      ]
+    },
+    "RPCBlobPayload": {
+      "properties": {
+        "data": {
+          "$ref": "#/$defs/UnknownExtraDataFormat"
+        },
+        "destinations": {
+          "items": {
+            "$ref": "#/$defs/Address"
+          },
+          "type": "array",
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "data",
+        "destinations"
+      ],
+      "type": "object"
+    },
+    "RPCTransactionType": {
+      "oneOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "transfers": {
+              "items": {
+                "$ref": "#/$defs/RPCTransferPayload"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "transfers"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "burn": {
+              "$ref": "#/$defs/BurnPayload"
+            }
+          },
+          "required": [
+            "burn"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "multi_sig": {
+              "$ref": "#/$defs/MultiSigPayload"
+            }
+          },
+          "required": [
+            "multi_sig"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "invoke_contract": {
+              "$ref": "#/$defs/InvokeContractPayload"
+            }
+          },
+          "required": [
+            "invoke_contract"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "deploy_contract": {
+              "$ref": "#/$defs/DeployContractPayload"
+            }
+          },
+          "required": [
+            "deploy_contract"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "blob": {
+              "$ref": "#/$defs/RPCBlobPayload"
+            }
+          },
+          "required": [
+            "blob"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "RPCTransferPayload": {
+      "properties": {
+        "asset": {
+          "$ref": "#/$defs/Hash"
+        },
+        "commitment": {
+          "$ref": "#/$defs/CompressedCommitment"
+        },
+        "ct_validity_proof": {
+          "$ref": "#/$defs/CiphertextValidityProof"
+        },
+        "destination": {
+          "$ref": "#/$defs/Address"
+        },
+        "extra_data": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/UnknownExtraDataFormat"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "receiver_handle": {
+          "$ref": "#/$defs/CompressedHandle"
+        },
+        "sender_handle": {
+          "$ref": "#/$defs/CompressedHandle"
+        }
+      },
+      "required": [
+        "asset",
+        "destination",
+        "commitment",
+        "sender_handle",
+        "receiver_handle",
+        "ct_validity_proof"
+      ],
+      "type": "object"
+    },
+    "Reference": {
+      "properties": {
+        "hash": {
+          "$ref": "#/$defs/Hash"
+        },
+        "topoheight": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "hash",
+        "topoheight"
+      ],
+      "type": "object"
+    },
+    "Role": {
+      "enum": [
+        "sender",
+        "receiver"
+      ],
+      "type": "string"
+    },
+    "RpcMethodInfo": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "schema": {
+          "$ref": "#/$defs/RpcSchema"
+        }
+      },
+      "required": [
+        "name",
+        "schema"
+      ],
+      "type": "object"
+    },
+    "RpcSchema": {
+      "properties": {
+        "params_schema": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Schema"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "returns_schema": {
+          "$ref": "#/$defs/Schema"
+        }
+      },
+      "required": [
+        "returns_schema"
+      ],
+      "type": "object"
+    },
+    "Schema": {
+      "type": [
+        "object",
+        "boolean"
+      ]
+    },
+    "SharedKey": {
+      "type": "string"
+    },
+    "Signature": {
+      "type": "string"
+    },
+    "SignatureId": {
+      "properties": {
+        "id": {
+          "format": "uint8",
+          "maximum": 255,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "signature": {
+          "$ref": "#/$defs/Signature"
+        }
+      },
+      "required": [
+        "id",
+        "signature"
+      ],
+      "type": "object"
+    },
+    "SignerId": {
+      "properties": {
+        "id": {
+          "format": "uint8",
+          "maximum": 255,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "private_key": {
+          "$ref": "#/$defs/PrivateKey"
+        }
+      },
+      "required": [
+        "id",
+        "private_key"
+      ],
+      "type": "object"
+    },
+    "SourceCommitment": {
+      "properties": {
+        "asset": {
+          "$ref": "#/$defs/Hash"
+        },
+        "commitment": {
+          "$ref": "#/$defs/CompressedCommitment"
+        },
+        "proof": {
+          "$ref": "#/$defs/CommitmentEqProof"
+        }
+      },
+      "required": [
+        "commitment",
+        "proof",
+        "asset"
+      ],
+      "type": "object"
+    },
+    "TransactionEntry": {
+      "oneOf": [
+        {
+          "properties": {
+            "coinbase": {
+              "properties": {
+                "reward": {
+                  "format": "uint64",
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "reward"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "coinbase"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "burn": {
+              "properties": {
+                "amount": {
+                  "format": "uint64",
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "asset": {
+                  "$ref": "#/$defs/Hash"
+                },
+                "fee": {
+                  "format": "uint64",
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "nonce": {
+                  "format": "uint64",
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "asset",
+                "amount",
+                "fee",
+                "nonce"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "burn"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "incoming": {
+              "properties": {
+                "from": {
+                  "$ref": "#/$defs/Address"
+                },
+                "transfers": {
+                  "items": {
+                    "$ref": "#/$defs/TransferIn"
+                  },
+                  "type": "array"
+                }
+              },
+              "required": [
+                "from",
+                "transfers"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "incoming"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "outgoing": {
+              "properties": {
+                "fee": {
+                  "format": "uint64",
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "nonce": {
+                  "format": "uint64",
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "transfers": {
+                  "items": {
+                    "$ref": "#/$defs/TransferOut"
+                  },
+                  "type": "array"
+                }
+              },
+              "required": [
+                "transfers",
+                "fee",
+                "nonce"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "outgoing"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "multi_sig": {
+              "properties": {
+                "fee": {
+                  "format": "uint64",
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "nonce": {
+                  "format": "uint64",
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "participants": {
+                  "items": {
+                    "$ref": "#/$defs/Address"
+                  },
+                  "type": "array"
+                },
+                "threshold": {
+                  "format": "uint8",
+                  "maximum": 255,
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "participants",
+                "threshold",
+                "fee",
+                "nonce"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "multi_sig"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "invoke_contract": {
+              "properties": {
+                "chunk_id": {
+                  "format": "uint16",
+                  "maximum": 65535,
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "contract": {
+                  "$ref": "#/$defs/Hash"
+                },
+                "deposits": {
+                  "additionalProperties": {
+                    "format": "uint64",
+                    "minimum": 0,
+                    "type": "integer"
+                  },
+                  "type": "object"
+                },
+                "fee": {
+                  "format": "uint64",
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "max_gas": {
+                  "format": "uint64",
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "nonce": {
+                  "format": "uint64",
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "received": {
+                  "additionalProperties": {
+                    "additionalProperties": {
+                      "format": "uint64",
+                      "minimum": 0,
+                      "type": "integer"
+                    },
+                    "type": "object"
+                  },
+                  "type": "object"
+                }
+              },
+              "required": [
+                "contract",
+                "deposits",
+                "received",
+                "chunk_id",
+                "fee",
+                "max_gas",
+                "nonce"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "invoke_contract"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "deploy_contract": {
+              "properties": {
+                "fee": {
+                  "format": "uint64",
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "invoke": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/$defs/DeployInvoke"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "nonce": {
+                  "format": "uint64",
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "fee",
+                "nonce"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "deploy_contract"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "incoming_contract": {
+              "properties": {
+                "transfers": {
+                  "additionalProperties": {
+                    "additionalProperties": {
+                      "format": "uint64",
+                      "minimum": 0,
+                      "type": "integer"
+                    },
+                    "type": "object"
+                  },
+                  "type": "object"
+                }
+              },
+              "required": [
+                "transfers"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "incoming_contract"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "outgoing_blob": {
+              "properties": {
+                "data": {
+                  "$ref": "#/$defs/PlaintextExtraData"
+                },
+                "destinations": {
+                  "items": {
+                    "$ref": "#/$defs/Address"
+                  },
+                  "type": "array",
+                  "uniqueItems": true
+                },
+                "fee": {
+                  "format": "uint64",
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "nonce": {
+                  "format": "uint64",
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "destinations",
+                "fee",
+                "nonce",
+                "data"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "outgoing_blob"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "incoming_blob": {
+              "properties": {
+                "data": {
+                  "$ref": "#/$defs/PlaintextExtraData"
+                },
+                "destinations": {
+                  "items": {
+                    "$ref": "#/$defs/Address"
+                  },
+                  "type": "array",
+                  "uniqueItems": true
+                },
+                "from": {
+                  "$ref": "#/$defs/Address"
+                }
+              },
+              "required": [
+                "from",
+                "destinations",
+                "data"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "incoming_blob"
+          ],
+          "type": "object"
+        }
+      ],
+      "properties": {
+        "hash": {
+          "$ref": "#/$defs/Hash"
+        },
+        "timestamp": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "topoheight": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "hash",
+        "topoheight",
+        "timestamp"
+      ],
+      "type": "object"
+    },
+    "TransactionPending": {
+      "oneOf": [
+        {
+          "properties": {
+            "coinbase": {
+              "properties": {
+                "reward": {
+                  "format": "uint64",
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "reward"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "coinbase"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "burn": {
+              "properties": {
+                "amount": {
+                  "format": "uint64",
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "asset": {
+                  "$ref": "#/$defs/Hash"
+                },
+                "fee": {
+                  "format": "uint64",
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "nonce": {
+                  "format": "uint64",
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "asset",
+                "amount",
+                "fee",
+                "nonce"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "burn"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "incoming": {
+              "properties": {
+                "from": {
+                  "$ref": "#/$defs/Address"
+                },
+                "transfers": {
+                  "items": {
+                    "$ref": "#/$defs/TransferIn"
+                  },
+                  "type": "array"
+                }
+              },
+              "required": [
+                "from",
+                "transfers"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "incoming"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "outgoing": {
+              "properties": {
+                "fee": {
+                  "format": "uint64",
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "nonce": {
+                  "format": "uint64",
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "transfers": {
+                  "items": {
+                    "$ref": "#/$defs/TransferOut"
+                  },
+                  "type": "array"
+                }
+              },
+              "required": [
+                "transfers",
+                "fee",
+                "nonce"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "outgoing"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "multi_sig": {
+              "properties": {
+                "fee": {
+                  "format": "uint64",
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "nonce": {
+                  "format": "uint64",
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "participants": {
+                  "items": {
+                    "$ref": "#/$defs/Address"
+                  },
+                  "type": "array"
+                },
+                "threshold": {
+                  "format": "uint8",
+                  "maximum": 255,
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "participants",
+                "threshold",
+                "fee",
+                "nonce"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "multi_sig"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "invoke_contract": {
+              "properties": {
+                "chunk_id": {
+                  "format": "uint16",
+                  "maximum": 65535,
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "contract": {
+                  "$ref": "#/$defs/Hash"
+                },
+                "deposits": {
+                  "additionalProperties": {
+                    "format": "uint64",
+                    "minimum": 0,
+                    "type": "integer"
+                  },
+                  "type": "object"
+                },
+                "fee": {
+                  "format": "uint64",
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "max_gas": {
+                  "format": "uint64",
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "nonce": {
+                  "format": "uint64",
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "received": {
+                  "additionalProperties": {
+                    "additionalProperties": {
+                      "format": "uint64",
+                      "minimum": 0,
+                      "type": "integer"
+                    },
+                    "type": "object"
+                  },
+                  "type": "object"
+                }
+              },
+              "required": [
+                "contract",
+                "deposits",
+                "received",
+                "chunk_id",
+                "fee",
+                "max_gas",
+                "nonce"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "invoke_contract"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "deploy_contract": {
+              "properties": {
+                "fee": {
+                  "format": "uint64",
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "invoke": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/$defs/DeployInvoke"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "nonce": {
+                  "format": "uint64",
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "fee",
+                "nonce"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "deploy_contract"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "incoming_contract": {
+              "properties": {
+                "transfers": {
+                  "additionalProperties": {
+                    "additionalProperties": {
+                      "format": "uint64",
+                      "minimum": 0,
+                      "type": "integer"
+                    },
+                    "type": "object"
+                  },
+                  "type": "object"
+                }
+              },
+              "required": [
+                "transfers"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "incoming_contract"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "outgoing_blob": {
+              "properties": {
+                "data": {
+                  "$ref": "#/$defs/PlaintextExtraData"
+                },
+                "destinations": {
+                  "items": {
+                    "$ref": "#/$defs/Address"
+                  },
+                  "type": "array",
+                  "uniqueItems": true
+                },
+                "fee": {
+                  "format": "uint64",
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "nonce": {
+                  "format": "uint64",
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "destinations",
+                "fee",
+                "nonce",
+                "data"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "outgoing_blob"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "incoming_blob": {
+              "properties": {
+                "data": {
+                  "$ref": "#/$defs/PlaintextExtraData"
+                },
+                "destinations": {
+                  "items": {
+                    "$ref": "#/$defs/Address"
+                  },
+                  "type": "array",
+                  "uniqueItems": true
+                },
+                "from": {
+                  "$ref": "#/$defs/Address"
+                }
+              },
+              "required": [
+                "from",
+                "destinations",
+                "data"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "incoming_blob"
+          ],
+          "type": "object"
+        }
+      ],
+      "properties": {
+        "hash": {
+          "$ref": "#/$defs/Hash"
+        },
+        "timestamp": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "hash",
+        "timestamp"
+      ],
+      "type": "object"
+    },
+    "TransactionType": {
+      "oneOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "transfers": {
+              "items": {
+                "$ref": "#/$defs/TransferPayload"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "transfers"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "burn": {
+              "$ref": "#/$defs/BurnPayload"
+            }
+          },
+          "required": [
+            "burn"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "multi_sig": {
+              "$ref": "#/$defs/MultiSigPayload"
+            }
+          },
+          "required": [
+            "multi_sig"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "invoke_contract": {
+              "$ref": "#/$defs/InvokeContractPayload"
+            }
+          },
+          "required": [
+            "invoke_contract"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "deploy_contract": {
+              "$ref": "#/$defs/DeployContractPayload"
+            }
+          },
+          "required": [
+            "deploy_contract"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "blob": {
+              "$ref": "#/$defs/BlobPayload"
+            }
+          },
+          "required": [
+            "blob"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "TransferBuilder": {
+      "properties": {
+        "amount": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "asset": {
+          "$ref": "#/$defs/Hash"
+        },
+        "destination": {
+          "$ref": "#/$defs/Address"
+        },
+        "encrypt_extra_data": {
+          "default": true,
+          "type": "boolean"
+        },
+        "extra_data": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/DataElement"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "asset",
+        "amount",
+        "destination"
+      ],
+      "type": "object"
+    },
+    "TransferIn": {
+      "properties": {
+        "amount": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "asset": {
+          "$ref": "#/$defs/Hash"
+        },
+        "extra_data": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/PlaintextExtraData"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "asset",
+        "amount"
+      ],
+      "type": "object"
+    },
+    "TransferOut": {
+      "properties": {
+        "amount": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "asset": {
+          "$ref": "#/$defs/Hash"
+        },
+        "destination": {
+          "$ref": "#/$defs/Address"
+        },
+        "extra_data": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/PlaintextExtraData"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "destination",
+        "asset",
+        "amount"
+      ],
+      "type": "object"
+    },
+    "TransferPayload": {
+      "properties": {
+        "asset": {
+          "$ref": "#/$defs/Hash"
+        },
+        "commitment": {
+          "$ref": "#/$defs/CompressedCommitment"
+        },
+        "ct_validity_proof": {
+          "$ref": "#/$defs/CiphertextValidityProof"
+        },
+        "destination": {
+          "$ref": "#/$defs/CompressedPublicKey"
+        },
+        "extra_data": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/UnknownExtraDataFormat"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "receiver_handle": {
+          "$ref": "#/$defs/CompressedHandle"
+        },
+        "sender_handle": {
+          "$ref": "#/$defs/CompressedHandle"
+        }
+      },
+      "required": [
+        "asset",
+        "destination",
+        "commitment",
+        "sender_handle",
+        "receiver_handle",
+        "ct_validity_proof"
+      ],
+      "type": "object"
+    },
+    "TxVersion": {
+      "enum": [
+        "V0",
+        "V1",
+        "V2",
+        "V3"
+      ],
+      "type": "string"
+    },
+    "TypePacked": {
+      "oneOf": [
+        {
+          "properties": {
+            "type": {
+              "const": "any",
+              "type": "string"
+            }
+          },
+          "required": [
+            "type"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "optional",
+              "type": "string"
+            },
+            "value": {
+              "$ref": "#/$defs/TypePacked"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "number",
+              "type": "string"
+            },
+            "value": {
+              "$ref": "#/$defs/NumberType"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "string",
+              "type": "string"
+            }
+          },
+          "required": [
+            "type"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "bool",
+              "type": "string"
+            }
+          },
+          "required": [
+            "type"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "bytes",
+              "type": "string"
+            }
+          },
+          "required": [
+            "type"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "opaque",
+              "type": "string"
+            },
+            "value": {
+              "format": "uint16",
+              "maximum": 65535,
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "array",
+              "type": "string"
+            },
+            "value": {
+              "$ref": "#/$defs/TypePacked"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "tuples",
+              "type": "string"
+            },
+            "value": {
+              "items": {
+                "$ref": "#/$defs/TypePacked"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "range",
+              "type": "string"
+            },
+            "value": {
+              "$ref": "#/$defs/NumberType"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "map",
+              "type": "string"
+            },
+            "value": {
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "$ref": "#/$defs/TypePacked"
+                },
+                {
+                  "$ref": "#/$defs/TypePacked"
+                }
+              ],
+              "type": "array"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "one_of",
+              "type": "string"
+            },
+            "value": {
+              "items": {
+                "items": {
+                  "$ref": "#/$defs/TypePacked"
+                },
+                "type": "array"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "U256": {
+      "type": "string"
+    },
+    "UnknownExtraDataFormat": {
+      "items": {
+        "format": "uint8",
+        "maximum": 255,
+        "minimum": 0,
+        "type": "integer"
+      },
+      "type": "array"
+    },
+    "UnsignedTransaction": {
+      "properties": {
+        "data": {
+          "$ref": "#/$defs/TransactionType"
+        },
+        "fee": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "fee_limit": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "multisig": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/MultiSig"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "nonce": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "range_proof": {
+          "items": {
+            "format": "uint8",
+            "maximum": 255,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "type": "array"
+        },
+        "reference": {
+          "$ref": "#/$defs/Reference"
+        },
+        "source": {
+          "$ref": "#/$defs/CompressedPublicKey"
+        },
+        "source_commitments": {
+          "items": {
+            "$ref": "#/$defs/SourceCommitment"
+          },
+          "type": "array"
+        },
+        "version": {
+          "$ref": "#/$defs/TxVersion"
+        }
+      },
+      "required": [
+        "version",
+        "source",
+        "data",
+        "fee",
+        "fee_limit",
+        "nonce",
+        "source_commitments",
+        "reference",
+        "range_proof"
+      ],
+      "type": "object"
+    },
+    "ValueCell": {
+      "oneOf": [
+        {
+          "properties": {
+            "type": {
+              "const": "primitive",
+              "type": "string"
+            },
+            "value": {
+              "$ref": "#/$defs/Primitive"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "bytes",
+              "type": "string"
+            },
+            "value": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "object",
+              "type": "string"
+            },
+            "value": {
+              "items": {
+                "$ref": "#/$defs/ValueCell"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "map",
+              "type": "string"
+            },
+            "value": {
+              "items": {
+                "maxItems": 2,
+                "minItems": 2,
+                "prefixItems": [
+                  {
+                    "$ref": "#/$defs/ValueCell"
+                  },
+                  {
+                    "$ref": "#/$defs/ValueCell"
+                  }
+                ],
+                "type": "array"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "ValueType": {
+      "enum": [
+        "Bool",
+        "String",
+        "U8",
+        "U16",
+        "U32",
+        "U64",
+        "U128",
+        "Hash",
+        "Blob"
+      ],
+      "type": "string"
+    },
+    "VarUint": {
+      "type": "string"
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "methods": [
+    {
+      "name": "batch_limit",
+      "schema": {
+        "params_schema": null,
+        "returns_schema": {
+          "format": "uint",
+          "minimum": 0,
+          "type": [
+            "integer",
+            "null"
+          ]
+        }
+      }
+    },
+    {
+      "name": "build_transaction",
+      "schema": {
+        "params_schema": {
+          "oneOf": [
+            {
+              "properties": {
+                "transfers": {
+                  "items": {
+                    "$ref": "#/$defs/TransferBuilder"
+                  },
+                  "type": "array"
+                }
+              },
+              "required": [
+                "transfers"
+              ],
+              "type": "object"
+            },
+            {
+              "properties": {
+                "burn": {
+                  "$ref": "#/$defs/BurnPayload"
+                }
+              },
+              "required": [
+                "burn"
+              ],
+              "type": "object"
+            },
+            {
+              "properties": {
+                "multi_sig": {
+                  "$ref": "#/$defs/MultiSigBuilder"
+                }
+              },
+              "required": [
+                "multi_sig"
+              ],
+              "type": "object"
+            },
+            {
+              "properties": {
+                "invoke_contract": {
+                  "$ref": "#/$defs/InvokeContractBuilder"
+                }
+              },
+              "required": [
+                "invoke_contract"
+              ],
+              "type": "object"
+            },
+            {
+              "properties": {
+                "deploy_contract": {
+                  "$ref": "#/$defs/DeployContractBuilder"
+                }
+              },
+              "required": [
+                "deploy_contract"
+              ],
+              "type": "object"
+            },
+            {
+              "properties": {
+                "blob": {
+                  "$ref": "#/$defs/BlobPayloadBuilder"
+                }
+              },
+              "required": [
+                "blob"
+              ],
+              "type": "object"
+            }
+          ],
+          "properties": {
+            "base_fee": {
+              "$ref": "#/$defs/BaseFeeMode",
+              "default": "none"
+            },
+            "broadcast": {
+              "default": true,
+              "type": "boolean"
+            },
+            "fee": {
+              "$ref": "#/$defs/FeeBuilder",
+              "default": {
+                "extra": "none"
+              }
+            },
+            "fee_limit": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "nonce": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "signers": {
+              "default": [],
+              "items": {
+                "$ref": "#/$defs/SignerId"
+              },
+              "type": "array"
+            },
+            "tx_as_hex": {
+              "default": false,
+              "type": "boolean"
+            },
+            "tx_version": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/TxVersion"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "type": "object"
+        },
+        "returns_schema": {
+          "properties": {
+            "data": {
+              "$ref": "#/$defs/RPCTransactionType"
+            },
+            "fee": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "fee_limit": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "fee_paid": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "fee_refund": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "hash": {
+              "$ref": "#/$defs/Hash"
+            },
+            "multisig": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/MultiSig"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "nonce": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "range_proof": {
+              "items": {
+                "format": "uint8",
+                "maximum": 255,
+                "minimum": 0,
+                "type": "integer"
+              },
+              "type": "array"
+            },
+            "reference": {
+              "$ref": "#/$defs/Reference"
+            },
+            "signature": {
+              "$ref": "#/$defs/Signature"
+            },
+            "size": {
+              "format": "uint",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "source": {
+              "$ref": "#/$defs/Address"
+            },
+            "source_commitments": {
+              "items": {
+                "$ref": "#/$defs/SourceCommitment"
+              },
+              "type": "array"
+            },
+            "tx_as_hex": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "version": {
+              "$ref": "#/$defs/TxVersion"
+            }
+          },
+          "required": [
+            "hash",
+            "version",
+            "source",
+            "data",
+            "fee",
+            "fee_limit",
+            "nonce",
+            "source_commitments",
+            "range_proof",
+            "reference",
+            "signature",
+            "size"
+          ],
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "build_transaction_offline",
+      "schema": {
+        "params_schema": {
+          "oneOf": [
+            {
+              "properties": {
+                "transfers": {
+                  "items": {
+                    "$ref": "#/$defs/TransferBuilder"
+                  },
+                  "type": "array"
+                }
+              },
+              "required": [
+                "transfers"
+              ],
+              "type": "object"
+            },
+            {
+              "properties": {
+                "burn": {
+                  "$ref": "#/$defs/BurnPayload"
+                }
+              },
+              "required": [
+                "burn"
+              ],
+              "type": "object"
+            },
+            {
+              "properties": {
+                "multi_sig": {
+                  "$ref": "#/$defs/MultiSigBuilder"
+                }
+              },
+              "required": [
+                "multi_sig"
+              ],
+              "type": "object"
+            },
+            {
+              "properties": {
+                "invoke_contract": {
+                  "$ref": "#/$defs/InvokeContractBuilder"
+                }
+              },
+              "required": [
+                "invoke_contract"
+              ],
+              "type": "object"
+            },
+            {
+              "properties": {
+                "deploy_contract": {
+                  "$ref": "#/$defs/DeployContractBuilder"
+                }
+              },
+              "required": [
+                "deploy_contract"
+              ],
+              "type": "object"
+            },
+            {
+              "properties": {
+                "blob": {
+                  "$ref": "#/$defs/BlobPayloadBuilder"
+                }
+              },
+              "required": [
+                "blob"
+              ],
+              "type": "object"
+            }
+          ],
+          "properties": {
+            "balances": {
+              "additionalProperties": {
+                "$ref": "#/$defs/CiphertextCache"
+              },
+              "type": "object"
+            },
+            "base_fee": {
+              "default": null,
+              "format": "uint64",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "fee": {
+              "$ref": "#/$defs/FeeBuilder",
+              "default": {
+                "extra": "none"
+              }
+            },
+            "fee_limit": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "nonce": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "reference": {
+              "$ref": "#/$defs/Reference"
+            },
+            "signers": {
+              "default": [],
+              "items": {
+                "$ref": "#/$defs/SignerId"
+              },
+              "type": "array"
+            },
+            "tx_as_hex": {
+              "default": false,
+              "type": "boolean"
+            },
+            "tx_version": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/TxVersion"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "balances",
+            "reference",
+            "nonce"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "properties": {
+            "data": {
+              "$ref": "#/$defs/RPCTransactionType"
+            },
+            "fee": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "fee_limit": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "fee_paid": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "fee_refund": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "hash": {
+              "$ref": "#/$defs/Hash"
+            },
+            "multisig": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/MultiSig"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "nonce": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "range_proof": {
+              "items": {
+                "format": "uint8",
+                "maximum": 255,
+                "minimum": 0,
+                "type": "integer"
+              },
+              "type": "array"
+            },
+            "reference": {
+              "$ref": "#/$defs/Reference"
+            },
+            "signature": {
+              "$ref": "#/$defs/Signature"
+            },
+            "size": {
+              "format": "uint",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "source": {
+              "$ref": "#/$defs/Address"
+            },
+            "source_commitments": {
+              "items": {
+                "$ref": "#/$defs/SourceCommitment"
+              },
+              "type": "array"
+            },
+            "tx_as_hex": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "version": {
+              "$ref": "#/$defs/TxVersion"
+            }
+          },
+          "required": [
+            "hash",
+            "version",
+            "source",
+            "data",
+            "fee",
+            "fee_limit",
+            "nonce",
+            "source_commitments",
+            "range_proof",
+            "reference",
+            "signature",
+            "size"
+          ],
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "build_unsigned_transaction",
+      "schema": {
+        "params_schema": {
+          "oneOf": [
+            {
+              "properties": {
+                "transfers": {
+                  "items": {
+                    "$ref": "#/$defs/TransferBuilder"
+                  },
+                  "type": "array"
+                }
+              },
+              "required": [
+                "transfers"
+              ],
+              "type": "object"
+            },
+            {
+              "properties": {
+                "burn": {
+                  "$ref": "#/$defs/BurnPayload"
+                }
+              },
+              "required": [
+                "burn"
+              ],
+              "type": "object"
+            },
+            {
+              "properties": {
+                "multi_sig": {
+                  "$ref": "#/$defs/MultiSigBuilder"
+                }
+              },
+              "required": [
+                "multi_sig"
+              ],
+              "type": "object"
+            },
+            {
+              "properties": {
+                "invoke_contract": {
+                  "$ref": "#/$defs/InvokeContractBuilder"
+                }
+              },
+              "required": [
+                "invoke_contract"
+              ],
+              "type": "object"
+            },
+            {
+              "properties": {
+                "deploy_contract": {
+                  "$ref": "#/$defs/DeployContractBuilder"
+                }
+              },
+              "required": [
+                "deploy_contract"
+              ],
+              "type": "object"
+            },
+            {
+              "properties": {
+                "blob": {
+                  "$ref": "#/$defs/BlobPayloadBuilder"
+                }
+              },
+              "required": [
+                "blob"
+              ],
+              "type": "object"
+            }
+          ],
+          "properties": {
+            "base_fee": {
+              "$ref": "#/$defs/BaseFeeMode",
+              "default": "none"
+            },
+            "fee": {
+              "$ref": "#/$defs/FeeBuilder",
+              "default": {
+                "extra": "none"
+              }
+            },
+            "fee_limit": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "nonce": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "tx_as_hex": {
+              "default": false,
+              "type": "boolean"
+            },
+            "tx_version": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/TxVersion"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "type": "object"
+        },
+        "returns_schema": {
+          "properties": {
+            "data": {
+              "$ref": "#/$defs/TransactionType"
+            },
+            "fee": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "fee_limit": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "hash": {
+              "$ref": "#/$defs/Hash"
+            },
+            "multisig": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/MultiSig"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "nonce": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "range_proof": {
+              "items": {
+                "format": "uint8",
+                "maximum": 255,
+                "minimum": 0,
+                "type": "integer"
+              },
+              "type": "array"
+            },
+            "reference": {
+              "$ref": "#/$defs/Reference"
+            },
+            "source": {
+              "$ref": "#/$defs/CompressedPublicKey"
+            },
+            "source_commitments": {
+              "items": {
+                "$ref": "#/$defs/SourceCommitment"
+              },
+              "type": "array"
+            },
+            "threshold": {
+              "format": "uint8",
+              "maximum": 255,
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "tx_as_hex": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "version": {
+              "$ref": "#/$defs/TxVersion"
+            }
+          },
+          "required": [
+            "version",
+            "source",
+            "data",
+            "fee",
+            "fee_limit",
+            "nonce",
+            "source_commitments",
+            "reference",
+            "range_proof",
+            "hash"
+          ],
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "clear_tx_cache",
+      "schema": {
+        "params_schema": null,
+        "returns_schema": {
+          "type": "boolean"
+        }
+      }
+    },
+    {
+      "name": "count_matching_entries",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "key": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/Query"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "tree": {
+              "type": "string"
+            },
+            "value": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/Query"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "tree"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "format": "uint",
+          "minimum": 0,
+          "type": "integer"
+        }
+      }
+    },
+    {
+      "name": "create_balance_proof",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "asset": {
+              "$ref": "#/$defs/Hash"
+            },
+            "topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "asset"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "name": "create_ownership_proof",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "amount": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "asset": {
+              "$ref": "#/$defs/Hash"
+            },
+            "topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "asset",
+            "amount"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "name": "decrypt_ciphertext",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "ciphertext": {
+              "$ref": "#/$defs/CompressedCiphertext"
+            },
+            "max_supply": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "ciphertext"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": [
+            "integer",
+            "null"
+          ]
+        }
+      }
+    },
+    {
+      "name": "decrypt_extra_data",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "extra_data": {
+              "$ref": "#/$defs/UnknownExtraDataFormat"
+            },
+            "role": {
+              "$ref": "#/$defs/Role"
+            }
+          },
+          "required": [
+            "extra_data",
+            "role"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "properties": {
+            "data": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/DataElement"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "flag": {
+              "$ref": "#/$defs/PlaintextFlag"
+            },
+            "shared_key": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/SharedKey"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "flag"
+          ],
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "delete",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "key": {
+              "$ref": "#/$defs/DataValue"
+            },
+            "tree": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "tree",
+            "key"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "type": "boolean"
+        }
+      }
+    },
+    {
+      "name": "delete_tree_entries",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "tree": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "tree"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "type": "boolean"
+        }
+      }
+    },
+    {
+      "name": "dump_transaction",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "hash": {
+              "$ref": "#/$defs/Hash"
+            }
+          },
+          "required": [
+            "hash"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "name": "estimate_extra_data_size",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "destinations": {
+              "items": {
+                "$ref": "#/$defs/Address"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "destinations"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "properties": {
+            "size": {
+              "format": "uint",
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "size"
+          ],
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "estimate_fees",
+      "schema": {
+        "params_schema": {
+          "oneOf": [
+            {
+              "properties": {
+                "transfers": {
+                  "items": {
+                    "$ref": "#/$defs/TransferBuilder"
+                  },
+                  "type": "array"
+                }
+              },
+              "required": [
+                "transfers"
+              ],
+              "type": "object"
+            },
+            {
+              "properties": {
+                "burn": {
+                  "$ref": "#/$defs/BurnPayload"
+                }
+              },
+              "required": [
+                "burn"
+              ],
+              "type": "object"
+            },
+            {
+              "properties": {
+                "multi_sig": {
+                  "$ref": "#/$defs/MultiSigBuilder"
+                }
+              },
+              "required": [
+                "multi_sig"
+              ],
+              "type": "object"
+            },
+            {
+              "properties": {
+                "invoke_contract": {
+                  "$ref": "#/$defs/InvokeContractBuilder"
+                }
+              },
+              "required": [
+                "invoke_contract"
+              ],
+              "type": "object"
+            },
+            {
+              "properties": {
+                "deploy_contract": {
+                  "$ref": "#/$defs/DeployContractBuilder"
+                }
+              },
+              "required": [
+                "deploy_contract"
+              ],
+              "type": "object"
+            },
+            {
+              "properties": {
+                "blob": {
+                  "$ref": "#/$defs/BlobPayloadBuilder"
+                }
+              },
+              "required": [
+                "blob"
+              ],
+              "type": "object"
+            }
+          ],
+          "properties": {
+            "base_fee": {
+              "$ref": "#/$defs/BaseFeeMode",
+              "default": "none"
+            },
+            "fee": {
+              "$ref": "#/$defs/FeeBuilder",
+              "default": {
+                "extra": "none"
+              }
+            }
+          },
+          "type": "object"
+        },
+        "returns_schema": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        }
+      }
+    },
+    {
+      "name": "finalize_unsigned_transaction",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "broadcast": {
+              "default": true,
+              "type": "boolean"
+            },
+            "signatures": {
+              "default": [],
+              "items": {
+                "$ref": "#/$defs/SignatureId"
+              },
+              "type": "array"
+            },
+            "tx_as_hex": {
+              "default": false,
+              "type": "boolean"
+            },
+            "unsigned": {
+              "$ref": "#/$defs/Hexable"
+            }
+          },
+          "required": [
+            "unsigned"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "properties": {
+            "data": {
+              "$ref": "#/$defs/RPCTransactionType"
+            },
+            "fee": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "fee_limit": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "fee_paid": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "fee_refund": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "hash": {
+              "$ref": "#/$defs/Hash"
+            },
+            "multisig": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/MultiSig"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "nonce": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "range_proof": {
+              "items": {
+                "format": "uint8",
+                "maximum": 255,
+                "minimum": 0,
+                "type": "integer"
+              },
+              "type": "array"
+            },
+            "reference": {
+              "$ref": "#/$defs/Reference"
+            },
+            "signature": {
+              "$ref": "#/$defs/Signature"
+            },
+            "size": {
+              "format": "uint",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "source": {
+              "$ref": "#/$defs/Address"
+            },
+            "source_commitments": {
+              "items": {
+                "$ref": "#/$defs/SourceCommitment"
+              },
+              "type": "array"
+            },
+            "tx_as_hex": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "version": {
+              "$ref": "#/$defs/TxVersion"
+            }
+          },
+          "required": [
+            "hash",
+            "version",
+            "source",
+            "data",
+            "fee",
+            "fee_limit",
+            "nonce",
+            "source_commitments",
+            "range_proof",
+            "reference",
+            "signature",
+            "size"
+          ],
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "get_address",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "integrated_data": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/DataElement"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "type": "object"
+        },
+        "returns_schema": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "name": "get_asset",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "asset": {
+              "$ref": "#/$defs/Hash"
+            }
+          },
+          "required": [
+            "asset"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "properties": {
+            "decimals": {
+              "format": "uint8",
+              "maximum": 255,
+              "minimum": 0,
+              "type": "integer"
+            },
+            "max_supply": {
+              "$ref": "#/$defs/MaxSupplyMode"
+            },
+            "name": {
+              "type": "string"
+            },
+            "owner": {
+              "$ref": "#/$defs/AssetOwner"
+            },
+            "ticker": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "decimals",
+            "name",
+            "ticker",
+            "max_supply",
+            "owner"
+          ],
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "get_asset_precision",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "asset": {
+              "$ref": "#/$defs/Hash"
+            }
+          },
+          "required": [
+            "asset"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "format": "uint8",
+          "maximum": 255,
+          "minimum": 0,
+          "type": "integer"
+        }
+      }
+    },
+    {
+      "name": "get_assets",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "maximum": {
+              "format": "uint",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "skip": {
+              "format": "uint",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            }
+          },
+          "type": "object"
+        },
+        "returns_schema": {
+          "items": {
+            "$ref": "#/$defs/GetAssetsEntry"
+          },
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "get_balance",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "asset": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/Hash"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "type": "object"
+        },
+        "returns_schema": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        }
+      }
+    },
+    {
+      "name": "get_matching_keys",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "limit": {
+              "format": "uint",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "query": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/Query"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "skip": {
+              "format": "uint",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "tree": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "tree"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "items": {
+            "$ref": "#/$defs/DataValue"
+          },
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "get_network",
+      "schema": {
+        "params_schema": null,
+        "returns_schema": {
+          "enum": [
+            "Mainnet",
+            "Testnet",
+            "Stagenet",
+            "Devnet"
+          ],
+          "type": "string"
+        }
+      }
+    },
+    {
+      "name": "get_nonce",
+      "schema": {
+        "params_schema": null,
+        "returns_schema": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        }
+      }
+    },
+    {
+      "name": "get_pending_transactions",
+      "schema": {
+        "params_schema": null,
+        "returns_schema": {
+          "items": {
+            "$ref": "#/$defs/TransactionPending"
+          },
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "get_topoheight",
+      "schema": {
+        "params_schema": null,
+        "returns_schema": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        }
+      }
+    },
+    {
+      "name": "get_tracked_assets",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "maximum": {
+              "format": "uint",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "skip": {
+              "format": "uint",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            }
+          },
+          "type": "object"
+        },
+        "returns_schema": {
+          "items": {
+            "$ref": "#/$defs/Hash"
+          },
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "get_transaction",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "hash": {
+              "$ref": "#/$defs/Hash"
+            }
+          },
+          "required": [
+            "hash"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "oneOf": [
+            {
+              "properties": {
+                "coinbase": {
+                  "properties": {
+                    "reward": {
+                      "format": "uint64",
+                      "minimum": 0,
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "reward"
+                  ],
+                  "type": "object"
+                }
+              },
+              "required": [
+                "coinbase"
+              ],
+              "type": "object"
+            },
+            {
+              "properties": {
+                "burn": {
+                  "properties": {
+                    "amount": {
+                      "format": "uint64",
+                      "minimum": 0,
+                      "type": "integer"
+                    },
+                    "asset": {
+                      "$ref": "#/$defs/Hash"
+                    },
+                    "fee": {
+                      "format": "uint64",
+                      "minimum": 0,
+                      "type": "integer"
+                    },
+                    "nonce": {
+                      "format": "uint64",
+                      "minimum": 0,
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "asset",
+                    "amount",
+                    "fee",
+                    "nonce"
+                  ],
+                  "type": "object"
+                }
+              },
+              "required": [
+                "burn"
+              ],
+              "type": "object"
+            },
+            {
+              "properties": {
+                "incoming": {
+                  "properties": {
+                    "from": {
+                      "$ref": "#/$defs/Address"
+                    },
+                    "transfers": {
+                      "items": {
+                        "$ref": "#/$defs/TransferIn"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "from",
+                    "transfers"
+                  ],
+                  "type": "object"
+                }
+              },
+              "required": [
+                "incoming"
+              ],
+              "type": "object"
+            },
+            {
+              "properties": {
+                "outgoing": {
+                  "properties": {
+                    "fee": {
+                      "format": "uint64",
+                      "minimum": 0,
+                      "type": "integer"
+                    },
+                    "nonce": {
+                      "format": "uint64",
+                      "minimum": 0,
+                      "type": "integer"
+                    },
+                    "transfers": {
+                      "items": {
+                        "$ref": "#/$defs/TransferOut"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "transfers",
+                    "fee",
+                    "nonce"
+                  ],
+                  "type": "object"
+                }
+              },
+              "required": [
+                "outgoing"
+              ],
+              "type": "object"
+            },
+            {
+              "properties": {
+                "multi_sig": {
+                  "properties": {
+                    "fee": {
+                      "format": "uint64",
+                      "minimum": 0,
+                      "type": "integer"
+                    },
+                    "nonce": {
+                      "format": "uint64",
+                      "minimum": 0,
+                      "type": "integer"
+                    },
+                    "participants": {
+                      "items": {
+                        "$ref": "#/$defs/Address"
+                      },
+                      "type": "array"
+                    },
+                    "threshold": {
+                      "format": "uint8",
+                      "maximum": 255,
+                      "minimum": 0,
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "participants",
+                    "threshold",
+                    "fee",
+                    "nonce"
+                  ],
+                  "type": "object"
+                }
+              },
+              "required": [
+                "multi_sig"
+              ],
+              "type": "object"
+            },
+            {
+              "properties": {
+                "invoke_contract": {
+                  "properties": {
+                    "chunk_id": {
+                      "format": "uint16",
+                      "maximum": 65535,
+                      "minimum": 0,
+                      "type": "integer"
+                    },
+                    "contract": {
+                      "$ref": "#/$defs/Hash"
+                    },
+                    "deposits": {
+                      "additionalProperties": {
+                        "format": "uint64",
+                        "minimum": 0,
+                        "type": "integer"
+                      },
+                      "type": "object"
+                    },
+                    "fee": {
+                      "format": "uint64",
+                      "minimum": 0,
+                      "type": "integer"
+                    },
+                    "max_gas": {
+                      "format": "uint64",
+                      "minimum": 0,
+                      "type": "integer"
+                    },
+                    "nonce": {
+                      "format": "uint64",
+                      "minimum": 0,
+                      "type": "integer"
+                    },
+                    "received": {
+                      "additionalProperties": {
+                        "additionalProperties": {
+                          "format": "uint64",
+                          "minimum": 0,
+                          "type": "integer"
+                        },
+                        "type": "object"
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "required": [
+                    "contract",
+                    "deposits",
+                    "received",
+                    "chunk_id",
+                    "fee",
+                    "max_gas",
+                    "nonce"
+                  ],
+                  "type": "object"
+                }
+              },
+              "required": [
+                "invoke_contract"
+              ],
+              "type": "object"
+            },
+            {
+              "properties": {
+                "deploy_contract": {
+                  "properties": {
+                    "fee": {
+                      "format": "uint64",
+                      "minimum": 0,
+                      "type": "integer"
+                    },
+                    "invoke": {
+                      "anyOf": [
+                        {
+                          "$ref": "#/$defs/DeployInvoke"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "nonce": {
+                      "format": "uint64",
+                      "minimum": 0,
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "fee",
+                    "nonce"
+                  ],
+                  "type": "object"
+                }
+              },
+              "required": [
+                "deploy_contract"
+              ],
+              "type": "object"
+            },
+            {
+              "properties": {
+                "incoming_contract": {
+                  "properties": {
+                    "transfers": {
+                      "additionalProperties": {
+                        "additionalProperties": {
+                          "format": "uint64",
+                          "minimum": 0,
+                          "type": "integer"
+                        },
+                        "type": "object"
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "required": [
+                    "transfers"
+                  ],
+                  "type": "object"
+                }
+              },
+              "required": [
+                "incoming_contract"
+              ],
+              "type": "object"
+            },
+            {
+              "properties": {
+                "outgoing_blob": {
+                  "properties": {
+                    "data": {
+                      "$ref": "#/$defs/PlaintextExtraData"
+                    },
+                    "destinations": {
+                      "items": {
+                        "$ref": "#/$defs/Address"
+                      },
+                      "type": "array",
+                      "uniqueItems": true
+                    },
+                    "fee": {
+                      "format": "uint64",
+                      "minimum": 0,
+                      "type": "integer"
+                    },
+                    "nonce": {
+                      "format": "uint64",
+                      "minimum": 0,
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "destinations",
+                    "fee",
+                    "nonce",
+                    "data"
+                  ],
+                  "type": "object"
+                }
+              },
+              "required": [
+                "outgoing_blob"
+              ],
+              "type": "object"
+            },
+            {
+              "properties": {
+                "incoming_blob": {
+                  "properties": {
+                    "data": {
+                      "$ref": "#/$defs/PlaintextExtraData"
+                    },
+                    "destinations": {
+                      "items": {
+                        "$ref": "#/$defs/Address"
+                      },
+                      "type": "array",
+                      "uniqueItems": true
+                    },
+                    "from": {
+                      "$ref": "#/$defs/Address"
+                    }
+                  },
+                  "required": [
+                    "from",
+                    "destinations",
+                    "data"
+                  ],
+                  "type": "object"
+                }
+              },
+              "required": [
+                "incoming_blob"
+              ],
+              "type": "object"
+            }
+          ],
+          "properties": {
+            "hash": {
+              "$ref": "#/$defs/Hash"
+            },
+            "timestamp": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "hash",
+            "topoheight",
+            "timestamp"
+          ],
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "get_value_from_key",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "key": {
+              "$ref": "#/$defs/DataValue"
+            },
+            "tree": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "tree",
+            "key"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/DataValue"
+            },
+            {
+              "items": {
+                "$ref": "#"
+              },
+              "type": "array"
+            },
+            {
+              "additionalProperties": {
+                "$ref": "#"
+              },
+              "patternProperties": {
+                "^\\d+$": {
+                  "$ref": "#"
+                }
+              },
+              "type": "object"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "get_version",
+      "schema": {
+        "params_schema": null,
+        "returns_schema": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "name": "has_balance",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "asset": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/Hash"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "type": "object"
+        },
+        "returns_schema": {
+          "type": "boolean"
+        }
+      }
+    },
+    {
+      "name": "has_key",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "key": {
+              "$ref": "#/$defs/DataValue"
+            },
+            "tree": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "tree",
+            "key"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "type": "boolean"
+        }
+      }
+    },
+    {
+      "name": "is_asset_tracked",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "asset": {
+              "$ref": "#/$defs/Hash"
+            }
+          },
+          "required": [
+            "asset"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "type": "boolean"
+        }
+      }
+    },
+    {
+      "name": "is_online",
+      "schema": {
+        "params_schema": null,
+        "returns_schema": {
+          "type": "boolean"
+        }
+      }
+    },
+    {
+      "name": "list_transactions",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "accept_blob": {
+              "default": true,
+              "type": "boolean"
+            },
+            "accept_burn": {
+              "default": true,
+              "type": "boolean"
+            },
+            "accept_coinbase": {
+              "default": true,
+              "type": "boolean"
+            },
+            "accept_incoming": {
+              "default": true,
+              "type": "boolean"
+            },
+            "accept_outgoing": {
+              "default": true,
+              "type": "boolean"
+            },
+            "address": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/Address"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "asset": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/Hash"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "contract": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/Hash"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "limit": {
+              "format": "uint",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "max_timestamp": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "max_topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "min_timestamp": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "min_topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "query": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/Query"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "skip": {
+              "format": "uint",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            }
+          },
+          "type": "object"
+        },
+        "returns_schema": {
+          "items": {
+            "$ref": "#/$defs/TransactionEntry"
+          },
+          "type": "array"
+        }
+      }
+    },
+    {
+      "name": "network_info",
+      "schema": {
+        "params_schema": null,
+        "returns_schema": {
+          "properties": {
+            "average_block_time": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "block_reward": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "block_time_target": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "block_version": {
+              "$ref": "#/$defs/BlockVersion"
+            },
+            "burned_supply": {
+              "default": 0,
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "circulating_supply": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "connected_to": {
+              "type": "string"
+            },
+            "dev_reward": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "difficulty": {
+              "$ref": "#/$defs/VarUint"
+            },
+            "emitted_supply": {
+              "default": 0,
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "height": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "maximum_supply": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "mempool_size": {
+              "format": "uint",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "miner_reward": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "network": {
+              "$ref": "#/$defs/Network"
+            },
+            "pruned_topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "stable_topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "stableheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "top_block_hash": {
+              "$ref": "#/$defs/Hash"
+            },
+            "topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": "integer"
+            },
+            "version": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "height",
+            "topoheight",
+            "stableheight",
+            "stable_topoheight",
+            "top_block_hash",
+            "circulating_supply",
+            "maximum_supply",
+            "difficulty",
+            "block_time_target",
+            "average_block_time",
+            "block_reward",
+            "dev_reward",
+            "miner_reward",
+            "mempool_size",
+            "version",
+            "network",
+            "block_version",
+            "connected_to"
+          ],
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "query_db",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "key": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/Query"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "limit": {
+              "format": "uint",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "skip": {
+              "format": "uint",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "tree": {
+              "type": "string"
+            },
+            "value": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/Query"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "tree"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "properties": {
+            "entries": {
+              "additionalProperties": {
+                "$ref": "#/$defs/DataElement"
+              },
+              "patternProperties": {
+                "^\\d+$": {
+                  "$ref": "#/$defs/DataElement"
+                }
+              },
+              "type": "object"
+            },
+            "next": {
+              "format": "uint",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "entries"
+          ],
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "rescan",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "auto_reconnect": {
+              "default": false,
+              "type": "boolean"
+            },
+            "until_topoheight": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            }
+          },
+          "type": "object"
+        },
+        "returns_schema": {
+          "type": "boolean"
+        }
+      }
+    },
+    {
+      "name": "schema",
+      "schema": {
+        "params_schema": null,
+        "returns_schema": {
+          "properties": {
+            "$defs": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "$schema": {
+              "type": "string"
+            },
+            "methods": {
+              "items": {
+                "$ref": "#/$defs/RpcMethodInfo"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "$schema",
+            "$defs",
+            "methods"
+          ],
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "search_transaction",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "hash": {
+              "$ref": "#/$defs/Hash"
+            }
+          },
+          "required": [
+            "hash"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "properties": {
+            "index": {
+              "format": "uint64",
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "is_raw_search": {
+              "type": "boolean"
+            },
+            "transaction": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/TransactionEntry"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "is_raw_search"
+          ],
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "set_offline_mode",
+      "schema": {
+        "params_schema": null,
+        "returns_schema": {
+          "type": "boolean"
+        }
+      }
+    },
+    {
+      "name": "set_online_mode",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "auto_reconnect": {
+              "default": false,
+              "type": "boolean"
+            },
+            "daemon_address": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "daemon_address"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "type": "boolean"
+        }
+      }
+    },
+    {
+      "name": "sign_data",
+      "schema": {
+        "params_schema": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/DataValue"
+            },
+            {
+              "items": {
+                "$ref": "#"
+              },
+              "type": "array"
+            },
+            {
+              "additionalProperties": {
+                "$ref": "#"
+              },
+              "patternProperties": {
+                "^\\d+$": {
+                  "$ref": "#"
+                }
+              },
+              "type": "object"
+            }
+          ]
+        },
+        "returns_schema": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "name": "sign_unsigned_transaction",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "hash": {
+              "$ref": "#/$defs/Hash"
+            },
+            "signer_id": {
+              "format": "uint8",
+              "maximum": 255,
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "hash",
+            "signer_id"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "properties": {
+            "id": {
+              "format": "uint8",
+              "maximum": 255,
+              "minimum": 0,
+              "type": "integer"
+            },
+            "signature": {
+              "$ref": "#/$defs/Signature"
+            }
+          },
+          "required": [
+            "id",
+            "signature"
+          ],
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "split_address",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "address": {
+              "$ref": "#/$defs/Address"
+            }
+          },
+          "required": [
+            "address"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "properties": {
+            "address": {
+              "$ref": "#/$defs/Address"
+            },
+            "integrated_data": {
+              "$ref": "#/$defs/DataElement"
+            },
+            "size": {
+              "format": "uint",
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "address",
+            "integrated_data",
+            "size"
+          ],
+          "type": "object"
+        }
+      }
+    },
+    {
+      "name": "store",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "key": {
+              "$ref": "#/$defs/DataValue"
+            },
+            "tree": {
+              "type": "string"
+            },
+            "value": {
+              "$ref": "#/$defs/DataElement"
+            }
+          },
+          "required": [
+            "tree",
+            "key",
+            "value"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "type": "boolean"
+        }
+      }
+    },
+    {
+      "name": "track_asset",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "asset": {
+              "$ref": "#/$defs/Hash"
+            }
+          },
+          "required": [
+            "asset"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "type": "boolean"
+        }
+      }
+    },
+    {
+      "name": "untrack_asset",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "asset": {
+              "$ref": "#/$defs/Hash"
+            }
+          },
+          "required": [
+            "asset"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "type": "boolean"
+        }
+      }
+    },
+    {
+      "name": "verify_human_readable_proof",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "address": {
+              "$ref": "#/$defs/Address"
+            },
+            "proof": {
+              "$ref": "#/$defs/HumanReadableProof"
+            }
+          },
+          "required": [
+            "proof",
+            "address"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "type": "boolean"
+        }
+      }
+    },
+    {
+      "name": "verify_signed_data",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "address": {
+              "$ref": "#/$defs/Address"
+            },
+            "data": {
+              "$ref": "#/$defs/DataElement"
+            },
+            "signature": {
+              "$ref": "#/$defs/Signature"
+            }
+          },
+          "required": [
+            "data",
+            "signature",
+            "address"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "type": "boolean"
+        }
+      }
+    }
+  ]
+}

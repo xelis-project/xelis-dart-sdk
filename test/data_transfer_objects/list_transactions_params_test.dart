@@ -4,12 +4,12 @@ import 'package:xelis_dart_sdk/xelis_dart_sdk.dart';
 void main() {
   group('ListTransactionsParams', () {
     test('serializes wallet filters using the Rust API field names', () {
-      const params = ListTransactionsParams(
+      final params = ListTransactionsParams(
         asset: 'asset-hash',
-        minTopoHeight: 10,
-        maxTopoHeight: 20,
-        minTimestamp: 1000,
-        maxTimestamp: 2000,
+        minTopoheight: BigInt.from(10),
+        maxTopoheight: BigInt.from(20),
+        minTimestamp: BigInt.from(1000),
+        maxTimestamp: BigInt.from(2000),
         address: 'xel-address',
         contract: 'contract-hash',
         acceptIncoming: true,
@@ -17,17 +17,19 @@ void main() {
         acceptCoinbase: true,
         acceptBurn: false,
         acceptBlob: false,
-        query: {'contains': 'memo'},
+        query: const DataQuery.containsValue(
+          DataValue(RpcJsonValue.string('memo')),
+        ),
         limit: 25,
         skip: 5,
       );
 
       expect(params.toJson(), {
         'asset': 'asset-hash',
-        'min_topoheight': 10,
-        'max_topoheight': 20,
-        'min_timestamp': 1000,
-        'max_timestamp': 2000,
+        'min_topoheight': BigInt.from(10),
+        'max_topoheight': BigInt.from(20),
+        'min_timestamp': BigInt.from(1000),
+        'max_timestamp': BigInt.from(2000),
         'address': 'xel-address',
         'contract': 'contract-hash',
         'accept_incoming': true,
@@ -35,7 +37,7 @@ void main() {
         'accept_coinbase': true,
         'accept_burn': false,
         'accept_blob': false,
-        'query': {'contains': 'memo'},
+        'query': {'contains_value': 'memo'},
         'limit': 25,
         'skip': 5,
       });
@@ -51,14 +53,16 @@ void main() {
         'max_timestamp': 2000,
         'contract': 'contract-hash',
         'accept_blob': false,
+        'query': {'contains_value': 'memo'},
         'limit': 25,
         'skip': 5,
       });
 
-      expect(params.minTimestamp, 1000);
-      expect(params.maxTimestamp, 2000);
+      expect(params.minTimestamp, BigInt.from(1000));
+      expect(params.maxTimestamp, BigInt.from(2000));
       expect(params.contract, 'contract-hash');
       expect(params.acceptBlob, isFalse);
+      expect(params.query?.toJson(), {'contains_value': 'memo'});
       expect(params.limit, 25);
       expect(params.skip, 5);
     });
