@@ -1,0 +1,20 @@
+name: XELIS v1.24.0 integration
+
+on:
+  workflow_dispatch:
+
+jobs:
+  integration:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: dart-lang/setup-dart@v1
+      - run: dart pub get
+      - name: Test daemon and wallet v1.24.0
+        env:
+          REQUIRE_XELIS_V1_24_INTEGRATION: 'true'
+          XELIS_DAEMON_ENDPOINT: ${{ secrets.XELIS_V1_24_DAEMON_ENDPOINT }}
+          XELIS_WALLET_ENDPOINT: ${{ secrets.XELIS_V1_24_WALLET_ENDPOINT }}
+          XELIS_WALLET_USERNAME: ${{ secrets.XELIS_V1_24_WALLET_USERNAME }}
+          XELIS_WALLET_PASSWORD: ${{ secrets.XELIS_V1_24_WALLET_PASSWORD }}
+        run: dart test integration_test/v1_24_live_test.dart

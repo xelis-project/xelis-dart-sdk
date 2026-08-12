@@ -14,7 +14,32 @@ jobs:
     steps:
       - uses: actions/checkout@v7
       - uses: dart-lang/setup-dart@v1
+      - name: Checkout xelis-blockchain v1.24.0
+        uses: actions/checkout@v7
+        with:
+          repository: xelis-project/xelis-blockchain
+          ref: v1.24.0
+          path: .dart_tool/xelis-blockchain-v1.24
 
       - run: dart pub get
       - run: dart format --output=none --set-exit-if-changed .
+      - run: dart run tool/check_dto_architecture.dart
+      - run: >-
+          dart run tool/check_upstream_rpc_contract.dart
+          .dart_tool/xelis-blockchain-v1.24
       - run: dart analyze
+      - run: dart test
+      - run: >-
+          dart test --platform chrome
+          test/utils/bigint_json_test.dart
+          test/data_transfer_objects/rpc_value_cell_test.dart
+          test/data_transfer_objects/freezed_rpc_models_test.dart
+          test/data_transfer_objects/rpc_contract_log_test.dart
+          test/repositories/rpc_json_value_test.dart
+      - run: dart run build_runner build
+      - run: git diff --exit-code
+      - run: dart doc --validate-links -o .dart_tool/dartdoc
+      - run: >-
+          dart compile exe example/xelis_dart_sdk_example.dart
+          -o .dart_tool/xelis_dart_sdk_example
+      - run: dart pub publish --dry-run

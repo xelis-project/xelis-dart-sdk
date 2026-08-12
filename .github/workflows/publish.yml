@@ -18,7 +18,52 @@ jobs:
     steps:
       - uses: actions/checkout@v7
       - uses: dart-lang/setup-dart@v1
+      - name: Checkout xelis-blockchain v1.24.0
+        uses: actions/checkout@v7
+        with:
+          repository: xelis-project/xelis-blockchain
+          ref: v1.24.0
+          path: .dart_tool/xelis-blockchain-v1.24
       - name: Install dependencies
         run: dart pub get
+      - name: Format
+        run: dart format --output=none --set-exit-if-changed .
+      - name: Architecture
+        run: dart run tool/check_dto_architecture.dart
+      - name: Stable upstream RPC contract
+        run: >-
+          dart run tool/check_upstream_rpc_contract.dart
+          .dart_tool/xelis-blockchain-v1.24
+      - name: Analyze
+        run: dart analyze
+      - name: Test
+        run: dart test
+      - name: Test critical Web contracts
+        run: >-
+          dart test --platform chrome
+          test/utils/bigint_json_test.dart
+          test/data_transfer_objects/rpc_value_cell_test.dart
+          test/data_transfer_objects/freezed_rpc_models_test.dart
+          test/data_transfer_objects/rpc_contract_log_test.dart
+          test/repositories/rpc_json_value_test.dart
+      - name: Generated sources
+        run: dart run build_runner build
+      - run: git diff --exit-code
+      - name: Dartdoc
+        run: dart doc --validate-links -o .dart_tool/dartdoc
+      - name: Compile example
+        run: >-
+          dart compile exe example/xelis_dart_sdk_example.dart
+          -o .dart_tool/xelis_dart_sdk_example
+      - name: Integration against XELIS v1.24.0
+        env:
+          REQUIRE_XELIS_V1_24_INTEGRATION: 'true'
+          XELIS_DAEMON_ENDPOINT: ${{ secrets.XELIS_V1_24_DAEMON_ENDPOINT }}
+          XELIS_WALLET_ENDPOINT: ${{ secrets.XELIS_V1_24_WALLET_ENDPOINT }}
+          XELIS_WALLET_USERNAME: ${{ secrets.XELIS_V1_24_WALLET_USERNAME }}
+          XELIS_WALLET_PASSWORD: ${{ secrets.XELIS_V1_24_WALLET_PASSWORD }}
+        run: dart test integration_test/v1_24_live_test.dart
+      - name: Validate package
+        run: dart pub publish --dry-run
       - name: Publish
         run: dart pub publish --force
