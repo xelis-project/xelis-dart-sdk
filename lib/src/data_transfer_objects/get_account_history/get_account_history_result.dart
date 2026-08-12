@@ -1,29 +1,60 @@
-// ignore_for_file: invalid_annotation_target
-
 import 'package:freezed_annotation/freezed_annotation.dart';
-
-import 'package:xelis_dart_sdk/xelis_dart_sdk.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/get_account_history/account_history_type.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/core/rpc_extra_fields.dart';
+import 'package:xelis_dart_sdk/src/utils/rpc_json.dart';
 
 part 'get_account_history_result.freezed.dart';
 
-part 'get_account_history_result.g.dart';
-
 /// @nodoc
-@freezed
+@Freezed(fromJson: false, toJson: false)
 abstract class GetAccountHistoryResult with _$GetAccountHistoryResult {
   /// @nodoc
   const factory GetAccountHistoryResult({
-    @JsonKey(name: 'topoheight') required int topoheight,
+    @JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson)
+    required BigInt topoheight,
     @JsonKey(name: 'hash') required String hash,
-    @JsonKey(name: 'block_timestamp') required int blockTimestamp,
-    @JsonKey(name: 'burn') BurnHistory? burnHistory,
-    @JsonKey(name: 'mining') MiningHistory? miningHistory,
-    @JsonKey(name: 'outgoing') OutgoingHistory? outgoingHistory,
-    @JsonKey(name: 'incoming') IncomingHistory? incomingHistory,
-    @JsonKey(name: 'dev_fee') DevFeeHistory? devFeeHistory,
+    @JsonKey(
+      name: 'block_timestamp',
+      fromJson: rpcBigInt,
+      toJson: rpcBigIntToJson,
+    )
+    required BigInt blockTimestamp,
+    required AccountHistoryType historyType,
+    @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = _GetAccountHistoryResult;
 
+  const GetAccountHistoryResult._();
+
   /// @nodoc
-  factory GetAccountHistoryResult.fromJson(Map<String, dynamic> json) =>
-      _$GetAccountHistoryResultFromJson(json);
+  factory GetAccountHistoryResult.fromJson(Map<String, dynamic> json) {
+    final historyType = AccountHistoryType.fromFlattenedJson(json);
+    final knownFields = {..._accountHistoryEntryFields};
+    if (historyType case UnknownAccountHistoryType(:final type)) {
+      knownFields.add(type);
+    } else {
+      knownFields.addAll(historyType.toWireJson().keys);
+    }
+    return GetAccountHistoryResult(
+      topoheight: rpcBigInt(json['topoheight']),
+      hash: json['hash'] as String,
+      blockTimestamp: rpcBigInt(json['block_timestamp']),
+      historyType: historyType,
+      extraFields: RpcExtraFields.capture(json, knownFields),
+    );
+  }
+
+  /// Serializes known fields and optionally restores fields received from wire.
+  Map<String, Object?> toWireJson({bool includeExtraFields = false}) =>
+      extraFields.mergeInto({
+        'topoheight': topoheight,
+        'hash': hash,
+        ...historyType.toWireJson(includeExtraFields: includeExtraFields),
+        'block_timestamp': blockTimestamp,
+      }, includeExtraFields: includeExtraFields);
 }
+
+const _accountHistoryEntryFields = {
+  'topoheight',
+  'hash',
+  'block_timestamp',
+};

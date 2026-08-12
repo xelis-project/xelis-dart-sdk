@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$TransferOutEntry {
 
-@JsonKey(name: 'destination') String get destination;@JsonKey(name: 'amount') int get amount;@JsonKey(name: 'asset') String get asset;@JsonKey(name: 'extra_data') ExtraData? get extraData;
+@JsonKey(name: 'destination') String get destination;@JsonKey(name: 'amount', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt get amount;@JsonKey(name: 'asset') String get asset;@JsonKey(name: 'extra_data') ExtraData? get extraData;@JsonKey(includeFromJson: false, includeToJson: false) RpcExtraFields get extraFields;
 /// Create a copy of TransferOutEntry
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,16 +28,16 @@ $TransferOutEntryCopyWith<TransferOutEntry> get copyWith => _$TransferOutEntryCo
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is TransferOutEntry&&(identical(other.destination, destination) || other.destination == destination)&&(identical(other.amount, amount) || other.amount == amount)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.extraData, extraData) || other.extraData == extraData));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is TransferOutEntry&&(identical(other.destination, destination) || other.destination == destination)&&(identical(other.amount, amount) || other.amount == amount)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.extraData, extraData) || other.extraData == extraData)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,destination,amount,asset,extraData);
+int get hashCode => Object.hash(runtimeType,destination,amount,asset,extraData,extraFields);
 
 @override
 String toString() {
-  return 'TransferOutEntry(destination: $destination, amount: $amount, asset: $asset, extraData: $extraData)';
+  return 'TransferOutEntry(destination: $destination, amount: $amount, asset: $asset, extraData: $extraData, extraFields: $extraFields)';
 }
 
 
@@ -48,11 +48,11 @@ abstract mixin class $TransferOutEntryCopyWith<$Res>  {
   factory $TransferOutEntryCopyWith(TransferOutEntry value, $Res Function(TransferOutEntry) _then) = _$TransferOutEntryCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(name: 'destination') String destination,@JsonKey(name: 'amount') int amount,@JsonKey(name: 'asset') String asset,@JsonKey(name: 'extra_data') ExtraData? extraData
+@JsonKey(name: 'destination') String destination,@JsonKey(name: 'amount', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt amount,@JsonKey(name: 'asset') String asset,@JsonKey(name: 'extra_data') ExtraData? extraData,@JsonKey(includeFromJson: false, includeToJson: false) RpcExtraFields extraFields
 });
 
 
-$ExtraDataCopyWith<$Res>? get extraData;
+$ExtraDataCopyWith<$Res>? get extraData;$RpcExtraFieldsCopyWith<$Res> get extraFields;
 
 }
 /// @nodoc
@@ -65,13 +65,14 @@ class _$TransferOutEntryCopyWithImpl<$Res>
 
 /// Create a copy of TransferOutEntry
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? destination = null,Object? amount = null,Object? asset = null,Object? extraData = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? destination = null,Object? amount = null,Object? asset = null,Object? extraData = freezed,Object? extraFields = null,}) {
   return _then(_self.copyWith(
 destination: null == destination ? _self.destination : destination // ignore: cast_nullable_to_non_nullable
 as String,amount: null == amount ? _self.amount : amount // ignore: cast_nullable_to_non_nullable
-as int,asset: null == asset ? _self.asset : asset // ignore: cast_nullable_to_non_nullable
+as BigInt,asset: null == asset ? _self.asset : asset // ignore: cast_nullable_to_non_nullable
 as String,extraData: freezed == extraData ? _self.extraData : extraData // ignore: cast_nullable_to_non_nullable
-as ExtraData?,
+as ExtraData?,extraFields: null == extraFields ? _self.extraFields : extraFields // ignore: cast_nullable_to_non_nullable
+as RpcExtraFields,
   ));
 }
 /// Create a copy of TransferOutEntry
@@ -85,6 +86,15 @@ $ExtraDataCopyWith<$Res>? get extraData {
 
   return $ExtraDataCopyWith<$Res>(_self.extraData!, (value) {
     return _then(_self.copyWith(extraData: value));
+  });
+}/// Create a copy of TransferOutEntry
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$RpcExtraFieldsCopyWith<$Res> get extraFields {
+  
+  return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
+    return _then(_self.copyWith(extraFields: value));
   });
 }
 }
@@ -168,10 +178,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'destination')  String destination, @JsonKey(name: 'amount')  int amount, @JsonKey(name: 'asset')  String asset, @JsonKey(name: 'extra_data')  ExtraData? extraData)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'destination')  String destination, @JsonKey(name: 'amount', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt amount, @JsonKey(name: 'asset')  String asset, @JsonKey(name: 'extra_data')  ExtraData? extraData, @JsonKey(includeFromJson: false, includeToJson: false)  RpcExtraFields extraFields)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _TransferOutEntry() when $default != null:
-return $default(_that.destination,_that.amount,_that.asset,_that.extraData);case _:
+return $default(_that.destination,_that.amount,_that.asset,_that.extraData,_that.extraFields);case _:
   return orElse();
 
 }
@@ -189,10 +199,10 @@ return $default(_that.destination,_that.amount,_that.asset,_that.extraData);case
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'destination')  String destination, @JsonKey(name: 'amount')  int amount, @JsonKey(name: 'asset')  String asset, @JsonKey(name: 'extra_data')  ExtraData? extraData)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'destination')  String destination, @JsonKey(name: 'amount', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt amount, @JsonKey(name: 'asset')  String asset, @JsonKey(name: 'extra_data')  ExtraData? extraData, @JsonKey(includeFromJson: false, includeToJson: false)  RpcExtraFields extraFields)  $default,) {final _that = this;
 switch (_that) {
 case _TransferOutEntry():
-return $default(_that.destination,_that.amount,_that.asset,_that.extraData);case _:
+return $default(_that.destination,_that.amount,_that.asset,_that.extraData,_that.extraFields);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -209,10 +219,10 @@ return $default(_that.destination,_that.amount,_that.asset,_that.extraData);case
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'destination')  String destination, @JsonKey(name: 'amount')  int amount, @JsonKey(name: 'asset')  String asset, @JsonKey(name: 'extra_data')  ExtraData? extraData)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'destination')  String destination, @JsonKey(name: 'amount', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt amount, @JsonKey(name: 'asset')  String asset, @JsonKey(name: 'extra_data')  ExtraData? extraData, @JsonKey(includeFromJson: false, includeToJson: false)  RpcExtraFields extraFields)?  $default,) {final _that = this;
 switch (_that) {
 case _TransferOutEntry() when $default != null:
-return $default(_that.destination,_that.amount,_that.asset,_that.extraData);case _:
+return $default(_that.destination,_that.amount,_that.asset,_that.extraData,_that.extraFields);case _:
   return null;
 
 }
@@ -223,14 +233,15 @@ return $default(_that.destination,_that.amount,_that.asset,_that.extraData);case
 /// @nodoc
 @JsonSerializable()
 
-class _TransferOutEntry implements TransferOutEntry {
-  const _TransferOutEntry({@JsonKey(name: 'destination') required this.destination, @JsonKey(name: 'amount') required this.amount, @JsonKey(name: 'asset') required this.asset, @JsonKey(name: 'extra_data') this.extraData});
+class _TransferOutEntry extends TransferOutEntry {
+  const _TransferOutEntry({@JsonKey(name: 'destination') required this.destination, @JsonKey(name: 'amount', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.amount, @JsonKey(name: 'asset') required this.asset, @JsonKey(name: 'extra_data') this.extraData, @JsonKey(includeFromJson: false, includeToJson: false) this.extraFields = const RpcExtraFields()}): super._();
   factory _TransferOutEntry.fromJson(Map<String, dynamic> json) => _$TransferOutEntryFromJson(json);
 
 @override@JsonKey(name: 'destination') final  String destination;
-@override@JsonKey(name: 'amount') final  int amount;
+@override@JsonKey(name: 'amount', fromJson: rpcBigInt, toJson: rpcBigIntToJson) final  BigInt amount;
 @override@JsonKey(name: 'asset') final  String asset;
 @override@JsonKey(name: 'extra_data') final  ExtraData? extraData;
+@override@JsonKey(includeFromJson: false, includeToJson: false) final  RpcExtraFields extraFields;
 
 /// Create a copy of TransferOutEntry
 /// with the given fields replaced by the non-null parameter values.
@@ -245,16 +256,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _TransferOutEntry&&(identical(other.destination, destination) || other.destination == destination)&&(identical(other.amount, amount) || other.amount == amount)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.extraData, extraData) || other.extraData == extraData));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _TransferOutEntry&&(identical(other.destination, destination) || other.destination == destination)&&(identical(other.amount, amount) || other.amount == amount)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.extraData, extraData) || other.extraData == extraData)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,destination,amount,asset,extraData);
+int get hashCode => Object.hash(runtimeType,destination,amount,asset,extraData,extraFields);
 
 @override
 String toString() {
-  return 'TransferOutEntry(destination: $destination, amount: $amount, asset: $asset, extraData: $extraData)';
+  return 'TransferOutEntry(destination: $destination, amount: $amount, asset: $asset, extraData: $extraData, extraFields: $extraFields)';
 }
 
 
@@ -265,11 +276,11 @@ abstract mixin class _$TransferOutEntryCopyWith<$Res> implements $TransferOutEnt
   factory _$TransferOutEntryCopyWith(_TransferOutEntry value, $Res Function(_TransferOutEntry) _then) = __$TransferOutEntryCopyWithImpl;
 @override @useResult
 $Res call({
-@JsonKey(name: 'destination') String destination,@JsonKey(name: 'amount') int amount,@JsonKey(name: 'asset') String asset,@JsonKey(name: 'extra_data') ExtraData? extraData
+@JsonKey(name: 'destination') String destination,@JsonKey(name: 'amount', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt amount,@JsonKey(name: 'asset') String asset,@JsonKey(name: 'extra_data') ExtraData? extraData,@JsonKey(includeFromJson: false, includeToJson: false) RpcExtraFields extraFields
 });
 
 
-@override $ExtraDataCopyWith<$Res>? get extraData;
+@override $ExtraDataCopyWith<$Res>? get extraData;@override $RpcExtraFieldsCopyWith<$Res> get extraFields;
 
 }
 /// @nodoc
@@ -282,13 +293,14 @@ class __$TransferOutEntryCopyWithImpl<$Res>
 
 /// Create a copy of TransferOutEntry
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? destination = null,Object? amount = null,Object? asset = null,Object? extraData = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? destination = null,Object? amount = null,Object? asset = null,Object? extraData = freezed,Object? extraFields = null,}) {
   return _then(_TransferOutEntry(
 destination: null == destination ? _self.destination : destination // ignore: cast_nullable_to_non_nullable
 as String,amount: null == amount ? _self.amount : amount // ignore: cast_nullable_to_non_nullable
-as int,asset: null == asset ? _self.asset : asset // ignore: cast_nullable_to_non_nullable
+as BigInt,asset: null == asset ? _self.asset : asset // ignore: cast_nullable_to_non_nullable
 as String,extraData: freezed == extraData ? _self.extraData : extraData // ignore: cast_nullable_to_non_nullable
-as ExtraData?,
+as ExtraData?,extraFields: null == extraFields ? _self.extraFields : extraFields // ignore: cast_nullable_to_non_nullable
+as RpcExtraFields,
   ));
 }
 
@@ -303,6 +315,15 @@ $ExtraDataCopyWith<$Res>? get extraData {
 
   return $ExtraDataCopyWith<$Res>(_self.extraData!, (value) {
     return _then(_self.copyWith(extraData: value));
+  });
+}/// Create a copy of TransferOutEntry
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$RpcExtraFieldsCopyWith<$Res> get extraFields {
+  
+  return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
+    return _then(_self.copyWith(extraFields: value));
   });
 }
 }

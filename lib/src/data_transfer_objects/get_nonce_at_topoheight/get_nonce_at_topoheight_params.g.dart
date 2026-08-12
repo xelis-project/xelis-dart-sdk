@@ -8,16 +8,16 @@ part of 'get_nonce_at_topoheight_params.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_GetNonceAtTopoHeightParams _$GetNonceAtTopoHeightParamsFromJson(
+_GetNonceAtTopoheightParams _$GetNonceAtTopoheightParamsFromJson(
   Map<String, dynamic> json,
-) => _GetNonceAtTopoHeightParams(
+) => _GetNonceAtTopoheightParams(
   address: json['address'] as String,
-  topoheight: (json['topoheight'] as num).toInt(),
+  topoheight: rpcBigInt(json['topoheight']),
 );
 
-Map<String, dynamic> _$GetNonceAtTopoHeightParamsToJson(
-  _GetNonceAtTopoHeightParams instance,
+Map<String, dynamic> _$GetNonceAtTopoheightParamsToJson(
+  _GetNonceAtTopoheightParams instance,
 ) => <String, dynamic>{
   'address': instance.address,
-  'topoheight': instance.topoheight,
+  'topoheight': rpcBigIntToJson(instance.topoheight),
 };

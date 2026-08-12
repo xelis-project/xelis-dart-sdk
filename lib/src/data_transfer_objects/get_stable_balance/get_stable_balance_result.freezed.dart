@@ -11,33 +11,30 @@ part of 'get_stable_balance_result.dart';
 
 // dart format off
 T _$identity<T>(T value) => value;
-
 /// @nodoc
 mixin _$GetStableBalanceResult {
 
-@JsonKey(name: 'version') BalanceVersion get versionedBalance;@JsonKey(name: 'stable_topoheight') int get stableTopoheight;@JsonKey(name: 'stable_block_hash') String get stableBlockHash;
+@JsonKey(name: 'version') BalanceVersion get versionedBalance;@JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt get topoheight;@JsonKey(name: 'stable_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt get stableTopoheight;@JsonKey(name: 'stable_block_hash') String get stableBlockHash;@JsonKey(includeFromJson: false, includeToJson: false) RpcExtraFields get extraFields;
 /// Create a copy of GetStableBalanceResult
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
 $GetStableBalanceResultCopyWith<GetStableBalanceResult> get copyWith => _$GetStableBalanceResultCopyWithImpl<GetStableBalanceResult>(this as GetStableBalanceResult, _$identity);
 
-  /// Serializes this GetStableBalanceResult to a JSON map.
-  Map<String, dynamic> toJson();
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetStableBalanceResult&&(identical(other.versionedBalance, versionedBalance) || other.versionedBalance == versionedBalance)&&(identical(other.stableTopoheight, stableTopoheight) || other.stableTopoheight == stableTopoheight)&&(identical(other.stableBlockHash, stableBlockHash) || other.stableBlockHash == stableBlockHash));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetStableBalanceResult&&(identical(other.versionedBalance, versionedBalance) || other.versionedBalance == versionedBalance)&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&(identical(other.stableTopoheight, stableTopoheight) || other.stableTopoheight == stableTopoheight)&&(identical(other.stableBlockHash, stableBlockHash) || other.stableBlockHash == stableBlockHash)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
-@JsonKey(includeFromJson: false, includeToJson: false)
+
 @override
-int get hashCode => Object.hash(runtimeType,versionedBalance,stableTopoheight,stableBlockHash);
+int get hashCode => Object.hash(runtimeType,versionedBalance,topoheight,stableTopoheight,stableBlockHash,extraFields);
 
 @override
 String toString() {
-  return 'GetStableBalanceResult(versionedBalance: $versionedBalance, stableTopoheight: $stableTopoheight, stableBlockHash: $stableBlockHash)';
+  return 'GetStableBalanceResult(versionedBalance: $versionedBalance, topoheight: $topoheight, stableTopoheight: $stableTopoheight, stableBlockHash: $stableBlockHash, extraFields: $extraFields)';
 }
 
 
@@ -48,11 +45,11 @@ abstract mixin class $GetStableBalanceResultCopyWith<$Res>  {
   factory $GetStableBalanceResultCopyWith(GetStableBalanceResult value, $Res Function(GetStableBalanceResult) _then) = _$GetStableBalanceResultCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(name: 'version') BalanceVersion versionedBalance,@JsonKey(name: 'stable_topoheight') int stableTopoheight,@JsonKey(name: 'stable_block_hash') String stableBlockHash
+@JsonKey(name: 'version') BalanceVersion versionedBalance,@JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt topoheight,@JsonKey(name: 'stable_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt stableTopoheight,@JsonKey(name: 'stable_block_hash') String stableBlockHash,@JsonKey(includeFromJson: false, includeToJson: false) RpcExtraFields extraFields
 });
 
 
-$BalanceVersionCopyWith<$Res> get versionedBalance;
+$BalanceVersionCopyWith<$Res> get versionedBalance;$RpcExtraFieldsCopyWith<$Res> get extraFields;
 
 }
 /// @nodoc
@@ -65,12 +62,14 @@ class _$GetStableBalanceResultCopyWithImpl<$Res>
 
 /// Create a copy of GetStableBalanceResult
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? versionedBalance = null,Object? stableTopoheight = null,Object? stableBlockHash = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? versionedBalance = null,Object? topoheight = null,Object? stableTopoheight = null,Object? stableBlockHash = null,Object? extraFields = null,}) {
   return _then(_self.copyWith(
 versionedBalance: null == versionedBalance ? _self.versionedBalance : versionedBalance // ignore: cast_nullable_to_non_nullable
-as BalanceVersion,stableTopoheight: null == stableTopoheight ? _self.stableTopoheight : stableTopoheight // ignore: cast_nullable_to_non_nullable
-as int,stableBlockHash: null == stableBlockHash ? _self.stableBlockHash : stableBlockHash // ignore: cast_nullable_to_non_nullable
-as String,
+as BalanceVersion,topoheight: null == topoheight ? _self.topoheight : topoheight // ignore: cast_nullable_to_non_nullable
+as BigInt,stableTopoheight: null == stableTopoheight ? _self.stableTopoheight : stableTopoheight // ignore: cast_nullable_to_non_nullable
+as BigInt,stableBlockHash: null == stableBlockHash ? _self.stableBlockHash : stableBlockHash // ignore: cast_nullable_to_non_nullable
+as String,extraFields: null == extraFields ? _self.extraFields : extraFields // ignore: cast_nullable_to_non_nullable
+as RpcExtraFields,
   ));
 }
 /// Create a copy of GetStableBalanceResult
@@ -78,9 +77,18 @@ as String,
 @override
 @pragma('vm:prefer-inline')
 $BalanceVersionCopyWith<$Res> get versionedBalance {
-  
+
   return $BalanceVersionCopyWith<$Res>(_self.versionedBalance, (value) {
     return _then(_self.copyWith(versionedBalance: value));
+  });
+}/// Create a copy of GetStableBalanceResult
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$RpcExtraFieldsCopyWith<$Res> get extraFields {
+
+  return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
+    return _then(_self.copyWith(extraFields: value));
   });
 }
 }
@@ -164,10 +172,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'version')  BalanceVersion versionedBalance, @JsonKey(name: 'stable_topoheight')  int stableTopoheight, @JsonKey(name: 'stable_block_hash')  String stableBlockHash)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'version')  BalanceVersion versionedBalance, @JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt topoheight, @JsonKey(name: 'stable_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt stableTopoheight, @JsonKey(name: 'stable_block_hash')  String stableBlockHash, @JsonKey(includeFromJson: false, includeToJson: false)  RpcExtraFields extraFields)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _GetStableBalanceResult() when $default != null:
-return $default(_that.versionedBalance,_that.stableTopoheight,_that.stableBlockHash);case _:
+return $default(_that.versionedBalance,_that.topoheight,_that.stableTopoheight,_that.stableBlockHash,_that.extraFields);case _:
   return orElse();
 
 }
@@ -185,10 +193,10 @@ return $default(_that.versionedBalance,_that.stableTopoheight,_that.stableBlockH
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'version')  BalanceVersion versionedBalance, @JsonKey(name: 'stable_topoheight')  int stableTopoheight, @JsonKey(name: 'stable_block_hash')  String stableBlockHash)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'version')  BalanceVersion versionedBalance, @JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt topoheight, @JsonKey(name: 'stable_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt stableTopoheight, @JsonKey(name: 'stable_block_hash')  String stableBlockHash, @JsonKey(includeFromJson: false, includeToJson: false)  RpcExtraFields extraFields)  $default,) {final _that = this;
 switch (_that) {
 case _GetStableBalanceResult():
-return $default(_that.versionedBalance,_that.stableTopoheight,_that.stableBlockHash);case _:
+return $default(_that.versionedBalance,_that.topoheight,_that.stableTopoheight,_that.stableBlockHash,_that.extraFields);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -205,10 +213,10 @@ return $default(_that.versionedBalance,_that.stableTopoheight,_that.stableBlockH
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'version')  BalanceVersion versionedBalance, @JsonKey(name: 'stable_topoheight')  int stableTopoheight, @JsonKey(name: 'stable_block_hash')  String stableBlockHash)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'version')  BalanceVersion versionedBalance, @JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt topoheight, @JsonKey(name: 'stable_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt stableTopoheight, @JsonKey(name: 'stable_block_hash')  String stableBlockHash, @JsonKey(includeFromJson: false, includeToJson: false)  RpcExtraFields extraFields)?  $default,) {final _that = this;
 switch (_that) {
 case _GetStableBalanceResult() when $default != null:
-return $default(_that.versionedBalance,_that.stableTopoheight,_that.stableBlockHash);case _:
+return $default(_that.versionedBalance,_that.topoheight,_that.stableTopoheight,_that.stableBlockHash,_that.extraFields);case _:
   return null;
 
 }
@@ -217,15 +225,17 @@ return $default(_that.versionedBalance,_that.stableTopoheight,_that.stableBlockH
 }
 
 /// @nodoc
-@JsonSerializable()
 
-class _GetStableBalanceResult implements GetStableBalanceResult {
-  const _GetStableBalanceResult({@JsonKey(name: 'version') required this.versionedBalance, @JsonKey(name: 'stable_topoheight') required this.stableTopoheight, @JsonKey(name: 'stable_block_hash') required this.stableBlockHash});
-  factory _GetStableBalanceResult.fromJson(Map<String, dynamic> json) => _$GetStableBalanceResultFromJson(json);
+
+class _GetStableBalanceResult extends GetStableBalanceResult {
+  const _GetStableBalanceResult({@JsonKey(name: 'version') required this.versionedBalance, @JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.topoheight, @JsonKey(name: 'stable_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.stableTopoheight, @JsonKey(name: 'stable_block_hash') required this.stableBlockHash, @JsonKey(includeFromJson: false, includeToJson: false) this.extraFields = const RpcExtraFields()}): super._();
+
 
 @override@JsonKey(name: 'version') final  BalanceVersion versionedBalance;
-@override@JsonKey(name: 'stable_topoheight') final  int stableTopoheight;
+@override@JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) final  BigInt topoheight;
+@override@JsonKey(name: 'stable_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) final  BigInt stableTopoheight;
 @override@JsonKey(name: 'stable_block_hash') final  String stableBlockHash;
+@override@JsonKey(includeFromJson: false, includeToJson: false) final  RpcExtraFields extraFields;
 
 /// Create a copy of GetStableBalanceResult
 /// with the given fields replaced by the non-null parameter values.
@@ -233,23 +243,20 @@ class _GetStableBalanceResult implements GetStableBalanceResult {
 @pragma('vm:prefer-inline')
 _$GetStableBalanceResultCopyWith<_GetStableBalanceResult> get copyWith => __$GetStableBalanceResultCopyWithImpl<_GetStableBalanceResult>(this, _$identity);
 
-@override
-Map<String, dynamic> toJson() {
-  return _$GetStableBalanceResultToJson(this, );
-}
+
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetStableBalanceResult&&(identical(other.versionedBalance, versionedBalance) || other.versionedBalance == versionedBalance)&&(identical(other.stableTopoheight, stableTopoheight) || other.stableTopoheight == stableTopoheight)&&(identical(other.stableBlockHash, stableBlockHash) || other.stableBlockHash == stableBlockHash));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetStableBalanceResult&&(identical(other.versionedBalance, versionedBalance) || other.versionedBalance == versionedBalance)&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&(identical(other.stableTopoheight, stableTopoheight) || other.stableTopoheight == stableTopoheight)&&(identical(other.stableBlockHash, stableBlockHash) || other.stableBlockHash == stableBlockHash)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
-@JsonKey(includeFromJson: false, includeToJson: false)
+
 @override
-int get hashCode => Object.hash(runtimeType,versionedBalance,stableTopoheight,stableBlockHash);
+int get hashCode => Object.hash(runtimeType,versionedBalance,topoheight,stableTopoheight,stableBlockHash,extraFields);
 
 @override
 String toString() {
-  return 'GetStableBalanceResult(versionedBalance: $versionedBalance, stableTopoheight: $stableTopoheight, stableBlockHash: $stableBlockHash)';
+  return 'GetStableBalanceResult(versionedBalance: $versionedBalance, topoheight: $topoheight, stableTopoheight: $stableTopoheight, stableBlockHash: $stableBlockHash, extraFields: $extraFields)';
 }
 
 
@@ -260,11 +267,11 @@ abstract mixin class _$GetStableBalanceResultCopyWith<$Res> implements $GetStabl
   factory _$GetStableBalanceResultCopyWith(_GetStableBalanceResult value, $Res Function(_GetStableBalanceResult) _then) = __$GetStableBalanceResultCopyWithImpl;
 @override @useResult
 $Res call({
-@JsonKey(name: 'version') BalanceVersion versionedBalance,@JsonKey(name: 'stable_topoheight') int stableTopoheight,@JsonKey(name: 'stable_block_hash') String stableBlockHash
+@JsonKey(name: 'version') BalanceVersion versionedBalance,@JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt topoheight,@JsonKey(name: 'stable_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt stableTopoheight,@JsonKey(name: 'stable_block_hash') String stableBlockHash,@JsonKey(includeFromJson: false, includeToJson: false) RpcExtraFields extraFields
 });
 
 
-@override $BalanceVersionCopyWith<$Res> get versionedBalance;
+@override $BalanceVersionCopyWith<$Res> get versionedBalance;@override $RpcExtraFieldsCopyWith<$Res> get extraFields;
 
 }
 /// @nodoc
@@ -277,12 +284,14 @@ class __$GetStableBalanceResultCopyWithImpl<$Res>
 
 /// Create a copy of GetStableBalanceResult
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? versionedBalance = null,Object? stableTopoheight = null,Object? stableBlockHash = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? versionedBalance = null,Object? topoheight = null,Object? stableTopoheight = null,Object? stableBlockHash = null,Object? extraFields = null,}) {
   return _then(_GetStableBalanceResult(
 versionedBalance: null == versionedBalance ? _self.versionedBalance : versionedBalance // ignore: cast_nullable_to_non_nullable
-as BalanceVersion,stableTopoheight: null == stableTopoheight ? _self.stableTopoheight : stableTopoheight // ignore: cast_nullable_to_non_nullable
-as int,stableBlockHash: null == stableBlockHash ? _self.stableBlockHash : stableBlockHash // ignore: cast_nullable_to_non_nullable
-as String,
+as BalanceVersion,topoheight: null == topoheight ? _self.topoheight : topoheight // ignore: cast_nullable_to_non_nullable
+as BigInt,stableTopoheight: null == stableTopoheight ? _self.stableTopoheight : stableTopoheight // ignore: cast_nullable_to_non_nullable
+as BigInt,stableBlockHash: null == stableBlockHash ? _self.stableBlockHash : stableBlockHash // ignore: cast_nullable_to_non_nullable
+as String,extraFields: null == extraFields ? _self.extraFields : extraFields // ignore: cast_nullable_to_non_nullable
+as RpcExtraFields,
   ));
 }
 
@@ -291,9 +300,18 @@ as String,
 @override
 @pragma('vm:prefer-inline')
 $BalanceVersionCopyWith<$Res> get versionedBalance {
-  
+
   return $BalanceVersionCopyWith<$Res>(_self.versionedBalance, (value) {
     return _then(_self.copyWith(versionedBalance: value));
+  });
+}/// Create a copy of GetStableBalanceResult
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$RpcExtraFieldsCopyWith<$Res> get extraFields {
+
+  return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
+    return _then(_self.copyWith(extraFields: value));
   });
 }
 }

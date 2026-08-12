@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$GetSizeOnDiskResult {
 
-@JsonKey(name: 'size_bytes') int get sizeBytes;@JsonKey(name: 'size_formatted') String get sizeFormatted;
+@JsonKey(name: 'size_bytes', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt get sizeBytes;@JsonKey(name: 'size_formatted') String get sizeFormatted;@JsonKey(includeFromJson: false, includeToJson: false) RpcExtraFields get extraFields;
 /// Create a copy of GetSizeOnDiskResult
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,16 +28,16 @@ $GetSizeOnDiskResultCopyWith<GetSizeOnDiskResult> get copyWith => _$GetSizeOnDis
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetSizeOnDiskResult&&(identical(other.sizeBytes, sizeBytes) || other.sizeBytes == sizeBytes)&&(identical(other.sizeFormatted, sizeFormatted) || other.sizeFormatted == sizeFormatted));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetSizeOnDiskResult&&(identical(other.sizeBytes, sizeBytes) || other.sizeBytes == sizeBytes)&&(identical(other.sizeFormatted, sizeFormatted) || other.sizeFormatted == sizeFormatted)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,sizeBytes,sizeFormatted);
+int get hashCode => Object.hash(runtimeType,sizeBytes,sizeFormatted,extraFields);
 
 @override
 String toString() {
-  return 'GetSizeOnDiskResult(sizeBytes: $sizeBytes, sizeFormatted: $sizeFormatted)';
+  return 'GetSizeOnDiskResult(sizeBytes: $sizeBytes, sizeFormatted: $sizeFormatted, extraFields: $extraFields)';
 }
 
 
@@ -48,11 +48,11 @@ abstract mixin class $GetSizeOnDiskResultCopyWith<$Res>  {
   factory $GetSizeOnDiskResultCopyWith(GetSizeOnDiskResult value, $Res Function(GetSizeOnDiskResult) _then) = _$GetSizeOnDiskResultCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(name: 'size_bytes') int sizeBytes,@JsonKey(name: 'size_formatted') String sizeFormatted
+@JsonKey(name: 'size_bytes', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt sizeBytes,@JsonKey(name: 'size_formatted') String sizeFormatted,@JsonKey(includeFromJson: false, includeToJson: false) RpcExtraFields extraFields
 });
 
 
-
+$RpcExtraFieldsCopyWith<$Res> get extraFields;
 
 }
 /// @nodoc
@@ -65,14 +65,24 @@ class _$GetSizeOnDiskResultCopyWithImpl<$Res>
 
 /// Create a copy of GetSizeOnDiskResult
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? sizeBytes = null,Object? sizeFormatted = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? sizeBytes = null,Object? sizeFormatted = null,Object? extraFields = null,}) {
   return _then(_self.copyWith(
 sizeBytes: null == sizeBytes ? _self.sizeBytes : sizeBytes // ignore: cast_nullable_to_non_nullable
-as int,sizeFormatted: null == sizeFormatted ? _self.sizeFormatted : sizeFormatted // ignore: cast_nullable_to_non_nullable
-as String,
+as BigInt,sizeFormatted: null == sizeFormatted ? _self.sizeFormatted : sizeFormatted // ignore: cast_nullable_to_non_nullable
+as String,extraFields: null == extraFields ? _self.extraFields : extraFields // ignore: cast_nullable_to_non_nullable
+as RpcExtraFields,
   ));
 }
+/// Create a copy of GetSizeOnDiskResult
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$RpcExtraFieldsCopyWith<$Res> get extraFields {
 
+  return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
+    return _then(_self.copyWith(extraFields: value));
+  });
+}
 }
 
 
@@ -154,10 +164,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'size_bytes')  int sizeBytes, @JsonKey(name: 'size_formatted')  String sizeFormatted)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'size_bytes', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt sizeBytes, @JsonKey(name: 'size_formatted')  String sizeFormatted, @JsonKey(includeFromJson: false, includeToJson: false)  RpcExtraFields extraFields)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _GetSizeOnDiskResult() when $default != null:
-return $default(_that.sizeBytes,_that.sizeFormatted);case _:
+return $default(_that.sizeBytes,_that.sizeFormatted,_that.extraFields);case _:
   return orElse();
 
 }
@@ -175,10 +185,10 @@ return $default(_that.sizeBytes,_that.sizeFormatted);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'size_bytes')  int sizeBytes, @JsonKey(name: 'size_formatted')  String sizeFormatted)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'size_bytes', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt sizeBytes, @JsonKey(name: 'size_formatted')  String sizeFormatted, @JsonKey(includeFromJson: false, includeToJson: false)  RpcExtraFields extraFields)  $default,) {final _that = this;
 switch (_that) {
 case _GetSizeOnDiskResult():
-return $default(_that.sizeBytes,_that.sizeFormatted);case _:
+return $default(_that.sizeBytes,_that.sizeFormatted,_that.extraFields);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -195,10 +205,10 @@ return $default(_that.sizeBytes,_that.sizeFormatted);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'size_bytes')  int sizeBytes, @JsonKey(name: 'size_formatted')  String sizeFormatted)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'size_bytes', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt sizeBytes, @JsonKey(name: 'size_formatted')  String sizeFormatted, @JsonKey(includeFromJson: false, includeToJson: false)  RpcExtraFields extraFields)?  $default,) {final _that = this;
 switch (_that) {
 case _GetSizeOnDiskResult() when $default != null:
-return $default(_that.sizeBytes,_that.sizeFormatted);case _:
+return $default(_that.sizeBytes,_that.sizeFormatted,_that.extraFields);case _:
   return null;
 
 }
@@ -209,12 +219,13 @@ return $default(_that.sizeBytes,_that.sizeFormatted);case _:
 /// @nodoc
 @JsonSerializable()
 
-class _GetSizeOnDiskResult implements GetSizeOnDiskResult {
-  const _GetSizeOnDiskResult({@JsonKey(name: 'size_bytes') required this.sizeBytes, @JsonKey(name: 'size_formatted') required this.sizeFormatted});
+class _GetSizeOnDiskResult extends GetSizeOnDiskResult {
+  const _GetSizeOnDiskResult({@JsonKey(name: 'size_bytes', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.sizeBytes, @JsonKey(name: 'size_formatted') required this.sizeFormatted, @JsonKey(includeFromJson: false, includeToJson: false) this.extraFields = const RpcExtraFields()}): super._();
   factory _GetSizeOnDiskResult.fromJson(Map<String, dynamic> json) => _$GetSizeOnDiskResultFromJson(json);
 
-@override@JsonKey(name: 'size_bytes') final  int sizeBytes;
+@override@JsonKey(name: 'size_bytes', fromJson: rpcBigInt, toJson: rpcBigIntToJson) final  BigInt sizeBytes;
 @override@JsonKey(name: 'size_formatted') final  String sizeFormatted;
+@override@JsonKey(includeFromJson: false, includeToJson: false) final  RpcExtraFields extraFields;
 
 /// Create a copy of GetSizeOnDiskResult
 /// with the given fields replaced by the non-null parameter values.
@@ -229,16 +240,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetSizeOnDiskResult&&(identical(other.sizeBytes, sizeBytes) || other.sizeBytes == sizeBytes)&&(identical(other.sizeFormatted, sizeFormatted) || other.sizeFormatted == sizeFormatted));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetSizeOnDiskResult&&(identical(other.sizeBytes, sizeBytes) || other.sizeBytes == sizeBytes)&&(identical(other.sizeFormatted, sizeFormatted) || other.sizeFormatted == sizeFormatted)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,sizeBytes,sizeFormatted);
+int get hashCode => Object.hash(runtimeType,sizeBytes,sizeFormatted,extraFields);
 
 @override
 String toString() {
-  return 'GetSizeOnDiskResult(sizeBytes: $sizeBytes, sizeFormatted: $sizeFormatted)';
+  return 'GetSizeOnDiskResult(sizeBytes: $sizeBytes, sizeFormatted: $sizeFormatted, extraFields: $extraFields)';
 }
 
 
@@ -249,11 +260,11 @@ abstract mixin class _$GetSizeOnDiskResultCopyWith<$Res> implements $GetSizeOnDi
   factory _$GetSizeOnDiskResultCopyWith(_GetSizeOnDiskResult value, $Res Function(_GetSizeOnDiskResult) _then) = __$GetSizeOnDiskResultCopyWithImpl;
 @override @useResult
 $Res call({
-@JsonKey(name: 'size_bytes') int sizeBytes,@JsonKey(name: 'size_formatted') String sizeFormatted
+@JsonKey(name: 'size_bytes', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt sizeBytes,@JsonKey(name: 'size_formatted') String sizeFormatted,@JsonKey(includeFromJson: false, includeToJson: false) RpcExtraFields extraFields
 });
 
 
-
+@override $RpcExtraFieldsCopyWith<$Res> get extraFields;
 
 }
 /// @nodoc
@@ -266,15 +277,25 @@ class __$GetSizeOnDiskResultCopyWithImpl<$Res>
 
 /// Create a copy of GetSizeOnDiskResult
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? sizeBytes = null,Object? sizeFormatted = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? sizeBytes = null,Object? sizeFormatted = null,Object? extraFields = null,}) {
   return _then(_GetSizeOnDiskResult(
 sizeBytes: null == sizeBytes ? _self.sizeBytes : sizeBytes // ignore: cast_nullable_to_non_nullable
-as int,sizeFormatted: null == sizeFormatted ? _self.sizeFormatted : sizeFormatted // ignore: cast_nullable_to_non_nullable
-as String,
+as BigInt,sizeFormatted: null == sizeFormatted ? _self.sizeFormatted : sizeFormatted // ignore: cast_nullable_to_non_nullable
+as String,extraFields: null == extraFields ? _self.extraFields : extraFields // ignore: cast_nullable_to_non_nullable
+as RpcExtraFields,
   ));
 }
 
+/// Create a copy of GetSizeOnDiskResult
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$RpcExtraFieldsCopyWith<$Res> get extraFields {
 
+  return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
+    return _then(_self.copyWith(extraFields: value));
+  });
+}
 }
 
 // dart format on

@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$HasNonceParams {
 
-@JsonKey(name: 'address') String get address;@JsonKey(name: 'topoheight') int? get topoheight;
+@JsonKey(name: 'address') String get address;@JsonKey(name: 'topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) BigInt? get topoheight;
 /// Create a copy of HasNonceParams
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $HasNonceParamsCopyWith<$Res>  {
   factory $HasNonceParamsCopyWith(HasNonceParams value, $Res Function(HasNonceParams) _then) = _$HasNonceParamsCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(name: 'address') String address,@JsonKey(name: 'topoheight') int? topoheight
+@JsonKey(name: 'address') String address,@JsonKey(name: 'topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) BigInt? topoheight
 });
 
 
@@ -69,7 +69,7 @@ class _$HasNonceParamsCopyWithImpl<$Res>
   return _then(_self.copyWith(
 address: null == address ? _self.address : address // ignore: cast_nullable_to_non_nullable
 as String,topoheight: freezed == topoheight ? _self.topoheight : topoheight // ignore: cast_nullable_to_non_nullable
-as int?,
+as BigInt?,
   ));
 }
 
@@ -154,7 +154,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'address')  String address, @JsonKey(name: 'topoheight')  int? topoheight)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'address')  String address, @JsonKey(name: 'topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson)  BigInt? topoheight)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _HasNonceParams() when $default != null:
 return $default(_that.address,_that.topoheight);case _:
@@ -175,7 +175,7 @@ return $default(_that.address,_that.topoheight);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'address')  String address, @JsonKey(name: 'topoheight')  int? topoheight)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'address')  String address, @JsonKey(name: 'topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson)  BigInt? topoheight)  $default,) {final _that = this;
 switch (_that) {
 case _HasNonceParams():
 return $default(_that.address,_that.topoheight);case _:
@@ -195,7 +195,7 @@ return $default(_that.address,_that.topoheight);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'address')  String address, @JsonKey(name: 'topoheight')  int? topoheight)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'address')  String address, @JsonKey(name: 'topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson)  BigInt? topoheight)?  $default,) {final _that = this;
 switch (_that) {
 case _HasNonceParams() when $default != null:
 return $default(_that.address,_that.topoheight);case _:
@@ -210,11 +210,11 @@ return $default(_that.address,_that.topoheight);case _:
 
 @JsonSerializable(includeIfNull: false)
 class _HasNonceParams implements HasNonceParams {
-  const _HasNonceParams({@JsonKey(name: 'address') required this.address, @JsonKey(name: 'topoheight') this.topoheight});
+  const _HasNonceParams({@JsonKey(name: 'address') required this.address, @JsonKey(name: 'topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) this.topoheight});
   factory _HasNonceParams.fromJson(Map<String, dynamic> json) => _$HasNonceParamsFromJson(json);
 
 @override@JsonKey(name: 'address') final  String address;
-@override@JsonKey(name: 'topoheight') final  int? topoheight;
+@override@JsonKey(name: 'topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) final  BigInt? topoheight;
 
 /// Create a copy of HasNonceParams
 /// with the given fields replaced by the non-null parameter values.
@@ -249,7 +249,7 @@ abstract mixin class _$HasNonceParamsCopyWith<$Res> implements $HasNonceParamsCo
   factory _$HasNonceParamsCopyWith(_HasNonceParams value, $Res Function(_HasNonceParams) _then) = __$HasNonceParamsCopyWithImpl;
 @override @useResult
 $Res call({
-@JsonKey(name: 'address') String address,@JsonKey(name: 'topoheight') int? topoheight
+@JsonKey(name: 'address') String address,@JsonKey(name: 'topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) BigInt? topoheight
 });
 
 
@@ -270,7 +270,7 @@ class __$HasNonceParamsCopyWithImpl<$Res>
   return _then(_HasNonceParams(
 address: null == address ? _self.address : address // ignore: cast_nullable_to_non_nullable
 as String,topoheight: freezed == topoheight ? _self.topoheight : topoheight // ignore: cast_nullable_to_non_nullable
-as int?,
+as BigInt?,
   ));
 }
 

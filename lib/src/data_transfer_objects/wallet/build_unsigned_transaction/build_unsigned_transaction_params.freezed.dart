@@ -14,7 +14,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$BuildUnsignedTransactionParams {
 
- TransactionTypeBuilder get transactionTypeBuilder; FeeBuilder? get feeBuilder; int? get nonce; int? get txVersion; bool? get txAsHex;
+ TransactionTypeBuilder get transactionTypeBuilder; FeeBuilder get fee; BaseFeeMode get baseFee; BigInt? get feeLimit; BigInt? get nonce; int? get txVersion; bool get txAsHex;
 /// Create a copy of BuildUnsignedTransactionParams
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -25,16 +25,16 @@ $BuildUnsignedTransactionParamsCopyWith<BuildUnsignedTransactionParams> get copy
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is BuildUnsignedTransactionParams&&(identical(other.transactionTypeBuilder, transactionTypeBuilder) || other.transactionTypeBuilder == transactionTypeBuilder)&&(identical(other.feeBuilder, feeBuilder) || other.feeBuilder == feeBuilder)&&(identical(other.nonce, nonce) || other.nonce == nonce)&&(identical(other.txVersion, txVersion) || other.txVersion == txVersion)&&(identical(other.txAsHex, txAsHex) || other.txAsHex == txAsHex));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is BuildUnsignedTransactionParams&&(identical(other.transactionTypeBuilder, transactionTypeBuilder) || other.transactionTypeBuilder == transactionTypeBuilder)&&(identical(other.fee, fee) || other.fee == fee)&&(identical(other.baseFee, baseFee) || other.baseFee == baseFee)&&(identical(other.feeLimit, feeLimit) || other.feeLimit == feeLimit)&&(identical(other.nonce, nonce) || other.nonce == nonce)&&(identical(other.txVersion, txVersion) || other.txVersion == txVersion)&&(identical(other.txAsHex, txAsHex) || other.txAsHex == txAsHex));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,transactionTypeBuilder,feeBuilder,nonce,txVersion,txAsHex);
+int get hashCode => Object.hash(runtimeType,transactionTypeBuilder,fee,baseFee,feeLimit,nonce,txVersion,txAsHex);
 
 @override
 String toString() {
-  return 'BuildUnsignedTransactionParams(transactionTypeBuilder: $transactionTypeBuilder, feeBuilder: $feeBuilder, nonce: $nonce, txVersion: $txVersion, txAsHex: $txAsHex)';
+  return 'BuildUnsignedTransactionParams(transactionTypeBuilder: $transactionTypeBuilder, fee: $fee, baseFee: $baseFee, feeLimit: $feeLimit, nonce: $nonce, txVersion: $txVersion, txAsHex: $txAsHex)';
 }
 
 
@@ -45,11 +45,11 @@ abstract mixin class $BuildUnsignedTransactionParamsCopyWith<$Res>  {
   factory $BuildUnsignedTransactionParamsCopyWith(BuildUnsignedTransactionParams value, $Res Function(BuildUnsignedTransactionParams) _then) = _$BuildUnsignedTransactionParamsCopyWithImpl;
 @useResult
 $Res call({
- TransactionTypeBuilder transactionTypeBuilder, FeeBuilder? feeBuilder, int? nonce, int? txVersion, bool? txAsHex
+ TransactionTypeBuilder transactionTypeBuilder, FeeBuilder fee, BaseFeeMode baseFee, BigInt? feeLimit, BigInt? nonce, int? txVersion, bool txAsHex
 });
 
 
-$TransactionTypeBuilderCopyWith<$Res> get transactionTypeBuilder;$FeeBuilderCopyWith<$Res>? get feeBuilder;
+$TransactionTypeBuilderCopyWith<$Res> get transactionTypeBuilder;$FeeBuilderCopyWith<$Res> get fee;$BaseFeeModeCopyWith<$Res> get baseFee;
 
 }
 /// @nodoc
@@ -62,14 +62,16 @@ class _$BuildUnsignedTransactionParamsCopyWithImpl<$Res>
 
 /// Create a copy of BuildUnsignedTransactionParams
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? transactionTypeBuilder = null,Object? feeBuilder = freezed,Object? nonce = freezed,Object? txVersion = freezed,Object? txAsHex = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? transactionTypeBuilder = null,Object? fee = null,Object? baseFee = null,Object? feeLimit = freezed,Object? nonce = freezed,Object? txVersion = freezed,Object? txAsHex = null,}) {
   return _then(_self.copyWith(
 transactionTypeBuilder: null == transactionTypeBuilder ? _self.transactionTypeBuilder : transactionTypeBuilder // ignore: cast_nullable_to_non_nullable
-as TransactionTypeBuilder,feeBuilder: freezed == feeBuilder ? _self.feeBuilder : feeBuilder // ignore: cast_nullable_to_non_nullable
-as FeeBuilder?,nonce: freezed == nonce ? _self.nonce : nonce // ignore: cast_nullable_to_non_nullable
-as int?,txVersion: freezed == txVersion ? _self.txVersion : txVersion // ignore: cast_nullable_to_non_nullable
-as int?,txAsHex: freezed == txAsHex ? _self.txAsHex : txAsHex // ignore: cast_nullable_to_non_nullable
-as bool?,
+as TransactionTypeBuilder,fee: null == fee ? _self.fee : fee // ignore: cast_nullable_to_non_nullable
+as FeeBuilder,baseFee: null == baseFee ? _self.baseFee : baseFee // ignore: cast_nullable_to_non_nullable
+as BaseFeeMode,feeLimit: freezed == feeLimit ? _self.feeLimit : feeLimit // ignore: cast_nullable_to_non_nullable
+as BigInt?,nonce: freezed == nonce ? _self.nonce : nonce // ignore: cast_nullable_to_non_nullable
+as BigInt?,txVersion: freezed == txVersion ? _self.txVersion : txVersion // ignore: cast_nullable_to_non_nullable
+as int?,txAsHex: null == txAsHex ? _self.txAsHex : txAsHex // ignore: cast_nullable_to_non_nullable
+as bool,
   ));
 }
 /// Create a copy of BuildUnsignedTransactionParams
@@ -85,13 +87,19 @@ $TransactionTypeBuilderCopyWith<$Res> get transactionTypeBuilder {
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
-$FeeBuilderCopyWith<$Res>? get feeBuilder {
-    if (_self.feeBuilder == null) {
-    return null;
-  }
-
-  return $FeeBuilderCopyWith<$Res>(_self.feeBuilder!, (value) {
-    return _then(_self.copyWith(feeBuilder: value));
+$FeeBuilderCopyWith<$Res> get fee {
+  
+  return $FeeBuilderCopyWith<$Res>(_self.fee, (value) {
+    return _then(_self.copyWith(fee: value));
+  });
+}/// Create a copy of BuildUnsignedTransactionParams
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$BaseFeeModeCopyWith<$Res> get baseFee {
+  
+  return $BaseFeeModeCopyWith<$Res>(_self.baseFee, (value) {
+    return _then(_self.copyWith(baseFee: value));
   });
 }
 }
@@ -175,10 +183,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( TransactionTypeBuilder transactionTypeBuilder,  FeeBuilder? feeBuilder,  int? nonce,  int? txVersion,  bool? txAsHex)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( TransactionTypeBuilder transactionTypeBuilder,  FeeBuilder fee,  BaseFeeMode baseFee,  BigInt? feeLimit,  BigInt? nonce,  int? txVersion,  bool txAsHex)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _BuildUnsignedTransactionParams() when $default != null:
-return $default(_that.transactionTypeBuilder,_that.feeBuilder,_that.nonce,_that.txVersion,_that.txAsHex);case _:
+return $default(_that.transactionTypeBuilder,_that.fee,_that.baseFee,_that.feeLimit,_that.nonce,_that.txVersion,_that.txAsHex);case _:
   return orElse();
 
 }
@@ -196,10 +204,10 @@ return $default(_that.transactionTypeBuilder,_that.feeBuilder,_that.nonce,_that.
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( TransactionTypeBuilder transactionTypeBuilder,  FeeBuilder? feeBuilder,  int? nonce,  int? txVersion,  bool? txAsHex)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( TransactionTypeBuilder transactionTypeBuilder,  FeeBuilder fee,  BaseFeeMode baseFee,  BigInt? feeLimit,  BigInt? nonce,  int? txVersion,  bool txAsHex)  $default,) {final _that = this;
 switch (_that) {
 case _BuildUnsignedTransactionParams():
-return $default(_that.transactionTypeBuilder,_that.feeBuilder,_that.nonce,_that.txVersion,_that.txAsHex);case _:
+return $default(_that.transactionTypeBuilder,_that.fee,_that.baseFee,_that.feeLimit,_that.nonce,_that.txVersion,_that.txAsHex);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -216,10 +224,10 @@ return $default(_that.transactionTypeBuilder,_that.feeBuilder,_that.nonce,_that.
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( TransactionTypeBuilder transactionTypeBuilder,  FeeBuilder? feeBuilder,  int? nonce,  int? txVersion,  bool? txAsHex)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( TransactionTypeBuilder transactionTypeBuilder,  FeeBuilder fee,  BaseFeeMode baseFee,  BigInt? feeLimit,  BigInt? nonce,  int? txVersion,  bool txAsHex)?  $default,) {final _that = this;
 switch (_that) {
 case _BuildUnsignedTransactionParams() when $default != null:
-return $default(_that.transactionTypeBuilder,_that.feeBuilder,_that.nonce,_that.txVersion,_that.txAsHex);case _:
+return $default(_that.transactionTypeBuilder,_that.fee,_that.baseFee,_that.feeLimit,_that.nonce,_that.txVersion,_that.txAsHex);case _:
   return null;
 
 }
@@ -231,14 +239,16 @@ return $default(_that.transactionTypeBuilder,_that.feeBuilder,_that.nonce,_that.
 
 
 class _BuildUnsignedTransactionParams extends BuildUnsignedTransactionParams {
-  const _BuildUnsignedTransactionParams({required this.transactionTypeBuilder, this.feeBuilder, this.nonce, this.txVersion, this.txAsHex}): super._();
+  const _BuildUnsignedTransactionParams({required this.transactionTypeBuilder, this.fee = const FeeBuilder.extra(), this.baseFee = const BaseFeeMode.none(), this.feeLimit, this.nonce, this.txVersion, this.txAsHex = false}): super._();
   
 
 @override final  TransactionTypeBuilder transactionTypeBuilder;
-@override final  FeeBuilder? feeBuilder;
-@override final  int? nonce;
+@override@JsonKey() final  FeeBuilder fee;
+@override@JsonKey() final  BaseFeeMode baseFee;
+@override final  BigInt? feeLimit;
+@override final  BigInt? nonce;
 @override final  int? txVersion;
-@override final  bool? txAsHex;
+@override@JsonKey() final  bool txAsHex;
 
 /// Create a copy of BuildUnsignedTransactionParams
 /// with the given fields replaced by the non-null parameter values.
@@ -250,16 +260,16 @@ _$BuildUnsignedTransactionParamsCopyWith<_BuildUnsignedTransactionParams> get co
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _BuildUnsignedTransactionParams&&(identical(other.transactionTypeBuilder, transactionTypeBuilder) || other.transactionTypeBuilder == transactionTypeBuilder)&&(identical(other.feeBuilder, feeBuilder) || other.feeBuilder == feeBuilder)&&(identical(other.nonce, nonce) || other.nonce == nonce)&&(identical(other.txVersion, txVersion) || other.txVersion == txVersion)&&(identical(other.txAsHex, txAsHex) || other.txAsHex == txAsHex));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _BuildUnsignedTransactionParams&&(identical(other.transactionTypeBuilder, transactionTypeBuilder) || other.transactionTypeBuilder == transactionTypeBuilder)&&(identical(other.fee, fee) || other.fee == fee)&&(identical(other.baseFee, baseFee) || other.baseFee == baseFee)&&(identical(other.feeLimit, feeLimit) || other.feeLimit == feeLimit)&&(identical(other.nonce, nonce) || other.nonce == nonce)&&(identical(other.txVersion, txVersion) || other.txVersion == txVersion)&&(identical(other.txAsHex, txAsHex) || other.txAsHex == txAsHex));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,transactionTypeBuilder,feeBuilder,nonce,txVersion,txAsHex);
+int get hashCode => Object.hash(runtimeType,transactionTypeBuilder,fee,baseFee,feeLimit,nonce,txVersion,txAsHex);
 
 @override
 String toString() {
-  return 'BuildUnsignedTransactionParams(transactionTypeBuilder: $transactionTypeBuilder, feeBuilder: $feeBuilder, nonce: $nonce, txVersion: $txVersion, txAsHex: $txAsHex)';
+  return 'BuildUnsignedTransactionParams(transactionTypeBuilder: $transactionTypeBuilder, fee: $fee, baseFee: $baseFee, feeLimit: $feeLimit, nonce: $nonce, txVersion: $txVersion, txAsHex: $txAsHex)';
 }
 
 
@@ -270,11 +280,11 @@ abstract mixin class _$BuildUnsignedTransactionParamsCopyWith<$Res> implements $
   factory _$BuildUnsignedTransactionParamsCopyWith(_BuildUnsignedTransactionParams value, $Res Function(_BuildUnsignedTransactionParams) _then) = __$BuildUnsignedTransactionParamsCopyWithImpl;
 @override @useResult
 $Res call({
- TransactionTypeBuilder transactionTypeBuilder, FeeBuilder? feeBuilder, int? nonce, int? txVersion, bool? txAsHex
+ TransactionTypeBuilder transactionTypeBuilder, FeeBuilder fee, BaseFeeMode baseFee, BigInt? feeLimit, BigInt? nonce, int? txVersion, bool txAsHex
 });
 
 
-@override $TransactionTypeBuilderCopyWith<$Res> get transactionTypeBuilder;@override $FeeBuilderCopyWith<$Res>? get feeBuilder;
+@override $TransactionTypeBuilderCopyWith<$Res> get transactionTypeBuilder;@override $FeeBuilderCopyWith<$Res> get fee;@override $BaseFeeModeCopyWith<$Res> get baseFee;
 
 }
 /// @nodoc
@@ -287,14 +297,16 @@ class __$BuildUnsignedTransactionParamsCopyWithImpl<$Res>
 
 /// Create a copy of BuildUnsignedTransactionParams
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? transactionTypeBuilder = null,Object? feeBuilder = freezed,Object? nonce = freezed,Object? txVersion = freezed,Object? txAsHex = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? transactionTypeBuilder = null,Object? fee = null,Object? baseFee = null,Object? feeLimit = freezed,Object? nonce = freezed,Object? txVersion = freezed,Object? txAsHex = null,}) {
   return _then(_BuildUnsignedTransactionParams(
 transactionTypeBuilder: null == transactionTypeBuilder ? _self.transactionTypeBuilder : transactionTypeBuilder // ignore: cast_nullable_to_non_nullable
-as TransactionTypeBuilder,feeBuilder: freezed == feeBuilder ? _self.feeBuilder : feeBuilder // ignore: cast_nullable_to_non_nullable
-as FeeBuilder?,nonce: freezed == nonce ? _self.nonce : nonce // ignore: cast_nullable_to_non_nullable
-as int?,txVersion: freezed == txVersion ? _self.txVersion : txVersion // ignore: cast_nullable_to_non_nullable
-as int?,txAsHex: freezed == txAsHex ? _self.txAsHex : txAsHex // ignore: cast_nullable_to_non_nullable
-as bool?,
+as TransactionTypeBuilder,fee: null == fee ? _self.fee : fee // ignore: cast_nullable_to_non_nullable
+as FeeBuilder,baseFee: null == baseFee ? _self.baseFee : baseFee // ignore: cast_nullable_to_non_nullable
+as BaseFeeMode,feeLimit: freezed == feeLimit ? _self.feeLimit : feeLimit // ignore: cast_nullable_to_non_nullable
+as BigInt?,nonce: freezed == nonce ? _self.nonce : nonce // ignore: cast_nullable_to_non_nullable
+as BigInt?,txVersion: freezed == txVersion ? _self.txVersion : txVersion // ignore: cast_nullable_to_non_nullable
+as int?,txAsHex: null == txAsHex ? _self.txAsHex : txAsHex // ignore: cast_nullable_to_non_nullable
+as bool,
   ));
 }
 
@@ -311,13 +323,19 @@ $TransactionTypeBuilderCopyWith<$Res> get transactionTypeBuilder {
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
-$FeeBuilderCopyWith<$Res>? get feeBuilder {
-    if (_self.feeBuilder == null) {
-    return null;
-  }
-
-  return $FeeBuilderCopyWith<$Res>(_self.feeBuilder!, (value) {
-    return _then(_self.copyWith(feeBuilder: value));
+$FeeBuilderCopyWith<$Res> get fee {
+  
+  return $FeeBuilderCopyWith<$Res>(_self.fee, (value) {
+    return _then(_self.copyWith(fee: value));
+  });
+}/// Create a copy of BuildUnsignedTransactionParams
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$BaseFeeModeCopyWith<$Res> get baseFee {
+  
+  return $BaseFeeModeCopyWith<$Res>(_self.baseFee, (value) {
+    return _then(_self.copyWith(baseFee: value));
   });
 }
 }

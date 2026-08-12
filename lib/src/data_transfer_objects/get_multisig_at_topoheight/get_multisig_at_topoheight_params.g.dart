@@ -12,12 +12,12 @@ _GetMultisigAtTopoheightParams _$GetMultisigAtTopoheightParamsFromJson(
   Map<String, dynamic> json,
 ) => _GetMultisigAtTopoheightParams(
   address: json['address'] as String,
-  topoheight: (json['topoheight'] as num).toInt(),
+  topoheight: rpcBigInt(json['topoheight']),
 );
 
 Map<String, dynamic> _$GetMultisigAtTopoheightParamsToJson(
   _GetMultisigAtTopoheightParams instance,
 ) => <String, dynamic>{
   'address': instance.address,
-  'topoheight': instance.topoheight,
+  'topoheight': rpcBigIntToJson(instance.topoheight),
 };

@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$GetAccountsParams {
 
-@JsonKey(name: 'skip') int? get skip;@JsonKey(name: 'maximum') int? get maximum;@JsonKey(name: 'minimum_topoheight') int? get minTopoHeight;@JsonKey(name: 'maximum_topoheight') int? get maxTopoHeight;
+@JsonKey(name: 'skip') int? get skip;@JsonKey(name: 'maximum') int? get maximum;@JsonKey(name: 'minimum_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) BigInt? get minTopoheight;@JsonKey(name: 'maximum_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) BigInt? get maxTopoheight;
 /// Create a copy of GetAccountsParams
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,16 +28,16 @@ $GetAccountsParamsCopyWith<GetAccountsParams> get copyWith => _$GetAccountsParam
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetAccountsParams&&(identical(other.skip, skip) || other.skip == skip)&&(identical(other.maximum, maximum) || other.maximum == maximum)&&(identical(other.minTopoHeight, minTopoHeight) || other.minTopoHeight == minTopoHeight)&&(identical(other.maxTopoHeight, maxTopoHeight) || other.maxTopoHeight == maxTopoHeight));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetAccountsParams&&(identical(other.skip, skip) || other.skip == skip)&&(identical(other.maximum, maximum) || other.maximum == maximum)&&(identical(other.minTopoheight, minTopoheight) || other.minTopoheight == minTopoheight)&&(identical(other.maxTopoheight, maxTopoheight) || other.maxTopoheight == maxTopoheight));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,skip,maximum,minTopoHeight,maxTopoHeight);
+int get hashCode => Object.hash(runtimeType,skip,maximum,minTopoheight,maxTopoheight);
 
 @override
 String toString() {
-  return 'GetAccountsParams(skip: $skip, maximum: $maximum, minTopoHeight: $minTopoHeight, maxTopoHeight: $maxTopoHeight)';
+  return 'GetAccountsParams(skip: $skip, maximum: $maximum, minTopoheight: $minTopoheight, maxTopoheight: $maxTopoheight)';
 }
 
 
@@ -48,7 +48,7 @@ abstract mixin class $GetAccountsParamsCopyWith<$Res>  {
   factory $GetAccountsParamsCopyWith(GetAccountsParams value, $Res Function(GetAccountsParams) _then) = _$GetAccountsParamsCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(name: 'skip') int? skip,@JsonKey(name: 'maximum') int? maximum,@JsonKey(name: 'minimum_topoheight') int? minTopoHeight,@JsonKey(name: 'maximum_topoheight') int? maxTopoHeight
+@JsonKey(name: 'skip') int? skip,@JsonKey(name: 'maximum') int? maximum,@JsonKey(name: 'minimum_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) BigInt? minTopoheight,@JsonKey(name: 'maximum_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) BigInt? maxTopoheight
 });
 
 
@@ -65,13 +65,13 @@ class _$GetAccountsParamsCopyWithImpl<$Res>
 
 /// Create a copy of GetAccountsParams
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? skip = freezed,Object? maximum = freezed,Object? minTopoHeight = freezed,Object? maxTopoHeight = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? skip = freezed,Object? maximum = freezed,Object? minTopoheight = freezed,Object? maxTopoheight = freezed,}) {
   return _then(_self.copyWith(
 skip: freezed == skip ? _self.skip : skip // ignore: cast_nullable_to_non_nullable
 as int?,maximum: freezed == maximum ? _self.maximum : maximum // ignore: cast_nullable_to_non_nullable
-as int?,minTopoHeight: freezed == minTopoHeight ? _self.minTopoHeight : minTopoHeight // ignore: cast_nullable_to_non_nullable
-as int?,maxTopoHeight: freezed == maxTopoHeight ? _self.maxTopoHeight : maxTopoHeight // ignore: cast_nullable_to_non_nullable
-as int?,
+as int?,minTopoheight: freezed == minTopoheight ? _self.minTopoheight : minTopoheight // ignore: cast_nullable_to_non_nullable
+as BigInt?,maxTopoheight: freezed == maxTopoheight ? _self.maxTopoheight : maxTopoheight // ignore: cast_nullable_to_non_nullable
+as BigInt?,
   ));
 }
 
@@ -156,10 +156,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'skip')  int? skip, @JsonKey(name: 'maximum')  int? maximum, @JsonKey(name: 'minimum_topoheight')  int? minTopoHeight, @JsonKey(name: 'maximum_topoheight')  int? maxTopoHeight)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'skip')  int? skip, @JsonKey(name: 'maximum')  int? maximum, @JsonKey(name: 'minimum_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson)  BigInt? minTopoheight, @JsonKey(name: 'maximum_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson)  BigInt? maxTopoheight)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _GetAccountsParams() when $default != null:
-return $default(_that.skip,_that.maximum,_that.minTopoHeight,_that.maxTopoHeight);case _:
+return $default(_that.skip,_that.maximum,_that.minTopoheight,_that.maxTopoheight);case _:
   return orElse();
 
 }
@@ -177,10 +177,10 @@ return $default(_that.skip,_that.maximum,_that.minTopoHeight,_that.maxTopoHeight
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'skip')  int? skip, @JsonKey(name: 'maximum')  int? maximum, @JsonKey(name: 'minimum_topoheight')  int? minTopoHeight, @JsonKey(name: 'maximum_topoheight')  int? maxTopoHeight)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'skip')  int? skip, @JsonKey(name: 'maximum')  int? maximum, @JsonKey(name: 'minimum_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson)  BigInt? minTopoheight, @JsonKey(name: 'maximum_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson)  BigInt? maxTopoheight)  $default,) {final _that = this;
 switch (_that) {
 case _GetAccountsParams():
-return $default(_that.skip,_that.maximum,_that.minTopoHeight,_that.maxTopoHeight);case _:
+return $default(_that.skip,_that.maximum,_that.minTopoheight,_that.maxTopoheight);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -197,10 +197,10 @@ return $default(_that.skip,_that.maximum,_that.minTopoHeight,_that.maxTopoHeight
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'skip')  int? skip, @JsonKey(name: 'maximum')  int? maximum, @JsonKey(name: 'minimum_topoheight')  int? minTopoHeight, @JsonKey(name: 'maximum_topoheight')  int? maxTopoHeight)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'skip')  int? skip, @JsonKey(name: 'maximum')  int? maximum, @JsonKey(name: 'minimum_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson)  BigInt? minTopoheight, @JsonKey(name: 'maximum_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson)  BigInt? maxTopoheight)?  $default,) {final _that = this;
 switch (_that) {
 case _GetAccountsParams() when $default != null:
-return $default(_that.skip,_that.maximum,_that.minTopoHeight,_that.maxTopoHeight);case _:
+return $default(_that.skip,_that.maximum,_that.minTopoheight,_that.maxTopoheight);case _:
   return null;
 
 }
@@ -212,13 +212,13 @@ return $default(_that.skip,_that.maximum,_that.minTopoHeight,_that.maxTopoHeight
 @JsonSerializable()
 
 class _GetAccountsParams implements GetAccountsParams {
-  const _GetAccountsParams({@JsonKey(name: 'skip') this.skip, @JsonKey(name: 'maximum') this.maximum, @JsonKey(name: 'minimum_topoheight') this.minTopoHeight, @JsonKey(name: 'maximum_topoheight') this.maxTopoHeight});
+  const _GetAccountsParams({@JsonKey(name: 'skip') this.skip, @JsonKey(name: 'maximum') this.maximum, @JsonKey(name: 'minimum_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) this.minTopoheight, @JsonKey(name: 'maximum_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) this.maxTopoheight});
   factory _GetAccountsParams.fromJson(Map<String, dynamic> json) => _$GetAccountsParamsFromJson(json);
 
 @override@JsonKey(name: 'skip') final  int? skip;
 @override@JsonKey(name: 'maximum') final  int? maximum;
-@override@JsonKey(name: 'minimum_topoheight') final  int? minTopoHeight;
-@override@JsonKey(name: 'maximum_topoheight') final  int? maxTopoHeight;
+@override@JsonKey(name: 'minimum_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) final  BigInt? minTopoheight;
+@override@JsonKey(name: 'maximum_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) final  BigInt? maxTopoheight;
 
 /// Create a copy of GetAccountsParams
 /// with the given fields replaced by the non-null parameter values.
@@ -233,16 +233,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetAccountsParams&&(identical(other.skip, skip) || other.skip == skip)&&(identical(other.maximum, maximum) || other.maximum == maximum)&&(identical(other.minTopoHeight, minTopoHeight) || other.minTopoHeight == minTopoHeight)&&(identical(other.maxTopoHeight, maxTopoHeight) || other.maxTopoHeight == maxTopoHeight));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetAccountsParams&&(identical(other.skip, skip) || other.skip == skip)&&(identical(other.maximum, maximum) || other.maximum == maximum)&&(identical(other.minTopoheight, minTopoheight) || other.minTopoheight == minTopoheight)&&(identical(other.maxTopoheight, maxTopoheight) || other.maxTopoheight == maxTopoheight));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,skip,maximum,minTopoHeight,maxTopoHeight);
+int get hashCode => Object.hash(runtimeType,skip,maximum,minTopoheight,maxTopoheight);
 
 @override
 String toString() {
-  return 'GetAccountsParams(skip: $skip, maximum: $maximum, minTopoHeight: $minTopoHeight, maxTopoHeight: $maxTopoHeight)';
+  return 'GetAccountsParams(skip: $skip, maximum: $maximum, minTopoheight: $minTopoheight, maxTopoheight: $maxTopoheight)';
 }
 
 
@@ -253,7 +253,7 @@ abstract mixin class _$GetAccountsParamsCopyWith<$Res> implements $GetAccountsPa
   factory _$GetAccountsParamsCopyWith(_GetAccountsParams value, $Res Function(_GetAccountsParams) _then) = __$GetAccountsParamsCopyWithImpl;
 @override @useResult
 $Res call({
-@JsonKey(name: 'skip') int? skip,@JsonKey(name: 'maximum') int? maximum,@JsonKey(name: 'minimum_topoheight') int? minTopoHeight,@JsonKey(name: 'maximum_topoheight') int? maxTopoHeight
+@JsonKey(name: 'skip') int? skip,@JsonKey(name: 'maximum') int? maximum,@JsonKey(name: 'minimum_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) BigInt? minTopoheight,@JsonKey(name: 'maximum_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) BigInt? maxTopoheight
 });
 
 
@@ -270,13 +270,13 @@ class __$GetAccountsParamsCopyWithImpl<$Res>
 
 /// Create a copy of GetAccountsParams
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? skip = freezed,Object? maximum = freezed,Object? minTopoHeight = freezed,Object? maxTopoHeight = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? skip = freezed,Object? maximum = freezed,Object? minTopoheight = freezed,Object? maxTopoheight = freezed,}) {
   return _then(_GetAccountsParams(
 skip: freezed == skip ? _self.skip : skip // ignore: cast_nullable_to_non_nullable
 as int?,maximum: freezed == maximum ? _self.maximum : maximum // ignore: cast_nullable_to_non_nullable
-as int?,minTopoHeight: freezed == minTopoHeight ? _self.minTopoHeight : minTopoHeight // ignore: cast_nullable_to_non_nullable
-as int?,maxTopoHeight: freezed == maxTopoHeight ? _self.maxTopoHeight : maxTopoHeight // ignore: cast_nullable_to_non_nullable
-as int?,
+as int?,minTopoheight: freezed == minTopoheight ? _self.minTopoheight : minTopoheight // ignore: cast_nullable_to_non_nullable
+as BigInt?,maxTopoheight: freezed == maxTopoheight ? _self.maxTopoheight : maxTopoheight // ignore: cast_nullable_to_non_nullable
+as BigInt?,
   ));
 }
 

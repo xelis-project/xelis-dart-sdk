@@ -1,10 +1,37 @@
 import 'dart:async';
 
-import 'package:xelis_dart_sdk/xelis_dart_sdk.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/block_ordered_event/block_ordered_event.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/block_orphaned_event/block_orphaned_event.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/block/block.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/contract_event/contract_event.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/contract_transfers_event/contract_transfers_event.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/get_block_template/get_block_template_result.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/get_mempool/mempool_transaction_summary.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/get_peers/peer_entry.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/invoke_contract_event/invoke_contract_event.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/new_asset_event/new_asset_event.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/new_contract_event/contract_deploy_event.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/peer_peer_list_updated_event/peer_peer_list_updated_event.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/shared/transaction/rpc_transaction.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/stable_height_changed_event/stable_height_changed_event.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/stable_topoheight_changed_event/stable_topoheight_changed_event.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/transaction_executed_event/transaction_executed_event.dart';
+import 'package:xelis_dart_sdk/src/repositories/common/xelis_constants.dart';
+import 'package:xelis_dart_sdk/src/repositories/daemon/daemon_constants.dart';
+import 'package:xelis_dart_sdk/src/repositories/rpc_client_repository.dart';
 
 /// Extension of [DaemonClient] that provides methods to
 /// subscribe/unsubscribe to daemon events.
 extension DaemonEventsExtension on DaemonClient {
+  /// Registers a callback for new topological heights.
+  void onNewTopoheight(void Function(BigInt topoheight) callback) =>
+      onEvent(DaemonEvent.newTopoheight, callback);
+
+  /// Unsubscribes from new topological heights.
+  void unsubscribeFromNewTopoheight() {
+    unawaited(unsubscribeFrom(DaemonEvent.newTopoheight));
+  }
+
   /// Registers a callback for NewBlock event.
   ///
   /// Note: It is called when a new block is added to the chain.
@@ -51,17 +78,17 @@ extension DaemonEventsExtension on DaemonClient {
     unawaited(unsubscribeFrom(DaemonEvent.stableHeightChanged));
   }
 
-  /// Registers a callback for StableTopoHeightChanged event.
+  /// Registers a callback for StableTopoheightChanged event.
   ///
   /// When stable topoheight has changed (different than the previous one).
-  void onStableTopoHeightChanged(
+  void onStableTopoheightChanged(
     void Function(StableTopoheightChangedEvent stableTopoheightChangedEvent)
     callback,
-  ) => onEvent(DaemonEvent.stableTopoHeightChanged, callback);
+  ) => onEvent(DaemonEvent.stableTopoheightChanged, callback);
 
-  /// Unsubscribes from StableTopoHeightChanged event.
-  void unsubscribeFromStableTopoHeightChanged() {
-    unawaited(unsubscribeFrom(DaemonEvent.stableTopoHeightChanged));
+  /// Unsubscribes from StableTopoheightChanged event.
+  void unsubscribeFromStableTopoheightChanged() {
+    unawaited(unsubscribeFrom(DaemonEvent.stableTopoheightChanged));
   }
 
   /// Registers a callback for TransactionAddedInMempool event.
@@ -92,7 +119,7 @@ extension DaemonEventsExtension on DaemonClient {
   /// in mempool.
   /// It contains TransactionOrphanedEvent as value.
   void onTransactionOrphaned(
-    void Function(TransactionResponse transactionResponse) callback,
+    void Function(RpcTransaction transactionResponse) callback,
   ) => onEvent(DaemonEvent.transactionOrphaned, callback);
 
   /// Unsubscribes from TransactionOrphaned event.
@@ -161,36 +188,93 @@ extension DaemonEventsExtension on DaemonClient {
   }
 
   /// Registers a callback for InvokeContract event.
-  void onInvokeContract(void Function(InvokeContractEvent event) callback) =>
-      onEvent(DaemonEvent.invokeContract, callback);
+  void onInvokeContract(
+    String contract,
+    void Function(InvokeContractEvent event) callback,
+  ) => onEvent(
+    RpcEventSubscription.contractInvoke(
+      event: DaemonEvent.invokeContract,
+      contract: contract,
+    ),
+    callback,
+  );
 
   /// Unsubscribes from InvokeContract event.
-  void unsubscribeFromInvokeContract() {
-    unawaited(unsubscribeFrom(DaemonEvent.invokeContract));
+  void unsubscribeFromInvokeContract(String contract) {
+    unawaited(
+      unsubscribeFrom(
+        RpcEventSubscription.contractInvoke(
+          event: DaemonEvent.invokeContract,
+          contract: contract,
+        ),
+      ),
+    );
   }
 
   /// Registers a callback for ContractTransfers event.
   void onContractTransfers(
+    String address,
     void Function(ContractTransfersEvent event) callback,
-  ) => onEvent(DaemonEvent.contractTransfers, callback);
+  ) => onEvent(
+    RpcEventSubscription.contractTransfers(
+      event: DaemonEvent.contractTransfers,
+      address: address,
+    ),
+    callback,
+  );
 
   /// Unsubscribes from ContractTransfers event.
-  void unsubscribeFromContractTransfers() {
-    unawaited(unsubscribeFrom(DaemonEvent.contractTransfers));
+  void unsubscribeFromContractTransfers(String address) {
+    unawaited(
+      unsubscribeFrom(
+        RpcEventSubscription.contractTransfers(
+          event: DaemonEvent.contractTransfers,
+          address: address,
+        ),
+      ),
+    );
   }
 
   /// Registers a callback for ContractEvent event.
-  void onContractEvent(void Function(ContractEvent event) callback) =>
-      onEvent(DaemonEvent.contractEvent, callback);
+  void onContractEvent(
+    String contract,
+    void Function(ContractEvent event) callback, {
+    BigInt? id,
+  }) => onEvent(
+    RpcEventSubscription.contractEvent(
+      event: DaemonEvent.contractEvent,
+      contract: contract,
+      id: id,
+    ),
+    callback,
+  );
 
   /// Unsubscribes from ContractEvent event.
-  void unsubscribeFromContractEvent() {
-    unawaited(unsubscribeFrom(DaemonEvent.contractEvent));
+  void unsubscribeFromContractEvent(String contract, {BigInt? id}) {
+    unawaited(
+      unsubscribeFrom(
+        RpcEventSubscription.contractEvent(
+          event: DaemonEvent.contractEvent,
+          contract: contract,
+          id: id,
+        ),
+      ),
+    );
   }
 
   /// Registers a callback for DeployContract event.
-  void onDeployContract(void Function(NewContractEvent event) callback) =>
+  void onDeployContract(void Function(ContractDeployEvent event) callback) =>
       onEvent(DaemonEvent.deployContract, callback);
+
+  /// Registers a callback for new block templates.
+  void onNewBlockTemplate(
+    void Function(GetBlockTemplateResult template) callback,
+  ) => onEvent(DaemonEvent.newBlockTemplate, callback);
+
+  /// Unsubscribes from new block templates.
+  void unsubscribeFromNewBlockTemplate() {
+    unawaited(unsubscribeFrom(DaemonEvent.newBlockTemplate));
+  }
 
   /// Unsubscribes from DeployContract event.
   void unsubscribeFromDeployContract() {
@@ -199,23 +283,6 @@ extension DaemonEventsExtension on DaemonClient {
 
   /// Unsubscribes from all events.
   void unsubscribeFromAll() {
-    unsubscribeFromNewBlock();
-    unsubscribeFromBlockOrdered();
-    unsubscribeFromTransactionAddedInMempool();
-    unsubscribeFromTransactionExecuted();
-    unsubscribeFromNewAsset();
-    unsubscribeFromPeerConnected();
-    unsubscribeFromPeerDisconnected();
-    unsubscribeFromPeerPeerListUpdated();
-    unsubscribeFromPeerStateUpdated();
-    unsubscribeFromPeerPeerDisconnected();
-    unsubscribeFromStableHeightChanged();
-    unsubscribeFromStableTopoHeightChanged();
-    unsubscribeFromBlockOrphaned();
-    unsubscribeFromTransactionOrphaned();
-    unsubscribeFromInvokeContract();
-    unsubscribeFromContractTransfers();
-    unsubscribeFromContractEvent();
-    unsubscribeFromDeployContract();
+    unawaited(unsubscribeAllEvents());
   }
 }

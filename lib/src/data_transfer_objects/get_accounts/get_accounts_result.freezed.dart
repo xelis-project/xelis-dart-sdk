@@ -207,7 +207,7 @@ return $default(_that.publicKeys);case _:
 
 class _GetAccountsResult implements GetAccountsResult {
   const _GetAccountsResult({required final  List<String> publicKeys}): _publicKeys = publicKeys;
-  
+
 
  final  List<String> _publicKeys;
 @override List<String> get publicKeys {

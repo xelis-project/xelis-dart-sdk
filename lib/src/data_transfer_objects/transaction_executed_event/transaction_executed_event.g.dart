@@ -13,7 +13,7 @@ _TransactionExecutedEvent _$TransactionExecutedEventFromJson(
 ) => _TransactionExecutedEvent(
   blockHash: json['block_hash'] as String,
   txHash: json['tx_hash'] as String,
-  topoHeight: (json['topoheight'] as num).toInt(),
+  topoheight: rpcBigInt(json['topoheight']),
 );
 
 Map<String, dynamic> _$TransactionExecutedEventToJson(
@@ -21,5 +21,5 @@ Map<String, dynamic> _$TransactionExecutedEventToJson(
 ) => <String, dynamic>{
   'block_hash': instance.blockHash,
   'tx_hash': instance.txHash,
-  'topoheight': instance.topoHeight,
+  'topoheight': rpcBigIntToJson(instance.topoheight),
 };

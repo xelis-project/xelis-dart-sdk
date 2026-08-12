@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$BlockOrphanedEvent {
 
-@JsonKey(name: 'block_hash') String get blockHash;@JsonKey(name: 'old_topoheight') int get oldTopoHeight;
+@JsonKey(name: 'block_hash') String get blockHash;@JsonKey(name: 'old_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt get oldTopoheight;@JsonKey(includeFromJson: false, includeToJson: false) RpcExtraFields get extraFields;
 /// Create a copy of BlockOrphanedEvent
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,16 +28,16 @@ $BlockOrphanedEventCopyWith<BlockOrphanedEvent> get copyWith => _$BlockOrphanedE
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is BlockOrphanedEvent&&(identical(other.blockHash, blockHash) || other.blockHash == blockHash)&&(identical(other.oldTopoHeight, oldTopoHeight) || other.oldTopoHeight == oldTopoHeight));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is BlockOrphanedEvent&&(identical(other.blockHash, blockHash) || other.blockHash == blockHash)&&(identical(other.oldTopoheight, oldTopoheight) || other.oldTopoheight == oldTopoheight)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,blockHash,oldTopoHeight);
+int get hashCode => Object.hash(runtimeType,blockHash,oldTopoheight,extraFields);
 
 @override
 String toString() {
-  return 'BlockOrphanedEvent(blockHash: $blockHash, oldTopoHeight: $oldTopoHeight)';
+  return 'BlockOrphanedEvent(blockHash: $blockHash, oldTopoheight: $oldTopoheight, extraFields: $extraFields)';
 }
 
 
@@ -48,11 +48,11 @@ abstract mixin class $BlockOrphanedEventCopyWith<$Res>  {
   factory $BlockOrphanedEventCopyWith(BlockOrphanedEvent value, $Res Function(BlockOrphanedEvent) _then) = _$BlockOrphanedEventCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(name: 'block_hash') String blockHash,@JsonKey(name: 'old_topoheight') int oldTopoHeight
+@JsonKey(name: 'block_hash') String blockHash,@JsonKey(name: 'old_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt oldTopoheight,@JsonKey(includeFromJson: false, includeToJson: false) RpcExtraFields extraFields
 });
 
 
-
+$RpcExtraFieldsCopyWith<$Res> get extraFields;
 
 }
 /// @nodoc
@@ -65,14 +65,24 @@ class _$BlockOrphanedEventCopyWithImpl<$Res>
 
 /// Create a copy of BlockOrphanedEvent
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? blockHash = null,Object? oldTopoHeight = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? blockHash = null,Object? oldTopoheight = null,Object? extraFields = null,}) {
   return _then(_self.copyWith(
 blockHash: null == blockHash ? _self.blockHash : blockHash // ignore: cast_nullable_to_non_nullable
-as String,oldTopoHeight: null == oldTopoHeight ? _self.oldTopoHeight : oldTopoHeight // ignore: cast_nullable_to_non_nullable
-as int,
+as String,oldTopoheight: null == oldTopoheight ? _self.oldTopoheight : oldTopoheight // ignore: cast_nullable_to_non_nullable
+as BigInt,extraFields: null == extraFields ? _self.extraFields : extraFields // ignore: cast_nullable_to_non_nullable
+as RpcExtraFields,
   ));
 }
+/// Create a copy of BlockOrphanedEvent
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$RpcExtraFieldsCopyWith<$Res> get extraFields {
 
+  return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
+    return _then(_self.copyWith(extraFields: value));
+  });
+}
 }
 
 
@@ -154,10 +164,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'block_hash')  String blockHash, @JsonKey(name: 'old_topoheight')  int oldTopoHeight)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'block_hash')  String blockHash, @JsonKey(name: 'old_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt oldTopoheight, @JsonKey(includeFromJson: false, includeToJson: false)  RpcExtraFields extraFields)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _BlockOrphanedEvent() when $default != null:
-return $default(_that.blockHash,_that.oldTopoHeight);case _:
+return $default(_that.blockHash,_that.oldTopoheight,_that.extraFields);case _:
   return orElse();
 
 }
@@ -175,10 +185,10 @@ return $default(_that.blockHash,_that.oldTopoHeight);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'block_hash')  String blockHash, @JsonKey(name: 'old_topoheight')  int oldTopoHeight)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'block_hash')  String blockHash, @JsonKey(name: 'old_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt oldTopoheight, @JsonKey(includeFromJson: false, includeToJson: false)  RpcExtraFields extraFields)  $default,) {final _that = this;
 switch (_that) {
 case _BlockOrphanedEvent():
-return $default(_that.blockHash,_that.oldTopoHeight);case _:
+return $default(_that.blockHash,_that.oldTopoheight,_that.extraFields);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -195,10 +205,10 @@ return $default(_that.blockHash,_that.oldTopoHeight);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'block_hash')  String blockHash, @JsonKey(name: 'old_topoheight')  int oldTopoHeight)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'block_hash')  String blockHash, @JsonKey(name: 'old_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt oldTopoheight, @JsonKey(includeFromJson: false, includeToJson: false)  RpcExtraFields extraFields)?  $default,) {final _that = this;
 switch (_that) {
 case _BlockOrphanedEvent() when $default != null:
-return $default(_that.blockHash,_that.oldTopoHeight);case _:
+return $default(_that.blockHash,_that.oldTopoheight,_that.extraFields);case _:
   return null;
 
 }
@@ -209,12 +219,13 @@ return $default(_that.blockHash,_that.oldTopoHeight);case _:
 /// @nodoc
 @JsonSerializable()
 
-class _BlockOrphanedEvent implements BlockOrphanedEvent {
-  const _BlockOrphanedEvent({@JsonKey(name: 'block_hash') required this.blockHash, @JsonKey(name: 'old_topoheight') required this.oldTopoHeight});
+class _BlockOrphanedEvent extends BlockOrphanedEvent {
+  const _BlockOrphanedEvent({@JsonKey(name: 'block_hash') required this.blockHash, @JsonKey(name: 'old_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.oldTopoheight, @JsonKey(includeFromJson: false, includeToJson: false) this.extraFields = const RpcExtraFields()}): super._();
   factory _BlockOrphanedEvent.fromJson(Map<String, dynamic> json) => _$BlockOrphanedEventFromJson(json);
 
 @override@JsonKey(name: 'block_hash') final  String blockHash;
-@override@JsonKey(name: 'old_topoheight') final  int oldTopoHeight;
+@override@JsonKey(name: 'old_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) final  BigInt oldTopoheight;
+@override@JsonKey(includeFromJson: false, includeToJson: false) final  RpcExtraFields extraFields;
 
 /// Create a copy of BlockOrphanedEvent
 /// with the given fields replaced by the non-null parameter values.
@@ -229,16 +240,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _BlockOrphanedEvent&&(identical(other.blockHash, blockHash) || other.blockHash == blockHash)&&(identical(other.oldTopoHeight, oldTopoHeight) || other.oldTopoHeight == oldTopoHeight));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _BlockOrphanedEvent&&(identical(other.blockHash, blockHash) || other.blockHash == blockHash)&&(identical(other.oldTopoheight, oldTopoheight) || other.oldTopoheight == oldTopoheight)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,blockHash,oldTopoHeight);
+int get hashCode => Object.hash(runtimeType,blockHash,oldTopoheight,extraFields);
 
 @override
 String toString() {
-  return 'BlockOrphanedEvent(blockHash: $blockHash, oldTopoHeight: $oldTopoHeight)';
+  return 'BlockOrphanedEvent(blockHash: $blockHash, oldTopoheight: $oldTopoheight, extraFields: $extraFields)';
 }
 
 
@@ -249,11 +260,11 @@ abstract mixin class _$BlockOrphanedEventCopyWith<$Res> implements $BlockOrphane
   factory _$BlockOrphanedEventCopyWith(_BlockOrphanedEvent value, $Res Function(_BlockOrphanedEvent) _then) = __$BlockOrphanedEventCopyWithImpl;
 @override @useResult
 $Res call({
-@JsonKey(name: 'block_hash') String blockHash,@JsonKey(name: 'old_topoheight') int oldTopoHeight
+@JsonKey(name: 'block_hash') String blockHash,@JsonKey(name: 'old_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt oldTopoheight,@JsonKey(includeFromJson: false, includeToJson: false) RpcExtraFields extraFields
 });
 
 
-
+@override $RpcExtraFieldsCopyWith<$Res> get extraFields;
 
 }
 /// @nodoc
@@ -266,15 +277,25 @@ class __$BlockOrphanedEventCopyWithImpl<$Res>
 
 /// Create a copy of BlockOrphanedEvent
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? blockHash = null,Object? oldTopoHeight = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? blockHash = null,Object? oldTopoheight = null,Object? extraFields = null,}) {
   return _then(_BlockOrphanedEvent(
 blockHash: null == blockHash ? _self.blockHash : blockHash // ignore: cast_nullable_to_non_nullable
-as String,oldTopoHeight: null == oldTopoHeight ? _self.oldTopoHeight : oldTopoHeight // ignore: cast_nullable_to_non_nullable
-as int,
+as String,oldTopoheight: null == oldTopoheight ? _self.oldTopoheight : oldTopoheight // ignore: cast_nullable_to_non_nullable
+as BigInt,extraFields: null == extraFields ? _self.extraFields : extraFields // ignore: cast_nullable_to_non_nullable
+as RpcExtraFields,
   ));
 }
 
+/// Create a copy of BlockOrphanedEvent
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$RpcExtraFieldsCopyWith<$Res> get extraFields {
 
+  return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
+    return _then(_self.copyWith(extraFields: value));
+  });
+}
 }
 
 // dart format on

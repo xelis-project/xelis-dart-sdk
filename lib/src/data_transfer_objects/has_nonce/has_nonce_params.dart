@@ -1,6 +1,5 @@
-// ignore_for_file: invalid_annotation_target
-
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:xelis_dart_sdk/src/utils/rpc_json.dart';
 
 part 'has_nonce_params.freezed.dart';
 part 'has_nonce_params.g.dart';
@@ -12,7 +11,12 @@ abstract class HasNonceParams with _$HasNonceParams {
   @JsonSerializable(includeIfNull: false)
   const factory HasNonceParams({
     @JsonKey(name: 'address') required String address,
-    @JsonKey(name: 'topoheight') int? topoheight,
+    @JsonKey(
+      name: 'topoheight',
+      fromJson: rpcNullableBigInt,
+      toJson: rpcNullableBigIntToJson,
+    )
+    BigInt? topoheight,
   }) = _HasNonceParams;
 
   /// @nodoc

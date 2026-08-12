@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$NewAssetEvent {
 
-@JsonKey(name: 'asset') String get asset;@JsonKey(name: 'block_hash') String get blockHash;@JsonKey(name: 'topoheight') int get topoheight;
+@JsonKey(name: 'asset') String get asset;@JsonKey(name: 'block_hash') String get blockHash;@JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt get topoheight;@JsonKey(includeFromJson: false, includeToJson: false) RpcExtraFields get extraFields;
 /// Create a copy of NewAssetEvent
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,16 +28,16 @@ $NewAssetEventCopyWith<NewAssetEvent> get copyWith => _$NewAssetEventCopyWithImp
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is NewAssetEvent&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.blockHash, blockHash) || other.blockHash == blockHash)&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is NewAssetEvent&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.blockHash, blockHash) || other.blockHash == blockHash)&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,asset,blockHash,topoheight);
+int get hashCode => Object.hash(runtimeType,asset,blockHash,topoheight,extraFields);
 
 @override
 String toString() {
-  return 'NewAssetEvent(asset: $asset, blockHash: $blockHash, topoheight: $topoheight)';
+  return 'NewAssetEvent(asset: $asset, blockHash: $blockHash, topoheight: $topoheight, extraFields: $extraFields)';
 }
 
 
@@ -48,11 +48,11 @@ abstract mixin class $NewAssetEventCopyWith<$Res>  {
   factory $NewAssetEventCopyWith(NewAssetEvent value, $Res Function(NewAssetEvent) _then) = _$NewAssetEventCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(name: 'asset') String asset,@JsonKey(name: 'block_hash') String blockHash,@JsonKey(name: 'topoheight') int topoheight
+@JsonKey(name: 'asset') String asset,@JsonKey(name: 'block_hash') String blockHash,@JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt topoheight,@JsonKey(includeFromJson: false, includeToJson: false) RpcExtraFields extraFields
 });
 
 
-
+$RpcExtraFieldsCopyWith<$Res> get extraFields;
 
 }
 /// @nodoc
@@ -65,15 +65,25 @@ class _$NewAssetEventCopyWithImpl<$Res>
 
 /// Create a copy of NewAssetEvent
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? asset = null,Object? blockHash = null,Object? topoheight = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? asset = null,Object? blockHash = null,Object? topoheight = null,Object? extraFields = null,}) {
   return _then(_self.copyWith(
 asset: null == asset ? _self.asset : asset // ignore: cast_nullable_to_non_nullable
 as String,blockHash: null == blockHash ? _self.blockHash : blockHash // ignore: cast_nullable_to_non_nullable
 as String,topoheight: null == topoheight ? _self.topoheight : topoheight // ignore: cast_nullable_to_non_nullable
-as int,
+as BigInt,extraFields: null == extraFields ? _self.extraFields : extraFields // ignore: cast_nullable_to_non_nullable
+as RpcExtraFields,
   ));
 }
+/// Create a copy of NewAssetEvent
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$RpcExtraFieldsCopyWith<$Res> get extraFields {
 
+  return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
+    return _then(_self.copyWith(extraFields: value));
+  });
+}
 }
 
 
@@ -155,10 +165,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'asset')  String asset, @JsonKey(name: 'block_hash')  String blockHash, @JsonKey(name: 'topoheight')  int topoheight)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'asset')  String asset, @JsonKey(name: 'block_hash')  String blockHash, @JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt topoheight, @JsonKey(includeFromJson: false, includeToJson: false)  RpcExtraFields extraFields)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _NewAssetEvent() when $default != null:
-return $default(_that.asset,_that.blockHash,_that.topoheight);case _:
+return $default(_that.asset,_that.blockHash,_that.topoheight,_that.extraFields);case _:
   return orElse();
 
 }
@@ -176,10 +186,10 @@ return $default(_that.asset,_that.blockHash,_that.topoheight);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'asset')  String asset, @JsonKey(name: 'block_hash')  String blockHash, @JsonKey(name: 'topoheight')  int topoheight)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'asset')  String asset, @JsonKey(name: 'block_hash')  String blockHash, @JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt topoheight, @JsonKey(includeFromJson: false, includeToJson: false)  RpcExtraFields extraFields)  $default,) {final _that = this;
 switch (_that) {
 case _NewAssetEvent():
-return $default(_that.asset,_that.blockHash,_that.topoheight);case _:
+return $default(_that.asset,_that.blockHash,_that.topoheight,_that.extraFields);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -196,10 +206,10 @@ return $default(_that.asset,_that.blockHash,_that.topoheight);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'asset')  String asset, @JsonKey(name: 'block_hash')  String blockHash, @JsonKey(name: 'topoheight')  int topoheight)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'asset')  String asset, @JsonKey(name: 'block_hash')  String blockHash, @JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt topoheight, @JsonKey(includeFromJson: false, includeToJson: false)  RpcExtraFields extraFields)?  $default,) {final _that = this;
 switch (_that) {
 case _NewAssetEvent() when $default != null:
-return $default(_that.asset,_that.blockHash,_that.topoheight);case _:
+return $default(_that.asset,_that.blockHash,_that.topoheight,_that.extraFields);case _:
   return null;
 
 }
@@ -210,13 +220,14 @@ return $default(_that.asset,_that.blockHash,_that.topoheight);case _:
 /// @nodoc
 @JsonSerializable()
 
-class _NewAssetEvent implements NewAssetEvent {
-  const _NewAssetEvent({@JsonKey(name: 'asset') required this.asset, @JsonKey(name: 'block_hash') required this.blockHash, @JsonKey(name: 'topoheight') required this.topoheight});
+class _NewAssetEvent extends NewAssetEvent {
+  const _NewAssetEvent({@JsonKey(name: 'asset') required this.asset, @JsonKey(name: 'block_hash') required this.blockHash, @JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.topoheight, @JsonKey(includeFromJson: false, includeToJson: false) this.extraFields = const RpcExtraFields()}): super._();
   factory _NewAssetEvent.fromJson(Map<String, dynamic> json) => _$NewAssetEventFromJson(json);
 
 @override@JsonKey(name: 'asset') final  String asset;
 @override@JsonKey(name: 'block_hash') final  String blockHash;
-@override@JsonKey(name: 'topoheight') final  int topoheight;
+@override@JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) final  BigInt topoheight;
+@override@JsonKey(includeFromJson: false, includeToJson: false) final  RpcExtraFields extraFields;
 
 /// Create a copy of NewAssetEvent
 /// with the given fields replaced by the non-null parameter values.
@@ -231,16 +242,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _NewAssetEvent&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.blockHash, blockHash) || other.blockHash == blockHash)&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _NewAssetEvent&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.blockHash, blockHash) || other.blockHash == blockHash)&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,asset,blockHash,topoheight);
+int get hashCode => Object.hash(runtimeType,asset,blockHash,topoheight,extraFields);
 
 @override
 String toString() {
-  return 'NewAssetEvent(asset: $asset, blockHash: $blockHash, topoheight: $topoheight)';
+  return 'NewAssetEvent(asset: $asset, blockHash: $blockHash, topoheight: $topoheight, extraFields: $extraFields)';
 }
 
 
@@ -251,11 +262,11 @@ abstract mixin class _$NewAssetEventCopyWith<$Res> implements $NewAssetEventCopy
   factory _$NewAssetEventCopyWith(_NewAssetEvent value, $Res Function(_NewAssetEvent) _then) = __$NewAssetEventCopyWithImpl;
 @override @useResult
 $Res call({
-@JsonKey(name: 'asset') String asset,@JsonKey(name: 'block_hash') String blockHash,@JsonKey(name: 'topoheight') int topoheight
+@JsonKey(name: 'asset') String asset,@JsonKey(name: 'block_hash') String blockHash,@JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt topoheight,@JsonKey(includeFromJson: false, includeToJson: false) RpcExtraFields extraFields
 });
 
 
-
+@override $RpcExtraFieldsCopyWith<$Res> get extraFields;
 
 }
 /// @nodoc
@@ -268,16 +279,26 @@ class __$NewAssetEventCopyWithImpl<$Res>
 
 /// Create a copy of NewAssetEvent
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? asset = null,Object? blockHash = null,Object? topoheight = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? asset = null,Object? blockHash = null,Object? topoheight = null,Object? extraFields = null,}) {
   return _then(_NewAssetEvent(
 asset: null == asset ? _self.asset : asset // ignore: cast_nullable_to_non_nullable
 as String,blockHash: null == blockHash ? _self.blockHash : blockHash // ignore: cast_nullable_to_non_nullable
 as String,topoheight: null == topoheight ? _self.topoheight : topoheight // ignore: cast_nullable_to_non_nullable
-as int,
+as BigInt,extraFields: null == extraFields ? _self.extraFields : extraFields // ignore: cast_nullable_to_non_nullable
+as RpcExtraFields,
   ));
 }
 
+/// Create a copy of NewAssetEvent
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$RpcExtraFieldsCopyWith<$Res> get extraFields {
 
+  return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
+    return _then(_self.copyWith(extraFields: value));
+  });
+}
 }
 
 // dart format on

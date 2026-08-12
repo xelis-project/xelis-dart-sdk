@@ -1,4 +1,4 @@
-// ignore_for_file: invalid_annotation_target, always_put_required_named_parameters_first
+// ignore_for_file: always_put_required_named_parameters_first
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 

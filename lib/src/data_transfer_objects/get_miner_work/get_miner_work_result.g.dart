@@ -12,16 +12,16 @@ _GetMinerWorkResult _$GetMinerWorkResultFromJson(Map<String, dynamic> json) =>
     _GetMinerWorkResult(
       algorithm: json['algorithm'] as String,
       minerWork: json['miner_work'] as String,
-      height: (json['height'] as num).toInt(),
-      difficulty: (json['difficulty'] as num).toInt(),
-      topoheight: (json['topoheight'] as num).toInt(),
+      height: rpcBigInt(json['height']),
+      difficulty: rpcBigInt(json['difficulty']),
+      topoheight: rpcBigInt(json['topoheight']),
     );
 
 Map<String, dynamic> _$GetMinerWorkResultToJson(_GetMinerWorkResult instance) =>
     <String, dynamic>{
       'algorithm': instance.algorithm,
       'miner_work': instance.minerWork,
-      'height': instance.height,
-      'difficulty': instance.difficulty,
-      'topoheight': instance.topoheight,
+      'height': rpcBigIntToJson(instance.height),
+      'difficulty': rpcBigIntStringToJson(instance.difficulty),
+      'topoheight': rpcBigIntToJson(instance.topoheight),
     };

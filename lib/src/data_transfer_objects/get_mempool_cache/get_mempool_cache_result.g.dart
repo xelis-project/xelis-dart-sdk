@@ -11,17 +11,17 @@ part of 'get_mempool_cache_result.dart';
 _GetMempoolCacheResult _$GetMempoolCacheResultFromJson(
   Map<String, dynamic> json,
 ) => _GetMempoolCacheResult(
-  balances: json['balances'] as Map<String, dynamic>,
-  max: (json['max'] as num).toInt(),
-  min: (json['min'] as num).toInt(),
+  balances: _balancesFromJson(json['balances']),
+  max: rpcBigInt(json['max']),
+  min: rpcBigInt(json['min']),
   txs: (json['txs'] as List<dynamic>).map((e) => e as String).toList(),
 );
 
 Map<String, dynamic> _$GetMempoolCacheResultToJson(
   _GetMempoolCacheResult instance,
 ) => <String, dynamic>{
-  'balances': instance.balances,
-  'max': instance.max,
-  'min': instance.min,
+  'balances': _balancesToJson(instance.balances),
+  'max': rpcBigIntToJson(instance.max),
+  'min': rpcBigIntToJson(instance.min),
   'txs': instance.txs,
 };

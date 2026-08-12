@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$GetNonceResult {
 
-@JsonKey(name: 'topoheight') int get topoHeight;@JsonKey(name: 'nonce') int get nonce;@JsonKey(name: 'previous_topoheight') int? get previousTopoHeight;
+@JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt get topoheight;@JsonKey(name: 'nonce', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt get nonce;@JsonKey(name: 'previous_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) BigInt? get previousTopoheight;@JsonKey(includeFromJson: false, includeToJson: false) RpcExtraFields get extraFields;
 /// Create a copy of GetNonceResult
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,16 +28,16 @@ $GetNonceResultCopyWith<GetNonceResult> get copyWith => _$GetNonceResultCopyWith
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetNonceResult&&(identical(other.topoHeight, topoHeight) || other.topoHeight == topoHeight)&&(identical(other.nonce, nonce) || other.nonce == nonce)&&(identical(other.previousTopoHeight, previousTopoHeight) || other.previousTopoHeight == previousTopoHeight));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetNonceResult&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&(identical(other.nonce, nonce) || other.nonce == nonce)&&(identical(other.previousTopoheight, previousTopoheight) || other.previousTopoheight == previousTopoheight)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,topoHeight,nonce,previousTopoHeight);
+int get hashCode => Object.hash(runtimeType,topoheight,nonce,previousTopoheight,extraFields);
 
 @override
 String toString() {
-  return 'GetNonceResult(topoHeight: $topoHeight, nonce: $nonce, previousTopoHeight: $previousTopoHeight)';
+  return 'GetNonceResult(topoheight: $topoheight, nonce: $nonce, previousTopoheight: $previousTopoheight, extraFields: $extraFields)';
 }
 
 
@@ -48,11 +48,11 @@ abstract mixin class $GetNonceResultCopyWith<$Res>  {
   factory $GetNonceResultCopyWith(GetNonceResult value, $Res Function(GetNonceResult) _then) = _$GetNonceResultCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(name: 'topoheight') int topoHeight,@JsonKey(name: 'nonce') int nonce,@JsonKey(name: 'previous_topoheight') int? previousTopoHeight
+@JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt topoheight,@JsonKey(name: 'nonce', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt nonce,@JsonKey(name: 'previous_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) BigInt? previousTopoheight,@JsonKey(includeFromJson: false, includeToJson: false) RpcExtraFields extraFields
 });
 
 
-
+$RpcExtraFieldsCopyWith<$Res> get extraFields;
 
 }
 /// @nodoc
@@ -65,15 +65,25 @@ class _$GetNonceResultCopyWithImpl<$Res>
 
 /// Create a copy of GetNonceResult
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? topoHeight = null,Object? nonce = null,Object? previousTopoHeight = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? topoheight = null,Object? nonce = null,Object? previousTopoheight = freezed,Object? extraFields = null,}) {
   return _then(_self.copyWith(
-topoHeight: null == topoHeight ? _self.topoHeight : topoHeight // ignore: cast_nullable_to_non_nullable
-as int,nonce: null == nonce ? _self.nonce : nonce // ignore: cast_nullable_to_non_nullable
-as int,previousTopoHeight: freezed == previousTopoHeight ? _self.previousTopoHeight : previousTopoHeight // ignore: cast_nullable_to_non_nullable
-as int?,
+topoheight: null == topoheight ? _self.topoheight : topoheight // ignore: cast_nullable_to_non_nullable
+as BigInt,nonce: null == nonce ? _self.nonce : nonce // ignore: cast_nullable_to_non_nullable
+as BigInt,previousTopoheight: freezed == previousTopoheight ? _self.previousTopoheight : previousTopoheight // ignore: cast_nullable_to_non_nullable
+as BigInt?,extraFields: null == extraFields ? _self.extraFields : extraFields // ignore: cast_nullable_to_non_nullable
+as RpcExtraFields,
   ));
 }
+/// Create a copy of GetNonceResult
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$RpcExtraFieldsCopyWith<$Res> get extraFields {
 
+  return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
+    return _then(_self.copyWith(extraFields: value));
+  });
+}
 }
 
 
@@ -155,10 +165,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'topoheight')  int topoHeight, @JsonKey(name: 'nonce')  int nonce, @JsonKey(name: 'previous_topoheight')  int? previousTopoHeight)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt topoheight, @JsonKey(name: 'nonce', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt nonce, @JsonKey(name: 'previous_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson)  BigInt? previousTopoheight, @JsonKey(includeFromJson: false, includeToJson: false)  RpcExtraFields extraFields)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _GetNonceResult() when $default != null:
-return $default(_that.topoHeight,_that.nonce,_that.previousTopoHeight);case _:
+return $default(_that.topoheight,_that.nonce,_that.previousTopoheight,_that.extraFields);case _:
   return orElse();
 
 }
@@ -176,10 +186,10 @@ return $default(_that.topoHeight,_that.nonce,_that.previousTopoHeight);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'topoheight')  int topoHeight, @JsonKey(name: 'nonce')  int nonce, @JsonKey(name: 'previous_topoheight')  int? previousTopoHeight)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt topoheight, @JsonKey(name: 'nonce', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt nonce, @JsonKey(name: 'previous_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson)  BigInt? previousTopoheight, @JsonKey(includeFromJson: false, includeToJson: false)  RpcExtraFields extraFields)  $default,) {final _that = this;
 switch (_that) {
 case _GetNonceResult():
-return $default(_that.topoHeight,_that.nonce,_that.previousTopoHeight);case _:
+return $default(_that.topoheight,_that.nonce,_that.previousTopoheight,_that.extraFields);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -196,10 +206,10 @@ return $default(_that.topoHeight,_that.nonce,_that.previousTopoHeight);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'topoheight')  int topoHeight, @JsonKey(name: 'nonce')  int nonce, @JsonKey(name: 'previous_topoheight')  int? previousTopoHeight)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt topoheight, @JsonKey(name: 'nonce', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt nonce, @JsonKey(name: 'previous_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson)  BigInt? previousTopoheight, @JsonKey(includeFromJson: false, includeToJson: false)  RpcExtraFields extraFields)?  $default,) {final _that = this;
 switch (_that) {
 case _GetNonceResult() when $default != null:
-return $default(_that.topoHeight,_that.nonce,_that.previousTopoHeight);case _:
+return $default(_that.topoheight,_that.nonce,_that.previousTopoheight,_that.extraFields);case _:
   return null;
 
 }
@@ -210,13 +220,14 @@ return $default(_that.topoHeight,_that.nonce,_that.previousTopoHeight);case _:
 /// @nodoc
 @JsonSerializable()
 
-class _GetNonceResult implements GetNonceResult {
-  const _GetNonceResult({@JsonKey(name: 'topoheight') required this.topoHeight, @JsonKey(name: 'nonce') required this.nonce, @JsonKey(name: 'previous_topoheight') this.previousTopoHeight});
+class _GetNonceResult extends GetNonceResult {
+  const _GetNonceResult({@JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.topoheight, @JsonKey(name: 'nonce', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.nonce, @JsonKey(name: 'previous_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) this.previousTopoheight, @JsonKey(includeFromJson: false, includeToJson: false) this.extraFields = const RpcExtraFields()}): super._();
   factory _GetNonceResult.fromJson(Map<String, dynamic> json) => _$GetNonceResultFromJson(json);
 
-@override@JsonKey(name: 'topoheight') final  int topoHeight;
-@override@JsonKey(name: 'nonce') final  int nonce;
-@override@JsonKey(name: 'previous_topoheight') final  int? previousTopoHeight;
+@override@JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) final  BigInt topoheight;
+@override@JsonKey(name: 'nonce', fromJson: rpcBigInt, toJson: rpcBigIntToJson) final  BigInt nonce;
+@override@JsonKey(name: 'previous_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) final  BigInt? previousTopoheight;
+@override@JsonKey(includeFromJson: false, includeToJson: false) final  RpcExtraFields extraFields;
 
 /// Create a copy of GetNonceResult
 /// with the given fields replaced by the non-null parameter values.
@@ -231,16 +242,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetNonceResult&&(identical(other.topoHeight, topoHeight) || other.topoHeight == topoHeight)&&(identical(other.nonce, nonce) || other.nonce == nonce)&&(identical(other.previousTopoHeight, previousTopoHeight) || other.previousTopoHeight == previousTopoHeight));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetNonceResult&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&(identical(other.nonce, nonce) || other.nonce == nonce)&&(identical(other.previousTopoheight, previousTopoheight) || other.previousTopoheight == previousTopoheight)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,topoHeight,nonce,previousTopoHeight);
+int get hashCode => Object.hash(runtimeType,topoheight,nonce,previousTopoheight,extraFields);
 
 @override
 String toString() {
-  return 'GetNonceResult(topoHeight: $topoHeight, nonce: $nonce, previousTopoHeight: $previousTopoHeight)';
+  return 'GetNonceResult(topoheight: $topoheight, nonce: $nonce, previousTopoheight: $previousTopoheight, extraFields: $extraFields)';
 }
 
 
@@ -251,11 +262,11 @@ abstract mixin class _$GetNonceResultCopyWith<$Res> implements $GetNonceResultCo
   factory _$GetNonceResultCopyWith(_GetNonceResult value, $Res Function(_GetNonceResult) _then) = __$GetNonceResultCopyWithImpl;
 @override @useResult
 $Res call({
-@JsonKey(name: 'topoheight') int topoHeight,@JsonKey(name: 'nonce') int nonce,@JsonKey(name: 'previous_topoheight') int? previousTopoHeight
+@JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt topoheight,@JsonKey(name: 'nonce', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt nonce,@JsonKey(name: 'previous_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) BigInt? previousTopoheight,@JsonKey(includeFromJson: false, includeToJson: false) RpcExtraFields extraFields
 });
 
 
-
+@override $RpcExtraFieldsCopyWith<$Res> get extraFields;
 
 }
 /// @nodoc
@@ -268,16 +279,26 @@ class __$GetNonceResultCopyWithImpl<$Res>
 
 /// Create a copy of GetNonceResult
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? topoHeight = null,Object? nonce = null,Object? previousTopoHeight = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? topoheight = null,Object? nonce = null,Object? previousTopoheight = freezed,Object? extraFields = null,}) {
   return _then(_GetNonceResult(
-topoHeight: null == topoHeight ? _self.topoHeight : topoHeight // ignore: cast_nullable_to_non_nullable
-as int,nonce: null == nonce ? _self.nonce : nonce // ignore: cast_nullable_to_non_nullable
-as int,previousTopoHeight: freezed == previousTopoHeight ? _self.previousTopoHeight : previousTopoHeight // ignore: cast_nullable_to_non_nullable
-as int?,
+topoheight: null == topoheight ? _self.topoheight : topoheight // ignore: cast_nullable_to_non_nullable
+as BigInt,nonce: null == nonce ? _self.nonce : nonce // ignore: cast_nullable_to_non_nullable
+as BigInt,previousTopoheight: freezed == previousTopoheight ? _self.previousTopoheight : previousTopoheight // ignore: cast_nullable_to_non_nullable
+as BigInt?,extraFields: null == extraFields ? _self.extraFields : extraFields // ignore: cast_nullable_to_non_nullable
+as RpcExtraFields,
   ));
 }
 
+/// Create a copy of GetNonceResult
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$RpcExtraFieldsCopyWith<$Res> get extraFields {
 
+  return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
+    return _then(_self.copyWith(extraFields: value));
+  });
+}
 }
 
 // dart format on

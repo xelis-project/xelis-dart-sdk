@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$StableTopoheightChangedEvent {
 
-@JsonKey(name: 'previous_stable_topoheight') int get previousStableTopoheight;@JsonKey(name: 'new_stable_topoheight') int get newStableTopoheight;
+@JsonKey(name: 'previous_stable_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt get previousStableTopoheight;@JsonKey(name: 'new_stable_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt get newStableTopoheight;@JsonKey(includeFromJson: false, includeToJson: false) RpcExtraFields get extraFields;
 /// Create a copy of StableTopoheightChangedEvent
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,16 +28,16 @@ $StableTopoheightChangedEventCopyWith<StableTopoheightChangedEvent> get copyWith
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is StableTopoheightChangedEvent&&(identical(other.previousStableTopoheight, previousStableTopoheight) || other.previousStableTopoheight == previousStableTopoheight)&&(identical(other.newStableTopoheight, newStableTopoheight) || other.newStableTopoheight == newStableTopoheight));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is StableTopoheightChangedEvent&&(identical(other.previousStableTopoheight, previousStableTopoheight) || other.previousStableTopoheight == previousStableTopoheight)&&(identical(other.newStableTopoheight, newStableTopoheight) || other.newStableTopoheight == newStableTopoheight)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,previousStableTopoheight,newStableTopoheight);
+int get hashCode => Object.hash(runtimeType,previousStableTopoheight,newStableTopoheight,extraFields);
 
 @override
 String toString() {
-  return 'StableTopoheightChangedEvent(previousStableTopoheight: $previousStableTopoheight, newStableTopoheight: $newStableTopoheight)';
+  return 'StableTopoheightChangedEvent(previousStableTopoheight: $previousStableTopoheight, newStableTopoheight: $newStableTopoheight, extraFields: $extraFields)';
 }
 
 
@@ -48,11 +48,11 @@ abstract mixin class $StableTopoheightChangedEventCopyWith<$Res>  {
   factory $StableTopoheightChangedEventCopyWith(StableTopoheightChangedEvent value, $Res Function(StableTopoheightChangedEvent) _then) = _$StableTopoheightChangedEventCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(name: 'previous_stable_topoheight') int previousStableTopoheight,@JsonKey(name: 'new_stable_topoheight') int newStableTopoheight
+@JsonKey(name: 'previous_stable_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt previousStableTopoheight,@JsonKey(name: 'new_stable_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt newStableTopoheight,@JsonKey(includeFromJson: false, includeToJson: false) RpcExtraFields extraFields
 });
 
 
-
+$RpcExtraFieldsCopyWith<$Res> get extraFields;
 
 }
 /// @nodoc
@@ -65,14 +65,24 @@ class _$StableTopoheightChangedEventCopyWithImpl<$Res>
 
 /// Create a copy of StableTopoheightChangedEvent
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? previousStableTopoheight = null,Object? newStableTopoheight = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? previousStableTopoheight = null,Object? newStableTopoheight = null,Object? extraFields = null,}) {
   return _then(_self.copyWith(
 previousStableTopoheight: null == previousStableTopoheight ? _self.previousStableTopoheight : previousStableTopoheight // ignore: cast_nullable_to_non_nullable
-as int,newStableTopoheight: null == newStableTopoheight ? _self.newStableTopoheight : newStableTopoheight // ignore: cast_nullable_to_non_nullable
-as int,
+as BigInt,newStableTopoheight: null == newStableTopoheight ? _self.newStableTopoheight : newStableTopoheight // ignore: cast_nullable_to_non_nullable
+as BigInt,extraFields: null == extraFields ? _self.extraFields : extraFields // ignore: cast_nullable_to_non_nullable
+as RpcExtraFields,
   ));
 }
+/// Create a copy of StableTopoheightChangedEvent
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$RpcExtraFieldsCopyWith<$Res> get extraFields {
 
+  return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
+    return _then(_self.copyWith(extraFields: value));
+  });
+}
 }
 
 
@@ -154,10 +164,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'previous_stable_topoheight')  int previousStableTopoheight, @JsonKey(name: 'new_stable_topoheight')  int newStableTopoheight)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'previous_stable_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt previousStableTopoheight, @JsonKey(name: 'new_stable_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt newStableTopoheight, @JsonKey(includeFromJson: false, includeToJson: false)  RpcExtraFields extraFields)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _StableTopoheightChangedEvent() when $default != null:
-return $default(_that.previousStableTopoheight,_that.newStableTopoheight);case _:
+return $default(_that.previousStableTopoheight,_that.newStableTopoheight,_that.extraFields);case _:
   return orElse();
 
 }
@@ -175,10 +185,10 @@ return $default(_that.previousStableTopoheight,_that.newStableTopoheight);case _
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'previous_stable_topoheight')  int previousStableTopoheight, @JsonKey(name: 'new_stable_topoheight')  int newStableTopoheight)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'previous_stable_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt previousStableTopoheight, @JsonKey(name: 'new_stable_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt newStableTopoheight, @JsonKey(includeFromJson: false, includeToJson: false)  RpcExtraFields extraFields)  $default,) {final _that = this;
 switch (_that) {
 case _StableTopoheightChangedEvent():
-return $default(_that.previousStableTopoheight,_that.newStableTopoheight);case _:
+return $default(_that.previousStableTopoheight,_that.newStableTopoheight,_that.extraFields);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -195,10 +205,10 @@ return $default(_that.previousStableTopoheight,_that.newStableTopoheight);case _
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'previous_stable_topoheight')  int previousStableTopoheight, @JsonKey(name: 'new_stable_topoheight')  int newStableTopoheight)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'previous_stable_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt previousStableTopoheight, @JsonKey(name: 'new_stable_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt newStableTopoheight, @JsonKey(includeFromJson: false, includeToJson: false)  RpcExtraFields extraFields)?  $default,) {final _that = this;
 switch (_that) {
 case _StableTopoheightChangedEvent() when $default != null:
-return $default(_that.previousStableTopoheight,_that.newStableTopoheight);case _:
+return $default(_that.previousStableTopoheight,_that.newStableTopoheight,_that.extraFields);case _:
   return null;
 
 }
@@ -209,12 +219,13 @@ return $default(_that.previousStableTopoheight,_that.newStableTopoheight);case _
 /// @nodoc
 @JsonSerializable()
 
-class _StableTopoheightChangedEvent implements StableTopoheightChangedEvent {
-  const _StableTopoheightChangedEvent({@JsonKey(name: 'previous_stable_topoheight') required this.previousStableTopoheight, @JsonKey(name: 'new_stable_topoheight') required this.newStableTopoheight});
+class _StableTopoheightChangedEvent extends StableTopoheightChangedEvent {
+  const _StableTopoheightChangedEvent({@JsonKey(name: 'previous_stable_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.previousStableTopoheight, @JsonKey(name: 'new_stable_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.newStableTopoheight, @JsonKey(includeFromJson: false, includeToJson: false) this.extraFields = const RpcExtraFields()}): super._();
   factory _StableTopoheightChangedEvent.fromJson(Map<String, dynamic> json) => _$StableTopoheightChangedEventFromJson(json);
 
-@override@JsonKey(name: 'previous_stable_topoheight') final  int previousStableTopoheight;
-@override@JsonKey(name: 'new_stable_topoheight') final  int newStableTopoheight;
+@override@JsonKey(name: 'previous_stable_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) final  BigInt previousStableTopoheight;
+@override@JsonKey(name: 'new_stable_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) final  BigInt newStableTopoheight;
+@override@JsonKey(includeFromJson: false, includeToJson: false) final  RpcExtraFields extraFields;
 
 /// Create a copy of StableTopoheightChangedEvent
 /// with the given fields replaced by the non-null parameter values.
@@ -229,16 +240,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _StableTopoheightChangedEvent&&(identical(other.previousStableTopoheight, previousStableTopoheight) || other.previousStableTopoheight == previousStableTopoheight)&&(identical(other.newStableTopoheight, newStableTopoheight) || other.newStableTopoheight == newStableTopoheight));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _StableTopoheightChangedEvent&&(identical(other.previousStableTopoheight, previousStableTopoheight) || other.previousStableTopoheight == previousStableTopoheight)&&(identical(other.newStableTopoheight, newStableTopoheight) || other.newStableTopoheight == newStableTopoheight)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,previousStableTopoheight,newStableTopoheight);
+int get hashCode => Object.hash(runtimeType,previousStableTopoheight,newStableTopoheight,extraFields);
 
 @override
 String toString() {
-  return 'StableTopoheightChangedEvent(previousStableTopoheight: $previousStableTopoheight, newStableTopoheight: $newStableTopoheight)';
+  return 'StableTopoheightChangedEvent(previousStableTopoheight: $previousStableTopoheight, newStableTopoheight: $newStableTopoheight, extraFields: $extraFields)';
 }
 
 
@@ -249,11 +260,11 @@ abstract mixin class _$StableTopoheightChangedEventCopyWith<$Res> implements $St
   factory _$StableTopoheightChangedEventCopyWith(_StableTopoheightChangedEvent value, $Res Function(_StableTopoheightChangedEvent) _then) = __$StableTopoheightChangedEventCopyWithImpl;
 @override @useResult
 $Res call({
-@JsonKey(name: 'previous_stable_topoheight') int previousStableTopoheight,@JsonKey(name: 'new_stable_topoheight') int newStableTopoheight
+@JsonKey(name: 'previous_stable_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt previousStableTopoheight,@JsonKey(name: 'new_stable_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt newStableTopoheight,@JsonKey(includeFromJson: false, includeToJson: false) RpcExtraFields extraFields
 });
 
 
-
+@override $RpcExtraFieldsCopyWith<$Res> get extraFields;
 
 }
 /// @nodoc
@@ -266,15 +277,25 @@ class __$StableTopoheightChangedEventCopyWithImpl<$Res>
 
 /// Create a copy of StableTopoheightChangedEvent
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? previousStableTopoheight = null,Object? newStableTopoheight = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? previousStableTopoheight = null,Object? newStableTopoheight = null,Object? extraFields = null,}) {
   return _then(_StableTopoheightChangedEvent(
 previousStableTopoheight: null == previousStableTopoheight ? _self.previousStableTopoheight : previousStableTopoheight // ignore: cast_nullable_to_non_nullable
-as int,newStableTopoheight: null == newStableTopoheight ? _self.newStableTopoheight : newStableTopoheight // ignore: cast_nullable_to_non_nullable
-as int,
+as BigInt,newStableTopoheight: null == newStableTopoheight ? _self.newStableTopoheight : newStableTopoheight // ignore: cast_nullable_to_non_nullable
+as BigInt,extraFields: null == extraFields ? _self.extraFields : extraFields // ignore: cast_nullable_to_non_nullable
+as RpcExtraFields,
   ));
 }
 
+/// Create a copy of StableTopoheightChangedEvent
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$RpcExtraFieldsCopyWith<$Res> get extraFields {
 
+  return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
+    return _then(_self.copyWith(extraFields: value));
+  });
+}
 }
 
 // dart format on

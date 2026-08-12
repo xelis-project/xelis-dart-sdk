@@ -1,4 +1,4 @@
-import 'package:xelis_dart_sdk/xelis_dart_sdk.dart';
+import 'package:xelis_dart_sdk/src/repositories/common/xelis_constants.dart';
 
 /// The RPC methods that can be called on the daemon.
 enum DaemonMethod implements XelisJsonKey {
@@ -12,7 +12,7 @@ enum DaemonMethod implements XelisJsonKey {
   getHeight('get_height'),
 
   /// Retrieve current topological height of the chain.
-  getTopoHeight('get_topoheight'),
+  getTopoheight('get_topoheight'),
 
   /// Retrieve current stable height of the chain.
   getStableHeight('get_stable_height'),
@@ -24,7 +24,7 @@ enum DaemonMethod implements XelisJsonKey {
   getBlockTemplate('get_block_template'),
 
   /// Retrieve a block at a specific topo height.
-  getBlockAtTopoHeight('get_block_at_topoheight'),
+  getBlockAtTopoheight('get_block_at_topoheight'),
 
   /// Retrieve all blocks at a specific height.
   getBlocksAtHeight('get_blocks_at_height'),
@@ -49,11 +49,11 @@ enum DaemonMethod implements XelisJsonKey {
 
   /// Get up-to-date asset's balance for a specific address.
   ///
-  /// https://github.com/xelis-project/xelis-blockchain/blob/dev/API.md#method-get_stable_balance
+  /// https://github.com/xelis-project/xelis-blockchain/blob/v1.24.0/API.md#method-get_stable_balance
   getStableBalance('get_stable_balance'),
 
   /// Get asset's balance from address at exact topoheight.
-  getBalanceAtTopoHeight('get_balance_at_topoheight'),
+  getBalanceAtTopoheight('get_balance_at_topoheight'),
 
   /// Get registered topoheight and decimals data from a specific asset.
   getAsset('get_asset'),
@@ -104,7 +104,7 @@ enum DaemonMethod implements XelisJsonKey {
 
   /// Retrieve a specific range of blocks (up to 20 maximum)
   /// based on topoheight.
-  getBlocksRangeByTopoHeight('get_blocks_range_by_topoheight'),
+  getBlocksRangeByTopoheight('get_blocks_range_by_topoheight'),
 
   /// Retrieve a specific range of blocks (up to 20 maximum) based on height.
   getBlocksRangeByHeight('get_blocks_range_by_height'),
@@ -197,14 +197,38 @@ enum DaemonMethod implements XelisJsonKey {
   /// Retrieve the contract logs that occurred in the requested transaction hash.
   getContractLogs('get_contract_logs'),
 
-  @Deprecated('Use getContractLogs instead')
-  getContractOutputs('get_contract_outputs'),
-
   /// TODO: Add documentation
   getContractModule('get_contract_module'),
 
   /// Retrieve the contract data with the requested key.
-  getContractData('get_contract_data');
+  getContractData('get_contract_data'),
+  getAssetSupply('get_asset_supply'),
+  getAssetSupplyAtTopoheight('get_asset_supply_at_topoheight'),
+  getBalancesAtMaximumTopoheight('get_balances_at_maximum_topoheight'),
+  getBlockBaseFeeByHash('get_block_base_fee_by_hash'),
+  getBlockDifficultyByHash('get_block_difficulty_by_hash'),
+  getBlockSummaryAtTopoheight('get_block_summary_at_topoheight'),
+  getBlockSummaryByHash('get_block_summary_by_hash'),
+  getContractAssets('get_contract_assets'),
+  getContractBalance('get_contract_balance'),
+  getContractBalanceAtTopoheight('get_contract_balance_at_topoheight'),
+  getContractDataAtTopoheight('get_contract_data_at_topoheight'),
+  getContractDataEntries('get_contract_data_entries'),
+  getContractRegisteredExecutionsAtTopoheight(
+    'get_contract_registered_executions_at_topoheight',
+  ),
+  getContractScheduledExecutionsAtTopoheight(
+    'get_contract_scheduled_executions_at_topoheight',
+  ),
+  getContractTransactions('get_contract_transactions'),
+  getContracts('get_contracts'),
+  getContractsOutputs('get_contracts_outputs'),
+  getEstimatedFeePerKb('get_estimated_fee_per_kb'),
+  getP2pBlockPropagation('get_p2p_block_propagation'),
+  getPrunedTopoheight('get_pruned_topoheight'),
+  getTransactionsSummary('get_transactions_summary'),
+  keyToAddress('key_to_address'),
+  simulateContractInvoke('simulate_contract_invoke');
 
   /// Creates a new [DaemonMethod] instance.
   const DaemonMethod(this.jsonKey);
@@ -216,6 +240,9 @@ enum DaemonMethod implements XelisJsonKey {
 
 /// The events that can be subscribed to on the daemon.
 enum DaemonEvent implements XelisJsonKey {
+  /// A new topological height was detected.
+  newTopoheight('new_topo_height'),
+
   /// New block event.
   newBlock('new_block'),
 
@@ -226,7 +253,7 @@ enum DaemonEvent implements XelisJsonKey {
   stableHeightChanged('stable_height_changed'),
 
   /// Stable topoheight changed event.
-  stableTopoHeightChanged('stable_topoheight_changed'),
+  stableTopoheightChanged('stable_topoheight_changed'),
 
   /// Transaction added in mempool event.
   transactionAddedInMempool('transaction_added_in_mempool'),
@@ -263,7 +290,7 @@ enum DaemonEvent implements XelisJsonKey {
 
   /// When the contract has been invoked,
   /// this allows to track all the contract invocations
-  invokeContract('invoke_contract'),
+  invokeContract('contract_invoke'),
 
   /// When a contract has transferred any token to the receiver address.
   contractTransfers('contract_transfers'),
@@ -272,14 +299,25 @@ enum DaemonEvent implements XelisJsonKey {
   contractEvent('contract_event'),
 
   /// When a contract has been deployed.
-  deployContract('deploy_contract');
+  deployContract('contract_deploy'),
+
+  /// A new mining block template was produced.
+  newBlockTemplate('new_block_template');
 
   /// Creates a new [DaemonEvent] instance.
   const DaemonEvent(this.jsonKey);
 
   /// Factory to convert a [String] to a [DaemonMethod].
   factory DaemonEvent.fromStr(String value) {
+    return tryFromStr(value) ??
+        (throw FormatException('Unknown event: $value'));
+  }
+
+  /// Returns `null` when a newer daemon sends an event unknown to this SDK.
+  static DaemonEvent? tryFromStr(String value) {
     switch (value) {
+      case 'new_topo_height':
+        return DaemonEvent.newTopoheight;
       case 'new_block':
         return DaemonEvent.newBlock;
       case 'block_ordered':
@@ -287,7 +325,7 @@ enum DaemonEvent implements XelisJsonKey {
       case 'stable_height_changed':
         return DaemonEvent.stableHeightChanged;
       case 'stable_topoheight_changed':
-        return DaemonEvent.stableTopoHeightChanged;
+        return DaemonEvent.stableTopoheightChanged;
       case 'transaction_added_in_mempool':
         return DaemonEvent.transactionAddedInMempool;
       case 'transaction_executed':
@@ -308,16 +346,18 @@ enum DaemonEvent implements XelisJsonKey {
         return DaemonEvent.blockOrphaned;
       case 'transaction_orphaned':
         return DaemonEvent.transactionOrphaned;
-      case 'invoke_contract':
+      case 'contract_invoke':
         return DaemonEvent.invokeContract;
       case 'contract_transfers':
         return DaemonEvent.contractTransfers;
       case 'contract_event':
         return DaemonEvent.contractEvent;
-      case 'deploy_contract':
+      case 'contract_deploy':
         return DaemonEvent.deployContract;
+      case 'new_block_template':
+        return DaemonEvent.newBlockTemplate;
       default:
-        throw Exception('Unknown event: $value');
+        return null;
     }
   }
 

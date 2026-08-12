@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$ContractDepositBuilder {
 
-@JsonKey(name: 'amount') int get amount;@JsonKey(name: 'private') bool get private;
+@JsonKey(name: 'amount', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt get amount;@JsonKey(name: 'private') bool get private;
 /// Create a copy of ContractDepositBuilder
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $ContractDepositBuilderCopyWith<$Res>  {
   factory $ContractDepositBuilderCopyWith(ContractDepositBuilder value, $Res Function(ContractDepositBuilder) _then) = _$ContractDepositBuilderCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(name: 'amount') int amount,@JsonKey(name: 'private') bool private
+@JsonKey(name: 'amount', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt amount,@JsonKey(name: 'private') bool private
 });
 
 
@@ -68,7 +68,7 @@ class _$ContractDepositBuilderCopyWithImpl<$Res>
 @pragma('vm:prefer-inline') @override $Res call({Object? amount = null,Object? private = null,}) {
   return _then(_self.copyWith(
 amount: null == amount ? _self.amount : amount // ignore: cast_nullable_to_non_nullable
-as int,private: null == private ? _self.private : private // ignore: cast_nullable_to_non_nullable
+as BigInt,private: null == private ? _self.private : private // ignore: cast_nullable_to_non_nullable
 as bool,
   ));
 }
@@ -151,7 +151,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'amount')  int amount, @JsonKey(name: 'private')  bool private)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'amount', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt amount, @JsonKey(name: 'private')  bool private)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ContractDepositBuilder() when $default != null:
 return $default(_that.amount,_that.private);case _:
@@ -172,7 +172,7 @@ return $default(_that.amount,_that.private);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'amount')  int amount, @JsonKey(name: 'private')  bool private)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'amount', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt amount, @JsonKey(name: 'private')  bool private)  $default,) {final _that = this;
 switch (_that) {
 case _ContractDepositBuilder():
 return $default(_that.amount,_that.private);}
@@ -189,7 +189,7 @@ return $default(_that.amount,_that.private);}
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'amount')  int amount, @JsonKey(name: 'private')  bool private)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'amount', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt amount, @JsonKey(name: 'private')  bool private)?  $default,) {final _that = this;
 switch (_that) {
 case _ContractDepositBuilder() when $default != null:
 return $default(_that.amount,_that.private);case _:
@@ -204,10 +204,10 @@ return $default(_that.amount,_that.private);case _:
 @JsonSerializable()
 
 class _ContractDepositBuilder implements ContractDepositBuilder {
-  const _ContractDepositBuilder({@JsonKey(name: 'amount') required this.amount, @JsonKey(name: 'private') this.private = false});
+  const _ContractDepositBuilder({@JsonKey(name: 'amount', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.amount, @JsonKey(name: 'private') this.private = false});
   factory _ContractDepositBuilder.fromJson(Map<String, dynamic> json) => _$ContractDepositBuilderFromJson(json);
 
-@override@JsonKey(name: 'amount') final  int amount;
+@override@JsonKey(name: 'amount', fromJson: rpcBigInt, toJson: rpcBigIntToJson) final  BigInt amount;
 @override@JsonKey(name: 'private') final  bool private;
 
 /// Create a copy of ContractDepositBuilder
@@ -243,7 +243,7 @@ abstract mixin class _$ContractDepositBuilderCopyWith<$Res> implements $Contract
   factory _$ContractDepositBuilderCopyWith(_ContractDepositBuilder value, $Res Function(_ContractDepositBuilder) _then) = __$ContractDepositBuilderCopyWithImpl;
 @override @useResult
 $Res call({
-@JsonKey(name: 'amount') int amount,@JsonKey(name: 'private') bool private
+@JsonKey(name: 'amount', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt amount,@JsonKey(name: 'private') bool private
 });
 
 
@@ -263,7 +263,7 @@ class __$ContractDepositBuilderCopyWithImpl<$Res>
 @override @pragma('vm:prefer-inline') $Res call({Object? amount = null,Object? private = null,}) {
   return _then(_ContractDepositBuilder(
 amount: null == amount ? _self.amount : amount // ignore: cast_nullable_to_non_nullable
-as int,private: null == private ? _self.private : private // ignore: cast_nullable_to_non_nullable
+as BigInt,private: null == private ? _self.private : private // ignore: cast_nullable_to_non_nullable
 as bool,
   ));
 }

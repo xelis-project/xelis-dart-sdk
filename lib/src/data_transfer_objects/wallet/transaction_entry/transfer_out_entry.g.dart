@@ -11,7 +11,7 @@ part of 'transfer_out_entry.dart';
 _TransferOutEntry _$TransferOutEntryFromJson(Map<String, dynamic> json) =>
     _TransferOutEntry(
       destination: json['destination'] as String,
-      amount: (json['amount'] as num).toInt(),
+      amount: rpcBigInt(json['amount']),
       asset: json['asset'] as String,
       extraData: json['extra_data'] == null
           ? null
@@ -21,7 +21,7 @@ _TransferOutEntry _$TransferOutEntryFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$TransferOutEntryToJson(_TransferOutEntry instance) =>
     <String, dynamic>{
       'destination': instance.destination,
-      'amount': instance.amount,
+      'amount': rpcBigIntToJson(instance.amount),
       'asset': instance.asset,
       'extra_data': instance.extraData,
     };

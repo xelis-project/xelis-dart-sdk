@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$GetMempoolSummaryResult {
 
-@JsonKey(name: 'transactions') List<MempoolTransactionSummary> get transactions;@JsonKey(name: 'total') int get total;
+@JsonKey(name: 'transactions') List<MempoolTransactionSummary> get transactions;@JsonKey(name: 'total', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt get total;@JsonKey(includeFromJson: false, includeToJson: false) RpcExtraFields get extraFields;
 /// Create a copy of GetMempoolSummaryResult
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,16 +28,16 @@ $GetMempoolSummaryResultCopyWith<GetMempoolSummaryResult> get copyWith => _$GetM
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetMempoolSummaryResult&&const DeepCollectionEquality().equals(other.transactions, transactions)&&(identical(other.total, total) || other.total == total));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetMempoolSummaryResult&&const DeepCollectionEquality().equals(other.transactions, transactions)&&(identical(other.total, total) || other.total == total)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(transactions),total);
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(transactions),total,extraFields);
 
 @override
 String toString() {
-  return 'GetMempoolSummaryResult(transactions: $transactions, total: $total)';
+  return 'GetMempoolSummaryResult(transactions: $transactions, total: $total, extraFields: $extraFields)';
 }
 
 
@@ -48,11 +48,11 @@ abstract mixin class $GetMempoolSummaryResultCopyWith<$Res>  {
   factory $GetMempoolSummaryResultCopyWith(GetMempoolSummaryResult value, $Res Function(GetMempoolSummaryResult) _then) = _$GetMempoolSummaryResultCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(name: 'transactions') List<MempoolTransactionSummary> transactions,@JsonKey(name: 'total') int total
+@JsonKey(name: 'transactions') List<MempoolTransactionSummary> transactions,@JsonKey(name: 'total', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt total,@JsonKey(includeFromJson: false, includeToJson: false) RpcExtraFields extraFields
 });
 
 
-
+$RpcExtraFieldsCopyWith<$Res> get extraFields;
 
 }
 /// @nodoc
@@ -65,14 +65,24 @@ class _$GetMempoolSummaryResultCopyWithImpl<$Res>
 
 /// Create a copy of GetMempoolSummaryResult
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? transactions = null,Object? total = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? transactions = null,Object? total = null,Object? extraFields = null,}) {
   return _then(_self.copyWith(
 transactions: null == transactions ? _self.transactions : transactions // ignore: cast_nullable_to_non_nullable
 as List<MempoolTransactionSummary>,total: null == total ? _self.total : total // ignore: cast_nullable_to_non_nullable
-as int,
+as BigInt,extraFields: null == extraFields ? _self.extraFields : extraFields // ignore: cast_nullable_to_non_nullable
+as RpcExtraFields,
   ));
 }
+/// Create a copy of GetMempoolSummaryResult
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$RpcExtraFieldsCopyWith<$Res> get extraFields {
 
+  return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
+    return _then(_self.copyWith(extraFields: value));
+  });
+}
 }
 
 
@@ -154,10 +164,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'transactions')  List<MempoolTransactionSummary> transactions, @JsonKey(name: 'total')  int total)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'transactions')  List<MempoolTransactionSummary> transactions, @JsonKey(name: 'total', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt total, @JsonKey(includeFromJson: false, includeToJson: false)  RpcExtraFields extraFields)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _GetMempoolSummaryResult() when $default != null:
-return $default(_that.transactions,_that.total);case _:
+return $default(_that.transactions,_that.total,_that.extraFields);case _:
   return orElse();
 
 }
@@ -175,10 +185,10 @@ return $default(_that.transactions,_that.total);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'transactions')  List<MempoolTransactionSummary> transactions, @JsonKey(name: 'total')  int total)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'transactions')  List<MempoolTransactionSummary> transactions, @JsonKey(name: 'total', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt total, @JsonKey(includeFromJson: false, includeToJson: false)  RpcExtraFields extraFields)  $default,) {final _that = this;
 switch (_that) {
 case _GetMempoolSummaryResult():
-return $default(_that.transactions,_that.total);case _:
+return $default(_that.transactions,_that.total,_that.extraFields);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -195,10 +205,10 @@ return $default(_that.transactions,_that.total);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'transactions')  List<MempoolTransactionSummary> transactions, @JsonKey(name: 'total')  int total)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'transactions')  List<MempoolTransactionSummary> transactions, @JsonKey(name: 'total', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt total, @JsonKey(includeFromJson: false, includeToJson: false)  RpcExtraFields extraFields)?  $default,) {final _that = this;
 switch (_that) {
 case _GetMempoolSummaryResult() when $default != null:
-return $default(_that.transactions,_that.total);case _:
+return $default(_that.transactions,_that.total,_that.extraFields);case _:
   return null;
 
 }
@@ -209,8 +219,8 @@ return $default(_that.transactions,_that.total);case _:
 /// @nodoc
 @JsonSerializable()
 
-class _GetMempoolSummaryResult implements GetMempoolSummaryResult {
-  const _GetMempoolSummaryResult({@JsonKey(name: 'transactions') required final  List<MempoolTransactionSummary> transactions, @JsonKey(name: 'total') required this.total}): _transactions = transactions;
+class _GetMempoolSummaryResult extends GetMempoolSummaryResult {
+  const _GetMempoolSummaryResult({@JsonKey(name: 'transactions') required final  List<MempoolTransactionSummary> transactions, @JsonKey(name: 'total', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.total, @JsonKey(includeFromJson: false, includeToJson: false) this.extraFields = const RpcExtraFields()}): _transactions = transactions,super._();
   factory _GetMempoolSummaryResult.fromJson(Map<String, dynamic> json) => _$GetMempoolSummaryResultFromJson(json);
 
  final  List<MempoolTransactionSummary> _transactions;
@@ -220,7 +230,8 @@ class _GetMempoolSummaryResult implements GetMempoolSummaryResult {
   return EqualUnmodifiableListView(_transactions);
 }
 
-@override@JsonKey(name: 'total') final  int total;
+@override@JsonKey(name: 'total', fromJson: rpcBigInt, toJson: rpcBigIntToJson) final  BigInt total;
+@override@JsonKey(includeFromJson: false, includeToJson: false) final  RpcExtraFields extraFields;
 
 /// Create a copy of GetMempoolSummaryResult
 /// with the given fields replaced by the non-null parameter values.
@@ -235,16 +246,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetMempoolSummaryResult&&const DeepCollectionEquality().equals(other._transactions, _transactions)&&(identical(other.total, total) || other.total == total));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetMempoolSummaryResult&&const DeepCollectionEquality().equals(other._transactions, _transactions)&&(identical(other.total, total) || other.total == total)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_transactions),total);
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_transactions),total,extraFields);
 
 @override
 String toString() {
-  return 'GetMempoolSummaryResult(transactions: $transactions, total: $total)';
+  return 'GetMempoolSummaryResult(transactions: $transactions, total: $total, extraFields: $extraFields)';
 }
 
 
@@ -255,11 +266,11 @@ abstract mixin class _$GetMempoolSummaryResultCopyWith<$Res> implements $GetMemp
   factory _$GetMempoolSummaryResultCopyWith(_GetMempoolSummaryResult value, $Res Function(_GetMempoolSummaryResult) _then) = __$GetMempoolSummaryResultCopyWithImpl;
 @override @useResult
 $Res call({
-@JsonKey(name: 'transactions') List<MempoolTransactionSummary> transactions,@JsonKey(name: 'total') int total
+@JsonKey(name: 'transactions') List<MempoolTransactionSummary> transactions,@JsonKey(name: 'total', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt total,@JsonKey(includeFromJson: false, includeToJson: false) RpcExtraFields extraFields
 });
 
 
-
+@override $RpcExtraFieldsCopyWith<$Res> get extraFields;
 
 }
 /// @nodoc
@@ -272,15 +283,25 @@ class __$GetMempoolSummaryResultCopyWithImpl<$Res>
 
 /// Create a copy of GetMempoolSummaryResult
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? transactions = null,Object? total = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? transactions = null,Object? total = null,Object? extraFields = null,}) {
   return _then(_GetMempoolSummaryResult(
 transactions: null == transactions ? _self._transactions : transactions // ignore: cast_nullable_to_non_nullable
 as List<MempoolTransactionSummary>,total: null == total ? _self.total : total // ignore: cast_nullable_to_non_nullable
-as int,
+as BigInt,extraFields: null == extraFields ? _self.extraFields : extraFields // ignore: cast_nullable_to_non_nullable
+as RpcExtraFields,
   ));
 }
 
+/// Create a copy of GetMempoolSummaryResult
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$RpcExtraFieldsCopyWith<$Res> get extraFields {
 
+  return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
+    return _then(_self.copyWith(extraFields: value));
+  });
+}
 }
 
 // dart format on

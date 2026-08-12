@@ -10,26 +10,29 @@ part of 'transaction_entry_type.dart';
 
 CoinbaseEntry _$CoinbaseEntryFromJson(Map<String, dynamic> json) =>
     CoinbaseEntry(
-      reward: (json['reward'] as num).toInt(),
+      reward: rpcBigInt(json['reward']),
       $type: json['runtimeType'] as String?,
     );
 
 Map<String, dynamic> _$CoinbaseEntryToJson(CoinbaseEntry instance) =>
-    <String, dynamic>{'reward': instance.reward, 'runtimeType': instance.$type};
+    <String, dynamic>{
+      'reward': rpcBigIntToJson(instance.reward),
+      'runtimeType': instance.$type,
+    };
 
 BurnEntry _$BurnEntryFromJson(Map<String, dynamic> json) => BurnEntry(
   asset: json['asset'] as String,
-  amount: (json['amount'] as num).toInt(),
-  fee: (json['fee'] as num).toInt(),
-  nonce: (json['nonce'] as num).toInt(),
+  amount: rpcBigInt(json['amount']),
+  fee: rpcBigInt(json['fee']),
+  nonce: rpcBigInt(json['nonce']),
   $type: json['runtimeType'] as String?,
 );
 
 Map<String, dynamic> _$BurnEntryToJson(BurnEntry instance) => <String, dynamic>{
   'asset': instance.asset,
-  'amount': instance.amount,
-  'fee': instance.fee,
-  'nonce': instance.nonce,
+  'amount': rpcBigIntToJson(instance.amount),
+  'fee': rpcBigIntToJson(instance.fee),
+  'nonce': rpcBigIntToJson(instance.nonce),
   'runtimeType': instance.$type,
 };
 
@@ -51,8 +54,8 @@ Map<String, dynamic> _$IncomingEntryToJson(IncomingEntry instance) =>
 
 OutgoingEntry _$OutgoingEntryFromJson(Map<String, dynamic> json) =>
     OutgoingEntry(
-      fee: (json['fee'] as num).toInt(),
-      nonce: (json['nonce'] as num).toInt(),
+      fee: rpcBigInt(json['fee']),
+      nonce: rpcBigInt(json['nonce']),
       transfers: (json['transfers'] as List<dynamic>)
           .map((e) => TransferOutEntry.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -61,8 +64,8 @@ OutgoingEntry _$OutgoingEntryFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$OutgoingEntryToJson(OutgoingEntry instance) =>
     <String, dynamic>{
-      'fee': instance.fee,
-      'nonce': instance.nonce,
+      'fee': rpcBigIntToJson(instance.fee),
+      'nonce': rpcBigIntToJson(instance.nonce),
       'transfers': instance.transfers,
       'runtimeType': instance.$type,
     };
@@ -73,8 +76,8 @@ MultisigEntry _$MultisigEntryFromJson(Map<String, dynamic> json) =>
           .map((e) => e as String)
           .toList(),
       threshold: (json['threshold'] as num).toInt(),
-      fee: (json['fee'] as num).toInt(),
-      nonce: (json['nonce'] as num).toInt(),
+      fee: rpcBigInt(json['fee']),
+      nonce: rpcBigInt(json['nonce']),
       $type: json['runtimeType'] as String?,
     );
 
@@ -82,22 +85,20 @@ Map<String, dynamic> _$MultisigEntryToJson(MultisigEntry instance) =>
     <String, dynamic>{
       'participants': instance.participants,
       'threshold': instance.threshold,
-      'fee': instance.fee,
-      'nonce': instance.nonce,
+      'fee': rpcBigIntToJson(instance.fee),
+      'nonce': rpcBigIntToJson(instance.nonce),
       'runtimeType': instance.$type,
     };
 
 InvokeContractEntry _$InvokeContractEntryFromJson(Map<String, dynamic> json) =>
     InvokeContractEntry(
       contract: json['contract'] as String,
-      deposits: Map<String, int>.from(json['deposits'] as Map),
-      received: (json['received'] as Map<String, dynamic>).map(
-        (k, e) => MapEntry(k, Map<String, int>.from(e as Map)),
-      ),
+      deposits: rpcBigIntMap(json['deposits']),
+      received: rpcNestedBigIntMap(json['received']),
       chunkId: (json['chunk_id'] as num).toInt(),
-      fee: (json['fee'] as num).toInt(),
-      maxGas: (json['max_gas'] as num).toInt(),
-      nonce: (json['nonce'] as num).toInt(),
+      fee: rpcBigInt(json['fee']),
+      maxGas: rpcBigInt(json['max_gas']),
+      nonce: rpcBigInt(json['nonce']),
       $type: json['runtimeType'] as String?,
     );
 
@@ -105,19 +106,19 @@ Map<String, dynamic> _$InvokeContractEntryToJson(
   InvokeContractEntry instance,
 ) => <String, dynamic>{
   'contract': instance.contract,
-  'deposits': instance.deposits,
-  'received': instance.received,
+  'deposits': rpcBigIntMapToJson(instance.deposits),
+  'received': rpcNestedBigIntMapToJson(instance.received),
   'chunk_id': instance.chunkId,
-  'fee': instance.fee,
-  'max_gas': instance.maxGas,
-  'nonce': instance.nonce,
+  'fee': rpcBigIntToJson(instance.fee),
+  'max_gas': rpcBigIntToJson(instance.maxGas),
+  'nonce': rpcBigIntToJson(instance.nonce),
   'runtimeType': instance.$type,
 };
 
 DeployContractEntry _$DeployContractEntryFromJson(Map<String, dynamic> json) =>
     DeployContractEntry(
-      fee: (json['fee'] as num).toInt(),
-      nonce: (json['nonce'] as num).toInt(),
+      fee: rpcBigInt(json['fee']),
+      nonce: rpcBigInt(json['nonce']),
       invoke: json['invoke'] == null
           ? null
           : DeployInvoke.fromJson(json['invoke'] as Map<String, dynamic>),
@@ -127,8 +128,8 @@ DeployContractEntry _$DeployContractEntryFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$DeployContractEntryToJson(
   DeployContractEntry instance,
 ) => <String, dynamic>{
-  'fee': instance.fee,
-  'nonce': instance.nonce,
+  'fee': rpcBigIntToJson(instance.fee),
+  'nonce': rpcBigIntToJson(instance.nonce),
   'invoke': instance.invoke,
   'runtimeType': instance.$type,
 };
@@ -136,16 +137,14 @@ Map<String, dynamic> _$DeployContractEntryToJson(
 IncomingContractEntry _$IncomingContractEntryFromJson(
   Map<String, dynamic> json,
 ) => IncomingContractEntry(
-  transfers: (json['transfers'] as Map<String, dynamic>).map(
-    (k, e) => MapEntry(k, Map<String, int>.from(e as Map)),
-  ),
+  transfers: rpcNestedBigIntMap(json['transfers']),
   $type: json['runtimeType'] as String?,
 );
 
 Map<String, dynamic> _$IncomingContractEntryToJson(
   IncomingContractEntry instance,
 ) => <String, dynamic>{
-  'transfers': instance.transfers,
+  'transfers': rpcNestedBigIntMapToJson(instance.transfers),
   'runtimeType': instance.$type,
 };
 
@@ -154,8 +153,8 @@ OutgoingBlobEntry _$OutgoingBlobEntryFromJson(Map<String, dynamic> json) =>
       destinations: (json['destinations'] as List<dynamic>)
           .map((e) => e as String)
           .toList(),
-      fee: (json['fee'] as num).toInt(),
-      nonce: (json['nonce'] as num).toInt(),
+      fee: rpcBigInt(json['fee']),
+      nonce: rpcBigInt(json['nonce']),
       data: ExtraData.fromJson(json['data'] as Map<String, dynamic>),
       $type: json['runtimeType'] as String?,
     );
@@ -163,8 +162,8 @@ OutgoingBlobEntry _$OutgoingBlobEntryFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$OutgoingBlobEntryToJson(OutgoingBlobEntry instance) =>
     <String, dynamic>{
       'destinations': instance.destinations,
-      'fee': instance.fee,
-      'nonce': instance.nonce,
+      'fee': rpcBigIntToJson(instance.fee),
+      'nonce': rpcBigIntToJson(instance.nonce),
       'data': instance.data,
       'runtimeType': instance.$type,
     };
@@ -186,3 +185,19 @@ Map<String, dynamic> _$IncomingBlobEntryToJson(IncomingBlobEntry instance) =>
       'data': instance.data,
       'runtimeType': instance.$type,
     };
+
+UnknownTransactionEntryType _$UnknownTransactionEntryTypeFromJson(
+  Map<String, dynamic> json,
+) => UnknownTransactionEntryType(
+  type: json['type'] as String,
+  wireValue: RpcJsonValue.fromJson(json['wireValue']),
+  $type: json['runtimeType'] as String?,
+);
+
+Map<String, dynamic> _$UnknownTransactionEntryTypeToJson(
+  UnknownTransactionEntryType instance,
+) => <String, dynamic>{
+  'type': instance.type,
+  'wireValue': instance.wireValue,
+  'runtimeType': instance.$type,
+};

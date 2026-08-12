@@ -1,12 +1,10 @@
-// ignore_for_file: invalid_annotation_target
-
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'signer_id.freezed.dart';
 part 'signer_id.g.dart';
 
 /// @nodoc
-@freezed
+@Freezed(toStringOverride: false)
 abstract class SignerId with _$SignerId {
   /// @nodoc
   const factory SignerId({
@@ -14,7 +12,12 @@ abstract class SignerId with _$SignerId {
     @JsonKey(name: 'private_key') required String privateKey,
   }) = _SignerId;
 
+  const SignerId._();
+
   /// @nodoc
   factory SignerId.fromJson(Map<String, dynamic> json) =>
       _$SignerIdFromJson(json);
+
+  @override
+  String toString() => 'SignerId(id: $id, privateKey: <redacted>)';
 }

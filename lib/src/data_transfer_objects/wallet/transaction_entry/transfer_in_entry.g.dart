@@ -10,7 +10,7 @@ part of 'transfer_in_entry.dart';
 
 _TransferInEntry _$TransferInEntryFromJson(Map<String, dynamic> json) =>
     _TransferInEntry(
-      amount: (json['amount'] as num).toInt(),
+      amount: rpcBigInt(json['amount']),
       asset: json['asset'] as String,
       extraData: json['extra_data'] == null
           ? null
@@ -19,7 +19,7 @@ _TransferInEntry _$TransferInEntryFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$TransferInEntryToJson(_TransferInEntry instance) =>
     <String, dynamic>{
-      'amount': instance.amount,
+      'amount': rpcBigIntToJson(instance.amount),
       'asset': instance.asset,
       'extra_data': instance.extraData,
     };

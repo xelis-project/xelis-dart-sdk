@@ -1,6 +1,5 @@
-// ignore_for_file: invalid_annotation_target
-
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:xelis_dart_sdk/src/utils/rpc_json.dart';
 
 part 'get_account_history_params.freezed.dart';
 
@@ -15,8 +14,18 @@ abstract class GetAccountHistoryParams with _$GetAccountHistoryParams {
     @JsonKey(name: 'asset') required String asset,
     @JsonKey(name: 'incoming_flow') required bool incomingFlow,
     @JsonKey(name: 'outgoing_flow') required bool outgoingFlow,
-    @JsonKey(name: 'minimum_topoheight') int? minimumTopoheight,
-    @JsonKey(name: 'maximum_topoheight') int? maximumTopoheight,
+    @JsonKey(
+      name: 'minimum_topoheight',
+      fromJson: rpcNullableBigInt,
+      toJson: rpcNullableBigIntToJson,
+    )
+    BigInt? minimumTopoheight,
+    @JsonKey(
+      name: 'maximum_topoheight',
+      fromJson: rpcNullableBigInt,
+      toJson: rpcNullableBigIntToJson,
+    )
+    BigInt? maximumTopoheight,
   }) = _GetAccountHistoryParams;
 
   /// @nodoc

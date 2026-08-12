@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$PeerPeerDisconnectedEvent {
 
-@JsonKey(name: 'peer_id') num get id;@JsonKey(name: 'peer_addr') String get address;
+@JsonKey(name: 'peer_id', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt get id;@JsonKey(name: 'peer_addr') String get address;@JsonKey(includeFromJson: false, includeToJson: false) RpcExtraFields get extraFields;
 /// Create a copy of PeerPeerDisconnectedEvent
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,16 +28,16 @@ $PeerPeerDisconnectedEventCopyWith<PeerPeerDisconnectedEvent> get copyWith => _$
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is PeerPeerDisconnectedEvent&&(identical(other.id, id) || other.id == id)&&(identical(other.address, address) || other.address == address));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is PeerPeerDisconnectedEvent&&(identical(other.id, id) || other.id == id)&&(identical(other.address, address) || other.address == address)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,address);
+int get hashCode => Object.hash(runtimeType,id,address,extraFields);
 
 @override
 String toString() {
-  return 'PeerPeerDisconnectedEvent(id: $id, address: $address)';
+  return 'PeerPeerDisconnectedEvent(id: $id, address: $address, extraFields: $extraFields)';
 }
 
 
@@ -48,11 +48,11 @@ abstract mixin class $PeerPeerDisconnectedEventCopyWith<$Res>  {
   factory $PeerPeerDisconnectedEventCopyWith(PeerPeerDisconnectedEvent value, $Res Function(PeerPeerDisconnectedEvent) _then) = _$PeerPeerDisconnectedEventCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(name: 'peer_id') num id,@JsonKey(name: 'peer_addr') String address
+@JsonKey(name: 'peer_id', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt id,@JsonKey(name: 'peer_addr') String address,@JsonKey(includeFromJson: false, includeToJson: false) RpcExtraFields extraFields
 });
 
 
-
+$RpcExtraFieldsCopyWith<$Res> get extraFields;
 
 }
 /// @nodoc
@@ -65,14 +65,24 @@ class _$PeerPeerDisconnectedEventCopyWithImpl<$Res>
 
 /// Create a copy of PeerPeerDisconnectedEvent
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? address = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? address = null,Object? extraFields = null,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as num,address: null == address ? _self.address : address // ignore: cast_nullable_to_non_nullable
-as String,
+as BigInt,address: null == address ? _self.address : address // ignore: cast_nullable_to_non_nullable
+as String,extraFields: null == extraFields ? _self.extraFields : extraFields // ignore: cast_nullable_to_non_nullable
+as RpcExtraFields,
   ));
 }
+/// Create a copy of PeerPeerDisconnectedEvent
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$RpcExtraFieldsCopyWith<$Res> get extraFields {
 
+  return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
+    return _then(_self.copyWith(extraFields: value));
+  });
+}
 }
 
 
@@ -154,10 +164,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'peer_id')  num id, @JsonKey(name: 'peer_addr')  String address)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'peer_id', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt id, @JsonKey(name: 'peer_addr')  String address, @JsonKey(includeFromJson: false, includeToJson: false)  RpcExtraFields extraFields)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _PeerPeerDisconnectedEvent() when $default != null:
-return $default(_that.id,_that.address);case _:
+return $default(_that.id,_that.address,_that.extraFields);case _:
   return orElse();
 
 }
@@ -175,10 +185,10 @@ return $default(_that.id,_that.address);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'peer_id')  num id, @JsonKey(name: 'peer_addr')  String address)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'peer_id', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt id, @JsonKey(name: 'peer_addr')  String address, @JsonKey(includeFromJson: false, includeToJson: false)  RpcExtraFields extraFields)  $default,) {final _that = this;
 switch (_that) {
 case _PeerPeerDisconnectedEvent():
-return $default(_that.id,_that.address);case _:
+return $default(_that.id,_that.address,_that.extraFields);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -195,10 +205,10 @@ return $default(_that.id,_that.address);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'peer_id')  num id, @JsonKey(name: 'peer_addr')  String address)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'peer_id', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt id, @JsonKey(name: 'peer_addr')  String address, @JsonKey(includeFromJson: false, includeToJson: false)  RpcExtraFields extraFields)?  $default,) {final _that = this;
 switch (_that) {
 case _PeerPeerDisconnectedEvent() when $default != null:
-return $default(_that.id,_that.address);case _:
+return $default(_that.id,_that.address,_that.extraFields);case _:
   return null;
 
 }
@@ -209,12 +219,13 @@ return $default(_that.id,_that.address);case _:
 /// @nodoc
 @JsonSerializable()
 
-class _PeerPeerDisconnectedEvent implements PeerPeerDisconnectedEvent {
-  const _PeerPeerDisconnectedEvent({@JsonKey(name: 'peer_id') required this.id, @JsonKey(name: 'peer_addr') required this.address});
+class _PeerPeerDisconnectedEvent extends PeerPeerDisconnectedEvent {
+  const _PeerPeerDisconnectedEvent({@JsonKey(name: 'peer_id', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.id, @JsonKey(name: 'peer_addr') required this.address, @JsonKey(includeFromJson: false, includeToJson: false) this.extraFields = const RpcExtraFields()}): super._();
   factory _PeerPeerDisconnectedEvent.fromJson(Map<String, dynamic> json) => _$PeerPeerDisconnectedEventFromJson(json);
 
-@override@JsonKey(name: 'peer_id') final  num id;
+@override@JsonKey(name: 'peer_id', fromJson: rpcBigInt, toJson: rpcBigIntToJson) final  BigInt id;
 @override@JsonKey(name: 'peer_addr') final  String address;
+@override@JsonKey(includeFromJson: false, includeToJson: false) final  RpcExtraFields extraFields;
 
 /// Create a copy of PeerPeerDisconnectedEvent
 /// with the given fields replaced by the non-null parameter values.
@@ -229,16 +240,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PeerPeerDisconnectedEvent&&(identical(other.id, id) || other.id == id)&&(identical(other.address, address) || other.address == address));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PeerPeerDisconnectedEvent&&(identical(other.id, id) || other.id == id)&&(identical(other.address, address) || other.address == address)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,address);
+int get hashCode => Object.hash(runtimeType,id,address,extraFields);
 
 @override
 String toString() {
-  return 'PeerPeerDisconnectedEvent(id: $id, address: $address)';
+  return 'PeerPeerDisconnectedEvent(id: $id, address: $address, extraFields: $extraFields)';
 }
 
 
@@ -249,11 +260,11 @@ abstract mixin class _$PeerPeerDisconnectedEventCopyWith<$Res> implements $PeerP
   factory _$PeerPeerDisconnectedEventCopyWith(_PeerPeerDisconnectedEvent value, $Res Function(_PeerPeerDisconnectedEvent) _then) = __$PeerPeerDisconnectedEventCopyWithImpl;
 @override @useResult
 $Res call({
-@JsonKey(name: 'peer_id') num id,@JsonKey(name: 'peer_addr') String address
+@JsonKey(name: 'peer_id', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt id,@JsonKey(name: 'peer_addr') String address,@JsonKey(includeFromJson: false, includeToJson: false) RpcExtraFields extraFields
 });
 
 
-
+@override $RpcExtraFieldsCopyWith<$Res> get extraFields;
 
 }
 /// @nodoc
@@ -266,15 +277,25 @@ class __$PeerPeerDisconnectedEventCopyWithImpl<$Res>
 
 /// Create a copy of PeerPeerDisconnectedEvent
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? address = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? address = null,Object? extraFields = null,}) {
   return _then(_PeerPeerDisconnectedEvent(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as num,address: null == address ? _self.address : address // ignore: cast_nullable_to_non_nullable
-as String,
+as BigInt,address: null == address ? _self.address : address // ignore: cast_nullable_to_non_nullable
+as String,extraFields: null == extraFields ? _self.extraFields : extraFields // ignore: cast_nullable_to_non_nullable
+as RpcExtraFields,
   ));
 }
 
+/// Create a copy of PeerPeerDisconnectedEvent
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$RpcExtraFieldsCopyWith<$Res> get extraFields {
 
+  return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
+    return _then(_self.copyWith(extraFields: value));
+  });
+}
 }
 
 // dart format on

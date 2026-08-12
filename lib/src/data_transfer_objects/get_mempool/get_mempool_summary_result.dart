@@ -1,7 +1,7 @@
-// ignore_for_file: invalid_annotation_target
-
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:xelis_dart_sdk/xelis_dart_sdk.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/core/rpc_extra_fields.dart';
+import 'package:xelis_dart_sdk/src/utils/rpc_json.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/get_mempool/mempool_transaction_summary.dart';
 
 part 'get_mempool_summary_result.freezed.dart';
 
@@ -14,10 +14,33 @@ abstract class GetMempoolSummaryResult with _$GetMempoolSummaryResult {
   const factory GetMempoolSummaryResult({
     @JsonKey(name: 'transactions')
     required List<MempoolTransactionSummary> transactions,
-    @JsonKey(name: 'total') required int total,
+    @JsonKey(name: 'total', fromJson: rpcBigInt, toJson: rpcBigIntToJson)
+    required BigInt total,
+    @JsonKey(includeFromJson: false, includeToJson: false)
+    @Default(RpcExtraFields())
+    RpcExtraFields extraFields,
   }) = _GetMempoolSummaryResult;
+
+  const GetMempoolSummaryResult._();
 
   /// @nodoc
   factory GetMempoolSummaryResult.fromJson(Map<String, dynamic> json) =>
-      _$GetMempoolSummaryResultFromJson(json);
+      _$GetMempoolSummaryResultFromJson(json).copyWith(
+        extraFields: RpcExtraFields.capture(json, const {
+          'transactions',
+          'total',
+        }),
+      );
+
+  Map<String, Object?> toWireJson({bool includeExtraFields = false}) =>
+      extraFields.mergeInto({
+        'transactions': transactions
+            .map(
+              (transaction) => transaction.toWireJson(
+                includeExtraFields: includeExtraFields,
+              ),
+            )
+            .toList(growable: false),
+        'total': total,
+      }, includeExtraFields: includeExtraFields);
 }

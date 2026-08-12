@@ -10,16 +10,16 @@ part of 'fee_rates_estimated.dart';
 
 _FeeRatesEstimated _$FeeRatesEstimatedFromJson(Map<String, dynamic> json) =>
     _FeeRatesEstimated(
-      low: (json['low'] as num).toInt(),
-      medium: (json['medium'] as num).toInt(),
-      high: (json['high'] as num).toInt(),
-      defaultFee: (json['default'] as num).toInt(),
+      low: rpcBigInt(json['low']),
+      medium: rpcBigInt(json['medium']),
+      high: rpcBigInt(json['high']),
+      defaultFee: rpcBigInt(json['default']),
     );
 
 Map<String, dynamic> _$FeeRatesEstimatedToJson(_FeeRatesEstimated instance) =>
     <String, dynamic>{
-      'low': instance.low,
-      'medium': instance.medium,
-      'high': instance.high,
-      'default': instance.defaultFee,
+      'low': rpcBigIntToJson(instance.low),
+      'medium': rpcBigIntToJson(instance.medium),
+      'high': rpcBigIntToJson(instance.high),
+      'default': rpcBigIntToJson(instance.defaultFee),
     };

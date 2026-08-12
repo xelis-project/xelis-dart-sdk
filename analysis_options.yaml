@@ -5,6 +5,11 @@ analyzer:
     - "**/*.g.dart"
     - "**/*.freezed.dart"
     - playground/trash/**
+  errors:
+    # json_serializable annotations are intentionally applied to Freezed
+    # constructor parameters. Keep this single project-wide exception instead
+    # of hundreds of per-file suppressions.
+    invalid_annotation_target: ignore
 
 linter:
   rules:

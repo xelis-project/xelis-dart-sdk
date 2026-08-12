@@ -35,10 +35,6 @@ bool operator ==(Object other) {
 @override
 int get hashCode => Object.hash(runtimeType,id,privateKey);
 
-@override
-String toString() {
-  return 'SignerId(id: $id, privateKey: $privateKey)';
-}
 
 
 }
@@ -209,8 +205,8 @@ return $default(_that.id,_that.privateKey);case _:
 /// @nodoc
 @JsonSerializable()
 
-class _SignerId implements SignerId {
-  const _SignerId({@JsonKey(name: 'id') required this.id, @JsonKey(name: 'private_key') required this.privateKey});
+class _SignerId extends SignerId {
+  const _SignerId({@JsonKey(name: 'id') required this.id, @JsonKey(name: 'private_key') required this.privateKey}): super._();
   factory _SignerId.fromJson(Map<String, dynamic> json) => _$SignerIdFromJson(json);
 
 @override@JsonKey(name: 'id') final  int id;
@@ -236,10 +232,6 @@ bool operator ==(Object other) {
 @override
 int get hashCode => Object.hash(runtimeType,id,privateKey);
 
-@override
-String toString() {
-  return 'SignerId(id: $id, privateKey: $privateKey)';
-}
 
 
 }

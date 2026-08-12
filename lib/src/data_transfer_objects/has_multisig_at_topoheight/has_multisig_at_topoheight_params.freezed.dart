@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$HasMultisigAtTopoheightParams {
 
-@JsonKey(name: 'address') String get address;@JsonKey(name: 'topoheight') int get topoheight;
+@JsonKey(name: 'address') String get address;@JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt get topoheight;
 /// Create a copy of HasMultisigAtTopoheightParams
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $HasMultisigAtTopoheightParamsCopyWith<$Res>  {
   factory $HasMultisigAtTopoheightParamsCopyWith(HasMultisigAtTopoheightParams value, $Res Function(HasMultisigAtTopoheightParams) _then) = _$HasMultisigAtTopoheightParamsCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(name: 'address') String address,@JsonKey(name: 'topoheight') int topoheight
+@JsonKey(name: 'address') String address,@JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt topoheight
 });
 
 
@@ -69,7 +69,7 @@ class _$HasMultisigAtTopoheightParamsCopyWithImpl<$Res>
   return _then(_self.copyWith(
 address: null == address ? _self.address : address // ignore: cast_nullable_to_non_nullable
 as String,topoheight: null == topoheight ? _self.topoheight : topoheight // ignore: cast_nullable_to_non_nullable
-as int,
+as BigInt,
   ));
 }
 
@@ -154,7 +154,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'address')  String address, @JsonKey(name: 'topoheight')  int topoheight)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'address')  String address, @JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt topoheight)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _HasMultisigAtTopoheightParams() when $default != null:
 return $default(_that.address,_that.topoheight);case _:
@@ -175,7 +175,7 @@ return $default(_that.address,_that.topoheight);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'address')  String address, @JsonKey(name: 'topoheight')  int topoheight)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'address')  String address, @JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt topoheight)  $default,) {final _that = this;
 switch (_that) {
 case _HasMultisigAtTopoheightParams():
 return $default(_that.address,_that.topoheight);case _:
@@ -195,7 +195,7 @@ return $default(_that.address,_that.topoheight);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'address')  String address, @JsonKey(name: 'topoheight')  int topoheight)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'address')  String address, @JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt topoheight)?  $default,) {final _that = this;
 switch (_that) {
 case _HasMultisigAtTopoheightParams() when $default != null:
 return $default(_that.address,_that.topoheight);case _:
@@ -210,11 +210,11 @@ return $default(_that.address,_that.topoheight);case _:
 @JsonSerializable()
 
 class _HasMultisigAtTopoheightParams implements HasMultisigAtTopoheightParams {
-  const _HasMultisigAtTopoheightParams({@JsonKey(name: 'address') required this.address, @JsonKey(name: 'topoheight') required this.topoheight});
+  const _HasMultisigAtTopoheightParams({@JsonKey(name: 'address') required this.address, @JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.topoheight});
   factory _HasMultisigAtTopoheightParams.fromJson(Map<String, dynamic> json) => _$HasMultisigAtTopoheightParamsFromJson(json);
 
 @override@JsonKey(name: 'address') final  String address;
-@override@JsonKey(name: 'topoheight') final  int topoheight;
+@override@JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) final  BigInt topoheight;
 
 /// Create a copy of HasMultisigAtTopoheightParams
 /// with the given fields replaced by the non-null parameter values.
@@ -249,7 +249,7 @@ abstract mixin class _$HasMultisigAtTopoheightParamsCopyWith<$Res> implements $H
   factory _$HasMultisigAtTopoheightParamsCopyWith(_HasMultisigAtTopoheightParams value, $Res Function(_HasMultisigAtTopoheightParams) _then) = __$HasMultisigAtTopoheightParamsCopyWithImpl;
 @override @useResult
 $Res call({
-@JsonKey(name: 'address') String address,@JsonKey(name: 'topoheight') int topoheight
+@JsonKey(name: 'address') String address,@JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt topoheight
 });
 
 
@@ -270,7 +270,7 @@ class __$HasMultisigAtTopoheightParamsCopyWithImpl<$Res>
   return _then(_HasMultisigAtTopoheightParams(
 address: null == address ? _self.address : address // ignore: cast_nullable_to_non_nullable
 as String,topoheight: null == topoheight ? _self.topoheight : topoheight // ignore: cast_nullable_to_non_nullable
-as int,
+as BigInt,
   ));
 }
 

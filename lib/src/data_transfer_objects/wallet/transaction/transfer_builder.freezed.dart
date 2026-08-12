@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$TransferBuilder {
 
-@JsonKey(name: 'asset') String get asset;@JsonKey(name: 'amount') int get amount;@JsonKey(name: 'destination') String get destination;@JsonKey(name: 'encrypt_extra_data') bool get encryptExtraData;@JsonKey(name: 'extra_data') dynamic get extraData;
+@JsonKey(name: 'asset') String get asset;@JsonKey(name: 'amount', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt get amount;@JsonKey(name: 'destination') String get destination;@JsonKey(name: 'encrypt_extra_data') bool get encryptExtraData;@JsonKey(name: 'extra_data', fromJson: _dataElementFromJson, toJson: _dataElementToJson) DataElement? get extraData;
 /// Create a copy of TransferBuilder
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,12 +28,12 @@ $TransferBuilderCopyWith<TransferBuilder> get copyWith => _$TransferBuilderCopyW
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is TransferBuilder&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.amount, amount) || other.amount == amount)&&(identical(other.destination, destination) || other.destination == destination)&&(identical(other.encryptExtraData, encryptExtraData) || other.encryptExtraData == encryptExtraData)&&const DeepCollectionEquality().equals(other.extraData, extraData));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is TransferBuilder&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.amount, amount) || other.amount == amount)&&(identical(other.destination, destination) || other.destination == destination)&&(identical(other.encryptExtraData, encryptExtraData) || other.encryptExtraData == encryptExtraData)&&(identical(other.extraData, extraData) || other.extraData == extraData));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,asset,amount,destination,encryptExtraData,const DeepCollectionEquality().hash(extraData));
+int get hashCode => Object.hash(runtimeType,asset,amount,destination,encryptExtraData,extraData);
 
 @override
 String toString() {
@@ -48,11 +48,11 @@ abstract mixin class $TransferBuilderCopyWith<$Res>  {
   factory $TransferBuilderCopyWith(TransferBuilder value, $Res Function(TransferBuilder) _then) = _$TransferBuilderCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(name: 'asset') String asset,@JsonKey(name: 'amount') int amount,@JsonKey(name: 'destination') String destination,@JsonKey(name: 'encrypt_extra_data') bool encryptExtraData,@JsonKey(name: 'extra_data') dynamic extraData
+@JsonKey(name: 'asset') String asset,@JsonKey(name: 'amount', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt amount,@JsonKey(name: 'destination') String destination,@JsonKey(name: 'encrypt_extra_data') bool encryptExtraData,@JsonKey(name: 'extra_data', fromJson: _dataElementFromJson, toJson: _dataElementToJson) DataElement? extraData
 });
 
 
-
+$DataElementCopyWith<$Res>? get extraData;
 
 }
 /// @nodoc
@@ -69,13 +69,25 @@ class _$TransferBuilderCopyWithImpl<$Res>
   return _then(_self.copyWith(
 asset: null == asset ? _self.asset : asset // ignore: cast_nullable_to_non_nullable
 as String,amount: null == amount ? _self.amount : amount // ignore: cast_nullable_to_non_nullable
-as int,destination: null == destination ? _self.destination : destination // ignore: cast_nullable_to_non_nullable
+as BigInt,destination: null == destination ? _self.destination : destination // ignore: cast_nullable_to_non_nullable
 as String,encryptExtraData: null == encryptExtraData ? _self.encryptExtraData : encryptExtraData // ignore: cast_nullable_to_non_nullable
 as bool,extraData: freezed == extraData ? _self.extraData : extraData // ignore: cast_nullable_to_non_nullable
-as dynamic,
+as DataElement?,
   ));
 }
+/// Create a copy of TransferBuilder
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$DataElementCopyWith<$Res>? get extraData {
+    if (_self.extraData == null) {
+    return null;
+  }
 
+  return $DataElementCopyWith<$Res>(_self.extraData!, (value) {
+    return _then(_self.copyWith(extraData: value));
+  });
+}
 }
 
 
@@ -157,7 +169,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'asset')  String asset, @JsonKey(name: 'amount')  int amount, @JsonKey(name: 'destination')  String destination, @JsonKey(name: 'encrypt_extra_data')  bool encryptExtraData, @JsonKey(name: 'extra_data')  dynamic extraData)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'asset')  String asset, @JsonKey(name: 'amount', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt amount, @JsonKey(name: 'destination')  String destination, @JsonKey(name: 'encrypt_extra_data')  bool encryptExtraData, @JsonKey(name: 'extra_data', fromJson: _dataElementFromJson, toJson: _dataElementToJson)  DataElement? extraData)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _TransferBuilder() when $default != null:
 return $default(_that.asset,_that.amount,_that.destination,_that.encryptExtraData,_that.extraData);case _:
@@ -178,7 +190,7 @@ return $default(_that.asset,_that.amount,_that.destination,_that.encryptExtraDat
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'asset')  String asset, @JsonKey(name: 'amount')  int amount, @JsonKey(name: 'destination')  String destination, @JsonKey(name: 'encrypt_extra_data')  bool encryptExtraData, @JsonKey(name: 'extra_data')  dynamic extraData)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'asset')  String asset, @JsonKey(name: 'amount', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt amount, @JsonKey(name: 'destination')  String destination, @JsonKey(name: 'encrypt_extra_data')  bool encryptExtraData, @JsonKey(name: 'extra_data', fromJson: _dataElementFromJson, toJson: _dataElementToJson)  DataElement? extraData)  $default,) {final _that = this;
 switch (_that) {
 case _TransferBuilder():
 return $default(_that.asset,_that.amount,_that.destination,_that.encryptExtraData,_that.extraData);case _:
@@ -198,7 +210,7 @@ return $default(_that.asset,_that.amount,_that.destination,_that.encryptExtraDat
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'asset')  String asset, @JsonKey(name: 'amount')  int amount, @JsonKey(name: 'destination')  String destination, @JsonKey(name: 'encrypt_extra_data')  bool encryptExtraData, @JsonKey(name: 'extra_data')  dynamic extraData)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'asset')  String asset, @JsonKey(name: 'amount', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt amount, @JsonKey(name: 'destination')  String destination, @JsonKey(name: 'encrypt_extra_data')  bool encryptExtraData, @JsonKey(name: 'extra_data', fromJson: _dataElementFromJson, toJson: _dataElementToJson)  DataElement? extraData)?  $default,) {final _that = this;
 switch (_that) {
 case _TransferBuilder() when $default != null:
 return $default(_that.asset,_that.amount,_that.destination,_that.encryptExtraData,_that.extraData);case _:
@@ -213,14 +225,14 @@ return $default(_that.asset,_that.amount,_that.destination,_that.encryptExtraDat
 
 @JsonSerializable(includeIfNull: false)
 class _TransferBuilder implements TransferBuilder {
-  const _TransferBuilder({@JsonKey(name: 'asset') required this.asset, @JsonKey(name: 'amount') required this.amount, @JsonKey(name: 'destination') required this.destination, @JsonKey(name: 'encrypt_extra_data') this.encryptExtraData = true, @JsonKey(name: 'extra_data') this.extraData});
+  const _TransferBuilder({@JsonKey(name: 'asset') required this.asset, @JsonKey(name: 'amount', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.amount, @JsonKey(name: 'destination') required this.destination, @JsonKey(name: 'encrypt_extra_data') this.encryptExtraData = true, @JsonKey(name: 'extra_data', fromJson: _dataElementFromJson, toJson: _dataElementToJson) this.extraData});
   factory _TransferBuilder.fromJson(Map<String, dynamic> json) => _$TransferBuilderFromJson(json);
 
 @override@JsonKey(name: 'asset') final  String asset;
-@override@JsonKey(name: 'amount') final  int amount;
+@override@JsonKey(name: 'amount', fromJson: rpcBigInt, toJson: rpcBigIntToJson) final  BigInt amount;
 @override@JsonKey(name: 'destination') final  String destination;
 @override@JsonKey(name: 'encrypt_extra_data') final  bool encryptExtraData;
-@override@JsonKey(name: 'extra_data') final  dynamic extraData;
+@override@JsonKey(name: 'extra_data', fromJson: _dataElementFromJson, toJson: _dataElementToJson) final  DataElement? extraData;
 
 /// Create a copy of TransferBuilder
 /// with the given fields replaced by the non-null parameter values.
@@ -235,12 +247,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _TransferBuilder&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.amount, amount) || other.amount == amount)&&(identical(other.destination, destination) || other.destination == destination)&&(identical(other.encryptExtraData, encryptExtraData) || other.encryptExtraData == encryptExtraData)&&const DeepCollectionEquality().equals(other.extraData, extraData));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _TransferBuilder&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.amount, amount) || other.amount == amount)&&(identical(other.destination, destination) || other.destination == destination)&&(identical(other.encryptExtraData, encryptExtraData) || other.encryptExtraData == encryptExtraData)&&(identical(other.extraData, extraData) || other.extraData == extraData));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,asset,amount,destination,encryptExtraData,const DeepCollectionEquality().hash(extraData));
+int get hashCode => Object.hash(runtimeType,asset,amount,destination,encryptExtraData,extraData);
 
 @override
 String toString() {
@@ -255,11 +267,11 @@ abstract mixin class _$TransferBuilderCopyWith<$Res> implements $TransferBuilder
   factory _$TransferBuilderCopyWith(_TransferBuilder value, $Res Function(_TransferBuilder) _then) = __$TransferBuilderCopyWithImpl;
 @override @useResult
 $Res call({
-@JsonKey(name: 'asset') String asset,@JsonKey(name: 'amount') int amount,@JsonKey(name: 'destination') String destination,@JsonKey(name: 'encrypt_extra_data') bool encryptExtraData,@JsonKey(name: 'extra_data') dynamic extraData
+@JsonKey(name: 'asset') String asset,@JsonKey(name: 'amount', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt amount,@JsonKey(name: 'destination') String destination,@JsonKey(name: 'encrypt_extra_data') bool encryptExtraData,@JsonKey(name: 'extra_data', fromJson: _dataElementFromJson, toJson: _dataElementToJson) DataElement? extraData
 });
 
 
-
+@override $DataElementCopyWith<$Res>? get extraData;
 
 }
 /// @nodoc
@@ -276,14 +288,26 @@ class __$TransferBuilderCopyWithImpl<$Res>
   return _then(_TransferBuilder(
 asset: null == asset ? _self.asset : asset // ignore: cast_nullable_to_non_nullable
 as String,amount: null == amount ? _self.amount : amount // ignore: cast_nullable_to_non_nullable
-as int,destination: null == destination ? _self.destination : destination // ignore: cast_nullable_to_non_nullable
+as BigInt,destination: null == destination ? _self.destination : destination // ignore: cast_nullable_to_non_nullable
 as String,encryptExtraData: null == encryptExtraData ? _self.encryptExtraData : encryptExtraData // ignore: cast_nullable_to_non_nullable
 as bool,extraData: freezed == extraData ? _self.extraData : extraData // ignore: cast_nullable_to_non_nullable
-as dynamic,
+as DataElement?,
   ));
 }
 
+/// Create a copy of TransferBuilder
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$DataElementCopyWith<$Res>? get extraData {
+    if (_self.extraData == null) {
+    return null;
+  }
 
+  return $DataElementCopyWith<$Res>(_self.extraData!, (value) {
+    return _then(_self.copyWith(extraData: value));
+  });
+}
 }
 
 // dart format on

@@ -13,42 +13,42 @@ part of 'get_topoheight_range_params.dart';
 T _$identity<T>(T value) => value;
 
 /// @nodoc
-mixin _$GetTopoHeightRangeParams {
+mixin _$GetTopoheightRangeParams {
 
-@JsonKey(name: 'start_topoheight') int? get startTopoHeight;@JsonKey(name: 'end_topoheight') int? get endTopoHeight;
-/// Create a copy of GetTopoHeightRangeParams
+@JsonKey(name: 'start_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) BigInt? get startTopoheight;@JsonKey(name: 'end_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) BigInt? get endTopoheight;
+/// Create a copy of GetTopoheightRangeParams
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-$GetTopoHeightRangeParamsCopyWith<GetTopoHeightRangeParams> get copyWith => _$GetTopoHeightRangeParamsCopyWithImpl<GetTopoHeightRangeParams>(this as GetTopoHeightRangeParams, _$identity);
+$GetTopoheightRangeParamsCopyWith<GetTopoheightRangeParams> get copyWith => _$GetTopoheightRangeParamsCopyWithImpl<GetTopoheightRangeParams>(this as GetTopoheightRangeParams, _$identity);
 
-  /// Serializes this GetTopoHeightRangeParams to a JSON map.
+  /// Serializes this GetTopoheightRangeParams to a JSON map.
   Map<String, dynamic> toJson();
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetTopoHeightRangeParams&&(identical(other.startTopoHeight, startTopoHeight) || other.startTopoHeight == startTopoHeight)&&(identical(other.endTopoHeight, endTopoHeight) || other.endTopoHeight == endTopoHeight));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetTopoheightRangeParams&&(identical(other.startTopoheight, startTopoheight) || other.startTopoheight == startTopoheight)&&(identical(other.endTopoheight, endTopoheight) || other.endTopoheight == endTopoheight));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,startTopoHeight,endTopoHeight);
+int get hashCode => Object.hash(runtimeType,startTopoheight,endTopoheight);
 
 @override
 String toString() {
-  return 'GetTopoHeightRangeParams(startTopoHeight: $startTopoHeight, endTopoHeight: $endTopoHeight)';
+  return 'GetTopoheightRangeParams(startTopoheight: $startTopoheight, endTopoheight: $endTopoheight)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class $GetTopoHeightRangeParamsCopyWith<$Res>  {
-  factory $GetTopoHeightRangeParamsCopyWith(GetTopoHeightRangeParams value, $Res Function(GetTopoHeightRangeParams) _then) = _$GetTopoHeightRangeParamsCopyWithImpl;
+abstract mixin class $GetTopoheightRangeParamsCopyWith<$Res>  {
+  factory $GetTopoheightRangeParamsCopyWith(GetTopoheightRangeParams value, $Res Function(GetTopoheightRangeParams) _then) = _$GetTopoheightRangeParamsCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(name: 'start_topoheight') int? startTopoHeight,@JsonKey(name: 'end_topoheight') int? endTopoHeight
+@JsonKey(name: 'start_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) BigInt? startTopoheight,@JsonKey(name: 'end_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) BigInt? endTopoheight
 });
 
 
@@ -56,28 +56,28 @@ $Res call({
 
 }
 /// @nodoc
-class _$GetTopoHeightRangeParamsCopyWithImpl<$Res>
-    implements $GetTopoHeightRangeParamsCopyWith<$Res> {
-  _$GetTopoHeightRangeParamsCopyWithImpl(this._self, this._then);
+class _$GetTopoheightRangeParamsCopyWithImpl<$Res>
+    implements $GetTopoheightRangeParamsCopyWith<$Res> {
+  _$GetTopoheightRangeParamsCopyWithImpl(this._self, this._then);
 
-  final GetTopoHeightRangeParams _self;
-  final $Res Function(GetTopoHeightRangeParams) _then;
+  final GetTopoheightRangeParams _self;
+  final $Res Function(GetTopoheightRangeParams) _then;
 
-/// Create a copy of GetTopoHeightRangeParams
+/// Create a copy of GetTopoheightRangeParams
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? startTopoHeight = freezed,Object? endTopoHeight = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? startTopoheight = freezed,Object? endTopoheight = freezed,}) {
   return _then(_self.copyWith(
-startTopoHeight: freezed == startTopoHeight ? _self.startTopoHeight : startTopoHeight // ignore: cast_nullable_to_non_nullable
-as int?,endTopoHeight: freezed == endTopoHeight ? _self.endTopoHeight : endTopoHeight // ignore: cast_nullable_to_non_nullable
-as int?,
+startTopoheight: freezed == startTopoheight ? _self.startTopoheight : startTopoheight // ignore: cast_nullable_to_non_nullable
+as BigInt?,endTopoheight: freezed == endTopoheight ? _self.endTopoheight : endTopoheight // ignore: cast_nullable_to_non_nullable
+as BigInt?,
   ));
 }
 
 }
 
 
-/// Adds pattern-matching-related methods to [GetTopoHeightRangeParams].
-extension GetTopoHeightRangeParamsPatterns on GetTopoHeightRangeParams {
+/// Adds pattern-matching-related methods to [GetTopoheightRangeParams].
+extension GetTopoheightRangeParamsPatterns on GetTopoheightRangeParams {
 /// A variant of `map` that fallback to returning `orElse`.
 ///
 /// It is equivalent to doing:
@@ -90,10 +90,10 @@ extension GetTopoHeightRangeParamsPatterns on GetTopoHeightRangeParams {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _GetTopoHeightRangeParams value)?  $default,{required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _GetTopoheightRangeParams value)?  $default,{required TResult orElse(),}){
 final _that = this;
 switch (_that) {
-case _GetTopoHeightRangeParams() when $default != null:
+case _GetTopoheightRangeParams() when $default != null:
 return $default(_that);case _:
   return orElse();
 
@@ -112,10 +112,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _GetTopoHeightRangeParams value)  $default,){
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _GetTopoheightRangeParams value)  $default,){
 final _that = this;
 switch (_that) {
-case _GetTopoHeightRangeParams():
+case _GetTopoheightRangeParams():
 return $default(_that);case _:
   throw StateError('Unexpected subclass');
 
@@ -133,10 +133,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _GetTopoHeightRangeParams value)?  $default,){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _GetTopoheightRangeParams value)?  $default,){
 final _that = this;
 switch (_that) {
-case _GetTopoHeightRangeParams() when $default != null:
+case _GetTopoheightRangeParams() when $default != null:
 return $default(_that);case _:
   return null;
 
@@ -154,10 +154,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'start_topoheight')  int? startTopoHeight, @JsonKey(name: 'end_topoheight')  int? endTopoHeight)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'start_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson)  BigInt? startTopoheight, @JsonKey(name: 'end_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson)  BigInt? endTopoheight)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
-case _GetTopoHeightRangeParams() when $default != null:
-return $default(_that.startTopoHeight,_that.endTopoHeight);case _:
+case _GetTopoheightRangeParams() when $default != null:
+return $default(_that.startTopoheight,_that.endTopoheight);case _:
   return orElse();
 
 }
@@ -175,10 +175,10 @@ return $default(_that.startTopoHeight,_that.endTopoHeight);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'start_topoheight')  int? startTopoHeight, @JsonKey(name: 'end_topoheight')  int? endTopoHeight)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'start_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson)  BigInt? startTopoheight, @JsonKey(name: 'end_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson)  BigInt? endTopoheight)  $default,) {final _that = this;
 switch (_that) {
-case _GetTopoHeightRangeParams():
-return $default(_that.startTopoHeight,_that.endTopoHeight);case _:
+case _GetTopoheightRangeParams():
+return $default(_that.startTopoheight,_that.endTopoheight);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -195,10 +195,10 @@ return $default(_that.startTopoHeight,_that.endTopoHeight);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'start_topoheight')  int? startTopoHeight, @JsonKey(name: 'end_topoheight')  int? endTopoHeight)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'start_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson)  BigInt? startTopoheight, @JsonKey(name: 'end_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson)  BigInt? endTopoheight)?  $default,) {final _that = this;
 switch (_that) {
-case _GetTopoHeightRangeParams() when $default != null:
-return $default(_that.startTopoHeight,_that.endTopoHeight);case _:
+case _GetTopoheightRangeParams() when $default != null:
+return $default(_that.startTopoheight,_that.endTopoheight);case _:
   return null;
 
 }
@@ -209,47 +209,47 @@ return $default(_that.startTopoHeight,_that.endTopoHeight);case _:
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _GetTopoHeightRangeParams implements GetTopoHeightRangeParams {
-  const _GetTopoHeightRangeParams({@JsonKey(name: 'start_topoheight') this.startTopoHeight, @JsonKey(name: 'end_topoheight') this.endTopoHeight});
-  factory _GetTopoHeightRangeParams.fromJson(Map<String, dynamic> json) => _$GetTopoHeightRangeParamsFromJson(json);
+class _GetTopoheightRangeParams implements GetTopoheightRangeParams {
+  const _GetTopoheightRangeParams({@JsonKey(name: 'start_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) this.startTopoheight, @JsonKey(name: 'end_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) this.endTopoheight});
+  factory _GetTopoheightRangeParams.fromJson(Map<String, dynamic> json) => _$GetTopoheightRangeParamsFromJson(json);
 
-@override@JsonKey(name: 'start_topoheight') final  int? startTopoHeight;
-@override@JsonKey(name: 'end_topoheight') final  int? endTopoHeight;
+@override@JsonKey(name: 'start_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) final  BigInt? startTopoheight;
+@override@JsonKey(name: 'end_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) final  BigInt? endTopoheight;
 
-/// Create a copy of GetTopoHeightRangeParams
+/// Create a copy of GetTopoheightRangeParams
 /// with the given fields replaced by the non-null parameter values.
 @override @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$GetTopoHeightRangeParamsCopyWith<_GetTopoHeightRangeParams> get copyWith => __$GetTopoHeightRangeParamsCopyWithImpl<_GetTopoHeightRangeParams>(this, _$identity);
+_$GetTopoheightRangeParamsCopyWith<_GetTopoheightRangeParams> get copyWith => __$GetTopoheightRangeParamsCopyWithImpl<_GetTopoheightRangeParams>(this, _$identity);
 
 @override
 Map<String, dynamic> toJson() {
-  return _$GetTopoHeightRangeParamsToJson(this, );
+  return _$GetTopoheightRangeParamsToJson(this, );
 }
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetTopoHeightRangeParams&&(identical(other.startTopoHeight, startTopoHeight) || other.startTopoHeight == startTopoHeight)&&(identical(other.endTopoHeight, endTopoHeight) || other.endTopoHeight == endTopoHeight));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetTopoheightRangeParams&&(identical(other.startTopoheight, startTopoheight) || other.startTopoheight == startTopoheight)&&(identical(other.endTopoheight, endTopoheight) || other.endTopoheight == endTopoheight));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,startTopoHeight,endTopoHeight);
+int get hashCode => Object.hash(runtimeType,startTopoheight,endTopoheight);
 
 @override
 String toString() {
-  return 'GetTopoHeightRangeParams(startTopoHeight: $startTopoHeight, endTopoHeight: $endTopoHeight)';
+  return 'GetTopoheightRangeParams(startTopoheight: $startTopoheight, endTopoheight: $endTopoheight)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class _$GetTopoHeightRangeParamsCopyWith<$Res> implements $GetTopoHeightRangeParamsCopyWith<$Res> {
-  factory _$GetTopoHeightRangeParamsCopyWith(_GetTopoHeightRangeParams value, $Res Function(_GetTopoHeightRangeParams) _then) = __$GetTopoHeightRangeParamsCopyWithImpl;
+abstract mixin class _$GetTopoheightRangeParamsCopyWith<$Res> implements $GetTopoheightRangeParamsCopyWith<$Res> {
+  factory _$GetTopoheightRangeParamsCopyWith(_GetTopoheightRangeParams value, $Res Function(_GetTopoheightRangeParams) _then) = __$GetTopoheightRangeParamsCopyWithImpl;
 @override @useResult
 $Res call({
-@JsonKey(name: 'start_topoheight') int? startTopoHeight,@JsonKey(name: 'end_topoheight') int? endTopoHeight
+@JsonKey(name: 'start_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) BigInt? startTopoheight,@JsonKey(name: 'end_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) BigInt? endTopoheight
 });
 
 
@@ -257,20 +257,20 @@ $Res call({
 
 }
 /// @nodoc
-class __$GetTopoHeightRangeParamsCopyWithImpl<$Res>
-    implements _$GetTopoHeightRangeParamsCopyWith<$Res> {
-  __$GetTopoHeightRangeParamsCopyWithImpl(this._self, this._then);
+class __$GetTopoheightRangeParamsCopyWithImpl<$Res>
+    implements _$GetTopoheightRangeParamsCopyWith<$Res> {
+  __$GetTopoheightRangeParamsCopyWithImpl(this._self, this._then);
 
-  final _GetTopoHeightRangeParams _self;
-  final $Res Function(_GetTopoHeightRangeParams) _then;
+  final _GetTopoheightRangeParams _self;
+  final $Res Function(_GetTopoheightRangeParams) _then;
 
-/// Create a copy of GetTopoHeightRangeParams
+/// Create a copy of GetTopoheightRangeParams
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? startTopoHeight = freezed,Object? endTopoHeight = freezed,}) {
-  return _then(_GetTopoHeightRangeParams(
-startTopoHeight: freezed == startTopoHeight ? _self.startTopoHeight : startTopoHeight // ignore: cast_nullable_to_non_nullable
-as int?,endTopoHeight: freezed == endTopoHeight ? _self.endTopoHeight : endTopoHeight // ignore: cast_nullable_to_non_nullable
-as int?,
+@override @pragma('vm:prefer-inline') $Res call({Object? startTopoheight = freezed,Object? endTopoheight = freezed,}) {
+  return _then(_GetTopoheightRangeParams(
+startTopoheight: freezed == startTopoheight ? _self.startTopoheight : startTopoheight // ignore: cast_nullable_to_non_nullable
+as BigInt?,endTopoheight: freezed == endTopoheight ? _self.endTopoheight : endTopoheight // ignore: cast_nullable_to_non_nullable
+as BigInt?,
   ));
 }
 

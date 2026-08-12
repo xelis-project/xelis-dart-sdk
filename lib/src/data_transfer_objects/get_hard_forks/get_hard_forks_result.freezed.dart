@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$GetHardForksResult {
 
-@JsonKey(name: 'height') int get height;@JsonKey(name: 'version') int get version;@JsonKey(name: 'changelog') String get changelog;@JsonKey(name: 'version_requirement') String? get versionRequirement;
+@JsonKey(name: 'height', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt get height;@JsonKey(name: 'version') int get version;@JsonKey(name: 'changelog') String get changelog;@JsonKey(name: 'version_requirement') String? get versionRequirement;@JsonKey(includeFromJson: false, includeToJson: false) RpcExtraFields get extraFields;
 /// Create a copy of GetHardForksResult
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,16 +28,16 @@ $GetHardForksResultCopyWith<GetHardForksResult> get copyWith => _$GetHardForksRe
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetHardForksResult&&(identical(other.height, height) || other.height == height)&&(identical(other.version, version) || other.version == version)&&(identical(other.changelog, changelog) || other.changelog == changelog)&&(identical(other.versionRequirement, versionRequirement) || other.versionRequirement == versionRequirement));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetHardForksResult&&(identical(other.height, height) || other.height == height)&&(identical(other.version, version) || other.version == version)&&(identical(other.changelog, changelog) || other.changelog == changelog)&&(identical(other.versionRequirement, versionRequirement) || other.versionRequirement == versionRequirement)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,height,version,changelog,versionRequirement);
+int get hashCode => Object.hash(runtimeType,height,version,changelog,versionRequirement,extraFields);
 
 @override
 String toString() {
-  return 'GetHardForksResult(height: $height, version: $version, changelog: $changelog, versionRequirement: $versionRequirement)';
+  return 'GetHardForksResult(height: $height, version: $version, changelog: $changelog, versionRequirement: $versionRequirement, extraFields: $extraFields)';
 }
 
 
@@ -48,11 +48,11 @@ abstract mixin class $GetHardForksResultCopyWith<$Res>  {
   factory $GetHardForksResultCopyWith(GetHardForksResult value, $Res Function(GetHardForksResult) _then) = _$GetHardForksResultCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(name: 'height') int height,@JsonKey(name: 'version') int version,@JsonKey(name: 'changelog') String changelog,@JsonKey(name: 'version_requirement') String? versionRequirement
+@JsonKey(name: 'height', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt height,@JsonKey(name: 'version') int version,@JsonKey(name: 'changelog') String changelog,@JsonKey(name: 'version_requirement') String? versionRequirement,@JsonKey(includeFromJson: false, includeToJson: false) RpcExtraFields extraFields
 });
 
 
-
+$RpcExtraFieldsCopyWith<$Res> get extraFields;
 
 }
 /// @nodoc
@@ -65,16 +65,26 @@ class _$GetHardForksResultCopyWithImpl<$Res>
 
 /// Create a copy of GetHardForksResult
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? height = null,Object? version = null,Object? changelog = null,Object? versionRequirement = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? height = null,Object? version = null,Object? changelog = null,Object? versionRequirement = freezed,Object? extraFields = null,}) {
   return _then(_self.copyWith(
 height: null == height ? _self.height : height // ignore: cast_nullable_to_non_nullable
-as int,version: null == version ? _self.version : version // ignore: cast_nullable_to_non_nullable
+as BigInt,version: null == version ? _self.version : version // ignore: cast_nullable_to_non_nullable
 as int,changelog: null == changelog ? _self.changelog : changelog // ignore: cast_nullable_to_non_nullable
 as String,versionRequirement: freezed == versionRequirement ? _self.versionRequirement : versionRequirement // ignore: cast_nullable_to_non_nullable
-as String?,
+as String?,extraFields: null == extraFields ? _self.extraFields : extraFields // ignore: cast_nullable_to_non_nullable
+as RpcExtraFields,
   ));
 }
+/// Create a copy of GetHardForksResult
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$RpcExtraFieldsCopyWith<$Res> get extraFields {
 
+  return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
+    return _then(_self.copyWith(extraFields: value));
+  });
+}
 }
 
 
@@ -156,10 +166,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'height')  int height, @JsonKey(name: 'version')  int version, @JsonKey(name: 'changelog')  String changelog, @JsonKey(name: 'version_requirement')  String? versionRequirement)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'height', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt height, @JsonKey(name: 'version')  int version, @JsonKey(name: 'changelog')  String changelog, @JsonKey(name: 'version_requirement')  String? versionRequirement, @JsonKey(includeFromJson: false, includeToJson: false)  RpcExtraFields extraFields)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _GetHardForksResult() when $default != null:
-return $default(_that.height,_that.version,_that.changelog,_that.versionRequirement);case _:
+return $default(_that.height,_that.version,_that.changelog,_that.versionRequirement,_that.extraFields);case _:
   return orElse();
 
 }
@@ -177,10 +187,10 @@ return $default(_that.height,_that.version,_that.changelog,_that.versionRequirem
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'height')  int height, @JsonKey(name: 'version')  int version, @JsonKey(name: 'changelog')  String changelog, @JsonKey(name: 'version_requirement')  String? versionRequirement)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'height', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt height, @JsonKey(name: 'version')  int version, @JsonKey(name: 'changelog')  String changelog, @JsonKey(name: 'version_requirement')  String? versionRequirement, @JsonKey(includeFromJson: false, includeToJson: false)  RpcExtraFields extraFields)  $default,) {final _that = this;
 switch (_that) {
 case _GetHardForksResult():
-return $default(_that.height,_that.version,_that.changelog,_that.versionRequirement);case _:
+return $default(_that.height,_that.version,_that.changelog,_that.versionRequirement,_that.extraFields);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -197,10 +207,10 @@ return $default(_that.height,_that.version,_that.changelog,_that.versionRequirem
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'height')  int height, @JsonKey(name: 'version')  int version, @JsonKey(name: 'changelog')  String changelog, @JsonKey(name: 'version_requirement')  String? versionRequirement)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'height', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt height, @JsonKey(name: 'version')  int version, @JsonKey(name: 'changelog')  String changelog, @JsonKey(name: 'version_requirement')  String? versionRequirement, @JsonKey(includeFromJson: false, includeToJson: false)  RpcExtraFields extraFields)?  $default,) {final _that = this;
 switch (_that) {
 case _GetHardForksResult() when $default != null:
-return $default(_that.height,_that.version,_that.changelog,_that.versionRequirement);case _:
+return $default(_that.height,_that.version,_that.changelog,_that.versionRequirement,_that.extraFields);case _:
   return null;
 
 }
@@ -211,14 +221,15 @@ return $default(_that.height,_that.version,_that.changelog,_that.versionRequirem
 /// @nodoc
 @JsonSerializable()
 
-class _GetHardForksResult implements GetHardForksResult {
-  const _GetHardForksResult({@JsonKey(name: 'height') required this.height, @JsonKey(name: 'version') required this.version, @JsonKey(name: 'changelog') required this.changelog, @JsonKey(name: 'version_requirement') this.versionRequirement});
+class _GetHardForksResult extends GetHardForksResult {
+  const _GetHardForksResult({@JsonKey(name: 'height', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.height, @JsonKey(name: 'version') required this.version, @JsonKey(name: 'changelog') required this.changelog, @JsonKey(name: 'version_requirement') this.versionRequirement, @JsonKey(includeFromJson: false, includeToJson: false) this.extraFields = const RpcExtraFields()}): super._();
   factory _GetHardForksResult.fromJson(Map<String, dynamic> json) => _$GetHardForksResultFromJson(json);
 
-@override@JsonKey(name: 'height') final  int height;
+@override@JsonKey(name: 'height', fromJson: rpcBigInt, toJson: rpcBigIntToJson) final  BigInt height;
 @override@JsonKey(name: 'version') final  int version;
 @override@JsonKey(name: 'changelog') final  String changelog;
 @override@JsonKey(name: 'version_requirement') final  String? versionRequirement;
+@override@JsonKey(includeFromJson: false, includeToJson: false) final  RpcExtraFields extraFields;
 
 /// Create a copy of GetHardForksResult
 /// with the given fields replaced by the non-null parameter values.
@@ -233,16 +244,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetHardForksResult&&(identical(other.height, height) || other.height == height)&&(identical(other.version, version) || other.version == version)&&(identical(other.changelog, changelog) || other.changelog == changelog)&&(identical(other.versionRequirement, versionRequirement) || other.versionRequirement == versionRequirement));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetHardForksResult&&(identical(other.height, height) || other.height == height)&&(identical(other.version, version) || other.version == version)&&(identical(other.changelog, changelog) || other.changelog == changelog)&&(identical(other.versionRequirement, versionRequirement) || other.versionRequirement == versionRequirement)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,height,version,changelog,versionRequirement);
+int get hashCode => Object.hash(runtimeType,height,version,changelog,versionRequirement,extraFields);
 
 @override
 String toString() {
-  return 'GetHardForksResult(height: $height, version: $version, changelog: $changelog, versionRequirement: $versionRequirement)';
+  return 'GetHardForksResult(height: $height, version: $version, changelog: $changelog, versionRequirement: $versionRequirement, extraFields: $extraFields)';
 }
 
 
@@ -253,11 +264,11 @@ abstract mixin class _$GetHardForksResultCopyWith<$Res> implements $GetHardForks
   factory _$GetHardForksResultCopyWith(_GetHardForksResult value, $Res Function(_GetHardForksResult) _then) = __$GetHardForksResultCopyWithImpl;
 @override @useResult
 $Res call({
-@JsonKey(name: 'height') int height,@JsonKey(name: 'version') int version,@JsonKey(name: 'changelog') String changelog,@JsonKey(name: 'version_requirement') String? versionRequirement
+@JsonKey(name: 'height', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt height,@JsonKey(name: 'version') int version,@JsonKey(name: 'changelog') String changelog,@JsonKey(name: 'version_requirement') String? versionRequirement,@JsonKey(includeFromJson: false, includeToJson: false) RpcExtraFields extraFields
 });
 
 
-
+@override $RpcExtraFieldsCopyWith<$Res> get extraFields;
 
 }
 /// @nodoc
@@ -270,17 +281,27 @@ class __$GetHardForksResultCopyWithImpl<$Res>
 
 /// Create a copy of GetHardForksResult
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? height = null,Object? version = null,Object? changelog = null,Object? versionRequirement = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? height = null,Object? version = null,Object? changelog = null,Object? versionRequirement = freezed,Object? extraFields = null,}) {
   return _then(_GetHardForksResult(
 height: null == height ? _self.height : height // ignore: cast_nullable_to_non_nullable
-as int,version: null == version ? _self.version : version // ignore: cast_nullable_to_non_nullable
+as BigInt,version: null == version ? _self.version : version // ignore: cast_nullable_to_non_nullable
 as int,changelog: null == changelog ? _self.changelog : changelog // ignore: cast_nullable_to_non_nullable
 as String,versionRequirement: freezed == versionRequirement ? _self.versionRequirement : versionRequirement // ignore: cast_nullable_to_non_nullable
-as String?,
+as String?,extraFields: null == extraFields ? _self.extraFields : extraFields // ignore: cast_nullable_to_non_nullable
+as RpcExtraFields,
   ));
 }
 
+/// Create a copy of GetHardForksResult
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$RpcExtraFieldsCopyWith<$Res> get extraFields {
 
+  return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
+    return _then(_self.copyWith(extraFields: value));
+  });
+}
 }
 
 // dart format on

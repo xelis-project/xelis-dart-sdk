@@ -8,16 +8,16 @@ part of 'get_block_at_topoheight_params.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_GetBlockAtTopoHeightParams _$GetBlockAtTopoHeightParamsFromJson(
+_GetBlockAtTopoheightParams _$GetBlockAtTopoheightParamsFromJson(
   Map<String, dynamic> json,
-) => _GetBlockAtTopoHeightParams(
-  topoHeight: (json['topoheight'] as num).toInt(),
+) => _GetBlockAtTopoheightParams(
+  topoheight: rpcBigInt(json['topoheight']),
   includeTxs: json['include_txs'] as bool?,
 );
 
-Map<String, dynamic> _$GetBlockAtTopoHeightParamsToJson(
-  _GetBlockAtTopoHeightParams instance,
+Map<String, dynamic> _$GetBlockAtTopoheightParamsToJson(
+  _GetBlockAtTopoheightParams instance,
 ) => <String, dynamic>{
-  'topoheight': instance.topoHeight,
+  'topoheight': rpcBigIntToJson(instance.topoheight),
   'include_txs': ?instance.includeTxs,
 };
