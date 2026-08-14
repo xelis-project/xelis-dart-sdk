@@ -11,7 +11,7 @@ import 'package:xelis_dart_sdk/src/utils/rpc_json.dart';
 extension DaemonChainRpcMethods on DaemonClient {
   Future<BigInt> getAssetSupply(String asset) => sendRequestAndDecode(
     DaemonMethod.getAssetSupply,
-    rpcBigInt,
+    _decodeVersionedUint64,
     {'asset': asset},
   );
 
@@ -20,7 +20,7 @@ extension DaemonChainRpcMethods on DaemonClient {
     BigInt topoheight,
   ) => sendRequestAndDecode(
     DaemonMethod.getAssetSupplyAtTopoheight,
-    (result) => result == null ? null : rpcBigInt(result),
+    (result) => result == null ? null : _decodeVersionedUint64(result),
     {'asset': asset, 'topoheight': topoheight},
   );
 
@@ -51,7 +51,10 @@ extension DaemonChainRpcMethods on DaemonClient {
 
   Future<BigInt> getBlockDifficultyByHash(String hash) => sendRequestAndDecode(
     DaemonMethod.getBlockDifficultyByHash,
-    (result) => rpcBigInt(result, method: 'get_block_difficulty_by_hash'),
+    (result) => rpcBigInt(
+      rpcJsonMap(result, method: 'get_block_difficulty_by_hash')['difficulty'],
+      method: 'get_block_difficulty_by_hash',
+    ),
     {'block_hash': hash},
   );
 
@@ -104,3 +107,7 @@ List<dynamic> _rpcList(Object? value) {
   if (value is List) return value;
   throw const FormatException('Expected an array.');
 }
+
+BigInt _decodeVersionedUint64(Object? value) => rpcBigInt(
+  rpcJsonMap(value)['data'],
+);

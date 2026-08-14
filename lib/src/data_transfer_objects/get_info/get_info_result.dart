@@ -121,7 +121,7 @@ abstract class GetInfoResult with _$GetInfoResult {
       network: Network.fromStr(json['network'] as String),
       minerReward: rpcBigInt(json['miner_reward']),
       devReward: rpcBigInt(json['dev_reward']),
-      blockVersion: rpcInt(json['block_version'], min: 0),
+      blockVersion: rpcVersionNumber(json['block_version']),
       extraFields: RpcExtraFields.capture(json, _getInfoFields),
     );
   }

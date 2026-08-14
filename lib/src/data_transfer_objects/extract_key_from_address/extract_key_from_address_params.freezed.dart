@@ -207,7 +207,7 @@ return $default(_that.address,_that.asHex);case _:
 }
 
 /// @nodoc
-@JsonSerializable()
+@JsonSerializable(includeIfNull: false)
 
 class _ExtractKeyFromAddressParams implements ExtractKeyFromAddressParams {
   const _ExtractKeyFromAddressParams({@JsonKey(name: 'address') required this.address, @JsonKey(name: 'as_hex') this.asHex});

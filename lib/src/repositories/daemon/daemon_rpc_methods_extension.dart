@@ -47,6 +47,7 @@ import 'package:xelis_dart_sdk/src/data_transfer_objects/get_nonce_at_topoheight
 import 'package:xelis_dart_sdk/src/data_transfer_objects/get_nonce/get_nonce_params.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/get_nonce/get_nonce_result.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/get_peers/get_peers_result.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/get_peers/peer_entry.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/get_range/get_height_range_params.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/get_range/get_topoheight_range_params.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/get_size_on_disk/get_size_on_disk_result.dart';
@@ -172,7 +173,7 @@ extension DaemonRpcMethodsExtension on DaemonClient {
       sendRequestAndDecode(
         DaemonMethod.getNonce,
         (result) => GetNonceResult.fromJson(rpcJsonMap(result)),
-        getNonceParams.toJson(),
+        {'address': getNonceParams.address},
       );
 
   /// Get nonce from address at exact topoheight.
@@ -395,7 +396,16 @@ extension DaemonRpcMethodsExtension on DaemonClient {
   /// Retrieve all peers connected
   Future<GetPeersResult> getPeers() => sendRequestAndDecode(
     DaemonMethod.getPeers,
-    (result) => GetPeersResult.fromJson(rpcJsonMap(result)),
+    (result) {
+      final peers = (result as List)
+          .map((value) => PeerEntry.fromJson(rpcJsonMap(value)))
+          .toList(growable: false);
+      return GetPeersResult(
+        peers: peers,
+        totalPeers: BigInt.from(peers.length),
+        hiddenPeers: BigInt.zero,
+      );
+    },
   );
 
   /// Fetch history events for an account.
@@ -491,7 +501,13 @@ extension DaemonRpcMethodsExtension on DaemonClient {
   ) => sendRequestAndDecode(
     DaemonMethod.validateAddress,
     (result) => ValidateAddressResult.fromJson(rpcJsonMap(result)),
-    validateAddressParams.toJson(),
+    {
+      'address': validateAddressParams.address,
+      'allow_integrated': validateAddressParams.allowIntegrated,
+      'max_integrated_data_size': int.parse(
+        validateAddressParams.maxIntegratedDataSize,
+      ),
+    },
   );
 
   /// Returns the current difficulty and associated network hashrate.

@@ -17,10 +17,16 @@ abstract class RpcCompressedCiphertext with _$RpcCompressedCiphertext {
   const RpcCompressedCiphertext._();
 
   factory RpcCompressedCiphertext.fromJson(Object? json) {
-    final map = rpcJsonMap(
+    final envelope = rpcJsonMap(
       json,
       method: 'get_balances_at_maximum_topoheight',
     );
+    final map = envelope['Compressed'] == null
+        ? envelope
+        : rpcJsonMap(
+            envelope['Compressed'],
+            method: 'get_balances_at_maximum_topoheight',
+          );
     List<int> bytes(String field) {
       final value = map[field];
       if (value is! List || value.length != 32) {

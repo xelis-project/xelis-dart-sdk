@@ -29,7 +29,7 @@ extension DaemonContractRpcMethods on DaemonClient {
   Future<BigInt> getContractBalance(String contract, String asset) =>
       sendRequestAndDecode(
         DaemonMethod.getContractBalance,
-        rpcBigInt,
+        _decodeVersionedUint64,
         {'contract': contract, 'asset': asset},
       );
 
@@ -39,7 +39,7 @@ extension DaemonContractRpcMethods on DaemonClient {
     BigInt topoheight,
   ) => sendRequestAndDecode(
     DaemonMethod.getContractBalanceAtTopoheight,
-    (result) => result == null ? null : rpcBigInt(result),
+    (result) => result == null ? null : _decodeVersionedUint64(result),
     {'contract': contract, 'asset': asset, 'topoheight': topoheight},
   );
 
@@ -49,7 +49,10 @@ extension DaemonContractRpcMethods on DaemonClient {
     required BigInt topoheight,
   }) => sendRequestAndDecode(
     DaemonMethod.getContractDataAtTopoheight,
-    (result) => GetContractDataResult.fromJson(rpcJsonMap(result)),
+    (result) => GetContractDataResult.fromJson({
+      ...rpcJsonMap(result),
+      'topoheight': topoheight,
+    }),
     {'contract': contract, 'key': key.toJson(), 'topoheight': topoheight},
   );
 
@@ -166,3 +169,7 @@ List<dynamic> _rpcList(Object? value) {
   if (value is List) return value;
   throw const FormatException('Expected an array.');
 }
+
+BigInt _decodeVersionedUint64(Object? value) => rpcBigInt(
+  rpcJsonMap(value)['data'],
+);

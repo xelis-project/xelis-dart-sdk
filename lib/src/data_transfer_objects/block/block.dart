@@ -101,7 +101,7 @@ abstract class Block with _$Block {
     totalFees: _nullableBigInt(json['total_fees']),
     totalFeesBurned: _nullableBigInt(json['total_fees_burned']),
     txsHashes: (json['txs_hashes'] as List).cast<String>(),
-    version: rpcInt(json['version'], min: 0),
+    version: rpcVersionNumber(json['version']),
     transactions: (json['transactions'] as List?)
         ?.map((value) => RpcTransaction.fromJson(rpcJsonMap(value)))
         .toList(growable: false),

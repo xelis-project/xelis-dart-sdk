@@ -49,7 +49,7 @@ abstract class RpcTransaction with _$RpcTransaction {
         method: method,
         path: r'$.fee_limit',
       ),
-      version: rpcInt(json['version'], min: 0, max: 255),
+      version: rpcVersionNumber(json['version'], max: 255),
       nonce: rpcBigInt(
         json['nonce'],
         method: method,

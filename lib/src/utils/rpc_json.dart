@@ -98,6 +98,23 @@ int rpcInt(
   return integer.toInt();
 }
 
+/// Reads a serde unit-enum version such as `V3` while retaining compatibility
+/// with the numeric representation returned by older daemon versions.
+int rpcVersionNumber(
+  Object? value, {
+  String method = '<unknown>',
+  String path = r'$',
+  int? max,
+}) {
+  if (value is String && value.startsWith('V')) {
+    final parsed = int.tryParse(value.substring(1));
+    if (parsed != null && parsed >= 0 && (max == null || parsed <= max)) {
+      return parsed;
+    }
+  }
+  return rpcInt(value, method: method, path: path, min: 0, max: max);
+}
+
 /// Reads a JSON array whose entries must all be strings.
 List<String> rpcStringList(
   Object? value, {

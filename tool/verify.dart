@@ -16,6 +16,7 @@ const _webTests = [
   'test/data_transfer_objects/freezed_rpc_models_test.dart',
   'test/data_transfer_objects/rpc_contract_log_test.dart',
   'test/repositories/rpc_json_value_test.dart',
+  'test/repositories/wallet_rpc_methods_contract_matrix_test.dart',
 ];
 
 Future<void> main(List<String> arguments) async {
