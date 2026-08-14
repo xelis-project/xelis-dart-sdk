@@ -88,7 +88,7 @@ $TransactionEntryCopyWith<$Res>? get transaction {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-  
+
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -231,7 +231,7 @@ return $default(_that.transaction,_that.index,_that.isRawSearch,_that.extraField
 
 class _SearchWalletTransactionResult extends SearchWalletTransactionResult {
   const _SearchWalletTransactionResult({required this.transaction, required this.index, required this.isRawSearch, this.extraFields = const RpcExtraFields()}): super._();
-  
+
 
 @override final  TransactionEntry? transaction;
 @override final  BigInt? index;
@@ -312,7 +312,7 @@ $TransactionEntryCopyWith<$Res>? get transaction {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-  
+
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });

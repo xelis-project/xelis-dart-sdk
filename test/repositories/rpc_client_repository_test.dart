@@ -125,6 +125,33 @@ void main() {
       });
     });
 
+    test('sendRequest works after the connected event has passed', () async {
+      final server = await RpcTestServer.start(
+        onRequest: (request, socket) {
+          socket.add(
+            jsonEncode({
+              'id': request['id'],
+              'jsonrpc': '2.0',
+              'result': '1.2.3',
+            }),
+          );
+        },
+      );
+      final client = _walletClient(server);
+      addTearDown(() async {
+        client.disconnect();
+        await server.close();
+      });
+      final opened = Completer<void>();
+      client
+        ..onOpen(opened.complete)
+        ..connect();
+      await opened.future.timeout(_timeout);
+      await Future<void>.delayed(const Duration(milliseconds: 50));
+
+      expect(await client.getVersion().timeout(_timeout), '1.2.3');
+    });
+
     test('sendRequest sends JSON-RPC request with params', () async {
       final server = await RpcTestServer.start(
         onRequest: (request, socket) {

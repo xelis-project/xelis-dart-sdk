@@ -76,7 +76,7 @@ as String?,
 @override
 @pragma('vm:prefer-inline')
 $UnsignedTransactionCopyWith<$Res> get transaction {
-  
+
   return $UnsignedTransactionCopyWith<$Res>(_self.transaction, (value) {
     return _then(_self.copyWith(transaction: value));
   });
@@ -219,7 +219,7 @@ return $default(_that.transaction,_that.hash,_that.threshold,_that.txAsHex);case
 
 class _UnsignedTransactionResponse extends UnsignedTransactionResponse {
   const _UnsignedTransactionResponse({required this.transaction, required this.hash, required this.threshold, this.txAsHex}): super._();
-  
+
 
 @override final  UnsignedTransaction transaction;
 @override final  String hash;
@@ -288,7 +288,7 @@ as String?,
 @override
 @pragma('vm:prefer-inline')
 $UnsignedTransactionCopyWith<$Res> get transaction {
-  
+
   return $UnsignedTransactionCopyWith<$Res>(_self.transaction, (value) {
     return _then(_self.copyWith(transaction: value));
   });

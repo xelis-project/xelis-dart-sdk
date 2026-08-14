@@ -77,7 +77,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $TransactionEntryTypeCopyWith<$Res> get txEntryType {
-  
+
   return $TransactionEntryTypeCopyWith<$Res>(_self.txEntryType, (value) {
     return _then(_self.copyWith(txEntryType: value));
   });
@@ -86,7 +86,7 @@ $TransactionEntryTypeCopyWith<$Res> get txEntryType {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-  
+
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -229,7 +229,7 @@ return $default(_that.hash,_that.topoheight,_that.txEntryType,_that.timestamp,_t
 
 class _TransactionEntry extends TransactionEntry {
   const _TransactionEntry({required this.hash, required this.topoheight, required this.txEntryType, required this.timestamp, this.extraFields = const RpcExtraFields()}): super._();
-  
+
 
 @override final  String hash;
 @override final  BigInt topoheight;
@@ -300,7 +300,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $TransactionEntryTypeCopyWith<$Res> get txEntryType {
-  
+
   return $TransactionEntryTypeCopyWith<$Res>(_self.txEntryType, (value) {
     return _then(_self.copyWith(txEntryType: value));
   });
@@ -309,7 +309,7 @@ $TransactionEntryTypeCopyWith<$Res> get txEntryType {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-  
+
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });

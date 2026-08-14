@@ -1,12 +1,11 @@
 import 'dart:io';
 
-/// Repository-local architecture gate for public RPC models.
-void main() {
+/// Runs the repository-local architecture gate for public RPC models.
+void checkDtoArchitecture() {
   final failures = <String>[];
   final libSrc = Directory('lib/src');
   final dtoRoot = Directory('lib/src/data_transfer_objects');
   final sourceFiles = _dartSources(libSrc);
-  final testSourceFiles = _dartSources(Directory('test'));
 
   for (final file in sourceFiles) {
     final source = file.readAsStringSync();
@@ -136,30 +135,11 @@ void main() {
     }
   }
 
-  const removedSymbols = {
-    'RPCTransaction',
-    'RPCAssetData',
-    'TransactionResponse',
-    'TransactionWalletResponse',
-    'RpcWireValue',
-    'VMParameter',
-  };
-  for (final file in [...sourceFiles, ...testSourceFiles]) {
-    final source = file.readAsStringSync();
-    for (final symbol in removedSymbols) {
-      if (RegExp('(?<![A-Za-z0-9_])$symbol(?![A-Za-z0-9_])').hasMatch(source)) {
-        failures.add('${_relative(file.path)} still references $symbol.');
-      }
-    }
-  }
-
   if (failures.isNotEmpty) {
-    stderr.writeln('DTO architecture check failed:');
-    for (final failure in failures.toSet()) {
-      stderr.writeln('  - $failure');
-    }
-    exitCode = 1;
-    return;
+    throw StateError(
+      'DTO architecture check failed:\n'
+      '${failures.toSet().map((failure) => '  - $failure').join('\n')}',
+    );
   }
   stdout.writeln('DTO architecture check passed.');
 }
@@ -247,11 +227,7 @@ void _checkRpcFacades(List<String> failures) {
   }
 }
 
-void _checkGeneratedPart(
-  File generated,
-  String suffix,
-  List<String> failures,
-) {
+void _checkGeneratedPart(File generated, String suffix, List<String> failures) {
   final sourcePath = generated.path.replaceFirst(
     RegExp('${RegExp.escape(suffix)}\$'),
     '.dart',

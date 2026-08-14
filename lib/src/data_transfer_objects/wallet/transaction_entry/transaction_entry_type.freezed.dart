@@ -59,7 +59,7 @@ TransactionEntryType _$TransactionEntryTypeFromJson(
           return UnknownTransactionEntryType.fromJson(
             json
           );
-        
+
           default:
             throw CheckedFromJsonException(
   json,
@@ -68,7 +68,7 @@ TransactionEntryType _$TransactionEntryTypeFromJson(
   'Invalid union type "${json['runtimeType']}"!'
 );
         }
-      
+
 }
 
 /// @nodoc
@@ -135,7 +135,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-  
+
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -404,7 +404,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-  
+
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -494,7 +494,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-  
+
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -586,7 +586,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-  
+
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -680,7 +680,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-  
+
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -776,7 +776,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-  
+
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -884,7 +884,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-  
+
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -984,7 +984,7 @@ $DeployInvokeCopyWith<$Res>? get invoke {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-  
+
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -1074,7 +1074,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-  
+
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -1170,7 +1170,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $ExtraDataCopyWith<$Res> get data {
-  
+
   return $ExtraDataCopyWith<$Res>(_self.data, (value) {
     return _then(_self.copyWith(data: value));
   });
@@ -1179,7 +1179,7 @@ $ExtraDataCopyWith<$Res> get data {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-  
+
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -1273,7 +1273,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $ExtraDataCopyWith<$Res> get data {
-  
+
   return $ExtraDataCopyWith<$Res>(_self.data, (value) {
     return _then(_self.copyWith(data: value));
   });
@@ -1282,7 +1282,7 @@ $ExtraDataCopyWith<$Res> get data {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-  
+
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -1368,7 +1368,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcJsonValueCopyWith<$Res> get wireValue {
-  
+
   return $RpcJsonValueCopyWith<$Res>(_self.wireValue, (value) {
     return _then(_self.copyWith(wireValue: value));
   });
@@ -1377,7 +1377,7 @@ $RpcJsonValueCopyWith<$Res> get wireValue {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-  
+
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });

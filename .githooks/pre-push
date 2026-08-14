@@ -1,0 +1,12 @@
+#!/bin/sh
+set -eu
+
+profile="$(git config --get xelis.prePushProfile || true)"
+if [ -z "$profile" ]; then
+  profile="smoke"
+fi
+if [ "$profile" = "off" ]; then
+  exit 0
+fi
+
+dart run tool/verify.dart "$profile"

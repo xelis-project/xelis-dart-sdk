@@ -75,7 +75,7 @@ as BaseFeeMode,
 @override
 @pragma('vm:prefer-inline')
 $TransactionTypeBuilderCopyWith<$Res> get transactionTypeBuilder {
-  
+
   return $TransactionTypeBuilderCopyWith<$Res>(_self.transactionTypeBuilder, (value) {
     return _then(_self.copyWith(transactionTypeBuilder: value));
   });
@@ -84,7 +84,7 @@ $TransactionTypeBuilderCopyWith<$Res> get transactionTypeBuilder {
 @override
 @pragma('vm:prefer-inline')
 $FeeBuilderCopyWith<$Res> get fee {
-  
+
   return $FeeBuilderCopyWith<$Res>(_self.fee, (value) {
     return _then(_self.copyWith(fee: value));
   });
@@ -93,7 +93,7 @@ $FeeBuilderCopyWith<$Res> get fee {
 @override
 @pragma('vm:prefer-inline')
 $BaseFeeModeCopyWith<$Res> get baseFee {
-  
+
   return $BaseFeeModeCopyWith<$Res>(_self.baseFee, (value) {
     return _then(_self.copyWith(baseFee: value));
   });
@@ -236,7 +236,7 @@ return $default(_that.transactionTypeBuilder,_that.fee,_that.baseFee);case _:
 
 class _EstimateWalletFeesParams extends EstimateWalletFeesParams {
   const _EstimateWalletFeesParams({required this.transactionTypeBuilder, this.fee = const FeeBuilder.extra(), this.baseFee = const BaseFeeMode.none()}): super._();
-  
+
 
 @override final  TransactionTypeBuilder transactionTypeBuilder;
 @override@JsonKey() final  FeeBuilder fee;
@@ -303,7 +303,7 @@ as BaseFeeMode,
 @override
 @pragma('vm:prefer-inline')
 $TransactionTypeBuilderCopyWith<$Res> get transactionTypeBuilder {
-  
+
   return $TransactionTypeBuilderCopyWith<$Res>(_self.transactionTypeBuilder, (value) {
     return _then(_self.copyWith(transactionTypeBuilder: value));
   });
@@ -312,7 +312,7 @@ $TransactionTypeBuilderCopyWith<$Res> get transactionTypeBuilder {
 @override
 @pragma('vm:prefer-inline')
 $FeeBuilderCopyWith<$Res> get fee {
-  
+
   return $FeeBuilderCopyWith<$Res>(_self.fee, (value) {
     return _then(_self.copyWith(fee: value));
   });
@@ -321,7 +321,7 @@ $FeeBuilderCopyWith<$Res> get fee {
 @override
 @pragma('vm:prefer-inline')
 $BaseFeeModeCopyWith<$Res> get baseFee {
-  
+
   return $BaseFeeModeCopyWith<$Res>(_self.baseFee, (value) {
     return _then(_self.copyWith(baseFee: value));
   });

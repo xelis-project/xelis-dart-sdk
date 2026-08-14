@@ -74,7 +74,7 @@ as String?,
 @override
 @pragma('vm:prefer-inline')
 $RpcTransactionCopyWith<$Res> get transaction {
-  
+
   return $RpcTransactionCopyWith<$Res>(_self.transaction, (value) {
     return _then(_self.copyWith(transaction: value));
   });
@@ -217,7 +217,7 @@ return $default(_that.transaction,_that.txAsHex);case _:
 
 class _WalletTransactionResponse extends WalletTransactionResponse {
   const _WalletTransactionResponse({required this.transaction, this.txAsHex}): super._();
-  
+
 
 @override final  RpcTransaction transaction;
 @override final  String? txAsHex;
@@ -282,7 +282,7 @@ as String?,
 @override
 @pragma('vm:prefer-inline')
 $RpcTransactionCopyWith<$Res> get transaction {
-  
+
   return $RpcTransactionCopyWith<$Res>(_self.transaction, (value) {
     return _then(_self.copyWith(transaction: value));
   });

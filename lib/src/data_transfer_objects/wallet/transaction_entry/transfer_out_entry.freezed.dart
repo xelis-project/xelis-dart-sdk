@@ -92,7 +92,7 @@ $ExtraDataCopyWith<$Res>? get extraData {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-  
+
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -321,7 +321,7 @@ $ExtraDataCopyWith<$Res>? get extraData {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-  
+
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });

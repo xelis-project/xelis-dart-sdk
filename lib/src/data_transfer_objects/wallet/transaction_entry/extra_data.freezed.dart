@@ -194,7 +194,7 @@ return unknown(_that.type);case _:
 
 class PrivateExtraDataFlag extends PlaintextExtraDataFlag {
   const PrivateExtraDataFlag(): super._();
-  
+
 
 
 
@@ -226,7 +226,7 @@ String toString() {
 
 class PublicExtraDataFlag extends PlaintextExtraDataFlag {
   const PublicExtraDataFlag(): super._();
-  
+
 
 
 
@@ -258,7 +258,7 @@ String toString() {
 
 class ProprietaryExtraDataFlag extends PlaintextExtraDataFlag {
   const ProprietaryExtraDataFlag(): super._();
-  
+
 
 
 
@@ -290,7 +290,7 @@ String toString() {
 
 class FailedExtraDataFlag extends PlaintextExtraDataFlag {
   const FailedExtraDataFlag(): super._();
-  
+
 
 
 
@@ -322,7 +322,7 @@ String toString() {
 
 class UnknownPlaintextExtraDataFlag extends PlaintextExtraDataFlag {
   const UnknownPlaintextExtraDataFlag(this.type): super._();
-  
+
 
  final  String type;
 
@@ -463,7 +463,7 @@ $DataElementCopyWith<$Res>? get data {
 @override
 @pragma('vm:prefer-inline')
 $PlaintextExtraDataFlagCopyWith<$Res> get flag {
-  
+
   return $PlaintextExtraDataFlagCopyWith<$Res>(_self.flag, (value) {
     return _then(_self.copyWith(flag: value));
   });
@@ -472,7 +472,7 @@ $PlaintextExtraDataFlagCopyWith<$Res> get flag {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-  
+
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -699,7 +699,7 @@ $DataElementCopyWith<$Res>? get data {
 @override
 @pragma('vm:prefer-inline')
 $PlaintextExtraDataFlagCopyWith<$Res> get flag {
-  
+
   return $PlaintextExtraDataFlagCopyWith<$Res>(_self.flag, (value) {
     return _then(_self.copyWith(flag: value));
   });
@@ -708,7 +708,7 @@ $PlaintextExtraDataFlagCopyWith<$Res> get flag {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-  
+
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });

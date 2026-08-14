@@ -219,7 +219,7 @@ return lesserOrEqual(_that.value);case _:
 
 class GreaterQueryNumber extends QueryNumber {
   const GreaterQueryNumber(this.value): super._();
-  
+
 
 @override final  BigInt value;
 
@@ -285,7 +285,7 @@ as BigInt,
 
 class GreaterOrEqualQueryNumber extends QueryNumber {
   const GreaterOrEqualQueryNumber(this.value): super._();
-  
+
 
 @override final  BigInt value;
 
@@ -351,7 +351,7 @@ as BigInt,
 
 class LesserQueryNumber extends QueryNumber {
   const LesserQueryNumber(this.value): super._();
-  
+
 
 @override final  BigInt value;
 
@@ -417,7 +417,7 @@ as BigInt,
 
 class LesserOrEqualQueryNumber extends QueryNumber {
   const LesserOrEqualQueryNumber(this.value): super._();
-  
+
 
 @override final  BigInt value;
 
@@ -745,7 +745,7 @@ return elementType(_that.type);case _:
 
 class NotDataQuery extends DataQuery {
   const NotDataQuery(this.query): super._();
-  
+
 
  final  DataQuery query;
 
@@ -808,7 +808,7 @@ as DataQuery,
 @override
 @pragma('vm:prefer-inline')
 $DataQueryCopyWith<$Res> get query {
-  
+
   return $DataQueryCopyWith<$Res>(_self.query, (value) {
     return _then(_self.copyWith(query: value));
   });
@@ -820,7 +820,7 @@ $DataQueryCopyWith<$Res> get query {
 
 class AndDataQuery extends DataQuery {
   const AndDataQuery(final  List<DataQuery> queries): _queries = queries,super._();
-  
+
 
  final  List<DataQuery> _queries;
  List<DataQuery> get queries {
@@ -892,7 +892,7 @@ as List<DataQuery>,
 
 class OrDataQuery extends DataQuery {
   const OrDataQuery(final  List<DataQuery> queries): _queries = queries,super._();
-  
+
 
  final  List<DataQuery> _queries;
  List<DataQuery> get queries {
@@ -964,7 +964,7 @@ as List<DataQuery>,
 
 class EqualDataQuery extends DataQuery {
   const EqualDataQuery(this.value): super._();
-  
+
 
  final  DataValue value;
 
@@ -1030,7 +1030,7 @@ as DataValue,
 
 class StartsWithDataQuery extends DataQuery {
   const StartsWithDataQuery(this.value): super._();
-  
+
 
  final  DataValue value;
 
@@ -1096,7 +1096,7 @@ as DataValue,
 
 class EndsWithDataQuery extends DataQuery {
   const EndsWithDataQuery(this.value): super._();
-  
+
 
  final  DataValue value;
 
@@ -1162,7 +1162,7 @@ as DataValue,
 
 class ContainsValueQuery extends DataQuery {
   const ContainsValueQuery(this.value): super._();
-  
+
 
  final  DataValue value;
 
@@ -1228,7 +1228,7 @@ as DataValue,
 
 class IsOfTypeDataQuery extends DataQuery {
   const IsOfTypeDataQuery(this.type): super._();
-  
+
 
  final  DataValueType type;
 
@@ -1294,7 +1294,7 @@ as DataValueType,
 
 class MatchesDataQuery extends DataQuery {
   const MatchesDataQuery(this.pattern): super._();
-  
+
 
  final  String pattern;
 
@@ -1360,7 +1360,7 @@ as String,
 
 class GreaterDataQuery extends DataQuery {
   const GreaterDataQuery(this.value): super._();
-  
+
 
  final  BigInt value;
 
@@ -1426,7 +1426,7 @@ as BigInt,
 
 class GreaterOrEqualDataQuery extends DataQuery {
   const GreaterOrEqualDataQuery(this.value): super._();
-  
+
 
  final  BigInt value;
 
@@ -1492,7 +1492,7 @@ as BigInt,
 
 class LesserDataQuery extends DataQuery {
   const LesserDataQuery(this.value): super._();
-  
+
 
  final  BigInt value;
 
@@ -1558,7 +1558,7 @@ as BigInt,
 
 class LesserOrEqualDataQuery extends DataQuery {
   const LesserOrEqualDataQuery(this.value): super._();
-  
+
 
  final  BigInt value;
 
@@ -1624,7 +1624,7 @@ as BigInt,
 
 class HasKeyDataQuery extends DataQuery {
   const HasKeyDataQuery({required this.key, this.query}): super._();
-  
+
 
  final  DataValue key;
  final  DataQuery? query;
@@ -1704,7 +1704,7 @@ $DataQueryCopyWith<$Res>? get query {
 
 class AtKeyDataQuery extends DataQuery {
   const AtKeyDataQuery({required this.key, required this.query}): super._();
-  
+
 
  final  DataValue key;
  final  DataQuery query;
@@ -1769,7 +1769,7 @@ as DataQuery,
 @override
 @pragma('vm:prefer-inline')
 $DataQueryCopyWith<$Res> get query {
-  
+
   return $DataQueryCopyWith<$Res>(_self.query, (value) {
     return _then(_self.copyWith(query: value));
   });
@@ -1781,7 +1781,7 @@ $DataQueryCopyWith<$Res> get query {
 
 class LengthDataQuery extends DataQuery {
   const LengthDataQuery(this.comparison): super._();
-  
+
 
  final  QueryNumber comparison;
 
@@ -1844,7 +1844,7 @@ as QueryNumber,
 @override
 @pragma('vm:prefer-inline')
 $QueryNumberCopyWith<$Res> get comparison {
-  
+
   return $QueryNumberCopyWith<$Res>(_self.comparison, (value) {
     return _then(_self.copyWith(comparison: value));
   });
@@ -1856,7 +1856,7 @@ $QueryNumberCopyWith<$Res> get comparison {
 
 class ContainsElementDataQuery extends DataQuery {
   const ContainsElementDataQuery(this.value): super._();
-  
+
 
  final  DataElement value;
 
@@ -1919,7 +1919,7 @@ as DataElement,
 @override
 @pragma('vm:prefer-inline')
 $DataElementCopyWith<$Res> get value {
-  
+
   return $DataElementCopyWith<$Res>(_self.value, (value) {
     return _then(_self.copyWith(value: value));
   });
@@ -1931,7 +1931,7 @@ $DataElementCopyWith<$Res> get value {
 
 class AtPositionDataQuery extends DataQuery {
   const AtPositionDataQuery({required this.position, required this.query}): assert(position >= 0, 'position must be non-negative'),super._();
-  
+
 
  final  int position;
  final  DataQuery query;
@@ -1996,7 +1996,7 @@ as DataQuery,
 @override
 @pragma('vm:prefer-inline')
 $DataQueryCopyWith<$Res> get query {
-  
+
   return $DataQueryCopyWith<$Res>(_self.query, (value) {
     return _then(_self.copyWith(query: value));
   });
@@ -2008,7 +2008,7 @@ $DataQueryCopyWith<$Res> get query {
 
 class ElementTypeDataQuery extends DataQuery {
   const ElementTypeDataQuery(this.type): super._();
-  
+
 
  final  DataElementType type;
 
@@ -2071,7 +2071,7 @@ as DataElementType,
 @override
 @pragma('vm:prefer-inline')
 $DataElementTypeCopyWith<$Res> get type {
-  
+
   return $DataElementTypeCopyWith<$Res>(_self.type, (value) {
     return _then(_self.copyWith(type: value));
   });

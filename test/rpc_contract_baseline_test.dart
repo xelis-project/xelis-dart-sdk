@@ -4,14 +4,19 @@ import 'dart:io';
 import 'package:test/test.dart';
 import 'package:xelis_dart_sdk/xelis_dart_sdk.dart';
 
+import '../tool/src/xelis_target.dart';
+
 void main() {
-  Map<String, dynamic> fixture(String name) =>
-      jsonDecode(
-            File(
-              'test/fixtures/rpc_schema/v1.24.0/$name.json',
-            ).readAsStringSync(),
-          )
-          as Map<String, dynamic>;
+  final target = XelisTarget.load();
+  Map<String, dynamic> fixture(String name) {
+    final path = switch (name) {
+      'daemon' => target.daemonSchema,
+      'wallet' => target.walletSchema,
+      'metadata' => target.schemaMetadata,
+      _ => throw ArgumentError.value(name, 'name'),
+    };
+    return jsonDecode(File(path).readAsStringSync()) as Map<String, dynamic>;
+  }
 
   List<String> methodNames(Map<String, dynamic> schema) =>
       (schema['methods'] as List<dynamic>)
@@ -23,8 +28,7 @@ void main() {
     final metadata = fixture('metadata');
     expect(
       metadata['reference'],
-      'xelis-blockchain/v1.24.0@'
-      'e8d7625a05ced6f9144d6abc9ecc278b8cab661c',
+      target.upstreamReference,
     );
     expect(metadata['source'], 'RPCHandler.schema');
 

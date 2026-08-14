@@ -1,15 +1,9 @@
 import 'dart:io';
 
-void main(List<String> arguments) {
-  if (arguments.length != 1) {
-    stderr.writeln(
-      'Usage: dart run tool/check_upstream_rpc_contract.dart <xelis-blockchain>',
-    );
-    exitCode = 64;
-    return;
-  }
-
-  final upstream = Directory(arguments.single);
+/// Checks that every registered upstream RPC method is classified by the SDK.
+///
+/// This is a method inventory, not a DTO/schema compatibility check.
+void checkRpcMethodInventory(Directory upstream) {
   final checks = <_Surface>[
     _Surface(
       name: 'daemon',
@@ -35,16 +29,21 @@ void main(List<String> arguments) {
     ),
   ];
 
-  var failed = false;
+  final failures = <String>[];
   for (final surface in checks) {
     if (!surface.upstream.existsSync()) {
-      stderr.writeln('Missing upstream source: ${surface.upstream.path}');
-      failed = true;
+      failures.add('Missing upstream source: ${surface.upstream.path}');
       continue;
     }
     final upstreamMethods = _registeredMethods(
       surface.upstream.readAsStringSync(),
     );
+    if (upstreamMethods.isEmpty) {
+      failures.add(
+        '${surface.name}: no upstream RPC registration could be parsed.',
+      );
+      continue;
+    }
     final sdkMethods = _enumWireNames(
       surface.sdk.readAsStringSync(),
       surface.enumName,
@@ -52,8 +51,7 @@ void main(List<String> arguments) {
     final classified = {...sdkMethods, ...surface.classifiedOutsideFacade};
     final unknown = upstreamMethods.difference(classified).toList()..sort();
     if (unknown.isNotEmpty) {
-      failed = true;
-      stderr.writeln(
+      failures.add(
         '${surface.name}: unclassified upstream methods: ${unknown.join(', ')}',
       );
     } else {
@@ -62,16 +60,17 @@ void main(List<String> arguments) {
       );
     }
   }
-  if (failed) exitCode = 1;
+  if (failures.isNotEmpty) throw StateError(failures.join('\n'));
 }
 
 Set<String> _registeredMethods(String source) {
   final methods = <String>{};
-  final methodName = RegExp(r'"([a-z][a-z0-9_]*)"');
-  for (final line in source.split('\n')) {
-    if (!line.contains('.register_')) continue;
-    final match = methodName.firstMatch(line);
-    if (match != null) methods.add(match.group(1)!);
+  final registration = RegExp(
+    r'\.register_[A-Za-z0-9_]+\s*\([\s\S]{0,300}?"([a-z][a-z0-9_]*)"',
+    multiLine: true,
+  );
+  for (final match in registration.allMatches(source)) {
+    methods.add(match.group(1)!);
   }
   return methods;
 }

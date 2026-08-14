@@ -82,7 +82,7 @@ as List<SignerId>,
 @override
 @pragma('vm:prefer-inline')
 $TransactionTypeBuilderCopyWith<$Res> get transactionTypeBuilder {
-  
+
   return $TransactionTypeBuilderCopyWith<$Res>(_self.transactionTypeBuilder, (value) {
     return _then(_self.copyWith(transactionTypeBuilder: value));
   });
@@ -91,7 +91,7 @@ $TransactionTypeBuilderCopyWith<$Res> get transactionTypeBuilder {
 @override
 @pragma('vm:prefer-inline')
 $ReferenceCopyWith<$Res> get reference {
-  
+
   return $ReferenceCopyWith<$Res>(_self.reference, (value) {
     return _then(_self.copyWith(reference: value));
   });
@@ -100,7 +100,7 @@ $ReferenceCopyWith<$Res> get reference {
 @override
 @pragma('vm:prefer-inline')
 $FeeBuilderCopyWith<$Res> get fee {
-  
+
   return $FeeBuilderCopyWith<$Res>(_self.fee, (value) {
     return _then(_self.copyWith(fee: value));
   });
@@ -243,7 +243,7 @@ return $default(_that.transactionTypeBuilder,_that.balances,_that.reference,_tha
 
 class _BuildTransactionOfflineParams extends BuildTransactionOfflineParams {
   const _BuildTransactionOfflineParams({required this.transactionTypeBuilder, required final  Map<String, RpcCompressedCiphertext> balances, required this.reference, required this.nonce, this.fee = const FeeBuilder.extra(), this.baseFee, this.feeLimit, this.txVersion, this.txAsHex = false, final  List<SignerId> signers = const <SignerId>[]}): _balances = balances,_signers = signers,super._();
-  
+
 
 @override final  TransactionTypeBuilder transactionTypeBuilder;
  final  Map<String, RpcCompressedCiphertext> _balances;
@@ -336,7 +336,7 @@ as List<SignerId>,
 @override
 @pragma('vm:prefer-inline')
 $TransactionTypeBuilderCopyWith<$Res> get transactionTypeBuilder {
-  
+
   return $TransactionTypeBuilderCopyWith<$Res>(_self.transactionTypeBuilder, (value) {
     return _then(_self.copyWith(transactionTypeBuilder: value));
   });
@@ -345,7 +345,7 @@ $TransactionTypeBuilderCopyWith<$Res> get transactionTypeBuilder {
 @override
 @pragma('vm:prefer-inline')
 $ReferenceCopyWith<$Res> get reference {
-  
+
   return $ReferenceCopyWith<$Res>(_self.reference, (value) {
     return _then(_self.copyWith(reference: value));
   });
@@ -354,7 +354,7 @@ $ReferenceCopyWith<$Res> get reference {
 @override
 @pragma('vm:prefer-inline')
 $FeeBuilderCopyWith<$Res> get fee {
-  
+
   return $FeeBuilderCopyWith<$Res>(_self.fee, (value) {
     return _then(_self.copyWith(fee: value));
   });

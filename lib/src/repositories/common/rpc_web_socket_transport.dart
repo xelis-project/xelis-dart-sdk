@@ -44,6 +44,8 @@ final class WebSocketClientTransport implements RpcWebSocketTransport {
 
   @override
   Future<void> waitUntilConnected() async {
+    final state = _socket.connection.state;
+    if (state is ws.Connected || state is ws.Reconnected) return;
     await _socket.connection.firstWhere(
       (state) => state is ws.Connected || state is ws.Reconnected,
     );

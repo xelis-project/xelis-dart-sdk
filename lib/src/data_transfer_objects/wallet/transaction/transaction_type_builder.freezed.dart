@@ -39,7 +39,7 @@ TransactionTypeBuilder _$TransactionTypeBuilderFromJson(
           return BlobBuilder.fromJson(
             json
           );
-        
+
           default:
             throw CheckedFromJsonException(
   json,
@@ -48,7 +48,7 @@ TransactionTypeBuilder _$TransactionTypeBuilderFromJson(
   'Invalid union type "${json['runtimeType']}"!'
 );
         }
-      
+
 }
 
 /// @nodoc
@@ -569,7 +569,7 @@ as InterContractPermission,
 @override
 @pragma('vm:prefer-inline')
 $InterContractPermissionCopyWith<$Res> get permission {
-  
+
   return $InterContractPermissionCopyWith<$Res>(_self.permission, (value) {
     return _then(_self.copyWith(permission: value));
   });
@@ -750,7 +750,7 @@ as bool,
 @override
 @pragma('vm:prefer-inline')
 $DataElementCopyWith<$Res> get data {
-  
+
   return $DataElementCopyWith<$Res>(_self.data, (value) {
     return _then(_self.copyWith(data: value));
   });

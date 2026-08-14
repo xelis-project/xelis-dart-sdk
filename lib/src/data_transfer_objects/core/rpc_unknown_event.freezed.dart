@@ -70,7 +70,7 @@ as RpcJsonValue,
 @override
 @pragma('vm:prefer-inline')
 $RpcJsonValueCopyWith<$Res> get payload {
-  
+
   return $RpcJsonValueCopyWith<$Res>(_self.payload, (value) {
     return _then(_self.copyWith(payload: value));
   });
@@ -213,7 +213,7 @@ return $default(_that.name,_that.payload);case _:
 
 class _RpcUnknownEvent extends RpcUnknownEvent {
   const _RpcUnknownEvent({required this.name, required this.payload}): super._();
-  
+
 
 @override final  String name;
 @override final  RpcJsonValue payload;
@@ -274,7 +274,7 @@ as RpcJsonValue,
 @override
 @pragma('vm:prefer-inline')
 $RpcJsonValueCopyWith<$Res> get payload {
-  
+
   return $RpcJsonValueCopyWith<$Res>(_self.payload, (value) {
     return _then(_self.copyWith(payload: value));
   });

@@ -1,0 +1,9 @@
+{
+  "format": 1,
+  "name": "upstream-module-serde-fixture",
+  "sourceCommit": "e8d7625a05ced6f9144d6abc9ecc278b8cab661c",
+  "sourceFile": "xelis_common/src/transaction/payload/contract/mod.rs",
+  "sourceTest": "test_serde_module",
+  "moduleSha256": "b7ea5b9d21f8af0183a9565e45c44d1fd7e8412b063b95e91c213cce321e89bf",
+  "moduleHex": "0200080d48656c6c6f2c20576f726c64210004000000000000000000010a00000018ef000001001402"
+}

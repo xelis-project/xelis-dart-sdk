@@ -1,26 +1,46 @@
 # XELIS Dart SDK
 
-Typed Dart clients for the XELIS daemon and wallet JSON-RPC APIs.
+A typed Dart client for the XELIS daemon and wallet JSON-RPC APIs over
+WebSockets.
 
-The `0.36.x` line targets `xelis-blockchain v1.24.0`. Public daemon methods,
-wallet methods, WebSocket events, transaction builders, contract logs and XSWD
-permissions are covered by the SDK. Methods that a server disables at runtime
-are detected through its RPC schema.
+Use this package to:
 
-| XELIS Dart SDK | xelis-blockchain |
-| --- | --- |
-| `0.36.x` | `v1.24.0` |
+- read blocks, transactions, balances, assets, contracts, mempool and network
+  data from a daemon;
+- query and control a wallet, build transactions, sign data and use wallet
+  storage;
+- build transfers, burns, multisig updates, contract calls, deployments and
+  blob transactions;
+- subscribe to daemon, wallet and filtered contract events;
+- work with exact RPC integers and typed XVM values without losing data;
+- discover optional RPC capabilities, call unmodeled methods and validate XSWD
+  manifests.
 
-## Install
+## Installation
 
-```yaml
-dependencies:
-  xelis_dart_sdk: ^0.36.0
+Add the package to a Dart or Flutter project:
+
+```console
+dart pub add xelis_dart_sdk
 ```
 
-Dart `^3.12.0` or newer is required.
+For Flutter projects, `flutter pub add xelis_dart_sdk` works as well.
 
-## Daemon client
+Import the single public library:
+
+```dart
+import 'package:xelis_dart_sdk/xelis_dart_sdk.dart';
+```
+
+Use the latest stable XELIS daemon and wallet releases. Some RPC methods depend
+on the server configuration; use runtime capability discovery when a feature
+is optional.
+
+## Connect to a daemon
+
+Pass the daemon address as `host:port`. Secure WebSockets are enabled by
+default; set `secureWebSocket` to `false` only for an unencrypted endpoint such
+as a local development node.
 
 ```dart
 import 'package:xelis_dart_sdk/xelis_dart_sdk.dart';
@@ -32,25 +52,44 @@ Future<void> main() async {
   );
 
   daemon.connect();
+  try {
+    final info = await daemon.getInfo();
+    final topoheight = await daemon.getTopoheight();
 
-  final info = await daemon.getInfo();
-  final block = await daemon.getBlockAtTopoheight(
-    GetBlockAtTopoheightParams(
-      topoheight: BigInt.from(1750),
-      includeTxs: true,
-    ),
-  );
-
-  daemon.onNewBlock((block) {
-    print('new block: ${block.hash}');
-  });
-
-  print(info);
-  print(block.hash);
+    print('network: ${info.network}');
+    print('topoheight: $topoheight');
+  } finally {
+    daemon.disconnect();
+  }
 }
 ```
 
-The wallet client follows the same connection model:
+Call `connect()` before sending requests. Requests made while the socket is
+connecting wait for the connection; `disconnect()` closes the client and any
+pending requests.
+
+The typed daemon API covers chain state, blocks, accounts, balances, assets,
+transactions, the mempool, peers, mining, multisig and contracts. For example:
+
+```dart
+final block = await daemon.getBlockAtTopoheight(
+  GetBlockAtTopoheightParams(
+    topoheight: BigInt.from(1750),
+    includeTxs: true,
+  ),
+);
+
+print(block.hash);
+print(block.transactions?.length ?? 0);
+```
+
+Administrative operations are intentionally separated under `daemon.admin`.
+Only use that facade with a daemon you are authorized to manage.
+
+## Connect to a wallet
+
+The wallet client uses the same lifecycle and sends HTTP Basic credentials
+during the WebSocket connection:
 
 ```dart
 final wallet = WalletClient(
@@ -61,172 +100,201 @@ final wallet = WalletClient(
 );
 
 wallet.connect();
-final address = await wallet.getAddress();
+try {
+  final address = await wallet.getAddress();
+  final balance = await wallet.getBalance(); // Native XELIS balance.
+
+  print('address: $address');
+  print('balance: $balance');
+} finally {
+  wallet.disconnect();
+}
 ```
 
-Build and broadcast a transfer:
+The wallet API also exposes tracked assets, transaction history, proofs,
+offline and unsigned transaction flows, fee estimation, extra-data helpers and
+typed key/value storage.
+
+### Build and broadcast a transfer
+
+RPC amounts are expressed in atomic units. Use `BigInt` and obtain an asset's
+precision with `wallet.getAssetPrecision(...)` when converting a display
+amount.
 
 ```dart
-final transfer = await wallet.buildTransaction(
+Future<WalletTransactionResponse> sendTransfer(
+  WalletClient wallet, {
+  required String asset,
+  required String destination,
+  required BigInt amountInAtomicUnits,
+}) {
+  return wallet.buildTransaction(
+    BuildTransactionParams(
+      transactionTypeBuilder: TransactionTypeBuilder.transfers(
+        transfers: [
+          TransferBuilder(
+            asset: asset,
+            destination: destination,
+            amount: amountInAtomicUnits,
+          ),
+        ],
+      ),
+    ),
+  );
+}
+
+final response = await sendTransfer(
+  wallet,
+  asset: assetHash,
+  destination: destinationAddress,
+  amountInAtomicUnits: BigInt.from(100000),
+);
+
+print(response.transaction.hash);
+```
+
+By default, the wallet uses the network-computed fee and broadcasts the
+transaction. Use `FeeBuilder.fixed`, an `ExtraFeeMode` or a `BaseFeeMode` when
+the application needs an explicit fee policy. Set `broadcast` to `false` to
+build without broadcasting.
+
+For offline or multisig workflows, use `buildTransactionOffline`,
+`buildUnsignedTransaction`, `signUnsignedTransaction` and
+`finalizeUnsignedTransaction`.
+
+## Subscribe to events
+
+Register callbacks after connecting. Subscriptions are restored when the
+WebSocket reconnects.
+
+```dart
+daemon.onNewBlock((block) {
+  print('new block: ${block.hash}');
+});
+
+wallet.onBalanceChanged((event) {
+  print('balance changed: $event');
+});
+
+// Later:
+daemon.unsubscribeFromNewBlock();
+wallet.unsubscribeFromBalanceChanged();
+```
+
+Contract subscriptions accept filters, so different contracts can use
+independent callbacks:
+
+```dart
+daemon.onContractEvent(contractHash, (event) {
+  print('contract event: $event');
+});
+
+daemon.onInvokeContract(contractHash, (event) {
+  for (final log in event.contractLogs) {
+    print(log);
+  }
+});
+```
+
+## Build contract transactions
+
+Use `RpcValueCell` for XVM parameters. Primitive integer variants preserve
+their Rust width and use `BigInt` where necessary.
+
+```dart
+final response = await wallet.buildTransaction(
   BuildTransactionParams(
-    transactionTypeBuilder: TransactionTypeBuilder.transfers(
-      transfers: [
-        TransferBuilder(
-          asset: assetHash,
-          destination: destinationAddress,
-          amount: BigInt.from(100000000),
-        ),
+    transactionTypeBuilder: TransactionTypeBuilder.invokeContract(
+      contract: contractHash,
+      maxGas: BigInt.from(5_000_000),
+      entryId: 0,
+      parameters: [
+        RpcValueCell.primitive(RpcPrimitive.u64(BigInt.from(42))),
       ],
     ),
-    fee: const FeeBuilder.extra(),
-    baseFee: const BaseFeeMode.none(),
-  ),
-);
-
-print(transfer.transaction.hash);
-```
-
-Build a deployment accepted by XELIS `v1.24.0`:
-
-```dart
-final deployment = await wallet.buildTransaction(
-  BuildTransactionParams(
-    transactionTypeBuilder: TransactionTypeBuilder.deployContract(
-      module: xvmModuleHex,
-      contractVersion: ContractVersion.v0,
-    ),
-    fee: const FeeBuilder.extra(),
-    baseFee: const BaseFeeMode.none(),
   ),
 );
 ```
 
-## Exact integers
+Deploy a compiled XVM module with
+`TransactionTypeBuilder.deployContract(module: xvmModuleHex)`. Daemon contract
+methods provide balances, storage data, registered or scheduled executions,
+simulation and typed `RpcContractLog` results.
 
-Wire values that can exceed JavaScript's safe integer range use `BigInt`,
-including amounts, fees, gas, nonces, heights, timestamps, sizes and mining
-difficulties. The transport serializes Rust integer values as exact JSON
-integer literals and `VarUint` difficulties as exact decimal strings on Dart
-VM and Web.
+## Data types and exact values
 
-```dart
-final params = GetBlockAtTopoheightParams(
-  topoheight: BigInt.parse('9007199254740993'),
-);
-```
+- `BigInt` represents amounts, fees, gas, nonces, heights, timestamps and other
+  RPC integers that may exceed JavaScript's safe integer range.
+- `RpcValueCell` represents typed XVM values used by contracts.
+- `DataElement` represents untagged wallet data used by storage, integrated
+  addresses, signed data and transaction extra data.
+- `RpcJsonValue` preserves arbitrary JSON values for raw RPC calls, including
+  exact integers.
 
-## Contract and wallet data
+Response models may expose `extraFields` or an `unknown` variant when a newer
+compatible server sends data the SDK does not model yet. These values are kept
+for inspection without being sent back automatically in normal requests.
 
-`RpcValueCell` is the single public representation for XVM values used by
-contract calls, simulation, storage and execution payloads. It preserves Rust
-primitive widths, byte arrays, objects, pair-based maps and known opaque types.
-`DataElement` remains the distinct untagged format used by wallet storage,
-integrated addresses, signed data and transaction extra data.
-Transaction responses expose Rust source commitments as
-`RpcSourceCommitment`, including their typed equality proofs.
+## Runtime capabilities and raw RPC
 
-```dart
-final parameter = RpcValueCell.primitive(
-  RpcPrimitive.u64(BigInt.parse('18446744073709551615')),
-);
-```
-
-## Runtime capabilities
-
-`getCapabilities()` reads the server's built-in `schema` method and, when
-available, `get_version`. The resulting `RpcCapabilities` answers whether a
-method exists on that particular server and exposes its parameter and result
-schemas.
+Optional methods can depend on how the connected server was started. Check the
+server schema instead of relying on a version number:
 
 ```dart
 final capabilities = await daemon.getCapabilities();
 
 if (capabilities.supportsMethod('simulate_contract_invoke')) {
-  // This node was started with contract VM execution enabled.
+  // The typed simulateContractInvoke method is available on this daemon.
 }
 ```
 
-`simulate_contract_invoke` is part of the current RPC contract, but the daemon
-only registers it when contract VM executions are allowed by its configuration.
-The capability check therefore represents runtime availability. The method is
-part of the regular daemon API whenever the connected node advertises it.
-
-## Contract events
-
-Contract subscriptions carry their filter on the wire and keep callbacks
-isolated per filter:
+Prefer typed methods. If the server advertises a method that the SDK does not
+model yet, use the explicit raw API:
 
 ```dart
-daemon.onInvokeContract('contract-hash-a', (event) {
-  for (final log in event.contractLogs) {
-    print(log);
-  }
-});
-
-daemon.onInvokeContract('contract-hash-b', (event) {
-  // Receives only invocations for contract-hash-b.
-});
+final value = await daemon.raw.call('server_specific_method');
+print(value);
 ```
 
-Known contract output variants are represented by `RpcContractLog`. Unknown
-future variants remain accessible without being included in `toString()`.
+`daemon.safely(...)` and `wallet.safely(...)` convert typed RPC failures into a
+`RpcCallOutcome` when an application wants to handle compatibility failures as
+data.
 
-## XSWD manifests
+## Error handling
 
-`XswdManifestParser.parse` validates the application identity, URL, permission
-limits and supported wallet methods. Permission names are normalized without
-the optional `wallet.` prefix and classified as read, mutation, transaction or
-signature operations. Unknown fields and methods are rejected by default.
+All public RPC failures derive from `RpcException`. Specific subtypes identify
+connection, transport, timeout, remote JSON-RPC, compatibility and
+deserialization failures.
 
 ```dart
-final manifest = const XswdManifestParser().parse(manifestJson);
+try {
+  final info = await daemon.getInfo();
+  print(info);
+} on RpcTimeoutException catch (error) {
+  print('request timed out: ${error.message}');
+} on RpcRemoteException catch (error) {
+  print('server rejected the request: ${error.message}');
+} on RpcException catch (error) {
+  print('RPC failure: ${error.message}');
+}
 ```
 
-## Model organization
+## Validate an XSWD manifest
 
-The public package still has one consumer import. Internally, immutable models
-are separated into `core`, genuinely shared Rust representations, daemon,
-wallet and XSWD domains. Canonical shared types include `RpcTransaction`,
-`RpcAssetData`, balances and XVM values. Wallet transaction responses compose
-the shared transaction instead of copying its fields:
+`XswdManifestParser` validates the manifest version, application identity, URL
+and requested wallet permissions. Unknown fields and unsupported methods are
+rejected.
 
 ```dart
-final response = await wallet.buildTransaction(params);
-print(response.transaction.hash);
-print(response.txAsHex);
+XswdManifest parseManifest(Map<String, dynamic> manifestJson) {
+  return const XswdManifestParser().parse(manifestJson);
+}
 ```
 
-Request models serialize with `toJson()`. Extensible responses use
-`toWireJson()`; received additive fields are restored only when
-`includeExtraFields: true` is explicitly requested.
+Permissions are normalized and classified as read, mutation, transaction or
+signature operations on the returned `XswdManifest`.
 
-## Errors and logging
+## Reference
 
-Transport, timeout, JSON-RPC rejection, unsupported-method and deserialization
-failures use distinct public exception types. Request parameters, complete
-results, event payloads and private signer keys are not printed by default.
-
-Typed responses preserve additive server fields in `extraFields` without
-silently sending them back. Future union variants are exposed as redacted
-`unknown` cases. A method announced by `schema` but not yet modeled can be
-called explicitly through the stable raw API:
-
-```dart
-final value = await daemon.raw.call(
-  'future_method',
-  params: const RpcJsonValue.object({}),
-);
-
-final outcome = await daemon.safely(
-  () => daemon.getBlockSummaryByHash(blockHash),
-);
-```
-
-`RpcJsonValue` preserves all JSON integers as `BigInt`. Normal SDK methods keep
-typed return values; raw access and `RpcCallOutcome` are compatibility tools
-within the same public API.
-
-See the [changelog](https://github.com/xelis-project/xelis-dart-sdk/blob/master/CHANGELOG.md)
-for release changes and the
-[0.36 migration guide](https://github.com/xelis-project/xelis-dart-sdk/blob/master/MIGRATION_0.36.md)
-for the `0.35.x` to `0.36.x` migration.
+- [API documentation](https://pub.dev/documentation/xelis_dart_sdk/latest/)
+- [Release notes](CHANGELOG.md)

@@ -75,7 +75,7 @@ as AssetData,
 @override
 @pragma('vm:prefer-inline')
 $AssetDataCopyWith<$Res> get data {
-  
+
   return $AssetDataCopyWith<$Res>(_self.data, (value) {
     return _then(_self.copyWith(data: value));
   });
@@ -218,7 +218,7 @@ return $default(_that.asset,_that.topoheight,_that.data);case _:
 
 class _RpcAssetData extends RpcAssetData {
   const _RpcAssetData({required this.asset, required this.topoheight, required this.data}): super._();
-  
+
 
 @override final  String asset;
 @override final  BigInt topoheight;
@@ -285,7 +285,7 @@ as AssetData,
 @override
 @pragma('vm:prefer-inline')
 $AssetDataCopyWith<$Res> get data {
-  
+
   return $AssetDataCopyWith<$Res>(_self.data, (value) {
     return _then(_self.copyWith(data: value));
   });
