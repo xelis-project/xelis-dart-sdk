@@ -127,9 +127,95 @@ void main() {
     test('parses ${testCase.$1['type']} contract log', () {
       final log = RpcContractLog.fromJson(testCase.$1);
       expect(log.runtimeType, testCase.$2);
+      expect(log.type, testCase.$1['type']);
+      expect(
+        _canonicalRpcValue(log.toWireJson()),
+        _canonicalRpcValue(testCase.$1),
+      );
+      expect(
+        _canonicalRpcValue(log.toJson()),
+        _canonicalRpcValue(testCase.$1),
+      );
       expect(log.toString(), contains('<redacted>'));
     });
   }
+
+  test('round-trips block-end scheduled executions exactly', () {
+    final log = RpcContractLog.fromJson({
+      'type': 'scheduled_execution',
+      'value': {
+        'contract': 'contract',
+        'hash': 'hash',
+        'kind': {
+          'block_end': {
+            'chunk_id': 65535,
+            'max_gas': BigInt.parse('9007199254740993'),
+            'params': [
+              {
+                'type': 'primitive',
+                'value': {'type': 'u8', 'value': 7},
+              },
+            ],
+          },
+        },
+      },
+    });
+
+    expect(log, isA<ScheduledExecutionContractLog>());
+    final kind = (log as ScheduledExecutionContractLog).kind;
+    expect(kind, isA<RpcBlockEndExecutionLogKind>());
+    expect(kind.toWireJson(), {
+      'block_end': {
+        'chunk_id': 65535,
+        'max_gas': BigInt.parse('9007199254740993'),
+        'params': [
+          {
+            'type': 'primitive',
+            'value': {'type': 'u8', 'value': 7},
+          },
+        ],
+      },
+    });
+    expect(log.toWireJson(), {
+      'type': 'scheduled_execution',
+      'value': {
+        'contract': 'contract',
+        'hash': 'hash',
+        'kind': kind.toWireJson(),
+      },
+    });
+  });
+
+  test('supports a nullable exit code and rejects malformed known logs', () {
+    final exitCode = RpcContractLog.fromJson({
+      'type': 'exit_code',
+      'value': null,
+    });
+    expect(exitCode, const RpcContractLog.exitCode(null));
+    expect(exitCode.toWireJson(), {'type': 'exit_code', 'value': null});
+
+    expect(
+      () => RpcContractLog.fromJson({'value': null}),
+      throwsFormatException,
+    );
+    expect(
+      () => RpcContractLog.fromJson({
+        'type': 'scheduled_execution',
+        'value': {
+          'contract': 'contract',
+          'hash': 'hash',
+          'kind': {
+            'block_end': {
+              'chunk_id': 0,
+              'max_gas': 1,
+              'params': 'not-an-array',
+            },
+          },
+        },
+      }),
+      throwsFormatException,
+    );
+  });
 
   test('preserves additive fields on known log envelopes and values', () {
     final log = RpcContractLog.fromJson({
@@ -176,3 +262,14 @@ void main() {
     expect(log.toString(), isNot(contains('do-not-log')));
   });
 }
+
+Object? _canonicalRpcValue(Object? value) => switch (value) {
+  final int number => BigInt.from(number),
+  final List<Object?> values =>
+    values.map(_canonicalRpcValue).toList(growable: false),
+  final Map<Object?, Object?> values => {
+    for (final entry in values.entries)
+      entry.key: _canonicalRpcValue(entry.value),
+  },
+  _ => value,
+};

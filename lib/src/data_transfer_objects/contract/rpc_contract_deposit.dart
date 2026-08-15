@@ -66,6 +66,13 @@ sealed class RpcContractDeposit with _$RpcContractDeposit {
         'receiver_handle',
         'ct_validity_proof',
       };
+      if (!known.every(value.containsKey)) {
+        throw const RpcDeserializationException(
+          method: 'transaction',
+          path: r'$.data.invoke_contract.deposits.*.private',
+          message: 'A private deposit is missing cryptographic fields.',
+        );
+      }
       return RpcContractDeposit.private(
         commitment: RpcJsonValue.fromJson(value['commitment']),
         senderHandle: RpcJsonValue.fromJson(value['sender_handle']),

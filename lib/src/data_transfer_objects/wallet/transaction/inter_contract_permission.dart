@@ -53,6 +53,11 @@ sealed class InterContractPermission with _$InterContractPermission {
               .toList(growable: false),
         );
       }
+      if (json.containsKey('specific')) {
+        throw const FormatException(
+          'Specific inter-contract permissions require an array.',
+        );
+      }
       final exclude = json['exclude'];
       if (exclude is List) {
         return InterContractPermission.exclude(
@@ -63,6 +68,11 @@ sealed class InterContractPermission with _$InterContractPermission {
                 ),
               )
               .toList(growable: false),
+        );
+      }
+      if (json.containsKey('exclude')) {
+        throw const FormatException(
+          'Excluded inter-contract permissions require an array.',
         );
       }
       final entry = json.entries.single;
@@ -170,12 +180,22 @@ sealed class ContractCallChunk with _$ContractCallChunk {
               .toList(growable: false),
         );
       }
+      if (json.containsKey('specific')) {
+        throw const FormatException(
+          'Specific contract-call chunks require an array.',
+        );
+      }
       final exclude = json['exclude'];
       if (exclude is List) {
         return ContractCallChunk.exclude(
           exclude
               .map((value) => rpcInt(value, min: 0, max: 65535))
               .toList(growable: false),
+        );
+      }
+      if (json.containsKey('exclude')) {
+        throw const FormatException(
+          'Excluded contract-call chunks require an array.',
         );
       }
       final entry = json.entries.single;

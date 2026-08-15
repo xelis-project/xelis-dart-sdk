@@ -95,6 +95,62 @@ void main() {
     },
   );
 
+  test('sends every optional contract pagination parameter exactly', () async {
+    client.responses[DaemonMethod.getContractAssets.jsonKey] = <String>[];
+    await client.getContractAssets('contract', skip: 1, maximum: 2);
+    expect(client.lastParams, {
+      'contract': 'contract',
+      'skip': 1,
+      'maximum': 2,
+    });
+
+    client.responses[DaemonMethod.getContractDataEntries.jsonKey] = <Object?>[];
+    await client.getContractDataEntries(
+      'contract',
+      minimumTopoheight: BigInt.from(3),
+      maximumTopoheight: BigInt.from(4),
+      skip: 5,
+      maximum: 6,
+    );
+    expect(client.lastParams, {
+      'contract': 'contract',
+      'minimum_topoheight': BigInt.from(3),
+      'maximum_topoheight': BigInt.from(4),
+      'skip': 5,
+      'maximum': 6,
+    });
+
+    client.responses[DaemonMethod
+            .getContractRegisteredExecutionsAtTopoheight
+            .jsonKey] =
+        <Object?>[];
+    await client.getContractRegisteredExecutionsAtTopoheight(
+      BigInt.from(7),
+      max: 8,
+      skip: 9,
+    );
+    expect(client.lastParams, {
+      'topoheight': BigInt.from(7),
+      'max': 8,
+      'skip': 9,
+    });
+
+    client.responses[DaemonMethod
+            .getContractScheduledExecutionsAtTopoheight
+            .jsonKey] =
+        <Object?>[];
+    await client.getContractScheduledExecutionsAtTopoheight(
+      BigInt.from(10),
+      max: 11,
+      skip: 12,
+    );
+    expect(client.lastParams, {
+      'topoheight': BigInt.from(10),
+      'max': 11,
+      'skip': 12,
+    });
+  });
+
   test('decodes registered and scheduled executions', () async {
     client.responses[DaemonMethod
         .getContractRegisteredExecutionsAtTopoheight
