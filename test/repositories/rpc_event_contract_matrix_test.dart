@@ -346,7 +346,10 @@ final _walletContracts = <_WalletEventContract>[
     unsubscribe: (client) => client.unsubscribeFromNewAsset(),
     verify: (value) {
       expect(value, isA<RpcAssetData>());
-      expect((value! as RpcAssetData).asset, 'wallet-asset');
+      final asset = value! as RpcAssetData;
+      expect(asset.asset, 'wallet-asset');
+      expect(asset.topoheight, BigInt.one);
+      expect(asset.data.extraFields['event'], isNull);
     },
   ),
   _WalletEventContract(
@@ -428,7 +431,15 @@ final _walletContracts = <_WalletEventContract>[
     unsubscribe: (client) => client.unsubscribeFromNewPendingTransaction(),
     verify: (value) {
       expect(value, isA<TransactionPending>());
-      expect((value! as TransactionPending).hash, 'pending-tx');
+      final transaction = value! as TransactionPending;
+      expect(transaction.hash, 'pending-tx');
+      expect(transaction.timestamp, BigInt.from(5));
+      expect(transaction.extraFields['event'], isNull);
+      expect(transaction.txEntryType, isA<IncomingEntry>());
+      final incoming = transaction.txEntryType as IncomingEntry;
+      expect(incoming.from, 'sender-address');
+      expect(incoming.transfers.single.asset, 'asset-hash');
+      expect(incoming.transfers.single.amount, BigInt.from(42));
     },
   ),
 ];
@@ -721,7 +732,12 @@ const Map<String, dynamic> _transactionEntryPayload = {
 const Map<String, dynamic> _pendingTransactionPayload = {
   'hash': 'pending-tx',
   'timestamp': 5,
-  'coinbase': {'reward': 6},
+  'incoming': {
+    'from': 'sender-address',
+    'transfers': [
+      {'asset': 'asset-hash', 'amount': 42},
+    ],
+  },
 };
 
 const Map<String, dynamic> _blockPayload = {

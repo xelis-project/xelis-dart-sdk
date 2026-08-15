@@ -373,6 +373,57 @@ void main() {
       'height': BigInt.parse('9007199254740993'),
     });
   });
+
+  test(
+    'raw calls forward object parameters and reject other JSON values',
+    () async {
+      client.responses['future_method'] = true;
+      final result = await client.raw.call(
+        'future_method',
+        params: RpcJsonValue.object({
+          'height': RpcJsonValue.integer(
+            BigInt.parse('9007199254740993'),
+          ),
+          'nested': const RpcJsonValue.object({
+            'enabled': RpcJsonValue.boolean(true),
+          }),
+        }),
+      );
+
+      expect(result, const RpcJsonValue.boolean(true));
+      expect(client.lastParams, {
+        'height': BigInt.parse('9007199254740993'),
+        'nested': {'enabled': true},
+      });
+      await expectLater(
+        client.raw.call(
+          'future_method',
+          params: const RpcJsonValue.string('not-an-object'),
+        ),
+        throwsArgumentError,
+      );
+    },
+  );
+
+  test('safely captures typed RPC failures and leaves bugs visible', () async {
+    final success = await client.safely(() async => 42);
+    expect(success, const RpcCallOutcome<int>.success(42));
+
+    final failure = await client.safely<int>(
+      () async => throw const RpcConnectionException('offline'),
+    );
+    expect(failure, isA<RpcCallFailure<int>>());
+    expect(
+      (failure as RpcCallFailure<int>).error,
+      isA<RpcConnectionException>(),
+    );
+    expect(failure.rawPayload, isNull);
+
+    await expectLater(
+      client.safely<int>(() async => throw StateError('programmer bug')),
+      throwsStateError,
+    );
+  });
 }
 
 Map<String, Object?> _u8(int value) => {

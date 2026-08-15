@@ -71,6 +71,13 @@ class RpcTestServer {
     }
   }
 
+  /// Sends an unencoded WebSocket frame to all connected sockets.
+  void sendRaw(Object payload) {
+    for (final socket in _sockets) {
+      socket.add(payload);
+    }
+  }
+
   /// Closes all currently connected sockets without closing the server.
   Future<void> closeSockets() async {
     final sockets = List<WebSocket>.of(_sockets);

@@ -147,7 +147,6 @@ void main() {
         ..onOpen(opened.complete)
         ..connect();
       await opened.future.timeout(_timeout);
-      await Future<void>.delayed(const Duration(milliseconds: 50));
 
       expect(await client.getVersion().timeout(_timeout), '1.2.3');
     });
@@ -329,6 +328,68 @@ void main() {
       );
     });
 
+    test('sendRequest rejects an explicitly disconnected transport', () async {
+      final server = await RpcTestServer.start();
+      final client = _walletClient(server);
+      addTearDown(() async {
+        client.disconnect();
+        await server.close();
+      });
+
+      client.connect();
+      await server.waitForSocket();
+      final disconnected = client.state.firstWhere(
+        (state) => state == ClientState.disconnected,
+      );
+      client.disconnect();
+      await disconnected.timeout(_timeout);
+
+      await expectLater(
+        client.sendRequest(WalletMethod.getVersion),
+        throwsA(
+          isA<RpcConnectionException>().having(
+            (error) => error.message,
+            'message',
+            contains('disconnected'),
+          ),
+        ),
+      );
+    });
+
+    test('sendRequest wraps synchronous serialization failures', () async {
+      final server = await RpcTestServer.start(
+        onRequest: (request, socket) {
+          socket.add(
+            jsonEncode({
+              'id': request['id'],
+              'jsonrpc': '2.0',
+              'result': '1.2.3',
+            }),
+          );
+        },
+      );
+      final client = _walletClient(server);
+      addTearDown(() async {
+        client.disconnect();
+        await server.close();
+      });
+
+      client.connect();
+      await server.waitForSocket();
+      await expectLater(
+        client.sendRequest(WalletMethod.getVersion, Object()),
+        throwsA(
+          isA<RpcTransportException>().having(
+            (error) => error.cause,
+            'cause',
+            isA<FormatException>(),
+          ),
+        ),
+      );
+      expect(server.receivedRequests, isEmpty);
+      expect(await client.getVersion(), '1.2.3');
+    });
+
     test('subscribeTo throws when connect was not called', () async {
       final client = WalletClient(
         endPoint: 'localhost:8080',
@@ -347,6 +408,21 @@ void main() {
           ),
         ),
       );
+    });
+
+    test('subscription APIs reject unsupported subscription objects', () async {
+      final client = WalletClient(
+        endPoint: 'localhost:8080',
+        username: 'user',
+        password: 'password',
+        secureWebSocket: false,
+      );
+
+      expect(
+        () => client.registerCallback(42, (_) {}),
+        throwsArgumentError,
+      );
+      await expectLater(client.subscribeTo(42), throwsArgumentError);
     });
 
     test('onEvent throws before connect and does not register callback', () {
@@ -408,6 +484,73 @@ void main() {
         ),
       );
     });
+
+    test('reports responses containing neither result nor error', () async {
+      final server = await RpcTestServer.start(
+        onRequest: (request, socket) {
+          socket.add(
+            jsonEncode({'id': request['id'], 'jsonrpc': '2.0'}),
+          );
+        },
+      );
+      final client = _walletClient(server);
+      addTearDown(() async {
+        client.disconnect();
+        await server.close();
+      });
+      final transportError = Completer<Object>();
+      client
+        ..onError(transportError.complete)
+        ..connect();
+
+      final requestError = expectLater(
+        client.getVersion(),
+        throwsA(
+          isA<RpcDeserializationException>()
+              .having((error) => error.method, 'method', 'get_version')
+              .having(
+                (error) => error.message,
+                'message',
+                contains('neither result nor error'),
+              ),
+        ),
+      );
+      expect(
+        await transportError.future.timeout(_timeout),
+        isA<RpcDeserializationException>(),
+      );
+      await requestError;
+    });
+
+    test(
+      'reports non-text WebSocket frames without closing callbacks',
+      () async {
+        final server = await RpcTestServer.start();
+        final client = _walletClient(server);
+        addTearDown(() async {
+          client.disconnect();
+          await server.close();
+        });
+        final transportError = Completer<Object>();
+        client
+          ..onError(transportError.complete)
+          ..connect();
+        await server.waitForSocket();
+
+        server.sendRaw(<int>[1, 2, 3]);
+
+        expect(
+          await transportError.future.timeout(_timeout),
+          isA<RpcDeserializationException>()
+              .having((error) => error.method, 'method', '<transport>')
+              .having(
+                (error) => error.message,
+                'message',
+                contains('text WebSocket frame'),
+              ),
+        );
+      },
+    );
 
     test('sendRequest has an independent typed request timeout', () async {
       final server = await RpcTestServer.start();
@@ -488,6 +631,75 @@ void main() {
         hasLength(1),
       );
     });
+
+    test(
+      'wallet capabilities include the server version and SDK surface',
+      () async {
+        final server = await RpcTestServer.start(
+          onRequest: (request, socket) {
+            final result = switch (request['method']) {
+              'schema' => {
+                r'$schema': 'https://json-schema.org/draft/2020-12/schema',
+                r'$defs': <String, Object?>{},
+                'methods': [
+                  {
+                    'name': 'get_version',
+                    'schema': {
+                      'description': ['Version'],
+                      'params_schema': null,
+                      'returns_schema': {'type': 'string'},
+                    },
+                  },
+                  {
+                    'name': 'future_wallet_method',
+                    'schema': {
+                      'description': ['Future'],
+                      'params_schema': null,
+                      'returns_schema': {'type': 'boolean'},
+                    },
+                  },
+                ],
+              },
+              'get_version' => '1.24.0',
+              _ => null,
+            };
+            socket.add(
+              jsonEncode({
+                'id': request['id'],
+                'jsonrpc': '2.0',
+                'result': result,
+              }),
+            );
+          },
+        );
+        final client = _walletClient(server);
+        addTearDown(() async {
+          client.disconnect();
+          await server.close();
+        });
+        client.connect();
+
+        final capabilities = await client.getCapabilities().timeout(_timeout);
+
+        expect(capabilities.serverVersion, '1.24.0');
+        expect(
+          capabilities.advertisedMethods,
+          {'get_version', 'future_wallet_method'},
+        );
+        expect(capabilities.knownMethods, contains('get_version'));
+        expect(capabilities.newMethods, {'future_wallet_method'});
+        expect(capabilities.conditionalMethods, isEmpty);
+        expect(capabilities.method('get_version')?.name, 'get_version');
+        expect(
+        capabilities.methodSchema('get_version')?.returnsSchema.toJson(),
+          {'type': 'string'},
+        );
+        expect(
+          server.receivedRequests.map((request) => request['method']),
+          ['schema', 'get_version'],
+        );
+      },
+    );
 
     test('decodes the built-in batch_limit method losslessly', () async {
       final server = await RpcTestServer.start(
@@ -692,86 +904,6 @@ void main() {
       expect(await event.future.timeout(_timeout), BigInt.from(99));
     });
 
-    test('decodes the actual RpcAssetData new_asset payload', () async {
-      final server = await RpcTestServer.start();
-      final client = _walletClient(server);
-      addTearDown(() async {
-        client.disconnect();
-        await server.close();
-      });
-
-      final eventCompleter = Completer<RpcAssetData>();
-      client
-        ..connect()
-        ..registerCallback(WalletEvent.newAsset, eventCompleter.complete);
-
-      await server.waitForSocket();
-      server.send({
-        'id': 7,
-        'jsonrpc': '2.0',
-        'result': {
-          'event': 'new_asset',
-          'asset': 'asset-hash',
-          'topoheight': 42,
-          'decimals': 8,
-          'name': 'Asset',
-          'ticker': 'AST',
-          'max_supply': 'none',
-          'owner': 'none',
-        },
-      });
-
-      final event = await eventCompleter.future.timeout(_timeout);
-      expect(event.asset, 'asset-hash');
-      expect(event.topoheight, BigInt.from(42));
-      expect(event.data.extraFields['event'], isNull);
-    });
-
-    test('dispatches new pending transaction events', () async {
-      final server = await RpcTestServer.start();
-      final client = _walletClient(server);
-      addTearDown(() async {
-        client.disconnect();
-        await server.close();
-      });
-
-      final eventCompleter = Completer<TransactionPending>();
-      client
-        ..connect()
-        ..registerCallback(
-          WalletEvent.newPendingTransaction,
-          eventCompleter.complete,
-        );
-
-      await server.waitForSocket();
-      server.send({
-        'id': 7,
-        'jsonrpc': '2.0',
-        'result': {
-          'event': 'new_pending_transaction',
-          'hash': 'tx_hash',
-          'timestamp': 1710000000000,
-          'incoming': {
-            'from': 'sender_address',
-            'transfers': [
-              {'asset': 'asset_hash', 'amount': 42},
-            ],
-          },
-        },
-      });
-
-      final event = await eventCompleter.future.timeout(_timeout);
-      expect(event.hash, 'tx_hash');
-      expect(event.timestamp, BigInt.from(1710000000000));
-      expect(event.txEntryType, isA<IncomingEntry>());
-      expect(event.extraFields['event'], isNull);
-
-      final incoming = event.txEntryType as IncomingEntry;
-      expect(incoming.from, 'sender_address');
-      expect(incoming.transfers.single.asset, 'asset_hash');
-      expect(incoming.transfers.single.amount, BigInt.from(42));
-    });
-
     for (final clientKind in ['daemon', 'wallet']) {
       test(
         '$clientKind preserves an unknown event without consuming a request',
@@ -907,6 +1039,44 @@ void main() {
         expect(contractBCalls, 1);
       },
     );
+
+    test('dispatches legacy base events to every filtered callback', () async {
+      final server = await RpcTestServer.start();
+      final client = _daemonClient(server);
+      addTearDown(() async {
+        client.disconnect();
+        await server.close();
+      });
+
+      final received = <String>[];
+      final completed = Completer<void>();
+      void receive(String filter, InvokeContractEvent event) {
+        received.add('$filter:${event.txHash}');
+        if (received.length == 2) completed.complete();
+      }
+
+      client
+        ..connect()
+        ..onInvokeContract('contract-a', (event) => receive('a', event))
+        ..onInvokeContract('contract-b', (event) => receive('b', event));
+      await server.nextRequest();
+      await server.nextRequest();
+
+      server.send({
+        'id': 12,
+        'jsonrpc': '2.0',
+        'result': {
+          'event': 'contract_invoke',
+          'block_hash': 'legacy-block',
+          'tx_hash': 'legacy-tx',
+          'topoheight': 44,
+          'contract_logs': <Object>[],
+        },
+      });
+
+      await completed.future.timeout(_timeout);
+      expect(received, ['a:legacy-tx', 'b:legacy-tx']);
+    });
   });
 }
 

@@ -670,13 +670,6 @@ sealed class RpcClientRepository {
       log!.info(message);
     }
   }
-
-  /// @nodoc
-  // void _logWarning(String message) {
-  //   if (log != null) {
-  //     log!.warning(message);
-  //   }
-  // }
 }
 
 RpcEventSubscription _asSubscription(Object event) {
@@ -708,15 +701,9 @@ Object? _normalizeCompatibleIntegers(Object? value) {
     return value.map(_normalizeCompatibleIntegers).toList(growable: false);
   }
   if (value is Map) {
-    if (value.keys.every((key) => key is String)) {
-      return <String, dynamic>{
-        for (final entry in value.entries)
-          entry.key as String: _normalizeCompatibleIntegers(entry.value),
-      };
-    }
-    return <Object?, Object?>{
+    return <String, dynamic>{
       for (final entry in value.entries)
-        entry.key: _normalizeCompatibleIntegers(entry.value),
+        entry.key as String: _normalizeCompatibleIntegers(entry.value),
     };
   }
   return value;

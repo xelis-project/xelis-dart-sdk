@@ -46,7 +46,6 @@ abstract class ListTransactionsParams with _$ListTransactionsParams {
     @JsonKey(name: 'accept_coinbase') bool? acceptCoinbase,
     @JsonKey(name: 'accept_burn') bool? acceptBurn,
     @JsonKey(name: 'accept_blob') bool? acceptBlob,
-    // TODO
     @JsonKey(
       name: 'query',
       fromJson: _nullableQueryFromJson,

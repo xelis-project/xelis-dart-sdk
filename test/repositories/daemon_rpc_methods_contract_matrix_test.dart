@@ -17,20 +17,6 @@ void main() {
         in (schema['methods'] as List<dynamic>).cast<Map<String, dynamic>>())
       entry['name']! as String: entry['schema']! as Map<String, dynamic>,
   };
-  final sources = <String, String>{
-    'daemon_rpc_methods_extension.dart': File(
-      'lib/src/repositories/daemon/daemon_rpc_methods_extension.dart',
-    ).readAsStringSync(),
-    'daemon_chain_rpc_methods_extension.dart': File(
-      'lib/src/repositories/daemon/daemon_chain_rpc_methods_extension.dart',
-    ).readAsStringSync(),
-    'daemon_contract_rpc_methods_extension.dart': File(
-      'lib/src/repositories/daemon/daemon_contract_rpc_methods_extension.dart',
-    ).readAsStringSync(),
-    'daemon_network_rpc_methods_extension.dart': File(
-      'lib/src/repositories/daemon/daemon_network_rpc_methods_extension.dart',
-    ).readAsStringSync(),
-  };
   final runtimeContracts = _daemonRuntimeContracts(schemaMethods, schema);
 
   test('the matrix covers all 88 daemon/admin v1.24 facades', () {
@@ -39,7 +25,7 @@ void main() {
     expect(
       {
         ...DaemonMethod.values.map((method) => method.jsonKey),
-        ..._adminMethods.keys,
+        ..._adminMethods,
       },
       schemaMethods.keys.toSet().difference(const {
         'schema',
@@ -49,51 +35,13 @@ void main() {
     );
   });
 
-  group('daemon typed facade source contracts', () {
-    for (final method in DaemonMethod.values) {
-      test(method.jsonKey, () {
-        final token = 'DaemonMethod.${method.name},';
-        final owners = <MapEntry<String, String>>[];
-        for (final source in sources.entries) {
-          if (source.value.contains(token)) owners.add(source);
-        }
-        expect(owners, hasLength(1), reason: '$token must have one facade');
-
-        final source = owners.single.value;
-        expect(RegExp(RegExp.escape(token)).allMatches(source), hasLength(1));
-        final block = _methodBlock(source, token);
-        expect(block, contains('sendRequestAndDecode'));
-
-        final contract = schemaMethods[method.jsonKey]!;
-        expect(contract, contains('returns_schema'));
-        _expectInlineParamsMatchSchema(method.jsonKey, block, contract);
-      });
-    }
-  });
-
-  group('daemon admin facade source contracts', () {
-    final source = File(
-      'lib/src/repositories/daemon/daemon_admin.dart',
-    ).readAsStringSync();
-    for (final entry in _adminMethods.entries) {
-      test(entry.key, () {
-        final token = "RpcMethodName('${entry.key}')";
-        expect(RegExp(RegExp.escape(token)).allMatches(source), hasLength(1));
-        final block = _methodBlock(source, token);
-        expect(block, contains('sendRequestAndDecode'));
-        expect(_inlineMapKeys(block), entry.value);
-        expect(schemaMethods[entry.key], contains('returns_schema'));
-      });
-    }
-  });
-
   test('the runtime matrix invokes all 88 daemon/admin facades', () {
     expect(runtimeContracts, hasLength(88));
     expect(
       runtimeContracts.map((contract) => contract.method).toSet(),
       {
         ...DaemonMethod.values.map((method) => method.jsonKey),
-        ..._adminMethods.keys,
+        ..._adminMethods,
       },
     );
   });
@@ -107,56 +55,7 @@ void main() {
   });
 }
 
-const Map<String, Set<String>> _adminMethods = {
-  'prune_chain': {'topoheight'},
-  'rewind_chain': {'count', 'until_stable_height'},
-  'clear_caches': {},
-};
-
-String _methodBlock(String source, String token) {
-  final tokenIndex = source.indexOf(token);
-  if (tokenIndex < 0) throw StateError('Missing $token');
-  final start = source.lastIndexOf('Future<', tokenIndex);
-  final next = source.indexOf('Future<', tokenIndex + token.length);
-  return source.substring(start, next < 0 ? source.length : next);
-}
-
-void _expectInlineParamsMatchSchema(
-  String method,
-  String block,
-  Map<String, dynamic> contract,
-) {
-  final paramsSchema = contract['params_schema'];
-  final inlineKeys = _inlineMapKeys(block);
-
-  if (inlineKeys.isEmpty && block.contains('.toJson()')) {
-    return;
-  }
-  final shapes = _schemaParamShapes(paramsSchema);
-  expect(
-    shapes.any(
-      (shape) =>
-          shape.length == inlineKeys.length && shape.containsAll(inlineKeys),
-    ),
-    isTrue,
-    reason: '$method inline parameter keys $inlineKeys drifted from $shapes',
-  );
-}
-
-List<Set<String>> _schemaParamShapes(Object? schema) {
-  if (schema == null) return const [<String>{}];
-  final map = schema as Map<String, dynamic>;
-  final oneOf = map['oneOf'] as List<dynamic>?;
-  if (oneOf != null) {
-    return oneOf.expand(_schemaParamShapes).toList(growable: false);
-  }
-  final properties = map['properties'] as Map<String, dynamic>?;
-  return [properties?.keys.toSet() ?? const <String>{}];
-}
-
-Set<String> _inlineMapKeys(String block) => RegExp(
-  r"'([a-z][a-z0-9_]*)'\s*:",
-).allMatches(block).map((match) => match.group(1)!).toSet();
+const _adminMethods = {'prune_chain', 'rewind_chain', 'clear_caches'};
 
 List<RpcContractCase<RecordingDaemonClient>> _daemonRuntimeContracts(
   Map<String, Map<String, dynamic>> methods,

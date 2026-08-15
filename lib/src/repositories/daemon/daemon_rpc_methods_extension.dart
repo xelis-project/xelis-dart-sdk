@@ -302,7 +302,7 @@ extension DaemonRpcMethodsExtension on DaemonClient {
     getTransactionParams.toJson(),
   );
 
-  /// TODO: Add documentation
+  /// Retrieve the block that executed the requested transaction.
   Future<GetTransactionExecutorResult> getTransactionExecutor(
     GetTransactionParams getTransactionParams,
   ) => sendRequestAndDecode(

@@ -197,7 +197,7 @@ enum DaemonMethod implements XelisJsonKey {
   /// Retrieve the contract logs that occurred in the requested transaction hash.
   getContractLogs('get_contract_logs'),
 
-  /// TODO: Add documentation
+  /// Retrieve the module currently stored for a contract.
   getContractModule('get_contract_module'),
 
   /// Retrieve the contract data with the requested key.
