@@ -53,9 +53,9 @@ void main() {
   });
 
   group('Daemon events', () {
-    test('maps stable_topoheight_changed to its enum value', () {
+    test('maps stable_topo_height_changed to its enum value', () {
       expect(
-        DaemonEvent.fromStr('stable_topoheight_changed'),
+        DaemonEvent.fromStr('stable_topo_height_changed'),
         DaemonEvent.stableTopoheightChanged,
       );
     });

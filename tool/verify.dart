@@ -5,6 +5,7 @@ import 'src/generated_sources.dart';
 import 'src/integration_orchestrator.dart';
 import 'src/live_probe.dart';
 import 'src/process_tools.dart';
+import 'src/rpc_event_inventory.dart';
 import 'src/rpc_method_inventory.dart';
 import 'src/upstream_source.dart';
 import 'src/verification_options.dart';
@@ -82,6 +83,8 @@ Future<void> _check(XelisTarget target, VerificationOptions options) async {
   checkDtoArchitecture();
   stdout.writeln('-> Pinned upstream RPC method inventory');
   checkRpcMethodInventory(source.directory);
+  stdout.writeln('-> Pinned upstream RPC event inventory');
+  checkRpcEventInventory(source.directory);
   await runChecked(Platform.resolvedExecutable, [
     'analyze',
   ], label: 'Dart analyze');

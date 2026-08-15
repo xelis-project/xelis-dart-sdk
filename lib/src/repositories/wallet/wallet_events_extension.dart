@@ -126,17 +126,6 @@ extension WalletEventsExtension on WalletClient {
 
   /// Unsubscribes from all events.
   void unsubscribeFromAll() {
-    unsubscribeFromNewTopoheight();
-    unsubscribeFromNewAsset();
-    unsubscribeFromNewTransaction();
-    unsubscribeFromNewPendingTransaction();
-    unsubscribeFromBalanceChanged();
-    unsubscribeFromRescan();
-    unsubscribeFromOnline();
-    unsubscribeFromOffline();
-    unsubscribeFromHistorySynced();
-    unsubscribeFromSyncError();
-    unsubscribeFromTrackAsset();
-    unsubscribeFromUntrackAsset();
+    unawaited(unsubscribeAllEvents());
   }
 }

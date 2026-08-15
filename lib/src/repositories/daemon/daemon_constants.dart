@@ -253,7 +253,7 @@ enum DaemonEvent implements XelisJsonKey {
   stableHeightChanged('stable_height_changed'),
 
   /// Stable topoheight changed event.
-  stableTopoheightChanged('stable_topoheight_changed'),
+  stableTopoheightChanged('stable_topo_height_changed'),
 
   /// Transaction added in mempool event.
   transactionAddedInMempool('transaction_added_in_mempool'),
@@ -324,7 +324,7 @@ enum DaemonEvent implements XelisJsonKey {
         return DaemonEvent.blockOrdered;
       case 'stable_height_changed':
         return DaemonEvent.stableHeightChanged;
-      case 'stable_topoheight_changed':
+      case 'stable_topo_height_changed':
         return DaemonEvent.stableTopoheightChanged;
       case 'transaction_added_in_mempool':
         return DaemonEvent.transactionAddedInMempool;

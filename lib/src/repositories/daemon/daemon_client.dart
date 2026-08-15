@@ -100,7 +100,7 @@ class DaemonClient extends RpcClientRepository {
         final stableTopoheightChanged = StableTopoheightChangedEvent.fromJson(
           payload,
         );
-        _logInfo('stable_topoheight_changed event received');
+        _logInfo('stable_topo_height_changed event received');
         _triggerCallbacks(event, stableTopoheightChanged, wireEvent);
       case DaemonEvent.transactionAddedInMempool:
         final transaction = MempoolTransactionSummary.fromJson(payload);

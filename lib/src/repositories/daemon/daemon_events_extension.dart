@@ -1,8 +1,8 @@
 import 'dart:async';
 
+import 'package:xelis_dart_sdk/src/data_transfer_objects/block/block.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/block_ordered_event/block_ordered_event.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/block_orphaned_event/block_orphaned_event.dart';
-import 'package:xelis_dart_sdk/src/data_transfer_objects/block/block.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/contract_event/contract_event.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/contract_transfers_event/contract_transfers_event.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/get_block_template/get_block_template_result.dart';
@@ -11,6 +11,7 @@ import 'package:xelis_dart_sdk/src/data_transfer_objects/get_peers/peer_entry.da
 import 'package:xelis_dart_sdk/src/data_transfer_objects/invoke_contract_event/invoke_contract_event.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/new_asset_event/new_asset_event.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/new_contract_event/contract_deploy_event.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/peer_peer_disconnected_event/peer_peer_disconnected_event.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/peer_peer_list_updated_event/peer_peer_list_updated_event.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/shared/transaction/rpc_transaction.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/stable_height_changed_event/stable_height_changed_event.dart';
@@ -179,7 +180,7 @@ extension DaemonEventsExtension on DaemonClient {
 
   /// Registers a callback for PeerPeerDisconnected event.
   void onPeerPeerDisconnected(
-    void Function(PeerEntry peerDisconnected) callback,
+    void Function(PeerPeerDisconnectedEvent peerDisconnected) callback,
   ) => onEvent(DaemonEvent.peerPeerDisconnected, callback);
 
   /// Unsubscribes from PeerPeerDisconnected event.
