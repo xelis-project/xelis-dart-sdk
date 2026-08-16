@@ -44,6 +44,12 @@ abstract class InvokeContractEvent with _$InvokeContractEvent {
         'block_hash': blockHash,
         'tx_hash': txHash,
         'topoheight': topoheight,
-        'contract_logs': contractLogs.map((log) => log.toJson()).toList(),
+        'contract_logs': contractLogs
+            .map(
+              (log) => log.toWireJson(
+                includeExtraFields: includeExtraFields,
+              ),
+            )
+            .toList(growable: false),
       }, includeExtraFields: includeExtraFields);
 }

@@ -103,7 +103,7 @@ void main() {
     });
 
     test('unsigned transactions expose every flattened Rust field', () {
-      final response = UnsignedTransactionResponse.fromJson({
+      final json = <String, dynamic>{
         'data': {
           'burn': {'asset': 'asset', 'amount': 1},
         },
@@ -120,7 +120,8 @@ void main() {
         'threshold': null,
         'tx_as_hex': null,
         'future_unsigned_field': true,
-      });
+      };
+      final response = UnsignedTransactionResponse.fromJson(json);
 
       expect(response.transaction.feeLimit, BigInt.from(3));
       expect(response.threshold, isNull);
@@ -136,6 +137,78 @@ void main() {
       _expectOnlyExtraKeys(
         response.transaction.sourceCommitments.single.proof.extraFields,
         {},
+      );
+      final wire = response.toWireJson();
+      expect(wire['hash'], 'unsigned-hash');
+      expect(wire['threshold'], isNull);
+      expect(wire['tx_as_hex'], isNull);
+      expect(wire['fee'], BigInt.from(2));
+      expect(wire['fee_limit'], BigInt.from(3));
+      expect(wire['nonce'], BigInt.from(4));
+      expect(wire['source'], List<int>.filled(32, 5));
+      expect(wire, isNot(contains('future_unsigned_field')));
+      expect(
+        response.toWireJson(includeExtraFields: true),
+        containsPair('future_unsigned_field', true),
+      );
+
+      final thresholdResponse = UnsignedTransactionResponse.fromJson({
+        ...json,
+        'threshold': 255,
+        'tx_as_hex': 'deadbeef',
+      });
+      expect(thresholdResponse.threshold, 255);
+      expect(thresholdResponse.txAsHex, 'deadbeef');
+      expect(
+        () => UnsignedTransactionResponse.fromJson({
+          ...json,
+          'threshold': 256,
+        }),
+        throwsA(isA<RpcDeserializationException>()),
+      );
+    });
+
+    test('multisig signatures preserve nested additive fields explicitly', () {
+      final multisig = Multisig.fromJson({
+        'signatures': [
+          {
+            'id': 255,
+            'signature': 'signature',
+            'future_signature_field': true,
+          },
+        ],
+        'future_multisig_field': {'epoch': 7},
+      });
+
+      final signature = multisig.signatures.single;
+      expect(signature.id, 255);
+      expect(signature.signature, 'signature');
+      expect(signature.extraFields['future_signature_field']?.toJson(), isTrue);
+      expect(multisig.extraFields['future_multisig_field']?.toJson(), {
+        'epoch': BigInt.from(7),
+      });
+      expect(multisig.toWireJson(), {
+        'signatures': [
+          {'id': 255, 'signature': 'signature'},
+        ],
+      });
+      expect(multisig.toWireJson(includeExtraFields: true), {
+        'signatures': [
+          {
+            'id': 255,
+            'signature': 'signature',
+            'future_signature_field': true,
+          },
+        ],
+        'future_multisig_field': {'epoch': BigInt.from(7)},
+      });
+      expect(
+        () => Multisig.fromJson({
+          'signatures': [
+            {'id': 256, 'signature': 'invalid'},
+          ],
+        }),
+        throwsA(isA<RpcDeserializationException>()),
       );
     });
 
