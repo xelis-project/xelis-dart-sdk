@@ -182,7 +182,7 @@ Map<String, dynamic> rpcJsonMap(
   if (value is Map<String, dynamic>) return value;
   if (value is Map) {
     try {
-      return value.cast<String, dynamic>();
+      return Map<String, dynamic>.from(value);
     } on Object catch (error) {
       throw RpcDeserializationException(
         method: method,

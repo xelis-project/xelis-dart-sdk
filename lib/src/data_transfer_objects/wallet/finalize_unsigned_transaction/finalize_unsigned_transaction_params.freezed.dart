@@ -210,7 +210,7 @@ return $default(_that.unsignedTransaction,_that.signatures,_that.broadcast,_that
 
 /// @nodoc
 
-@JsonSerializable(includeIfNull: false)
+@JsonSerializable(includeIfNull: false, explicitToJson: true)
 class _FinalizeUnsignedTransactionParams implements FinalizeUnsignedTransactionParams {
   const _FinalizeUnsignedTransactionParams({@JsonKey(name: 'unsigned') required this.unsignedTransaction, @JsonKey(name: 'signatures') final  List<SignatureId>? signatures, @JsonKey(name: 'broadcast') this.broadcast, @JsonKey(name: 'tx_as_hex') this.txAsHex}): _signatures = signatures;
   factory _FinalizeUnsignedTransactionParams.fromJson(Map<String, dynamic> json) => _$FinalizeUnsignedTransactionParamsFromJson(json);

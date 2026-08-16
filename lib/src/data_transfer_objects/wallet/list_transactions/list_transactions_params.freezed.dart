@@ -15,8 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$ListTransactionsParams {
 
-@JsonKey(name: 'asset') String? get asset;@JsonKey(name: 'min_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) BigInt? get minTopoheight;@JsonKey(name: 'max_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) BigInt? get maxTopoheight;@JsonKey(name: 'min_timestamp', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) BigInt? get minTimestamp;@JsonKey(name: 'max_timestamp', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) BigInt? get maxTimestamp;@JsonKey(name: 'address') String? get address;@JsonKey(name: 'contract') String? get contract;@JsonKey(name: 'accept_incoming') bool? get acceptIncoming;@JsonKey(name: 'accept_outgoing') bool? get acceptOutgoing;@JsonKey(name: 'accept_coinbase') bool? get acceptCoinbase;@JsonKey(name: 'accept_burn') bool? get acceptBurn;@JsonKey(name: 'accept_blob') bool? get acceptBlob;// TODO
-@JsonKey(name: 'query', fromJson: _nullableQueryFromJson, toJson: _nullableQueryToJson) DataQuery? get query;@JsonKey(name: 'limit') int? get limit;@JsonKey(name: 'skip') int? get skip;
+@JsonKey(name: 'asset') String? get asset;@JsonKey(name: 'min_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) BigInt? get minTopoheight;@JsonKey(name: 'max_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) BigInt? get maxTopoheight;@JsonKey(name: 'min_timestamp', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) BigInt? get minTimestamp;@JsonKey(name: 'max_timestamp', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) BigInt? get maxTimestamp;@JsonKey(name: 'address') String? get address;@JsonKey(name: 'contract') String? get contract;@JsonKey(name: 'accept_incoming') bool? get acceptIncoming;@JsonKey(name: 'accept_outgoing') bool? get acceptOutgoing;@JsonKey(name: 'accept_coinbase') bool? get acceptCoinbase;@JsonKey(name: 'accept_burn') bool? get acceptBurn;@JsonKey(name: 'accept_blob') bool? get acceptBlob;@JsonKey(name: 'query', fromJson: _nullableQueryFromJson, toJson: _nullableQueryToJson) DataQuery? get query;@JsonKey(name: 'limit') int? get limit;@JsonKey(name: 'skip') int? get skip;
 /// Create a copy of ListTransactionsParams
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -251,7 +250,6 @@ class _ListTransactionsParams implements ListTransactionsParams {
 @override@JsonKey(name: 'accept_coinbase') final  bool? acceptCoinbase;
 @override@JsonKey(name: 'accept_burn') final  bool? acceptBurn;
 @override@JsonKey(name: 'accept_blob') final  bool? acceptBlob;
-// TODO
 @override@JsonKey(name: 'query', fromJson: _nullableQueryFromJson, toJson: _nullableQueryToJson) final  DataQuery? query;
 @override@JsonKey(name: 'limit') final  int? limit;
 @override@JsonKey(name: 'skip') final  int? skip;

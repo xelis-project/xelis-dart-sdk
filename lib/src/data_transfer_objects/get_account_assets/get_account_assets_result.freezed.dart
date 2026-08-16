@@ -11,7 +11,6 @@ part of 'get_account_assets_result.dart';
 
 // dart format off
 T _$identity<T>(T value) => value;
-
 /// @nodoc
 mixin _$GetAccountAssetsResult {
 
@@ -22,8 +21,6 @@ mixin _$GetAccountAssetsResult {
 @pragma('vm:prefer-inline')
 $GetAccountAssetsResultCopyWith<GetAccountAssetsResult> get copyWith => _$GetAccountAssetsResultCopyWithImpl<GetAccountAssetsResult>(this as GetAccountAssetsResult, _$identity);
 
-  /// Serializes this GetAccountAssetsResult to a JSON map.
-  Map<String, dynamic> toJson();
 
 
 @override
@@ -31,7 +28,7 @@ bool operator ==(Object other) {
   return identical(this, other) || (other.runtimeType == runtimeType&&other is GetAccountAssetsResult&&const DeepCollectionEquality().equals(other.assets, assets));
 }
 
-@JsonKey(includeFromJson: false, includeToJson: false)
+
 @override
 int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(assets));
 
@@ -206,11 +203,11 @@ return $default(_that.assets);case _:
 }
 
 /// @nodoc
-@JsonSerializable()
 
-class _GetAccountAssetsResult implements GetAccountAssetsResult {
-  const _GetAccountAssetsResult({required final  List<String> assets}): _assets = assets;
-  factory _GetAccountAssetsResult.fromJson(Map<String, dynamic> json) => _$GetAccountAssetsResultFromJson(json);
+
+class _GetAccountAssetsResult extends GetAccountAssetsResult {
+  const _GetAccountAssetsResult({required final  List<String> assets}): _assets = assets,super._();
+
 
  final  List<String> _assets;
 @override List<String> get assets {
@@ -226,17 +223,14 @@ class _GetAccountAssetsResult implements GetAccountAssetsResult {
 @pragma('vm:prefer-inline')
 _$GetAccountAssetsResultCopyWith<_GetAccountAssetsResult> get copyWith => __$GetAccountAssetsResultCopyWithImpl<_GetAccountAssetsResult>(this, _$identity);
 
-@override
-Map<String, dynamic> toJson() {
-  return _$GetAccountAssetsResultToJson(this, );
-}
+
 
 @override
 bool operator ==(Object other) {
   return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetAccountAssetsResult&&const DeepCollectionEquality().equals(other._assets, _assets));
 }
 
-@JsonKey(includeFromJson: false, includeToJson: false)
+
 @override
 int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_assets));
 

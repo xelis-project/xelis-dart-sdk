@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'src/coverage_gate.dart';
 import 'src/dto_architecture_check.dart';
 import 'src/generated_sources.dart';
 import 'src/integration_orchestrator.dart';
@@ -12,13 +13,17 @@ import 'src/verification_options.dart';
 import 'src/xelis_target.dart';
 
 const _webTests = [
-  'test/utils/bigint_json_test.dart',
-  'test/data_transfer_objects/rpc_value_cell_test.dart',
-  'test/data_transfer_objects/freezed_rpc_models_test.dart',
-  'test/data_transfer_objects/rpc_contract_log_test.dart',
+  'test/data_transfer_objects',
+  'test/utils',
+  'test/repositories/client_state_test.dart',
   'test/repositories/rpc_json_value_test.dart',
   'test/repositories/wallet_rpc_methods_contract_matrix_test.dart',
 ];
+
+const _coverageDirectory = '.dart_tool/coverage';
+const _rawCoverageDirectory = '$_coverageDirectory/raw';
+const _lcovPath = '$_coverageDirectory/lcov.info';
+const _minimumCoverage = 90.0;
 
 Future<void> main(List<String> arguments) async {
   if (arguments.isEmpty || arguments.contains('--help')) {
@@ -88,9 +93,44 @@ Future<void> _check(XelisTarget target, VerificationOptions options) async {
   await runChecked(Platform.resolvedExecutable, [
     'analyze',
   ], label: 'Dart analyze');
+  if (options.profile == VerifyProfile.ci) {
+    await _testWithCoverage();
+  } else {
+    await runChecked(Platform.resolvedExecutable, [
+      'test',
+    ], label: 'Dart VM tests');
+  }
+}
+
+Future<void> _testWithCoverage() async {
+  final coverageDirectory = Directory(_coverageDirectory);
+  if (coverageDirectory.existsSync()) {
+    coverageDirectory.deleteSync(recursive: true);
+  }
+  coverageDirectory.createSync(recursive: true);
   await runChecked(Platform.resolvedExecutable, [
     'test',
-  ], label: 'Dart VM tests');
+    '--coverage=$_rawCoverageDirectory',
+  ], label: 'Dart VM tests with coverage');
+  await runChecked(Platform.resolvedExecutable, [
+    'run',
+    'coverage:format_coverage',
+    '--packages=.dart_tool/package_config.json',
+    '--report-on=lib',
+    '--lcov',
+    '--in=$_rawCoverageDirectory',
+    '--out=$_lcovPath',
+  ], label: 'Format LCOV coverage');
+
+  final summary = enforceLcovCoverage(
+    File(_lcovPath).readAsStringSync(),
+    minimumPercentage: _minimumCoverage,
+  );
+  stdout.writeln(
+    '-> Handwritten lib/ coverage: '
+    '${summary.percentage.toStringAsFixed(2)}% '
+    '(${summary.linesHit}/${summary.linesFound}, minimum 90.00%)',
+  );
 }
 
 Future<void> _integration(

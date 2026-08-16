@@ -691,7 +691,7 @@ void main() {
         expect(capabilities.conditionalMethods, isEmpty);
         expect(capabilities.method('get_version')?.name, 'get_version');
         expect(
-        capabilities.methodSchema('get_version')?.returnsSchema.toJson(),
+          capabilities.methodSchema('get_version')?.returnsSchema.toJson(),
           {'type': 'string'},
         );
         expect(

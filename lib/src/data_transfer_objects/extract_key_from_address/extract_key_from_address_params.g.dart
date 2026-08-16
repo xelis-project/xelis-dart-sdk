@@ -17,7 +17,4 @@ _ExtractKeyFromAddressParams _$ExtractKeyFromAddressParamsFromJson(
 
 Map<String, dynamic> _$ExtractKeyFromAddressParamsToJson(
   _ExtractKeyFromAddressParams instance,
-) => <String, dynamic>{
-  'address': instance.address,
-  if (instance.asHex case final value?) 'as_hex': value,
-};
+) => <String, dynamic>{'address': instance.address, 'as_hex': ?instance.asHex};

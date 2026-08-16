@@ -37,6 +37,9 @@ could lose RPC data or no longer matched the supported Rust contract.
   wallet storage methods and strict versioned XSWD permission manifests.
 - Preserve unknown variants and additive response fields so newer compatible
   server responses can be inspected without losing data.
+- Decode `get_account_assets` from its actual XELIS `v1.24.0` array response.
+- Deprecate the legacy helpers from `data_converter.dart`; they remain available
+  for this release and now document their standard-library replacements.
 - Pin the RPC contract and integration verification tooling to XELIS `v1.24.0`.
 
 ## 0.35.1

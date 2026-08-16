@@ -424,7 +424,7 @@ extension DaemonRpcMethodsExtension on DaemonClient {
     GetAccountAssetsParams getAccountAssetsParams,
   ) => sendRequestAndDecode(
     DaemonMethod.getAccountAssets,
-    (result) => GetAccountAssetsResult(assets: (result as List).cast()),
+    GetAccountAssetsResult.fromJson,
     getAccountAssetsParams.toJson(),
   );
 

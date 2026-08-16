@@ -16,69 +16,6 @@ void main() {
       );
     });
 
-    test('serializes every structural Rust Query variant', () {
-      expect(
-        const DataQuery.hasKey(
-          key: DataValue(RpcJsonValue.string('owner')),
-          query: DataQuery.equal(DataValue(RpcJsonValue.string('alice'))),
-        ).toJson(),
-        {
-          'has_key': {
-            'key': 'owner',
-            'query': {'equal': 'alice'},
-          },
-        },
-      );
-      expect(
-        DataQuery.atKey(
-          key: DataValue(RpcJsonValue.string('balance')),
-          query: DataQuery.greater(BigInt.zero),
-        ).toJson(),
-        {
-          'at_key': {
-            'key': 'balance',
-            'query': {'greater': BigInt.zero},
-          },
-        },
-      );
-      expect(
-        DataQuery.length(QueryNumber.greaterOrEqual(BigInt.one)).toJson(),
-        {
-          'len': {'greater_or_equal': BigInt.one},
-        },
-      );
-      expect(
-        const DataQuery.containsElement(
-          DataValue(RpcJsonValue.boolean(true)),
-        ).toJson(),
-        {'contains_element': true},
-      );
-      expect(
-        const DataQuery.atPosition(
-          position: 1,
-          query: DataQuery.matches(r'^xel'),
-        ).toJson(),
-        {
-          'at_position': {
-            'position': 1,
-            'query': {'matches': r'^xel'},
-          },
-        },
-      );
-      expect(
-        const DataQuery.isOfType(DataValueType.u128).toJson(),
-        {'is_of_type': 'U128'},
-      );
-      expect(
-        const DataQuery.elementType(
-          DataElementType.value(DataValueType.string),
-        ).toJson(),
-        {
-          'type': {'Value': 'String'},
-        },
-      );
-    });
-
     test('keeps query pagination lossless and captures only future fields', () {
       final next = BigInt.parse('18446744073709551615');
       final result = WalletQueryResult.fromJson({

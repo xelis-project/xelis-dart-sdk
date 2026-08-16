@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:convert';
 
 import 'package:logging/logging.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/block/block.dart';
@@ -24,7 +25,6 @@ import 'package:xelis_dart_sdk/src/data_transfer_objects/wallet/transaction_entr
 import 'package:xelis_dart_sdk/src/data_transfer_objects/wallet/transaction_entry/transaction_pending.dart';
 import 'package:xelis_dart_sdk/src/repositories/common/rpc_web_socket_transport.dart';
 import 'package:xelis_dart_sdk/src/utils/bigint_json.dart';
-import 'package:xelis_dart_sdk/src/utils/data_converter.dart';
 
 import 'package:xelis_dart_sdk/src/data_transfer_objects/core/rpc_exception.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/core/rpc_json_value.dart';

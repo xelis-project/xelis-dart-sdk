@@ -163,4 +163,83 @@ void main() {
       'future_cell': {'window': BigInt.from(64)},
     });
   });
+
+  test('decodes opaque and unknown primitive variants losslessly', () {
+    final opaque = RpcValueCell.fromJson({
+      'type': 'primitive',
+      'value': {
+        'type': 'opaque',
+        'value': {
+          'type': 'Hash',
+          'value': List.filled(64, 'a').join(),
+          'future_opaque': true,
+        },
+      },
+    });
+    final unknown = RpcValueCell.fromJson({
+      'type': 'primitive',
+      'value': {'type': 'future_primitive', 'value': 7},
+    });
+
+    expect(opaque, isA<RpcPrimitiveValueCell>());
+    expect(opaque.toJson(), {
+      'type': 'primitive',
+      'value': {
+        'type': 'opaque',
+        'value': {'type': 'Hash', 'value': List.filled(64, 'a').join()},
+      },
+    });
+    expect(opaque.toWireJson(includeExtraFields: true), {
+      'type': 'primitive',
+      'value': {
+        'type': 'opaque',
+        'value': {
+          'type': 'Hash',
+          'value': List.filled(64, 'a').join(),
+          'future_opaque': true,
+        },
+      },
+    });
+    expect(unknown.toWireJson(), {
+      'type': 'primitive',
+      'value': {'type': 'future_primitive', 'value': BigInt.from(7)},
+    });
+    expect(unknown.toJson, throwsArgumentError);
+  });
+
+  test('rejects invalid primitive shapes and unsigned bounds', () {
+    for (final wire in [
+      {'type': 'boolean', 'value': 1},
+      {'type': 'string', 'value': false},
+      {
+        'type': 'range',
+        'value': [
+          {'type': 'u8', 'value': 1},
+        ],
+      },
+    ]) {
+      expect(
+        () => RpcPrimitive.fromJson(wire),
+        throwsA(isA<RpcDeserializationException>()),
+      );
+    }
+
+    for (final value in [-1, 256]) {
+      expect(
+        RpcValueCell.primitive(RpcPrimitive.u8(value)).toJson,
+        throwsArgumentError,
+      );
+      expect(
+        () => RpcValueCell.fromJson({
+          'type': 'primitive',
+          'value': {'type': 'u8', 'value': value},
+        }),
+        throwsA(isA<RpcDeserializationException>()),
+      );
+    }
+    expect(
+      RpcValueCell.primitive(RpcPrimitive.u64(BigInt.one << 64)).toJson,
+      throwsArgumentError,
+    );
+  });
 }

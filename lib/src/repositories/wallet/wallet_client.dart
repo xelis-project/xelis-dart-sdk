@@ -31,7 +31,7 @@ class WalletClient extends RpcClientRepository {
           <void Function(TransactionPending transactionPending)>[],
     };
 
-    _basicAuth = stringToBase64('$username:$password');
+    _basicAuth = base64Encode(utf8.encode('$username:$password'));
   }
 
   late final String _basicAuth;
