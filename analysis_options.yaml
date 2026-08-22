@@ -5,6 +5,13 @@ analyzer:
     - "**/*.g.dart"
     - "**/*.freezed.dart"
     - playground/trash/**
+    - build/**
+    - android/**
+    - ios/**
+    - web/**
+    - windows/**
+    - macos/**
+    - linux/**
   errors:
     # json_serializable annotations are intentionally applied to Freezed
     # constructor parameters. Keep this single project-wide exception instead
