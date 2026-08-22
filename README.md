@@ -32,9 +32,10 @@ Import the single public library:
 import 'package:xelis_dart_sdk/xelis_dart_sdk.dart';
 ```
 
-Use the latest stable XELIS daemon and wallet releases. Some RPC methods depend
-on the server configuration; use runtime capability discovery when a feature
-is optional.
+Use XELIS daemon and wallet releases supported by your SDK version; consult the
+[release notes](CHANGELOG.md) for compatibility details. Some RPC methods also
+depend on the server configuration, so use runtime capability discovery when a
+feature is optional.
 
 ## Connect to a daemon
 

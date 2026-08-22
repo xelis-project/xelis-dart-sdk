@@ -22,6 +22,14 @@ could lose RPC data or no longer matched the supported Rust contract.
   `getAssets` accepts pagination and returns `List<WalletAssetEntry>`,
   `estimateFees` accepts `EstimateWalletFeesParams`, and the extra-data and
   ciphertext decryption methods use typed parameters and results.
+- Preserve the positional daemon batch-transaction response by returning
+  `List<RpcTransaction?>` from `getTransactions`; missing transactions remain
+  `null` instead of being dropped.
+- Match event subscriptions and payloads to the current RPC contract. Contract
+  invoke, transfer and event subscriptions and unsubscriptions now require
+  their original filters. `onHistorySynced` receives the synced topoheight,
+  `onPeerPeerDisconnected` receives `PeerPeerDisconnectedEvent`, and
+  `onDeployContract` receives `ContractDeployEvent`.
 - Replace `Flag` with `PlaintextExtraDataFlag` and use the Dart spelling
   `topoheight`/`Topoheight` instead of `topoHeight`/`TopoHeight`. Keep the wire
   tag `multi_sig` for the multisig action and `multisig` for transaction
