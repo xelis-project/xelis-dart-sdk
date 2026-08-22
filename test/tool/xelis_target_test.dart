@@ -14,7 +14,38 @@ void main() {
     expect(target.daemonSchema, isNotEmpty);
     expect(target.walletSchema, isNotEmpty);
     expect(target.schemaMetadata, isNotEmpty);
+    expect(target.daemonIntegration.isSupported, isTrue);
+    expect(target.walletIntegration.status, IntegrationComponentStatus.blocked);
+    expect(target.walletIntegration.reason, isNotEmpty);
     expect(target.upstreamReference, contains(target.commit));
+  });
+
+  test('requires a reason only for blocked integration components', () {
+    final directory = Directory.systemTemp.createTempSync(
+      'xelis-target-integration-',
+    );
+    addTearDown(() => directory.deleteSync(recursive: true));
+    final manifest =
+        jsonDecode(File('xelis_target.json').readAsStringSync())
+            as Map<String, dynamic>;
+    final components =
+        (manifest['integration'] as Map<String, dynamic>)['components']
+            as Map<String, dynamic>;
+    components['wallet'] = {'status': 'supported'};
+    final supported = File('${directory.path}/supported.json')
+      ..writeAsStringSync(jsonEncode(manifest));
+    expect(
+      () => XelisTarget.load(path: supported.path, requireFiles: false),
+      returnsNormally,
+    );
+
+    components['wallet'] = {'status': 'blocked'};
+    final blocked = File('${directory.path}/blocked.json')
+      ..writeAsStringSync(jsonEncode(manifest));
+    expect(
+      () => XelisTarget.load(path: blocked.path, requireFiles: false),
+      throwsFormatException,
+    );
   });
 
   test('rejects unknown fields and abbreviated commits', () {

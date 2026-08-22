@@ -10,6 +10,13 @@ typedef ProcessStarter =
       Map<String, String>? environment,
     });
 
+// A narrow boundary is intentional so cleanup behavior can be tested without
+// starting operating-system processes.
+// ignore: one_member_abstracts
+abstract interface class StoppableProcess {
+  Future<void> stop();
+}
+
 Future<ProcessResult> runChecked(
   String executable,
   List<String> arguments, {
@@ -42,7 +49,7 @@ Future<ProcessResult> runChecked(
   return result;
 }
 
-final class ManagedProcess {
+final class ManagedProcess implements StoppableProcess {
   ManagedProcess._(
     this.process,
     this.logFile,
@@ -95,6 +102,7 @@ final class ManagedProcess {
   final File logFile;
   final Future<void> _closed;
 
+  @override
   Future<void> stop({Duration timeout = const Duration(seconds: 8)}) async {
     process.kill();
     try {

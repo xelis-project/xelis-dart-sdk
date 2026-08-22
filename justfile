@@ -56,17 +56,25 @@ check *args:
 ci *args:
     dart run tool/verify.dart ci {{ args }}
 
-# Run fast validation plus the smoke integration suite.
-smoke *args:
-    dart run tool/verify.dart smoke {{ args }}
+# Run the daemon-only live integration suite.
+daemon *args:
+    dart run tool/verify.dart integration daemon {{ args }}
 
-# Run fast validation plus the complete integration suite.
-full *args:
-    dart run tool/verify.dart full {{ args }}
+# Run the wallet live integration suite.
+wallet *args:
+    dart run tool/verify.dart integration wallet {{ args }}
+
+# Run cross-component daemon-wallet scenarios.
+e2e *args:
+    dart run tool/verify.dart integration e2e {{ args }}
+
+# Run daemon, wallet and E2E suites sequentially.
+integration *args:
+    dart run tool/verify.dart integration all {{ args }}
 
 # Run the complete integration suite with stress scenarios.
 stress *args:
-    dart run tool/verify.dart full --stress {{ args }}
+    dart run tool/verify.dart integration all --stress {{ args }}
 
 # Run the complete local release validation.
 release *args:
@@ -80,8 +88,8 @@ release-ci *args:
 probe *args:
     dart run tool/verify.dart probe {{ args }}
 
-# Install repository Git hooks (pre-push: check, smoke, full or off).
-install-hooks profile="smoke":
+# Install repository Git hooks (pre-push: check, daemon, wallet, e2e, all or off).
+install-hooks profile="daemon":
     dart run tool/install_hooks.dart --pre-push={{ profile }}
 
 # Capture pinned daemon and wallet RPC schemas; password comes from XELIS_CAPTURE_WALLET_PASSWORD.

@@ -9,6 +9,7 @@ import '../../integration_test/scenario_catalog.dart';
 import '../../tool/src/generated_sources.dart';
 import '../../tool/src/hook_config.dart';
 import '../../tool/src/integration_orchestrator.dart';
+import '../../tool/src/integration_suite.dart';
 import '../../tool/src/live_probe.dart';
 import '../../tool/src/process_tools.dart';
 import '../../tool/src/upstream_source.dart';
@@ -52,7 +53,15 @@ void main() {
       operatingSystem: 'linux',
       architecture: 'x64',
     );
+    final wallet = integrationCacheKey(
+      target: target,
+      cargoLock: 'lock-a',
+      buildOptions: 'wallet release default features',
+      operatingSystem: 'linux',
+      architecture: 'x64',
+    );
     expect(first, isNot(second));
+    expect(first, isNot(wallet));
     expect(first, startsWith(target.commit.substring(0, 12)));
     expect(first.length, lessThan(40));
     expect(first, isNot(contains(' ')));
@@ -88,6 +97,323 @@ void main() {
       );
     expect(() => verifyContractFixture(fixture), throwsStateError);
   });
+
+  test('suite plans keep daemon and wallet resources independent', () {
+    expect(IntegrationSuite.daemon.requiredComponents, {
+      IntegrationComponent.daemon,
+    });
+    expect(IntegrationSuite.daemon.walletCount, 0);
+    expect(IntegrationSuite.wallet.requiredComponents, {
+      IntegrationComponent.daemon,
+      IntegrationComponent.wallet,
+    });
+    expect(IntegrationSuite.wallet.walletCount, 1);
+    expect(IntegrationSuite.e2e.requiredComponents, {
+      IntegrationComponent.daemon,
+      IntegrationComponent.wallet,
+    });
+    expect(IntegrationSuite.e2e.walletCount, 3);
+    expect(IntegrationSuite.all.concreteSuites, [
+      IntegrationSuite.daemon,
+      IntegrationSuite.wallet,
+      IntegrationSuite.e2e,
+    ]);
+  });
+
+  test('scenario reports must exactly cover and pass their catalog', () {
+    final directory = Directory.systemTemp.createTempSync('scenario-report-');
+    addTearDown(() => directory.deleteSync(recursive: true));
+    final report = File('${directory.path}/scenarios.json');
+    final expected = scenariosForSuite(
+      IntegrationSuite.daemon.name,
+    ).map((scenario) => scenario.id).toList(growable: false);
+
+    report.writeAsStringSync(
+      jsonEncode({
+        'expected': expected,
+        'states': {for (final id in expected) id: 'passed'},
+      }),
+    );
+    expect(
+      () => validateScenarioReport(
+        report,
+        suite: IntegrationSuite.daemon,
+        includeStress: false,
+        requirePassed: true,
+      ),
+      returnsNormally,
+    );
+
+    report.writeAsStringSync(
+      jsonEncode({
+        'expected': expected,
+        'states': {for (final id in expected) id: 'pending'},
+      }),
+    );
+    expect(
+      () => validateScenarioReport(
+        report,
+        suite: IntegrationSuite.daemon,
+        includeStress: false,
+        requirePassed: true,
+      ),
+      throwsStateError,
+    );
+
+    report.writeAsStringSync(
+      jsonEncode({
+        'expected': expected.take(expected.length - 1).toList(),
+        'states': {for (final id in expected) id: 'passed'},
+      }),
+    );
+    expect(
+      () => validateScenarioReport(
+        report,
+        suite: IntegrationSuite.daemon,
+        includeStress: false,
+        requirePassed: false,
+      ),
+      throwsFormatException,
+    );
+  });
+
+  test('cleanup failures make the final suite report fail', () {
+    final directory = Directory.systemTemp.createTempSync('suite-finalize-');
+    addTearDown(() => directory.deleteSync(recursive: true));
+    final expected = scenariosForSuite(
+      IntegrationSuite.daemon.name,
+    ).map((scenario) => scenario.id).toList(growable: false);
+    final reportFile = File('${directory.path}/daemon.json');
+
+    final status = finalizeIntegrationSuiteReport(
+      reportFile,
+      suite: IntegrationSuite.daemon,
+      targetCommit: XelisTarget.load().commit,
+      startedAt: DateTime.utc(2026),
+      scenarios: {
+        'expected': expected,
+        'states': {for (final id in expected) id: 'passed'},
+      },
+      testsPassed: true,
+      failures: [StateError('daemon cleanup failed')],
+      logs: directory.path,
+    );
+
+    final report =
+        jsonDecode(reportFile.readAsStringSync()) as Map<String, dynamic>;
+    expect(status, 'failed');
+    expect(report['status'], 'failed');
+    expect(report['failure'], contains('daemon cleanup failed'));
+    expect(report['failureType'], 'StateError');
+  });
+
+  test(
+    'blocked wallet suite reports strictly without resolving binaries',
+    () async {
+      final targetDirectory = Directory.systemTemp.createTempSync(
+        'blocked-wallet-target-',
+      );
+      addTearDown(() => targetDirectory.deleteSync(recursive: true));
+      final targetJson = XelisTarget.load().toJson();
+      ((targetJson['integration']! as Map<String, Object?>)['components']!
+          as Map<String, Object?>)['wallet'] = {
+        'status': 'blocked',
+        'reason': 'Known wallet RPC server regression.',
+      };
+      final targetFile = File('${targetDirectory.path}/target.json')
+        ..writeAsStringSync(jsonEncode(targetJson));
+      final reportsRoot = Directory('.dart_tool/xelis-integration/reports')
+        ..createSync(recursive: true);
+      final before = reportsRoot
+          .listSync()
+          .whereType<Directory>()
+          .map((directory) => directory.path)
+          .toSet();
+      final orchestrator = IntegrationOrchestrator(
+        target: XelisTarget.load(path: targetFile.path, requireFiles: false),
+        selection: IntegrationSuite.wallet,
+      );
+      await expectLater(
+        orchestrator.run(
+          const IntegrationOptions(
+            daemonBinary: 'missing-daemon-binary',
+            walletBinary: 'missing-wallet-binary',
+          ),
+        ),
+        throwsStateError,
+      );
+      final created = reportsRoot
+          .listSync()
+          .whereType<Directory>()
+          .where((directory) => !before.contains(directory.path))
+          .single;
+      addTearDown(() {
+        if (created.existsSync()) created.deleteSync(recursive: true);
+        final run = Directory(
+          '.dart_tool/xelis-integration/runs/'
+          '${created.uri.pathSegments.where((part) => part.isNotEmpty).last}',
+        );
+        if (run.existsSync()) run.deleteSync(recursive: true);
+      });
+      final report =
+          jsonDecode(File('${created.path}/wallet.json').readAsStringSync())
+              as Map<String, dynamic>;
+      expect(report['status'], 'blocked');
+      expect(report['failure'], contains('wallet RPC server regression'));
+      expect(
+        (report['scenarios'] as Map<String, dynamic>)['states'],
+        {'wallet_health': 'blocked'},
+      );
+    },
+  );
+
+  test(
+    'all preserves suite order and aggregates every blocked result',
+    () async {
+      final targetDirectory = Directory.systemTemp.createTempSync(
+        'blocked-all-target-',
+      );
+      addTearDown(() => targetDirectory.deleteSync(recursive: true));
+      final targetJson = XelisTarget.load().toJson();
+      final components =
+          (targetJson['integration']! as Map<String, Object?>)['components']!
+              as Map<String, Object?>;
+      components['daemon'] = {
+        'status': 'blocked',
+        'reason': 'Daemon deliberately unavailable for this test.',
+      };
+      components['wallet'] = {
+        'status': 'blocked',
+        'reason': 'Wallet deliberately unavailable for this test.',
+      };
+      final targetFile = File('${targetDirectory.path}/target.json')
+        ..writeAsStringSync(jsonEncode(targetJson));
+      final reportsRoot = Directory('.dart_tool/xelis-integration/reports')
+        ..createSync(recursive: true);
+      final before = reportsRoot
+          .listSync()
+          .whereType<Directory>()
+          .map((directory) => directory.path)
+          .toSet();
+
+      await expectLater(
+        IntegrationOrchestrator(
+          target: XelisTarget.load(path: targetFile.path, requireFiles: false),
+          selection: IntegrationSuite.all,
+        ).run(const IntegrationOptions()),
+        throwsStateError,
+      );
+
+      final created = reportsRoot
+          .listSync()
+          .whereType<Directory>()
+          .where((directory) => !before.contains(directory.path))
+          .single;
+      addTearDown(() {
+        if (created.existsSync()) created.deleteSync(recursive: true);
+        final run = Directory(
+          '.dart_tool/xelis-integration/runs/'
+          '${created.uri.pathSegments.where((part) => part.isNotEmpty).last}',
+        );
+        if (run.existsSync()) run.deleteSync(recursive: true);
+      });
+      final summary =
+          jsonDecode(File('${created.path}/summary.json').readAsStringSync())
+              as Map<String, dynamic>;
+      expect(summary['success'], isFalse);
+      expect(summary['suites'], {
+        'daemon': 'blocked',
+        'wallet': 'blocked',
+        'e2e': 'blocked',
+      });
+      expect(
+        created
+            .listSync()
+            .whereType<File>()
+            .map((file) => file.uri.pathSegments.last)
+            .toSet(),
+        {'daemon.json', 'wallet.json', 'e2e.json', 'summary.json'},
+      );
+    },
+  );
+
+  test(
+    'all continues after an exception and preserves mixed outcomes',
+    () async {
+      final reportsRoot = Directory('.dart_tool/xelis-integration/reports')
+        ..createSync(recursive: true);
+      final before = reportsRoot
+          .listSync()
+          .whereType<Directory>()
+          .map((directory) => directory.path)
+          .toSet();
+      final executed = <IntegrationSuite>[];
+
+      await expectLater(
+        IntegrationOrchestrator(
+          target: XelisTarget.load(),
+          selection: IntegrationSuite.all,
+          suiteExecutor: (suite, options, runDirectory, reportFile) async {
+            executed.add(suite);
+            if (suite == IntegrationSuite.daemon) {
+              throw StateError('synthetic daemon finalization failure');
+            }
+            final status = suite == IntegrationSuite.wallet
+                ? 'passed'
+                : 'blocked';
+            reportFile.writeAsStringSync(
+              jsonEncode({'suite': suite.name, 'status': status}),
+            );
+            return status;
+          },
+        ).run(const IntegrationOptions()),
+        throwsStateError,
+      );
+
+      expect(executed, [
+        IntegrationSuite.daemon,
+        IntegrationSuite.wallet,
+        IntegrationSuite.e2e,
+      ]);
+      final created = reportsRoot
+          .listSync()
+          .whereType<Directory>()
+          .where((directory) => !before.contains(directory.path))
+          .single;
+      addTearDown(() {
+        if (created.existsSync()) created.deleteSync(recursive: true);
+        final run = Directory(
+          '.dart_tool/xelis-integration/runs/'
+          '${created.uri.pathSegments.where((part) => part.isNotEmpty).last}',
+        );
+        if (run.existsSync()) run.deleteSync(recursive: true);
+      });
+      final summary =
+          jsonDecode(File('${created.path}/summary.json').readAsStringSync())
+              as Map<String, dynamic>;
+      expect(summary['suites'], {
+        'daemon': 'failed',
+        'wallet': 'passed',
+        'e2e': 'blocked',
+      });
+      expect(
+        created
+            .listSync()
+            .whereType<File>()
+            .map((file) => file.uri.pathSegments.last)
+            .toSet(),
+        {'daemon.json', 'wallet.json', 'e2e.json', 'summary.json'},
+      );
+      final daemonReport =
+          jsonDecode(File('${created.path}/daemon.json').readAsStringSync())
+              as Map<String, dynamic>;
+      expect(daemonReport['status'], 'failed');
+      expect(
+        daemonReport['failure'],
+        contains('synthetic daemon finalization failure'),
+      );
+    },
+  );
 
   test('schema capture validates servers and records provenance', () {
     final target = XelisTarget.load();
@@ -175,6 +501,20 @@ void main() {
     expect(log.existsSync(), isFalse);
   });
 
+  test('cleanup attempts every process and reports every failure', () async {
+    final stopped = <String>[];
+    final failures = await stopProcesses([
+      _FakeStoppableProcess('wallet-2', stopped, failure: 'first'),
+      _FakeStoppableProcess('wallet-1', stopped),
+      _FakeStoppableProcess('daemon', stopped, failure: 'second'),
+    ]);
+
+    expect(stopped, ['wallet-2', 'wallet-1', 'daemon']);
+    expect(failures, hasLength(2));
+    expect(failures.first, isA<StateError>());
+    expect(failures.last, isA<StateError>());
+  });
+
   test('redacts credentials and private material', () {
     final value = redact(
       'password="secret" Authorization=Basic QWxhZGRpbjpvcGVu '
@@ -212,6 +552,37 @@ void main() {
       endpoint: '127.0.0.1:${server.port}',
       expectedVersion: target.serverVersion,
       expectedNetwork: 'devnet',
+    );
+  });
+
+  test('daemon readiness extracts the network from get_info', () async {
+    final target = XelisTarget.load();
+    final server = await HttpServer.bind(InternetAddress.loopbackIPv4, 0);
+    addTearDown(() => server.close(force: true));
+    unawaited(
+      server.forEach((request) async {
+        final body = await utf8.decoder.bind(request).join();
+        final method = (jsonDecode(body) as Map<String, dynamic>)['method'];
+        request.response
+          ..statusCode = HttpStatus.ok
+          ..write(
+            jsonEncode({
+              'jsonrpc': '2.0',
+              'id': 1,
+              'result': method == 'get_version'
+                  ? target.serverVersion ?? 'development'
+                  : {'network': 'devnet'},
+            }),
+          );
+        await request.response.close();
+      }),
+    );
+    await waitForRpc(
+      endpoint: '127.0.0.1:${server.port}',
+      expectedVersion: target.serverVersion,
+      expectedNetwork: 'devnet',
+      networkMethod: 'get_info',
+      networkField: 'network',
     );
   });
 
@@ -272,19 +643,22 @@ void main() {
     for (final profile in hookProfiles) {
       expect(parseHookProfile(profile), profile);
     }
-    expect(() => parseHookProfile('stress'), throwsArgumentError);
+    expect(() => parseHookProfile('smoke'), throwsArgumentError);
   });
 
   test('verify profiles map to explicit actions', () {
     for (final profile in [
       'check',
       'ci',
-      'smoke',
-      'full',
       'release',
       'probe',
     ]) {
       expect(VerificationOptions.parse([profile]).profile.name, profile);
+    }
+    for (final suite in ['daemon', 'wallet', 'e2e', 'all']) {
+      final options = VerificationOptions.parse(['integration', suite]);
+      expect(options.profile, VerifyProfile.integration);
+      expect(options.integrationSuite?.name, suite);
     }
     final ci = verificationActionsFor(VerificationOptions.parse(['ci']));
     final release = verificationActionsFor(
@@ -298,12 +672,10 @@ void main() {
       VerificationAction.web,
       VerificationAction.generatedSources,
     ]);
-    expect(ci, isNot(contains(VerificationAction.smokeIntegration)));
-    expect(ci, isNot(contains(VerificationAction.fullIntegration)));
-    expect(ci, isNot(contains(VerificationAction.stressIntegration)));
+    expect(ci, isNot(contains(VerificationAction.integration)));
     expect(release, [
       VerificationAction.check,
-      VerificationAction.fullIntegration,
+      VerificationAction.integration,
       VerificationAction.web,
       VerificationAction.generatedSources,
       VerificationAction.releasePackage,
@@ -323,16 +695,29 @@ void main() {
     }
     expect(
       verificationActionsFor(
-        VerificationOptions.parse(['full', '--stress']),
+        VerificationOptions.parse(['integration', 'all', '--stress']),
       ),
-      contains(VerificationAction.stressIntegration),
+      contains(VerificationAction.integration),
     );
     expect(
       () => VerificationOptions.parse(['stress']),
       throwsFormatException,
     );
     expect(
-      () => VerificationOptions.parse(['smoke', '--stress']),
+      () => VerificationOptions.parse(['integration', 'wallet', '--stress']),
+      throwsFormatException,
+    );
+    expect(
+      () => VerificationOptions.parse([
+        'integration',
+        'daemon',
+        '--wallet-binary',
+        'wallet',
+      ]),
+      throwsFormatException,
+    );
+    expect(
+      () => VerificationOptions.parse(['smoke']),
       throwsFormatException,
     );
     expect(
@@ -358,9 +743,9 @@ void main() {
       );
     }
     for (final arguments in [
-      ['smoke'],
-      ['full'],
-      ['full', '--stress'],
+      ['integration', 'daemon'],
+      ['integration', 'wallet'],
+      ['integration', 'all', '--stress'],
       ['release'],
     ]) {
       expect(
@@ -386,8 +771,13 @@ void main() {
     expect(ids.toSet(), hasLength(ids.length));
     for (final id in ids) {
       expect(documentation, contains('`$id`'));
+      final scenario = integrationScenarios.singleWhere(
+        (scenario) => scenario.id == id,
+      );
       expect(
-        File('integration_test/live_rpc_contract_test.dart').readAsStringSync(),
+        File(
+          'integration_test/live_${scenario.suite}_rpc_test.dart',
+        ).readAsStringSync(),
         contains(id),
       );
     }
@@ -423,7 +813,15 @@ void main() {
         .toList();
     expect(offending, isEmpty);
     expect(
-      File('integration_test/live_rpc_contract_test.dart').existsSync(),
+      File('integration_test/live_daemon_rpc_test.dart').existsSync(),
+      isTrue,
+    );
+    expect(
+      File('integration_test/live_wallet_rpc_test.dart').existsSync(),
+      isTrue,
+    );
+    expect(
+      File('integration_test/live_e2e_rpc_test.dart').existsSync(),
       isTrue,
     );
   });
@@ -441,7 +839,7 @@ void main() {
     expect(source, isNot(contains(RegExp(r'\bcargo(?:\.exe)?(?:\s|$)'))));
     expect(
       source,
-      isNot(contains(RegExp(r'verify\.dart\s+(?:smoke|full)\b'))),
+      isNot(contains(RegExp(r'verify\.dart\s+integration\b'))),
     );
     expect(source, isNot(contains('--stress')));
     expect(
@@ -467,4 +865,18 @@ void main() {
       contains('release --skip-integration'),
     );
   });
+}
+
+final class _FakeStoppableProcess implements StoppableProcess {
+  _FakeStoppableProcess(this.name, this.stopped, {this.failure});
+
+  final String name;
+  final List<String> stopped;
+  final String? failure;
+
+  @override
+  Future<void> stop() async {
+    stopped.add(name);
+    if (failure case final message?) throw StateError(message);
+  }
 }

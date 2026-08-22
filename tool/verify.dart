@@ -4,6 +4,7 @@ import 'src/coverage_gate.dart';
 import 'src/dto_architecture_check.dart';
 import 'src/generated_sources.dart';
 import 'src/integration_orchestrator.dart';
+import 'src/integration_suite.dart';
 import 'src/live_probe.dart';
 import 'src/process_tools.dart';
 import 'src/rpc_event_inventory.dart';
@@ -38,12 +39,14 @@ Future<void> main(List<String> arguments) async {
       switch (action) {
         case VerificationAction.check:
           await _check(target, options);
-        case VerificationAction.smokeIntegration:
-          await _integration(target, IntegrationProfile.smoke, options);
-        case VerificationAction.fullIntegration:
-          await _integration(target, IntegrationProfile.full, options);
-        case VerificationAction.stressIntegration:
-          await _integration(target, IntegrationProfile.stress, options);
+        case VerificationAction.integration:
+          await _integration(
+            target,
+            options.profile == VerifyProfile.release
+                ? IntegrationSuite.all
+                : options.integrationSuite!,
+            options,
+          );
         case VerificationAction.web:
           await _webChecks();
         case VerificationAction.generatedSources:
@@ -135,17 +138,22 @@ Future<void> _testWithCoverage() async {
 
 Future<void> _integration(
   XelisTarget target,
-  IntegrationProfile profile,
+  IntegrationSuite suite,
   VerificationOptions options,
-) => IntegrationOrchestrator(target: target, profile: profile).run(
-  IntegrationOptions(
-    xelisSource: options.xelisSource,
-    daemonBinary: options.daemonBinary,
-    walletBinary: options.walletBinary,
-    connectConfig: options.connectConfig,
-    verbose: options.verbose,
-  ),
-);
+) =>
+    IntegrationOrchestrator(
+      target: target,
+      selection: suite,
+      stress: options.stress,
+    ).run(
+      IntegrationOptions(
+        xelisSource: options.xelisSource,
+        daemonBinary: options.daemonBinary,
+        walletBinary: options.walletBinary,
+        connectConfig: options.connectConfig,
+        verbose: options.verbose,
+      ),
+    );
 
 Future<void> _generatedSourcesCheck() async {
   await runChecked(Platform.resolvedExecutable, [
@@ -203,7 +211,7 @@ void _usage() {
   stdout.writeln('''
 Usage: dart run tool/verify.dart <profile> [options]
 
-Profiles: check, ci, smoke, full, release, probe
+Profiles: check, ci, integration <daemon|wallet|e2e|all>, release, probe
 
 CI options:
   --skip-integration      Skip local XELIS processes for release packaging.
@@ -213,7 +221,7 @@ Local integration options:
   --daemon-binary <path> Reuse an existing daemon binary.
   --wallet-binary <path> Reuse an existing wallet binary.
   --connect <file>        Test already-running processes from a config file.
-  --stress                Add stress scenarios to the full profile.
+  --stress                Add daemon stress scenarios to daemon or all.
   --verbose               Print detailed integration progress.
 
 Probe options:

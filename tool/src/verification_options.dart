@@ -1,12 +1,12 @@
 import 'dart:io';
 
-enum VerifyProfile { check, ci, smoke, full, release, probe }
+import 'integration_suite.dart';
+
+enum VerifyProfile { check, ci, integration, release, probe }
 
 enum VerificationAction {
   check,
-  smokeIntegration,
-  fullIntegration,
-  stressIntegration,
+  integration,
   web,
   generatedSources,
   releasePackage,
@@ -16,6 +16,7 @@ enum VerificationAction {
 final class VerificationOptions {
   const VerificationOptions({
     required this.profile,
+    this.integrationSuite,
     this.xelisSource,
     this.daemonBinary,
     this.walletBinary,
@@ -34,19 +35,34 @@ final class VerificationOptions {
       throw const FormatException('A verification profile is required.');
     }
     final profile = VerifyProfile.values
-        .where(
-          (value) => value.name == arguments.first,
-        )
+        .where((value) => value.name == arguments.first)
         .firstOrNull;
     if (profile == null) {
       throw FormatException('Unknown verification profile: ${arguments.first}');
+    }
+
+    IntegrationSuite? integrationSuite;
+    var optionStart = 1;
+    if (profile == VerifyProfile.integration) {
+      if (arguments.length < 2 || arguments[1].startsWith('--')) {
+        throw const FormatException(
+          'The integration profile requires daemon, wallet, e2e, or all.',
+        );
+      }
+      integrationSuite = IntegrationSuite.values
+          .where((value) => value.name == arguments[1])
+          .firstOrNull;
+      if (integrationSuite == null) {
+        throw FormatException('Unknown integration suite: ${arguments[1]}.');
+      }
+      optionStart = 2;
     }
 
     final values = <String, String>{};
     var stress = false;
     var skipIntegration = false;
     var verbose = false;
-    for (var index = 1; index < arguments.length; index++) {
+    for (var index = optionStart; index < arguments.length; index++) {
       final argument = arguments[index];
       if (argument == '--stress') {
         stress = true;
@@ -81,12 +97,38 @@ final class VerificationOptions {
     if (unknown.isNotEmpty) {
       throw FormatException('Unknown options: ${unknown.join(', ')}.');
     }
-    if (stress && profile != VerifyProfile.full) {
-      throw const FormatException('--stress is only valid with full.');
+    if (stress &&
+        (profile != VerifyProfile.integration ||
+            (integrationSuite != IntegrationSuite.daemon &&
+                integrationSuite != IntegrationSuite.all))) {
+      throw const FormatException(
+        '--stress is only valid with integration daemon or integration all.',
+      );
     }
     if (skipIntegration && profile != VerifyProfile.release) {
       throw const FormatException(
         '--skip-integration is only valid with release.',
+      );
+    }
+    if (integrationSuite == IntegrationSuite.daemon &&
+        values.containsKey('--wallet-binary')) {
+      throw const FormatException(
+        '--wallet-binary is not valid with integration daemon.',
+      );
+    }
+    final hasIntegrationOption = values.keys.any(
+      const {
+        '--xelis-source',
+        '--daemon-binary',
+        '--wallet-binary',
+        '--connect',
+      }.contains,
+    );
+    if (hasIntegrationOption &&
+        profile != VerifyProfile.integration &&
+        profile != VerifyProfile.release) {
+      throw const FormatException(
+        'Local integration options require integration or release.',
       );
     }
     final hasProbeOption = values.keys.any(
@@ -102,6 +144,7 @@ final class VerificationOptions {
 
     return VerificationOptions(
       profile: profile,
+      integrationSuite: integrationSuite,
       xelisSource: values['--xelis-source'],
       daemonBinary: values['--daemon-binary'],
       walletBinary: values['--wallet-binary'],
@@ -124,6 +167,7 @@ final class VerificationOptions {
   }
 
   final VerifyProfile profile;
+  final IntegrationSuite? integrationSuite;
   final String? xelisSource;
   final String? daemonBinary;
   final String? walletBinary;
@@ -145,18 +189,10 @@ List<VerificationAction> verificationActionsFor(VerificationOptions options) =>
         VerificationAction.web,
         VerificationAction.generatedSources,
       ],
-      VerifyProfile.smoke => const [
-        VerificationAction.check,
-        VerificationAction.smokeIntegration,
-      ],
-      VerifyProfile.full => [
-        VerificationAction.check,
-        VerificationAction.fullIntegration,
-        if (options.stress) VerificationAction.stressIntegration,
-      ],
+      VerifyProfile.integration => const [VerificationAction.integration],
       VerifyProfile.release => [
         VerificationAction.check,
-        if (!options.skipIntegration) VerificationAction.fullIntegration,
+        if (!options.skipIntegration) VerificationAction.integration,
         VerificationAction.web,
         VerificationAction.generatedSources,
         VerificationAction.releasePackage,
@@ -172,7 +208,7 @@ void validateGitHubActionsSafety(
   final allowed = switch (options.profile) {
     VerifyProfile.check || VerifyProfile.ci || VerifyProfile.probe => true,
     VerifyProfile.release => options.skipIntegration,
-    VerifyProfile.smoke || VerifyProfile.full => false,
+    VerifyProfile.integration => false,
   };
   if (allowed) return;
   throw StateError(

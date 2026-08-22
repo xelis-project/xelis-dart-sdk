@@ -41,6 +41,10 @@ could lose RPC data or no longer matched the supported Rust contract.
 - Deprecate the legacy helpers from `data_converter.dart`; they remain available
   for this release and now document their standard-library replacements.
 - Pin the RPC contract and integration verification tooling to XELIS `v1.24.0`.
+- Add unified `check`, `ci`, `integration`, `release` and `probe` verification
+  profiles, split live integration into daemon, wallet and E2E suites, enforce
+  at least 90% coverage of handwritten library code in CI, and provide a
+  `justfile` with shortcuts for common contributor workflows.
 
 ## 0.35.1
 

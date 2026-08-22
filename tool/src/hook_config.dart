@@ -1,4 +1,4 @@
-const hookProfiles = {'check', 'smoke', 'full', 'off'};
+const hookProfiles = {'check', 'daemon', 'wallet', 'e2e', 'all', 'off'};
 
 String parseHookProfile(String value) {
   if (!hookProfiles.contains(value)) {

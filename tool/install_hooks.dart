@@ -4,14 +4,14 @@ import 'src/hook_config.dart';
 import 'src/process_tools.dart';
 
 Future<void> main(List<String> arguments) async {
-  var profile = 'smoke';
+  var profile = 'daemon';
   for (final argument in arguments) {
     if (argument.startsWith('--pre-push=')) {
       profile = parseHookProfile(argument.substring('--pre-push='.length));
     } else if (argument == '--help') {
       stdout.writeln(
         'Usage: dart run tool/install_hooks.dart '
-        '[--pre-push=check|smoke|full|off]',
+        '[--pre-push=check|daemon|wallet|e2e|all|off]',
       );
       return;
     } else {

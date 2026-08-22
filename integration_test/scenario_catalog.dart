@@ -1,46 +1,45 @@
 /// Human-readable metadata for live integration coverage.
-///
-/// Scenario implementations remain in `live_rpc_contract_test.dart`; this
-/// catalog is used by reports and checked against `integration_test/README.md`.
 const integrationScenarios = <IntegrationScenario>[
   IntegrationScenario(
     id: 'daemon_health',
-    profile: 'smoke',
+    suite: 'daemon',
     coverage: 'version, network, schema, capabilities and chain reads',
   ),
   IntegrationScenario(
     id: 'daemon_subscription_lifecycle',
-    profile: 'smoke',
+    suite: 'daemon',
     coverage: 'subscribe, receive, unsubscribe and reconnect',
   ),
   IntegrationScenario(
     id: 'wallet_health',
-    profile: 'smoke',
+    suite: 'wallet',
     coverage: 'version, network, schema, address and balance',
   ),
   IntegrationScenario(
     id: 'transfer_lifecycle',
-    profile: 'full',
+    suite: 'e2e',
     coverage: 'funding, pending event, transfer, mining and confirmation',
   ),
   IntegrationScenario(
     id: 'contract_deployment',
-    profile: 'full',
+    suite: 'e2e',
     coverage: 'fixture verification, deployment, confirmation and readback',
   ),
   IntegrationScenario(
     id: 'multisig_configuration',
-    profile: 'full',
+    suite: 'e2e',
     coverage: 'participants, configuration transaction and state readback',
   ),
   IntegrationScenario(
     id: 'event_burst',
-    profile: 'stress',
+    suite: 'daemon',
+    stress: true,
     coverage: 'topoheight event burst and duplicate detection',
   ),
   IntegrationScenario(
     id: 'reconnection_stress',
-    profile: 'stress',
+    suite: 'daemon',
+    stress: true,
     coverage: 'disconnect, reconnect and real resubscription',
   ),
 ];
@@ -48,26 +47,23 @@ const integrationScenarios = <IntegrationScenario>[
 final class IntegrationScenario {
   const IntegrationScenario({
     required this.id,
-    required this.profile,
+    required this.suite,
     required this.coverage,
+    this.stress = false,
   });
 
   final String id;
-  final String profile;
+  final String suite;
   final String coverage;
+  final bool stress;
 }
 
-List<IntegrationScenario> scenariosForProfile(String profile) =>
-    integrationScenarios
-        .where(
-          (scenario) => switch (profile) {
-            'smoke' => scenario.profile == 'smoke',
-            'full' => scenario.profile == 'smoke' || scenario.profile == 'full',
-            'stress' =>
-              scenario.profile == 'stress' ||
-                  scenario.id == 'daemon_health' ||
-                  scenario.id == 'daemon_subscription_lifecycle',
-            _ => false,
-          },
-        )
-        .toList(growable: false);
+List<IntegrationScenario> scenariosForSuite(
+  String suite, {
+  bool includeStress = false,
+}) => integrationScenarios
+    .where(
+      (scenario) =>
+          scenario.suite == suite && (includeStress || !scenario.stress),
+    )
+    .toList(growable: false);

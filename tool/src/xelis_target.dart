@@ -1,6 +1,25 @@
 import 'dart:convert';
 import 'dart:io';
 
+enum IntegrationComponentStatus { supported, blocked }
+
+final class IntegrationComponentAvailability {
+  const IntegrationComponentAvailability({
+    required this.status,
+    this.reason,
+  });
+
+  final IntegrationComponentStatus status;
+  final String? reason;
+
+  bool get isSupported => status == IntegrationComponentStatus.supported;
+
+  Map<String, Object?> toJson() => {
+    'status': status.name,
+    if (reason != null) 'reason': reason,
+  };
+}
+
 final class XelisTarget {
   const XelisTarget({
     required this.format,
@@ -12,6 +31,8 @@ final class XelisTarget {
     required this.daemonSchema,
     required this.walletSchema,
     required this.schemaMetadata,
+    required this.daemonIntegration,
+    required this.walletIntegration,
     required this.liveNetwork,
     required this.daemonEndpoints,
   });
@@ -36,6 +57,7 @@ final class XelisTarget {
       'channel',
       'upstream',
       'schemas',
+      'integration',
       'liveProbe',
     }, r'$');
 
@@ -92,6 +114,26 @@ final class XelisTarget {
       r'$.schemas.metadata',
     );
 
+    final integration = _object(root['integration'], r'$.integration');
+    _only(integration, const {'components'}, r'$.integration');
+    final components = _object(
+      integration['components'],
+      r'$.integration.components',
+    );
+    _only(
+      components,
+      const {'daemon', 'wallet'},
+      r'$.integration.components',
+    );
+    final daemonIntegration = _componentAvailability(
+      components['daemon'],
+      r'$.integration.components.daemon',
+    );
+    final walletIntegration = _componentAvailability(
+      components['wallet'],
+      r'$.integration.components.wallet',
+    );
+
     final liveProbe = _object(root['liveProbe'], r'$.liveProbe');
     _only(liveProbe, const {'network', 'daemonEndpoints'}, r'$.liveProbe');
     final liveNetwork = _nonEmptyString(
@@ -141,6 +183,8 @@ final class XelisTarget {
       daemonSchema: daemonSchema,
       walletSchema: walletSchema,
       schemaMetadata: schemaMetadata,
+      daemonIntegration: daemonIntegration,
+      walletIntegration: walletIntegration,
       liveNetwork: liveNetwork,
       daemonEndpoints: daemonEndpoints,
     );
@@ -155,6 +199,8 @@ final class XelisTarget {
   final String daemonSchema;
   final String walletSchema;
   final String schemaMetadata;
+  final IntegrationComponentAvailability daemonIntegration;
+  final IntegrationComponentAvailability walletIntegration;
   final String liveNetwork;
   final List<String> daemonEndpoints;
 
@@ -176,8 +222,38 @@ final class XelisTarget {
       'wallet': walletSchema,
       'metadata': schemaMetadata,
     },
+    'integration': {
+      'components': {
+        'daemon': daemonIntegration.toJson(),
+        'wallet': walletIntegration.toJson(),
+      },
+    },
     'liveProbe': {'network': liveNetwork, 'daemonEndpoints': daemonEndpoints},
   };
+}
+
+IntegrationComponentAvailability _componentAvailability(
+  Object? value,
+  String path,
+) {
+  final component = _object(value, path);
+  final statusValue = _nonEmptyString(component['status'], '$path.status');
+  final status = IntegrationComponentStatus.values
+      .where((candidate) => candidate.name == statusValue)
+      .firstOrNull;
+  if (status == null) {
+    throw FormatException('$path.status must be "supported" or "blocked".');
+  }
+  final allowed = status == IntegrationComponentStatus.blocked
+      ? const {'status', 'reason'}
+      : const {'status'};
+  _only(component, allowed, path);
+  return IntegrationComponentAvailability(
+    status: status,
+    reason: status == IntegrationComponentStatus.blocked
+        ? _nonEmptyString(component['reason'], '$path.reason')
+        : null,
+  );
 }
 
 Map<String, Object?> _object(Object? value, String path) {
