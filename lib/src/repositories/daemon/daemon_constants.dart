@@ -179,7 +179,8 @@ enum DaemonMethod implements XelisJsonKey {
   /// Retrieve the latest multisig information for a specific address.
   getMultisig('get_multisig'),
 
-  /// Retrieve the latest multisig information for a specific address at a specific topoheight.
+  /// Retrieve the latest multisig information for a specific address at a
+  /// specific topoheight.
   getMultisigAtTopoheight('get_multisig_at_topoheight'),
 
   /// Verify if the address has a multisig setup.
@@ -194,7 +195,8 @@ enum DaemonMethod implements XelisJsonKey {
   /// Get the estimated fee rates.
   getEstimatedFeeRates('get_estimated_fee_rates'),
 
-  /// Retrieve the contract logs that occurred in the requested transaction hash.
+  /// Retrieve the contract logs that occurred in the requested transaction
+  /// hash.
   getContractLogs('get_contract_logs'),
 
   /// Retrieve the module currently stored for a contract.

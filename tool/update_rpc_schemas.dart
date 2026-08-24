@@ -191,13 +191,14 @@ final class _Options {
 }
 
 Never _usage() {
-  stderr.writeln(
-    'Usage: dart run tool/update_rpc_schemas.dart '
-    '--daemon=<host:port> --wallet=<host:port> '
-    '--username=<name> '
-    '[--insecure-daemon] [--insecure-wallet]',
-  );
-  stderr.writeln('Set XELIS_CAPTURE_WALLET_PASSWORD in the environment.');
+  stderr
+    ..writeln(
+      'Usage: dart run tool/update_rpc_schemas.dart '
+      '--daemon=<host:port> --wallet=<host:port> '
+      '--username=<name> '
+      '[--insecure-daemon] [--insecure-wallet]',
+    )
+    ..writeln('Set XELIS_CAPTURE_WALLET_PASSWORD in the environment.');
   exit(64);
 }
 

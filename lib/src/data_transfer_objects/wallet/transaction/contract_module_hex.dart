@@ -39,7 +39,7 @@ final class ContractModuleHex {
   const ContractModuleHex._(this.value);
 
   /// Parses the wallet RPC string representation.
-  static ContractModuleHex fromJson(Object? json) {
+  factory ContractModuleHex.fromJson(Object? json) {
     if (json is! String) {
       throw const FormatException(
         'A serialized contract module must be a hexadecimal string.',

@@ -879,8 +879,9 @@ void main() {
       });
 
       final event = Completer<BigInt>();
-      client.connect();
-      client.onEvent(WalletEvent.newTopoheight, event.complete);
+      client
+        ..connect()
+        ..onEvent(WalletEvent.newTopoheight, event.complete);
       final firstSubscription = await server.nextRequest();
       expect(firstSubscription['method'], 'subscribe');
 
@@ -978,15 +979,16 @@ void main() {
         final contractAEvent = Completer<InvokeContractEvent>();
         final contractBEvent = Completer<InvokeContractEvent>();
 
-        client.connect();
-        client.onInvokeContract('contract-a', (event) {
-          contractACalls++;
-          if (!contractAEvent.isCompleted) contractAEvent.complete(event);
-        });
-        client.onInvokeContract('contract-b', (event) {
-          contractBCalls++;
-          if (!contractBEvent.isCompleted) contractBEvent.complete(event);
-        });
+        client
+          ..connect()
+          ..onInvokeContract('contract-a', (event) {
+            contractACalls++;
+            if (!contractAEvent.isCompleted) contractAEvent.complete(event);
+          })
+          ..onInvokeContract('contract-b', (event) {
+            contractBCalls++;
+            if (!contractBEvent.isCompleted) contractBEvent.complete(event);
+          });
 
         final firstRequest = await server.nextRequest();
         final secondRequest = await server.nextRequest();

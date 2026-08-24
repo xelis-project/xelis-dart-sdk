@@ -229,15 +229,18 @@ sealed class RpcClientRepository {
 
     final id = ++_id;
     final completer = Completer<Object?>.sync();
-    final request = _Request(method.jsonKey, completer, params);
-    request.timer = Timer(_requestTimeout, () {
-      final pending = _pendingRequests.remove(id);
-      if (pending != null && !pending.completer.isCompleted) {
-        pending.completer.completeError(
-          RpcTimeoutException(method: pending.method, timeout: _requestTimeout),
-        );
-      }
-    });
+    final request = _Request(method.jsonKey, completer, params)
+      ..timer = Timer(_requestTimeout, () {
+        final pending = _pendingRequests.remove(id);
+        if (pending != null && !pending.completer.isCompleted) {
+          pending.completer.completeError(
+            RpcTimeoutException(
+              method: pending.method,
+              timeout: _requestTimeout,
+            ),
+          );
+        }
+      });
     _pendingRequests[id] = request;
     try {
       _send(transport, id, method, params);

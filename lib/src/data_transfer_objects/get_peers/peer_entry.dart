@@ -1,3 +1,4 @@
+// Freezed factory parameters intentionally follow the RPC model order.
 // ignore_for_file: always_put_required_named_parameters_first
 
 import 'package:freezed_annotation/freezed_annotation.dart';

@@ -578,7 +578,8 @@ extension DaemonRpcMethodsExtension on DaemonClient {
     getMultisigParams.toJson(),
   );
 
-  /// Retrieve the latest multisig information for a specific address at a specific topoheight.
+  /// Retrieve the latest multisig information for a specific address at a
+  /// specific topoheight.
   Future<GetMultisigAtTopoheightResult> getMultisigAtTopoheight(
     GetMultisigAtTopoheightParams getMultisigAtTopoheightParams,
   ) => sendRequestAndDecode(
@@ -616,7 +617,8 @@ extension DaemonRpcMethodsExtension on DaemonClient {
     (result) => FeeRatesEstimated.fromJson(rpcJsonMap(result)),
   );
 
-  /// Retrieve the contract outputs that have occurred in the requested transaction hash.
+  /// Retrieve the contract outputs that have occurred in the requested
+  /// transaction hash.
   Future<List<RpcContractLog>> getContractLogs(
     GetContractLogsParams params,
   ) => sendRequestAndDecode(
