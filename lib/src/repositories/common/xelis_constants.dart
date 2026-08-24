@@ -88,7 +88,10 @@ final class RpcEventSubscription {
 
 String _eventSubscriptionIdentity(Object? value) {
   if (value == null) return 'null';
-  if (value is BigInt) return 'bigint:$value';
+  // BigInt request values that fit JSON's integer domain are decoded back as
+  // int by dart:convert. Treat both representations as the same subscription
+  // identity so filtered callbacks remain reachable on the response path.
+  if (value is BigInt || value is int) return 'integer:$value';
   if (value is String) return 'string:$value';
   if (value is bool) return 'bool:$value';
   if (value is num) return 'number:$value';
@@ -96,7 +99,10 @@ String _eventSubscriptionIdentity(Object? value) {
     return 'list:[${value.map(_eventSubscriptionIdentity).join(',')}]';
   }
   if (value is Map) {
-    final entries = value.entries.toList()
+    // Rust `Option` filters accept a missing request field but serialize the
+    // same value as an explicit null in event responses. Canonicalize both
+    // shapes to the same subscription identity.
+    final entries = value.entries.where((entry) => entry.value != null).toList()
       ..sort((left, right) => '${left.key}'.compareTo('${right.key}'));
     return 'map:{${entries.map((entry) {
       return '${_eventSubscriptionIdentity(entry.key)}:'

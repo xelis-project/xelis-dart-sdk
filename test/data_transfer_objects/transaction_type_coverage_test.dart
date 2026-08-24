@@ -389,8 +389,7 @@ _TransactionTypeCase _invokeContractCase() {
 _TransactionTypeCase _deployContractCase() {
   final builderRpcJson = <String, dynamic>{
     'deploy_contract': <String, dynamic>{
-      'module': '00ab',
-      'contract_version': 'v1',
+      'contract': '0100ab',
       'invoke': <String, dynamic>{
         'max_gas': BigInt.from(500),
         'deposits': <String, dynamic>{
@@ -418,8 +417,10 @@ _TransactionTypeCase _deployContractCase() {
   return (
     name: 'deploy_contract',
     builder: TransactionTypeBuilder.deployContract(
-      module: '00ab',
-      contractVersion: ContractVersion.v1,
+      contract: ContractModuleHex.fromModule(
+        module: '00ab',
+        version: ContractVersion.v1,
+      ),
       invoke: DeployContractInvokeBuilder(
         maxGas: BigInt.from(500),
         deposits: <String, ContractDepositBuilder>{
@@ -431,9 +432,12 @@ _TransactionTypeCase _deployContractCase() {
     payloadRpcJson: payloadRpcJson,
     rawPayloadJson: payloadRpcJson,
     builderMatcher: isA<DeployContractBuilder>().having(
-      (builder) => builder.module,
-      'module',
-      '00ab',
+      (builder) => builder.contract,
+      'contract',
+      ContractModuleHex.fromModule(
+        module: '00ab',
+        version: ContractVersion.v1,
+      ),
     ),
     payloadMatcher: isA<DeployContractPayload>().having(
       (payload) => payload.version,

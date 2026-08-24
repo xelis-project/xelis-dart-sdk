@@ -192,13 +192,12 @@ void main() {
 
     test('uses Rust builder defaults for deploy contracts', () {
       final builder = TransactionTypeBuilder.deployContract(
-        module: '00ab',
+        contract: ContractModuleHex.fromModule(module: '00ab'),
       );
 
       expect(builder.toRpcJson(), {
         'deploy_contract': {
-          'module': '00ab',
-          'contract_version': 'v0',
+          'contract': '0000ab',
           'invoke': null,
         },
       });

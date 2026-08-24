@@ -1,3 +1,4 @@
+
 {
   "$defs": {
     "Address": {
@@ -516,6 +517,21 @@
       ],
       "type": "object"
     },
+    "ContractModule": {
+      "properties": {
+        "module": {
+          "$ref": "#/$defs/Module"
+        },
+        "version": {
+          "$ref": "#/$defs/ContractVersion"
+        }
+      },
+      "required": [
+        "version",
+        "module"
+      ],
+      "type": "object"
+    },
     "ContractVersion": {
       "enum": [
         "v0",
@@ -598,9 +614,8 @@
     },
     "DeployContractBuilder": {
       "properties": {
-        "contract_version": {
-          "$ref": "#/$defs/ContractVersion",
-          "default": "v0"
+        "contract": {
+          "$ref": "#/$defs/Hexable%3CContractModule%3E"
         },
         "invoke": {
           "anyOf": [
@@ -611,13 +626,10 @@
               "type": "null"
             }
           ]
-        },
-        "module": {
-          "type": "string"
         }
       },
       "required": [
-        "module"
+        "contract"
       ],
       "type": "object"
     },
@@ -627,7 +639,8 @@
           "additionalProperties": {
             "$ref": "#/$defs/ContractDepositBuilder"
           },
-          "default": {},
+          "default": {
+          },
           "type": "object"
         },
         "max_gas": {
@@ -802,7 +815,10 @@
     "Hash": {
       "type": "string"
     },
-    "Hexable": {
+    "Hexable<ContractModule>": {
+      "$ref": "#/$defs/ContractModule"
+    },
+    "Hexable<UnsignedTransaction>": {
       "$ref": "#/$defs/UnsignedTransaction"
     },
     "HumanReadableProof": {
@@ -877,7 +893,8 @@
           "additionalProperties": {
             "$ref": "#/$defs/ContractDepositBuilder"
           },
-          "default": {},
+          "default": {
+          },
           "type": "object"
         },
         "entry_id": {
@@ -990,14 +1007,16 @@
     "Module": {
       "properties": {
         "chunks": {
-          "default": [],
+          "default": [
+          ],
           "items": {
             "$ref": "#/$defs/ModuleChunk"
           },
           "type": "array"
         },
         "constants": {
-          "default": [],
+          "default": [
+          ],
           "items": {
             "$ref": "#/$defs/ValueCell"
           },
@@ -1006,7 +1025,8 @@
         },
         "hook_chunk_ids": {
           "additionalProperties": false,
-          "default": [],
+          "default": [
+          ],
           "patternProperties": {
             "^\\d+$": {
               "format": "uint",
@@ -1190,6 +1210,23 @@
         "Testnet",
         "Stagenet",
         "Devnet"
+      ],
+      "type": "string"
+    },
+    "NotifyEvent": {
+      "enum": [
+        "new_topo_height",
+        "new_asset",
+        "new_transaction",
+        "balance_changed",
+        "rescan",
+        "history_synced",
+        "online",
+        "offline",
+        "sync_error",
+        "track_asset",
+        "untrack_asset",
+        "new_pending_transaction"
       ],
       "type": "string"
     },
@@ -3514,7 +3551,8 @@
               ]
             },
             "signers": {
-              "default": [],
+              "default": [
+              ],
               "items": {
                 "$ref": "#/$defs/SignerId"
               },
@@ -3751,7 +3789,8 @@
               "$ref": "#/$defs/Reference"
             },
             "signers": {
-              "default": [],
+              "default": [
+              ],
               "items": {
                 "$ref": "#/$defs/SignerId"
               },
@@ -4479,7 +4518,8 @@
               "type": "boolean"
             },
             "signatures": {
-              "default": [],
+              "default": [
+              ],
               "items": {
                 "$ref": "#/$defs/SignatureId"
               },
@@ -4490,7 +4530,7 @@
               "type": "boolean"
             },
             "unsigned": {
-              "$ref": "#/$defs/Hexable"
+              "$ref": "#/$defs/Hexable%3CUnsignedTransaction%3E"
             }
           },
           "required": [
@@ -6002,6 +6042,25 @@
       }
     },
     {
+      "name": "subscribe",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "notify": {
+              "$ref": "#/$defs/NotifyEvent"
+            }
+          },
+          "required": [
+            "notify"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "type": "boolean"
+        }
+      }
+    },
+    {
       "name": "track_asset",
       "schema": {
         "params_schema": {
@@ -6012,6 +6071,25 @@
           },
           "required": [
             "asset"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "type": "boolean"
+        }
+      }
+    },
+    {
+      "name": "unsubscribe",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "notify": {
+              "$ref": "#/$defs/NotifyEvent"
+            }
+          },
+          "required": [
+            "notify"
           ],
           "type": "object"
         },

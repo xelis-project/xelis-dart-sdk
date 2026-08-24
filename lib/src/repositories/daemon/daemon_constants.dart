@@ -49,7 +49,7 @@ enum DaemonMethod implements XelisJsonKey {
 
   /// Get up-to-date asset's balance for a specific address.
   ///
-  /// https://github.com/xelis-project/xelis-blockchain/blob/v1.24.0/API.md#method-get_stable_balance
+  /// https://github.com/xelis-project/xelis-blockchain/blob/dev/API.md#method-get_stable_balance
   getStableBalance('get_stable_balance'),
 
   /// Get asset's balance from address at exact topoheight.
@@ -202,6 +202,9 @@ enum DaemonMethod implements XelisJsonKey {
 
   /// Retrieve the contract data with the requested key.
   getContractData('get_contract_data'),
+
+  /// Verify whether the requested contract data key exists.
+  hasContractData('has_contract_data'),
   getAssetSupply('get_asset_supply'),
   getAssetSupplyAtTopoheight('get_asset_supply_at_topoheight'),
   getBalancesAtMaximumTopoheight('get_balances_at_maximum_topoheight'),

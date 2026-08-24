@@ -15,8 +15,8 @@ void main() {
     expect(target.walletSchema, isNotEmpty);
     expect(target.schemaMetadata, isNotEmpty);
     expect(target.daemonIntegration.isSupported, isTrue);
-    expect(target.walletIntegration.status, IntegrationComponentStatus.blocked);
-    expect(target.walletIntegration.reason, isNotEmpty);
+    expect(target.walletIntegration.isSupported, isTrue);
+    expect(target.walletIntegration.reason, isNull);
     expect(target.upstreamReference, contains(target.commit));
   });
 

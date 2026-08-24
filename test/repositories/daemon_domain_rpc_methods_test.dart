@@ -171,7 +171,19 @@ void main() {
         'params': [_u8(1)],
         'max_gas': 1000,
         'kind': {'topo_height': 20},
-        'gas_sources': <String, Object?>{},
+        'gas_sources': [
+          {
+            'key': {'type': 'contract', 'value': 'contract'},
+            'value': 750,
+          },
+          {
+            'key': {
+              'type': 'account_balance',
+              'value': List<int>.filled(32, 7),
+            },
+            'value': 250,
+          },
+        ],
       },
     ];
 
@@ -185,6 +197,24 @@ void main() {
     expect(registered.single.executionTopoheight, BigInt.from(12));
     expect(scheduled.single.kind, isA<RpcTopoheightScheduledExecution>());
     expect(scheduled.single.maxGas, BigInt.from(1000));
+    expect(scheduled.single.gasSources.first.key, isA<RpcContractGasSource>());
+    expect(scheduled.single.gasSources.first.value, BigInt.from(750));
+    expect(
+      scheduled.single.gasSources.last.key,
+      isA<RpcAccountBalanceGasSource>(),
+    );
+  });
+
+  test('checks contract data existence with a typed ValueCell key', () async {
+    client.responses[DaemonMethod.hasContractData.jsonKey] = true;
+    final key = RpcValueCell.fromJson(_u8(4));
+
+    final exists = await client.hasContractData(
+      GetContractDataParams(contractHash: 'contract', key: key),
+    );
+
+    expect(exists, isTrue);
+    expect(client.lastParams, {'contract': 'contract', 'key': _u8(4)});
   });
 
   test('sends complete contract transaction pagination', () async {

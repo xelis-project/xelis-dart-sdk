@@ -2,7 +2,7 @@ import 'package:test/test.dart';
 import 'package:xelis_dart_sdk/xelis_dart_sdk.dart';
 
 void main() {
-  group('RPC models aligned with Rust v1.24.0', () {
+  group('RPC models aligned with the pinned Rust contracts', () {
     test('known daemon fields are typed instead of captured as extras', () {
       final u64Max = BigInt.parse('18446744073709551615');
       final u256Max = BigInt.parse(

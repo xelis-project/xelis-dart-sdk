@@ -1,3 +1,4 @@
+
 {
   "$defs": {
     "AccountHistoryEntry": {
@@ -979,6 +980,23 @@
         }
       ]
     },
+    "GasSourceEntry": {
+      "properties": {
+        "key": {
+          "$ref": "#/$defs/Source"
+        },
+        "value": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "key",
+        "value"
+      ],
+      "type": "object"
+    },
     "GetTransactionResult": {
       "properties": {
         "blocks": {
@@ -1134,7 +1152,7 @@
     "Hash": {
       "type": "string"
     },
-    "Immutable": {
+    "Immutable<Hash>": {
       "anyOf": [
         {
           "$ref": "#/$defs/Hash"
@@ -1243,7 +1261,7 @@
       ],
       "type": "object"
     },
-    "KV": {
+    "KV<ContractTransfersEntryKey, ContractTransfersEntry>": {
       "properties": {
         "key": {
           "$ref": "#/$defs/ContractTransfersEntryKey"
@@ -1338,14 +1356,16 @@
     "Module": {
       "properties": {
         "chunks": {
-          "default": [],
+          "default": [
+          ],
           "items": {
             "$ref": "#/$defs/ModuleChunk"
           },
           "type": "array"
         },
         "constants": {
-          "default": [],
+          "default": [
+          ],
           "items": {
             "$ref": "#/$defs/ValueCell"
           },
@@ -1354,7 +1374,8 @@
         },
         "hook_chunk_ids": {
           "additionalProperties": false,
-          "default": [],
+          "default": [
+          ],
           "patternProperties": {
             "^\\d+$": {
               "format": "uint",
@@ -1556,6 +1577,100 @@
         "Devnet"
       ],
       "type": "string"
+    },
+    "NotifyEvent": {
+      "oneOf": [
+        {
+          "enum": [
+            "new_topo_height",
+            "new_block",
+            "block_ordered",
+            "block_orphaned",
+            "stable_height_changed",
+            "stable_topo_height_changed",
+            "transaction_orphaned",
+            "transaction_added_in_mempool",
+            "transaction_executed",
+            "contract_deploy",
+            "new_asset",
+            "peer_connected",
+            "peer_disconnected",
+            "peer_peer_list_updated",
+            "peer_state_updated",
+            "peer_peer_disconnected",
+            "new_block_template"
+          ],
+          "type": "string"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "contract_invoke": {
+              "properties": {
+                "contract": {
+                  "$ref": "#/$defs/Hash"
+                }
+              },
+              "required": [
+                "contract"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "contract_invoke"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "contract_transfers": {
+              "properties": {
+                "address": {
+                  "$ref": "#/$defs/Address"
+                }
+              },
+              "required": [
+                "address"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "contract_transfers"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "contract_event": {
+              "properties": {
+                "contract": {
+                  "$ref": "#/$defs/Hash"
+                },
+                "id": {
+                  "format": "uint64",
+                  "minimum": 0,
+                  "type": [
+                    "integer",
+                    "null"
+                  ]
+                }
+              },
+              "required": [
+                "contract"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "contract_event"
+          ],
+          "type": "object"
+        }
+      ]
     },
     "NumberType": {
       "enum": [
@@ -2114,7 +2229,8 @@
           "type": "integer"
         },
         "transactions": {
-          "default": [],
+          "default": [
+          ],
           "items": {
             "$ref": "#/$defs/RPCTransaction"
           },
@@ -2777,7 +2893,7 @@
       ],
       "type": "object"
     },
-    "RPCVersioned": {
+    "RPCVersioned<VersionedBalance>": {
       "properties": {
         "balance_type": {
           "$ref": "#/$defs/BalanceType"
@@ -2902,12 +3018,10 @@
           "$ref": "#/$defs/Hash"
         },
         "gas_sources": {
-          "additionalProperties": {
-            "format": "uint64",
-            "minimum": 0,
-            "type": "integer"
+          "items": {
+            "$ref": "#/$defs/GasSourceEntry"
           },
-          "type": "object"
+          "type": "array"
         },
         "hash": {
           "$ref": "#/$defs/Hash"
@@ -3053,6 +3167,74 @@
         "signature"
       ],
       "type": "object"
+    },
+    "Source": {
+      "oneOf": [
+        {
+          "properties": {
+            "type": {
+              "const": "contract",
+              "type": "string"
+            },
+            "value": {
+              "$ref": "#/$defs/Hash"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "account",
+              "type": "string"
+            },
+            "value": {
+              "$ref": "#/$defs/CompressedPublicKey"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "contract_balance",
+              "type": "string"
+            },
+            "value": {
+              "$ref": "#/$defs/Hash"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "account_balance",
+              "type": "string"
+            },
+            "value": {
+              "$ref": "#/$defs/CompressedPublicKey"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "type": "object"
+        }
+      ]
     },
     "SourceCommitment": {
       "properties": {
@@ -4162,7 +4344,7 @@
           "items": {
             "anyOf": [
               {
-                "$ref": "#/$defs/RPCVersioned"
+                "$ref": "#/$defs/RPCVersioned%3CVersionedBalance%3E"
               },
               {
                 "type": "null"
@@ -4276,7 +4458,8 @@
               "type": "integer"
             },
             "transactions": {
-              "default": [],
+              "default": [
+              ],
               "items": {
                 "$ref": "#/$defs/RPCTransaction"
               },
@@ -4448,7 +4631,8 @@
               "type": "integer"
             },
             "transactions": {
-              "default": [],
+              "default": [
+              ],
               "items": {
                 "$ref": "#/$defs/RPCTransaction"
               },
@@ -5415,7 +5599,7 @@
           "properties": {
             "executions": {
               "items": {
-                "$ref": "#/$defs/KV"
+                "$ref": "#/$defs/KV%3CContractTransfersEntryKey,%20ContractTransfersEntry%3E"
               },
               "type": "array"
             }
@@ -6360,7 +6544,8 @@
               "type": "integer"
             },
             "transactions": {
-              "default": [],
+              "default": [
+              ],
               "items": {
                 "$ref": "#/$defs/RPCTransaction"
               },
@@ -6701,6 +6886,29 @@
       }
     },
     {
+      "name": "has_contract_data",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "contract": {
+              "$ref": "#/$defs/Hash"
+            },
+            "key": {
+              "$ref": "#/$defs/ValueCell"
+            }
+          },
+          "required": [
+            "contract",
+            "key"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "type": "boolean"
+        }
+      }
+    },
+    {
       "name": "has_multisig",
       "schema": {
         "params_schema": {
@@ -7008,7 +7216,7 @@
             },
             "txs": {
               "items": {
-                "$ref": "#/$defs/Immutable"
+                "$ref": "#/$defs/Immutable%3CHash%3E"
               },
               "type": "array"
             }
@@ -7192,6 +7400,44 @@
           },
           "required": [
             "data"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "type": "boolean"
+        }
+      }
+    },
+    {
+      "name": "subscribe",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "notify": {
+              "$ref": "#/$defs/NotifyEvent"
+            }
+          },
+          "required": [
+            "notify"
+          ],
+          "type": "object"
+        },
+        "returns_schema": {
+          "type": "boolean"
+        }
+      }
+    },
+    {
+      "name": "unsubscribe",
+      "schema": {
+        "params_schema": {
+          "properties": {
+            "notify": {
+              "$ref": "#/$defs/NotifyEvent"
+            }
+          },
+          "required": [
+            "notify"
           ],
           "type": "object"
         },

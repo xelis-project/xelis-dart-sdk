@@ -251,14 +251,45 @@ Future<void> mineBlocks(
   }
 }
 
-Future<String> publicKey(DaemonClient daemon, String address) async {
-  final result = await daemon.extractKeyFromAddress(
-    ExtractKeyFromAddressParams(address: address, asHex: true),
+/// Mines a block, then advances the chain until that exact topoheight is
+/// stable.
+Future<BigInt> mineUntilStable(
+  DaemonClient daemon,
+  String address, {
+  int maximumAdditionalBlocks = 512,
+}) async {
+  await mineBlocks(daemon, address, 1);
+  final targetTopoheight = await daemon.getTopoheight();
+  for (var mined = 0; mined <= maximumAdditionalBlocks; mined++) {
+    if (await daemon.getStableTopoheight() >= targetTopoheight) {
+      return targetTopoheight;
+    }
+    if (mined == maximumAdditionalBlocks) break;
+    await mineBlocks(daemon, address, 1);
+  }
+  throw StateError(
+    'Topoheight $targetTopoheight did not become stable after '
+    '$maximumAdditionalBlocks additional blocks.',
   );
-  return switch (result) {
-    ExtractKeyHexResult(:final value) => value,
-    _ => throw StateError('Daemon did not return a hexadecimal public key.'),
-  };
+}
+
+Future<void> waitForWalletsAtDaemonTopoheight(
+  DaemonClient daemon,
+  Iterable<WalletClient> wallets,
+) async {
+  final daemonTopoheight = await daemon.getTopoheight();
+  await waitUntil(
+    () async {
+      final walletTopoheights = await Future.wait(
+        wallets.map((wallet) => wallet.getTopoheight()),
+      );
+      return walletTopoheights.every(
+        (topoheight) => topoheight >= daemonTopoheight,
+      );
+    },
+    description:
+        'wallet synchronization at daemon topoheight $daemonTopoheight',
+  );
 }
 
 Future<void> waitUntil(
@@ -280,7 +311,54 @@ Set<String> snapshotMethods(String path) {
   return (json['methods'] as List<dynamic>)
       .cast<Map<String, dynamic>>()
       .map((method) => method['name'] as String)
+      .where((name) => name != 'subscribe' && name != 'unsubscribe')
       .toSet();
+}
+
+Future<void> expectLiveSchemaMatchesSnapshot(
+  RpcClientRepository client,
+  String snapshotPath,
+) async {
+  final expected = parseBigIntJson(File(snapshotPath).readAsStringSync());
+  final live = (await client.raw.call('schema')).toJson();
+  expect(
+    _normalizeRpcSchema(live, parentKey: null),
+    _normalizeRpcSchema(expected, parentKey: null),
+  );
+}
+
+Object? _normalizeRpcSchema(Object? value, {required String? parentKey}) {
+  if (value is List) {
+    final normalized = value
+        .map((item) => _normalizeRpcSchema(item, parentKey: parentKey))
+        .toList(growable: false);
+    if (parentKey == 'methods') {
+      normalized.sort(
+        (left, right) => ((left! as Map)['name']! as String).compareTo(
+          (right! as Map)['name']! as String,
+        ),
+      );
+    }
+    return normalized;
+  }
+  if (value is! Map) return value;
+  final entries =
+      value.entries
+          .where(
+            (entry) =>
+                entry.key != 'description' &&
+                entry.key != 'notes' &&
+                entry.key != 'title',
+          )
+          .map(
+            (entry) => MapEntry(
+              entry.key as String,
+              _normalizeRpcSchema(entry.value, parentKey: entry.key as String),
+            ),
+          )
+          .toList()
+        ..sort((left, right) => left.key.compareTo(right.key));
+  return Map<String, Object?>.fromEntries(entries);
 }
 
 Set<String> rpcMethods(RpcCapabilities capabilities) => capabilities

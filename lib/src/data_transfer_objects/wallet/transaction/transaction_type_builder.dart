@@ -3,8 +3,8 @@ import 'package:xelis_dart_sdk/src/contract/xvm_serializer.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/contract/data_element.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/contract/rpc_value_cell.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/wallet/transaction/contract_deposit_builder.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/wallet/transaction/contract_module_hex.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/wallet/transaction/deploy_contract_invoke_builder.dart';
-import 'package:xelis_dart_sdk/src/data_transfer_objects/wallet/transaction/contract_version.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/wallet/transaction/inter_contract_permission.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/wallet/transaction/transfer_builder.dart';
 import 'package:xelis_dart_sdk/src/utils/rpc_json.dart';
@@ -62,10 +62,12 @@ sealed class TransactionTypeBuilder with _$TransactionTypeBuilder {
   /// @nodoc
   @JsonSerializable(explicitToJson: true)
   const factory TransactionTypeBuilder.deployContract({
-    @JsonKey(name: 'module') required String module,
-    @JsonKey(name: 'contract_version')
-    @Default(ContractVersion.v0)
-    ContractVersion contractVersion,
+    @JsonKey(
+      name: 'contract',
+      fromJson: ContractModuleHex.fromJson,
+      toJson: _contractModuleHexToJson,
+    )
+    required ContractModuleHex contract,
     @JsonKey(name: 'invoke') DeployContractInvokeBuilder? invoke,
   }) = DeployContractBuilder;
 
@@ -109,6 +111,8 @@ sealed class TransactionTypeBuilder with _$TransactionTypeBuilder {
 }
 
 Object? _dataElementToJson(DataElement value) => value.toJson();
+
+String _contractModuleHexToJson(ContractModuleHex value) => value.toJson();
 
 /// @nodoc
 Map<String, dynamic> _prepareRpcJson(Map<String, dynamic> json) {

@@ -206,7 +206,7 @@ extension DaemonRpcMethodsExtension on DaemonClient {
 
   /// Get up-to-date asset's balance for a specific address.
   ///
-  /// https://github.com/xelis-project/xelis-blockchain/blob/v1.24.0/API.md#method-get_stable_balance
+  /// https://github.com/xelis-project/xelis-blockchain/blob/dev/API.md#method-get_stable_balance
   Future<GetStableBalanceResult> getStableBalance(
     GetBalanceParams getBalanceParams,
   ) => sendRequestAndDecode(
@@ -644,4 +644,12 @@ extension DaemonRpcMethodsExtension on DaemonClient {
     (result) => GetContractDataResult.fromJson(rpcJsonMap(result)),
     getContractDataParams.toJson(),
   );
+
+  /// Verify whether a contract has data stored for the requested key.
+  Future<bool> hasContractData(GetContractDataParams params) =>
+      sendRequestAndDecode(
+        DaemonMethod.hasContractData,
+        (result) => result as bool,
+        params.toJson(),
+      );
 }

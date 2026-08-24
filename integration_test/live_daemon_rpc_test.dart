@@ -35,6 +35,7 @@ void main() {
     test(
       'daemon_health',
       () => scenarios.run('daemon_health', () async {
+        await expectLiveSchemaMatchesSnapshot(daemon, target.daemonSchema);
         final capabilities = await daemon.getCapabilities();
         expect(capabilities.serverVersion, contains(target.serverVersion));
         expect(rpcMethods(capabilities), snapshotMethods(target.daemonSchema));
@@ -70,9 +71,48 @@ void main() {
         expect(await reconnecting.getVersion(), contains(target.serverVersion));
         reconnecting.disconnect();
         await connectRpc(reconnecting);
+        final reconnectedEvent = Completer<BigInt>();
+        reconnecting.registerCallback(
+          DaemonEvent.newTopoheight,
+          (BigInt value) {
+            if (!reconnectedEvent.isCompleted) {
+              reconnectedEvent.complete(value);
+            }
+          },
+        );
         await reconnecting.subscribeTo(DaemonEvent.newTopoheight);
+        await mineBlocks(daemon, configuration.miningAddress, 1);
+        expect(
+          await reconnectedEvent.future.timeout(const Duration(seconds: 30)),
+          greaterThanOrEqualTo(BigInt.zero),
+        );
         await reconnecting.unsubscribeFrom(DaemonEvent.newTopoheight);
         reconnecting.disconnect();
+      }),
+    );
+
+    test(
+      'daemon_error_contracts',
+      () => scenarios.run('daemon_error_contracts', () async {
+        await expectLater(
+          daemon.raw.call('integration_method_that_does_not_exist'),
+          throwsA(isA<RpcRemoteException>()),
+        );
+        await expectLater(
+          daemon.raw.call(
+            'get_block_at_topoheight',
+            params: const RpcJsonValue.object({}),
+          ),
+          throwsA(isA<RpcRemoteException>()),
+        );
+        final disconnected = DaemonClient(
+          endPoint: configuration.daemon.endpoint,
+          secureWebSocket: configuration.daemon.secureWebSocket,
+        );
+        await expectLater(
+          disconnected.getVersion(),
+          throwsA(isA<RpcConnectionException>()),
+        );
       }),
     );
 
@@ -108,10 +148,27 @@ void main() {
           await client.subscribeTo(DaemonEvent.newTopoheight);
           client.disconnect();
           await connectRpc(client);
+          final event = Completer<BigInt>();
+          client.registerCallback(DaemonEvent.newTopoheight, (BigInt value) {
+            if (!event.isCompleted) event.complete(value);
+          });
           await client.subscribeTo(DaemonEvent.newTopoheight);
+          await mineBlocks(daemon, configuration.miningAddress, 1);
+          await event.future.timeout(const Duration(seconds: 30));
           await client.unsubscribeFrom(DaemonEvent.newTopoheight);
           expect(await client.getVersion(), contains(target.serverVersion));
           client.disconnect();
+        }),
+      );
+
+      test(
+        'concurrent_requests',
+        () => scenarios.run('concurrent_requests', () async {
+          final expected = await daemon.getTopoheight();
+          final results = await Future.wait(
+            List<Future<BigInt>>.generate(100, (_) => daemon.getTopoheight()),
+          );
+          expect(results, everyElement(expected));
         }),
       );
     }

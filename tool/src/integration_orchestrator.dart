@@ -159,6 +159,8 @@ final class IntegrationOrchestrator {
     }
 
     final processes = <ManagedProcess>[];
+    final walletProcesses = <_WalletProcess>[];
+    final temporaryFiles = <File>[];
     File? generatedConfig;
     final scenarioReport = File('${runDirectory.path}/scenarios.json');
     var testsPassed = false;
@@ -171,6 +173,8 @@ final class IntegrationOrchestrator {
               options,
               runDirectory: runDirectory,
               processes: processes,
+              walletProcesses: walletProcesses,
+              temporaryFiles: temporaryFiles,
             )
           : File(options.connectConfig!).absolute;
       if (!config.existsSync()) {
@@ -185,6 +189,15 @@ final class IntegrationOrchestrator {
         scenarioReport: scenarioReport,
         stress: suiteStress,
       );
+      if (suite == IntegrationSuite.wallet && options.connectConfig == null) {
+        await _restartWalletAndVerifyPersistence(
+          walletProcesses.single,
+          config: config,
+          scenarioReport: scenarioReport,
+          runDirectory: runDirectory,
+          processes: processes,
+        );
+      }
       scenarios = validateScenarioReport(
         scenarioReport,
         suite: suite,
@@ -203,6 +216,14 @@ final class IntegrationOrchestrator {
       }
     }
     failures.addAll(await stopProcesses(processes.reversed));
+    for (final file in temporaryFiles) {
+      if (!file.existsSync()) continue;
+      try {
+        file.deleteSync();
+      } on Object catch (error) {
+        failures.add(error);
+      }
+    }
     if (scenarios == null && scenarioReport.existsSync()) {
       try {
         scenarios = validateScenarioReport(
@@ -246,6 +267,8 @@ final class IntegrationOrchestrator {
     IntegrationOptions options, {
     required Directory runDirectory,
     required List<ManagedProcess> processes,
+    required List<_WalletProcess> walletProcesses,
+    required List<File> temporaryFiles,
   }) async {
     final daemonBinary = await _resolveArtifact(
       component: 'daemon',
@@ -290,18 +313,16 @@ final class IntegrationOrchestrator {
           runDirectory: runDirectory,
         );
         processes.add(wallet.process);
-        try {
-          await waitForRpc(
-            endpoint: wallet.configuration['endpoint']! as String,
-            username: wallet.configuration['username']! as String,
-            password: wallet.configuration['password']! as String,
-            expectedVersion: target.serverVersion,
-            expectedNetwork: 'devnet',
-            timeout: const Duration(minutes: 5),
-          );
-        } finally {
-          if (wallet.configFile.existsSync()) wallet.configFile.deleteSync();
-        }
+        walletProcesses.add(wallet);
+        temporaryFiles.add(wallet.configFile);
+        await waitForRpc(
+          endpoint: wallet.configuration['endpoint']! as String,
+          username: wallet.configuration['username']! as String,
+          password: wallet.configuration['password']! as String,
+          expectedVersion: target.serverVersion,
+          expectedNetwork: 'devnet',
+          timeout: const Duration(minutes: 5),
+        );
         wallets.add(wallet.configuration);
       }
     }
@@ -467,10 +488,11 @@ final class IntegrationOrchestrator {
     config.writeAsStringSync(
       const JsonEncoder.withIndent('  ').convert({
         'rpc': {
-          'rpc_bind_address': endpoint,
-          'rpc_username': username,
-          'rpc_password': password,
-          'rpc_threads': 1,
+          'bind_address': endpoint,
+          'username': username,
+          'password': password,
+          'threads': 1,
+          'notify_events_concurrency': 1,
         },
         'network_handler': {
           'daemon_address': 'http://$daemonEndpoint',
@@ -501,6 +523,8 @@ final class IntegrationOrchestrator {
         logFile: File('${runDirectory.path}/wallet-$index.log'),
       );
       return _WalletProcess(
+        index: index,
+        binary: binary,
         process: process,
         configFile: config,
         configuration: {
@@ -514,6 +538,46 @@ final class IntegrationOrchestrator {
       if (config.existsSync()) config.deleteSync();
       rethrow;
     }
+  }
+
+  Future<void> _restartWalletAndVerifyPersistence(
+    _WalletProcess wallet, {
+    required File config,
+    required File scenarioReport,
+    required Directory runDirectory,
+    required List<ManagedProcess> processes,
+  }) async {
+    final previousProcess = wallet.process;
+    await previousProcess.stop();
+    processes.remove(previousProcess);
+
+    final restarted = await ManagedProcess.start(
+      wallet.binary,
+      ['--config-file', wallet.configFile.path],
+      logFile: File(
+        '${runDirectory.path}/wallet-${wallet.index}-restart.log',
+      ),
+    );
+    wallet.process = restarted;
+    processes.add(restarted);
+    await waitForRpc(
+      endpoint: wallet.configuration['endpoint']! as String,
+      username: wallet.configuration['username']! as String,
+      password: wallet.configuration['password']! as String,
+      expectedVersion: target.serverVersion,
+      expectedNetwork: 'devnet',
+      timeout: const Duration(minutes: 5),
+    );
+    await runChecked(
+      Platform.resolvedExecutable,
+      ['test', 'integration_test/live_wallet_restart_rpc_test.dart'],
+      environment: {
+        'XELIS_INTEGRATION_CONFIG': config.path,
+        'XELIS_SCENARIO_REPORT': scenarioReport.path,
+        'XELIS_INTEGRATION_REQUIRED': 'true',
+      },
+      label: 'Verify wallet persistence after process restart',
+    );
   }
 
   Future<void> _runTests(
@@ -849,13 +913,17 @@ final class _DaemonProcess {
 }
 
 final class _WalletProcess {
-  const _WalletProcess({
+  _WalletProcess({
+    required this.index,
+    required this.binary,
     required this.process,
     required this.configFile,
     required this.configuration,
   });
 
-  final ManagedProcess process;
+  final int index;
+  final String binary;
+  ManagedProcess process;
   final File configFile;
   final Map<String, Object?> configuration;
 }

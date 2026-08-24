@@ -9,6 +9,7 @@ dart run tool/verify.dart integration wallet
 dart run tool/verify.dart integration e2e
 dart run tool/verify.dart integration all
 dart run tool/verify.dart integration daemon --stress
+dart run tool/verify.dart integration all --stress
 ```
 
 `daemon` builds and starts only the daemon. `wallet` tests one wallet while a
@@ -39,12 +40,18 @@ to `supported`, refresh the pinned schemas, then run wallet, E2E and all.
 | --- | --- | --- |
 | `daemon_health` | daemon | Version, network, schema, capabilities and essential chain reads |
 | `daemon_subscription_lifecycle` | daemon | Subscription, received event, unsubscribe, reconnect and resubscribe |
+| `daemon_error_contracts` | daemon | Remote invalid-method/parameter errors and disconnected calls |
 | `wallet_health` | wallet | Version, network, schema, address, balance and event protocol |
+| `wallet_authentication_errors` | wallet | Missing and invalid HTTP Basic authentication |
+| `wallet_state_and_storage` | wallet | Integrated addresses, signatures, online/offline mode and storage across a process restart |
+| `wallet_error_contracts` | wallet | Remote invalid-method and invalid-parameter errors |
 | `transfer_lifecycle` | e2e | Funding, pending event, transfer, mining, confirmation and destination balance |
-| `contract_deployment` | e2e | Fixture hash, deployment, confirmation, contract listing and module readback |
-| `multisig_configuration` | e2e | Participant keys, configuration transaction and state readback |
+| `wallet_transaction_building` | e2e | Fee estimation, unsigned/finalize, offline build, integrated blob and burn transactions |
+| `contract_deployment` | e2e | Fixture verification, deployment, invocation, filtered/unfiltered RPC events, scheduled execution, logs, storage and readback |
+| `multisig_configuration` | e2e | Threshold-2 configuration, participant signatures, finalization, broadcast and spend |
 | `event_burst` | daemon stress | A burst of topoheight events without duplicates |
 | `reconnection_stress` | daemon stress | Disconnect, reconnect, real resubscription and a subsequent request |
+| `concurrent_requests` | daemon stress | 100 parallel requests with correct response correlation and no loss |
 
 The executable scenario catalog is `integration_test/scenario_catalog.dart`.
 Scenario reports use `pending`, `running`, `passed`, `failed`, `blocked` and
@@ -60,4 +67,6 @@ rejected for the daemon-only suite.
 `--connect <configuration.json>` runs a selected suite against externally
 managed processes. Format 2 contains `targetManifest`, `daemon`, `wallets`,
 `miningAddress` and, for E2E, `contractFixture`. Credentials must not be
-committed or passed on the command line.
+committed or passed on the command line. The wallet process-restart assertion
+is available when the orchestrator owns the process; external processes are
+left untouched in `--connect` mode.

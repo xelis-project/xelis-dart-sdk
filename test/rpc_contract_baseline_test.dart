@@ -67,6 +67,8 @@ void main() {
 
     final expectedDaemon = {
       'schema',
+      'subscribe',
+      'unsubscribe',
       'batch_limit',
       'get_stableheight',
       'clear_caches',
@@ -76,6 +78,8 @@ void main() {
     };
     final expectedWallet = {
       'schema',
+      'subscribe',
+      'unsubscribe',
       'batch_limit',
       ...WalletMethod.values.map((method) => method.jsonKey),
     };
@@ -90,14 +94,10 @@ void main() {
         definitions['DeployContractBuilder']! as Map<String, dynamic>;
     final deployProperties = deploy['properties']! as Map<String, dynamic>;
 
-    expect(deploy['required'], ['module']);
+    expect(deploy['required'], ['contract']);
     expect(
       deployProperties.keys,
-      unorderedEquals(['module', 'contract_version', 'invoke']),
-    );
-    expect(
-      (deployProperties['contract_version'] as Map)['default'],
-      'v0',
+      unorderedEquals(['contract', 'invoke']),
     );
     expect(definitions['PlaintextFlag'], {
       'enum': ['private', 'public', 'proprietary', 'failed'],

@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/contract/rpc_value_cell.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/core/rpc_extra_fields.dart';
-import 'package:xelis_dart_sdk/src/data_transfer_objects/core/rpc_json_value.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/daemon/contract/rpc_gas_source.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/daemon/contract/rpc_scheduled_execution_kind.dart';
 import 'package:xelis_dart_sdk/src/utils/rpc_json.dart';
 
@@ -17,7 +17,7 @@ abstract class RpcScheduledExecution with _$RpcScheduledExecution {
     required List<RpcValueCell> params,
     required BigInt maxGas,
     required RpcScheduledExecutionKind kind,
-    required RpcJsonValue gasSources,
+    required List<RpcGasSourceEntry> gasSources,
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = _RpcScheduledExecution;
 
@@ -41,7 +41,11 @@ abstract class RpcScheduledExecution with _$RpcScheduledExecution {
       ).map(RpcValueCell.fromJson).toList(growable: false),
       maxGas: rpcBigInt(map['max_gas'], method: method),
       kind: RpcScheduledExecutionKind.fromJson(map['kind']),
-      gasSources: RpcJsonValue.fromJson(map['gas_sources']),
+      gasSources: rpcList(
+        map['gas_sources'],
+        method: method,
+        path: r'$.gas_sources',
+      ).map(RpcGasSourceEntry.fromJson).toList(growable: false),
       extraFields: RpcExtraFields.capture(map, const {
         'hash',
         'contract',

@@ -1,11 +1,11 @@
 {
   "format": 1,
-  "channel": "stable",
+  "channel": "dev",
   "upstream": {
     "repository": "xelis-project/xelis-blockchain",
-    "ref": "v1.24.0",
-    "commit": "e8d7625a05ced6f9144d6abc9ecc278b8cab661c",
-    "serverVersion": "1.24.0"
+    "ref": "dev",
+    "commit": "d6c8852bd9e186c233d747e9e2f4bf80ada0ab47",
+    "serverVersion": "1.25.0"
   },
   "schemas": {
     "daemon": "test/fixtures/rpc_schema/daemon.json",
@@ -18,8 +18,7 @@
         "status": "supported"
       },
       "wallet": {
-        "status": "blocked",
-        "reason": "The wallet RPC server in v1.24.0 cannot serve the live RPC integration suite."
+        "status": "supported"
       }
     }
   },

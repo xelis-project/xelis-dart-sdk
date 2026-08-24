@@ -1,12 +1,12 @@
-/// Contract execution environment supported by `xelis-blockchain v1.24.0`.
+/// Contract execution environment identifier used on the wire.
 enum ContractVersion {
   /// Original contract environment.
-  v0('v0'),
+  v0('v0', 0),
 
-  /// Current contract environment published with XELIS v1.24.0.
-  v1('v1');
+  /// Version 1 contract environment.
+  v1('v1', 1);
 
-  const ContractVersion(this.wireName);
+  const ContractVersion(this.wireName, this.byte);
 
   /// Parses the strict request wire value.
   factory ContractVersion.fromJson(String value) => switch (value) {
@@ -17,6 +17,12 @@ enum ContractVersion {
 
   /// Rust `snake_case` wire value.
   final String wireName;
+
+  /// Binary discriminant embedded before a serialized contract module.
+  final int byte;
+
+  /// Two-character hexadecimal form of [byte].
+  String get hexByte => byte.toRadixString(16).padLeft(2, '0');
 
   /// Serializes this request value.
   String toJson() => wireName;

@@ -218,7 +218,49 @@ void main() {
       );
     });
 
-    test('contract event filter omits its optional id exactly', () async {
+    test(
+      'contract event omits request id and matches a null response id',
+      () async {
+        final server = await RpcTestServer.start();
+        final client = _daemonClient(server)..connect();
+        addTearDown(() async {
+          client.disconnect();
+          await server.close();
+        });
+        await server.waitForSocket();
+
+        final received = Completer<ContractEvent>();
+        client.onContractEvent('contract-a', received.complete);
+        final subscribe = await server.nextRequest();
+        final notify = {
+          DaemonEvent.contractEvent.jsonKey: {'contract': 'contract-a'},
+        };
+        expect(subscribe['params'], {'notify': notify});
+
+        server.send({
+          'id': 301,
+          'jsonrpc': '2.0',
+          'result': {
+            'event': {
+              DaemonEvent.contractEvent.jsonKey: {
+                'contract': 'contract-a',
+                'id': null,
+              },
+            },
+            ..._contractEventPayload,
+          },
+        });
+        expect(
+          (await received.future.timeout(rpcTestTimeout)).eventId,
+          BigInt.one,
+        );
+
+        client.unsubscribeFromContractEvent('contract-a');
+        expect((await server.nextRequest())['params'], {'notify': notify});
+      },
+    );
+
+    test('contract event id matches BigInt request to int response', () async {
       final server = await RpcTestServer.start();
       final client = _daemonClient(server)..connect();
       addTearDown(() async {
@@ -228,25 +270,31 @@ void main() {
       await server.waitForSocket();
 
       final received = Completer<ContractEvent>();
-      client.onContractEvent('contract-a', received.complete);
-      final subscribe = await server.nextRequest();
-      final notify = {
-        DaemonEvent.contractEvent.jsonKey: {'contract': 'contract-a'},
-      };
-      expect(subscribe['params'], {'notify': notify});
-
+      client.onContractEvent(
+        'contract-a',
+        received.complete,
+        id: BigInt.two,
+      );
+      await server.nextRequest();
       server.send({
-        'id': 301,
+        'id': 302,
         'jsonrpc': '2.0',
-        'result': {'event': notify, ..._contractEventPayload},
+        'result': {
+          'event': {
+            DaemonEvent.contractEvent.jsonKey: {
+              'contract': 'contract-a',
+              'id': 2,
+            },
+          },
+          ..._contractEventPayload,
+          'event_id': 2,
+        },
       });
+
       expect(
         (await received.future.timeout(rpcTestTimeout)).eventId,
-        BigInt.one,
+        BigInt.two,
       );
-
-      client.unsubscribeFromContractEvent('contract-a');
-      expect((await server.nextRequest())['params'], {'notify': notify});
     });
   });
 

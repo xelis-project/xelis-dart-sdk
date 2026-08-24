@@ -30,7 +30,7 @@ Future<void> main() async {
   }
 }
 
-/// Constructs a transfer request accepted by XELIS v1.24.0.
+/// Constructs a transfer request accepted by the pinned XELIS RPC contract.
 BuildTransactionParams transferRequest({
   required String asset,
   required String destination,
@@ -49,12 +49,11 @@ BuildTransactionParams transferRequest({
   baseFee: const BaseFeeMode.none(),
 );
 
-/// Constructs the stable `module + contract_version + invoke` deployment.
+/// Constructs the stable serialized-contract deployment.
 BuildTransactionParams deploymentRequest(String xvmModuleHex) =>
     BuildTransactionParams(
       transactionTypeBuilder: TransactionTypeBuilder.deployContract(
-        module: xvmModuleHex,
-        contractVersion: ContractVersion.v0,
+        contract: ContractModuleHex.fromModule(module: xvmModuleHex),
       ),
       fee: const FeeBuilder.extra(),
       baseFee: const BaseFeeMode.none(),

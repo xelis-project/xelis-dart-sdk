@@ -19,9 +19,9 @@ void main() {
   };
   final runtimeContracts = _daemonRuntimeContracts(schemaMethods, schema);
 
-  test('the matrix covers all 88 daemon/admin v1.24 facades', () {
-    expect(DaemonMethod.values, hasLength(85));
-    expect(DaemonMethod.values.length + _adminMethods.length, 88);
+  test('the matrix covers all 89 pinned daemon/admin facades', () {
+    expect(DaemonMethod.values, hasLength(86));
+    expect(DaemonMethod.values.length + _adminMethods.length, 89);
     expect(
       {
         ...DaemonMethod.values.map((method) => method.jsonKey),
@@ -31,12 +31,14 @@ void main() {
         'schema',
         'batch_limit',
         'get_stableheight',
+        'subscribe',
+        'unsubscribe',
       }),
     );
   });
 
-  test('the runtime matrix invokes all 88 daemon/admin facades', () {
-    expect(runtimeContracts, hasLength(88));
+  test('the runtime matrix invokes all 89 daemon/admin facades', () {
+    expect(runtimeContracts, hasLength(89));
     expect(
       runtimeContracts.map((contract) => contract.method).toSet(),
       {
@@ -307,6 +309,10 @@ List<RpcContractCase<RecordingDaemonClient>> _daemonRuntimeContracts(
     call(
       'get_contract_data',
       (c, p) => c.getContractData(GetContractDataParams.fromJson(p)),
+    ),
+    call(
+      'has_contract_data',
+      (c, p) => c.hasContractData(GetContractDataParams.fromJson(p)),
     ),
     call('get_asset_supply', (c, p) => c.getAssetSupply(p['asset']! as String)),
     call(

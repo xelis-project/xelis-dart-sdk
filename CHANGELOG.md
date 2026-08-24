@@ -1,6 +1,6 @@
 ## 0.36.0
 
-This release aligns the SDK with XELIS `v1.24.0`. It removes public models that
+This release aligns the SDK with XELIS `v1.25.0`. It removes public models that
 could lose RPC data or no longer matched the supported Rust contract.
 
 ### Breaking changes from 0.35.x
@@ -15,9 +15,9 @@ could lose RPC data or no longer matched the supported Rust contract.
   `GetContractLogsParams` instead of `ContractOutput`,
   `GetContractOutputsParams` and `getContractOutputs`.
 - Build fees with `FeeBuilder.fixed` or `FeeBuilder.extra`, configure base fees
-  with `BaseFeeMode`, and use typed signers. Contract deployment now uses
-  `module`, `contractVersion` and optional `invoke`.
-- Update existing RPC calls to their XELIS `v1.24.0` contracts:
+  with `BaseFeeMode`, and use typed signers. Contract deployment now uses a
+  serialized `ContractModuleHex` and optional `invoke`.
+- Update existing RPC calls to their XELIS `v1.25.0` contracts:
   `getAccountHistory` returns `List<GetAccountHistoryResult>`, wallet
   `getAssets` accepts pagination and returns `List<WalletAssetEntry>`,
   `estimateFees` accepts `EstimateWalletFeesParams`, and the extra-data and
@@ -43,16 +43,24 @@ could lose RPC data or no longer matched the supported Rust contract.
   request timeouts, raw RPC access and `RpcCallOutcome` helpers.
 - Add the missing daemon and wallet RPC methods, opt-in daemon administration,
   wallet storage methods and strict versioned XSWD permission manifests.
+- Add the XELIS 1.25 `has_contract_data` daemon method and typed scheduled
+  execution gas sources.
 - Preserve unknown variants and additive response fields so newer compatible
   server responses can be inspected without losing data.
-- Decode `get_account_assets` from its actual XELIS `v1.24.0` array response.
+- Normalize optional event filters across omitted and explicit-null wire forms,
+  including filtered and unfiltered `contract_event` subscriptions.
+- Decode `get_account_assets` from its actual XELIS `v1.25.0` array response.
 - Deprecate the legacy helpers from `data_converter.dart`; they remain available
   for this release and now document their standard-library replacements.
-- Pin the RPC contract and integration verification tooling to XELIS `v1.24.0`.
+- Pin the RPC contract and integration verification tooling to XELIS `v1.25.0`
+  and re-enable wallet and cross-component integration suites.
 - Add unified `check`, `ci`, `integration`, `release` and `probe` verification
   profiles, split live integration into daemon, wallet and E2E suites, enforce
   at least 90% coverage of handwritten library code in CI, and provide a
   `justfile` with shortcuts for common contributor workflows.
+- Expand live verification with a complete contract-event assertion plus
+  wallet restart persistence, authentication, error-path, concurrency and
+  transaction-lifecycle checks.
 
 ## 0.35.1
 

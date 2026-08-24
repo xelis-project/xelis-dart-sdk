@@ -89,10 +89,7 @@ Map<String, dynamic> _$InvokeContractBuilderToJson(
 DeployContractBuilder _$DeployContractBuilderFromJson(
   Map<String, dynamic> json,
 ) => DeployContractBuilder(
-  module: json['module'] as String,
-  contractVersion: json['contract_version'] == null
-      ? ContractVersion.v0
-      : ContractVersion.fromJson(json['contract_version'] as String),
+  contract: ContractModuleHex.fromJson(json['contract']),
   invoke: json['invoke'] == null
       ? null
       : DeployContractInvokeBuilder.fromJson(
@@ -104,8 +101,7 @@ DeployContractBuilder _$DeployContractBuilderFromJson(
 Map<String, dynamic> _$DeployContractBuilderToJson(
   DeployContractBuilder instance,
 ) => <String, dynamic>{
-  'module': instance.module,
-  'contract_version': instance.contractVersion.toJson(),
+  'contract': _contractModuleHexToJson(instance.contract),
   'invoke': instance.invoke?.toJson(),
   'runtimeType': instance.$type,
 };

@@ -14,7 +14,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$RpcScheduledExecution {
 
- String get hash; String get contract; int get chunkId; List<RpcValueCell> get params; BigInt get maxGas; RpcScheduledExecutionKind get kind; RpcJsonValue get gasSources; RpcExtraFields get extraFields;
+ String get hash; String get contract; int get chunkId; List<RpcValueCell> get params; BigInt get maxGas; RpcScheduledExecutionKind get kind; List<RpcGasSourceEntry> get gasSources; RpcExtraFields get extraFields;
 /// Create a copy of RpcScheduledExecution
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -25,12 +25,12 @@ $RpcScheduledExecutionCopyWith<RpcScheduledExecution> get copyWith => _$RpcSched
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcScheduledExecution&&(identical(other.hash, hash) || other.hash == hash)&&(identical(other.contract, contract) || other.contract == contract)&&(identical(other.chunkId, chunkId) || other.chunkId == chunkId)&&const DeepCollectionEquality().equals(other.params, params)&&(identical(other.maxGas, maxGas) || other.maxGas == maxGas)&&(identical(other.kind, kind) || other.kind == kind)&&(identical(other.gasSources, gasSources) || other.gasSources == gasSources)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcScheduledExecution&&(identical(other.hash, hash) || other.hash == hash)&&(identical(other.contract, contract) || other.contract == contract)&&(identical(other.chunkId, chunkId) || other.chunkId == chunkId)&&const DeepCollectionEquality().equals(other.params, params)&&(identical(other.maxGas, maxGas) || other.maxGas == maxGas)&&(identical(other.kind, kind) || other.kind == kind)&&const DeepCollectionEquality().equals(other.gasSources, gasSources)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,hash,contract,chunkId,const DeepCollectionEquality().hash(params),maxGas,kind,gasSources,extraFields);
+int get hashCode => Object.hash(runtimeType,hash,contract,chunkId,const DeepCollectionEquality().hash(params),maxGas,kind,const DeepCollectionEquality().hash(gasSources),extraFields);
 
 @override
 String toString() {
@@ -45,11 +45,11 @@ abstract mixin class $RpcScheduledExecutionCopyWith<$Res>  {
   factory $RpcScheduledExecutionCopyWith(RpcScheduledExecution value, $Res Function(RpcScheduledExecution) _then) = _$RpcScheduledExecutionCopyWithImpl;
 @useResult
 $Res call({
- String hash, String contract, int chunkId, List<RpcValueCell> params, BigInt maxGas, RpcScheduledExecutionKind kind, RpcJsonValue gasSources, RpcExtraFields extraFields
+ String hash, String contract, int chunkId, List<RpcValueCell> params, BigInt maxGas, RpcScheduledExecutionKind kind, List<RpcGasSourceEntry> gasSources, RpcExtraFields extraFields
 });
 
 
-$RpcScheduledExecutionKindCopyWith<$Res> get kind;$RpcJsonValueCopyWith<$Res> get gasSources;$RpcExtraFieldsCopyWith<$Res> get extraFields;
+$RpcScheduledExecutionKindCopyWith<$Res> get kind;$RpcExtraFieldsCopyWith<$Res> get extraFields;
 
 }
 /// @nodoc
@@ -71,7 +71,7 @@ as int,params: null == params ? _self.params : params // ignore: cast_nullable_t
 as List<RpcValueCell>,maxGas: null == maxGas ? _self.maxGas : maxGas // ignore: cast_nullable_to_non_nullable
 as BigInt,kind: null == kind ? _self.kind : kind // ignore: cast_nullable_to_non_nullable
 as RpcScheduledExecutionKind,gasSources: null == gasSources ? _self.gasSources : gasSources // ignore: cast_nullable_to_non_nullable
-as RpcJsonValue,extraFields: null == extraFields ? _self.extraFields : extraFields // ignore: cast_nullable_to_non_nullable
+as List<RpcGasSourceEntry>,extraFields: null == extraFields ? _self.extraFields : extraFields // ignore: cast_nullable_to_non_nullable
 as RpcExtraFields,
   ));
 }
@@ -83,15 +83,6 @@ $RpcScheduledExecutionKindCopyWith<$Res> get kind {
 
   return $RpcScheduledExecutionKindCopyWith<$Res>(_self.kind, (value) {
     return _then(_self.copyWith(kind: value));
-  });
-}/// Create a copy of RpcScheduledExecution
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$RpcJsonValueCopyWith<$Res> get gasSources {
-
-  return $RpcJsonValueCopyWith<$Res>(_self.gasSources, (value) {
-    return _then(_self.copyWith(gasSources: value));
   });
 }/// Create a copy of RpcScheduledExecution
 /// with the given fields replaced by the non-null parameter values.
@@ -184,7 +175,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String hash,  String contract,  int chunkId,  List<RpcValueCell> params,  BigInt maxGas,  RpcScheduledExecutionKind kind,  RpcJsonValue gasSources,  RpcExtraFields extraFields)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String hash,  String contract,  int chunkId,  List<RpcValueCell> params,  BigInt maxGas,  RpcScheduledExecutionKind kind,  List<RpcGasSourceEntry> gasSources,  RpcExtraFields extraFields)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _RpcScheduledExecution() when $default != null:
 return $default(_that.hash,_that.contract,_that.chunkId,_that.params,_that.maxGas,_that.kind,_that.gasSources,_that.extraFields);case _:
@@ -205,7 +196,7 @@ return $default(_that.hash,_that.contract,_that.chunkId,_that.params,_that.maxGa
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String hash,  String contract,  int chunkId,  List<RpcValueCell> params,  BigInt maxGas,  RpcScheduledExecutionKind kind,  RpcJsonValue gasSources,  RpcExtraFields extraFields)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String hash,  String contract,  int chunkId,  List<RpcValueCell> params,  BigInt maxGas,  RpcScheduledExecutionKind kind,  List<RpcGasSourceEntry> gasSources,  RpcExtraFields extraFields)  $default,) {final _that = this;
 switch (_that) {
 case _RpcScheduledExecution():
 return $default(_that.hash,_that.contract,_that.chunkId,_that.params,_that.maxGas,_that.kind,_that.gasSources,_that.extraFields);case _:
@@ -225,7 +216,7 @@ return $default(_that.hash,_that.contract,_that.chunkId,_that.params,_that.maxGa
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String hash,  String contract,  int chunkId,  List<RpcValueCell> params,  BigInt maxGas,  RpcScheduledExecutionKind kind,  RpcJsonValue gasSources,  RpcExtraFields extraFields)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String hash,  String contract,  int chunkId,  List<RpcValueCell> params,  BigInt maxGas,  RpcScheduledExecutionKind kind,  List<RpcGasSourceEntry> gasSources,  RpcExtraFields extraFields)?  $default,) {final _that = this;
 switch (_that) {
 case _RpcScheduledExecution() when $default != null:
 return $default(_that.hash,_that.contract,_that.chunkId,_that.params,_that.maxGas,_that.kind,_that.gasSources,_that.extraFields);case _:
@@ -240,7 +231,7 @@ return $default(_that.hash,_that.contract,_that.chunkId,_that.params,_that.maxGa
 
 
 class _RpcScheduledExecution extends RpcScheduledExecution {
-  const _RpcScheduledExecution({required this.hash, required this.contract, required this.chunkId, required final  List<RpcValueCell> params, required this.maxGas, required this.kind, required this.gasSources, this.extraFields = const RpcExtraFields()}): _params = params,super._();
+  const _RpcScheduledExecution({required this.hash, required this.contract, required this.chunkId, required final  List<RpcValueCell> params, required this.maxGas, required this.kind, required final  List<RpcGasSourceEntry> gasSources, this.extraFields = const RpcExtraFields()}): _params = params,_gasSources = gasSources,super._();
 
 
 @override final  String hash;
@@ -255,7 +246,13 @@ class _RpcScheduledExecution extends RpcScheduledExecution {
 
 @override final  BigInt maxGas;
 @override final  RpcScheduledExecutionKind kind;
-@override final  RpcJsonValue gasSources;
+ final  List<RpcGasSourceEntry> _gasSources;
+@override List<RpcGasSourceEntry> get gasSources {
+  if (_gasSources is EqualUnmodifiableListView) return _gasSources;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_gasSources);
+}
+
 @override@JsonKey() final  RpcExtraFields extraFields;
 
 /// Create a copy of RpcScheduledExecution
@@ -268,12 +265,12 @@ _$RpcScheduledExecutionCopyWith<_RpcScheduledExecution> get copyWith => __$RpcSc
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RpcScheduledExecution&&(identical(other.hash, hash) || other.hash == hash)&&(identical(other.contract, contract) || other.contract == contract)&&(identical(other.chunkId, chunkId) || other.chunkId == chunkId)&&const DeepCollectionEquality().equals(other._params, _params)&&(identical(other.maxGas, maxGas) || other.maxGas == maxGas)&&(identical(other.kind, kind) || other.kind == kind)&&(identical(other.gasSources, gasSources) || other.gasSources == gasSources)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RpcScheduledExecution&&(identical(other.hash, hash) || other.hash == hash)&&(identical(other.contract, contract) || other.contract == contract)&&(identical(other.chunkId, chunkId) || other.chunkId == chunkId)&&const DeepCollectionEquality().equals(other._params, _params)&&(identical(other.maxGas, maxGas) || other.maxGas == maxGas)&&(identical(other.kind, kind) || other.kind == kind)&&const DeepCollectionEquality().equals(other._gasSources, _gasSources)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,hash,contract,chunkId,const DeepCollectionEquality().hash(_params),maxGas,kind,gasSources,extraFields);
+int get hashCode => Object.hash(runtimeType,hash,contract,chunkId,const DeepCollectionEquality().hash(_params),maxGas,kind,const DeepCollectionEquality().hash(_gasSources),extraFields);
 
 @override
 String toString() {
@@ -288,11 +285,11 @@ abstract mixin class _$RpcScheduledExecutionCopyWith<$Res> implements $RpcSchedu
   factory _$RpcScheduledExecutionCopyWith(_RpcScheduledExecution value, $Res Function(_RpcScheduledExecution) _then) = __$RpcScheduledExecutionCopyWithImpl;
 @override @useResult
 $Res call({
- String hash, String contract, int chunkId, List<RpcValueCell> params, BigInt maxGas, RpcScheduledExecutionKind kind, RpcJsonValue gasSources, RpcExtraFields extraFields
+ String hash, String contract, int chunkId, List<RpcValueCell> params, BigInt maxGas, RpcScheduledExecutionKind kind, List<RpcGasSourceEntry> gasSources, RpcExtraFields extraFields
 });
 
 
-@override $RpcScheduledExecutionKindCopyWith<$Res> get kind;@override $RpcJsonValueCopyWith<$Res> get gasSources;@override $RpcExtraFieldsCopyWith<$Res> get extraFields;
+@override $RpcScheduledExecutionKindCopyWith<$Res> get kind;@override $RpcExtraFieldsCopyWith<$Res> get extraFields;
 
 }
 /// @nodoc
@@ -313,8 +310,8 @@ as String,chunkId: null == chunkId ? _self.chunkId : chunkId // ignore: cast_nul
 as int,params: null == params ? _self._params : params // ignore: cast_nullable_to_non_nullable
 as List<RpcValueCell>,maxGas: null == maxGas ? _self.maxGas : maxGas // ignore: cast_nullable_to_non_nullable
 as BigInt,kind: null == kind ? _self.kind : kind // ignore: cast_nullable_to_non_nullable
-as RpcScheduledExecutionKind,gasSources: null == gasSources ? _self.gasSources : gasSources // ignore: cast_nullable_to_non_nullable
-as RpcJsonValue,extraFields: null == extraFields ? _self.extraFields : extraFields // ignore: cast_nullable_to_non_nullable
+as RpcScheduledExecutionKind,gasSources: null == gasSources ? _self._gasSources : gasSources // ignore: cast_nullable_to_non_nullable
+as List<RpcGasSourceEntry>,extraFields: null == extraFields ? _self.extraFields : extraFields // ignore: cast_nullable_to_non_nullable
 as RpcExtraFields,
   ));
 }
@@ -327,15 +324,6 @@ $RpcScheduledExecutionKindCopyWith<$Res> get kind {
 
   return $RpcScheduledExecutionKindCopyWith<$Res>(_self.kind, (value) {
     return _then(_self.copyWith(kind: value));
-  });
-}/// Create a copy of RpcScheduledExecution
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$RpcJsonValueCopyWith<$Res> get gasSources {
-
-  return $RpcJsonValueCopyWith<$Res>(_self.gasSources, (value) {
-    return _then(_self.copyWith(gasSources: value));
   });
 }/// Create a copy of RpcScheduledExecution
 /// with the given fields replaced by the non-null parameter values.

@@ -260,9 +260,13 @@ void main() {
               as Map<String, dynamic>;
       expect(report['status'], 'blocked');
       expect(report['failure'], contains('wallet RPC server regression'));
+      final expectedStates = {
+        for (final scenario in scenariosForSuite('wallet'))
+          scenario.id: 'blocked',
+      };
       expect(
         (report['scenarios'] as Map<String, dynamic>)['states'],
-        {'wallet_health': 'blocked'},
+        expectedStates,
       );
     },
   );

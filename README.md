@@ -218,9 +218,11 @@ final response = await wallet.buildTransaction(
 ```
 
 Deploy a compiled XVM module with
-`TransactionTypeBuilder.deployContract(module: xvmModuleHex)`. Daemon contract
-methods provide balances, storage data, registered or scheduled executions,
-simulation and typed `RpcContractLog` results.
+`TransactionTypeBuilder.deployContract(contract:
+ContractModuleHex.fromModule(module: xvmModuleHex))`. The helper embeds the
+selected contract environment version. Daemon contract methods provide balances,
+storage data, registered or scheduled executions, simulation and typed
+`RpcContractLog` results.
 
 ## Data types and exact values
 
