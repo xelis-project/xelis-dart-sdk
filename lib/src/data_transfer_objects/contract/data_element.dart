@@ -70,5 +70,10 @@ sealed class DataElement with _$DataElement {
   };
 
   @override
-  String toString() => '$runtimeType(<redacted>)';
+  String toString() => switch (this) {
+    DataValue() => 'DataValue(<redacted>)',
+    DataArray() => 'DataArray(<redacted>)',
+    DataFields() => 'DataFields(<redacted>)',
+    DataNull() => 'DataNull(<redacted>)',
+  };
 }

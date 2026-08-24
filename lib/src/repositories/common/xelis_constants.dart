@@ -1,3 +1,7 @@
+// `notify` is intentionally exposed as a mutable wire payload, while equality
+// and hashing use only the canonical event key and identity string.
+// ignore_for_file: avoid_equals_and_hash_code_on_mutable_classes
+
 /// JSON-RPC key for Xelis method/event.
 abstract class XelisJsonKey {
   /// @nodoc

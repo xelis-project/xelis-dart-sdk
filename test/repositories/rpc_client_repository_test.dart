@@ -706,11 +706,8 @@ void main() {
         onRequest: (request, socket) {
           if (request['method'] != 'batch_limit') return;
           socket.add(
-            jsonEncode({
-              'id': request['id'],
-              'jsonrpc': '2.0',
-              'result': 9007199254740993,
-            }),
+            '{"id":${request['id']},"jsonrpc":"2.0","result":'
+            '9007199254740993}',
           );
         },
       );
@@ -932,15 +929,11 @@ void main() {
           });
           final request = await server.nextRequest();
 
-          server.send({
-            'id': 999,
-            'jsonrpc': '2.0',
-            'result': {
-              'event': 'future_consensus_event',
-              'height': 9007199254740993,
-              'secret': 'must-not-leak',
-            },
-          });
+          server.sendRaw(
+            '{"id":999,"jsonrpc":"2.0","result":{"event":'
+            '"future_consensus_event","height":9007199254740993,'
+            '"secret":"must-not-leak"}}',
+          );
 
           final unknown = await unknownCompleter.future.timeout(_timeout);
           expect(unknown.name, 'future_consensus_event');
