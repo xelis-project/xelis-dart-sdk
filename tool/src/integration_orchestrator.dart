@@ -338,18 +338,18 @@ final class IntegrationOrchestrator {
     final miningAddress = File(
       'integration_test/fixtures/devnet_mining_address.txt',
     ).readAsStringSync().trim();
-    final config = File('${runDirectory.path}/integration.json');
-    config.writeAsStringSync(
-      const JsonEncoder.withIndent('  ').convert({
-        'format': 2,
-        'targetManifest': File('xelis_target.json').absolute.path,
-        'daemon': {'endpoint': daemon.endpoint, 'secureWebSocket': false},
-        'wallets': wallets,
-        'miningAddress': miningAddress,
-        if (contractFixture != null) 'contractFixture': contractFixture,
-      }),
-      flush: true,
-    );
+    final config = File('${runDirectory.path}/integration.json')
+      ..writeAsStringSync(
+        const JsonEncoder.withIndent('  ').convert({
+          'format': 2,
+          'targetManifest': File('xelis_target.json').absolute.path,
+          'daemon': {'endpoint': daemon.endpoint, 'secureWebSocket': false},
+          'wallets': wallets,
+          'miningAddress': miningAddress,
+          'contractFixture': ?contractFixture,
+        }),
+        flush: true,
+      );
     return config;
   }
 
@@ -884,9 +884,9 @@ void _writeSuiteReport(
       'finishedAt': DateTime.now().toUtc().toIso8601String(),
       'status': status,
       'scenarios': scenarios,
-      if (failureType != null) 'failureType': failureType,
+      'failureType': ?failureType,
       if (failure != null) 'failure': redact(failure),
-      if (logs != null) 'logs': logs,
+      'logs': ?logs,
     }),
     flush: true,
   );

@@ -127,8 +127,8 @@ void main() {
         },
       });
 
-      final receivedOnly = RpcValueCell.primitive(
-        const RpcPrimitive.opaque(
+      const receivedOnly = RpcValueCell.primitive(
+        RpcPrimitive.opaque(
           RpcOpaqueValue(
             type: 'FutureOpaque',
             value: RpcJsonValue.string('payload'),

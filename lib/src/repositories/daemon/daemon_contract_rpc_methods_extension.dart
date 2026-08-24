@@ -18,11 +18,11 @@ extension DaemonContractRpcMethods on DaemonClient {
     int? maximum,
   }) => sendRequestAndDecode(
     DaemonMethod.getContractAssets,
-    (result) => (result as List).cast<String>(),
+    (result) => (result! as List).cast<String>(),
     {
       'contract': contract,
-      if (skip != null) 'skip': skip,
-      if (maximum != null) 'maximum': maximum,
+      'skip': ?skip,
+      'maximum': ?maximum,
     },
   );
 
@@ -69,10 +69,10 @@ extension DaemonContractRpcMethods on DaemonClient {
     ).map(RpcContractDataEntry.fromJson).toList(growable: false),
     {
       'contract': contract,
-      if (minimumTopoheight != null) 'minimum_topoheight': minimumTopoheight,
-      if (maximumTopoheight != null) 'maximum_topoheight': maximumTopoheight,
-      if (skip != null) 'skip': skip,
-      if (maximum != null) 'maximum': maximum,
+      'minimum_topoheight': ?minimumTopoheight,
+      'maximum_topoheight': ?maximumTopoheight,
+      'skip': ?skip,
+      'maximum': ?maximum,
     },
   );
 
@@ -88,8 +88,8 @@ extension DaemonContractRpcMethods on DaemonClient {
     ).map(RpcRegisteredExecution.fromJson).toList(growable: false),
     {
       'topoheight': topoheight,
-      if (max != null) 'max': max,
-      if (skip != null) 'skip': skip,
+      'max': ?max,
+      'skip': ?skip,
     },
   );
 
@@ -105,8 +105,8 @@ extension DaemonContractRpcMethods on DaemonClient {
     ).map(RpcScheduledExecution.fromJson).toList(growable: false),
     {
       'topoheight': topoheight,
-      if (max != null) 'max': max,
-      if (skip != null) 'skip': skip,
+      'max': ?max,
+      'skip': ?skip,
     },
   );
 
@@ -121,10 +121,10 @@ extension DaemonContractRpcMethods on DaemonClient {
     (raw) => _rpcList(raw).cast<String>(),
     {
       'contract': contract,
-      if (skip != null) 'skip': skip,
-      if (maximum != null) 'maximum': maximum,
-      if (minimumTopoheight != null) 'minimum_topoheight': minimumTopoheight,
-      if (maximumTopoheight != null) 'maximum_topoheight': maximumTopoheight,
+      'skip': ?skip,
+      'maximum': ?maximum,
+      'minimum_topoheight': ?minimumTopoheight,
+      'maximum_topoheight': ?maximumTopoheight,
     },
   );
 
@@ -135,12 +135,12 @@ extension DaemonContractRpcMethods on DaemonClient {
     BigInt? maximumTopoheight,
   }) => sendRequestAndDecode(
     DaemonMethod.getContracts,
-    (result) => (result as List).cast<String>(),
+    (result) => (result! as List).cast<String>(),
     {
-      if (skip != null) 'skip': skip,
-      if (maximum != null) 'maximum': maximum,
-      if (minimumTopoheight != null) 'minimum_topoheight': minimumTopoheight,
-      if (maximumTopoheight != null) 'maximum_topoheight': maximumTopoheight,
+      'skip': ?skip,
+      'maximum': ?maximum,
+      'minimum_topoheight': ?minimumTopoheight,
+      'maximum_topoheight': ?maximumTopoheight,
     },
   );
 

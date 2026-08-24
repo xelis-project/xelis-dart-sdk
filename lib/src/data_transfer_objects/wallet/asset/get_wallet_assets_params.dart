@@ -16,7 +16,7 @@ abstract class GetWalletAssetsParams with _$GetWalletAssetsParams {
   const GetWalletAssetsParams._();
 
   Map<String, Object> toJson() => {
-    if (skip != null) 'skip': skip!,
-    if (maximum != null) 'maximum': maximum!,
+    'skip': ?skip,
+    'maximum': ?maximum,
   };
 }

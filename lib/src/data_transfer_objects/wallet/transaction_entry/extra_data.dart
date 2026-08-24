@@ -52,17 +52,17 @@ abstract class ExtraData with _$ExtraData {
   /// @nodoc
   const factory ExtraData({
     @JsonKey(
-      name: 'data',
-      fromJson: _nullableDataElementFromJson,
-      toJson: _nullableDataElementToJson,
-    )
-    DataElement? data,
-    @JsonKey(
       name: 'flag',
       fromJson: PlaintextExtraDataFlag.fromJson,
       toJson: _plaintextFlagToJson,
     )
     required PlaintextExtraDataFlag flag,
+    @JsonKey(
+      name: 'data',
+      fromJson: _nullableDataElementFromJson,
+      toJson: _nullableDataElementToJson,
+    )
+    DataElement? data,
     @JsonKey(
       name: 'shared_key',
       fromJson: _nullableSharedKeyFromJson,

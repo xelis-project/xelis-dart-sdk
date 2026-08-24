@@ -8,10 +8,9 @@ const rpcTestTimeout = Duration(seconds: 3);
 /// Local JSON-RPC WebSocket server for repository/client tests.
 class RpcTestServer {
   RpcTestServer._({
-    required HttpServer server,
-    required RpcRequestHandler? onRequest,
-  }) : _server = server,
-       _onRequest = onRequest {
+    required this._server,
+    required this._onRequest,
+  }) {
     _server.listen(_handleRequest);
   }
 

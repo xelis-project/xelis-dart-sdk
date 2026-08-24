@@ -12,9 +12,6 @@ enum DataValueType {
 
   const DataValueType(this.wireName);
 
-  /// Exact Rust variant name.
-  final String wireName;
-
   /// Decodes a Rust `ValueType` name.
   factory DataValueType.fromJson(Object? value) {
     if (value is! String) {
@@ -25,4 +22,7 @@ enum DataValueType {
       orElse: () => throw FormatException('Unknown ValueType: $value.'),
     );
   }
+
+  /// Exact Rust variant name.
+  final String wireName;
 }

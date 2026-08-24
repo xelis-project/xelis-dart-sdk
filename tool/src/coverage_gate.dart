@@ -102,7 +102,7 @@ int _counter(String line, String prefix, int lineNumber) {
 }
 
 bool _isHandwrittenLibrary(String path) {
-  final normalized = path.replaceAll('\\', '/');
+  final normalized = path.replaceAll(r'\', '/');
   final isLibrary =
       normalized.startsWith('lib/') || normalized.contains('/lib/');
   return isLibrary &&

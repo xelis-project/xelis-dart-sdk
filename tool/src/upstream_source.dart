@@ -78,7 +78,6 @@ Future<String?> gitHead(Directory directory) async {
     'git',
     ['rev-parse', 'HEAD'],
     workingDirectory: directory.path,
-    runInShell: false,
   );
   if (result.exitCode != 0) return null;
   return (result.stdout as String).trim().toLowerCase();
@@ -91,7 +90,6 @@ Future<String> cargoLockIdentity(Directory source) async {
     'git',
     ['hash-object', 'Cargo.lock'],
     workingDirectory: source.path,
-    runInShell: false,
   );
   if (result.exitCode == 0) return (result.stdout as String).trim();
   return _fnv1aBytes(file.readAsBytesSync());

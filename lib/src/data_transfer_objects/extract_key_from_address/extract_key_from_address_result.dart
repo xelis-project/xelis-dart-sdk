@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:xelis_dart_sdk/src/data_transfer_objects/core/rpc_json_value.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/core/rpc_exception.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/core/rpc_json_value.dart';
 import 'package:xelis_dart_sdk/src/utils/rpc_json.dart';
 
 part 'extract_key_from_address_result.freezed.dart';

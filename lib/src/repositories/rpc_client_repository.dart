@@ -7,6 +7,11 @@ import 'package:xelis_dart_sdk/src/data_transfer_objects/block_ordered_event/blo
 import 'package:xelis_dart_sdk/src/data_transfer_objects/block_orphaned_event/block_orphaned_event.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/contract_event/contract_event.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/contract_transfers_event/contract_transfers_event.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/core/rpc_exception.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/core/rpc_json_value.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/core/rpc_unknown_event.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/core/schema/rpc_capabilities.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/core/schema/rpc_schema_response.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/get_block_template/get_block_template_result.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/get_mempool/mempool_transaction_summary.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/get_peers/peer_entry.dart';
@@ -23,21 +28,15 @@ import 'package:xelis_dart_sdk/src/data_transfer_objects/transaction_executed_ev
 import 'package:xelis_dart_sdk/src/data_transfer_objects/wallet/balance_changed_event/balance_changed_event.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/wallet/transaction_entry/transaction_entry.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/wallet/transaction_entry/transaction_pending.dart';
-import 'package:xelis_dart_sdk/src/repositories/common/rpc_web_socket_transport.dart';
-import 'package:xelis_dart_sdk/src/utils/bigint_json.dart';
-
-import 'package:xelis_dart_sdk/src/data_transfer_objects/core/rpc_exception.dart';
-import 'package:xelis_dart_sdk/src/data_transfer_objects/core/rpc_json_value.dart';
-import 'package:xelis_dart_sdk/src/data_transfer_objects/core/rpc_unknown_event.dart';
-import 'package:xelis_dart_sdk/src/data_transfer_objects/core/schema/rpc_capabilities.dart';
-import 'package:xelis_dart_sdk/src/data_transfer_objects/core/schema/rpc_schema_response.dart';
 import 'package:xelis_dart_sdk/src/repositories/common/client_state.dart';
+import 'package:xelis_dart_sdk/src/repositories/common/rpc_web_socket_transport.dart';
 import 'package:xelis_dart_sdk/src/repositories/common/xelis_constants.dart';
 import 'package:xelis_dart_sdk/src/repositories/daemon/daemon_constants.dart';
 import 'package:xelis_dart_sdk/src/repositories/wallet/wallet_constants.dart';
+import 'package:xelis_dart_sdk/src/utils/bigint_json.dart';
 import 'package:xelis_dart_sdk/src/utils/rpc_json.dart';
-part 'daemon/daemon_client.dart';
 
+part 'daemon/daemon_client.dart';
 part 'wallet/wallet_client.dart';
 
 /// A repository that provides a JSON-RPC Client.
@@ -308,9 +307,8 @@ sealed class RpcClientRepository {
   /// A `null` value means that the server does not impose a batch limit.
   Future<BigInt?> getBatchLimit() => sendRequestAndDecode(
     const RpcMethodName('batch_limit'),
-    (result) => result == null
-        ? null
-        : rpcBigInt(result, method: 'batch_limit', path: r'$'),
+    (result) =>
+        result == null ? null : rpcBigInt(result, method: 'batch_limit'),
   );
 
   /// Builds a runtime capability profile from `schema` and `get_version`.
@@ -323,7 +321,7 @@ sealed class RpcClientRepository {
     if (schema.methods.any((method) => method.name == 'get_version')) {
       version = await sendRequestAndDecode(
         const RpcMethodName('get_version'),
-        (result) => result as String,
+        (result) => result! as String,
       );
     }
     return _capabilities = RpcCapabilities(
@@ -431,7 +429,7 @@ sealed class RpcClientRepository {
   void _handleData(Object? rawData) {
     try {
       if (rawData is! String) {
-        throw RpcDeserializationException(
+        throw const RpcDeserializationException(
           method: '<transport>',
           path: r'$',
           message: 'Expected a text WebSocket frame.',
@@ -440,7 +438,6 @@ sealed class RpcClientRepository {
       final json = rpcJsonMap(
         _normalizeCompatibleIntegers(parseBigIntJson(rawData)),
         method: '<transport>',
-        path: r'$',
       );
       if (json['jsonrpc'] != '2.0') {
         throw const RpcDeserializationException(

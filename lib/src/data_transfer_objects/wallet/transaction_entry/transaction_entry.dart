@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/core/rpc_extra_fields.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/wallet/transaction_entry/transaction_entry_type.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/wallet/transaction_entry/transaction_entry_type_parser.dart';
-import 'package:xelis_dart_sdk/src/data_transfer_objects/core/rpc_extra_fields.dart';
 import 'package:xelis_dart_sdk/src/utils/rpc_json.dart';
 
 part 'transaction_entry.freezed.dart';

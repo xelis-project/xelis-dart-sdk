@@ -4,7 +4,7 @@ import 'package:xelis_dart_sdk/xelis_dart_sdk.dart';
 void main() {
   test('daemon decrypt_extra_data uses shared_key and typed byte arrays', () {
     final params = DecryptExtraDataDaemonParams(
-      extraData: EncryptedExtraData([1, 2, 3]),
+      extraData: EncryptedExtraData(const [1, 2, 3]),
       sharedKey: ExtraDataSharedKey(
         '0707070707070707070707070707070707070707070707070707070707070707',
       ),
@@ -21,7 +21,7 @@ void main() {
 
   test('wallet decrypt_extra_data serializes the Rust role', () {
     final params = DecryptExtraDataWalletParams(
-      extraData: EncryptedExtraData([4, 5]),
+      extraData: EncryptedExtraData(const [4, 5]),
       role: Role.receiver,
     );
 

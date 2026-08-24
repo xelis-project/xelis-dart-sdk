@@ -1,10 +1,10 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/contract/rpc_contract_deposit.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/contract/rpc_value_cell.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/core/rpc_json_value.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/shared/transaction/address_or_public_key.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/shared/transaction/transfer_payload.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/wallet/transaction/inter_contract_permission.dart';
-import 'package:xelis_dart_sdk/src/data_transfer_objects/core/rpc_json_value.dart';
 import 'package:xelis_dart_sdk/src/utils/rpc_json.dart';
 
 part 'transaction_type.freezed.dart';

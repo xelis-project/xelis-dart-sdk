@@ -1,12 +1,11 @@
 // ignore_for_file: always_put_required_named_parameters_first
 
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:xelis_dart_sdk/src/data_transfer_objects/daemon/network/rpc_timed_direction.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/core/rpc_extra_fields.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/daemon/network/rpc_timed_direction.dart';
 import 'package:xelis_dart_sdk/src/utils/rpc_json.dart';
 
 part 'peer_entry.freezed.dart';
-
 part 'peer_entry.g.dart';
 
 /// @nodoc

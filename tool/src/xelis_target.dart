@@ -67,7 +67,7 @@ final class XelisTarget {
     }
     final channel = _nonEmptyString(root['channel'], r'$.channel');
     if (channel != 'stable' && channel != 'dev') {
-      throw FormatException(r'$.channel must be "stable" or "dev".');
+      throw const FormatException(r'$.channel must be "stable" or "dev".');
     }
 
     final upstream = _object(root['upstream'], r'$.upstream');
@@ -82,14 +82,14 @@ final class XelisTarget {
       r'$.upstream.repository',
     );
     if (!RegExp(r'^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$').hasMatch(repository)) {
-      throw FormatException(
+      throw const FormatException(
         r'$.upstream.repository must be an owner/repository pair.',
       );
     }
     final ref = _nonEmptyString(upstream['ref'], r'$.upstream.ref');
     final commit = _nonEmptyString(upstream['commit'], r'$.upstream.commit');
     if (!RegExp(r'^[0-9a-f]{40}$').hasMatch(commit)) {
-      throw FormatException(
+      throw const FormatException(
         r'$.upstream.commit must be a full lowercase Git SHA.',
       );
     }
@@ -100,7 +100,7 @@ final class XelisTarget {
             r'$.upstream.serverVersion',
           );
     if (channel == 'stable' && serverVersion == null) {
-      throw FormatException(
+      throw const FormatException(
         r'$.upstream.serverVersion is required for stable targets.',
       );
     }
@@ -142,7 +142,7 @@ final class XelisTarget {
     );
     final endpointValues = liveProbe['daemonEndpoints'];
     if (endpointValues is! List || endpointValues.isEmpty) {
-      throw FormatException(
+      throw const FormatException(
         r'$.liveProbe.daemonEndpoints must be a non-empty array.',
       );
     }
@@ -158,7 +158,7 @@ final class XelisTarget {
         )
         .toList(growable: false);
     if (daemonEndpoints.toSet().length != daemonEndpoints.length) {
-      throw FormatException(
+      throw const FormatException(
         r'$.liveProbe.daemonEndpoints contains duplicates.',
       );
     }
@@ -292,9 +292,9 @@ String _nonEmptyString(Object? value, String path) {
 
 String _relativePath(Object? value, String path) {
   final result = _nonEmptyString(value, path);
-  final normalized = result.replaceAll('\\', '/');
+  final normalized = result.replaceAll(r'\', '/');
   if (normalized.startsWith('/') ||
-      RegExp(r'^[A-Za-z]:').hasMatch(normalized) ||
+      RegExp('^[A-Za-z]:').hasMatch(normalized) ||
       normalized.split('/').contains('..')) {
     throw FormatException('$path must be a repository-relative path.');
   }

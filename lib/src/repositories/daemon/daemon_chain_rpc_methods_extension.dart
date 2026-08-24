@@ -98,7 +98,7 @@ extension DaemonChainRpcMethods on DaemonClient {
 
   Future<String> keyToAddress(String hex) => sendRequestAndDecode(
     DaemonMethod.keyToAddress,
-    (result) => result as String,
+    (result) => result! as String,
     {'hex': hex},
   );
 }

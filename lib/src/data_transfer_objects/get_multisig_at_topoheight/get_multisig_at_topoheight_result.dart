@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:xelis_dart_sdk/src/data_transfer_objects/get_multisig/multisig_state.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/core/rpc_extra_fields.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/get_multisig/multisig_state.dart';
 
 part 'get_multisig_at_topoheight_result.freezed.dart';
 

@@ -79,8 +79,6 @@ void main() {
                 ),
               ],
             ),
-            fee: const FeeBuilder.extra(),
-            baseFee: const BaseFeeMode.none(),
           ),
         );
         expect(transfer.transaction.hash, hasLength(64));
@@ -258,8 +256,6 @@ void main() {
                 maxGas: BigInt.from(100000),
               ),
             ),
-            fee: const FeeBuilder.extra(),
-            baseFee: const BaseFeeMode.none(),
           ),
         );
         expect(deployment.transaction.hash, hasLength(64));
@@ -542,8 +538,6 @@ void main() {
               threshold: 2,
               participants: [addressB, addressC],
             ),
-            fee: const FeeBuilder.extra(),
-            baseFee: const BaseFeeMode.none(),
           ),
         );
         expect(multisig.transaction.hash, hasLength(64));

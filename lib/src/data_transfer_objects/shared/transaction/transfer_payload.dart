@@ -1,9 +1,8 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:xelis_dart_sdk/src/data_transfer_objects/shared/transaction/address_or_public_key.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/core/rpc_json_value.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/shared/transaction/address_or_public_key.dart';
 
 part 'transfer_payload.freezed.dart';
-
 part 'transfer_payload.g.dart';
 
 /// Transfer payload embedded in a transaction.

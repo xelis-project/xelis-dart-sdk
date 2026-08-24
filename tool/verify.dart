@@ -127,7 +127,6 @@ Future<void> _testWithCoverage() async {
 
   final summary = enforceLcovCoverage(
     File(_lcovPath).readAsStringSync(),
-    minimumPercentage: _minimumCoverage,
   );
   stdout.writeln(
     '-> Handwritten lib/ coverage: '

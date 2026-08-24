@@ -79,10 +79,10 @@ void main() {
         },
         'future_module_field': true,
       });
-      final key = RpcValueCell.primitive(
-        const RpcPrimitive.string('storage-key'),
+      const key = RpcValueCell.primitive(
+        RpcPrimitive.string('storage-key'),
       );
-      final params = GetContractDataParams(contractHash: 'contract', key: key);
+      const params = GetContractDataParams(contractHash: 'contract', key: key);
 
       expect(result.topoheight, BigInt.from(12));
       expect(result.data?.toJson(), {

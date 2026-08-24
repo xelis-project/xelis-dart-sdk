@@ -30,7 +30,6 @@ Future<ProcessResult> runChecked(
     arguments,
     workingDirectory: workingDirectory,
     environment: environment,
-    runInShell: false,
   );
   if (result.stdout case final String output when output.trim().isNotEmpty) {
     stdout.write(output);
@@ -112,7 +111,6 @@ final class ManagedProcess implements StoppableProcess {
         await Process.run(
           'taskkill',
           ['/PID', '${process.pid}', '/T', '/F'],
-          runInShell: false,
         );
       } else {
         process.kill(ProcessSignal.sigkill);
@@ -133,7 +131,6 @@ Future<Process> _start(
   arguments,
   workingDirectory: workingDirectory,
   environment: environment,
-  runInShell: false,
 );
 
 String redact(String value) {

@@ -11,8 +11,8 @@ import 'package:xelis_dart_sdk/src/data_transfer_objects/wallet/account/wallet_n
 import 'package:xelis_dart_sdk/src/data_transfer_objects/wallet/asset/get_wallet_assets_params.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/wallet/asset/wallet_asset_entry.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/wallet/balance/decrypt_ciphertext_wallet_params.dart';
-import 'package:xelis_dart_sdk/src/data_transfer_objects/wallet/build_transaction_offline/build_transaction_offline_params.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/wallet/build_transaction/build_transaction_params.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/wallet/build_transaction_offline/build_transaction_offline_params.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/wallet/build_unsigned_transaction/build_unsigned_transaction_params.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/wallet/decrypt_extra_data/decrypt_extra_data_wallet_params.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/wallet/estimate_extra_data_size/estimate_extra_data_size_params.dart';
@@ -25,13 +25,13 @@ import 'package:xelis_dart_sdk/src/data_transfer_objects/wallet/rescan/rescan_pa
 import 'package:xelis_dart_sdk/src/data_transfer_objects/wallet/sign_unsigned_transaction/sign_unsigned_transaction_params.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/wallet/storage/data_query.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/wallet/storage/wallet_query_result.dart';
-import 'package:xelis_dart_sdk/src/data_transfer_objects/wallet/transaction_entry/extra_data.dart';
-import 'package:xelis_dart_sdk/src/data_transfer_objects/wallet/transaction_entry/transaction_entry.dart';
-import 'package:xelis_dart_sdk/src/data_transfer_objects/wallet/transaction_entry/transaction_pending.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/wallet/transaction/estimate_wallet_fees_params.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/wallet/transaction/search_wallet_transaction_result.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/wallet/transaction/unsigned_transaction_response.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/wallet/transaction/wallet_transaction_response.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/wallet/transaction_entry/extra_data.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/wallet/transaction_entry/transaction_entry.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/wallet/transaction_entry/transaction_pending.dart';
 import 'package:xelis_dart_sdk/src/repositories/rpc_client_repository.dart';
 import 'package:xelis_dart_sdk/src/repositories/wallet/wallet_constants.dart';
 import 'package:xelis_dart_sdk/src/utils/rpc_json.dart';
@@ -43,7 +43,7 @@ extension WalletRpcMethodsExtension on WalletClient {
   Future<List<TransactionPending>> getPendingTransactions() =>
       sendRequestAndDecode(
         WalletMethod.getPendingTransactions,
-        (result) => (result as List)
+        (result) => (result! as List)
             .map((value) => TransactionPending.fromJson(rpcJsonMap(value)))
             .toList(growable: false),
       );
@@ -54,7 +54,7 @@ extension WalletRpcMethodsExtension on WalletClient {
     bool autoReconnect = false,
   }) => sendRequestAndDecode(
     WalletMethod.setOnlineMode,
-    (result) => result as bool,
+    (result) => result! as bool,
     {
       'daemon_address': daemonAddress,
       'auto_reconnect': autoReconnect,
@@ -64,7 +64,7 @@ extension WalletRpcMethodsExtension on WalletClient {
   /// Switches the wallet to offline mode.
   Future<bool> setOfflineMode() => sendRequestAndDecode(
     WalletMethod.setOfflineMode,
-    (result) => result as bool,
+    (result) => result! as bool,
   );
 
   /// Retrieves information about the connected daemon.
@@ -76,21 +76,21 @@ extension WalletRpcMethodsExtension on WalletClient {
   /// Checks whether [asset] is tracked.
   Future<bool> isAssetTracked(String asset) => sendRequestAndDecode(
     WalletMethod.isAssetTracked,
-    (result) => result as bool,
+    (result) => result! as bool,
     {'asset': asset},
   );
 
   /// Tracks [asset].
   Future<bool> trackAsset(String asset) => sendRequestAndDecode(
     WalletMethod.trackAsset,
-    (result) => result as bool,
+    (result) => result! as bool,
     {'asset': asset},
   );
 
   /// Stops tracking [asset].
   Future<bool> untrackAsset(String asset) => sendRequestAndDecode(
     WalletMethod.untrackAsset,
-    (result) => result as bool,
+    (result) => result! as bool,
     {'asset': asset},
   );
 
@@ -111,7 +111,7 @@ extension WalletRpcMethodsExtension on WalletClient {
     required String address,
   }) => sendRequestAndDecode(
     WalletMethod.verifySignedData,
-    (result) => result as bool,
+    (result) => result! as bool,
     {
       'data': data.toJson(),
       'signature': signature,
@@ -126,11 +126,11 @@ extension WalletRpcMethodsExtension on WalletClient {
     BigInt? topoheight,
   }) => sendRequestAndDecode(
     WalletMethod.createOwnershipProof,
-    (result) => result as String,
+    (result) => result! as String,
     {
       'asset': asset,
       'amount': amount,
-      if (topoheight != null) 'topoheight': topoheight,
+      'topoheight': ?topoheight,
     },
   );
 
@@ -140,10 +140,10 @@ extension WalletRpcMethodsExtension on WalletClient {
     BigInt? topoheight,
   }) => sendRequestAndDecode(
     WalletMethod.createBalanceProof,
-    (result) => result as String,
+    (result) => result! as String,
     {
       'asset': asset,
-      if (topoheight != null) 'topoheight': topoheight,
+      'topoheight': ?topoheight,
     },
   );
 
@@ -153,7 +153,7 @@ extension WalletRpcMethodsExtension on WalletClient {
     required String address,
   }) => sendRequestAndDecode(
     WalletMethod.verifyHumanReadableProof,
-    (result) => result as bool,
+    (result) => result! as bool,
     {'proof': proof, 'address': address},
   );
 
@@ -169,8 +169,8 @@ extension WalletRpcMethodsExtension on WalletClient {
     {
       'tree': tree,
       if (query != null) 'query': query.toJson(),
-      if (limit != null) 'limit': limit,
-      if (skip != null) 'skip': skip,
+      'limit': ?limit,
+      'skip': ?skip,
     },
   );
 
@@ -213,7 +213,7 @@ extension WalletRpcMethodsExtension on WalletClient {
     required DataElement value,
   }) => sendRequestAndDecode(
     WalletMethod.store,
-    (result) => result as bool,
+    (result) => result! as bool,
     {'tree': tree, 'key': key.toJson(), 'value': value.toJson()},
   );
 
@@ -221,14 +221,14 @@ extension WalletRpcMethodsExtension on WalletClient {
   Future<bool> delete({required String tree, required DataValue key}) =>
       sendRequestAndDecode(
         WalletMethod.delete,
-        (result) => result as bool,
+        (result) => result! as bool,
         {'tree': tree, 'key': key.toJson()},
       );
 
   /// Deletes every entry from a custom tree.
   Future<bool> deleteTreeEntries(String tree) => sendRequestAndDecode(
     WalletMethod.deleteTreeEntries,
-    (result) => result as bool,
+    (result) => result! as bool,
     {'tree': tree},
   );
 
@@ -236,7 +236,7 @@ extension WalletRpcMethodsExtension on WalletClient {
   Future<bool> hasKey({required String tree, required DataValue key}) =>
       sendRequestAndDecode(
         WalletMethod.hasKey,
-        (result) => result as bool,
+        (result) => result! as bool,
         {'tree': tree, 'key': key.toJson()},
       );
 
@@ -254,21 +254,21 @@ extension WalletRpcMethodsExtension on WalletClient {
       'tree': tree,
       if (key != null) 'key': key.toJson(),
       if (value != null) 'value': value.toJson(),
-      if (limit != null) 'limit': limit,
-      if (skip != null) 'skip': skip,
+      'limit': ?limit,
+      'skip': ?skip,
     },
   );
 
   /// Returns current daemon version.
   Future<String> getVersion() => sendRequestAndDecode(
     WalletMethod.getVersion,
-    (result) => result as String,
+    (result) => result! as String,
   );
 
   /// Retrieves network used by the wallet.
   Future<Network> getNetwork() => sendRequestAndDecode(
     WalletMethod.getNetwork,
-    (result) => Network.fromStr(result as String),
+    (result) => Network.fromStr(result! as String),
   );
 
   /// Retrieves account nonce saved in wallet.
@@ -289,7 +289,7 @@ extension WalletRpcMethodsExtension on WalletClient {
     GetAddressParams getAddressParams = const GetAddressParams(),
   ]) => sendRequestAndDecode(
     WalletMethod.getAddress,
-    (result) => result as String,
+    (result) => result! as String,
     getAddressParams.toJson(),
   );
 
@@ -310,7 +310,7 @@ extension WalletRpcMethodsExtension on WalletClient {
   /// storage to be up-to-date with the chain of the node connected to.
   Future<bool> rescan(RescanParams rescanParams) => sendRequestAndDecode(
     WalletMethod.rescan,
-    (result) => result as bool,
+    (result) => result! as bool,
     rescanParams.toJson(),
   );
 
@@ -330,14 +330,14 @@ extension WalletRpcMethodsExtension on WalletClient {
     GetWalletBalanceParams? getWalletBalanceParams,
   ]) => sendRequestAndDecode(
     WalletMethod.hasBalance,
-    (result) => result as bool,
+    (result) => result! as bool,
     getWalletBalanceParams?.toJson() ?? const GetWalletBalanceParams().toJson(),
   );
 
   /// Retrieves all assets that are tracked by the wallet.
   Future<List<String>> getTrackedAssets() => sendRequestAndDecode(
     WalletMethod.getTrackedAssets,
-    (result) => (result as List).cast<String>(),
+    (result) => (result! as List).cast<String>(),
   );
 
   /// Retrieves the decimals precision for the selected asset.
@@ -424,7 +424,7 @@ extension WalletRpcMethodsExtension on WalletClient {
     ListTransactionsParams? listTransactionsParams,
   ]) => sendRequestAndDecode(
     WalletMethod.listTransactions,
-    (result) => (result as List)
+    (result) => (result! as List)
         .map((entry) => TransactionEntry.fromJson(rpcJsonMap(entry)))
         .toList(),
     listTransactionsParams?.toJson() ?? const ListTransactionsParams().toJson(),
@@ -433,13 +433,13 @@ extension WalletRpcMethodsExtension on WalletClient {
   /// Checks if the wallet is in online mode.
   Future<bool> isOnline() => sendRequestAndDecode(
     WalletMethod.isOnline,
-    (result) => result as bool,
+    (result) => result! as bool,
   );
 
   /// Signs data with the wallet's private key.
   Future<String> signData(DataElement data) => sendRequestAndDecode(
     WalletMethod.signData,
-    (result) => result as String,
+    (result) => result! as String,
     data.toJson(),
   );
 
@@ -465,7 +465,7 @@ extension WalletRpcMethodsExtension on WalletClient {
   /// you can erase the TX cache stored in the wallet.
   Future<bool> clearTxCache() => sendRequestAndDecode(
     WalletMethod.clearTxCache,
-    (result) => result as bool,
+    (result) => result! as bool,
   );
 
   /// Decrypt extra data from a transaction.
@@ -494,8 +494,9 @@ extension WalletRpcMethodsExtension on WalletClient {
     GetWalletAssetsParams params = const GetWalletAssetsParams(),
   ]) => sendRequestAndDecode(
     WalletMethod.getAssets,
-    (result) =>
-        (result as List).map(WalletAssetEntry.fromJson).toList(growable: false),
+    (result) => (result! as List)
+        .map(WalletAssetEntry.fromJson)
+        .toList(growable: false),
     params.toJson(),
   );
 
@@ -512,14 +513,14 @@ extension WalletRpcMethodsExtension on WalletClient {
     GetTransactionParams getTransactionParams,
   ) => sendRequestAndDecode(
     WalletMethod.dumpTransaction,
-    (result) => result as String,
+    (result) => result! as String,
     getTransactionParams.toJson(),
   );
 }
 
 List<DataValue> _decodeWalletStorageKeys(Object? result) {
   if (result is! List) {
-    throw RpcDeserializationException(
+    throw const RpcDeserializationException(
       method: 'get_matching_keys',
       path: r'$result',
       message: 'Expected an array of scalar DataValue keys.',
@@ -531,7 +532,9 @@ List<DataValue> _decodeWalletStorageKeys(Object? result) {
         if (value is! DataValue) {
           throw RpcDeserializationException(
             method: 'get_matching_keys',
-            path: r'$result[' + '${entry.$1}]',
+            path:
+                r'$result['
+                '${entry.$1}]',
             message: 'Expected a scalar DataValue key.',
           );
         }

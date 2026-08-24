@@ -1,6 +1,6 @@
-import 'package:xelis_dart_sdk/src/data_transfer_objects/wallet/transaction_entry/transaction_entry_type.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/core/rpc_extra_fields.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/core/rpc_json_value.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/wallet/transaction_entry/transaction_entry_type.dart';
 import 'package:xelis_dart_sdk/src/utils/rpc_json.dart';
 
 /// Parses the flattened wallet transaction entry payload into its typed
@@ -57,7 +57,7 @@ Map<String, Object?> transactionEntryTypeToWireJson(
   }
 
   final payload = Map<String, Object?>.from(value.toJson());
-  final runtimeType = payload.remove('runtimeType') as String;
+  final runtimeType = payload.remove('runtimeType')! as String;
   final wirePayload = value.extraFields.mergeInto(
     payload,
     includeExtraFields: includeExtraFields,

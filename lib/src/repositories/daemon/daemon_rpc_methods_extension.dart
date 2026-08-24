@@ -14,9 +14,9 @@ import 'package:xelis_dart_sdk/src/data_transfer_objects/get_accounts/get_accoun
 import 'package:xelis_dart_sdk/src/data_transfer_objects/get_accounts/get_accounts_result.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/get_asset/get_asset_params.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/get_assets/get_assets_params.dart';
-import 'package:xelis_dart_sdk/src/data_transfer_objects/get_balance_at_topoheight/get_balance_at_topoheight_params.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/get_balance/get_balance_params.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/get_balance/get_balance_result.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/get_balance_at_topoheight/get_balance_at_topoheight_params.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/get_block_at_topoheight/get_block_at_topoheight_params.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/get_block_by_hash/get_block_by_hash_params.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/get_block_template/get_block_template_params.dart';
@@ -31,21 +31,21 @@ import 'package:xelis_dart_sdk/src/data_transfer_objects/get_difficulty/get_diff
 import 'package:xelis_dart_sdk/src/data_transfer_objects/get_estimated_fee_rates/fee_rates_estimated.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/get_hard_forks/get_hard_forks_result.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/get_info/get_info_result.dart';
-import 'package:xelis_dart_sdk/src/data_transfer_objects/get_mempool_cache/get_mempool_cache_params.dart';
-import 'package:xelis_dart_sdk/src/data_transfer_objects/get_mempool_cache/get_mempool_cache_result.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/get_mempool/get_mempool_params.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/get_mempool/get_mempool_result.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/get_mempool/get_mempool_summary_result.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/get_mempool_cache/get_mempool_cache_params.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/get_mempool_cache/get_mempool_cache_result.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/get_miner_work/get_miner_work_params.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/get_miner_work/get_miner_work_result.dart';
-import 'package:xelis_dart_sdk/src/data_transfer_objects/get_multisig_at_topoheight/get_multisig_at_topoheight_params.dart';
-import 'package:xelis_dart_sdk/src/data_transfer_objects/get_multisig_at_topoheight/get_multisig_at_topoheight_result.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/get_multisig/get_multisig_params.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/get_multisig/get_multisig_result.dart';
-import 'package:xelis_dart_sdk/src/data_transfer_objects/get_nonce_at_topoheight/get_nonce_at_topoheight_params.dart';
-import 'package:xelis_dart_sdk/src/data_transfer_objects/get_nonce_at_topoheight/get_nonce_at_topoheight_result.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/get_multisig_at_topoheight/get_multisig_at_topoheight_params.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/get_multisig_at_topoheight/get_multisig_at_topoheight_result.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/get_nonce/get_nonce_params.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/get_nonce/get_nonce_result.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/get_nonce_at_topoheight/get_nonce_at_topoheight_params.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/get_nonce_at_topoheight/get_nonce_at_topoheight_result.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/get_peers/get_peers_result.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/get_peers/peer_entry.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/get_range/get_height_range_params.dart';
@@ -53,13 +53,13 @@ import 'package:xelis_dart_sdk/src/data_transfer_objects/get_range/get_topoheigh
 import 'package:xelis_dart_sdk/src/data_transfer_objects/get_size_on_disk/get_size_on_disk_result.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/get_stable_balance/get_stable_balance_result.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/get_top_block/get_top_block_params.dart';
-import 'package:xelis_dart_sdk/src/data_transfer_objects/get_transaction_executor/get_transaction_executor_result.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/get_transaction/get_transaction_params.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/get_transaction_executor/get_transaction_executor_result.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/get_transactions/get_transactions_params.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/has_balance/has_balance_params.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/has_balance/has_balance_result.dart';
-import 'package:xelis_dart_sdk/src/data_transfer_objects/has_multisig_at_topoheight/has_multisig_at_topoheight_params.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/has_multisig/has_multisig_params.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/has_multisig_at_topoheight/has_multisig_at_topoheight_params.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/has_nonce/has_nonce_params.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/has_nonce/has_nonce_result.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/is_account_registered/is_account_registered_params.dart';
@@ -85,7 +85,7 @@ extension DaemonRpcMethodsExtension on DaemonClient {
   /// Returns current daemon version.
   Future<String> getVersion() => sendRequestAndDecode(
     DaemonMethod.getVersion,
-    (result) => result as String,
+    (result) => result! as String,
   );
 
   /// Returns current information from chain.
@@ -97,25 +97,25 @@ extension DaemonRpcMethodsExtension on DaemonClient {
   /// Returns current height  of the chain.
   Future<BigInt> getHeight() => sendRequestAndDecode(
     DaemonMethod.getHeight,
-    (result) => rpcBigInt(result),
+    rpcBigInt,
   );
 
   /// Returns current topological height of the chain.
   Future<BigInt> getTopoheight() => sendRequestAndDecode(
     DaemonMethod.getTopoheight,
-    (result) => rpcBigInt(result),
+    rpcBigInt,
   );
 
   /// Returns the stable height of the chain.
   Future<BigInt> getStableHeight() => sendRequestAndDecode(
     DaemonMethod.getStableHeight,
-    (result) => rpcBigInt(result),
+    rpcBigInt,
   );
 
   /// Returns the stable topological height of the chain.
   Future<BigInt> getStableTopoheight() => sendRequestAndDecode(
     DaemonMethod.getStableTopoheight,
-    (result) => rpcBigInt(result),
+    rpcBigInt,
   );
 
   /// Returns the block template for PoW work.
@@ -141,7 +141,7 @@ extension DaemonRpcMethodsExtension on DaemonClient {
     GetBlocksAtHeightParams getBlocksAtHeightParams,
   ) => sendRequestAndDecode(
     DaemonMethod.getBlocksAtHeight,
-    (result) => (result as List)
+    (result) => (result! as List)
         .map((value) => Block.fromJson(rpcJsonMap(value)))
         .toList(),
     getBlocksAtHeightParams.toJson(),
@@ -239,7 +239,7 @@ extension DaemonRpcMethodsExtension on DaemonClient {
     GetAssetsParams? getAssetsParams,
   ]) => sendRequestAndDecode(
     DaemonMethod.getAssets,
-    (result) => (result as List)
+    (result) => (result! as List)
         .map((value) => RpcAssetData.fromJson(rpcJsonMap(value)))
         .toList(),
     getAssetsParams?.toJson() ?? const GetAssetsParams().toJson(),
@@ -248,19 +248,19 @@ extension DaemonRpcMethodsExtension on DaemonClient {
   /// Returns the number of transactions saved on node disk.
   Future<int> countTransactions() => sendRequestAndDecode(
     DaemonMethod.countTransactions,
-    (result) => result as int,
+    (result) => result! as int,
   );
 
   /// Counts the number of assets saved on disk.
   Future<int> countAssets() => sendRequestAndDecode(
     DaemonMethod.countAssets,
-    (result) => result as int,
+    (result) => result! as int,
   );
 
   /// Returns Tips (highest blocks from blockDAG) from chain.
   Future<List<String>> getTips() => sendRequestAndDecode(
     DaemonMethod.getTips,
-    (result) => (result as List).cast<String>(),
+    (result) => (result! as List).cast<String>(),
   );
 
   /// Returns information about P2P.
@@ -277,7 +277,7 @@ extension DaemonRpcMethodsExtension on DaemonClient {
     GetTopoheightRangeParams getTopoheightRangeParams,
   ) => sendRequestAndDecode(
     DaemonMethod.getDagOrder,
-    (result) => (result as List).cast<String>(),
+    (result) => (result! as List).cast<String>(),
     getTopoheightRangeParams.toJson(),
   );
 
@@ -286,7 +286,7 @@ extension DaemonRpcMethodsExtension on DaemonClient {
     SubmitTransactionParams submitTransactionParams,
   ) => sendRequestAndDecode(
     DaemonMethod.submitTransaction,
-    (result) => result as bool,
+    (result) => result! as bool,
     submitTransactionParams.toJson(),
   );
 
@@ -335,7 +335,7 @@ extension DaemonRpcMethodsExtension on DaemonClient {
     GetTransactionsParams getTransactionsParams,
   ) => sendRequestAndDecode(
     DaemonMethod.getTransactions,
-    (result) => (result as List)
+    (result) => (result! as List)
         .map(
           (value) =>
               value == null ? null : RpcTransaction.fromJson(rpcJsonMap(value)),
@@ -349,7 +349,7 @@ extension DaemonRpcMethodsExtension on DaemonClient {
     SubmitBlockParams submitBlockParams,
   ) => sendRequestAndDecode(
     DaemonMethod.submitBlock,
-    (result) => result as bool,
+    (result) => result! as bool,
     submitBlockParams.toJson(),
   );
 
@@ -359,7 +359,7 @@ extension DaemonRpcMethodsExtension on DaemonClient {
     GetTopoheightRangeParams getTopoheightRangeParams,
   ) => sendRequestAndDecode(
     DaemonMethod.getBlocksRangeByTopoheight,
-    (result) => (result as List)
+    (result) => (result! as List)
         .map((value) => Block.fromJson(rpcJsonMap(value)))
         .toList(),
     getTopoheightRangeParams.toJson(),
@@ -371,7 +371,7 @@ extension DaemonRpcMethodsExtension on DaemonClient {
     GetHeightRangeParams getHeightRangeParams,
   ) => sendRequestAndDecode(
     DaemonMethod.getBlocksRangeByHeight,
-    (result) => (result as List)
+    (result) => (result! as List)
         .map((value) => Block.fromJson(rpcJsonMap(value)))
         .toList(),
     getHeightRangeParams.toJson(),
@@ -383,21 +383,21 @@ extension DaemonRpcMethodsExtension on DaemonClient {
     GetAccountsParams? getAccountsParams,
   ]) => sendRequestAndDecode(
     DaemonMethod.getAccounts,
-    (result) => GetAccountsResult(publicKeys: (result as List).cast()),
+    (result) => GetAccountsResult(publicKeys: (result! as List).cast()),
     getAccountsParams?.toJson() ?? const GetAccountsParams().toJson(),
   );
 
   /// Counts the number of accounts saved on disk
   Future<int> countAccounts() => sendRequestAndDecode(
     DaemonMethod.countAccounts,
-    (result) => result as int,
+    (result) => result! as int,
   );
 
   /// Retrieve all peers connected
   Future<GetPeersResult> getPeers() => sendRequestAndDecode(
     DaemonMethod.getPeers,
     (result) {
-      final peers = (result as List)
+      final peers = (result! as List)
           .map((value) => PeerEntry.fromJson(rpcJsonMap(value)))
           .toList(growable: false);
       return GetPeersResult(
@@ -413,7 +413,7 @@ extension DaemonRpcMethodsExtension on DaemonClient {
     GetAccountHistoryParams getAccountHistoryParams,
   ) => sendRequestAndDecode(
     DaemonMethod.getAccountHistory,
-    (result) => (result as List)
+    (result) => (result! as List)
         .map((value) => GetAccountHistoryResult.fromJson(rpcJsonMap(value)))
         .toList(growable: false),
     getAccountHistoryParams.toJson(),
@@ -437,7 +437,7 @@ extension DaemonRpcMethodsExtension on DaemonClient {
     IsAccountRegisteredParams isAccountRegisteredParams,
   ) => sendRequestAndDecode(
     DaemonMethod.isAccountRegistered,
-    (result) => result as bool,
+    (result) => result! as bool,
     isAccountRegisteredParams.toJson(),
   );
 
@@ -449,7 +449,7 @@ extension DaemonRpcMethodsExtension on DaemonClient {
     getAccountRegistrationTopoheightParams,
   ) => sendRequestAndDecode(
     DaemonMethod.getAccountRegistrationTopoheight,
-    (result) => rpcBigInt(result),
+    rpcBigInt,
     getAccountRegistrationTopoheightParams.toJson(),
   );
 
@@ -466,14 +466,14 @@ extension DaemonRpcMethodsExtension on DaemonClient {
     IsTxExecutedInBlockParams isTxExecutedInBlockParams,
   ) => sendRequestAndDecode(
     DaemonMethod.isTxExecutedInBlock,
-    (result) => result as bool,
+    (result) => result! as bool,
     isTxExecutedInBlockParams.toJson(),
   );
 
   /// Retrieve configured dev fees thresholds
   Future<List<DevFeeThresholds>> getDevFeeThresholds() => sendRequestAndDecode(
     DaemonMethod.getDevFeeThresholds,
-    (result) => (result as List)
+    (result) => (result! as List)
         .map((value) => DevFeeThresholds.fromJson(rpcJsonMap(value)))
         .toList(),
   );
@@ -546,7 +546,7 @@ extension DaemonRpcMethodsExtension on DaemonClient {
   /// Get hard forks
   Future<List<GetHardForksResult>> getHardForks() => sendRequestAndDecode(
     DaemonMethod.getHardForks,
-    (result) => (result as List)
+    (result) => (result! as List)
         .map((value) => GetHardForksResult.fromJson(rpcJsonMap(value)))
         .toList(),
   );
@@ -556,7 +556,7 @@ extension DaemonRpcMethodsExtension on DaemonClient {
     MakeIntegratedAddressParams makeIntegratedAddressParams,
   ) => sendRequestAndDecode(
     DaemonMethod.makeIntegratedAddress,
-    (result) => result as String,
+    (result) => result! as String,
     makeIntegratedAddressParams.toJson(),
   );
 
@@ -591,7 +591,7 @@ extension DaemonRpcMethodsExtension on DaemonClient {
   Future<bool> hasMultisig(HasMultisigParams hasMultisigParams) =>
       sendRequestAndDecode(
         DaemonMethod.hasMultisig,
-        (result) => result as bool,
+        (result) => result! as bool,
         hasMultisigParams.toJson(),
       );
 
@@ -600,14 +600,14 @@ extension DaemonRpcMethodsExtension on DaemonClient {
     HasMultisigAtTopoheightParams hasMultisigAtTopoheightParams,
   ) => sendRequestAndDecode(
     DaemonMethod.hasMultisigAtTopoheight,
-    (result) => result as bool,
+    (result) => result! as bool,
     hasMultisigAtTopoheightParams.toJson(),
   );
 
   /// Retrieve the number of contracts saved on disk.
   Future<int> countContracts() => sendRequestAndDecode(
     DaemonMethod.countContracts,
-    (result) => result as int,
+    (result) => result! as int,
   );
 
   /// Get estimated fee rates.
@@ -621,7 +621,7 @@ extension DaemonRpcMethodsExtension on DaemonClient {
     GetContractLogsParams params,
   ) => sendRequestAndDecode(
     DaemonMethod.getContractLogs,
-    (result) => (result as List)
+    (result) => (result! as List)
         .map((value) => RpcContractLog.fromJson(rpcJsonMap(value)))
         .toList(growable: false),
     params.toJson(),
@@ -649,7 +649,7 @@ extension DaemonRpcMethodsExtension on DaemonClient {
   Future<bool> hasContractData(GetContractDataParams params) =>
       sendRequestAndDecode(
         DaemonMethod.hasContractData,
-        (result) => result as bool,
+        (result) => result! as bool,
         params.toJson(),
       );
 }

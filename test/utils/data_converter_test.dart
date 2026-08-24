@@ -11,7 +11,7 @@ import 'package:xelis_dart_sdk/xelis_dart_sdk.dart';
 void main() {
   group('legacy data converters', () {
     test('keeps the public zero hash contract', () {
-      final Hash typedHash = zeroHash;
+      final typedHash = zeroHash;
 
       expect(typedHash, isA<Uint8List>());
       expect(typedHash, hasLength(32));

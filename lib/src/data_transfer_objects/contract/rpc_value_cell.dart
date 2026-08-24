@@ -1,10 +1,10 @@
 import 'dart:typed_data';
 
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/contract/rpc_opaque_value.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/core/rpc_exception.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/core/rpc_extra_fields.dart';
 import 'package:xelis_dart_sdk/src/data_transfer_objects/core/rpc_json_value.dart';
-import 'package:xelis_dart_sdk/src/data_transfer_objects/contract/rpc_opaque_value.dart';
 import 'package:xelis_dart_sdk/src/utils/rpc_json.dart';
 
 part 'rpc_value_cell.freezed.dart';
@@ -12,9 +12,9 @@ part 'rpc_value_cell.freezed.dart';
 final _maxU8 = BigInt.from(0xff);
 final _maxU16 = BigInt.from(0xffff);
 final _maxU32 = BigInt.from(0xffffffff);
-final _maxU64 = (BigInt.one << 64) - BigInt.one;
-final _maxU128 = (BigInt.one << 128) - BigInt.one;
-final _maxU256 = (BigInt.one << 256) - BigInt.one;
+final BigInt _maxU64 = (BigInt.one << 64) - BigInt.one;
+final BigInt _maxU128 = (BigInt.one << 128) - BigInt.one;
+final BigInt _maxU256 = (BigInt.one << 256) - BigInt.one;
 
 /// Exact RPC representation of `xelis_vm::ValueCell`.
 @Freezed(fromJson: false, toJson: false, toStringOverride: false)

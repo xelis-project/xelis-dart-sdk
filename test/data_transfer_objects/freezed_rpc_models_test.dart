@@ -59,8 +59,8 @@ void main() {
     );
 
     test('nested permission unions are deeply immutable and lossless', () {
-      final permission = InterContractPermission.specific([
-        const ContractCall(
+      const permission = InterContractPermission.specific([
+        ContractCall(
           contract: 'contract',
           chunk: ContractCallChunk.specific([1, 2]),
         ),
@@ -68,8 +68,8 @@ void main() {
 
       expect(
         permission,
-        InterContractPermission.specific([
-          const ContractCall(
+        const InterContractPermission.specific([
+          ContractCall(
             contract: 'contract',
             chunk: ContractCallChunk.specific([1, 2]),
           ),
@@ -155,11 +155,11 @@ void main() {
     );
 
     test('validated wrappers keep structural equality and redaction', () {
-      final extraData = EncryptedExtraData([1, 2, 3]);
+      final extraData = EncryptedExtraData(const [1, 2, 3]);
       final sharedKeyHex = List<String>.filled(32, 'AB').join();
       final sharedKey = ExtraDataSharedKey(sharedKeyHex);
 
-      expect(extraData, EncryptedExtraData([1, 2, 3]));
+      expect(extraData, EncryptedExtraData(const [1, 2, 3]));
       expect(extraData.copyWith(), extraData);
       expect(sharedKey, ExtraDataSharedKey(sharedKeyHex.toLowerCase()));
       expect(extraData.toString(), isNot(contains('[1, 2, 3]')));

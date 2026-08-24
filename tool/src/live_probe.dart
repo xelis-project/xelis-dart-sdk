@@ -249,7 +249,7 @@ Future<void> _connect(RpcClientRepository client) async {
     ..onOpen(() {
       if (!connected.isCompleted) connected.complete();
     })
-    ..onError((Object error) {
+    ..onError((error) {
       if (!connected.isCompleted) connected.completeError(error);
     })
     ..connect();

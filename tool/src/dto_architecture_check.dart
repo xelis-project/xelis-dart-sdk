@@ -10,7 +10,7 @@ void checkDtoArchitecture() {
   for (final file in sourceFiles) {
     final source = file.readAsStringSync();
     final relative = _relative(file.path);
-    if (source.contains("package:xelis_dart_sdk/xelis_dart_sdk.dart") ||
+    if (source.contains('package:xelis_dart_sdk/xelis_dart_sdk.dart') ||
         source.contains(
           'package:xelis_dart_sdk/src/data_transfer_objects/dtos.dart',
         )) {
@@ -47,7 +47,7 @@ void checkDtoArchitecture() {
   for (final file in dtoSources) {
     final source = file.readAsStringSync();
     final relative = _relative(file.path);
-    if (RegExp(r'^export ', multiLine: true).hasMatch(source)) {
+    if (RegExp('^export ', multiLine: true).hasMatch(source)) {
       failures.add('$relative re-exports another model.');
     }
     final declarations = _publicDeclarations(source);
@@ -69,7 +69,7 @@ void checkDtoArchitecture() {
   }
 
   final barrel = File('lib/src/data_transfer_objects/dtos.dart');
-  final exportPattern = RegExp(r"^export '([^']+)';", multiLine: true);
+  final exportPattern = RegExp("^export '([^']+)';", multiLine: true);
   final exportedPaths = <String>{};
   for (final match in exportPattern.allMatches(barrel.readAsStringSync())) {
     final path = match.group(1)!;
@@ -94,7 +94,7 @@ void checkDtoArchitecture() {
 
   for (final file in dtoSources) {
     final source = file.readAsStringSync();
-    if (RegExp(r'^part of ', multiLine: true).hasMatch(source) ||
+    if (RegExp('^part of ', multiLine: true).hasMatch(source) ||
         _publicDeclarations(source).isEmpty) {
       continue;
     }
@@ -157,7 +157,7 @@ List<File> _dartSources(Directory directory) {
 void _checkPublicBarrel(List<String> failures) {
   final barrel = File('lib/xelis_dart_sdk.dart');
   final exports = RegExp(
-    r"^export '([^']+)';",
+    "^export '([^']+)';",
     multiLine: true,
   ).allMatches(barrel.readAsStringSync()).map((match) => match.group(1)!);
   final seen = <String>{};
@@ -251,7 +251,7 @@ List<String> _publicDeclarations(String source) => RegExp(
 bool _isGenerated(String path) =>
     path.endsWith('.freezed.dart') || path.endsWith('.g.dart');
 
-String _relative(String path) => path.replaceAll('\\', '/');
+String _relative(String path) => path.replaceAll(r'\', '/');
 
 String _relativeFrom(Directory root, File file) {
   final rootPath = _relative(root.absolute.path);
@@ -261,11 +261,11 @@ String _relativeFrom(Directory root, File file) {
 
 String _snakeCase(String value) => value
     .replaceAllMapped(
-      RegExp(r'([a-z0-9])([A-Z])'),
+      RegExp('([a-z0-9])([A-Z])'),
       (match) => '${match.group(1)}_${match.group(2)}',
     )
     .replaceAllMapped(
-      RegExp(r'([A-Z]+)([A-Z][a-z])'),
+      RegExp('([A-Z]+)([A-Z][a-z])'),
       (match) => '${match.group(1)}_${match.group(2)}',
     )
     .toLowerCase();

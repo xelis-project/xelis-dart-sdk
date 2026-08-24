@@ -1,6 +1,6 @@
 import 'package:test/test.dart';
-import 'package:xelis_dart_sdk/xelis_dart_sdk.dart';
 import 'package:xelis_dart_sdk/src/utils/rpc_json.dart';
+import 'package:xelis_dart_sdk/xelis_dart_sdk.dart';
 
 void main() {
   final exactIntegers = <BigInt>[

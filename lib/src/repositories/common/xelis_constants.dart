@@ -55,10 +55,10 @@ final class RpcEventSubscription {
     BigInt? id,
   }) : event = event,
        notify = {
-         event.jsonKey: {'contract': contract, if (id != null) 'id': id},
+         event.jsonKey: {'contract': contract, 'id': ?id},
        },
        _identity = _eventSubscriptionIdentity({
-         event.jsonKey: {'contract': contract, if (id != null) 'id': id},
+         event.jsonKey: {'contract': contract, 'id': ?id},
        });
 
   /// Reconstructs the subscription identity carried by an event response.

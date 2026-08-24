@@ -809,7 +809,7 @@ void main() {
     final offending = files
         .where(
           (file) => RegExp(
-            r'v1[_.-]24',
+            'v1[_.-]24',
             caseSensitive: false,
           ).hasMatch('${file.path}\n${file.readAsStringSync()}'),
         )

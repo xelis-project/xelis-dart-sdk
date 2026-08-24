@@ -51,7 +51,7 @@ void main() {
 
         final plaintext = await client.decryptExtraData(
           DecryptExtraDataWalletParams(
-            extraData: EncryptedExtraData([1, 2, 3]),
+            extraData: EncryptedExtraData(const [1, 2, 3]),
             role: Role.receiver,
           ),
         );

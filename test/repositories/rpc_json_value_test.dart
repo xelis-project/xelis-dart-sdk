@@ -158,7 +158,7 @@ void main() {
 
     final roundTrip = event.toWireJson(includeExtraFields: true);
     expect(roundTrip, containsPair('future_event_field', isTrue));
-    final encodedExecution = (roundTrip['executions'] as List).single as Map;
+    final encodedExecution = (roundTrip['executions']! as List).single as Map;
     expect(encodedExecution, containsPair('future_entry_field', 'entry'));
     expect(
       encodedExecution['key'],

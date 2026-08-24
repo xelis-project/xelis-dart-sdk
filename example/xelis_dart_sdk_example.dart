@@ -45,8 +45,6 @@ BuildTransactionParams transferRequest({
       ),
     ],
   ),
-  fee: const FeeBuilder.extra(),
-  baseFee: const BaseFeeMode.none(),
 );
 
 /// Constructs the stable serialized-contract deployment.
@@ -55,6 +53,4 @@ BuildTransactionParams deploymentRequest(String xvmModuleHex) =>
       transactionTypeBuilder: TransactionTypeBuilder.deployContract(
         contract: ContractModuleHex.fromModule(module: xvmModuleHex),
       ),
-      fee: const FeeBuilder.extra(),
-      baseFee: const BaseFeeMode.none(),
     );
