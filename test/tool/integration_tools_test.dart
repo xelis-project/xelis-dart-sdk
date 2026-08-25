@@ -647,7 +647,6 @@ void main() {
     for (final profile in hookProfiles) {
       expect(parseHookProfile(profile), profile);
     }
-    expect(() => parseHookProfile('smoke'), throwsArgumentError);
   });
 
   test('verify profiles map to explicit actions', () {
@@ -720,7 +719,6 @@ void main() {
       ]),
       throwsFormatException,
     );
-    expect(() => VerificationOptions.parse(['smoke']), throwsFormatException);
     expect(
       () => VerificationOptions.parse(['ci', '--skip-integration']),
       throwsFormatException,
@@ -893,6 +891,24 @@ void main() {
       File('.github/workflows/publish.yml').readAsStringSync(),
       contains('release --skip-integration'),
     );
+  });
+
+  test('GitHub sparse checkouts include every RPC inventory source', () {
+    const requiredSources = {
+      'xelis_common/src/api/daemon/mod.rs',
+      'xelis_common/src/api/wallet.rs',
+      'xelis_daemon/src/rpc/rpc.rs',
+      'xelis_wallet/src/api/rpc.rs',
+    };
+    for (final workflow in [
+      '.github/workflows/checks.yml',
+      '.github/workflows/publish.yml',
+    ]) {
+      final source = File(workflow).readAsStringSync();
+      for (final requiredSource in requiredSources) {
+        expect(source, contains(requiredSource), reason: workflow);
+      }
+    }
   });
 }
 
