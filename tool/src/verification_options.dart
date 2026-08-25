@@ -116,19 +116,20 @@ final class VerificationOptions {
         '--wallet-binary is not valid with integration daemon.',
       );
     }
-    final hasIntegrationOption = values.keys.any(
-      const {
-        '--xelis-source',
-        '--daemon-binary',
-        '--wallet-binary',
-        '--connect',
-      }.contains,
+    final hasLocalIntegrationOption = values.keys.any(
+      const {'--daemon-binary', '--wallet-binary', '--connect'}.contains,
     );
-    if (hasIntegrationOption &&
+    if (hasLocalIntegrationOption &&
         profile != VerifyProfile.integration &&
         profile != VerifyProfile.release) {
       throw const FormatException(
         'Local integration options require integration or release.',
+      );
+    }
+    if (values.containsKey('--xelis-source') &&
+        profile == VerifyProfile.probe) {
+      throw const FormatException(
+        '--xelis-source is only valid with check, ci, integration, or release.',
       );
     }
     final hasProbeOption = values.keys.any(

@@ -720,14 +720,38 @@ void main() {
       ]),
       throwsFormatException,
     );
-    expect(
-      () => VerificationOptions.parse(['smoke']),
-      throwsFormatException,
-    );
+    expect(() => VerificationOptions.parse(['smoke']), throwsFormatException);
     expect(
       () => VerificationOptions.parse(['ci', '--skip-integration']),
       throwsFormatException,
     );
+  });
+
+  test('pinned XELIS source is shared by checks and integration', () {
+    for (final arguments in [
+      ['check', '--xelis-source', 'source'],
+      ['ci', '--xelis-source', 'source'],
+      ['integration', 'daemon', '--xelis-source', 'source'],
+      ['release', '--xelis-source', 'source'],
+    ]) {
+      expect(VerificationOptions.parse(arguments).xelisSource, 'source');
+    }
+    expect(
+      () => VerificationOptions.parse(['probe', '--xelis-source', 'source']),
+      throwsFormatException,
+    );
+    for (final profile in ['check', 'ci']) {
+      for (final option in [
+        '--daemon-binary',
+        '--wallet-binary',
+        '--connect',
+      ]) {
+        expect(
+          () => VerificationOptions.parse([profile, option, 'value']),
+          throwsFormatException,
+        );
+      }
+    }
   });
 
   test('GitHub Actions cannot start local XELIS integration', () {
@@ -735,6 +759,7 @@ void main() {
     for (final arguments in [
       ['check'],
       ['ci'],
+      ['ci', '--xelis-source', 'source'],
       ['probe'],
       ['release', '--skip-integration'],
     ]) {

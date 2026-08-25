@@ -216,8 +216,10 @@ Profiles: check, ci, integration <daemon|wallet|e2e|all>, release, probe
 CI options:
   --skip-integration      Skip local XELIS processes for release packaging.
 
+Upstream source options:
+  --xelis-source <path>   Pinned XELIS source used by checks and integration.
+
 Local integration options:
-  --xelis-source <path>   Pinned XELIS source used as a clone reference.
   --daemon-binary <path> Reuse an existing daemon binary.
   --wallet-binary <path> Reuse an existing wallet binary.
   --connect <file>        Test already-running processes from a config file.
