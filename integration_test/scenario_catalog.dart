@@ -45,14 +45,12 @@ const integrationScenarios = <IntegrationScenario>[
   IntegrationScenario(
     id: 'wallet_transaction_building',
     suite: 'e2e',
-    coverage:
-        'fee estimation, unsigned/finalize, offline build, integrated blob and burn',
+    coverage: 'fee estimation, unsigned/finalize, offline build, integrated blob and burn',
   ),
   IntegrationScenario(
     id: 'contract_deployment',
     suite: 'e2e',
-    coverage:
-        'fixture verification, deployment, RPC events, scheduled execution and readback',
+    coverage: 'fixture verification, deployment, RPC events, scheduled execution and readback',
   ),
   IntegrationScenario(
     id: 'multisig_configuration',

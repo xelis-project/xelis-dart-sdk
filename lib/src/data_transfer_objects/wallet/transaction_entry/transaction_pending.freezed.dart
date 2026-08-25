@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'transaction_pending.dart';
@@ -9,6 +9,7 @@ part of 'transaction_pending.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 /// @nodoc
@@ -63,7 +64,7 @@ class _$TransactionPendingCopyWithImpl<$Res>
 /// Create a copy of TransactionPending
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? hash = null,Object? txEntryType = null,Object? timestamp = null,Object? extraFields = null,}) {
-  return _then(_self.copyWith(
+  return _then(TransactionPending(
 hash: null == hash ? _self.hash : hash // ignore: cast_nullable_to_non_nullable
 as String,txEntryType: null == txEntryType ? _self.txEntryType : txEntryType // ignore: cast_nullable_to_non_nullable
 as TransactionEntryType,timestamp: null == timestamp ? _self.timestamp : timestamp // ignore: cast_nullable_to_non_nullable
@@ -76,7 +77,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $TransactionEntryTypeCopyWith<$Res> get txEntryType {
-
+  
   return $TransactionEntryTypeCopyWith<$Res>(_self.txEntryType, (value) {
     return _then(_self.copyWith(txEntryType: value));
   });
@@ -85,7 +86,7 @@ $TransactionEntryTypeCopyWith<$Res> get txEntryType {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -228,7 +229,7 @@ return $default(_that.hash,_that.txEntryType,_that.timestamp,_that.extraFields);
 
 class _TransactionPending extends TransactionPending {
   const _TransactionPending({required this.hash, required this.txEntryType, required this.timestamp, this.extraFields = const RpcExtraFields()}): super._();
-
+  
 
 @override final  String hash;
 @override final  TransactionEntryType txEntryType;
@@ -297,7 +298,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $TransactionEntryTypeCopyWith<$Res> get txEntryType {
-
+  
   return $TransactionEntryTypeCopyWith<$Res>(_self.txEntryType, (value) {
     return _then(_self.copyWith(txEntryType: value));
   });
@@ -306,7 +307,7 @@ $TransactionEntryTypeCopyWith<$Res> get txEntryType {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });

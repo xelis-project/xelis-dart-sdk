@@ -25,9 +25,9 @@ void main() {
       'xelis-target-integration-',
     );
     addTearDown(() => directory.deleteSync(recursive: true));
-    final manifest =
-        jsonDecode(File('xelis_target.json').readAsStringSync())
-            as Map<String, dynamic>;
+    final manifest = jsonDecode(
+      File('xelis_target.json').readAsStringSync(),
+    ) as Map<String, dynamic>;
     final components =
         (manifest['integration'] as Map<String, dynamic>)['components']
             as Map<String, dynamic>;
@@ -51,9 +51,9 @@ void main() {
   test('rejects unknown fields and abbreviated commits', () {
     final directory = Directory.systemTemp.createTempSync('xelis-target-test-');
     addTearDown(() => directory.deleteSync(recursive: true));
-    final manifest =
-        jsonDecode(File('xelis_target.json').readAsStringSync())
-            as Map<String, dynamic>;
+    final manifest = jsonDecode(
+      File('xelis_target.json').readAsStringSync(),
+    ) as Map<String, dynamic>;
     manifest['unexpected'] = true;
     (manifest['upstream'] as Map<String, dynamic>)['commit'] = 'deadbeef';
     final file = File('${directory.path}/target.json')
@@ -67,9 +67,9 @@ void main() {
   test('rejects absolute or parent-relative schema paths', () {
     final directory = Directory.systemTemp.createTempSync('xelis-target-path-');
     addTearDown(() => directory.deleteSync(recursive: true));
-    final manifest =
-        jsonDecode(File('xelis_target.json').readAsStringSync())
-            as Map<String, dynamic>;
+    final manifest = jsonDecode(
+      File('xelis_target.json').readAsStringSync(),
+    ) as Map<String, dynamic>;
     (manifest['schemas'] as Map<String, dynamic>)['daemon'] = '../daemon.json';
     final file = File('${directory.path}/target.json')
       ..writeAsStringSync(jsonEncode(manifest));
@@ -82,9 +82,9 @@ void main() {
   test('allows a future baseline only when files are not required', () {
     final directory = Directory.systemTemp.createTempSync('xelis-target-new-');
     addTearDown(() => directory.deleteSync(recursive: true));
-    final manifest =
-        jsonDecode(File('xelis_target.json').readAsStringSync())
-            as Map<String, dynamic>;
+    final manifest = jsonDecode(
+      File('xelis_target.json').readAsStringSync(),
+    ) as Map<String, dynamic>;
     manifest['schemas'] = {
       'daemon': 'future/daemon.json',
       'wallet': 'future/wallet.json',

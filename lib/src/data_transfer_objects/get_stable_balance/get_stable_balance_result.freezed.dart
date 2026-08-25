@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'get_stable_balance_result.dart';
@@ -9,6 +9,7 @@ part of 'get_stable_balance_result.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 /// @nodoc
@@ -63,7 +64,7 @@ class _$GetStableBalanceResultCopyWithImpl<$Res>
 /// Create a copy of GetStableBalanceResult
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? versionedBalance = null,Object? topoheight = null,Object? stableTopoheight = null,Object? stableBlockHash = null,Object? extraFields = null,}) {
-  return _then(_self.copyWith(
+  return _then(GetStableBalanceResult(
 versionedBalance: null == versionedBalance ? _self.versionedBalance : versionedBalance // ignore: cast_nullable_to_non_nullable
 as BalanceVersion,topoheight: null == topoheight ? _self.topoheight : topoheight // ignore: cast_nullable_to_non_nullable
 as BigInt,stableTopoheight: null == stableTopoheight ? _self.stableTopoheight : stableTopoheight // ignore: cast_nullable_to_non_nullable
@@ -77,7 +78,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $BalanceVersionCopyWith<$Res> get versionedBalance {
-
+  
   return $BalanceVersionCopyWith<$Res>(_self.versionedBalance, (value) {
     return _then(_self.copyWith(versionedBalance: value));
   });
@@ -86,7 +87,7 @@ $BalanceVersionCopyWith<$Res> get versionedBalance {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -229,7 +230,7 @@ return $default(_that.versionedBalance,_that.topoheight,_that.stableTopoheight,_
 
 class _GetStableBalanceResult extends GetStableBalanceResult {
   const _GetStableBalanceResult({@JsonKey(name: 'version') required this.versionedBalance, @JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.topoheight, @JsonKey(name: 'stable_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.stableTopoheight, @JsonKey(name: 'stable_block_hash') required this.stableBlockHash, @JsonKey(includeFromJson: false, includeToJson: false) this.extraFields = const RpcExtraFields()}): super._();
-
+  
 
 @override@JsonKey(name: 'version') final  BalanceVersion versionedBalance;
 @override@JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) final  BigInt topoheight;
@@ -300,7 +301,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $BalanceVersionCopyWith<$Res> get versionedBalance {
-
+  
   return $BalanceVersionCopyWith<$Res>(_self.versionedBalance, (value) {
     return _then(_self.copyWith(versionedBalance: value));
   });
@@ -309,7 +310,7 @@ $BalanceVersionCopyWith<$Res> get versionedBalance {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });

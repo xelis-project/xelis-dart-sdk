@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'rpc_simulate_contract_invoke_result.dart';
@@ -9,6 +9,7 @@ part of 'rpc_simulate_contract_invoke_result.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 /// @nodoc
@@ -63,7 +64,7 @@ class _$RpcSimulateContractInvokeResultCopyWithImpl<$Res>
 /// Create a copy of RpcSimulateContractInvokeResult
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? baseFee = null,Object? result = null,Object? blockHash = null,Object? topoheight = null,Object? extraFields = null,}) {
-  return _then(_self.copyWith(
+  return _then(RpcSimulateContractInvokeResult(
 baseFee: null == baseFee ? _self.baseFee : baseFee // ignore: cast_nullable_to_non_nullable
 as BigInt,result: null == result ? _self.result : result // ignore: cast_nullable_to_non_nullable
 as RpcExecutionResult,blockHash: null == blockHash ? _self.blockHash : blockHash // ignore: cast_nullable_to_non_nullable
@@ -77,7 +78,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExecutionResultCopyWith<$Res> get result {
-
+  
   return $RpcExecutionResultCopyWith<$Res>(_self.result, (value) {
     return _then(_self.copyWith(result: value));
   });
@@ -86,7 +87,7 @@ $RpcExecutionResultCopyWith<$Res> get result {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -229,7 +230,7 @@ return $default(_that.baseFee,_that.result,_that.blockHash,_that.topoheight,_tha
 
 class _RpcSimulateContractInvokeResult extends RpcSimulateContractInvokeResult {
   const _RpcSimulateContractInvokeResult({required this.baseFee, required this.result, required this.blockHash, required this.topoheight, this.extraFields = const RpcExtraFields()}): super._();
-
+  
 
 @override final  BigInt baseFee;
 @override final  RpcExecutionResult result;
@@ -300,7 +301,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExecutionResultCopyWith<$Res> get result {
-
+  
   return $RpcExecutionResultCopyWith<$Res>(_self.result, (value) {
     return _then(_self.copyWith(result: value));
   });
@@ -309,7 +310,7 @@ $RpcExecutionResultCopyWith<$Res> get result {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });

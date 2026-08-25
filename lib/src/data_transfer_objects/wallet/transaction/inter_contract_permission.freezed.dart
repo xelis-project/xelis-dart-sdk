@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'inter_contract_permission.dart';
@@ -9,6 +9,7 @@ part of 'inter_contract_permission.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 /// @nodoc
@@ -194,7 +195,7 @@ return unknown(_that.type,_that.wireValue);case _:
 
 class NoInterContractPermission extends InterContractPermission {
   const NoInterContractPermission(): super._();
-
+  
 
 
 
@@ -226,7 +227,7 @@ String toString() {
 
 class AllInterContractPermission extends InterContractPermission {
   const AllInterContractPermission(): super._();
-
+  
 
 
 
@@ -257,8 +258,8 @@ String toString() {
 
 
 class SpecificInterContractPermission extends InterContractPermission {
-  const SpecificInterContractPermission(final  List<ContractCall> calls): _calls = calls,super._();
-
+  const SpecificInterContractPermission( List<ContractCall> calls): _calls = calls,super._();
+  
 
  final  List<ContractCall> _calls;
  List<ContractCall> get calls {
@@ -329,8 +330,8 @@ as List<ContractCall>,
 
 
 class ExcludedInterContractPermission extends InterContractPermission {
-  const ExcludedInterContractPermission(final  List<ContractCall> calls): _calls = calls,super._();
-
+  const ExcludedInterContractPermission( List<ContractCall> calls): _calls = calls,super._();
+  
 
  final  List<ContractCall> _calls;
  List<ContractCall> get calls {
@@ -402,7 +403,7 @@ as List<ContractCall>,
 
 class UnknownInterContractPermission extends InterContractPermission {
   const UnknownInterContractPermission({required this.type, required this.wireValue}): super._();
-
+  
 
  final  String type;
  final  RpcJsonValue wireValue;
@@ -467,7 +468,7 @@ as RpcJsonValue,
 @override
 @pragma('vm:prefer-inline')
 $RpcJsonValueCopyWith<$Res> get wireValue {
-
+  
   return $RpcJsonValueCopyWith<$Res>(_self.wireValue, (value) {
     return _then(_self.copyWith(wireValue: value));
   });
@@ -526,7 +527,7 @@ class _$ContractCallCopyWithImpl<$Res>
 /// Create a copy of ContractCall
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? contract = null,Object? chunk = null,Object? extraFields = null,}) {
-  return _then(_self.copyWith(
+  return _then(ContractCall(
 contract: null == contract ? _self.contract : contract // ignore: cast_nullable_to_non_nullable
 as String,chunk: null == chunk ? _self.chunk : chunk // ignore: cast_nullable_to_non_nullable
 as ContractCallChunk,extraFields: null == extraFields ? _self.extraFields : extraFields // ignore: cast_nullable_to_non_nullable
@@ -538,7 +539,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $ContractCallChunkCopyWith<$Res> get chunk {
-
+  
   return $ContractCallChunkCopyWith<$Res>(_self.chunk, (value) {
     return _then(_self.copyWith(chunk: value));
   });
@@ -547,7 +548,7 @@ $ContractCallChunkCopyWith<$Res> get chunk {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -690,7 +691,7 @@ return $default(_that.contract,_that.chunk,_that.extraFields);case _:
 
 class _ContractCall extends ContractCall {
   const _ContractCall({required this.contract, required this.chunk, this.extraFields = const RpcExtraFields()}): super._();
-
+  
 
 @override final  String contract;
 @override final  ContractCallChunk chunk;
@@ -757,7 +758,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $ContractCallChunkCopyWith<$Res> get chunk {
-
+  
   return $ContractCallChunkCopyWith<$Res>(_self.chunk, (value) {
     return _then(_self.copyWith(chunk: value));
   });
@@ -766,7 +767,7 @@ $ContractCallChunkCopyWith<$Res> get chunk {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -950,7 +951,7 @@ return unknown(_that.type,_that.wireValue);case _:
 
 class AllContractCallChunks extends ContractCallChunk {
   const AllContractCallChunks(): super._();
-
+  
 
 
 
@@ -981,8 +982,8 @@ String toString() {
 
 
 class SpecificContractCallChunks extends ContractCallChunk {
-  const SpecificContractCallChunks(final  List<int> chunks): _chunks = chunks,super._();
-
+  const SpecificContractCallChunks( List<int> chunks): _chunks = chunks,super._();
+  
 
  final  List<int> _chunks;
  List<int> get chunks {
@@ -1053,8 +1054,8 @@ as List<int>,
 
 
 class ExcludedContractCallChunks extends ContractCallChunk {
-  const ExcludedContractCallChunks(final  List<int> chunks): _chunks = chunks,super._();
-
+  const ExcludedContractCallChunks( List<int> chunks): _chunks = chunks,super._();
+  
 
  final  List<int> _chunks;
  List<int> get chunks {
@@ -1126,7 +1127,7 @@ as List<int>,
 
 class UnknownContractCallChunk extends ContractCallChunk {
   const UnknownContractCallChunk({required this.type, required this.wireValue}): super._();
-
+  
 
  final  String type;
  final  RpcJsonValue wireValue;
@@ -1191,7 +1192,7 @@ as RpcJsonValue,
 @override
 @pragma('vm:prefer-inline')
 $RpcJsonValueCopyWith<$Res> get wireValue {
-
+  
   return $RpcJsonValueCopyWith<$Res>(_self.wireValue, (value) {
     return _then(_self.copyWith(wireValue: value));
   });

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'transaction_entry_type.dart';
@@ -9,6 +9,7 @@ part of 'transaction_entry_type.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 TransactionEntryType _$TransactionEntryTypeFromJson(
@@ -59,7 +60,7 @@ TransactionEntryType _$TransactionEntryTypeFromJson(
           return UnknownTransactionEntryType.fromJson(
             json
           );
-
+        
           default:
             throw CheckedFromJsonException(
   json,
@@ -68,7 +69,7 @@ TransactionEntryType _$TransactionEntryTypeFromJson(
   'Invalid union type "${json['runtimeType']}"!'
 );
         }
-
+      
 }
 
 /// @nodoc
@@ -135,7 +136,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -331,7 +332,7 @@ return unknown(_that.type,_that.wireValue,_that.extraFields);case _:
 @JsonSerializable()
 
 class CoinbaseEntry implements TransactionEntryType {
-  const CoinbaseEntry({@JsonKey(name: 'reward', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.reward, @JsonKey(includeFromJson: false, includeToJson: false) this.extraFields = const RpcExtraFields(), final  String? $type}): $type = $type ?? 'coinbase';
+  const CoinbaseEntry({@JsonKey(name: 'reward', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.reward, @JsonKey(includeFromJson: false, includeToJson: false) this.extraFields = const RpcExtraFields(),  String? $type}): $type = $type ?? 'coinbase';
   factory CoinbaseEntry.fromJson(Map<String, dynamic> json) => _$CoinbaseEntryFromJson(json);
 
 @JsonKey(name: 'reward', fromJson: rpcBigInt, toJson: rpcBigIntToJson) final  BigInt reward;
@@ -404,7 +405,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -415,7 +416,7 @@ $RpcExtraFieldsCopyWith<$Res> get extraFields {
 @JsonSerializable()
 
 class BurnEntry implements TransactionEntryType {
-  const BurnEntry({@JsonKey(name: 'asset') required this.asset, @JsonKey(name: 'amount', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.amount, @JsonKey(name: 'fee', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.fee, @JsonKey(name: 'nonce', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.nonce, @JsonKey(includeFromJson: false, includeToJson: false) this.extraFields = const RpcExtraFields(), final  String? $type}): $type = $type ?? 'burn';
+  const BurnEntry({@JsonKey(name: 'asset') required this.asset, @JsonKey(name: 'amount', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.amount, @JsonKey(name: 'fee', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.fee, @JsonKey(name: 'nonce', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.nonce, @JsonKey(includeFromJson: false, includeToJson: false) this.extraFields = const RpcExtraFields(),  String? $type}): $type = $type ?? 'burn';
   factory BurnEntry.fromJson(Map<String, dynamic> json) => _$BurnEntryFromJson(json);
 
 @JsonKey(name: 'asset') final  String asset;
@@ -494,7 +495,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -505,7 +506,7 @@ $RpcExtraFieldsCopyWith<$Res> get extraFields {
 @JsonSerializable()
 
 class IncomingEntry implements TransactionEntryType {
-  const IncomingEntry({@JsonKey(name: 'from') required this.from, @JsonKey(name: 'transfers') required final  List<TransferInEntry> transfers, @JsonKey(includeFromJson: false, includeToJson: false) this.extraFields = const RpcExtraFields(), final  String? $type}): _transfers = transfers,$type = $type ?? 'incoming';
+  const IncomingEntry({@JsonKey(name: 'from') required this.from, @JsonKey(name: 'transfers') required  List<TransferInEntry> transfers, @JsonKey(includeFromJson: false, includeToJson: false) this.extraFields = const RpcExtraFields(),  String? $type}): _transfers = transfers,$type = $type ?? 'incoming';
   factory IncomingEntry.fromJson(Map<String, dynamic> json) => _$IncomingEntryFromJson(json);
 
 @JsonKey(name: 'from') final  String from;
@@ -586,7 +587,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -597,7 +598,7 @@ $RpcExtraFieldsCopyWith<$Res> get extraFields {
 @JsonSerializable()
 
 class OutgoingEntry implements TransactionEntryType {
-  const OutgoingEntry({@JsonKey(name: 'fee', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.fee, @JsonKey(name: 'nonce', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.nonce, @JsonKey(name: 'transfers') required final  List<TransferOutEntry> transfers, @JsonKey(includeFromJson: false, includeToJson: false) this.extraFields = const RpcExtraFields(), final  String? $type}): _transfers = transfers,$type = $type ?? 'outgoing';
+  const OutgoingEntry({@JsonKey(name: 'fee', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.fee, @JsonKey(name: 'nonce', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.nonce, @JsonKey(name: 'transfers') required  List<TransferOutEntry> transfers, @JsonKey(includeFromJson: false, includeToJson: false) this.extraFields = const RpcExtraFields(),  String? $type}): _transfers = transfers,$type = $type ?? 'outgoing';
   factory OutgoingEntry.fromJson(Map<String, dynamic> json) => _$OutgoingEntryFromJson(json);
 
 @JsonKey(name: 'fee', fromJson: rpcBigInt, toJson: rpcBigIntToJson) final  BigInt fee;
@@ -680,7 +681,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -691,7 +692,7 @@ $RpcExtraFieldsCopyWith<$Res> get extraFields {
 @JsonSerializable()
 
 class MultisigEntry implements TransactionEntryType {
-  const MultisigEntry({@JsonKey(name: 'participants') required final  List<String> participants, @JsonKey(name: 'threshold') required this.threshold, @JsonKey(name: 'fee', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.fee, @JsonKey(name: 'nonce', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.nonce, @JsonKey(includeFromJson: false, includeToJson: false) this.extraFields = const RpcExtraFields(), final  String? $type}): _participants = participants,$type = $type ?? 'multisig';
+  const MultisigEntry({@JsonKey(name: 'participants') required  List<String> participants, @JsonKey(name: 'threshold') required this.threshold, @JsonKey(name: 'fee', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.fee, @JsonKey(name: 'nonce', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.nonce, @JsonKey(includeFromJson: false, includeToJson: false) this.extraFields = const RpcExtraFields(),  String? $type}): _participants = participants,$type = $type ?? 'multisig';
   factory MultisigEntry.fromJson(Map<String, dynamic> json) => _$MultisigEntryFromJson(json);
 
  final  List<String> _participants;
@@ -776,7 +777,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -787,7 +788,7 @@ $RpcExtraFieldsCopyWith<$Res> get extraFields {
 @JsonSerializable()
 
 class InvokeContractEntry implements TransactionEntryType {
-  const InvokeContractEntry({@JsonKey(name: 'contract') required this.contract, @JsonKey(name: 'deposits', fromJson: rpcBigIntMap, toJson: rpcBigIntMapToJson) required final  Map<String, BigInt> deposits, @JsonKey(name: 'received', fromJson: rpcNestedBigIntMap, toJson: rpcNestedBigIntMapToJson) required final  Map<String, Map<String, BigInt>> received, @JsonKey(name: 'chunk_id') required this.chunkId, @JsonKey(name: 'fee', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.fee, @JsonKey(name: 'max_gas', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.maxGas, @JsonKey(name: 'nonce', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.nonce, @JsonKey(includeFromJson: false, includeToJson: false) this.extraFields = const RpcExtraFields(), final  String? $type}): _deposits = deposits,_received = received,$type = $type ?? 'invokeContract';
+  const InvokeContractEntry({@JsonKey(name: 'contract') required this.contract, @JsonKey(name: 'deposits', fromJson: rpcBigIntMap, toJson: rpcBigIntMapToJson) required  Map<String, BigInt> deposits, @JsonKey(name: 'received', fromJson: rpcNestedBigIntMap, toJson: rpcNestedBigIntMapToJson) required  Map<String, Map<String, BigInt>> received, @JsonKey(name: 'chunk_id') required this.chunkId, @JsonKey(name: 'fee', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.fee, @JsonKey(name: 'max_gas', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.maxGas, @JsonKey(name: 'nonce', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.nonce, @JsonKey(includeFromJson: false, includeToJson: false) this.extraFields = const RpcExtraFields(),  String? $type}): _deposits = deposits,_received = received,$type = $type ?? 'invokeContract';
   factory InvokeContractEntry.fromJson(Map<String, dynamic> json) => _$InvokeContractEntryFromJson(json);
 
 @JsonKey(name: 'contract') final  String contract;
@@ -884,7 +885,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -895,7 +896,7 @@ $RpcExtraFieldsCopyWith<$Res> get extraFields {
 @JsonSerializable()
 
 class DeployContractEntry implements TransactionEntryType {
-  const DeployContractEntry({@JsonKey(name: 'fee', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.fee, @JsonKey(name: 'nonce', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.nonce, @JsonKey(name: 'invoke') this.invoke, @JsonKey(includeFromJson: false, includeToJson: false) this.extraFields = const RpcExtraFields(), final  String? $type}): $type = $type ?? 'deployContract';
+  const DeployContractEntry({@JsonKey(name: 'fee', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.fee, @JsonKey(name: 'nonce', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.nonce, @JsonKey(name: 'invoke') this.invoke, @JsonKey(includeFromJson: false, includeToJson: false) this.extraFields = const RpcExtraFields(),  String? $type}): $type = $type ?? 'deployContract';
   factory DeployContractEntry.fromJson(Map<String, dynamic> json) => _$DeployContractEntryFromJson(json);
 
 @JsonKey(name: 'fee', fromJson: rpcBigInt, toJson: rpcBigIntToJson) final  BigInt fee;
@@ -984,7 +985,7 @@ $DeployInvokeCopyWith<$Res>? get invoke {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -995,7 +996,7 @@ $RpcExtraFieldsCopyWith<$Res> get extraFields {
 @JsonSerializable()
 
 class IncomingContractEntry implements TransactionEntryType {
-  const IncomingContractEntry({@JsonKey(name: 'transfers', fromJson: rpcNestedBigIntMap, toJson: rpcNestedBigIntMapToJson) required final  Map<String, Map<String, BigInt>> transfers, @JsonKey(includeFromJson: false, includeToJson: false) this.extraFields = const RpcExtraFields(), final  String? $type}): _transfers = transfers,$type = $type ?? 'incomingContract';
+  const IncomingContractEntry({@JsonKey(name: 'transfers', fromJson: rpcNestedBigIntMap, toJson: rpcNestedBigIntMapToJson) required  Map<String, Map<String, BigInt>> transfers, @JsonKey(includeFromJson: false, includeToJson: false) this.extraFields = const RpcExtraFields(),  String? $type}): _transfers = transfers,$type = $type ?? 'incomingContract';
   factory IncomingContractEntry.fromJson(Map<String, dynamic> json) => _$IncomingContractEntryFromJson(json);
 
  final  Map<String, Map<String, BigInt>> _transfers;
@@ -1074,7 +1075,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -1085,7 +1086,7 @@ $RpcExtraFieldsCopyWith<$Res> get extraFields {
 @JsonSerializable()
 
 class OutgoingBlobEntry implements TransactionEntryType {
-  const OutgoingBlobEntry({@JsonKey(name: 'destinations') required final  List<String> destinations, @JsonKey(name: 'fee', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.fee, @JsonKey(name: 'nonce', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.nonce, @JsonKey(name: 'data') required this.data, @JsonKey(includeFromJson: false, includeToJson: false) this.extraFields = const RpcExtraFields(), final  String? $type}): _destinations = destinations,$type = $type ?? 'outgoingBlob';
+  const OutgoingBlobEntry({@JsonKey(name: 'destinations') required  List<String> destinations, @JsonKey(name: 'fee', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.fee, @JsonKey(name: 'nonce', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.nonce, @JsonKey(name: 'data') required this.data, @JsonKey(includeFromJson: false, includeToJson: false) this.extraFields = const RpcExtraFields(),  String? $type}): _destinations = destinations,$type = $type ?? 'outgoingBlob';
   factory OutgoingBlobEntry.fromJson(Map<String, dynamic> json) => _$OutgoingBlobEntryFromJson(json);
 
  final  List<String> _destinations;
@@ -1170,7 +1171,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $ExtraDataCopyWith<$Res> get data {
-
+  
   return $ExtraDataCopyWith<$Res>(_self.data, (value) {
     return _then(_self.copyWith(data: value));
   });
@@ -1179,7 +1180,7 @@ $ExtraDataCopyWith<$Res> get data {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -1190,7 +1191,7 @@ $RpcExtraFieldsCopyWith<$Res> get extraFields {
 @JsonSerializable()
 
 class IncomingBlobEntry implements TransactionEntryType {
-  const IncomingBlobEntry({@JsonKey(name: 'from') required this.from, @JsonKey(name: 'destinations') required final  List<String> destinations, @JsonKey(name: 'data') required this.data, @JsonKey(includeFromJson: false, includeToJson: false) this.extraFields = const RpcExtraFields(), final  String? $type}): _destinations = destinations,$type = $type ?? 'incomingBlob';
+  const IncomingBlobEntry({@JsonKey(name: 'from') required this.from, @JsonKey(name: 'destinations') required  List<String> destinations, @JsonKey(name: 'data') required this.data, @JsonKey(includeFromJson: false, includeToJson: false) this.extraFields = const RpcExtraFields(),  String? $type}): _destinations = destinations,$type = $type ?? 'incomingBlob';
   factory IncomingBlobEntry.fromJson(Map<String, dynamic> json) => _$IncomingBlobEntryFromJson(json);
 
 @JsonKey(name: 'from') final  String from;
@@ -1273,7 +1274,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $ExtraDataCopyWith<$Res> get data {
-
+  
   return $ExtraDataCopyWith<$Res>(_self.data, (value) {
     return _then(_self.copyWith(data: value));
   });
@@ -1282,7 +1283,7 @@ $ExtraDataCopyWith<$Res> get data {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -1293,7 +1294,7 @@ $RpcExtraFieldsCopyWith<$Res> get extraFields {
 @JsonSerializable()
 
 class UnknownTransactionEntryType implements TransactionEntryType {
-  const UnknownTransactionEntryType({required this.type, required this.wireValue, @JsonKey(includeFromJson: false, includeToJson: false) this.extraFields = const RpcExtraFields(), final  String? $type}): $type = $type ?? 'unknown';
+  const UnknownTransactionEntryType({required this.type, required this.wireValue, @JsonKey(includeFromJson: false, includeToJson: false) this.extraFields = const RpcExtraFields(),  String? $type}): $type = $type ?? 'unknown';
   factory UnknownTransactionEntryType.fromJson(Map<String, dynamic> json) => _$UnknownTransactionEntryTypeFromJson(json);
 
  final  String type;
@@ -1368,7 +1369,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcJsonValueCopyWith<$Res> get wireValue {
-
+  
   return $RpcJsonValueCopyWith<$Res>(_self.wireValue, (value) {
     return _then(_self.copyWith(wireValue: value));
   });
@@ -1377,7 +1378,7 @@ $RpcJsonValueCopyWith<$Res> get wireValue {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });

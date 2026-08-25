@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'unsigned_transaction_response.dart';
@@ -9,6 +9,7 @@ part of 'unsigned_transaction_response.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 /// @nodoc
@@ -63,7 +64,7 @@ class _$UnsignedTransactionResponseCopyWithImpl<$Res>
 /// Create a copy of UnsignedTransactionResponse
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? transaction = null,Object? hash = null,Object? threshold = freezed,Object? txAsHex = freezed,}) {
-  return _then(_self.copyWith(
+  return _then(UnsignedTransactionResponse(
 transaction: null == transaction ? _self.transaction : transaction // ignore: cast_nullable_to_non_nullable
 as UnsignedTransaction,hash: null == hash ? _self.hash : hash // ignore: cast_nullable_to_non_nullable
 as String,threshold: freezed == threshold ? _self.threshold : threshold // ignore: cast_nullable_to_non_nullable
@@ -76,7 +77,7 @@ as String?,
 @override
 @pragma('vm:prefer-inline')
 $UnsignedTransactionCopyWith<$Res> get transaction {
-
+  
   return $UnsignedTransactionCopyWith<$Res>(_self.transaction, (value) {
     return _then(_self.copyWith(transaction: value));
   });
@@ -219,7 +220,7 @@ return $default(_that.transaction,_that.hash,_that.threshold,_that.txAsHex);case
 
 class _UnsignedTransactionResponse extends UnsignedTransactionResponse {
   const _UnsignedTransactionResponse({required this.transaction, required this.hash, required this.threshold, this.txAsHex}): super._();
-
+  
 
 @override final  UnsignedTransaction transaction;
 @override final  String hash;
@@ -288,7 +289,7 @@ as String?,
 @override
 @pragma('vm:prefer-inline')
 $UnsignedTransactionCopyWith<$Res> get transaction {
-
+  
   return $UnsignedTransactionCopyWith<$Res>(_self.transaction, (value) {
     return _then(_self.copyWith(transaction: value));
   });

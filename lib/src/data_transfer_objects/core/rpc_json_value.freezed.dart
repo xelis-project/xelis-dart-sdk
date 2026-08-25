@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'rpc_json_value.dart';
@@ -9,6 +9,7 @@ part of 'rpc_json_value.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 /// @nodoc
@@ -202,7 +203,7 @@ return object(_that.values);case _:
 
 class RpcJsonNullValue extends RpcJsonValue {
   const RpcJsonNullValue(): super._();
-
+  
 
 
 
@@ -230,7 +231,7 @@ int get hashCode => runtimeType.hashCode;
 
 class RpcJsonBoolean extends RpcJsonValue {
   const RpcJsonBoolean(this.value): super._();
-
+  
 
  final  bool value;
 
@@ -292,7 +293,7 @@ as bool,
 
 class RpcJsonInteger extends RpcJsonValue {
   const RpcJsonInteger(this.value): super._();
-
+  
 
  final  BigInt value;
 
@@ -354,7 +355,7 @@ as BigInt,
 
 class RpcJsonNumber extends RpcJsonValue {
   const RpcJsonNumber(this.value): super._();
-
+  
 
  final  double value;
 
@@ -416,7 +417,7 @@ as double,
 
 class RpcJsonString extends RpcJsonValue {
   const RpcJsonString(this.value): super._();
-
+  
 
  final  String value;
 
@@ -477,8 +478,8 @@ as String,
 
 
 class RpcJsonArray extends RpcJsonValue {
-  const RpcJsonArray(final  List<RpcJsonValue> values): _values = values,super._();
-
+  const RpcJsonArray( List<RpcJsonValue> values): _values = values,super._();
+  
 
  final  List<RpcJsonValue> _values;
  List<RpcJsonValue> get values {
@@ -545,8 +546,8 @@ as List<RpcJsonValue>,
 
 
 class RpcJsonObject extends RpcJsonValue {
-  const RpcJsonObject(final  Map<String, RpcJsonValue> values): _values = values,super._();
-
+  const RpcJsonObject( Map<String, RpcJsonValue> values): _values = values,super._();
+  
 
  final  Map<String, RpcJsonValue> _values;
  Map<String, RpcJsonValue> get values {

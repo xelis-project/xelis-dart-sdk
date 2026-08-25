@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'block.dart';
@@ -9,6 +9,7 @@ part of 'block.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 /// @nodoc
@@ -63,7 +64,7 @@ class _$BlockCopyWithImpl<$Res>
 /// Create a copy of Block
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? blockType = null,Object? cumulativeDifficulty = null,Object? difficulty = null,Object? extraNonce = null,Object? hash = null,Object? height = null,Object? miner = null,Object? nonce = null,Object? reward = freezed,Object? minerReward = freezed,Object? devReward = freezed,Object? supply = freezed,Object? timestamp = null,Object? tips = null,Object? topoheight = freezed,Object? totalSizeInBytes = null,Object? totalFees = freezed,Object? totalFeesBurned = freezed,Object? txsHashes = null,Object? version = null,Object? transactions = freezed,Object? extraFields = null,}) {
-  return _then(_self.copyWith(
+  return _then(Block(
 blockType: null == blockType ? _self.blockType : blockType // ignore: cast_nullable_to_non_nullable
 as RpcBlockType,cumulativeDifficulty: null == cumulativeDifficulty ? _self.cumulativeDifficulty : cumulativeDifficulty // ignore: cast_nullable_to_non_nullable
 as BigInt,difficulty: null == difficulty ? _self.difficulty : difficulty // ignore: cast_nullable_to_non_nullable
@@ -94,7 +95,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcBlockTypeCopyWith<$Res> get blockType {
-
+  
   return $RpcBlockTypeCopyWith<$Res>(_self.blockType, (value) {
     return _then(_self.copyWith(blockType: value));
   });
@@ -103,7 +104,7 @@ $RpcBlockTypeCopyWith<$Res> get blockType {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -245,8 +246,8 @@ return $default(_that.blockType,_that.cumulativeDifficulty,_that.difficulty,_tha
 
 
 class _Block extends Block {
-  const _Block({@JsonKey(name: 'block_type') required this.blockType, @JsonKey(name: 'cumulative_difficulty') required this.cumulativeDifficulty, @JsonKey(name: 'difficulty') required this.difficulty, @JsonKey(name: 'extra_nonce') required this.extraNonce, @JsonKey(name: 'hash') required this.hash, @JsonKey(name: 'height', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.height, @JsonKey(name: 'miner') required this.miner, @JsonKey(name: 'nonce', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.nonce, @JsonKey(name: 'reward', fromJson: _nullableBigInt, toJson: rpcNullableBigIntToJson) this.reward, @JsonKey(name: 'miner_reward', fromJson: _nullableBigInt, toJson: rpcNullableBigIntToJson) this.minerReward, @JsonKey(name: 'dev_reward', fromJson: _nullableBigInt, toJson: rpcNullableBigIntToJson) this.devReward, @JsonKey(name: 'supply', fromJson: _nullableBigInt, toJson: rpcNullableBigIntToJson) this.supply, @JsonKey(name: 'timestamp', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.timestamp, @JsonKey(name: 'tips') required final  List<String> tips, @JsonKey(name: 'topoheight', fromJson: _nullableBigInt, toJson: rpcNullableBigIntToJson) this.topoheight, @JsonKey(name: 'total_size_in_bytes') required this.totalSizeInBytes, @JsonKey(name: 'total_fees', fromJson: _nullableBigInt, toJson: rpcNullableBigIntToJson) this.totalFees, @JsonKey(name: 'total_fees_burned', fromJson: _nullableBigInt, toJson: rpcNullableBigIntToJson) this.totalFeesBurned, @JsonKey(name: 'txs_hashes') required final  List<String> txsHashes, @JsonKey(name: 'version') required this.version, @JsonKey(name: 'transactions') final  List<RpcTransaction>? transactions, @JsonKey(includeFromJson: false, includeToJson: false) this.extraFields = const RpcExtraFields()}): _tips = tips,_txsHashes = txsHashes,_transactions = transactions,super._();
-
+  const _Block({@JsonKey(name: 'block_type') required this.blockType, @JsonKey(name: 'cumulative_difficulty') required this.cumulativeDifficulty, @JsonKey(name: 'difficulty') required this.difficulty, @JsonKey(name: 'extra_nonce') required this.extraNonce, @JsonKey(name: 'hash') required this.hash, @JsonKey(name: 'height', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.height, @JsonKey(name: 'miner') required this.miner, @JsonKey(name: 'nonce', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.nonce, @JsonKey(name: 'reward', fromJson: _nullableBigInt, toJson: rpcNullableBigIntToJson) this.reward, @JsonKey(name: 'miner_reward', fromJson: _nullableBigInt, toJson: rpcNullableBigIntToJson) this.minerReward, @JsonKey(name: 'dev_reward', fromJson: _nullableBigInt, toJson: rpcNullableBigIntToJson) this.devReward, @JsonKey(name: 'supply', fromJson: _nullableBigInt, toJson: rpcNullableBigIntToJson) this.supply, @JsonKey(name: 'timestamp', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.timestamp, @JsonKey(name: 'tips') required  List<String> tips, @JsonKey(name: 'topoheight', fromJson: _nullableBigInt, toJson: rpcNullableBigIntToJson) this.topoheight, @JsonKey(name: 'total_size_in_bytes') required this.totalSizeInBytes, @JsonKey(name: 'total_fees', fromJson: _nullableBigInt, toJson: rpcNullableBigIntToJson) this.totalFees, @JsonKey(name: 'total_fees_burned', fromJson: _nullableBigInt, toJson: rpcNullableBigIntToJson) this.totalFeesBurned, @JsonKey(name: 'txs_hashes') required  List<String> txsHashes, @JsonKey(name: 'version') required this.version, @JsonKey(name: 'transactions')  List<RpcTransaction>? transactions, @JsonKey(includeFromJson: false, includeToJson: false) this.extraFields = const RpcExtraFields()}): _tips = tips,_txsHashes = txsHashes,_transactions = transactions,super._();
+  
 
 @override@JsonKey(name: 'block_type') final  RpcBlockType blockType;
 @override@JsonKey(name: 'cumulative_difficulty') final  BigInt cumulativeDifficulty;
@@ -371,7 +372,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcBlockTypeCopyWith<$Res> get blockType {
-
+  
   return $RpcBlockTypeCopyWith<$Res>(_self.blockType, (value) {
     return _then(_self.copyWith(blockType: value));
   });
@@ -380,7 +381,7 @@ $RpcBlockTypeCopyWith<$Res> get blockType {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });

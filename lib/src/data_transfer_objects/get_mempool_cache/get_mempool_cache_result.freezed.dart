@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'get_mempool_cache_result.dart';
@@ -9,6 +9,7 @@ part of 'get_mempool_cache_result.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 
@@ -66,7 +67,7 @@ class _$GetMempoolCacheResultCopyWithImpl<$Res>
 /// Create a copy of GetMempoolCacheResult
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? balances = null,Object? max = null,Object? min = null,Object? txs = null,Object? extraFields = null,}) {
-  return _then(_self.copyWith(
+  return _then(GetMempoolCacheResult(
 balances: null == balances ? _self.balances : balances // ignore: cast_nullable_to_non_nullable
 as Map<String, RpcCompressedCiphertext>,max: null == max ? _self.max : max // ignore: cast_nullable_to_non_nullable
 as BigInt,min: null == min ? _self.min : min // ignore: cast_nullable_to_non_nullable
@@ -80,7 +81,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -222,7 +223,7 @@ return $default(_that.balances,_that.max,_that.min,_that.txs,_that.extraFields);
 @JsonSerializable()
 
 class _GetMempoolCacheResult extends GetMempoolCacheResult {
-  const _GetMempoolCacheResult({@JsonKey(name: 'balances', fromJson: _balancesFromJson, toJson: _balancesToJson) required final  Map<String, RpcCompressedCiphertext> balances, @JsonKey(name: 'max', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.max, @JsonKey(name: 'min', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.min, @JsonKey(name: 'txs') required final  List<String> txs, @JsonKey(includeFromJson: false, includeToJson: false) this.extraFields = const RpcExtraFields()}): _balances = balances,_txs = txs,super._();
+  const _GetMempoolCacheResult({@JsonKey(name: 'balances', fromJson: _balancesFromJson, toJson: _balancesToJson) required  Map<String, RpcCompressedCiphertext> balances, @JsonKey(name: 'max', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.max, @JsonKey(name: 'min', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.min, @JsonKey(name: 'txs') required  List<String> txs, @JsonKey(includeFromJson: false, includeToJson: false) this.extraFields = const RpcExtraFields()}): _balances = balances,_txs = txs,super._();
   factory _GetMempoolCacheResult.fromJson(Map<String, dynamic> json) => _$GetMempoolCacheResultFromJson(json);
 
  final  Map<String, RpcCompressedCiphertext> _balances;
@@ -309,7 +310,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });

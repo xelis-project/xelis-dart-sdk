@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'multisig_state.dart';
@@ -9,6 +9,7 @@ part of 'multisig_state.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 /// @nodoc
@@ -178,7 +179,7 @@ return unknown(_that.type,_that.wireValue);case _:
 
 class Deleted extends MultisigState {
   const Deleted(): super._();
-
+  
 
 
 
@@ -205,8 +206,8 @@ int get hashCode => runtimeType.hashCode;
 
 
 class Active extends MultisigState {
-  const Active({required final  List<String> participants, required this.threshold, this.extraFields = const RpcExtraFields()}): _participants = participants,super._();
-
+  const Active({required  List<String> participants, required this.threshold, this.extraFields = const RpcExtraFields()}): _participants = participants,super._();
+  
 
  final  List<String> _participants;
  List<String> get participants {
@@ -275,7 +276,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -287,7 +288,7 @@ $RpcExtraFieldsCopyWith<$Res> get extraFields {
 
 class UnknownMultisigState extends MultisigState {
   const UnknownMultisigState(this.type, this.wireValue): super._();
-
+  
 
  final  String type;
  final  RpcJsonValue wireValue;
@@ -348,7 +349,7 @@ as RpcJsonValue,
 @override
 @pragma('vm:prefer-inline')
 $RpcJsonValueCopyWith<$Res> get wireValue {
-
+  
   return $RpcJsonValueCopyWith<$Res>(_self.wireValue, (value) {
     return _then(_self.copyWith(wireValue: value));
   });

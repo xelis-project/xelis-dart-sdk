@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'get_peers_result.dart';
@@ -9,6 +9,7 @@ part of 'get_peers_result.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 
@@ -66,7 +67,7 @@ class _$GetPeersResultCopyWithImpl<$Res>
 /// Create a copy of GetPeersResult
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? peers = null,Object? totalPeers = null,Object? hiddenPeers = null,Object? extraFields = null,}) {
-  return _then(_self.copyWith(
+  return _then(GetPeersResult(
 peers: null == peers ? _self.peers : peers // ignore: cast_nullable_to_non_nullable
 as List<PeerEntry>,totalPeers: null == totalPeers ? _self.totalPeers : totalPeers // ignore: cast_nullable_to_non_nullable
 as BigInt,hiddenPeers: null == hiddenPeers ? _self.hiddenPeers : hiddenPeers // ignore: cast_nullable_to_non_nullable
@@ -79,7 +80,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -221,7 +222,7 @@ return $default(_that.peers,_that.totalPeers,_that.hiddenPeers,_that.extraFields
 @JsonSerializable()
 
 class _GetPeersResult extends GetPeersResult {
-  const _GetPeersResult({@JsonKey(name: 'peers') required final  List<PeerEntry> peers, @JsonKey(name: 'total_peers', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.totalPeers, @JsonKey(name: 'hidden_peers', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.hiddenPeers, @JsonKey(includeFromJson: false, includeToJson: false) this.extraFields = const RpcExtraFields()}): _peers = peers,super._();
+  const _GetPeersResult({@JsonKey(name: 'peers') required  List<PeerEntry> peers, @JsonKey(name: 'total_peers', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.totalPeers, @JsonKey(name: 'hidden_peers', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.hiddenPeers, @JsonKey(includeFromJson: false, includeToJson: false) this.extraFields = const RpcExtraFields()}): _peers = peers,super._();
   factory _GetPeersResult.fromJson(Map<String, dynamic> json) => _$GetPeersResultFromJson(json);
 
  final  List<PeerEntry> _peers;
@@ -300,7 +301,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });

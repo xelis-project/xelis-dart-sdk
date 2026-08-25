@@ -9,9 +9,9 @@ import '../helpers/recording_rpc_client.dart';
 
 void main() {
   final target = XelisTarget.load();
-  final schema =
-      jsonDecode(File(target.daemonSchema).readAsStringSync())
-          as Map<String, dynamic>;
+  final schema = jsonDecode(
+    File(target.daemonSchema).readAsStringSync(),
+  ) as Map<String, dynamic>;
   final schemaMethods = {
     for (final entry
         in (schema['methods'] as List<dynamic>).cast<Map<String, dynamic>>())

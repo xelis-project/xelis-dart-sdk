@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'estimate_wallet_fees_params.dart';
@@ -9,6 +9,7 @@ part of 'estimate_wallet_fees_params.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 /// @nodoc
@@ -63,7 +64,7 @@ class _$EstimateWalletFeesParamsCopyWithImpl<$Res>
 /// Create a copy of EstimateWalletFeesParams
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? transactionTypeBuilder = null,Object? fee = null,Object? baseFee = null,}) {
-  return _then(_self.copyWith(
+  return _then(EstimateWalletFeesParams(
 transactionTypeBuilder: null == transactionTypeBuilder ? _self.transactionTypeBuilder : transactionTypeBuilder // ignore: cast_nullable_to_non_nullable
 as TransactionTypeBuilder,fee: null == fee ? _self.fee : fee // ignore: cast_nullable_to_non_nullable
 as FeeBuilder,baseFee: null == baseFee ? _self.baseFee : baseFee // ignore: cast_nullable_to_non_nullable
@@ -75,7 +76,7 @@ as BaseFeeMode,
 @override
 @pragma('vm:prefer-inline')
 $TransactionTypeBuilderCopyWith<$Res> get transactionTypeBuilder {
-
+  
   return $TransactionTypeBuilderCopyWith<$Res>(_self.transactionTypeBuilder, (value) {
     return _then(_self.copyWith(transactionTypeBuilder: value));
   });
@@ -84,7 +85,7 @@ $TransactionTypeBuilderCopyWith<$Res> get transactionTypeBuilder {
 @override
 @pragma('vm:prefer-inline')
 $FeeBuilderCopyWith<$Res> get fee {
-
+  
   return $FeeBuilderCopyWith<$Res>(_self.fee, (value) {
     return _then(_self.copyWith(fee: value));
   });
@@ -93,7 +94,7 @@ $FeeBuilderCopyWith<$Res> get fee {
 @override
 @pragma('vm:prefer-inline')
 $BaseFeeModeCopyWith<$Res> get baseFee {
-
+  
   return $BaseFeeModeCopyWith<$Res>(_self.baseFee, (value) {
     return _then(_self.copyWith(baseFee: value));
   });
@@ -236,7 +237,7 @@ return $default(_that.transactionTypeBuilder,_that.fee,_that.baseFee);case _:
 
 class _EstimateWalletFeesParams extends EstimateWalletFeesParams {
   const _EstimateWalletFeesParams({required this.transactionTypeBuilder, this.fee = const FeeBuilder.extra(), this.baseFee = const BaseFeeMode.none()}): super._();
-
+  
 
 @override final  TransactionTypeBuilder transactionTypeBuilder;
 @override@JsonKey() final  FeeBuilder fee;
@@ -303,7 +304,7 @@ as BaseFeeMode,
 @override
 @pragma('vm:prefer-inline')
 $TransactionTypeBuilderCopyWith<$Res> get transactionTypeBuilder {
-
+  
   return $TransactionTypeBuilderCopyWith<$Res>(_self.transactionTypeBuilder, (value) {
     return _then(_self.copyWith(transactionTypeBuilder: value));
   });
@@ -312,7 +313,7 @@ $TransactionTypeBuilderCopyWith<$Res> get transactionTypeBuilder {
 @override
 @pragma('vm:prefer-inline')
 $FeeBuilderCopyWith<$Res> get fee {
-
+  
   return $FeeBuilderCopyWith<$Res>(_self.fee, (value) {
     return _then(_self.copyWith(fee: value));
   });
@@ -321,7 +322,7 @@ $FeeBuilderCopyWith<$Res> get fee {
 @override
 @pragma('vm:prefer-inline')
 $BaseFeeModeCopyWith<$Res> get baseFee {
-
+  
   return $BaseFeeModeCopyWith<$Res>(_self.baseFee, (value) {
     return _then(_self.copyWith(baseFee: value));
   });

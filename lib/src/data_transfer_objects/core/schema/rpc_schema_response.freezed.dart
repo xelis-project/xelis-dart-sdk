@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'rpc_schema_response.dart';
@@ -9,6 +9,7 @@ part of 'rpc_schema_response.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 /// @nodoc
@@ -63,7 +64,7 @@ class _$RpcSchemaResponseCopyWithImpl<$Res>
 /// Create a copy of RpcSchemaResponse
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? schemaUri = null,Object? definitions = null,Object? methods = null,Object? extraFields = null,}) {
-  return _then(_self.copyWith(
+  return _then(RpcSchemaResponse(
 schemaUri: null == schemaUri ? _self.schemaUri : schemaUri // ignore: cast_nullable_to_non_nullable
 as String,definitions: null == definitions ? _self.definitions : definitions // ignore: cast_nullable_to_non_nullable
 as RpcJsonValue,methods: null == methods ? _self.methods : methods // ignore: cast_nullable_to_non_nullable
@@ -76,7 +77,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcJsonValueCopyWith<$Res> get definitions {
-
+  
   return $RpcJsonValueCopyWith<$Res>(_self.definitions, (value) {
     return _then(_self.copyWith(definitions: value));
   });
@@ -85,7 +86,7 @@ $RpcJsonValueCopyWith<$Res> get definitions {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -227,8 +228,8 @@ return $default(_that.schemaUri,_that.definitions,_that.methods,_that.extraField
 
 
 class _RpcSchemaResponse extends RpcSchemaResponse {
-  const _RpcSchemaResponse({required this.schemaUri, required this.definitions, required final  List<RpcMethodInfo> methods, this.extraFields = const RpcExtraFields()}): _methods = methods,super._();
-
+  const _RpcSchemaResponse({required this.schemaUri, required this.definitions, required  List<RpcMethodInfo> methods, this.extraFields = const RpcExtraFields()}): _methods = methods,super._();
+  
 
 @override final  String schemaUri;
 @override final  RpcJsonValue definitions;
@@ -303,7 +304,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcJsonValueCopyWith<$Res> get definitions {
-
+  
   return $RpcJsonValueCopyWith<$Res>(_self.definitions, (value) {
     return _then(_self.copyWith(definitions: value));
   });
@@ -312,7 +313,7 @@ $RpcJsonValueCopyWith<$Res> get definitions {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -371,7 +372,7 @@ class _$RpcMethodInfoCopyWithImpl<$Res>
 /// Create a copy of RpcMethodInfo
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? name = null,Object? schema = null,Object? extraFields = null,}) {
-  return _then(_self.copyWith(
+  return _then(RpcMethodInfo(
 name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,schema: null == schema ? _self.schema : schema // ignore: cast_nullable_to_non_nullable
 as RpcMethodSchema,extraFields: null == extraFields ? _self.extraFields : extraFields // ignore: cast_nullable_to_non_nullable
@@ -383,7 +384,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcMethodSchemaCopyWith<$Res> get schema {
-
+  
   return $RpcMethodSchemaCopyWith<$Res>(_self.schema, (value) {
     return _then(_self.copyWith(schema: value));
   });
@@ -392,7 +393,7 @@ $RpcMethodSchemaCopyWith<$Res> get schema {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -535,7 +536,7 @@ return $default(_that.name,_that.schema,_that.extraFields);case _:
 
 class _RpcMethodInfo extends RpcMethodInfo {
   const _RpcMethodInfo({required this.name, required this.schema, this.extraFields = const RpcExtraFields()}): super._();
-
+  
 
 @override final  String name;
 @override final  RpcMethodSchema schema;
@@ -602,7 +603,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcMethodSchemaCopyWith<$Res> get schema {
-
+  
   return $RpcMethodSchemaCopyWith<$Res>(_self.schema, (value) {
     return _then(_self.copyWith(schema: value));
   });
@@ -611,7 +612,7 @@ $RpcMethodSchemaCopyWith<$Res> get schema {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -670,7 +671,7 @@ class _$RpcMethodSchemaCopyWithImpl<$Res>
 /// Create a copy of RpcMethodSchema
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? description = null,Object? notes = null,Object? paramsSchema = freezed,Object? returnsSchema = null,Object? extraFields = null,}) {
-  return _then(_self.copyWith(
+  return _then(RpcMethodSchema(
 description: null == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
 as List<String>,notes: null == notes ? _self.notes : notes // ignore: cast_nullable_to_non_nullable
 as List<String>,paramsSchema: freezed == paramsSchema ? _self.paramsSchema : paramsSchema // ignore: cast_nullable_to_non_nullable
@@ -696,7 +697,7 @@ $RpcJsonValueCopyWith<$Res>? get paramsSchema {
 @override
 @pragma('vm:prefer-inline')
 $RpcJsonValueCopyWith<$Res> get returnsSchema {
-
+  
   return $RpcJsonValueCopyWith<$Res>(_self.returnsSchema, (value) {
     return _then(_self.copyWith(returnsSchema: value));
   });
@@ -705,7 +706,7 @@ $RpcJsonValueCopyWith<$Res> get returnsSchema {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -847,8 +848,8 @@ return $default(_that.description,_that.notes,_that.paramsSchema,_that.returnsSc
 
 
 class _RpcMethodSchema extends RpcMethodSchema {
-  const _RpcMethodSchema({required final  List<String> description, required final  List<String> notes, required this.paramsSchema, required this.returnsSchema, this.extraFields = const RpcExtraFields()}): _description = description,_notes = notes,super._();
-
+  const _RpcMethodSchema({required  List<String> description, required  List<String> notes, required this.paramsSchema, required this.returnsSchema, this.extraFields = const RpcExtraFields()}): _description = description,_notes = notes,super._();
+  
 
  final  List<String> _description;
 @override List<String> get description {
@@ -943,7 +944,7 @@ $RpcJsonValueCopyWith<$Res>? get paramsSchema {
 @override
 @pragma('vm:prefer-inline')
 $RpcJsonValueCopyWith<$Res> get returnsSchema {
-
+  
   return $RpcJsonValueCopyWith<$Res>(_self.returnsSchema, (value) {
     return _then(_self.copyWith(returnsSchema: value));
   });
@@ -952,7 +953,7 @@ $RpcJsonValueCopyWith<$Res> get returnsSchema {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'rpc_compressed_ciphertext.dart';
@@ -9,6 +9,7 @@ part of 'rpc_compressed_ciphertext.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 /// @nodoc
@@ -59,7 +60,7 @@ class _$RpcCompressedCiphertextCopyWithImpl<$Res>
 /// Create a copy of RpcCompressedCiphertext
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? commitment = null,Object? handle = null,Object? extraFields = null,}) {
-  return _then(_self.copyWith(
+  return _then(RpcCompressedCiphertext(
 commitment: null == commitment ? _self.commitment : commitment // ignore: cast_nullable_to_non_nullable
 as List<int>,handle: null == handle ? _self.handle : handle // ignore: cast_nullable_to_non_nullable
 as List<int>,extraFields: null == extraFields ? _self.extraFields : extraFields // ignore: cast_nullable_to_non_nullable
@@ -71,7 +72,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -213,8 +214,8 @@ return $default(_that.commitment,_that.handle,_that.extraFields);case _:
 
 
 class _RpcCompressedCiphertext extends RpcCompressedCiphertext {
-  const _RpcCompressedCiphertext({required final  List<int> commitment, required final  List<int> handle, this.extraFields = const RpcExtraFields()}): _commitment = commitment,_handle = handle,super._();
-
+  const _RpcCompressedCiphertext({required  List<int> commitment, required  List<int> handle, this.extraFields = const RpcExtraFields()}): _commitment = commitment,_handle = handle,super._();
+  
 
  final  List<int> _commitment;
 @override List<int> get commitment {
@@ -289,7 +290,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });

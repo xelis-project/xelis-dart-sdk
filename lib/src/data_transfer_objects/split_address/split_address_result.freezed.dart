@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'split_address_result.dart';
@@ -9,6 +9,7 @@ part of 'split_address_result.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 /// @nodoc
@@ -63,7 +64,7 @@ class _$SplitAddressResultCopyWithImpl<$Res>
 /// Create a copy of SplitAddressResult
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? address = null,Object? integratedData = null,Object? size = null,Object? extraFields = null,}) {
-  return _then(_self.copyWith(
+  return _then(SplitAddressResult(
 address: null == address ? _self.address : address // ignore: cast_nullable_to_non_nullable
 as String,integratedData: null == integratedData ? _self.integratedData : integratedData // ignore: cast_nullable_to_non_nullable
 as DataElement,size: null == size ? _self.size : size // ignore: cast_nullable_to_non_nullable
@@ -76,7 +77,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $DataElementCopyWith<$Res> get integratedData {
-
+  
   return $DataElementCopyWith<$Res>(_self.integratedData, (value) {
     return _then(_self.copyWith(integratedData: value));
   });
@@ -85,7 +86,7 @@ $DataElementCopyWith<$Res> get integratedData {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -228,7 +229,7 @@ return $default(_that.address,_that.integratedData,_that.size,_that.extraFields)
 
 class _SplitAddressResult extends SplitAddressResult {
   const _SplitAddressResult({required this.address, required this.integratedData, required this.size, this.extraFields = const RpcExtraFields()}): super._();
-
+  
 
 @override final  String address;
 @override final  DataElement integratedData;
@@ -297,7 +298,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $DataElementCopyWith<$Res> get integratedData {
-
+  
   return $DataElementCopyWith<$Res>(_self.integratedData, (value) {
     return _then(_self.copyWith(integratedData: value));
   });
@@ -306,7 +307,7 @@ $DataElementCopyWith<$Res> get integratedData {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });

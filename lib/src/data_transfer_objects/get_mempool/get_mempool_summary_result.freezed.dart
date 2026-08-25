@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'get_mempool_summary_result.dart';
@@ -9,6 +9,7 @@ part of 'get_mempool_summary_result.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 
@@ -66,7 +67,7 @@ class _$GetMempoolSummaryResultCopyWithImpl<$Res>
 /// Create a copy of GetMempoolSummaryResult
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? transactions = null,Object? total = null,Object? extraFields = null,}) {
-  return _then(_self.copyWith(
+  return _then(GetMempoolSummaryResult(
 transactions: null == transactions ? _self.transactions : transactions // ignore: cast_nullable_to_non_nullable
 as List<MempoolTransactionSummary>,total: null == total ? _self.total : total // ignore: cast_nullable_to_non_nullable
 as BigInt,extraFields: null == extraFields ? _self.extraFields : extraFields // ignore: cast_nullable_to_non_nullable
@@ -78,7 +79,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -220,7 +221,7 @@ return $default(_that.transactions,_that.total,_that.extraFields);case _:
 @JsonSerializable()
 
 class _GetMempoolSummaryResult extends GetMempoolSummaryResult {
-  const _GetMempoolSummaryResult({@JsonKey(name: 'transactions') required final  List<MempoolTransactionSummary> transactions, @JsonKey(name: 'total', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.total, @JsonKey(includeFromJson: false, includeToJson: false) this.extraFields = const RpcExtraFields()}): _transactions = transactions,super._();
+  const _GetMempoolSummaryResult({@JsonKey(name: 'transactions') required  List<MempoolTransactionSummary> transactions, @JsonKey(name: 'total', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.total, @JsonKey(includeFromJson: false, includeToJson: false) this.extraFields = const RpcExtraFields()}): _transactions = transactions,super._();
   factory _GetMempoolSummaryResult.fromJson(Map<String, dynamic> json) => _$GetMempoolSummaryResultFromJson(json);
 
  final  List<MempoolTransactionSummary> _transactions;
@@ -297,7 +298,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });

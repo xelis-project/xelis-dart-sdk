@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'transaction_type.dart';
@@ -9,6 +9,7 @@ part of 'transaction_type.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 /// @nodoc
@@ -182,7 +183,7 @@ return unknown(_that.wireValue);case _:
 
 class RpcContractVersionV0 extends RpcContractVersion {
   const RpcContractVersionV0(): super._();
-
+  
 
 
 
@@ -214,7 +215,7 @@ String toString() {
 
 class RpcContractVersionV1 extends RpcContractVersion {
   const RpcContractVersionV1(): super._();
-
+  
 
 
 
@@ -246,7 +247,7 @@ String toString() {
 
 class RpcUnknownContractVersion extends RpcContractVersion {
   const RpcUnknownContractVersion(this.wireValue): super._();
-
+  
 
  final  String wireValue;
 
@@ -362,7 +363,7 @@ class _$RpcDeployContractInvokePayloadCopyWithImpl<$Res>
 /// Create a copy of RpcDeployContractInvokePayload
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? maxGas = null,Object? deposits = null,}) {
-  return _then(_self.copyWith(
+  return _then(RpcDeployContractInvokePayload(
 maxGas: null == maxGas ? _self.maxGas : maxGas // ignore: cast_nullable_to_non_nullable
 as BigInt,deposits: null == deposits ? _self.deposits : deposits // ignore: cast_nullable_to_non_nullable
 as Map<String, RpcContractDeposit>,
@@ -506,7 +507,7 @@ return $default(_that.maxGas,_that.deposits);case _:
 
 @JsonSerializable(explicitToJson: true)
 class _RpcDeployContractInvokePayload implements RpcDeployContractInvokePayload {
-  const _RpcDeployContractInvokePayload({@JsonKey(name: 'max_gas', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.maxGas, @JsonKey(fromJson: _rpcDepositsFromJson, toJson: _rpcDepositsToJson) required final  Map<String, RpcContractDeposit> deposits}): _deposits = deposits;
+  const _RpcDeployContractInvokePayload({@JsonKey(name: 'max_gas', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.maxGas, @JsonKey(fromJson: _rpcDepositsFromJson, toJson: _rpcDepositsToJson) required  Map<String, RpcContractDeposit> deposits}): _deposits = deposits;
   factory _RpcDeployContractInvokePayload.fromJson(Map<String, dynamic> json) => _$RpcDeployContractInvokePayloadFromJson(json);
 
 @override@JsonKey(name: 'max_gas', fromJson: rpcBigInt, toJson: rpcBigIntToJson) final  BigInt maxGas;
@@ -611,7 +612,7 @@ TransactionType _$TransactionTypeFromJson(
           return UnknownTransactionPayload.fromJson(
             json
           );
-
+        
           default:
             throw CheckedFromJsonException(
   json,
@@ -620,7 +621,7 @@ TransactionType _$TransactionTypeFromJson(
   'Invalid union type "${json['runtimeType']}"!'
 );
         }
-
+      
 }
 
 /// @nodoc
@@ -819,7 +820,7 @@ return unknown(_that.type,_that.wireValue);case _:
 @JsonSerializable()
 
 class TransfersPayload extends TransactionType {
-  const TransfersPayload({@JsonKey(name: 'transfers') required final  List<TransferPayload> transfers, final  String? $type}): _transfers = transfers,$type = $type ?? 'transfers',super._();
+  const TransfersPayload({@JsonKey(name: 'transfers') required  List<TransferPayload> transfers,  String? $type}): _transfers = transfers,$type = $type ?? 'transfers',super._();
   factory TransfersPayload.fromJson(Map<String, dynamic> json) => _$TransfersPayloadFromJson(json);
 
  final  List<TransferPayload> _transfers;
@@ -898,7 +899,7 @@ as List<TransferPayload>,
 @JsonSerializable()
 
 class BurnPayload extends TransactionType {
-  const BurnPayload({@JsonKey(name: 'asset') required this.asset, @JsonKey(name: 'amount', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.amount, final  String? $type}): $type = $type ?? 'burn',super._();
+  const BurnPayload({@JsonKey(name: 'asset') required this.asset, @JsonKey(name: 'amount', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.amount,  String? $type}): $type = $type ?? 'burn',super._();
   factory BurnPayload.fromJson(Map<String, dynamic> json) => _$BurnPayloadFromJson(json);
 
 @JsonKey(name: 'asset') final  String asset;
@@ -973,7 +974,7 @@ as BigInt,
 @JsonSerializable()
 
 class MultisigPayload extends TransactionType {
-  const MultisigPayload({@JsonKey(name: 'participants', fromJson: AddressOrPublicKey.listFromJson, toJson: AddressOrPublicKey.listToJson) required final  List<AddressOrPublicKey> participants, @JsonKey(name: 'threshold') required this.threshold, final  String? $type}): _participants = participants,$type = $type ?? 'multisig',super._();
+  const MultisigPayload({@JsonKey(name: 'participants', fromJson: AddressOrPublicKey.listFromJson, toJson: AddressOrPublicKey.listToJson) required  List<AddressOrPublicKey> participants, @JsonKey(name: 'threshold') required this.threshold,  String? $type}): _participants = participants,$type = $type ?? 'multisig',super._();
   factory MultisigPayload.fromJson(Map<String, dynamic> json) => _$MultisigPayloadFromJson(json);
 
  final  List<AddressOrPublicKey> _participants;
@@ -1054,7 +1055,7 @@ as int,
 @JsonSerializable()
 
 class InvokeContractPayload extends TransactionType {
-  const InvokeContractPayload({@JsonKey(name: 'contract') required this.contract, @JsonKey(fromJson: _rpcDepositsFromJson, toJson: _rpcDepositsToJson) required final  Map<String, RpcContractDeposit> deposits, @JsonKey(name: 'entry_id') required this.entryId, @JsonKey(name: 'max_gas', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.maxGas, @JsonKey(name: 'parameters', fromJson: _rpcValueCellsFromJson, toJson: _rpcValueCellsToJson) required final  List<RpcValueCell> parameters, @JsonKey(name: 'permission', fromJson: InterContractPermission.fromJson, toJson: _permissionToJson) this.permission = const InterContractPermission.none(), final  String? $type}): _deposits = deposits,_parameters = parameters,$type = $type ?? 'invokeContract',super._();
+  const InvokeContractPayload({@JsonKey(name: 'contract') required this.contract, @JsonKey(fromJson: _rpcDepositsFromJson, toJson: _rpcDepositsToJson) required  Map<String, RpcContractDeposit> deposits, @JsonKey(name: 'entry_id') required this.entryId, @JsonKey(name: 'max_gas', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.maxGas, @JsonKey(name: 'parameters', fromJson: _rpcValueCellsFromJson, toJson: _rpcValueCellsToJson) required  List<RpcValueCell> parameters, @JsonKey(name: 'permission', fromJson: InterContractPermission.fromJson, toJson: _permissionToJson) this.permission = const InterContractPermission.none(),  String? $type}): _deposits = deposits,_parameters = parameters,$type = $type ?? 'invokeContract',super._();
   factory InvokeContractPayload.fromJson(Map<String, dynamic> json) => _$InvokeContractPayloadFromJson(json);
 
 @JsonKey(name: 'contract') final  String contract;
@@ -1147,7 +1148,7 @@ as InterContractPermission,
 @override
 @pragma('vm:prefer-inline')
 $InterContractPermissionCopyWith<$Res> get permission {
-
+  
   return $InterContractPermissionCopyWith<$Res>(_self.permission, (value) {
     return _then(_self.copyWith(permission: value));
   });
@@ -1158,7 +1159,7 @@ $InterContractPermissionCopyWith<$Res> get permission {
 @JsonSerializable()
 
 class DeployContractPayload extends TransactionType {
-  const DeployContractPayload({@JsonKey(name: 'version', fromJson: RpcContractVersion.fromJson, toJson: _contractVersionToJson) required this.version, @JsonKey(name: 'module', fromJson: RpcJsonValue.fromJson, toJson: _rpcJsonToJson) required this.module, @JsonKey(name: 'invoke', toJson: _deployInvokeToJson) this.invoke, final  String? $type}): $type = $type ?? 'deployContract',super._();
+  const DeployContractPayload({@JsonKey(name: 'version', fromJson: RpcContractVersion.fromJson, toJson: _contractVersionToJson) required this.version, @JsonKey(name: 'module', fromJson: RpcJsonValue.fromJson, toJson: _rpcJsonToJson) required this.module, @JsonKey(name: 'invoke', toJson: _deployInvokeToJson) this.invoke,  String? $type}): $type = $type ?? 'deployContract',super._();
   factory DeployContractPayload.fromJson(Map<String, dynamic> json) => _$DeployContractPayloadFromJson(json);
 
 @JsonKey(name: 'version', fromJson: RpcContractVersion.fromJson, toJson: _contractVersionToJson) final  RpcContractVersion version;
@@ -1233,7 +1234,7 @@ as RpcDeployContractInvokePayload?,
 @override
 @pragma('vm:prefer-inline')
 $RpcContractVersionCopyWith<$Res> get version {
-
+  
   return $RpcContractVersionCopyWith<$Res>(_self.version, (value) {
     return _then(_self.copyWith(version: value));
   });
@@ -1242,7 +1243,7 @@ $RpcContractVersionCopyWith<$Res> get version {
 @override
 @pragma('vm:prefer-inline')
 $RpcJsonValueCopyWith<$Res> get module {
-
+  
   return $RpcJsonValueCopyWith<$Res>(_self.module, (value) {
     return _then(_self.copyWith(module: value));
   });
@@ -1265,7 +1266,7 @@ $RpcDeployContractInvokePayloadCopyWith<$Res>? get invoke {
 @JsonSerializable()
 
 class BlobPayload extends TransactionType {
-  const BlobPayload({@JsonKey(name: 'data', fromJson: RpcJsonValue.fromJson, toJson: _rpcJsonToJson) required this.data, @JsonKey(name: 'destinations', fromJson: AddressOrPublicKey.listFromJson, toJson: AddressOrPublicKey.listToJson) required final  List<AddressOrPublicKey> destinations, final  String? $type}): _destinations = destinations,$type = $type ?? 'blob',super._();
+  const BlobPayload({@JsonKey(name: 'data', fromJson: RpcJsonValue.fromJson, toJson: _rpcJsonToJson) required this.data, @JsonKey(name: 'destinations', fromJson: AddressOrPublicKey.listFromJson, toJson: AddressOrPublicKey.listToJson) required  List<AddressOrPublicKey> destinations,  String? $type}): _destinations = destinations,$type = $type ?? 'blob',super._();
   factory BlobPayload.fromJson(Map<String, dynamic> json) => _$BlobPayloadFromJson(json);
 
 @JsonKey(name: 'data', fromJson: RpcJsonValue.fromJson, toJson: _rpcJsonToJson) final  RpcJsonValue data;
@@ -1344,7 +1345,7 @@ as List<AddressOrPublicKey>,
 @override
 @pragma('vm:prefer-inline')
 $RpcJsonValueCopyWith<$Res> get data {
-
+  
   return $RpcJsonValueCopyWith<$Res>(_self.data, (value) {
     return _then(_self.copyWith(data: value));
   });
@@ -1355,7 +1356,7 @@ $RpcJsonValueCopyWith<$Res> get data {
 @JsonSerializable()
 
 class UnknownTransactionPayload extends TransactionType {
-  const UnknownTransactionPayload({required this.type, @JsonKey(name: 'wireValue', fromJson: RpcJsonValue.fromJson, toJson: _rpcJsonToJson) required this.wireValue, final  String? $type}): $type = $type ?? 'unknown',super._();
+  const UnknownTransactionPayload({required this.type, @JsonKey(name: 'wireValue', fromJson: RpcJsonValue.fromJson, toJson: _rpcJsonToJson) required this.wireValue,  String? $type}): $type = $type ?? 'unknown',super._();
   factory UnknownTransactionPayload.fromJson(Map<String, dynamic> json) => _$UnknownTransactionPayloadFromJson(json);
 
  final  String type;
@@ -1428,7 +1429,7 @@ as RpcJsonValue,
 @override
 @pragma('vm:prefer-inline')
 $RpcJsonValueCopyWith<$Res> get wireValue {
-
+  
   return $RpcJsonValueCopyWith<$Res>(_self.wireValue, (value) {
     return _then(_self.copyWith(wireValue: value));
   });

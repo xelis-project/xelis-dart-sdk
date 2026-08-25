@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'rpc_registered_execution.dart';
@@ -9,6 +9,7 @@ part of 'rpc_registered_execution.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 /// @nodoc
@@ -63,7 +64,7 @@ class _$RpcRegisteredExecutionCopyWithImpl<$Res>
 /// Create a copy of RpcRegisteredExecution
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? executionHash = null,Object? executionContract = null,Object? executionTopoheight = null,Object? extraFields = null,}) {
-  return _then(_self.copyWith(
+  return _then(RpcRegisteredExecution(
 executionHash: null == executionHash ? _self.executionHash : executionHash // ignore: cast_nullable_to_non_nullable
 as String,executionContract: null == executionContract ? _self.executionContract : executionContract // ignore: cast_nullable_to_non_nullable
 as String,executionTopoheight: null == executionTopoheight ? _self.executionTopoheight : executionTopoheight // ignore: cast_nullable_to_non_nullable
@@ -76,7 +77,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -219,7 +220,7 @@ return $default(_that.executionHash,_that.executionContract,_that.executionTopoh
 
 class _RpcRegisteredExecution extends RpcRegisteredExecution {
   const _RpcRegisteredExecution({required this.executionHash, required this.executionContract, required this.executionTopoheight, this.extraFields = const RpcExtraFields()}): super._();
-
+  
 
 @override final  String executionHash;
 @override final  String executionContract;
@@ -288,7 +289,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });

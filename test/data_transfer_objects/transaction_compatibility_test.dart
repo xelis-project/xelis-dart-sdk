@@ -9,28 +9,26 @@ void main() {
     'contract transaction payloads keep typed cells and deposit fallbacks',
     () {
       final maximum = BigInt.parse('18446744073709551615');
-      final payload =
-          TransactionType.fromJson({
-                'invoke_contract': {
-                  'contract': 'contract',
-                  'deposits': {
-                    'public-asset': {'public': maximum},
-                    'future-asset': {
-                      'streamed': {'amount': maximum},
-                    },
-                  },
-                  'entry_id': 1,
-                  'max_gas': maximum,
-                  'parameters': [
-                    {
-                      'type': 'primitive',
-                      'value': {'type': 'u64', 'value': maximum.toString()},
-                    },
-                  ],
-                  'permission': 'none',
-                },
-              })
-              as InvokeContractPayload;
+      final payload = TransactionType.fromJson({
+        'invoke_contract': {
+          'contract': 'contract',
+          'deposits': {
+            'public-asset': {'public': maximum},
+            'future-asset': {
+              'streamed': {'amount': maximum},
+            },
+          },
+          'entry_id': 1,
+          'max_gas': maximum,
+          'parameters': [
+            {
+              'type': 'primitive',
+              'value': {'type': 'u64', 'value': maximum.toString()},
+            },
+          ],
+          'permission': 'none',
+        },
+      }) as InvokeContractPayload;
 
       expect(
         payload.deposits['public-asset'],

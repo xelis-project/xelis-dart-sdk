@@ -88,17 +88,15 @@ void main() {
     );
 
     test('contract calls restore additive fields only when requested', () {
-      final permission =
-          InterContractPermission.fromJson({
-                'specific': [
-                  {
-                    'contract': 'contract',
-                    'chunk': 'all',
-                    'future_call_field': {'enabled': true},
-                  },
-                ],
-              })
-              as SpecificInterContractPermission;
+      final permission = InterContractPermission.fromJson({
+        'specific': [
+          {
+            'contract': 'contract',
+            'chunk': 'all',
+            'future_call_field': {'enabled': true},
+          },
+        ],
+      }) as SpecificInterContractPermission;
       final call = permission.calls.single;
 
       expect(call.extraFields['future_call_field']?.toJson(), {

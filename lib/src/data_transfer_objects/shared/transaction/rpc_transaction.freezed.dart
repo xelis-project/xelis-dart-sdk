@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'rpc_transaction.dart';
@@ -9,6 +9,7 @@ part of 'rpc_transaction.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 /// @nodoc
@@ -63,7 +64,7 @@ class _$RpcTransactionCopyWithImpl<$Res>
 /// Create a copy of RpcTransaction
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? hash = null,Object? data = null,Object? fee = null,Object? feeLimit = null,Object? version = null,Object? nonce = null,Object? source = null,Object? rangeProof = null,Object? sourceCommitments = null,Object? reference = null,Object? signature = null,Object? size = null,Object? feePaid = freezed,Object? feeRefund = freezed,Object? multiSig = freezed,Object? extraFields = null,}) {
-  return _then(_self.copyWith(
+  return _then(RpcTransaction(
 hash: null == hash ? _self.hash : hash // ignore: cast_nullable_to_non_nullable
 as String,data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
 as TransactionType,fee: null == fee ? _self.fee : fee // ignore: cast_nullable_to_non_nullable
@@ -88,7 +89,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $TransactionTypeCopyWith<$Res> get data {
-
+  
   return $TransactionTypeCopyWith<$Res>(_self.data, (value) {
     return _then(_self.copyWith(data: value));
   });
@@ -97,7 +98,7 @@ $TransactionTypeCopyWith<$Res> get data {
 @override
 @pragma('vm:prefer-inline')
 $ReferenceCopyWith<$Res> get reference {
-
+  
   return $ReferenceCopyWith<$Res>(_self.reference, (value) {
     return _then(_self.copyWith(reference: value));
   });
@@ -118,7 +119,7 @@ $MultisigCopyWith<$Res>? get multiSig {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -260,8 +261,8 @@ return $default(_that.hash,_that.data,_that.fee,_that.feeLimit,_that.version,_th
 
 
 class _RpcTransaction extends RpcTransaction {
-   _RpcTransaction({@JsonKey(name: 'hash') required this.hash, @JsonKey(name: 'data') required this.data, @JsonKey(name: 'fee') required this.fee, @JsonKey(name: 'fee_limit') required this.feeLimit, @JsonKey(name: 'version') required this.version, @JsonKey(name: 'nonce') required this.nonce, @JsonKey(name: 'source') required this.source, @JsonKey(name: 'range_proof') required final  List<int> rangeProof, @JsonKey(name: 'source_commitments') required final  List<RpcSourceCommitment> sourceCommitments, @JsonKey(name: 'reference') required this.reference, @JsonKey(name: 'signature') required this.signature, @JsonKey(name: 'size') required this.size, @JsonKey(name: 'fee_paid') this.feePaid, @JsonKey(name: 'fee_refund') this.feeRefund, @JsonKey(name: 'multisig') this.multiSig, this.extraFields = const RpcExtraFields()}): _rangeProof = rangeProof,_sourceCommitments = sourceCommitments,super._();
-
+   _RpcTransaction({@JsonKey(name: 'hash') required this.hash, @JsonKey(name: 'data') required this.data, @JsonKey(name: 'fee') required this.fee, @JsonKey(name: 'fee_limit') required this.feeLimit, @JsonKey(name: 'version') required this.version, @JsonKey(name: 'nonce') required this.nonce, @JsonKey(name: 'source') required this.source, @JsonKey(name: 'range_proof') required  List<int> rangeProof, @JsonKey(name: 'source_commitments') required  List<RpcSourceCommitment> sourceCommitments, @JsonKey(name: 'reference') required this.reference, @JsonKey(name: 'signature') required this.signature, @JsonKey(name: 'size') required this.size, @JsonKey(name: 'fee_paid') this.feePaid, @JsonKey(name: 'fee_refund') this.feeRefund, @JsonKey(name: 'multisig') this.multiSig, this.extraFields = const RpcExtraFields()}): _rangeProof = rangeProof,_sourceCommitments = sourceCommitments,super._();
+  
 
 @override@JsonKey(name: 'hash') final  String hash;
 @override@JsonKey(name: 'data') final  TransactionType data;
@@ -366,7 +367,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $TransactionTypeCopyWith<$Res> get data {
-
+  
   return $TransactionTypeCopyWith<$Res>(_self.data, (value) {
     return _then(_self.copyWith(data: value));
   });
@@ -375,7 +376,7 @@ $TransactionTypeCopyWith<$Res> get data {
 @override
 @pragma('vm:prefer-inline')
 $ReferenceCopyWith<$Res> get reference {
-
+  
   return $ReferenceCopyWith<$Res>(_self.reference, (value) {
     return _then(_self.copyWith(reference: value));
   });
@@ -396,7 +397,7 @@ $MultisigCopyWith<$Res>? get multiSig {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });

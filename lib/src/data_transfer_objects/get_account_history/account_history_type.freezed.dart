@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'account_history_type.dart';
@@ -9,6 +9,7 @@ part of 'account_history_type.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 /// @nodoc
@@ -230,7 +231,7 @@ return unknown(_that.type,_that.wireValue);case _:
 
 class AccountHistoryDevFee extends AccountHistoryType {
   const AccountHistoryDevFee({required this.reward, this.extraFields = const RpcExtraFields()}): super._();
-
+  
 
  final  BigInt reward;
 @JsonKey() final  RpcExtraFields extraFields;
@@ -295,7 +296,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -307,7 +308,7 @@ $RpcExtraFieldsCopyWith<$Res> get extraFields {
 
 class AccountHistoryMining extends AccountHistoryType {
   const AccountHistoryMining({required this.reward, this.extraFields = const RpcExtraFields()}): super._();
-
+  
 
  final  BigInt reward;
 @JsonKey() final  RpcExtraFields extraFields;
@@ -372,7 +373,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -384,7 +385,7 @@ $RpcExtraFieldsCopyWith<$Res> get extraFields {
 
 class AccountHistoryBurn extends AccountHistoryType {
   const AccountHistoryBurn({required this.asset, required this.amount, this.extraFields = const RpcExtraFields()}): super._();
-
+  
 
  final  String asset;
  final  BigInt amount;
@@ -451,7 +452,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -463,7 +464,7 @@ $RpcExtraFieldsCopyWith<$Res> get extraFields {
 
 class AccountHistoryOutgoing extends AccountHistoryType {
   const AccountHistoryOutgoing({required this.asset, required this.to, this.extraFields = const RpcExtraFields()}): super._();
-
+  
 
  final  String asset;
  final  String to;
@@ -530,7 +531,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -542,7 +543,7 @@ $RpcExtraFieldsCopyWith<$Res> get extraFields {
 
 class AccountHistoryIncoming extends AccountHistoryType {
   const AccountHistoryIncoming({required this.asset, required this.from, this.extraFields = const RpcExtraFields()}): super._();
-
+  
 
  final  String asset;
  final  String from;
@@ -609,7 +610,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -620,8 +621,8 @@ $RpcExtraFieldsCopyWith<$Res> get extraFields {
 
 
 class AccountHistoryMultiSig extends AccountHistoryType {
-  const AccountHistoryMultiSig({required final  List<String> participants, required this.threshold, this.extraFields = const RpcExtraFields()}): _participants = participants,super._();
-
+  const AccountHistoryMultiSig({required  List<String> participants, required this.threshold, this.extraFields = const RpcExtraFields()}): _participants = participants,super._();
+  
 
  final  List<String> _participants;
  List<String> get participants {
@@ -694,7 +695,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -705,8 +706,8 @@ $RpcExtraFieldsCopyWith<$Res> get extraFields {
 
 
 class AccountHistoryInvokeContract extends AccountHistoryType {
-  const AccountHistoryInvokeContract({required this.contract, required this.entryId, required final  List<String> deposits, this.extraFields = const RpcExtraFields()}): _deposits = deposits,super._();
-
+  const AccountHistoryInvokeContract({required this.contract, required this.entryId, required  List<String> deposits, this.extraFields = const RpcExtraFields()}): _deposits = deposits,super._();
+  
 
  final  String contract;
  final  int entryId;
@@ -781,7 +782,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -792,8 +793,8 @@ $RpcExtraFieldsCopyWith<$Res> get extraFields {
 
 
 class AccountHistoryDeployContract extends AccountHistoryType {
-  const AccountHistoryDeployContract({required final  List<String>? deposits, this.extraFields = const RpcExtraFields()}): _deposits = deposits,super._();
-
+  const AccountHistoryDeployContract({required  List<String>? deposits, this.extraFields = const RpcExtraFields()}): _deposits = deposits,super._();
+  
 
  final  List<String>? _deposits;
  List<String>? get deposits {
@@ -866,7 +867,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -878,7 +879,7 @@ $RpcExtraFieldsCopyWith<$Res> get extraFields {
 
 class AccountHistoryFromContract extends AccountHistoryType {
   const AccountHistoryFromContract({required this.contract, required this.asset, required this.amount, this.extraFields = const RpcExtraFields()}): super._();
-
+  
 
  final  String contract;
  final  String asset;
@@ -947,7 +948,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -959,7 +960,7 @@ $RpcExtraFieldsCopyWith<$Res> get extraFields {
 
 class AccountHistoryBlob extends AccountHistoryType {
   const AccountHistoryBlob({this.extraFields = const RpcExtraFields()}): super._();
-
+  
 
 @JsonKey() final  RpcExtraFields extraFields;
 
@@ -1022,7 +1023,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -1034,7 +1035,7 @@ $RpcExtraFieldsCopyWith<$Res> get extraFields {
 
 class UnknownAccountHistoryType extends AccountHistoryType {
   const UnknownAccountHistoryType({required this.type, required this.wireValue}): super._();
-
+  
 
  final  String type;
  final  RpcJsonValue wireValue;
@@ -1099,7 +1100,7 @@ as RpcJsonValue,
 @override
 @pragma('vm:prefer-inline')
 $RpcJsonValueCopyWith<$Res> get wireValue {
-
+  
   return $RpcJsonValueCopyWith<$Res>(_self.wireValue, (value) {
     return _then(_self.copyWith(wireValue: value));
   });

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'rpc_source_commitment.dart';
@@ -9,6 +9,7 @@ part of 'rpc_source_commitment.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 /// @nodoc
@@ -59,7 +60,7 @@ class _$RpcCommitmentEqProofCopyWithImpl<$Res>
 /// Create a copy of RpcCommitmentEqProof
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? y0 = null,Object? y1 = null,Object? y2 = null,Object? zS = null,Object? zX = null,Object? zR = null,Object? extraFields = null,}) {
-  return _then(_self.copyWith(
+  return _then(RpcCommitmentEqProof(
 y0: null == y0 ? _self.y0 : y0 // ignore: cast_nullable_to_non_nullable
 as List<int>,y1: null == y1 ? _self.y1 : y1 // ignore: cast_nullable_to_non_nullable
 as List<int>,y2: null == y2 ? _self.y2 : y2 // ignore: cast_nullable_to_non_nullable
@@ -75,7 +76,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -217,8 +218,8 @@ return $default(_that.y0,_that.y1,_that.y2,_that.zS,_that.zX,_that.zR,_that.extr
 
 
 class _RpcCommitmentEqProof extends RpcCommitmentEqProof {
-  const _RpcCommitmentEqProof({required final  List<int> y0, required final  List<int> y1, required final  List<int> y2, required final  List<int> zS, required final  List<int> zX, required final  List<int> zR, this.extraFields = const RpcExtraFields()}): _y0 = y0,_y1 = y1,_y2 = y2,_zS = zS,_zX = zX,_zR = zR,super._();
-
+  const _RpcCommitmentEqProof({required  List<int> y0, required  List<int> y1, required  List<int> y2, required  List<int> zS, required  List<int> zX, required  List<int> zR, this.extraFields = const RpcExtraFields()}): _y0 = y0,_y1 = y1,_y2 = y2,_zS = zS,_zX = zX,_zR = zR,super._();
+  
 
  final  List<int> _y0;
 @override List<int> get y0 {
@@ -325,7 +326,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -380,7 +381,7 @@ class _$RpcSourceCommitmentCopyWithImpl<$Res>
 /// Create a copy of RpcSourceCommitment
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? commitment = null,Object? proof = null,Object? asset = null,Object? extraFields = null,}) {
-  return _then(_self.copyWith(
+  return _then(RpcSourceCommitment(
 commitment: null == commitment ? _self.commitment : commitment // ignore: cast_nullable_to_non_nullable
 as List<int>,proof: null == proof ? _self.proof : proof // ignore: cast_nullable_to_non_nullable
 as RpcCommitmentEqProof,asset: null == asset ? _self.asset : asset // ignore: cast_nullable_to_non_nullable
@@ -393,7 +394,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcCommitmentEqProofCopyWith<$Res> get proof {
-
+  
   return $RpcCommitmentEqProofCopyWith<$Res>(_self.proof, (value) {
     return _then(_self.copyWith(proof: value));
   });
@@ -402,7 +403,7 @@ $RpcCommitmentEqProofCopyWith<$Res> get proof {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -544,8 +545,8 @@ return $default(_that.commitment,_that.proof,_that.asset,_that.extraFields);case
 
 
 class _RpcSourceCommitment extends RpcSourceCommitment {
-  const _RpcSourceCommitment({required final  List<int> commitment, required this.proof, required this.asset, this.extraFields = const RpcExtraFields()}): _commitment = commitment,super._();
-
+  const _RpcSourceCommitment({required  List<int> commitment, required this.proof, required this.asset, this.extraFields = const RpcExtraFields()}): _commitment = commitment,super._();
+  
 
  final  List<int> _commitment;
 @override List<int> get commitment {
@@ -616,7 +617,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcCommitmentEqProofCopyWith<$Res> get proof {
-
+  
   return $RpcCommitmentEqProofCopyWith<$Res>(_self.proof, (value) {
     return _then(_self.copyWith(proof: value));
   });
@@ -625,7 +626,7 @@ $RpcCommitmentEqProofCopyWith<$Res> get proof {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });

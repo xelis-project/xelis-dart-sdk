@@ -27,13 +27,12 @@ final class IntegrationOptions {
   final bool verbose;
 }
 
-typedef IntegrationSuiteExecutor =
-    Future<String> Function(
-      IntegrationSuite suite,
-      IntegrationOptions options,
-      Directory runDirectory,
-      File reportFile,
-    );
+typedef IntegrationSuiteExecutor = Future<String> Function(
+  IntegrationSuite suite,
+  IntegrationOptions options,
+  Directory runDirectory,
+  File reportFile,
+);
 
 final class IntegrationOrchestrator {
   IntegrationOrchestrator({

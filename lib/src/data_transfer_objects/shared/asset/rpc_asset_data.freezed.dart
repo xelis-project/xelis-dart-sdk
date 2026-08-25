@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'rpc_asset_data.dart';
@@ -9,6 +9,7 @@ part of 'rpc_asset_data.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 /// @nodoc
@@ -63,7 +64,7 @@ class _$RpcAssetDataCopyWithImpl<$Res>
 /// Create a copy of RpcAssetData
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? asset = null,Object? topoheight = null,Object? data = null,}) {
-  return _then(_self.copyWith(
+  return _then(RpcAssetData(
 asset: null == asset ? _self.asset : asset // ignore: cast_nullable_to_non_nullable
 as String,topoheight: null == topoheight ? _self.topoheight : topoheight // ignore: cast_nullable_to_non_nullable
 as BigInt,data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
@@ -75,7 +76,7 @@ as AssetData,
 @override
 @pragma('vm:prefer-inline')
 $AssetDataCopyWith<$Res> get data {
-
+  
   return $AssetDataCopyWith<$Res>(_self.data, (value) {
     return _then(_self.copyWith(data: value));
   });
@@ -218,7 +219,7 @@ return $default(_that.asset,_that.topoheight,_that.data);case _:
 
 class _RpcAssetData extends RpcAssetData {
   const _RpcAssetData({required this.asset, required this.topoheight, required this.data}): super._();
-
+  
 
 @override final  String asset;
 @override final  BigInt topoheight;
@@ -285,7 +286,7 @@ as AssetData,
 @override
 @pragma('vm:prefer-inline')
 $AssetDataCopyWith<$Res> get data {
-
+  
   return $AssetDataCopyWith<$Res>(_self.data, (value) {
     return _then(_self.copyWith(data: value));
   });

@@ -140,13 +140,11 @@ void main() {
   );
 
   test('keeps additive fields locally and restores them only on request', () {
-    final cell =
-        RpcValueCell.fromJson({
-              'type': 'primitive',
-              'value': {'type': 'u8', 'value': 1, 'future_primitive': true},
-              'future_cell': {'window': 64},
-            })
-            as RpcPrimitiveValueCell;
+    final cell = RpcValueCell.fromJson({
+      'type': 'primitive',
+      'value': {'type': 'u8', 'value': 1, 'future_primitive': true},
+      'future_cell': {'window': 64},
+    }) as RpcPrimitiveValueCell;
 
     expect(cell.extraFields['future_cell']?.toJson(), {
       'window': BigInt.from(64),

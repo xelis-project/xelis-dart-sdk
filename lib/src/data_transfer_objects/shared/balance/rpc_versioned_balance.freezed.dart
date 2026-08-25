@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'rpc_versioned_balance.dart';
@@ -9,6 +9,7 @@ part of 'rpc_versioned_balance.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 /// @nodoc
@@ -63,7 +64,7 @@ class _$RpcVersionedBalanceCopyWithImpl<$Res>
 /// Create a copy of RpcVersionedBalance
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? topoheight = null,Object? version = null,Object? extraFields = null,}) {
-  return _then(_self.copyWith(
+  return _then(RpcVersionedBalance(
 topoheight: null == topoheight ? _self.topoheight : topoheight // ignore: cast_nullable_to_non_nullable
 as BigInt,version: null == version ? _self.version : version // ignore: cast_nullable_to_non_nullable
 as BalanceVersion,extraFields: null == extraFields ? _self.extraFields : extraFields // ignore: cast_nullable_to_non_nullable
@@ -75,7 +76,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $BalanceVersionCopyWith<$Res> get version {
-
+  
   return $BalanceVersionCopyWith<$Res>(_self.version, (value) {
     return _then(_self.copyWith(version: value));
   });
@@ -84,7 +85,7 @@ $BalanceVersionCopyWith<$Res> get version {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -227,7 +228,7 @@ return $default(_that.topoheight,_that.version,_that.extraFields);case _:
 
 class _RpcVersionedBalance extends RpcVersionedBalance {
   const _RpcVersionedBalance({required this.topoheight, required this.version, this.extraFields = const RpcExtraFields()}): super._();
-
+  
 
 @override final  BigInt topoheight;
 @override final  BalanceVersion version;
@@ -294,7 +295,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $BalanceVersionCopyWith<$Res> get version {
-
+  
   return $BalanceVersionCopyWith<$Res>(_self.version, (value) {
     return _then(_self.copyWith(version: value));
   });
@@ -303,7 +304,7 @@ $BalanceVersionCopyWith<$Res> get version {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'rpc_gas_source.dart';
@@ -9,6 +9,7 @@ part of 'rpc_gas_source.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 /// @nodoc
@@ -194,7 +195,7 @@ return unknown(_that.wireValue);case _:
 
 class RpcContractGasSource extends RpcGasSource {
   const RpcContractGasSource(this.hash): super._();
-
+  
 
  final  String hash;
 
@@ -259,8 +260,8 @@ as String,
 
 
 class RpcAccountGasSource extends RpcGasSource {
-  const RpcAccountGasSource(final  List<int> publicKey): _publicKey = publicKey,super._();
-
+  const RpcAccountGasSource( List<int> publicKey): _publicKey = publicKey,super._();
+  
 
  final  List<int> _publicKey;
  List<int> get publicKey {
@@ -332,7 +333,7 @@ as List<int>,
 
 class RpcContractBalanceGasSource extends RpcGasSource {
   const RpcContractBalanceGasSource(this.hash): super._();
-
+  
 
  final  String hash;
 
@@ -397,8 +398,8 @@ as String,
 
 
 class RpcAccountBalanceGasSource extends RpcGasSource {
-  const RpcAccountBalanceGasSource(final  List<int> publicKey): _publicKey = publicKey,super._();
-
+  const RpcAccountBalanceGasSource( List<int> publicKey): _publicKey = publicKey,super._();
+  
 
  final  List<int> _publicKey;
  List<int> get publicKey {
@@ -470,7 +471,7 @@ as List<int>,
 
 class RpcUnknownGasSource extends RpcGasSource {
   const RpcUnknownGasSource(this.wireValue): super._();
-
+  
 
  final  RpcJsonValue wireValue;
 
@@ -533,7 +534,7 @@ as RpcJsonValue,
 @override
 @pragma('vm:prefer-inline')
 $RpcJsonValueCopyWith<$Res> get wireValue {
-
+  
   return $RpcJsonValueCopyWith<$Res>(_self.wireValue, (value) {
     return _then(_self.copyWith(wireValue: value));
   });
@@ -592,7 +593,7 @@ class _$RpcGasSourceEntryCopyWithImpl<$Res>
 /// Create a copy of RpcGasSourceEntry
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? key = null,Object? value = null,Object? extraFields = null,}) {
-  return _then(_self.copyWith(
+  return _then(RpcGasSourceEntry(
 key: null == key ? _self.key : key // ignore: cast_nullable_to_non_nullable
 as RpcGasSource,value: null == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
 as BigInt,extraFields: null == extraFields ? _self.extraFields : extraFields // ignore: cast_nullable_to_non_nullable
@@ -604,7 +605,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcGasSourceCopyWith<$Res> get key {
-
+  
   return $RpcGasSourceCopyWith<$Res>(_self.key, (value) {
     return _then(_self.copyWith(key: value));
   });
@@ -613,7 +614,7 @@ $RpcGasSourceCopyWith<$Res> get key {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -756,7 +757,7 @@ return $default(_that.key,_that.value,_that.extraFields);case _:
 
 class _RpcGasSourceEntry extends RpcGasSourceEntry {
   const _RpcGasSourceEntry({required this.key, required this.value, this.extraFields = const RpcExtraFields()}): super._();
-
+  
 
 @override final  RpcGasSource key;
 @override final  BigInt value;
@@ -823,7 +824,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcGasSourceCopyWith<$Res> get key {
-
+  
   return $RpcGasSourceCopyWith<$Res>(_self.key, (value) {
     return _then(_self.copyWith(key: value));
   });
@@ -832,7 +833,7 @@ $RpcGasSourceCopyWith<$Res> get key {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'get_info_result.dart';
@@ -9,6 +9,7 @@ part of 'get_info_result.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 /// @nodoc
@@ -63,7 +64,7 @@ class _$GetInfoResultCopyWithImpl<$Res>
 /// Create a copy of GetInfoResult
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? height = null,Object? topoheight = null,Object? stableHeight = null,Object? stableTopoheight = null,Object? prunedTopoheight = freezed,Object? topBlockHash = null,Object? circulatingSupply = null,Object? maximumSupply = null,Object? burnedSupply = null,Object? emittedSupply = null,Object? difficulty = null,Object? blockTimeTarget = null,Object? averageBlockTime = null,Object? blockReward = null,Object? mempoolSize = null,Object? version = null,Object? network = null,Object? minerReward = null,Object? devReward = null,Object? blockVersion = null,Object? extraFields = null,}) {
-  return _then(_self.copyWith(
+  return _then(GetInfoResult(
 height: null == height ? _self.height : height // ignore: cast_nullable_to_non_nullable
 as BigInt,topoheight: null == topoheight ? _self.topoheight : topoheight // ignore: cast_nullable_to_non_nullable
 as BigInt,stableHeight: null == stableHeight ? _self.stableHeight : stableHeight // ignore: cast_nullable_to_non_nullable
@@ -93,7 +94,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -236,7 +237,7 @@ return $default(_that.height,_that.topoheight,_that.stableHeight,_that.stableTop
 
 class _GetInfoResult extends GetInfoResult {
   const _GetInfoResult({@JsonKey(name: 'height', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.height, @JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.topoheight, @JsonKey(name: 'stableheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.stableHeight, @JsonKey(name: 'stable_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.stableTopoheight, @JsonKey(name: 'pruned_topoheight', fromJson: _nullableBigInt, toJson: rpcNullableBigIntToJson) this.prunedTopoheight, @JsonKey(name: 'top_block_hash') required this.topBlockHash, @JsonKey(name: 'circulating_supply', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.circulatingSupply, @JsonKey(name: 'maximum_supply', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.maximumSupply, @JsonKey(name: 'burned_supply', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.burnedSupply, @JsonKey(name: 'emitted_supply', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.emittedSupply, @JsonKey(name: 'difficulty', fromJson: rpcBigInt, toJson: rpcBigIntStringToJson) required this.difficulty, @JsonKey(name: 'block_time_target', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.blockTimeTarget, @JsonKey(name: 'average_block_time', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.averageBlockTime, @JsonKey(name: 'block_reward', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.blockReward, @JsonKey(name: 'mempool_size', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.mempoolSize, @JsonKey(name: 'version') required this.version, @JsonKey(name: 'network') required this.network, @JsonKey(name: 'miner_reward', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.minerReward, @JsonKey(name: 'dev_reward', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.devReward, @JsonKey(name: 'block_version') required this.blockVersion, @JsonKey(includeFromJson: false, includeToJson: false) this.extraFields = const RpcExtraFields()}): super._();
-
+  
 
 @override@JsonKey(name: 'height', fromJson: rpcBigInt, toJson: rpcBigIntToJson) final  BigInt height;
 @override@JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) final  BigInt topoheight;
@@ -339,7 +340,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });

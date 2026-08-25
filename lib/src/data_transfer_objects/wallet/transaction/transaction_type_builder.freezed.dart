@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'transaction_type_builder.dart';
@@ -9,6 +9,7 @@ part of 'transaction_type_builder.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 TransactionTypeBuilder _$TransactionTypeBuilderFromJson(
@@ -39,7 +40,7 @@ TransactionTypeBuilder _$TransactionTypeBuilderFromJson(
           return BlobBuilder.fromJson(
             json
           );
-
+        
           default:
             throw CheckedFromJsonException(
   json,
@@ -48,7 +49,7 @@ TransactionTypeBuilder _$TransactionTypeBuilderFromJson(
   'Invalid union type "${json['runtimeType']}"!'
 );
         }
-
+      
 }
 
 /// @nodoc
@@ -241,7 +242,7 @@ return blob(_that.data,_that.destinations,_that.encrypt);case _:
 
 @JsonSerializable(explicitToJson: true)
 class TransfersBuilder extends TransactionTypeBuilder {
-  const TransfersBuilder({@JsonKey(name: 'transfers') required final  List<TransferBuilder> transfers, final  String? $type}): _transfers = transfers,$type = $type ?? 'transfers',super._();
+  const TransfersBuilder({@JsonKey(name: 'transfers') required  List<TransferBuilder> transfers,  String? $type}): _transfers = transfers,$type = $type ?? 'transfers',super._();
   factory TransfersBuilder.fromJson(Map<String, dynamic> json) => _$TransfersBuilderFromJson(json);
 
  final  List<TransferBuilder> _transfers;
@@ -320,7 +321,7 @@ as List<TransferBuilder>,
 @JsonSerializable()
 
 class BurnBuilder extends TransactionTypeBuilder {
-  const BurnBuilder({@JsonKey(name: 'asset') required this.asset, @JsonKey(name: 'amount', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.amount, final  String? $type}): $type = $type ?? 'burn',super._();
+  const BurnBuilder({@JsonKey(name: 'asset') required this.asset, @JsonKey(name: 'amount', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.amount,  String? $type}): $type = $type ?? 'burn',super._();
   factory BurnBuilder.fromJson(Map<String, dynamic> json) => _$BurnBuilderFromJson(json);
 
 @JsonKey(name: 'asset') final  String asset;
@@ -395,7 +396,7 @@ as BigInt,
 @JsonSerializable()
 
 class MultisigBuilder extends TransactionTypeBuilder {
-  const MultisigBuilder({@JsonKey(name: 'threshold') required this.threshold, @JsonKey(name: 'participants') required final  List<String> participants, final  String? $type}): _participants = participants,$type = $type ?? 'multisig',super._();
+  const MultisigBuilder({@JsonKey(name: 'threshold') required this.threshold, @JsonKey(name: 'participants') required  List<String> participants,  String? $type}): _participants = participants,$type = $type ?? 'multisig',super._();
   factory MultisigBuilder.fromJson(Map<String, dynamic> json) => _$MultisigBuilderFromJson(json);
 
 @JsonKey(name: 'threshold') final  int threshold;
@@ -476,7 +477,7 @@ as List<String>,
 
 @JsonSerializable(explicitToJson: true)
 class InvokeContractBuilder extends TransactionTypeBuilder {
-  const InvokeContractBuilder({@JsonKey(name: 'contract') required this.contract, @JsonKey(name: 'max_gas', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.maxGas, @JsonKey(name: 'entry_id') required this.entryId, @JsonKey(name: 'parameters') required final  List<RpcValueCell> parameters, @JsonKey(name: 'deposits') final  Map<String, ContractDepositBuilder> deposits = const <String, ContractDepositBuilder>{}, @JsonKey(name: 'permission') this.permission = const InterContractPermission.none(), final  String? $type}): _parameters = parameters,_deposits = deposits,$type = $type ?? 'invokeContract',super._();
+  const InvokeContractBuilder({@JsonKey(name: 'contract') required this.contract, @JsonKey(name: 'max_gas', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.maxGas, @JsonKey(name: 'entry_id') required this.entryId, @JsonKey(name: 'parameters') required  List<RpcValueCell> parameters, @JsonKey(name: 'deposits')  Map<String, ContractDepositBuilder> deposits = const <String, ContractDepositBuilder>{}, @JsonKey(name: 'permission') this.permission = const InterContractPermission.none(),  String? $type}): _parameters = parameters,_deposits = deposits,$type = $type ?? 'invokeContract',super._();
   factory InvokeContractBuilder.fromJson(Map<String, dynamic> json) => _$InvokeContractBuilderFromJson(json);
 
 @JsonKey(name: 'contract') final  String contract;
@@ -569,7 +570,7 @@ as InterContractPermission,
 @override
 @pragma('vm:prefer-inline')
 $InterContractPermissionCopyWith<$Res> get permission {
-
+  
   return $InterContractPermissionCopyWith<$Res>(_self.permission, (value) {
     return _then(_self.copyWith(permission: value));
   });
@@ -580,7 +581,7 @@ $InterContractPermissionCopyWith<$Res> get permission {
 
 @JsonSerializable(explicitToJson: true)
 class DeployContractBuilder extends TransactionTypeBuilder {
-  const DeployContractBuilder({@JsonKey(name: 'contract', fromJson: ContractModuleHex.fromJson, toJson: _contractModuleHexToJson) required this.contract, @JsonKey(name: 'invoke') this.invoke, final  String? $type}): $type = $type ?? 'deployContract',super._();
+  const DeployContractBuilder({@JsonKey(name: 'contract', fromJson: ContractModuleHex.fromJson, toJson: _contractModuleHexToJson) required this.contract, @JsonKey(name: 'invoke') this.invoke,  String? $type}): $type = $type ?? 'deployContract',super._();
   factory DeployContractBuilder.fromJson(Map<String, dynamic> json) => _$DeployContractBuilderFromJson(json);
 
 @JsonKey(name: 'contract', fromJson: ContractModuleHex.fromJson, toJson: _contractModuleHexToJson) final  ContractModuleHex contract;
@@ -667,7 +668,7 @@ $DeployContractInvokeBuilderCopyWith<$Res>? get invoke {
 @JsonSerializable()
 
 class BlobBuilder extends TransactionTypeBuilder {
-  const BlobBuilder({@JsonKey(name: 'data', fromJson: DataElement.fromJson, toJson: _dataElementToJson) required this.data, @JsonKey(name: 'destinations') required final  List<String> destinations, @JsonKey(name: 'encrypt') this.encrypt = true, final  String? $type}): _destinations = destinations,$type = $type ?? 'blob',super._();
+  const BlobBuilder({@JsonKey(name: 'data', fromJson: DataElement.fromJson, toJson: _dataElementToJson) required this.data, @JsonKey(name: 'destinations') required  List<String> destinations, @JsonKey(name: 'encrypt') this.encrypt = true,  String? $type}): _destinations = destinations,$type = $type ?? 'blob',super._();
   factory BlobBuilder.fromJson(Map<String, dynamic> json) => _$BlobBuilderFromJson(json);
 
 @JsonKey(name: 'data', fromJson: DataElement.fromJson, toJson: _dataElementToJson) final  DataElement data;
@@ -748,7 +749,7 @@ as bool,
 @override
 @pragma('vm:prefer-inline')
 $DataElementCopyWith<$Res> get data {
-
+  
   return $DataElementCopyWith<$Res>(_self.data, (value) {
     return _then(_self.copyWith(data: value));
   });

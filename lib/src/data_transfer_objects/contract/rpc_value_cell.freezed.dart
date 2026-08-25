@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'rpc_value_cell.dart';
@@ -9,6 +9,7 @@ part of 'rpc_value_cell.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 /// @nodoc
@@ -190,7 +191,7 @@ return unknown(_that.wireValue);case _:
 
 class RpcPrimitiveValueCell extends RpcValueCell {
   const RpcPrimitiveValueCell(this.value, {this.extraFields = const RpcExtraFields()}): super._();
-
+  
 
  final  RpcPrimitive value;
 @JsonKey() final  RpcExtraFields extraFields;
@@ -251,7 +252,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcPrimitiveCopyWith<$Res> get value {
-
+  
   return $RpcPrimitiveCopyWith<$Res>(_self.value, (value) {
     return _then(_self.copyWith(value: value));
   });
@@ -260,7 +261,7 @@ $RpcPrimitiveCopyWith<$Res> get value {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -272,7 +273,7 @@ $RpcExtraFieldsCopyWith<$Res> get extraFields {
 
 class RpcBytesValueCell extends RpcValueCell {
   const RpcBytesValueCell(this.value, {this.extraFields = const RpcExtraFields()}): super._();
-
+  
 
  final  Uint8List value;
 @JsonKey() final  RpcExtraFields extraFields;
@@ -333,7 +334,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -344,8 +345,8 @@ $RpcExtraFieldsCopyWith<$Res> get extraFields {
 
 
 class RpcObjectValueCell extends RpcValueCell {
-  const RpcObjectValueCell(final  List<RpcValueCell> values, {this.extraFields = const RpcExtraFields()}): _values = values,super._();
-
+  const RpcObjectValueCell( List<RpcValueCell> values, {this.extraFields = const RpcExtraFields()}): _values = values,super._();
+  
 
  final  List<RpcValueCell> _values;
  List<RpcValueCell> get values {
@@ -412,7 +413,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -423,8 +424,8 @@ $RpcExtraFieldsCopyWith<$Res> get extraFields {
 
 
 class RpcMapValueCell extends RpcValueCell {
-  const RpcMapValueCell(final  List<RpcValueCellEntry> entries, {this.extraFields = const RpcExtraFields()}): _entries = entries,super._();
-
+  const RpcMapValueCell( List<RpcValueCellEntry> entries, {this.extraFields = const RpcExtraFields()}): _entries = entries,super._();
+  
 
  final  List<RpcValueCellEntry> _entries;
  List<RpcValueCellEntry> get entries {
@@ -491,7 +492,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -503,7 +504,7 @@ $RpcExtraFieldsCopyWith<$Res> get extraFields {
 
 class RpcUnknownValueCell extends RpcValueCell {
   const RpcUnknownValueCell(this.wireValue): super._();
-
+  
 
  final  RpcJsonValue wireValue;
 
@@ -562,7 +563,7 @@ as RpcJsonValue,
 @override
 @pragma('vm:prefer-inline')
 $RpcJsonValueCopyWith<$Res> get wireValue {
-
+  
   return $RpcJsonValueCopyWith<$Res>(_self.wireValue, (value) {
     return _then(_self.copyWith(wireValue: value));
   });
@@ -621,7 +622,7 @@ class _$RpcValueCellEntryCopyWithImpl<$Res>
 /// Create a copy of RpcValueCellEntry
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? key = null,Object? value = null,}) {
-  return _then(_self.copyWith(
+  return _then(RpcValueCellEntry(
 key: null == key ? _self.key : key // ignore: cast_nullable_to_non_nullable
 as RpcValueCell,value: null == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
 as RpcValueCell,
@@ -632,7 +633,7 @@ as RpcValueCell,
 @override
 @pragma('vm:prefer-inline')
 $RpcValueCellCopyWith<$Res> get key {
-
+  
   return $RpcValueCellCopyWith<$Res>(_self.key, (value) {
     return _then(_self.copyWith(key: value));
   });
@@ -641,7 +642,7 @@ $RpcValueCellCopyWith<$Res> get key {
 @override
 @pragma('vm:prefer-inline')
 $RpcValueCellCopyWith<$Res> get value {
-
+  
   return $RpcValueCellCopyWith<$Res>(_self.value, (value) {
     return _then(_self.copyWith(value: value));
   });
@@ -784,7 +785,7 @@ return $default(_that.key,_that.value);case _:
 
 class _RpcValueCellEntry extends RpcValueCellEntry {
   const _RpcValueCellEntry({required this.key, required this.value}): super._();
-
+  
 
 @override final  RpcValueCell key;
 @override final  RpcValueCell value;
@@ -849,7 +850,7 @@ as RpcValueCell,
 @override
 @pragma('vm:prefer-inline')
 $RpcValueCellCopyWith<$Res> get key {
-
+  
   return $RpcValueCellCopyWith<$Res>(_self.key, (value) {
     return _then(_self.copyWith(key: value));
   });
@@ -858,7 +859,7 @@ $RpcValueCellCopyWith<$Res> get key {
 @override
 @pragma('vm:prefer-inline')
 $RpcValueCellCopyWith<$Res> get value {
-
+  
   return $RpcValueCellCopyWith<$Res>(_self.value, (value) {
     return _then(_self.copyWith(value: value));
   });
@@ -1086,7 +1087,7 @@ return unknown(_that.wireValue);case _:
 
 class RpcNullPrimitive extends RpcPrimitive {
   const RpcNullPrimitive({this.extraFields = const RpcExtraFields()}): super._();
-
+  
 
 @JsonKey() final  RpcExtraFields extraFields;
 
@@ -1145,7 +1146,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -1157,7 +1158,7 @@ $RpcExtraFieldsCopyWith<$Res> get extraFields {
 
 class RpcBooleanPrimitive extends RpcPrimitive {
   const RpcBooleanPrimitive(this.value, {this.extraFields = const RpcExtraFields()}): super._();
-
+  
 
  final  bool value;
 @JsonKey() final  RpcExtraFields extraFields;
@@ -1218,7 +1219,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -1230,7 +1231,7 @@ $RpcExtraFieldsCopyWith<$Res> get extraFields {
 
 class RpcU8Primitive extends RpcPrimitive {
   const RpcU8Primitive(this.value, {this.extraFields = const RpcExtraFields()}): super._();
-
+  
 
  final  int value;
 @JsonKey() final  RpcExtraFields extraFields;
@@ -1291,7 +1292,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -1303,7 +1304,7 @@ $RpcExtraFieldsCopyWith<$Res> get extraFields {
 
 class RpcU16Primitive extends RpcPrimitive {
   const RpcU16Primitive(this.value, {this.extraFields = const RpcExtraFields()}): super._();
-
+  
 
  final  int value;
 @JsonKey() final  RpcExtraFields extraFields;
@@ -1364,7 +1365,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -1376,7 +1377,7 @@ $RpcExtraFieldsCopyWith<$Res> get extraFields {
 
 class RpcU32Primitive extends RpcPrimitive {
   const RpcU32Primitive(this.value, {this.extraFields = const RpcExtraFields()}): super._();
-
+  
 
  final  int value;
 @JsonKey() final  RpcExtraFields extraFields;
@@ -1437,7 +1438,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -1449,7 +1450,7 @@ $RpcExtraFieldsCopyWith<$Res> get extraFields {
 
 class RpcU64Primitive extends RpcPrimitive {
   const RpcU64Primitive(this.value, {this.extraFields = const RpcExtraFields()}): super._();
-
+  
 
  final  BigInt value;
 @JsonKey() final  RpcExtraFields extraFields;
@@ -1510,7 +1511,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -1522,7 +1523,7 @@ $RpcExtraFieldsCopyWith<$Res> get extraFields {
 
 class RpcU128Primitive extends RpcPrimitive {
   const RpcU128Primitive(this.value, {this.extraFields = const RpcExtraFields()}): super._();
-
+  
 
  final  BigInt value;
 @JsonKey() final  RpcExtraFields extraFields;
@@ -1583,7 +1584,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -1595,7 +1596,7 @@ $RpcExtraFieldsCopyWith<$Res> get extraFields {
 
 class RpcU256Primitive extends RpcPrimitive {
   const RpcU256Primitive(this.value, {this.extraFields = const RpcExtraFields()}): super._();
-
+  
 
  final  BigInt value;
 @JsonKey() final  RpcExtraFields extraFields;
@@ -1656,7 +1657,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -1668,7 +1669,7 @@ $RpcExtraFieldsCopyWith<$Res> get extraFields {
 
 class RpcStringPrimitive extends RpcPrimitive {
   const RpcStringPrimitive(this.value, {this.extraFields = const RpcExtraFields()}): super._();
-
+  
 
  final  String value;
 @JsonKey() final  RpcExtraFields extraFields;
@@ -1729,7 +1730,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -1741,7 +1742,7 @@ $RpcExtraFieldsCopyWith<$Res> get extraFields {
 
 class RpcRangePrimitive extends RpcPrimitive {
   const RpcRangePrimitive(this.start, this.end, {this.extraFields = const RpcExtraFields()}): super._();
-
+  
 
  final  RpcPrimitive start;
  final  RpcPrimitive end;
@@ -1804,7 +1805,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcPrimitiveCopyWith<$Res> get start {
-
+  
   return $RpcPrimitiveCopyWith<$Res>(_self.start, (value) {
     return _then(_self.copyWith(start: value));
   });
@@ -1813,7 +1814,7 @@ $RpcPrimitiveCopyWith<$Res> get start {
 @override
 @pragma('vm:prefer-inline')
 $RpcPrimitiveCopyWith<$Res> get end {
-
+  
   return $RpcPrimitiveCopyWith<$Res>(_self.end, (value) {
     return _then(_self.copyWith(end: value));
   });
@@ -1822,7 +1823,7 @@ $RpcPrimitiveCopyWith<$Res> get end {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -1834,7 +1835,7 @@ $RpcExtraFieldsCopyWith<$Res> get extraFields {
 
 class RpcOpaquePrimitive extends RpcPrimitive {
   const RpcOpaquePrimitive(this.value, {this.extraFields = const RpcExtraFields()}): super._();
-
+  
 
  final  RpcOpaqueValue value;
 @JsonKey() final  RpcExtraFields extraFields;
@@ -1895,7 +1896,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcOpaqueValueCopyWith<$Res> get value {
-
+  
   return $RpcOpaqueValueCopyWith<$Res>(_self.value, (value) {
     return _then(_self.copyWith(value: value));
   });
@@ -1904,7 +1905,7 @@ $RpcOpaqueValueCopyWith<$Res> get value {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -1916,7 +1917,7 @@ $RpcExtraFieldsCopyWith<$Res> get extraFields {
 
 class RpcUnknownPrimitive extends RpcPrimitive {
   const RpcUnknownPrimitive(this.wireValue): super._();
-
+  
 
  final  RpcJsonValue wireValue;
 
@@ -1975,7 +1976,7 @@ as RpcJsonValue,
 @override
 @pragma('vm:prefer-inline')
 $RpcJsonValueCopyWith<$Res> get wireValue {
-
+  
   return $RpcJsonValueCopyWith<$Res>(_self.wireValue, (value) {
     return _then(_self.copyWith(wireValue: value));
   });

@@ -6,7 +6,6 @@ import 'package:test/test.dart';
 import 'package:xelis_dart_sdk/xelis_dart_sdk.dart' show Network;
 
 import '../../integration_test/scenario_catalog.dart';
-import '../../tool/src/generated_sources.dart';
 import '../../tool/src/hook_config.dart';
 import '../../tool/src/integration_orchestrator.dart';
 import '../../tool/src/integration_suite.dart';
@@ -18,25 +17,6 @@ import '../../tool/src/xelis_target.dart';
 import '../../tool/update_rpc_schemas.dart';
 
 void main() {
-  test('generated source whitespace normalization is deterministic', () {
-    final directory = Directory.systemTemp.createTempSync(
-      'generated-source-test-',
-    );
-    addTearDown(() => directory.deleteSync(recursive: true));
-    final generated = File(
-      '${directory.path}${Platform.pathSeparator}model.freezed.dart',
-    )..writeAsStringSync('first  \r\nsecond\t\r\n');
-    final regular = File('${directory.path}${Platform.pathSeparator}model.dart')
-      ..writeAsStringSync('first  \r\n');
-
-    normalizeGeneratedSourceWhitespace([directory.path]);
-
-    expect(generated.readAsStringSync(), 'first\r\nsecond\r\n');
-    expect(regular.readAsStringSync(), 'first  \r\n');
-    normalizeGeneratedSourceWhitespace([directory.path]);
-    expect(generated.readAsStringSync(), 'first\r\nsecond\r\n');
-  });
-
   test('cache key changes with target inputs and build options', () {
     final target = XelisTarget.load();
     final first = integrationCacheKey(
@@ -255,9 +235,9 @@ void main() {
         );
         if (run.existsSync()) run.deleteSync(recursive: true);
       });
-      final report =
-          jsonDecode(File('${created.path}/wallet.json').readAsStringSync())
-              as Map<String, dynamic>;
+      final report = jsonDecode(
+        File('${created.path}/wallet.json').readAsStringSync(),
+      ) as Map<String, dynamic>;
       expect(report['status'], 'blocked');
       expect(report['failure'], contains('wallet RPC server regression'));
       final expectedStates = {
@@ -321,9 +301,9 @@ void main() {
         );
         if (run.existsSync()) run.deleteSync(recursive: true);
       });
-      final summary =
-          jsonDecode(File('${created.path}/summary.json').readAsStringSync())
-              as Map<String, dynamic>;
+      final summary = jsonDecode(
+        File('${created.path}/summary.json').readAsStringSync(),
+      ) as Map<String, dynamic>;
       expect(summary['success'], isFalse);
       expect(summary['suites'], {
         'daemon': 'blocked',
@@ -392,9 +372,9 @@ void main() {
         );
         if (run.existsSync()) run.deleteSync(recursive: true);
       });
-      final summary =
-          jsonDecode(File('${created.path}/summary.json').readAsStringSync())
-              as Map<String, dynamic>;
+      final summary = jsonDecode(
+        File('${created.path}/summary.json').readAsStringSync(),
+      ) as Map<String, dynamic>;
       expect(summary['suites'], {
         'daemon': 'failed',
         'wallet': 'passed',
@@ -408,9 +388,9 @@ void main() {
             .toSet(),
         {'daemon.json', 'wallet.json', 'e2e.json', 'summary.json'},
       );
-      final daemonReport =
-          jsonDecode(File('${created.path}/daemon.json').readAsStringSync())
-              as Map<String, dynamic>;
+      final daemonReport = jsonDecode(
+        File('${created.path}/daemon.json').readAsStringSync(),
+      ) as Map<String, dynamic>;
       expect(daemonReport['status'], 'failed');
       expect(
         daemonReport['failure'],

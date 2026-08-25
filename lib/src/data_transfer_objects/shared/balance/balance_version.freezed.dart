@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'balance_version.dart';
@@ -9,6 +9,7 @@ part of 'balance_version.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 /// @nodoc
@@ -63,7 +64,7 @@ class _$BalanceVersionCopyWithImpl<$Res>
 /// Create a copy of BalanceVersion
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? balanceType = null,Object? finalBalance = null,Object? outputBalance = freezed,Object? previousTopoheight = freezed,Object? extraFields = null,}) {
-  return _then(_self.copyWith(
+  return _then(BalanceVersion(
 balanceType: null == balanceType ? _self.balanceType : balanceType // ignore: cast_nullable_to_non_nullable
 as RpcBalanceType,finalBalance: null == finalBalance ? _self.finalBalance : finalBalance // ignore: cast_nullable_to_non_nullable
 as RpcCompressedCiphertext,outputBalance: freezed == outputBalance ? _self.outputBalance : outputBalance // ignore: cast_nullable_to_non_nullable
@@ -77,7 +78,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcBalanceTypeCopyWith<$Res> get balanceType {
-
+  
   return $RpcBalanceTypeCopyWith<$Res>(_self.balanceType, (value) {
     return _then(_self.copyWith(balanceType: value));
   });
@@ -86,7 +87,7 @@ $RpcBalanceTypeCopyWith<$Res> get balanceType {
 @override
 @pragma('vm:prefer-inline')
 $RpcCompressedCiphertextCopyWith<$Res> get finalBalance {
-
+  
   return $RpcCompressedCiphertextCopyWith<$Res>(_self.finalBalance, (value) {
     return _then(_self.copyWith(finalBalance: value));
   });
@@ -107,7 +108,7 @@ $RpcCompressedCiphertextCopyWith<$Res>? get outputBalance {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -250,7 +251,7 @@ return $default(_that.balanceType,_that.finalBalance,_that.outputBalance,_that.p
 
 class _BalanceVersion extends BalanceVersion {
   const _BalanceVersion({required this.balanceType, required this.finalBalance, this.outputBalance, this.previousTopoheight, this.extraFields = const RpcExtraFields()}): super._();
-
+  
 
 @override final  RpcBalanceType balanceType;
 @override final  RpcCompressedCiphertext finalBalance;
@@ -321,7 +322,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcBalanceTypeCopyWith<$Res> get balanceType {
-
+  
   return $RpcBalanceTypeCopyWith<$Res>(_self.balanceType, (value) {
     return _then(_self.copyWith(balanceType: value));
   });
@@ -330,7 +331,7 @@ $RpcBalanceTypeCopyWith<$Res> get balanceType {
 @override
 @pragma('vm:prefer-inline')
 $RpcCompressedCiphertextCopyWith<$Res> get finalBalance {
-
+  
   return $RpcCompressedCiphertextCopyWith<$Res>(_self.finalBalance, (value) {
     return _then(_self.copyWith(finalBalance: value));
   });
@@ -351,7 +352,7 @@ $RpcCompressedCiphertextCopyWith<$Res>? get outputBalance {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'finalize_unsigned_transaction_params.dart';
@@ -9,6 +9,7 @@ part of 'finalize_unsigned_transaction_params.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 
@@ -66,7 +67,7 @@ class _$FinalizeUnsignedTransactionParamsCopyWithImpl<$Res>
 /// Create a copy of FinalizeUnsignedTransactionParams
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? unsignedTransaction = null,Object? signatures = freezed,Object? broadcast = freezed,Object? txAsHex = freezed,}) {
-  return _then(_self.copyWith(
+  return _then(FinalizeUnsignedTransactionParams(
 unsignedTransaction: null == unsignedTransaction ? _self.unsignedTransaction : unsignedTransaction // ignore: cast_nullable_to_non_nullable
 as String,signatures: freezed == signatures ? _self.signatures : signatures // ignore: cast_nullable_to_non_nullable
 as List<SignatureId>?,broadcast: freezed == broadcast ? _self.broadcast : broadcast // ignore: cast_nullable_to_non_nullable
@@ -212,7 +213,7 @@ return $default(_that.unsignedTransaction,_that.signatures,_that.broadcast,_that
 
 @JsonSerializable(includeIfNull: false, explicitToJson: true)
 class _FinalizeUnsignedTransactionParams implements FinalizeUnsignedTransactionParams {
-  const _FinalizeUnsignedTransactionParams({@JsonKey(name: 'unsigned') required this.unsignedTransaction, @JsonKey(name: 'signatures') final  List<SignatureId>? signatures, @JsonKey(name: 'broadcast') this.broadcast, @JsonKey(name: 'tx_as_hex') this.txAsHex}): _signatures = signatures;
+  const _FinalizeUnsignedTransactionParams({@JsonKey(name: 'unsigned') required this.unsignedTransaction, @JsonKey(name: 'signatures')  List<SignatureId>? signatures, @JsonKey(name: 'broadcast') this.broadcast, @JsonKey(name: 'tx_as_hex') this.txAsHex}): _signatures = signatures;
   factory _FinalizeUnsignedTransactionParams.fromJson(Map<String, dynamic> json) => _$FinalizeUnsignedTransactionParamsFromJson(json);
 
 @override@JsonKey(name: 'unsigned') final  String unsignedTransaction;

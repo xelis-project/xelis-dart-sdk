@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'deploy_invoke.dart';
@@ -9,6 +9,7 @@ part of 'deploy_invoke.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 
@@ -66,7 +67,7 @@ class _$DeployInvokeCopyWithImpl<$Res>
 /// Create a copy of DeployInvoke
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? maxGas = null,Object? deposits = null,Object? extraFields = null,}) {
-  return _then(_self.copyWith(
+  return _then(DeployInvoke(
 maxGas: null == maxGas ? _self.maxGas : maxGas // ignore: cast_nullable_to_non_nullable
 as BigInt,deposits: null == deposits ? _self.deposits : deposits // ignore: cast_nullable_to_non_nullable
 as Map<String, BigInt>,extraFields: null == extraFields ? _self.extraFields : extraFields // ignore: cast_nullable_to_non_nullable
@@ -78,7 +79,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -220,7 +221,7 @@ return $default(_that.maxGas,_that.deposits,_that.extraFields);case _:
 @JsonSerializable()
 
 class _DeployInvoke extends DeployInvoke {
-  const _DeployInvoke({@JsonKey(name: 'max_gas', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.maxGas, @JsonKey(name: 'deposits', fromJson: rpcBigIntMap, toJson: rpcBigIntMapToJson) required final  Map<String, BigInt> deposits, @JsonKey(includeFromJson: false, includeToJson: false) this.extraFields = const RpcExtraFields()}): _deposits = deposits,super._();
+  const _DeployInvoke({@JsonKey(name: 'max_gas', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.maxGas, @JsonKey(name: 'deposits', fromJson: rpcBigIntMap, toJson: rpcBigIntMapToJson) required  Map<String, BigInt> deposits, @JsonKey(includeFromJson: false, includeToJson: false) this.extraFields = const RpcExtraFields()}): _deposits = deposits,super._();
   factory _DeployInvoke.fromJson(Map<String, dynamic> json) => _$DeployInvokeFromJson(json);
 
 @override@JsonKey(name: 'max_gas', fromJson: rpcBigInt, toJson: rpcBigIntToJson) final  BigInt maxGas;
@@ -297,7 +298,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'wallet_network_info.dart';
@@ -9,6 +9,7 @@ part of 'wallet_network_info.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 /// @nodoc
@@ -63,7 +64,7 @@ class _$WalletNetworkInfoCopyWithImpl<$Res>
 /// Create a copy of WalletNetworkInfo
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? info = null,Object? connectedTo = null,Object? extraFields = null,}) {
-  return _then(_self.copyWith(
+  return _then(WalletNetworkInfo(
 info: null == info ? _self.info : info // ignore: cast_nullable_to_non_nullable
 as GetInfoResult,connectedTo: null == connectedTo ? _self.connectedTo : connectedTo // ignore: cast_nullable_to_non_nullable
 as String,extraFields: null == extraFields ? _self.extraFields : extraFields // ignore: cast_nullable_to_non_nullable
@@ -75,7 +76,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $GetInfoResultCopyWith<$Res> get info {
-
+  
   return $GetInfoResultCopyWith<$Res>(_self.info, (value) {
     return _then(_self.copyWith(info: value));
   });
@@ -84,7 +85,7 @@ $GetInfoResultCopyWith<$Res> get info {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -227,7 +228,7 @@ return $default(_that.info,_that.connectedTo,_that.extraFields);case _:
 
 class _WalletNetworkInfo extends WalletNetworkInfo {
   const _WalletNetworkInfo({required this.info, required this.connectedTo, this.extraFields = const RpcExtraFields()}): super._();
-
+  
 
 @override final  GetInfoResult info;
 @override final  String connectedTo;
@@ -294,7 +295,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $GetInfoResultCopyWith<$Res> get info {
-
+  
   return $GetInfoResultCopyWith<$Res>(_self.info, (value) {
     return _then(_self.copyWith(info: value));
   });
@@ -303,7 +304,7 @@ $GetInfoResultCopyWith<$Res> get info {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });

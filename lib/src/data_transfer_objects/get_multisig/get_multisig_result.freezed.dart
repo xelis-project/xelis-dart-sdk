@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'get_multisig_result.dart';
@@ -9,6 +9,7 @@ part of 'get_multisig_result.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 /// @nodoc
@@ -63,7 +64,7 @@ class _$GetMultisigResultCopyWithImpl<$Res>
 /// Create a copy of GetMultisigResult
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? state = null,Object? topoheight = null,Object? extraFields = null,}) {
-  return _then(_self.copyWith(
+  return _then(GetMultisigResult(
 state: null == state ? _self.state : state // ignore: cast_nullable_to_non_nullable
 as MultisigState,topoheight: null == topoheight ? _self.topoheight : topoheight // ignore: cast_nullable_to_non_nullable
 as BigInt,extraFields: null == extraFields ? _self.extraFields : extraFields // ignore: cast_nullable_to_non_nullable
@@ -75,7 +76,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $MultisigStateCopyWith<$Res> get state {
-
+  
   return $MultisigStateCopyWith<$Res>(_self.state, (value) {
     return _then(_self.copyWith(state: value));
   });
@@ -84,7 +85,7 @@ $MultisigStateCopyWith<$Res> get state {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -227,7 +228,7 @@ return $default(_that.state,_that.topoheight,_that.extraFields);case _:
 
 class _GetMultisigResult extends GetMultisigResult {
   const _GetMultisigResult({@JsonKey(name: 'state') required this.state, @JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.topoheight, @JsonKey(includeFromJson: false, includeToJson: false) this.extraFields = const RpcExtraFields()}): super._();
-
+  
 
 @override@JsonKey(name: 'state') final  MultisigState state;
 @override@JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) final  BigInt topoheight;
@@ -294,7 +295,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $MultisigStateCopyWith<$Res> get state {
-
+  
   return $MultisigStateCopyWith<$Res>(_self.state, (value) {
     return _then(_self.copyWith(state: value));
   });
@@ -303,7 +304,7 @@ $MultisigStateCopyWith<$Res> get state {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'extra_data.dart';
@@ -9,6 +9,7 @@ part of 'extra_data.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 /// @nodoc
@@ -194,7 +195,7 @@ return unknown(_that.type);case _:
 
 class PrivateExtraDataFlag extends PlaintextExtraDataFlag {
   const PrivateExtraDataFlag(): super._();
-
+  
 
 
 
@@ -226,7 +227,7 @@ String toString() {
 
 class PublicExtraDataFlag extends PlaintextExtraDataFlag {
   const PublicExtraDataFlag(): super._();
-
+  
 
 
 
@@ -258,7 +259,7 @@ String toString() {
 
 class ProprietaryExtraDataFlag extends PlaintextExtraDataFlag {
   const ProprietaryExtraDataFlag(): super._();
-
+  
 
 
 
@@ -290,7 +291,7 @@ String toString() {
 
 class FailedExtraDataFlag extends PlaintextExtraDataFlag {
   const FailedExtraDataFlag(): super._();
-
+  
 
 
 
@@ -322,7 +323,7 @@ String toString() {
 
 class UnknownPlaintextExtraDataFlag extends PlaintextExtraDataFlag {
   const UnknownPlaintextExtraDataFlag(this.type): super._();
-
+  
 
  final  String type;
 
@@ -387,7 +388,7 @@ as String,
 /// @nodoc
 mixin _$ExtraData {
 
-@JsonKey(name: 'data', fromJson: _nullableDataElementFromJson, toJson: _nullableDataElementToJson) DataElement? get data;@JsonKey(name: 'flag', fromJson: PlaintextExtraDataFlag.fromJson, toJson: _plaintextFlagToJson) PlaintextExtraDataFlag get flag;@JsonKey(name: 'shared_key', fromJson: _nullableSharedKeyFromJson, toJson: _nullableSharedKeyToJson) ExtraDataSharedKey? get sharedKey;@JsonKey(includeFromJson: false, includeToJson: false) RpcExtraFields get extraFields;
+@JsonKey(name: 'flag', fromJson: PlaintextExtraDataFlag.fromJson, toJson: _plaintextFlagToJson) PlaintextExtraDataFlag get flag;@JsonKey(name: 'data', fromJson: _nullableDataElementFromJson, toJson: _nullableDataElementToJson) DataElement? get data;@JsonKey(name: 'shared_key', fromJson: _nullableSharedKeyFromJson, toJson: _nullableSharedKeyToJson) ExtraDataSharedKey? get sharedKey;@JsonKey(includeFromJson: false, includeToJson: false) RpcExtraFields get extraFields;
 /// Create a copy of ExtraData
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -400,16 +401,16 @@ $ExtraDataCopyWith<ExtraData> get copyWith => _$ExtraDataCopyWithImpl<ExtraData>
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ExtraData&&(identical(other.data, data) || other.data == data)&&(identical(other.flag, flag) || other.flag == flag)&&(identical(other.sharedKey, sharedKey) || other.sharedKey == sharedKey)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ExtraData&&(identical(other.flag, flag) || other.flag == flag)&&(identical(other.data, data) || other.data == data)&&(identical(other.sharedKey, sharedKey) || other.sharedKey == sharedKey)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,data,flag,sharedKey,extraFields);
+int get hashCode => Object.hash(runtimeType,flag,data,sharedKey,extraFields);
 
 @override
 String toString() {
-  return 'ExtraData(data: $data, flag: $flag, sharedKey: $sharedKey, extraFields: $extraFields)';
+  return 'ExtraData(flag: $flag, data: $data, sharedKey: $sharedKey, extraFields: $extraFields)';
 }
 
 
@@ -420,11 +421,11 @@ abstract mixin class $ExtraDataCopyWith<$Res>  {
   factory $ExtraDataCopyWith(ExtraData value, $Res Function(ExtraData) _then) = _$ExtraDataCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(name: 'data', fromJson: _nullableDataElementFromJson, toJson: _nullableDataElementToJson) DataElement? data,@JsonKey(name: 'flag', fromJson: PlaintextExtraDataFlag.fromJson, toJson: _plaintextFlagToJson) PlaintextExtraDataFlag flag,@JsonKey(name: 'shared_key', fromJson: _nullableSharedKeyFromJson, toJson: _nullableSharedKeyToJson) ExtraDataSharedKey? sharedKey,@JsonKey(includeFromJson: false, includeToJson: false) RpcExtraFields extraFields
+@JsonKey(name: 'flag', fromJson: PlaintextExtraDataFlag.fromJson, toJson: _plaintextFlagToJson) PlaintextExtraDataFlag flag,@JsonKey(name: 'data', fromJson: _nullableDataElementFromJson, toJson: _nullableDataElementToJson) DataElement? data,@JsonKey(name: 'shared_key', fromJson: _nullableSharedKeyFromJson, toJson: _nullableSharedKeyToJson) ExtraDataSharedKey? sharedKey,@JsonKey(includeFromJson: false, includeToJson: false) RpcExtraFields extraFields
 });
 
 
-$DataElementCopyWith<$Res>? get data;$PlaintextExtraDataFlagCopyWith<$Res> get flag;$RpcExtraFieldsCopyWith<$Res> get extraFields;
+$PlaintextExtraDataFlagCopyWith<$Res> get flag;$DataElementCopyWith<$Res>? get data;$RpcExtraFieldsCopyWith<$Res> get extraFields;
 
 }
 /// @nodoc
@@ -437,16 +438,25 @@ class _$ExtraDataCopyWithImpl<$Res>
 
 /// Create a copy of ExtraData
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? data = freezed,Object? flag = null,Object? sharedKey = freezed,Object? extraFields = null,}) {
-  return _then(_self.copyWith(
-data: freezed == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as DataElement?,flag: null == flag ? _self.flag : flag // ignore: cast_nullable_to_non_nullable
-as PlaintextExtraDataFlag,sharedKey: freezed == sharedKey ? _self.sharedKey : sharedKey // ignore: cast_nullable_to_non_nullable
+@pragma('vm:prefer-inline') @override $Res call({Object? flag = null,Object? data = freezed,Object? sharedKey = freezed,Object? extraFields = null,}) {
+  return _then(ExtraData(
+flag: null == flag ? _self.flag : flag // ignore: cast_nullable_to_non_nullable
+as PlaintextExtraDataFlag,data: freezed == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
+as DataElement?,sharedKey: freezed == sharedKey ? _self.sharedKey : sharedKey // ignore: cast_nullable_to_non_nullable
 as ExtraDataSharedKey?,extraFields: null == extraFields ? _self.extraFields : extraFields // ignore: cast_nullable_to_non_nullable
 as RpcExtraFields,
   ));
 }
 /// Create a copy of ExtraData
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$PlaintextExtraDataFlagCopyWith<$Res> get flag {
+  
+  return $PlaintextExtraDataFlagCopyWith<$Res>(_self.flag, (value) {
+    return _then(_self.copyWith(flag: value));
+  });
+}/// Create a copy of ExtraData
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
@@ -462,17 +472,8 @@ $DataElementCopyWith<$Res>? get data {
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
-$PlaintextExtraDataFlagCopyWith<$Res> get flag {
-
-  return $PlaintextExtraDataFlagCopyWith<$Res>(_self.flag, (value) {
-    return _then(_self.copyWith(flag: value));
-  });
-}/// Create a copy of ExtraData
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -558,10 +559,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'data', fromJson: _nullableDataElementFromJson, toJson: _nullableDataElementToJson)  DataElement? data, @JsonKey(name: 'flag', fromJson: PlaintextExtraDataFlag.fromJson, toJson: _plaintextFlagToJson)  PlaintextExtraDataFlag flag, @JsonKey(name: 'shared_key', fromJson: _nullableSharedKeyFromJson, toJson: _nullableSharedKeyToJson)  ExtraDataSharedKey? sharedKey, @JsonKey(includeFromJson: false, includeToJson: false)  RpcExtraFields extraFields)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'flag', fromJson: PlaintextExtraDataFlag.fromJson, toJson: _plaintextFlagToJson)  PlaintextExtraDataFlag flag, @JsonKey(name: 'data', fromJson: _nullableDataElementFromJson, toJson: _nullableDataElementToJson)  DataElement? data, @JsonKey(name: 'shared_key', fromJson: _nullableSharedKeyFromJson, toJson: _nullableSharedKeyToJson)  ExtraDataSharedKey? sharedKey, @JsonKey(includeFromJson: false, includeToJson: false)  RpcExtraFields extraFields)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ExtraData() when $default != null:
-return $default(_that.data,_that.flag,_that.sharedKey,_that.extraFields);case _:
+return $default(_that.flag,_that.data,_that.sharedKey,_that.extraFields);case _:
   return orElse();
 
 }
@@ -579,10 +580,10 @@ return $default(_that.data,_that.flag,_that.sharedKey,_that.extraFields);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'data', fromJson: _nullableDataElementFromJson, toJson: _nullableDataElementToJson)  DataElement? data, @JsonKey(name: 'flag', fromJson: PlaintextExtraDataFlag.fromJson, toJson: _plaintextFlagToJson)  PlaintextExtraDataFlag flag, @JsonKey(name: 'shared_key', fromJson: _nullableSharedKeyFromJson, toJson: _nullableSharedKeyToJson)  ExtraDataSharedKey? sharedKey, @JsonKey(includeFromJson: false, includeToJson: false)  RpcExtraFields extraFields)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'flag', fromJson: PlaintextExtraDataFlag.fromJson, toJson: _plaintextFlagToJson)  PlaintextExtraDataFlag flag, @JsonKey(name: 'data', fromJson: _nullableDataElementFromJson, toJson: _nullableDataElementToJson)  DataElement? data, @JsonKey(name: 'shared_key', fromJson: _nullableSharedKeyFromJson, toJson: _nullableSharedKeyToJson)  ExtraDataSharedKey? sharedKey, @JsonKey(includeFromJson: false, includeToJson: false)  RpcExtraFields extraFields)  $default,) {final _that = this;
 switch (_that) {
 case _ExtraData():
-return $default(_that.data,_that.flag,_that.sharedKey,_that.extraFields);case _:
+return $default(_that.flag,_that.data,_that.sharedKey,_that.extraFields);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -599,10 +600,10 @@ return $default(_that.data,_that.flag,_that.sharedKey,_that.extraFields);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'data', fromJson: _nullableDataElementFromJson, toJson: _nullableDataElementToJson)  DataElement? data, @JsonKey(name: 'flag', fromJson: PlaintextExtraDataFlag.fromJson, toJson: _plaintextFlagToJson)  PlaintextExtraDataFlag flag, @JsonKey(name: 'shared_key', fromJson: _nullableSharedKeyFromJson, toJson: _nullableSharedKeyToJson)  ExtraDataSharedKey? sharedKey, @JsonKey(includeFromJson: false, includeToJson: false)  RpcExtraFields extraFields)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'flag', fromJson: PlaintextExtraDataFlag.fromJson, toJson: _plaintextFlagToJson)  PlaintextExtraDataFlag flag, @JsonKey(name: 'data', fromJson: _nullableDataElementFromJson, toJson: _nullableDataElementToJson)  DataElement? data, @JsonKey(name: 'shared_key', fromJson: _nullableSharedKeyFromJson, toJson: _nullableSharedKeyToJson)  ExtraDataSharedKey? sharedKey, @JsonKey(includeFromJson: false, includeToJson: false)  RpcExtraFields extraFields)?  $default,) {final _that = this;
 switch (_that) {
 case _ExtraData() when $default != null:
-return $default(_that.data,_that.flag,_that.sharedKey,_that.extraFields);case _:
+return $default(_that.flag,_that.data,_that.sharedKey,_that.extraFields);case _:
   return null;
 
 }
@@ -614,11 +615,11 @@ return $default(_that.data,_that.flag,_that.sharedKey,_that.extraFields);case _:
 @JsonSerializable()
 
 class _ExtraData extends ExtraData {
-  const _ExtraData({@JsonKey(name: 'data', fromJson: _nullableDataElementFromJson, toJson: _nullableDataElementToJson) this.data, @JsonKey(name: 'flag', fromJson: PlaintextExtraDataFlag.fromJson, toJson: _plaintextFlagToJson) required this.flag, @JsonKey(name: 'shared_key', fromJson: _nullableSharedKeyFromJson, toJson: _nullableSharedKeyToJson) this.sharedKey, @JsonKey(includeFromJson: false, includeToJson: false) this.extraFields = const RpcExtraFields()}): super._();
+  const _ExtraData({@JsonKey(name: 'flag', fromJson: PlaintextExtraDataFlag.fromJson, toJson: _plaintextFlagToJson) required this.flag, @JsonKey(name: 'data', fromJson: _nullableDataElementFromJson, toJson: _nullableDataElementToJson) this.data, @JsonKey(name: 'shared_key', fromJson: _nullableSharedKeyFromJson, toJson: _nullableSharedKeyToJson) this.sharedKey, @JsonKey(includeFromJson: false, includeToJson: false) this.extraFields = const RpcExtraFields()}): super._();
   factory _ExtraData.fromJson(Map<String, dynamic> json) => _$ExtraDataFromJson(json);
 
-@override@JsonKey(name: 'data', fromJson: _nullableDataElementFromJson, toJson: _nullableDataElementToJson) final  DataElement? data;
 @override@JsonKey(name: 'flag', fromJson: PlaintextExtraDataFlag.fromJson, toJson: _plaintextFlagToJson) final  PlaintextExtraDataFlag flag;
+@override@JsonKey(name: 'data', fromJson: _nullableDataElementFromJson, toJson: _nullableDataElementToJson) final  DataElement? data;
 @override@JsonKey(name: 'shared_key', fromJson: _nullableSharedKeyFromJson, toJson: _nullableSharedKeyToJson) final  ExtraDataSharedKey? sharedKey;
 @override@JsonKey(includeFromJson: false, includeToJson: false) final  RpcExtraFields extraFields;
 
@@ -635,16 +636,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ExtraData&&(identical(other.data, data) || other.data == data)&&(identical(other.flag, flag) || other.flag == flag)&&(identical(other.sharedKey, sharedKey) || other.sharedKey == sharedKey)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ExtraData&&(identical(other.flag, flag) || other.flag == flag)&&(identical(other.data, data) || other.data == data)&&(identical(other.sharedKey, sharedKey) || other.sharedKey == sharedKey)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,data,flag,sharedKey,extraFields);
+int get hashCode => Object.hash(runtimeType,flag,data,sharedKey,extraFields);
 
 @override
 String toString() {
-  return 'ExtraData(data: $data, flag: $flag, sharedKey: $sharedKey, extraFields: $extraFields)';
+  return 'ExtraData(flag: $flag, data: $data, sharedKey: $sharedKey, extraFields: $extraFields)';
 }
 
 
@@ -655,11 +656,11 @@ abstract mixin class _$ExtraDataCopyWith<$Res> implements $ExtraDataCopyWith<$Re
   factory _$ExtraDataCopyWith(_ExtraData value, $Res Function(_ExtraData) _then) = __$ExtraDataCopyWithImpl;
 @override @useResult
 $Res call({
-@JsonKey(name: 'data', fromJson: _nullableDataElementFromJson, toJson: _nullableDataElementToJson) DataElement? data,@JsonKey(name: 'flag', fromJson: PlaintextExtraDataFlag.fromJson, toJson: _plaintextFlagToJson) PlaintextExtraDataFlag flag,@JsonKey(name: 'shared_key', fromJson: _nullableSharedKeyFromJson, toJson: _nullableSharedKeyToJson) ExtraDataSharedKey? sharedKey,@JsonKey(includeFromJson: false, includeToJson: false) RpcExtraFields extraFields
+@JsonKey(name: 'flag', fromJson: PlaintextExtraDataFlag.fromJson, toJson: _plaintextFlagToJson) PlaintextExtraDataFlag flag,@JsonKey(name: 'data', fromJson: _nullableDataElementFromJson, toJson: _nullableDataElementToJson) DataElement? data,@JsonKey(name: 'shared_key', fromJson: _nullableSharedKeyFromJson, toJson: _nullableSharedKeyToJson) ExtraDataSharedKey? sharedKey,@JsonKey(includeFromJson: false, includeToJson: false) RpcExtraFields extraFields
 });
 
 
-@override $DataElementCopyWith<$Res>? get data;@override $PlaintextExtraDataFlagCopyWith<$Res> get flag;@override $RpcExtraFieldsCopyWith<$Res> get extraFields;
+@override $PlaintextExtraDataFlagCopyWith<$Res> get flag;@override $DataElementCopyWith<$Res>? get data;@override $RpcExtraFieldsCopyWith<$Res> get extraFields;
 
 }
 /// @nodoc
@@ -672,17 +673,26 @@ class __$ExtraDataCopyWithImpl<$Res>
 
 /// Create a copy of ExtraData
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? data = freezed,Object? flag = null,Object? sharedKey = freezed,Object? extraFields = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? flag = null,Object? data = freezed,Object? sharedKey = freezed,Object? extraFields = null,}) {
   return _then(_ExtraData(
-data: freezed == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as DataElement?,flag: null == flag ? _self.flag : flag // ignore: cast_nullable_to_non_nullable
-as PlaintextExtraDataFlag,sharedKey: freezed == sharedKey ? _self.sharedKey : sharedKey // ignore: cast_nullable_to_non_nullable
+flag: null == flag ? _self.flag : flag // ignore: cast_nullable_to_non_nullable
+as PlaintextExtraDataFlag,data: freezed == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
+as DataElement?,sharedKey: freezed == sharedKey ? _self.sharedKey : sharedKey // ignore: cast_nullable_to_non_nullable
 as ExtraDataSharedKey?,extraFields: null == extraFields ? _self.extraFields : extraFields // ignore: cast_nullable_to_non_nullable
 as RpcExtraFields,
   ));
 }
 
 /// Create a copy of ExtraData
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$PlaintextExtraDataFlagCopyWith<$Res> get flag {
+  
+  return $PlaintextExtraDataFlagCopyWith<$Res>(_self.flag, (value) {
+    return _then(_self.copyWith(flag: value));
+  });
+}/// Create a copy of ExtraData
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
@@ -698,17 +708,8 @@ $DataElementCopyWith<$Res>? get data {
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
-$PlaintextExtraDataFlagCopyWith<$Res> get flag {
-
-  return $PlaintextExtraDataFlagCopyWith<$Res>(_self.flag, (value) {
-    return _then(_self.copyWith(flag: value));
-  });
-}/// Create a copy of ExtraData
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });

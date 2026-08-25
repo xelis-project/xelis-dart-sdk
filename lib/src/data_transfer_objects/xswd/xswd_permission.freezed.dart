@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'xswd_permission.dart';
@@ -9,6 +9,7 @@ part of 'xswd_permission.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 /// @nodoc
@@ -65,7 +66,7 @@ class _$XswdPermissionCopyWithImpl<$Res>
 /// Create a copy of XswdPermission
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? method = null,Object? kind = null,}) {
-  return _then(_self.copyWith(
+  return _then(XswdPermission(
 method: null == method ? _self.method : method // ignore: cast_nullable_to_non_nullable
 as String,kind: null == kind ? _self.kind : kind // ignore: cast_nullable_to_non_nullable
 as XswdPermissionKind,
@@ -210,7 +211,7 @@ return $default(_that.method,_that.kind);case _:
 
 class _XswdPermission implements XswdPermission {
   const _XswdPermission({required this.method, required this.kind});
-
+  
 
 /// Wallet RPC method without the optional `wallet.` prefix.
 @override final  String method;

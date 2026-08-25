@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'unsigned_transaction.dart';
@@ -9,6 +9,7 @@ part of 'unsigned_transaction.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 /// @nodoc
@@ -63,7 +64,7 @@ class _$UnsignedTransactionCopyWithImpl<$Res>
 /// Create a copy of UnsignedTransaction
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? data = null,Object? fee = null,Object? feeLimit = null,Object? version = null,Object? nonce = null,Object? source = null,Object? rangeProof = null,Object? sourceCommitments = null,Object? reference = null,Object? multiSig = freezed,Object? extraFields = null,}) {
-  return _then(_self.copyWith(
+  return _then(UnsignedTransaction(
 data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
 as TransactionType,fee: null == fee ? _self.fee : fee // ignore: cast_nullable_to_non_nullable
 as BigInt,feeLimit: null == feeLimit ? _self.feeLimit : feeLimit // ignore: cast_nullable_to_non_nullable
@@ -83,7 +84,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $TransactionTypeCopyWith<$Res> get data {
-
+  
   return $TransactionTypeCopyWith<$Res>(_self.data, (value) {
     return _then(_self.copyWith(data: value));
   });
@@ -92,7 +93,7 @@ $TransactionTypeCopyWith<$Res> get data {
 @override
 @pragma('vm:prefer-inline')
 $ReferenceCopyWith<$Res> get reference {
-
+  
   return $ReferenceCopyWith<$Res>(_self.reference, (value) {
     return _then(_self.copyWith(reference: value));
   });
@@ -113,7 +114,7 @@ $MultisigCopyWith<$Res>? get multiSig {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -255,8 +256,8 @@ return $default(_that.data,_that.fee,_that.feeLimit,_that.version,_that.nonce,_t
 
 
 class _UnsignedTransaction extends UnsignedTransaction {
-  const _UnsignedTransaction({required this.data, required this.fee, required this.feeLimit, required this.version, required this.nonce, required final  List<int> source, required final  List<int> rangeProof, required final  List<RpcSourceCommitment> sourceCommitments, required this.reference, this.multiSig, this.extraFields = const RpcExtraFields()}): _source = source,_rangeProof = rangeProof,_sourceCommitments = sourceCommitments,super._();
-
+  const _UnsignedTransaction({required this.data, required this.fee, required this.feeLimit, required this.version, required this.nonce, required  List<int> source, required  List<int> rangeProof, required  List<RpcSourceCommitment> sourceCommitments, required this.reference, this.multiSig, this.extraFields = const RpcExtraFields()}): _source = source,_rangeProof = rangeProof,_sourceCommitments = sourceCommitments,super._();
+  
 
 @override final  TransactionType data;
 @override final  BigInt fee;
@@ -357,7 +358,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $TransactionTypeCopyWith<$Res> get data {
-
+  
   return $TransactionTypeCopyWith<$Res>(_self.data, (value) {
     return _then(_self.copyWith(data: value));
   });
@@ -366,7 +367,7 @@ $TransactionTypeCopyWith<$Res> get data {
 @override
 @pragma('vm:prefer-inline')
 $ReferenceCopyWith<$Res> get reference {
-
+  
   return $ReferenceCopyWith<$Res>(_self.reference, (value) {
     return _then(_self.copyWith(reference: value));
   });
@@ -387,7 +388,7 @@ $MultisigCopyWith<$Res>? get multiSig {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });

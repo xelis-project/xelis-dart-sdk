@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'contract_transfers_event.dart';
@@ -9,6 +9,7 @@ part of 'contract_transfers_event.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 /// @nodoc
@@ -63,7 +64,7 @@ class _$ContractTransfersEventCopyWithImpl<$Res>
 /// Create a copy of ContractTransfersEvent
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? blockHash = null,Object? blockTimestamp = null,Object? executions = null,Object? topoheight = null,Object? extraFields = null,}) {
-  return _then(_self.copyWith(
+  return _then(ContractTransfersEvent(
 blockHash: null == blockHash ? _self.blockHash : blockHash // ignore: cast_nullable_to_non_nullable
 as String,blockTimestamp: null == blockTimestamp ? _self.blockTimestamp : blockTimestamp // ignore: cast_nullable_to_non_nullable
 as BigInt,executions: null == executions ? _self.executions : executions // ignore: cast_nullable_to_non_nullable
@@ -77,7 +78,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -219,8 +220,8 @@ return $default(_that.blockHash,_that.blockTimestamp,_that.executions,_that.topo
 
 
 class _ContractTransfersEvent extends ContractTransfersEvent {
-  const _ContractTransfersEvent({required this.blockHash, required this.blockTimestamp, required final  List<ContractTransferExecution> executions, required this.topoheight, this.extraFields = const RpcExtraFields()}): _executions = executions,super._();
-
+  const _ContractTransfersEvent({required this.blockHash, required this.blockTimestamp, required  List<ContractTransferExecution> executions, required this.topoheight, this.extraFields = const RpcExtraFields()}): _executions = executions,super._();
+  
 
 @override final  String blockHash;
 @override final  BigInt blockTimestamp;
@@ -297,7 +298,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -356,7 +357,7 @@ class _$ContractTransferExecutionCopyWithImpl<$Res>
 /// Create a copy of ContractTransferExecution
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? contract = null,Object? caller = null,Object? transfers = null,Object? extraFields = null,Object? keyExtraFields = null,Object? valueExtraFields = null,}) {
-  return _then(_self.copyWith(
+  return _then(ContractTransferExecution(
 contract: null == contract ? _self.contract : contract // ignore: cast_nullable_to_non_nullable
 as String,caller: null == caller ? _self.caller : caller // ignore: cast_nullable_to_non_nullable
 as String,transfers: null == transfers ? _self.transfers : transfers // ignore: cast_nullable_to_non_nullable
@@ -371,7 +372,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -380,7 +381,7 @@ $RpcExtraFieldsCopyWith<$Res> get extraFields {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get keyExtraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.keyExtraFields, (value) {
     return _then(_self.copyWith(keyExtraFields: value));
   });
@@ -389,7 +390,7 @@ $RpcExtraFieldsCopyWith<$Res> get keyExtraFields {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get valueExtraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.valueExtraFields, (value) {
     return _then(_self.copyWith(valueExtraFields: value));
   });
@@ -531,8 +532,8 @@ return $default(_that.contract,_that.caller,_that.transfers,_that.extraFields,_t
 
 
 class _ContractTransferExecution extends ContractTransferExecution {
-  const _ContractTransferExecution({required this.contract, required this.caller, required final  Map<String, BigInt> transfers, this.extraFields = const RpcExtraFields(), this.keyExtraFields = const RpcExtraFields(), this.valueExtraFields = const RpcExtraFields()}): _transfers = transfers,super._();
-
+  const _ContractTransferExecution({required this.contract, required this.caller, required  Map<String, BigInt> transfers, this.extraFields = const RpcExtraFields(), this.keyExtraFields = const RpcExtraFields(), this.valueExtraFields = const RpcExtraFields()}): _transfers = transfers,super._();
+  
 
 @override final  String contract;
 @override final  String caller;
@@ -611,7 +612,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -620,7 +621,7 @@ $RpcExtraFieldsCopyWith<$Res> get extraFields {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get keyExtraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.keyExtraFields, (value) {
     return _then(_self.copyWith(keyExtraFields: value));
   });
@@ -629,7 +630,7 @@ $RpcExtraFieldsCopyWith<$Res> get keyExtraFields {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get valueExtraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.valueExtraFields, (value) {
     return _then(_self.copyWith(valueExtraFields: value));
   });

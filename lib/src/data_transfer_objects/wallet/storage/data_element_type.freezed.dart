@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'data_element_type.dart';
@@ -9,6 +9,7 @@ part of 'data_element_type.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 /// @nodoc
@@ -182,7 +183,7 @@ return fields();case _:
 
 class ValueDataElementType extends DataElementType {
   const ValueDataElementType(this.type): super._();
-
+  
 
  final  DataValueType type;
 
@@ -248,7 +249,7 @@ as DataValueType,
 
 class ArrayDataElementType extends DataElementType {
   const ArrayDataElementType(): super._();
-
+  
 
 
 
@@ -280,7 +281,7 @@ String toString() {
 
 class FieldsDataElementType extends DataElementType {
   const FieldsDataElementType(): super._();
-
+  
 
 
 

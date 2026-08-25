@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'build_transaction_offline_params.dart';
@@ -9,6 +9,7 @@ part of 'build_transaction_offline_params.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 /// @nodoc
@@ -63,7 +64,7 @@ class _$BuildTransactionOfflineParamsCopyWithImpl<$Res>
 /// Create a copy of BuildTransactionOfflineParams
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? transactionTypeBuilder = null,Object? balances = null,Object? reference = null,Object? nonce = null,Object? fee = null,Object? baseFee = freezed,Object? feeLimit = freezed,Object? txVersion = freezed,Object? txAsHex = null,Object? signers = null,}) {
-  return _then(_self.copyWith(
+  return _then(BuildTransactionOfflineParams(
 transactionTypeBuilder: null == transactionTypeBuilder ? _self.transactionTypeBuilder : transactionTypeBuilder // ignore: cast_nullable_to_non_nullable
 as TransactionTypeBuilder,balances: null == balances ? _self.balances : balances // ignore: cast_nullable_to_non_nullable
 as Map<String, RpcCompressedCiphertext>,reference: null == reference ? _self.reference : reference // ignore: cast_nullable_to_non_nullable
@@ -82,7 +83,7 @@ as List<SignerId>,
 @override
 @pragma('vm:prefer-inline')
 $TransactionTypeBuilderCopyWith<$Res> get transactionTypeBuilder {
-
+  
   return $TransactionTypeBuilderCopyWith<$Res>(_self.transactionTypeBuilder, (value) {
     return _then(_self.copyWith(transactionTypeBuilder: value));
   });
@@ -91,7 +92,7 @@ $TransactionTypeBuilderCopyWith<$Res> get transactionTypeBuilder {
 @override
 @pragma('vm:prefer-inline')
 $ReferenceCopyWith<$Res> get reference {
-
+  
   return $ReferenceCopyWith<$Res>(_self.reference, (value) {
     return _then(_self.copyWith(reference: value));
   });
@@ -100,7 +101,7 @@ $ReferenceCopyWith<$Res> get reference {
 @override
 @pragma('vm:prefer-inline')
 $FeeBuilderCopyWith<$Res> get fee {
-
+  
   return $FeeBuilderCopyWith<$Res>(_self.fee, (value) {
     return _then(_self.copyWith(fee: value));
   });
@@ -242,8 +243,8 @@ return $default(_that.transactionTypeBuilder,_that.balances,_that.reference,_tha
 
 
 class _BuildTransactionOfflineParams extends BuildTransactionOfflineParams {
-  const _BuildTransactionOfflineParams({required this.transactionTypeBuilder, required final  Map<String, RpcCompressedCiphertext> balances, required this.reference, required this.nonce, this.fee = const FeeBuilder.extra(), this.baseFee, this.feeLimit, this.txVersion, this.txAsHex = false, final  List<SignerId> signers = const <SignerId>[]}): _balances = balances,_signers = signers,super._();
-
+  const _BuildTransactionOfflineParams({required this.transactionTypeBuilder, required  Map<String, RpcCompressedCiphertext> balances, required this.reference, required this.nonce, this.fee = const FeeBuilder.extra(), this.baseFee, this.feeLimit, this.txVersion, this.txAsHex = false,  List<SignerId> signers = const <SignerId>[]}): _balances = balances,_signers = signers,super._();
+  
 
 @override final  TransactionTypeBuilder transactionTypeBuilder;
  final  Map<String, RpcCompressedCiphertext> _balances;
@@ -336,7 +337,7 @@ as List<SignerId>,
 @override
 @pragma('vm:prefer-inline')
 $TransactionTypeBuilderCopyWith<$Res> get transactionTypeBuilder {
-
+  
   return $TransactionTypeBuilderCopyWith<$Res>(_self.transactionTypeBuilder, (value) {
     return _then(_self.copyWith(transactionTypeBuilder: value));
   });
@@ -345,7 +346,7 @@ $TransactionTypeBuilderCopyWith<$Res> get transactionTypeBuilder {
 @override
 @pragma('vm:prefer-inline')
 $ReferenceCopyWith<$Res> get reference {
-
+  
   return $ReferenceCopyWith<$Res>(_self.reference, (value) {
     return _then(_self.copyWith(reference: value));
   });
@@ -354,7 +355,7 @@ $ReferenceCopyWith<$Res> get reference {
 @override
 @pragma('vm:prefer-inline')
 $FeeBuilderCopyWith<$Res> get fee {
-
+  
   return $FeeBuilderCopyWith<$Res>(_self.fee, (value) {
     return _then(_self.copyWith(fee: value));
   });

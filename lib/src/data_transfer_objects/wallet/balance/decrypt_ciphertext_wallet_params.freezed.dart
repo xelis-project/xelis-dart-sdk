@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'decrypt_ciphertext_wallet_params.dart';
@@ -9,6 +9,7 @@ part of 'decrypt_ciphertext_wallet_params.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 /// @nodoc
@@ -63,7 +64,7 @@ class _$DecryptCiphertextWalletParamsCopyWithImpl<$Res>
 /// Create a copy of DecryptCiphertextWalletParams
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? ciphertext = null,Object? maxSupply = freezed,}) {
-  return _then(_self.copyWith(
+  return _then(DecryptCiphertextWalletParams(
 ciphertext: null == ciphertext ? _self.ciphertext : ciphertext // ignore: cast_nullable_to_non_nullable
 as RpcCompressedCiphertext,maxSupply: freezed == maxSupply ? _self.maxSupply : maxSupply // ignore: cast_nullable_to_non_nullable
 as BigInt?,
@@ -74,7 +75,7 @@ as BigInt?,
 @override
 @pragma('vm:prefer-inline')
 $RpcCompressedCiphertextCopyWith<$Res> get ciphertext {
-
+  
   return $RpcCompressedCiphertextCopyWith<$Res>(_self.ciphertext, (value) {
     return _then(_self.copyWith(ciphertext: value));
   });
@@ -217,7 +218,7 @@ return $default(_that.ciphertext,_that.maxSupply);case _:
 
 class _DecryptCiphertextWalletParams extends DecryptCiphertextWalletParams {
   const _DecryptCiphertextWalletParams({required this.ciphertext, this.maxSupply}): super._();
-
+  
 
 @override final  RpcCompressedCiphertext ciphertext;
 @override final  BigInt? maxSupply;
@@ -282,7 +283,7 @@ as BigInt?,
 @override
 @pragma('vm:prefer-inline')
 $RpcCompressedCiphertextCopyWith<$Res> get ciphertext {
-
+  
   return $RpcCompressedCiphertextCopyWith<$Res>(_self.ciphertext, (value) {
     return _then(_self.copyWith(ciphertext: value));
   });

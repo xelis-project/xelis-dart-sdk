@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'wallet_transaction_response.dart';
@@ -9,6 +9,7 @@ part of 'wallet_transaction_response.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 /// @nodoc
@@ -63,7 +64,7 @@ class _$WalletTransactionResponseCopyWithImpl<$Res>
 /// Create a copy of WalletTransactionResponse
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? transaction = null,Object? txAsHex = freezed,}) {
-  return _then(_self.copyWith(
+  return _then(WalletTransactionResponse(
 transaction: null == transaction ? _self.transaction : transaction // ignore: cast_nullable_to_non_nullable
 as RpcTransaction,txAsHex: freezed == txAsHex ? _self.txAsHex : txAsHex // ignore: cast_nullable_to_non_nullable
 as String?,
@@ -74,7 +75,7 @@ as String?,
 @override
 @pragma('vm:prefer-inline')
 $RpcTransactionCopyWith<$Res> get transaction {
-
+  
   return $RpcTransactionCopyWith<$Res>(_self.transaction, (value) {
     return _then(_self.copyWith(transaction: value));
   });
@@ -217,7 +218,7 @@ return $default(_that.transaction,_that.txAsHex);case _:
 
 class _WalletTransactionResponse extends WalletTransactionResponse {
   const _WalletTransactionResponse({required this.transaction, this.txAsHex}): super._();
-
+  
 
 @override final  RpcTransaction transaction;
 @override final  String? txAsHex;
@@ -282,7 +283,7 @@ as String?,
 @override
 @pragma('vm:prefer-inline')
 $RpcTransactionCopyWith<$Res> get transaction {
-
+  
   return $RpcTransactionCopyWith<$Res>(_self.transaction, (value) {
     return _then(_self.copyWith(transaction: value));
   });

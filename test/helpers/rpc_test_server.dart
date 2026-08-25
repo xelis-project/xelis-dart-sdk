@@ -122,5 +122,7 @@ class RpcTestServer {
 }
 
 /// Callback invoked whenever the test server receives a JSON-RPC request.
-typedef RpcRequestHandler =
-    void Function(Map<String, dynamic> request, WebSocket socket);
+typedef RpcRequestHandler = void Function(
+  Map<String, dynamic> request,
+  WebSocket socket,
+);

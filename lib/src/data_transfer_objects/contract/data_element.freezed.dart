@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'data_element.dart';
@@ -9,6 +9,7 @@ part of 'data_element.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 /// @nodoc
@@ -184,7 +185,7 @@ return nullValue();case _:
 
 class DataValue extends DataElement {
   const DataValue(this.value): super._();
-
+  
 
  final  RpcJsonValue value;
 
@@ -243,7 +244,7 @@ as RpcJsonValue,
 @override
 @pragma('vm:prefer-inline')
 $RpcJsonValueCopyWith<$Res> get value {
-
+  
   return $RpcJsonValueCopyWith<$Res>(_self.value, (value) {
     return _then(_self.copyWith(value: value));
   });
@@ -254,8 +255,8 @@ $RpcJsonValueCopyWith<$Res> get value {
 
 
 class DataArray extends DataElement {
-  const DataArray(final  List<DataElement> values): _values = values,super._();
-
+  const DataArray( List<DataElement> values): _values = values,super._();
+  
 
  final  List<DataElement> _values;
  List<DataElement> get values {
@@ -322,8 +323,8 @@ as List<DataElement>,
 
 
 class DataFields extends DataElement {
-  const DataFields(final  Map<String, DataElement> fields): _fields = fields,super._();
-
+  const DataFields( Map<String, DataElement> fields): _fields = fields,super._();
+  
 
  final  Map<String, DataElement> _fields;
  Map<String, DataElement> get fields {
@@ -391,7 +392,7 @@ as Map<String, DataElement>,
 
 class DataNull extends DataElement {
   const DataNull(): super._();
-
+  
 
 
 

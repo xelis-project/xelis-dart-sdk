@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'src/coverage_gate.dart';
 import 'src/dto_architecture_check.dart';
-import 'src/generated_sources.dart';
 import 'src/integration_orchestrator.dart';
 import 'src/integration_suite.dart';
 import 'src/live_probe.dart';
@@ -161,8 +160,6 @@ Future<void> _generatedSourcesCheck() async {
     'build_runner',
     'build',
   ], label: 'Generated sources');
-  stdout.writeln('-> Normalize generated source whitespace');
-  normalizeGeneratedSourceWhitespace(generatedSourceRoots);
   await runChecked('git', [
     'status',
     '--porcelain',

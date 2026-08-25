@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'wallet_query_result.dart';
@@ -9,6 +9,7 @@ part of 'wallet_query_result.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 /// @nodoc
@@ -63,7 +64,7 @@ class _$WalletQueryResultCopyWithImpl<$Res>
 /// Create a copy of WalletQueryResult
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? entries = null,Object? next = freezed,Object? extraFields = null,}) {
-  return _then(_self.copyWith(
+  return _then(WalletQueryResult(
 entries: null == entries ? _self.entries : entries // ignore: cast_nullable_to_non_nullable
 as List<WalletDataEntry>,next: freezed == next ? _self.next : next // ignore: cast_nullable_to_non_nullable
 as BigInt?,extraFields: null == extraFields ? _self.extraFields : extraFields // ignore: cast_nullable_to_non_nullable
@@ -75,7 +76,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -217,8 +218,8 @@ return $default(_that.entries,_that.next,_that.extraFields);case _:
 
 
 class _WalletQueryResult extends WalletQueryResult {
-  const _WalletQueryResult({required final  List<WalletDataEntry> entries, required this.next, this.extraFields = const RpcExtraFields()}): _entries = entries,super._();
-
+  const _WalletQueryResult({required  List<WalletDataEntry> entries, required this.next, this.extraFields = const RpcExtraFields()}): _entries = entries,super._();
+  
 
  final  List<WalletDataEntry> _entries;
 @override List<WalletDataEntry> get entries {
@@ -291,7 +292,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });

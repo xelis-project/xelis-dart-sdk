@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'peer_entry.dart';
@@ -9,6 +9,7 @@ part of 'peer_entry.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 
@@ -66,7 +67,7 @@ class _$PeerEntryCopyWithImpl<$Res>
 /// Create a copy of PeerEntry
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? address = null,Object? bytesRecv = null,Object? bytesSent = null,Object? connectedOn = null,Object? cumulativeDifficulty = null,Object? height = null,Object? id = null,Object? lastPing = null,Object? localPort = null,Object? prunedTopoheight = freezed,Object? tag = freezed,Object? topBlockHash = null,Object? topoheight = null,Object? version = null,Object? peers = null,Object? extraFields = null,}) {
-  return _then(_self.copyWith(
+  return _then(PeerEntry(
 address: null == address ? _self.address : address // ignore: cast_nullable_to_non_nullable
 as String,bytesRecv: null == bytesRecv ? _self.bytesRecv : bytesRecv // ignore: cast_nullable_to_non_nullable
 as BigInt,bytesSent: null == bytesSent ? _self.bytesSent : bytesSent // ignore: cast_nullable_to_non_nullable
@@ -91,7 +92,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -233,7 +234,7 @@ return $default(_that.address,_that.bytesRecv,_that.bytesSent,_that.connectedOn,
 @JsonSerializable()
 
 class _PeerEntry extends PeerEntry {
-  const _PeerEntry({@JsonKey(name: 'addr') required this.address, @JsonKey(name: 'bytes_recv', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.bytesRecv, @JsonKey(name: 'bytes_sent', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.bytesSent, @JsonKey(name: 'connected_on', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.connectedOn, @JsonKey(name: 'cumulative_difficulty') required this.cumulativeDifficulty, @JsonKey(name: 'height', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.height, @JsonKey(name: 'id', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.id, @JsonKey(name: 'last_ping', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.lastPing, @JsonKey(name: 'local_port') required this.localPort, @JsonKey(name: 'pruned_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) this.prunedTopoheight, @JsonKey(name: 'tag') this.tag, @JsonKey(name: 'top_block_hash') required this.topBlockHash, @JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.topoheight, @JsonKey(name: 'version') required this.version, @JsonKey(name: 'peers', fromJson: _peersFromJson, toJson: _peersToJson) required final  Map<String, RpcTimedDirection> peers, @JsonKey(includeFromJson: false, includeToJson: false) this.extraFields = const RpcExtraFields()}): _peers = peers,super._();
+  const _PeerEntry({@JsonKey(name: 'addr') required this.address, @JsonKey(name: 'bytes_recv', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.bytesRecv, @JsonKey(name: 'bytes_sent', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.bytesSent, @JsonKey(name: 'connected_on', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.connectedOn, @JsonKey(name: 'cumulative_difficulty') required this.cumulativeDifficulty, @JsonKey(name: 'height', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.height, @JsonKey(name: 'id', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.id, @JsonKey(name: 'last_ping', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.lastPing, @JsonKey(name: 'local_port') required this.localPort, @JsonKey(name: 'pruned_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) this.prunedTopoheight, @JsonKey(name: 'tag') this.tag, @JsonKey(name: 'top_block_hash') required this.topBlockHash, @JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.topoheight, @JsonKey(name: 'version') required this.version, @JsonKey(name: 'peers', fromJson: _peersFromJson, toJson: _peersToJson) required  Map<String, RpcTimedDirection> peers, @JsonKey(includeFromJson: false, includeToJson: false) this.extraFields = const RpcExtraFields()}): _peers = peers,super._();
   factory _PeerEntry.fromJson(Map<String, dynamic> json) => _$PeerEntryFromJson(json);
 
 @override@JsonKey(name: 'addr') final  String address;
@@ -336,7 +337,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });

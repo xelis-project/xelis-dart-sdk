@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'deploy_contract_invoke_builder.dart';
@@ -9,6 +9,7 @@ part of 'deploy_contract_invoke_builder.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 
@@ -66,7 +67,7 @@ class _$DeployContractInvokeBuilderCopyWithImpl<$Res>
 /// Create a copy of DeployContractInvokeBuilder
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? maxGas = null,Object? deposits = null,}) {
-  return _then(_self.copyWith(
+  return _then(DeployContractInvokeBuilder(
 maxGas: null == maxGas ? _self.maxGas : maxGas // ignore: cast_nullable_to_non_nullable
 as BigInt,deposits: null == deposits ? _self.deposits : deposits // ignore: cast_nullable_to_non_nullable
 as Map<String, ContractDepositBuilder>,
@@ -204,7 +205,7 @@ return $default(_that.maxGas,_that.deposits);case _:
 
 @JsonSerializable(explicitToJson: true)
 class _DeployContractInvokeBuilder implements DeployContractInvokeBuilder {
-  const _DeployContractInvokeBuilder({@JsonKey(name: 'max_gas', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.maxGas, @JsonKey(name: 'deposits') final  Map<String, ContractDepositBuilder> deposits = const <String, ContractDepositBuilder>{}}): _deposits = deposits;
+  const _DeployContractInvokeBuilder({@JsonKey(name: 'max_gas', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.maxGas, @JsonKey(name: 'deposits')  Map<String, ContractDepositBuilder> deposits = const <String, ContractDepositBuilder>{}}): _deposits = deposits;
   factory _DeployContractInvokeBuilder.fromJson(Map<String, dynamic> json) => _$DeployContractInvokeBuilderFromJson(json);
 
 @override@JsonKey(name: 'max_gas', fromJson: rpcBigInt, toJson: rpcBigIntToJson) final  BigInt maxGas;

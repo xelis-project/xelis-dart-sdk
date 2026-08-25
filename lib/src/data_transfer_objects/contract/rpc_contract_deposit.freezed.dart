@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'rpc_contract_deposit.dart';
@@ -9,6 +9,7 @@ part of 'rpc_contract_deposit.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 /// @nodoc
@@ -178,7 +179,7 @@ return unknown(_that.type,_that.wireValue);case _:
 
 class RpcPublicContractDeposit extends RpcContractDeposit {
   const RpcPublicContractDeposit(this.amount): super._();
-
+  
 
  final  BigInt amount;
 
@@ -240,7 +241,7 @@ as BigInt,
 
 class RpcPrivateContractDeposit extends RpcContractDeposit {
   const RpcPrivateContractDeposit({required this.commitment, required this.senderHandle, required this.receiverHandle, required this.validityProof, this.extraFields = const RpcExtraFields()}): super._();
-
+  
 
  final  RpcJsonValue commitment;
  final  RpcJsonValue senderHandle;
@@ -307,7 +308,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcJsonValueCopyWith<$Res> get commitment {
-
+  
   return $RpcJsonValueCopyWith<$Res>(_self.commitment, (value) {
     return _then(_self.copyWith(commitment: value));
   });
@@ -316,7 +317,7 @@ $RpcJsonValueCopyWith<$Res> get commitment {
 @override
 @pragma('vm:prefer-inline')
 $RpcJsonValueCopyWith<$Res> get senderHandle {
-
+  
   return $RpcJsonValueCopyWith<$Res>(_self.senderHandle, (value) {
     return _then(_self.copyWith(senderHandle: value));
   });
@@ -325,7 +326,7 @@ $RpcJsonValueCopyWith<$Res> get senderHandle {
 @override
 @pragma('vm:prefer-inline')
 $RpcJsonValueCopyWith<$Res> get receiverHandle {
-
+  
   return $RpcJsonValueCopyWith<$Res>(_self.receiverHandle, (value) {
     return _then(_self.copyWith(receiverHandle: value));
   });
@@ -334,7 +335,7 @@ $RpcJsonValueCopyWith<$Res> get receiverHandle {
 @override
 @pragma('vm:prefer-inline')
 $RpcJsonValueCopyWith<$Res> get validityProof {
-
+  
   return $RpcJsonValueCopyWith<$Res>(_self.validityProof, (value) {
     return _then(_self.copyWith(validityProof: value));
   });
@@ -343,7 +344,7 @@ $RpcJsonValueCopyWith<$Res> get validityProof {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -355,7 +356,7 @@ $RpcExtraFieldsCopyWith<$Res> get extraFields {
 
 class RpcUnknownContractDeposit extends RpcContractDeposit {
   const RpcUnknownContractDeposit({required this.type, required this.wireValue}): super._();
-
+  
 
  final  String type;
  final  RpcJsonValue wireValue;
@@ -416,7 +417,7 @@ as RpcJsonValue,
 @override
 @pragma('vm:prefer-inline')
 $RpcJsonValueCopyWith<$Res> get wireValue {
-
+  
   return $RpcJsonValueCopyWith<$Res>(_self.wireValue, (value) {
     return _then(_self.copyWith(wireValue: value));
   });

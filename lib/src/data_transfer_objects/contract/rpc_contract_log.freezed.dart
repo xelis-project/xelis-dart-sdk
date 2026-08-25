@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'rpc_contract_log.dart';
@@ -9,6 +9,7 @@ part of 'rpc_contract_log.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 /// @nodoc
@@ -70,7 +71,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get valueExtraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.valueExtraFields, (value) {
     return _then(_self.copyWith(valueExtraFields: value));
   });
@@ -79,7 +80,7 @@ $RpcExtraFieldsCopyWith<$Res> get valueExtraFields {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -300,7 +301,7 @@ return unknown(_that.type,_that.wireValue,_that.valueExtraFields,_that.extraFiel
 
 class RefundGasContractLog extends RpcContractLog {
   const RefundGasContractLog(this.amount, {this.valueExtraFields = const RpcExtraFields(), this.extraFields = const RpcExtraFields()}): super._();
-
+  
 
  final  BigInt amount;
 @override@JsonKey() final  RpcExtraFields valueExtraFields;
@@ -363,7 +364,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get valueExtraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.valueExtraFields, (value) {
     return _then(_self.copyWith(valueExtraFields: value));
   });
@@ -372,7 +373,7 @@ $RpcExtraFieldsCopyWith<$Res> get valueExtraFields {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -384,7 +385,7 @@ $RpcExtraFieldsCopyWith<$Res> get extraFields {
 
 class TransferContractLog extends RpcContractLog {
   const TransferContractLog({required this.contract, required this.amount, required this.asset, required this.destination, this.valueExtraFields = const RpcExtraFields(), this.extraFields = const RpcExtraFields()}): super._();
-
+  
 
  final  String contract;
  final  BigInt amount;
@@ -453,7 +454,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get valueExtraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.valueExtraFields, (value) {
     return _then(_self.copyWith(valueExtraFields: value));
   });
@@ -462,7 +463,7 @@ $RpcExtraFieldsCopyWith<$Res> get valueExtraFields {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -474,7 +475,7 @@ $RpcExtraFieldsCopyWith<$Res> get extraFields {
 
 class TransferToContractLog extends RpcContractLog {
   const TransferToContractLog({required this.contract, required this.amount, required this.asset, required this.destination, this.valueExtraFields = const RpcExtraFields(), this.extraFields = const RpcExtraFields()}): super._();
-
+  
 
  final  String contract;
  final  BigInt amount;
@@ -543,7 +544,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get valueExtraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.valueExtraFields, (value) {
     return _then(_self.copyWith(valueExtraFields: value));
   });
@@ -552,7 +553,7 @@ $RpcExtraFieldsCopyWith<$Res> get valueExtraFields {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -564,7 +565,7 @@ $RpcExtraFieldsCopyWith<$Res> get extraFields {
 
 class MintContractLog extends RpcContractLog {
   const MintContractLog({required this.contract, required this.asset, required this.amount, this.valueExtraFields = const RpcExtraFields(), this.extraFields = const RpcExtraFields()}): super._();
-
+  
 
  final  String contract;
  final  String asset;
@@ -631,7 +632,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get valueExtraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.valueExtraFields, (value) {
     return _then(_self.copyWith(valueExtraFields: value));
   });
@@ -640,7 +641,7 @@ $RpcExtraFieldsCopyWith<$Res> get valueExtraFields {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -652,7 +653,7 @@ $RpcExtraFieldsCopyWith<$Res> get extraFields {
 
 class BurnContractLog extends RpcContractLog {
   const BurnContractLog({required this.contract, required this.asset, required this.amount, this.valueExtraFields = const RpcExtraFields(), this.extraFields = const RpcExtraFields()}): super._();
-
+  
 
  final  String contract;
  final  String asset;
@@ -719,7 +720,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get valueExtraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.valueExtraFields, (value) {
     return _then(_self.copyWith(valueExtraFields: value));
   });
@@ -728,7 +729,7 @@ $RpcExtraFieldsCopyWith<$Res> get valueExtraFields {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -740,7 +741,7 @@ $RpcExtraFieldsCopyWith<$Res> get extraFields {
 
 class NewAssetContractLog extends RpcContractLog {
   const NewAssetContractLog({required this.contract, required this.asset, this.valueExtraFields = const RpcExtraFields(), this.extraFields = const RpcExtraFields()}): super._();
-
+  
 
  final  String contract;
  final  String asset;
@@ -805,7 +806,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get valueExtraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.valueExtraFields, (value) {
     return _then(_self.copyWith(valueExtraFields: value));
   });
@@ -814,7 +815,7 @@ $RpcExtraFieldsCopyWith<$Res> get valueExtraFields {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -826,7 +827,7 @@ $RpcExtraFieldsCopyWith<$Res> get extraFields {
 
 class ExitCodeContractLog extends RpcContractLog {
   const ExitCodeContractLog(this.code, {this.valueExtraFields = const RpcExtraFields(), this.extraFields = const RpcExtraFields()}): super._();
-
+  
 
  final  BigInt? code;
 @override@JsonKey() final  RpcExtraFields valueExtraFields;
@@ -889,7 +890,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get valueExtraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.valueExtraFields, (value) {
     return _then(_self.copyWith(valueExtraFields: value));
   });
@@ -898,7 +899,7 @@ $RpcExtraFieldsCopyWith<$Res> get valueExtraFields {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -910,7 +911,7 @@ $RpcExtraFieldsCopyWith<$Res> get extraFields {
 
 class RefundDepositsContractLog extends RpcContractLog {
   const RefundDepositsContractLog({this.valueExtraFields = const RpcExtraFields(), this.extraFields = const RpcExtraFields()}): super._();
-
+  
 
 @override@JsonKey() final  RpcExtraFields valueExtraFields;
 @override@JsonKey() final  RpcExtraFields extraFields;
@@ -971,7 +972,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get valueExtraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.valueExtraFields, (value) {
     return _then(_self.copyWith(valueExtraFields: value));
   });
@@ -980,7 +981,7 @@ $RpcExtraFieldsCopyWith<$Res> get valueExtraFields {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -992,7 +993,7 @@ $RpcExtraFieldsCopyWith<$Res> get extraFields {
 
 class GasInjectionContractLog extends RpcContractLog {
   const GasInjectionContractLog({required this.contract, required this.amount, this.valueExtraFields = const RpcExtraFields(), this.extraFields = const RpcExtraFields()}): super._();
-
+  
 
  final  String contract;
  final  BigInt amount;
@@ -1057,7 +1058,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get valueExtraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.valueExtraFields, (value) {
     return _then(_self.copyWith(valueExtraFields: value));
   });
@@ -1066,7 +1067,7 @@ $RpcExtraFieldsCopyWith<$Res> get valueExtraFields {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -1078,7 +1079,7 @@ $RpcExtraFieldsCopyWith<$Res> get extraFields {
 
 class ScheduledExecutionContractLog extends RpcContractLog {
   const ScheduledExecutionContractLog({required this.contract, required this.hash, required this.kind, this.valueExtraFields = const RpcExtraFields(), this.extraFields = const RpcExtraFields()}): super._();
-
+  
 
  final  String contract;
  final  String hash;
@@ -1145,7 +1146,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcScheduledExecutionLogKindCopyWith<$Res> get kind {
-
+  
   return $RpcScheduledExecutionLogKindCopyWith<$Res>(_self.kind, (value) {
     return _then(_self.copyWith(kind: value));
   });
@@ -1154,7 +1155,7 @@ $RpcScheduledExecutionLogKindCopyWith<$Res> get kind {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get valueExtraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.valueExtraFields, (value) {
     return _then(_self.copyWith(valueExtraFields: value));
   });
@@ -1163,7 +1164,7 @@ $RpcExtraFieldsCopyWith<$Res> get valueExtraFields {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -1175,7 +1176,7 @@ $RpcExtraFieldsCopyWith<$Res> get extraFields {
 
 class ExitPayloadContractLog extends RpcContractLog {
   const ExitPayloadContractLog(this.payload, {this.valueExtraFields = const RpcExtraFields(), this.extraFields = const RpcExtraFields()}): super._();
-
+  
 
  final  RpcValueCell payload;
 @override@JsonKey() final  RpcExtraFields valueExtraFields;
@@ -1238,7 +1239,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcValueCellCopyWith<$Res> get payload {
-
+  
   return $RpcValueCellCopyWith<$Res>(_self.payload, (value) {
     return _then(_self.copyWith(payload: value));
   });
@@ -1247,7 +1248,7 @@ $RpcValueCellCopyWith<$Res> get payload {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get valueExtraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.valueExtraFields, (value) {
     return _then(_self.copyWith(valueExtraFields: value));
   });
@@ -1256,7 +1257,7 @@ $RpcExtraFieldsCopyWith<$Res> get valueExtraFields {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -1268,7 +1269,7 @@ $RpcExtraFieldsCopyWith<$Res> get extraFields {
 
 class TransferPayloadContractLog extends RpcContractLog {
   const TransferPayloadContractLog({required this.contract, required this.amount, required this.asset, required this.destination, required this.payload, this.valueExtraFields = const RpcExtraFields(), this.extraFields = const RpcExtraFields()}): super._();
-
+  
 
  final  String contract;
  final  BigInt amount;
@@ -1339,7 +1340,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcValueCellCopyWith<$Res> get payload {
-
+  
   return $RpcValueCellCopyWith<$Res>(_self.payload, (value) {
     return _then(_self.copyWith(payload: value));
   });
@@ -1348,7 +1349,7 @@ $RpcValueCellCopyWith<$Res> get payload {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get valueExtraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.valueExtraFields, (value) {
     return _then(_self.copyWith(valueExtraFields: value));
   });
@@ -1357,7 +1358,7 @@ $RpcExtraFieldsCopyWith<$Res> get valueExtraFields {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -1369,7 +1370,7 @@ $RpcExtraFieldsCopyWith<$Res> get extraFields {
 
 class ExitErrorContractLog extends RpcContractLog {
   const ExitErrorContractLog(this.error, {this.valueExtraFields = const RpcExtraFields(), this.extraFields = const RpcExtraFields()}): super._();
-
+  
 
  final  RpcExitError error;
 @override@JsonKey() final  RpcExtraFields valueExtraFields;
@@ -1432,7 +1433,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExitErrorCopyWith<$Res> get error {
-
+  
   return $RpcExitErrorCopyWith<$Res>(_self.error, (value) {
     return _then(_self.copyWith(error: value));
   });
@@ -1441,7 +1442,7 @@ $RpcExitErrorCopyWith<$Res> get error {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get valueExtraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.valueExtraFields, (value) {
     return _then(_self.copyWith(valueExtraFields: value));
   });
@@ -1450,7 +1451,7 @@ $RpcExtraFieldsCopyWith<$Res> get valueExtraFields {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -1462,7 +1463,7 @@ $RpcExtraFieldsCopyWith<$Res> get extraFields {
 
 class EventContractLog extends RpcContractLog {
   const EventContractLog({required this.contract, required this.eventId, this.valueExtraFields = const RpcExtraFields(), this.extraFields = const RpcExtraFields()}): super._();
-
+  
 
  final  String contract;
  final  BigInt eventId;
@@ -1527,7 +1528,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get valueExtraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.valueExtraFields, (value) {
     return _then(_self.copyWith(valueExtraFields: value));
   });
@@ -1536,7 +1537,7 @@ $RpcExtraFieldsCopyWith<$Res> get valueExtraFields {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -1548,7 +1549,7 @@ $RpcExtraFieldsCopyWith<$Res> get extraFields {
 
 class UnknownRpcContractLog extends RpcContractLog {
   const UnknownRpcContractLog({required this.type, required this.wireValue, this.valueExtraFields = const RpcExtraFields(), this.extraFields = const RpcExtraFields()}): super._();
-
+  
 
  final  String type;
  final  RpcJsonValue wireValue;
@@ -1613,7 +1614,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcJsonValueCopyWith<$Res> get wireValue {
-
+  
   return $RpcJsonValueCopyWith<$Res>(_self.wireValue, (value) {
     return _then(_self.copyWith(wireValue: value));
   });
@@ -1622,7 +1623,7 @@ $RpcJsonValueCopyWith<$Res> get wireValue {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get valueExtraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.valueExtraFields, (value) {
     return _then(_self.copyWith(valueExtraFields: value));
   });
@@ -1631,7 +1632,7 @@ $RpcExtraFieldsCopyWith<$Res> get valueExtraFields {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -1805,7 +1806,7 @@ return unknown(_that.wireValue);case _:
 
 class RpcTopoheightExecutionLogKind extends RpcScheduledExecutionLogKind {
   const RpcTopoheightExecutionLogKind(this.topoheight): super._();
-
+  
 
  final  BigInt topoheight;
 
@@ -1866,8 +1867,8 @@ as BigInt,
 
 
 class RpcBlockEndExecutionLogKind extends RpcScheduledExecutionLogKind {
-  const RpcBlockEndExecutionLogKind({required this.chunkId, required this.maxGas, required final  List<RpcValueCell> params}): _params = params,super._();
-
+  const RpcBlockEndExecutionLogKind({required this.chunkId, required this.maxGas, required  List<RpcValueCell> params}): _params = params,super._();
+  
 
  final  int chunkId;
  final  BigInt maxGas;
@@ -1939,7 +1940,7 @@ as List<RpcValueCell>,
 
 class RpcUnknownExecutionLogKind extends RpcScheduledExecutionLogKind {
   const RpcUnknownExecutionLogKind(this.wireValue): super._();
-
+  
 
  final  RpcJsonValue wireValue;
 
@@ -1998,7 +1999,7 @@ as RpcJsonValue,
 @override
 @pragma('vm:prefer-inline')
 $RpcJsonValueCopyWith<$Res> get wireValue {
-
+  
   return $RpcJsonValueCopyWith<$Res>(_self.wireValue, (value) {
     return _then(_self.copyWith(wireValue: value));
   });

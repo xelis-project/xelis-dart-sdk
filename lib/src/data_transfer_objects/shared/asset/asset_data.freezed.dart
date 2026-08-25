@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'asset_data.dart';
@@ -9,6 +9,7 @@ part of 'asset_data.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 
@@ -66,7 +67,7 @@ class _$AssetDataCopyWithImpl<$Res>
 /// Create a copy of AssetData
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? decimals = null,Object? name = null,Object? ticker = null,Object? maxSupply = null,Object? owner = null,Object? extraFields = null,}) {
-  return _then(_self.copyWith(
+  return _then(AssetData(
 decimals: null == decimals ? _self.decimals : decimals // ignore: cast_nullable_to_non_nullable
 as int,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,ticker: null == ticker ? _self.ticker : ticker // ignore: cast_nullable_to_non_nullable
@@ -81,7 +82,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $MaxSupplyModeCopyWith<$Res> get maxSupply {
-
+  
   return $MaxSupplyModeCopyWith<$Res>(_self.maxSupply, (value) {
     return _then(_self.copyWith(maxSupply: value));
   });
@@ -90,7 +91,7 @@ $MaxSupplyModeCopyWith<$Res> get maxSupply {
 @override
 @pragma('vm:prefer-inline')
 $AssetOwnerCopyWith<$Res> get owner {
-
+  
   return $AssetOwnerCopyWith<$Res>(_self.owner, (value) {
     return _then(_self.copyWith(owner: value));
   });
@@ -99,7 +100,7 @@ $AssetOwnerCopyWith<$Res> get owner {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -318,7 +319,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $MaxSupplyModeCopyWith<$Res> get maxSupply {
-
+  
   return $MaxSupplyModeCopyWith<$Res>(_self.maxSupply, (value) {
     return _then(_self.copyWith(maxSupply: value));
   });
@@ -327,7 +328,7 @@ $MaxSupplyModeCopyWith<$Res> get maxSupply {
 @override
 @pragma('vm:prefer-inline')
 $AssetOwnerCopyWith<$Res> get owner {
-
+  
   return $AssetOwnerCopyWith<$Res>(_self.owner, (value) {
     return _then(_self.copyWith(owner: value));
   });
@@ -336,7 +337,7 @@ $AssetOwnerCopyWith<$Res> get owner {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });

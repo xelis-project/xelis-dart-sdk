@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'rpc_unknown_event.dart';
@@ -9,6 +9,7 @@ part of 'rpc_unknown_event.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 /// @nodoc
@@ -59,7 +60,7 @@ class _$RpcUnknownEventCopyWithImpl<$Res>
 /// Create a copy of RpcUnknownEvent
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? name = null,Object? payload = null,}) {
-  return _then(_self.copyWith(
+  return _then(RpcUnknownEvent(
 name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,payload: null == payload ? _self.payload : payload // ignore: cast_nullable_to_non_nullable
 as RpcJsonValue,
@@ -70,7 +71,7 @@ as RpcJsonValue,
 @override
 @pragma('vm:prefer-inline')
 $RpcJsonValueCopyWith<$Res> get payload {
-
+  
   return $RpcJsonValueCopyWith<$Res>(_self.payload, (value) {
     return _then(_self.copyWith(payload: value));
   });
@@ -213,7 +214,7 @@ return $default(_that.name,_that.payload);case _:
 
 class _RpcUnknownEvent extends RpcUnknownEvent {
   const _RpcUnknownEvent({required this.name, required this.payload}): super._();
-
+  
 
 @override final  String name;
 @override final  RpcJsonValue payload;
@@ -274,7 +275,7 @@ as RpcJsonValue,
 @override
 @pragma('vm:prefer-inline')
 $RpcJsonValueCopyWith<$Res> get payload {
-
+  
   return $RpcJsonValueCopyWith<$Res>(_self.payload, (value) {
     return _then(_self.copyWith(payload: value));
   });

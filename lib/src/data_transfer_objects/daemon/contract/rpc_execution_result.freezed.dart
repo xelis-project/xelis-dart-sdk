@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'rpc_execution_result.dart';
@@ -9,6 +9,7 @@ part of 'rpc_execution_result.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 /// @nodoc
@@ -63,7 +64,7 @@ class _$RpcExecutionResultCopyWithImpl<$Res>
 /// Create a copy of RpcExecutionResult
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? usedGas = null,Object? burnedGas = null,Object? feeGas = null,Object? vmMaxGas = null,Object? exitValue = null,Object? extraFields = null,}) {
-  return _then(_self.copyWith(
+  return _then(RpcExecutionResult(
 usedGas: null == usedGas ? _self.usedGas : usedGas // ignore: cast_nullable_to_non_nullable
 as BigInt,burnedGas: null == burnedGas ? _self.burnedGas : burnedGas // ignore: cast_nullable_to_non_nullable
 as BigInt,feeGas: null == feeGas ? _self.feeGas : feeGas // ignore: cast_nullable_to_non_nullable
@@ -78,7 +79,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExitValueCopyWith<$Res> get exitValue {
-
+  
   return $RpcExitValueCopyWith<$Res>(_self.exitValue, (value) {
     return _then(_self.copyWith(exitValue: value));
   });
@@ -87,7 +88,7 @@ $RpcExitValueCopyWith<$Res> get exitValue {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
@@ -230,7 +231,7 @@ return $default(_that.usedGas,_that.burnedGas,_that.feeGas,_that.vmMaxGas,_that.
 
 class _RpcExecutionResult extends RpcExecutionResult {
   const _RpcExecutionResult({required this.usedGas, required this.burnedGas, required this.feeGas, required this.vmMaxGas, required this.exitValue, this.extraFields = const RpcExtraFields()}): super._();
-
+  
 
 @override final  BigInt usedGas;
 @override final  BigInt burnedGas;
@@ -303,7 +304,7 @@ as RpcExtraFields,
 @override
 @pragma('vm:prefer-inline')
 $RpcExitValueCopyWith<$Res> get exitValue {
-
+  
   return $RpcExitValueCopyWith<$Res>(_self.exitValue, (value) {
     return _then(_self.copyWith(exitValue: value));
   });
@@ -312,7 +313,7 @@ $RpcExitValueCopyWith<$Res> get exitValue {
 @override
 @pragma('vm:prefer-inline')
 $RpcExtraFieldsCopyWith<$Res> get extraFields {
-
+  
   return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
     return _then(_self.copyWith(extraFields: value));
   });
