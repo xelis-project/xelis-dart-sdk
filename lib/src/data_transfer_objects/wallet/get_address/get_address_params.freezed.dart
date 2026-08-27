@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'get_address_params.dart';
@@ -9,13 +9,14 @@ part of 'get_address_params.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$GetAddressParams {
 
-@JsonKey(name: 'integrated_data') dynamic get integratedData;
+@JsonKey(name: 'integrated_data', fromJson: _nullableDataElementFromJson, toJson: _nullableDataElementToJson) DataElement? get integratedData;
 /// Create a copy of GetAddressParams
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,12 +29,12 @@ $GetAddressParamsCopyWith<GetAddressParams> get copyWith => _$GetAddressParamsCo
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetAddressParams&&const DeepCollectionEquality().equals(other.integratedData, integratedData));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetAddressParams&&(identical(other.integratedData, integratedData) || other.integratedData == integratedData));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(integratedData));
+int get hashCode => Object.hash(runtimeType,integratedData);
 
 @override
 String toString() {
@@ -48,11 +49,11 @@ abstract mixin class $GetAddressParamsCopyWith<$Res>  {
   factory $GetAddressParamsCopyWith(GetAddressParams value, $Res Function(GetAddressParams) _then) = _$GetAddressParamsCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(name: 'integrated_data') dynamic integratedData
+@JsonKey(name: 'integrated_data', fromJson: _nullableDataElementFromJson, toJson: _nullableDataElementToJson) DataElement? integratedData
 });
 
 
-
+$DataElementCopyWith<$Res>? get integratedData;
 
 }
 /// @nodoc
@@ -66,12 +67,24 @@ class _$GetAddressParamsCopyWithImpl<$Res>
 /// Create a copy of GetAddressParams
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? integratedData = freezed,}) {
-  return _then(_self.copyWith(
+  return _then(GetAddressParams(
 integratedData: freezed == integratedData ? _self.integratedData : integratedData // ignore: cast_nullable_to_non_nullable
-as dynamic,
+as DataElement?,
   ));
 }
+/// Create a copy of GetAddressParams
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$DataElementCopyWith<$Res>? get integratedData {
+    if (_self.integratedData == null) {
+    return null;
+  }
 
+  return $DataElementCopyWith<$Res>(_self.integratedData!, (value) {
+    return _then(_self.copyWith(integratedData: value));
+  });
+}
 }
 
 
@@ -153,7 +166,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'integrated_data')  dynamic integratedData)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'integrated_data', fromJson: _nullableDataElementFromJson, toJson: _nullableDataElementToJson)  DataElement? integratedData)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _GetAddressParams() when $default != null:
 return $default(_that.integratedData);case _:
@@ -174,7 +187,7 @@ return $default(_that.integratedData);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'integrated_data')  dynamic integratedData)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'integrated_data', fromJson: _nullableDataElementFromJson, toJson: _nullableDataElementToJson)  DataElement? integratedData)  $default,) {final _that = this;
 switch (_that) {
 case _GetAddressParams():
 return $default(_that.integratedData);case _:
@@ -194,7 +207,7 @@ return $default(_that.integratedData);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'integrated_data')  dynamic integratedData)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'integrated_data', fromJson: _nullableDataElementFromJson, toJson: _nullableDataElementToJson)  DataElement? integratedData)?  $default,) {final _that = this;
 switch (_that) {
 case _GetAddressParams() when $default != null:
 return $default(_that.integratedData);case _:
@@ -209,10 +222,10 @@ return $default(_that.integratedData);case _:
 @JsonSerializable()
 
 class _GetAddressParams implements GetAddressParams {
-  const _GetAddressParams({@JsonKey(name: 'integrated_data') required this.integratedData});
+  const _GetAddressParams({@JsonKey(name: 'integrated_data', fromJson: _nullableDataElementFromJson, toJson: _nullableDataElementToJson) this.integratedData});
   factory _GetAddressParams.fromJson(Map<String, dynamic> json) => _$GetAddressParamsFromJson(json);
 
-@override@JsonKey(name: 'integrated_data') final  dynamic integratedData;
+@override@JsonKey(name: 'integrated_data', fromJson: _nullableDataElementFromJson, toJson: _nullableDataElementToJson) final  DataElement? integratedData;
 
 /// Create a copy of GetAddressParams
 /// with the given fields replaced by the non-null parameter values.
@@ -227,12 +240,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetAddressParams&&const DeepCollectionEquality().equals(other.integratedData, integratedData));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetAddressParams&&(identical(other.integratedData, integratedData) || other.integratedData == integratedData));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(integratedData));
+int get hashCode => Object.hash(runtimeType,integratedData);
 
 @override
 String toString() {
@@ -247,11 +260,11 @@ abstract mixin class _$GetAddressParamsCopyWith<$Res> implements $GetAddressPara
   factory _$GetAddressParamsCopyWith(_GetAddressParams value, $Res Function(_GetAddressParams) _then) = __$GetAddressParamsCopyWithImpl;
 @override @useResult
 $Res call({
-@JsonKey(name: 'integrated_data') dynamic integratedData
+@JsonKey(name: 'integrated_data', fromJson: _nullableDataElementFromJson, toJson: _nullableDataElementToJson) DataElement? integratedData
 });
 
 
-
+@override $DataElementCopyWith<$Res>? get integratedData;
 
 }
 /// @nodoc
@@ -267,11 +280,23 @@ class __$GetAddressParamsCopyWithImpl<$Res>
 @override @pragma('vm:prefer-inline') $Res call({Object? integratedData = freezed,}) {
   return _then(_GetAddressParams(
 integratedData: freezed == integratedData ? _self.integratedData : integratedData // ignore: cast_nullable_to_non_nullable
-as dynamic,
+as DataElement?,
   ));
 }
 
+/// Create a copy of GetAddressParams
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$DataElementCopyWith<$Res>? get integratedData {
+    if (_self.integratedData == null) {
+    return null;
+  }
 
+  return $DataElementCopyWith<$Res>(_self.integratedData!, (value) {
+    return _then(_self.copyWith(integratedData: value));
+  });
+}
 }
 
 // dart format on

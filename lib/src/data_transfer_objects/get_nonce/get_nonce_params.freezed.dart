@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'get_nonce_params.dart';
@@ -9,13 +9,14 @@ part of 'get_nonce_params.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$GetNonceParams {
 
-@JsonKey(name: 'address') String get address;@JsonKey(name: 'topoheight') int? get topoHeight;
+@JsonKey(name: 'address') String get address;@JsonKey(name: 'topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) BigInt? get topoheight;
 /// Create a copy of GetNonceParams
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,16 +29,16 @@ $GetNonceParamsCopyWith<GetNonceParams> get copyWith => _$GetNonceParamsCopyWith
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetNonceParams&&(identical(other.address, address) || other.address == address)&&(identical(other.topoHeight, topoHeight) || other.topoHeight == topoHeight));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetNonceParams&&(identical(other.address, address) || other.address == address)&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,address,topoHeight);
+int get hashCode => Object.hash(runtimeType,address,topoheight);
 
 @override
 String toString() {
-  return 'GetNonceParams(address: $address, topoHeight: $topoHeight)';
+  return 'GetNonceParams(address: $address, topoheight: $topoheight)';
 }
 
 
@@ -48,7 +49,7 @@ abstract mixin class $GetNonceParamsCopyWith<$Res>  {
   factory $GetNonceParamsCopyWith(GetNonceParams value, $Res Function(GetNonceParams) _then) = _$GetNonceParamsCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(name: 'address') String address,@JsonKey(name: 'topoheight') int? topoHeight
+@JsonKey(name: 'address') String address,@JsonKey(name: 'topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) BigInt? topoheight
 });
 
 
@@ -65,11 +66,11 @@ class _$GetNonceParamsCopyWithImpl<$Res>
 
 /// Create a copy of GetNonceParams
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? address = null,Object? topoHeight = freezed,}) {
-  return _then(_self.copyWith(
+@pragma('vm:prefer-inline') @override $Res call({Object? address = null,Object? topoheight = freezed,}) {
+  return _then(GetNonceParams(
 address: null == address ? _self.address : address // ignore: cast_nullable_to_non_nullable
-as String,topoHeight: freezed == topoHeight ? _self.topoHeight : topoHeight // ignore: cast_nullable_to_non_nullable
-as int?,
+as String,topoheight: freezed == topoheight ? _self.topoheight : topoheight // ignore: cast_nullable_to_non_nullable
+as BigInt?,
   ));
 }
 
@@ -154,10 +155,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'address')  String address, @JsonKey(name: 'topoheight')  int? topoHeight)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'address')  String address, @JsonKey(name: 'topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson)  BigInt? topoheight)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _GetNonceParams() when $default != null:
-return $default(_that.address,_that.topoHeight);case _:
+return $default(_that.address,_that.topoheight);case _:
   return orElse();
 
 }
@@ -175,10 +176,10 @@ return $default(_that.address,_that.topoHeight);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'address')  String address, @JsonKey(name: 'topoheight')  int? topoHeight)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'address')  String address, @JsonKey(name: 'topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson)  BigInt? topoheight)  $default,) {final _that = this;
 switch (_that) {
 case _GetNonceParams():
-return $default(_that.address,_that.topoHeight);case _:
+return $default(_that.address,_that.topoheight);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -195,10 +196,10 @@ return $default(_that.address,_that.topoHeight);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'address')  String address, @JsonKey(name: 'topoheight')  int? topoHeight)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'address')  String address, @JsonKey(name: 'topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson)  BigInt? topoheight)?  $default,) {final _that = this;
 switch (_that) {
 case _GetNonceParams() when $default != null:
-return $default(_that.address,_that.topoHeight);case _:
+return $default(_that.address,_that.topoheight);case _:
   return null;
 
 }
@@ -210,11 +211,11 @@ return $default(_that.address,_that.topoHeight);case _:
 @JsonSerializable()
 
 class _GetNonceParams implements GetNonceParams {
-  const _GetNonceParams({@JsonKey(name: 'address') required this.address, @JsonKey(name: 'topoheight') this.topoHeight});
+  const _GetNonceParams({@JsonKey(name: 'address') required this.address, @JsonKey(name: 'topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) this.topoheight});
   factory _GetNonceParams.fromJson(Map<String, dynamic> json) => _$GetNonceParamsFromJson(json);
 
 @override@JsonKey(name: 'address') final  String address;
-@override@JsonKey(name: 'topoheight') final  int? topoHeight;
+@override@JsonKey(name: 'topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) final  BigInt? topoheight;
 
 /// Create a copy of GetNonceParams
 /// with the given fields replaced by the non-null parameter values.
@@ -229,16 +230,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetNonceParams&&(identical(other.address, address) || other.address == address)&&(identical(other.topoHeight, topoHeight) || other.topoHeight == topoHeight));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetNonceParams&&(identical(other.address, address) || other.address == address)&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,address,topoHeight);
+int get hashCode => Object.hash(runtimeType,address,topoheight);
 
 @override
 String toString() {
-  return 'GetNonceParams(address: $address, topoHeight: $topoHeight)';
+  return 'GetNonceParams(address: $address, topoheight: $topoheight)';
 }
 
 
@@ -249,7 +250,7 @@ abstract mixin class _$GetNonceParamsCopyWith<$Res> implements $GetNonceParamsCo
   factory _$GetNonceParamsCopyWith(_GetNonceParams value, $Res Function(_GetNonceParams) _then) = __$GetNonceParamsCopyWithImpl;
 @override @useResult
 $Res call({
-@JsonKey(name: 'address') String address,@JsonKey(name: 'topoheight') int? topoHeight
+@JsonKey(name: 'address') String address,@JsonKey(name: 'topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) BigInt? topoheight
 });
 
 
@@ -266,11 +267,11 @@ class __$GetNonceParamsCopyWithImpl<$Res>
 
 /// Create a copy of GetNonceParams
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? address = null,Object? topoHeight = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? address = null,Object? topoheight = freezed,}) {
   return _then(_GetNonceParams(
 address: null == address ? _self.address : address // ignore: cast_nullable_to_non_nullable
-as String,topoHeight: freezed == topoHeight ? _self.topoHeight : topoHeight // ignore: cast_nullable_to_non_nullable
-as int?,
+as String,topoheight: freezed == topoheight ? _self.topoheight : topoheight // ignore: cast_nullable_to_non_nullable
+as BigInt?,
   ));
 }
 

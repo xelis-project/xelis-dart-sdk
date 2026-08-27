@@ -72,7 +72,7 @@ base class _BigIntJsonReader
     if (key != null) sink.addKey(key);
     final copy = reader.copy();
     final source = reader.expectAnyValueSource().toString();
-    assert(source.isNotEmpty);
+    assert(source.isNotEmpty, 'JSON number source must not be empty.');
     final result = BigInt.tryParse(source);
     if (result != null) {
       sink.addSourceValue(result);
@@ -81,14 +81,3 @@ base class _BigIntJsonReader
     sink.addNumber(copy.expectDouble());
   }
 }
-
-// void main() {
-//   // Start with a JSON containing a number too big for Dart integers.
-//   var source = '{"x":123456789123456789123456789123456789}';
-//   print("source: $source");
-//   var data = parseBigIntJson(source) as Map<String, Object?>;
-//   print("big value: ${data["x"]}"); // The big integer.
-//   var newSource = serializeBigIntJson(data);
-//   print("new source: $newSource"); // Roundtripped.
-//   assert(source == newSource);
-// }

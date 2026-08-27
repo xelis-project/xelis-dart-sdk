@@ -1,6 +1,6 @@
-// ignore_for_file: invalid_annotation_target
-
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/core/rpc_extra_fields.dart';
+import 'package:xelis_dart_sdk/src/utils/rpc_json.dart';
 
 part 'get_size_on_disk_result.freezed.dart';
 
@@ -11,11 +11,28 @@ part 'get_size_on_disk_result.g.dart';
 abstract class GetSizeOnDiskResult with _$GetSizeOnDiskResult {
   /// @nodoc
   const factory GetSizeOnDiskResult({
-    @JsonKey(name: 'size_bytes') required int sizeBytes,
+    @JsonKey(name: 'size_bytes', fromJson: rpcBigInt, toJson: rpcBigIntToJson)
+    required BigInt sizeBytes,
     @JsonKey(name: 'size_formatted') required String sizeFormatted,
+    @JsonKey(includeFromJson: false, includeToJson: false)
+    @Default(RpcExtraFields())
+    RpcExtraFields extraFields,
   }) = _GetSizeOnDiskResult;
+
+  const GetSizeOnDiskResult._();
 
   /// @nodoc
   factory GetSizeOnDiskResult.fromJson(Map<String, dynamic> json) =>
-      _$GetSizeOnDiskResultFromJson(json);
+      _$GetSizeOnDiskResultFromJson(json).copyWith(
+        extraFields: RpcExtraFields.capture(json, const {
+          'size_bytes',
+          'size_formatted',
+        }),
+      );
+
+  Map<String, Object?> toWireJson({bool includeExtraFields = false}) =>
+      extraFields.mergeInto({
+        'size_bytes': sizeBytes,
+        'size_formatted': sizeFormatted,
+      }, includeExtraFields: includeExtraFields);
 }

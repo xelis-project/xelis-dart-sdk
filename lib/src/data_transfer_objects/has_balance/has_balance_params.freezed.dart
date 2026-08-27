@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'has_balance_params.dart';
@@ -9,13 +9,14 @@ part of 'has_balance_params.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$HasBalanceParams {
 
-@JsonKey(name: 'address') String get address;@JsonKey(name: 'asset') String get asset;@JsonKey(name: 'topoheight') int? get topoheight;
+@JsonKey(name: 'address') String get address;@JsonKey(name: 'asset') String get asset;@JsonKey(name: 'topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) BigInt? get topoheight;
 /// Create a copy of HasBalanceParams
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +49,7 @@ abstract mixin class $HasBalanceParamsCopyWith<$Res>  {
   factory $HasBalanceParamsCopyWith(HasBalanceParams value, $Res Function(HasBalanceParams) _then) = _$HasBalanceParamsCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(name: 'address') String address,@JsonKey(name: 'asset') String asset,@JsonKey(name: 'topoheight') int? topoheight
+@JsonKey(name: 'address') String address,@JsonKey(name: 'asset') String asset,@JsonKey(name: 'topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) BigInt? topoheight
 });
 
 
@@ -66,11 +67,11 @@ class _$HasBalanceParamsCopyWithImpl<$Res>
 /// Create a copy of HasBalanceParams
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? address = null,Object? asset = null,Object? topoheight = freezed,}) {
-  return _then(_self.copyWith(
+  return _then(HasBalanceParams(
 address: null == address ? _self.address : address // ignore: cast_nullable_to_non_nullable
 as String,asset: null == asset ? _self.asset : asset // ignore: cast_nullable_to_non_nullable
 as String,topoheight: freezed == topoheight ? _self.topoheight : topoheight // ignore: cast_nullable_to_non_nullable
-as int?,
+as BigInt?,
   ));
 }
 
@@ -155,7 +156,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'address')  String address, @JsonKey(name: 'asset')  String asset, @JsonKey(name: 'topoheight')  int? topoheight)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'address')  String address, @JsonKey(name: 'asset')  String asset, @JsonKey(name: 'topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson)  BigInt? topoheight)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _HasBalanceParams() when $default != null:
 return $default(_that.address,_that.asset,_that.topoheight);case _:
@@ -176,7 +177,7 @@ return $default(_that.address,_that.asset,_that.topoheight);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'address')  String address, @JsonKey(name: 'asset')  String asset, @JsonKey(name: 'topoheight')  int? topoheight)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'address')  String address, @JsonKey(name: 'asset')  String asset, @JsonKey(name: 'topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson)  BigInt? topoheight)  $default,) {final _that = this;
 switch (_that) {
 case _HasBalanceParams():
 return $default(_that.address,_that.asset,_that.topoheight);case _:
@@ -196,7 +197,7 @@ return $default(_that.address,_that.asset,_that.topoheight);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'address')  String address, @JsonKey(name: 'asset')  String asset, @JsonKey(name: 'topoheight')  int? topoheight)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'address')  String address, @JsonKey(name: 'asset')  String asset, @JsonKey(name: 'topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson)  BigInt? topoheight)?  $default,) {final _that = this;
 switch (_that) {
 case _HasBalanceParams() when $default != null:
 return $default(_that.address,_that.asset,_that.topoheight);case _:
@@ -211,12 +212,12 @@ return $default(_that.address,_that.asset,_that.topoheight);case _:
 
 @JsonSerializable(includeIfNull: false)
 class _HasBalanceParams implements HasBalanceParams {
-  const _HasBalanceParams({@JsonKey(name: 'address') required this.address, @JsonKey(name: 'asset') required this.asset, @JsonKey(name: 'topoheight') this.topoheight});
+  const _HasBalanceParams({@JsonKey(name: 'address') required this.address, @JsonKey(name: 'asset') required this.asset, @JsonKey(name: 'topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) this.topoheight});
   factory _HasBalanceParams.fromJson(Map<String, dynamic> json) => _$HasBalanceParamsFromJson(json);
 
 @override@JsonKey(name: 'address') final  String address;
 @override@JsonKey(name: 'asset') final  String asset;
-@override@JsonKey(name: 'topoheight') final  int? topoheight;
+@override@JsonKey(name: 'topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) final  BigInt? topoheight;
 
 /// Create a copy of HasBalanceParams
 /// with the given fields replaced by the non-null parameter values.
@@ -251,7 +252,7 @@ abstract mixin class _$HasBalanceParamsCopyWith<$Res> implements $HasBalancePara
   factory _$HasBalanceParamsCopyWith(_HasBalanceParams value, $Res Function(_HasBalanceParams) _then) = __$HasBalanceParamsCopyWithImpl;
 @override @useResult
 $Res call({
-@JsonKey(name: 'address') String address,@JsonKey(name: 'asset') String asset,@JsonKey(name: 'topoheight') int? topoheight
+@JsonKey(name: 'address') String address,@JsonKey(name: 'asset') String asset,@JsonKey(name: 'topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) BigInt? topoheight
 });
 
 
@@ -273,7 +274,7 @@ class __$HasBalanceParamsCopyWithImpl<$Res>
 address: null == address ? _self.address : address // ignore: cast_nullable_to_non_nullable
 as String,asset: null == asset ? _self.asset : asset // ignore: cast_nullable_to_non_nullable
 as String,topoheight: freezed == topoheight ? _self.topoheight : topoheight // ignore: cast_nullable_to_non_nullable
-as int?,
+as BigInt?,
   ));
 }
 

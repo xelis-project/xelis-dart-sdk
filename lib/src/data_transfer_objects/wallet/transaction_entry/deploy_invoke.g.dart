@@ -10,12 +10,12 @@ part of 'deploy_invoke.dart';
 
 _DeployInvoke _$DeployInvokeFromJson(Map<String, dynamic> json) =>
     _DeployInvoke(
-      maxGas: (json['max_gas'] as num).toInt(),
-      deposits: Map<String, int>.from(json['deposits'] as Map),
+      maxGas: rpcBigInt(json['max_gas']),
+      deposits: rpcBigIntMap(json['deposits']),
     );
 
 Map<String, dynamic> _$DeployInvokeToJson(_DeployInvoke instance) =>
     <String, dynamic>{
-      'max_gas': instance.maxGas,
-      'deposits': instance.deposits,
+      'max_gas': rpcBigIntToJson(instance.maxGas),
+      'deposits': rpcBigIntMapToJson(instance.deposits),
     };

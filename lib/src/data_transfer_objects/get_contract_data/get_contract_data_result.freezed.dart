@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'get_contract_data_result.dart';
@@ -9,35 +9,33 @@ part of 'get_contract_data_result.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
-
 /// @nodoc
 mixin _$GetContractDataResult {
 
-@JsonKey(name: 'topoheight') int get topoheight;@JsonKey(name: 'data') Map<String, dynamic> get data;@JsonKey(name: 'previous_topoheight') int get previousTopoheight;
+ BigInt get topoheight; RpcValueCell? get data; BigInt? get previousTopoheight; RpcExtraFields get extraFields;
 /// Create a copy of GetContractDataResult
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
 $GetContractDataResultCopyWith<GetContractDataResult> get copyWith => _$GetContractDataResultCopyWithImpl<GetContractDataResult>(this as GetContractDataResult, _$identity);
 
-  /// Serializes this GetContractDataResult to a JSON map.
-  Map<String, dynamic> toJson();
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetContractDataResult&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&const DeepCollectionEquality().equals(other.data, data)&&(identical(other.previousTopoheight, previousTopoheight) || other.previousTopoheight == previousTopoheight));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetContractDataResult&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&(identical(other.data, data) || other.data == data)&&(identical(other.previousTopoheight, previousTopoheight) || other.previousTopoheight == previousTopoheight)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
-@JsonKey(includeFromJson: false, includeToJson: false)
+
 @override
-int get hashCode => Object.hash(runtimeType,topoheight,const DeepCollectionEquality().hash(data),previousTopoheight);
+int get hashCode => Object.hash(runtimeType,topoheight,data,previousTopoheight,extraFields);
 
 @override
 String toString() {
-  return 'GetContractDataResult(topoheight: $topoheight, data: $data, previousTopoheight: $previousTopoheight)';
+  return 'GetContractDataResult(topoheight: $topoheight, data: $data, previousTopoheight: $previousTopoheight, extraFields: $extraFields)';
 }
 
 
@@ -48,11 +46,11 @@ abstract mixin class $GetContractDataResultCopyWith<$Res>  {
   factory $GetContractDataResultCopyWith(GetContractDataResult value, $Res Function(GetContractDataResult) _then) = _$GetContractDataResultCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(name: 'topoheight') int topoheight,@JsonKey(name: 'data') Map<String, dynamic> data,@JsonKey(name: 'previous_topoheight') int previousTopoheight
+ BigInt topoheight, RpcValueCell? data, BigInt? previousTopoheight, RpcExtraFields extraFields
 });
 
 
-
+$RpcValueCellCopyWith<$Res>? get data;$RpcExtraFieldsCopyWith<$Res> get extraFields;
 
 }
 /// @nodoc
@@ -65,15 +63,37 @@ class _$GetContractDataResultCopyWithImpl<$Res>
 
 /// Create a copy of GetContractDataResult
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? topoheight = null,Object? data = null,Object? previousTopoheight = null,}) {
-  return _then(_self.copyWith(
+@pragma('vm:prefer-inline') @override $Res call({Object? topoheight = null,Object? data = freezed,Object? previousTopoheight = freezed,Object? extraFields = null,}) {
+  return _then(GetContractDataResult(
 topoheight: null == topoheight ? _self.topoheight : topoheight // ignore: cast_nullable_to_non_nullable
-as int,data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>,previousTopoheight: null == previousTopoheight ? _self.previousTopoheight : previousTopoheight // ignore: cast_nullable_to_non_nullable
-as int,
+as BigInt,data: freezed == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
+as RpcValueCell?,previousTopoheight: freezed == previousTopoheight ? _self.previousTopoheight : previousTopoheight // ignore: cast_nullable_to_non_nullable
+as BigInt?,extraFields: null == extraFields ? _self.extraFields : extraFields // ignore: cast_nullable_to_non_nullable
+as RpcExtraFields,
   ));
 }
+/// Create a copy of GetContractDataResult
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$RpcValueCellCopyWith<$Res>? get data {
+    if (_self.data == null) {
+    return null;
+  }
 
+  return $RpcValueCellCopyWith<$Res>(_self.data!, (value) {
+    return _then(_self.copyWith(data: value));
+  });
+}/// Create a copy of GetContractDataResult
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$RpcExtraFieldsCopyWith<$Res> get extraFields {
+  
+  return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
+    return _then(_self.copyWith(extraFields: value));
+  });
+}
 }
 
 
@@ -155,10 +175,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'topoheight')  int topoheight, @JsonKey(name: 'data')  Map<String, dynamic> data, @JsonKey(name: 'previous_topoheight')  int previousTopoheight)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( BigInt topoheight,  RpcValueCell? data,  BigInt? previousTopoheight,  RpcExtraFields extraFields)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _GetContractDataResult() when $default != null:
-return $default(_that.topoheight,_that.data,_that.previousTopoheight);case _:
+return $default(_that.topoheight,_that.data,_that.previousTopoheight,_that.extraFields);case _:
   return orElse();
 
 }
@@ -176,10 +196,10 @@ return $default(_that.topoheight,_that.data,_that.previousTopoheight);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'topoheight')  int topoheight, @JsonKey(name: 'data')  Map<String, dynamic> data, @JsonKey(name: 'previous_topoheight')  int previousTopoheight)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( BigInt topoheight,  RpcValueCell? data,  BigInt? previousTopoheight,  RpcExtraFields extraFields)  $default,) {final _that = this;
 switch (_that) {
 case _GetContractDataResult():
-return $default(_that.topoheight,_that.data,_that.previousTopoheight);case _:
+return $default(_that.topoheight,_that.data,_that.previousTopoheight,_that.extraFields);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -196,10 +216,10 @@ return $default(_that.topoheight,_that.data,_that.previousTopoheight);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'topoheight')  int topoheight, @JsonKey(name: 'data')  Map<String, dynamic> data, @JsonKey(name: 'previous_topoheight')  int previousTopoheight)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( BigInt topoheight,  RpcValueCell? data,  BigInt? previousTopoheight,  RpcExtraFields extraFields)?  $default,) {final _that = this;
 switch (_that) {
 case _GetContractDataResult() when $default != null:
-return $default(_that.topoheight,_that.data,_that.previousTopoheight);case _:
+return $default(_that.topoheight,_that.data,_that.previousTopoheight,_that.extraFields);case _:
   return null;
 
 }
@@ -208,21 +228,16 @@ return $default(_that.topoheight,_that.data,_that.previousTopoheight);case _:
 }
 
 /// @nodoc
-@JsonSerializable()
 
-class _GetContractDataResult implements GetContractDataResult {
-  const _GetContractDataResult({@JsonKey(name: 'topoheight') required this.topoheight, @JsonKey(name: 'data') required final  Map<String, dynamic> data, @JsonKey(name: 'previous_topoheight') required this.previousTopoheight}): _data = data;
-  factory _GetContractDataResult.fromJson(Map<String, dynamic> json) => _$GetContractDataResultFromJson(json);
 
-@override@JsonKey(name: 'topoheight') final  int topoheight;
- final  Map<String, dynamic> _data;
-@override@JsonKey(name: 'data') Map<String, dynamic> get data {
-  if (_data is EqualUnmodifiableMapView) return _data;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(_data);
-}
+class _GetContractDataResult extends GetContractDataResult {
+  const _GetContractDataResult({required this.topoheight, required this.data, required this.previousTopoheight, this.extraFields = const RpcExtraFields()}): super._();
+  
 
-@override@JsonKey(name: 'previous_topoheight') final  int previousTopoheight;
+@override final  BigInt topoheight;
+@override final  RpcValueCell? data;
+@override final  BigInt? previousTopoheight;
+@override@JsonKey() final  RpcExtraFields extraFields;
 
 /// Create a copy of GetContractDataResult
 /// with the given fields replaced by the non-null parameter values.
@@ -230,23 +245,20 @@ class _GetContractDataResult implements GetContractDataResult {
 @pragma('vm:prefer-inline')
 _$GetContractDataResultCopyWith<_GetContractDataResult> get copyWith => __$GetContractDataResultCopyWithImpl<_GetContractDataResult>(this, _$identity);
 
-@override
-Map<String, dynamic> toJson() {
-  return _$GetContractDataResultToJson(this, );
-}
+
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetContractDataResult&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&const DeepCollectionEquality().equals(other._data, _data)&&(identical(other.previousTopoheight, previousTopoheight) || other.previousTopoheight == previousTopoheight));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetContractDataResult&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&(identical(other.data, data) || other.data == data)&&(identical(other.previousTopoheight, previousTopoheight) || other.previousTopoheight == previousTopoheight)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
-@JsonKey(includeFromJson: false, includeToJson: false)
+
 @override
-int get hashCode => Object.hash(runtimeType,topoheight,const DeepCollectionEquality().hash(_data),previousTopoheight);
+int get hashCode => Object.hash(runtimeType,topoheight,data,previousTopoheight,extraFields);
 
 @override
 String toString() {
-  return 'GetContractDataResult(topoheight: $topoheight, data: $data, previousTopoheight: $previousTopoheight)';
+  return 'GetContractDataResult(topoheight: $topoheight, data: $data, previousTopoheight: $previousTopoheight, extraFields: $extraFields)';
 }
 
 
@@ -257,11 +269,11 @@ abstract mixin class _$GetContractDataResultCopyWith<$Res> implements $GetContra
   factory _$GetContractDataResultCopyWith(_GetContractDataResult value, $Res Function(_GetContractDataResult) _then) = __$GetContractDataResultCopyWithImpl;
 @override @useResult
 $Res call({
-@JsonKey(name: 'topoheight') int topoheight,@JsonKey(name: 'data') Map<String, dynamic> data,@JsonKey(name: 'previous_topoheight') int previousTopoheight
+ BigInt topoheight, RpcValueCell? data, BigInt? previousTopoheight, RpcExtraFields extraFields
 });
 
 
-
+@override $RpcValueCellCopyWith<$Res>? get data;@override $RpcExtraFieldsCopyWith<$Res> get extraFields;
 
 }
 /// @nodoc
@@ -274,16 +286,38 @@ class __$GetContractDataResultCopyWithImpl<$Res>
 
 /// Create a copy of GetContractDataResult
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? topoheight = null,Object? data = null,Object? previousTopoheight = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? topoheight = null,Object? data = freezed,Object? previousTopoheight = freezed,Object? extraFields = null,}) {
   return _then(_GetContractDataResult(
 topoheight: null == topoheight ? _self.topoheight : topoheight // ignore: cast_nullable_to_non_nullable
-as int,data: null == data ? _self._data : data // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>,previousTopoheight: null == previousTopoheight ? _self.previousTopoheight : previousTopoheight // ignore: cast_nullable_to_non_nullable
-as int,
+as BigInt,data: freezed == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
+as RpcValueCell?,previousTopoheight: freezed == previousTopoheight ? _self.previousTopoheight : previousTopoheight // ignore: cast_nullable_to_non_nullable
+as BigInt?,extraFields: null == extraFields ? _self.extraFields : extraFields // ignore: cast_nullable_to_non_nullable
+as RpcExtraFields,
   ));
 }
 
+/// Create a copy of GetContractDataResult
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$RpcValueCellCopyWith<$Res>? get data {
+    if (_self.data == null) {
+    return null;
+  }
 
+  return $RpcValueCellCopyWith<$Res>(_self.data!, (value) {
+    return _then(_self.copyWith(data: value));
+  });
+}/// Create a copy of GetContractDataResult
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$RpcExtraFieldsCopyWith<$Res> get extraFields {
+  
+  return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
+    return _then(_self.copyWith(extraFields: value));
+  });
+}
 }
 
 // dart format on

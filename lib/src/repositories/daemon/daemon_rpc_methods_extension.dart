@@ -1,396 +1,432 @@
-import 'package:xelis_dart_sdk/xelis_dart_sdk.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/block/block.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/contract/data_element.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/contract/get_contract_logs_params.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/contract/rpc_contract_log.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/decrypt_extra_data/decrypt_extra_data_daemon_params.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/extract_key_from_address/extract_key_from_address_params.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/extract_key_from_address/extract_key_from_address_result.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/get_account_assets/get_account_assets_params.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/get_account_assets/get_account_assets_result.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/get_account_history/get_account_history_params.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/get_account_history/get_account_history_result.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/get_account_registration_topoheight/get_account_registration_topoheight_params.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/get_accounts/get_accounts_params.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/get_accounts/get_accounts_result.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/get_asset/get_asset_params.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/get_assets/get_assets_params.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/get_balance/get_balance_params.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/get_balance/get_balance_result.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/get_balance_at_topoheight/get_balance_at_topoheight_params.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/get_block_at_topoheight/get_block_at_topoheight_params.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/get_block_by_hash/get_block_by_hash_params.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/get_block_template/get_block_template_params.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/get_block_template/get_block_template_result.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/get_blocks_at_height/get_blocks_at_height_params.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/get_contract_data/get_contract_data_params.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/get_contract_data/get_contract_data_result.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/get_contract_module/get_contract_module_params.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/get_contract_module/get_contract_module_result.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/get_dev_fee_thresholds/dev_fee_thresholds.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/get_difficulty/get_difficulty_result.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/get_estimated_fee_rates/fee_rates_estimated.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/get_hard_forks/get_hard_forks_result.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/get_info/get_info_result.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/get_mempool/get_mempool_params.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/get_mempool/get_mempool_result.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/get_mempool/get_mempool_summary_result.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/get_mempool_cache/get_mempool_cache_params.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/get_mempool_cache/get_mempool_cache_result.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/get_miner_work/get_miner_work_params.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/get_miner_work/get_miner_work_result.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/get_multisig/get_multisig_params.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/get_multisig/get_multisig_result.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/get_multisig_at_topoheight/get_multisig_at_topoheight_params.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/get_multisig_at_topoheight/get_multisig_at_topoheight_result.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/get_nonce/get_nonce_params.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/get_nonce/get_nonce_result.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/get_nonce_at_topoheight/get_nonce_at_topoheight_params.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/get_nonce_at_topoheight/get_nonce_at_topoheight_result.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/get_peers/get_peers_result.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/get_peers/peer_entry.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/get_range/get_height_range_params.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/get_range/get_topoheight_range_params.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/get_size_on_disk/get_size_on_disk_result.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/get_stable_balance/get_stable_balance_result.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/get_top_block/get_top_block_params.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/get_transaction/get_transaction_params.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/get_transaction_executor/get_transaction_executor_result.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/get_transactions/get_transactions_params.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/has_balance/has_balance_params.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/has_balance/has_balance_result.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/has_multisig/has_multisig_params.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/has_multisig_at_topoheight/has_multisig_at_topoheight_params.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/has_nonce/has_nonce_params.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/has_nonce/has_nonce_result.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/is_account_registered/is_account_registered_params.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/is_tx_executed_in_block/is_tx_executed_in_block_params.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/make_integrated_address/make_integrated_address_params.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/p2p_status/p2p_status_result.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/shared/asset/rpc_asset_data.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/shared/balance/balance_version.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/shared/transaction/rpc_transaction.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/split_address/split_address_params.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/split_address/split_address_result.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/submit_block/submit_block_params.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/submit_transaction/submit_transaction_params.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/validate_address/validate_address_params.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/validate_address/validate_address_result.dart';
+import 'package:xelis_dart_sdk/src/repositories/daemon/daemon_constants.dart';
+import 'package:xelis_dart_sdk/src/repositories/rpc_client_repository.dart';
+import 'package:xelis_dart_sdk/src/utils/rpc_json.dart';
 
 /// Extension of [DaemonClient] that provides all the methods to query
 /// Xelis daemon.
 extension DaemonRpcMethodsExtension on DaemonClient {
   /// Returns current daemon version.
-  Future<String> getVersion() async {
-    final result = await sendRequest(DaemonMethod.getVersion);
-    return result as String;
-  }
+  Future<String> getVersion() => sendRequestAndDecode(
+    DaemonMethod.getVersion,
+    (result) => result! as String,
+  );
 
   /// Returns current information from chain.
-  Future<GetInfoResult> getInfo() async {
-    final result = await sendRequest(DaemonMethod.getInfo);
-    return GetInfoResult.fromJson(result as Map<String, dynamic>);
-  }
+  Future<GetInfoResult> getInfo() => sendRequestAndDecode(
+    DaemonMethod.getInfo,
+    (result) => GetInfoResult.fromJson(rpcJsonMap(result)),
+  );
 
   /// Returns current height  of the chain.
-  Future<int> getHeight() async {
-    final result = await sendRequest(DaemonMethod.getHeight);
-    return result as int;
-  }
+  Future<BigInt> getHeight() => sendRequestAndDecode(
+    DaemonMethod.getHeight,
+    rpcBigInt,
+  );
 
   /// Returns current topological height of the chain.
-  Future<int> getTopoHeight() async {
-    final result = await sendRequest(DaemonMethod.getTopoHeight);
-    return result as int;
-  }
+  Future<BigInt> getTopoheight() => sendRequestAndDecode(
+    DaemonMethod.getTopoheight,
+    rpcBigInt,
+  );
 
   /// Returns the stable height of the chain.
-  Future<int> getStableHeight() async {
-    final result = await sendRequest(DaemonMethod.getStableHeight);
-    return result as int;
-  }
+  Future<BigInt> getStableHeight() => sendRequestAndDecode(
+    DaemonMethod.getStableHeight,
+    rpcBigInt,
+  );
 
   /// Returns the stable topological height of the chain.
-  Future<int> getStableTopoHeight() async {
-    final result = await sendRequest(DaemonMethod.getStableTopoheight);
-    return result as int;
-  }
+  Future<BigInt> getStableTopoheight() => sendRequestAndDecode(
+    DaemonMethod.getStableTopoheight,
+    rpcBigInt,
+  );
 
   /// Returns the block template for PoW work.
   Future<GetBlockTemplateResult> getBlockTemplate(
     GetBlockTemplateParams getBlockTemplateParams,
-  ) async {
-    final result = await sendRequest(
-      DaemonMethod.getBlockTemplate,
-      getBlockTemplateParams.toJson(),
-    );
-    return GetBlockTemplateResult.fromJson(result as Map<String, dynamic>);
-  }
+  ) => sendRequestAndDecode(
+    DaemonMethod.getBlockTemplate,
+    (result) => GetBlockTemplateResult.fromJson(rpcJsonMap(result)),
+    getBlockTemplateParams.toJson(),
+  );
 
   /// Returns a block at a specific topo height.
-  Future<Block> getBlockAtTopoHeight(
-    GetBlockAtTopoHeightParams getBlockAtTopoHeightParams,
-  ) async {
-    final result = await sendRequest(
-      DaemonMethod.getBlockAtTopoHeight,
-      getBlockAtTopoHeightParams.toJson(),
-    );
-    return Block.fromJson(result as Map<String, dynamic>);
-  }
+  Future<Block> getBlockAtTopoheight(
+    GetBlockAtTopoheightParams getBlockAtTopoheightParams,
+  ) => sendRequestAndDecode(
+    DaemonMethod.getBlockAtTopoheight,
+    (result) => Block.fromJson(rpcJsonMap(result)),
+    getBlockAtTopoheightParams.toJson(),
+  );
 
   /// Returns all blocks at a specific height.
   Future<List<Block>> getBlocksAtHeight(
     GetBlocksAtHeightParams getBlocksAtHeightParams,
-  ) async {
-    final result = await sendRequest(
-      DaemonMethod.getBlocksAtHeight,
-      getBlocksAtHeightParams.toJson(),
-    );
-    return (result as List)
-        .map((e) => Block.fromJson(e as Map<String, dynamic>))
-        .toList();
-  }
+  ) => sendRequestAndDecode(
+    DaemonMethod.getBlocksAtHeight,
+    (result) => (result! as List)
+        .map((value) => Block.fromJson(rpcJsonMap(value)))
+        .toList(),
+    getBlocksAtHeightParams.toJson(),
+  );
 
   /// Return a block by its hash.
   Future<Block> getBlockByHash(
     GetBlockByHashParams getBlockByHashParams,
-  ) async {
-    final result = await sendRequest(
-      DaemonMethod.getBlockByHash,
-      getBlockByHashParams.toJson(),
-    );
-    return Block.fromJson(result as Map<String, dynamic>);
-  }
+  ) => sendRequestAndDecode(
+    DaemonMethod.getBlockByHash,
+    (result) => Block.fromJson(rpcJsonMap(result)),
+    getBlockByHashParams.toJson(),
+  );
 
   /// Returns the highest block based on the topological height.
   Future<Block> getTopBlock([
     GetTopBlockParams? getTopBlockParams,
-  ]) async {
-    final result = await sendRequest(
-      DaemonMethod.getTopBlock,
-      getTopBlockParams?.toJson() ?? const GetTopBlockParams().toJson(),
-    );
-    return Block.fromJson(result as Map<String, dynamic>);
-  }
+  ]) => sendRequestAndDecode(
+    DaemonMethod.getTopBlock,
+    (result) => Block.fromJson(rpcJsonMap(result)),
+    getTopBlockParams?.toJson() ?? const GetTopBlockParams().toJson(),
+  );
 
   /// Returns the nonce for address in request params.
   ///
   /// If no nonce is found for this address and its valid, value start at 0.
   /// Each nonce represents how many TX has been made by this address.
-  Future<GetNonceResult> getNonce(GetNonceParams getNonceParams) async {
-    final result = await sendRequest(
-      DaemonMethod.getNonce,
-      getNonceParams.toJson(),
-    );
-    return GetNonceResult.fromJson(result as Map<String, dynamic>);
-  }
+  Future<GetNonceResult> getNonce(GetNonceParams getNonceParams) =>
+      sendRequestAndDecode(
+        DaemonMethod.getNonce,
+        (result) => GetNonceResult.fromJson(rpcJsonMap(result)),
+        {'address': getNonceParams.address},
+      );
 
   /// Get nonce from address at exact topoheight.
-  Future<GetNonceAtTopoHeightResult> getNonceAtTopoHeight(
-    GetNonceAtTopoHeightParams getNonceAtTopoHeightParams,
-  ) async {
-    final result = await sendRequest(
-      DaemonMethod.getNonceAtTopoheight,
-      getNonceAtTopoHeightParams.toJson(),
-    );
-    return GetNonceAtTopoHeightResult.fromJson(result as Map<String, dynamic>);
-  }
+  Future<GetNonceAtTopoheightResult> getNonceAtTopoheight(
+    GetNonceAtTopoheightParams getNonceAtTopoheightParams,
+  ) => sendRequestAndDecode(
+    DaemonMethod.getNonceAtTopoheight,
+    (result) => GetNonceAtTopoheightResult.fromJson(rpcJsonMap(result)),
+    getNonceAtTopoheightParams.toJson(),
+  );
 
   /// Verify if address has a balance on-chain registered for requested asset.
-  Future<HasBalanceResult> hasBalance(HasBalanceParams hasBalanceParams) async {
-    final result = await sendRequest(
-      DaemonMethod.hasBalance,
-      hasBalanceParams.toJson(),
-    );
-    return HasBalanceResult.fromJson(result as Map<String, dynamic>);
-  }
+  Future<HasBalanceResult> hasBalance(HasBalanceParams hasBalanceParams) =>
+      sendRequestAndDecode(
+        DaemonMethod.hasBalance,
+        (result) => HasBalanceResult.fromJson(rpcJsonMap(result)),
+        hasBalanceParams.toJson(),
+      );
 
   /// Returns up-to-date asset's balance for a specific address.
   ///
   /// NOTE: Balance is returned in atomic units.
   Future<GetBalanceResult> getBalance(
     GetBalanceParams getBalanceParams,
-  ) async {
-    final result = await sendRequest(
-      DaemonMethod.getBalance,
-      getBalanceParams.toJson(),
-    );
-    return GetBalanceResult.fromJson(result as Map<String, dynamic>);
-  }
+  ) => sendRequestAndDecode(
+    DaemonMethod.getBalance,
+    (result) => GetBalanceResult.fromJson(rpcJsonMap(result)),
+    getBalanceParams.toJson(),
+  );
 
   /// Get up-to-date asset's balance for a specific address.
   ///
   /// https://github.com/xelis-project/xelis-blockchain/blob/dev/API.md#method-get_stable_balance
   Future<GetStableBalanceResult> getStableBalance(
     GetBalanceParams getBalanceParams,
-  ) async {
-    final result = await sendRequest(
-      DaemonMethod.getStableBalance,
-      getBalanceParams.toJson(),
-    );
-    return GetStableBalanceResult.fromJson(result as Map<String, dynamic>);
-  }
+  ) => sendRequestAndDecode(
+    DaemonMethod.getStableBalance,
+    (result) => GetStableBalanceResult.fromJson(rpcJsonMap(result)),
+    getBalanceParams.toJson(),
+  );
 
   /// Returns asset's balance from address at exact topo height.
   ///
   /// NOTE: Balance is returned in atomic units
-  Future<BalanceVersion> getBalanceAtTopoHeight(
-    GetBalanceAtTopoHeightParams getBalanceAtTopoHeightParams,
-  ) async {
-    final result = await sendRequest(
-      DaemonMethod.getBalanceAtTopoHeight,
-      getBalanceAtTopoHeightParams.toJson(),
-    );
-    return BalanceVersion.fromJson(result as Map<String, dynamic>);
-  }
+  Future<BalanceVersion> getBalanceAtTopoheight(
+    GetBalanceAtTopoheightParams getBalanceAtTopoheightParams,
+  ) => sendRequestAndDecode(
+    DaemonMethod.getBalanceAtTopoheight,
+    (result) => BalanceVersion.fromJson(rpcJsonMap(result)),
+    getBalanceAtTopoheightParams.toJson(),
+  );
 
   /// Get registered topoheight and decimals data from a specific asset.
-  Future<RPCAssetData> getAsset(GetAssetParams getAssetParams) async {
-    final result = await sendRequest(
-      DaemonMethod.getAsset,
-      getAssetParams.toJson(),
-    );
-    return RPCAssetData.fromJson(result as Map<String, dynamic>);
-  }
+  Future<RpcAssetData> getAsset(GetAssetParams getAssetParams) =>
+      sendRequestAndDecode(
+        DaemonMethod.getAsset,
+        (result) => RpcAssetData.fromJson(rpcJsonMap(result)),
+        getAssetParams.toJson(),
+      );
 
   /// Get all assets available on network with its registered topoheight.
-  Future<List<RPCAssetData>> getAssets([
+  Future<List<RpcAssetData>> getAssets([
     GetAssetsParams? getAssetsParams,
-  ]) async {
-    final result = await sendRequest(
-      DaemonMethod.getAssets,
-      getAssetsParams?.toJson() ?? const GetAssetsParams().toJson(),
-    );
-    return (result as List)
-        .map((e) => RPCAssetData.fromJson(e as Map<String, dynamic>))
-        .toList();
-  }
+  ]) => sendRequestAndDecode(
+    DaemonMethod.getAssets,
+    (result) => (result! as List)
+        .map((value) => RpcAssetData.fromJson(rpcJsonMap(value)))
+        .toList(),
+    getAssetsParams?.toJson() ?? const GetAssetsParams().toJson(),
+  );
 
   /// Returns the number of transactions saved on node disk.
-  Future<int> countTransactions() async {
-    final result = await sendRequest(DaemonMethod.countTransactions);
-    return result as int;
-  }
+  Future<int> countTransactions() => sendRequestAndDecode(
+    DaemonMethod.countTransactions,
+    (result) => result! as int,
+  );
 
   /// Counts the number of assets saved on disk.
-  Future<int> countAssets() async {
-    final result = await sendRequest(DaemonMethod.countAssets);
-    return result as int;
-  }
+  Future<int> countAssets() => sendRequestAndDecode(
+    DaemonMethod.countAssets,
+    (result) => result! as int,
+  );
 
   /// Returns Tips (highest blocks from blockDAG) from chain.
-  Future<List<String>> getTips() async {
-    final result = await sendRequest(DaemonMethod.getTips);
-    return (result as List).map((e) => e as String).toList();
-  }
+  Future<List<String>> getTips() => sendRequestAndDecode(
+    DaemonMethod.getTips,
+    (result) => (result! as List).cast<String>(),
+  );
 
   /// Returns information about P2P.
-  Future<P2pStatusResult> p2pStatus() async {
-    final result = await sendRequest(DaemonMethod.p2pStatus);
-    return P2pStatusResult.fromJson(result as Map<String, dynamic>);
-  }
+  Future<P2pStatusResult> p2pStatus() => sendRequestAndDecode(
+    DaemonMethod.p2pStatus,
+    (result) => P2pStatusResult.fromJson(rpcJsonMap(result)),
+  );
 
   /// Returns the whole DAG order (all blocks hash ordered by topo height).
   ///
   /// If no parameters are set, it will retrieve the last 64 blocks
   /// hash ordered descending. Maximum of 64 blocks hash only per request.
   Future<List<String>> getDagOrder(
-    GetTopoHeightRangeParams getTopoHeightRangeParams,
-  ) async {
-    final result = await sendRequest(
-      DaemonMethod.getDagOrder,
-      getTopoHeightRangeParams.toJson(),
-    );
-    return (result as List).map((e) => e as String).toList();
-  }
+    GetTopoheightRangeParams getTopoheightRangeParams,
+  ) => sendRequestAndDecode(
+    DaemonMethod.getDagOrder,
+    (result) => (result! as List).cast<String>(),
+    getTopoheightRangeParams.toJson(),
+  );
 
   /// Submit a transaction in hex format to daemon mempool.
   Future<bool> submitTransaction(
     SubmitTransactionParams submitTransactionParams,
-  ) async {
-    final result = await sendRequest(
-      DaemonMethod.submitTransaction,
-      submitTransactionParams.toJson(),
-    );
-    return result as bool;
-  }
+  ) => sendRequestAndDecode(
+    DaemonMethod.submitTransaction,
+    (result) => result! as bool,
+    submitTransactionParams.toJson(),
+  );
 
   /// Fetch a transaction by its hash from daemon.
   ///
   /// NOTE: result returned in data field can changes based on
   /// the TransactionType (transfer, burn, Smart Contract call, Deploy Code...).
-  Future<TransactionResponse> getTransaction(
+  Future<RpcTransaction> getTransaction(
     GetTransactionParams getTransactionParams,
-  ) async {
-    final result = await sendRequest(
-      DaemonMethod.getTransaction,
-      getTransactionParams.toJson(),
-    );
-    return TransactionResponse.fromJson(result as Map<String, dynamic>);
-  }
+  ) => sendRequestAndDecode(
+    DaemonMethod.getTransaction,
+    (result) => RpcTransaction.fromJson(rpcJsonMap(result)),
+    getTransactionParams.toJson(),
+  );
 
-  /// TODO: Add documentation
+  /// Retrieve the block that executed the requested transaction.
   Future<GetTransactionExecutorResult> getTransactionExecutor(
     GetTransactionParams getTransactionParams,
-  ) async {
-    final result = await sendRequest(
-      DaemonMethod.getTransactionExecutor,
-      getTransactionParams.toJson(),
-    );
-    return GetTransactionExecutorResult.fromJson(
-      result as Map<String, dynamic>,
-    );
-  }
+  ) => sendRequestAndDecode(
+    DaemonMethod.getTransactionExecutor,
+    (result) => GetTransactionExecutorResult.fromJson(rpcJsonMap(result)),
+    getTransactionParams.toJson(),
+  );
 
   /// Fetch all transactions presents in the mempool.
   Future<GetMempoolResult> getMempool(
     GetMempoolParams getMempoolParams,
-  ) async {
-    final result = await sendRequest(
-      DaemonMethod.getMempool,
-      getMempoolParams.toJson(),
-    );
-    return GetMempoolResult.fromJson(result as Map<String, dynamic>);
-  }
+  ) => sendRequestAndDecode(
+    DaemonMethod.getMempool,
+    (result) => GetMempoolResult.fromJson(rpcJsonMap(result)),
+    getMempoolParams.toJson(),
+  );
 
   /// Fetch transactions summary presents in the mempool.
   Future<GetMempoolSummaryResult> getMempoolSummary(
     GetMempoolParams getMempoolParams,
-  ) async {
-    final result = await sendRequest(
-      DaemonMethod.getMempoolSummary,
-      getMempoolParams.toJson(),
-    );
-    return GetMempoolSummaryResult.fromJson(
-      result as Map<String, dynamic>,
-    );
-  }
+  ) => sendRequestAndDecode(
+    DaemonMethod.getMempoolSummary,
+    (result) => GetMempoolSummaryResult.fromJson(rpcJsonMap(result)),
+    getMempoolParams.toJson(),
+  );
 
   /// Fetch transactions by theirs hashes from daemon and keep
   /// the same order in response.
-  Future<List<TransactionResponse>> getTransactions(
+  Future<List<RpcTransaction?>> getTransactions(
     GetTransactionsParams getTransactionsParams,
-  ) async {
-    final result = await sendRequest(
-      DaemonMethod.getTransactions,
-      getTransactionsParams.toJson(),
-    );
-    return (result as List)
-        .map((e) => TransactionResponse.fromJson(e as Map<String, dynamic>))
-        .toList();
-  }
+  ) => sendRequestAndDecode(
+    DaemonMethod.getTransactions,
+    (result) => (result! as List)
+        .map(
+          (value) =>
+              value == null ? null : RpcTransaction.fromJson(rpcJsonMap(value)),
+        )
+        .toList(growable: false),
+    getTransactionsParams.toJson(),
+  );
 
   /// Submit a block to the daemon.
   Future<bool> submitBlock(
     SubmitBlockParams submitBlockParams,
-  ) async {
-    final result = await sendRequest(
-      DaemonMethod.submitBlock,
-      submitBlockParams.toJson(),
-    );
-    return result as bool;
-  }
+  ) => sendRequestAndDecode(
+    DaemonMethod.submitBlock,
+    (result) => result! as bool,
+    submitBlockParams.toJson(),
+  );
 
   /// Returns a specific range of blocks (up to 20 maximum)
   /// based on topo height.
-  Future<List<Block>> getBlocksRangeByTopoHeight(
-    GetTopoHeightRangeParams getTopoHeightRangeParams,
-  ) async {
-    final result = await sendRequest(
-      DaemonMethod.getBlocksRangeByTopoHeight,
-      getTopoHeightRangeParams.toJson(),
-    );
-    return (result as List)
-        .map((e) => Block.fromJson(e as Map<String, dynamic>))
-        .toList();
-  }
+  Future<List<Block>> getBlocksRangeByTopoheight(
+    GetTopoheightRangeParams getTopoheightRangeParams,
+  ) => sendRequestAndDecode(
+    DaemonMethod.getBlocksRangeByTopoheight,
+    (result) => (result! as List)
+        .map((value) => Block.fromJson(rpcJsonMap(value)))
+        .toList(),
+    getTopoheightRangeParams.toJson(),
+  );
 
   /// Returns a specific range of blocks (up to 20 maximum)
   /// based on height.
   Future<List<Block>> getBlocksRangeByHeight(
     GetHeightRangeParams getHeightRangeParams,
-  ) async {
-    final result = await sendRequest(
-      DaemonMethod.getBlocksRangeByHeight,
-      getHeightRangeParams.toJson(),
-    );
-    return (result as List)
-        .map((e) => Block.fromJson(e as Map<String, dynamic>))
-        .toList();
-  }
+  ) => sendRequestAndDecode(
+    DaemonMethod.getBlocksRangeByHeight,
+    (result) => (result! as List)
+        .map((value) => Block.fromJson(rpcJsonMap(value)))
+        .toList(),
+    getHeightRangeParams.toJson(),
+  );
 
   /// Retrieve all available accounts
   /// (each account got at least one interaction on chain).
   Future<GetAccountsResult> getAccounts([
     GetAccountsParams? getAccountsParams,
-  ]) async {
-    final result = await sendRequest(
-      DaemonMethod.getAccounts,
-      getAccountsParams?.toJson() ?? const GetAccountsParams().toJson(),
-    );
-    return GetAccountsResult(
-      publicKeys: (result as List).map((e) => e as String).toList(),
-    );
-  }
+  ]) => sendRequestAndDecode(
+    DaemonMethod.getAccounts,
+    (result) => GetAccountsResult(publicKeys: (result! as List).cast()),
+    getAccountsParams?.toJson() ?? const GetAccountsParams().toJson(),
+  );
 
   /// Counts the number of accounts saved on disk
-  Future<int> countAccounts() async {
-    final result = await sendRequest(DaemonMethod.countAccounts);
-    return result as int;
-  }
+  Future<int> countAccounts() => sendRequestAndDecode(
+    DaemonMethod.countAccounts,
+    (result) => result! as int,
+  );
 
   /// Retrieve all peers connected
-  Future<GetPeersResult> getPeers() async {
-    final result = await sendRequest(DaemonMethod.getPeers);
-    return GetPeersResult.fromJson(result as Map<String, dynamic>);
-  }
+  Future<GetPeersResult> getPeers() => sendRequestAndDecode(
+    DaemonMethod.getPeers,
+    (result) {
+      final peers = (result! as List)
+          .map((value) => PeerEntry.fromJson(rpcJsonMap(value)))
+          .toList(growable: false);
+      return GetPeersResult(
+        peers: peers,
+        totalPeers: BigInt.from(peers.length),
+        hiddenPeers: BigInt.zero,
+      );
+    },
+  );
 
-  /// Fetch up to 20 history events for an account on a specific asset
-  Future<GetAccountHistoryResult> getAccountHistory(
+  /// Fetch history events for an account.
+  Future<List<GetAccountHistoryResult>> getAccountHistory(
     GetAccountHistoryParams getAccountHistoryParams,
-  ) async {
-    final result = await sendRequest(
-      DaemonMethod.getAccountHistory,
-      getAccountHistoryParams.toJson(),
-    );
-    return GetAccountHistoryResult.fromJson(result as Map<String, dynamic>);
-  }
+  ) => sendRequestAndDecode(
+    DaemonMethod.getAccountHistory,
+    (result) => (result! as List)
+        .map((value) => GetAccountHistoryResult.fromJson(rpcJsonMap(value)))
+        .toList(growable: false),
+    getAccountHistoryParams.toJson(),
+  );
 
   /// Retrieve all assets for an account
   Future<GetAccountAssetsResult> getAccountAssets(
     GetAccountAssetsParams getAccountAssetsParams,
-  ) async {
-    final result = await sendRequest(
-      DaemonMethod.getAccountAssets,
-      getAccountAssetsParams.toJson(),
-    );
-    return GetAccountAssetsResult(
-      assets: (result as List).map((e) => e as String).toList(),
-    );
-  }
+  ) => sendRequestAndDecode(
+    DaemonMethod.getAccountAssets,
+    GetAccountAssetsResult.fromJson,
+    getAccountAssetsParams.toJson(),
+  );
 
   /// Verify if the account on chain is registered.
   /// This is useful to determine if we should pay additionnal fee or not.
@@ -399,250 +435,223 @@ extension DaemonRpcMethodsExtension on DaemonClient {
   /// that the account is already registered in stable height.
   Future<bool> isAccountRegistered(
     IsAccountRegisteredParams isAccountRegisteredParams,
-  ) async {
-    final result = await sendRequest(
-      DaemonMethod.isAccountRegistered,
-      isAccountRegisteredParams.toJson(),
-    );
-    return result as bool;
-  }
+  ) => sendRequestAndDecode(
+    DaemonMethod.isAccountRegistered,
+    (result) => result! as bool,
+    isAccountRegisteredParams.toJson(),
+  );
 
   /// Retrieve the account registration topoheight.
   ///
   /// This is like its "first time" doing an action on the chain.
-  Future<int> getAccountRegistrationTopoheight(
+  Future<BigInt> getAccountRegistrationTopoheight(
     GetAccountRegistrationTopoheightParams
     getAccountRegistrationTopoheightParams,
-  ) async {
-    final result = await sendRequest(
-      DaemonMethod.getAccountRegistrationTopoheight,
-      getAccountRegistrationTopoheightParams.toJson(),
-    );
-    return result as int;
-  }
+  ) => sendRequestAndDecode(
+    DaemonMethod.getAccountRegistrationTopoheight,
+    rpcBigInt,
+    getAccountRegistrationTopoheightParams.toJson(),
+  );
 
   /// Verify if address has a nonce on-chain registered
-  Future<HasNonceResult> hasNonce(HasNonceParams hasNonceParams) async {
-    final result = await sendRequest(
-      DaemonMethod.hasNonce,
-      hasNonceParams.toJson(),
-    );
-    return HasNonceResult.fromJson(result as Map<String, dynamic>);
-  }
+  Future<HasNonceResult> hasNonce(HasNonceParams hasNonceParams) =>
+      sendRequestAndDecode(
+        DaemonMethod.hasNonce,
+        (result) => HasNonceResult.fromJson(rpcJsonMap(result)),
+        hasNonceParams.toJson(),
+      );
 
   /// Check if the asked TX is executed in the block
   Future<bool> isTxExecutedInBlock(
     IsTxExecutedInBlockParams isTxExecutedInBlockParams,
-  ) async {
-    final result = await sendRequest(
-      DaemonMethod.isTxExecutedInBlock,
-      isTxExecutedInBlockParams.toJson(),
-    );
-    return result as bool;
-  }
+  ) => sendRequestAndDecode(
+    DaemonMethod.isTxExecutedInBlock,
+    (result) => result! as bool,
+    isTxExecutedInBlockParams.toJson(),
+  );
 
   /// Retrieve configured dev fees thresholds
-  Future<List<DevFeeThresholds>> getDevFeeThresholds() async {
-    final result = await sendRequest(DaemonMethod.getDevFeeThresholds);
-    return (result as List)
-        .map((e) => DevFeeThresholds.fromJson(e as Map<String, dynamic>))
-        .toList();
-  }
+  Future<List<DevFeeThresholds>> getDevFeeThresholds() => sendRequestAndDecode(
+    DaemonMethod.getDevFeeThresholds,
+    (result) => (result! as List)
+        .map((value) => DevFeeThresholds.fromJson(rpcJsonMap(value)))
+        .toList(),
+  );
 
   /// Get size of the blockchain on disk
-  Future<GetSizeOnDiskResult> getSizeOnDisk() async {
-    final result = await sendRequest(DaemonMethod.getSizeOnDisk);
-    return GetSizeOnDiskResult.fromJson(result as Map<String, dynamic>);
-  }
+  Future<GetSizeOnDiskResult> getSizeOnDisk() => sendRequestAndDecode(
+    DaemonMethod.getSizeOnDisk,
+    (result) => GetSizeOnDiskResult.fromJson(rpcJsonMap(result)),
+  );
 
   /// Retrieve the stored mempool cache for a requested address.
   ///
   /// This includes nonce range (min/max) used, final output balances expected per asset used, and all transactions hashes related to this account.
   Future<GetMempoolCacheResult> getMempoolCache(
     GetMempoolCacheParams getMempoolCacheParams,
-  ) async {
-    final result = await sendRequest(
-      DaemonMethod.getMempoolCache,
-      getMempoolCacheParams.toJson(),
-    );
-    return GetMempoolCacheResult.fromJson(result as Map<String, dynamic>);
-  }
+  ) => sendRequestAndDecode(
+    DaemonMethod.getMempoolCache,
+    (result) => GetMempoolCacheResult.fromJson(rpcJsonMap(result)),
+    getMempoolCacheParams.toJson(),
+  );
 
   /// Validate an address
   Future<ValidateAddressResult> validateAddress(
     ValidateAddressParams validateAddressParams,
-  ) async {
-    final result = await sendRequest(
-      DaemonMethod.validateAddress,
-      validateAddressParams.toJson(),
-    );
-    return ValidateAddressResult.fromJson(result as Map<String, dynamic>);
-  }
+  ) => sendRequestAndDecode(
+    DaemonMethod.validateAddress,
+    (result) => ValidateAddressResult.fromJson(rpcJsonMap(result)),
+    {
+      'address': validateAddressParams.address,
+      'allow_integrated': validateAddressParams.allowIntegrated,
+      'max_integrated_data_size': int.parse(
+        validateAddressParams.maxIntegratedDataSize,
+      ),
+    },
+  );
 
   /// Returns the current difficulty and associated network hashrate.
-  Future<GetDifficultyResult> getDifficulty() async {
-    final result = await sendRequest(DaemonMethod.getDifficulty);
-    return GetDifficultyResult.fromJson(result as Map<String, dynamic>);
-  }
+  Future<GetDifficultyResult> getDifficulty() => sendRequestAndDecode(
+    DaemonMethod.getDifficulty,
+    (result) => GetDifficultyResult.fromJson(rpcJsonMap(result)),
+  );
 
   /// Splits address and integrated data into two different fields.
   Future<SplitAddressResult> splitAddress(
     SplitAddressParams splitAddressParams,
-  ) async {
-    final result = await sendRequest(
-      DaemonMethod.splitAddress,
-      splitAddressParams.toJson(),
-    );
-    return SplitAddressResult.fromJson(result as Map<String, dynamic>);
-  }
+  ) => sendRequestAndDecode(
+    DaemonMethod.splitAddress,
+    (result) => SplitAddressResult.fromJson(rpcJsonMap(result)),
+    splitAddressParams.toJson(),
+  );
 
   /// Extract key from address
   Future<ExtractKeyFromAddressResult> extractKeyFromAddress(
     ExtractKeyFromAddressParams extractKeyFromAddressParams,
-  ) async {
-    final result = await sendRequest(
-      DaemonMethod.extractKeyFromAddress,
-      extractKeyFromAddressParams.toJson(),
-    );
-    return ExtractKeyFromAddressResult.fromJson(result as Map<String, dynamic>);
-  }
+  ) => sendRequestAndDecode(
+    DaemonMethod.extractKeyFromAddress,
+    ExtractKeyFromAddressResult.fromJson,
+    extractKeyFromAddressParams.toJson(),
+  );
 
   /// Get miner Work
   Future<GetMinerWorkResult> getMinerWork(
     GetMinerWorkParams getMinerWorkParams,
-  ) async {
-    final result = await sendRequest(
-      DaemonMethod.getMinerWork,
-      getMinerWorkParams.toJson(),
-    );
-    return GetMinerWorkResult.fromJson(result as Map<String, dynamic>);
-  }
+  ) => sendRequestAndDecode(
+    DaemonMethod.getMinerWork,
+    (result) => GetMinerWorkResult.fromJson(rpcJsonMap(result)),
+    getMinerWorkParams.toJson(),
+  );
 
   /// Get hard forks
-  Future<List<GetHardForksResult>> getHardForks() async {
-    final result = await sendRequest(DaemonMethod.getHardForks);
-    return (result as List)
-        .map((e) => GetHardForksResult.fromJson(e as Map<String, dynamic>))
-        .toList();
-  }
+  Future<List<GetHardForksResult>> getHardForks() => sendRequestAndDecode(
+    DaemonMethod.getHardForks,
+    (result) => (result! as List)
+        .map((value) => GetHardForksResult.fromJson(rpcJsonMap(value)))
+        .toList(),
+  );
 
   /// Create an integrated address using a wallet address and data to include.
   Future<String> makeIntegratedAddress(
     MakeIntegratedAddressParams makeIntegratedAddressParams,
-  ) async {
-    final result = await sendRequest(
-      DaemonMethod.makeIntegratedAddress,
-      makeIntegratedAddressParams.toJson(),
-    );
-    return result as String;
-  }
+  ) => sendRequestAndDecode(
+    DaemonMethod.makeIntegratedAddress,
+    (result) => result! as String,
+    makeIntegratedAddressParams.toJson(),
+  );
 
   /// Decrypt extra data from a transaction.
-  Future<dynamic> decryptExtraData(
+  Future<DataElement> decryptExtraData(
     DecryptExtraDataDaemonParams decryptExtraDataParams,
-  ) async {
-    return sendRequest(
-      DaemonMethod.decryptExtraData,
-      decryptExtraDataParams.toJson(),
-    );
-  }
+  ) => sendRequestAndDecode(
+    DaemonMethod.decryptExtraData,
+    DataElement.fromJson,
+    decryptExtraDataParams.toJson(),
+  );
 
   /// Retrieve the latest multisig information for a specific address.
   Future<GetMultisigResult> getMultisig(
     GetMultisigParams getMultisigParams,
-  ) async {
-    final result = await sendRequest(
-      DaemonMethod.getMultisig,
-      getMultisigParams.toJson(),
-    );
-    return GetMultisigResult.fromJson(result as Map<String, dynamic>);
-  }
+  ) => sendRequestAndDecode(
+    DaemonMethod.getMultisig,
+    (result) => GetMultisigResult.fromJson(rpcJsonMap(result)),
+    getMultisigParams.toJson(),
+  );
 
-  /// Retrieve the latest multisig information for a specific address at a specific topoheight.
+  /// Retrieve the latest multisig information for a specific address at a
+  /// specific topoheight.
   Future<GetMultisigAtTopoheightResult> getMultisigAtTopoheight(
     GetMultisigAtTopoheightParams getMultisigAtTopoheightParams,
-  ) async {
-    final result = await sendRequest(
-      DaemonMethod.getMultisigAtTopoheight,
-      getMultisigAtTopoheightParams.toJson(),
-    );
-    return GetMultisigAtTopoheightResult.fromJson(
-      result as Map<String, dynamic>,
-    );
-  }
+  ) => sendRequestAndDecode(
+    DaemonMethod.getMultisigAtTopoheight,
+    (result) => GetMultisigAtTopoheightResult.fromJson(rpcJsonMap(result)),
+    getMultisigAtTopoheightParams.toJson(),
+  );
 
   /// Verify if the address has a multisig setup.
-  Future<bool> hasMultisig(HasMultisigParams hasMultisigParams) async {
-    final result = await sendRequest(
-      DaemonMethod.hasMultisig,
-      hasMultisigParams.toJson(),
-    );
-    return result as bool;
-  }
+  Future<bool> hasMultisig(HasMultisigParams hasMultisigParams) =>
+      sendRequestAndDecode(
+        DaemonMethod.hasMultisig,
+        (result) => result! as bool,
+        hasMultisigParams.toJson(),
+      );
 
   /// Verify if the address has a multisig setup at a specific topoheight.
   Future<bool> hasMultisigAtTopoheight(
     HasMultisigAtTopoheightParams hasMultisigAtTopoheightParams,
-  ) async {
-    final result = await sendRequest(
-      DaemonMethod.hasMultisigAtTopoheight,
-      hasMultisigAtTopoheightParams.toJson(),
-    );
-    return result as bool;
-  }
+  ) => sendRequestAndDecode(
+    DaemonMethod.hasMultisigAtTopoheight,
+    (result) => result! as bool,
+    hasMultisigAtTopoheightParams.toJson(),
+  );
 
   /// Retrieve the number of contracts saved on disk.
-  Future<int> countContracts() async {
-    final result = await sendRequest(DaemonMethod.countContracts);
-    return result as int;
-  }
+  Future<int> countContracts() => sendRequestAndDecode(
+    DaemonMethod.countContracts,
+    (result) => result! as int,
+  );
 
   /// Get estimated fee rates.
-  Future<FeeRatesEstimated> getEstimatedFeeRates() async {
-    final result = await sendRequest(DaemonMethod.getEstimatedFeeRates);
-    return FeeRatesEstimated.fromJson(result as Map<String, dynamic>);
-  }
+  Future<FeeRatesEstimated> getEstimatedFeeRates() => sendRequestAndDecode(
+    DaemonMethod.getEstimatedFeeRates,
+    (result) => FeeRatesEstimated.fromJson(rpcJsonMap(result)),
+  );
 
-  /// Retrieve the contract outputs that have occurred in the requested transaction hash.
-  Future<List<Map<String, dynamic>>> getContractLogs(
-    GetContractOutputsParams params,
-  ) async {
-    final result = await sendRequest(
-      DaemonMethod.getContractLogs,
-      params.toJson(),
-    );
+  /// Retrieve the contract outputs that have occurred in the requested
+  /// transaction hash.
+  Future<List<RpcContractLog>> getContractLogs(
+    GetContractLogsParams params,
+  ) => sendRequestAndDecode(
+    DaemonMethod.getContractLogs,
+    (result) => (result! as List)
+        .map((value) => RpcContractLog.fromJson(rpcJsonMap(value)))
+        .toList(growable: false),
+    params.toJson(),
+  );
 
-    return (result as List).map((e) => e as Map<String, dynamic>).toList();
-  }
-
-  @Deprecated('Use getContractLogs instead')
-  Future<List<Map<String, dynamic>>> getContractOutputs(
-    GetContractOutputsParams getContractOutputsParams,
-  ) async {
-    return getContractLogs(getContractOutputsParams);
-  }
-
-  /// TODO: Add documentation
-  Future<Map<String, dynamic>> getContractModule(
+  /// Retrieves a versioned compiled contract module.
+  Future<GetContractModuleResult> getContractModule(
     GetContractModuleParams getContractModuleParams,
-  ) async {
-    final result = await sendRequest(
-      DaemonMethod.getContractModule,
-      getContractModuleParams.toJson(),
-    );
-
-    return result as Map<String, dynamic>;
-  }
+  ) => sendRequestAndDecode(
+    DaemonMethod.getContractModule,
+    (result) => GetContractModuleResult.fromJson(rpcJsonMap(result)),
+    getContractModuleParams.toJson(),
+  );
 
   /// Retrieve the contract data with the requested key.
   Future<GetContractDataResult> getContractData(
     GetContractDataParams getContractDataParams,
-  ) async {
-    final result = await sendRequest(
-      DaemonMethod.getContractData,
-      getContractDataParams.toJson(),
-    );
+  ) => sendRequestAndDecode(
+    DaemonMethod.getContractData,
+    (result) => GetContractDataResult.fromJson(rpcJsonMap(result)),
+    getContractDataParams.toJson(),
+  );
 
-    return GetContractDataResult.fromJson(result as Map<String, dynamic>);
-  }
+  /// Verify whether a contract has data stored for the requested key.
+  Future<bool> hasContractData(GetContractDataParams params) =>
+      sendRequestAndDecode(
+        DaemonMethod.hasContractData,
+        (result) => result! as bool,
+        params.toJson(),
+      );
 }

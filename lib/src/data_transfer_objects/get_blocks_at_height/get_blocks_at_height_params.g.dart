@@ -11,13 +11,13 @@ part of 'get_blocks_at_height_params.dart';
 _GetBlocksAtHeightParams _$GetBlocksAtHeightParamsFromJson(
   Map<String, dynamic> json,
 ) => _GetBlocksAtHeightParams(
-  height: (json['height'] as num).toInt(),
+  height: rpcBigInt(json['height']),
   includeTxs: json['include_txs'] as bool?,
 );
 
 Map<String, dynamic> _$GetBlocksAtHeightParamsToJson(
   _GetBlocksAtHeightParams instance,
 ) => <String, dynamic>{
-  'height': instance.height,
+  'height': rpcBigIntToJson(instance.height),
   'include_txs': ?instance.includeTxs,
 };

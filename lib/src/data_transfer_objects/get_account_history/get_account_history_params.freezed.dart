@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'get_account_history_params.dart';
@@ -9,13 +9,14 @@ part of 'get_account_history_params.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$GetAccountHistoryParams {
 
-@JsonKey(name: 'address') String get address;@JsonKey(name: 'asset') String get asset;@JsonKey(name: 'incoming_flow') bool get incomingFlow;@JsonKey(name: 'outgoing_flow') bool get outgoingFlow;@JsonKey(name: 'minimum_topoheight') int? get minimumTopoheight;@JsonKey(name: 'maximum_topoheight') int? get maximumTopoheight;
+@JsonKey(name: 'address') String get address;@JsonKey(name: 'asset') String get asset;@JsonKey(name: 'incoming_flow') bool get incomingFlow;@JsonKey(name: 'outgoing_flow') bool get outgoingFlow;@JsonKey(name: 'minimum_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) BigInt? get minimumTopoheight;@JsonKey(name: 'maximum_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) BigInt? get maximumTopoheight;
 /// Create a copy of GetAccountHistoryParams
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +49,7 @@ abstract mixin class $GetAccountHistoryParamsCopyWith<$Res>  {
   factory $GetAccountHistoryParamsCopyWith(GetAccountHistoryParams value, $Res Function(GetAccountHistoryParams) _then) = _$GetAccountHistoryParamsCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(name: 'address') String address,@JsonKey(name: 'asset') String asset,@JsonKey(name: 'incoming_flow') bool incomingFlow,@JsonKey(name: 'outgoing_flow') bool outgoingFlow,@JsonKey(name: 'minimum_topoheight') int? minimumTopoheight,@JsonKey(name: 'maximum_topoheight') int? maximumTopoheight
+@JsonKey(name: 'address') String address,@JsonKey(name: 'asset') String asset,@JsonKey(name: 'incoming_flow') bool incomingFlow,@JsonKey(name: 'outgoing_flow') bool outgoingFlow,@JsonKey(name: 'minimum_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) BigInt? minimumTopoheight,@JsonKey(name: 'maximum_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) BigInt? maximumTopoheight
 });
 
 
@@ -66,14 +67,14 @@ class _$GetAccountHistoryParamsCopyWithImpl<$Res>
 /// Create a copy of GetAccountHistoryParams
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? address = null,Object? asset = null,Object? incomingFlow = null,Object? outgoingFlow = null,Object? minimumTopoheight = freezed,Object? maximumTopoheight = freezed,}) {
-  return _then(_self.copyWith(
+  return _then(GetAccountHistoryParams(
 address: null == address ? _self.address : address // ignore: cast_nullable_to_non_nullable
 as String,asset: null == asset ? _self.asset : asset // ignore: cast_nullable_to_non_nullable
 as String,incomingFlow: null == incomingFlow ? _self.incomingFlow : incomingFlow // ignore: cast_nullable_to_non_nullable
 as bool,outgoingFlow: null == outgoingFlow ? _self.outgoingFlow : outgoingFlow // ignore: cast_nullable_to_non_nullable
 as bool,minimumTopoheight: freezed == minimumTopoheight ? _self.minimumTopoheight : minimumTopoheight // ignore: cast_nullable_to_non_nullable
-as int?,maximumTopoheight: freezed == maximumTopoheight ? _self.maximumTopoheight : maximumTopoheight // ignore: cast_nullable_to_non_nullable
-as int?,
+as BigInt?,maximumTopoheight: freezed == maximumTopoheight ? _self.maximumTopoheight : maximumTopoheight // ignore: cast_nullable_to_non_nullable
+as BigInt?,
   ));
 }
 
@@ -158,7 +159,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'address')  String address, @JsonKey(name: 'asset')  String asset, @JsonKey(name: 'incoming_flow')  bool incomingFlow, @JsonKey(name: 'outgoing_flow')  bool outgoingFlow, @JsonKey(name: 'minimum_topoheight')  int? minimumTopoheight, @JsonKey(name: 'maximum_topoheight')  int? maximumTopoheight)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'address')  String address, @JsonKey(name: 'asset')  String asset, @JsonKey(name: 'incoming_flow')  bool incomingFlow, @JsonKey(name: 'outgoing_flow')  bool outgoingFlow, @JsonKey(name: 'minimum_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson)  BigInt? minimumTopoheight, @JsonKey(name: 'maximum_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson)  BigInt? maximumTopoheight)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _GetAccountHistoryParams() when $default != null:
 return $default(_that.address,_that.asset,_that.incomingFlow,_that.outgoingFlow,_that.minimumTopoheight,_that.maximumTopoheight);case _:
@@ -179,7 +180,7 @@ return $default(_that.address,_that.asset,_that.incomingFlow,_that.outgoingFlow,
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'address')  String address, @JsonKey(name: 'asset')  String asset, @JsonKey(name: 'incoming_flow')  bool incomingFlow, @JsonKey(name: 'outgoing_flow')  bool outgoingFlow, @JsonKey(name: 'minimum_topoheight')  int? minimumTopoheight, @JsonKey(name: 'maximum_topoheight')  int? maximumTopoheight)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'address')  String address, @JsonKey(name: 'asset')  String asset, @JsonKey(name: 'incoming_flow')  bool incomingFlow, @JsonKey(name: 'outgoing_flow')  bool outgoingFlow, @JsonKey(name: 'minimum_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson)  BigInt? minimumTopoheight, @JsonKey(name: 'maximum_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson)  BigInt? maximumTopoheight)  $default,) {final _that = this;
 switch (_that) {
 case _GetAccountHistoryParams():
 return $default(_that.address,_that.asset,_that.incomingFlow,_that.outgoingFlow,_that.minimumTopoheight,_that.maximumTopoheight);case _:
@@ -199,7 +200,7 @@ return $default(_that.address,_that.asset,_that.incomingFlow,_that.outgoingFlow,
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'address')  String address, @JsonKey(name: 'asset')  String asset, @JsonKey(name: 'incoming_flow')  bool incomingFlow, @JsonKey(name: 'outgoing_flow')  bool outgoingFlow, @JsonKey(name: 'minimum_topoheight')  int? minimumTopoheight, @JsonKey(name: 'maximum_topoheight')  int? maximumTopoheight)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'address')  String address, @JsonKey(name: 'asset')  String asset, @JsonKey(name: 'incoming_flow')  bool incomingFlow, @JsonKey(name: 'outgoing_flow')  bool outgoingFlow, @JsonKey(name: 'minimum_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson)  BigInt? minimumTopoheight, @JsonKey(name: 'maximum_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson)  BigInt? maximumTopoheight)?  $default,) {final _that = this;
 switch (_that) {
 case _GetAccountHistoryParams() when $default != null:
 return $default(_that.address,_that.asset,_that.incomingFlow,_that.outgoingFlow,_that.minimumTopoheight,_that.maximumTopoheight);case _:
@@ -214,15 +215,15 @@ return $default(_that.address,_that.asset,_that.incomingFlow,_that.outgoingFlow,
 @JsonSerializable()
 
 class _GetAccountHistoryParams implements GetAccountHistoryParams {
-  const _GetAccountHistoryParams({@JsonKey(name: 'address') required this.address, @JsonKey(name: 'asset') required this.asset, @JsonKey(name: 'incoming_flow') required this.incomingFlow, @JsonKey(name: 'outgoing_flow') required this.outgoingFlow, @JsonKey(name: 'minimum_topoheight') this.minimumTopoheight, @JsonKey(name: 'maximum_topoheight') this.maximumTopoheight});
+  const _GetAccountHistoryParams({@JsonKey(name: 'address') required this.address, @JsonKey(name: 'asset') required this.asset, @JsonKey(name: 'incoming_flow') required this.incomingFlow, @JsonKey(name: 'outgoing_flow') required this.outgoingFlow, @JsonKey(name: 'minimum_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) this.minimumTopoheight, @JsonKey(name: 'maximum_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) this.maximumTopoheight});
   factory _GetAccountHistoryParams.fromJson(Map<String, dynamic> json) => _$GetAccountHistoryParamsFromJson(json);
 
 @override@JsonKey(name: 'address') final  String address;
 @override@JsonKey(name: 'asset') final  String asset;
 @override@JsonKey(name: 'incoming_flow') final  bool incomingFlow;
 @override@JsonKey(name: 'outgoing_flow') final  bool outgoingFlow;
-@override@JsonKey(name: 'minimum_topoheight') final  int? minimumTopoheight;
-@override@JsonKey(name: 'maximum_topoheight') final  int? maximumTopoheight;
+@override@JsonKey(name: 'minimum_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) final  BigInt? minimumTopoheight;
+@override@JsonKey(name: 'maximum_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) final  BigInt? maximumTopoheight;
 
 /// Create a copy of GetAccountHistoryParams
 /// with the given fields replaced by the non-null parameter values.
@@ -257,7 +258,7 @@ abstract mixin class _$GetAccountHistoryParamsCopyWith<$Res> implements $GetAcco
   factory _$GetAccountHistoryParamsCopyWith(_GetAccountHistoryParams value, $Res Function(_GetAccountHistoryParams) _then) = __$GetAccountHistoryParamsCopyWithImpl;
 @override @useResult
 $Res call({
-@JsonKey(name: 'address') String address,@JsonKey(name: 'asset') String asset,@JsonKey(name: 'incoming_flow') bool incomingFlow,@JsonKey(name: 'outgoing_flow') bool outgoingFlow,@JsonKey(name: 'minimum_topoheight') int? minimumTopoheight,@JsonKey(name: 'maximum_topoheight') int? maximumTopoheight
+@JsonKey(name: 'address') String address,@JsonKey(name: 'asset') String asset,@JsonKey(name: 'incoming_flow') bool incomingFlow,@JsonKey(name: 'outgoing_flow') bool outgoingFlow,@JsonKey(name: 'minimum_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) BigInt? minimumTopoheight,@JsonKey(name: 'maximum_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) BigInt? maximumTopoheight
 });
 
 
@@ -281,8 +282,8 @@ as String,asset: null == asset ? _self.asset : asset // ignore: cast_nullable_to
 as String,incomingFlow: null == incomingFlow ? _self.incomingFlow : incomingFlow // ignore: cast_nullable_to_non_nullable
 as bool,outgoingFlow: null == outgoingFlow ? _self.outgoingFlow : outgoingFlow // ignore: cast_nullable_to_non_nullable
 as bool,minimumTopoheight: freezed == minimumTopoheight ? _self.minimumTopoheight : minimumTopoheight // ignore: cast_nullable_to_non_nullable
-as int?,maximumTopoheight: freezed == maximumTopoheight ? _self.maximumTopoheight : maximumTopoheight // ignore: cast_nullable_to_non_nullable
-as int?,
+as BigInt?,maximumTopoheight: freezed == maximumTopoheight ? _self.maximumTopoheight : maximumTopoheight // ignore: cast_nullable_to_non_nullable
+as BigInt?,
   ));
 }
 

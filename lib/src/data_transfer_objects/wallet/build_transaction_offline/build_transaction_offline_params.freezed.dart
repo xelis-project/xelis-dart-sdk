@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'build_transaction_offline_params.dart';
@@ -9,12 +9,13 @@ part of 'build_transaction_offline_params.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$BuildTransactionOfflineParams {
 
- TransactionTypeBuilder get transactionTypeBuilder; Map<String, dynamic> get balances; Reference get reference; FeeBuilder? get feeBuilder; int? get nonce; int? get txVersion; bool? get txAsHex; List<SignerId>? get signers;
+ TransactionTypeBuilder get transactionTypeBuilder; Map<String, RpcCompressedCiphertext> get balances; Reference get reference; BigInt get nonce; FeeBuilder get fee; BigInt? get baseFee; BigInt? get feeLimit; int? get txVersion; bool get txAsHex; List<SignerId> get signers;
 /// Create a copy of BuildTransactionOfflineParams
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -25,16 +26,16 @@ $BuildTransactionOfflineParamsCopyWith<BuildTransactionOfflineParams> get copyWi
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is BuildTransactionOfflineParams&&(identical(other.transactionTypeBuilder, transactionTypeBuilder) || other.transactionTypeBuilder == transactionTypeBuilder)&&const DeepCollectionEquality().equals(other.balances, balances)&&(identical(other.reference, reference) || other.reference == reference)&&(identical(other.feeBuilder, feeBuilder) || other.feeBuilder == feeBuilder)&&(identical(other.nonce, nonce) || other.nonce == nonce)&&(identical(other.txVersion, txVersion) || other.txVersion == txVersion)&&(identical(other.txAsHex, txAsHex) || other.txAsHex == txAsHex)&&const DeepCollectionEquality().equals(other.signers, signers));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is BuildTransactionOfflineParams&&(identical(other.transactionTypeBuilder, transactionTypeBuilder) || other.transactionTypeBuilder == transactionTypeBuilder)&&const DeepCollectionEquality().equals(other.balances, balances)&&(identical(other.reference, reference) || other.reference == reference)&&(identical(other.nonce, nonce) || other.nonce == nonce)&&(identical(other.fee, fee) || other.fee == fee)&&(identical(other.baseFee, baseFee) || other.baseFee == baseFee)&&(identical(other.feeLimit, feeLimit) || other.feeLimit == feeLimit)&&(identical(other.txVersion, txVersion) || other.txVersion == txVersion)&&(identical(other.txAsHex, txAsHex) || other.txAsHex == txAsHex)&&const DeepCollectionEquality().equals(other.signers, signers));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,transactionTypeBuilder,const DeepCollectionEquality().hash(balances),reference,feeBuilder,nonce,txVersion,txAsHex,const DeepCollectionEquality().hash(signers));
+int get hashCode => Object.hash(runtimeType,transactionTypeBuilder,const DeepCollectionEquality().hash(balances),reference,nonce,fee,baseFee,feeLimit,txVersion,txAsHex,const DeepCollectionEquality().hash(signers));
 
 @override
 String toString() {
-  return 'BuildTransactionOfflineParams(transactionTypeBuilder: $transactionTypeBuilder, balances: $balances, reference: $reference, feeBuilder: $feeBuilder, nonce: $nonce, txVersion: $txVersion, txAsHex: $txAsHex, signers: $signers)';
+  return 'BuildTransactionOfflineParams(transactionTypeBuilder: $transactionTypeBuilder, balances: $balances, reference: $reference, nonce: $nonce, fee: $fee, baseFee: $baseFee, feeLimit: $feeLimit, txVersion: $txVersion, txAsHex: $txAsHex, signers: $signers)';
 }
 
 
@@ -45,11 +46,11 @@ abstract mixin class $BuildTransactionOfflineParamsCopyWith<$Res>  {
   factory $BuildTransactionOfflineParamsCopyWith(BuildTransactionOfflineParams value, $Res Function(BuildTransactionOfflineParams) _then) = _$BuildTransactionOfflineParamsCopyWithImpl;
 @useResult
 $Res call({
- TransactionTypeBuilder transactionTypeBuilder, Map<String, dynamic> balances, Reference reference, FeeBuilder? feeBuilder, int? nonce, int? txVersion, bool? txAsHex, List<SignerId>? signers
+ TransactionTypeBuilder transactionTypeBuilder, Map<String, RpcCompressedCiphertext> balances, Reference reference, BigInt nonce, FeeBuilder fee, BigInt? baseFee, BigInt? feeLimit, int? txVersion, bool txAsHex, List<SignerId> signers
 });
 
 
-$TransactionTypeBuilderCopyWith<$Res> get transactionTypeBuilder;$ReferenceCopyWith<$Res> get reference;$FeeBuilderCopyWith<$Res>? get feeBuilder;
+$TransactionTypeBuilderCopyWith<$Res> get transactionTypeBuilder;$ReferenceCopyWith<$Res> get reference;$FeeBuilderCopyWith<$Res> get fee;
 
 }
 /// @nodoc
@@ -62,17 +63,19 @@ class _$BuildTransactionOfflineParamsCopyWithImpl<$Res>
 
 /// Create a copy of BuildTransactionOfflineParams
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? transactionTypeBuilder = null,Object? balances = null,Object? reference = null,Object? feeBuilder = freezed,Object? nonce = freezed,Object? txVersion = freezed,Object? txAsHex = freezed,Object? signers = freezed,}) {
-  return _then(_self.copyWith(
+@pragma('vm:prefer-inline') @override $Res call({Object? transactionTypeBuilder = null,Object? balances = null,Object? reference = null,Object? nonce = null,Object? fee = null,Object? baseFee = freezed,Object? feeLimit = freezed,Object? txVersion = freezed,Object? txAsHex = null,Object? signers = null,}) {
+  return _then(BuildTransactionOfflineParams(
 transactionTypeBuilder: null == transactionTypeBuilder ? _self.transactionTypeBuilder : transactionTypeBuilder // ignore: cast_nullable_to_non_nullable
 as TransactionTypeBuilder,balances: null == balances ? _self.balances : balances // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>,reference: null == reference ? _self.reference : reference // ignore: cast_nullable_to_non_nullable
-as Reference,feeBuilder: freezed == feeBuilder ? _self.feeBuilder : feeBuilder // ignore: cast_nullable_to_non_nullable
-as FeeBuilder?,nonce: freezed == nonce ? _self.nonce : nonce // ignore: cast_nullable_to_non_nullable
-as int?,txVersion: freezed == txVersion ? _self.txVersion : txVersion // ignore: cast_nullable_to_non_nullable
-as int?,txAsHex: freezed == txAsHex ? _self.txAsHex : txAsHex // ignore: cast_nullable_to_non_nullable
-as bool?,signers: freezed == signers ? _self.signers : signers // ignore: cast_nullable_to_non_nullable
-as List<SignerId>?,
+as Map<String, RpcCompressedCiphertext>,reference: null == reference ? _self.reference : reference // ignore: cast_nullable_to_non_nullable
+as Reference,nonce: null == nonce ? _self.nonce : nonce // ignore: cast_nullable_to_non_nullable
+as BigInt,fee: null == fee ? _self.fee : fee // ignore: cast_nullable_to_non_nullable
+as FeeBuilder,baseFee: freezed == baseFee ? _self.baseFee : baseFee // ignore: cast_nullable_to_non_nullable
+as BigInt?,feeLimit: freezed == feeLimit ? _self.feeLimit : feeLimit // ignore: cast_nullable_to_non_nullable
+as BigInt?,txVersion: freezed == txVersion ? _self.txVersion : txVersion // ignore: cast_nullable_to_non_nullable
+as int?,txAsHex: null == txAsHex ? _self.txAsHex : txAsHex // ignore: cast_nullable_to_non_nullable
+as bool,signers: null == signers ? _self.signers : signers // ignore: cast_nullable_to_non_nullable
+as List<SignerId>,
   ));
 }
 /// Create a copy of BuildTransactionOfflineParams
@@ -97,13 +100,10 @@ $ReferenceCopyWith<$Res> get reference {
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
-$FeeBuilderCopyWith<$Res>? get feeBuilder {
-    if (_self.feeBuilder == null) {
-    return null;
-  }
-
-  return $FeeBuilderCopyWith<$Res>(_self.feeBuilder!, (value) {
-    return _then(_self.copyWith(feeBuilder: value));
+$FeeBuilderCopyWith<$Res> get fee {
+  
+  return $FeeBuilderCopyWith<$Res>(_self.fee, (value) {
+    return _then(_self.copyWith(fee: value));
   });
 }
 }
@@ -187,10 +187,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( TransactionTypeBuilder transactionTypeBuilder,  Map<String, dynamic> balances,  Reference reference,  FeeBuilder? feeBuilder,  int? nonce,  int? txVersion,  bool? txAsHex,  List<SignerId>? signers)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( TransactionTypeBuilder transactionTypeBuilder,  Map<String, RpcCompressedCiphertext> balances,  Reference reference,  BigInt nonce,  FeeBuilder fee,  BigInt? baseFee,  BigInt? feeLimit,  int? txVersion,  bool txAsHex,  List<SignerId> signers)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _BuildTransactionOfflineParams() when $default != null:
-return $default(_that.transactionTypeBuilder,_that.balances,_that.reference,_that.feeBuilder,_that.nonce,_that.txVersion,_that.txAsHex,_that.signers);case _:
+return $default(_that.transactionTypeBuilder,_that.balances,_that.reference,_that.nonce,_that.fee,_that.baseFee,_that.feeLimit,_that.txVersion,_that.txAsHex,_that.signers);case _:
   return orElse();
 
 }
@@ -208,10 +208,10 @@ return $default(_that.transactionTypeBuilder,_that.balances,_that.reference,_tha
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( TransactionTypeBuilder transactionTypeBuilder,  Map<String, dynamic> balances,  Reference reference,  FeeBuilder? feeBuilder,  int? nonce,  int? txVersion,  bool? txAsHex,  List<SignerId>? signers)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( TransactionTypeBuilder transactionTypeBuilder,  Map<String, RpcCompressedCiphertext> balances,  Reference reference,  BigInt nonce,  FeeBuilder fee,  BigInt? baseFee,  BigInt? feeLimit,  int? txVersion,  bool txAsHex,  List<SignerId> signers)  $default,) {final _that = this;
 switch (_that) {
 case _BuildTransactionOfflineParams():
-return $default(_that.transactionTypeBuilder,_that.balances,_that.reference,_that.feeBuilder,_that.nonce,_that.txVersion,_that.txAsHex,_that.signers);case _:
+return $default(_that.transactionTypeBuilder,_that.balances,_that.reference,_that.nonce,_that.fee,_that.baseFee,_that.feeLimit,_that.txVersion,_that.txAsHex,_that.signers);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -228,10 +228,10 @@ return $default(_that.transactionTypeBuilder,_that.balances,_that.reference,_tha
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( TransactionTypeBuilder transactionTypeBuilder,  Map<String, dynamic> balances,  Reference reference,  FeeBuilder? feeBuilder,  int? nonce,  int? txVersion,  bool? txAsHex,  List<SignerId>? signers)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( TransactionTypeBuilder transactionTypeBuilder,  Map<String, RpcCompressedCiphertext> balances,  Reference reference,  BigInt nonce,  FeeBuilder fee,  BigInt? baseFee,  BigInt? feeLimit,  int? txVersion,  bool txAsHex,  List<SignerId> signers)?  $default,) {final _that = this;
 switch (_that) {
 case _BuildTransactionOfflineParams() when $default != null:
-return $default(_that.transactionTypeBuilder,_that.balances,_that.reference,_that.feeBuilder,_that.nonce,_that.txVersion,_that.txAsHex,_that.signers);case _:
+return $default(_that.transactionTypeBuilder,_that.balances,_that.reference,_that.nonce,_that.fee,_that.baseFee,_that.feeLimit,_that.txVersion,_that.txAsHex,_that.signers);case _:
   return null;
 
 }
@@ -243,29 +243,29 @@ return $default(_that.transactionTypeBuilder,_that.balances,_that.reference,_tha
 
 
 class _BuildTransactionOfflineParams extends BuildTransactionOfflineParams {
-  const _BuildTransactionOfflineParams({required this.transactionTypeBuilder, required final  Map<String, dynamic> balances, required this.reference, this.feeBuilder, this.nonce, this.txVersion, this.txAsHex, final  List<SignerId>? signers}): _balances = balances,_signers = signers,super._();
+  const _BuildTransactionOfflineParams({required this.transactionTypeBuilder, required  Map<String, RpcCompressedCiphertext> balances, required this.reference, required this.nonce, this.fee = const FeeBuilder.extra(), this.baseFee, this.feeLimit, this.txVersion, this.txAsHex = false,  List<SignerId> signers = const <SignerId>[]}): _balances = balances,_signers = signers,super._();
   
 
 @override final  TransactionTypeBuilder transactionTypeBuilder;
- final  Map<String, dynamic> _balances;
-@override Map<String, dynamic> get balances {
+ final  Map<String, RpcCompressedCiphertext> _balances;
+@override Map<String, RpcCompressedCiphertext> get balances {
   if (_balances is EqualUnmodifiableMapView) return _balances;
   // ignore: implicit_dynamic_type
   return EqualUnmodifiableMapView(_balances);
 }
 
 @override final  Reference reference;
-@override final  FeeBuilder? feeBuilder;
-@override final  int? nonce;
+@override final  BigInt nonce;
+@override@JsonKey() final  FeeBuilder fee;
+@override final  BigInt? baseFee;
+@override final  BigInt? feeLimit;
 @override final  int? txVersion;
-@override final  bool? txAsHex;
- final  List<SignerId>? _signers;
-@override List<SignerId>? get signers {
-  final value = _signers;
-  if (value == null) return null;
+@override@JsonKey() final  bool txAsHex;
+ final  List<SignerId> _signers;
+@override@JsonKey() List<SignerId> get signers {
   if (_signers is EqualUnmodifiableListView) return _signers;
   // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
+  return EqualUnmodifiableListView(_signers);
 }
 
 
@@ -279,16 +279,16 @@ _$BuildTransactionOfflineParamsCopyWith<_BuildTransactionOfflineParams> get copy
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _BuildTransactionOfflineParams&&(identical(other.transactionTypeBuilder, transactionTypeBuilder) || other.transactionTypeBuilder == transactionTypeBuilder)&&const DeepCollectionEquality().equals(other._balances, _balances)&&(identical(other.reference, reference) || other.reference == reference)&&(identical(other.feeBuilder, feeBuilder) || other.feeBuilder == feeBuilder)&&(identical(other.nonce, nonce) || other.nonce == nonce)&&(identical(other.txVersion, txVersion) || other.txVersion == txVersion)&&(identical(other.txAsHex, txAsHex) || other.txAsHex == txAsHex)&&const DeepCollectionEquality().equals(other._signers, _signers));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _BuildTransactionOfflineParams&&(identical(other.transactionTypeBuilder, transactionTypeBuilder) || other.transactionTypeBuilder == transactionTypeBuilder)&&const DeepCollectionEquality().equals(other._balances, _balances)&&(identical(other.reference, reference) || other.reference == reference)&&(identical(other.nonce, nonce) || other.nonce == nonce)&&(identical(other.fee, fee) || other.fee == fee)&&(identical(other.baseFee, baseFee) || other.baseFee == baseFee)&&(identical(other.feeLimit, feeLimit) || other.feeLimit == feeLimit)&&(identical(other.txVersion, txVersion) || other.txVersion == txVersion)&&(identical(other.txAsHex, txAsHex) || other.txAsHex == txAsHex)&&const DeepCollectionEquality().equals(other._signers, _signers));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,transactionTypeBuilder,const DeepCollectionEquality().hash(_balances),reference,feeBuilder,nonce,txVersion,txAsHex,const DeepCollectionEquality().hash(_signers));
+int get hashCode => Object.hash(runtimeType,transactionTypeBuilder,const DeepCollectionEquality().hash(_balances),reference,nonce,fee,baseFee,feeLimit,txVersion,txAsHex,const DeepCollectionEquality().hash(_signers));
 
 @override
 String toString() {
-  return 'BuildTransactionOfflineParams(transactionTypeBuilder: $transactionTypeBuilder, balances: $balances, reference: $reference, feeBuilder: $feeBuilder, nonce: $nonce, txVersion: $txVersion, txAsHex: $txAsHex, signers: $signers)';
+  return 'BuildTransactionOfflineParams(transactionTypeBuilder: $transactionTypeBuilder, balances: $balances, reference: $reference, nonce: $nonce, fee: $fee, baseFee: $baseFee, feeLimit: $feeLimit, txVersion: $txVersion, txAsHex: $txAsHex, signers: $signers)';
 }
 
 
@@ -299,11 +299,11 @@ abstract mixin class _$BuildTransactionOfflineParamsCopyWith<$Res> implements $B
   factory _$BuildTransactionOfflineParamsCopyWith(_BuildTransactionOfflineParams value, $Res Function(_BuildTransactionOfflineParams) _then) = __$BuildTransactionOfflineParamsCopyWithImpl;
 @override @useResult
 $Res call({
- TransactionTypeBuilder transactionTypeBuilder, Map<String, dynamic> balances, Reference reference, FeeBuilder? feeBuilder, int? nonce, int? txVersion, bool? txAsHex, List<SignerId>? signers
+ TransactionTypeBuilder transactionTypeBuilder, Map<String, RpcCompressedCiphertext> balances, Reference reference, BigInt nonce, FeeBuilder fee, BigInt? baseFee, BigInt? feeLimit, int? txVersion, bool txAsHex, List<SignerId> signers
 });
 
 
-@override $TransactionTypeBuilderCopyWith<$Res> get transactionTypeBuilder;@override $ReferenceCopyWith<$Res> get reference;@override $FeeBuilderCopyWith<$Res>? get feeBuilder;
+@override $TransactionTypeBuilderCopyWith<$Res> get transactionTypeBuilder;@override $ReferenceCopyWith<$Res> get reference;@override $FeeBuilderCopyWith<$Res> get fee;
 
 }
 /// @nodoc
@@ -316,17 +316,19 @@ class __$BuildTransactionOfflineParamsCopyWithImpl<$Res>
 
 /// Create a copy of BuildTransactionOfflineParams
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? transactionTypeBuilder = null,Object? balances = null,Object? reference = null,Object? feeBuilder = freezed,Object? nonce = freezed,Object? txVersion = freezed,Object? txAsHex = freezed,Object? signers = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? transactionTypeBuilder = null,Object? balances = null,Object? reference = null,Object? nonce = null,Object? fee = null,Object? baseFee = freezed,Object? feeLimit = freezed,Object? txVersion = freezed,Object? txAsHex = null,Object? signers = null,}) {
   return _then(_BuildTransactionOfflineParams(
 transactionTypeBuilder: null == transactionTypeBuilder ? _self.transactionTypeBuilder : transactionTypeBuilder // ignore: cast_nullable_to_non_nullable
 as TransactionTypeBuilder,balances: null == balances ? _self._balances : balances // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>,reference: null == reference ? _self.reference : reference // ignore: cast_nullable_to_non_nullable
-as Reference,feeBuilder: freezed == feeBuilder ? _self.feeBuilder : feeBuilder // ignore: cast_nullable_to_non_nullable
-as FeeBuilder?,nonce: freezed == nonce ? _self.nonce : nonce // ignore: cast_nullable_to_non_nullable
-as int?,txVersion: freezed == txVersion ? _self.txVersion : txVersion // ignore: cast_nullable_to_non_nullable
-as int?,txAsHex: freezed == txAsHex ? _self.txAsHex : txAsHex // ignore: cast_nullable_to_non_nullable
-as bool?,signers: freezed == signers ? _self._signers : signers // ignore: cast_nullable_to_non_nullable
-as List<SignerId>?,
+as Map<String, RpcCompressedCiphertext>,reference: null == reference ? _self.reference : reference // ignore: cast_nullable_to_non_nullable
+as Reference,nonce: null == nonce ? _self.nonce : nonce // ignore: cast_nullable_to_non_nullable
+as BigInt,fee: null == fee ? _self.fee : fee // ignore: cast_nullable_to_non_nullable
+as FeeBuilder,baseFee: freezed == baseFee ? _self.baseFee : baseFee // ignore: cast_nullable_to_non_nullable
+as BigInt?,feeLimit: freezed == feeLimit ? _self.feeLimit : feeLimit // ignore: cast_nullable_to_non_nullable
+as BigInt?,txVersion: freezed == txVersion ? _self.txVersion : txVersion // ignore: cast_nullable_to_non_nullable
+as int?,txAsHex: null == txAsHex ? _self.txAsHex : txAsHex // ignore: cast_nullable_to_non_nullable
+as bool,signers: null == signers ? _self._signers : signers // ignore: cast_nullable_to_non_nullable
+as List<SignerId>,
   ));
 }
 
@@ -352,13 +354,10 @@ $ReferenceCopyWith<$Res> get reference {
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
-$FeeBuilderCopyWith<$Res>? get feeBuilder {
-    if (_self.feeBuilder == null) {
-    return null;
-  }
-
-  return $FeeBuilderCopyWith<$Res>(_self.feeBuilder!, (value) {
-    return _then(_self.copyWith(feeBuilder: value));
+$FeeBuilderCopyWith<$Res> get fee {
+  
+  return $FeeBuilderCopyWith<$Res>(_self.fee, (value) {
+    return _then(_self.copyWith(fee: value));
   });
 }
 }

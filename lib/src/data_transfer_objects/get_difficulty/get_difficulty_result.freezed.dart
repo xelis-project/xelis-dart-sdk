@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'get_difficulty_result.dart';
@@ -9,13 +9,14 @@ part of 'get_difficulty_result.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$GetDifficultyResult {
 
-@JsonKey(name: 'difficulty') String get difficulty;@JsonKey(name: 'hashrate') String get hashrate;@JsonKey(name: 'hashrate_formatted') String get hashrateFormatted;
+@JsonKey(name: 'difficulty', fromJson: rpcBigInt, toJson: rpcBigIntStringToJson) BigInt get difficulty;@JsonKey(name: 'hashrate', fromJson: rpcBigInt, toJson: rpcBigIntStringToJson) BigInt get hashrate;@JsonKey(name: 'hashrate_formatted') String get hashrateFormatted;@JsonKey(includeFromJson: false, includeToJson: false) RpcExtraFields get extraFields;
 /// Create a copy of GetDifficultyResult
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,16 +29,16 @@ $GetDifficultyResultCopyWith<GetDifficultyResult> get copyWith => _$GetDifficult
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetDifficultyResult&&(identical(other.difficulty, difficulty) || other.difficulty == difficulty)&&(identical(other.hashrate, hashrate) || other.hashrate == hashrate)&&(identical(other.hashrateFormatted, hashrateFormatted) || other.hashrateFormatted == hashrateFormatted));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetDifficultyResult&&(identical(other.difficulty, difficulty) || other.difficulty == difficulty)&&(identical(other.hashrate, hashrate) || other.hashrate == hashrate)&&(identical(other.hashrateFormatted, hashrateFormatted) || other.hashrateFormatted == hashrateFormatted)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,difficulty,hashrate,hashrateFormatted);
+int get hashCode => Object.hash(runtimeType,difficulty,hashrate,hashrateFormatted,extraFields);
 
 @override
 String toString() {
-  return 'GetDifficultyResult(difficulty: $difficulty, hashrate: $hashrate, hashrateFormatted: $hashrateFormatted)';
+  return 'GetDifficultyResult(difficulty: $difficulty, hashrate: $hashrate, hashrateFormatted: $hashrateFormatted, extraFields: $extraFields)';
 }
 
 
@@ -48,11 +49,11 @@ abstract mixin class $GetDifficultyResultCopyWith<$Res>  {
   factory $GetDifficultyResultCopyWith(GetDifficultyResult value, $Res Function(GetDifficultyResult) _then) = _$GetDifficultyResultCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(name: 'difficulty') String difficulty,@JsonKey(name: 'hashrate') String hashrate,@JsonKey(name: 'hashrate_formatted') String hashrateFormatted
+@JsonKey(name: 'difficulty', fromJson: rpcBigInt, toJson: rpcBigIntStringToJson) BigInt difficulty,@JsonKey(name: 'hashrate', fromJson: rpcBigInt, toJson: rpcBigIntStringToJson) BigInt hashrate,@JsonKey(name: 'hashrate_formatted') String hashrateFormatted,@JsonKey(includeFromJson: false, includeToJson: false) RpcExtraFields extraFields
 });
 
 
-
+$RpcExtraFieldsCopyWith<$Res> get extraFields;
 
 }
 /// @nodoc
@@ -65,15 +66,25 @@ class _$GetDifficultyResultCopyWithImpl<$Res>
 
 /// Create a copy of GetDifficultyResult
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? difficulty = null,Object? hashrate = null,Object? hashrateFormatted = null,}) {
-  return _then(_self.copyWith(
+@pragma('vm:prefer-inline') @override $Res call({Object? difficulty = null,Object? hashrate = null,Object? hashrateFormatted = null,Object? extraFields = null,}) {
+  return _then(GetDifficultyResult(
 difficulty: null == difficulty ? _self.difficulty : difficulty // ignore: cast_nullable_to_non_nullable
-as String,hashrate: null == hashrate ? _self.hashrate : hashrate // ignore: cast_nullable_to_non_nullable
-as String,hashrateFormatted: null == hashrateFormatted ? _self.hashrateFormatted : hashrateFormatted // ignore: cast_nullable_to_non_nullable
-as String,
+as BigInt,hashrate: null == hashrate ? _self.hashrate : hashrate // ignore: cast_nullable_to_non_nullable
+as BigInt,hashrateFormatted: null == hashrateFormatted ? _self.hashrateFormatted : hashrateFormatted // ignore: cast_nullable_to_non_nullable
+as String,extraFields: null == extraFields ? _self.extraFields : extraFields // ignore: cast_nullable_to_non_nullable
+as RpcExtraFields,
   ));
 }
-
+/// Create a copy of GetDifficultyResult
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$RpcExtraFieldsCopyWith<$Res> get extraFields {
+  
+  return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
+    return _then(_self.copyWith(extraFields: value));
+  });
+}
 }
 
 
@@ -155,10 +166,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'difficulty')  String difficulty, @JsonKey(name: 'hashrate')  String hashrate, @JsonKey(name: 'hashrate_formatted')  String hashrateFormatted)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'difficulty', fromJson: rpcBigInt, toJson: rpcBigIntStringToJson)  BigInt difficulty, @JsonKey(name: 'hashrate', fromJson: rpcBigInt, toJson: rpcBigIntStringToJson)  BigInt hashrate, @JsonKey(name: 'hashrate_formatted')  String hashrateFormatted, @JsonKey(includeFromJson: false, includeToJson: false)  RpcExtraFields extraFields)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _GetDifficultyResult() when $default != null:
-return $default(_that.difficulty,_that.hashrate,_that.hashrateFormatted);case _:
+return $default(_that.difficulty,_that.hashrate,_that.hashrateFormatted,_that.extraFields);case _:
   return orElse();
 
 }
@@ -176,10 +187,10 @@ return $default(_that.difficulty,_that.hashrate,_that.hashrateFormatted);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'difficulty')  String difficulty, @JsonKey(name: 'hashrate')  String hashrate, @JsonKey(name: 'hashrate_formatted')  String hashrateFormatted)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'difficulty', fromJson: rpcBigInt, toJson: rpcBigIntStringToJson)  BigInt difficulty, @JsonKey(name: 'hashrate', fromJson: rpcBigInt, toJson: rpcBigIntStringToJson)  BigInt hashrate, @JsonKey(name: 'hashrate_formatted')  String hashrateFormatted, @JsonKey(includeFromJson: false, includeToJson: false)  RpcExtraFields extraFields)  $default,) {final _that = this;
 switch (_that) {
 case _GetDifficultyResult():
-return $default(_that.difficulty,_that.hashrate,_that.hashrateFormatted);case _:
+return $default(_that.difficulty,_that.hashrate,_that.hashrateFormatted,_that.extraFields);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -196,10 +207,10 @@ return $default(_that.difficulty,_that.hashrate,_that.hashrateFormatted);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'difficulty')  String difficulty, @JsonKey(name: 'hashrate')  String hashrate, @JsonKey(name: 'hashrate_formatted')  String hashrateFormatted)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'difficulty', fromJson: rpcBigInt, toJson: rpcBigIntStringToJson)  BigInt difficulty, @JsonKey(name: 'hashrate', fromJson: rpcBigInt, toJson: rpcBigIntStringToJson)  BigInt hashrate, @JsonKey(name: 'hashrate_formatted')  String hashrateFormatted, @JsonKey(includeFromJson: false, includeToJson: false)  RpcExtraFields extraFields)?  $default,) {final _that = this;
 switch (_that) {
 case _GetDifficultyResult() when $default != null:
-return $default(_that.difficulty,_that.hashrate,_that.hashrateFormatted);case _:
+return $default(_that.difficulty,_that.hashrate,_that.hashrateFormatted,_that.extraFields);case _:
   return null;
 
 }
@@ -210,13 +221,14 @@ return $default(_that.difficulty,_that.hashrate,_that.hashrateFormatted);case _:
 /// @nodoc
 @JsonSerializable()
 
-class _GetDifficultyResult implements GetDifficultyResult {
-  const _GetDifficultyResult({@JsonKey(name: 'difficulty') required this.difficulty, @JsonKey(name: 'hashrate') required this.hashrate, @JsonKey(name: 'hashrate_formatted') required this.hashrateFormatted});
+class _GetDifficultyResult extends GetDifficultyResult {
+  const _GetDifficultyResult({@JsonKey(name: 'difficulty', fromJson: rpcBigInt, toJson: rpcBigIntStringToJson) required this.difficulty, @JsonKey(name: 'hashrate', fromJson: rpcBigInt, toJson: rpcBigIntStringToJson) required this.hashrate, @JsonKey(name: 'hashrate_formatted') required this.hashrateFormatted, @JsonKey(includeFromJson: false, includeToJson: false) this.extraFields = const RpcExtraFields()}): super._();
   factory _GetDifficultyResult.fromJson(Map<String, dynamic> json) => _$GetDifficultyResultFromJson(json);
 
-@override@JsonKey(name: 'difficulty') final  String difficulty;
-@override@JsonKey(name: 'hashrate') final  String hashrate;
+@override@JsonKey(name: 'difficulty', fromJson: rpcBigInt, toJson: rpcBigIntStringToJson) final  BigInt difficulty;
+@override@JsonKey(name: 'hashrate', fromJson: rpcBigInt, toJson: rpcBigIntStringToJson) final  BigInt hashrate;
 @override@JsonKey(name: 'hashrate_formatted') final  String hashrateFormatted;
+@override@JsonKey(includeFromJson: false, includeToJson: false) final  RpcExtraFields extraFields;
 
 /// Create a copy of GetDifficultyResult
 /// with the given fields replaced by the non-null parameter values.
@@ -231,16 +243,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetDifficultyResult&&(identical(other.difficulty, difficulty) || other.difficulty == difficulty)&&(identical(other.hashrate, hashrate) || other.hashrate == hashrate)&&(identical(other.hashrateFormatted, hashrateFormatted) || other.hashrateFormatted == hashrateFormatted));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetDifficultyResult&&(identical(other.difficulty, difficulty) || other.difficulty == difficulty)&&(identical(other.hashrate, hashrate) || other.hashrate == hashrate)&&(identical(other.hashrateFormatted, hashrateFormatted) || other.hashrateFormatted == hashrateFormatted)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,difficulty,hashrate,hashrateFormatted);
+int get hashCode => Object.hash(runtimeType,difficulty,hashrate,hashrateFormatted,extraFields);
 
 @override
 String toString() {
-  return 'GetDifficultyResult(difficulty: $difficulty, hashrate: $hashrate, hashrateFormatted: $hashrateFormatted)';
+  return 'GetDifficultyResult(difficulty: $difficulty, hashrate: $hashrate, hashrateFormatted: $hashrateFormatted, extraFields: $extraFields)';
 }
 
 
@@ -251,11 +263,11 @@ abstract mixin class _$GetDifficultyResultCopyWith<$Res> implements $GetDifficul
   factory _$GetDifficultyResultCopyWith(_GetDifficultyResult value, $Res Function(_GetDifficultyResult) _then) = __$GetDifficultyResultCopyWithImpl;
 @override @useResult
 $Res call({
-@JsonKey(name: 'difficulty') String difficulty,@JsonKey(name: 'hashrate') String hashrate,@JsonKey(name: 'hashrate_formatted') String hashrateFormatted
+@JsonKey(name: 'difficulty', fromJson: rpcBigInt, toJson: rpcBigIntStringToJson) BigInt difficulty,@JsonKey(name: 'hashrate', fromJson: rpcBigInt, toJson: rpcBigIntStringToJson) BigInt hashrate,@JsonKey(name: 'hashrate_formatted') String hashrateFormatted,@JsonKey(includeFromJson: false, includeToJson: false) RpcExtraFields extraFields
 });
 
 
-
+@override $RpcExtraFieldsCopyWith<$Res> get extraFields;
 
 }
 /// @nodoc
@@ -268,16 +280,26 @@ class __$GetDifficultyResultCopyWithImpl<$Res>
 
 /// Create a copy of GetDifficultyResult
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? difficulty = null,Object? hashrate = null,Object? hashrateFormatted = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? difficulty = null,Object? hashrate = null,Object? hashrateFormatted = null,Object? extraFields = null,}) {
   return _then(_GetDifficultyResult(
 difficulty: null == difficulty ? _self.difficulty : difficulty // ignore: cast_nullable_to_non_nullable
-as String,hashrate: null == hashrate ? _self.hashrate : hashrate // ignore: cast_nullable_to_non_nullable
-as String,hashrateFormatted: null == hashrateFormatted ? _self.hashrateFormatted : hashrateFormatted // ignore: cast_nullable_to_non_nullable
-as String,
+as BigInt,hashrate: null == hashrate ? _self.hashrate : hashrate // ignore: cast_nullable_to_non_nullable
+as BigInt,hashrateFormatted: null == hashrateFormatted ? _self.hashrateFormatted : hashrateFormatted // ignore: cast_nullable_to_non_nullable
+as String,extraFields: null == extraFields ? _self.extraFields : extraFields // ignore: cast_nullable_to_non_nullable
+as RpcExtraFields,
   ));
 }
 
-
+/// Create a copy of GetDifficultyResult
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$RpcExtraFieldsCopyWith<$Res> get extraFields {
+  
+  return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
+    return _then(_self.copyWith(extraFields: value));
+  });
+}
 }
 
 // dart format on

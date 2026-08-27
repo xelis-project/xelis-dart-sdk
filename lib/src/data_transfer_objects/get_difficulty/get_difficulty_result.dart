@@ -1,6 +1,6 @@
-// ignore_for_file: invalid_annotation_target
-
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/core/rpc_extra_fields.dart';
+import 'package:xelis_dart_sdk/src/utils/rpc_json.dart';
 
 part 'get_difficulty_result.freezed.dart';
 
@@ -11,12 +11,40 @@ part 'get_difficulty_result.g.dart';
 abstract class GetDifficultyResult with _$GetDifficultyResult {
   /// @nodoc
   const factory GetDifficultyResult({
-    @JsonKey(name: 'difficulty') required String difficulty,
-    @JsonKey(name: 'hashrate') required String hashrate,
+    @JsonKey(
+      name: 'difficulty',
+      fromJson: rpcBigInt,
+      toJson: rpcBigIntStringToJson,
+    )
+    required BigInt difficulty,
+    @JsonKey(
+      name: 'hashrate',
+      fromJson: rpcBigInt,
+      toJson: rpcBigIntStringToJson,
+    )
+    required BigInt hashrate,
     @JsonKey(name: 'hashrate_formatted') required String hashrateFormatted,
+    @JsonKey(includeFromJson: false, includeToJson: false)
+    @Default(RpcExtraFields())
+    RpcExtraFields extraFields,
   }) = _GetDifficultyResult;
+
+  const GetDifficultyResult._();
 
   /// @nodoc
   factory GetDifficultyResult.fromJson(Map<String, dynamic> json) =>
-      _$GetDifficultyResultFromJson(json);
+      _$GetDifficultyResultFromJson(json).copyWith(
+        extraFields: RpcExtraFields.capture(json, const {
+          'difficulty',
+          'hashrate',
+          'hashrate_formatted',
+        }),
+      );
+
+  Map<String, Object?> toWireJson({bool includeExtraFields = false}) =>
+      extraFields.mergeInto({
+        'difficulty': difficulty.toString(),
+        'hashrate': hashrate.toString(),
+        'hashrate_formatted': hashrateFormatted,
+      }, includeExtraFields: includeExtraFields);
 }

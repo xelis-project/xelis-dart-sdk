@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'signer_id.dart';
@@ -9,6 +9,7 @@ part of 'signer_id.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 
@@ -35,10 +36,6 @@ bool operator ==(Object other) {
 @override
 int get hashCode => Object.hash(runtimeType,id,privateKey);
 
-@override
-String toString() {
-  return 'SignerId(id: $id, privateKey: $privateKey)';
-}
 
 
 }
@@ -66,7 +63,7 @@ class _$SignerIdCopyWithImpl<$Res>
 /// Create a copy of SignerId
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? privateKey = null,}) {
-  return _then(_self.copyWith(
+  return _then(SignerId(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as int,privateKey: null == privateKey ? _self.privateKey : privateKey // ignore: cast_nullable_to_non_nullable
 as String,
@@ -209,8 +206,8 @@ return $default(_that.id,_that.privateKey);case _:
 /// @nodoc
 @JsonSerializable()
 
-class _SignerId implements SignerId {
-  const _SignerId({@JsonKey(name: 'id') required this.id, @JsonKey(name: 'private_key') required this.privateKey});
+class _SignerId extends SignerId {
+  const _SignerId({@JsonKey(name: 'id') required this.id, @JsonKey(name: 'private_key') required this.privateKey}): super._();
   factory _SignerId.fromJson(Map<String, dynamic> json) => _$SignerIdFromJson(json);
 
 @override@JsonKey(name: 'id') final  int id;
@@ -236,10 +233,6 @@ bool operator ==(Object other) {
 @override
 int get hashCode => Object.hash(runtimeType,id,privateKey);
 
-@override
-String toString() {
-  return 'SignerId(id: $id, privateKey: $privateKey)';
-}
 
 
 }

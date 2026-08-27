@@ -1,0 +1,12 @@
+{
+  "reference": "xelis-blockchain/v1.25.0@db59b5c246ab0e40386d6c241dcd77f0aea84b10",
+  "source": "RPCHandler.schema",
+  "daemon_version": "1.25.0-db59b5c2",
+  "wallet_version": "1.25.0-db59b5c2",
+  "network": "devnet",
+  "daemon_registration": {
+    "allow_mining_methods": true,
+    "allow_private_methods": true,
+    "allow_contract_vm_executions": true
+  }
+}

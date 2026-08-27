@@ -1,0 +1,46 @@
+name: SDK checks
+
+on:
+  push:
+    branches:
+      - master
+      - dev
+      - 'release/**'
+  pull_request:
+    branches:
+      - master
+      - dev
+      - 'release/**'
+
+concurrency:
+  group: checks-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: dart-lang/setup-dart@v1
+      - run: dart pub get
+      - id: xelis-target
+        name: Read pinned XELIS target
+        shell: pwsh
+        run: |
+          $target = Get-Content xelis_target.json -Raw | ConvertFrom-Json
+          "repository=$($target.upstream.repository)" >> $env:GITHUB_OUTPUT
+          "commit=$($target.upstream.commit)" >> $env:GITHUB_OUTPUT
+      - name: Checkout pinned XELIS RPC sources
+        uses: actions/checkout@v7
+        with:
+          repository: ${{ steps.xelis-target.outputs.repository }}
+          ref: ${{ steps.xelis-target.outputs.commit }}
+          path: .dart_tool/xelis-blockchain
+          sparse-checkout: |
+            xelis_common/src/api/daemon/mod.rs
+            xelis_common/src/api/wallet.rs
+            xelis_daemon/src/rpc/rpc.rs
+            xelis_wallet/src/api/rpc.rs
+          sparse-checkout-cone-mode: false
+      - name: Run Dart CI checks
+        run: dart run tool/verify.dart ci --xelis-source .dart_tool/xelis-blockchain

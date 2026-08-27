@@ -8,16 +8,16 @@ part of 'get_topoheight_range_params.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_GetTopoHeightRangeParams _$GetTopoHeightRangeParamsFromJson(
+_GetTopoheightRangeParams _$GetTopoheightRangeParamsFromJson(
   Map<String, dynamic> json,
-) => _GetTopoHeightRangeParams(
-  startTopoHeight: (json['start_topoheight'] as num?)?.toInt(),
-  endTopoHeight: (json['end_topoheight'] as num?)?.toInt(),
+) => _GetTopoheightRangeParams(
+  startTopoheight: rpcNullableBigInt(json['start_topoheight']),
+  endTopoheight: rpcNullableBigInt(json['end_topoheight']),
 );
 
-Map<String, dynamic> _$GetTopoHeightRangeParamsToJson(
-  _GetTopoHeightRangeParams instance,
+Map<String, dynamic> _$GetTopoheightRangeParamsToJson(
+  _GetTopoheightRangeParams instance,
 ) => <String, dynamic>{
-  'start_topoheight': ?instance.startTopoHeight,
-  'end_topoheight': ?instance.endTopoHeight,
+  'start_topoheight': ?rpcNullableBigIntToJson(instance.startTopoheight),
+  'end_topoheight': ?rpcNullableBigIntToJson(instance.endTopoheight),
 };

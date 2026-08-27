@@ -8,16 +8,16 @@ part of 'get_nonce_at_topoheight_result.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_GetNonceAtTopoHeightResult _$GetNonceAtTopoHeightResultFromJson(
+_GetNonceAtTopoheightResult _$GetNonceAtTopoheightResultFromJson(
   Map<String, dynamic> json,
-) => _GetNonceAtTopoHeightResult(
-  nonce: (json['nonce'] as num).toInt(),
-  previousTopoheight: (json['previous_topoheight'] as num?)?.toInt(),
+) => _GetNonceAtTopoheightResult(
+  nonce: rpcBigInt(json['nonce']),
+  previousTopoheight: rpcNullableBigInt(json['previous_topoheight']),
 );
 
-Map<String, dynamic> _$GetNonceAtTopoHeightResultToJson(
-  _GetNonceAtTopoHeightResult instance,
+Map<String, dynamic> _$GetNonceAtTopoheightResultToJson(
+  _GetNonceAtTopoheightResult instance,
 ) => <String, dynamic>{
-  'nonce': instance.nonce,
-  'previous_topoheight': instance.previousTopoheight,
+  'nonce': rpcBigIntToJson(instance.nonce),
+  'previous_topoheight': rpcNullableBigIntToJson(instance.previousTopoheight),
 };

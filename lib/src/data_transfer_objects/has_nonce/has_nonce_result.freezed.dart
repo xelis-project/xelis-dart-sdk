@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'has_nonce_result.dart';
@@ -9,13 +9,14 @@ part of 'has_nonce_result.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$HasNonceResult {
 
-@JsonKey(name: 'exist') bool get exist;
+@JsonKey(name: 'exist') bool get exist;@JsonKey(includeFromJson: false, includeToJson: false) RpcExtraFields get extraFields;
 /// Create a copy of HasNonceResult
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,16 +29,16 @@ $HasNonceResultCopyWith<HasNonceResult> get copyWith => _$HasNonceResultCopyWith
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is HasNonceResult&&(identical(other.exist, exist) || other.exist == exist));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is HasNonceResult&&(identical(other.exist, exist) || other.exist == exist)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,exist);
+int get hashCode => Object.hash(runtimeType,exist,extraFields);
 
 @override
 String toString() {
-  return 'HasNonceResult(exist: $exist)';
+  return 'HasNonceResult(exist: $exist, extraFields: $extraFields)';
 }
 
 
@@ -48,11 +49,11 @@ abstract mixin class $HasNonceResultCopyWith<$Res>  {
   factory $HasNonceResultCopyWith(HasNonceResult value, $Res Function(HasNonceResult) _then) = _$HasNonceResultCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(name: 'exist') bool exist
+@JsonKey(name: 'exist') bool exist,@JsonKey(includeFromJson: false, includeToJson: false) RpcExtraFields extraFields
 });
 
 
-
+$RpcExtraFieldsCopyWith<$Res> get extraFields;
 
 }
 /// @nodoc
@@ -65,13 +66,23 @@ class _$HasNonceResultCopyWithImpl<$Res>
 
 /// Create a copy of HasNonceResult
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? exist = null,}) {
-  return _then(_self.copyWith(
+@pragma('vm:prefer-inline') @override $Res call({Object? exist = null,Object? extraFields = null,}) {
+  return _then(HasNonceResult(
 exist: null == exist ? _self.exist : exist // ignore: cast_nullable_to_non_nullable
-as bool,
+as bool,extraFields: null == extraFields ? _self.extraFields : extraFields // ignore: cast_nullable_to_non_nullable
+as RpcExtraFields,
   ));
 }
-
+/// Create a copy of HasNonceResult
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$RpcExtraFieldsCopyWith<$Res> get extraFields {
+  
+  return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
+    return _then(_self.copyWith(extraFields: value));
+  });
+}
 }
 
 
@@ -153,10 +164,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'exist')  bool exist)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'exist')  bool exist, @JsonKey(includeFromJson: false, includeToJson: false)  RpcExtraFields extraFields)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _HasNonceResult() when $default != null:
-return $default(_that.exist);case _:
+return $default(_that.exist,_that.extraFields);case _:
   return orElse();
 
 }
@@ -174,10 +185,10 @@ return $default(_that.exist);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'exist')  bool exist)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'exist')  bool exist, @JsonKey(includeFromJson: false, includeToJson: false)  RpcExtraFields extraFields)  $default,) {final _that = this;
 switch (_that) {
 case _HasNonceResult():
-return $default(_that.exist);case _:
+return $default(_that.exist,_that.extraFields);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -194,10 +205,10 @@ return $default(_that.exist);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'exist')  bool exist)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'exist')  bool exist, @JsonKey(includeFromJson: false, includeToJson: false)  RpcExtraFields extraFields)?  $default,) {final _that = this;
 switch (_that) {
 case _HasNonceResult() when $default != null:
-return $default(_that.exist);case _:
+return $default(_that.exist,_that.extraFields);case _:
   return null;
 
 }
@@ -208,11 +219,12 @@ return $default(_that.exist);case _:
 /// @nodoc
 @JsonSerializable()
 
-class _HasNonceResult implements HasNonceResult {
-  const _HasNonceResult({@JsonKey(name: 'exist') required this.exist});
+class _HasNonceResult extends HasNonceResult {
+  const _HasNonceResult({@JsonKey(name: 'exist') required this.exist, @JsonKey(includeFromJson: false, includeToJson: false) this.extraFields = const RpcExtraFields()}): super._();
   factory _HasNonceResult.fromJson(Map<String, dynamic> json) => _$HasNonceResultFromJson(json);
 
 @override@JsonKey(name: 'exist') final  bool exist;
+@override@JsonKey(includeFromJson: false, includeToJson: false) final  RpcExtraFields extraFields;
 
 /// Create a copy of HasNonceResult
 /// with the given fields replaced by the non-null parameter values.
@@ -227,16 +239,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _HasNonceResult&&(identical(other.exist, exist) || other.exist == exist));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _HasNonceResult&&(identical(other.exist, exist) || other.exist == exist)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,exist);
+int get hashCode => Object.hash(runtimeType,exist,extraFields);
 
 @override
 String toString() {
-  return 'HasNonceResult(exist: $exist)';
+  return 'HasNonceResult(exist: $exist, extraFields: $extraFields)';
 }
 
 
@@ -247,11 +259,11 @@ abstract mixin class _$HasNonceResultCopyWith<$Res> implements $HasNonceResultCo
   factory _$HasNonceResultCopyWith(_HasNonceResult value, $Res Function(_HasNonceResult) _then) = __$HasNonceResultCopyWithImpl;
 @override @useResult
 $Res call({
-@JsonKey(name: 'exist') bool exist
+@JsonKey(name: 'exist') bool exist,@JsonKey(includeFromJson: false, includeToJson: false) RpcExtraFields extraFields
 });
 
 
-
+@override $RpcExtraFieldsCopyWith<$Res> get extraFields;
 
 }
 /// @nodoc
@@ -264,14 +276,24 @@ class __$HasNonceResultCopyWithImpl<$Res>
 
 /// Create a copy of HasNonceResult
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? exist = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? exist = null,Object? extraFields = null,}) {
   return _then(_HasNonceResult(
 exist: null == exist ? _self.exist : exist // ignore: cast_nullable_to_non_nullable
-as bool,
+as bool,extraFields: null == extraFields ? _self.extraFields : extraFields // ignore: cast_nullable_to_non_nullable
+as RpcExtraFields,
   ));
 }
 
-
+/// Create a copy of HasNonceResult
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$RpcExtraFieldsCopyWith<$Res> get extraFields {
+  
+  return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
+    return _then(_self.copyWith(extraFields: value));
+  });
+}
 }
 
 // dart format on

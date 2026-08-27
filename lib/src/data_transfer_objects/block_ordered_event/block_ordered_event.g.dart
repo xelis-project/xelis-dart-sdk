@@ -12,12 +12,12 @@ _BlockOrderedEvent _$BlockOrderedEventFromJson(Map<String, dynamic> json) =>
     _BlockOrderedEvent(
       blockHash: json['block_hash'] as String,
       blockType: json['block_type'] as String,
-      topoHeight: (json['topoheight'] as num).toInt(),
+      topoheight: rpcBigInt(json['topoheight']),
     );
 
 Map<String, dynamic> _$BlockOrderedEventToJson(_BlockOrderedEvent instance) =>
     <String, dynamic>{
       'block_hash': instance.blockHash,
       'block_type': instance.blockType,
-      'topoheight': instance.topoHeight,
+      'topoheight': rpcBigIntToJson(instance.topoheight),
     };

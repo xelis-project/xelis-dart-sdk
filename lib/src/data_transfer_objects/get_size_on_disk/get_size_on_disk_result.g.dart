@@ -10,13 +10,13 @@ part of 'get_size_on_disk_result.dart';
 
 _GetSizeOnDiskResult _$GetSizeOnDiskResultFromJson(Map<String, dynamic> json) =>
     _GetSizeOnDiskResult(
-      sizeBytes: (json['size_bytes'] as num).toInt(),
+      sizeBytes: rpcBigInt(json['size_bytes']),
       sizeFormatted: json['size_formatted'] as String,
     );
 
 Map<String, dynamic> _$GetSizeOnDiskResultToJson(
   _GetSizeOnDiskResult instance,
 ) => <String, dynamic>{
-  'size_bytes': instance.sizeBytes,
+  'size_bytes': rpcBigIntToJson(instance.sizeBytes),
   'size_formatted': instance.sizeFormatted,
 };

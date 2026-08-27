@@ -1,0 +1,32 @@
+{
+  "format": 1,
+  "channel": "stable",
+  "upstream": {
+    "repository": "xelis-project/xelis-blockchain",
+    "ref": "v1.25.0",
+    "commit": "db59b5c246ab0e40386d6c241dcd77f0aea84b10",
+    "serverVersion": "1.25.0"
+  },
+  "schemas": {
+    "daemon": "test/fixtures/rpc_schema/daemon.json",
+    "wallet": "test/fixtures/rpc_schema/wallet.json",
+    "metadata": "test/fixtures/rpc_schema/metadata.json"
+  },
+  "integration": {
+    "components": {
+      "daemon": {
+        "status": "supported"
+      },
+      "wallet": {
+        "status": "supported"
+      }
+    }
+  },
+  "liveProbe": {
+    "network": "mainnet",
+    "daemonEndpoints": [
+      "node.xelis.io",
+      "fr-node.xelis.io"
+    ]
+  }
+}

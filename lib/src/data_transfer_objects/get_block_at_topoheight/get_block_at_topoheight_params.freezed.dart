@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'get_block_at_topoheight_params.dart';
@@ -9,46 +9,47 @@ part of 'get_block_at_topoheight_params.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 
 /// @nodoc
-mixin _$GetBlockAtTopoHeightParams {
+mixin _$GetBlockAtTopoheightParams {
 
-@JsonKey(name: 'topoheight') int get topoHeight;@JsonKey(name: 'include_txs') bool? get includeTxs;
-/// Create a copy of GetBlockAtTopoHeightParams
+@JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt get topoheight;@JsonKey(name: 'include_txs') bool? get includeTxs;
+/// Create a copy of GetBlockAtTopoheightParams
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-$GetBlockAtTopoHeightParamsCopyWith<GetBlockAtTopoHeightParams> get copyWith => _$GetBlockAtTopoHeightParamsCopyWithImpl<GetBlockAtTopoHeightParams>(this as GetBlockAtTopoHeightParams, _$identity);
+$GetBlockAtTopoheightParamsCopyWith<GetBlockAtTopoheightParams> get copyWith => _$GetBlockAtTopoheightParamsCopyWithImpl<GetBlockAtTopoheightParams>(this as GetBlockAtTopoheightParams, _$identity);
 
-  /// Serializes this GetBlockAtTopoHeightParams to a JSON map.
+  /// Serializes this GetBlockAtTopoheightParams to a JSON map.
   Map<String, dynamic> toJson();
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetBlockAtTopoHeightParams&&(identical(other.topoHeight, topoHeight) || other.topoHeight == topoHeight)&&(identical(other.includeTxs, includeTxs) || other.includeTxs == includeTxs));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetBlockAtTopoheightParams&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&(identical(other.includeTxs, includeTxs) || other.includeTxs == includeTxs));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,topoHeight,includeTxs);
+int get hashCode => Object.hash(runtimeType,topoheight,includeTxs);
 
 @override
 String toString() {
-  return 'GetBlockAtTopoHeightParams(topoHeight: $topoHeight, includeTxs: $includeTxs)';
+  return 'GetBlockAtTopoheightParams(topoheight: $topoheight, includeTxs: $includeTxs)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class $GetBlockAtTopoHeightParamsCopyWith<$Res>  {
-  factory $GetBlockAtTopoHeightParamsCopyWith(GetBlockAtTopoHeightParams value, $Res Function(GetBlockAtTopoHeightParams) _then) = _$GetBlockAtTopoHeightParamsCopyWithImpl;
+abstract mixin class $GetBlockAtTopoheightParamsCopyWith<$Res>  {
+  factory $GetBlockAtTopoheightParamsCopyWith(GetBlockAtTopoheightParams value, $Res Function(GetBlockAtTopoheightParams) _then) = _$GetBlockAtTopoheightParamsCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(name: 'topoheight') int topoHeight,@JsonKey(name: 'include_txs') bool? includeTxs
+@JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt topoheight,@JsonKey(name: 'include_txs') bool? includeTxs
 });
 
 
@@ -56,19 +57,19 @@ $Res call({
 
 }
 /// @nodoc
-class _$GetBlockAtTopoHeightParamsCopyWithImpl<$Res>
-    implements $GetBlockAtTopoHeightParamsCopyWith<$Res> {
-  _$GetBlockAtTopoHeightParamsCopyWithImpl(this._self, this._then);
+class _$GetBlockAtTopoheightParamsCopyWithImpl<$Res>
+    implements $GetBlockAtTopoheightParamsCopyWith<$Res> {
+  _$GetBlockAtTopoheightParamsCopyWithImpl(this._self, this._then);
 
-  final GetBlockAtTopoHeightParams _self;
-  final $Res Function(GetBlockAtTopoHeightParams) _then;
+  final GetBlockAtTopoheightParams _self;
+  final $Res Function(GetBlockAtTopoheightParams) _then;
 
-/// Create a copy of GetBlockAtTopoHeightParams
+/// Create a copy of GetBlockAtTopoheightParams
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? topoHeight = null,Object? includeTxs = freezed,}) {
-  return _then(_self.copyWith(
-topoHeight: null == topoHeight ? _self.topoHeight : topoHeight // ignore: cast_nullable_to_non_nullable
-as int,includeTxs: freezed == includeTxs ? _self.includeTxs : includeTxs // ignore: cast_nullable_to_non_nullable
+@pragma('vm:prefer-inline') @override $Res call({Object? topoheight = null,Object? includeTxs = freezed,}) {
+  return _then(GetBlockAtTopoheightParams(
+topoheight: null == topoheight ? _self.topoheight : topoheight // ignore: cast_nullable_to_non_nullable
+as BigInt,includeTxs: freezed == includeTxs ? _self.includeTxs : includeTxs // ignore: cast_nullable_to_non_nullable
 as bool?,
   ));
 }
@@ -76,8 +77,8 @@ as bool?,
 }
 
 
-/// Adds pattern-matching-related methods to [GetBlockAtTopoHeightParams].
-extension GetBlockAtTopoHeightParamsPatterns on GetBlockAtTopoHeightParams {
+/// Adds pattern-matching-related methods to [GetBlockAtTopoheightParams].
+extension GetBlockAtTopoheightParamsPatterns on GetBlockAtTopoheightParams {
 /// A variant of `map` that fallback to returning `orElse`.
 ///
 /// It is equivalent to doing:
@@ -90,10 +91,10 @@ extension GetBlockAtTopoHeightParamsPatterns on GetBlockAtTopoHeightParams {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _GetBlockAtTopoHeightParams value)?  $default,{required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _GetBlockAtTopoheightParams value)?  $default,{required TResult orElse(),}){
 final _that = this;
 switch (_that) {
-case _GetBlockAtTopoHeightParams() when $default != null:
+case _GetBlockAtTopoheightParams() when $default != null:
 return $default(_that);case _:
   return orElse();
 
@@ -112,10 +113,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _GetBlockAtTopoHeightParams value)  $default,){
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _GetBlockAtTopoheightParams value)  $default,){
 final _that = this;
 switch (_that) {
-case _GetBlockAtTopoHeightParams():
+case _GetBlockAtTopoheightParams():
 return $default(_that);case _:
   throw StateError('Unexpected subclass');
 
@@ -133,10 +134,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _GetBlockAtTopoHeightParams value)?  $default,){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _GetBlockAtTopoheightParams value)?  $default,){
 final _that = this;
 switch (_that) {
-case _GetBlockAtTopoHeightParams() when $default != null:
+case _GetBlockAtTopoheightParams() when $default != null:
 return $default(_that);case _:
   return null;
 
@@ -154,10 +155,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'topoheight')  int topoHeight, @JsonKey(name: 'include_txs')  bool? includeTxs)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt topoheight, @JsonKey(name: 'include_txs')  bool? includeTxs)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
-case _GetBlockAtTopoHeightParams() when $default != null:
-return $default(_that.topoHeight,_that.includeTxs);case _:
+case _GetBlockAtTopoheightParams() when $default != null:
+return $default(_that.topoheight,_that.includeTxs);case _:
   return orElse();
 
 }
@@ -175,10 +176,10 @@ return $default(_that.topoHeight,_that.includeTxs);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'topoheight')  int topoHeight, @JsonKey(name: 'include_txs')  bool? includeTxs)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt topoheight, @JsonKey(name: 'include_txs')  bool? includeTxs)  $default,) {final _that = this;
 switch (_that) {
-case _GetBlockAtTopoHeightParams():
-return $default(_that.topoHeight,_that.includeTxs);case _:
+case _GetBlockAtTopoheightParams():
+return $default(_that.topoheight,_that.includeTxs);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -195,10 +196,10 @@ return $default(_that.topoHeight,_that.includeTxs);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'topoheight')  int topoHeight, @JsonKey(name: 'include_txs')  bool? includeTxs)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt topoheight, @JsonKey(name: 'include_txs')  bool? includeTxs)?  $default,) {final _that = this;
 switch (_that) {
-case _GetBlockAtTopoHeightParams() when $default != null:
-return $default(_that.topoHeight,_that.includeTxs);case _:
+case _GetBlockAtTopoheightParams() when $default != null:
+return $default(_that.topoheight,_that.includeTxs);case _:
   return null;
 
 }
@@ -209,47 +210,47 @@ return $default(_that.topoHeight,_that.includeTxs);case _:
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _GetBlockAtTopoHeightParams implements GetBlockAtTopoHeightParams {
-  const _GetBlockAtTopoHeightParams({@JsonKey(name: 'topoheight') required this.topoHeight, @JsonKey(name: 'include_txs') this.includeTxs});
-  factory _GetBlockAtTopoHeightParams.fromJson(Map<String, dynamic> json) => _$GetBlockAtTopoHeightParamsFromJson(json);
+class _GetBlockAtTopoheightParams implements GetBlockAtTopoheightParams {
+  const _GetBlockAtTopoheightParams({@JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.topoheight, @JsonKey(name: 'include_txs') this.includeTxs});
+  factory _GetBlockAtTopoheightParams.fromJson(Map<String, dynamic> json) => _$GetBlockAtTopoheightParamsFromJson(json);
 
-@override@JsonKey(name: 'topoheight') final  int topoHeight;
+@override@JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) final  BigInt topoheight;
 @override@JsonKey(name: 'include_txs') final  bool? includeTxs;
 
-/// Create a copy of GetBlockAtTopoHeightParams
+/// Create a copy of GetBlockAtTopoheightParams
 /// with the given fields replaced by the non-null parameter values.
 @override @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$GetBlockAtTopoHeightParamsCopyWith<_GetBlockAtTopoHeightParams> get copyWith => __$GetBlockAtTopoHeightParamsCopyWithImpl<_GetBlockAtTopoHeightParams>(this, _$identity);
+_$GetBlockAtTopoheightParamsCopyWith<_GetBlockAtTopoheightParams> get copyWith => __$GetBlockAtTopoheightParamsCopyWithImpl<_GetBlockAtTopoheightParams>(this, _$identity);
 
 @override
 Map<String, dynamic> toJson() {
-  return _$GetBlockAtTopoHeightParamsToJson(this, );
+  return _$GetBlockAtTopoheightParamsToJson(this, );
 }
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetBlockAtTopoHeightParams&&(identical(other.topoHeight, topoHeight) || other.topoHeight == topoHeight)&&(identical(other.includeTxs, includeTxs) || other.includeTxs == includeTxs));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetBlockAtTopoheightParams&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&(identical(other.includeTxs, includeTxs) || other.includeTxs == includeTxs));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,topoHeight,includeTxs);
+int get hashCode => Object.hash(runtimeType,topoheight,includeTxs);
 
 @override
 String toString() {
-  return 'GetBlockAtTopoHeightParams(topoHeight: $topoHeight, includeTxs: $includeTxs)';
+  return 'GetBlockAtTopoheightParams(topoheight: $topoheight, includeTxs: $includeTxs)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class _$GetBlockAtTopoHeightParamsCopyWith<$Res> implements $GetBlockAtTopoHeightParamsCopyWith<$Res> {
-  factory _$GetBlockAtTopoHeightParamsCopyWith(_GetBlockAtTopoHeightParams value, $Res Function(_GetBlockAtTopoHeightParams) _then) = __$GetBlockAtTopoHeightParamsCopyWithImpl;
+abstract mixin class _$GetBlockAtTopoheightParamsCopyWith<$Res> implements $GetBlockAtTopoheightParamsCopyWith<$Res> {
+  factory _$GetBlockAtTopoheightParamsCopyWith(_GetBlockAtTopoheightParams value, $Res Function(_GetBlockAtTopoheightParams) _then) = __$GetBlockAtTopoheightParamsCopyWithImpl;
 @override @useResult
 $Res call({
-@JsonKey(name: 'topoheight') int topoHeight,@JsonKey(name: 'include_txs') bool? includeTxs
+@JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt topoheight,@JsonKey(name: 'include_txs') bool? includeTxs
 });
 
 
@@ -257,19 +258,19 @@ $Res call({
 
 }
 /// @nodoc
-class __$GetBlockAtTopoHeightParamsCopyWithImpl<$Res>
-    implements _$GetBlockAtTopoHeightParamsCopyWith<$Res> {
-  __$GetBlockAtTopoHeightParamsCopyWithImpl(this._self, this._then);
+class __$GetBlockAtTopoheightParamsCopyWithImpl<$Res>
+    implements _$GetBlockAtTopoheightParamsCopyWith<$Res> {
+  __$GetBlockAtTopoheightParamsCopyWithImpl(this._self, this._then);
 
-  final _GetBlockAtTopoHeightParams _self;
-  final $Res Function(_GetBlockAtTopoHeightParams) _then;
+  final _GetBlockAtTopoheightParams _self;
+  final $Res Function(_GetBlockAtTopoheightParams) _then;
 
-/// Create a copy of GetBlockAtTopoHeightParams
+/// Create a copy of GetBlockAtTopoheightParams
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? topoHeight = null,Object? includeTxs = freezed,}) {
-  return _then(_GetBlockAtTopoHeightParams(
-topoHeight: null == topoHeight ? _self.topoHeight : topoHeight // ignore: cast_nullable_to_non_nullable
-as int,includeTxs: freezed == includeTxs ? _self.includeTxs : includeTxs // ignore: cast_nullable_to_non_nullable
+@override @pragma('vm:prefer-inline') $Res call({Object? topoheight = null,Object? includeTxs = freezed,}) {
+  return _then(_GetBlockAtTopoheightParams(
+topoheight: null == topoheight ? _self.topoheight : topoheight // ignore: cast_nullable_to_non_nullable
+as BigInt,includeTxs: freezed == includeTxs ? _self.includeTxs : includeTxs // ignore: cast_nullable_to_non_nullable
 as bool?,
   ));
 }

@@ -1,6 +1,6 @@
-// ignore_for_file: invalid_annotation_target
-
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/core/rpc_extra_fields.dart';
+import 'package:xelis_dart_sdk/src/utils/rpc_json.dart';
 
 part 'block_ordered_event.freezed.dart';
 
@@ -13,10 +13,29 @@ abstract class BlockOrderedEvent with _$BlockOrderedEvent {
   const factory BlockOrderedEvent({
     @JsonKey(name: 'block_hash') required String blockHash,
     @JsonKey(name: 'block_type') required String blockType,
-    @JsonKey(name: 'topoheight') required int topoHeight,
+    @JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson)
+    required BigInt topoheight,
+    @JsonKey(includeFromJson: false, includeToJson: false)
+    @Default(RpcExtraFields())
+    RpcExtraFields extraFields,
   }) = _BlockOrderedEvent;
+
+  const BlockOrderedEvent._();
 
   /// @nodoc
   factory BlockOrderedEvent.fromJson(Map<String, dynamic> json) =>
-      _$BlockOrderedEventFromJson(json);
+      _$BlockOrderedEventFromJson(json).copyWith(
+        extraFields: RpcExtraFields.capture(json, const {
+          'block_hash',
+          'block_type',
+          'topoheight',
+        }),
+      );
+
+  Map<String, Object?> toWireJson({bool includeExtraFields = false}) =>
+      extraFields.mergeInto({
+        'block_hash': blockHash,
+        'block_type': blockType,
+        'topoheight': topoheight,
+      }, includeExtraFields: includeExtraFields);
 }

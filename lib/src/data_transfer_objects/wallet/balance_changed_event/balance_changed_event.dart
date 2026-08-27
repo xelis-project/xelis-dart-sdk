@@ -1,6 +1,6 @@
-// ignore_for_file: invalid_annotation_target
-
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/core/rpc_extra_fields.dart';
+import 'package:xelis_dart_sdk/src/utils/rpc_json.dart';
 
 part 'balance_changed_event.freezed.dart';
 
@@ -12,10 +12,25 @@ abstract class BalanceChangedEvent with _$BalanceChangedEvent {
   /// @nodoc
   const factory BalanceChangedEvent({
     @JsonKey(name: 'asset') required String assetHash,
-    @JsonKey(name: 'balance') required int balance,
+    @JsonKey(name: 'balance', fromJson: rpcBigInt, toJson: rpcBigIntToJson)
+    required BigInt balance,
+    @JsonKey(includeFromJson: false, includeToJson: false)
+    @Default(RpcExtraFields())
+    RpcExtraFields extraFields,
   }) = _BalanceChangedEvent;
+
+  const BalanceChangedEvent._();
 
   /// @nodoc
   factory BalanceChangedEvent.fromJson(Map<String, dynamic> json) =>
-      _$BalanceChangedEventFromJson(json);
+      _$BalanceChangedEventFromJson(json).copyWith(
+        extraFields: RpcExtraFields.capture(json, const {'asset', 'balance'}),
+      );
+
+  /// Serializes known fields and optionally restores fields received from wire.
+  Map<String, Object?> toWireJson({bool includeExtraFields = false}) =>
+      extraFields.mergeInto({
+        'asset': assetHash,
+        'balance': balance,
+      }, includeExtraFields: includeExtraFields);
 }

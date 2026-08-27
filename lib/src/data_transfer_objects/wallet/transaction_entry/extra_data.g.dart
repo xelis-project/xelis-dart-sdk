@@ -9,21 +9,14 @@ part of 'extra_data.dart';
 // **************************************************************************
 
 _ExtraData _$ExtraDataFromJson(Map<String, dynamic> json) => _ExtraData(
-  data: json['data'],
-  flag: $enumDecode(_$FlagEnumMap, json['flag']),
-  sharedKey: json['shared_key'],
+  flag: PlaintextExtraDataFlag.fromJson(json['flag']),
+  data: _nullableDataElementFromJson(json['data']),
+  sharedKey: _nullableSharedKeyFromJson(json['shared_key']),
 );
 
 Map<String, dynamic> _$ExtraDataToJson(_ExtraData instance) =>
     <String, dynamic>{
-      'data': instance.data,
-      'flag': _$FlagEnumMap[instance.flag]!,
-      'shared_key': instance.sharedKey,
+      'flag': _plaintextFlagToJson(instance.flag),
+      'data': _nullableDataElementToJson(instance.data),
+      'shared_key': _nullableSharedKeyToJson(instance.sharedKey),
     };
-
-const _$FlagEnumMap = {
-  Flag.private: 'private',
-  Flag.public: 'public',
-  Flag.proprietary: 'proprietary',
-  Flag.failed: 'failed',
-};

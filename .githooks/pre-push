@@ -1,0 +1,16 @@
+#!/bin/sh
+set -eu
+
+profile="$(git config --get xelis.prePushProfile || true)"
+if [ -z "$profile" ]; then
+  profile="daemon"
+fi
+if [ "$profile" = "off" ]; then
+  exit 0
+fi
+
+if [ "$profile" = "check" ]; then
+  dart run tool/verify.dart check
+else
+  dart run tool/verify.dart integration "$profile"
+fi

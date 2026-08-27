@@ -9,7 +9,9 @@ part of 'rescan_params.dart';
 // **************************************************************************
 
 _RescanParams _$RescanParamsFromJson(Map<String, dynamic> json) =>
-    _RescanParams(untilTopoheight: (json['until_topoheight'] as num).toInt());
+    _RescanParams(untilTopoheight: rpcBigInt(json['until_topoheight']));
 
 Map<String, dynamic> _$RescanParamsToJson(_RescanParams instance) =>
-    <String, dynamic>{'until_topoheight': instance.untilTopoheight};
+    <String, dynamic>{
+      'until_topoheight': rpcBigIntToJson(instance.untilTopoheight),
+    };

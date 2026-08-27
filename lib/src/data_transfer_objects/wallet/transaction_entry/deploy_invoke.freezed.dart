@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'deploy_invoke.dart';
@@ -9,13 +9,14 @@ part of 'deploy_invoke.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$DeployInvoke {
 
-@JsonKey(name: 'max_gas') int get maxGas;@JsonKey(name: 'deposits') Map<String, int> get deposits;
+@JsonKey(name: 'max_gas', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt get maxGas;@JsonKey(name: 'deposits', fromJson: rpcBigIntMap, toJson: rpcBigIntMapToJson) Map<String, BigInt> get deposits;@JsonKey(includeFromJson: false, includeToJson: false) RpcExtraFields get extraFields;
 /// Create a copy of DeployInvoke
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,16 +29,16 @@ $DeployInvokeCopyWith<DeployInvoke> get copyWith => _$DeployInvokeCopyWithImpl<D
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is DeployInvoke&&(identical(other.maxGas, maxGas) || other.maxGas == maxGas)&&const DeepCollectionEquality().equals(other.deposits, deposits));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is DeployInvoke&&(identical(other.maxGas, maxGas) || other.maxGas == maxGas)&&const DeepCollectionEquality().equals(other.deposits, deposits)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,maxGas,const DeepCollectionEquality().hash(deposits));
+int get hashCode => Object.hash(runtimeType,maxGas,const DeepCollectionEquality().hash(deposits),extraFields);
 
 @override
 String toString() {
-  return 'DeployInvoke(maxGas: $maxGas, deposits: $deposits)';
+  return 'DeployInvoke(maxGas: $maxGas, deposits: $deposits, extraFields: $extraFields)';
 }
 
 
@@ -48,11 +49,11 @@ abstract mixin class $DeployInvokeCopyWith<$Res>  {
   factory $DeployInvokeCopyWith(DeployInvoke value, $Res Function(DeployInvoke) _then) = _$DeployInvokeCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(name: 'max_gas') int maxGas,@JsonKey(name: 'deposits') Map<String, int> deposits
+@JsonKey(name: 'max_gas', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt maxGas,@JsonKey(name: 'deposits', fromJson: rpcBigIntMap, toJson: rpcBigIntMapToJson) Map<String, BigInt> deposits,@JsonKey(includeFromJson: false, includeToJson: false) RpcExtraFields extraFields
 });
 
 
-
+$RpcExtraFieldsCopyWith<$Res> get extraFields;
 
 }
 /// @nodoc
@@ -65,14 +66,24 @@ class _$DeployInvokeCopyWithImpl<$Res>
 
 /// Create a copy of DeployInvoke
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? maxGas = null,Object? deposits = null,}) {
-  return _then(_self.copyWith(
+@pragma('vm:prefer-inline') @override $Res call({Object? maxGas = null,Object? deposits = null,Object? extraFields = null,}) {
+  return _then(DeployInvoke(
 maxGas: null == maxGas ? _self.maxGas : maxGas // ignore: cast_nullable_to_non_nullable
-as int,deposits: null == deposits ? _self.deposits : deposits // ignore: cast_nullable_to_non_nullable
-as Map<String, int>,
+as BigInt,deposits: null == deposits ? _self.deposits : deposits // ignore: cast_nullable_to_non_nullable
+as Map<String, BigInt>,extraFields: null == extraFields ? _self.extraFields : extraFields // ignore: cast_nullable_to_non_nullable
+as RpcExtraFields,
   ));
 }
-
+/// Create a copy of DeployInvoke
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$RpcExtraFieldsCopyWith<$Res> get extraFields {
+  
+  return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
+    return _then(_self.copyWith(extraFields: value));
+  });
+}
 }
 
 
@@ -154,10 +165,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'max_gas')  int maxGas, @JsonKey(name: 'deposits')  Map<String, int> deposits)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'max_gas', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt maxGas, @JsonKey(name: 'deposits', fromJson: rpcBigIntMap, toJson: rpcBigIntMapToJson)  Map<String, BigInt> deposits, @JsonKey(includeFromJson: false, includeToJson: false)  RpcExtraFields extraFields)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _DeployInvoke() when $default != null:
-return $default(_that.maxGas,_that.deposits);case _:
+return $default(_that.maxGas,_that.deposits,_that.extraFields);case _:
   return orElse();
 
 }
@@ -175,10 +186,10 @@ return $default(_that.maxGas,_that.deposits);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'max_gas')  int maxGas, @JsonKey(name: 'deposits')  Map<String, int> deposits)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'max_gas', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt maxGas, @JsonKey(name: 'deposits', fromJson: rpcBigIntMap, toJson: rpcBigIntMapToJson)  Map<String, BigInt> deposits, @JsonKey(includeFromJson: false, includeToJson: false)  RpcExtraFields extraFields)  $default,) {final _that = this;
 switch (_that) {
 case _DeployInvoke():
-return $default(_that.maxGas,_that.deposits);case _:
+return $default(_that.maxGas,_that.deposits,_that.extraFields);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -195,10 +206,10 @@ return $default(_that.maxGas,_that.deposits);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'max_gas')  int maxGas, @JsonKey(name: 'deposits')  Map<String, int> deposits)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'max_gas', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt maxGas, @JsonKey(name: 'deposits', fromJson: rpcBigIntMap, toJson: rpcBigIntMapToJson)  Map<String, BigInt> deposits, @JsonKey(includeFromJson: false, includeToJson: false)  RpcExtraFields extraFields)?  $default,) {final _that = this;
 switch (_that) {
 case _DeployInvoke() when $default != null:
-return $default(_that.maxGas,_that.deposits);case _:
+return $default(_that.maxGas,_that.deposits,_that.extraFields);case _:
   return null;
 
 }
@@ -209,18 +220,19 @@ return $default(_that.maxGas,_that.deposits);case _:
 /// @nodoc
 @JsonSerializable()
 
-class _DeployInvoke implements DeployInvoke {
-  const _DeployInvoke({@JsonKey(name: 'max_gas') required this.maxGas, @JsonKey(name: 'deposits') required final  Map<String, int> deposits}): _deposits = deposits;
+class _DeployInvoke extends DeployInvoke {
+  const _DeployInvoke({@JsonKey(name: 'max_gas', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.maxGas, @JsonKey(name: 'deposits', fromJson: rpcBigIntMap, toJson: rpcBigIntMapToJson) required  Map<String, BigInt> deposits, @JsonKey(includeFromJson: false, includeToJson: false) this.extraFields = const RpcExtraFields()}): _deposits = deposits,super._();
   factory _DeployInvoke.fromJson(Map<String, dynamic> json) => _$DeployInvokeFromJson(json);
 
-@override@JsonKey(name: 'max_gas') final  int maxGas;
- final  Map<String, int> _deposits;
-@override@JsonKey(name: 'deposits') Map<String, int> get deposits {
+@override@JsonKey(name: 'max_gas', fromJson: rpcBigInt, toJson: rpcBigIntToJson) final  BigInt maxGas;
+ final  Map<String, BigInt> _deposits;
+@override@JsonKey(name: 'deposits', fromJson: rpcBigIntMap, toJson: rpcBigIntMapToJson) Map<String, BigInt> get deposits {
   if (_deposits is EqualUnmodifiableMapView) return _deposits;
   // ignore: implicit_dynamic_type
   return EqualUnmodifiableMapView(_deposits);
 }
 
+@override@JsonKey(includeFromJson: false, includeToJson: false) final  RpcExtraFields extraFields;
 
 /// Create a copy of DeployInvoke
 /// with the given fields replaced by the non-null parameter values.
@@ -235,16 +247,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _DeployInvoke&&(identical(other.maxGas, maxGas) || other.maxGas == maxGas)&&const DeepCollectionEquality().equals(other._deposits, _deposits));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _DeployInvoke&&(identical(other.maxGas, maxGas) || other.maxGas == maxGas)&&const DeepCollectionEquality().equals(other._deposits, _deposits)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,maxGas,const DeepCollectionEquality().hash(_deposits));
+int get hashCode => Object.hash(runtimeType,maxGas,const DeepCollectionEquality().hash(_deposits),extraFields);
 
 @override
 String toString() {
-  return 'DeployInvoke(maxGas: $maxGas, deposits: $deposits)';
+  return 'DeployInvoke(maxGas: $maxGas, deposits: $deposits, extraFields: $extraFields)';
 }
 
 
@@ -255,11 +267,11 @@ abstract mixin class _$DeployInvokeCopyWith<$Res> implements $DeployInvokeCopyWi
   factory _$DeployInvokeCopyWith(_DeployInvoke value, $Res Function(_DeployInvoke) _then) = __$DeployInvokeCopyWithImpl;
 @override @useResult
 $Res call({
-@JsonKey(name: 'max_gas') int maxGas,@JsonKey(name: 'deposits') Map<String, int> deposits
+@JsonKey(name: 'max_gas', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt maxGas,@JsonKey(name: 'deposits', fromJson: rpcBigIntMap, toJson: rpcBigIntMapToJson) Map<String, BigInt> deposits,@JsonKey(includeFromJson: false, includeToJson: false) RpcExtraFields extraFields
 });
 
 
-
+@override $RpcExtraFieldsCopyWith<$Res> get extraFields;
 
 }
 /// @nodoc
@@ -272,15 +284,25 @@ class __$DeployInvokeCopyWithImpl<$Res>
 
 /// Create a copy of DeployInvoke
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? maxGas = null,Object? deposits = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? maxGas = null,Object? deposits = null,Object? extraFields = null,}) {
   return _then(_DeployInvoke(
 maxGas: null == maxGas ? _self.maxGas : maxGas // ignore: cast_nullable_to_non_nullable
-as int,deposits: null == deposits ? _self._deposits : deposits // ignore: cast_nullable_to_non_nullable
-as Map<String, int>,
+as BigInt,deposits: null == deposits ? _self._deposits : deposits // ignore: cast_nullable_to_non_nullable
+as Map<String, BigInt>,extraFields: null == extraFields ? _self.extraFields : extraFields // ignore: cast_nullable_to_non_nullable
+as RpcExtraFields,
   ));
 }
 
-
+/// Create a copy of DeployInvoke
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$RpcExtraFieldsCopyWith<$Res> get extraFields {
+  
+  return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
+    return _then(_self.copyWith(extraFields: value));
+  });
+}
 }
 
 // dart format on

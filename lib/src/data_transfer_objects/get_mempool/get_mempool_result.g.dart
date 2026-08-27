@@ -11,13 +11,13 @@ part of 'get_mempool_result.dart';
 _GetMempoolResult _$GetMempoolResultFromJson(Map<String, dynamic> json) =>
     _GetMempoolResult(
       transactions: (json['transactions'] as List<dynamic>)
-          .map((e) => TransactionResponse.fromJson(e as Map<String, dynamic>))
+          .map((e) => RpcTransaction.fromJson(e as Map<String, dynamic>))
           .toList(),
-      total: (json['total'] as num).toInt(),
+      total: rpcBigInt(json['total']),
     );
 
 Map<String, dynamic> _$GetMempoolResultToJson(_GetMempoolResult instance) =>
     <String, dynamic>{
       'transactions': instance.transactions,
-      'total': instance.total,
+      'total': rpcBigIntToJson(instance.total),
     };

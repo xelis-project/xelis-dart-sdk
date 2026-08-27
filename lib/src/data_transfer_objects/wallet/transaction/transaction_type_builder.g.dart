@@ -24,14 +24,14 @@ Map<String, dynamic> _$TransfersBuilderToJson(TransfersBuilder instance) =>
 
 BurnBuilder _$BurnBuilderFromJson(Map<String, dynamic> json) => BurnBuilder(
   asset: json['asset'] as String,
-  amount: (json['amount'] as num).toInt(),
+  amount: rpcBigInt(json['amount']),
   $type: json['runtimeType'] as String?,
 );
 
 Map<String, dynamic> _$BurnBuilderToJson(BurnBuilder instance) =>
     <String, dynamic>{
       'asset': instance.asset,
-      'amount': instance.amount,
+      'amount': rpcBigIntToJson(instance.amount),
       'runtimeType': instance.$type,
     };
 
@@ -55,9 +55,11 @@ InvokeContractBuilder _$InvokeContractBuilderFromJson(
   Map<String, dynamic> json,
 ) => InvokeContractBuilder(
   contract: json['contract'] as String,
-  maxGas: (json['max_gas'] as num).toInt(),
+  maxGas: rpcBigInt(json['max_gas']),
   entryId: (json['entry_id'] as num).toInt(),
-  parameters: json['parameters'] as List<dynamic>,
+  parameters: (json['parameters'] as List<dynamic>)
+      .map(RpcValueCell.fromJson)
+      .toList(),
   deposits:
       (json['deposits'] as Map<String, dynamic>?)?.map(
         (k, e) => MapEntry(
@@ -66,7 +68,9 @@ InvokeContractBuilder _$InvokeContractBuilderFromJson(
         ),
       ) ??
       const <String, ContractDepositBuilder>{},
-  permission: json['permission'] ?? 'none',
+  permission: json['permission'] == null
+      ? const InterContractPermission.none()
+      : InterContractPermission.fromJson(json['permission']),
   $type: json['runtimeType'] as String?,
 );
 
@@ -74,19 +78,18 @@ Map<String, dynamic> _$InvokeContractBuilderToJson(
   InvokeContractBuilder instance,
 ) => <String, dynamic>{
   'contract': instance.contract,
-  'max_gas': instance.maxGas,
+  'max_gas': rpcBigIntToJson(instance.maxGas),
   'entry_id': instance.entryId,
-  'parameters': instance.parameters,
+  'parameters': instance.parameters.map((e) => e.toJson()).toList(),
   'deposits': instance.deposits.map((k, e) => MapEntry(k, e.toJson())),
-  'permission': instance.permission,
+  'permission': instance.permission.toJson(),
   'runtimeType': instance.$type,
 };
 
 DeployContractBuilder _$DeployContractBuilderFromJson(
   Map<String, dynamic> json,
 ) => DeployContractBuilder(
-  module: json['module'] as String,
-  contractVersion: json['contract_version'] as String? ?? 'v0',
+  contract: ContractModuleHex.fromJson(json['contract']),
   invoke: json['invoke'] == null
       ? null
       : DeployContractInvokeBuilder.fromJson(
@@ -98,14 +101,13 @@ DeployContractBuilder _$DeployContractBuilderFromJson(
 Map<String, dynamic> _$DeployContractBuilderToJson(
   DeployContractBuilder instance,
 ) => <String, dynamic>{
-  'module': instance.module,
-  'contract_version': instance.contractVersion,
+  'contract': _contractModuleHexToJson(instance.contract),
   'invoke': instance.invoke?.toJson(),
   'runtimeType': instance.$type,
 };
 
 BlobBuilder _$BlobBuilderFromJson(Map<String, dynamic> json) => BlobBuilder(
-  data: json['data'],
+  data: DataElement.fromJson(json['data']),
   destinations: (json['destinations'] as List<dynamic>)
       .map((e) => e as String)
       .toList(),
@@ -115,7 +117,7 @@ BlobBuilder _$BlobBuilderFromJson(Map<String, dynamic> json) => BlobBuilder(
 
 Map<String, dynamic> _$BlobBuilderToJson(BlobBuilder instance) =>
     <String, dynamic>{
-      'data': instance.data,
+      'data': _dataElementToJson(instance.data),
       'destinations': instance.destinations,
       'encrypt': instance.encrypt,
       'runtimeType': instance.$type,

@@ -1,6 +1,5 @@
-// ignore_for_file: invalid_annotation_target
-
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:xelis_dart_sdk/src/utils/rpc_json.dart';
 
 part 'get_assets_params.freezed.dart';
 
@@ -14,8 +13,18 @@ abstract class GetAssetsParams with _$GetAssetsParams {
   const factory GetAssetsParams({
     @JsonKey(name: 'skip') int? skip,
     @JsonKey(name: 'maximum') int? maximum,
-    @JsonKey(name: 'minimum_topoheight') int? minimumTopoheight,
-    @JsonKey(name: 'maximum_topoheight') int? maximumTopoheight,
+    @JsonKey(
+      name: 'minimum_topoheight',
+      fromJson: rpcNullableBigInt,
+      toJson: rpcNullableBigIntToJson,
+    )
+    BigInt? minimumTopoheight,
+    @JsonKey(
+      name: 'maximum_topoheight',
+      fromJson: rpcNullableBigInt,
+      toJson: rpcNullableBigIntToJson,
+    )
+    BigInt? maximumTopoheight,
   }) = _GetAssetsParams;
 
   /// @nodoc

@@ -1,7 +1,13 @@
-// ignore_for_file: invalid_annotation_target
-
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:xelis_dart_sdk/src/data_transfer_objects/dtos.dart';
+import 'package:xelis_dart_sdk/src/contract/xvm_serializer.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/contract/data_element.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/contract/rpc_value_cell.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/wallet/transaction/contract_deposit_builder.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/wallet/transaction/contract_module_hex.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/wallet/transaction/deploy_contract_invoke_builder.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/wallet/transaction/inter_contract_permission.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/wallet/transaction/transfer_builder.dart';
+import 'package:xelis_dart_sdk/src/utils/rpc_json.dart';
 
 part 'transaction_type_builder.freezed.dart';
 
@@ -19,7 +25,12 @@ sealed class TransactionTypeBuilder with _$TransactionTypeBuilder {
   /// @nodoc
   const factory TransactionTypeBuilder.burn({
     @JsonKey(name: 'asset') required String asset,
-    @JsonKey(name: 'amount') required int amount,
+    @JsonKey(
+      name: 'amount',
+      fromJson: rpcBigInt,
+      toJson: rpcBigIntToJson,
+    )
+    required BigInt amount,
   }) = BurnBuilder;
 
   /// @nodoc
@@ -32,26 +43,42 @@ sealed class TransactionTypeBuilder with _$TransactionTypeBuilder {
   @JsonSerializable(explicitToJson: true)
   const factory TransactionTypeBuilder.invokeContract({
     @JsonKey(name: 'contract') required String contract,
-    @JsonKey(name: 'max_gas') required int maxGas,
+    @JsonKey(
+      name: 'max_gas',
+      fromJson: rpcBigInt,
+      toJson: rpcBigIntToJson,
+    )
+    required BigInt maxGas,
     @JsonKey(name: 'entry_id') required int entryId,
-    @JsonKey(name: 'parameters') required List<dynamic> parameters,
+    @JsonKey(name: 'parameters') required List<RpcValueCell> parameters,
     @JsonKey(name: 'deposits')
     @Default(<String, ContractDepositBuilder>{})
     Map<String, ContractDepositBuilder> deposits,
-    @JsonKey(name: 'permission') @Default('none') dynamic permission,
+    @JsonKey(name: 'permission')
+    @Default(InterContractPermission.none())
+    InterContractPermission permission,
   }) = InvokeContractBuilder;
 
   /// @nodoc
   @JsonSerializable(explicitToJson: true)
   const factory TransactionTypeBuilder.deployContract({
-    @JsonKey(name: 'module') required String module,
-    @JsonKey(name: 'contract_version') @Default('v0') String contractVersion,
+    @JsonKey(
+      name: 'contract',
+      fromJson: ContractModuleHex.fromJson,
+      toJson: _contractModuleHexToJson,
+    )
+    required ContractModuleHex contract,
     @JsonKey(name: 'invoke') DeployContractInvokeBuilder? invoke,
   }) = DeployContractBuilder;
 
   /// @nodoc
   const factory TransactionTypeBuilder.blob({
-    @JsonKey(name: 'data') required dynamic data,
+    @JsonKey(
+      name: 'data',
+      fromJson: DataElement.fromJson,
+      toJson: _dataElementToJson,
+    )
+    required DataElement data,
     @JsonKey(name: 'destinations') required List<String> destinations,
     @JsonKey(name: 'encrypt') @Default(true) bool encrypt,
   }) = BlobBuilder;
@@ -82,6 +109,10 @@ sealed class TransactionTypeBuilder with _$TransactionTypeBuilder {
     };
   }
 }
+
+Object? _dataElementToJson(DataElement value) => value.toJson();
+
+String _contractModuleHexToJson(ContractModuleHex value) => value.toJson();
 
 /// @nodoc
 Map<String, dynamic> _prepareRpcJson(Map<String, dynamic> json) {

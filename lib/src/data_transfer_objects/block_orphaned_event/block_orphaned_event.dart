@@ -1,6 +1,6 @@
-// ignore_for_file: invalid_annotation_target
-
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/core/rpc_extra_fields.dart';
+import 'package:xelis_dart_sdk/src/utils/rpc_json.dart';
 
 part 'block_orphaned_event.freezed.dart';
 part 'block_orphaned_event.g.dart';
@@ -11,10 +11,31 @@ abstract class BlockOrphanedEvent with _$BlockOrphanedEvent {
   /// @nodoc
   const factory BlockOrphanedEvent({
     @JsonKey(name: 'block_hash') required String blockHash,
-    @JsonKey(name: 'old_topoheight') required int oldTopoHeight,
+    @JsonKey(
+      name: 'old_topoheight',
+      fromJson: rpcBigInt,
+      toJson: rpcBigIntToJson,
+    )
+    required BigInt oldTopoheight,
+    @JsonKey(includeFromJson: false, includeToJson: false)
+    @Default(RpcExtraFields())
+    RpcExtraFields extraFields,
   }) = _BlockOrphanedEvent;
+
+  const BlockOrphanedEvent._();
 
   /// @nodoc
   factory BlockOrphanedEvent.fromJson(Map<String, dynamic> json) =>
-      _$BlockOrphanedEventFromJson(json);
+      _$BlockOrphanedEventFromJson(json).copyWith(
+        extraFields: RpcExtraFields.capture(json, const {
+          'block_hash',
+          'old_topoheight',
+        }),
+      );
+
+  Map<String, Object?> toWireJson({bool includeExtraFields = false}) =>
+      extraFields.mergeInto({
+        'block_hash': blockHash,
+        'old_topoheight': oldTopoheight,
+      }, includeExtraFields: includeExtraFields);
 }

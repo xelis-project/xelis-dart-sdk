@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'p2p_status_result.dart';
@@ -9,13 +9,14 @@ part of 'p2p_status_result.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$P2pStatusResult {
 
-@JsonKey(name: 'best_topoheight') int get bestTopoHeight;@JsonKey(name: 'median_topoheight') int get medianTopoHeight;@JsonKey(name: 'max_peers') int get maxPeers;@JsonKey(name: 'our_topoheight') int get ourTopoHeight;@JsonKey(name: 'peer_count') int get peerCount;@JsonKey(name: 'peer_id') num get peerId;@JsonKey(name: 'tag') String? get tag;
+@JsonKey(name: 'best_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt get bestTopoheight;@JsonKey(name: 'median_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt get medianTopoheight;@JsonKey(name: 'max_peers', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt get maxPeers;@JsonKey(name: 'our_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt get ourTopoheight;@JsonKey(name: 'peer_count', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt get peerCount;@JsonKey(name: 'peer_id', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt get peerId;@JsonKey(name: 'tag') String? get tag;@JsonKey(includeFromJson: false, includeToJson: false) RpcExtraFields get extraFields;
 /// Create a copy of P2pStatusResult
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,16 +29,16 @@ $P2pStatusResultCopyWith<P2pStatusResult> get copyWith => _$P2pStatusResultCopyW
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is P2pStatusResult&&(identical(other.bestTopoHeight, bestTopoHeight) || other.bestTopoHeight == bestTopoHeight)&&(identical(other.medianTopoHeight, medianTopoHeight) || other.medianTopoHeight == medianTopoHeight)&&(identical(other.maxPeers, maxPeers) || other.maxPeers == maxPeers)&&(identical(other.ourTopoHeight, ourTopoHeight) || other.ourTopoHeight == ourTopoHeight)&&(identical(other.peerCount, peerCount) || other.peerCount == peerCount)&&(identical(other.peerId, peerId) || other.peerId == peerId)&&(identical(other.tag, tag) || other.tag == tag));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is P2pStatusResult&&(identical(other.bestTopoheight, bestTopoheight) || other.bestTopoheight == bestTopoheight)&&(identical(other.medianTopoheight, medianTopoheight) || other.medianTopoheight == medianTopoheight)&&(identical(other.maxPeers, maxPeers) || other.maxPeers == maxPeers)&&(identical(other.ourTopoheight, ourTopoheight) || other.ourTopoheight == ourTopoheight)&&(identical(other.peerCount, peerCount) || other.peerCount == peerCount)&&(identical(other.peerId, peerId) || other.peerId == peerId)&&(identical(other.tag, tag) || other.tag == tag)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,bestTopoHeight,medianTopoHeight,maxPeers,ourTopoHeight,peerCount,peerId,tag);
+int get hashCode => Object.hash(runtimeType,bestTopoheight,medianTopoheight,maxPeers,ourTopoheight,peerCount,peerId,tag,extraFields);
 
 @override
 String toString() {
-  return 'P2pStatusResult(bestTopoHeight: $bestTopoHeight, medianTopoHeight: $medianTopoHeight, maxPeers: $maxPeers, ourTopoHeight: $ourTopoHeight, peerCount: $peerCount, peerId: $peerId, tag: $tag)';
+  return 'P2pStatusResult(bestTopoheight: $bestTopoheight, medianTopoheight: $medianTopoheight, maxPeers: $maxPeers, ourTopoheight: $ourTopoheight, peerCount: $peerCount, peerId: $peerId, tag: $tag, extraFields: $extraFields)';
 }
 
 
@@ -48,11 +49,11 @@ abstract mixin class $P2pStatusResultCopyWith<$Res>  {
   factory $P2pStatusResultCopyWith(P2pStatusResult value, $Res Function(P2pStatusResult) _then) = _$P2pStatusResultCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(name: 'best_topoheight') int bestTopoHeight,@JsonKey(name: 'median_topoheight') int medianTopoHeight,@JsonKey(name: 'max_peers') int maxPeers,@JsonKey(name: 'our_topoheight') int ourTopoHeight,@JsonKey(name: 'peer_count') int peerCount,@JsonKey(name: 'peer_id') num peerId,@JsonKey(name: 'tag') String? tag
+@JsonKey(name: 'best_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt bestTopoheight,@JsonKey(name: 'median_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt medianTopoheight,@JsonKey(name: 'max_peers', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt maxPeers,@JsonKey(name: 'our_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt ourTopoheight,@JsonKey(name: 'peer_count', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt peerCount,@JsonKey(name: 'peer_id', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt peerId,@JsonKey(name: 'tag') String? tag,@JsonKey(includeFromJson: false, includeToJson: false) RpcExtraFields extraFields
 });
 
 
-
+$RpcExtraFieldsCopyWith<$Res> get extraFields;
 
 }
 /// @nodoc
@@ -65,19 +66,29 @@ class _$P2pStatusResultCopyWithImpl<$Res>
 
 /// Create a copy of P2pStatusResult
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? bestTopoHeight = null,Object? medianTopoHeight = null,Object? maxPeers = null,Object? ourTopoHeight = null,Object? peerCount = null,Object? peerId = null,Object? tag = freezed,}) {
-  return _then(_self.copyWith(
-bestTopoHeight: null == bestTopoHeight ? _self.bestTopoHeight : bestTopoHeight // ignore: cast_nullable_to_non_nullable
-as int,medianTopoHeight: null == medianTopoHeight ? _self.medianTopoHeight : medianTopoHeight // ignore: cast_nullable_to_non_nullable
-as int,maxPeers: null == maxPeers ? _self.maxPeers : maxPeers // ignore: cast_nullable_to_non_nullable
-as int,ourTopoHeight: null == ourTopoHeight ? _self.ourTopoHeight : ourTopoHeight // ignore: cast_nullable_to_non_nullable
-as int,peerCount: null == peerCount ? _self.peerCount : peerCount // ignore: cast_nullable_to_non_nullable
-as int,peerId: null == peerId ? _self.peerId : peerId // ignore: cast_nullable_to_non_nullable
-as num,tag: freezed == tag ? _self.tag : tag // ignore: cast_nullable_to_non_nullable
-as String?,
+@pragma('vm:prefer-inline') @override $Res call({Object? bestTopoheight = null,Object? medianTopoheight = null,Object? maxPeers = null,Object? ourTopoheight = null,Object? peerCount = null,Object? peerId = null,Object? tag = freezed,Object? extraFields = null,}) {
+  return _then(P2pStatusResult(
+bestTopoheight: null == bestTopoheight ? _self.bestTopoheight : bestTopoheight // ignore: cast_nullable_to_non_nullable
+as BigInt,medianTopoheight: null == medianTopoheight ? _self.medianTopoheight : medianTopoheight // ignore: cast_nullable_to_non_nullable
+as BigInt,maxPeers: null == maxPeers ? _self.maxPeers : maxPeers // ignore: cast_nullable_to_non_nullable
+as BigInt,ourTopoheight: null == ourTopoheight ? _self.ourTopoheight : ourTopoheight // ignore: cast_nullable_to_non_nullable
+as BigInt,peerCount: null == peerCount ? _self.peerCount : peerCount // ignore: cast_nullable_to_non_nullable
+as BigInt,peerId: null == peerId ? _self.peerId : peerId // ignore: cast_nullable_to_non_nullable
+as BigInt,tag: freezed == tag ? _self.tag : tag // ignore: cast_nullable_to_non_nullable
+as String?,extraFields: null == extraFields ? _self.extraFields : extraFields // ignore: cast_nullable_to_non_nullable
+as RpcExtraFields,
   ));
 }
-
+/// Create a copy of P2pStatusResult
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$RpcExtraFieldsCopyWith<$Res> get extraFields {
+  
+  return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
+    return _then(_self.copyWith(extraFields: value));
+  });
+}
 }
 
 
@@ -159,10 +170,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'best_topoheight')  int bestTopoHeight, @JsonKey(name: 'median_topoheight')  int medianTopoHeight, @JsonKey(name: 'max_peers')  int maxPeers, @JsonKey(name: 'our_topoheight')  int ourTopoHeight, @JsonKey(name: 'peer_count')  int peerCount, @JsonKey(name: 'peer_id')  num peerId, @JsonKey(name: 'tag')  String? tag)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'best_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt bestTopoheight, @JsonKey(name: 'median_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt medianTopoheight, @JsonKey(name: 'max_peers', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt maxPeers, @JsonKey(name: 'our_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt ourTopoheight, @JsonKey(name: 'peer_count', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt peerCount, @JsonKey(name: 'peer_id', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt peerId, @JsonKey(name: 'tag')  String? tag, @JsonKey(includeFromJson: false, includeToJson: false)  RpcExtraFields extraFields)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _P2pStatusResult() when $default != null:
-return $default(_that.bestTopoHeight,_that.medianTopoHeight,_that.maxPeers,_that.ourTopoHeight,_that.peerCount,_that.peerId,_that.tag);case _:
+return $default(_that.bestTopoheight,_that.medianTopoheight,_that.maxPeers,_that.ourTopoheight,_that.peerCount,_that.peerId,_that.tag,_that.extraFields);case _:
   return orElse();
 
 }
@@ -180,10 +191,10 @@ return $default(_that.bestTopoHeight,_that.medianTopoHeight,_that.maxPeers,_that
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'best_topoheight')  int bestTopoHeight, @JsonKey(name: 'median_topoheight')  int medianTopoHeight, @JsonKey(name: 'max_peers')  int maxPeers, @JsonKey(name: 'our_topoheight')  int ourTopoHeight, @JsonKey(name: 'peer_count')  int peerCount, @JsonKey(name: 'peer_id')  num peerId, @JsonKey(name: 'tag')  String? tag)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'best_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt bestTopoheight, @JsonKey(name: 'median_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt medianTopoheight, @JsonKey(name: 'max_peers', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt maxPeers, @JsonKey(name: 'our_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt ourTopoheight, @JsonKey(name: 'peer_count', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt peerCount, @JsonKey(name: 'peer_id', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt peerId, @JsonKey(name: 'tag')  String? tag, @JsonKey(includeFromJson: false, includeToJson: false)  RpcExtraFields extraFields)  $default,) {final _that = this;
 switch (_that) {
 case _P2pStatusResult():
-return $default(_that.bestTopoHeight,_that.medianTopoHeight,_that.maxPeers,_that.ourTopoHeight,_that.peerCount,_that.peerId,_that.tag);case _:
+return $default(_that.bestTopoheight,_that.medianTopoheight,_that.maxPeers,_that.ourTopoheight,_that.peerCount,_that.peerId,_that.tag,_that.extraFields);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -200,10 +211,10 @@ return $default(_that.bestTopoHeight,_that.medianTopoHeight,_that.maxPeers,_that
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'best_topoheight')  int bestTopoHeight, @JsonKey(name: 'median_topoheight')  int medianTopoHeight, @JsonKey(name: 'max_peers')  int maxPeers, @JsonKey(name: 'our_topoheight')  int ourTopoHeight, @JsonKey(name: 'peer_count')  int peerCount, @JsonKey(name: 'peer_id')  num peerId, @JsonKey(name: 'tag')  String? tag)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'best_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt bestTopoheight, @JsonKey(name: 'median_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt medianTopoheight, @JsonKey(name: 'max_peers', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt maxPeers, @JsonKey(name: 'our_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt ourTopoheight, @JsonKey(name: 'peer_count', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt peerCount, @JsonKey(name: 'peer_id', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt peerId, @JsonKey(name: 'tag')  String? tag, @JsonKey(includeFromJson: false, includeToJson: false)  RpcExtraFields extraFields)?  $default,) {final _that = this;
 switch (_that) {
 case _P2pStatusResult() when $default != null:
-return $default(_that.bestTopoHeight,_that.medianTopoHeight,_that.maxPeers,_that.ourTopoHeight,_that.peerCount,_that.peerId,_that.tag);case _:
+return $default(_that.bestTopoheight,_that.medianTopoheight,_that.maxPeers,_that.ourTopoheight,_that.peerCount,_that.peerId,_that.tag,_that.extraFields);case _:
   return null;
 
 }
@@ -214,17 +225,18 @@ return $default(_that.bestTopoHeight,_that.medianTopoHeight,_that.maxPeers,_that
 /// @nodoc
 @JsonSerializable()
 
-class _P2pStatusResult implements P2pStatusResult {
-  const _P2pStatusResult({@JsonKey(name: 'best_topoheight') required this.bestTopoHeight, @JsonKey(name: 'median_topoheight') required this.medianTopoHeight, @JsonKey(name: 'max_peers') required this.maxPeers, @JsonKey(name: 'our_topoheight') required this.ourTopoHeight, @JsonKey(name: 'peer_count') required this.peerCount, @JsonKey(name: 'peer_id') required this.peerId, @JsonKey(name: 'tag') this.tag});
+class _P2pStatusResult extends P2pStatusResult {
+  const _P2pStatusResult({@JsonKey(name: 'best_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.bestTopoheight, @JsonKey(name: 'median_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.medianTopoheight, @JsonKey(name: 'max_peers', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.maxPeers, @JsonKey(name: 'our_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.ourTopoheight, @JsonKey(name: 'peer_count', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.peerCount, @JsonKey(name: 'peer_id', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.peerId, @JsonKey(name: 'tag') this.tag, @JsonKey(includeFromJson: false, includeToJson: false) this.extraFields = const RpcExtraFields()}): super._();
   factory _P2pStatusResult.fromJson(Map<String, dynamic> json) => _$P2pStatusResultFromJson(json);
 
-@override@JsonKey(name: 'best_topoheight') final  int bestTopoHeight;
-@override@JsonKey(name: 'median_topoheight') final  int medianTopoHeight;
-@override@JsonKey(name: 'max_peers') final  int maxPeers;
-@override@JsonKey(name: 'our_topoheight') final  int ourTopoHeight;
-@override@JsonKey(name: 'peer_count') final  int peerCount;
-@override@JsonKey(name: 'peer_id') final  num peerId;
+@override@JsonKey(name: 'best_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) final  BigInt bestTopoheight;
+@override@JsonKey(name: 'median_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) final  BigInt medianTopoheight;
+@override@JsonKey(name: 'max_peers', fromJson: rpcBigInt, toJson: rpcBigIntToJson) final  BigInt maxPeers;
+@override@JsonKey(name: 'our_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) final  BigInt ourTopoheight;
+@override@JsonKey(name: 'peer_count', fromJson: rpcBigInt, toJson: rpcBigIntToJson) final  BigInt peerCount;
+@override@JsonKey(name: 'peer_id', fromJson: rpcBigInt, toJson: rpcBigIntToJson) final  BigInt peerId;
 @override@JsonKey(name: 'tag') final  String? tag;
+@override@JsonKey(includeFromJson: false, includeToJson: false) final  RpcExtraFields extraFields;
 
 /// Create a copy of P2pStatusResult
 /// with the given fields replaced by the non-null parameter values.
@@ -239,16 +251,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _P2pStatusResult&&(identical(other.bestTopoHeight, bestTopoHeight) || other.bestTopoHeight == bestTopoHeight)&&(identical(other.medianTopoHeight, medianTopoHeight) || other.medianTopoHeight == medianTopoHeight)&&(identical(other.maxPeers, maxPeers) || other.maxPeers == maxPeers)&&(identical(other.ourTopoHeight, ourTopoHeight) || other.ourTopoHeight == ourTopoHeight)&&(identical(other.peerCount, peerCount) || other.peerCount == peerCount)&&(identical(other.peerId, peerId) || other.peerId == peerId)&&(identical(other.tag, tag) || other.tag == tag));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _P2pStatusResult&&(identical(other.bestTopoheight, bestTopoheight) || other.bestTopoheight == bestTopoheight)&&(identical(other.medianTopoheight, medianTopoheight) || other.medianTopoheight == medianTopoheight)&&(identical(other.maxPeers, maxPeers) || other.maxPeers == maxPeers)&&(identical(other.ourTopoheight, ourTopoheight) || other.ourTopoheight == ourTopoheight)&&(identical(other.peerCount, peerCount) || other.peerCount == peerCount)&&(identical(other.peerId, peerId) || other.peerId == peerId)&&(identical(other.tag, tag) || other.tag == tag)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,bestTopoHeight,medianTopoHeight,maxPeers,ourTopoHeight,peerCount,peerId,tag);
+int get hashCode => Object.hash(runtimeType,bestTopoheight,medianTopoheight,maxPeers,ourTopoheight,peerCount,peerId,tag,extraFields);
 
 @override
 String toString() {
-  return 'P2pStatusResult(bestTopoHeight: $bestTopoHeight, medianTopoHeight: $medianTopoHeight, maxPeers: $maxPeers, ourTopoHeight: $ourTopoHeight, peerCount: $peerCount, peerId: $peerId, tag: $tag)';
+  return 'P2pStatusResult(bestTopoheight: $bestTopoheight, medianTopoheight: $medianTopoheight, maxPeers: $maxPeers, ourTopoheight: $ourTopoheight, peerCount: $peerCount, peerId: $peerId, tag: $tag, extraFields: $extraFields)';
 }
 
 
@@ -259,11 +271,11 @@ abstract mixin class _$P2pStatusResultCopyWith<$Res> implements $P2pStatusResult
   factory _$P2pStatusResultCopyWith(_P2pStatusResult value, $Res Function(_P2pStatusResult) _then) = __$P2pStatusResultCopyWithImpl;
 @override @useResult
 $Res call({
-@JsonKey(name: 'best_topoheight') int bestTopoHeight,@JsonKey(name: 'median_topoheight') int medianTopoHeight,@JsonKey(name: 'max_peers') int maxPeers,@JsonKey(name: 'our_topoheight') int ourTopoHeight,@JsonKey(name: 'peer_count') int peerCount,@JsonKey(name: 'peer_id') num peerId,@JsonKey(name: 'tag') String? tag
+@JsonKey(name: 'best_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt bestTopoheight,@JsonKey(name: 'median_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt medianTopoheight,@JsonKey(name: 'max_peers', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt maxPeers,@JsonKey(name: 'our_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt ourTopoheight,@JsonKey(name: 'peer_count', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt peerCount,@JsonKey(name: 'peer_id', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt peerId,@JsonKey(name: 'tag') String? tag,@JsonKey(includeFromJson: false, includeToJson: false) RpcExtraFields extraFields
 });
 
 
-
+@override $RpcExtraFieldsCopyWith<$Res> get extraFields;
 
 }
 /// @nodoc
@@ -276,20 +288,30 @@ class __$P2pStatusResultCopyWithImpl<$Res>
 
 /// Create a copy of P2pStatusResult
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? bestTopoHeight = null,Object? medianTopoHeight = null,Object? maxPeers = null,Object? ourTopoHeight = null,Object? peerCount = null,Object? peerId = null,Object? tag = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? bestTopoheight = null,Object? medianTopoheight = null,Object? maxPeers = null,Object? ourTopoheight = null,Object? peerCount = null,Object? peerId = null,Object? tag = freezed,Object? extraFields = null,}) {
   return _then(_P2pStatusResult(
-bestTopoHeight: null == bestTopoHeight ? _self.bestTopoHeight : bestTopoHeight // ignore: cast_nullable_to_non_nullable
-as int,medianTopoHeight: null == medianTopoHeight ? _self.medianTopoHeight : medianTopoHeight // ignore: cast_nullable_to_non_nullable
-as int,maxPeers: null == maxPeers ? _self.maxPeers : maxPeers // ignore: cast_nullable_to_non_nullable
-as int,ourTopoHeight: null == ourTopoHeight ? _self.ourTopoHeight : ourTopoHeight // ignore: cast_nullable_to_non_nullable
-as int,peerCount: null == peerCount ? _self.peerCount : peerCount // ignore: cast_nullable_to_non_nullable
-as int,peerId: null == peerId ? _self.peerId : peerId // ignore: cast_nullable_to_non_nullable
-as num,tag: freezed == tag ? _self.tag : tag // ignore: cast_nullable_to_non_nullable
-as String?,
+bestTopoheight: null == bestTopoheight ? _self.bestTopoheight : bestTopoheight // ignore: cast_nullable_to_non_nullable
+as BigInt,medianTopoheight: null == medianTopoheight ? _self.medianTopoheight : medianTopoheight // ignore: cast_nullable_to_non_nullable
+as BigInt,maxPeers: null == maxPeers ? _self.maxPeers : maxPeers // ignore: cast_nullable_to_non_nullable
+as BigInt,ourTopoheight: null == ourTopoheight ? _self.ourTopoheight : ourTopoheight // ignore: cast_nullable_to_non_nullable
+as BigInt,peerCount: null == peerCount ? _self.peerCount : peerCount // ignore: cast_nullable_to_non_nullable
+as BigInt,peerId: null == peerId ? _self.peerId : peerId // ignore: cast_nullable_to_non_nullable
+as BigInt,tag: freezed == tag ? _self.tag : tag // ignore: cast_nullable_to_non_nullable
+as String?,extraFields: null == extraFields ? _self.extraFields : extraFields // ignore: cast_nullable_to_non_nullable
+as RpcExtraFields,
   ));
 }
 
-
+/// Create a copy of P2pStatusResult
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$RpcExtraFieldsCopyWith<$Res> get extraFields {
+  
+  return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
+    return _then(_self.copyWith(extraFields: value));
+  });
+}
 }
 
 // dart format on

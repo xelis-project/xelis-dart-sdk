@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'get_transaction_executor_result.dart';
@@ -9,13 +9,14 @@ part of 'get_transaction_executor_result.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$GetTransactionExecutorResult {
 
-@JsonKey(name: 'block_topoheight') int get blockTopoheight;@JsonKey(name: 'block_hash') String get blockHash;
+@JsonKey(name: 'block_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt get blockTopoheight;@JsonKey(name: 'block_timestamp', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt get blockTimestamp;@JsonKey(name: 'block_hash') String get blockHash;@JsonKey(includeFromJson: false, includeToJson: false) RpcExtraFields get extraFields;
 /// Create a copy of GetTransactionExecutorResult
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,16 +29,16 @@ $GetTransactionExecutorResultCopyWith<GetTransactionExecutorResult> get copyWith
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetTransactionExecutorResult&&(identical(other.blockTopoheight, blockTopoheight) || other.blockTopoheight == blockTopoheight)&&(identical(other.blockHash, blockHash) || other.blockHash == blockHash));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetTransactionExecutorResult&&(identical(other.blockTopoheight, blockTopoheight) || other.blockTopoheight == blockTopoheight)&&(identical(other.blockTimestamp, blockTimestamp) || other.blockTimestamp == blockTimestamp)&&(identical(other.blockHash, blockHash) || other.blockHash == blockHash)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,blockTopoheight,blockHash);
+int get hashCode => Object.hash(runtimeType,blockTopoheight,blockTimestamp,blockHash,extraFields);
 
 @override
 String toString() {
-  return 'GetTransactionExecutorResult(blockTopoheight: $blockTopoheight, blockHash: $blockHash)';
+  return 'GetTransactionExecutorResult(blockTopoheight: $blockTopoheight, blockTimestamp: $blockTimestamp, blockHash: $blockHash, extraFields: $extraFields)';
 }
 
 
@@ -48,11 +49,11 @@ abstract mixin class $GetTransactionExecutorResultCopyWith<$Res>  {
   factory $GetTransactionExecutorResultCopyWith(GetTransactionExecutorResult value, $Res Function(GetTransactionExecutorResult) _then) = _$GetTransactionExecutorResultCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(name: 'block_topoheight') int blockTopoheight,@JsonKey(name: 'block_hash') String blockHash
+@JsonKey(name: 'block_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt blockTopoheight,@JsonKey(name: 'block_timestamp', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt blockTimestamp,@JsonKey(name: 'block_hash') String blockHash,@JsonKey(includeFromJson: false, includeToJson: false) RpcExtraFields extraFields
 });
 
 
-
+$RpcExtraFieldsCopyWith<$Res> get extraFields;
 
 }
 /// @nodoc
@@ -65,14 +66,25 @@ class _$GetTransactionExecutorResultCopyWithImpl<$Res>
 
 /// Create a copy of GetTransactionExecutorResult
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? blockTopoheight = null,Object? blockHash = null,}) {
-  return _then(_self.copyWith(
+@pragma('vm:prefer-inline') @override $Res call({Object? blockTopoheight = null,Object? blockTimestamp = null,Object? blockHash = null,Object? extraFields = null,}) {
+  return _then(GetTransactionExecutorResult(
 blockTopoheight: null == blockTopoheight ? _self.blockTopoheight : blockTopoheight // ignore: cast_nullable_to_non_nullable
-as int,blockHash: null == blockHash ? _self.blockHash : blockHash // ignore: cast_nullable_to_non_nullable
-as String,
+as BigInt,blockTimestamp: null == blockTimestamp ? _self.blockTimestamp : blockTimestamp // ignore: cast_nullable_to_non_nullable
+as BigInt,blockHash: null == blockHash ? _self.blockHash : blockHash // ignore: cast_nullable_to_non_nullable
+as String,extraFields: null == extraFields ? _self.extraFields : extraFields // ignore: cast_nullable_to_non_nullable
+as RpcExtraFields,
   ));
 }
-
+/// Create a copy of GetTransactionExecutorResult
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$RpcExtraFieldsCopyWith<$Res> get extraFields {
+  
+  return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
+    return _then(_self.copyWith(extraFields: value));
+  });
+}
 }
 
 
@@ -154,10 +166,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'block_topoheight')  int blockTopoheight, @JsonKey(name: 'block_hash')  String blockHash)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'block_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt blockTopoheight, @JsonKey(name: 'block_timestamp', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt blockTimestamp, @JsonKey(name: 'block_hash')  String blockHash, @JsonKey(includeFromJson: false, includeToJson: false)  RpcExtraFields extraFields)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _GetTransactionExecutorResult() when $default != null:
-return $default(_that.blockTopoheight,_that.blockHash);case _:
+return $default(_that.blockTopoheight,_that.blockTimestamp,_that.blockHash,_that.extraFields);case _:
   return orElse();
 
 }
@@ -175,10 +187,10 @@ return $default(_that.blockTopoheight,_that.blockHash);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'block_topoheight')  int blockTopoheight, @JsonKey(name: 'block_hash')  String blockHash)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'block_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt blockTopoheight, @JsonKey(name: 'block_timestamp', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt blockTimestamp, @JsonKey(name: 'block_hash')  String blockHash, @JsonKey(includeFromJson: false, includeToJson: false)  RpcExtraFields extraFields)  $default,) {final _that = this;
 switch (_that) {
 case _GetTransactionExecutorResult():
-return $default(_that.blockTopoheight,_that.blockHash);case _:
+return $default(_that.blockTopoheight,_that.blockTimestamp,_that.blockHash,_that.extraFields);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -195,10 +207,10 @@ return $default(_that.blockTopoheight,_that.blockHash);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'block_topoheight')  int blockTopoheight, @JsonKey(name: 'block_hash')  String blockHash)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'block_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt blockTopoheight, @JsonKey(name: 'block_timestamp', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt blockTimestamp, @JsonKey(name: 'block_hash')  String blockHash, @JsonKey(includeFromJson: false, includeToJson: false)  RpcExtraFields extraFields)?  $default,) {final _that = this;
 switch (_that) {
 case _GetTransactionExecutorResult() when $default != null:
-return $default(_that.blockTopoheight,_that.blockHash);case _:
+return $default(_that.blockTopoheight,_that.blockTimestamp,_that.blockHash,_that.extraFields);case _:
   return null;
 
 }
@@ -209,12 +221,14 @@ return $default(_that.blockTopoheight,_that.blockHash);case _:
 /// @nodoc
 @JsonSerializable()
 
-class _GetTransactionExecutorResult implements GetTransactionExecutorResult {
-  const _GetTransactionExecutorResult({@JsonKey(name: 'block_topoheight') required this.blockTopoheight, @JsonKey(name: 'block_hash') required this.blockHash});
+class _GetTransactionExecutorResult extends GetTransactionExecutorResult {
+  const _GetTransactionExecutorResult({@JsonKey(name: 'block_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.blockTopoheight, @JsonKey(name: 'block_timestamp', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.blockTimestamp, @JsonKey(name: 'block_hash') required this.blockHash, @JsonKey(includeFromJson: false, includeToJson: false) this.extraFields = const RpcExtraFields()}): super._();
   factory _GetTransactionExecutorResult.fromJson(Map<String, dynamic> json) => _$GetTransactionExecutorResultFromJson(json);
 
-@override@JsonKey(name: 'block_topoheight') final  int blockTopoheight;
+@override@JsonKey(name: 'block_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) final  BigInt blockTopoheight;
+@override@JsonKey(name: 'block_timestamp', fromJson: rpcBigInt, toJson: rpcBigIntToJson) final  BigInt blockTimestamp;
 @override@JsonKey(name: 'block_hash') final  String blockHash;
+@override@JsonKey(includeFromJson: false, includeToJson: false) final  RpcExtraFields extraFields;
 
 /// Create a copy of GetTransactionExecutorResult
 /// with the given fields replaced by the non-null parameter values.
@@ -229,16 +243,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetTransactionExecutorResult&&(identical(other.blockTopoheight, blockTopoheight) || other.blockTopoheight == blockTopoheight)&&(identical(other.blockHash, blockHash) || other.blockHash == blockHash));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetTransactionExecutorResult&&(identical(other.blockTopoheight, blockTopoheight) || other.blockTopoheight == blockTopoheight)&&(identical(other.blockTimestamp, blockTimestamp) || other.blockTimestamp == blockTimestamp)&&(identical(other.blockHash, blockHash) || other.blockHash == blockHash)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,blockTopoheight,blockHash);
+int get hashCode => Object.hash(runtimeType,blockTopoheight,blockTimestamp,blockHash,extraFields);
 
 @override
 String toString() {
-  return 'GetTransactionExecutorResult(blockTopoheight: $blockTopoheight, blockHash: $blockHash)';
+  return 'GetTransactionExecutorResult(blockTopoheight: $blockTopoheight, blockTimestamp: $blockTimestamp, blockHash: $blockHash, extraFields: $extraFields)';
 }
 
 
@@ -249,11 +263,11 @@ abstract mixin class _$GetTransactionExecutorResultCopyWith<$Res> implements $Ge
   factory _$GetTransactionExecutorResultCopyWith(_GetTransactionExecutorResult value, $Res Function(_GetTransactionExecutorResult) _then) = __$GetTransactionExecutorResultCopyWithImpl;
 @override @useResult
 $Res call({
-@JsonKey(name: 'block_topoheight') int blockTopoheight,@JsonKey(name: 'block_hash') String blockHash
+@JsonKey(name: 'block_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt blockTopoheight,@JsonKey(name: 'block_timestamp', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt blockTimestamp,@JsonKey(name: 'block_hash') String blockHash,@JsonKey(includeFromJson: false, includeToJson: false) RpcExtraFields extraFields
 });
 
 
-
+@override $RpcExtraFieldsCopyWith<$Res> get extraFields;
 
 }
 /// @nodoc
@@ -266,15 +280,26 @@ class __$GetTransactionExecutorResultCopyWithImpl<$Res>
 
 /// Create a copy of GetTransactionExecutorResult
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? blockTopoheight = null,Object? blockHash = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? blockTopoheight = null,Object? blockTimestamp = null,Object? blockHash = null,Object? extraFields = null,}) {
   return _then(_GetTransactionExecutorResult(
 blockTopoheight: null == blockTopoheight ? _self.blockTopoheight : blockTopoheight // ignore: cast_nullable_to_non_nullable
-as int,blockHash: null == blockHash ? _self.blockHash : blockHash // ignore: cast_nullable_to_non_nullable
-as String,
+as BigInt,blockTimestamp: null == blockTimestamp ? _self.blockTimestamp : blockTimestamp // ignore: cast_nullable_to_non_nullable
+as BigInt,blockHash: null == blockHash ? _self.blockHash : blockHash // ignore: cast_nullable_to_non_nullable
+as String,extraFields: null == extraFields ? _self.extraFields : extraFields // ignore: cast_nullable_to_non_nullable
+as RpcExtraFields,
   ));
 }
 
-
+/// Create a copy of GetTransactionExecutorResult
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$RpcExtraFieldsCopyWith<$Res> get extraFields {
+  
+  return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
+    return _then(_self.copyWith(extraFields: value));
+  });
+}
 }
 
 // dart format on

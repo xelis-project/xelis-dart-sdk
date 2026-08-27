@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'get_assets_params.dart';
@@ -9,13 +9,14 @@ part of 'get_assets_params.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$GetAssetsParams {
 
-@JsonKey(name: 'skip') int? get skip;@JsonKey(name: 'maximum') int? get maximum;@JsonKey(name: 'minimum_topoheight') int? get minimumTopoheight;@JsonKey(name: 'maximum_topoheight') int? get maximumTopoheight;
+@JsonKey(name: 'skip') int? get skip;@JsonKey(name: 'maximum') int? get maximum;@JsonKey(name: 'minimum_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) BigInt? get minimumTopoheight;@JsonKey(name: 'maximum_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) BigInt? get maximumTopoheight;
 /// Create a copy of GetAssetsParams
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +49,7 @@ abstract mixin class $GetAssetsParamsCopyWith<$Res>  {
   factory $GetAssetsParamsCopyWith(GetAssetsParams value, $Res Function(GetAssetsParams) _then) = _$GetAssetsParamsCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(name: 'skip') int? skip,@JsonKey(name: 'maximum') int? maximum,@JsonKey(name: 'minimum_topoheight') int? minimumTopoheight,@JsonKey(name: 'maximum_topoheight') int? maximumTopoheight
+@JsonKey(name: 'skip') int? skip,@JsonKey(name: 'maximum') int? maximum,@JsonKey(name: 'minimum_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) BigInt? minimumTopoheight,@JsonKey(name: 'maximum_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) BigInt? maximumTopoheight
 });
 
 
@@ -66,12 +67,12 @@ class _$GetAssetsParamsCopyWithImpl<$Res>
 /// Create a copy of GetAssetsParams
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? skip = freezed,Object? maximum = freezed,Object? minimumTopoheight = freezed,Object? maximumTopoheight = freezed,}) {
-  return _then(_self.copyWith(
+  return _then(GetAssetsParams(
 skip: freezed == skip ? _self.skip : skip // ignore: cast_nullable_to_non_nullable
 as int?,maximum: freezed == maximum ? _self.maximum : maximum // ignore: cast_nullable_to_non_nullable
 as int?,minimumTopoheight: freezed == minimumTopoheight ? _self.minimumTopoheight : minimumTopoheight // ignore: cast_nullable_to_non_nullable
-as int?,maximumTopoheight: freezed == maximumTopoheight ? _self.maximumTopoheight : maximumTopoheight // ignore: cast_nullable_to_non_nullable
-as int?,
+as BigInt?,maximumTopoheight: freezed == maximumTopoheight ? _self.maximumTopoheight : maximumTopoheight // ignore: cast_nullable_to_non_nullable
+as BigInt?,
   ));
 }
 
@@ -156,7 +157,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'skip')  int? skip, @JsonKey(name: 'maximum')  int? maximum, @JsonKey(name: 'minimum_topoheight')  int? minimumTopoheight, @JsonKey(name: 'maximum_topoheight')  int? maximumTopoheight)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'skip')  int? skip, @JsonKey(name: 'maximum')  int? maximum, @JsonKey(name: 'minimum_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson)  BigInt? minimumTopoheight, @JsonKey(name: 'maximum_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson)  BigInt? maximumTopoheight)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _GetAssetsParams() when $default != null:
 return $default(_that.skip,_that.maximum,_that.minimumTopoheight,_that.maximumTopoheight);case _:
@@ -177,7 +178,7 @@ return $default(_that.skip,_that.maximum,_that.minimumTopoheight,_that.maximumTo
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'skip')  int? skip, @JsonKey(name: 'maximum')  int? maximum, @JsonKey(name: 'minimum_topoheight')  int? minimumTopoheight, @JsonKey(name: 'maximum_topoheight')  int? maximumTopoheight)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'skip')  int? skip, @JsonKey(name: 'maximum')  int? maximum, @JsonKey(name: 'minimum_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson)  BigInt? minimumTopoheight, @JsonKey(name: 'maximum_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson)  BigInt? maximumTopoheight)  $default,) {final _that = this;
 switch (_that) {
 case _GetAssetsParams():
 return $default(_that.skip,_that.maximum,_that.minimumTopoheight,_that.maximumTopoheight);case _:
@@ -197,7 +198,7 @@ return $default(_that.skip,_that.maximum,_that.minimumTopoheight,_that.maximumTo
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'skip')  int? skip, @JsonKey(name: 'maximum')  int? maximum, @JsonKey(name: 'minimum_topoheight')  int? minimumTopoheight, @JsonKey(name: 'maximum_topoheight')  int? maximumTopoheight)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'skip')  int? skip, @JsonKey(name: 'maximum')  int? maximum, @JsonKey(name: 'minimum_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson)  BigInt? minimumTopoheight, @JsonKey(name: 'maximum_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson)  BigInt? maximumTopoheight)?  $default,) {final _that = this;
 switch (_that) {
 case _GetAssetsParams() when $default != null:
 return $default(_that.skip,_that.maximum,_that.minimumTopoheight,_that.maximumTopoheight);case _:
@@ -212,13 +213,13 @@ return $default(_that.skip,_that.maximum,_that.minimumTopoheight,_that.maximumTo
 
 @JsonSerializable(includeIfNull: false)
 class _GetAssetsParams implements GetAssetsParams {
-  const _GetAssetsParams({@JsonKey(name: 'skip') this.skip, @JsonKey(name: 'maximum') this.maximum, @JsonKey(name: 'minimum_topoheight') this.minimumTopoheight, @JsonKey(name: 'maximum_topoheight') this.maximumTopoheight});
+  const _GetAssetsParams({@JsonKey(name: 'skip') this.skip, @JsonKey(name: 'maximum') this.maximum, @JsonKey(name: 'minimum_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) this.minimumTopoheight, @JsonKey(name: 'maximum_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) this.maximumTopoheight});
   factory _GetAssetsParams.fromJson(Map<String, dynamic> json) => _$GetAssetsParamsFromJson(json);
 
 @override@JsonKey(name: 'skip') final  int? skip;
 @override@JsonKey(name: 'maximum') final  int? maximum;
-@override@JsonKey(name: 'minimum_topoheight') final  int? minimumTopoheight;
-@override@JsonKey(name: 'maximum_topoheight') final  int? maximumTopoheight;
+@override@JsonKey(name: 'minimum_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) final  BigInt? minimumTopoheight;
+@override@JsonKey(name: 'maximum_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) final  BigInt? maximumTopoheight;
 
 /// Create a copy of GetAssetsParams
 /// with the given fields replaced by the non-null parameter values.
@@ -253,7 +254,7 @@ abstract mixin class _$GetAssetsParamsCopyWith<$Res> implements $GetAssetsParams
   factory _$GetAssetsParamsCopyWith(_GetAssetsParams value, $Res Function(_GetAssetsParams) _then) = __$GetAssetsParamsCopyWithImpl;
 @override @useResult
 $Res call({
-@JsonKey(name: 'skip') int? skip,@JsonKey(name: 'maximum') int? maximum,@JsonKey(name: 'minimum_topoheight') int? minimumTopoheight,@JsonKey(name: 'maximum_topoheight') int? maximumTopoheight
+@JsonKey(name: 'skip') int? skip,@JsonKey(name: 'maximum') int? maximum,@JsonKey(name: 'minimum_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) BigInt? minimumTopoheight,@JsonKey(name: 'maximum_topoheight', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) BigInt? maximumTopoheight
 });
 
 
@@ -275,8 +276,8 @@ class __$GetAssetsParamsCopyWithImpl<$Res>
 skip: freezed == skip ? _self.skip : skip // ignore: cast_nullable_to_non_nullable
 as int?,maximum: freezed == maximum ? _self.maximum : maximum // ignore: cast_nullable_to_non_nullable
 as int?,minimumTopoheight: freezed == minimumTopoheight ? _self.minimumTopoheight : minimumTopoheight // ignore: cast_nullable_to_non_nullable
-as int?,maximumTopoheight: freezed == maximumTopoheight ? _self.maximumTopoheight : maximumTopoheight // ignore: cast_nullable_to_non_nullable
-as int?,
+as BigInt?,maximumTopoheight: freezed == maximumTopoheight ? _self.maximumTopoheight : maximumTopoheight // ignore: cast_nullable_to_non_nullable
+as BigInt?,
   ));
 }
 

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'get_contract_data_params.dart';
@@ -9,13 +9,14 @@ part of 'get_contract_data_params.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$GetContractDataParams {
 
-@JsonKey(name: 'contract') String get contractHash;@JsonKey(name: 'key') Map<String, dynamic> get key;
+@JsonKey(name: 'contract') String get contractHash;@JsonKey(name: 'key', fromJson: RpcValueCell.fromJson, toJson: _rpcValueCellToJson) RpcValueCell get key;
 /// Create a copy of GetContractDataParams
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,12 +29,12 @@ $GetContractDataParamsCopyWith<GetContractDataParams> get copyWith => _$GetContr
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetContractDataParams&&(identical(other.contractHash, contractHash) || other.contractHash == contractHash)&&const DeepCollectionEquality().equals(other.key, key));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetContractDataParams&&(identical(other.contractHash, contractHash) || other.contractHash == contractHash)&&(identical(other.key, key) || other.key == key));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,contractHash,const DeepCollectionEquality().hash(key));
+int get hashCode => Object.hash(runtimeType,contractHash,key);
 
 @override
 String toString() {
@@ -48,11 +49,11 @@ abstract mixin class $GetContractDataParamsCopyWith<$Res>  {
   factory $GetContractDataParamsCopyWith(GetContractDataParams value, $Res Function(GetContractDataParams) _then) = _$GetContractDataParamsCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(name: 'contract') String contractHash,@JsonKey(name: 'key') Map<String, dynamic> key
+@JsonKey(name: 'contract') String contractHash,@JsonKey(name: 'key', fromJson: RpcValueCell.fromJson, toJson: _rpcValueCellToJson) RpcValueCell key
 });
 
 
-
+$RpcValueCellCopyWith<$Res> get key;
 
 }
 /// @nodoc
@@ -66,13 +67,22 @@ class _$GetContractDataParamsCopyWithImpl<$Res>
 /// Create a copy of GetContractDataParams
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? contractHash = null,Object? key = null,}) {
-  return _then(_self.copyWith(
+  return _then(GetContractDataParams(
 contractHash: null == contractHash ? _self.contractHash : contractHash // ignore: cast_nullable_to_non_nullable
 as String,key: null == key ? _self.key : key // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>,
+as RpcValueCell,
   ));
 }
-
+/// Create a copy of GetContractDataParams
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$RpcValueCellCopyWith<$Res> get key {
+  
+  return $RpcValueCellCopyWith<$Res>(_self.key, (value) {
+    return _then(_self.copyWith(key: value));
+  });
+}
 }
 
 
@@ -154,7 +164,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'contract')  String contractHash, @JsonKey(name: 'key')  Map<String, dynamic> key)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'contract')  String contractHash, @JsonKey(name: 'key', fromJson: RpcValueCell.fromJson, toJson: _rpcValueCellToJson)  RpcValueCell key)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _GetContractDataParams() when $default != null:
 return $default(_that.contractHash,_that.key);case _:
@@ -175,7 +185,7 @@ return $default(_that.contractHash,_that.key);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'contract')  String contractHash, @JsonKey(name: 'key')  Map<String, dynamic> key)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'contract')  String contractHash, @JsonKey(name: 'key', fromJson: RpcValueCell.fromJson, toJson: _rpcValueCellToJson)  RpcValueCell key)  $default,) {final _that = this;
 switch (_that) {
 case _GetContractDataParams():
 return $default(_that.contractHash,_that.key);case _:
@@ -195,7 +205,7 @@ return $default(_that.contractHash,_that.key);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'contract')  String contractHash, @JsonKey(name: 'key')  Map<String, dynamic> key)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'contract')  String contractHash, @JsonKey(name: 'key', fromJson: RpcValueCell.fromJson, toJson: _rpcValueCellToJson)  RpcValueCell key)?  $default,) {final _that = this;
 switch (_that) {
 case _GetContractDataParams() when $default != null:
 return $default(_that.contractHash,_that.key);case _:
@@ -210,17 +220,11 @@ return $default(_that.contractHash,_that.key);case _:
 @JsonSerializable()
 
 class _GetContractDataParams implements GetContractDataParams {
-  const _GetContractDataParams({@JsonKey(name: 'contract') required this.contractHash, @JsonKey(name: 'key') required final  Map<String, dynamic> key}): _key = key;
+  const _GetContractDataParams({@JsonKey(name: 'contract') required this.contractHash, @JsonKey(name: 'key', fromJson: RpcValueCell.fromJson, toJson: _rpcValueCellToJson) required this.key});
   factory _GetContractDataParams.fromJson(Map<String, dynamic> json) => _$GetContractDataParamsFromJson(json);
 
 @override@JsonKey(name: 'contract') final  String contractHash;
- final  Map<String, dynamic> _key;
-@override@JsonKey(name: 'key') Map<String, dynamic> get key {
-  if (_key is EqualUnmodifiableMapView) return _key;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(_key);
-}
-
+@override@JsonKey(name: 'key', fromJson: RpcValueCell.fromJson, toJson: _rpcValueCellToJson) final  RpcValueCell key;
 
 /// Create a copy of GetContractDataParams
 /// with the given fields replaced by the non-null parameter values.
@@ -235,12 +239,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetContractDataParams&&(identical(other.contractHash, contractHash) || other.contractHash == contractHash)&&const DeepCollectionEquality().equals(other._key, _key));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetContractDataParams&&(identical(other.contractHash, contractHash) || other.contractHash == contractHash)&&(identical(other.key, key) || other.key == key));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,contractHash,const DeepCollectionEquality().hash(_key));
+int get hashCode => Object.hash(runtimeType,contractHash,key);
 
 @override
 String toString() {
@@ -255,11 +259,11 @@ abstract mixin class _$GetContractDataParamsCopyWith<$Res> implements $GetContra
   factory _$GetContractDataParamsCopyWith(_GetContractDataParams value, $Res Function(_GetContractDataParams) _then) = __$GetContractDataParamsCopyWithImpl;
 @override @useResult
 $Res call({
-@JsonKey(name: 'contract') String contractHash,@JsonKey(name: 'key') Map<String, dynamic> key
+@JsonKey(name: 'contract') String contractHash,@JsonKey(name: 'key', fromJson: RpcValueCell.fromJson, toJson: _rpcValueCellToJson) RpcValueCell key
 });
 
 
-
+@override $RpcValueCellCopyWith<$Res> get key;
 
 }
 /// @nodoc
@@ -275,12 +279,21 @@ class __$GetContractDataParamsCopyWithImpl<$Res>
 @override @pragma('vm:prefer-inline') $Res call({Object? contractHash = null,Object? key = null,}) {
   return _then(_GetContractDataParams(
 contractHash: null == contractHash ? _self.contractHash : contractHash // ignore: cast_nullable_to_non_nullable
-as String,key: null == key ? _self._key : key // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>,
+as String,key: null == key ? _self.key : key // ignore: cast_nullable_to_non_nullable
+as RpcValueCell,
   ));
 }
 
-
+/// Create a copy of GetContractDataParams
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$RpcValueCellCopyWith<$Res> get key {
+  
+  return $RpcValueCellCopyWith<$Res>(_self.key, (value) {
+    return _then(_self.copyWith(key: value));
+  });
+}
 }
 
 // dart format on

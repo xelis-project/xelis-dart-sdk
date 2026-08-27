@@ -1,21 +1,45 @@
-// ignore_for_file: invalid_annotation_target
-
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/contract/rpc_value_cell.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/core/rpc_extra_fields.dart';
+import 'package:xelis_dart_sdk/src/utils/rpc_json.dart';
 
 part 'get_contract_data_result.freezed.dart';
-part 'get_contract_data_result.g.dart';
 
-/// @nodoc
-@freezed
+/// Versioned, nullable contract storage value.
+@Freezed(fromJson: false, toJson: false)
 abstract class GetContractDataResult with _$GetContractDataResult {
-  /// @nodoc
+  /// Creates a versioned contract data result.
   const factory GetContractDataResult({
-    @JsonKey(name: 'topoheight') required int topoheight,
-    @JsonKey(name: 'data') required Map<String, dynamic> data,
-    @JsonKey(name: 'previous_topoheight') required int previousTopoheight,
+    required BigInt topoheight,
+    required RpcValueCell? data,
+    required BigInt? previousTopoheight,
+    @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = _GetContractDataResult;
 
-  /// @nodoc
+  const GetContractDataResult._();
+
+  /// Decodes the current daemon response.
   factory GetContractDataResult.fromJson(Map<String, dynamic> json) =>
-      _$GetContractDataResultFromJson(json);
+      GetContractDataResult(
+        topoheight: rpcBigInt(json['topoheight'], method: 'get_contract_data'),
+        data: json['data'] == null ? null : RpcValueCell.fromJson(json['data']),
+        previousTopoheight: json['previous_topoheight'] == null
+            ? null
+            : rpcBigInt(
+                json['previous_topoheight'],
+                method: 'get_contract_data',
+              ),
+        extraFields: RpcExtraFields.capture(
+          json,
+          const {'topoheight', 'data', 'previous_topoheight'},
+        ),
+      );
+
+  /// Serializes known fields and optionally restores additive received fields.
+  Map<String, Object?> toWireJson({bool includeExtraFields = false}) =>
+      extraFields.mergeInto({
+        'topoheight': topoheight,
+        'data': data?.toWireJson(includeExtraFields: includeExtraFields),
+        'previous_topoheight': previousTopoheight,
+      }, includeExtraFields: includeExtraFields);
 }

@@ -11,13 +11,13 @@ part of 'get_height_range_params.dart';
 _GetHeightRangeParams _$GetHeightRangeParamsFromJson(
   Map<String, dynamic> json,
 ) => _GetHeightRangeParams(
-  startHeight: (json['start_height'] as num?)?.toInt(),
-  endHeight: (json['end_height'] as num?)?.toInt(),
+  startHeight: rpcNullableBigInt(json['start_height']),
+  endHeight: rpcNullableBigInt(json['end_height']),
 );
 
 Map<String, dynamic> _$GetHeightRangeParamsToJson(
   _GetHeightRangeParams instance,
 ) => <String, dynamic>{
-  'start_height': ?instance.startHeight,
-  'end_height': ?instance.endHeight,
+  'start_height': ?rpcNullableBigIntToJson(instance.startHeight),
+  'end_height': ?rpcNullableBigIntToJson(instance.endHeight),
 };

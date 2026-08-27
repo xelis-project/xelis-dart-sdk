@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'get_nonce_at_topoheight_params.dart';
@@ -9,26 +9,27 @@ part of 'get_nonce_at_topoheight_params.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 
 /// @nodoc
-mixin _$GetNonceAtTopoHeightParams {
+mixin _$GetNonceAtTopoheightParams {
 
-@JsonKey(name: 'address') String get address;@JsonKey(name: 'topoheight') int get topoheight;
-/// Create a copy of GetNonceAtTopoHeightParams
+@JsonKey(name: 'address') String get address;@JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt get topoheight;
+/// Create a copy of GetNonceAtTopoheightParams
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-$GetNonceAtTopoHeightParamsCopyWith<GetNonceAtTopoHeightParams> get copyWith => _$GetNonceAtTopoHeightParamsCopyWithImpl<GetNonceAtTopoHeightParams>(this as GetNonceAtTopoHeightParams, _$identity);
+$GetNonceAtTopoheightParamsCopyWith<GetNonceAtTopoheightParams> get copyWith => _$GetNonceAtTopoheightParamsCopyWithImpl<GetNonceAtTopoheightParams>(this as GetNonceAtTopoheightParams, _$identity);
 
-  /// Serializes this GetNonceAtTopoHeightParams to a JSON map.
+  /// Serializes this GetNonceAtTopoheightParams to a JSON map.
   Map<String, dynamic> toJson();
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetNonceAtTopoHeightParams&&(identical(other.address, address) || other.address == address)&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetNonceAtTopoheightParams&&(identical(other.address, address) || other.address == address)&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -37,18 +38,18 @@ int get hashCode => Object.hash(runtimeType,address,topoheight);
 
 @override
 String toString() {
-  return 'GetNonceAtTopoHeightParams(address: $address, topoheight: $topoheight)';
+  return 'GetNonceAtTopoheightParams(address: $address, topoheight: $topoheight)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class $GetNonceAtTopoHeightParamsCopyWith<$Res>  {
-  factory $GetNonceAtTopoHeightParamsCopyWith(GetNonceAtTopoHeightParams value, $Res Function(GetNonceAtTopoHeightParams) _then) = _$GetNonceAtTopoHeightParamsCopyWithImpl;
+abstract mixin class $GetNonceAtTopoheightParamsCopyWith<$Res>  {
+  factory $GetNonceAtTopoheightParamsCopyWith(GetNonceAtTopoheightParams value, $Res Function(GetNonceAtTopoheightParams) _then) = _$GetNonceAtTopoheightParamsCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(name: 'address') String address,@JsonKey(name: 'topoheight') int topoheight
+@JsonKey(name: 'address') String address,@JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt topoheight
 });
 
 
@@ -56,28 +57,28 @@ $Res call({
 
 }
 /// @nodoc
-class _$GetNonceAtTopoHeightParamsCopyWithImpl<$Res>
-    implements $GetNonceAtTopoHeightParamsCopyWith<$Res> {
-  _$GetNonceAtTopoHeightParamsCopyWithImpl(this._self, this._then);
+class _$GetNonceAtTopoheightParamsCopyWithImpl<$Res>
+    implements $GetNonceAtTopoheightParamsCopyWith<$Res> {
+  _$GetNonceAtTopoheightParamsCopyWithImpl(this._self, this._then);
 
-  final GetNonceAtTopoHeightParams _self;
-  final $Res Function(GetNonceAtTopoHeightParams) _then;
+  final GetNonceAtTopoheightParams _self;
+  final $Res Function(GetNonceAtTopoheightParams) _then;
 
-/// Create a copy of GetNonceAtTopoHeightParams
+/// Create a copy of GetNonceAtTopoheightParams
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? address = null,Object? topoheight = null,}) {
-  return _then(_self.copyWith(
+  return _then(GetNonceAtTopoheightParams(
 address: null == address ? _self.address : address // ignore: cast_nullable_to_non_nullable
 as String,topoheight: null == topoheight ? _self.topoheight : topoheight // ignore: cast_nullable_to_non_nullable
-as int,
+as BigInt,
   ));
 }
 
 }
 
 
-/// Adds pattern-matching-related methods to [GetNonceAtTopoHeightParams].
-extension GetNonceAtTopoHeightParamsPatterns on GetNonceAtTopoHeightParams {
+/// Adds pattern-matching-related methods to [GetNonceAtTopoheightParams].
+extension GetNonceAtTopoheightParamsPatterns on GetNonceAtTopoheightParams {
 /// A variant of `map` that fallback to returning `orElse`.
 ///
 /// It is equivalent to doing:
@@ -90,10 +91,10 @@ extension GetNonceAtTopoHeightParamsPatterns on GetNonceAtTopoHeightParams {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _GetNonceAtTopoHeightParams value)?  $default,{required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _GetNonceAtTopoheightParams value)?  $default,{required TResult orElse(),}){
 final _that = this;
 switch (_that) {
-case _GetNonceAtTopoHeightParams() when $default != null:
+case _GetNonceAtTopoheightParams() when $default != null:
 return $default(_that);case _:
   return orElse();
 
@@ -112,10 +113,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _GetNonceAtTopoHeightParams value)  $default,){
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _GetNonceAtTopoheightParams value)  $default,){
 final _that = this;
 switch (_that) {
-case _GetNonceAtTopoHeightParams():
+case _GetNonceAtTopoheightParams():
 return $default(_that);case _:
   throw StateError('Unexpected subclass');
 
@@ -133,10 +134,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _GetNonceAtTopoHeightParams value)?  $default,){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _GetNonceAtTopoheightParams value)?  $default,){
 final _that = this;
 switch (_that) {
-case _GetNonceAtTopoHeightParams() when $default != null:
+case _GetNonceAtTopoheightParams() when $default != null:
 return $default(_that);case _:
   return null;
 
@@ -154,9 +155,9 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'address')  String address, @JsonKey(name: 'topoheight')  int topoheight)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'address')  String address, @JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt topoheight)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
-case _GetNonceAtTopoHeightParams() when $default != null:
+case _GetNonceAtTopoheightParams() when $default != null:
 return $default(_that.address,_that.topoheight);case _:
   return orElse();
 
@@ -175,9 +176,9 @@ return $default(_that.address,_that.topoheight);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'address')  String address, @JsonKey(name: 'topoheight')  int topoheight)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'address')  String address, @JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt topoheight)  $default,) {final _that = this;
 switch (_that) {
-case _GetNonceAtTopoHeightParams():
+case _GetNonceAtTopoheightParams():
 return $default(_that.address,_that.topoheight);case _:
   throw StateError('Unexpected subclass');
 
@@ -195,9 +196,9 @@ return $default(_that.address,_that.topoheight);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'address')  String address, @JsonKey(name: 'topoheight')  int topoheight)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'address')  String address, @JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt topoheight)?  $default,) {final _that = this;
 switch (_that) {
-case _GetNonceAtTopoHeightParams() when $default != null:
+case _GetNonceAtTopoheightParams() when $default != null:
 return $default(_that.address,_that.topoheight);case _:
   return null;
 
@@ -209,27 +210,27 @@ return $default(_that.address,_that.topoheight);case _:
 /// @nodoc
 @JsonSerializable()
 
-class _GetNonceAtTopoHeightParams implements GetNonceAtTopoHeightParams {
-  const _GetNonceAtTopoHeightParams({@JsonKey(name: 'address') required this.address, @JsonKey(name: 'topoheight') required this.topoheight});
-  factory _GetNonceAtTopoHeightParams.fromJson(Map<String, dynamic> json) => _$GetNonceAtTopoHeightParamsFromJson(json);
+class _GetNonceAtTopoheightParams implements GetNonceAtTopoheightParams {
+  const _GetNonceAtTopoheightParams({@JsonKey(name: 'address') required this.address, @JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.topoheight});
+  factory _GetNonceAtTopoheightParams.fromJson(Map<String, dynamic> json) => _$GetNonceAtTopoheightParamsFromJson(json);
 
 @override@JsonKey(name: 'address') final  String address;
-@override@JsonKey(name: 'topoheight') final  int topoheight;
+@override@JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) final  BigInt topoheight;
 
-/// Create a copy of GetNonceAtTopoHeightParams
+/// Create a copy of GetNonceAtTopoheightParams
 /// with the given fields replaced by the non-null parameter values.
 @override @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$GetNonceAtTopoHeightParamsCopyWith<_GetNonceAtTopoHeightParams> get copyWith => __$GetNonceAtTopoHeightParamsCopyWithImpl<_GetNonceAtTopoHeightParams>(this, _$identity);
+_$GetNonceAtTopoheightParamsCopyWith<_GetNonceAtTopoheightParams> get copyWith => __$GetNonceAtTopoheightParamsCopyWithImpl<_GetNonceAtTopoheightParams>(this, _$identity);
 
 @override
 Map<String, dynamic> toJson() {
-  return _$GetNonceAtTopoHeightParamsToJson(this, );
+  return _$GetNonceAtTopoheightParamsToJson(this, );
 }
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetNonceAtTopoHeightParams&&(identical(other.address, address) || other.address == address)&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetNonceAtTopoheightParams&&(identical(other.address, address) || other.address == address)&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -238,18 +239,18 @@ int get hashCode => Object.hash(runtimeType,address,topoheight);
 
 @override
 String toString() {
-  return 'GetNonceAtTopoHeightParams(address: $address, topoheight: $topoheight)';
+  return 'GetNonceAtTopoheightParams(address: $address, topoheight: $topoheight)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class _$GetNonceAtTopoHeightParamsCopyWith<$Res> implements $GetNonceAtTopoHeightParamsCopyWith<$Res> {
-  factory _$GetNonceAtTopoHeightParamsCopyWith(_GetNonceAtTopoHeightParams value, $Res Function(_GetNonceAtTopoHeightParams) _then) = __$GetNonceAtTopoHeightParamsCopyWithImpl;
+abstract mixin class _$GetNonceAtTopoheightParamsCopyWith<$Res> implements $GetNonceAtTopoheightParamsCopyWith<$Res> {
+  factory _$GetNonceAtTopoheightParamsCopyWith(_GetNonceAtTopoheightParams value, $Res Function(_GetNonceAtTopoheightParams) _then) = __$GetNonceAtTopoheightParamsCopyWithImpl;
 @override @useResult
 $Res call({
-@JsonKey(name: 'address') String address,@JsonKey(name: 'topoheight') int topoheight
+@JsonKey(name: 'address') String address,@JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt topoheight
 });
 
 
@@ -257,20 +258,20 @@ $Res call({
 
 }
 /// @nodoc
-class __$GetNonceAtTopoHeightParamsCopyWithImpl<$Res>
-    implements _$GetNonceAtTopoHeightParamsCopyWith<$Res> {
-  __$GetNonceAtTopoHeightParamsCopyWithImpl(this._self, this._then);
+class __$GetNonceAtTopoheightParamsCopyWithImpl<$Res>
+    implements _$GetNonceAtTopoheightParamsCopyWith<$Res> {
+  __$GetNonceAtTopoheightParamsCopyWithImpl(this._self, this._then);
 
-  final _GetNonceAtTopoHeightParams _self;
-  final $Res Function(_GetNonceAtTopoHeightParams) _then;
+  final _GetNonceAtTopoheightParams _self;
+  final $Res Function(_GetNonceAtTopoheightParams) _then;
 
-/// Create a copy of GetNonceAtTopoHeightParams
+/// Create a copy of GetNonceAtTopoheightParams
 /// with the given fields replaced by the non-null parameter values.
 @override @pragma('vm:prefer-inline') $Res call({Object? address = null,Object? topoheight = null,}) {
-  return _then(_GetNonceAtTopoHeightParams(
+  return _then(_GetNonceAtTopoheightParams(
 address: null == address ? _self.address : address // ignore: cast_nullable_to_non_nullable
 as String,topoheight: null == topoheight ? _self.topoheight : topoheight // ignore: cast_nullable_to_non_nullable
-as int,
+as BigInt,
   ));
 }
 

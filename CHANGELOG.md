@@ -1,3 +1,72 @@
+## 0.36.0
+
+This release aligns the SDK with XELIS `v1.25.0`. It removes public models that
+could lose RPC data or no longer matched the supported Rust contract.
+
+### Breaking changes from 0.35.x
+
+- Require Dart 3.13 or newer.
+- Rename `RPCTransaction` to `RpcTransaction` and `RPCAssetData` to
+  `RpcAssetData`. `TransactionResponse` and `TransactionWalletResponse` are
+  removed; wallet transaction responses now expose the canonical transaction
+  through `response.transaction`.
+- Represent RPC amounts, fees, gas, nonces, heights, supplies, timestamps and
+  other wide integer fields with `BigInt` instead of `int`.
+- Use `RpcValueCell` instead of `VMParameter`. Use `RpcContractLog` and
+  `GetContractLogsParams` instead of `ContractOutput`,
+  `GetContractOutputsParams` and `getContractOutputs`.
+- Build fees with `FeeBuilder.fixed` or `FeeBuilder.extra`, configure base fees
+  with `BaseFeeMode`, and use typed signers. Contract deployment now uses a
+  serialized `ContractModuleHex` and optional `invoke`.
+- Update existing RPC calls to their XELIS `v1.25.0` contracts:
+  `getAccountHistory` returns `List<GetAccountHistoryResult>`, wallet
+  `getAssets` accepts pagination and returns `List<WalletAssetEntry>`,
+  `estimateFees` accepts `EstimateWalletFeesParams`, and the extra-data and
+  ciphertext decryption methods use typed parameters and results.
+- Preserve the positional daemon batch-transaction response by returning
+  `List<RpcTransaction?>` from `getTransactions`; missing transactions remain
+  `null` instead of being dropped.
+- Match event subscriptions and payloads to the current RPC contract. Contract
+  invoke, transfer and event subscriptions and unsubscriptions now require
+  their original filters. `onHistorySynced` receives the synced topoheight,
+  `onPeerPeerDisconnected` receives `PeerPeerDisconnectedEvent`, and
+  `onDeployContract` receives `ContractDeployEvent`.
+- Replace `Flag` with `PlaintextExtraDataFlag` and use the Dart spelling
+  `topoheight`/`Topoheight` instead of `topoHeight`/`TopoHeight`. Keep the wire
+  tag `multi_sig` for the multisig action and `multisig` for transaction
+  signatures.
+- Handle transport, timeout, remote, compatibility and deserialization failures
+  through the typed `RpcException` hierarchy.
+
+### Notable additions
+
+- Upgrade the generator toolchain to Freezed 4 and the runtime annotation
+  dependency to `json_annotation` 4.12.0. This removes the 0.35.1
+  `json_annotation` 4.11 compatibility pin for Genesix wallet; Genesix
+  integrations should confirm their dependency constraints before upgrading.
+- Add RPC schema and capability discovery, parameterized subscriptions,
+  request timeouts, raw RPC access and `RpcCallOutcome` helpers.
+- Add the missing daemon and wallet RPC methods, opt-in daemon administration,
+  wallet storage methods and strict versioned XSWD permission manifests.
+- Add the XELIS 1.25 `has_contract_data` daemon method and typed scheduled
+  execution gas sources.
+- Preserve unknown variants and additive response fields so newer compatible
+  server responses can be inspected without losing data.
+- Normalize optional event filters across omitted and explicit-null wire forms,
+  including filtered and unfiltered `contract_event` subscriptions.
+- Decode `get_account_assets` from its actual XELIS `v1.25.0` array response.
+- Deprecate the legacy helpers from `data_converter.dart`; they remain available
+  for this release and now document their standard-library replacements.
+- Pin the RPC contract and integration verification tooling to XELIS `v1.25.0`
+  and re-enable wallet and cross-component integration suites.
+- Add unified `check`, `ci`, `integration`, `release` and `probe` verification
+  profiles, split live integration into daemon, wallet and E2E suites, enforce
+  at least 90% coverage of handwritten library code in CI, and provide a
+  `justfile` with shortcuts for common contributor workflows.
+- Expand live verification with a complete contract-event assertion plus
+  wallet restart persistence, authentication, error-path, concurrency and
+  transaction-lifecycle checks.
+
 ## 0.35.1
 
 - downgrade `json_annotation` to `^4.11.0` for Genesix wallet compatibility.

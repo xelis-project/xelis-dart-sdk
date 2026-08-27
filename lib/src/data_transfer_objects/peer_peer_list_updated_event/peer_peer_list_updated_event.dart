@@ -1,6 +1,6 @@
-// ignore_for_file: invalid_annotation_target
-
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/core/rpc_extra_fields.dart';
+import 'package:xelis_dart_sdk/src/utils/rpc_json.dart';
 
 part 'peer_peer_list_updated_event.freezed.dart';
 
@@ -11,11 +11,28 @@ part 'peer_peer_list_updated_event.g.dart';
 abstract class PeerPeerListUpdatedEvent with _$PeerPeerListUpdatedEvent {
   /// @nodoc
   const factory PeerPeerListUpdatedEvent({
-    @JsonKey(name: 'peer_id') required num id,
+    @JsonKey(name: 'peer_id', fromJson: rpcBigInt, toJson: rpcBigIntToJson)
+    required BigInt id,
     @JsonKey(name: 'peerlist') required List<String> peerList,
+    @JsonKey(includeFromJson: false, includeToJson: false)
+    @Default(RpcExtraFields())
+    RpcExtraFields extraFields,
   }) = _PeerPeerListUpdatedEvent;
+
+  const PeerPeerListUpdatedEvent._();
 
   /// @nodoc
   factory PeerPeerListUpdatedEvent.fromJson(Map<String, dynamic> json) =>
-      _$PeerPeerListUpdatedEventFromJson(json);
+      _$PeerPeerListUpdatedEventFromJson(json).copyWith(
+        extraFields: RpcExtraFields.capture(json, const {
+          'peer_id',
+          'peerlist',
+        }),
+      );
+
+  Map<String, Object?> toWireJson({bool includeExtraFields = false}) =>
+      extraFields.mergeInto({
+        'peer_id': id,
+        'peerlist': peerList,
+      }, includeExtraFields: includeExtraFields);
 }

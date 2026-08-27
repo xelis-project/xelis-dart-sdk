@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'split_address_result.dart';
@@ -9,35 +9,33 @@ part of 'split_address_result.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
-
 /// @nodoc
 mixin _$SplitAddressResult {
 
-@JsonKey(name: 'address') String get address;@JsonKey(name: 'integrated_data') Map<String, dynamic> get integratedData;@JsonKey(name: 'size') int get size;
+ String get address; DataElement get integratedData; BigInt get size; RpcExtraFields get extraFields;
 /// Create a copy of SplitAddressResult
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
 $SplitAddressResultCopyWith<SplitAddressResult> get copyWith => _$SplitAddressResultCopyWithImpl<SplitAddressResult>(this as SplitAddressResult, _$identity);
 
-  /// Serializes this SplitAddressResult to a JSON map.
-  Map<String, dynamic> toJson();
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is SplitAddressResult&&(identical(other.address, address) || other.address == address)&&const DeepCollectionEquality().equals(other.integratedData, integratedData)&&(identical(other.size, size) || other.size == size));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is SplitAddressResult&&(identical(other.address, address) || other.address == address)&&(identical(other.integratedData, integratedData) || other.integratedData == integratedData)&&(identical(other.size, size) || other.size == size)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
-@JsonKey(includeFromJson: false, includeToJson: false)
+
 @override
-int get hashCode => Object.hash(runtimeType,address,const DeepCollectionEquality().hash(integratedData),size);
+int get hashCode => Object.hash(runtimeType,address,integratedData,size,extraFields);
 
 @override
 String toString() {
-  return 'SplitAddressResult(address: $address, integratedData: $integratedData, size: $size)';
+  return 'SplitAddressResult(address: $address, integratedData: $integratedData, size: $size, extraFields: $extraFields)';
 }
 
 
@@ -48,11 +46,11 @@ abstract mixin class $SplitAddressResultCopyWith<$Res>  {
   factory $SplitAddressResultCopyWith(SplitAddressResult value, $Res Function(SplitAddressResult) _then) = _$SplitAddressResultCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(name: 'address') String address,@JsonKey(name: 'integrated_data') Map<String, dynamic> integratedData,@JsonKey(name: 'size') int size
+ String address, DataElement integratedData, BigInt size, RpcExtraFields extraFields
 });
 
 
-
+$DataElementCopyWith<$Res> get integratedData;$RpcExtraFieldsCopyWith<$Res> get extraFields;
 
 }
 /// @nodoc
@@ -65,15 +63,34 @@ class _$SplitAddressResultCopyWithImpl<$Res>
 
 /// Create a copy of SplitAddressResult
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? address = null,Object? integratedData = null,Object? size = null,}) {
-  return _then(_self.copyWith(
+@pragma('vm:prefer-inline') @override $Res call({Object? address = null,Object? integratedData = null,Object? size = null,Object? extraFields = null,}) {
+  return _then(SplitAddressResult(
 address: null == address ? _self.address : address // ignore: cast_nullable_to_non_nullable
 as String,integratedData: null == integratedData ? _self.integratedData : integratedData // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>,size: null == size ? _self.size : size // ignore: cast_nullable_to_non_nullable
-as int,
+as DataElement,size: null == size ? _self.size : size // ignore: cast_nullable_to_non_nullable
+as BigInt,extraFields: null == extraFields ? _self.extraFields : extraFields // ignore: cast_nullable_to_non_nullable
+as RpcExtraFields,
   ));
 }
-
+/// Create a copy of SplitAddressResult
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$DataElementCopyWith<$Res> get integratedData {
+  
+  return $DataElementCopyWith<$Res>(_self.integratedData, (value) {
+    return _then(_self.copyWith(integratedData: value));
+  });
+}/// Create a copy of SplitAddressResult
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$RpcExtraFieldsCopyWith<$Res> get extraFields {
+  
+  return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
+    return _then(_self.copyWith(extraFields: value));
+  });
+}
 }
 
 
@@ -155,10 +172,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'address')  String address, @JsonKey(name: 'integrated_data')  Map<String, dynamic> integratedData, @JsonKey(name: 'size')  int size)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String address,  DataElement integratedData,  BigInt size,  RpcExtraFields extraFields)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _SplitAddressResult() when $default != null:
-return $default(_that.address,_that.integratedData,_that.size);case _:
+return $default(_that.address,_that.integratedData,_that.size,_that.extraFields);case _:
   return orElse();
 
 }
@@ -176,10 +193,10 @@ return $default(_that.address,_that.integratedData,_that.size);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'address')  String address, @JsonKey(name: 'integrated_data')  Map<String, dynamic> integratedData, @JsonKey(name: 'size')  int size)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String address,  DataElement integratedData,  BigInt size,  RpcExtraFields extraFields)  $default,) {final _that = this;
 switch (_that) {
 case _SplitAddressResult():
-return $default(_that.address,_that.integratedData,_that.size);case _:
+return $default(_that.address,_that.integratedData,_that.size,_that.extraFields);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -196,10 +213,10 @@ return $default(_that.address,_that.integratedData,_that.size);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'address')  String address, @JsonKey(name: 'integrated_data')  Map<String, dynamic> integratedData, @JsonKey(name: 'size')  int size)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String address,  DataElement integratedData,  BigInt size,  RpcExtraFields extraFields)?  $default,) {final _that = this;
 switch (_that) {
 case _SplitAddressResult() when $default != null:
-return $default(_that.address,_that.integratedData,_that.size);case _:
+return $default(_that.address,_that.integratedData,_that.size,_that.extraFields);case _:
   return null;
 
 }
@@ -208,21 +225,16 @@ return $default(_that.address,_that.integratedData,_that.size);case _:
 }
 
 /// @nodoc
-@JsonSerializable()
 
-class _SplitAddressResult implements SplitAddressResult {
-  const _SplitAddressResult({@JsonKey(name: 'address') required this.address, @JsonKey(name: 'integrated_data') required final  Map<String, dynamic> integratedData, @JsonKey(name: 'size') required this.size}): _integratedData = integratedData;
-  factory _SplitAddressResult.fromJson(Map<String, dynamic> json) => _$SplitAddressResultFromJson(json);
 
-@override@JsonKey(name: 'address') final  String address;
- final  Map<String, dynamic> _integratedData;
-@override@JsonKey(name: 'integrated_data') Map<String, dynamic> get integratedData {
-  if (_integratedData is EqualUnmodifiableMapView) return _integratedData;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(_integratedData);
-}
+class _SplitAddressResult extends SplitAddressResult {
+  const _SplitAddressResult({required this.address, required this.integratedData, required this.size, this.extraFields = const RpcExtraFields()}): super._();
+  
 
-@override@JsonKey(name: 'size') final  int size;
+@override final  String address;
+@override final  DataElement integratedData;
+@override final  BigInt size;
+@override@JsonKey() final  RpcExtraFields extraFields;
 
 /// Create a copy of SplitAddressResult
 /// with the given fields replaced by the non-null parameter values.
@@ -230,23 +242,20 @@ class _SplitAddressResult implements SplitAddressResult {
 @pragma('vm:prefer-inline')
 _$SplitAddressResultCopyWith<_SplitAddressResult> get copyWith => __$SplitAddressResultCopyWithImpl<_SplitAddressResult>(this, _$identity);
 
-@override
-Map<String, dynamic> toJson() {
-  return _$SplitAddressResultToJson(this, );
-}
+
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _SplitAddressResult&&(identical(other.address, address) || other.address == address)&&const DeepCollectionEquality().equals(other._integratedData, _integratedData)&&(identical(other.size, size) || other.size == size));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _SplitAddressResult&&(identical(other.address, address) || other.address == address)&&(identical(other.integratedData, integratedData) || other.integratedData == integratedData)&&(identical(other.size, size) || other.size == size)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
-@JsonKey(includeFromJson: false, includeToJson: false)
+
 @override
-int get hashCode => Object.hash(runtimeType,address,const DeepCollectionEquality().hash(_integratedData),size);
+int get hashCode => Object.hash(runtimeType,address,integratedData,size,extraFields);
 
 @override
 String toString() {
-  return 'SplitAddressResult(address: $address, integratedData: $integratedData, size: $size)';
+  return 'SplitAddressResult(address: $address, integratedData: $integratedData, size: $size, extraFields: $extraFields)';
 }
 
 
@@ -257,11 +266,11 @@ abstract mixin class _$SplitAddressResultCopyWith<$Res> implements $SplitAddress
   factory _$SplitAddressResultCopyWith(_SplitAddressResult value, $Res Function(_SplitAddressResult) _then) = __$SplitAddressResultCopyWithImpl;
 @override @useResult
 $Res call({
-@JsonKey(name: 'address') String address,@JsonKey(name: 'integrated_data') Map<String, dynamic> integratedData,@JsonKey(name: 'size') int size
+ String address, DataElement integratedData, BigInt size, RpcExtraFields extraFields
 });
 
 
-
+@override $DataElementCopyWith<$Res> get integratedData;@override $RpcExtraFieldsCopyWith<$Res> get extraFields;
 
 }
 /// @nodoc
@@ -274,16 +283,35 @@ class __$SplitAddressResultCopyWithImpl<$Res>
 
 /// Create a copy of SplitAddressResult
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? address = null,Object? integratedData = null,Object? size = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? address = null,Object? integratedData = null,Object? size = null,Object? extraFields = null,}) {
   return _then(_SplitAddressResult(
 address: null == address ? _self.address : address // ignore: cast_nullable_to_non_nullable
-as String,integratedData: null == integratedData ? _self._integratedData : integratedData // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>,size: null == size ? _self.size : size // ignore: cast_nullable_to_non_nullable
-as int,
+as String,integratedData: null == integratedData ? _self.integratedData : integratedData // ignore: cast_nullable_to_non_nullable
+as DataElement,size: null == size ? _self.size : size // ignore: cast_nullable_to_non_nullable
+as BigInt,extraFields: null == extraFields ? _self.extraFields : extraFields // ignore: cast_nullable_to_non_nullable
+as RpcExtraFields,
   ));
 }
 
-
+/// Create a copy of SplitAddressResult
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$DataElementCopyWith<$Res> get integratedData {
+  
+  return $DataElementCopyWith<$Res>(_self.integratedData, (value) {
+    return _then(_self.copyWith(integratedData: value));
+  });
+}/// Create a copy of SplitAddressResult
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$RpcExtraFieldsCopyWith<$Res> get extraFields {
+  
+  return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
+    return _then(_self.copyWith(extraFields: value));
+  });
+}
 }
 
 // dart format on

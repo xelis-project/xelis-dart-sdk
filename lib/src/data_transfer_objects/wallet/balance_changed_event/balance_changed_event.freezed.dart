@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'balance_changed_event.dart';
@@ -9,13 +9,14 @@ part of 'balance_changed_event.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$BalanceChangedEvent {
 
-@JsonKey(name: 'asset') String get assetHash;@JsonKey(name: 'balance') int get balance;
+@JsonKey(name: 'asset') String get assetHash;@JsonKey(name: 'balance', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt get balance;@JsonKey(includeFromJson: false, includeToJson: false) RpcExtraFields get extraFields;
 /// Create a copy of BalanceChangedEvent
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,16 +29,16 @@ $BalanceChangedEventCopyWith<BalanceChangedEvent> get copyWith => _$BalanceChang
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is BalanceChangedEvent&&(identical(other.assetHash, assetHash) || other.assetHash == assetHash)&&(identical(other.balance, balance) || other.balance == balance));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is BalanceChangedEvent&&(identical(other.assetHash, assetHash) || other.assetHash == assetHash)&&(identical(other.balance, balance) || other.balance == balance)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,assetHash,balance);
+int get hashCode => Object.hash(runtimeType,assetHash,balance,extraFields);
 
 @override
 String toString() {
-  return 'BalanceChangedEvent(assetHash: $assetHash, balance: $balance)';
+  return 'BalanceChangedEvent(assetHash: $assetHash, balance: $balance, extraFields: $extraFields)';
 }
 
 
@@ -48,11 +49,11 @@ abstract mixin class $BalanceChangedEventCopyWith<$Res>  {
   factory $BalanceChangedEventCopyWith(BalanceChangedEvent value, $Res Function(BalanceChangedEvent) _then) = _$BalanceChangedEventCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(name: 'asset') String assetHash,@JsonKey(name: 'balance') int balance
+@JsonKey(name: 'asset') String assetHash,@JsonKey(name: 'balance', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt balance,@JsonKey(includeFromJson: false, includeToJson: false) RpcExtraFields extraFields
 });
 
 
-
+$RpcExtraFieldsCopyWith<$Res> get extraFields;
 
 }
 /// @nodoc
@@ -65,14 +66,24 @@ class _$BalanceChangedEventCopyWithImpl<$Res>
 
 /// Create a copy of BalanceChangedEvent
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? assetHash = null,Object? balance = null,}) {
-  return _then(_self.copyWith(
+@pragma('vm:prefer-inline') @override $Res call({Object? assetHash = null,Object? balance = null,Object? extraFields = null,}) {
+  return _then(BalanceChangedEvent(
 assetHash: null == assetHash ? _self.assetHash : assetHash // ignore: cast_nullable_to_non_nullable
 as String,balance: null == balance ? _self.balance : balance // ignore: cast_nullable_to_non_nullable
-as int,
+as BigInt,extraFields: null == extraFields ? _self.extraFields : extraFields // ignore: cast_nullable_to_non_nullable
+as RpcExtraFields,
   ));
 }
-
+/// Create a copy of BalanceChangedEvent
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$RpcExtraFieldsCopyWith<$Res> get extraFields {
+  
+  return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
+    return _then(_self.copyWith(extraFields: value));
+  });
+}
 }
 
 
@@ -154,10 +165,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'asset')  String assetHash, @JsonKey(name: 'balance')  int balance)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'asset')  String assetHash, @JsonKey(name: 'balance', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt balance, @JsonKey(includeFromJson: false, includeToJson: false)  RpcExtraFields extraFields)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _BalanceChangedEvent() when $default != null:
-return $default(_that.assetHash,_that.balance);case _:
+return $default(_that.assetHash,_that.balance,_that.extraFields);case _:
   return orElse();
 
 }
@@ -175,10 +186,10 @@ return $default(_that.assetHash,_that.balance);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'asset')  String assetHash, @JsonKey(name: 'balance')  int balance)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'asset')  String assetHash, @JsonKey(name: 'balance', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt balance, @JsonKey(includeFromJson: false, includeToJson: false)  RpcExtraFields extraFields)  $default,) {final _that = this;
 switch (_that) {
 case _BalanceChangedEvent():
-return $default(_that.assetHash,_that.balance);case _:
+return $default(_that.assetHash,_that.balance,_that.extraFields);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -195,10 +206,10 @@ return $default(_that.assetHash,_that.balance);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'asset')  String assetHash, @JsonKey(name: 'balance')  int balance)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'asset')  String assetHash, @JsonKey(name: 'balance', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt balance, @JsonKey(includeFromJson: false, includeToJson: false)  RpcExtraFields extraFields)?  $default,) {final _that = this;
 switch (_that) {
 case _BalanceChangedEvent() when $default != null:
-return $default(_that.assetHash,_that.balance);case _:
+return $default(_that.assetHash,_that.balance,_that.extraFields);case _:
   return null;
 
 }
@@ -209,12 +220,13 @@ return $default(_that.assetHash,_that.balance);case _:
 /// @nodoc
 @JsonSerializable()
 
-class _BalanceChangedEvent implements BalanceChangedEvent {
-  const _BalanceChangedEvent({@JsonKey(name: 'asset') required this.assetHash, @JsonKey(name: 'balance') required this.balance});
+class _BalanceChangedEvent extends BalanceChangedEvent {
+  const _BalanceChangedEvent({@JsonKey(name: 'asset') required this.assetHash, @JsonKey(name: 'balance', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.balance, @JsonKey(includeFromJson: false, includeToJson: false) this.extraFields = const RpcExtraFields()}): super._();
   factory _BalanceChangedEvent.fromJson(Map<String, dynamic> json) => _$BalanceChangedEventFromJson(json);
 
 @override@JsonKey(name: 'asset') final  String assetHash;
-@override@JsonKey(name: 'balance') final  int balance;
+@override@JsonKey(name: 'balance', fromJson: rpcBigInt, toJson: rpcBigIntToJson) final  BigInt balance;
+@override@JsonKey(includeFromJson: false, includeToJson: false) final  RpcExtraFields extraFields;
 
 /// Create a copy of BalanceChangedEvent
 /// with the given fields replaced by the non-null parameter values.
@@ -229,16 +241,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _BalanceChangedEvent&&(identical(other.assetHash, assetHash) || other.assetHash == assetHash)&&(identical(other.balance, balance) || other.balance == balance));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _BalanceChangedEvent&&(identical(other.assetHash, assetHash) || other.assetHash == assetHash)&&(identical(other.balance, balance) || other.balance == balance)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,assetHash,balance);
+int get hashCode => Object.hash(runtimeType,assetHash,balance,extraFields);
 
 @override
 String toString() {
-  return 'BalanceChangedEvent(assetHash: $assetHash, balance: $balance)';
+  return 'BalanceChangedEvent(assetHash: $assetHash, balance: $balance, extraFields: $extraFields)';
 }
 
 
@@ -249,11 +261,11 @@ abstract mixin class _$BalanceChangedEventCopyWith<$Res> implements $BalanceChan
   factory _$BalanceChangedEventCopyWith(_BalanceChangedEvent value, $Res Function(_BalanceChangedEvent) _then) = __$BalanceChangedEventCopyWithImpl;
 @override @useResult
 $Res call({
-@JsonKey(name: 'asset') String assetHash,@JsonKey(name: 'balance') int balance
+@JsonKey(name: 'asset') String assetHash,@JsonKey(name: 'balance', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt balance,@JsonKey(includeFromJson: false, includeToJson: false) RpcExtraFields extraFields
 });
 
 
-
+@override $RpcExtraFieldsCopyWith<$Res> get extraFields;
 
 }
 /// @nodoc
@@ -266,15 +278,25 @@ class __$BalanceChangedEventCopyWithImpl<$Res>
 
 /// Create a copy of BalanceChangedEvent
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? assetHash = null,Object? balance = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? assetHash = null,Object? balance = null,Object? extraFields = null,}) {
   return _then(_BalanceChangedEvent(
 assetHash: null == assetHash ? _self.assetHash : assetHash // ignore: cast_nullable_to_non_nullable
 as String,balance: null == balance ? _self.balance : balance // ignore: cast_nullable_to_non_nullable
-as int,
+as BigInt,extraFields: null == extraFields ? _self.extraFields : extraFields // ignore: cast_nullable_to_non_nullable
+as RpcExtraFields,
   ));
 }
 
-
+/// Create a copy of BalanceChangedEvent
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$RpcExtraFieldsCopyWith<$Res> get extraFields {
+  
+  return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
+    return _then(_self.copyWith(extraFields: value));
+  });
+}
 }
 
 // dart format on

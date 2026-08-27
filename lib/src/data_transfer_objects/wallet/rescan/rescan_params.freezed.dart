@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'rescan_params.dart';
@@ -9,13 +9,14 @@ part of 'rescan_params.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$RescanParams {
 
-@JsonKey(name: 'until_topoheight') int get untilTopoheight;
+@JsonKey(name: 'until_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt get untilTopoheight;
 /// Create a copy of RescanParams
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +49,7 @@ abstract mixin class $RescanParamsCopyWith<$Res>  {
   factory $RescanParamsCopyWith(RescanParams value, $Res Function(RescanParams) _then) = _$RescanParamsCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(name: 'until_topoheight') int untilTopoheight
+@JsonKey(name: 'until_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt untilTopoheight
 });
 
 
@@ -66,9 +67,9 @@ class _$RescanParamsCopyWithImpl<$Res>
 /// Create a copy of RescanParams
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? untilTopoheight = null,}) {
-  return _then(_self.copyWith(
+  return _then(RescanParams(
 untilTopoheight: null == untilTopoheight ? _self.untilTopoheight : untilTopoheight // ignore: cast_nullable_to_non_nullable
-as int,
+as BigInt,
   ));
 }
 
@@ -153,7 +154,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'until_topoheight')  int untilTopoheight)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'until_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt untilTopoheight)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _RescanParams() when $default != null:
 return $default(_that.untilTopoheight);case _:
@@ -174,7 +175,7 @@ return $default(_that.untilTopoheight);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'until_topoheight')  int untilTopoheight)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'until_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt untilTopoheight)  $default,) {final _that = this;
 switch (_that) {
 case _RescanParams():
 return $default(_that.untilTopoheight);case _:
@@ -194,7 +195,7 @@ return $default(_that.untilTopoheight);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'until_topoheight')  int untilTopoheight)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'until_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt untilTopoheight)?  $default,) {final _that = this;
 switch (_that) {
 case _RescanParams() when $default != null:
 return $default(_that.untilTopoheight);case _:
@@ -209,10 +210,10 @@ return $default(_that.untilTopoheight);case _:
 @JsonSerializable()
 
 class _RescanParams implements RescanParams {
-  const _RescanParams({@JsonKey(name: 'until_topoheight') required this.untilTopoheight});
+  const _RescanParams({@JsonKey(name: 'until_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.untilTopoheight});
   factory _RescanParams.fromJson(Map<String, dynamic> json) => _$RescanParamsFromJson(json);
 
-@override@JsonKey(name: 'until_topoheight') final  int untilTopoheight;
+@override@JsonKey(name: 'until_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) final  BigInt untilTopoheight;
 
 /// Create a copy of RescanParams
 /// with the given fields replaced by the non-null parameter values.
@@ -247,7 +248,7 @@ abstract mixin class _$RescanParamsCopyWith<$Res> implements $RescanParamsCopyWi
   factory _$RescanParamsCopyWith(_RescanParams value, $Res Function(_RescanParams) _then) = __$RescanParamsCopyWithImpl;
 @override @useResult
 $Res call({
-@JsonKey(name: 'until_topoheight') int untilTopoheight
+@JsonKey(name: 'until_topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt untilTopoheight
 });
 
 
@@ -267,7 +268,7 @@ class __$RescanParamsCopyWithImpl<$Res>
 @override @pragma('vm:prefer-inline') $Res call({Object? untilTopoheight = null,}) {
   return _then(_RescanParams(
 untilTopoheight: null == untilTopoheight ? _self.untilTopoheight : untilTopoheight // ignore: cast_nullable_to_non_nullable
-as int,
+as BigInt,
   ));
 }
 

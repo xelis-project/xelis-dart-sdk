@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'get_height_range_params.dart';
@@ -9,13 +9,14 @@ part of 'get_height_range_params.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$GetHeightRangeParams {
 
-@JsonKey(name: 'start_height') int? get startHeight;@JsonKey(name: 'end_height') int? get endHeight;
+@JsonKey(name: 'start_height', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) BigInt? get startHeight;@JsonKey(name: 'end_height', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) BigInt? get endHeight;
 /// Create a copy of GetHeightRangeParams
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +49,7 @@ abstract mixin class $GetHeightRangeParamsCopyWith<$Res>  {
   factory $GetHeightRangeParamsCopyWith(GetHeightRangeParams value, $Res Function(GetHeightRangeParams) _then) = _$GetHeightRangeParamsCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(name: 'start_height') int? startHeight,@JsonKey(name: 'end_height') int? endHeight
+@JsonKey(name: 'start_height', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) BigInt? startHeight,@JsonKey(name: 'end_height', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) BigInt? endHeight
 });
 
 
@@ -66,10 +67,10 @@ class _$GetHeightRangeParamsCopyWithImpl<$Res>
 /// Create a copy of GetHeightRangeParams
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? startHeight = freezed,Object? endHeight = freezed,}) {
-  return _then(_self.copyWith(
+  return _then(GetHeightRangeParams(
 startHeight: freezed == startHeight ? _self.startHeight : startHeight // ignore: cast_nullable_to_non_nullable
-as int?,endHeight: freezed == endHeight ? _self.endHeight : endHeight // ignore: cast_nullable_to_non_nullable
-as int?,
+as BigInt?,endHeight: freezed == endHeight ? _self.endHeight : endHeight // ignore: cast_nullable_to_non_nullable
+as BigInt?,
   ));
 }
 
@@ -154,7 +155,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'start_height')  int? startHeight, @JsonKey(name: 'end_height')  int? endHeight)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'start_height', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson)  BigInt? startHeight, @JsonKey(name: 'end_height', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson)  BigInt? endHeight)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _GetHeightRangeParams() when $default != null:
 return $default(_that.startHeight,_that.endHeight);case _:
@@ -175,7 +176,7 @@ return $default(_that.startHeight,_that.endHeight);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'start_height')  int? startHeight, @JsonKey(name: 'end_height')  int? endHeight)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'start_height', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson)  BigInt? startHeight, @JsonKey(name: 'end_height', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson)  BigInt? endHeight)  $default,) {final _that = this;
 switch (_that) {
 case _GetHeightRangeParams():
 return $default(_that.startHeight,_that.endHeight);case _:
@@ -195,7 +196,7 @@ return $default(_that.startHeight,_that.endHeight);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'start_height')  int? startHeight, @JsonKey(name: 'end_height')  int? endHeight)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'start_height', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson)  BigInt? startHeight, @JsonKey(name: 'end_height', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson)  BigInt? endHeight)?  $default,) {final _that = this;
 switch (_that) {
 case _GetHeightRangeParams() when $default != null:
 return $default(_that.startHeight,_that.endHeight);case _:
@@ -210,11 +211,11 @@ return $default(_that.startHeight,_that.endHeight);case _:
 
 @JsonSerializable(includeIfNull: false)
 class _GetHeightRangeParams implements GetHeightRangeParams {
-  const _GetHeightRangeParams({@JsonKey(name: 'start_height') this.startHeight, @JsonKey(name: 'end_height') this.endHeight});
+  const _GetHeightRangeParams({@JsonKey(name: 'start_height', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) this.startHeight, @JsonKey(name: 'end_height', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) this.endHeight});
   factory _GetHeightRangeParams.fromJson(Map<String, dynamic> json) => _$GetHeightRangeParamsFromJson(json);
 
-@override@JsonKey(name: 'start_height') final  int? startHeight;
-@override@JsonKey(name: 'end_height') final  int? endHeight;
+@override@JsonKey(name: 'start_height', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) final  BigInt? startHeight;
+@override@JsonKey(name: 'end_height', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) final  BigInt? endHeight;
 
 /// Create a copy of GetHeightRangeParams
 /// with the given fields replaced by the non-null parameter values.
@@ -249,7 +250,7 @@ abstract mixin class _$GetHeightRangeParamsCopyWith<$Res> implements $GetHeightR
   factory _$GetHeightRangeParamsCopyWith(_GetHeightRangeParams value, $Res Function(_GetHeightRangeParams) _then) = __$GetHeightRangeParamsCopyWithImpl;
 @override @useResult
 $Res call({
-@JsonKey(name: 'start_height') int? startHeight,@JsonKey(name: 'end_height') int? endHeight
+@JsonKey(name: 'start_height', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) BigInt? startHeight,@JsonKey(name: 'end_height', fromJson: rpcNullableBigInt, toJson: rpcNullableBigIntToJson) BigInt? endHeight
 });
 
 
@@ -269,8 +270,8 @@ class __$GetHeightRangeParamsCopyWithImpl<$Res>
 @override @pragma('vm:prefer-inline') $Res call({Object? startHeight = freezed,Object? endHeight = freezed,}) {
   return _then(_GetHeightRangeParams(
 startHeight: freezed == startHeight ? _self.startHeight : startHeight // ignore: cast_nullable_to_non_nullable
-as int?,endHeight: freezed == endHeight ? _self.endHeight : endHeight // ignore: cast_nullable_to_non_nullable
-as int?,
+as BigInt?,endHeight: freezed == endHeight ? _self.endHeight : endHeight // ignore: cast_nullable_to_non_nullable
+as BigInt?,
   ));
 }
 
