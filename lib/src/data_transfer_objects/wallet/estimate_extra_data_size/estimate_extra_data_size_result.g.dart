@@ -10,8 +10,8 @@ part of 'estimate_extra_data_size_result.dart';
 
 _EstimateExtraDataSizeResult _$EstimateExtraDataSizeResultFromJson(
   Map<String, dynamic> json,
-) => _EstimateExtraDataSizeResult(size: (json['size'] as num).toInt());
+) => _EstimateExtraDataSizeResult(size: rpcBigInt(json['size']));
 
 Map<String, dynamic> _$EstimateExtraDataSizeResultToJson(
   _EstimateExtraDataSizeResult instance,
-) => <String, dynamic>{'size': instance.size};
+) => <String, dynamic>{'size': rpcBigIntToJson(instance.size)};

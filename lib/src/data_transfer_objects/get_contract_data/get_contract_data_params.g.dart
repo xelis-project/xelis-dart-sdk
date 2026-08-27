@@ -12,9 +12,12 @@ _GetContractDataParams _$GetContractDataParamsFromJson(
   Map<String, dynamic> json,
 ) => _GetContractDataParams(
   contractHash: json['contract'] as String,
-  key: json['key'] as Map<String, dynamic>,
+  key: RpcValueCell.fromJson(json['key']),
 );
 
 Map<String, dynamic> _$GetContractDataParamsToJson(
   _GetContractDataParams instance,
-) => <String, dynamic>{'contract': instance.contractHash, 'key': instance.key};
+) => <String, dynamic>{
+  'contract': instance.contractHash,
+  'key': _rpcValueCellToJson(instance.key),
+};

@@ -1,7 +1,5 @@
-// ignore_for_file: invalid_annotation_target
-
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:xelis_dart_sdk/xelis_dart_sdk.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/shared/transaction/signature_id.dart';
 
 part 'finalize_unsigned_transaction_params.freezed.dart';
 part 'finalize_unsigned_transaction_params.g.dart';
@@ -11,7 +9,7 @@ part 'finalize_unsigned_transaction_params.g.dart';
 abstract class FinalizeUnsignedTransactionParams
     with _$FinalizeUnsignedTransactionParams {
   /// @nodoc
-  @JsonSerializable(includeIfNull: false)
+  @JsonSerializable(includeIfNull: false, explicitToJson: true)
   const factory FinalizeUnsignedTransactionParams({
     @JsonKey(name: 'unsigned') required String unsignedTransaction,
     @JsonKey(name: 'signatures') List<SignatureId>? signatures,

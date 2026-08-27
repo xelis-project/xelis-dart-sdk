@@ -12,12 +12,12 @@ _NewAssetEvent _$NewAssetEventFromJson(Map<String, dynamic> json) =>
     _NewAssetEvent(
       asset: json['asset'] as String,
       blockHash: json['block_hash'] as String,
-      topoheight: (json['topoheight'] as num).toInt(),
+      topoheight: rpcBigInt(json['topoheight']),
     );
 
 Map<String, dynamic> _$NewAssetEventToJson(_NewAssetEvent instance) =>
     <String, dynamic>{
       'asset': instance.asset,
       'block_hash': instance.blockHash,
-      'topoheight': instance.topoheight,
+      'topoheight': rpcBigIntToJson(instance.topoheight),
     };

@@ -10,22 +10,22 @@ part of 'p2p_status_result.dart';
 
 _P2pStatusResult _$P2pStatusResultFromJson(Map<String, dynamic> json) =>
     _P2pStatusResult(
-      bestTopoHeight: (json['best_topoheight'] as num).toInt(),
-      medianTopoHeight: (json['median_topoheight'] as num).toInt(),
-      maxPeers: (json['max_peers'] as num).toInt(),
-      ourTopoHeight: (json['our_topoheight'] as num).toInt(),
-      peerCount: (json['peer_count'] as num).toInt(),
-      peerId: json['peer_id'] as num,
+      bestTopoheight: rpcBigInt(json['best_topoheight']),
+      medianTopoheight: rpcBigInt(json['median_topoheight']),
+      maxPeers: rpcBigInt(json['max_peers']),
+      ourTopoheight: rpcBigInt(json['our_topoheight']),
+      peerCount: rpcBigInt(json['peer_count']),
+      peerId: rpcBigInt(json['peer_id']),
       tag: json['tag'] as String?,
     );
 
 Map<String, dynamic> _$P2pStatusResultToJson(_P2pStatusResult instance) =>
     <String, dynamic>{
-      'best_topoheight': instance.bestTopoHeight,
-      'median_topoheight': instance.medianTopoHeight,
-      'max_peers': instance.maxPeers,
-      'our_topoheight': instance.ourTopoHeight,
-      'peer_count': instance.peerCount,
-      'peer_id': instance.peerId,
+      'best_topoheight': rpcBigIntToJson(instance.bestTopoheight),
+      'median_topoheight': rpcBigIntToJson(instance.medianTopoheight),
+      'max_peers': rpcBigIntToJson(instance.maxPeers),
+      'our_topoheight': rpcBigIntToJson(instance.ourTopoheight),
+      'peer_count': rpcBigIntToJson(instance.peerCount),
+      'peer_id': rpcBigIntToJson(instance.peerId),
       'tag': instance.tag,
     };

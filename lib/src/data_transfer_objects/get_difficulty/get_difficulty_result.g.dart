@@ -10,15 +10,15 @@ part of 'get_difficulty_result.dart';
 
 _GetDifficultyResult _$GetDifficultyResultFromJson(Map<String, dynamic> json) =>
     _GetDifficultyResult(
-      difficulty: json['difficulty'] as String,
-      hashrate: json['hashrate'] as String,
+      difficulty: rpcBigInt(json['difficulty']),
+      hashrate: rpcBigInt(json['hashrate']),
       hashrateFormatted: json['hashrate_formatted'] as String,
     );
 
 Map<String, dynamic> _$GetDifficultyResultToJson(
   _GetDifficultyResult instance,
 ) => <String, dynamic>{
-  'difficulty': instance.difficulty,
-  'hashrate': instance.hashrate,
+  'difficulty': rpcBigIntStringToJson(instance.difficulty),
+  'hashrate': rpcBigIntStringToJson(instance.hashrate),
   'hashrate_formatted': instance.hashrateFormatted,
 };

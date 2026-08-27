@@ -1,6 +1,5 @@
-// ignore_for_file: invalid_annotation_target
-
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:xelis_dart_sdk/src/utils/rpc_json.dart';
 
 part 'get_nonce_at_topoheight_params.freezed.dart';
 
@@ -8,14 +7,15 @@ part 'get_nonce_at_topoheight_params.g.dart';
 
 /// @nodoc
 @freezed
-abstract class GetNonceAtTopoHeightParams with _$GetNonceAtTopoHeightParams {
+abstract class GetNonceAtTopoheightParams with _$GetNonceAtTopoheightParams {
   /// @nodoc
-  const factory GetNonceAtTopoHeightParams({
+  const factory GetNonceAtTopoheightParams({
     @JsonKey(name: 'address') required String address,
-    @JsonKey(name: 'topoheight') required int topoheight,
-  }) = _GetNonceAtTopoHeightParams;
+    @JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson)
+    required BigInt topoheight,
+  }) = _GetNonceAtTopoheightParams;
 
   /// @nodoc
-  factory GetNonceAtTopoHeightParams.fromJson(Map<String, dynamic> json) =>
-      _$GetNonceAtTopoHeightParamsFromJson(json);
+  factory GetNonceAtTopoheightParams.fromJson(Map<String, dynamic> json) =>
+      _$GetNonceAtTopoheightParamsFromJson(json);
 }

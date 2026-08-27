@@ -13,9 +13,10 @@ _MempoolTransactionSummary _$MempoolTransactionSummaryFromJson(
 ) => _MempoolTransactionSummary(
   hash: json['hash'] as String,
   source: json['source'] as String,
-  fee: (json['fee'] as num).toInt(),
-  firstSeen: (json['first_seen'] as num).toInt(),
-  size: (json['size'] as num).toInt(),
+  fee: rpcBigInt(json['fee']),
+  firstSeen: rpcBigInt(json['first_seen']),
+  size: rpcBigInt(json['size']),
+  feePerKb: rpcBigInt(json['fee_per_kb']),
 );
 
 Map<String, dynamic> _$MempoolTransactionSummaryToJson(
@@ -23,7 +24,8 @@ Map<String, dynamic> _$MempoolTransactionSummaryToJson(
 ) => <String, dynamic>{
   'hash': instance.hash,
   'source': instance.source,
-  'fee': instance.fee,
-  'first_seen': instance.firstSeen,
-  'size': instance.size,
+  'fee': rpcBigIntToJson(instance.fee),
+  'first_seen': rpcBigIntToJson(instance.firstSeen),
+  'size': rpcBigIntToJson(instance.size),
+  'fee_per_kb': rpcBigIntToJson(instance.feePerKb),
 };

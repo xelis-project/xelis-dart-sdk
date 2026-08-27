@@ -15,8 +15,8 @@ _GetAccountHistoryParams _$GetAccountHistoryParamsFromJson(
   asset: json['asset'] as String,
   incomingFlow: json['incoming_flow'] as bool,
   outgoingFlow: json['outgoing_flow'] as bool,
-  minimumTopoheight: (json['minimum_topoheight'] as num?)?.toInt(),
-  maximumTopoheight: (json['maximum_topoheight'] as num?)?.toInt(),
+  minimumTopoheight: rpcNullableBigInt(json['minimum_topoheight']),
+  maximumTopoheight: rpcNullableBigInt(json['maximum_topoheight']),
 );
 
 Map<String, dynamic> _$GetAccountHistoryParamsToJson(
@@ -26,6 +26,6 @@ Map<String, dynamic> _$GetAccountHistoryParamsToJson(
   'asset': instance.asset,
   'incoming_flow': instance.incomingFlow,
   'outgoing_flow': instance.outgoingFlow,
-  'minimum_topoheight': instance.minimumTopoheight,
-  'maximum_topoheight': instance.maximumTopoheight,
+  'minimum_topoheight': rpcNullableBigIntToJson(instance.minimumTopoheight),
+  'maximum_topoheight': rpcNullableBigIntToJson(instance.maximumTopoheight),
 };

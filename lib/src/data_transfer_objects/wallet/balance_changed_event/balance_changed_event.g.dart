@@ -11,12 +11,12 @@ part of 'balance_changed_event.dart';
 _BalanceChangedEvent _$BalanceChangedEventFromJson(Map<String, dynamic> json) =>
     _BalanceChangedEvent(
       assetHash: json['asset'] as String,
-      balance: (json['balance'] as num).toInt(),
+      balance: rpcBigInt(json['balance']),
     );
 
 Map<String, dynamic> _$BalanceChangedEventToJson(
   _BalanceChangedEvent instance,
 ) => <String, dynamic>{
   'asset': instance.assetHash,
-  'balance': instance.balance,
+  'balance': rpcBigIntToJson(instance.balance),
 };

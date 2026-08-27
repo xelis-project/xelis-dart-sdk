@@ -12,12 +12,12 @@ _MakeIntegratedAddressParams _$MakeIntegratedAddressParamsFromJson(
   Map<String, dynamic> json,
 ) => _MakeIntegratedAddressParams(
   address: json['address'] as String,
-  data: json['integrated_data'],
+  data: DataElement.fromJson(json['integrated_data']),
 );
 
 Map<String, dynamic> _$MakeIntegratedAddressParamsToJson(
   _MakeIntegratedAddressParams instance,
 ) => <String, dynamic>{
   'address': instance.address,
-  'integrated_data': instance.data,
+  'integrated_data': _dataElementToJson(instance.data),
 };

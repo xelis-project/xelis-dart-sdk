@@ -12,12 +12,12 @@ _HasBalanceParams _$HasBalanceParamsFromJson(Map<String, dynamic> json) =>
     _HasBalanceParams(
       address: json['address'] as String,
       asset: json['asset'] as String,
-      topoheight: (json['topoheight'] as num?)?.toInt(),
+      topoheight: rpcNullableBigInt(json['topoheight']),
     );
 
 Map<String, dynamic> _$HasBalanceParamsToJson(_HasBalanceParams instance) =>
     <String, dynamic>{
       'address': instance.address,
       'asset': instance.asset,
-      'topoheight': ?instance.topoheight,
+      'topoheight': ?rpcNullableBigIntToJson(instance.topoheight),
     };

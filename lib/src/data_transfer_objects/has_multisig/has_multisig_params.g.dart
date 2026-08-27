@@ -11,11 +11,11 @@ part of 'has_multisig_params.dart';
 _HasMultisigParams _$HasMultisigParamsFromJson(Map<String, dynamic> json) =>
     _HasMultisigParams(
       address: json['address'] as String,
-      topoheight: (json['topoheight'] as num?)?.toInt(),
+      topoheight: rpcNullableBigInt(json['topoheight']),
     );
 
 Map<String, dynamic> _$HasMultisigParamsToJson(_HasMultisigParams instance) =>
     <String, dynamic>{
       'address': instance.address,
-      'topoheight': ?instance.topoheight,
+      'topoheight': ?rpcNullableBigIntToJson(instance.topoheight),
     };

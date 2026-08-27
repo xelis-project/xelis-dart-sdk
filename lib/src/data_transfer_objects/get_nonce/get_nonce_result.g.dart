@@ -10,14 +10,15 @@ part of 'get_nonce_result.dart';
 
 _GetNonceResult _$GetNonceResultFromJson(Map<String, dynamic> json) =>
     _GetNonceResult(
-      topoHeight: (json['topoheight'] as num).toInt(),
-      nonce: (json['nonce'] as num).toInt(),
-      previousTopoHeight: (json['previous_topoheight'] as num?)?.toInt(),
+      topoheight: rpcBigInt(json['topoheight']),
+      nonce: rpcBigInt(json['nonce']),
+      previousTopoheight: rpcNullableBigInt(json['previous_topoheight']),
     );
 
-Map<String, dynamic> _$GetNonceResultToJson(_GetNonceResult instance) =>
-    <String, dynamic>{
-      'topoheight': instance.topoHeight,
-      'nonce': instance.nonce,
-      'previous_topoheight': instance.previousTopoHeight,
-    };
+Map<String, dynamic> _$GetNonceResultToJson(
+  _GetNonceResult instance,
+) => <String, dynamic>{
+  'topoheight': rpcBigIntToJson(instance.topoheight),
+  'nonce': rpcBigIntToJson(instance.nonce),
+  'previous_topoheight': rpcNullableBigIntToJson(instance.previousTopoheight),
+};

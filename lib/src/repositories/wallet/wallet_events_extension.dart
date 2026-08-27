@@ -1,21 +1,26 @@
 import 'dart:async';
 
-import 'package:xelis_dart_sdk/xelis_dart_sdk.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/shared/asset/rpc_asset_data.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/wallet/balance_changed_event/balance_changed_event.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/wallet/transaction_entry/transaction_entry.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/wallet/transaction_entry/transaction_pending.dart';
+import 'package:xelis_dart_sdk/src/repositories/rpc_client_repository.dart';
+import 'package:xelis_dart_sdk/src/repositories/wallet/wallet_constants.dart';
 
 /// Extension of [WalletClient] that provides methods to
 /// subscribe/unsubscribe to wallet events.
 extension WalletEventsExtension on WalletClient {
-  /// Registers a callback for NewTopoHeight event.
-  void onNewTopoHeight(void Function(int topoheight) callback) =>
-      onEvent(WalletEvent.newTopoHeight, callback);
+  /// Registers a callback for NewTopoheight event.
+  void onNewTopoheight(void Function(BigInt topoheight) callback) =>
+      onEvent(WalletEvent.newTopoheight, callback);
 
-  /// Unsubscribes from NewTopoHeight event.
-  void unsubscribeFromNewTopoHeight() {
-    unawaited(unsubscribeFrom(WalletEvent.newTopoHeight));
+  /// Unsubscribes from NewTopoheight event.
+  void unsubscribeFromNewTopoheight() {
+    unawaited(unsubscribeFrom(WalletEvent.newTopoheight));
   }
 
   /// Registers a callback for NewAsset event.
-  void onNewAsset(void Function(RPCAssetData rpcAssetData) callback) =>
+  void onNewAsset(void Function(RpcAssetData rpcAssetData) callback) =>
       onEvent(WalletEvent.newAsset, callback);
 
   /// Unsubscribes from NewAsset event.
@@ -55,7 +60,7 @@ extension WalletEventsExtension on WalletClient {
 
   /// Registers a callback for Rescan event.
   void onRescan(
-    void Function(int topoheight) callback,
+    void Function(BigInt topoheight) callback,
   ) => onEvent(WalletEvent.rescan, callback);
 
   /// Unsubscribes from Rescan event.
@@ -84,7 +89,7 @@ extension WalletEventsExtension on WalletClient {
   }
 
   /// Registers a callback for HistorySynced event.
-  void onHistorySynced(void Function() callback) =>
+  void onHistorySynced(void Function(BigInt topoheight) callback) =>
       onEvent(WalletEvent.historySynced, callback);
 
   /// Unsubscribes from HistorySynced event.
@@ -121,17 +126,6 @@ extension WalletEventsExtension on WalletClient {
 
   /// Unsubscribes from all events.
   void unsubscribeFromAll() {
-    unsubscribeFromNewTopoHeight();
-    unsubscribeFromNewAsset();
-    unsubscribeFromNewTransaction();
-    unsubscribeFromNewPendingTransaction();
-    unsubscribeFromBalanceChanged();
-    unsubscribeFromRescan();
-    unsubscribeFromOnline();
-    unsubscribeFromOffline();
-    unsubscribeFromHistorySynced();
-    unsubscribeFromSyncError();
-    unsubscribeFromTrackAsset();
-    unsubscribeFromUntrackAsset();
+    unawaited(unsubscribeAllEvents());
   }
 }

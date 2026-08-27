@@ -1,23 +1,40 @@
-// ignore_for_file: invalid_annotation_target
-
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/contract/data_element.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/core/rpc_extra_fields.dart';
+import 'package:xelis_dart_sdk/src/utils/rpc_json.dart';
 
 part 'split_address_result.freezed.dart';
 
-part 'split_address_result.g.dart';
-
-/// @nodoc
-@freezed
+/// Split address and optional untagged integrated data.
+@Freezed(fromJson: false, toJson: false)
 abstract class SplitAddressResult with _$SplitAddressResult {
-  /// @nodoc
+  /// Creates a split address result.
   const factory SplitAddressResult({
-    @JsonKey(name: 'address') required String address,
-    @JsonKey(name: 'integrated_data')
-    required Map<String, dynamic> integratedData,
-    @JsonKey(name: 'size') required int size,
+    required String address,
+    required DataElement integratedData,
+    required BigInt size,
+    @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = _SplitAddressResult;
 
-  /// @nodoc
+  const SplitAddressResult._();
+
+  /// Decodes a daemon or wallet response.
   factory SplitAddressResult.fromJson(Map<String, dynamic> json) =>
-      _$SplitAddressResultFromJson(json);
+      SplitAddressResult(
+        address: json['address'] as String,
+        integratedData: DataElement.fromJson(json['integrated_data']),
+        size: rpcBigInt(json['size'], path: r'$.size'),
+        extraFields: RpcExtraFields.capture(json, const {
+          'address',
+          'integrated_data',
+          'size',
+        }),
+      );
+
+  Map<String, Object?> toWireJson({bool includeExtraFields = false}) =>
+      extraFields.mergeInto({
+        'address': address,
+        'integrated_data': integratedData.toJson(),
+        'size': size,
+      }, includeExtraFields: includeExtraFields);
 }

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'get_peers_result.dart';
@@ -9,13 +9,14 @@ part of 'get_peers_result.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$GetPeersResult {
 
-@JsonKey(name: 'peers') List<PeerEntry> get peers;@JsonKey(name: 'total_peers') int get totalPeers;@JsonKey(name: 'hidden_peers') int get hiddenPeers;
+@JsonKey(name: 'peers') List<PeerEntry> get peers;@JsonKey(name: 'total_peers', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt get totalPeers;@JsonKey(name: 'hidden_peers', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt get hiddenPeers;@JsonKey(includeFromJson: false, includeToJson: false) RpcExtraFields get extraFields;
 /// Create a copy of GetPeersResult
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,16 +29,16 @@ $GetPeersResultCopyWith<GetPeersResult> get copyWith => _$GetPeersResultCopyWith
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetPeersResult&&const DeepCollectionEquality().equals(other.peers, peers)&&(identical(other.totalPeers, totalPeers) || other.totalPeers == totalPeers)&&(identical(other.hiddenPeers, hiddenPeers) || other.hiddenPeers == hiddenPeers));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetPeersResult&&const DeepCollectionEquality().equals(other.peers, peers)&&(identical(other.totalPeers, totalPeers) || other.totalPeers == totalPeers)&&(identical(other.hiddenPeers, hiddenPeers) || other.hiddenPeers == hiddenPeers)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(peers),totalPeers,hiddenPeers);
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(peers),totalPeers,hiddenPeers,extraFields);
 
 @override
 String toString() {
-  return 'GetPeersResult(peers: $peers, totalPeers: $totalPeers, hiddenPeers: $hiddenPeers)';
+  return 'GetPeersResult(peers: $peers, totalPeers: $totalPeers, hiddenPeers: $hiddenPeers, extraFields: $extraFields)';
 }
 
 
@@ -48,11 +49,11 @@ abstract mixin class $GetPeersResultCopyWith<$Res>  {
   factory $GetPeersResultCopyWith(GetPeersResult value, $Res Function(GetPeersResult) _then) = _$GetPeersResultCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(name: 'peers') List<PeerEntry> peers,@JsonKey(name: 'total_peers') int totalPeers,@JsonKey(name: 'hidden_peers') int hiddenPeers
+@JsonKey(name: 'peers') List<PeerEntry> peers,@JsonKey(name: 'total_peers', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt totalPeers,@JsonKey(name: 'hidden_peers', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt hiddenPeers,@JsonKey(includeFromJson: false, includeToJson: false) RpcExtraFields extraFields
 });
 
 
-
+$RpcExtraFieldsCopyWith<$Res> get extraFields;
 
 }
 /// @nodoc
@@ -65,15 +66,25 @@ class _$GetPeersResultCopyWithImpl<$Res>
 
 /// Create a copy of GetPeersResult
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? peers = null,Object? totalPeers = null,Object? hiddenPeers = null,}) {
-  return _then(_self.copyWith(
+@pragma('vm:prefer-inline') @override $Res call({Object? peers = null,Object? totalPeers = null,Object? hiddenPeers = null,Object? extraFields = null,}) {
+  return _then(GetPeersResult(
 peers: null == peers ? _self.peers : peers // ignore: cast_nullable_to_non_nullable
 as List<PeerEntry>,totalPeers: null == totalPeers ? _self.totalPeers : totalPeers // ignore: cast_nullable_to_non_nullable
-as int,hiddenPeers: null == hiddenPeers ? _self.hiddenPeers : hiddenPeers // ignore: cast_nullable_to_non_nullable
-as int,
+as BigInt,hiddenPeers: null == hiddenPeers ? _self.hiddenPeers : hiddenPeers // ignore: cast_nullable_to_non_nullable
+as BigInt,extraFields: null == extraFields ? _self.extraFields : extraFields // ignore: cast_nullable_to_non_nullable
+as RpcExtraFields,
   ));
 }
-
+/// Create a copy of GetPeersResult
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$RpcExtraFieldsCopyWith<$Res> get extraFields {
+  
+  return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
+    return _then(_self.copyWith(extraFields: value));
+  });
+}
 }
 
 
@@ -155,10 +166,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'peers')  List<PeerEntry> peers, @JsonKey(name: 'total_peers')  int totalPeers, @JsonKey(name: 'hidden_peers')  int hiddenPeers)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'peers')  List<PeerEntry> peers, @JsonKey(name: 'total_peers', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt totalPeers, @JsonKey(name: 'hidden_peers', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt hiddenPeers, @JsonKey(includeFromJson: false, includeToJson: false)  RpcExtraFields extraFields)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _GetPeersResult() when $default != null:
-return $default(_that.peers,_that.totalPeers,_that.hiddenPeers);case _:
+return $default(_that.peers,_that.totalPeers,_that.hiddenPeers,_that.extraFields);case _:
   return orElse();
 
 }
@@ -176,10 +187,10 @@ return $default(_that.peers,_that.totalPeers,_that.hiddenPeers);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'peers')  List<PeerEntry> peers, @JsonKey(name: 'total_peers')  int totalPeers, @JsonKey(name: 'hidden_peers')  int hiddenPeers)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'peers')  List<PeerEntry> peers, @JsonKey(name: 'total_peers', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt totalPeers, @JsonKey(name: 'hidden_peers', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt hiddenPeers, @JsonKey(includeFromJson: false, includeToJson: false)  RpcExtraFields extraFields)  $default,) {final _that = this;
 switch (_that) {
 case _GetPeersResult():
-return $default(_that.peers,_that.totalPeers,_that.hiddenPeers);case _:
+return $default(_that.peers,_that.totalPeers,_that.hiddenPeers,_that.extraFields);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -196,10 +207,10 @@ return $default(_that.peers,_that.totalPeers,_that.hiddenPeers);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'peers')  List<PeerEntry> peers, @JsonKey(name: 'total_peers')  int totalPeers, @JsonKey(name: 'hidden_peers')  int hiddenPeers)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'peers')  List<PeerEntry> peers, @JsonKey(name: 'total_peers', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt totalPeers, @JsonKey(name: 'hidden_peers', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt hiddenPeers, @JsonKey(includeFromJson: false, includeToJson: false)  RpcExtraFields extraFields)?  $default,) {final _that = this;
 switch (_that) {
 case _GetPeersResult() when $default != null:
-return $default(_that.peers,_that.totalPeers,_that.hiddenPeers);case _:
+return $default(_that.peers,_that.totalPeers,_that.hiddenPeers,_that.extraFields);case _:
   return null;
 
 }
@@ -210,8 +221,8 @@ return $default(_that.peers,_that.totalPeers,_that.hiddenPeers);case _:
 /// @nodoc
 @JsonSerializable()
 
-class _GetPeersResult implements GetPeersResult {
-  const _GetPeersResult({@JsonKey(name: 'peers') required final  List<PeerEntry> peers, @JsonKey(name: 'total_peers') required this.totalPeers, @JsonKey(name: 'hidden_peers') required this.hiddenPeers}): _peers = peers;
+class _GetPeersResult extends GetPeersResult {
+  const _GetPeersResult({@JsonKey(name: 'peers') required  List<PeerEntry> peers, @JsonKey(name: 'total_peers', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.totalPeers, @JsonKey(name: 'hidden_peers', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.hiddenPeers, @JsonKey(includeFromJson: false, includeToJson: false) this.extraFields = const RpcExtraFields()}): _peers = peers,super._();
   factory _GetPeersResult.fromJson(Map<String, dynamic> json) => _$GetPeersResultFromJson(json);
 
  final  List<PeerEntry> _peers;
@@ -221,8 +232,9 @@ class _GetPeersResult implements GetPeersResult {
   return EqualUnmodifiableListView(_peers);
 }
 
-@override@JsonKey(name: 'total_peers') final  int totalPeers;
-@override@JsonKey(name: 'hidden_peers') final  int hiddenPeers;
+@override@JsonKey(name: 'total_peers', fromJson: rpcBigInt, toJson: rpcBigIntToJson) final  BigInt totalPeers;
+@override@JsonKey(name: 'hidden_peers', fromJson: rpcBigInt, toJson: rpcBigIntToJson) final  BigInt hiddenPeers;
+@override@JsonKey(includeFromJson: false, includeToJson: false) final  RpcExtraFields extraFields;
 
 /// Create a copy of GetPeersResult
 /// with the given fields replaced by the non-null parameter values.
@@ -237,16 +249,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetPeersResult&&const DeepCollectionEquality().equals(other._peers, _peers)&&(identical(other.totalPeers, totalPeers) || other.totalPeers == totalPeers)&&(identical(other.hiddenPeers, hiddenPeers) || other.hiddenPeers == hiddenPeers));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetPeersResult&&const DeepCollectionEquality().equals(other._peers, _peers)&&(identical(other.totalPeers, totalPeers) || other.totalPeers == totalPeers)&&(identical(other.hiddenPeers, hiddenPeers) || other.hiddenPeers == hiddenPeers)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_peers),totalPeers,hiddenPeers);
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_peers),totalPeers,hiddenPeers,extraFields);
 
 @override
 String toString() {
-  return 'GetPeersResult(peers: $peers, totalPeers: $totalPeers, hiddenPeers: $hiddenPeers)';
+  return 'GetPeersResult(peers: $peers, totalPeers: $totalPeers, hiddenPeers: $hiddenPeers, extraFields: $extraFields)';
 }
 
 
@@ -257,11 +269,11 @@ abstract mixin class _$GetPeersResultCopyWith<$Res> implements $GetPeersResultCo
   factory _$GetPeersResultCopyWith(_GetPeersResult value, $Res Function(_GetPeersResult) _then) = __$GetPeersResultCopyWithImpl;
 @override @useResult
 $Res call({
-@JsonKey(name: 'peers') List<PeerEntry> peers,@JsonKey(name: 'total_peers') int totalPeers,@JsonKey(name: 'hidden_peers') int hiddenPeers
+@JsonKey(name: 'peers') List<PeerEntry> peers,@JsonKey(name: 'total_peers', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt totalPeers,@JsonKey(name: 'hidden_peers', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt hiddenPeers,@JsonKey(includeFromJson: false, includeToJson: false) RpcExtraFields extraFields
 });
 
 
-
+@override $RpcExtraFieldsCopyWith<$Res> get extraFields;
 
 }
 /// @nodoc
@@ -274,16 +286,26 @@ class __$GetPeersResultCopyWithImpl<$Res>
 
 /// Create a copy of GetPeersResult
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? peers = null,Object? totalPeers = null,Object? hiddenPeers = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? peers = null,Object? totalPeers = null,Object? hiddenPeers = null,Object? extraFields = null,}) {
   return _then(_GetPeersResult(
 peers: null == peers ? _self._peers : peers // ignore: cast_nullable_to_non_nullable
 as List<PeerEntry>,totalPeers: null == totalPeers ? _self.totalPeers : totalPeers // ignore: cast_nullable_to_non_nullable
-as int,hiddenPeers: null == hiddenPeers ? _self.hiddenPeers : hiddenPeers // ignore: cast_nullable_to_non_nullable
-as int,
+as BigInt,hiddenPeers: null == hiddenPeers ? _self.hiddenPeers : hiddenPeers // ignore: cast_nullable_to_non_nullable
+as BigInt,extraFields: null == extraFields ? _self.extraFields : extraFields // ignore: cast_nullable_to_non_nullable
+as RpcExtraFields,
   ));
 }
 
-
+/// Create a copy of GetPeersResult
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$RpcExtraFieldsCopyWith<$Res> get extraFields {
+  
+  return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
+    return _then(_self.copyWith(extraFields: value));
+  });
+}
 }
 
 // dart format on

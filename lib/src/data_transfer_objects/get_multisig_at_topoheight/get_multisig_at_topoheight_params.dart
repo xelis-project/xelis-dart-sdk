@@ -1,6 +1,5 @@
-// ignore_for_file: invalid_annotation_target
-
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:xelis_dart_sdk/src/utils/rpc_json.dart';
 
 part 'get_multisig_at_topoheight_params.freezed.dart';
 part 'get_multisig_at_topoheight_params.g.dart';
@@ -12,7 +11,8 @@ abstract class GetMultisigAtTopoheightParams
   /// @nodoc
   const factory GetMultisigAtTopoheightParams({
     @JsonKey(name: 'address') required String address,
-    @JsonKey(name: 'topoheight') required int topoheight,
+    @JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson)
+    required BigInt topoheight,
   }) = _GetMultisigAtTopoheightParams;
 
   /// @nodoc

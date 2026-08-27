@@ -23,7 +23,7 @@ Map<String, dynamic> _$FinalizeUnsignedTransactionParamsToJson(
   _FinalizeUnsignedTransactionParams instance,
 ) => <String, dynamic>{
   'unsigned': instance.unsignedTransaction,
-  'signatures': ?instance.signatures,
+  'signatures': ?instance.signatures?.map((e) => e.toJson()).toList(),
   'broadcast': ?instance.broadcast,
   'tx_as_hex': ?instance.txAsHex,
 };

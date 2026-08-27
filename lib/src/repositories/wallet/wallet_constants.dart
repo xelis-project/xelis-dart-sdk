@@ -12,7 +12,7 @@ enum WalletMethod implements XelisJsonKey {
   getNonce('get_nonce'),
 
   /// Retrieves daemon topoheight until which the wallet scanned transactions/balances.
-  getTopoHeight('get_topoheight'),
+  getTopoheight('get_topoheight'),
 
   /// Retrieves wallet address with or without integrated data in it.
   /// Without parameters set, it returns the normal wallet address.
@@ -106,31 +106,65 @@ enum WalletMethod implements XelisJsonKey {
   /// Dump the TX in hex format.
   dumpTransaction('dump_transaction'),
 
-  //----------------------------------------------------------------------------
-  /// TODO: implement
+  /// Retrieves locally-created transactions that are not confirmed yet.
+  getPendingTransactions('get_pending_transactions'),
+
+  /// Connects the wallet to a daemon.
+  setOnlineMode('set_online_mode'),
+
+  /// Disconnects the wallet from its daemon.
+  setOfflineMode('set_offline_mode'),
+
+  /// Returns connected daemon information.
+  networkInfo('network_info'),
+
+  /// Checks whether an asset is tracked.
+  isAssetTracked('is_asset_tracked'),
+
+  /// Tracks an asset.
+  trackAsset('track_asset'),
+
+  /// Stops tracking an asset.
+  untrackAsset('untrack_asset'),
+
+  /// Searches raw wallet transaction storage.
+  searchTransaction('search_transaction'),
+
+  /// Verifies signed structured data.
+  verifySignedData('verify_signed_data'),
+
+  /// Creates an ownership proof.
+  createOwnershipProof('create_ownership_proof'),
+
+  /// Creates a balance proof.
+  createBalanceProof('create_balance_proof'),
+
+  /// Verifies a human-readable proof.
+  verifyHumanReadableProof('verify_human_readable_proof'),
+
+  /// Finds storage keys matching a query.
   getMatchingKeys('get_matching_keys'),
 
-  /// TODO: implement
+  /// Counts storage entries matching a query.
   countMatchingEntries('count_matching_entries'),
 
-  /// TODO: implement
+  /// Reads a storage value by key.
   getValueFromKey('get_value_from_key'),
 
-  /// TODO: implement
+  /// Stores a value.
   store('store'),
 
-  /// TODO: implement
+  /// Deletes a value.
   delete('delete'),
 
-  /// TODO: implement
+  /// Deletes all entries in a storage tree.
   deleteTreeEntries('delete_tree_entries'),
 
-  /// TODO: implement
+  /// Checks whether a storage key exists.
   hasKey('has_key'),
 
-  /// TODO: implement
+  /// Runs a typed storage query.
   queryDB('query_db');
-  //----------------------------------------------------------------------------
 
   /// Creates a new [WalletMethod] instance.
   const WalletMethod(this.jsonKey);
@@ -144,7 +178,7 @@ enum WalletMethod implements XelisJsonKey {
 enum WalletEvent implements XelisJsonKey {
   /// When a a get_info request is made
   /// and we receive a different topoheight than previous one
-  newTopoHeight('new_topo_height'),
+  newTopoheight('new_topo_height'),
 
   /// When a new asset is added to wallet
   /// Contains a Hash as value
@@ -191,9 +225,15 @@ enum WalletEvent implements XelisJsonKey {
 
   /// Factory to convert a [String] to a [WalletEvent].
   factory WalletEvent.fromStr(String value) {
+    return tryFromStr(value) ??
+        (throw FormatException('Unknown event: $value'));
+  }
+
+  /// Returns `null` when a newer wallet sends an event unknown to this SDK.
+  static WalletEvent? tryFromStr(String value) {
     switch (value) {
       case 'new_topo_height':
-        return WalletEvent.newTopoHeight;
+        return WalletEvent.newTopoheight;
       case 'new_asset':
         return WalletEvent.newAsset;
       case 'new_transaction':
@@ -217,7 +257,7 @@ enum WalletEvent implements XelisJsonKey {
       case 'new_pending_transaction':
         return WalletEvent.newPendingTransaction;
       default:
-        throw Exception('Unknown event: $value');
+        return null;
     }
   }
 

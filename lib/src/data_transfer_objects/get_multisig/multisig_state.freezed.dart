@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'multisig_state.dart';
@@ -9,39 +9,14 @@ part of 'multisig_state.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
-MultisigState _$MultisigStateFromJson(
-  Map<String, dynamic> json
-) {
-        switch (json['runtimeType']) {
-                  case 'deleted':
-          return Deleted.fromJson(
-            json
-          );
-                case 'active':
-          return Active.fromJson(
-            json
-          );
-        
-          default:
-            throw CheckedFromJsonException(
-  json,
-  'runtimeType',
-  'MultisigState',
-  'Invalid union type "${json['runtimeType']}"!'
-);
-        }
-      
-}
-
 /// @nodoc
 mixin _$MultisigState {
 
 
 
-  /// Serializes this MultisigState to a JSON map.
-  Map<String, dynamic> toJson();
 
 
 @override
@@ -49,14 +24,10 @@ bool operator ==(Object other) {
   return identical(this, other) || (other.runtimeType == runtimeType&&other is MultisigState);
 }
 
-@JsonKey(includeFromJson: false, includeToJson: false)
+
 @override
 int get hashCode => runtimeType.hashCode;
 
-@override
-String toString() {
-  return 'MultisigState()';
-}
 
 
 }
@@ -81,12 +52,13 @@ extension MultisigStatePatterns on MultisigState {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( Deleted value)?  deleted,TResult Function( Active value)?  active,required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( Deleted value)?  deleted,TResult Function( Active value)?  active,TResult Function( UnknownMultisigState value)?  unknown,required TResult orElse(),}){
 final _that = this;
 switch (_that) {
 case Deleted() when deleted != null:
 return deleted(_that);case Active() when active != null:
-return active(_that);case _:
+return active(_that);case UnknownMultisigState() when unknown != null:
+return unknown(_that);case _:
   return orElse();
 
 }
@@ -104,12 +76,13 @@ return active(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( Deleted value)  deleted,required TResult Function( Active value)  active,}){
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( Deleted value)  deleted,required TResult Function( Active value)  active,required TResult Function( UnknownMultisigState value)  unknown,}){
 final _that = this;
 switch (_that) {
 case Deleted():
 return deleted(_that);case Active():
-return active(_that);}
+return active(_that);case UnknownMultisigState():
+return unknown(_that);}
 }
 /// A variant of `map` that fallback to returning `null`.
 ///
@@ -123,12 +96,13 @@ return active(_that);}
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( Deleted value)?  deleted,TResult? Function( Active value)?  active,}){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( Deleted value)?  deleted,TResult? Function( Active value)?  active,TResult? Function( UnknownMultisigState value)?  unknown,}){
 final _that = this;
 switch (_that) {
 case Deleted() when deleted != null:
 return deleted(_that);case Active() when active != null:
-return active(_that);case _:
+return active(_that);case UnknownMultisigState() when unknown != null:
+return unknown(_that);case _:
   return null;
 
 }
@@ -145,11 +119,12 @@ return active(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  deleted,TResult Function(@JsonKey(name: 'participants')  List<String> participants, @JsonKey(name: 'threshold')  int threshold)?  active,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  deleted,TResult Function( List<String> participants,  int threshold,  RpcExtraFields extraFields)?  active,TResult Function( String type,  RpcJsonValue wireValue)?  unknown,required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case Deleted() when deleted != null:
 return deleted();case Active() when active != null:
-return active(_that.participants,_that.threshold);case _:
+return active(_that.participants,_that.threshold,_that.extraFields);case UnknownMultisigState() when unknown != null:
+return unknown(_that.type,_that.wireValue);case _:
   return orElse();
 
 }
@@ -167,11 +142,12 @@ return active(_that.participants,_that.threshold);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  deleted,required TResult Function(@JsonKey(name: 'participants')  List<String> participants, @JsonKey(name: 'threshold')  int threshold)  active,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  deleted,required TResult Function( List<String> participants,  int threshold,  RpcExtraFields extraFields)  active,required TResult Function( String type,  RpcJsonValue wireValue)  unknown,}) {final _that = this;
 switch (_that) {
 case Deleted():
 return deleted();case Active():
-return active(_that.participants,_that.threshold);}
+return active(_that.participants,_that.threshold,_that.extraFields);case UnknownMultisigState():
+return unknown(_that.type,_that.wireValue);}
 }
 /// A variant of `when` that fallback to returning `null`
 ///
@@ -185,11 +161,12 @@ return active(_that.participants,_that.threshold);}
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  deleted,TResult? Function(@JsonKey(name: 'participants')  List<String> participants, @JsonKey(name: 'threshold')  int threshold)?  active,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  deleted,TResult? Function( List<String> participants,  int threshold,  RpcExtraFields extraFields)?  active,TResult? Function( String type,  RpcJsonValue wireValue)?  unknown,}) {final _that = this;
 switch (_that) {
 case Deleted() when deleted != null:
 return deleted();case Active() when active != null:
-return active(_that.participants,_that.threshold);case _:
+return active(_that.participants,_that.threshold,_that.extraFields);case UnknownMultisigState() when unknown != null:
+return unknown(_that.type,_that.wireValue);case _:
   return null;
 
 }
@@ -198,37 +175,26 @@ return active(_that.participants,_that.threshold);case _:
 }
 
 /// @nodoc
-@JsonSerializable()
-
-class Deleted implements MultisigState {
-  const Deleted({final  String? $type}): $type = $type ?? 'deleted';
-  factory Deleted.fromJson(Map<String, dynamic> json) => _$DeletedFromJson(json);
 
 
-
-@JsonKey(name: 'runtimeType')
-final String $type;
+class Deleted extends MultisigState {
+  const Deleted(): super._();
+  
 
 
 
-@override
-Map<String, dynamic> toJson() {
-  return _$DeletedToJson(this, );
-}
+
+
 
 @override
 bool operator ==(Object other) {
   return identical(this, other) || (other.runtimeType == runtimeType&&other is Deleted);
 }
 
-@JsonKey(includeFromJson: false, includeToJson: false)
+
 @override
 int get hashCode => runtimeType.hashCode;
 
-@override
-String toString() {
-  return 'MultisigState.deleted()';
-}
 
 
 }
@@ -237,24 +203,21 @@ String toString() {
 
 
 /// @nodoc
-@JsonSerializable()
 
-class Active implements MultisigState {
-  const Active({@JsonKey(name: 'participants') required final  List<String> participants, @JsonKey(name: 'threshold') required this.threshold, final  String? $type}): _participants = participants,$type = $type ?? 'active';
-  factory Active.fromJson(Map<String, dynamic> json) => _$ActiveFromJson(json);
+
+class Active extends MultisigState {
+  const Active({required  List<String> participants, required this.threshold, this.extraFields = const RpcExtraFields()}): _participants = participants,super._();
+  
 
  final  List<String> _participants;
-@JsonKey(name: 'participants') List<String> get participants {
+ List<String> get participants {
   if (_participants is EqualUnmodifiableListView) return _participants;
   // ignore: implicit_dynamic_type
   return EqualUnmodifiableListView(_participants);
 }
 
-@JsonKey(name: 'threshold') final  int threshold;
-
-@JsonKey(name: 'runtimeType')
-final String $type;
-
+ final  int threshold;
+@JsonKey() final  RpcExtraFields extraFields;
 
 /// Create a copy of MultisigState
 /// with the given fields replaced by the non-null parameter values.
@@ -262,24 +225,17 @@ final String $type;
 @pragma('vm:prefer-inline')
 $ActiveCopyWith<Active> get copyWith => _$ActiveCopyWithImpl<Active>(this, _$identity);
 
-@override
-Map<String, dynamic> toJson() {
-  return _$ActiveToJson(this, );
-}
+
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is Active&&const DeepCollectionEquality().equals(other._participants, _participants)&&(identical(other.threshold, threshold) || other.threshold == threshold));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is Active&&const DeepCollectionEquality().equals(other._participants, _participants)&&(identical(other.threshold, threshold) || other.threshold == threshold)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_participants),threshold);
 
 @override
-String toString() {
-  return 'MultisigState.active(participants: $participants, threshold: $threshold)';
-}
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_participants),threshold,extraFields);
+
 
 
 }
@@ -289,11 +245,11 @@ abstract mixin class $ActiveCopyWith<$Res> implements $MultisigStateCopyWith<$Re
   factory $ActiveCopyWith(Active value, $Res Function(Active) _then) = _$ActiveCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(name: 'participants') List<String> participants,@JsonKey(name: 'threshold') int threshold
+ List<String> participants, int threshold, RpcExtraFields extraFields
 });
 
 
-
+$RpcExtraFieldsCopyWith<$Res> get extraFields;
 
 }
 /// @nodoc
@@ -306,15 +262,98 @@ class _$ActiveCopyWithImpl<$Res>
 
 /// Create a copy of MultisigState
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? participants = null,Object? threshold = null,}) {
+@pragma('vm:prefer-inline') $Res call({Object? participants = null,Object? threshold = null,Object? extraFields = null,}) {
   return _then(Active(
 participants: null == participants ? _self._participants : participants // ignore: cast_nullable_to_non_nullable
 as List<String>,threshold: null == threshold ? _self.threshold : threshold // ignore: cast_nullable_to_non_nullable
-as int,
+as int,extraFields: null == extraFields ? _self.extraFields : extraFields // ignore: cast_nullable_to_non_nullable
+as RpcExtraFields,
   ));
 }
 
+/// Create a copy of MultisigState
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$RpcExtraFieldsCopyWith<$Res> get extraFields {
+  
+  return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
+    return _then(_self.copyWith(extraFields: value));
+  });
+}
+}
 
+/// @nodoc
+
+
+class UnknownMultisigState extends MultisigState {
+  const UnknownMultisigState(this.type, this.wireValue): super._();
+  
+
+ final  String type;
+ final  RpcJsonValue wireValue;
+
+/// Create a copy of MultisigState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$UnknownMultisigStateCopyWith<UnknownMultisigState> get copyWith => _$UnknownMultisigStateCopyWithImpl<UnknownMultisigState>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is UnknownMultisigState&&(identical(other.type, type) || other.type == type)&&(identical(other.wireValue, wireValue) || other.wireValue == wireValue));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,type,wireValue);
+
+
+
+}
+
+/// @nodoc
+abstract mixin class $UnknownMultisigStateCopyWith<$Res> implements $MultisigStateCopyWith<$Res> {
+  factory $UnknownMultisigStateCopyWith(UnknownMultisigState value, $Res Function(UnknownMultisigState) _then) = _$UnknownMultisigStateCopyWithImpl;
+@useResult
+$Res call({
+ String type, RpcJsonValue wireValue
+});
+
+
+$RpcJsonValueCopyWith<$Res> get wireValue;
+
+}
+/// @nodoc
+class _$UnknownMultisigStateCopyWithImpl<$Res>
+    implements $UnknownMultisigStateCopyWith<$Res> {
+  _$UnknownMultisigStateCopyWithImpl(this._self, this._then);
+
+  final UnknownMultisigState _self;
+  final $Res Function(UnknownMultisigState) _then;
+
+/// Create a copy of MultisigState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? type = null,Object? wireValue = null,}) {
+  return _then(UnknownMultisigState(
+null == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
+as String,null == wireValue ? _self.wireValue : wireValue // ignore: cast_nullable_to_non_nullable
+as RpcJsonValue,
+  ));
+}
+
+/// Create a copy of MultisigState
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$RpcJsonValueCopyWith<$Res> get wireValue {
+  
+  return $RpcJsonValueCopyWith<$Res>(_self.wireValue, (value) {
+    return _then(_self.copyWith(wireValue: value));
+  });
+}
 }
 
 // dart format on

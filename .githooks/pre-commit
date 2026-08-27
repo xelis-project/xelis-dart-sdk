@@ -1,0 +1,4 @@
+#!/bin/sh
+set -eu
+
+dart run tool/src/pre_commit_check.dart

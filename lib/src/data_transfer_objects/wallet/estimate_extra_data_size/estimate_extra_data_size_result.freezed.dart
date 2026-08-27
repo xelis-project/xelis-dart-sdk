@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'estimate_extra_data_size_result.dart';
@@ -9,13 +9,14 @@ part of 'estimate_extra_data_size_result.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$EstimateExtraDataSizeResult {
 
-@JsonKey(name: 'size') int get size;
+@JsonKey(name: 'size', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt get size;@JsonKey(includeFromJson: false, includeToJson: false) RpcExtraFields get extraFields;
 /// Create a copy of EstimateExtraDataSizeResult
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,16 +29,16 @@ $EstimateExtraDataSizeResultCopyWith<EstimateExtraDataSizeResult> get copyWith =
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is EstimateExtraDataSizeResult&&(identical(other.size, size) || other.size == size));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is EstimateExtraDataSizeResult&&(identical(other.size, size) || other.size == size)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,size);
+int get hashCode => Object.hash(runtimeType,size,extraFields);
 
 @override
 String toString() {
-  return 'EstimateExtraDataSizeResult(size: $size)';
+  return 'EstimateExtraDataSizeResult(size: $size, extraFields: $extraFields)';
 }
 
 
@@ -48,11 +49,11 @@ abstract mixin class $EstimateExtraDataSizeResultCopyWith<$Res>  {
   factory $EstimateExtraDataSizeResultCopyWith(EstimateExtraDataSizeResult value, $Res Function(EstimateExtraDataSizeResult) _then) = _$EstimateExtraDataSizeResultCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(name: 'size') int size
+@JsonKey(name: 'size', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt size,@JsonKey(includeFromJson: false, includeToJson: false) RpcExtraFields extraFields
 });
 
 
-
+$RpcExtraFieldsCopyWith<$Res> get extraFields;
 
 }
 /// @nodoc
@@ -65,13 +66,23 @@ class _$EstimateExtraDataSizeResultCopyWithImpl<$Res>
 
 /// Create a copy of EstimateExtraDataSizeResult
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? size = null,}) {
-  return _then(_self.copyWith(
+@pragma('vm:prefer-inline') @override $Res call({Object? size = null,Object? extraFields = null,}) {
+  return _then(EstimateExtraDataSizeResult(
 size: null == size ? _self.size : size // ignore: cast_nullable_to_non_nullable
-as int,
+as BigInt,extraFields: null == extraFields ? _self.extraFields : extraFields // ignore: cast_nullable_to_non_nullable
+as RpcExtraFields,
   ));
 }
-
+/// Create a copy of EstimateExtraDataSizeResult
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$RpcExtraFieldsCopyWith<$Res> get extraFields {
+  
+  return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
+    return _then(_self.copyWith(extraFields: value));
+  });
+}
 }
 
 
@@ -153,10 +164,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'size')  int size)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'size', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt size, @JsonKey(includeFromJson: false, includeToJson: false)  RpcExtraFields extraFields)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _EstimateExtraDataSizeResult() when $default != null:
-return $default(_that.size);case _:
+return $default(_that.size,_that.extraFields);case _:
   return orElse();
 
 }
@@ -174,10 +185,10 @@ return $default(_that.size);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'size')  int size)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'size', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt size, @JsonKey(includeFromJson: false, includeToJson: false)  RpcExtraFields extraFields)  $default,) {final _that = this;
 switch (_that) {
 case _EstimateExtraDataSizeResult():
-return $default(_that.size);case _:
+return $default(_that.size,_that.extraFields);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -194,10 +205,10 @@ return $default(_that.size);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'size')  int size)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'size', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt size, @JsonKey(includeFromJson: false, includeToJson: false)  RpcExtraFields extraFields)?  $default,) {final _that = this;
 switch (_that) {
 case _EstimateExtraDataSizeResult() when $default != null:
-return $default(_that.size);case _:
+return $default(_that.size,_that.extraFields);case _:
   return null;
 
 }
@@ -208,11 +219,12 @@ return $default(_that.size);case _:
 /// @nodoc
 @JsonSerializable()
 
-class _EstimateExtraDataSizeResult implements EstimateExtraDataSizeResult {
-  const _EstimateExtraDataSizeResult({@JsonKey(name: 'size') required this.size});
+class _EstimateExtraDataSizeResult extends EstimateExtraDataSizeResult {
+  const _EstimateExtraDataSizeResult({@JsonKey(name: 'size', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.size, @JsonKey(includeFromJson: false, includeToJson: false) this.extraFields = const RpcExtraFields()}): super._();
   factory _EstimateExtraDataSizeResult.fromJson(Map<String, dynamic> json) => _$EstimateExtraDataSizeResultFromJson(json);
 
-@override@JsonKey(name: 'size') final  int size;
+@override@JsonKey(name: 'size', fromJson: rpcBigInt, toJson: rpcBigIntToJson) final  BigInt size;
+@override@JsonKey(includeFromJson: false, includeToJson: false) final  RpcExtraFields extraFields;
 
 /// Create a copy of EstimateExtraDataSizeResult
 /// with the given fields replaced by the non-null parameter values.
@@ -227,16 +239,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _EstimateExtraDataSizeResult&&(identical(other.size, size) || other.size == size));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _EstimateExtraDataSizeResult&&(identical(other.size, size) || other.size == size)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,size);
+int get hashCode => Object.hash(runtimeType,size,extraFields);
 
 @override
 String toString() {
-  return 'EstimateExtraDataSizeResult(size: $size)';
+  return 'EstimateExtraDataSizeResult(size: $size, extraFields: $extraFields)';
 }
 
 
@@ -247,11 +259,11 @@ abstract mixin class _$EstimateExtraDataSizeResultCopyWith<$Res> implements $Est
   factory _$EstimateExtraDataSizeResultCopyWith(_EstimateExtraDataSizeResult value, $Res Function(_EstimateExtraDataSizeResult) _then) = __$EstimateExtraDataSizeResultCopyWithImpl;
 @override @useResult
 $Res call({
-@JsonKey(name: 'size') int size
+@JsonKey(name: 'size', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt size,@JsonKey(includeFromJson: false, includeToJson: false) RpcExtraFields extraFields
 });
 
 
-
+@override $RpcExtraFieldsCopyWith<$Res> get extraFields;
 
 }
 /// @nodoc
@@ -264,14 +276,24 @@ class __$EstimateExtraDataSizeResultCopyWithImpl<$Res>
 
 /// Create a copy of EstimateExtraDataSizeResult
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? size = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? size = null,Object? extraFields = null,}) {
   return _then(_EstimateExtraDataSizeResult(
 size: null == size ? _self.size : size // ignore: cast_nullable_to_non_nullable
-as int,
+as BigInt,extraFields: null == extraFields ? _self.extraFields : extraFields // ignore: cast_nullable_to_non_nullable
+as RpcExtraFields,
   ));
 }
 
-
+/// Create a copy of EstimateExtraDataSizeResult
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$RpcExtraFieldsCopyWith<$Res> get extraFields {
+  
+  return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
+    return _then(_self.copyWith(extraFields: value));
+  });
+}
 }
 
 // dart format on

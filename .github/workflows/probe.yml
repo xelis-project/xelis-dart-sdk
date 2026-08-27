@@ -1,0 +1,28 @@
+name: Live compatibility probe
+
+on:
+  workflow_dispatch:
+    inputs:
+      daemon_endpoint:
+        description: Optional daemon host and port (uses manifest fallbacks when empty)
+        required: false
+        type: string
+      wallet_endpoint:
+        description: Optional private wallet RPC host and port
+        required: false
+        type: string
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: dart-lang/setup-dart@v1
+      - run: dart pub get
+      - name: Probe live read-only RPC surfaces
+        env:
+          XELIS_PROBE_DAEMON_ENDPOINT: ${{ inputs.daemon_endpoint }}
+          XELIS_PROBE_WALLET_ENDPOINT: ${{ inputs.wallet_endpoint }}
+          XELIS_PROBE_WALLET_USERNAME: ${{ secrets.XELIS_PROBE_WALLET_USERNAME }}
+          XELIS_PROBE_WALLET_PASSWORD: ${{ secrets.XELIS_PROBE_WALLET_PASSWORD }}
+        run: dart run tool/verify.dart probe

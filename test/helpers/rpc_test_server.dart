@@ -8,10 +8,9 @@ const rpcTestTimeout = Duration(seconds: 3);
 /// Local JSON-RPC WebSocket server for repository/client tests.
 class RpcTestServer {
   RpcTestServer._({
-    required HttpServer server,
-    required RpcRequestHandler? onRequest,
-  }) : _server = server,
-       _onRequest = onRequest {
+    required this._server,
+    required this._onRequest,
+  }) {
     _server.listen(_handleRequest);
   }
 
@@ -71,6 +70,13 @@ class RpcTestServer {
     }
   }
 
+  /// Sends an unencoded WebSocket frame to all connected sockets.
+  void sendRaw(Object payload) {
+    for (final socket in _sockets) {
+      socket.add(payload);
+    }
+  }
+
   /// Closes all currently connected sockets without closing the server.
   Future<void> closeSockets() async {
     final sockets = List<WebSocket>.of(_sockets);
@@ -116,5 +122,7 @@ class RpcTestServer {
 }
 
 /// Callback invoked whenever the test server receives a JSON-RPC request.
-typedef RpcRequestHandler =
-    void Function(Map<String, dynamic> request, WebSocket socket);
+typedef RpcRequestHandler = void Function(
+  Map<String, dynamic> request,
+  WebSocket socket,
+);

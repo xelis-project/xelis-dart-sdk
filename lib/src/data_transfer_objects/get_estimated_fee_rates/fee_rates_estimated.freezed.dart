@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'fee_rates_estimated.dart';
@@ -9,13 +9,14 @@ part of 'fee_rates_estimated.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$FeeRatesEstimated {
 
-@JsonKey(name: 'low') int get low;@JsonKey(name: 'medium') int get medium;@JsonKey(name: 'high') int get high;@JsonKey(name: 'default') int get defaultFee;
+@JsonKey(name: 'low', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt get low;@JsonKey(name: 'medium', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt get medium;@JsonKey(name: 'high', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt get high;@JsonKey(name: 'default', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt get defaultFee;@JsonKey(includeFromJson: false, includeToJson: false) RpcExtraFields get extraFields;
 /// Create a copy of FeeRatesEstimated
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,16 +29,16 @@ $FeeRatesEstimatedCopyWith<FeeRatesEstimated> get copyWith => _$FeeRatesEstimate
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is FeeRatesEstimated&&(identical(other.low, low) || other.low == low)&&(identical(other.medium, medium) || other.medium == medium)&&(identical(other.high, high) || other.high == high)&&(identical(other.defaultFee, defaultFee) || other.defaultFee == defaultFee));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is FeeRatesEstimated&&(identical(other.low, low) || other.low == low)&&(identical(other.medium, medium) || other.medium == medium)&&(identical(other.high, high) || other.high == high)&&(identical(other.defaultFee, defaultFee) || other.defaultFee == defaultFee)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,low,medium,high,defaultFee);
+int get hashCode => Object.hash(runtimeType,low,medium,high,defaultFee,extraFields);
 
 @override
 String toString() {
-  return 'FeeRatesEstimated(low: $low, medium: $medium, high: $high, defaultFee: $defaultFee)';
+  return 'FeeRatesEstimated(low: $low, medium: $medium, high: $high, defaultFee: $defaultFee, extraFields: $extraFields)';
 }
 
 
@@ -48,11 +49,11 @@ abstract mixin class $FeeRatesEstimatedCopyWith<$Res>  {
   factory $FeeRatesEstimatedCopyWith(FeeRatesEstimated value, $Res Function(FeeRatesEstimated) _then) = _$FeeRatesEstimatedCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(name: 'low') int low,@JsonKey(name: 'medium') int medium,@JsonKey(name: 'high') int high,@JsonKey(name: 'default') int defaultFee
+@JsonKey(name: 'low', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt low,@JsonKey(name: 'medium', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt medium,@JsonKey(name: 'high', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt high,@JsonKey(name: 'default', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt defaultFee,@JsonKey(includeFromJson: false, includeToJson: false) RpcExtraFields extraFields
 });
 
 
-
+$RpcExtraFieldsCopyWith<$Res> get extraFields;
 
 }
 /// @nodoc
@@ -65,16 +66,26 @@ class _$FeeRatesEstimatedCopyWithImpl<$Res>
 
 /// Create a copy of FeeRatesEstimated
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? low = null,Object? medium = null,Object? high = null,Object? defaultFee = null,}) {
-  return _then(_self.copyWith(
+@pragma('vm:prefer-inline') @override $Res call({Object? low = null,Object? medium = null,Object? high = null,Object? defaultFee = null,Object? extraFields = null,}) {
+  return _then(FeeRatesEstimated(
 low: null == low ? _self.low : low // ignore: cast_nullable_to_non_nullable
-as int,medium: null == medium ? _self.medium : medium // ignore: cast_nullable_to_non_nullable
-as int,high: null == high ? _self.high : high // ignore: cast_nullable_to_non_nullable
-as int,defaultFee: null == defaultFee ? _self.defaultFee : defaultFee // ignore: cast_nullable_to_non_nullable
-as int,
+as BigInt,medium: null == medium ? _self.medium : medium // ignore: cast_nullable_to_non_nullable
+as BigInt,high: null == high ? _self.high : high // ignore: cast_nullable_to_non_nullable
+as BigInt,defaultFee: null == defaultFee ? _self.defaultFee : defaultFee // ignore: cast_nullable_to_non_nullable
+as BigInt,extraFields: null == extraFields ? _self.extraFields : extraFields // ignore: cast_nullable_to_non_nullable
+as RpcExtraFields,
   ));
 }
-
+/// Create a copy of FeeRatesEstimated
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$RpcExtraFieldsCopyWith<$Res> get extraFields {
+  
+  return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
+    return _then(_self.copyWith(extraFields: value));
+  });
+}
 }
 
 
@@ -156,10 +167,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'low')  int low, @JsonKey(name: 'medium')  int medium, @JsonKey(name: 'high')  int high, @JsonKey(name: 'default')  int defaultFee)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'low', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt low, @JsonKey(name: 'medium', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt medium, @JsonKey(name: 'high', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt high, @JsonKey(name: 'default', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt defaultFee, @JsonKey(includeFromJson: false, includeToJson: false)  RpcExtraFields extraFields)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _FeeRatesEstimated() when $default != null:
-return $default(_that.low,_that.medium,_that.high,_that.defaultFee);case _:
+return $default(_that.low,_that.medium,_that.high,_that.defaultFee,_that.extraFields);case _:
   return orElse();
 
 }
@@ -177,10 +188,10 @@ return $default(_that.low,_that.medium,_that.high,_that.defaultFee);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'low')  int low, @JsonKey(name: 'medium')  int medium, @JsonKey(name: 'high')  int high, @JsonKey(name: 'default')  int defaultFee)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'low', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt low, @JsonKey(name: 'medium', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt medium, @JsonKey(name: 'high', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt high, @JsonKey(name: 'default', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt defaultFee, @JsonKey(includeFromJson: false, includeToJson: false)  RpcExtraFields extraFields)  $default,) {final _that = this;
 switch (_that) {
 case _FeeRatesEstimated():
-return $default(_that.low,_that.medium,_that.high,_that.defaultFee);case _:
+return $default(_that.low,_that.medium,_that.high,_that.defaultFee,_that.extraFields);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -197,10 +208,10 @@ return $default(_that.low,_that.medium,_that.high,_that.defaultFee);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'low')  int low, @JsonKey(name: 'medium')  int medium, @JsonKey(name: 'high')  int high, @JsonKey(name: 'default')  int defaultFee)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'low', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt low, @JsonKey(name: 'medium', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt medium, @JsonKey(name: 'high', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt high, @JsonKey(name: 'default', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt defaultFee, @JsonKey(includeFromJson: false, includeToJson: false)  RpcExtraFields extraFields)?  $default,) {final _that = this;
 switch (_that) {
 case _FeeRatesEstimated() when $default != null:
-return $default(_that.low,_that.medium,_that.high,_that.defaultFee);case _:
+return $default(_that.low,_that.medium,_that.high,_that.defaultFee,_that.extraFields);case _:
   return null;
 
 }
@@ -211,14 +222,15 @@ return $default(_that.low,_that.medium,_that.high,_that.defaultFee);case _:
 /// @nodoc
 @JsonSerializable()
 
-class _FeeRatesEstimated implements FeeRatesEstimated {
-  const _FeeRatesEstimated({@JsonKey(name: 'low') required this.low, @JsonKey(name: 'medium') required this.medium, @JsonKey(name: 'high') required this.high, @JsonKey(name: 'default') required this.defaultFee});
+class _FeeRatesEstimated extends FeeRatesEstimated {
+  const _FeeRatesEstimated({@JsonKey(name: 'low', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.low, @JsonKey(name: 'medium', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.medium, @JsonKey(name: 'high', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.high, @JsonKey(name: 'default', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.defaultFee, @JsonKey(includeFromJson: false, includeToJson: false) this.extraFields = const RpcExtraFields()}): super._();
   factory _FeeRatesEstimated.fromJson(Map<String, dynamic> json) => _$FeeRatesEstimatedFromJson(json);
 
-@override@JsonKey(name: 'low') final  int low;
-@override@JsonKey(name: 'medium') final  int medium;
-@override@JsonKey(name: 'high') final  int high;
-@override@JsonKey(name: 'default') final  int defaultFee;
+@override@JsonKey(name: 'low', fromJson: rpcBigInt, toJson: rpcBigIntToJson) final  BigInt low;
+@override@JsonKey(name: 'medium', fromJson: rpcBigInt, toJson: rpcBigIntToJson) final  BigInt medium;
+@override@JsonKey(name: 'high', fromJson: rpcBigInt, toJson: rpcBigIntToJson) final  BigInt high;
+@override@JsonKey(name: 'default', fromJson: rpcBigInt, toJson: rpcBigIntToJson) final  BigInt defaultFee;
+@override@JsonKey(includeFromJson: false, includeToJson: false) final  RpcExtraFields extraFields;
 
 /// Create a copy of FeeRatesEstimated
 /// with the given fields replaced by the non-null parameter values.
@@ -233,16 +245,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _FeeRatesEstimated&&(identical(other.low, low) || other.low == low)&&(identical(other.medium, medium) || other.medium == medium)&&(identical(other.high, high) || other.high == high)&&(identical(other.defaultFee, defaultFee) || other.defaultFee == defaultFee));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _FeeRatesEstimated&&(identical(other.low, low) || other.low == low)&&(identical(other.medium, medium) || other.medium == medium)&&(identical(other.high, high) || other.high == high)&&(identical(other.defaultFee, defaultFee) || other.defaultFee == defaultFee)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,low,medium,high,defaultFee);
+int get hashCode => Object.hash(runtimeType,low,medium,high,defaultFee,extraFields);
 
 @override
 String toString() {
-  return 'FeeRatesEstimated(low: $low, medium: $medium, high: $high, defaultFee: $defaultFee)';
+  return 'FeeRatesEstimated(low: $low, medium: $medium, high: $high, defaultFee: $defaultFee, extraFields: $extraFields)';
 }
 
 
@@ -253,11 +265,11 @@ abstract mixin class _$FeeRatesEstimatedCopyWith<$Res> implements $FeeRatesEstim
   factory _$FeeRatesEstimatedCopyWith(_FeeRatesEstimated value, $Res Function(_FeeRatesEstimated) _then) = __$FeeRatesEstimatedCopyWithImpl;
 @override @useResult
 $Res call({
-@JsonKey(name: 'low') int low,@JsonKey(name: 'medium') int medium,@JsonKey(name: 'high') int high,@JsonKey(name: 'default') int defaultFee
+@JsonKey(name: 'low', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt low,@JsonKey(name: 'medium', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt medium,@JsonKey(name: 'high', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt high,@JsonKey(name: 'default', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt defaultFee,@JsonKey(includeFromJson: false, includeToJson: false) RpcExtraFields extraFields
 });
 
 
-
+@override $RpcExtraFieldsCopyWith<$Res> get extraFields;
 
 }
 /// @nodoc
@@ -270,17 +282,27 @@ class __$FeeRatesEstimatedCopyWithImpl<$Res>
 
 /// Create a copy of FeeRatesEstimated
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? low = null,Object? medium = null,Object? high = null,Object? defaultFee = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? low = null,Object? medium = null,Object? high = null,Object? defaultFee = null,Object? extraFields = null,}) {
   return _then(_FeeRatesEstimated(
 low: null == low ? _self.low : low // ignore: cast_nullable_to_non_nullable
-as int,medium: null == medium ? _self.medium : medium // ignore: cast_nullable_to_non_nullable
-as int,high: null == high ? _self.high : high // ignore: cast_nullable_to_non_nullable
-as int,defaultFee: null == defaultFee ? _self.defaultFee : defaultFee // ignore: cast_nullable_to_non_nullable
-as int,
+as BigInt,medium: null == medium ? _self.medium : medium // ignore: cast_nullable_to_non_nullable
+as BigInt,high: null == high ? _self.high : high // ignore: cast_nullable_to_non_nullable
+as BigInt,defaultFee: null == defaultFee ? _self.defaultFee : defaultFee // ignore: cast_nullable_to_non_nullable
+as BigInt,extraFields: null == extraFields ? _self.extraFields : extraFields // ignore: cast_nullable_to_non_nullable
+as RpcExtraFields,
   ));
 }
 
-
+/// Create a copy of FeeRatesEstimated
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$RpcExtraFieldsCopyWith<$Res> get extraFields {
+  
+  return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
+    return _then(_self.copyWith(extraFields: value));
+  });
+}
 }
 
 // dart format on

@@ -14,12 +14,12 @@ _GetMempoolSummaryResult _$GetMempoolSummaryResultFromJson(
   transactions: (json['transactions'] as List<dynamic>)
       .map((e) => MempoolTransactionSummary.fromJson(e as Map<String, dynamic>))
       .toList(),
-  total: (json['total'] as num).toInt(),
+  total: rpcBigInt(json['total']),
 );
 
 Map<String, dynamic> _$GetMempoolSummaryResultToJson(
   _GetMempoolSummaryResult instance,
 ) => <String, dynamic>{
   'transactions': instance.transactions,
-  'total': instance.total,
+  'total': rpcBigIntToJson(instance.total),
 };

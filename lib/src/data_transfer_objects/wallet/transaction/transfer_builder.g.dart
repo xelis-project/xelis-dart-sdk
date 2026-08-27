@@ -11,17 +11,17 @@ part of 'transfer_builder.dart';
 _TransferBuilder _$TransferBuilderFromJson(Map<String, dynamic> json) =>
     _TransferBuilder(
       asset: json['asset'] as String,
-      amount: (json['amount'] as num).toInt(),
+      amount: rpcBigInt(json['amount']),
       destination: json['destination'] as String,
       encryptExtraData: json['encrypt_extra_data'] as bool? ?? true,
-      extraData: json['extra_data'],
+      extraData: _dataElementFromJson(json['extra_data']),
     );
 
 Map<String, dynamic> _$TransferBuilderToJson(_TransferBuilder instance) =>
     <String, dynamic>{
       'asset': instance.asset,
-      'amount': instance.amount,
+      'amount': rpcBigIntToJson(instance.amount),
       'destination': instance.destination,
       'encrypt_extra_data': instance.encryptExtraData,
-      'extra_data': ?instance.extraData,
+      'extra_data': ?_dataElementToJson(instance.extraData),
     };

@@ -13,13 +13,13 @@ _GetPeersResult _$GetPeersResultFromJson(Map<String, dynamic> json) =>
       peers: (json['peers'] as List<dynamic>)
           .map((e) => PeerEntry.fromJson(e as Map<String, dynamic>))
           .toList(),
-      totalPeers: (json['total_peers'] as num).toInt(),
-      hiddenPeers: (json['hidden_peers'] as num).toInt(),
+      totalPeers: rpcBigInt(json['total_peers']),
+      hiddenPeers: rpcBigInt(json['hidden_peers']),
     );
 
 Map<String, dynamic> _$GetPeersResultToJson(_GetPeersResult instance) =>
     <String, dynamic>{
       'peers': instance.peers,
-      'total_peers': instance.totalPeers,
-      'hidden_peers': instance.hiddenPeers,
+      'total_peers': rpcBigIntToJson(instance.totalPeers),
+      'hidden_peers': rpcBigIntToJson(instance.hiddenPeers),
     };

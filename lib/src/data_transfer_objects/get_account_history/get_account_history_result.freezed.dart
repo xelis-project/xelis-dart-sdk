@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'get_account_history_result.dart';
@@ -9,35 +9,33 @@ part of 'get_account_history_result.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
-
 /// @nodoc
 mixin _$GetAccountHistoryResult {
 
-@JsonKey(name: 'topoheight') int get topoheight;@JsonKey(name: 'hash') String get hash;@JsonKey(name: 'block_timestamp') int get blockTimestamp;@JsonKey(name: 'burn') BurnHistory? get burnHistory;@JsonKey(name: 'mining') MiningHistory? get miningHistory;@JsonKey(name: 'outgoing') OutgoingHistory? get outgoingHistory;@JsonKey(name: 'incoming') IncomingHistory? get incomingHistory;@JsonKey(name: 'dev_fee') DevFeeHistory? get devFeeHistory;
+@JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt get topoheight;@JsonKey(name: 'hash') String get hash;@JsonKey(name: 'block_timestamp', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt get blockTimestamp; AccountHistoryType get historyType; RpcExtraFields get extraFields;
 /// Create a copy of GetAccountHistoryResult
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
 $GetAccountHistoryResultCopyWith<GetAccountHistoryResult> get copyWith => _$GetAccountHistoryResultCopyWithImpl<GetAccountHistoryResult>(this as GetAccountHistoryResult, _$identity);
 
-  /// Serializes this GetAccountHistoryResult to a JSON map.
-  Map<String, dynamic> toJson();
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetAccountHistoryResult&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&(identical(other.hash, hash) || other.hash == hash)&&(identical(other.blockTimestamp, blockTimestamp) || other.blockTimestamp == blockTimestamp)&&(identical(other.burnHistory, burnHistory) || other.burnHistory == burnHistory)&&(identical(other.miningHistory, miningHistory) || other.miningHistory == miningHistory)&&(identical(other.outgoingHistory, outgoingHistory) || other.outgoingHistory == outgoingHistory)&&(identical(other.incomingHistory, incomingHistory) || other.incomingHistory == incomingHistory)&&(identical(other.devFeeHistory, devFeeHistory) || other.devFeeHistory == devFeeHistory));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetAccountHistoryResult&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&(identical(other.hash, hash) || other.hash == hash)&&(identical(other.blockTimestamp, blockTimestamp) || other.blockTimestamp == blockTimestamp)&&(identical(other.historyType, historyType) || other.historyType == historyType)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
-@JsonKey(includeFromJson: false, includeToJson: false)
+
 @override
-int get hashCode => Object.hash(runtimeType,topoheight,hash,blockTimestamp,burnHistory,miningHistory,outgoingHistory,incomingHistory,devFeeHistory);
+int get hashCode => Object.hash(runtimeType,topoheight,hash,blockTimestamp,historyType,extraFields);
 
 @override
 String toString() {
-  return 'GetAccountHistoryResult(topoheight: $topoheight, hash: $hash, blockTimestamp: $blockTimestamp, burnHistory: $burnHistory, miningHistory: $miningHistory, outgoingHistory: $outgoingHistory, incomingHistory: $incomingHistory, devFeeHistory: $devFeeHistory)';
+  return 'GetAccountHistoryResult(topoheight: $topoheight, hash: $hash, blockTimestamp: $blockTimestamp, historyType: $historyType, extraFields: $extraFields)';
 }
 
 
@@ -48,11 +46,11 @@ abstract mixin class $GetAccountHistoryResultCopyWith<$Res>  {
   factory $GetAccountHistoryResultCopyWith(GetAccountHistoryResult value, $Res Function(GetAccountHistoryResult) _then) = _$GetAccountHistoryResultCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(name: 'topoheight') int topoheight,@JsonKey(name: 'hash') String hash,@JsonKey(name: 'block_timestamp') int blockTimestamp,@JsonKey(name: 'burn') BurnHistory? burnHistory,@JsonKey(name: 'mining') MiningHistory? miningHistory,@JsonKey(name: 'outgoing') OutgoingHistory? outgoingHistory,@JsonKey(name: 'incoming') IncomingHistory? incomingHistory,@JsonKey(name: 'dev_fee') DevFeeHistory? devFeeHistory
+@JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt topoheight,@JsonKey(name: 'hash') String hash,@JsonKey(name: 'block_timestamp', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt blockTimestamp, AccountHistoryType historyType, RpcExtraFields extraFields
 });
 
 
-$BurnHistoryCopyWith<$Res>? get burnHistory;$MiningHistoryCopyWith<$Res>? get miningHistory;$OutgoingHistoryCopyWith<$Res>? get outgoingHistory;$IncomingHistoryCopyWith<$Res>? get incomingHistory;$DevFeeHistoryCopyWith<$Res>? get devFeeHistory;
+$AccountHistoryTypeCopyWith<$Res> get historyType;$RpcExtraFieldsCopyWith<$Res> get extraFields;
 
 }
 /// @nodoc
@@ -65,78 +63,33 @@ class _$GetAccountHistoryResultCopyWithImpl<$Res>
 
 /// Create a copy of GetAccountHistoryResult
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? topoheight = null,Object? hash = null,Object? blockTimestamp = null,Object? burnHistory = freezed,Object? miningHistory = freezed,Object? outgoingHistory = freezed,Object? incomingHistory = freezed,Object? devFeeHistory = freezed,}) {
-  return _then(_self.copyWith(
+@pragma('vm:prefer-inline') @override $Res call({Object? topoheight = null,Object? hash = null,Object? blockTimestamp = null,Object? historyType = null,Object? extraFields = null,}) {
+  return _then(GetAccountHistoryResult(
 topoheight: null == topoheight ? _self.topoheight : topoheight // ignore: cast_nullable_to_non_nullable
-as int,hash: null == hash ? _self.hash : hash // ignore: cast_nullable_to_non_nullable
+as BigInt,hash: null == hash ? _self.hash : hash // ignore: cast_nullable_to_non_nullable
 as String,blockTimestamp: null == blockTimestamp ? _self.blockTimestamp : blockTimestamp // ignore: cast_nullable_to_non_nullable
-as int,burnHistory: freezed == burnHistory ? _self.burnHistory : burnHistory // ignore: cast_nullable_to_non_nullable
-as BurnHistory?,miningHistory: freezed == miningHistory ? _self.miningHistory : miningHistory // ignore: cast_nullable_to_non_nullable
-as MiningHistory?,outgoingHistory: freezed == outgoingHistory ? _self.outgoingHistory : outgoingHistory // ignore: cast_nullable_to_non_nullable
-as OutgoingHistory?,incomingHistory: freezed == incomingHistory ? _self.incomingHistory : incomingHistory // ignore: cast_nullable_to_non_nullable
-as IncomingHistory?,devFeeHistory: freezed == devFeeHistory ? _self.devFeeHistory : devFeeHistory // ignore: cast_nullable_to_non_nullable
-as DevFeeHistory?,
+as BigInt,historyType: null == historyType ? _self.historyType : historyType // ignore: cast_nullable_to_non_nullable
+as AccountHistoryType,extraFields: null == extraFields ? _self.extraFields : extraFields // ignore: cast_nullable_to_non_nullable
+as RpcExtraFields,
   ));
 }
 /// Create a copy of GetAccountHistoryResult
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
-$BurnHistoryCopyWith<$Res>? get burnHistory {
-    if (_self.burnHistory == null) {
-    return null;
-  }
-
-  return $BurnHistoryCopyWith<$Res>(_self.burnHistory!, (value) {
-    return _then(_self.copyWith(burnHistory: value));
+$AccountHistoryTypeCopyWith<$Res> get historyType {
+  
+  return $AccountHistoryTypeCopyWith<$Res>(_self.historyType, (value) {
+    return _then(_self.copyWith(historyType: value));
   });
 }/// Create a copy of GetAccountHistoryResult
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
-$MiningHistoryCopyWith<$Res>? get miningHistory {
-    if (_self.miningHistory == null) {
-    return null;
-  }
-
-  return $MiningHistoryCopyWith<$Res>(_self.miningHistory!, (value) {
-    return _then(_self.copyWith(miningHistory: value));
-  });
-}/// Create a copy of GetAccountHistoryResult
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$OutgoingHistoryCopyWith<$Res>? get outgoingHistory {
-    if (_self.outgoingHistory == null) {
-    return null;
-  }
-
-  return $OutgoingHistoryCopyWith<$Res>(_self.outgoingHistory!, (value) {
-    return _then(_self.copyWith(outgoingHistory: value));
-  });
-}/// Create a copy of GetAccountHistoryResult
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$IncomingHistoryCopyWith<$Res>? get incomingHistory {
-    if (_self.incomingHistory == null) {
-    return null;
-  }
-
-  return $IncomingHistoryCopyWith<$Res>(_self.incomingHistory!, (value) {
-    return _then(_self.copyWith(incomingHistory: value));
-  });
-}/// Create a copy of GetAccountHistoryResult
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$DevFeeHistoryCopyWith<$Res>? get devFeeHistory {
-    if (_self.devFeeHistory == null) {
-    return null;
-  }
-
-  return $DevFeeHistoryCopyWith<$Res>(_self.devFeeHistory!, (value) {
-    return _then(_self.copyWith(devFeeHistory: value));
+$RpcExtraFieldsCopyWith<$Res> get extraFields {
+  
+  return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
+    return _then(_self.copyWith(extraFields: value));
   });
 }
 }
@@ -220,10 +173,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'topoheight')  int topoheight, @JsonKey(name: 'hash')  String hash, @JsonKey(name: 'block_timestamp')  int blockTimestamp, @JsonKey(name: 'burn')  BurnHistory? burnHistory, @JsonKey(name: 'mining')  MiningHistory? miningHistory, @JsonKey(name: 'outgoing')  OutgoingHistory? outgoingHistory, @JsonKey(name: 'incoming')  IncomingHistory? incomingHistory, @JsonKey(name: 'dev_fee')  DevFeeHistory? devFeeHistory)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt topoheight, @JsonKey(name: 'hash')  String hash, @JsonKey(name: 'block_timestamp', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt blockTimestamp,  AccountHistoryType historyType,  RpcExtraFields extraFields)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _GetAccountHistoryResult() when $default != null:
-return $default(_that.topoheight,_that.hash,_that.blockTimestamp,_that.burnHistory,_that.miningHistory,_that.outgoingHistory,_that.incomingHistory,_that.devFeeHistory);case _:
+return $default(_that.topoheight,_that.hash,_that.blockTimestamp,_that.historyType,_that.extraFields);case _:
   return orElse();
 
 }
@@ -241,10 +194,10 @@ return $default(_that.topoheight,_that.hash,_that.blockTimestamp,_that.burnHisto
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'topoheight')  int topoheight, @JsonKey(name: 'hash')  String hash, @JsonKey(name: 'block_timestamp')  int blockTimestamp, @JsonKey(name: 'burn')  BurnHistory? burnHistory, @JsonKey(name: 'mining')  MiningHistory? miningHistory, @JsonKey(name: 'outgoing')  OutgoingHistory? outgoingHistory, @JsonKey(name: 'incoming')  IncomingHistory? incomingHistory, @JsonKey(name: 'dev_fee')  DevFeeHistory? devFeeHistory)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt topoheight, @JsonKey(name: 'hash')  String hash, @JsonKey(name: 'block_timestamp', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt blockTimestamp,  AccountHistoryType historyType,  RpcExtraFields extraFields)  $default,) {final _that = this;
 switch (_that) {
 case _GetAccountHistoryResult():
-return $default(_that.topoheight,_that.hash,_that.blockTimestamp,_that.burnHistory,_that.miningHistory,_that.outgoingHistory,_that.incomingHistory,_that.devFeeHistory);case _:
+return $default(_that.topoheight,_that.hash,_that.blockTimestamp,_that.historyType,_that.extraFields);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -261,10 +214,10 @@ return $default(_that.topoheight,_that.hash,_that.blockTimestamp,_that.burnHisto
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'topoheight')  int topoheight, @JsonKey(name: 'hash')  String hash, @JsonKey(name: 'block_timestamp')  int blockTimestamp, @JsonKey(name: 'burn')  BurnHistory? burnHistory, @JsonKey(name: 'mining')  MiningHistory? miningHistory, @JsonKey(name: 'outgoing')  OutgoingHistory? outgoingHistory, @JsonKey(name: 'incoming')  IncomingHistory? incomingHistory, @JsonKey(name: 'dev_fee')  DevFeeHistory? devFeeHistory)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt topoheight, @JsonKey(name: 'hash')  String hash, @JsonKey(name: 'block_timestamp', fromJson: rpcBigInt, toJson: rpcBigIntToJson)  BigInt blockTimestamp,  AccountHistoryType historyType,  RpcExtraFields extraFields)?  $default,) {final _that = this;
 switch (_that) {
 case _GetAccountHistoryResult() when $default != null:
-return $default(_that.topoheight,_that.hash,_that.blockTimestamp,_that.burnHistory,_that.miningHistory,_that.outgoingHistory,_that.incomingHistory,_that.devFeeHistory);case _:
+return $default(_that.topoheight,_that.hash,_that.blockTimestamp,_that.historyType,_that.extraFields);case _:
   return null;
 
 }
@@ -273,20 +226,17 @@ return $default(_that.topoheight,_that.hash,_that.blockTimestamp,_that.burnHisto
 }
 
 /// @nodoc
-@JsonSerializable()
 
-class _GetAccountHistoryResult implements GetAccountHistoryResult {
-  const _GetAccountHistoryResult({@JsonKey(name: 'topoheight') required this.topoheight, @JsonKey(name: 'hash') required this.hash, @JsonKey(name: 'block_timestamp') required this.blockTimestamp, @JsonKey(name: 'burn') this.burnHistory, @JsonKey(name: 'mining') this.miningHistory, @JsonKey(name: 'outgoing') this.outgoingHistory, @JsonKey(name: 'incoming') this.incomingHistory, @JsonKey(name: 'dev_fee') this.devFeeHistory});
-  factory _GetAccountHistoryResult.fromJson(Map<String, dynamic> json) => _$GetAccountHistoryResultFromJson(json);
 
-@override@JsonKey(name: 'topoheight') final  int topoheight;
+class _GetAccountHistoryResult extends GetAccountHistoryResult {
+  const _GetAccountHistoryResult({@JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.topoheight, @JsonKey(name: 'hash') required this.hash, @JsonKey(name: 'block_timestamp', fromJson: rpcBigInt, toJson: rpcBigIntToJson) required this.blockTimestamp, required this.historyType, this.extraFields = const RpcExtraFields()}): super._();
+  
+
+@override@JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) final  BigInt topoheight;
 @override@JsonKey(name: 'hash') final  String hash;
-@override@JsonKey(name: 'block_timestamp') final  int blockTimestamp;
-@override@JsonKey(name: 'burn') final  BurnHistory? burnHistory;
-@override@JsonKey(name: 'mining') final  MiningHistory? miningHistory;
-@override@JsonKey(name: 'outgoing') final  OutgoingHistory? outgoingHistory;
-@override@JsonKey(name: 'incoming') final  IncomingHistory? incomingHistory;
-@override@JsonKey(name: 'dev_fee') final  DevFeeHistory? devFeeHistory;
+@override@JsonKey(name: 'block_timestamp', fromJson: rpcBigInt, toJson: rpcBigIntToJson) final  BigInt blockTimestamp;
+@override final  AccountHistoryType historyType;
+@override@JsonKey() final  RpcExtraFields extraFields;
 
 /// Create a copy of GetAccountHistoryResult
 /// with the given fields replaced by the non-null parameter values.
@@ -294,23 +244,20 @@ class _GetAccountHistoryResult implements GetAccountHistoryResult {
 @pragma('vm:prefer-inline')
 _$GetAccountHistoryResultCopyWith<_GetAccountHistoryResult> get copyWith => __$GetAccountHistoryResultCopyWithImpl<_GetAccountHistoryResult>(this, _$identity);
 
-@override
-Map<String, dynamic> toJson() {
-  return _$GetAccountHistoryResultToJson(this, );
-}
+
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetAccountHistoryResult&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&(identical(other.hash, hash) || other.hash == hash)&&(identical(other.blockTimestamp, blockTimestamp) || other.blockTimestamp == blockTimestamp)&&(identical(other.burnHistory, burnHistory) || other.burnHistory == burnHistory)&&(identical(other.miningHistory, miningHistory) || other.miningHistory == miningHistory)&&(identical(other.outgoingHistory, outgoingHistory) || other.outgoingHistory == outgoingHistory)&&(identical(other.incomingHistory, incomingHistory) || other.incomingHistory == incomingHistory)&&(identical(other.devFeeHistory, devFeeHistory) || other.devFeeHistory == devFeeHistory));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetAccountHistoryResult&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&(identical(other.hash, hash) || other.hash == hash)&&(identical(other.blockTimestamp, blockTimestamp) || other.blockTimestamp == blockTimestamp)&&(identical(other.historyType, historyType) || other.historyType == historyType)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
-@JsonKey(includeFromJson: false, includeToJson: false)
+
 @override
-int get hashCode => Object.hash(runtimeType,topoheight,hash,blockTimestamp,burnHistory,miningHistory,outgoingHistory,incomingHistory,devFeeHistory);
+int get hashCode => Object.hash(runtimeType,topoheight,hash,blockTimestamp,historyType,extraFields);
 
 @override
 String toString() {
-  return 'GetAccountHistoryResult(topoheight: $topoheight, hash: $hash, blockTimestamp: $blockTimestamp, burnHistory: $burnHistory, miningHistory: $miningHistory, outgoingHistory: $outgoingHistory, incomingHistory: $incomingHistory, devFeeHistory: $devFeeHistory)';
+  return 'GetAccountHistoryResult(topoheight: $topoheight, hash: $hash, blockTimestamp: $blockTimestamp, historyType: $historyType, extraFields: $extraFields)';
 }
 
 
@@ -321,11 +268,11 @@ abstract mixin class _$GetAccountHistoryResultCopyWith<$Res> implements $GetAcco
   factory _$GetAccountHistoryResultCopyWith(_GetAccountHistoryResult value, $Res Function(_GetAccountHistoryResult) _then) = __$GetAccountHistoryResultCopyWithImpl;
 @override @useResult
 $Res call({
-@JsonKey(name: 'topoheight') int topoheight,@JsonKey(name: 'hash') String hash,@JsonKey(name: 'block_timestamp') int blockTimestamp,@JsonKey(name: 'burn') BurnHistory? burnHistory,@JsonKey(name: 'mining') MiningHistory? miningHistory,@JsonKey(name: 'outgoing') OutgoingHistory? outgoingHistory,@JsonKey(name: 'incoming') IncomingHistory? incomingHistory,@JsonKey(name: 'dev_fee') DevFeeHistory? devFeeHistory
+@JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt topoheight,@JsonKey(name: 'hash') String hash,@JsonKey(name: 'block_timestamp', fromJson: rpcBigInt, toJson: rpcBigIntToJson) BigInt blockTimestamp, AccountHistoryType historyType, RpcExtraFields extraFields
 });
 
 
-@override $BurnHistoryCopyWith<$Res>? get burnHistory;@override $MiningHistoryCopyWith<$Res>? get miningHistory;@override $OutgoingHistoryCopyWith<$Res>? get outgoingHistory;@override $IncomingHistoryCopyWith<$Res>? get incomingHistory;@override $DevFeeHistoryCopyWith<$Res>? get devFeeHistory;
+@override $AccountHistoryTypeCopyWith<$Res> get historyType;@override $RpcExtraFieldsCopyWith<$Res> get extraFields;
 
 }
 /// @nodoc
@@ -338,17 +285,14 @@ class __$GetAccountHistoryResultCopyWithImpl<$Res>
 
 /// Create a copy of GetAccountHistoryResult
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? topoheight = null,Object? hash = null,Object? blockTimestamp = null,Object? burnHistory = freezed,Object? miningHistory = freezed,Object? outgoingHistory = freezed,Object? incomingHistory = freezed,Object? devFeeHistory = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? topoheight = null,Object? hash = null,Object? blockTimestamp = null,Object? historyType = null,Object? extraFields = null,}) {
   return _then(_GetAccountHistoryResult(
 topoheight: null == topoheight ? _self.topoheight : topoheight // ignore: cast_nullable_to_non_nullable
-as int,hash: null == hash ? _self.hash : hash // ignore: cast_nullable_to_non_nullable
+as BigInt,hash: null == hash ? _self.hash : hash // ignore: cast_nullable_to_non_nullable
 as String,blockTimestamp: null == blockTimestamp ? _self.blockTimestamp : blockTimestamp // ignore: cast_nullable_to_non_nullable
-as int,burnHistory: freezed == burnHistory ? _self.burnHistory : burnHistory // ignore: cast_nullable_to_non_nullable
-as BurnHistory?,miningHistory: freezed == miningHistory ? _self.miningHistory : miningHistory // ignore: cast_nullable_to_non_nullable
-as MiningHistory?,outgoingHistory: freezed == outgoingHistory ? _self.outgoingHistory : outgoingHistory // ignore: cast_nullable_to_non_nullable
-as OutgoingHistory?,incomingHistory: freezed == incomingHistory ? _self.incomingHistory : incomingHistory // ignore: cast_nullable_to_non_nullable
-as IncomingHistory?,devFeeHistory: freezed == devFeeHistory ? _self.devFeeHistory : devFeeHistory // ignore: cast_nullable_to_non_nullable
-as DevFeeHistory?,
+as BigInt,historyType: null == historyType ? _self.historyType : historyType // ignore: cast_nullable_to_non_nullable
+as AccountHistoryType,extraFields: null == extraFields ? _self.extraFields : extraFields // ignore: cast_nullable_to_non_nullable
+as RpcExtraFields,
   ));
 }
 
@@ -356,61 +300,19 @@ as DevFeeHistory?,
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
-$BurnHistoryCopyWith<$Res>? get burnHistory {
-    if (_self.burnHistory == null) {
-    return null;
-  }
-
-  return $BurnHistoryCopyWith<$Res>(_self.burnHistory!, (value) {
-    return _then(_self.copyWith(burnHistory: value));
+$AccountHistoryTypeCopyWith<$Res> get historyType {
+  
+  return $AccountHistoryTypeCopyWith<$Res>(_self.historyType, (value) {
+    return _then(_self.copyWith(historyType: value));
   });
 }/// Create a copy of GetAccountHistoryResult
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
-$MiningHistoryCopyWith<$Res>? get miningHistory {
-    if (_self.miningHistory == null) {
-    return null;
-  }
-
-  return $MiningHistoryCopyWith<$Res>(_self.miningHistory!, (value) {
-    return _then(_self.copyWith(miningHistory: value));
-  });
-}/// Create a copy of GetAccountHistoryResult
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$OutgoingHistoryCopyWith<$Res>? get outgoingHistory {
-    if (_self.outgoingHistory == null) {
-    return null;
-  }
-
-  return $OutgoingHistoryCopyWith<$Res>(_self.outgoingHistory!, (value) {
-    return _then(_self.copyWith(outgoingHistory: value));
-  });
-}/// Create a copy of GetAccountHistoryResult
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$IncomingHistoryCopyWith<$Res>? get incomingHistory {
-    if (_self.incomingHistory == null) {
-    return null;
-  }
-
-  return $IncomingHistoryCopyWith<$Res>(_self.incomingHistory!, (value) {
-    return _then(_self.copyWith(incomingHistory: value));
-  });
-}/// Create a copy of GetAccountHistoryResult
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$DevFeeHistoryCopyWith<$Res>? get devFeeHistory {
-    if (_self.devFeeHistory == null) {
-    return null;
-  }
-
-  return $DevFeeHistoryCopyWith<$Res>(_self.devFeeHistory!, (value) {
-    return _then(_self.copyWith(devFeeHistory: value));
+$RpcExtraFieldsCopyWith<$Res> get extraFields {
+  
+  return $RpcExtraFieldsCopyWith<$Res>(_self.extraFields, (value) {
+    return _then(_self.copyWith(extraFields: value));
   });
 }
 }

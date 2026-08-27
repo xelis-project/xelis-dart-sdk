@@ -1,6 +1,5 @@
-// ignore_for_file: invalid_annotation_target
-
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:xelis_dart_sdk/src/utils/rpc_json.dart';
 
 part 'get_block_at_topoheight_params.freezed.dart';
 
@@ -8,15 +7,16 @@ part 'get_block_at_topoheight_params.g.dart';
 
 /// @nodoc
 @freezed
-abstract class GetBlockAtTopoHeightParams with _$GetBlockAtTopoHeightParams {
+abstract class GetBlockAtTopoheightParams with _$GetBlockAtTopoheightParams {
   /// @nodoc
   @JsonSerializable(includeIfNull: false)
-  const factory GetBlockAtTopoHeightParams({
-    @JsonKey(name: 'topoheight') required int topoHeight,
+  const factory GetBlockAtTopoheightParams({
+    @JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson)
+    required BigInt topoheight,
     @JsonKey(name: 'include_txs') bool? includeTxs,
-  }) = _GetBlockAtTopoHeightParams;
+  }) = _GetBlockAtTopoheightParams;
 
   /// @nodoc
-  factory GetBlockAtTopoHeightParams.fromJson(Map<String, dynamic> json) =>
-      _$GetBlockAtTopoHeightParamsFromJson(json);
+  factory GetBlockAtTopoheightParams.fromJson(Map<String, dynamic> json) =>
+      _$GetBlockAtTopoheightParamsFromJson(json);
 }

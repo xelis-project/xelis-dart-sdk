@@ -1,7 +1,7 @@
-// ignore_for_file: invalid_annotation_target
-
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:xelis_dart_sdk/xelis_dart_sdk.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/wallet/build_transaction/base_fee_mode.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/wallet/build_transaction/fee_builder.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/wallet/transaction/transaction_type_builder.dart';
 
 part 'build_unsigned_transaction_params.freezed.dart';
 
@@ -12,10 +12,12 @@ abstract class BuildUnsignedTransactionParams
   /// @nodoc
   const factory BuildUnsignedTransactionParams({
     required TransactionTypeBuilder transactionTypeBuilder,
-    FeeBuilder? feeBuilder,
-    int? nonce,
+    @Default(FeeBuilder.extra()) FeeBuilder fee,
+    @Default(BaseFeeMode.none()) BaseFeeMode baseFee,
+    BigInt? feeLimit,
+    BigInt? nonce,
     int? txVersion,
-    bool? txAsHex,
+    @Default(false) bool txAsHex,
   }) = _BuildUnsignedTransactionParams;
 
   const BuildUnsignedTransactionParams._();
@@ -24,10 +26,12 @@ abstract class BuildUnsignedTransactionParams
   Map<String, dynamic> toJson() {
     return {
       ...transactionTypeBuilder.toRpcJson(),
-      if (feeBuilder != null) 'fee': feeBuilder,
+      'fee': fee.toJson(),
+      'base_fee': baseFee.toJson(),
+      if (feeLimit != null) 'fee_limit': feeLimit,
       if (nonce != null) 'nonce': nonce,
       if (txVersion != null) 'tx_version': txVersion,
-      if (txAsHex != null) 'tx_as_hex': txAsHex,
+      'tx_as_hex': txAsHex,
     };
   }
 }

@@ -1,6 +1,6 @@
-// ignore_for_file: invalid_annotation_target
-
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:xelis_dart_sdk/src/data_transfer_objects/core/rpc_extra_fields.dart';
+import 'package:xelis_dart_sdk/src/utils/rpc_json.dart';
 
 part 'fee_rates_estimated.freezed.dart';
 part 'fee_rates_estimated.g.dart';
@@ -10,13 +10,37 @@ part 'fee_rates_estimated.g.dart';
 abstract class FeeRatesEstimated with _$FeeRatesEstimated {
   /// @nodoc
   const factory FeeRatesEstimated({
-    @JsonKey(name: 'low') required int low,
-    @JsonKey(name: 'medium') required int medium,
-    @JsonKey(name: 'high') required int high,
-    @JsonKey(name: 'default') required int defaultFee,
+    @JsonKey(name: 'low', fromJson: rpcBigInt, toJson: rpcBigIntToJson)
+    required BigInt low,
+    @JsonKey(name: 'medium', fromJson: rpcBigInt, toJson: rpcBigIntToJson)
+    required BigInt medium,
+    @JsonKey(name: 'high', fromJson: rpcBigInt, toJson: rpcBigIntToJson)
+    required BigInt high,
+    @JsonKey(name: 'default', fromJson: rpcBigInt, toJson: rpcBigIntToJson)
+    required BigInt defaultFee,
+    @JsonKey(includeFromJson: false, includeToJson: false)
+    @Default(RpcExtraFields())
+    RpcExtraFields extraFields,
   }) = _FeeRatesEstimated;
+
+  const FeeRatesEstimated._();
 
   /// @nodoc
   factory FeeRatesEstimated.fromJson(Map<String, dynamic> json) =>
-      _$FeeRatesEstimatedFromJson(json);
+      _$FeeRatesEstimatedFromJson(json).copyWith(
+        extraFields: RpcExtraFields.capture(json, const {
+          'low',
+          'medium',
+          'high',
+          'default',
+        }),
+      );
+
+  Map<String, Object?> toWireJson({bool includeExtraFields = false}) =>
+      extraFields.mergeInto({
+        'low': low,
+        'medium': medium,
+        'high': high,
+        'default': defaultFee,
+      }, includeExtraFields: includeExtraFields);
 }

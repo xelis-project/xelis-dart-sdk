@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'make_integrated_address_params.dart';
@@ -9,13 +9,14 @@ part of 'make_integrated_address_params.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$MakeIntegratedAddressParams {
 
-@JsonKey(name: 'address') String get address;@JsonKey(name: 'integrated_data') dynamic get data;
+@JsonKey(name: 'address') String get address;@JsonKey(name: 'integrated_data', fromJson: DataElement.fromJson, toJson: _dataElementToJson) DataElement get data;
 /// Create a copy of MakeIntegratedAddressParams
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,12 +29,12 @@ $MakeIntegratedAddressParamsCopyWith<MakeIntegratedAddressParams> get copyWith =
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is MakeIntegratedAddressParams&&(identical(other.address, address) || other.address == address)&&const DeepCollectionEquality().equals(other.data, data));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is MakeIntegratedAddressParams&&(identical(other.address, address) || other.address == address)&&(identical(other.data, data) || other.data == data));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,address,const DeepCollectionEquality().hash(data));
+int get hashCode => Object.hash(runtimeType,address,data);
 
 @override
 String toString() {
@@ -48,11 +49,11 @@ abstract mixin class $MakeIntegratedAddressParamsCopyWith<$Res>  {
   factory $MakeIntegratedAddressParamsCopyWith(MakeIntegratedAddressParams value, $Res Function(MakeIntegratedAddressParams) _then) = _$MakeIntegratedAddressParamsCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(name: 'address') String address,@JsonKey(name: 'integrated_data') dynamic data
+@JsonKey(name: 'address') String address,@JsonKey(name: 'integrated_data', fromJson: DataElement.fromJson, toJson: _dataElementToJson) DataElement data
 });
 
 
-
+$DataElementCopyWith<$Res> get data;
 
 }
 /// @nodoc
@@ -65,14 +66,23 @@ class _$MakeIntegratedAddressParamsCopyWithImpl<$Res>
 
 /// Create a copy of MakeIntegratedAddressParams
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? address = null,Object? data = freezed,}) {
-  return _then(_self.copyWith(
+@pragma('vm:prefer-inline') @override $Res call({Object? address = null,Object? data = null,}) {
+  return _then(MakeIntegratedAddressParams(
 address: null == address ? _self.address : address // ignore: cast_nullable_to_non_nullable
-as String,data: freezed == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as dynamic,
+as String,data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
+as DataElement,
   ));
 }
-
+/// Create a copy of MakeIntegratedAddressParams
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$DataElementCopyWith<$Res> get data {
+  
+  return $DataElementCopyWith<$Res>(_self.data, (value) {
+    return _then(_self.copyWith(data: value));
+  });
+}
 }
 
 
@@ -154,7 +164,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'address')  String address, @JsonKey(name: 'integrated_data')  dynamic data)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'address')  String address, @JsonKey(name: 'integrated_data', fromJson: DataElement.fromJson, toJson: _dataElementToJson)  DataElement data)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _MakeIntegratedAddressParams() when $default != null:
 return $default(_that.address,_that.data);case _:
@@ -175,7 +185,7 @@ return $default(_that.address,_that.data);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'address')  String address, @JsonKey(name: 'integrated_data')  dynamic data)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'address')  String address, @JsonKey(name: 'integrated_data', fromJson: DataElement.fromJson, toJson: _dataElementToJson)  DataElement data)  $default,) {final _that = this;
 switch (_that) {
 case _MakeIntegratedAddressParams():
 return $default(_that.address,_that.data);case _:
@@ -195,7 +205,7 @@ return $default(_that.address,_that.data);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'address')  String address, @JsonKey(name: 'integrated_data')  dynamic data)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'address')  String address, @JsonKey(name: 'integrated_data', fromJson: DataElement.fromJson, toJson: _dataElementToJson)  DataElement data)?  $default,) {final _that = this;
 switch (_that) {
 case _MakeIntegratedAddressParams() when $default != null:
 return $default(_that.address,_that.data);case _:
@@ -210,11 +220,11 @@ return $default(_that.address,_that.data);case _:
 @JsonSerializable()
 
 class _MakeIntegratedAddressParams implements MakeIntegratedAddressParams {
-  const _MakeIntegratedAddressParams({@JsonKey(name: 'address') required this.address, @JsonKey(name: 'integrated_data') this.data});
+  const _MakeIntegratedAddressParams({@JsonKey(name: 'address') required this.address, @JsonKey(name: 'integrated_data', fromJson: DataElement.fromJson, toJson: _dataElementToJson) required this.data});
   factory _MakeIntegratedAddressParams.fromJson(Map<String, dynamic> json) => _$MakeIntegratedAddressParamsFromJson(json);
 
 @override@JsonKey(name: 'address') final  String address;
-@override@JsonKey(name: 'integrated_data') final  dynamic data;
+@override@JsonKey(name: 'integrated_data', fromJson: DataElement.fromJson, toJson: _dataElementToJson) final  DataElement data;
 
 /// Create a copy of MakeIntegratedAddressParams
 /// with the given fields replaced by the non-null parameter values.
@@ -229,12 +239,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _MakeIntegratedAddressParams&&(identical(other.address, address) || other.address == address)&&const DeepCollectionEquality().equals(other.data, data));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _MakeIntegratedAddressParams&&(identical(other.address, address) || other.address == address)&&(identical(other.data, data) || other.data == data));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,address,const DeepCollectionEquality().hash(data));
+int get hashCode => Object.hash(runtimeType,address,data);
 
 @override
 String toString() {
@@ -249,11 +259,11 @@ abstract mixin class _$MakeIntegratedAddressParamsCopyWith<$Res> implements $Mak
   factory _$MakeIntegratedAddressParamsCopyWith(_MakeIntegratedAddressParams value, $Res Function(_MakeIntegratedAddressParams) _then) = __$MakeIntegratedAddressParamsCopyWithImpl;
 @override @useResult
 $Res call({
-@JsonKey(name: 'address') String address,@JsonKey(name: 'integrated_data') dynamic data
+@JsonKey(name: 'address') String address,@JsonKey(name: 'integrated_data', fromJson: DataElement.fromJson, toJson: _dataElementToJson) DataElement data
 });
 
 
-
+@override $DataElementCopyWith<$Res> get data;
 
 }
 /// @nodoc
@@ -266,15 +276,24 @@ class __$MakeIntegratedAddressParamsCopyWithImpl<$Res>
 
 /// Create a copy of MakeIntegratedAddressParams
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? address = null,Object? data = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? address = null,Object? data = null,}) {
   return _then(_MakeIntegratedAddressParams(
 address: null == address ? _self.address : address // ignore: cast_nullable_to_non_nullable
-as String,data: freezed == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as dynamic,
+as String,data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
+as DataElement,
   ));
 }
 
-
+/// Create a copy of MakeIntegratedAddressParams
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$DataElementCopyWith<$Res> get data {
+  
+  return $DataElementCopyWith<$Res>(_self.data, (value) {
+    return _then(_self.copyWith(data: value));
+  });
+}
 }
 
 // dart format on
