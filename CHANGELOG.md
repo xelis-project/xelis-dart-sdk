@@ -5,6 +5,7 @@ could lose RPC data or no longer matched the supported Rust contract.
 
 ### Breaking changes from 0.35.x
 
+- Require Dart 3.13 or newer.
 - Rename `RPCTransaction` to `RpcTransaction` and `RPCAssetData` to
   `RpcAssetData`. `TransactionResponse` and `TransactionWalletResponse` are
   removed; wallet transaction responses now expose the canonical transaction
@@ -39,6 +40,10 @@ could lose RPC data or no longer matched the supported Rust contract.
 
 ### Notable additions
 
+- Upgrade the generator toolchain to Freezed 4 and the runtime annotation
+  dependency to `json_annotation` 4.12.0. This removes the 0.35.1
+  `json_annotation` 4.11 compatibility pin for Genesix wallet; Genesix
+  integrations should confirm their dependency constraints before upgrading.
 - Add RPC schema and capability discovery, parameterized subscriptions,
   request timeouts, raw RPC access and `RpcCallOutcome` helpers.
 - Add the missing daemon and wallet RPC methods, opt-in daemon administration,

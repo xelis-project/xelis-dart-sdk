@@ -1,7 +1,7 @@
 {
   "format": 1,
   "name": "contract-lifecycle-v1",
-  "sourceCommit": "d6c8852bd9e186c233d747e9e2f4bf80ada0ab47",
+  "sourceCommit": "db59b5c246ab0e40386d6c241dcd77f0aea84b10",
   "compiler": "xelis-vm/silex v1.3.0 with xelis_common ContractVersion::V1 environment",
   "sourceCode": "hook constructor() -> u64 { let storage = Storage::new(); storage.store(b\"counter\", 1u64); println(\"constructed\"); emit_event(1u64, [1u64]); return 0 } entry increment(amount: u64) -> u64 { let storage = Storage::new(); let current: u64 = storage.load(b\"counter\").expect(\"counter missing\"); let next: u64 = current + amount; storage.store(b\"counter\", next); println(\"incremented\"); emit_event(2u64, [next]); fire_rpc_event(102u64, next); return 0 } pub fn scheduled_callback() -> u64 { let storage = Storage::new(); storage.store(b\"scheduled\", true); println(\"scheduled callback\"); emit_event(3u64, []); return 0 } entry schedule(topoheight: u64) -> u64 { let execution = ScheduledExecution::new_at_topoheight(scheduled_callback, [], 50000u64, false, topoheight); require(execution != null, \"scheduled execution was not created\"); return 0 }",
   "moduleSha256": "d3fd84ea7abeebad2cbec1c605a5edd970dd815cea78858e5163cc9d9ad98101",

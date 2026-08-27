@@ -33,7 +33,7 @@ import 'package:xelis_dart_sdk/xelis_dart_sdk.dart';
 ```
 
 Use XELIS daemon and wallet releases supported by your SDK version; consult the
-[release notes](CHANGELOG.md) for compatibility details. Some RPC methods also
+[release notes](https://github.com/xelis-project/xelis-dart-sdk/blob/master/CHANGELOG.md) for compatibility details. Some RPC methods also
 depend on the server configuration, so use runtime capability discovery when a
 feature is optional.
 
@@ -300,4 +300,4 @@ signature operations on the returned `XswdManifest`.
 ## Reference
 
 - [API documentation](https://pub.dev/documentation/xelis_dart_sdk/latest/)
-- [Release notes](CHANGELOG.md)
+- [Release notes](https://github.com/xelis-project/xelis-dart-sdk/blob/master/CHANGELOG.md)

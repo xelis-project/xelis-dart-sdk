@@ -1,10 +1,10 @@
 {
   "format": 1,
-  "channel": "dev",
+  "channel": "stable",
   "upstream": {
     "repository": "xelis-project/xelis-blockchain",
-    "ref": "dev",
-    "commit": "d6c8852bd9e186c233d747e9e2f4bf80ada0ab47",
+    "ref": "v1.25.0",
+    "commit": "db59b5c246ab0e40386d6c241dcd77f0aea84b10",
     "serverVersion": "1.25.0"
   },
   "schemas": {
