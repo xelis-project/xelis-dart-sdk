@@ -47,7 +47,7 @@ void main() {
 }
 
 class _FakeWalletClient extends WalletClient {
-  _FakeWalletClient()
+  new()
     : super(
         endPoint: 'localhost:8080',
         username: 'user',

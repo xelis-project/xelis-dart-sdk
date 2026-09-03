@@ -9,7 +9,7 @@ part 'transfer_payload.g.dart';
 @freezed
 abstract class TransferPayload with _$TransferPayload {
   /// @nodoc
-  const factory TransferPayload({
+  const factory({
     @JsonKey(name: 'asset') required String asset,
     @JsonKey(name: 'commitment') required List<int> commitment,
     @JsonKey(
@@ -35,7 +35,7 @@ abstract class TransferPayload with _$TransferPayload {
   }) = _TransferPayload;
 
   /// @nodoc
-  factory TransferPayload.fromJson(Map<String, dynamic> json) =>
+  factory fromJson(Map<String, dynamic> json) =>
       _$TransferPayloadFromJson(json);
 }
 

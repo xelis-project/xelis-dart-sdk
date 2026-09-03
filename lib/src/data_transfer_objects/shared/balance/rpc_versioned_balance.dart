@@ -8,19 +8,16 @@ part 'rpc_versioned_balance.freezed.dart';
 /// A balance version together with the topoheight at which it was found.
 @Freezed(fromJson: false, toJson: false)
 abstract class RpcVersionedBalance with _$RpcVersionedBalance {
-  const factory RpcVersionedBalance({
+  const factory({
     required BigInt topoheight,
     required BalanceVersion version,
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = _RpcVersionedBalance;
 
-  const RpcVersionedBalance._();
+  const new _();
 
-  factory RpcVersionedBalance.fromJson(Object? json) {
-    final map = rpcJsonMap(
-      json,
-      method: 'get_balances_at_maximum_topoheight',
-    );
+  factory fromJson(Object? json) {
+    final map = rpcJsonMap(json, method: 'get_balances_at_maximum_topoheight');
     final versionJson = Map<String, dynamic>.of(map)..remove('topoheight');
     return RpcVersionedBalance(
       topoheight: rpcBigInt(

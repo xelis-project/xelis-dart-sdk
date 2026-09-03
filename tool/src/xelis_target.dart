@@ -4,10 +4,7 @@ import 'dart:io';
 enum IntegrationComponentStatus { supported, blocked }
 
 final class IntegrationComponentAvailability {
-  const IntegrationComponentAvailability({
-    required this.status,
-    this.reason,
-  });
+  const new({required this.status, this.reason});
 
   final IntegrationComponentStatus status;
   final String? reason;
@@ -21,7 +18,7 @@ final class IntegrationComponentAvailability {
 }
 
 final class XelisTarget {
-  const XelisTarget({
+  const new({
     required this.format,
     required this.channel,
     required this.repository,
@@ -37,10 +34,7 @@ final class XelisTarget {
     required this.daemonEndpoints,
   });
 
-  factory XelisTarget.load({
-    String path = 'xelis_target.json',
-    bool requireFiles = true,
-  }) {
+  factory load({String path = 'xelis_target.json', bool requireFiles = true}) {
     final file = File(path);
     if (!file.existsSync()) {
       throw FormatException('Missing XELIS target manifest: ${file.path}');
@@ -120,11 +114,7 @@ final class XelisTarget {
       integration['components'],
       r'$.integration.components',
     );
-    _only(
-      components,
-      const {'daemon', 'wallet'},
-      r'$.integration.components',
-    );
+    _only(components, const {'daemon', 'wallet'}, r'$.integration.components');
     final daemonIntegration = _componentAvailability(
       components['daemon'],
       r'$.integration.components.daemon',

@@ -98,20 +98,16 @@ List<RpcContractCase<RecordingWalletClient>> walletRpcContractCases() => [
     'create_balance_proof',
     {'asset': 'asset', 'topoheight': BigInt.from(9)},
     'proof',
-    (client) => client.createBalanceProof(
-      asset: 'asset',
-      topoheight: BigInt.from(9),
-    ),
+    (client) =>
+        client.createBalanceProof(asset: 'asset', topoheight: BigInt.from(9)),
     'proof',
   ),
   _case(
     'verify_human_readable_proof',
     {'proof': 'proof', 'address': 'address'},
     true,
-    (client) => client.verifyHumanReadableProof(
-      proof: 'proof',
-      address: 'address',
-    ),
+    (client) =>
+        client.verifyHumanReadableProof(proof: 'proof', address: 'address'),
     isTrue,
   ),
   _case(
@@ -252,18 +248,16 @@ List<RpcContractCase<RecordingWalletClient>> walletRpcContractCases() => [
     'get_balance',
     {'asset': 'asset'},
     BigInt.from(8),
-    (client) => client.getBalance(
-      const GetWalletBalanceParams(assetHash: 'asset'),
-    ),
+    (client) =>
+        client.getBalance(const GetWalletBalanceParams(assetHash: 'asset')),
     BigInt.from(8),
   ),
   _case(
     'has_balance',
     {'asset': 'asset'},
     true,
-    (client) => client.hasBalance(
-      const GetWalletBalanceParams(assetHash: 'asset'),
-    ),
+    (client) =>
+        client.hasBalance(const GetWalletBalanceParams(assetHash: 'asset')),
     isTrue,
   ),
   _case(
@@ -494,9 +488,8 @@ List<RpcContractCase<RecordingWalletClient>> walletRpcContractCases() => [
     [
       {'asset': 'asset', 'data': _assetDataJson},
     ],
-    (client) => client.getAssets(
-      const GetWalletAssetsParams(skip: 2, maximum: 10),
-    ),
+    (client) =>
+        client.getAssets(const GetWalletAssetsParams(skip: 2, maximum: 10)),
     isA<List<WalletAssetEntry>>(),
   ),
   _case(

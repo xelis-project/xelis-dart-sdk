@@ -11,7 +11,7 @@ part 'build_transaction_params.freezed.dart';
 @freezed
 abstract class BuildTransactionParams with _$BuildTransactionParams {
   /// @nodoc
-  const factory BuildTransactionParams({
+  const factory({
     required TransactionTypeBuilder transactionTypeBuilder,
     @Default(FeeBuilder.extra()) FeeBuilder fee,
     @Default(BaseFeeMode.none()) BaseFeeMode baseFee,
@@ -23,10 +23,10 @@ abstract class BuildTransactionParams with _$BuildTransactionParams {
     @Default(<SignerId>[]) List<SignerId> signers,
   }) = _BuildTransactionParams;
 
-  const BuildTransactionParams._();
+  const new _();
 
   /// @nodoc
-  factory BuildTransactionParams.fromJson(Map<String, dynamic> json) {
+  factory fromJson(Map<String, dynamic> json) {
     return BuildTransactionParams(
       transactionTypeBuilder: TransactionTypeBuilder.fromRpcJson(json),
       fee: json['fee'] == null
@@ -57,10 +57,7 @@ abstract class BuildTransactionParams with _$BuildTransactionParams {
   Map<String, dynamic> toJson() {
     final txJson = transactionTypeBuilder.toRpcJson();
     final commonJson = _serializeCommonFields();
-    return {
-      ...txJson,
-      ...commonJson,
-    };
+    return {...txJson, ...commonJson};
   }
 
   Map<String, dynamic> _serializeCommonFields() {

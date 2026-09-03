@@ -8,11 +8,10 @@ part 'get_block_template_params.g.dart';
 @freezed
 abstract class GetBlockTemplateParams with _$GetBlockTemplateParams {
   /// @nodoc
-  const factory GetBlockTemplateParams({
-    @JsonKey(name: 'address') required String address,
-  }) = _GetBlockTemplateParams;
+  const factory({@JsonKey(name: 'address') required String address}) =
+      _GetBlockTemplateParams;
 
   /// @nodoc
-  factory GetBlockTemplateParams.fromJson(Map<String, dynamic> json) =>
+  factory fromJson(Map<String, dynamic> json) =>
       _$GetBlockTemplateParamsFromJson(json);
 }

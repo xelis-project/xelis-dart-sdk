@@ -39,13 +39,10 @@ void main() {
 
   test('the runtime matrix invokes all 89 daemon/admin facades', () {
     expect(runtimeContracts, hasLength(89));
-    expect(
-      runtimeContracts.map((contract) => contract.method).toSet(),
-      {
-        ...DaemonMethod.values.map((method) => method.jsonKey),
-        ..._adminMethods,
-      },
-    );
+    expect(runtimeContracts.map((contract) => contract.method).toSet(), {
+      ...DaemonMethod.values.map((method) => method.jsonKey),
+      ..._adminMethods,
+    });
   });
 
   group('daemon/admin runtime contracts', () {
@@ -473,10 +470,7 @@ List<RpcContractCase<RecordingDaemonClient>> _daemonRuntimeContracts(
       ),
       params: {'hash': '0', 'outgoing': true, 'incoming': true},
     ),
-    call(
-      'prune_chain',
-      (c, p) => c.admin.pruneChain(_bigInt(p, 'topoheight')),
-    ),
+    call('prune_chain', (c, p) => c.admin.pruneChain(_bigInt(p, 'topoheight'))),
     call(
       'rewind_chain',
       (c, p) => c.admin.rewindChain(
@@ -494,7 +488,7 @@ List<RpcContractCase<RecordingDaemonClient>> _daemonRuntimeContracts(
 }
 
 final class _SchemaSamples {
-  _SchemaSamples(this.root);
+  new(this.root);
 
   final Map<String, dynamic> root;
 

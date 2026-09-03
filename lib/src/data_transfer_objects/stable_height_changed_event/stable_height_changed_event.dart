@@ -10,7 +10,7 @@ part 'stable_height_changed_event.g.dart';
 @freezed
 abstract class StableHeightChangedEvent with _$StableHeightChangedEvent {
   /// @nodoc
-  const factory StableHeightChangedEvent({
+  const factory({
     @JsonKey(
       name: 'previous_stable_height',
       fromJson: rpcBigInt,
@@ -28,10 +28,10 @@ abstract class StableHeightChangedEvent with _$StableHeightChangedEvent {
     RpcExtraFields extraFields,
   }) = _StableHeightChangedEvent;
 
-  const StableHeightChangedEvent._();
+  const new _();
 
   /// @nodoc
-  factory StableHeightChangedEvent.fromJson(Map<String, dynamic> json) =>
+  factory fromJson(Map<String, dynamic> json) =>
       _$StableHeightChangedEventFromJson(json).copyWith(
         extraFields: RpcExtraFields.capture(json, const {
           'previous_stable_height',

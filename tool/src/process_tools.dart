@@ -11,7 +11,6 @@ typedef ProcessStarter = Future<Process> Function(
 
 // A narrow boundary is intentional so cleanup behavior can be tested without
 // starting operating-system processes.
-// ignore: one_member_abstracts
 abstract interface class StoppableProcess {
   Future<void> stop();
 }
@@ -48,11 +47,7 @@ Future<ProcessResult> runChecked(
 }
 
 final class ManagedProcess implements StoppableProcess {
-  ManagedProcess._(
-    this.process,
-    this.logFile,
-    this._closed,
-  );
+  new _(this.process, this.logFile, this._closed);
 
   static Future<ManagedProcess> start(
     String executable,
@@ -107,10 +102,7 @@ final class ManagedProcess implements StoppableProcess {
       await process.exitCode.timeout(timeout);
     } on TimeoutException {
       if (Platform.isWindows) {
-        await Process.run(
-          'taskkill',
-          ['/PID', '${process.pid}', '/T', '/F'],
-        );
+        await Process.run('taskkill', ['/PID', '${process.pid}', '/T', '/F']);
       } else {
         process.kill(ProcessSignal.sigkill);
       }

@@ -8,11 +8,10 @@ part 'submit_transaction_params.g.dart';
 @freezed
 abstract class SubmitTransactionParams with _$SubmitTransactionParams {
   /// @nodoc
-  const factory SubmitTransactionParams({
-    @JsonKey(name: 'data') required String hex,
-  }) = _SubmitTransactionParams;
+  const factory({@JsonKey(name: 'data') required String hex}) =
+      _SubmitTransactionParams;
 
   /// @nodoc
-  factory SubmitTransactionParams.fromJson(Map<String, dynamic> json) =>
+  factory fromJson(Map<String, dynamic> json) =>
       _$SubmitTransactionParamsFromJson(json);
 }

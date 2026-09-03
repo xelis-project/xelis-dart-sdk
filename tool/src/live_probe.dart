@@ -7,7 +7,7 @@ import 'package:xelis_dart_sdk/xelis_dart_sdk.dart';
 import 'xelis_target.dart';
 
 final class ProbeOptions {
-  const ProbeOptions({
+  const new({
     this.daemonEndpoint,
     this.walletEndpoint,
     this.walletUsername,
@@ -21,7 +21,7 @@ final class ProbeOptions {
 }
 
 final class LiveProbe {
-  LiveProbe(this.target);
+  new(this.target);
 
   final XelisTarget target;
 
@@ -180,7 +180,8 @@ final class LiveProbe {
       if (target.serverVersion != null &&
           !result.version.contains(target.serverVersion!)) {
         buffer.writeln(
-          '> Warning: observed version differs from the pinned target. This is informational.',
+          '> Warning: observed version differs from the pinned target. '
+          'This is informational.',
         );
       }
     }
@@ -232,7 +233,7 @@ Future<EndpointAttempt<T>> firstSuccessfulEndpoint<T>(
 }
 
 final class EndpointAttempt<T> {
-  const EndpointAttempt({
+  const new({
     required this.endpoint,
     required this.value,
     required this.failures,
@@ -271,7 +272,7 @@ String _methodList(List<String> methods) =>
     methods.isEmpty ? 'none' : methods.map((method) => '`$method`').join(', ');
 
 final class _DaemonProbeResult {
-  const _DaemonProbeResult({
+  const new({
     required this.endpoint,
     required this.version,
     required this.network,
@@ -299,7 +300,7 @@ final class _DaemonProbeResult {
 }
 
 final class _WalletProbeResult {
-  const _WalletProbeResult({
+  const new({
     required this.version,
     required this.network,
     required this.addressPrefix,

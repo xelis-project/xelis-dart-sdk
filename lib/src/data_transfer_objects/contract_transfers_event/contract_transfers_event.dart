@@ -8,7 +8,7 @@ part 'contract_transfers_event.freezed.dart';
 @Freezed(fromJson: false, toJson: false)
 abstract class ContractTransfersEvent with _$ContractTransfersEvent {
   /// Creates a contract transfers event.
-  const factory ContractTransfersEvent({
+  const factory({
     required String blockHash,
     required BigInt blockTimestamp,
     required List<ContractTransferExecution> executions,
@@ -16,28 +16,26 @@ abstract class ContractTransfersEvent with _$ContractTransfersEvent {
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = _ContractTransfersEvent;
 
-  const ContractTransfersEvent._();
+  const new _();
 
   /// Decodes the current daemon event wire shape.
-  factory ContractTransfersEvent.fromJson(Map<String, dynamic> json) =>
-      ContractTransfersEvent(
-        blockHash: json['block_hash'] as String,
-        blockTimestamp: rpcBigInt(
-          json['block_timestamp'],
-          method: 'contract_transfers',
-        ),
-        executions: (json['executions'] as List)
-            .map(ContractTransferExecution.fromJson)
-            .toList(growable: false),
-        topoheight: rpcBigInt(
-          json['topoheight'],
-          method: 'contract_transfers',
-        ),
-        extraFields: RpcExtraFields.capture(
-          json,
-          const {'block_hash', 'block_timestamp', 'executions', 'topoheight'},
-        ),
-      );
+  factory fromJson(Map<String, dynamic> json) => ContractTransfersEvent(
+    blockHash: json['block_hash'] as String,
+    blockTimestamp: rpcBigInt(
+      json['block_timestamp'],
+      method: 'contract_transfers',
+    ),
+    executions: (json['executions'] as List)
+        .map(ContractTransferExecution.fromJson)
+        .toList(growable: false),
+    topoheight: rpcBigInt(json['topoheight'], method: 'contract_transfers'),
+    extraFields: RpcExtraFields.capture(json, const {
+      'block_hash',
+      'block_timestamp',
+      'executions',
+      'topoheight',
+    }),
+  );
 
   /// Serializes known fields and optionally restores fields received from wire.
   Map<String, Object?> toWireJson({bool includeExtraFields = false}) =>
@@ -46,9 +44,8 @@ abstract class ContractTransfersEvent with _$ContractTransfersEvent {
         'block_timestamp': blockTimestamp,
         'executions': executions
             .map(
-              (execution) => execution.toWireJson(
-                includeExtraFields: includeExtraFields,
-              ),
+              (execution) =>
+                  execution.toWireJson(includeExtraFields: includeExtraFields),
             )
             .toList(growable: false),
         'topoheight': topoheight,
@@ -59,7 +56,7 @@ abstract class ContractTransfersEvent with _$ContractTransfersEvent {
 @Freezed(fromJson: false, toJson: false)
 abstract class ContractTransferExecution with _$ContractTransferExecution {
   /// Creates a transfer execution.
-  const factory ContractTransferExecution({
+  const factory({
     required String contract,
     required String caller,
     required Map<String, BigInt> transfers,
@@ -68,10 +65,10 @@ abstract class ContractTransferExecution with _$ContractTransferExecution {
     @Default(RpcExtraFields()) RpcExtraFields valueExtraFields,
   }) = _ContractTransferExecution;
 
-  const ContractTransferExecution._();
+  const new _();
 
   /// Decodes the Rust `KV` list representation.
-  factory ContractTransferExecution.fromJson(Object? json) {
+  factory fromJson(Object? json) {
     final entry = rpcJsonMap(json, method: 'contract_transfers');
     final key = rpcJsonMap(entry['key'], method: 'contract_transfers');
     final value = rpcJsonMap(entry['value'], method: 'contract_transfers');
@@ -83,16 +80,11 @@ abstract class ContractTransferExecution with _$ContractTransferExecution {
       contract: key['contract'] as String,
       caller: key['caller'] as String,
       transfers: transfers.map(
-        (asset, amount) => MapEntry(
-          asset,
-          rpcBigInt(amount, method: 'contract_transfers'),
-        ),
+        (asset, amount) =>
+            MapEntry(asset, rpcBigInt(amount, method: 'contract_transfers')),
       ),
       extraFields: RpcExtraFields.capture(entry, const {'key', 'value'}),
-      keyExtraFields: RpcExtraFields.capture(
-        key,
-        const {'contract', 'caller'},
-      ),
+      keyExtraFields: RpcExtraFields.capture(key, const {'contract', 'caller'}),
       valueExtraFields: RpcExtraFields.capture(value, const {'transfers'}),
     );
   }

@@ -10,7 +10,7 @@ part 'get_peers_result.g.dart';
 @freezed
 abstract class GetPeersResult with _$GetPeersResult {
   /// @nodoc
-  const factory GetPeersResult({
+  const factory({
     @JsonKey(name: 'peers') required List<PeerEntry> peers,
     @JsonKey(name: 'total_peers', fromJson: rpcBigInt, toJson: rpcBigIntToJson)
     required BigInt totalPeers,
@@ -21,11 +21,11 @@ abstract class GetPeersResult with _$GetPeersResult {
     RpcExtraFields extraFields,
   }) = _GetPeersResult;
 
-  const GetPeersResult._();
+  const new _();
 
   /// @nodoc
-  factory GetPeersResult.fromJson(Map<String, dynamic> json) =>
-      _$GetPeersResultFromJson(json).copyWith(
+  factory fromJson(Map<String, dynamic> json) => _$GetPeersResultFromJson(json)
+      .copyWith(
         extraFields: RpcExtraFields.capture(json, const {
           'peers',
           'total_peers',
@@ -37,9 +37,7 @@ abstract class GetPeersResult with _$GetPeersResult {
       extraFields.mergeInto({
         'peers': peers
             .map(
-              (peer) => peer.toWireJson(
-                includeExtraFields: includeExtraFields,
-              ),
+              (peer) => peer.toWireJson(includeExtraFields: includeExtraFields),
             )
             .toList(growable: false),
         'total_peers': totalPeers,

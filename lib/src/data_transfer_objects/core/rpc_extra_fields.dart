@@ -6,17 +6,14 @@ part 'rpc_extra_fields.freezed.dart';
 /// Unknown fields captured while decoding an extensible RPC object.
 @Freezed(fromJson: false, toJson: false, toStringOverride: false)
 abstract class RpcExtraFields with _$RpcExtraFields {
-  const factory RpcExtraFields({
+  const factory({
     @Default(<String, RpcJsonValue>{}) Map<String, RpcJsonValue> values,
   }) = _RpcExtraFields;
 
-  const RpcExtraFields._();
+  const new _();
 
   /// Captures all properties not listed in [knownKeys].
-  factory RpcExtraFields.capture(
-    Map<String, dynamic> json,
-    Iterable<String> knownKeys,
-  ) {
+  factory capture(Map<String, dynamic> json, Iterable<String> knownKeys) {
     final known = knownKeys.toSet();
     return RpcExtraFields(
       values: {
@@ -34,18 +31,14 @@ abstract class RpcExtraFields with _$RpcExtraFields {
   bool get isEmpty => values.isEmpty;
 
   /// Converts the captured fields back to their wire representation.
-  Map<String, Object?> toWireJson() => values.map(
-    (key, value) => MapEntry(key, value.toJson()),
-  );
+  Map<String, Object?> toWireJson() =>
+      values.map((key, value) => MapEntry(key, value.toJson()));
 
   /// Adds captured fields to [knownFields] only when explicitly requested.
   Map<String, Object?> mergeInto(
     Map<String, Object?> knownFields, {
     bool includeExtraFields = false,
-  }) => {
-    if (includeExtraFields) ...toWireJson(),
-    ...knownFields,
-  };
+  }) => {if (includeExtraFields) ...toWireJson(), ...knownFields};
 
   @override
   String toString() => 'RpcExtraFields(count: ${values.length}, <redacted>)';

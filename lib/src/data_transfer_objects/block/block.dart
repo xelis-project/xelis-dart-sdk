@@ -13,7 +13,7 @@ part 'block.freezed.dart';
 @Freezed(fromJson: false, toJson: false)
 abstract class Block with _$Block {
   /// @nodoc
-  const factory Block({
+  const factory({
     @JsonKey(name: 'block_type') required RpcBlockType blockType,
     @JsonKey(name: 'cumulative_difficulty')
     required BigInt cumulativeDifficulty,
@@ -79,10 +79,10 @@ abstract class Block with _$Block {
     RpcExtraFields extraFields,
   }) = _Block;
 
-  const Block._();
+  const new _();
 
   /// @nodoc
-  factory Block.fromJson(Map<String, dynamic> json) => Block(
+  factory fromJson(Map<String, dynamic> json) => Block(
     blockType: RpcBlockType.fromJson(json['block_type']),
     cumulativeDifficulty: rpcBigInt(json['cumulative_difficulty']),
     difficulty: rpcBigInt(json['difficulty']),

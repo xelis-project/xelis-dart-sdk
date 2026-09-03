@@ -7,18 +7,18 @@ part 'base_fee_mode.freezed.dart';
 @Freezed(fromJson: false, toJson: false)
 sealed class BaseFeeMode with _$BaseFeeMode {
   /// Lets the wallet select the base fee.
-  const factory BaseFeeMode.none() = NoBaseFee;
+  const factory none() = NoBaseFee;
 
   /// Uses an exact base fee.
-  const factory BaseFeeMode.fixed(BigInt amount) = FixedBaseFee;
+  const factory fixed(BigInt amount) = FixedBaseFee;
 
   /// Rejects fees above the specified cap.
-  const factory BaseFeeMode.cap(BigInt amount) = CappedBaseFee;
+  const factory cap(BigInt amount) = CappedBaseFee;
 
-  const BaseFeeMode._();
+  const new _();
 
   /// Decodes the Rust enum wire representation.
-  factory BaseFeeMode.fromJson(Object? json) {
+  factory fromJson(Object? json) {
     if (json == 'none') return const BaseFeeMode.none();
     if (json is Map && json.length == 1 && json.containsKey('fixed')) {
       return BaseFeeMode.fixed(

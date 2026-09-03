@@ -20,11 +20,7 @@ void main() {
     'deploy_contract': {
       'deposits': ['asset'],
     },
-    'from_contract': {
-      'contract': 'contract',
-      'asset': 'asset',
-      'amount': 4,
-    },
+    'from_contract': {'contract': 'contract', 'asset': 'asset', 'amount': 4},
     'blob': null,
   };
 

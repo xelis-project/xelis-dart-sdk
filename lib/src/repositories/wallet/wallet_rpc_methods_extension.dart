@@ -55,10 +55,7 @@ extension WalletRpcMethodsExtension on WalletClient {
   }) => sendRequestAndDecode(
     WalletMethod.setOnlineMode,
     (result) => result! as bool,
-    {
-      'daemon_address': daemonAddress,
-      'auto_reconnect': autoReconnect,
-    },
+    {'daemon_address': daemonAddress, 'auto_reconnect': autoReconnect},
   );
 
   /// Switches the wallet to offline mode.
@@ -98,9 +95,7 @@ extension WalletRpcMethodsExtension on WalletClient {
   Future<SearchWalletTransactionResult> searchTransaction(String hash) =>
       sendRequestAndDecode(
         WalletMethod.searchTransaction,
-        (result) => SearchWalletTransactionResult.fromJson(
-          rpcJsonMap(result),
-        ),
+        (result) => SearchWalletTransactionResult.fromJson(rpcJsonMap(result)),
         {'hash': hash},
       );
 
@@ -112,11 +107,7 @@ extension WalletRpcMethodsExtension on WalletClient {
   }) => sendRequestAndDecode(
     WalletMethod.verifySignedData,
     (result) => result! as bool,
-    {
-      'data': data.toJson(),
-      'signature': signature,
-      'address': address,
-    },
+    {'data': data.toJson(), 'signature': signature, 'address': address},
   );
 
   /// Creates a proof that the wallet owns at least [amount].
@@ -127,11 +118,7 @@ extension WalletRpcMethodsExtension on WalletClient {
   }) => sendRequestAndDecode(
     WalletMethod.createOwnershipProof,
     (result) => result! as String,
-    {
-      'asset': asset,
-      'amount': amount,
-      'topoheight': ?topoheight,
-    },
+    {'asset': asset, 'amount': amount, 'topoheight': ?topoheight},
   );
 
   /// Creates a proof of the wallet balance for [asset].
@@ -141,10 +128,7 @@ extension WalletRpcMethodsExtension on WalletClient {
   }) => sendRequestAndDecode(
     WalletMethod.createBalanceProof,
     (result) => result! as String,
-    {
-      'asset': asset,
-      'topoheight': ?topoheight,
-    },
+    {'asset': asset, 'topoheight': ?topoheight},
   );
 
   /// Verifies a human-readable proof for [address].
@@ -181,11 +165,8 @@ extension WalletRpcMethodsExtension on WalletClient {
     DataQuery? value,
   }) => sendRequestAndDecode(
     WalletMethod.countMatchingEntries,
-    (result) => rpcBigInt(
-      result,
-      method: 'count_matching_entries',
-      path: r'$result',
-    ),
+    (result) =>
+        rpcBigInt(result, method: 'count_matching_entries', path: r'$result'),
     {
       'tree': tree,
       if (key != null) 'key': key.toJson(),
@@ -200,10 +181,7 @@ extension WalletRpcMethodsExtension on WalletClient {
   }) => sendRequestAndDecode(
     WalletMethod.getValueFromKey,
     DataElement.fromJson,
-    {
-      'tree': tree,
-      'key': key.toJson(),
-    },
+    {'tree': tree, 'key': key.toJson()},
   );
 
   /// Stores one custom key/value pair.
@@ -211,19 +189,18 @@ extension WalletRpcMethodsExtension on WalletClient {
     required String tree,
     required DataValue key,
     required DataElement value,
-  }) => sendRequestAndDecode(
-    WalletMethod.store,
-    (result) => result! as bool,
-    {'tree': tree, 'key': key.toJson(), 'value': value.toJson()},
-  );
+  }) => sendRequestAndDecode(WalletMethod.store, (result) => result! as bool, {
+    'tree': tree,
+    'key': key.toJson(),
+    'value': value.toJson(),
+  });
 
   /// Deletes one custom key/value pair.
   Future<bool> delete({required String tree, required DataValue key}) =>
-      sendRequestAndDecode(
-        WalletMethod.delete,
-        (result) => result! as bool,
-        {'tree': tree, 'key': key.toJson()},
-      );
+      sendRequestAndDecode(WalletMethod.delete, (result) => result! as bool, {
+        'tree': tree,
+        'key': key.toJson(),
+      });
 
   /// Deletes every entry from a custom tree.
   Future<bool> deleteTreeEntries(String tree) => sendRequestAndDecode(
@@ -234,11 +211,10 @@ extension WalletRpcMethodsExtension on WalletClient {
 
   /// Checks whether a custom-storage key exists.
   Future<bool> hasKey({required String tree, required DataValue key}) =>
-      sendRequestAndDecode(
-        WalletMethod.hasKey,
-        (result) => result! as bool,
-        {'tree': tree, 'key': key.toJson()},
-      );
+      sendRequestAndDecode(WalletMethod.hasKey, (result) => result! as bool, {
+        'tree': tree,
+        'key': key.toJson(),
+      });
 
   /// Queries custom storage with typed key/value expressions.
   Future<WalletQueryResult> queryDb({
@@ -272,16 +248,12 @@ extension WalletRpcMethodsExtension on WalletClient {
   );
 
   /// Retrieves account nonce saved in wallet.
-  Future<BigInt> getNonce() => sendRequestAndDecode(
-    WalletMethod.getNonce,
-    rpcBigInt,
-  );
+  Future<BigInt> getNonce() =>
+      sendRequestAndDecode(WalletMethod.getNonce, rpcBigInt);
 
   /// Retrieves daemon topoheight until which the wallet scanned transactions/balances.
-  Future<BigInt> getTopoheight() => sendRequestAndDecode(
-    WalletMethod.getTopoheight,
-    rpcBigInt,
-  );
+  Future<BigInt> getTopoheight() =>
+      sendRequestAndDecode(WalletMethod.getTopoheight, rpcBigInt);
 
   /// Retrieves wallet address with or without integrated data in it.
   /// Without parameters set, it returns the normal wallet address.
@@ -316,23 +288,23 @@ extension WalletRpcMethodsExtension on WalletClient {
 
   /// Gets asset balance from wallet.
   /// When no parameter is set, default asset is XELIS.
-  Future<BigInt> getBalance([
-    GetWalletBalanceParams? getWalletBalanceParams,
-  ]) => sendRequestAndDecode(
-    WalletMethod.getBalance,
-    rpcBigInt,
-    getWalletBalanceParams?.toJson() ?? const GetWalletBalanceParams().toJson(),
-  );
+  Future<BigInt> getBalance([GetWalletBalanceParams? getWalletBalanceParams]) =>
+      sendRequestAndDecode(
+        WalletMethod.getBalance,
+        rpcBigInt,
+        getWalletBalanceParams?.toJson() ??
+            const GetWalletBalanceParams().toJson(),
+      );
 
   /// Gets asset balance from wallet.
   /// When no parameter is set, default asset is XELIS.
-  Future<bool> hasBalance([
-    GetWalletBalanceParams? getWalletBalanceParams,
-  ]) => sendRequestAndDecode(
-    WalletMethod.hasBalance,
-    (result) => result! as bool,
-    getWalletBalanceParams?.toJson() ?? const GetWalletBalanceParams().toJson(),
-  );
+  Future<bool> hasBalance([GetWalletBalanceParams? getWalletBalanceParams]) =>
+      sendRequestAndDecode(
+        WalletMethod.hasBalance,
+        (result) => result! as bool,
+        getWalletBalanceParams?.toJson() ??
+            const GetWalletBalanceParams().toJson(),
+      );
 
   /// Retrieves all assets that are tracked by the wallet.
   Future<List<String>> getTrackedAssets() => sendRequestAndDecode(
@@ -341,19 +313,18 @@ extension WalletRpcMethodsExtension on WalletClient {
   );
 
   /// Retrieves the decimals precision for the selected asset.
-  Future<int> getAssetPrecision(
-    GetAssetParams getAssetParams,
-  ) => sendRequestAndDecode(
-    WalletMethod.getAssetPrecision,
-    (result) => rpcInt(
-      result,
-      method: 'get_asset_precision',
-      path: r'$result',
-      min: 0,
-      max: 255,
-    ),
-    getAssetParams.toJson(),
-  );
+  Future<int> getAssetPrecision(GetAssetParams getAssetParams) =>
+      sendRequestAndDecode(
+        WalletMethod.getAssetPrecision,
+        (result) => rpcInt(
+          result,
+          method: 'get_asset_precision',
+          path: r'$result',
+          min: 0,
+          max: 255,
+        ),
+        getAssetParams.toJson(),
+      );
 
   /// Gets transaction by hash from wallet.
   Future<TransactionEntry> getTransaction(
@@ -434,10 +405,8 @@ extension WalletRpcMethodsExtension on WalletClient {
   );
 
   /// Checks if the wallet is in online mode.
-  Future<bool> isOnline() => sendRequestAndDecode(
-    WalletMethod.isOnline,
-    (result) => result! as bool,
-  );
+  Future<bool> isOnline() =>
+      sendRequestAndDecode(WalletMethod.isOnline, (result) => result! as bool);
 
   /// Signs data with the wallet's private key.
   Future<String> signData(DataElement data) => sendRequestAndDecode(
@@ -476,9 +445,8 @@ extension WalletRpcMethodsExtension on WalletClient {
     DecryptExtraDataWalletParams decryptExtraDataParams,
   ) => sendRequestAndDecode(
     WalletMethod.decryptExtraData,
-    (result) => ExtraData.fromJson(
-      rpcJsonMap(result, method: 'decrypt_extra_data'),
-    ),
+    (result) =>
+        ExtraData.fromJson(rpcJsonMap(result, method: 'decrypt_extra_data')),
     decryptExtraDataParams.toJson(),
   );
 
@@ -512,13 +480,12 @@ extension WalletRpcMethodsExtension on WalletClient {
       );
 
   /// Dump the TX in hex format.
-  Future<String> dumpTransaction(
-    GetTransactionParams getTransactionParams,
-  ) => sendRequestAndDecode(
-    WalletMethod.dumpTransaction,
-    (result) => result! as String,
-    getTransactionParams.toJson(),
-  );
+  Future<String> dumpTransaction(GetTransactionParams getTransactionParams) =>
+      sendRequestAndDecode(
+        WalletMethod.dumpTransaction,
+        (result) => result! as String,
+        getTransactionParams.toJson(),
+      );
 }
 
 List<DataValue> _decodeWalletStorageKeys(Object? result) {

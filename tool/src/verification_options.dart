@@ -14,7 +14,7 @@ enum VerificationAction {
 }
 
 final class VerificationOptions {
-  const VerificationOptions({
+  const new({
     required this.profile,
     this.integrationSuite,
     this.xelisSource,
@@ -30,7 +30,7 @@ final class VerificationOptions {
     this.verbose = false,
   });
 
-  factory VerificationOptions.parse(List<String> arguments) {
+  factory parse(List<String> arguments) {
     if (arguments.isEmpty) {
       throw const FormatException('A verification profile is required.');
     }

@@ -14,7 +14,7 @@ void main() {
   test('round-trips every current ValueCell variant', () {
     final cells = <RpcValueCell>[
       const RpcValueCell.primitive(RpcPrimitive.nullValue()),
-      const RpcValueCell.primitive(RpcPrimitive.boolean(true)),
+      const RpcValueCell.primitive(RpcPrimitive.boolean(value: true)),
       const RpcValueCell.primitive(RpcPrimitive.u8(255)),
       const RpcValueCell.primitive(RpcPrimitive.u16(65535)),
       const RpcValueCell.primitive(RpcPrimitive.u32(4294967295)),
@@ -71,11 +71,11 @@ void main() {
     const cell = RpcValueCell.map([
       RpcValueCellEntry(
         key: RpcValueCell.primitive(RpcPrimitive.u8(1)),
-        value: RpcValueCell.primitive(RpcPrimitive.boolean(true)),
+        value: RpcValueCell.primitive(RpcPrimitive.boolean(value: true)),
       ),
       RpcValueCellEntry(
         key: RpcValueCell.primitive(RpcPrimitive.string('1')),
-        value: RpcValueCell.primitive(RpcPrimitive.boolean(false)),
+        value: RpcValueCell.primitive(RpcPrimitive.boolean(value: false)),
       ),
     ]);
 

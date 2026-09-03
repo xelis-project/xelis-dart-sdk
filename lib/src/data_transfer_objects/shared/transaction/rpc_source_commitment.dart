@@ -7,7 +7,7 @@ part 'rpc_source_commitment.freezed.dart';
 /// Equality proof embedded in a Rust `SourceCommitment` transaction field.
 @Freezed(fromJson: false, toJson: false, toStringOverride: false)
 abstract class RpcCommitmentEqProof with _$RpcCommitmentEqProof {
-  const factory RpcCommitmentEqProof({
+  const factory({
     required List<int> y0,
     required List<int> y1,
     required List<int> y2,
@@ -17,9 +17,9 @@ abstract class RpcCommitmentEqProof with _$RpcCommitmentEqProof {
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = _RpcCommitmentEqProof;
 
-  const RpcCommitmentEqProof._();
+  const new _();
 
-  factory RpcCommitmentEqProof.fromJson(Object? json) {
+  factory fromJson(Object? json) {
     final map = rpcJsonMap(json, method: 'rpc_transaction', path: r'$.proof');
     return RpcCommitmentEqProof(
       y0: rpcBytes(map['Y_0'], method: 'rpc_transaction', length: 32),
@@ -56,16 +56,16 @@ abstract class RpcCommitmentEqProof with _$RpcCommitmentEqProof {
 /// Current Rust `SourceCommitment` wire object.
 @Freezed(fromJson: false, toJson: false, toStringOverride: false)
 abstract class RpcSourceCommitment with _$RpcSourceCommitment {
-  const factory RpcSourceCommitment({
+  const factory({
     required List<int> commitment,
     required RpcCommitmentEqProof proof,
     required String asset,
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = _RpcSourceCommitment;
 
-  const RpcSourceCommitment._();
+  const new _();
 
-  factory RpcSourceCommitment.fromJson(Object? json) {
+  factory fromJson(Object? json) {
     final map = rpcJsonMap(
       json,
       method: 'rpc_transaction',

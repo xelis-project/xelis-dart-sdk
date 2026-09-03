@@ -9,19 +9,17 @@ part 'get_multisig_at_topoheight_result.freezed.dart';
 abstract class GetMultisigAtTopoheightResult
     with _$GetMultisigAtTopoheightResult {
   /// @nodoc
-  const factory GetMultisigAtTopoheightResult({
+  const factory({
     @JsonKey(name: 'state') required MultisigState state,
     @JsonKey(includeFromJson: false, includeToJson: false)
     @Default(RpcExtraFields())
     RpcExtraFields extraFields,
   }) = _GetMultisigAtTopoheightResult;
 
-  const GetMultisigAtTopoheightResult._();
+  const new _();
 
   /// @nodoc
-  factory GetMultisigAtTopoheightResult.fromJson(
-    Map<String, dynamic> json,
-  ) => GetMultisigAtTopoheightResult(
+  factory fromJson(Map<String, dynamic> json) => GetMultisigAtTopoheightResult(
     state: MultisigState.fromJson(json['state']),
     extraFields: RpcExtraFields.capture(json, const {'state'}),
   );

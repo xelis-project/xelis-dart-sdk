@@ -8,11 +8,10 @@ part 'get_account_assets_params.g.dart';
 @freezed
 abstract class GetAccountAssetsParams with _$GetAccountAssetsParams {
   /// @nodoc
-  const factory GetAccountAssetsParams({
-    @JsonKey(name: 'address') required String address,
-  }) = _GetAccountAssetsParams;
+  const factory({@JsonKey(name: 'address') required String address}) =
+      _GetAccountAssetsParams;
 
   /// @nodoc
-  factory GetAccountAssetsParams.fromJson(Map<String, dynamic> json) =>
+  factory fromJson(Map<String, dynamic> json) =>
       _$GetAccountAssetsParamsFromJson(json);
 }

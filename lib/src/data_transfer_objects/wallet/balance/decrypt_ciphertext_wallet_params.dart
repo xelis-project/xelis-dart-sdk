@@ -7,12 +7,12 @@ part 'decrypt_ciphertext_wallet_params.freezed.dart';
 @Freezed(fromJson: false, toJson: false)
 abstract class DecryptCiphertextWalletParams
     with _$DecryptCiphertextWalletParams {
-  const factory DecryptCiphertextWalletParams({
+  const factory({
     required RpcCompressedCiphertext ciphertext,
     BigInt? maxSupply,
   }) = _DecryptCiphertextWalletParams;
 
-  const DecryptCiphertextWalletParams._();
+  const new _();
 
   Map<String, Object?> toJson() => {
     'ciphertext': ciphertext.toJson(),

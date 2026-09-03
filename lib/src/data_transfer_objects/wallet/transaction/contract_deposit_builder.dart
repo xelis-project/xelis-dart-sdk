@@ -9,17 +9,13 @@ part 'contract_deposit_builder.g.dart';
 @freezed
 sealed class ContractDepositBuilder with _$ContractDepositBuilder {
   /// @nodoc
-  const factory ContractDepositBuilder({
-    @JsonKey(
-      name: 'amount',
-      fromJson: rpcBigInt,
-      toJson: rpcBigIntToJson,
-    )
+  const factory({
+    @JsonKey(name: 'amount', fromJson: rpcBigInt, toJson: rpcBigIntToJson)
     required BigInt amount,
     @JsonKey(name: 'private') @Default(false) bool private,
   }) = _ContractDepositBuilder;
 
   /// @nodoc
-  factory ContractDepositBuilder.fromJson(Map<String, dynamic> json) =>
+  factory fromJson(Map<String, dynamic> json) =>
       _$ContractDepositBuilderFromJson(json);
 }

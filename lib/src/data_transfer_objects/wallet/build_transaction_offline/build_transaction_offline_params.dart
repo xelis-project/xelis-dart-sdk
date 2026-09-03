@@ -12,7 +12,7 @@ part 'build_transaction_offline_params.freezed.dart';
 abstract class BuildTransactionOfflineParams
     with _$BuildTransactionOfflineParams {
   /// @nodoc
-  const factory BuildTransactionOfflineParams({
+  const factory({
     required TransactionTypeBuilder transactionTypeBuilder,
     required Map<String, RpcCompressedCiphertext> balances,
     required Reference reference,
@@ -25,16 +25,13 @@ abstract class BuildTransactionOfflineParams
     @Default(<SignerId>[]) List<SignerId> signers,
   }) = _BuildTransactionOfflineParams;
 
-  const BuildTransactionOfflineParams._();
+  const new _();
 
   /// @nodoc
   Map<String, dynamic> toJson() {
     final txJson = transactionTypeBuilder.toRpcJson();
     final commonJson = _serializeCommonFields();
-    return {
-      ...txJson,
-      ...commonJson,
-    };
+    return {...txJson, ...commonJson};
   }
 
   Map<String, dynamic> _serializeCommonFields() {

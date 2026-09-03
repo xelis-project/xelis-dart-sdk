@@ -7,15 +7,15 @@ part 'rpc_asset_data.freezed.dart';
 /// Asset identifier and creation topoheight flattened with its metadata.
 @Freezed(fromJson: false, toJson: false)
 abstract class RpcAssetData with _$RpcAssetData {
-  const factory RpcAssetData({
+  const factory({
     required String asset,
     required BigInt topoheight,
     required AssetData data,
   }) = _RpcAssetData;
 
-  const RpcAssetData._();
+  const new _();
 
-  factory RpcAssetData.fromJson(Map<String, dynamic> json) {
+  factory fromJson(Map<String, dynamic> json) {
     final dataJson = Map<String, dynamic>.from(json)
       ..remove('asset')
       ..remove('topoheight');

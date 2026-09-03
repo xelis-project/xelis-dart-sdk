@@ -7,31 +7,30 @@ part 'predicated_base_fee_result.freezed.dart';
 /// Current result of `get_estimated_fee_per_kb`.
 @Freezed(fromJson: false, toJson: false)
 abstract class PredicatedBaseFeeResult with _$PredicatedBaseFeeResult {
-  const factory PredicatedBaseFeeResult({
+  const factory({
     required BigInt feePerKb,
     required BigInt predicatedFeePerKb,
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = _PredicatedBaseFeeResult;
 
-  const PredicatedBaseFeeResult._();
+  const new _();
 
-  factory PredicatedBaseFeeResult.fromJson(Map<String, dynamic> json) =>
-      PredicatedBaseFeeResult(
-        feePerKb: rpcBigInt(
-          json['fee_per_kb'],
-          method: 'get_estimated_fee_per_kb',
-          path: r'$.fee_per_kb',
-        ),
-        predicatedFeePerKb: rpcBigInt(
-          json['predicated_fee_per_kb'],
-          method: 'get_estimated_fee_per_kb',
-          path: r'$.predicated_fee_per_kb',
-        ),
-        extraFields: RpcExtraFields.capture(json, const {
-          'fee_per_kb',
-          'predicated_fee_per_kb',
-        }),
-      );
+  factory fromJson(Map<String, dynamic> json) => PredicatedBaseFeeResult(
+    feePerKb: rpcBigInt(
+      json['fee_per_kb'],
+      method: 'get_estimated_fee_per_kb',
+      path: r'$.fee_per_kb',
+    ),
+    predicatedFeePerKb: rpcBigInt(
+      json['predicated_fee_per_kb'],
+      method: 'get_estimated_fee_per_kb',
+      path: r'$.predicated_fee_per_kb',
+    ),
+    extraFields: RpcExtraFields.capture(json, const {
+      'fee_per_kb',
+      'predicated_fee_per_kb',
+    }),
+  );
 
   Map<String, Object?> toWireJson({bool includeExtraFields = false}) =>
       extraFields.mergeInto({

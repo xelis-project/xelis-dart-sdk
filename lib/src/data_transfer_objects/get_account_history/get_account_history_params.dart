@@ -9,7 +9,7 @@ part 'get_account_history_params.g.dart';
 @freezed
 abstract class GetAccountHistoryParams with _$GetAccountHistoryParams {
   /// @nodoc
-  const factory GetAccountHistoryParams({
+  const factory({
     @JsonKey(name: 'address') required String address,
     @JsonKey(name: 'asset') required String asset,
     @JsonKey(name: 'incoming_flow') required bool incomingFlow,
@@ -29,6 +29,6 @@ abstract class GetAccountHistoryParams with _$GetAccountHistoryParams {
   }) = _GetAccountHistoryParams;
 
   /// @nodoc
-  factory GetAccountHistoryParams.fromJson(Map<String, dynamic> json) =>
+  factory fromJson(Map<String, dynamic> json) =>
       _$GetAccountHistoryParamsFromJson(json);
 }

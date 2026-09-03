@@ -167,7 +167,7 @@ enum WalletMethod implements XelisJsonKey {
   queryDB('query_db');
 
   /// Creates a new [WalletMethod] instance.
-  const WalletMethod(this.jsonKey);
+  new(this.jsonKey);
 
   /// The json value of the method.
   @override
@@ -221,10 +221,10 @@ enum WalletEvent implements XelisJsonKey {
   newPendingTransaction('new_pending_transaction');
 
   /// Creates a new [WalletEvent] instance.
-  const WalletEvent(this.jsonKey);
+  new(this.jsonKey);
 
   /// Factory to convert a [String] to a [WalletEvent].
-  factory WalletEvent.fromStr(String value) {
+  factory fromStr(String value) {
     return tryFromStr(value) ??
         (throw FormatException('Unknown event: $value'));
   }

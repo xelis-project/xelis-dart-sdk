@@ -9,7 +9,7 @@ part 'get_stable_balance_result.freezed.dart';
 @Freezed(fromJson: false, toJson: false)
 abstract class GetStableBalanceResult with _$GetStableBalanceResult {
   /// @nodoc
-  const factory GetStableBalanceResult({
+  const factory({
     @JsonKey(name: 'version') required BalanceVersion versionedBalance,
     @JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson)
     required BigInt topoheight,
@@ -25,40 +25,39 @@ abstract class GetStableBalanceResult with _$GetStableBalanceResult {
     RpcExtraFields extraFields,
   }) = _GetStableBalanceResult;
 
-  const GetStableBalanceResult._();
+  const new _();
 
   /// @nodoc
-  factory GetStableBalanceResult.fromJson(Map<String, dynamic> json) =>
-      GetStableBalanceResult(
-        versionedBalance: BalanceVersion.fromJson(
-          rpcJsonMap(
-            json['version'],
-            method: 'get_stable_balance',
-            path: r'$.version',
-          ),
-        ),
-        topoheight: rpcBigInt(
-          json['topoheight'],
-          method: 'get_stable_balance',
-          path: r'$.topoheight',
-        ),
-        stableTopoheight: rpcBigInt(
-          json['stable_topoheight'],
-          method: 'get_stable_balance',
-          path: r'$.stable_topoheight',
-        ),
-        stableBlockHash: rpcString(
-          json['stable_block_hash'],
-          method: 'get_stable_balance',
-          path: r'$.stable_block_hash',
-        ),
-        extraFields: RpcExtraFields.capture(json, const {
-          'version',
-          'topoheight',
-          'stable_topoheight',
-          'stable_block_hash',
-        }),
-      );
+  factory fromJson(Map<String, dynamic> json) => GetStableBalanceResult(
+    versionedBalance: BalanceVersion.fromJson(
+      rpcJsonMap(
+        json['version'],
+        method: 'get_stable_balance',
+        path: r'$.version',
+      ),
+    ),
+    topoheight: rpcBigInt(
+      json['topoheight'],
+      method: 'get_stable_balance',
+      path: r'$.topoheight',
+    ),
+    stableTopoheight: rpcBigInt(
+      json['stable_topoheight'],
+      method: 'get_stable_balance',
+      path: r'$.stable_topoheight',
+    ),
+    stableBlockHash: rpcString(
+      json['stable_block_hash'],
+      method: 'get_stable_balance',
+      path: r'$.stable_block_hash',
+    ),
+    extraFields: RpcExtraFields.capture(json, const {
+      'version',
+      'topoheight',
+      'stable_topoheight',
+      'stable_block_hash',
+    }),
+  );
 
   /// Serializes known fields and optionally restores fields received from wire.
   Map<String, Object?> toWireJson({bool includeExtraFields = false}) =>

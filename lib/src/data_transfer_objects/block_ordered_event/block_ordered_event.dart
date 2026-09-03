@@ -10,7 +10,7 @@ part 'block_ordered_event.g.dart';
 @freezed
 abstract class BlockOrderedEvent with _$BlockOrderedEvent {
   /// @nodoc
-  const factory BlockOrderedEvent({
+  const factory({
     @JsonKey(name: 'block_hash') required String blockHash,
     @JsonKey(name: 'block_type') required String blockType,
     @JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson)
@@ -20,10 +20,10 @@ abstract class BlockOrderedEvent with _$BlockOrderedEvent {
     RpcExtraFields extraFields,
   }) = _BlockOrderedEvent;
 
-  const BlockOrderedEvent._();
+  const new _();
 
   /// @nodoc
-  factory BlockOrderedEvent.fromJson(Map<String, dynamic> json) =>
+  factory fromJson(Map<String, dynamic> json) =>
       _$BlockOrderedEventFromJson(json).copyWith(
         extraFields: RpcExtraFields.capture(json, const {
           'block_hash',

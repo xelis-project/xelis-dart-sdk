@@ -153,9 +153,7 @@ void main() {
         );
 
         const tree = 'xelis_dart_sdk_integration';
-        const key = DataValue(
-          RpcJsonValue.string('persistent-key'),
-        );
+        const key = DataValue(RpcJsonValue.string('persistent-key'));
         expect(await wallet.store(tree: tree, key: key, value: data), isTrue);
         expect(await wallet.hasKey(tree: tree, key: key), isTrue);
         expect(
@@ -181,9 +179,7 @@ void main() {
           description: 'wallet offline mode',
         );
         expect(
-          await wallet.setOnlineMode(
-            'http://${configuration.daemon.endpoint}',
-          ),
+          await wallet.setOnlineMode('http://${configuration.daemon.endpoint}'),
           isTrue,
         );
         await waitUntil(
@@ -201,11 +197,7 @@ void main() {
           RpcJsonValue.string('survives-process-restart'),
         );
         expect(
-          await wallet.store(
-            tree: tree,
-            key: restartKey,
-            value: restartValue,
-          ),
+          await wallet.store(tree: tree, key: restartKey, value: restartValue),
           isTrue,
         );
         // A completed sync flushes the encrypted wallet storage to disk.

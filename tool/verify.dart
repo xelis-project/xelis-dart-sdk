@@ -23,7 +23,6 @@ const _webTests = [
 const _coverageDirectory = '.dart_tool/coverage';
 const _rawCoverageDirectory = '$_coverageDirectory/raw';
 const _lcovPath = '$_coverageDirectory/lcov.info';
-const _minimumCoverage = 90.0;
 
 Future<void> main(List<String> arguments) async {
   if (arguments.isEmpty || arguments.contains('--help')) {
@@ -124,10 +123,7 @@ Future<void> _testWithCoverage() async {
     '--out=$_lcovPath',
   ], label: 'Format LCOV coverage');
 
-  final summary = enforceLcovCoverage(
-    File(_lcovPath).readAsStringSync(),
-    minimumPercentage: _minimumCoverage,
-  );
+  final summary = enforceLcovCoverage(File(_lcovPath).readAsStringSync());
   stdout.writeln(
     '-> Handwritten lib/ coverage: '
     '${summary.percentage.toStringAsFixed(2)}% '

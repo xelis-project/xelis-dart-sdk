@@ -10,7 +10,7 @@ part 'transaction_entry.freezed.dart';
 @freezed
 abstract class TransactionEntry with _$TransactionEntry {
   /// @nodoc
-  const factory TransactionEntry({
+  const factory({
     required String hash,
     required BigInt topoheight,
     required TransactionEntryType txEntryType,
@@ -18,10 +18,10 @@ abstract class TransactionEntry with _$TransactionEntry {
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = _TransactionEntry;
 
-  const TransactionEntry._();
+  const new _();
 
   /// @nodoc
-  factory TransactionEntry.fromJson(Map<String, dynamic> json) {
+  factory fromJson(Map<String, dynamic> json) {
     final hash = json['hash'] as String;
     final topoheight = rpcBigInt(
       json['topoheight'],

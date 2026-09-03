@@ -10,15 +10,15 @@ part 'wallet_query_result.freezed.dart';
 /// Paginated custom-storage query result.
 @Freezed(fromJson: false, toJson: false)
 abstract class WalletQueryResult with _$WalletQueryResult {
-  const factory WalletQueryResult({
+  const factory({
     required List<WalletDataEntry> entries,
     required BigInt? next,
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = _WalletQueryResult;
 
-  const WalletQueryResult._();
+  const new _();
 
-  factory WalletQueryResult.fromJson(Map<String, dynamic> json) {
+  factory fromJson(Map<String, dynamic> json) {
     final entries = rpcJsonMap(json['entries'], method: 'query_db');
     return WalletQueryResult(
       entries: entries.entries

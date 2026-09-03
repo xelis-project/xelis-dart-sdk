@@ -59,9 +59,8 @@ extension WalletEventsExtension on WalletClient {
   }
 
   /// Registers a callback for Rescan event.
-  void onRescan(
-    void Function(BigInt topoheight) callback,
-  ) => onEvent(WalletEvent.rescan, callback);
+  void onRescan(void Function(BigInt topoheight) callback) =>
+      onEvent(WalletEvent.rescan, callback);
 
   /// Unsubscribes from Rescan event.
   void unsubscribeFromRescan() {
@@ -69,9 +68,8 @@ extension WalletEventsExtension on WalletClient {
   }
 
   /// Registers a callback for Online event.
-  void onOnline(
-    void Function() callback,
-  ) => onEvent(WalletEvent.online, callback);
+  void onOnline(void Function() callback) =>
+      onEvent(WalletEvent.online, callback);
 
   /// Unsubscribes from Online event.
   void unsubscribeFromOnline() {
@@ -79,9 +77,8 @@ extension WalletEventsExtension on WalletClient {
   }
 
   /// Registers a callback for Offline event.
-  void onOffline(
-    void Function() callback,
-  ) => onEvent(WalletEvent.offline, callback);
+  void onOffline(void Function() callback) =>
+      onEvent(WalletEvent.offline, callback);
 
   /// Unsubscribes from Offline event.
   void unsubscribeFromOffline() {

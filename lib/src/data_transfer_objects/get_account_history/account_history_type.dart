@@ -8,73 +8,72 @@ part 'account_history_type.freezed.dart';
 /// Current variants of the flattened Rust `AccountHistoryType` enum.
 @Freezed(fromJson: false, toJson: false)
 sealed class AccountHistoryType with _$AccountHistoryType {
-  const factory AccountHistoryType.devFee({
+  const factory devFee({
     required BigInt reward,
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = AccountHistoryDevFee;
 
-  const factory AccountHistoryType.mining({
+  const factory mining({
     required BigInt reward,
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = AccountHistoryMining;
 
-  const factory AccountHistoryType.burn({
+  const factory burn({
     required String asset,
     required BigInt amount,
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = AccountHistoryBurn;
 
-  const factory AccountHistoryType.outgoing({
+  const factory outgoing({
     required String asset,
     required String to,
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = AccountHistoryOutgoing;
 
-  const factory AccountHistoryType.incoming({
+  const factory incoming({
     required String asset,
     required String from,
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = AccountHistoryIncoming;
 
-  const factory AccountHistoryType.multiSig({
+  const factory multiSig({
     required List<String> participants,
     required int threshold,
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = AccountHistoryMultiSig;
 
-  const factory AccountHistoryType.invokeContract({
+  const factory invokeContract({
     required String contract,
     required int entryId,
     required List<String> deposits,
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = AccountHistoryInvokeContract;
 
-  const factory AccountHistoryType.deployContract({
+  const factory deployContract({
     required List<String>? deposits,
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = AccountHistoryDeployContract;
 
-  const factory AccountHistoryType.fromContract({
+  const factory fromContract({
     required String contract,
     required String asset,
     required BigInt amount,
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = AccountHistoryFromContract;
 
-  const factory AccountHistoryType.blob({
-    @Default(RpcExtraFields()) RpcExtraFields extraFields,
-  }) = AccountHistoryBlob;
+  const factory blob({@Default(RpcExtraFields()) RpcExtraFields extraFields}) =
+      AccountHistoryBlob;
 
   /// Preserves an upstream variant not yet known by this SDK release.
-  const factory AccountHistoryType.unknown({
+  const factory unknown({
     required String type,
     required RpcJsonValue wireValue,
   }) = UnknownAccountHistoryType;
 
-  const AccountHistoryType._();
+  const new _();
 
   /// Decodes the single flattened enum member present in a history entry.
-  factory AccountHistoryType.fromFlattenedJson(Map<String, dynamic> json) {
+  factory fromFlattenedJson(Map<String, dynamic> json) {
     final knownVariants = json.entries
         .where((entry) => _accountHistoryKnownVariants.contains(entry.key))
         .toList(growable: false);
@@ -170,38 +169,36 @@ sealed class AccountHistoryType with _$AccountHistoryType {
     final (type, payload) = switch (this) {
       AccountHistoryDevFee(:final reward, :final extraFields) => (
         'dev_fee',
-        extraFields.mergeInto(
-          {'reward': reward},
-          includeExtraFields: includeExtraFields,
-        ),
+        extraFields.mergeInto({
+          'reward': reward,
+        }, includeExtraFields: includeExtraFields),
       ),
       AccountHistoryMining(:final reward, :final extraFields) => (
         'mining',
-        extraFields.mergeInto(
-          {'reward': reward},
-          includeExtraFields: includeExtraFields,
-        ),
+        extraFields.mergeInto({
+          'reward': reward,
+        }, includeExtraFields: includeExtraFields),
       ),
       AccountHistoryBurn(:final asset, :final amount, :final extraFields) => (
         'burn',
-        extraFields.mergeInto(
-          {'asset': asset, 'amount': amount},
-          includeExtraFields: includeExtraFields,
-        ),
+        extraFields.mergeInto({
+          'asset': asset,
+          'amount': amount,
+        }, includeExtraFields: includeExtraFields),
       ),
       AccountHistoryOutgoing(:final asset, :final to, :final extraFields) => (
         'outgoing',
-        extraFields.mergeInto(
-          {'asset': asset, 'to': to},
-          includeExtraFields: includeExtraFields,
-        ),
+        extraFields.mergeInto({
+          'asset': asset,
+          'to': to,
+        }, includeExtraFields: includeExtraFields),
       ),
       AccountHistoryIncoming(:final asset, :final from, :final extraFields) => (
         'incoming',
-        extraFields.mergeInto(
-          {'asset': asset, 'from': from},
-          includeExtraFields: includeExtraFields,
-        ),
+        extraFields.mergeInto({
+          'asset': asset,
+          'from': from,
+        }, includeExtraFields: includeExtraFields),
       ),
       AccountHistoryMultiSig(
         :final participants,
@@ -210,10 +207,10 @@ sealed class AccountHistoryType with _$AccountHistoryType {
       ) =>
         (
           'multi_sig',
-          extraFields.mergeInto(
-            {'participants': participants, 'threshold': threshold},
-            includeExtraFields: includeExtraFields,
-          ),
+          extraFields.mergeInto({
+            'participants': participants,
+            'threshold': threshold,
+          }, includeExtraFields: includeExtraFields),
         ),
       AccountHistoryInvokeContract(
         :final contract,
@@ -223,17 +220,17 @@ sealed class AccountHistoryType with _$AccountHistoryType {
       ) =>
         (
           'invoke_contract',
-          extraFields.mergeInto(
-            {'contract': contract, 'entry_id': entryId, 'deposits': deposits},
-            includeExtraFields: includeExtraFields,
-          ),
+          extraFields.mergeInto({
+            'contract': contract,
+            'entry_id': entryId,
+            'deposits': deposits,
+          }, includeExtraFields: includeExtraFields),
         ),
       AccountHistoryDeployContract(:final deposits, :final extraFields) => (
         'deploy_contract',
-        extraFields.mergeInto(
-          {'deposits': deposits},
-          includeExtraFields: includeExtraFields,
-        ),
+        extraFields.mergeInto({
+          'deposits': deposits,
+        }, includeExtraFields: includeExtraFields),
       ),
       AccountHistoryFromContract(
         :final contract,
@@ -243,10 +240,11 @@ sealed class AccountHistoryType with _$AccountHistoryType {
       ) =>
         (
           'from_contract',
-          extraFields.mergeInto(
-            {'contract': contract, 'asset': asset, 'amount': amount},
-            includeExtraFields: includeExtraFields,
-          ),
+          extraFields.mergeInto({
+            'contract': contract,
+            'asset': asset,
+            'amount': amount,
+          }, includeExtraFields: includeExtraFields),
         ),
       AccountHistoryBlob() => ('blob', null),
       UnknownAccountHistoryType(:final type, :final wireValue) => (
@@ -258,11 +256,7 @@ sealed class AccountHistoryType with _$AccountHistoryType {
   }
 }
 
-const _accountHistoryEnvelopeFields = {
-  'topoheight',
-  'hash',
-  'block_timestamp',
-};
+const _accountHistoryEnvelopeFields = {'topoheight', 'hash', 'block_timestamp'};
 
 const _accountHistoryKnownVariants = {
   'dev_fee',

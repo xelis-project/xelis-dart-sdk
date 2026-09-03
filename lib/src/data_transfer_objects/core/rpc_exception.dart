@@ -9,7 +9,7 @@ part 'rpc_transport_exception.dart';
 
 /// Base class for public RPC failures.
 sealed class RpcException implements Exception {
-  const RpcException(this.message);
+  const new(this.message);
 
   /// A redacted, human-readable description.
   final String message;

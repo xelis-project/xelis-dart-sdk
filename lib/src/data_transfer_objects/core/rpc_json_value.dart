@@ -5,21 +5,20 @@ part 'rpc_json_value.freezed.dart';
 /// A JSON value that preserves every integer as a [BigInt].
 @Freezed(fromJson: false, toJson: false, toStringOverride: false)
 sealed class RpcJsonValue with _$RpcJsonValue {
-  const factory RpcJsonValue.nullValue() = RpcJsonNullValue;
-  const factory RpcJsonValue.boolean(bool value) = RpcJsonBoolean;
-  const factory RpcJsonValue.integer(BigInt value) = RpcJsonInteger;
-  const factory RpcJsonValue.number(double value) = RpcJsonNumber;
-  const factory RpcJsonValue.string(String value) = RpcJsonString;
-  const factory RpcJsonValue.array(List<RpcJsonValue> values) = RpcJsonArray;
-  const factory RpcJsonValue.object(Map<String, RpcJsonValue> values) =
-      RpcJsonObject;
+  const factory nullValue() = RpcJsonNullValue;
+  const factory boolean({required bool value}) = RpcJsonBoolean;
+  const factory integer(BigInt value) = RpcJsonInteger;
+  const factory number(double value) = RpcJsonNumber;
+  const factory string(String value) = RpcJsonString;
+  const factory array(List<RpcJsonValue> values) = RpcJsonArray;
+  const factory object(Map<String, RpcJsonValue> values) = RpcJsonObject;
 
-  const RpcJsonValue._();
+  const new _();
 
   /// Converts a value produced by the lossless RPC JSON decoder.
-  factory RpcJsonValue.fromJson(Object? json) {
+  factory fromJson(Object? json) {
     if (json == null) return const RpcJsonValue.nullValue();
-    if (json is bool) return RpcJsonValue.boolean(json);
+    if (json is bool) return RpcJsonValue.boolean(value: json);
     if (json is BigInt) return RpcJsonValue.integer(json);
     if (json is int) return RpcJsonValue.integer(BigInt.from(json));
     if (json is double) {

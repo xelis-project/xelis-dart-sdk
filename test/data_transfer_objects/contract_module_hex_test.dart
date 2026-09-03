@@ -3,10 +3,7 @@ import 'package:xelis_dart_sdk/xelis_dart_sdk.dart';
 
 void main() {
   test('serializes the contract version before the compiled module', () {
-    expect(
-      ContractModuleHex.fromModule(module: 'A0ff').toJson(),
-      '00a0ff',
-    );
+    expect(ContractModuleHex.fromModule(module: 'A0ff').toJson(), '00a0ff');
     expect(
       ContractModuleHex.fromModule(
         module: 'A0ff',

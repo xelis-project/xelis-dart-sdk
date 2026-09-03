@@ -9,7 +9,7 @@ part 'rescan_params.g.dart';
 @freezed
 abstract class RescanParams with _$RescanParams {
   /// @nodoc
-  const factory RescanParams({
+  const factory({
     @JsonKey(
       name: 'until_topoheight',
       fromJson: rpcBigInt,
@@ -19,6 +19,5 @@ abstract class RescanParams with _$RescanParams {
   }) = _RescanParams;
 
   /// @nodoc
-  factory RescanParams.fromJson(Map<String, dynamic> json) =>
-      _$RescanParamsFromJson(json);
+  factory fromJson(Map<String, dynamic> json) => _$RescanParamsFromJson(json);
 }

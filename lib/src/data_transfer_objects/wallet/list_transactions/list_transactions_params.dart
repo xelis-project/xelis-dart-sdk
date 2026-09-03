@@ -13,7 +13,7 @@ part 'list_transactions_params.g.dart';
 abstract class ListTransactionsParams with _$ListTransactionsParams {
   /// @nodoc
   @JsonSerializable(includeIfNull: false)
-  const factory ListTransactionsParams({
+  const factory({
     @JsonKey(name: 'asset') String? asset,
     @JsonKey(
       name: 'min_topoheight',
@@ -57,7 +57,7 @@ abstract class ListTransactionsParams with _$ListTransactionsParams {
   }) = _ListTransactionsParams;
 
   /// @nodoc
-  factory ListTransactionsParams.fromJson(Map<String, dynamic> json) =>
+  factory fromJson(Map<String, dynamic> json) =>
       _$ListTransactionsParamsFromJson(json);
 }
 

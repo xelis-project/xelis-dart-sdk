@@ -9,11 +9,10 @@ part 'get_top_block_params.g.dart';
 abstract class GetTopBlockParams with _$GetTopBlockParams {
   /// @nodoc
   @JsonSerializable(includeIfNull: false)
-  const factory GetTopBlockParams({
-    @JsonKey(name: 'include_txs') bool? includeTxs,
-  }) = _GetTopBlockParams;
+  const factory({@JsonKey(name: 'include_txs') bool? includeTxs}) =
+      _GetTopBlockParams;
 
   /// @nodoc
-  factory GetTopBlockParams.fromJson(Map<String, dynamic> json) =>
+  factory fromJson(Map<String, dynamic> json) =>
       _$GetTopBlockParamsFromJson(json);
 }

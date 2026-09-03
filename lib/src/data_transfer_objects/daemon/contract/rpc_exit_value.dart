@@ -9,16 +9,14 @@ part 'rpc_exit_value.freezed.dart';
 /// Value returned when a contract execution finishes.
 @Freezed(fromJson: false, toJson: false, toStringOverride: false)
 sealed class RpcExitValue with _$RpcExitValue {
-  const factory RpcExitValue.error(RpcExitError error) = RpcErrorExitValue;
-  const factory RpcExitValue.exitCode(BigInt code) = RpcCodeExitValue;
-  const factory RpcExitValue.payload(RpcValueCell payload) =
-      RpcPayloadExitValue;
-  const factory RpcExitValue.unknown(RpcJsonValue wireValue) =
-      RpcUnknownExitValue;
+  const factory error(RpcExitError error) = RpcErrorExitValue;
+  const factory exitCode(BigInt code) = RpcCodeExitValue;
+  const factory payload(RpcValueCell payload) = RpcPayloadExitValue;
+  const factory unknown(RpcJsonValue wireValue) = RpcUnknownExitValue;
 
-  const RpcExitValue._();
+  const new _();
 
-  factory RpcExitValue.fromJson(Object? json) {
+  factory fromJson(Object? json) {
     final map = rpcJsonMap(json, method: 'simulate_contract_invoke');
     return switch (map['type']) {
       'Error' => RpcExitValue.error(RpcExitError.fromJson(map['value'])),

@@ -9,27 +9,25 @@ part 'rpc_gas_source.freezed.dart';
 @Freezed(fromJson: false, toJson: false)
 sealed class RpcGasSource with _$RpcGasSource {
   /// Gas attributed to a legacy contract source.
-  const factory RpcGasSource.contract(String hash) = RpcContractGasSource;
+  const factory contract(String hash) = RpcContractGasSource;
 
   /// Gas attributed to a legacy transaction account source.
-  const factory RpcGasSource.account(List<int> publicKey) = RpcAccountGasSource;
+  const factory account(List<int> publicKey) = RpcAccountGasSource;
 
   /// Gas explicitly reserved from a contract balance.
-  const factory RpcGasSource.contractBalance(String hash) =
-      RpcContractBalanceGasSource;
+  const factory contractBalance(String hash) = RpcContractBalanceGasSource;
 
   /// Gas explicitly reserved from the original transaction gas pool.
-  const factory RpcGasSource.accountBalance(List<int> publicKey) =
+  const factory accountBalance(List<int> publicKey) =
       RpcAccountBalanceGasSource;
 
   /// A future source variant retained losslessly.
-  const factory RpcGasSource.unknown(RpcJsonValue wireValue) =
-      RpcUnknownGasSource;
+  const factory unknown(RpcJsonValue wireValue) = RpcUnknownGasSource;
 
-  const RpcGasSource._();
+  const new _();
 
   /// Decodes the internally tagged Rust `Source` enum.
-  factory RpcGasSource.fromJson(Object? json) {
+  factory fromJson(Object? json) {
     final map = rpcJsonMap(
       json,
       method: 'get_contract_scheduled_executions_at_topoheight',
@@ -72,10 +70,7 @@ sealed class RpcGasSource with _$RpcGasSource {
 
   /// Returns the exact tagged JSON representation.
   Object? toJson() => switch (this) {
-    RpcContractGasSource(:final hash) => {
-      'type': 'contract',
-      'value': hash,
-    },
+    RpcContractGasSource(:final hash) => {'type': 'contract', 'value': hash},
     RpcAccountGasSource(:final publicKey) => {
       'type': 'account',
       'value': publicKey,
@@ -96,16 +91,16 @@ sealed class RpcGasSource with _$RpcGasSource {
 @Freezed(fromJson: false, toJson: false)
 abstract class RpcGasSourceEntry with _$RpcGasSourceEntry {
   /// Creates a typed scheduled-execution gas source entry.
-  const factory RpcGasSourceEntry({
+  const factory({
     required RpcGasSource key,
     required BigInt value,
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = _RpcGasSourceEntry;
 
-  const RpcGasSourceEntry._();
+  const new _();
 
   /// Decodes a gas source entry.
-  factory RpcGasSourceEntry.fromJson(Object? json) {
+  factory fromJson(Object? json) {
     const method = 'get_contract_scheduled_executions_at_topoheight';
     final map = rpcJsonMap(json, method: method, path: r'$.gas_sources[]');
     return RpcGasSourceEntry(
@@ -120,8 +115,8 @@ abstract class RpcGasSourceEntry with _$RpcGasSourceEntry {
   }
 
   /// Returns the exact JSON representation.
-  Map<String, Object?> toJson() => extraFields.mergeInto(
-    {'key': key.toJson(), 'value': value},
-    includeExtraFields: true,
-  );
+  Map<String, Object?> toJson() => extraFields.mergeInto({
+    'key': key.toJson(),
+    'value': value,
+  }, includeExtraFields: true);
 }

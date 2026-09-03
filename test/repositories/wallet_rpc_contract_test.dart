@@ -32,10 +32,7 @@ void main() {
         assets.single.data.extraFields['future_asset_data']?.toJson(),
         BigInt.from(7),
       );
-      expect(
-        assets.single.extraFields['future_entry_field']?.toJson(),
-        isTrue,
-      );
+      expect(assets.single.extraFields['future_entry_field']?.toJson(), isTrue);
     });
 
     test(
@@ -103,10 +100,7 @@ void main() {
         final maximum = BigInt.parse('18446744073709551615');
         final client = _FakeWalletClient()..response = maximum;
 
-        expect(
-          await client.countMatchingEntries(tree: 'settings'),
-          maximum,
-        );
+        expect(await client.countMatchingEntries(tree: 'settings'), maximum);
 
         client.response = [
           {'nested': 'not-a-data-value'},
@@ -184,16 +178,13 @@ void main() {
         'timestamp': 5,
         'multisig': {'future': true},
       });
-      expect(
-        wrongHistoryTag.txEntryType,
-        isA<UnknownTransactionEntryType>(),
-      );
+      expect(wrongHistoryTag.txEntryType, isA<UnknownTransactionEntryType>());
     });
   });
 }
 
 class _FakeWalletClient extends WalletClient {
-  _FakeWalletClient()
+  new()
     : super(
         endPoint: 'localhost:8080',
         username: 'user',

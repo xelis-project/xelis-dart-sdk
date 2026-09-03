@@ -305,10 +305,7 @@ void main() {
         'out': {'sent_at': BigInt.from(11)},
       });
       expect(peer.peers['both']?.toJson(), {
-        'both': {
-          'received_at': BigInt.from(12),
-          'sent_at': BigInt.from(13),
-        },
+        'both': {'received_at': BigInt.from(12), 'sent_at': BigInt.from(13)},
       });
       expect(peer.peers['future']?.toJson(), {
         'future': {'at': BigInt.from(14)},

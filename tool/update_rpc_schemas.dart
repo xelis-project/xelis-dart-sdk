@@ -133,7 +133,7 @@ Future<void> _connect(RpcClientRepository client) async {
 }
 
 final class _Options {
-  const _Options({
+  const new({
     required this.daemon,
     required this.wallet,
     required this.username,
@@ -142,7 +142,7 @@ final class _Options {
     required this.insecureWallet,
   });
 
-  factory _Options.parse(List<String> arguments) {
+  factory parse(List<String> arguments) {
     final values = <String, String>{};
     final flags = <String>{};
     for (final argument in arguments) {

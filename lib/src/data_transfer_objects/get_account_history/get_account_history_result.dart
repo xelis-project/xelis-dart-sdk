@@ -9,7 +9,7 @@ part 'get_account_history_result.freezed.dart';
 @Freezed(fromJson: false, toJson: false)
 abstract class GetAccountHistoryResult with _$GetAccountHistoryResult {
   /// @nodoc
-  const factory GetAccountHistoryResult({
+  const factory({
     @JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson)
     required BigInt topoheight,
     @JsonKey(name: 'hash') required String hash,
@@ -23,10 +23,10 @@ abstract class GetAccountHistoryResult with _$GetAccountHistoryResult {
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = _GetAccountHistoryResult;
 
-  const GetAccountHistoryResult._();
+  const new _();
 
   /// @nodoc
-  factory GetAccountHistoryResult.fromJson(Map<String, dynamic> json) {
+  factory fromJson(Map<String, dynamic> json) {
     final historyType = AccountHistoryType.fromFlattenedJson(json);
     final knownFields = {..._accountHistoryEntryFields};
     if (historyType case UnknownAccountHistoryType(:final type)) {
@@ -53,8 +53,4 @@ abstract class GetAccountHistoryResult with _$GetAccountHistoryResult {
       }, includeExtraFields: includeExtraFields);
 }
 
-const _accountHistoryEntryFields = {
-  'topoheight',
-  'hash',
-  'block_timestamp',
-};
+const _accountHistoryEntryFields = {'topoheight', 'hash', 'block_timestamp'};

@@ -9,24 +9,22 @@ part 'has_nonce_result.g.dart';
 @freezed
 abstract class HasNonceResult with _$HasNonceResult {
   /// @nodoc
-  const factory HasNonceResult({
+  const factory({
     @JsonKey(name: 'exist') required bool exist,
     @JsonKey(includeFromJson: false, includeToJson: false)
     @Default(RpcExtraFields())
     RpcExtraFields extraFields,
   }) = _HasNonceResult;
 
-  const HasNonceResult._();
+  const new _();
 
   /// @nodoc
-  factory HasNonceResult.fromJson(Map<String, dynamic> json) =>
-      _$HasNonceResultFromJson(json).copyWith(
-        extraFields: RpcExtraFields.capture(json, const {'exist'}),
-      );
+  factory fromJson(Map<String, dynamic> json) =>
+      _$HasNonceResultFromJson(json)
+          .copyWith(extraFields: RpcExtraFields.capture(json, const {'exist'}));
 
   Map<String, Object?> toWireJson({bool includeExtraFields = false}) =>
-      extraFields.mergeInto(
-        {'exist': exist},
-        includeExtraFields: includeExtraFields,
-      );
+      extraFields.mergeInto({
+        'exist': exist,
+      }, includeExtraFields: includeExtraFields);
 }

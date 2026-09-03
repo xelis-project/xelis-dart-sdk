@@ -9,7 +9,7 @@ part 'invoke_contract_event.freezed.dart';
 @Freezed(fromJson: false, toJson: false)
 abstract class InvokeContractEvent with _$InvokeContractEvent {
   /// Creates an invocation event.
-  const factory InvokeContractEvent({
+  const factory({
     required String blockHash,
     required String txHash,
     required BigInt topoheight,
@@ -17,26 +17,27 @@ abstract class InvokeContractEvent with _$InvokeContractEvent {
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = _InvokeContractEvent;
 
-  const InvokeContractEvent._();
+  const new _();
 
   /// Decodes the current daemon event wire shape.
-  factory InvokeContractEvent.fromJson(Map<String, dynamic> json) =>
-      InvokeContractEvent(
-        blockHash: json['block_hash'] as String,
-        txHash: json['tx_hash'] as String,
-        topoheight: rpcBigInt(json['topoheight'], method: 'contract_invoke'),
-        contractLogs: (json['contract_logs'] as List)
-            .map(
-              (value) => RpcContractLog.fromJson(
-                rpcJsonMap(value, method: 'contract_invoke'),
-              ),
-            )
-            .toList(growable: false),
-        extraFields: RpcExtraFields.capture(
-          json,
-          const {'block_hash', 'tx_hash', 'topoheight', 'contract_logs'},
-        ),
-      );
+  factory fromJson(Map<String, dynamic> json) => InvokeContractEvent(
+    blockHash: json['block_hash'] as String,
+    txHash: json['tx_hash'] as String,
+    topoheight: rpcBigInt(json['topoheight'], method: 'contract_invoke'),
+    contractLogs: (json['contract_logs'] as List)
+        .map(
+          (value) => RpcContractLog.fromJson(
+            rpcJsonMap(value, method: 'contract_invoke'),
+          ),
+        )
+        .toList(growable: false),
+    extraFields: RpcExtraFields.capture(json, const {
+      'block_hash',
+      'tx_hash',
+      'topoheight',
+      'contract_logs',
+    }),
+  );
 
   /// Serializes known fields and optionally restores fields received from wire.
   Map<String, Object?> toWireJson({bool includeExtraFields = false}) =>
@@ -46,9 +47,7 @@ abstract class InvokeContractEvent with _$InvokeContractEvent {
         'topoheight': topoheight,
         'contract_logs': contractLogs
             .map(
-              (log) => log.toWireJson(
-                includeExtraFields: includeExtraFields,
-              ),
+              (log) => log.toWireJson(includeExtraFields: includeExtraFields),
             )
             .toList(growable: false),
       }, includeExtraFields: includeExtraFields);

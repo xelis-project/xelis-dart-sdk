@@ -4,7 +4,7 @@ import 'process_tools.dart';
 import 'xelis_target.dart';
 
 final class UpstreamSource {
-  const UpstreamSource({required this.directory, required this.isIsolated});
+  const new({required this.directory, required this.isIsolated});
 
   final Directory directory;
   final bool isIsolated;
@@ -74,11 +74,10 @@ Future<UpstreamSource> resolveUpstreamSource(
 }
 
 Future<String?> gitHead(Directory directory) async {
-  final result = await Process.run(
-    'git',
-    ['rev-parse', 'HEAD'],
-    workingDirectory: directory.path,
-  );
+  final result = await Process.run('git', [
+    'rev-parse',
+    'HEAD',
+  ], workingDirectory: directory.path);
   if (result.exitCode != 0) return null;
   return (result.stdout as String).trim().toLowerCase();
 }
@@ -86,11 +85,10 @@ Future<String?> gitHead(Directory directory) async {
 Future<String> cargoLockIdentity(Directory source) async {
   final file = File('${source.path}${Platform.pathSeparator}Cargo.lock');
   if (!file.existsSync()) throw StateError('Missing ${file.path}.');
-  final result = await Process.run(
-    'git',
-    ['hash-object', 'Cargo.lock'],
-    workingDirectory: source.path,
-  );
+  final result = await Process.run('git', [
+    'hash-object',
+    'Cargo.lock',
+  ], workingDirectory: source.path);
   if (result.exitCode == 0) return (result.stdout as String).trim();
   return _fnv1aBytes(file.readAsBytesSync());
 }

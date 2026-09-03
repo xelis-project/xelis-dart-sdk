@@ -9,17 +9,15 @@ part 'data_query.freezed.dart';
 /// Numeric comparison used by Rust `QueryNumber`.
 @Freezed(fromJson: false, toJson: false)
 sealed class QueryNumber with _$QueryNumber {
-  const factory QueryNumber.greater(BigInt value) = GreaterQueryNumber;
-  const factory QueryNumber.greaterOrEqual(BigInt value) =
-      GreaterOrEqualQueryNumber;
-  const factory QueryNumber.lesser(BigInt value) = LesserQueryNumber;
-  const factory QueryNumber.lesserOrEqual(BigInt value) =
-      LesserOrEqualQueryNumber;
+  const factory greater(BigInt value) = GreaterQueryNumber;
+  const factory greaterOrEqual(BigInt value) = GreaterOrEqualQueryNumber;
+  const factory lesser(BigInt value) = LesserQueryNumber;
+  const factory lesserOrEqual(BigInt value) = LesserOrEqualQueryNumber;
 
-  const QueryNumber._();
+  const new _();
 
   /// Parses the externally tagged Rust union.
-  factory QueryNumber.fromJson(Object? json) {
+  factory fromJson(Object? json) {
     final map = rpcJsonMap(json, method: 'query_number');
     if (map.length != 1) {
       throw const FormatException(
@@ -49,42 +47,33 @@ sealed class QueryNumber with _$QueryNumber {
 /// Typed query expression accepted by wallet custom storage methods.
 @Freezed(fromJson: false, toJson: false)
 sealed class DataQuery with _$DataQuery {
-  const factory DataQuery.not(DataQuery query) = NotDataQuery;
-  const factory DataQuery.and(List<DataQuery> queries) = AndDataQuery;
-  const factory DataQuery.or(List<DataQuery> queries) = OrDataQuery;
-  const factory DataQuery.equal(DataValue value) = EqualDataQuery;
-  const factory DataQuery.startsWith(DataValue value) = StartsWithDataQuery;
-  const factory DataQuery.endsWith(DataValue value) = EndsWithDataQuery;
-  const factory DataQuery.containsValue(DataValue value) = ContainsValueQuery;
-  const factory DataQuery.isOfType(DataValueType type) = IsOfTypeDataQuery;
-  const factory DataQuery.matches(String pattern) = MatchesDataQuery;
-  const factory DataQuery.greater(BigInt value) = GreaterDataQuery;
-  const factory DataQuery.greaterOrEqual(BigInt value) =
-      GreaterOrEqualDataQuery;
-  const factory DataQuery.lesser(BigInt value) = LesserDataQuery;
-  const factory DataQuery.lesserOrEqual(BigInt value) = LesserOrEqualDataQuery;
-  const factory DataQuery.hasKey({
-    required DataValue key,
-    DataQuery? query,
-  }) = HasKeyDataQuery;
-  const factory DataQuery.atKey({
-    required DataValue key,
-    required DataQuery query,
-  }) = AtKeyDataQuery;
-  const factory DataQuery.length(QueryNumber comparison) = LengthDataQuery;
-  const factory DataQuery.containsElement(DataElement value) =
-      ContainsElementDataQuery;
+  const factory not(DataQuery query) = NotDataQuery;
+  const factory and(List<DataQuery> queries) = AndDataQuery;
+  const factory or(List<DataQuery> queries) = OrDataQuery;
+  const factory equal(DataValue value) = EqualDataQuery;
+  const factory startsWith(DataValue value) = StartsWithDataQuery;
+  const factory endsWith(DataValue value) = EndsWithDataQuery;
+  const factory containsValue(DataValue value) = ContainsValueQuery;
+  const factory isOfType(DataValueType type) = IsOfTypeDataQuery;
+  const factory matches(String pattern) = MatchesDataQuery;
+  const factory greater(BigInt value) = GreaterDataQuery;
+  const factory greaterOrEqual(BigInt value) = GreaterOrEqualDataQuery;
+  const factory lesser(BigInt value) = LesserDataQuery;
+  const factory lesserOrEqual(BigInt value) = LesserOrEqualDataQuery;
+  const factory hasKey({required DataValue key, DataQuery? query}) =
+      HasKeyDataQuery;
+  const factory atKey({required DataValue key, required DataQuery query}) =
+      AtKeyDataQuery;
+  const factory length(QueryNumber comparison) = LengthDataQuery;
+  const factory containsElement(DataElement value) = ContainsElementDataQuery;
   @Assert('position >= 0', 'position must be non-negative')
-  const factory DataQuery.atPosition({
-    required int position,
-    required DataQuery query,
-  }) = AtPositionDataQuery;
-  const factory DataQuery.elementType(DataElementType type) =
-      ElementTypeDataQuery;
+  const factory atPosition({required int position, required DataQuery query}) =
+      AtPositionDataQuery;
+  const factory elementType(DataElementType type) = ElementTypeDataQuery;
 
-  const DataQuery._();
+  const new _();
 
-  factory DataQuery.fromJson(Object? json) {
+  factory fromJson(Object? json) {
     final map = rpcJsonMap(json, method: 'query');
     if (map.length != 1) {
       throw const FormatException('Query must contain exactly one variant.');

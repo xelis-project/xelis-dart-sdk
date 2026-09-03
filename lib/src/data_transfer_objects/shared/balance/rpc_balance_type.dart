@@ -6,15 +6,14 @@ part 'rpc_balance_type.freezed.dart';
 /// Balance mutation category advertised by the daemon.
 @Freezed(fromJson: false, toJson: false)
 sealed class RpcBalanceType with _$RpcBalanceType {
-  const factory RpcBalanceType.input() = RpcInputBalanceType;
-  const factory RpcBalanceType.output() = RpcOutputBalanceType;
-  const factory RpcBalanceType.both() = RpcBothBalanceType;
-  const factory RpcBalanceType.unknown(String wireValue) =
-      RpcUnknownBalanceType;
+  const factory input() = RpcInputBalanceType;
+  const factory output() = RpcOutputBalanceType;
+  const factory both() = RpcBothBalanceType;
+  const factory unknown(String wireValue) = RpcUnknownBalanceType;
 
-  const RpcBalanceType._();
+  const new _();
 
-  factory RpcBalanceType.fromJson(Object? json) => switch (json) {
+  factory fromJson(Object? json) => switch (json) {
     'input' => const RpcBalanceType.input(),
     'output' => const RpcBalanceType.output(),
     'both' => const RpcBalanceType.both(),

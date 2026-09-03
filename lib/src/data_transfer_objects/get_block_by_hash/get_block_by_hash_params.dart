@@ -9,12 +9,12 @@ part 'get_block_by_hash_params.g.dart';
 abstract class GetBlockByHashParams with _$GetBlockByHashParams {
   /// @nodoc
   @JsonSerializable(includeIfNull: false)
-  const factory GetBlockByHashParams({
+  const factory({
     @JsonKey(name: 'hash') required String hash,
     @JsonKey(name: 'include_txs') bool? includeTxs,
   }) = _GetBlockByHashParams;
 
   /// @nodoc
-  factory GetBlockByHashParams.fromJson(Map<String, dynamic> json) =>
+  factory fromJson(Map<String, dynamic> json) =>
       _$GetBlockByHashParamsFromJson(json);
 }

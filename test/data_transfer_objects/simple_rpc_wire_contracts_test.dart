@@ -7,7 +7,8 @@ import 'package:xelis_dart_sdk/xelis_dart_sdk.dart';
 void main() {
   final wide = BigInt.parse('18446744073709551615');
   final wider = BigInt.parse(
-    '115792089237316195423570985008687907853269984665640564039457584007913129639935',
+    '115792089237316195423570985008687907853269984665640564039457'
+    '584007913129639935',
   );
 
   test('get_account_assets uses the raw daemon array', () {
@@ -29,7 +30,7 @@ void main() {
   test('fee rates preserve wide integers and gate additive fields', () {
     _expectWireContract(
       decode: FeeRatesEstimated.fromJson,
-      encode: (value, includeExtras) =>
+      encode: (value, {required includeExtras}) =>
           value.toWireJson(includeExtraFields: includeExtras),
       input: {
         'low': wide,
@@ -102,9 +103,8 @@ void main() {
     });
     final knownWire = pending.toWireJson();
     expect(
-      TransactionPending.fromJson(
-        Map<String, dynamic>.from(knownWire),
-      ).toWireJson(),
+      TransactionPending.fromJson(Map<String, dynamic>.from(knownWire))
+          .toWireJson(),
       knownWire,
     );
   });
@@ -112,13 +112,13 @@ void main() {
   test('daemon events preserve exact wire keys and additive fields', () {
     _expectWireContract(
       decode: NewAssetEvent.fromJson,
-      encode: (value, includeExtras) =>
+      encode: (value, {required includeExtras}) =>
           value.toWireJson(includeExtraFields: includeExtras),
       input: {'asset': 'asset', 'block_hash': 'block', 'topoheight': wide},
     );
     _expectWireContract(
       decode: BlockOrderedEvent.fromJson,
-      encode: (value, includeExtras) =>
+      encode: (value, {required includeExtras}) =>
           value.toWireJson(includeExtraFields: includeExtras),
       input: {
         'block_hash': 'block',
@@ -128,7 +128,7 @@ void main() {
     );
     _expectWireContract(
       decode: TransactionExecutedEvent.fromJson,
-      encode: (value, includeExtras) =>
+      encode: (value, {required includeExtras}) =>
           value.toWireJson(includeExtraFields: includeExtras),
       input: {'block_hash': 'block', 'tx_hash': 'tx', 'topoheight': wide},
     );
@@ -137,7 +137,7 @@ void main() {
   test('difficulty, nonce and executor preserve wide integer wire forms', () {
     _expectWireContract(
       decode: GetDifficultyResult.fromJson,
-      encode: (value, includeExtras) =>
+      encode: (value, {required includeExtras}) =>
           value.toWireJson(includeExtraFields: includeExtras),
       input: {
         'difficulty': wider.toString(),
@@ -152,7 +152,7 @@ void main() {
     );
     _expectWireContract(
       decode: GetNonceResult.fromJson,
-      encode: (value, includeExtras) =>
+      encode: (value, {required includeExtras}) =>
           value.toWireJson(includeExtraFields: includeExtras),
       input: {
         'topoheight': wide,
@@ -162,7 +162,7 @@ void main() {
     );
     _expectWireContract(
       decode: GetTransactionExecutorResult.fromJson,
-      encode: (value, includeExtras) =>
+      encode: (value, {required includeExtras}) =>
           value.toWireJson(includeExtraFields: includeExtras),
       input: {
         'block_topoheight': wide,
@@ -175,7 +175,8 @@ void main() {
 
 void _expectWireContract<T>({
   required T Function(Map<String, dynamic>) decode,
-  required Map<String, Object?> Function(T, bool) encode,
+  required Map<String, Object?> Function(T, {required bool includeExtras})
+  encode,
   required Map<String, Object?> input,
   Map<String, Object?>? expected,
 }) {
@@ -186,13 +187,13 @@ void _expectWireContract<T>({
   };
   final value = decode(Map<String, dynamic>.from(withFuture));
 
-  expect(encode(value, false), knownWire);
-  expect(encode(value, true), {
+  expect(encode(value, includeExtras: false), knownWire);
+  expect(encode(value, includeExtras: true), {
     ...knownWire,
     'future': {'height': BigInt.from(7)},
   });
   expect(
-    encode(decode(Map<String, dynamic>.from(knownWire)), false),
+    encode(decode(Map<String, dynamic>.from(knownWire)), includeExtras: false),
     knownWire,
   );
 }

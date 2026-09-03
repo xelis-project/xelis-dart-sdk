@@ -9,7 +9,7 @@ part 'has_multisig_params.g.dart';
 abstract class HasMultisigParams with _$HasMultisigParams {
   /// @nodoc
   @JsonSerializable(includeIfNull: false)
-  const factory HasMultisigParams({
+  const factory({
     @JsonKey(name: 'address') required String address,
     @JsonKey(
       name: 'topoheight',
@@ -20,6 +20,6 @@ abstract class HasMultisigParams with _$HasMultisigParams {
   }) = _HasMultisigParams;
 
   /// @nodoc
-  factory HasMultisigParams.fromJson(Map<String, dynamic> json) =>
+  factory fromJson(Map<String, dynamic> json) =>
       _$HasMultisigParamsFromJson(json);
 }

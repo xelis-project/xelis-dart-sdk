@@ -1,9 +1,6 @@
 /// Aggregated handwritten source coverage from an LCOV report.
 final class CoverageSummary {
-  const CoverageSummary({
-    required this.linesFound,
-    required this.linesHit,
-  });
+  const new({required this.linesFound, required this.linesHit});
 
   final int linesFound;
   final int linesHit;

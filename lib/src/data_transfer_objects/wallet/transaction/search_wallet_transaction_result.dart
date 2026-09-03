@@ -9,32 +9,31 @@ part 'search_wallet_transaction_result.freezed.dart';
 @Freezed(fromJson: false, toJson: false)
 abstract class SearchWalletTransactionResult
     with _$SearchWalletTransactionResult {
-  const factory SearchWalletTransactionResult({
+  const factory({
     required TransactionEntry? transaction,
     required BigInt? index,
     required bool isRawSearch,
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = _SearchWalletTransactionResult;
 
-  const SearchWalletTransactionResult._();
+  const new _();
 
-  factory SearchWalletTransactionResult.fromJson(Map<String, dynamic> json) =>
-      SearchWalletTransactionResult(
-        transaction: json['transaction'] == null
-            ? null
-            : TransactionEntry.fromJson(
-                rpcJsonMap(json['transaction'], method: 'search_transaction'),
-              ),
-        index: json['index'] == null
-            ? null
-            : rpcBigInt(json['index'], method: 'search_transaction'),
-        isRawSearch: json['is_raw_search'] as bool,
-        extraFields: RpcExtraFields.capture(json, const {
-          'transaction',
-          'index',
-          'is_raw_search',
-        }),
-      );
+  factory fromJson(Map<String, dynamic> json) => SearchWalletTransactionResult(
+    transaction: json['transaction'] == null
+        ? null
+        : TransactionEntry.fromJson(
+            rpcJsonMap(json['transaction'], method: 'search_transaction'),
+          ),
+    index: json['index'] == null
+        ? null
+        : rpcBigInt(json['index'], method: 'search_transaction'),
+    isRawSearch: json['is_raw_search'] as bool,
+    extraFields: RpcExtraFields.capture(json, const {
+      'transaction',
+      'index',
+      'is_raw_search',
+    }),
+  );
 
   Map<String, Object?> toWireJson({bool includeExtraFields = false}) =>
       extraFields.mergeInto({

@@ -18,36 +18,28 @@ part 'transaction_type_builder.g.dart';
 sealed class TransactionTypeBuilder with _$TransactionTypeBuilder {
   /// @nodoc
   @JsonSerializable(explicitToJson: true)
-  const factory TransactionTypeBuilder.transfers({
+  const factory transfers({
     @JsonKey(name: 'transfers') required List<TransferBuilder> transfers,
   }) = TransfersBuilder;
 
   /// @nodoc
-  const factory TransactionTypeBuilder.burn({
+  const factory burn({
     @JsonKey(name: 'asset') required String asset,
-    @JsonKey(
-      name: 'amount',
-      fromJson: rpcBigInt,
-      toJson: rpcBigIntToJson,
-    )
+    @JsonKey(name: 'amount', fromJson: rpcBigInt, toJson: rpcBigIntToJson)
     required BigInt amount,
   }) = BurnBuilder;
 
   /// @nodoc
-  const factory TransactionTypeBuilder.multisig({
+  const factory multisig({
     @JsonKey(name: 'threshold') required int threshold,
     @JsonKey(name: 'participants') required List<String> participants,
   }) = MultisigBuilder;
 
   /// @nodoc
   @JsonSerializable(explicitToJson: true)
-  const factory TransactionTypeBuilder.invokeContract({
+  const factory invokeContract({
     @JsonKey(name: 'contract') required String contract,
-    @JsonKey(
-      name: 'max_gas',
-      fromJson: rpcBigInt,
-      toJson: rpcBigIntToJson,
-    )
+    @JsonKey(name: 'max_gas', fromJson: rpcBigInt, toJson: rpcBigIntToJson)
     required BigInt maxGas,
     @JsonKey(name: 'entry_id') required int entryId,
     @JsonKey(name: 'parameters') required List<RpcValueCell> parameters,
@@ -61,7 +53,7 @@ sealed class TransactionTypeBuilder with _$TransactionTypeBuilder {
 
   /// @nodoc
   @JsonSerializable(explicitToJson: true)
-  const factory TransactionTypeBuilder.deployContract({
+  const factory deployContract({
     @JsonKey(
       name: 'contract',
       fromJson: ContractModuleHex.fromJson,
@@ -72,7 +64,7 @@ sealed class TransactionTypeBuilder with _$TransactionTypeBuilder {
   }) = DeployContractBuilder;
 
   /// @nodoc
-  const factory TransactionTypeBuilder.blob({
+  const factory blob({
     @JsonKey(
       name: 'data',
       fromJson: DataElement.fromJson,
@@ -83,14 +75,14 @@ sealed class TransactionTypeBuilder with _$TransactionTypeBuilder {
     @JsonKey(name: 'encrypt') @Default(true) bool encrypt,
   }) = BlobBuilder;
 
-  const TransactionTypeBuilder._();
+  const new _();
 
   /// @nodoc
-  factory TransactionTypeBuilder.fromJson(Map<String, dynamic> json) =>
+  factory fromJson(Map<String, dynamic> json) =>
       _$TransactionTypeBuilderFromJson(json);
 
   /// @nodoc
-  factory TransactionTypeBuilder.fromRpcJson(Map<String, dynamic> json) {
+  factory fromRpcJson(Map<String, dynamic> json) {
     final preparedJson = _prepareRpcJson(json);
     return TransactionTypeBuilder.fromJson(preparedJson);
   }

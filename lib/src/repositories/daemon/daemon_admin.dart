@@ -6,7 +6,7 @@ import 'package:xelis_dart_sdk/src/utils/rpc_json.dart';
 /// Explicit opt-in facade for destructive daemon administration methods.
 final class DaemonAdmin {
   /// Creates an administration facade for [client].
-  const DaemonAdmin(this.client);
+  const new(this.client);
 
   /// Underlying connected daemon client.
   final DaemonClient client;

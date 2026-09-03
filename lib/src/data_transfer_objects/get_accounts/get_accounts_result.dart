@@ -6,7 +6,5 @@ part 'get_accounts_result.freezed.dart';
 @freezed
 abstract class GetAccountsResult with _$GetAccountsResult {
   /// @nodoc
-  const factory GetAccountsResult({
-    required List<String> publicKeys,
-  }) = _GetAccountsResult;
+  const factory({required List<String> publicKeys}) = _GetAccountsResult;
 }

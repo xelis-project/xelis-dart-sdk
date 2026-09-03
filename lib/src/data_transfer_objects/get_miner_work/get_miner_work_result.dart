@@ -10,7 +10,7 @@ part 'get_miner_work_result.g.dart';
 @freezed
 abstract class GetMinerWorkResult with _$GetMinerWorkResult {
   /// @nodoc
-  const factory GetMinerWorkResult({
+  const factory({
     @JsonKey(name: 'algorithm') required String algorithm,
     @JsonKey(name: 'miner_work') required String minerWork,
     @JsonKey(name: 'height', fromJson: rpcBigInt, toJson: rpcBigIntToJson)
@@ -28,10 +28,10 @@ abstract class GetMinerWorkResult with _$GetMinerWorkResult {
     RpcExtraFields extraFields,
   }) = _GetMinerWorkResult;
 
-  const GetMinerWorkResult._();
+  const new _();
 
   /// @nodoc
-  factory GetMinerWorkResult.fromJson(Map<String, dynamic> json) =>
+  factory fromJson(Map<String, dynamic> json) =>
       _$GetMinerWorkResultFromJson(json).copyWith(
         extraFields: RpcExtraFields.capture(json, const {
           'algorithm',

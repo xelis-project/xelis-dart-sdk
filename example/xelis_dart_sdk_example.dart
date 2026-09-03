@@ -38,11 +38,7 @@ BuildTransactionParams transferRequest({
 }) => BuildTransactionParams(
   transactionTypeBuilder: TransactionTypeBuilder.transfers(
     transfers: [
-      TransferBuilder(
-        asset: asset,
-        destination: destination,
-        amount: amount,
-      ),
+      TransferBuilder(asset: asset, destination: destination, amount: amount),
     ],
   ),
 );

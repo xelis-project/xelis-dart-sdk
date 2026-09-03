@@ -5,7 +5,7 @@ import 'package:xelis_dart_sdk/src/repositories/wallet/wallet_constants.dart';
 
 /// Strict parser for the versioned XSWD SDK envelope.
 final class XswdManifestParser {
-  const XswdManifestParser({this.supportedMethods});
+  const new({this.supportedMethods});
 
   /// Optional allow-list overriding the wallet methods known by this SDK.
   final Set<String>? supportedMethods;

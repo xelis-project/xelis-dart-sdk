@@ -8,7 +8,7 @@ part 'get_contract_data_params.g.dart';
 @freezed
 abstract class GetContractDataParams with _$GetContractDataParams {
   /// @nodoc
-  const factory GetContractDataParams({
+  const factory({
     @JsonKey(name: 'contract') required String contractHash,
     @JsonKey(
       name: 'key',
@@ -19,7 +19,7 @@ abstract class GetContractDataParams with _$GetContractDataParams {
   }) = _GetContractDataParams;
 
   /// @nodoc
-  factory GetContractDataParams.fromJson(Map<String, dynamic> json) =>
+  factory fromJson(Map<String, dynamic> json) =>
       _$GetContractDataParamsFromJson(json);
 }
 

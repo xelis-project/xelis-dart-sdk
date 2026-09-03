@@ -5,9 +5,7 @@ void checkRpcEventInventory(Directory upstream) {
   final surfaces = <_EventSurface>[
     _EventSurface(
       name: 'daemon',
-      upstream: File(
-        '${upstream.path}/xelis_common/src/api/daemon/mod.rs',
-      ),
+      upstream: File('${upstream.path}/xelis_common/src/api/daemon/mod.rs'),
       sdk: File('lib/src/repositories/daemon/daemon_constants.dart'),
       enumName: 'DaemonEvent',
     ),
@@ -76,9 +74,10 @@ Set<String> rustNotifyEventWireNames(String source) {
 /// Extracts the explicit snake_case wire names from a Dart event enum.
 Set<String> dartEventEnumWireNames(String source, String enumName) {
   final body = _enumBody(source, enumName);
-  final names = RegExp(
-    r"\b[a-z][A-Za-z0-9]*\(\s*'([a-z][a-z0-9_]*)'\s*\)",
-  ).allMatches(body).map((match) => match.group(1)!).toSet();
+  final names = RegExp(r"\b[a-z][A-Za-z0-9]*\(\s*'([a-z][a-z0-9_]*)'\s*\)")
+      .allMatches(body)
+      .map((match) => match.group(1)!)
+      .toSet();
   if (names.isEmpty) {
     throw FormatException('No $enumName wire names could be parsed.');
   }
@@ -86,9 +85,8 @@ Set<String> dartEventEnumWireNames(String source, String enumName) {
 }
 
 String _enumBody(String source, String enumName) {
-  final declaration = RegExp(
-    r'\b(?:pub\s+)?enum\s+' + enumName + r'\b',
-  ).firstMatch(source);
+  final declaration = RegExp(r'\b(?:pub\s+)?enum\s+' + enumName + r'\b')
+      .firstMatch(source);
   if (declaration == null) throw FormatException('Missing enum $enumName.');
   final open = source.indexOf('{', declaration.end);
   if (open < 0) throw FormatException('Missing body for enum $enumName.');
@@ -120,7 +118,7 @@ String _pascalToSnakeCase(String value) {
 }
 
 final class _EventSurface {
-  const _EventSurface({
+  const new({
     required this.name,
     required this.upstream,
     required this.sdk,

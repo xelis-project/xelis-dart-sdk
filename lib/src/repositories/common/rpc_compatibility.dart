@@ -6,15 +6,12 @@ import 'package:xelis_dart_sdk/src/repositories/rpc_client_repository.dart';
 
 /// Explicit access to RPC methods that do not yet have a typed SDK facade.
 final class RpcRawClient {
-  const RpcRawClient(this._client);
+  const new(this._client);
 
   final RpcClientRepository _client;
 
   /// Calls [method] and preserves the complete result as [RpcJsonValue].
-  Future<RpcJsonValue> call(
-    String method, {
-    RpcJsonValue? params,
-  }) async {
+  Future<RpcJsonValue> call(String method, {RpcJsonValue? params}) async {
     Map<String, dynamic>? encodedParams;
     if (params != null) {
       final encoded = params.toJson();
@@ -45,10 +42,7 @@ extension RpcCompatibilityAccess on RpcClientRepository {
     try {
       return RpcCallOutcome.success(await operation());
     } on RpcDeserializationException catch (error) {
-      return RpcCallOutcome.failure(
-        error: error,
-        rawPayload: error.rawPayload,
-      );
+      return RpcCallOutcome.failure(error: error, rawPayload: error.rawPayload);
     } on RpcException catch (error) {
       return RpcCallOutcome.failure(error: error);
     }

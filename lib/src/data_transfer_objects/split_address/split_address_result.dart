@@ -9,27 +9,26 @@ part 'split_address_result.freezed.dart';
 @Freezed(fromJson: false, toJson: false)
 abstract class SplitAddressResult with _$SplitAddressResult {
   /// Creates a split address result.
-  const factory SplitAddressResult({
+  const factory({
     required String address,
     required DataElement integratedData,
     required BigInt size,
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = _SplitAddressResult;
 
-  const SplitAddressResult._();
+  const new _();
 
   /// Decodes a daemon or wallet response.
-  factory SplitAddressResult.fromJson(Map<String, dynamic> json) =>
-      SplitAddressResult(
-        address: json['address'] as String,
-        integratedData: DataElement.fromJson(json['integrated_data']),
-        size: rpcBigInt(json['size'], path: r'$.size'),
-        extraFields: RpcExtraFields.capture(json, const {
-          'address',
-          'integrated_data',
-          'size',
-        }),
-      );
+  factory fromJson(Map<String, dynamic> json) => SplitAddressResult(
+    address: json['address'] as String,
+    integratedData: DataElement.fromJson(json['integrated_data']),
+    size: rpcBigInt(json['size'], path: r'$.size'),
+    extraFields: RpcExtraFields.capture(json, const {
+      'address',
+      'integrated_data',
+      'size',
+    }),
+  );
 
   Map<String, Object?> toWireJson({bool includeExtraFields = false}) =>
       extraFields.mergeInto({

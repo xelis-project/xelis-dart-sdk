@@ -9,7 +9,7 @@ part 'validate_address_result.g.dart';
 @freezed
 abstract class ValidateAddressResult with _$ValidateAddressResult {
   /// @nodoc
-  const factory ValidateAddressResult({
+  const factory({
     @JsonKey(name: 'is_valid') required bool isValid,
     @JsonKey(name: 'is_integrated') required bool isIntegrated,
     @JsonKey(includeFromJson: false, includeToJson: false)
@@ -17,10 +17,10 @@ abstract class ValidateAddressResult with _$ValidateAddressResult {
     RpcExtraFields extraFields,
   }) = _ValidateAddressResult;
 
-  const ValidateAddressResult._();
+  const new _();
 
   /// @nodoc
-  factory ValidateAddressResult.fromJson(Map<String, dynamic> json) =>
+  factory fromJson(Map<String, dynamic> json) =>
       _$ValidateAddressResultFromJson(json).copyWith(
         extraFields: RpcExtraFields.capture(json, const {
           'is_valid',

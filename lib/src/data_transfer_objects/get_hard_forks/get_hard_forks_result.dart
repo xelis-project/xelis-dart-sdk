@@ -10,7 +10,7 @@ part 'get_hard_forks_result.g.dart';
 @freezed
 abstract class GetHardForksResult with _$GetHardForksResult {
   /// @nodoc
-  const factory GetHardForksResult({
+  const factory({
     @JsonKey(name: 'height', fromJson: rpcBigInt, toJson: rpcBigIntToJson)
     required BigInt height,
     @JsonKey(name: 'version') required int version,
@@ -21,10 +21,10 @@ abstract class GetHardForksResult with _$GetHardForksResult {
     RpcExtraFields extraFields,
   }) = _GetHardForksResult;
 
-  const GetHardForksResult._();
+  const new _();
 
   /// @nodoc
-  factory GetHardForksResult.fromJson(Map<String, dynamic> json) =>
+  factory fromJson(Map<String, dynamic> json) =>
       _$GetHardForksResultFromJson(json).copyWith(
         extraFields: RpcExtraFields.capture(json, const {
           'height',

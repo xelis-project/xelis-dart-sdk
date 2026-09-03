@@ -42,11 +42,9 @@ void main() {
           'subscribe',
           reason: contract.event.jsonKey,
         );
-        expect(
-          subscribe['params'],
-          {'notify': contract.notify},
-          reason: contract.event.jsonKey,
-        );
+        expect(subscribe['params'], {
+          'notify': contract.notify,
+        }, reason: contract.event.jsonKey);
 
         server.send({
           'id': notificationId++,
@@ -56,9 +54,7 @@ void main() {
             ...contract.payload,
           },
         });
-        contract.verify(
-          await received.future.timeout(rpcTestTimeout),
-        );
+        contract.verify(await received.future.timeout(rpcTestTimeout));
 
         contract.unsubscribe(client);
         final unsubscribe = await server.nextRequest();
@@ -67,11 +63,9 @@ void main() {
           'unsubscribe',
           reason: contract.event.jsonKey,
         );
-        expect(
-          unsubscribe['params'],
-          {'notify': contract.notify},
-          reason: contract.event.jsonKey,
-        );
+        expect(unsubscribe['params'], {
+          'notify': contract.notify,
+        }, reason: contract.event.jsonKey);
       }
     });
 
@@ -94,11 +88,9 @@ void main() {
           'subscribe',
           reason: contract.event.jsonKey,
         );
-        expect(
-          subscribe['params'],
-          {'notify': contract.notify},
-          reason: contract.event.jsonKey,
-        );
+        expect(subscribe['params'], {
+          'notify': contract.notify,
+        }, reason: contract.event.jsonKey);
 
         server.send({
           'id': notificationId++,
@@ -108,9 +100,7 @@ void main() {
             ...contract.payload,
           },
         });
-        contract.verify(
-          await received.future.timeout(rpcTestTimeout),
-        );
+        contract.verify(await received.future.timeout(rpcTestTimeout));
 
         contract.unsubscribe(client);
         final unsubscribe = await server.nextRequest();
@@ -119,11 +109,9 @@ void main() {
           'unsubscribe',
           reason: contract.event.jsonKey,
         );
-        expect(
-          unsubscribe['params'],
-          {'notify': contract.notify},
-          reason: contract.event.jsonKey,
-        );
+        expect(unsubscribe['params'], {
+          'notify': contract.notify,
+        }, reason: contract.event.jsonKey);
       }
     });
   });
@@ -155,13 +143,10 @@ void main() {
           requests.map((request) => request['method']),
           everyElement('unsubscribe'),
         );
-        expect(
-          requests.map((request) => request['params']).toSet(),
-          {
-            {'notify': WalletEvent.newTopoheight.jsonKey},
-            {'notify': WalletEvent.syncError.jsonKey},
-          },
-        );
+        expect(requests.map((request) => request['params']).toSet(), {
+          {'notify': WalletEvent.newTopoheight.jsonKey},
+          {'notify': WalletEvent.syncError.jsonKey},
+        });
         expect(client.eventsCallbacks[WalletEvent.newTopoheight], isEmpty);
         expect(client.eventsCallbacks[WalletEvent.syncError], isEmpty);
         await _pumpEventQueue();
@@ -190,25 +175,19 @@ void main() {
       await server.nextRequest();
 
       client.unsubscribeFromAll();
-      final requests = [
-        await server.nextRequest(),
-        await server.nextRequest(),
-      ];
+      final requests = [await server.nextRequest(), await server.nextRequest()];
       expect(
         requests.map((request) => request['method']),
         everyElement('unsubscribe'),
       );
-      expect(
-        requests.map((request) => request['params']).toSet(),
+      expect(requests.map((request) => request['params']).toSet(), {
+        {'notify': DaemonEvent.newBlock.jsonKey},
         {
-          {'notify': DaemonEvent.newBlock.jsonKey},
-          {
-            'notify': {
-              DaemonEvent.contractTransfers.jsonKey: {'address': 'address-a'},
-            },
+          'notify': {
+            DaemonEvent.contractTransfers.jsonKey: {'address': 'address-a'},
           },
         },
-      );
+      });
       await _pumpEventQueue();
       expect(
         server.receivedRequests.where(
@@ -270,11 +249,7 @@ void main() {
       await server.waitForSocket();
 
       final received = Completer<ContractEvent>();
-      client.onContractEvent(
-        'contract-a',
-        received.complete,
-        id: BigInt.two,
-      );
+      client.onContractEvent('contract-a', received.complete, id: BigInt.two);
       await server.nextRequest();
       server.send({
         'id': 302,
@@ -851,7 +826,7 @@ const Map<String, dynamic> _contractEventPayload = {
 };
 
 final class _WalletEventContract {
-  _WalletEventContract({
+  new({
     required this.event,
     required this.payload,
     required this.subscribe,
@@ -868,7 +843,7 @@ final class _WalletEventContract {
 }
 
 final class _DaemonEventContract {
-  _DaemonEventContract({
+  new({
     required this.event,
     required this.payload,
     required this.subscribe,

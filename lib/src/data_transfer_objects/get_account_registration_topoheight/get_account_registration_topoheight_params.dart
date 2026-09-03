@@ -9,12 +9,10 @@ part 'get_account_registration_topoheight_params.g.dart';
 abstract class GetAccountRegistrationTopoheightParams
     with _$GetAccountRegistrationTopoheightParams {
   /// @nodoc
-  const factory GetAccountRegistrationTopoheightParams({
-    @JsonKey(name: 'address') required String address,
-  }) = _GetAccountRegistrationTopoheightParams;
+  const factory({@JsonKey(name: 'address') required String address}) =
+      _GetAccountRegistrationTopoheightParams;
 
   /// @nodoc
-  factory GetAccountRegistrationTopoheightParams.fromJson(
-    Map<String, dynamic> json,
-  ) => _$GetAccountRegistrationTopoheightParamsFromJson(json);
+  factory fromJson(Map<String, dynamic> json) =>
+      _$GetAccountRegistrationTopoheightParamsFromJson(json);
 }

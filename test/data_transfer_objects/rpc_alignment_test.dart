@@ -6,7 +6,8 @@ void main() {
     test('known daemon fields are typed instead of captured as extras', () {
       final u64Max = BigInt.parse('18446744073709551615');
       final u256Max = BigInt.parse(
-        '115792089237316195423570985008687907853269984665640564039457584007913129639935',
+        '115792089237316195423570985008687907853269984665640564039457'
+        '584007913129639935',
       );
 
       final minerWork = GetMinerWorkResult.fromJson({
@@ -56,12 +57,8 @@ void main() {
       expect(baseFee.feePerKb, u64Max);
       expect(baseFee.predicatedFeePerKb, u64Max);
       _expectOnlyExtraKeys(minerWork.extraFields, {'future_pow_field'});
-      _expectOnlyExtraKeys(difficulty.extraFields, {
-        'future_hashrate_field',
-      });
-      _expectOnlyExtraKeys(threshold.extraFields, {
-        'future_threshold_field',
-      });
+      _expectOnlyExtraKeys(difficulty.extraFields, {'future_hashrate_field'});
+      _expectOnlyExtraKeys(threshold.extraFields, {'future_threshold_field'});
       _expectOnlyExtraKeys(feeRates.extraFields, {'future_fee_field'});
       _expectOnlyExtraKeys(disk.extraFields, {'future_disk_field'});
       _expectOnlyExtraKeys(baseFee.extraFields, {'future_base_fee_field'});
@@ -86,10 +83,7 @@ void main() {
       expect(active.participants, ['alice', 'bob']);
       expect(active.threshold, 2);
       _expectOnlyExtraKeys(active.extraFields, {'future_active_field'});
-      expect(
-        result.toWireJson(),
-        isNot(contains('future_result_field')),
-      );
+      expect(result.toWireJson(), isNot(contains('future_result_field')));
       expect(
         result.toWireJson(includeExtraFields: true),
         contains('future_result_field'),
@@ -126,10 +120,9 @@ void main() {
       expect(response.transaction.feeLimit, BigInt.from(3));
       expect(response.threshold, isNull);
       expect(response.transaction.sourceCommitments.single.asset, 'asset');
-      _expectOnlyExtraKeys(
-        response.transaction.extraFields,
-        {'future_unsigned_field'},
-      );
+      _expectOnlyExtraKeys(response.transaction.extraFields, {
+        'future_unsigned_field',
+      });
       _expectOnlyExtraKeys(
         response.transaction.sourceCommitments.single.extraFields,
         {},
@@ -160,10 +153,7 @@ void main() {
       expect(thresholdResponse.threshold, 255);
       expect(thresholdResponse.txAsHex, 'deadbeef');
       expect(
-        () => UnsignedTransactionResponse.fromJson({
-          ...json,
-          'threshold': 256,
-        }),
+        () => UnsignedTransactionResponse.fromJson({...json, 'threshold': 256}),
         throwsA(isA<RpcDeserializationException>()),
       );
     });
@@ -171,11 +161,7 @@ void main() {
     test('multisig signatures preserve nested additive fields explicitly', () {
       final multisig = Multisig.fromJson({
         'signatures': [
-          {
-            'id': 255,
-            'signature': 'signature',
-            'future_signature_field': true,
-          },
+          {'id': 255, 'signature': 'signature', 'future_signature_field': true},
         ],
         'future_multisig_field': {'epoch': 7},
       });
@@ -194,11 +180,7 @@ void main() {
       });
       expect(multisig.toWireJson(includeExtraFields: true), {
         'signatures': [
-          {
-            'id': 255,
-            'signature': 'signature',
-            'future_signature_field': true,
-          },
+          {'id': 255, 'signature': 'signature', 'future_signature_field': true},
         ],
         'future_multisig_field': {'epoch': BigInt.from(7)},
       });
@@ -221,10 +203,9 @@ void main() {
         {'address': 'address', 'integrated_data': integer},
       );
       expect(const GetAddressParams().toJson(), {'integrated_data': null});
-      expect(
-        GetAddressParams(integratedData: data).toJson(),
-        {'integrated_data': integer},
-      );
+      expect(GetAddressParams(integratedData: data).toJson(), {
+        'integrated_data': integer,
+      });
     });
 
     test('mempool balances and nonce bounds are exact', () {

@@ -8,12 +8,12 @@ part 'is_tx_executed_in_block_params.g.dart';
 @freezed
 abstract class IsTxExecutedInBlockParams with _$IsTxExecutedInBlockParams {
   /// @nodoc
-  const factory IsTxExecutedInBlockParams({
+  const factory({
     @JsonKey(name: 'tx_hash') required String txHash,
     @JsonKey(name: 'block_hash') required String blockHash,
   }) = _IsTxExecutedInBlockParams;
 
   /// @nodoc
-  factory IsTxExecutedInBlockParams.fromJson(Map<String, dynamic> json) =>
+  factory fromJson(Map<String, dynamic> json) =>
       _$IsTxExecutedInBlockParamsFromJson(json);
 }

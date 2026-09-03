@@ -9,16 +9,16 @@ part 'rpc_opaque_value.freezed.dart';
 /// Environment-provided opaque primitive value.
 @Freezed(fromJson: false, toJson: false, toStringOverride: false)
 abstract class RpcOpaqueValue with _$RpcOpaqueValue {
-  const factory RpcOpaqueValue({
+  const factory({
     required String type,
     required RpcJsonValue value,
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = _RpcOpaqueValue;
 
-  const RpcOpaqueValue._();
+  const new _();
 
   /// Creates a hash opaque accepted by the XELIS contract environment.
-  factory RpcOpaqueValue.hash(String hash) {
+  factory hash(String hash) {
     if (hash.length != 64 || !RegExp(r'^[0-9a-fA-F]+$').hasMatch(hash)) {
       throw ArgumentError.value(hash, 'hash', 'Expected a 32-byte hex hash.');
     }
@@ -29,17 +29,14 @@ abstract class RpcOpaqueValue with _$RpcOpaqueValue {
   }
 
   /// Creates an address opaque accepted by the XELIS contract environment.
-  factory RpcOpaqueValue.address(String address) {
+  factory address(String address) {
     if (address.isEmpty) {
       throw ArgumentError.value(address, 'address', 'Address cannot be empty.');
     }
-    return RpcOpaqueValue(
-      type: 'Address',
-      value: RpcJsonValue.string(address),
-    );
+    return RpcOpaqueValue(type: 'Address', value: RpcJsonValue.string(address));
   }
 
-  factory RpcOpaqueValue.fromJson(Object? json) {
+  factory fromJson(Object? json) {
     final map = rpcJsonMap(json, method: '<value_cell>');
     final type = map['type'];
     if (type is! String || !map.containsKey('value')) {

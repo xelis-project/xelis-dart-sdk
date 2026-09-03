@@ -5,11 +5,11 @@ import 'package:xelis_dart_sdk/src/data_transfer_objects/core/rpc_exception.dart
 @immutable
 final class EncryptedExtraData {
   /// Creates validated opaque extra-data bytes.
-  EncryptedExtraData(List<int> bytes)
+  new(List<int> bytes)
     : bytes = List<int>.unmodifiable(_validateBytes(bytes, 'extra_data'));
 
   /// Decodes the Rust tuple-struct JSON representation.
-  factory EncryptedExtraData.fromJson(Object? json) => EncryptedExtraData(
+  factory fromJson(Object? json) => EncryptedExtraData(
     _readByteList(json, method: 'decrypt_extra_data', path: r'$.extra_data'),
   );
 
@@ -39,10 +39,10 @@ final class EncryptedExtraData {
 @immutable
 final class ExtraDataSharedKey {
   /// Creates and validates the exact 32-byte hexadecimal wire value.
-  ExtraDataSharedKey(String hex) : hex = _validateSharedKey(hex);
+  new(String hex) : hex = _validateSharedKey(hex);
 
   /// Decodes the custom Rust hexadecimal representation.
-  factory ExtraDataSharedKey.fromJson(Object? json) {
+  factory fromJson(Object? json) {
     if (json is! String) {
       throw const RpcDeserializationException(
         method: 'decrypt_extra_data',

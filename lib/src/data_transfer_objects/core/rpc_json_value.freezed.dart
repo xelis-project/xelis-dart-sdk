@@ -230,7 +230,7 @@ int get hashCode => runtimeType.hashCode;
 
 
 class RpcJsonBoolean extends RpcJsonValue {
-  const RpcJsonBoolean(this.value): super._();
+  const RpcJsonBoolean({required this.value}): super._();
   
 
  final  bool value;
@@ -280,7 +280,7 @@ class _$RpcJsonBooleanCopyWithImpl<$Res>
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') $Res call({Object? value = null,}) {
   return _then(RpcJsonBoolean(
-null == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
+value: null == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
 as bool,
   ));
 }

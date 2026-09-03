@@ -6,14 +6,13 @@ part 'data_element_type.freezed.dart';
 /// Rust `ElementType`, including its nested `Value(ValueType)` variant.
 @Freezed(fromJson: false, toJson: false)
 sealed class DataElementType with _$DataElementType {
-  const factory DataElementType.value(DataValueType type) =
-      ValueDataElementType;
-  const factory DataElementType.array() = ArrayDataElementType;
-  const factory DataElementType.fields() = FieldsDataElementType;
+  const factory value(DataValueType type) = ValueDataElementType;
+  const factory array() = ArrayDataElementType;
+  const factory fields() = FieldsDataElementType;
 
-  const DataElementType._();
+  const new _();
 
-  factory DataElementType.fromJson(Object? json) => switch (json) {
+  factory fromJson(Object? json) => switch (json) {
     'Array' => const DataElementType.array(),
     'Fields' => const DataElementType.fields(),
     {'Value': final Object? value} => DataElementType.value(

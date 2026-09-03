@@ -7,17 +7,16 @@ part 'fee_builder.freezed.dart';
 @Freezed(fromJson: false, toJson: false)
 sealed class FeeBuilder with _$FeeBuilder {
   /// Uses an exact fee amount.
-  const factory FeeBuilder.fixed(BigInt amount) = FixedFeeBuilder;
+  const factory fixed(BigInt amount) = FixedFeeBuilder;
 
   /// Uses the node-computed fee with an optional extra fee mode.
-  const factory FeeBuilder.extra([
-    @Default(ExtraFeeMode.none()) ExtraFeeMode mode,
-  ]) = ExtraFeeBuilder;
+  const factory extra([@Default(ExtraFeeMode.none()) ExtraFeeMode mode]) =
+      ExtraFeeBuilder;
 
-  const FeeBuilder._();
+  const new _();
 
   /// Decodes an externally tagged Rust enum.
-  factory FeeBuilder.fromJson(Map<String, dynamic> json) {
+  factory fromJson(Map<String, dynamic> json) {
     if (json.length != 1) {
       throw const FormatException(
         'FeeBuilder must contain exactly one variant.',
@@ -45,18 +44,18 @@ sealed class FeeBuilder with _$FeeBuilder {
 @Freezed(fromJson: false, toJson: false)
 sealed class ExtraFeeMode with _$ExtraFeeMode {
   /// No extra fee.
-  const factory ExtraFeeMode.none() = NoExtraFee;
+  const factory none() = NoExtraFee;
 
   /// Adds an exact atomic tip.
-  const factory ExtraFeeMode.tip(BigInt amount) = TipExtraFee;
+  const factory tip(BigInt amount) = TipExtraFee;
 
   /// Multiplies the computed fee.
-  const factory ExtraFeeMode.multiplier(double multiplier) = MultiplierExtraFee;
+  const factory multiplier(double multiplier) = MultiplierExtraFee;
 
-  const ExtraFeeMode._();
+  const new _();
 
   /// Decodes the Rust enum wire representation.
-  factory ExtraFeeMode.fromJson(Object? json) {
+  factory fromJson(Object? json) {
     if (json == 'none') return const ExtraFeeMode.none();
     if (json is Map && json.length == 1 && json.containsKey('tip')) {
       return ExtraFeeMode.tip(

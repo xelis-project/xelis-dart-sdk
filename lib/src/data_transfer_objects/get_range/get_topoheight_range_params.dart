@@ -10,7 +10,7 @@ part 'get_topoheight_range_params.g.dart';
 abstract class GetTopoheightRangeParams with _$GetTopoheightRangeParams {
   /// @nodoc
   @JsonSerializable(includeIfNull: false)
-  const factory GetTopoheightRangeParams({
+  const factory({
     @JsonKey(
       name: 'start_topoheight',
       fromJson: rpcNullableBigInt,
@@ -26,6 +26,6 @@ abstract class GetTopoheightRangeParams with _$GetTopoheightRangeParams {
   }) = _GetTopoheightRangeParams;
 
   /// @nodoc
-  factory GetTopoheightRangeParams.fromJson(Map<String, dynamic> json) =>
+  factory fromJson(Map<String, dynamic> json) =>
       _$GetTopoheightRangeParamsFromJson(json);
 }

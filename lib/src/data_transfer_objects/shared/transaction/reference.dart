@@ -9,13 +9,12 @@ part 'reference.g.dart';
 @freezed
 abstract class Reference with _$Reference {
   /// @nodoc
-  const factory Reference({
+  const factory({
     @JsonKey(name: 'hash') required String hash,
     @JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson)
     required BigInt topoheight,
   }) = _Reference;
 
   /// @nodoc
-  factory Reference.fromJson(Map<String, dynamic> json) =>
-      _$ReferenceFromJson(json);
+  factory fromJson(Map<String, dynamic> json) => _$ReferenceFromJson(json);
 }

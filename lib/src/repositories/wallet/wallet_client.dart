@@ -5,7 +5,7 @@ class WalletClient extends RpcClientRepository {
   /// [WalletClient] constructor
   ///
   /// Note: Secure WebSocket is enabled by default.
-  WalletClient({
+  new({
     required super.endPoint,
     required String username,
     required String password,

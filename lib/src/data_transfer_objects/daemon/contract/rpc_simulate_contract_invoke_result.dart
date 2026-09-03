@@ -9,7 +9,7 @@ part 'rpc_simulate_contract_invoke_result.freezed.dart';
 @Freezed(fromJson: false, toJson: false)
 abstract class RpcSimulateContractInvokeResult
     with _$RpcSimulateContractInvokeResult {
-  const factory RpcSimulateContractInvokeResult({
+  const factory({
     required BigInt baseFee,
     required RpcExecutionResult result,
     required String blockHash,
@@ -17,9 +17,9 @@ abstract class RpcSimulateContractInvokeResult
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = _RpcSimulateContractInvokeResult;
 
-  const RpcSimulateContractInvokeResult._();
+  const new _();
 
-  factory RpcSimulateContractInvokeResult.fromJson(Object? json) {
+  factory fromJson(Object? json) {
     final map = rpcJsonMap(json, method: 'simulate_contract_invoke');
     return RpcSimulateContractInvokeResult(
       baseFee: rpcBigInt(map['base_fee'], method: 'simulate_contract_invoke'),
@@ -33,10 +33,12 @@ abstract class RpcSimulateContractInvokeResult
         map['topoheight'],
         method: 'simulate_contract_invoke',
       ),
-      extraFields: RpcExtraFields.capture(
-        map,
-        const {'base_fee', 'result', 'block_hash', 'topoheight'},
-      ),
+      extraFields: RpcExtraFields.capture(map, const {
+        'base_fee',
+        'result',
+        'block_hash',
+        'topoheight',
+      }),
     );
   }
 }

@@ -72,14 +72,13 @@ void main() {
         reconnecting.disconnect();
         await connectRpc(reconnecting);
         final reconnectedEvent = Completer<BigInt>();
-        reconnecting.registerCallback(
-          DaemonEvent.newTopoheight,
-          (BigInt value) {
-            if (!reconnectedEvent.isCompleted) {
-              reconnectedEvent.complete(value);
-            }
-          },
-        );
+        reconnecting.registerCallback(DaemonEvent.newTopoheight, (
+          BigInt value,
+        ) {
+          if (!reconnectedEvent.isCompleted) {
+            reconnectedEvent.complete(value);
+          }
+        });
         await reconnecting.subscribeTo(DaemonEvent.newTopoheight);
         await mineBlocks(daemon, configuration.miningAddress, 1);
         expect(

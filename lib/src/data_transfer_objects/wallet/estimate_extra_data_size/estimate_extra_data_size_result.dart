@@ -10,7 +10,7 @@ part 'estimate_extra_data_size_result.g.dart';
 @freezed
 abstract class EstimateExtraDataSizeResult with _$EstimateExtraDataSizeResult {
   /// @nodoc
-  const factory EstimateExtraDataSizeResult({
+  const factory({
     @JsonKey(name: 'size', fromJson: rpcBigInt, toJson: rpcBigIntToJson)
     required BigInt size,
     @JsonKey(includeFromJson: false, includeToJson: false)
@@ -18,13 +18,12 @@ abstract class EstimateExtraDataSizeResult with _$EstimateExtraDataSizeResult {
     RpcExtraFields extraFields,
   }) = _EstimateExtraDataSizeResult;
 
-  const EstimateExtraDataSizeResult._();
+  const new _();
 
   /// @nodoc
-  factory EstimateExtraDataSizeResult.fromJson(Map<String, dynamic> json) =>
-      _$EstimateExtraDataSizeResultFromJson(json).copyWith(
-        extraFields: RpcExtraFields.capture(json, const {'size'}),
-      );
+  factory fromJson(Map<String, dynamic> json) =>
+      _$EstimateExtraDataSizeResultFromJson(json)
+          .copyWith(extraFields: RpcExtraFields.capture(json, const {'size'}));
 
   Map<String, Object?> toWireJson({bool includeExtraFields = false}) =>
       extraFields.mergeInto({

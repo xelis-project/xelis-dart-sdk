@@ -7,15 +7,15 @@ part 'wallet_network_info.freezed.dart';
 /// Wallet network state plus its connected daemon endpoint.
 @Freezed(fromJson: false, toJson: false)
 abstract class WalletNetworkInfo with _$WalletNetworkInfo {
-  const factory WalletNetworkInfo({
+  const factory({
     required GetInfoResult info,
     required String connectedTo,
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = _WalletNetworkInfo;
 
-  const WalletNetworkInfo._();
+  const new _();
 
-  factory WalletNetworkInfo.fromJson(Map<String, dynamic> json) {
+  factory fromJson(Map<String, dynamic> json) {
     final info = GetInfoResult.fromJson(json);
     final knownFields = info.toJson().keys.toSet()..add('connected_to');
     return WalletNetworkInfo(

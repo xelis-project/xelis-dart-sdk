@@ -9,7 +9,7 @@ part 'contract_event.freezed.dart';
 @Freezed(fromJson: false, toJson: false)
 abstract class ContractEvent with _$ContractEvent {
   /// Creates a contract event.
-  const factory ContractEvent({
+  const factory({
     required BigInt topoheight,
     required String blockHash,
     required BigInt eventId,
@@ -17,18 +17,20 @@ abstract class ContractEvent with _$ContractEvent {
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = _ContractEvent;
 
-  const ContractEvent._();
+  const new _();
 
   /// Decodes the current daemon event wire shape.
-  factory ContractEvent.fromJson(Map<String, dynamic> json) => ContractEvent(
+  factory fromJson(Map<String, dynamic> json) => ContractEvent(
     topoheight: rpcBigInt(json['topoheight'], method: 'contract_event'),
     blockHash: json['block_hash'] as String,
     eventId: rpcBigInt(json['event_id'], method: 'contract_event'),
     data: RpcValueCell.fromJson(json['data']),
-    extraFields: RpcExtraFields.capture(
-      json,
-      const {'topoheight', 'block_hash', 'event_id', 'data'},
-    ),
+    extraFields: RpcExtraFields.capture(json, const {
+      'topoheight',
+      'block_hash',
+      'event_id',
+      'data',
+    }),
   );
 
   /// Serializes known fields and optionally restores fields received from wire.

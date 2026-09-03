@@ -10,7 +10,7 @@ part 'get_height_range_params.g.dart';
 abstract class GetHeightRangeParams with _$GetHeightRangeParams {
   /// @nodoc
   @JsonSerializable(includeIfNull: false)
-  const factory GetHeightRangeParams({
+  const factory({
     @JsonKey(
       name: 'start_height',
       fromJson: rpcNullableBigInt,
@@ -26,6 +26,6 @@ abstract class GetHeightRangeParams with _$GetHeightRangeParams {
   }) = _GetHeightRangeParams;
 
   /// @nodoc
-  factory GetHeightRangeParams.fromJson(Map<String, dynamic> json) =>
+  factory fromJson(Map<String, dynamic> json) =>
       _$GetHeightRangeParamsFromJson(json);
 }

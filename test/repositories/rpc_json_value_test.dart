@@ -63,10 +63,7 @@ void main() {
     expect(result.extraFields['future_consensus_field']?.toJson(), {
       'window': BigInt.from(64),
     });
-    expect(
-      result.toWireJson(),
-      isNot(contains('future_consensus_field')),
-    );
+    expect(result.toWireJson(), isNot(contains('future_consensus_field')));
     expect(
       result.toWireJson(includeExtraFields: true),
       containsPair('future_consensus_field', {'window': BigInt.from(64)}),
@@ -88,9 +85,7 @@ void main() {
       'total_size_in_bytes': 4,
       'txs_hashes': <String>[],
       'version': 1,
-      'future_block_field': {
-        'window': BigInt.parse('9007199254740993'),
-      },
+      'future_block_field': {'window': BigInt.parse('9007199254740993')},
     });
 
     expect(block.extraFields['future_block_field']?.toJson(), {
@@ -297,14 +292,8 @@ void main() {
       'future_peer_field': 1,
     });
 
-    expect(
-      stable.previousStableTopoheight,
-      BigInt.parse('9007199254740993'),
-    );
-    expect(
-      stable.extraFields['future_stability_field']?.toJson(),
-      isTrue,
-    );
+    expect(stable.previousStableTopoheight, BigInt.parse('9007199254740993'));
+    expect(stable.extraFields['future_stability_field']?.toJson(), isTrue);
     expect(peer.id, BigInt.parse('18446744073709551615'));
     expect(peer.extraFields['future_peer_field']?.toJson(), BigInt.one);
   });

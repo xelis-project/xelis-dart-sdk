@@ -10,7 +10,7 @@ part 'rpc_scheduled_execution.freezed.dart';
 /// A contract execution waiting to be triggered.
 @Freezed(fromJson: false, toJson: false)
 abstract class RpcScheduledExecution with _$RpcScheduledExecution {
-  const factory RpcScheduledExecution({
+  const factory({
     required String hash,
     required String contract,
     required int chunkId,
@@ -21,18 +21,14 @@ abstract class RpcScheduledExecution with _$RpcScheduledExecution {
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = _RpcScheduledExecution;
 
-  const RpcScheduledExecution._();
+  const new _();
 
-  factory RpcScheduledExecution.fromJson(Object? json) {
+  factory fromJson(Object? json) {
     const method = 'get_contract_scheduled_executions_at_topoheight';
     final map = rpcJsonMap(json, method: method);
     return RpcScheduledExecution(
       hash: rpcString(map['hash'], method: method, path: r'$.hash'),
-      contract: rpcString(
-        map['contract'],
-        method: method,
-        path: r'$.contract',
-      ),
+      contract: rpcString(map['contract'], method: method, path: r'$.contract'),
       chunkId: rpcInt(map['chunk_id'], method: method, min: 0, max: 0xffff),
       params: rpcList(
         map['params'],

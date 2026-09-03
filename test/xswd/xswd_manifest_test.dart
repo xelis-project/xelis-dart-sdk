@@ -19,23 +19,24 @@ void main() {
       ],
     });
 
-    expect(
-      manifest.permissions.map((permission) => permission.method),
-      ['get_balance', 'build_transaction', 'sign_data', 'store'],
-    );
-    expect(
-      manifest.permissions.map((permission) => permission.kind),
-      [
-        XswdPermissionKind.read,
-        XswdPermissionKind.transaction,
-        XswdPermissionKind.signature,
-        XswdPermissionKind.mutation,
-      ],
-    );
-    expect(
-      manifest.toApplicationDataJson()['permissions'],
-      ['get_balance', 'build_transaction', 'sign_data', 'store'],
-    );
+    expect(manifest.permissions.map((permission) => permission.method), [
+      'get_balance',
+      'build_transaction',
+      'sign_data',
+      'store',
+    ]);
+    expect(manifest.permissions.map((permission) => permission.kind), [
+      XswdPermissionKind.read,
+      XswdPermissionKind.transaction,
+      XswdPermissionKind.signature,
+      XswdPermissionKind.mutation,
+    ]);
+    expect(manifest.toApplicationDataJson()['permissions'], [
+      'get_balance',
+      'build_transaction',
+      'sign_data',
+      'store',
+    ]);
   });
 
   test('rejects unknown versions, fields and wallet methods by default', () {
@@ -51,10 +52,7 @@ void main() {
       () => parser.parse({...base, 'future': true}),
       throwsFormatException,
     );
-    expect(
-      () => parser.parse({...base, 'version': 2}),
-      throwsFormatException,
-    );
+    expect(() => parser.parse({...base, 'version': 2}), throwsFormatException);
     expect(
       () => parser.parse({
         ...base,
@@ -78,17 +76,12 @@ void main() {
       throwsFormatException,
     );
     expect(
-      () => parser.parse({
-        ...base,
-        'name': List.filled(33, 'x').join(),
-      }),
+      () => parser.parse({...base, 'name': List.filled(33, 'x').join()}),
       throwsFormatException,
     );
     expect(
-      () => parser.parse({
-        ...base,
-        'description': List.filled(256, 'x').join(),
-      }),
+      () =>
+          parser.parse({...base, 'description': List.filled(256, 'x').join()}),
       throwsFormatException,
     );
     expect(

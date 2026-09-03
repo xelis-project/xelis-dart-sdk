@@ -9,16 +9,16 @@ part 'rpc_schema_response.freezed.dart';
 /// The normalized schema advertised by a XELIS RPC server.
 @Freezed(fromJson: false, toJson: false)
 abstract class RpcSchemaResponse with _$RpcSchemaResponse {
-  const factory RpcSchemaResponse({
+  const factory({
     required String schemaUri,
     required RpcJsonValue definitions,
     required List<RpcMethodInfo> methods,
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = _RpcSchemaResponse;
 
-  const RpcSchemaResponse._();
+  const new _();
 
-  factory RpcSchemaResponse.fromJson(Object? json) {
+  factory fromJson(Object? json) {
     final map = rpcJsonMap(json, method: 'schema');
     final rawMethods = map['methods'];
     if (rawMethods is! List) {
@@ -40,10 +40,11 @@ abstract class RpcSchemaResponse with _$RpcSchemaResponse {
             ),
           )
           .toList(growable: false),
-      extraFields: RpcExtraFields.capture(
-        map,
-        const {r'$schema', r'$defs', 'methods'},
-      ),
+      extraFields: RpcExtraFields.capture(map, const {
+        r'$schema',
+        r'$defs',
+        'methods',
+      }),
     );
   }
 }
@@ -51,15 +52,15 @@ abstract class RpcSchemaResponse with _$RpcSchemaResponse {
 /// One method entry in [RpcSchemaResponse].
 @Freezed(fromJson: false, toJson: false)
 abstract class RpcMethodInfo with _$RpcMethodInfo {
-  const factory RpcMethodInfo({
+  const factory({
     required String name,
     required RpcMethodSchema schema,
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = _RpcMethodInfo;
 
-  const RpcMethodInfo._();
+  const new _();
 
-  factory RpcMethodInfo.fromJson(Object? json) {
+  factory fromJson(Object? json) {
     final map = rpcJsonMap(json, method: 'schema', path: r'$.methods[]');
     final name = map['name'];
     if (name is! String) {
@@ -80,7 +81,7 @@ abstract class RpcMethodInfo with _$RpcMethodInfo {
 /// Parameter and return JSON schemas for an RPC method.
 @Freezed(fromJson: false, toJson: false)
 abstract class RpcMethodSchema with _$RpcMethodSchema {
-  const factory RpcMethodSchema({
+  const factory({
     required List<String> description,
     required List<String> notes,
     required RpcJsonValue? paramsSchema,
@@ -88,14 +89,10 @@ abstract class RpcMethodSchema with _$RpcMethodSchema {
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = _RpcMethodSchema;
 
-  const RpcMethodSchema._();
+  const new _();
 
-  factory RpcMethodSchema.fromJson(Object? json) {
-    final map = rpcJsonMap(
-      json,
-      method: 'schema',
-      path: r'$.methods[].schema',
-    );
+  factory fromJson(Object? json) {
+    final map = rpcJsonMap(json, method: 'schema', path: r'$.methods[].schema');
     final description = map['description'];
     final notes = map['notes'];
     if (description != null && description is! List) {

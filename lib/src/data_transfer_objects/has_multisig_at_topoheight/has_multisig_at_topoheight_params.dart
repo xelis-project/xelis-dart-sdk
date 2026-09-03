@@ -9,13 +9,13 @@ part 'has_multisig_at_topoheight_params.g.dart';
 abstract class HasMultisigAtTopoheightParams
     with _$HasMultisigAtTopoheightParams {
   /// @nodoc
-  const factory HasMultisigAtTopoheightParams({
+  const factory({
     @JsonKey(name: 'address') required String address,
     @JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson)
     required BigInt topoheight,
   }) = _HasMultisigAtTopoheightParams;
 
   /// @nodoc
-  factory HasMultisigAtTopoheightParams.fromJson(Map<String, dynamic> json) =>
+  factory fromJson(Map<String, dynamic> json) =>
       _$HasMultisigAtTopoheightParamsFromJson(json);
 }

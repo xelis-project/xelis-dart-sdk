@@ -39,10 +39,7 @@ void main() {
         'xel-address',
         [4, 5, 6],
       ]);
-      expect(
-        AddressOrPublicKey.toJsonValue(values.first),
-        'xel-address',
-      );
+      expect(AddressOrPublicKey.toJsonValue(values.first), 'xel-address');
     });
 
     test('rejects values outside the untagged string-or-byte-list union', () {

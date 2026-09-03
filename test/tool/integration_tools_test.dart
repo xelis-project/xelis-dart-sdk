@@ -104,9 +104,9 @@ void main() {
     final directory = Directory.systemTemp.createTempSync('scenario-report-');
     addTearDown(() => directory.deleteSync(recursive: true));
     final report = File('${directory.path}/scenarios.json');
-    final expected = scenariosForSuite(
-      IntegrationSuite.daemon.name,
-    ).map((scenario) => scenario.id).toList(growable: false);
+    final expected = scenariosForSuite(IntegrationSuite.daemon.name)
+        .map((scenario) => scenario.id)
+        .toList(growable: false);
 
     report.writeAsStringSync(
       jsonEncode({
@@ -160,9 +160,9 @@ void main() {
   test('cleanup failures make the final suite report fail', () {
     final directory = Directory.systemTemp.createTempSync('suite-finalize-');
     addTearDown(() => directory.deleteSync(recursive: true));
-    final expected = scenariosForSuite(
-      IntegrationSuite.daemon.name,
-    ).map((scenario) => scenario.id).toList(growable: false);
+    final expected = scenariosForSuite(IntegrationSuite.daemon.name)
+        .map((scenario) => scenario.id)
+        .toList(growable: false);
     final reportFile = File('${directory.path}/daemon.json');
 
     final status = finalizeIntegrationSuiteReport(
@@ -473,11 +473,9 @@ void main() {
         '}\n',
       );
     final log = File('${directory.path}${Platform.pathSeparator}child.log');
-    final process = await ManagedProcess.start(
-      Platform.resolvedExecutable,
-      [script.path],
-      logFile: log,
-    );
+    final process = await ManagedProcess.start(Platform.resolvedExecutable, [
+      script.path,
+    ], logFile: log);
     await process.stop();
     expect(await process.process.exitCode, isNotNull);
     expect(log.existsSync(), isTrue);
@@ -630,12 +628,7 @@ void main() {
   });
 
   test('verify profiles map to explicit actions', () {
-    for (final profile in [
-      'check',
-      'ci',
-      'release',
-      'probe',
-    ]) {
+    for (final profile in ['check', 'ci', 'release', 'probe']) {
       expect(VerificationOptions.parse([profile]).profile.name, profile);
     }
     for (final suite in ['daemon', 'wallet', 'e2e', 'all']) {
@@ -682,10 +675,7 @@ void main() {
       ),
       contains(VerificationAction.integration),
     );
-    expect(
-      () => VerificationOptions.parse(['stress']),
-      throwsFormatException,
-    );
+    expect(() => VerificationOptions.parse(['stress']), throwsFormatException);
     expect(
       () => VerificationOptions.parse(['integration', 'wallet', '--stress']),
       throwsFormatException,
@@ -782,9 +772,8 @@ void main() {
         (scenario) => scenario.id == id,
       );
       expect(
-        File(
-          'integration_test/live_${scenario.suite}_rpc_test.dart',
-        ).readAsStringSync(),
+        File('integration_test/live_${scenario.suite}_rpc_test.dart')
+            .readAsStringSync(),
         contains(id),
       );
     }
@@ -844,10 +833,7 @@ void main() {
         .toList(growable: false);
     final source = workflows.map((file) => file.readAsStringSync()).join('\n');
     expect(source, isNot(contains(RegExp(r'\bcargo(?:\.exe)?(?:\s|$)'))));
-    expect(
-      source,
-      isNot(contains(RegExp(r'verify\.dart\s+integration\b'))),
-    );
+    expect(source, isNot(contains(RegExp(r'verify\.dart\s+integration\b'))));
     expect(source, isNot(contains('--stress')));
     expect(
       source,
@@ -893,7 +879,7 @@ void main() {
 }
 
 final class _FakeStoppableProcess implements StoppableProcess {
-  _FakeStoppableProcess(this.name, this.stopped, {this.failure});
+  new(this.name, this.stopped, {this.failure});
 
   final String name;
   final List<String> stopped;

@@ -9,7 +9,7 @@ part 'fee_rates_estimated.g.dart';
 @freezed
 abstract class FeeRatesEstimated with _$FeeRatesEstimated {
   /// @nodoc
-  const factory FeeRatesEstimated({
+  const factory({
     @JsonKey(name: 'low', fromJson: rpcBigInt, toJson: rpcBigIntToJson)
     required BigInt low,
     @JsonKey(name: 'medium', fromJson: rpcBigInt, toJson: rpcBigIntToJson)
@@ -23,10 +23,10 @@ abstract class FeeRatesEstimated with _$FeeRatesEstimated {
     RpcExtraFields extraFields,
   }) = _FeeRatesEstimated;
 
-  const FeeRatesEstimated._();
+  const new _();
 
   /// @nodoc
-  factory FeeRatesEstimated.fromJson(Map<String, dynamic> json) =>
+  factory fromJson(Map<String, dynamic> json) =>
       _$FeeRatesEstimatedFromJson(json).copyWith(
         extraFields: RpcExtraFields.capture(json, const {
           'low',

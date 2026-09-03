@@ -12,7 +12,7 @@ part 'rpc_transaction.freezed.dart';
 @Freezed(toJson: false)
 abstract class RpcTransaction with _$RpcTransaction {
   /// @nodoc
-  factory RpcTransaction({
+  factory({
     @JsonKey(name: 'hash') required String hash,
     @JsonKey(name: 'data') required TransactionType data,
     @JsonKey(name: 'fee') required BigInt fee,
@@ -32,10 +32,10 @@ abstract class RpcTransaction with _$RpcTransaction {
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = _RpcTransaction;
 
-  RpcTransaction._();
+  new _();
 
   /// @nodoc
-  factory RpcTransaction.fromJson(
+  factory fromJson(
     Map<String, dynamic> json, {
     String method = 'get_transaction',
   }) {
@@ -50,11 +50,7 @@ abstract class RpcTransaction with _$RpcTransaction {
         path: r'$.fee_limit',
       ),
       version: rpcVersionNumber(json['version'], max: 255),
-      nonce: rpcBigInt(
-        json['nonce'],
-        method: method,
-        path: r'$.nonce',
-      ),
+      nonce: rpcBigInt(json['nonce'], method: method, path: r'$.nonce'),
       source: json['source'] as String,
       rangeProof: rpcBytes(
         json['range_proof'],
@@ -114,9 +110,7 @@ abstract class RpcTransaction with _$RpcTransaction {
       'range_proof': rangeProof,
       'source_commitments': sourceCommitments
           .map(
-            (value) => value.toWireJson(
-              includeExtraFields: includeExtraFields,
-            ),
+            (value) => value.toWireJson(includeExtraFields: includeExtraFields),
           )
           .toList(),
       'reference': reference.toJson(),

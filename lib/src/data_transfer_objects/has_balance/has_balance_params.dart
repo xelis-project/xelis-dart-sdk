@@ -9,7 +9,7 @@ part 'has_balance_params.g.dart';
 abstract class HasBalanceParams with _$HasBalanceParams {
   /// @nodoc
   @JsonSerializable(includeIfNull: false)
-  const factory HasBalanceParams({
+  const factory({
     @JsonKey(name: 'address') required String address,
     @JsonKey(name: 'asset') required String asset,
     @JsonKey(
@@ -21,6 +21,6 @@ abstract class HasBalanceParams with _$HasBalanceParams {
   }) = _HasBalanceParams;
 
   /// @nodoc
-  factory HasBalanceParams.fromJson(Map<String, dynamic> json) =>
+  factory fromJson(Map<String, dynamic> json) =>
       _$HasBalanceParamsFromJson(json);
 }

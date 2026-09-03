@@ -8,11 +8,10 @@ part 'get_transactions_params.g.dart';
 @freezed
 abstract class GetTransactionsParams with _$GetTransactionsParams {
   /// @nodoc
-  const factory GetTransactionsParams({
-    @JsonKey(name: 'tx_hashes') required List<String> txHashes,
-  }) = _GetTransactionsParams;
+  const factory({@JsonKey(name: 'tx_hashes') required List<String> txHashes}) =
+      _GetTransactionsParams;
 
   /// @nodoc
-  factory GetTransactionsParams.fromJson(Map<String, dynamic> json) =>
+  factory fromJson(Map<String, dynamic> json) =>
       _$GetTransactionsParamsFromJson(json);
 }

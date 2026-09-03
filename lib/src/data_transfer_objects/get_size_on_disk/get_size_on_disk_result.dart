@@ -10,7 +10,7 @@ part 'get_size_on_disk_result.g.dart';
 @freezed
 abstract class GetSizeOnDiskResult with _$GetSizeOnDiskResult {
   /// @nodoc
-  const factory GetSizeOnDiskResult({
+  const factory({
     @JsonKey(name: 'size_bytes', fromJson: rpcBigInt, toJson: rpcBigIntToJson)
     required BigInt sizeBytes,
     @JsonKey(name: 'size_formatted') required String sizeFormatted,
@@ -19,10 +19,10 @@ abstract class GetSizeOnDiskResult with _$GetSizeOnDiskResult {
     RpcExtraFields extraFields,
   }) = _GetSizeOnDiskResult;
 
-  const GetSizeOnDiskResult._();
+  const new _();
 
   /// @nodoc
-  factory GetSizeOnDiskResult.fromJson(Map<String, dynamic> json) =>
+  factory fromJson(Map<String, dynamic> json) =>
       _$GetSizeOnDiskResultFromJson(json).copyWith(
         extraFields: RpcExtraFields.capture(json, const {
           'size_bytes',

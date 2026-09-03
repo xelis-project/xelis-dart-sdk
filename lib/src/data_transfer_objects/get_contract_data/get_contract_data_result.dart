@@ -9,31 +9,28 @@ part 'get_contract_data_result.freezed.dart';
 @Freezed(fromJson: false, toJson: false)
 abstract class GetContractDataResult with _$GetContractDataResult {
   /// Creates a versioned contract data result.
-  const factory GetContractDataResult({
+  const factory({
     required BigInt topoheight,
     required RpcValueCell? data,
     required BigInt? previousTopoheight,
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = _GetContractDataResult;
 
-  const GetContractDataResult._();
+  const new _();
 
   /// Decodes the current daemon response.
-  factory GetContractDataResult.fromJson(Map<String, dynamic> json) =>
-      GetContractDataResult(
-        topoheight: rpcBigInt(json['topoheight'], method: 'get_contract_data'),
-        data: json['data'] == null ? null : RpcValueCell.fromJson(json['data']),
-        previousTopoheight: json['previous_topoheight'] == null
-            ? null
-            : rpcBigInt(
-                json['previous_topoheight'],
-                method: 'get_contract_data',
-              ),
-        extraFields: RpcExtraFields.capture(
-          json,
-          const {'topoheight', 'data', 'previous_topoheight'},
-        ),
-      );
+  factory fromJson(Map<String, dynamic> json) => GetContractDataResult(
+    topoheight: rpcBigInt(json['topoheight'], method: 'get_contract_data'),
+    data: json['data'] == null ? null : RpcValueCell.fromJson(json['data']),
+    previousTopoheight: json['previous_topoheight'] == null
+        ? null
+        : rpcBigInt(json['previous_topoheight'], method: 'get_contract_data'),
+    extraFields: RpcExtraFields.capture(json, const {
+      'topoheight',
+      'data',
+      'previous_topoheight',
+    }),
+  );
 
   /// Serializes known fields and optionally restores additive received fields.
   Map<String, Object?> toWireJson({bool includeExtraFields = false}) =>

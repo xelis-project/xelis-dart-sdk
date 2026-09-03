@@ -6,16 +6,16 @@ part 'address_or_public_key.freezed.dart';
 /// compressed public-key bytes.
 @freezed
 sealed class AddressOrPublicKey with _$AddressOrPublicKey {
-  const AddressOrPublicKey._();
+  const new _();
 
   /// Creates an endpoint from an address string.
-  const factory AddressOrPublicKey.address(String value) = AddressValue;
+  const factory address(String value) = AddressValue;
 
   /// Creates an endpoint from compressed public-key bytes.
-  const factory AddressOrPublicKey.publicKey(List<int> bytes) = PublicKeyValue;
+  const factory publicKey(List<int> bytes) = PublicKeyValue;
 
   /// Parses a JSON value returned by wallet or daemon RPCs.
-  factory AddressOrPublicKey.fromJson(Object? json) {
+  factory fromJson(Object? json) {
     if (json is String) {
       return AddressOrPublicKey.address(json);
     }

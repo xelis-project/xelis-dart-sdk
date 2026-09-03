@@ -50,7 +50,9 @@ const integrationScenarios = <IntegrationScenario>[
   IntegrationScenario(
     id: 'contract_deployment',
     suite: 'e2e',
-    coverage: 'fixture verification, deployment, RPC events, scheduled execution and readback',
+    coverage:
+        'fixture verification, deployment, RPC events, scheduled execution '
+        'and readback',
   ),
   IntegrationScenario(
     id: 'multisig_configuration',
@@ -80,7 +82,7 @@ const integrationScenarios = <IntegrationScenario>[
 ];
 
 final class IntegrationScenario {
-  const IntegrationScenario({
+  const new({
     required this.id,
     required this.suite,
     required this.coverage,

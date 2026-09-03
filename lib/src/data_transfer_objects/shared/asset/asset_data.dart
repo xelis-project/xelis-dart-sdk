@@ -10,7 +10,7 @@ part 'asset_data.g.dart';
 @freezed
 abstract class AssetData with _$AssetData {
   /// @nodoc
-  const factory AssetData({
+  const factory({
     @JsonKey(name: 'decimals') required int decimals,
     @JsonKey(name: 'name') required String name,
     @JsonKey(name: 'ticker') required String ticker,
@@ -31,13 +31,11 @@ abstract class AssetData with _$AssetData {
     RpcExtraFields extraFields,
   }) = _AssetData;
 
-  const AssetData._();
+  const new _();
 
   /// @nodoc
-  factory AssetData.fromJson(Map<String, dynamic> json) =>
-      _$AssetDataFromJson(json).copyWith(
-        extraFields: RpcExtraFields.capture(json, _assetDataFields),
-      );
+  factory fromJson(Map<String, dynamic> json) => _$AssetDataFromJson(json)
+      .copyWith(extraFields: RpcExtraFields.capture(json, _assetDataFields));
 
   /// Serializes known fields and optionally restores fields received from wire.
   Map<String, Object?> toWireJson({bool includeExtraFields = false}) =>

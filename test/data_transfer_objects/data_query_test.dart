@@ -5,15 +5,9 @@ void main() {
   group('QueryNumber wire union', () {
     final cases = <(Map<String, Object?>, QueryNumber)>[
       ({'greater': 1}, QueryNumber.greater(BigInt.one)),
-      (
-        {'greater_or_equal': 2},
-        QueryNumber.greaterOrEqual(BigInt.from(2)),
-      ),
+      ({'greater_or_equal': 2}, QueryNumber.greaterOrEqual(BigInt.from(2))),
       ({'lesser': 3}, QueryNumber.lesser(BigInt.from(3))),
-      (
-        {'lesser_or_equal': 4},
-        QueryNumber.lesserOrEqual(BigInt.from(4)),
-      ),
+      ({'lesser_or_equal': 4}, QueryNumber.lesserOrEqual(BigInt.from(4))),
     ];
 
     for (final (wire, expected) in cases) {
@@ -93,7 +87,7 @@ void main() {
       (
         {'contains_value': true},
         const DataQuery.containsValue(
-          DataValue(RpcJsonValue.boolean(true)),
+          DataValue(RpcJsonValue.boolean(value: true)),
         ),
         {'contains_value': true},
       ),
@@ -131,9 +125,7 @@ void main() {
         {
           'has_key': {'key': 'owner', 'query': null},
         },
-        const DataQuery.hasKey(
-          key: DataValue(RpcJsonValue.string('owner')),
-        ),
+        const DataQuery.hasKey(key: DataValue(RpcJsonValue.string('owner'))),
         {
           'has_key': {'key': 'owner', 'query': null},
         },

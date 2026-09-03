@@ -9,7 +9,7 @@ part 'get_multisig_result.freezed.dart';
 @Freezed(fromJson: false, toJson: false)
 abstract class GetMultisigResult with _$GetMultisigResult {
   /// @nodoc
-  const factory GetMultisigResult({
+  const factory({
     @JsonKey(name: 'state') required MultisigState state,
     @JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson)
     required BigInt topoheight,
@@ -18,12 +18,10 @@ abstract class GetMultisigResult with _$GetMultisigResult {
     RpcExtraFields extraFields,
   }) = _GetMultisigResult;
 
-  const GetMultisigResult._();
+  const new _();
 
   /// @nodoc
-  factory GetMultisigResult.fromJson(
-    Map<String, dynamic> json,
-  ) => GetMultisigResult(
+  factory fromJson(Map<String, dynamic> json) => GetMultisigResult(
     state: MultisigState.fromJson(json['state']),
     topoheight: rpcBigInt(
       json['topoheight'],

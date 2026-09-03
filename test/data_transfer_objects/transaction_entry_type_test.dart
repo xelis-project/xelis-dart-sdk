@@ -266,16 +266,13 @@ void main() {
         'hash': 'tx-hash',
         'topoheight': 42,
         'timestamp': 1710000000000,
-        'future_envelope_field': {
-          'height': BigInt.parse('9007199254740993'),
-        },
+        'future_envelope_field': {'height': BigInt.parse('9007199254740993')},
         'coinbase': {'reward': 10, 'future_reward_field': true},
       });
 
-      expect(
-        entry.extraFields['future_envelope_field']?.toJson(),
-        {'height': BigInt.parse('9007199254740993')},
-      );
+      expect(entry.extraFields['future_envelope_field']?.toJson(), {
+        'height': BigInt.parse('9007199254740993'),
+      });
       final coinbase = entry.txEntryType as CoinbaseEntry;
       expect(coinbase.extraFields['future_reward_field']?.toJson(), isTrue);
       expect(entry.toWireJson(), isNot(contains('future_envelope_field')));
@@ -328,10 +325,7 @@ void main() {
         expect(decoded, entry.value, reason: entry.key);
         expect(decoded.toJson(), entry.key, reason: entry.key);
       }
-      expect(
-        () => PlaintextExtraDataFlag.fromJson(1),
-        throwsFormatException,
-      );
+      expect(() => PlaintextExtraDataFlag.fromJson(1), throwsFormatException);
     });
 
     test('restores additive plaintext extra-data fields only on request', () {

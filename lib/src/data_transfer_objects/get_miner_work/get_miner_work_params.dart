@@ -8,12 +8,12 @@ part 'get_miner_work_params.g.dart';
 @freezed
 abstract class GetMinerWorkParams with _$GetMinerWorkParams {
   /// @nodoc
-  const factory GetMinerWorkParams({
+  const factory({
     @JsonKey(name: 'template') required String template,
     @JsonKey(name: 'address') required String address,
   }) = _GetMinerWorkParams;
 
   /// @nodoc
-  factory GetMinerWorkParams.fromJson(Map<String, dynamic> json) =>
+  factory fromJson(Map<String, dynamic> json) =>
       _$GetMinerWorkParamsFromJson(json);
 }

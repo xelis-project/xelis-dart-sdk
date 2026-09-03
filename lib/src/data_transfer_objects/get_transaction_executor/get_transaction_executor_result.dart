@@ -10,7 +10,7 @@ part 'get_transaction_executor_result.g.dart';
 abstract class GetTransactionExecutorResult
     with _$GetTransactionExecutorResult {
   /// @nodoc
-  const factory GetTransactionExecutorResult({
+  const factory({
     @JsonKey(
       name: 'block_topoheight',
       fromJson: rpcBigInt,
@@ -29,10 +29,10 @@ abstract class GetTransactionExecutorResult
     RpcExtraFields extraFields,
   }) = _GetTransactionExecutorResult;
 
-  const GetTransactionExecutorResult._();
+  const new _();
 
   /// @nodoc
-  factory GetTransactionExecutorResult.fromJson(Map<String, dynamic> json) =>
+  factory fromJson(Map<String, dynamic> json) =>
       _$GetTransactionExecutorResultFromJson(json).copyWith(
         extraFields: RpcExtraFields.capture(json, const {
           'block_topoheight',

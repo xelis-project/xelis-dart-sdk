@@ -11,13 +11,9 @@ part 'transfer_builder.g.dart';
 abstract class TransferBuilder with _$TransferBuilder {
   /// @nodoc
   @JsonSerializable(includeIfNull: false)
-  const factory TransferBuilder({
+  const factory({
     @JsonKey(name: 'asset') required String asset,
-    @JsonKey(
-      name: 'amount',
-      fromJson: rpcBigInt,
-      toJson: rpcBigIntToJson,
-    )
+    @JsonKey(name: 'amount', fromJson: rpcBigInt, toJson: rpcBigIntToJson)
     required BigInt amount,
     @JsonKey(name: 'destination') required String destination,
     @JsonKey(name: 'encrypt_extra_data') @Default(true) bool encryptExtraData,
@@ -30,7 +26,7 @@ abstract class TransferBuilder with _$TransferBuilder {
   }) = _TransferBuilder;
 
   /// @nodoc
-  factory TransferBuilder.fromJson(Map<String, dynamic> json) =>
+  factory fromJson(Map<String, dynamic> json) =>
       _$TransferBuilderFromJson(json);
 }
 

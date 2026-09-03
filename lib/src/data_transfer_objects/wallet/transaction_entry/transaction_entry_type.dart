@@ -15,7 +15,7 @@ part 'transaction_entry_type.g.dart';
 @freezed
 sealed class TransactionEntryType with _$TransactionEntryType {
   /// @nodoc
-  const factory TransactionEntryType.coinbase({
+  const factory coinbase({
     @JsonKey(name: 'reward', fromJson: rpcBigInt, toJson: rpcBigIntToJson)
     required BigInt reward,
     @JsonKey(includeFromJson: false, includeToJson: false)
@@ -24,7 +24,7 @@ sealed class TransactionEntryType with _$TransactionEntryType {
   }) = CoinbaseEntry;
 
   /// @nodoc
-  const factory TransactionEntryType.burn({
+  const factory burn({
     @JsonKey(name: 'asset') required String asset,
     @JsonKey(name: 'amount', fromJson: rpcBigInt, toJson: rpcBigIntToJson)
     required BigInt amount,
@@ -38,7 +38,7 @@ sealed class TransactionEntryType with _$TransactionEntryType {
   }) = BurnEntry;
 
   /// @nodoc
-  const factory TransactionEntryType.incoming({
+  const factory incoming({
     @JsonKey(name: 'from') required String from,
     @JsonKey(name: 'transfers') required List<TransferInEntry> transfers,
     @JsonKey(includeFromJson: false, includeToJson: false)
@@ -47,7 +47,7 @@ sealed class TransactionEntryType with _$TransactionEntryType {
   }) = IncomingEntry;
 
   /// @nodoc
-  const factory TransactionEntryType.outgoing({
+  const factory outgoing({
     @JsonKey(name: 'fee', fromJson: rpcBigInt, toJson: rpcBigIntToJson)
     required BigInt fee,
     @JsonKey(name: 'nonce', fromJson: rpcBigInt, toJson: rpcBigIntToJson)
@@ -58,7 +58,7 @@ sealed class TransactionEntryType with _$TransactionEntryType {
     RpcExtraFields extraFields,
   }) = OutgoingEntry;
 
-  const factory TransactionEntryType.multisig({
+  const factory multisig({
     @JsonKey(name: 'participants') required List<String> participants,
     @JsonKey(name: 'threshold') required int threshold,
     @JsonKey(name: 'fee', fromJson: rpcBigInt, toJson: rpcBigIntToJson)
@@ -70,7 +70,7 @@ sealed class TransactionEntryType with _$TransactionEntryType {
     RpcExtraFields extraFields,
   }) = MultisigEntry;
 
-  const factory TransactionEntryType.invokeContract({
+  const factory invokeContract({
     @JsonKey(name: 'contract') required String contract,
     @JsonKey(
       name: 'deposits',
@@ -96,7 +96,7 @@ sealed class TransactionEntryType with _$TransactionEntryType {
     RpcExtraFields extraFields,
   }) = InvokeContractEntry;
 
-  const factory TransactionEntryType.deployContract({
+  const factory deployContract({
     @JsonKey(name: 'fee', fromJson: rpcBigInt, toJson: rpcBigIntToJson)
     required BigInt fee,
     @JsonKey(name: 'nonce', fromJson: rpcBigInt, toJson: rpcBigIntToJson)
@@ -107,7 +107,7 @@ sealed class TransactionEntryType with _$TransactionEntryType {
     RpcExtraFields extraFields,
   }) = DeployContractEntry;
 
-  const factory TransactionEntryType.incomingContract({
+  const factory incomingContract({
     @JsonKey(
       name: 'transfers',
       fromJson: rpcNestedBigIntMap,
@@ -119,7 +119,7 @@ sealed class TransactionEntryType with _$TransactionEntryType {
     RpcExtraFields extraFields,
   }) = IncomingContractEntry;
 
-  const factory TransactionEntryType.outgoingBlob({
+  const factory outgoingBlob({
     @JsonKey(name: 'destinations') required List<String> destinations,
     @JsonKey(name: 'fee', fromJson: rpcBigInt, toJson: rpcBigIntToJson)
     required BigInt fee,
@@ -131,7 +131,7 @@ sealed class TransactionEntryType with _$TransactionEntryType {
     RpcExtraFields extraFields,
   }) = OutgoingBlobEntry;
 
-  const factory TransactionEntryType.incomingBlob({
+  const factory incomingBlob({
     @JsonKey(name: 'from') required String from,
     @JsonKey(name: 'destinations') required List<String> destinations,
     @JsonKey(name: 'data') required ExtraData data,
@@ -141,7 +141,7 @@ sealed class TransactionEntryType with _$TransactionEntryType {
   }) = IncomingBlobEntry;
 
   /// Preserves a future wallet transaction-entry variant losslessly.
-  const factory TransactionEntryType.unknown({
+  const factory unknown({
     required String type,
     required RpcJsonValue wireValue,
     @JsonKey(includeFromJson: false, includeToJson: false)
@@ -150,6 +150,6 @@ sealed class TransactionEntryType with _$TransactionEntryType {
   }) = UnknownTransactionEntryType;
 
   /// @nodoc
-  factory TransactionEntryType.fromJson(Map<String, dynamic> json) =>
+  factory fromJson(Map<String, dynamic> json) =>
       _$TransactionEntryTypeFromJson(json);
 }

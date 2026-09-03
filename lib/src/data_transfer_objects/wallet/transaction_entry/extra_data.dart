@@ -9,19 +9,18 @@ part 'extra_data.g.dart';
 /// Extensible representation of Rust `PlaintextFlag`.
 @Freezed(fromJson: false, toJson: false)
 sealed class PlaintextExtraDataFlag with _$PlaintextExtraDataFlag {
-  const factory PlaintextExtraDataFlag.private() = PrivateExtraDataFlag;
-  const factory PlaintextExtraDataFlag.public() = PublicExtraDataFlag;
-  const factory PlaintextExtraDataFlag.proprietary() = ProprietaryExtraDataFlag;
-  const factory PlaintextExtraDataFlag.failed() = FailedExtraDataFlag;
+  const factory private() = PrivateExtraDataFlag;
+  const factory public() = PublicExtraDataFlag;
+  const factory proprietary() = ProprietaryExtraDataFlag;
+  const factory failed() = FailedExtraDataFlag;
 
   /// Preserves a flag introduced by a newer wallet.
-  const factory PlaintextExtraDataFlag.unknown(String type) =
-      UnknownPlaintextExtraDataFlag;
+  const factory unknown(String type) = UnknownPlaintextExtraDataFlag;
 
-  const PlaintextExtraDataFlag._();
+  const new _();
 
   /// Parses the Rust snake-case wire value without discarding future values.
-  factory PlaintextExtraDataFlag.fromJson(Object? json) {
+  factory fromJson(Object? json) {
     if (json is! String) {
       throw const FormatException(
         'Plaintext extra-data flag must be a string.',
@@ -50,7 +49,7 @@ sealed class PlaintextExtraDataFlag with _$PlaintextExtraDataFlag {
 @freezed
 abstract class ExtraData with _$ExtraData {
   /// @nodoc
-  const factory ExtraData({
+  const factory({
     @JsonKey(
       name: 'flag',
       fromJson: PlaintextExtraDataFlag.fromJson,
@@ -74,11 +73,11 @@ abstract class ExtraData with _$ExtraData {
     RpcExtraFields extraFields,
   }) = _ExtraData;
 
-  const ExtraData._();
+  const new _();
 
   /// @nodoc
-  factory ExtraData.fromJson(Map<String, dynamic> json) =>
-      _$ExtraDataFromJson(json).copyWith(
+  factory fromJson(Map<String, dynamic> json) => _$ExtraDataFromJson(json)
+      .copyWith(
         extraFields: RpcExtraFields.capture(json, const {
           'data',
           'flag',

@@ -8,16 +8,16 @@ part 'rpc_exit_error.freezed.dart';
 @freezed
 abstract class RpcExitError with _$RpcExitError {
   /// Creates a typed contract runtime error.
-  const factory RpcExitError({
+  const factory({
     required String code,
     required String message,
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = _RpcExitError;
 
-  const RpcExitError._();
+  const new _();
 
   /// Decodes the `{code, message}` wire published by `xelis-blockchain`.
-  factory RpcExitError.fromJson(Object? json) {
+  factory fromJson(Object? json) {
     final map = rpcJsonMap(json, method: '<contract_exit_error>');
     final code = map['code'];
     final message = map['message'];

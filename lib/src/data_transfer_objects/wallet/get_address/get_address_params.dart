@@ -9,7 +9,7 @@ part 'get_address_params.g.dart';
 @freezed
 abstract class GetAddressParams with _$GetAddressParams {
   /// @nodoc
-  const factory GetAddressParams({
+  const factory({
     @JsonKey(
       name: 'integrated_data',
       fromJson: _nullableDataElementFromJson,
@@ -19,7 +19,7 @@ abstract class GetAddressParams with _$GetAddressParams {
   }) = _GetAddressParams;
 
   /// @nodoc
-  factory GetAddressParams.fromJson(Map<String, dynamic> json) =>
+  factory fromJson(Map<String, dynamic> json) =>
       _$GetAddressParamsFromJson(json);
 }
 

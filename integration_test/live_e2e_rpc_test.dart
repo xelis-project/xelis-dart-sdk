@@ -132,17 +132,13 @@ void main() {
         );
         expect(
           await walletA.estimateFees(
-            EstimateWalletFeesParams(
-              transactionTypeBuilder: transferBuilder,
-            ),
+            EstimateWalletFeesParams(transactionTypeBuilder: transferBuilder),
           ),
           greaterThan(BigInt.zero),
         );
         expect(
           (await walletA.estimateExtraDataSize(
-            EstimateExtraDataSizeParams(
-              destinations: [integratedAddress],
-            ),
+            EstimateExtraDataSizeParams(destinations: [integratedAddress]),
           )).size,
           greaterThan(BigInt.zero),
         );
@@ -172,9 +168,7 @@ void main() {
                 ),
               ],
             ),
-            balances: {
-              xelisAsset: stableBalance.versionedBalance.finalBalance,
-            },
+            balances: {xelisAsset: stableBalance.versionedBalance.finalBalance},
             reference: Reference(
               hash: stableBalance.stableBlockHash,
               topoheight: stableBalance.stableTopoheight,
@@ -238,12 +232,11 @@ void main() {
         final fixture = ContractFixture.load(configuration.contractFixture!);
         expect(fixture.sourceCommit, target.commit);
         final deployedEvent = Completer<ContractDeployEvent>();
-        daemon.registerCallback(
-          DaemonEvent.deployContract,
-          (ContractDeployEvent event) {
-            if (!deployedEvent.isCompleted) deployedEvent.complete(event);
-          },
-        );
+        daemon.registerCallback(DaemonEvent.deployContract, (
+          ContractDeployEvent event,
+        ) {
+          if (!deployedEvent.isCompleted) deployedEvent.complete(event);
+        });
         await daemon.subscribeTo(DaemonEvent.deployContract);
         final deployment = await walletA.buildTransaction(
           BuildTransactionParams(
@@ -252,9 +245,7 @@ void main() {
                 module: fixture.moduleHex,
                 version: ContractVersion.v1,
               ),
-              invoke: DeployContractInvokeBuilder(
-                maxGas: BigInt.from(100000),
-              ),
+              invoke: DeployContractInvokeBuilder(maxGas: BigInt.from(100000)),
             ),
           ),
         );
@@ -272,9 +263,9 @@ void main() {
         );
         await daemon.unsubscribeFrom(DaemonEvent.deployContract);
         await waitUntil(
-          () async => (await daemon.getContracts(
-            maximum: 100,
-          )).contains(deployment.transaction.hash),
+          () async =>
+              (await daemon.getContracts(maximum: 100))
+                  .contains(deployment.transaction.hash),
           description: 'deployed contract readback',
         );
         final module = await daemon.getContractModule(
@@ -300,9 +291,7 @@ void main() {
         expect(await daemon.hasContractData(counterRequest), isTrue);
         expect(
           (await daemon.getContractData(counterRequest)).data?.toWireJson(),
-          RpcValueCell.primitive(
-            RpcPrimitive.u64(BigInt.one),
-          ).toWireJson(),
+          RpcValueCell.primitive(RpcPrimitive.u64(BigInt.one)).toWireJson(),
         );
 
         final invokeSubscription = RpcEventSubscription.contractInvoke(
@@ -310,12 +299,11 @@ void main() {
           contract: deployment.transaction.hash,
         );
         final invokedEvent = Completer<InvokeContractEvent>();
-        daemon.registerCallback(
-          invokeSubscription,
-          (InvokeContractEvent event) {
-            if (!invokedEvent.isCompleted) invokedEvent.complete(event);
-          },
-        );
+        daemon.registerCallback(invokeSubscription, (
+          InvokeContractEvent event,
+        ) {
+          if (!invokedEvent.isCompleted) invokedEvent.complete(event);
+        });
         await daemon.sendRequest(XelisSubscription.subscribe, {
           'notify': invokeSubscription.notify,
         });
@@ -338,20 +326,16 @@ void main() {
         final filteredRpcEvent = Completer<ContractEvent>();
         var unrelatedRpcEventDelivered = false;
         daemon
-          ..registerCallback(
-            anyRpcEventSubscription,
-            (ContractEvent event) {
-              if (!anyRpcEvent.isCompleted) anyRpcEvent.complete(event);
-            },
-          )
-          ..registerCallback(
-            filteredRpcEventSubscription,
-            (ContractEvent event) {
-              if (!filteredRpcEvent.isCompleted) {
-                filteredRpcEvent.complete(event);
-              }
-            },
-          )
+          ..registerCallback(anyRpcEventSubscription, (ContractEvent event) {
+            if (!anyRpcEvent.isCompleted) anyRpcEvent.complete(event);
+          })
+          ..registerCallback(filteredRpcEventSubscription, (
+            ContractEvent event,
+          ) {
+            if (!filteredRpcEvent.isCompleted) {
+              filteredRpcEvent.complete(event);
+            }
+          })
           ..registerCallback(
             unrelatedRpcEventSubscription,
             (ContractEvent _) => unrelatedRpcEventDelivered = true,
@@ -423,9 +407,7 @@ void main() {
         await daemon.unsubscribeFrom(unrelatedRpcEventSubscription);
         expect(
           (await daemon.getContractData(counterRequest)).data?.toWireJson(),
-          RpcValueCell.primitive(
-            RpcPrimitive.u64(BigInt.from(5)),
-          ).toWireJson(),
+          RpcValueCell.primitive(RpcPrimitive.u64(BigInt.from(5))).toWireJson(),
         );
         expect(
           await daemon.getContractTransactions(deployment.transaction.hash),
@@ -433,14 +415,13 @@ void main() {
         );
 
         final scheduledInvocation = Completer<InvokeContractEvent>();
-        daemon.registerCallback(
-          invokeSubscription,
-          (InvokeContractEvent event) {
-            if (!scheduledInvocation.isCompleted) {
-              scheduledInvocation.complete(event);
-            }
-          },
-        );
+        daemon.registerCallback(invokeSubscription, (
+          InvokeContractEvent event,
+        ) {
+          if (!scheduledInvocation.isCompleted) {
+            scheduledInvocation.complete(event);
+          }
+        });
         await daemon.sendRequest(XelisSubscription.subscribe, {
           'notify': invokeSubscription.notify,
         });
@@ -455,9 +436,7 @@ void main() {
               // following entry chunk.
               entryId: 3,
               parameters: [
-                RpcValueCell.primitive(
-                  RpcPrimitive.u64(scheduledTopoheight),
-                ),
+                RpcValueCell.primitive(RpcPrimitive.u64(scheduledTopoheight)),
               ],
             ),
           ),
@@ -484,10 +463,7 @@ void main() {
           (value) => value.hash == scheduleLog.hash,
         );
         expect(matchingExecutions, hasLength(1));
-        expect(
-          matchingExecutions.single.contract,
-          deployment.transaction.hash,
-        );
+        expect(matchingExecutions.single.contract, deployment.transaction.hash);
         expect(
           matchingExecutions.single.gasSources,
           everyElement(isA<RpcGasSourceEntry>()),

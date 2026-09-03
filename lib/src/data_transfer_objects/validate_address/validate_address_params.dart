@@ -8,7 +8,7 @@ part 'validate_address_params.g.dart';
 @freezed
 abstract class ValidateAddressParams with _$ValidateAddressParams {
   /// @nodoc
-  const factory ValidateAddressParams({
+  const factory({
     @JsonKey(name: 'address') required String address,
     @JsonKey(name: 'allow_integrated') required bool allowIntegrated,
     @JsonKey(name: 'max_integrated_data_size')
@@ -16,6 +16,6 @@ abstract class ValidateAddressParams with _$ValidateAddressParams {
   }) = _ValidateAddressParams;
 
   /// @nodoc
-  factory ValidateAddressParams.fromJson(Map<String, dynamic> json) =>
+  factory fromJson(Map<String, dynamic> json) =>
       _$ValidateAddressParamsFromJson(json);
 }

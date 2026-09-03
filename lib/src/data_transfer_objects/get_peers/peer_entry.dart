@@ -13,7 +13,7 @@ part 'peer_entry.g.dart';
 @freezed
 abstract class PeerEntry with _$PeerEntry {
   /// @nodoc
-  const factory PeerEntry({
+  const factory({
     @JsonKey(name: 'addr') required String address,
     @JsonKey(name: 'bytes_recv', fromJson: rpcBigInt, toJson: rpcBigIntToJson)
     required BigInt bytesRecv,
@@ -48,13 +48,11 @@ abstract class PeerEntry with _$PeerEntry {
     RpcExtraFields extraFields,
   }) = _PeerEntry;
 
-  const PeerEntry._();
+  const new _();
 
   /// @nodoc
-  factory PeerEntry.fromJson(Map<String, dynamic> json) =>
-      _$PeerEntryFromJson(json).copyWith(
-        extraFields: RpcExtraFields.capture(json, _peerEntryFields),
-      );
+  factory fromJson(Map<String, dynamic> json) => _$PeerEntryFromJson(json)
+      .copyWith(extraFields: RpcExtraFields.capture(json, _peerEntryFields));
 
   Map<String, Object?> toWireJson({bool includeExtraFields = false}) =>
       extraFields.mergeInto({

@@ -62,23 +62,21 @@ void main() {
         });
 
         test('parses wallet build params from the Rust RPC tag', () {
-          final params = BuildTransactionParams.fromJson(
-            <String, dynamic>{...txCase.builderRpcJson, 'tx_version': 3},
-          );
+          final params = BuildTransactionParams.fromJson(<String, dynamic>{
+            ...txCase.builderRpcJson,
+            'tx_version': 3,
+          });
 
           expect(params.transactionTypeBuilder, txCase.builderMatcher);
-          expect(
-            params.toJson(),
-            <String, dynamic>{
-              ...txCase.builderRpcJson,
-              'fee': {'extra': 'none'},
-              'base_fee': 'none',
-              'tx_version': 3,
-              'broadcast': true,
-              'tx_as_hex': false,
-              'signers': <dynamic>[],
-            },
-          );
+          expect(params.toJson(), <String, dynamic>{
+            ...txCase.builderRpcJson,
+            'fee': {'extra': 'none'},
+            'base_fee': 'none',
+            'tx_version': 3,
+            'broadcast': true,
+            'tx_as_hex': false,
+            'signers': <dynamic>[],
+          });
         });
 
         test('parses transaction payloads from the Rust RPC tag', () {
@@ -184,9 +182,7 @@ _TransactionTypeCase _transfersCase() {
           amount: BigInt.from(42),
           destination: 'xel-address',
           encryptExtraData: false,
-          extraData: DataElement.fromJson(<String, dynamic>{
-            'value': 'memo',
-          }),
+          extraData: DataElement.fromJson(<String, dynamic>{'value': 'memo'}),
         ),
       ],
     ),
@@ -219,10 +215,7 @@ _TransactionTypeCase _transfersCase() {
 
 _TransactionTypeCase _burnCase() {
   final builderRpcJson = <String, dynamic>{
-    'burn': <String, dynamic>{
-      'asset': 'asset-hash',
-      'amount': BigInt.from(42),
-    },
+    'burn': <String, dynamic>{'asset': 'asset-hash', 'amount': BigInt.from(42)},
   };
   final payloadRpcJson = <String, dynamic>{
     'burn': <String, dynamic>{'asset': 'asset-hash', 'amount': 42},
@@ -434,10 +427,7 @@ _TransactionTypeCase _deployContractCase() {
     builderMatcher: isA<DeployContractBuilder>().having(
       (builder) => builder.contract,
       'contract',
-      ContractModuleHex.fromModule(
-        module: '00ab',
-        version: ContractVersion.v1,
-      ),
+      ContractModuleHex.fromModule(module: '00ab', version: ContractVersion.v1),
     ),
     payloadMatcher: isA<DeployContractPayload>().having(
       (payload) => payload.version,
@@ -519,9 +509,7 @@ Map<String, dynamic> _rpcTransactionJson(Map<String, dynamic> data) {
     'nonce': 1,
     'source': 'source-address',
     'range_proof': <dynamic>[4, 5, 6],
-    'source_commitments': <dynamic>[
-      _sourceCommitmentJson(),
-    ],
+    'source_commitments': <dynamic>[_sourceCommitmentJson()],
     'reference': <String, dynamic>{'hash': 'ref-hash', 'topoheight': 42},
     'multisig': null,
     'signature': 'signature',
@@ -539,9 +527,7 @@ Map<String, dynamic> _walletTransactionJson(Map<String, dynamic> data) {
     'nonce': 1,
     'source': 'source-address',
     'range_proof': <dynamic>[4, 5, 6],
-    'source_commitments': <dynamic>[
-      _sourceCommitmentJson(),
-    ],
+    'source_commitments': <dynamic>[_sourceCommitmentJson()],
     'reference': <String, dynamic>{'hash': 'ref-hash', 'topoheight': 42},
     'multisig': null,
     'signature': 'signature',

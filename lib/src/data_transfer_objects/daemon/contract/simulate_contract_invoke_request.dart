@@ -9,7 +9,7 @@ part 'simulate_contract_invoke_request.freezed.dart';
 @Freezed(fromJson: false, toJson: false)
 abstract class SimulateContractInvokeRequest
     with _$SimulateContractInvokeRequest {
-  const factory SimulateContractInvokeRequest({
+  const factory({
     required String source,
     required String contract,
     required Map<String, ContractDepositBuilder> deposits,
@@ -18,7 +18,7 @@ abstract class SimulateContractInvokeRequest
     @Default(InterContractPermission.none()) InterContractPermission permission,
   }) = _SimulateContractInvokeRequest;
 
-  const SimulateContractInvokeRequest._();
+  const new _();
 
   Map<String, dynamic> toJson() => {
     'source': source,

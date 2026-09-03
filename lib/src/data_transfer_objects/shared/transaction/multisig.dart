@@ -9,28 +9,26 @@ part 'multisig.g.dart';
 @freezed
 abstract class Multisig with _$Multisig {
   /// @nodoc
-  const factory Multisig({
+  const factory({
     @JsonKey(name: 'signatures') required List<SignatureId> signatures,
     @JsonKey(includeFromJson: false, includeToJson: false)
     @Default(RpcExtraFields())
     RpcExtraFields extraFields,
   }) = _Multisig;
 
-  const Multisig._();
+  const new _();
 
   /// @nodoc
-  factory Multisig.fromJson(Map<String, dynamic> json) =>
-      _$MultisigFromJson(json).copyWith(
-        extraFields: RpcExtraFields.capture(json, const {'signatures'}),
-      );
+  factory fromJson(Map<String, dynamic> json) => _$MultisigFromJson(
+    json,
+  ).copyWith(extraFields: RpcExtraFields.capture(json, const {'signatures'}));
 
   Map<String, Object?> toWireJson({bool includeExtraFields = false}) =>
       extraFields.mergeInto({
         'signatures': signatures
             .map(
-              (value) => value.toWireJson(
-                includeExtraFields: includeExtraFields,
-              ),
+              (value) =>
+                  value.toWireJson(includeExtraFields: includeExtraFields),
             )
             .toList(),
       }, includeExtraFields: includeExtraFields);

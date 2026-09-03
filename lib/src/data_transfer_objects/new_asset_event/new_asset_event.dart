@@ -9,7 +9,7 @@ part 'new_asset_event.g.dart';
 @freezed
 abstract class NewAssetEvent with _$NewAssetEvent {
   /// @nodoc
-  const factory NewAssetEvent({
+  const factory({
     @JsonKey(name: 'asset') required String asset,
     @JsonKey(name: 'block_hash') required String blockHash,
     @JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson)
@@ -19,11 +19,11 @@ abstract class NewAssetEvent with _$NewAssetEvent {
     RpcExtraFields extraFields,
   }) = _NewAssetEvent;
 
-  const NewAssetEvent._();
+  const new _();
 
   /// @nodoc
-  factory NewAssetEvent.fromJson(Map<String, dynamic> json) =>
-      _$NewAssetEventFromJson(json).copyWith(
+  factory fromJson(Map<String, dynamic> json) => _$NewAssetEventFromJson(json)
+      .copyWith(
         extraFields: RpcExtraFields.capture(json, const {
           'asset',
           'block_hash',

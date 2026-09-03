@@ -10,13 +10,13 @@ part 'get_blocks_at_height_params.g.dart';
 abstract class GetBlocksAtHeightParams with _$GetBlocksAtHeightParams {
   /// @nodoc
   @JsonSerializable(includeIfNull: false)
-  const factory GetBlocksAtHeightParams({
+  const factory({
     @JsonKey(name: 'height', fromJson: rpcBigInt, toJson: rpcBigIntToJson)
     required BigInt height,
     @JsonKey(name: 'include_txs') bool? includeTxs,
   }) = _GetBlocksAtHeightParams;
 
   /// @nodoc
-  factory GetBlocksAtHeightParams.fromJson(Map<String, dynamic> json) =>
+  factory fromJson(Map<String, dynamic> json) =>
       _$GetBlocksAtHeightParamsFromJson(json);
 }

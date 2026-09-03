@@ -8,19 +8,18 @@ part 'decrypt_extra_data_daemon_params.freezed.dart';
 abstract class DecryptExtraDataDaemonParams
     with _$DecryptExtraDataDaemonParams {
   /// @nodoc
-  const factory DecryptExtraDataDaemonParams({
+  const factory({
     required EncryptedExtraData extraData,
     required ExtraDataSharedKey sharedKey,
   }) = _DecryptExtraDataDaemonParams;
 
-  const DecryptExtraDataDaemonParams._();
+  const new _();
 
   /// @nodoc
-  factory DecryptExtraDataDaemonParams.fromJson(Map<String, dynamic> json) =>
-      DecryptExtraDataDaemonParams(
-        extraData: EncryptedExtraData.fromJson(json['extra_data']),
-        sharedKey: ExtraDataSharedKey.fromJson(json['shared_key']),
-      );
+  factory fromJson(Map<String, dynamic> json) => DecryptExtraDataDaemonParams(
+    extraData: EncryptedExtraData.fromJson(json['extra_data']),
+    sharedKey: ExtraDataSharedKey.fromJson(json['shared_key']),
+  );
 
   /// Encodes the current daemon request fields.
   Map<String, Object> toJson() => {

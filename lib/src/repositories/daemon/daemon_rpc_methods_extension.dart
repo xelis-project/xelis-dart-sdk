@@ -95,28 +95,20 @@ extension DaemonRpcMethodsExtension on DaemonClient {
   );
 
   /// Returns current height  of the chain.
-  Future<BigInt> getHeight() => sendRequestAndDecode(
-    DaemonMethod.getHeight,
-    rpcBigInt,
-  );
+  Future<BigInt> getHeight() =>
+      sendRequestAndDecode(DaemonMethod.getHeight, rpcBigInt);
 
   /// Returns current topological height of the chain.
-  Future<BigInt> getTopoheight() => sendRequestAndDecode(
-    DaemonMethod.getTopoheight,
-    rpcBigInt,
-  );
+  Future<BigInt> getTopoheight() =>
+      sendRequestAndDecode(DaemonMethod.getTopoheight, rpcBigInt);
 
   /// Returns the stable height of the chain.
-  Future<BigInt> getStableHeight() => sendRequestAndDecode(
-    DaemonMethod.getStableHeight,
-    rpcBigInt,
-  );
+  Future<BigInt> getStableHeight() =>
+      sendRequestAndDecode(DaemonMethod.getStableHeight, rpcBigInt);
 
   /// Returns the stable topological height of the chain.
-  Future<BigInt> getStableTopoheight() => sendRequestAndDecode(
-    DaemonMethod.getStableTopoheight,
-    rpcBigInt,
-  );
+  Future<BigInt> getStableTopoheight() =>
+      sendRequestAndDecode(DaemonMethod.getStableTopoheight, rpcBigInt);
 
   /// Returns the block template for PoW work.
   Future<GetBlockTemplateResult> getBlockTemplate(
@@ -148,22 +140,20 @@ extension DaemonRpcMethodsExtension on DaemonClient {
   );
 
   /// Return a block by its hash.
-  Future<Block> getBlockByHash(
-    GetBlockByHashParams getBlockByHashParams,
-  ) => sendRequestAndDecode(
-    DaemonMethod.getBlockByHash,
-    (result) => Block.fromJson(rpcJsonMap(result)),
-    getBlockByHashParams.toJson(),
-  );
+  Future<Block> getBlockByHash(GetBlockByHashParams getBlockByHashParams) =>
+      sendRequestAndDecode(
+        DaemonMethod.getBlockByHash,
+        (result) => Block.fromJson(rpcJsonMap(result)),
+        getBlockByHashParams.toJson(),
+      );
 
   /// Returns the highest block based on the topological height.
-  Future<Block> getTopBlock([
-    GetTopBlockParams? getTopBlockParams,
-  ]) => sendRequestAndDecode(
-    DaemonMethod.getTopBlock,
-    (result) => Block.fromJson(rpcJsonMap(result)),
-    getTopBlockParams?.toJson() ?? const GetTopBlockParams().toJson(),
-  );
+  Future<Block> getTopBlock([GetTopBlockParams? getTopBlockParams]) =>
+      sendRequestAndDecode(
+        DaemonMethod.getTopBlock,
+        (result) => Block.fromJson(rpcJsonMap(result)),
+        getTopBlockParams?.toJson() ?? const GetTopBlockParams().toJson(),
+      );
 
   /// Returns the nonce for address in request params.
   ///
@@ -196,13 +186,12 @@ extension DaemonRpcMethodsExtension on DaemonClient {
   /// Returns up-to-date asset's balance for a specific address.
   ///
   /// NOTE: Balance is returned in atomic units.
-  Future<GetBalanceResult> getBalance(
-    GetBalanceParams getBalanceParams,
-  ) => sendRequestAndDecode(
-    DaemonMethod.getBalance,
-    (result) => GetBalanceResult.fromJson(rpcJsonMap(result)),
-    getBalanceParams.toJson(),
-  );
+  Future<GetBalanceResult> getBalance(GetBalanceParams getBalanceParams) =>
+      sendRequestAndDecode(
+        DaemonMethod.getBalance,
+        (result) => GetBalanceResult.fromJson(rpcJsonMap(result)),
+        getBalanceParams.toJson(),
+      );
 
   /// Get up-to-date asset's balance for a specific address.
   ///
@@ -235,15 +224,14 @@ extension DaemonRpcMethodsExtension on DaemonClient {
       );
 
   /// Get all assets available on network with its registered topoheight.
-  Future<List<RpcAssetData>> getAssets([
-    GetAssetsParams? getAssetsParams,
-  ]) => sendRequestAndDecode(
-    DaemonMethod.getAssets,
-    (result) => (result! as List)
-        .map((value) => RpcAssetData.fromJson(rpcJsonMap(value)))
-        .toList(),
-    getAssetsParams?.toJson() ?? const GetAssetsParams().toJson(),
-  );
+  Future<List<RpcAssetData>> getAssets([GetAssetsParams? getAssetsParams]) =>
+      sendRequestAndDecode(
+        DaemonMethod.getAssets,
+        (result) => (result! as List)
+            .map((value) => RpcAssetData.fromJson(rpcJsonMap(value)))
+            .toList(),
+        getAssetsParams?.toJson() ?? const GetAssetsParams().toJson(),
+      );
 
   /// Returns the number of transactions saved on node disk.
   Future<int> countTransactions() => sendRequestAndDecode(
@@ -312,13 +300,12 @@ extension DaemonRpcMethodsExtension on DaemonClient {
   );
 
   /// Fetch all transactions presents in the mempool.
-  Future<GetMempoolResult> getMempool(
-    GetMempoolParams getMempoolParams,
-  ) => sendRequestAndDecode(
-    DaemonMethod.getMempool,
-    (result) => GetMempoolResult.fromJson(rpcJsonMap(result)),
-    getMempoolParams.toJson(),
-  );
+  Future<GetMempoolResult> getMempool(GetMempoolParams getMempoolParams) =>
+      sendRequestAndDecode(
+        DaemonMethod.getMempool,
+        (result) => GetMempoolResult.fromJson(rpcJsonMap(result)),
+        getMempoolParams.toJson(),
+      );
 
   /// Fetch transactions summary presents in the mempool.
   Future<GetMempoolSummaryResult> getMempoolSummary(
@@ -345,13 +332,12 @@ extension DaemonRpcMethodsExtension on DaemonClient {
   );
 
   /// Submit a block to the daemon.
-  Future<bool> submitBlock(
-    SubmitBlockParams submitBlockParams,
-  ) => sendRequestAndDecode(
-    DaemonMethod.submitBlock,
-    (result) => result! as bool,
-    submitBlockParams.toJson(),
-  );
+  Future<bool> submitBlock(SubmitBlockParams submitBlockParams) =>
+      sendRequestAndDecode(
+        DaemonMethod.submitBlock,
+        (result) => result! as bool,
+        submitBlockParams.toJson(),
+      );
 
   /// Returns a specific range of blocks (up to 20 maximum)
   /// based on topo height.
@@ -394,19 +380,17 @@ extension DaemonRpcMethodsExtension on DaemonClient {
   );
 
   /// Retrieve all peers connected
-  Future<GetPeersResult> getPeers() => sendRequestAndDecode(
-    DaemonMethod.getPeers,
-    (result) {
-      final peers = (result! as List)
-          .map((value) => PeerEntry.fromJson(rpcJsonMap(value)))
-          .toList(growable: false);
-      return GetPeersResult(
-        peers: peers,
-        totalPeers: BigInt.from(peers.length),
-        hiddenPeers: BigInt.zero,
-      );
-    },
-  );
+  Future<GetPeersResult> getPeers() =>
+      sendRequestAndDecode(DaemonMethod.getPeers, (result) {
+        final peers = (result! as List)
+            .map((value) => PeerEntry.fromJson(rpcJsonMap(value)))
+            .toList(growable: false);
+        return GetPeersResult(
+          peers: peers,
+          totalPeers: BigInt.from(peers.length),
+          hiddenPeers: BigInt.zero,
+        );
+      });
 
   /// Fetch history events for an account.
   Future<List<GetAccountHistoryResult>> getAccountHistory(
@@ -570,13 +554,12 @@ extension DaemonRpcMethodsExtension on DaemonClient {
   );
 
   /// Retrieve the latest multisig information for a specific address.
-  Future<GetMultisigResult> getMultisig(
-    GetMultisigParams getMultisigParams,
-  ) => sendRequestAndDecode(
-    DaemonMethod.getMultisig,
-    (result) => GetMultisigResult.fromJson(rpcJsonMap(result)),
-    getMultisigParams.toJson(),
-  );
+  Future<GetMultisigResult> getMultisig(GetMultisigParams getMultisigParams) =>
+      sendRequestAndDecode(
+        DaemonMethod.getMultisig,
+        (result) => GetMultisigResult.fromJson(rpcJsonMap(result)),
+        getMultisigParams.toJson(),
+      );
 
   /// Retrieve the latest multisig information for a specific address at a
   /// specific topoheight.
@@ -619,15 +602,14 @@ extension DaemonRpcMethodsExtension on DaemonClient {
 
   /// Retrieve the contract outputs that have occurred in the requested
   /// transaction hash.
-  Future<List<RpcContractLog>> getContractLogs(
-    GetContractLogsParams params,
-  ) => sendRequestAndDecode(
-    DaemonMethod.getContractLogs,
-    (result) => (result! as List)
-        .map((value) => RpcContractLog.fromJson(rpcJsonMap(value)))
-        .toList(growable: false),
-    params.toJson(),
-  );
+  Future<List<RpcContractLog>> getContractLogs(GetContractLogsParams params) =>
+      sendRequestAndDecode(
+        DaemonMethod.getContractLogs,
+        (result) => (result! as List)
+            .map((value) => RpcContractLog.fromJson(rpcJsonMap(value)))
+            .toList(growable: false),
+        params.toJson(),
+      );
 
   /// Retrieves a versioned compiled contract module.
   Future<GetContractModuleResult> getContractModule(

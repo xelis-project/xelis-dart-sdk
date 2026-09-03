@@ -9,13 +9,13 @@ part 'get_nonce_at_topoheight_params.g.dart';
 @freezed
 abstract class GetNonceAtTopoheightParams with _$GetNonceAtTopoheightParams {
   /// @nodoc
-  const factory GetNonceAtTopoheightParams({
+  const factory({
     @JsonKey(name: 'address') required String address,
     @JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson)
     required BigInt topoheight,
   }) = _GetNonceAtTopoheightParams;
 
   /// @nodoc
-  factory GetNonceAtTopoheightParams.fromJson(Map<String, dynamic> json) =>
+  factory fromJson(Map<String, dynamic> json) =>
       _$GetNonceAtTopoheightParamsFromJson(json);
 }

@@ -8,15 +8,15 @@ part 'rpc_compressed_ciphertext.freezed.dart';
 /// Compressed ElGamal ciphertext returned in account balances.
 @Freezed(fromJson: false, toJson: false, toStringOverride: false)
 abstract class RpcCompressedCiphertext with _$RpcCompressedCiphertext {
-  const factory RpcCompressedCiphertext({
+  const factory({
     required List<int> commitment,
     required List<int> handle,
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = _RpcCompressedCiphertext;
 
-  const RpcCompressedCiphertext._();
+  const new _();
 
-  factory RpcCompressedCiphertext.fromJson(Object? json) {
+  factory fromJson(Object? json) {
     final envelope = rpcJsonMap(
       json,
       method: 'get_balances_at_maximum_topoheight',
@@ -48,16 +48,10 @@ abstract class RpcCompressedCiphertext with _$RpcCompressedCiphertext {
     );
   }
 
-  Map<String, Object?> toJson() => {
-    'commitment': commitment,
-    'handle': handle,
-  };
+  Map<String, Object?> toJson() => {'commitment': commitment, 'handle': handle};
 
   Map<String, Object?> toWireJson({bool includeExtraFields = false}) =>
-      extraFields.mergeInto(
-        toJson(),
-        includeExtraFields: includeExtraFields,
-      );
+      extraFields.mergeInto(toJson(), includeExtraFields: includeExtraFields);
 
   @override
   String toString() => 'RpcCompressedCiphertext(<redacted>)';

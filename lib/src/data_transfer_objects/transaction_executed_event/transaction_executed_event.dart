@@ -10,7 +10,7 @@ part 'transaction_executed_event.g.dart';
 @freezed
 abstract class TransactionExecutedEvent with _$TransactionExecutedEvent {
   /// @nodoc
-  const factory TransactionExecutedEvent({
+  const factory({
     @JsonKey(name: 'block_hash') required String blockHash,
     @JsonKey(name: 'tx_hash') required String txHash,
     @JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson)
@@ -20,10 +20,10 @@ abstract class TransactionExecutedEvent with _$TransactionExecutedEvent {
     RpcExtraFields extraFields,
   }) = _TransactionExecutedEvent;
 
-  const TransactionExecutedEvent._();
+  const new _();
 
   /// @nodoc
-  factory TransactionExecutedEvent.fromJson(Map<String, dynamic> json) =>
+  factory fromJson(Map<String, dynamic> json) =>
       _$TransactionExecutedEventFromJson(json).copyWith(
         extraFields: RpcExtraFields.capture(json, const {
           'block_hash',

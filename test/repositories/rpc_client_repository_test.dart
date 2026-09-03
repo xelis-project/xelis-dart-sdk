@@ -68,10 +68,7 @@ void main() {
         ..connect();
 
       await opened.future.timeout(_timeout);
-      expect(
-        await client.state.first.timeout(_timeout),
-        ClientState.connected,
-      );
+      expect(await client.state.first.timeout(_timeout), ClientState.connected);
 
       client.disconnect();
 
@@ -118,11 +115,7 @@ void main() {
       final request = await server.nextRequest();
 
       expect(result, '1.2.3');
-      expect(request, {
-        'id': 1,
-        'jsonrpc': '2.0',
-        'method': 'get_version',
-      });
+      expect(request, {'id': 1, 'jsonrpc': '2.0', 'method': 'get_version'});
     });
 
     test('sendRequest works after the connected event has passed', () async {
@@ -155,11 +148,7 @@ void main() {
       final server = await RpcTestServer.start(
         onRequest: (request, socket) {
           socket.add(
-            jsonEncode({
-              'id': request['id'],
-              'jsonrpc': '2.0',
-              'result': true,
-            }),
+            jsonEncode({'id': request['id'], 'jsonrpc': '2.0', 'result': true}),
           );
         },
       );
@@ -418,10 +407,7 @@ void main() {
         secureWebSocket: false,
       );
 
-      expect(
-        () => client.registerCallback(42, (_) {}),
-        throwsArgumentError,
-      );
+      expect(() => client.registerCallback(42, (_) {}), throwsArgumentError);
       await expectLater(client.subscribeTo(42), throwsArgumentError);
     });
 
@@ -476,11 +462,9 @@ void main() {
           isA<RpcRemoteException>()
               .having((error) => error.code, 'code', -32602)
               .having((error) => error.message, 'message', 'Invalid params')
-              .having(
-                (error) => error.data?.toJson(),
-                'data',
-                {'field': 'amount'},
-              ),
+              .having((error) => error.data?.toJson(), 'data', {
+                'field': 'amount',
+              }),
         ),
       );
     });
@@ -488,9 +472,7 @@ void main() {
     test('reports responses containing neither result nor error', () async {
       final server = await RpcTestServer.start(
         onRequest: (request, socket) {
-          socket.add(
-            jsonEncode({'id': request['id'], 'jsonrpc': '2.0'}),
-          );
+          socket.add(jsonEncode({'id': request['id'], 'jsonrpc': '2.0'}));
         },
       );
       final client = _walletClient(server);
@@ -682,10 +664,10 @@ void main() {
         final capabilities = await client.getCapabilities().timeout(_timeout);
 
         expect(capabilities.serverVersion, '1.24.0');
-        expect(
-          capabilities.advertisedMethods,
-          {'get_version', 'future_wallet_method'},
-        );
+        expect(capabilities.advertisedMethods, {
+          'get_version',
+          'future_wallet_method',
+        });
         expect(capabilities.knownMethods, contains('get_version'));
         expect(capabilities.newMethods, {'future_wallet_method'});
         expect(capabilities.conditionalMethods, isEmpty);
@@ -694,10 +676,10 @@ void main() {
           capabilities.methodSchema('get_version')?.returnsSchema.toJson(),
           {'type': 'string'},
         );
-        expect(
-          server.receivedRequests.map((request) => request['method']),
-          ['schema', 'get_version'],
-        );
+        expect(server.receivedRequests.map((request) => request['method']), [
+          'schema',
+          'get_version',
+        ]);
       },
     );
 
@@ -720,10 +702,7 @@ void main() {
       client.connect();
       await server.waitForSocket();
 
-      expect(
-        await client.getBatchLimit(),
-        BigInt.parse('9007199254740993'),
-      );
+      expect(await client.getBatchLimit(), BigInt.parse('9007199254740993'));
     });
 
     test('subscribeTo sends a subscribe request', () async {
@@ -800,10 +779,7 @@ void main() {
       await _pumpEventQueue();
 
       expect(subscribeRequest['method'], 'subscribe');
-      expect(
-        client.eventsCallbacks[WalletEvent.newTopoheight],
-        hasLength(2),
-      );
+      expect(client.eventsCallbacks[WalletEvent.newTopoheight], hasLength(2));
       await _pumpEventQueue();
       expect(server.receivedRequests, hasLength(1));
     });
@@ -819,10 +795,7 @@ void main() {
       final eventCompleter = Completer<BigInt>();
       client
         ..connect()
-        ..registerCallback(
-          WalletEvent.newTopoheight,
-          eventCompleter.complete,
-        );
+        ..registerCallback(WalletEvent.newTopoheight, eventCompleter.complete);
 
       await server.waitForSocket();
       server.send({
@@ -831,10 +804,7 @@ void main() {
         'result': {'event': 'new_topo_height', 'topoheight': 42},
       });
 
-      expect(
-        await eventCompleter.future.timeout(_timeout),
-        BigInt.from(42),
-      );
+      expect(await eventCompleter.future.timeout(_timeout), BigInt.from(42));
     });
 
     test('dispatches event bursts without dropping order', () async {
@@ -890,9 +860,7 @@ void main() {
 
       final restoredSubscription = await server.nextRequest();
       expect(restoredSubscription['method'], 'subscribe');
-      expect(restoredSubscription['params'], {
-        'notify': 'new_topo_height',
-      });
+      expect(restoredSubscription['params'], {'notify': 'new_topo_height'});
 
       server.send({
         'id': 9,

@@ -6,10 +6,10 @@ enum ContractVersion {
   /// Version 1 contract environment.
   v1('v1', 1);
 
-  const ContractVersion(this.wireName, this.byte);
+  new(this.wireName, this.byte);
 
   /// Parses the strict request wire value.
-  factory ContractVersion.fromJson(String value) => switch (value) {
+  factory fromJson(String value) => switch (value) {
     'v0' => ContractVersion.v0,
     'v1' => ContractVersion.v1,
     _ => throw FormatException('Unknown contract version: $value.'),

@@ -13,14 +13,13 @@ part 'transaction_type.g.dart';
 /// Contract module version embedded in accepted transactions.
 @Freezed(fromJson: false, toJson: false)
 sealed class RpcContractVersion with _$RpcContractVersion {
-  const factory RpcContractVersion.v0() = RpcContractVersionV0;
-  const factory RpcContractVersion.v1() = RpcContractVersionV1;
-  const factory RpcContractVersion.unknown(String wireValue) =
-      RpcUnknownContractVersion;
+  const factory v0() = RpcContractVersionV0;
+  const factory v1() = RpcContractVersionV1;
+  const factory unknown(String wireValue) = RpcUnknownContractVersion;
 
-  const RpcContractVersion._();
+  const new _();
 
-  factory RpcContractVersion.fromJson(Object? json) => switch (json) {
+  factory fromJson(Object? json) => switch (json) {
     'v0' => const RpcContractVersion.v0(),
     'v1' => const RpcContractVersion.v1(),
     final String value => RpcContractVersion.unknown(value),
@@ -39,36 +38,36 @@ sealed class RpcContractVersion with _$RpcContractVersion {
 abstract class RpcDeployContractInvokePayload
     with _$RpcDeployContractInvokePayload {
   @JsonSerializable(explicitToJson: true)
-  const factory RpcDeployContractInvokePayload({
+  const factory({
     @JsonKey(name: 'max_gas', fromJson: rpcBigInt, toJson: rpcBigIntToJson)
     required BigInt maxGas,
     @JsonKey(fromJson: _rpcDepositsFromJson, toJson: _rpcDepositsToJson)
     required Map<String, RpcContractDeposit> deposits,
   }) = _RpcDeployContractInvokePayload;
 
-  factory RpcDeployContractInvokePayload.fromJson(Map<String, dynamic> json) =>
+  factory fromJson(Map<String, dynamic> json) =>
       _$RpcDeployContractInvokePayloadFromJson(json);
 }
 
 /// @nodoc
 @freezed
 sealed class TransactionType with _$TransactionType {
-  const TransactionType._();
+  const new _();
 
   /// @nodoc
-  const factory TransactionType.transfers({
+  const factory transfers({
     @JsonKey(name: 'transfers') required List<TransferPayload> transfers,
   }) = TransfersPayload;
 
   /// @nodoc
-  const factory TransactionType.burn({
+  const factory burn({
     @JsonKey(name: 'asset') required String asset,
     @JsonKey(name: 'amount', fromJson: rpcBigInt, toJson: rpcBigIntToJson)
     required BigInt amount,
   }) = BurnPayload;
 
   /// @nodoc
-  const factory TransactionType.multisig({
+  const factory multisig({
     @JsonKey(
       name: 'participants',
       fromJson: AddressOrPublicKey.listFromJson,
@@ -79,7 +78,7 @@ sealed class TransactionType with _$TransactionType {
   }) = MultisigPayload;
 
   /// @nodoc
-  const factory TransactionType.invokeContract({
+  const factory invokeContract({
     @JsonKey(name: 'contract') required String contract,
     @JsonKey(fromJson: _rpcDepositsFromJson, toJson: _rpcDepositsToJson)
     required Map<String, RpcContractDeposit> deposits,
@@ -102,7 +101,7 @@ sealed class TransactionType with _$TransactionType {
   }) = InvokeContractPayload;
 
   /// @nodoc
-  const factory TransactionType.deployContract({
+  const factory deployContract({
     @JsonKey(
       name: 'version',
       fromJson: RpcContractVersion.fromJson,
@@ -120,7 +119,7 @@ sealed class TransactionType with _$TransactionType {
   }) = DeployContractPayload;
 
   /// @nodoc
-  const factory TransactionType.blob({
+  const factory blob({
     @JsonKey(
       name: 'data',
       fromJson: RpcJsonValue.fromJson,
@@ -136,7 +135,7 @@ sealed class TransactionType with _$TransactionType {
   }) = BlobPayload;
 
   /// Future transaction variant retained without pretending it is understood.
-  const factory TransactionType.unknown({
+  const factory unknown({
     required String type,
     @JsonKey(
       name: 'wireValue',
@@ -147,7 +146,7 @@ sealed class TransactionType with _$TransactionType {
   }) = UnknownTransactionPayload;
 
   /// @nodoc
-  factory TransactionType.fromJson(Map<String, dynamic> json) =>
+  factory fromJson(Map<String, dynamic> json) =>
       _$TransactionTypeFromJson(prepareTransactionTypeJson(json));
 
   /// Encodes the externally tagged Rust transaction enum.
@@ -208,9 +207,7 @@ Map<String, RpcContractDeposit> _rpcDepositsFromJson(Object? json) =>
 
 Map<String, Object> _rpcDepositsToJson(
   Map<String, RpcContractDeposit> deposits,
-) => deposits.map(
-  (asset, deposit) => MapEntry(asset, deposit.toWireJson()),
-);
+) => deposits.map((asset, deposit) => MapEntry(asset, deposit.toWireJson()));
 
 List<RpcValueCell> _rpcValueCellsFromJson(List<dynamic> values) =>
     values.map(RpcValueCell.fromJson).toList(growable: false);

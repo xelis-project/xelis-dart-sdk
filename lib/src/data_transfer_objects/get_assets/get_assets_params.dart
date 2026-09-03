@@ -10,7 +10,7 @@ part 'get_assets_params.g.dart';
 abstract class GetAssetsParams with _$GetAssetsParams {
   /// @nodoc
   @JsonSerializable(includeIfNull: false)
-  const factory GetAssetsParams({
+  const factory({
     @JsonKey(name: 'skip') int? skip,
     @JsonKey(name: 'maximum') int? maximum,
     @JsonKey(
@@ -28,6 +28,6 @@ abstract class GetAssetsParams with _$GetAssetsParams {
   }) = _GetAssetsParams;
 
   /// @nodoc
-  factory GetAssetsParams.fromJson(Map<String, dynamic> json) =>
+  factory fromJson(Map<String, dynamic> json) =>
       _$GetAssetsParamsFromJson(json);
 }

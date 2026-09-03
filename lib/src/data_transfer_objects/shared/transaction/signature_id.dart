@@ -9,7 +9,7 @@ part 'signature_id.g.dart';
 @freezed
 abstract class SignatureId with _$SignatureId {
   /// @nodoc
-  const factory SignatureId({
+  const factory({
     @JsonKey(name: 'id', fromJson: _signatureId) required int id,
     @JsonKey(name: 'signature') required String signature,
     @JsonKey(includeFromJson: false, includeToJson: false)
@@ -17,11 +17,11 @@ abstract class SignatureId with _$SignatureId {
     RpcExtraFields extraFields,
   }) = _SignatureId;
 
-  const SignatureId._();
+  const new _();
 
   /// @nodoc
-  factory SignatureId.fromJson(Map<String, dynamic> json) =>
-      _$SignatureIdFromJson(json).copyWith(
+  factory fromJson(Map<String, dynamic> json) => _$SignatureIdFromJson(json)
+      .copyWith(
         extraFields: RpcExtraFields.capture(json, const {'id', 'signature'}),
       );
 

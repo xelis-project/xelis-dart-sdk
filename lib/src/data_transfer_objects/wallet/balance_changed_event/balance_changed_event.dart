@@ -10,7 +10,7 @@ part 'balance_changed_event.g.dart';
 @freezed
 abstract class BalanceChangedEvent with _$BalanceChangedEvent {
   /// @nodoc
-  const factory BalanceChangedEvent({
+  const factory({
     @JsonKey(name: 'asset') required String assetHash,
     @JsonKey(name: 'balance', fromJson: rpcBigInt, toJson: rpcBigIntToJson)
     required BigInt balance,
@@ -19,10 +19,10 @@ abstract class BalanceChangedEvent with _$BalanceChangedEvent {
     RpcExtraFields extraFields,
   }) = _BalanceChangedEvent;
 
-  const BalanceChangedEvent._();
+  const new _();
 
   /// @nodoc
-  factory BalanceChangedEvent.fromJson(Map<String, dynamic> json) =>
+  factory fromJson(Map<String, dynamic> json) =>
       _$BalanceChangedEventFromJson(json).copyWith(
         extraFields: RpcExtraFields.capture(json, const {'asset', 'balance'}),
       );

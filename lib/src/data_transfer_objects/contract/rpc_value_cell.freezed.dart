@@ -1157,7 +1157,7 @@ $RpcExtraFieldsCopyWith<$Res> get extraFields {
 
 
 class RpcBooleanPrimitive extends RpcPrimitive {
-  const RpcBooleanPrimitive(this.value, {this.extraFields = const RpcExtraFields()}): super._();
+  const RpcBooleanPrimitive({required this.value, this.extraFields = const RpcExtraFields()}): super._();
   
 
  final  bool value;
@@ -1208,7 +1208,7 @@ class _$RpcBooleanPrimitiveCopyWithImpl<$Res>
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') $Res call({Object? value = null,Object? extraFields = null,}) {
   return _then(RpcBooleanPrimitive(
-null == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
+value: null == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
 as bool,extraFields: null == extraFields ? _self.extraFields : extraFields // ignore: cast_nullable_to_non_nullable
 as RpcExtraFields,
   ));

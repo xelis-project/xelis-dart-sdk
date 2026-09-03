@@ -7,22 +7,21 @@ part 'data_element.freezed.dart';
 @Freezed(fromJson: false, toJson: false, toStringOverride: false)
 sealed class DataElement with _$DataElement {
   /// Scalar data value.
-  const factory DataElement.value(RpcJsonValue value) = DataValue;
+  const factory value(RpcJsonValue value) = DataValue;
 
   /// Ordered array value.
-  const factory DataElement.array(List<DataElement> values) = DataArray;
+  const factory array(List<DataElement> values) = DataArray;
 
   /// Named data fields.
-  const factory DataElement.fields(Map<String, DataElement> fields) =
-      DataFields;
+  const factory fields(Map<String, DataElement> fields) = DataFields;
 
   /// Explicit null used by nullable RPC results.
-  const factory DataElement.nullValue() = DataNull;
+  const factory nullValue() = DataNull;
 
-  const DataElement._();
+  const new _();
 
   /// Decodes an untagged data element while preserving every integer as BigInt.
-  factory DataElement.fromJson(Object? json) {
+  factory fromJson(Object? json) {
     if (json == null) return const DataElement.nullValue();
     if (json is Map) {
       if (json.keys.any((key) => key is! String)) {
@@ -30,10 +29,7 @@ sealed class DataElement with _$DataElement {
       }
       return DataElement.fields(
         json.map(
-          (key, value) => MapEntry(
-            key as String,
-            DataElement.fromJson(value),
-          ),
+          (key, value) => MapEntry(key as String, DataElement.fromJson(value)),
         ),
       );
     }

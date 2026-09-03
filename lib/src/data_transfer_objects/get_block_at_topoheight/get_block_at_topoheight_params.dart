@@ -10,13 +10,13 @@ part 'get_block_at_topoheight_params.g.dart';
 abstract class GetBlockAtTopoheightParams with _$GetBlockAtTopoheightParams {
   /// @nodoc
   @JsonSerializable(includeIfNull: false)
-  const factory GetBlockAtTopoheightParams({
+  const factory({
     @JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson)
     required BigInt topoheight,
     @JsonKey(name: 'include_txs') bool? includeTxs,
   }) = _GetBlockAtTopoheightParams;
 
   /// @nodoc
-  factory GetBlockAtTopoheightParams.fromJson(Map<String, dynamic> json) =>
+  factory fromJson(Map<String, dynamic> json) =>
       _$GetBlockAtTopoheightParamsFromJson(json);
 }

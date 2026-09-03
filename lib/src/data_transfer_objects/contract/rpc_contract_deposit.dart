@@ -10,11 +10,10 @@ part 'rpc_contract_deposit.freezed.dart';
 @Freezed(fromJson: false, toJson: false, toStringOverride: false)
 sealed class RpcContractDeposit with _$RpcContractDeposit {
   /// Public amount.
-  const factory RpcContractDeposit.public(BigInt amount) =
-      RpcPublicContractDeposit;
+  const factory public(BigInt amount) = RpcPublicContractDeposit;
 
   /// Private amount and its cryptographic proof material.
-  const factory RpcContractDeposit.private({
+  const factory private({
     required RpcJsonValue commitment,
     required RpcJsonValue senderHandle,
     required RpcJsonValue receiverHandle,
@@ -23,15 +22,15 @@ sealed class RpcContractDeposit with _$RpcContractDeposit {
   }) = RpcPrivateContractDeposit;
 
   /// Future Rust enum variant retained losslessly.
-  const factory RpcContractDeposit.unknown({
+  const factory unknown({
     required String type,
     required RpcJsonValue wireValue,
   }) = RpcUnknownContractDeposit;
 
-  const RpcContractDeposit._();
+  const new _();
 
   /// Decodes the externally tagged Rust `ContractDeposit` enum.
-  factory RpcContractDeposit.fromJson(Object? json) {
+  factory fromJson(Object? json) {
     final map = rpcJsonMap(
       json,
       method: 'transaction',

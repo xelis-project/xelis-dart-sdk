@@ -236,7 +236,7 @@ enum DaemonMethod implements XelisJsonKey {
   simulateContractInvoke('simulate_contract_invoke');
 
   /// Creates a new [DaemonMethod] instance.
-  const DaemonMethod(this.jsonKey);
+  new(this.jsonKey);
 
   /// The json value of the method.
   @override
@@ -310,10 +310,10 @@ enum DaemonEvent implements XelisJsonKey {
   newBlockTemplate('new_block_template');
 
   /// Creates a new [DaemonEvent] instance.
-  const DaemonEvent(this.jsonKey);
+  new(this.jsonKey);
 
   /// Factory to convert a [String] to a [DaemonMethod].
-  factory DaemonEvent.fromStr(String value) {
+  factory fromStr(String value) {
     return tryFromStr(value) ??
         (throw FormatException('Unknown event: $value'));
   }

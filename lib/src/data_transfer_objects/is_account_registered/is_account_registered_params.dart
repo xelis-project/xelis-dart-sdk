@@ -8,12 +8,12 @@ part 'is_account_registered_params.g.dart';
 @freezed
 abstract class IsAccountRegisteredParams with _$IsAccountRegisteredParams {
   /// @nodoc
-  const factory IsAccountRegisteredParams({
+  const factory({
     @JsonKey(name: 'address') required String address,
     @JsonKey(name: 'in_stable_height') required bool inStableHeight,
   }) = _IsAccountRegisteredParams;
 
   /// @nodoc
-  factory IsAccountRegisteredParams.fromJson(Map<String, dynamic> json) =>
+  factory fromJson(Map<String, dynamic> json) =>
       _$IsAccountRegisteredParamsFromJson(json);
 }

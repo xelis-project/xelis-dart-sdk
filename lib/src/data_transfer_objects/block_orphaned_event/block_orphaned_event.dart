@@ -9,7 +9,7 @@ part 'block_orphaned_event.g.dart';
 @freezed
 abstract class BlockOrphanedEvent with _$BlockOrphanedEvent {
   /// @nodoc
-  const factory BlockOrphanedEvent({
+  const factory({
     @JsonKey(name: 'block_hash') required String blockHash,
     @JsonKey(
       name: 'old_topoheight',
@@ -22,10 +22,10 @@ abstract class BlockOrphanedEvent with _$BlockOrphanedEvent {
     RpcExtraFields extraFields,
   }) = _BlockOrphanedEvent;
 
-  const BlockOrphanedEvent._();
+  const new _();
 
   /// @nodoc
-  factory BlockOrphanedEvent.fromJson(Map<String, dynamic> json) =>
+  factory fromJson(Map<String, dynamic> json) =>
       _$BlockOrphanedEventFromJson(json).copyWith(
         extraFields: RpcExtraFields.capture(json, const {
           'block_hash',

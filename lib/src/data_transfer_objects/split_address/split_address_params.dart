@@ -8,11 +8,10 @@ part 'split_address_params.g.dart';
 @freezed
 abstract class SplitAddressParams with _$SplitAddressParams {
   /// @nodoc
-  const factory SplitAddressParams({
-    @JsonKey(name: 'address') required String address,
-  }) = _SplitAddressParams;
+  const factory({@JsonKey(name: 'address') required String address}) =
+      _SplitAddressParams;
 
   /// @nodoc
-  factory SplitAddressParams.fromJson(Map<String, dynamic> json) =>
+  factory fromJson(Map<String, dynamic> json) =>
       _$SplitAddressParamsFromJson(json);
 }

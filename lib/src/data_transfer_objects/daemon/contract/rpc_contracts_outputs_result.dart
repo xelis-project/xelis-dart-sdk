@@ -8,14 +8,14 @@ part 'rpc_contracts_outputs_result.freezed.dart';
 /// Aggregated contract transfers received by one address at a topoheight.
 @Freezed(fromJson: false, toJson: false)
 abstract class RpcContractsOutputsResult with _$RpcContractsOutputsResult {
-  const factory RpcContractsOutputsResult({
+  const factory({
     required List<ContractTransferExecution> executions,
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = _RpcContractsOutputsResult;
 
-  const RpcContractsOutputsResult._();
+  const new _();
 
-  factory RpcContractsOutputsResult.fromJson(Object? json) {
+  factory fromJson(Object? json) {
     final map = rpcJsonMap(json, method: 'get_contracts_outputs');
     return RpcContractsOutputsResult(
       executions: rpcList(

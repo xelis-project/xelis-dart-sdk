@@ -10,34 +10,26 @@ part 'mempool_transaction_summary.g.dart';
 @freezed
 abstract class MempoolTransactionSummary with _$MempoolTransactionSummary {
   /// @nodoc
-  const factory MempoolTransactionSummary({
+  const factory({
     @JsonKey(name: 'hash') required String hash,
     @JsonKey(name: 'source') required String source,
     @JsonKey(name: 'fee', fromJson: rpcBigInt, toJson: rpcBigIntToJson)
     required BigInt fee,
-    @JsonKey(
-      name: 'first_seen',
-      fromJson: rpcBigInt,
-      toJson: rpcBigIntToJson,
-    )
+    @JsonKey(name: 'first_seen', fromJson: rpcBigInt, toJson: rpcBigIntToJson)
     required BigInt firstSeen,
     @JsonKey(name: 'size', fromJson: rpcBigInt, toJson: rpcBigIntToJson)
     required BigInt size,
-    @JsonKey(
-      name: 'fee_per_kb',
-      fromJson: rpcBigInt,
-      toJson: rpcBigIntToJson,
-    )
+    @JsonKey(name: 'fee_per_kb', fromJson: rpcBigInt, toJson: rpcBigIntToJson)
     required BigInt feePerKb,
     @JsonKey(includeFromJson: false, includeToJson: false)
     @Default(RpcExtraFields())
     RpcExtraFields extraFields,
   }) = _MempoolTransactionSummary;
 
-  const MempoolTransactionSummary._();
+  const new _();
 
   /// @nodoc
-  factory MempoolTransactionSummary.fromJson(Map<String, dynamic> json) =>
+  factory fromJson(Map<String, dynamic> json) =>
       _$MempoolTransactionSummaryFromJson(json).copyWith(
         extraFields: RpcExtraFields.capture(json, const {
           'hash',

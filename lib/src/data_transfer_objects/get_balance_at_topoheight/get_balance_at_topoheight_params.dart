@@ -10,7 +10,7 @@ part 'get_balance_at_topoheight_params.g.dart';
 abstract class GetBalanceAtTopoheightParams
     with _$GetBalanceAtTopoheightParams {
   /// @nodoc
-  const factory GetBalanceAtTopoheightParams({
+  const factory({
     @JsonKey(name: 'address') required String address,
     @JsonKey(name: 'asset') required String asset,
     @JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson)
@@ -18,6 +18,6 @@ abstract class GetBalanceAtTopoheightParams
   }) = _GetBalanceAtTopoheightParams;
 
   /// @nodoc
-  factory GetBalanceAtTopoheightParams.fromJson(Map<String, dynamic> json) =>
+  factory fromJson(Map<String, dynamic> json) =>
       _$GetBalanceAtTopoheightParamsFromJson(json);
 }

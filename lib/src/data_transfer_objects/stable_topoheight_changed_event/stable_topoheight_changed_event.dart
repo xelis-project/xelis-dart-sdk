@@ -11,7 +11,7 @@ part 'stable_topoheight_changed_event.g.dart';
 abstract class StableTopoheightChangedEvent
     with _$StableTopoheightChangedEvent {
   /// @nodoc
-  const factory StableTopoheightChangedEvent({
+  const factory({
     @JsonKey(
       name: 'previous_stable_topoheight',
       fromJson: rpcBigInt,
@@ -29,10 +29,10 @@ abstract class StableTopoheightChangedEvent
     RpcExtraFields extraFields,
   }) = _StableTopoheightChangedEvent;
 
-  const StableTopoheightChangedEvent._();
+  const new _();
 
   /// @nodoc
-  factory StableTopoheightChangedEvent.fromJson(Map<String, dynamic> json) =>
+  factory fromJson(Map<String, dynamic> json) =>
       _$StableTopoheightChangedEventFromJson(json).copyWith(
         extraFields: RpcExtraFields.capture(json, const {
           'previous_stable_topoheight',

@@ -9,7 +9,7 @@ part 'get_nonce_params.g.dart';
 @freezed
 abstract class GetNonceParams with _$GetNonceParams {
   /// @nodoc
-  const factory GetNonceParams({
+  const factory({
     @JsonKey(name: 'address') required String address,
     @JsonKey(
       name: 'topoheight',
@@ -20,6 +20,5 @@ abstract class GetNonceParams with _$GetNonceParams {
   }) = _GetNonceParams;
 
   /// @nodoc
-  factory GetNonceParams.fromJson(Map<String, dynamic> json) =>
-      _$GetNonceParamsFromJson(json);
+  factory fromJson(Map<String, dynamic> json) => _$GetNonceParamsFromJson(json);
 }

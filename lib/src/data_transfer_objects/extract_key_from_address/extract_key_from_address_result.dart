@@ -9,23 +9,19 @@ part 'extract_key_from_address_result.freezed.dart';
 @Freezed(fromJson: false, toJson: false, toStringOverride: false)
 sealed class ExtractKeyFromAddressResult with _$ExtractKeyFromAddressResult {
   /// Public-key bytes.
-  const factory ExtractKeyFromAddressResult.bytes(List<int> value) =
-      ExtractKeyBytesResult;
+  const factory bytes(List<int> value) = ExtractKeyBytesResult;
 
   /// Hexadecimal public key.
-  const factory ExtractKeyFromAddressResult.hex(String value) =
-      ExtractKeyHexResult;
+  const factory hex(String value) = ExtractKeyHexResult;
 
   /// Variant introduced by a newer daemon.
-  const factory ExtractKeyFromAddressResult.unknown(
-    String type,
-    RpcJsonValue wireValue,
-  ) = ExtractKeyUnknownResult;
+  const factory unknown(String type, RpcJsonValue wireValue) =
+      ExtractKeyUnknownResult;
 
-  const ExtractKeyFromAddressResult._();
+  const new _();
 
   /// Decodes the exact externally-tagged Rust enum.
-  factory ExtractKeyFromAddressResult.fromJson(Object? json) {
+  factory fromJson(Object? json) {
     final map = rpcJsonMap(json, method: 'extract_key_from_address');
     if (map.length != 1) {
       throw RpcDeserializationException(
@@ -37,9 +33,7 @@ sealed class ExtractKeyFromAddressResult with _$ExtractKeyFromAddressResult {
     }
     final entry = map.entries.single;
     return switch (entry.key) {
-      'bytes' => ExtractKeyFromAddressResult.bytes(
-        _bytes(entry.value),
-      ),
+      'bytes' => ExtractKeyFromAddressResult.bytes(_bytes(entry.value)),
       'hex' when entry.value is String => ExtractKeyFromAddressResult.hex(
         entry.value! as String,
       ),

@@ -19,7 +19,7 @@ enum Network {
   stagenet;
 
   /// Converts json value into Network enum.
-  factory Network.fromStr(String value) {
+  factory fromStr(String value) {
     switch (value.toLowerCase()) {
       case 'mainnet':
         return Network.mainnet;

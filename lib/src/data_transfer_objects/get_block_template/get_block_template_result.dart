@@ -8,7 +8,7 @@ part 'get_block_template_result.freezed.dart';
 @Freezed(fromJson: false, toJson: false)
 abstract class GetBlockTemplateResult with _$GetBlockTemplateResult {
   /// @nodoc
-  const factory GetBlockTemplateResult({
+  const factory({
     @JsonKey(
       name: 'difficulty',
       fromJson: rpcBigInt,
@@ -26,18 +26,17 @@ abstract class GetBlockTemplateResult with _$GetBlockTemplateResult {
     RpcExtraFields extraFields,
   }) = _GetBlockTemplateResult;
 
-  const GetBlockTemplateResult._();
+  const new _();
 
   /// @nodoc
-  factory GetBlockTemplateResult.fromJson(Map<String, dynamic> json) =>
-      GetBlockTemplateResult(
-        difficulty: rpcBigInt(json['difficulty']),
-        height: rpcBigInt(json['height']),
-        topoheight: rpcBigInt(json['topoheight']),
-        template: json['template'] as String,
-        algorithm: json['algorithm'] as String,
-        extraFields: RpcExtraFields.capture(json, _blockTemplateFields),
-      );
+  factory fromJson(Map<String, dynamic> json) => GetBlockTemplateResult(
+    difficulty: rpcBigInt(json['difficulty']),
+    height: rpcBigInt(json['height']),
+    topoheight: rpcBigInt(json['topoheight']),
+    template: json['template'] as String,
+    algorithm: json['algorithm'] as String,
+    extraFields: RpcExtraFields.capture(json, _blockTemplateFields),
+  );
 
   Map<String, Object?> toJson() => toWireJson();
 

@@ -7,28 +7,20 @@ part 'rpc_timed_direction.freezed.dart';
 /// Direction and timestamps for propagation to one peer.
 @Freezed(fromJson: false, toJson: false, toStringOverride: false)
 sealed class RpcTimedDirection with _$RpcTimedDirection {
-  const factory RpcTimedDirection.incoming(BigInt receivedAt) =
-      RpcIncomingTimedDirection;
-  const factory RpcTimedDirection.outgoing(BigInt sentAt) =
-      RpcOutgoingTimedDirection;
-  const factory RpcTimedDirection.both({
-    required BigInt receivedAt,
-    required BigInt sentAt,
-  }) = RpcBothTimedDirection;
-  const factory RpcTimedDirection.unknown(RpcJsonValue wireValue) =
-      RpcUnknownTimedDirection;
+  const factory incoming(BigInt receivedAt) = RpcIncomingTimedDirection;
+  const factory outgoing(BigInt sentAt) = RpcOutgoingTimedDirection;
+  const factory both({required BigInt receivedAt, required BigInt sentAt}) =
+      RpcBothTimedDirection;
+  const factory unknown(RpcJsonValue wireValue) = RpcUnknownTimedDirection;
 
-  const RpcTimedDirection._();
+  const new _();
 
-  factory RpcTimedDirection.fromJson(Object? json) {
+  factory fromJson(Object? json) {
     if (json is Map && json.length == 1) {
       if (json['in'] case final Object? value?) {
         final map = rpcJsonMap(value, method: 'get_p2p_block_propagation');
         return RpcTimedDirection.incoming(
-          rpcBigInt(
-            map['received_at'],
-            method: 'get_p2p_block_propagation',
-          ),
+          rpcBigInt(map['received_at'], method: 'get_p2p_block_propagation'),
         );
       }
       if (json['out'] case final Object? value?) {

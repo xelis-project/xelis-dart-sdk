@@ -8,15 +8,15 @@ part 'rpc_contract_data_entry.freezed.dart';
 /// One key/value entry from contract storage.
 @Freezed(fromJson: false, toJson: false)
 abstract class RpcContractDataEntry with _$RpcContractDataEntry {
-  const factory RpcContractDataEntry({
+  const factory({
     required RpcValueCell key,
     required RpcValueCell value,
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = _RpcContractDataEntry;
 
-  const RpcContractDataEntry._();
+  const new _();
 
-  factory RpcContractDataEntry.fromJson(Object? json) {
+  factory fromJson(Object? json) {
     final map = rpcJsonMap(json, method: 'get_contract_data_entries');
     return RpcContractDataEntry(
       key: RpcValueCell.fromJson(map['key']),

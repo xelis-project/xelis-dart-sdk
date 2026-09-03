@@ -8,7 +8,7 @@ part 'rpc_execution_result.freezed.dart';
 /// Gas accounting and return value of a contract execution.
 @Freezed(fromJson: false, toJson: false)
 abstract class RpcExecutionResult with _$RpcExecutionResult {
-  const factory RpcExecutionResult({
+  const factory({
     required BigInt usedGas,
     required BigInt burnedGas,
     required BigInt feeGas,
@@ -17,9 +17,9 @@ abstract class RpcExecutionResult with _$RpcExecutionResult {
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = _RpcExecutionResult;
 
-  const RpcExecutionResult._();
+  const new _();
 
-  factory RpcExecutionResult.fromJson(Object? json) {
+  factory fromJson(Object? json) {
     final map = rpcJsonMap(json, method: 'simulate_contract_invoke');
     return RpcExecutionResult(
       usedGas: rpcBigInt(map['used_gas'], method: 'simulate_contract_invoke'),

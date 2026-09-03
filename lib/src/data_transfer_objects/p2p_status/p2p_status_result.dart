@@ -10,7 +10,7 @@ part 'p2p_status_result.g.dart';
 @freezed
 abstract class P2pStatusResult with _$P2pStatusResult {
   /// @nodoc
-  const factory P2pStatusResult({
+  const factory({
     @JsonKey(
       name: 'best_topoheight',
       fromJson: rpcBigInt,
@@ -41,11 +41,11 @@ abstract class P2pStatusResult with _$P2pStatusResult {
     RpcExtraFields extraFields,
   }) = _P2pStatusResult;
 
-  const P2pStatusResult._();
+  const new _();
 
   /// @nodoc
-  factory P2pStatusResult.fromJson(Map<String, dynamic> json) =>
-      _$P2pStatusResultFromJson(json).copyWith(
+  factory fromJson(Map<String, dynamic> json) => _$P2pStatusResultFromJson(json)
+      .copyWith(
         extraFields: RpcExtraFields.capture(json, const {
           'best_topoheight',
           'median_topoheight',

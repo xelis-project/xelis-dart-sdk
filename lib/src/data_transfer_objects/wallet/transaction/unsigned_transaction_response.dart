@@ -7,16 +7,16 @@ part 'unsigned_transaction_response.freezed.dart';
 /// Wallet response flattening an unsigned transaction and signing metadata.
 @Freezed(fromJson: false, toJson: false)
 abstract class UnsignedTransactionResponse with _$UnsignedTransactionResponse {
-  const factory UnsignedTransactionResponse({
+  const factory({
     required UnsignedTransaction transaction,
     required String hash,
     required int? threshold,
     String? txAsHex,
   }) = _UnsignedTransactionResponse;
 
-  const UnsignedTransactionResponse._();
+  const new _();
 
-  factory UnsignedTransactionResponse.fromJson(Map<String, dynamic> json) {
+  factory fromJson(Map<String, dynamic> json) {
     final transactionJson = Map<String, dynamic>.from(json)
       ..remove('hash')
       ..remove('threshold')

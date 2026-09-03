@@ -28,9 +28,7 @@ void main() {
 
   test('reports the measured coverage when below threshold', () {
     expect(
-      () => enforceLcovCoverage(
-        _record('lib/source.dart', found: 10, hit: 8),
-      ),
+      () => enforceLcovCoverage(_record('lib/source.dart', found: 10, hit: 8)),
       throwsA(
         isA<StateError>()
             .having((error) => error.message, 'message', contains('80.00%'))

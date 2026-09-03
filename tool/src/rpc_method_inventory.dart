@@ -56,7 +56,8 @@ void checkRpcMethodInventory(Directory upstream) {
       );
     } else {
       stdout.writeln(
-        '${surface.name}: ${upstreamMethods.length} upstream methods classified.',
+        '${surface.name}: ${upstreamMethods.length} upstream methods '
+        'classified.',
       );
     }
   }
@@ -81,13 +82,14 @@ Set<String> _enumWireNames(String source, String enumName) {
   final bodyStart = source.indexOf('{', start);
   final bodyEnd = source.indexOf('\n}', bodyStart);
   final body = source.substring(bodyStart, bodyEnd);
-  return RegExp(
-    r"\(\s*'([a-z][a-z0-9_]*)'\s*,?\s*\)",
-  ).allMatches(body).map((match) => match.group(1)!).toSet();
+  return RegExp(r"\(\s*'([a-z][a-z0-9_]*)'\s*,?\s*\)")
+      .allMatches(body)
+      .map((match) => match.group(1)!)
+      .toSet();
 }
 
 final class _Surface {
-  const _Surface({
+  const new({
     required this.name,
     required this.upstream,
     required this.sdk,

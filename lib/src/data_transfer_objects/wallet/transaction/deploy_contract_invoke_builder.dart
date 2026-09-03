@@ -11,12 +11,8 @@ part 'deploy_contract_invoke_builder.freezed.dart';
 sealed class DeployContractInvokeBuilder with _$DeployContractInvokeBuilder {
   /// @nodoc
   @JsonSerializable(explicitToJson: true)
-  const factory DeployContractInvokeBuilder({
-    @JsonKey(
-      name: 'max_gas',
-      fromJson: rpcBigInt,
-      toJson: rpcBigIntToJson,
-    )
+  const factory({
+    @JsonKey(name: 'max_gas', fromJson: rpcBigInt, toJson: rpcBigIntToJson)
     required BigInt maxGas,
     @JsonKey(name: 'deposits')
     @Default(<String, ContractDepositBuilder>{})
@@ -24,6 +20,6 @@ sealed class DeployContractInvokeBuilder with _$DeployContractInvokeBuilder {
   }) = _DeployContractInvokeBuilder;
 
   /// @nodoc
-  factory DeployContractInvokeBuilder.fromJson(Map<String, dynamic> json) =>
+  factory fromJson(Map<String, dynamic> json) =>
       _$DeployContractInvokeBuilderFromJson(json);
 }

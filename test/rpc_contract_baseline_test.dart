@@ -26,10 +26,7 @@ void main() {
 
   test('snapshots come from the stable upstream schema method', () {
     final metadata = fixture('metadata');
-    expect(
-      metadata['reference'],
-      target.upstreamReference,
-    );
+    expect(metadata['reference'], target.upstreamReference);
     expect(metadata['source'], 'RPCHandler.schema');
 
     for (final name in ['daemon', 'wallet']) {
@@ -95,10 +92,7 @@ void main() {
     final deployProperties = deploy['properties']! as Map<String, dynamic>;
 
     expect(deploy['required'], ['contract']);
-    expect(
-      deployProperties.keys,
-      unorderedEquals(['contract', 'invoke']),
-    );
+    expect(deployProperties.keys, unorderedEquals(['contract', 'invoke']));
     expect(definitions['PlaintextFlag'], {
       'enum': ['private', 'public', 'proprietary', 'failed'],
       'type': 'string',
@@ -109,9 +103,8 @@ void main() {
     final lengthVariant = variants.cast<Map<String, dynamic>>().singleWhere(
       (variant) => (variant['properties'] as Map).containsKey('len'),
     );
-    expect(
-      (lengthVariant['properties'] as Map)['len'],
-      {r'$ref': r'#/$defs/QueryNumber'},
-    );
+    expect((lengthVariant['properties'] as Map)['len'], {
+      r'$ref': r'#/$defs/QueryNumber',
+    });
   });
 }

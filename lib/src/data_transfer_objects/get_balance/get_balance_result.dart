@@ -9,7 +9,7 @@ part 'get_balance_result.freezed.dart';
 @Freezed(fromJson: false, toJson: false)
 abstract class GetBalanceResult with _$GetBalanceResult {
   /// @nodoc
-  const factory GetBalanceResult({
+  const factory({
     @JsonKey(name: 'version') required BalanceVersion versionedBalance,
     @JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson)
     required BigInt topoheight,
@@ -18,28 +18,20 @@ abstract class GetBalanceResult with _$GetBalanceResult {
     RpcExtraFields extraFields,
   }) = _GetBalanceResult;
 
-  const GetBalanceResult._();
+  const new _();
 
   /// @nodoc
-  factory GetBalanceResult.fromJson(Map<String, dynamic> json) =>
-      GetBalanceResult(
-        versionedBalance: BalanceVersion.fromJson(
-          rpcJsonMap(
-            json['version'],
-            method: 'get_balance',
-            path: r'$.version',
-          ),
-        ),
-        topoheight: rpcBigInt(
-          json['topoheight'],
-          method: 'get_balance',
-          path: r'$.topoheight',
-        ),
-        extraFields: RpcExtraFields.capture(json, const {
-          'version',
-          'topoheight',
-        }),
-      );
+  factory fromJson(Map<String, dynamic> json) => GetBalanceResult(
+    versionedBalance: BalanceVersion.fromJson(
+      rpcJsonMap(json['version'], method: 'get_balance', path: r'$.version'),
+    ),
+    topoheight: rpcBigInt(
+      json['topoheight'],
+      method: 'get_balance',
+      path: r'$.topoheight',
+    ),
+    extraFields: RpcExtraFields.capture(json, const {'version', 'topoheight'}),
+  );
 
   /// Serializes known fields and optionally restores fields received from wire.
   Map<String, Object?> toWireJson({bool includeExtraFields = false}) =>

@@ -10,7 +10,7 @@ part 'get_mempool_summary_result.g.dart';
 @freezed
 abstract class GetMempoolSummaryResult with _$GetMempoolSummaryResult {
   /// @nodoc
-  const factory GetMempoolSummaryResult({
+  const factory({
     @JsonKey(name: 'transactions')
     required List<MempoolTransactionSummary> transactions,
     @JsonKey(name: 'total', fromJson: rpcBigInt, toJson: rpcBigIntToJson)
@@ -20,10 +20,10 @@ abstract class GetMempoolSummaryResult with _$GetMempoolSummaryResult {
     RpcExtraFields extraFields,
   }) = _GetMempoolSummaryResult;
 
-  const GetMempoolSummaryResult._();
+  const new _();
 
   /// @nodoc
-  factory GetMempoolSummaryResult.fromJson(Map<String, dynamic> json) =>
+  factory fromJson(Map<String, dynamic> json) =>
       _$GetMempoolSummaryResultFromJson(json).copyWith(
         extraFields: RpcExtraFields.capture(json, const {
           'transactions',

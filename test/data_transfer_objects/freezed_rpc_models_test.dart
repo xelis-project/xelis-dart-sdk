@@ -13,12 +13,9 @@ void main() {
           (fee as FixedFeeBuilder).copyWith(amount: BigInt.from(84)).toJson(),
           {'fixed': BigInt.from(84)},
         );
-        expect(
-          const FeeBuilder.extra(ExtraFeeMode.multiplier(1.5)).toJson(),
-          {
-            'extra': {'multiplier': 1.5},
-          },
-        );
+        expect(const FeeBuilder.extra(ExtraFeeMode.multiplier(1.5)).toJson(), {
+          'extra': {'multiplier': 1.5},
+        });
         expect(
           BaseFeeMode.fromJson({'cap': BigInt.from(100)}),
           BaseFeeMode.cap(BigInt.from(100)),
@@ -77,26 +74,20 @@ void main() {
       );
       expect(
         () => (permission as SpecificInterContractPermission).calls.add(
-          const ContractCall(
-            contract: 'other',
-            chunk: ContractCallChunk.all(),
-          ),
+          const ContractCall(contract: 'other', chunk: ContractCallChunk.all()),
         ),
         throwsUnsupportedError,
       );
-      expect(
-        permission.toJson(),
-        {
-          'specific': [
-            {
-              'contract': 'contract',
-              'chunk': {
-                'specific': [1, 2],
-              },
+      expect(permission.toJson(), {
+        'specific': [
+          {
+            'contract': 'contract',
+            'chunk': {
+              'specific': [1, 2],
             },
-          ],
-        },
-      );
+          },
+        ],
+      });
     });
 
     test('storage queries gain deep equality without changing their wire', () {
@@ -235,9 +226,7 @@ void main() {
         response,
         response
             .copyWith(schemaUri: 'other')
-            .copyWith(
-              schemaUri: response.schemaUri,
-            ),
+            .copyWith(schemaUri: response.schemaUri),
       );
       expect(
         () => response.methods.add(

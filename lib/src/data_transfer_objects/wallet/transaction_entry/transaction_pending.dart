@@ -10,17 +10,17 @@ part 'transaction_pending.freezed.dart';
 @freezed
 abstract class TransactionPending with _$TransactionPending {
   /// @nodoc
-  const factory TransactionPending({
+  const factory({
     required String hash,
     required TransactionEntryType txEntryType,
     required BigInt timestamp,
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = _TransactionPending;
 
-  const TransactionPending._();
+  const new _();
 
   /// @nodoc
-  factory TransactionPending.fromJson(Map<String, dynamic> json) {
+  factory fromJson(Map<String, dynamic> json) {
     final hash = json['hash'] as String;
     final timestamp = rpcBigInt(
       json['timestamp'],

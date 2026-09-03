@@ -149,9 +149,8 @@ extension DaemonEventsExtension on DaemonClient {
   }
 
   /// Registers a callback for PeerDisconnected event.
-  void onPeerDisconnected(
-    void Function(PeerEntry peerDisconnected) callback,
-  ) => onEvent(DaemonEvent.peerDisconnected, callback);
+  void onPeerDisconnected(void Function(PeerEntry peerDisconnected) callback) =>
+      onEvent(DaemonEvent.peerDisconnected, callback);
 
   /// Unsubscribes from PeerDisconnected event.
   void unsubscribeFromPeerDisconnected() {
@@ -169,9 +168,8 @@ extension DaemonEventsExtension on DaemonClient {
   }
 
   /// Registers a callback for PeerStateUpdated event.
-  void onPeerStateUpdated(
-    void Function(PeerEntry peerUpdated) callback,
-  ) => onEvent(DaemonEvent.peerStateUpdated, callback);
+  void onPeerStateUpdated(void Function(PeerEntry peerUpdated) callback) =>
+      onEvent(DaemonEvent.peerStateUpdated, callback);
 
   /// Unsubscribes from PeerStateUpdated event.
   void unsubscribeFromPeerStateUpdated() {

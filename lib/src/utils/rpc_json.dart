@@ -1,11 +1,7 @@
 import 'package:xelis_dart_sdk/src/data_transfer_objects/core/rpc_exception.dart';
 
 /// Reads a required string and reports its RPC field path on failure.
-String rpcString(
-  Object? value, {
-  required String method,
-  String path = r'$',
-}) {
+String rpcString(Object? value, {required String method, String path = r'$'}) {
   if (value is String) return value;
   throw RpcDeserializationException(
     method: method,
@@ -61,15 +57,13 @@ BigInt? rpcNullableBigInt(Object? value) =>
     value == null ? null : rpcBigInt(value);
 
 /// Reads a string-keyed map whose values are exact JSON integers.
-Map<String, BigInt> rpcBigIntMap(Object? value) => rpcJsonMap(value).map(
-  (key, amount) => MapEntry(key, rpcBigInt(amount, path: r'$.' + key)),
-);
+Map<String, BigInt> rpcBigIntMap(Object? value) => rpcJsonMap(value)
+    .map((key, amount) => MapEntry(key, rpcBigInt(amount, path: r'$.' + key)));
 
 /// Reads a nested string-keyed map whose leaf values are exact integers.
 Map<String, Map<String, BigInt>> rpcNestedBigIntMap(Object? value) =>
-    rpcJsonMap(value).map(
-      (key, amounts) => MapEntry(key, rpcBigIntMap(amounts)),
-    );
+    rpcJsonMap(value)
+        .map((key, amounts) => MapEntry(key, rpcBigIntMap(amounts)));
 
 /// Preserves exact integer map values for the lossless JSON writer.
 Object rpcBigIntMapToJson(Map<String, BigInt> value) => value;

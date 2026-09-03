@@ -7,7 +7,7 @@ part 'rpc_transaction_summary.freezed.dart';
 /// Compact transaction information embedded in block summaries.
 @Freezed(fromJson: false, toJson: false)
 abstract class RpcTransactionSummary with _$RpcTransactionSummary {
-  const factory RpcTransactionSummary({
+  const factory({
     required String hash,
     required String source,
     required BigInt fee,
@@ -15,9 +15,9 @@ abstract class RpcTransactionSummary with _$RpcTransactionSummary {
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = _RpcTransactionSummary;
 
-  const RpcTransactionSummary._();
+  const new _();
 
-  factory RpcTransactionSummary.fromJson(Object? json) {
+  factory fromJson(Object? json) {
     final map = rpcJsonMap(json, method: 'get_transactions_summary');
     return RpcTransactionSummary(
       hash: rpcString(
@@ -32,10 +32,12 @@ abstract class RpcTransactionSummary with _$RpcTransactionSummary {
       ),
       fee: rpcBigInt(map['fee'], method: 'get_transactions_summary'),
       size: rpcBigInt(map['size'], method: 'get_transactions_summary'),
-      extraFields: RpcExtraFields.capture(
-        map,
-        const {'hash', 'source', 'fee', 'size'},
-      ),
+      extraFields: RpcExtraFields.capture(map, const {
+        'hash',
+        'source',
+        'fee',
+        'size',
+      }),
     );
   }
 }

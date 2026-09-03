@@ -8,18 +8,14 @@ import 'package:xelis_dart_sdk/src/utils/rpc_json.dart';
 part 'rpc_contract_log.freezed.dart';
 
 /// Current contract execution log union returned by the daemon.
-@Freezed(
-  fromJson: false,
-  toJson: false,
-  toStringOverride: false,
-)
+@Freezed(fromJson: false, toJson: false, toStringOverride: false)
 sealed class RpcContractLog with _$RpcContractLog {
-  const factory RpcContractLog.refundGas(
+  const factory refundGas(
     BigInt amount, {
     @Default(RpcExtraFields()) RpcExtraFields valueExtraFields,
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = RefundGasContractLog;
-  const factory RpcContractLog.transfer({
+  const factory transfer({
     required String contract,
     required BigInt amount,
     required String asset,
@@ -27,7 +23,7 @@ sealed class RpcContractLog with _$RpcContractLog {
     @Default(RpcExtraFields()) RpcExtraFields valueExtraFields,
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = TransferContractLog;
-  const factory RpcContractLog.transferContract({
+  const factory transferContract({
     required String contract,
     required BigInt amount,
     required String asset,
@@ -35,54 +31,54 @@ sealed class RpcContractLog with _$RpcContractLog {
     @Default(RpcExtraFields()) RpcExtraFields valueExtraFields,
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = TransferToContractLog;
-  const factory RpcContractLog.mint({
+  const factory mint({
     required String contract,
     required String asset,
     required BigInt amount,
     @Default(RpcExtraFields()) RpcExtraFields valueExtraFields,
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = MintContractLog;
-  const factory RpcContractLog.burn({
+  const factory burn({
     required String contract,
     required String asset,
     required BigInt amount,
     @Default(RpcExtraFields()) RpcExtraFields valueExtraFields,
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = BurnContractLog;
-  const factory RpcContractLog.newAsset({
+  const factory newAsset({
     required String contract,
     required String asset,
     @Default(RpcExtraFields()) RpcExtraFields valueExtraFields,
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = NewAssetContractLog;
-  const factory RpcContractLog.exitCode(
+  const factory exitCode(
     BigInt? code, {
     @Default(RpcExtraFields()) RpcExtraFields valueExtraFields,
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = ExitCodeContractLog;
-  const factory RpcContractLog.refundDeposits({
+  const factory refundDeposits({
     @Default(RpcExtraFields()) RpcExtraFields valueExtraFields,
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = RefundDepositsContractLog;
-  const factory RpcContractLog.gasInjection({
+  const factory gasInjection({
     required String contract,
     required BigInt amount,
     @Default(RpcExtraFields()) RpcExtraFields valueExtraFields,
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = GasInjectionContractLog;
-  const factory RpcContractLog.scheduledExecution({
+  const factory scheduledExecution({
     required String contract,
     required String hash,
     required RpcScheduledExecutionLogKind kind,
     @Default(RpcExtraFields()) RpcExtraFields valueExtraFields,
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = ScheduledExecutionContractLog;
-  const factory RpcContractLog.exitPayload(
+  const factory exitPayload(
     RpcValueCell payload, {
     @Default(RpcExtraFields()) RpcExtraFields valueExtraFields,
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = ExitPayloadContractLog;
-  const factory RpcContractLog.transferPayload({
+  const factory transferPayload({
     required String contract,
     required BigInt amount,
     required String asset,
@@ -91,12 +87,12 @@ sealed class RpcContractLog with _$RpcContractLog {
     @Default(RpcExtraFields()) RpcExtraFields valueExtraFields,
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = TransferPayloadContractLog;
-  const factory RpcContractLog.exitError(
+  const factory exitError(
     RpcExitError error, {
     @Default(RpcExtraFields()) RpcExtraFields valueExtraFields,
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = ExitErrorContractLog;
-  const factory RpcContractLog.event({
+  const factory event({
     required String contract,
     required BigInt eventId,
     @Default(RpcExtraFields()) RpcExtraFields valueExtraFields,
@@ -104,17 +100,17 @@ sealed class RpcContractLog with _$RpcContractLog {
   }) = EventContractLog;
 
   /// Forward-compatible log variant whose payload remains accessible.
-  const factory RpcContractLog.unknown({
+  const factory unknown({
     required String type,
     required RpcJsonValue wireValue,
     @Default(RpcExtraFields()) RpcExtraFields valueExtraFields,
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = UnknownRpcContractLog;
 
-  const RpcContractLog._();
+  const new _();
 
   /// Decodes the internally tagged Rust union and preserves future variants.
-  factory RpcContractLog.fromJson(Map<String, dynamic> json) {
+  factory fromJson(Map<String, dynamic> json) {
     final type = json['type'] as String?;
     if (type == null) {
       throw const FormatException('Contract log type is missing.');
@@ -354,10 +350,7 @@ sealed class RpcContractLog with _$RpcContractLog {
             ),
           }
         : wire;
-    return extraFields.mergeInto(
-      withValueExtras,
-      includeExtraFields: true,
-    );
+    return extraFields.mergeInto(withValueExtras, includeExtraFields: true);
   }
 
   @override
@@ -368,24 +361,22 @@ sealed class RpcContractLog with _$RpcContractLog {
 @Freezed(fromJson: false, toJson: false, toStringOverride: false)
 sealed class RpcScheduledExecutionLogKind with _$RpcScheduledExecutionLogKind {
   /// Execution scheduled for one topoheight.
-  const factory RpcScheduledExecutionLogKind.topoheight(BigInt topoheight) =
-      RpcTopoheightExecutionLogKind;
+  const factory topoheight(BigInt topoheight) = RpcTopoheightExecutionLogKind;
 
   /// Execution embedded at the end of the current block.
-  const factory RpcScheduledExecutionLogKind.blockEnd({
+  const factory blockEnd({
     required int chunkId,
     required BigInt maxGas,
     required List<RpcValueCell> params,
   }) = RpcBlockEndExecutionLogKind;
 
   /// Future wire variant retained without interpretation.
-  const factory RpcScheduledExecutionLogKind.unknown(RpcJsonValue wireValue) =
-      RpcUnknownExecutionLogKind;
+  const factory unknown(RpcJsonValue wireValue) = RpcUnknownExecutionLogKind;
 
-  const RpcScheduledExecutionLogKind._();
+  const new _();
 
   /// Decodes the externally tagged Rust enum.
-  factory RpcScheduledExecutionLogKind.fromJson(Object? json) {
+  factory fromJson(Object? json) {
     if (json is Map && json.length == 1 && json.containsKey('topo_height')) {
       final fields = rpcJsonMap(
         json['topo_height'],
@@ -396,10 +387,7 @@ sealed class RpcScheduledExecutionLogKind with _$RpcScheduledExecutionLogKind {
       );
     }
     if (json is Map && json.length == 1 && json.containsKey('block_end')) {
-      final fields = rpcJsonMap(
-        json['block_end'],
-        method: 'get_contract_logs',
-      );
+      final fields = rpcJsonMap(json['block_end'], method: 'get_contract_logs');
       final params = fields['params'];
       if (params is! List) {
         throw const FormatException(
@@ -452,13 +440,7 @@ const _contractLogValueFields = <String, Set<String>>{
   'gas_injection': {'contract', 'amount'},
   'scheduled_execution': {'contract', 'hash', 'kind'},
   'exit_payload': {'payload'},
-  'transfer_payload': {
-    'contract',
-    'amount',
-    'asset',
-    'destination',
-    'payload',
-  },
+  'transfer_payload': {'contract', 'amount', 'asset', 'destination', 'payload'},
   'exit_error': {'err'},
   'event': {'contract', 'event_id'},
 };

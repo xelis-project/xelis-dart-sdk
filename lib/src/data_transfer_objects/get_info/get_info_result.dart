@@ -12,7 +12,7 @@ part 'get_info_result.freezed.dart';
 @Freezed(fromJson: false, toJson: false)
 abstract class GetInfoResult with _$GetInfoResult {
   /// @nodoc
-  const factory GetInfoResult({
+  const factory({
     @JsonKey(name: 'height', fromJson: rpcBigInt, toJson: rpcBigIntToJson)
     required BigInt height,
     @JsonKey(name: 'topoheight', fromJson: rpcBigInt, toJson: rpcBigIntToJson)
@@ -74,21 +74,13 @@ abstract class GetInfoResult with _$GetInfoResult {
       toJson: rpcBigIntToJson,
     )
     required BigInt averageBlockTime,
-    @JsonKey(
-      name: 'block_reward',
-      fromJson: rpcBigInt,
-      toJson: rpcBigIntToJson,
-    )
+    @JsonKey(name: 'block_reward', fromJson: rpcBigInt, toJson: rpcBigIntToJson)
     required BigInt blockReward,
     @JsonKey(name: 'mempool_size', fromJson: rpcBigInt, toJson: rpcBigIntToJson)
     required BigInt mempoolSize,
     @JsonKey(name: 'version') required String version,
     @JsonKey(name: 'network') required Network network,
-    @JsonKey(
-      name: 'miner_reward',
-      fromJson: rpcBigInt,
-      toJson: rpcBigIntToJson,
-    )
+    @JsonKey(name: 'miner_reward', fromJson: rpcBigInt, toJson: rpcBigIntToJson)
     required BigInt minerReward,
     @JsonKey(name: 'dev_reward', fromJson: rpcBigInt, toJson: rpcBigIntToJson)
     required BigInt devReward,
@@ -98,10 +90,10 @@ abstract class GetInfoResult with _$GetInfoResult {
     RpcExtraFields extraFields,
   }) = _GetInfoResult;
 
-  const GetInfoResult._();
+  const new _();
 
   /// @nodoc
-  factory GetInfoResult.fromJson(Map<String, dynamic> json) {
+  factory fromJson(Map<String, dynamic> json) {
     return GetInfoResult(
       height: rpcBigInt(json['height']),
       topoheight: rpcBigInt(json['topoheight']),

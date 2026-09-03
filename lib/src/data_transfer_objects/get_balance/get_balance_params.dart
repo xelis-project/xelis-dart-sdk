@@ -8,12 +8,12 @@ part 'get_balance_params.g.dart';
 @freezed
 abstract class GetBalanceParams with _$GetBalanceParams {
   /// @nodoc
-  const factory GetBalanceParams({
+  const factory({
     @JsonKey(name: 'address') required String address,
     @JsonKey(name: 'asset') required String asset,
   }) = _GetBalanceParams;
 
   /// @nodoc
-  factory GetBalanceParams.fromJson(Map<String, dynamic> json) =>
+  factory fromJson(Map<String, dynamic> json) =>
       _$GetBalanceParamsFromJson(json);
 }

@@ -25,11 +25,8 @@ abstract interface class RpcWebSocketTransport {
 /// [RpcWebSocketTransport] implementation backed by `web_socket_client`.
 final class WebSocketClientTransport implements RpcWebSocketTransport {
   /// Creates a WebSocket transport.
-  WebSocketClientTransport(
-    Uri uri, {
-    Duration? timeout,
-    Map<String, String>? headers,
-  }) : _socket = ws.WebSocket(uri, timeout: timeout, headers: headers);
+  new(Uri uri, {Duration? timeout, Map<String, String>? headers})
+    : _socket = ws.WebSocket(uri, timeout: timeout, headers: headers);
 
   final ws.WebSocket _socket;
 

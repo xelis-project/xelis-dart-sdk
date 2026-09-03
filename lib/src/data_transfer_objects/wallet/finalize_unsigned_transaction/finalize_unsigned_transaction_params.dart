@@ -10,7 +10,7 @@ abstract class FinalizeUnsignedTransactionParams
     with _$FinalizeUnsignedTransactionParams {
   /// @nodoc
   @JsonSerializable(includeIfNull: false, explicitToJson: true)
-  const factory FinalizeUnsignedTransactionParams({
+  const factory({
     @JsonKey(name: 'unsigned') required String unsignedTransaction,
     @JsonKey(name: 'signatures') List<SignatureId>? signatures,
     @JsonKey(name: 'broadcast') bool? broadcast,
@@ -18,7 +18,6 @@ abstract class FinalizeUnsignedTransactionParams
   }) = _FinalizeUnsignedTransactionParams;
 
   /// @nodoc
-  factory FinalizeUnsignedTransactionParams.fromJson(
-    Map<String, dynamic> json,
-  ) => _$FinalizeUnsignedTransactionParamsFromJson(json);
+  factory fromJson(Map<String, dynamic> json) =>
+      _$FinalizeUnsignedTransactionParamsFromJson(json);
 }

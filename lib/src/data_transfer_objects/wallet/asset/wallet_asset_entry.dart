@@ -8,22 +8,18 @@ part 'wallet_asset_entry.freezed.dart';
 /// One entry returned by the wallet `get_assets` method.
 @Freezed(fromJson: false, toJson: false)
 abstract class WalletAssetEntry with _$WalletAssetEntry {
-  const factory WalletAssetEntry({
+  const factory({
     required String asset,
     required AssetData data,
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = _WalletAssetEntry;
 
-  const WalletAssetEntry._();
+  const new _();
 
-  factory WalletAssetEntry.fromJson(Object? json) {
+  factory fromJson(Object? json) {
     final map = rpcJsonMap(json, method: 'get_assets', path: r'$[]');
     return WalletAssetEntry(
-      asset: rpcString(
-        map['asset'],
-        method: 'get_assets',
-        path: r'$[].asset',
-      ),
+      asset: rpcString(map['asset'], method: 'get_assets', path: r'$[].asset'),
       data: AssetData.fromJson(
         rpcJsonMap(map['data'], method: 'get_assets', path: r'$[].data'),
       ),

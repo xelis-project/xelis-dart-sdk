@@ -7,16 +7,16 @@ part 'rpc_registered_execution.freezed.dart';
 /// A registered contract execution and its target topoheight.
 @Freezed(fromJson: false, toJson: false)
 abstract class RpcRegisteredExecution with _$RpcRegisteredExecution {
-  const factory RpcRegisteredExecution({
+  const factory({
     required String executionHash,
     required String executionContract,
     required BigInt executionTopoheight,
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = _RpcRegisteredExecution;
 
-  const RpcRegisteredExecution._();
+  const new _();
 
-  factory RpcRegisteredExecution.fromJson(Object? json) {
+  factory fromJson(Object? json) {
     const method = 'get_contract_registered_executions_at_topoheight';
     final map = rpcJsonMap(json, method: method);
     return RpcRegisteredExecution(

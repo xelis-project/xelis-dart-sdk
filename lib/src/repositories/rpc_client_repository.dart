@@ -44,7 +44,7 @@ sealed class RpcClientRepository {
   /// RpcClientRepository constructor
   ///
   /// Note: Secure WebSocket is enabled by default.
-  RpcClientRepository({
+  new({
     required String endPoint,
     bool secureWebSocket = true,
     int timeout = 60000,
@@ -133,41 +133,38 @@ sealed class RpcClientRepository {
     _capabilities = null;
     _transport = _initWebSocket();
 
-    _transport?.states.listen(
-      (state) {
-        switch (state) {
-          case ClientState.connected:
-            _logInfo('connected to $_uri...');
-            _onConnOpen();
-          case ClientState.connecting:
-            _logInfo('connecting to $_uri...');
-          case ClientState.disconnected:
-            _capabilities = null;
-            _logInfo('disconnected from $_uri...');
-            _completePendingRequestsWithError(
-              const RpcConnectionException(
-                'WebSocket closed before the RPC response was received.',
-              ),
-            );
-            _onConnClose();
-          case ClientState.disconnecting:
-            _logInfo('disconnecting from $_uri...');
-          case ClientState.reconnected:
-            _capabilities = null;
-            _logInfo('reconnected to $_uri...');
-            _completePendingRequestsWithError(
-              const RpcConnectionException(
-                'WebSocket reconnected before the RPC response was received.',
-              ),
-            );
-            _restoreSubscriptions();
-            _onConnOpen();
-          case ClientState.reconnecting:
-            _logInfo('reconnecting to $_uri...');
-        }
-      },
-      onError: _onConnError,
-    );
+    _transport?.states.listen((state) {
+      switch (state) {
+        case ClientState.connected:
+          _logInfo('connected to $_uri...');
+          _onConnOpen();
+        case ClientState.connecting:
+          _logInfo('connecting to $_uri...');
+        case ClientState.disconnected:
+          _capabilities = null;
+          _logInfo('disconnected from $_uri...');
+          _completePendingRequestsWithError(
+            const RpcConnectionException(
+              'WebSocket closed before the RPC response was received.',
+            ),
+          );
+          _onConnClose();
+        case ClientState.disconnecting:
+          _logInfo('disconnecting from $_uri...');
+        case ClientState.reconnected:
+          _capabilities = null;
+          _logInfo('reconnected to $_uri...');
+          _completePendingRequestsWithError(
+            const RpcConnectionException(
+              'WebSocket reconnected before the RPC response was received.',
+            ),
+          );
+          _restoreSubscriptions();
+          _onConnOpen();
+        case ClientState.reconnecting:
+          _logInfo('reconnecting to $_uri...');
+      }
+    }, onError: _onConnError);
 
     _transport?.messages.listen(_handleData, onError: _onConnError);
   }
@@ -212,10 +209,7 @@ sealed class RpcClientRepository {
   }
 
   /// Sends a request to xelis rpc server.
-  Future<Object?> sendRequest(
-    XelisJsonKey method, [
-    Object? params,
-  ]) async {
+  Future<Object?> sendRequest(XelisJsonKey method, [Object? params]) async {
     final transport = _requireTransport();
 
     if (transport.currentState == ClientState.disconnected) {
@@ -252,7 +246,7 @@ sealed class RpcClientRepository {
         cause: error,
       );
     }
-    return completer.future;
+    return await completer.future;
   }
 
   /// Sends an RPC request and decodes its result with complete compatibility
@@ -266,10 +260,10 @@ sealed class RpcClientRepository {
     XelisJsonKey method,
     T Function(Object? raw) decode, [
     Object? params,
-  ]) async {
-    final raw = await sendRequest(method, params);
-    return decodeRpcResult(raw, method: method.jsonKey, decode: decode);
-  }
+  ]) => sendRequest(
+    method,
+    params,
+  ).then((raw) => decodeRpcResult(raw, method: method.jsonKey, decode: decode));
 
   /// Decodes an already received result using the same compatibility contract
   /// as [sendRequestAndDecode].
@@ -516,10 +510,7 @@ sealed class RpcClientRepository {
     Object wireEvent,
   );
 
-  void _emitUnknownEvent(
-    String name,
-    Map<String, dynamic> result,
-  ) {
+  void _emitUnknownEvent(String name, Map<String, dynamic> result) {
     final payload = Map<String, dynamic>.of(result)..remove('event');
     final event = RpcUnknownEvent(
       name: name,
@@ -554,10 +545,7 @@ sealed class RpcClientRepository {
   }
 
   /// Returns callbacks registered for the exact event filter received.
-  Iterable<Function> _callbacksFor(
-    XelisJsonKey event,
-    Object wireEvent,
-  ) {
+  Iterable<Function> _callbacksFor(XelisJsonKey event, Object wireEvent) {
     final subscription = RpcEventSubscription.fromWire(
       event: event,
       notify: wireEvent,
@@ -643,24 +631,20 @@ sealed class RpcClientRepository {
   }
 
   // Creates a JSON-RPC request.
-  String _jsonRequest(
-    int id,
-    XelisJsonKey method, [
-    Object? params,
-  ]) {
+  String _jsonRequest(int id, XelisJsonKey method, [Object? params]) {
     if (params != null) {
-      return serializeBigIntJson(
-        {
-          'id': id,
-          'jsonrpc': '2.0',
-          'method': method.jsonKey,
-          'params': params,
-        },
-      );
+      return serializeBigIntJson({
+        'id': id,
+        'jsonrpc': '2.0',
+        'method': method.jsonKey,
+        'params': params,
+      });
     } else {
-      return serializeBigIntJson(
-        {'id': id, 'jsonrpc': '2.0', 'method': method.jsonKey},
-      );
+      return serializeBigIntJson({
+        'id': id,
+        'jsonrpc': '2.0',
+        'method': method.jsonKey,
+      });
     }
   }
 
@@ -712,7 +696,7 @@ Object? _normalizeCompatibleIntegers(Object? value) {
 /// A pending request to the server.
 class _Request {
   /// @nodoc
-  _Request(this.method, this.completer, [this.params]);
+  new(this.method, this.completer, [this.params]);
 
   /// THe method that was sent.
   final String method;

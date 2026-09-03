@@ -6,15 +6,15 @@ part 'rpc_block_type.freezed.dart';
 /// Block category returned by the summary endpoints.
 @Freezed(fromJson: false, toJson: false)
 sealed class RpcBlockType with _$RpcBlockType {
-  const factory RpcBlockType.sync() = RpcSyncBlockType;
-  const factory RpcBlockType.side() = RpcSideBlockType;
-  const factory RpcBlockType.orphaned() = RpcOrphanedBlockType;
-  const factory RpcBlockType.normal() = RpcNormalBlockType;
-  const factory RpcBlockType.unknown(String wireValue) = RpcUnknownBlockType;
+  const factory sync() = RpcSyncBlockType;
+  const factory side() = RpcSideBlockType;
+  const factory orphaned() = RpcOrphanedBlockType;
+  const factory normal() = RpcNormalBlockType;
+  const factory unknown(String wireValue) = RpcUnknownBlockType;
 
-  const RpcBlockType._();
+  const new _();
 
-  factory RpcBlockType.fromJson(Object? json) => switch (json) {
+  factory fromJson(Object? json) => switch (json) {
     'Sync' => const RpcBlockType.sync(),
     'Side' => const RpcBlockType.side(),
     'Orphaned' => const RpcBlockType.orphaned(),

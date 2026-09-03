@@ -9,29 +9,29 @@ part 'inter_contract_permission.freezed.dart';
 @Freezed(fromJson: false, toJson: false)
 sealed class InterContractPermission with _$InterContractPermission {
   /// Disallows calls made in the invoking contract's name.
-  const factory InterContractPermission.none() = NoInterContractPermission;
+  const factory none() = NoInterContractPermission;
 
   /// Allows every inter-contract call.
-  const factory InterContractPermission.all() = AllInterContractPermission;
+  const factory all() = AllInterContractPermission;
 
   /// Allows only the supplied calls.
-  const factory InterContractPermission.specific(List<ContractCall> calls) =
+  const factory specific(List<ContractCall> calls) =
       SpecificInterContractPermission;
 
   /// Allows every call except the supplied calls.
-  const factory InterContractPermission.exclude(List<ContractCall> calls) =
+  const factory exclude(List<ContractCall> calls) =
       ExcludedInterContractPermission;
 
   /// Future permission retained for inspection but rejected by builders.
-  const factory InterContractPermission.unknown({
+  const factory unknown({
     required String type,
     required RpcJsonValue wireValue,
   }) = UnknownInterContractPermission;
 
-  const InterContractPermission._();
+  const new _();
 
   /// Decodes the externally tagged Rust enum.
-  factory InterContractPermission.fromJson(Object? json) {
+  factory fromJson(Object? json) {
     if (json == 'none') return const InterContractPermission.none();
     if (json == 'all') return const InterContractPermission.all();
     if (json is String) {
@@ -111,16 +111,16 @@ sealed class InterContractPermission with _$InterContractPermission {
 @Freezed(fromJson: false, toJson: false)
 abstract class ContractCall with _$ContractCall {
   /// Creates a contract call rule.
-  const factory ContractCall({
+  const factory({
     required String contract,
     required ContractCallChunk chunk,
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = _ContractCall;
 
-  const ContractCall._();
+  const new _();
 
   /// Decodes a call rule.
-  factory ContractCall.fromJson(Map<String, dynamic> json) => ContractCall(
+  factory fromJson(Map<String, dynamic> json) => ContractCall(
     contract: json['contract'] as String,
     chunk: ContractCallChunk.fromJson(json['chunk']),
     extraFields: RpcExtraFields.capture(json, const {'contract', 'chunk'}),
@@ -144,26 +144,24 @@ abstract class ContractCall with _$ContractCall {
 @Freezed(fromJson: false, toJson: false)
 sealed class ContractCallChunk with _$ContractCallChunk {
   /// Every chunk.
-  const factory ContractCallChunk.all() = AllContractCallChunks;
+  const factory all() = AllContractCallChunks;
 
   /// Only listed chunks.
-  const factory ContractCallChunk.specific(List<int> chunks) =
-      SpecificContractCallChunks;
+  const factory specific(List<int> chunks) = SpecificContractCallChunks;
 
   /// Every chunk except listed chunks.
-  const factory ContractCallChunk.exclude(List<int> chunks) =
-      ExcludedContractCallChunks;
+  const factory exclude(List<int> chunks) = ExcludedContractCallChunks;
 
   /// Future chunk selector retained for inspection but rejected by builders.
-  const factory ContractCallChunk.unknown({
+  const factory unknown({
     required String type,
     required RpcJsonValue wireValue,
   }) = UnknownContractCallChunk;
 
-  const ContractCallChunk._();
+  const new _();
 
   /// Decodes the externally tagged Rust enum.
-  factory ContractCallChunk.fromJson(Object? json) {
+  factory fromJson(Object? json) {
     if (json == 'all') return const ContractCallChunk.all();
     if (json is String) {
       return ContractCallChunk.unknown(

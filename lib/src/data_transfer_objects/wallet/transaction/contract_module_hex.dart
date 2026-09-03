@@ -8,11 +8,12 @@ import 'package:xelis_dart_sdk/src/data_transfer_objects/wallet/transaction/cont
 @immutable
 final class ContractModuleHex {
   /// Parses an already serialized contract module.
-  factory ContractModuleHex(String value) {
+  factory(String value) {
     _validateHex(value, field: 'contract');
     if (value.length <= 2) {
       throw const FormatException(
-        'A serialized contract module must contain a version byte and module bytes.',
+        'A serialized contract module must contain a version byte and '
+        'module bytes.',
       );
     }
     final version = int.parse(value.substring(0, 2), radix: 16);
@@ -25,7 +26,7 @@ final class ContractModuleHex {
   }
 
   /// Serializes a compiled module with its contract environment [version].
-  factory ContractModuleHex.fromModule({
+  factory fromModule({
     required String module,
     ContractVersion version = ContractVersion.v0,
   }) {
@@ -36,10 +37,10 @@ final class ContractModuleHex {
     return ContractModuleHex._('${version.hexByte}${module.toLowerCase()}');
   }
 
-  const ContractModuleHex._(this.value);
+  const new _(this.value);
 
   /// Parses the wallet RPC string representation.
-  factory ContractModuleHex.fromJson(Object? json) {
+  factory fromJson(Object? json) {
     if (json is! String) {
       throw const FormatException(
         'A serialized contract module must be a hexadecimal string.',

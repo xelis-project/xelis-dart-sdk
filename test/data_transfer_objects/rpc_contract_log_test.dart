@@ -132,10 +132,7 @@ void main() {
         _canonicalRpcValue(log.toWireJson()),
         _canonicalRpcValue(testCase.$1),
       );
-      expect(
-        _canonicalRpcValue(log.toJson()),
-        _canonicalRpcValue(testCase.$1),
-      );
+      expect(_canonicalRpcValue(log.toJson()), _canonicalRpcValue(testCase.$1));
       expect(log.toString(), contains('<redacted>'));
     });
   }

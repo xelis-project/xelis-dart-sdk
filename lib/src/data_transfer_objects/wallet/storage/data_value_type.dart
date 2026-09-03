@@ -10,10 +10,10 @@ enum DataValueType {
   hash('Hash'),
   blob('Blob');
 
-  const DataValueType(this.wireName);
+  new(this.wireName);
 
   /// Decodes a Rust `ValueType` name.
-  factory DataValueType.fromJson(Object? value) {
+  factory fromJson(Object? value) {
     if (value is! String) {
       throw const FormatException('Expected a ValueType.');
     }

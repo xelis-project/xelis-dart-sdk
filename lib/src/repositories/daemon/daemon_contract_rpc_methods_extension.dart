@@ -19,11 +19,7 @@ extension DaemonContractRpcMethods on DaemonClient {
   }) => sendRequestAndDecode(
     DaemonMethod.getContractAssets,
     (result) => (result! as List).cast<String>(),
-    {
-      'contract': contract,
-      'skip': ?skip,
-      'maximum': ?maximum,
-    },
+    {'contract': contract, 'skip': ?skip, 'maximum': ?maximum},
   );
 
   Future<BigInt> getContractBalance(String contract, String asset) =>
@@ -64,9 +60,10 @@ extension DaemonContractRpcMethods on DaemonClient {
     int? maximum,
   }) => sendRequestAndDecode(
     DaemonMethod.getContractDataEntries,
-    (raw) => _rpcList(
-      raw,
-    ).map(RpcContractDataEntry.fromJson).toList(growable: false),
+    (raw) =>
+        _rpcList(raw)
+            .map(RpcContractDataEntry.fromJson)
+            .toList(growable: false),
     {
       'contract': contract,
       'minimum_topoheight': ?minimumTopoheight,
@@ -83,14 +80,11 @@ extension DaemonContractRpcMethods on DaemonClient {
     int? skip,
   }) => sendRequestAndDecode(
     DaemonMethod.getContractRegisteredExecutionsAtTopoheight,
-    (raw) => _rpcList(
-      raw,
-    ).map(RpcRegisteredExecution.fromJson).toList(growable: false),
-    {
-      'topoheight': topoheight,
-      'max': ?max,
-      'skip': ?skip,
-    },
+    (raw) =>
+        _rpcList(raw)
+            .map(RpcRegisteredExecution.fromJson)
+            .toList(growable: false),
+    {'topoheight': topoheight, 'max': ?max, 'skip': ?skip},
   );
 
   Future<List<RpcScheduledExecution>>
@@ -100,14 +94,11 @@ extension DaemonContractRpcMethods on DaemonClient {
     int? skip,
   }) => sendRequestAndDecode(
     DaemonMethod.getContractScheduledExecutionsAtTopoheight,
-    (raw) => _rpcList(
-      raw,
-    ).map(RpcScheduledExecution.fromJson).toList(growable: false),
-    {
-      'topoheight': topoheight,
-      'max': ?max,
-      'skip': ?skip,
-    },
+    (raw) =>
+        _rpcList(raw)
+            .map(RpcScheduledExecution.fromJson)
+            .toList(growable: false),
+    {'topoheight': topoheight, 'max': ?max, 'skip': ?skip},
   );
 
   Future<List<String>> getContractTransactions(
@@ -157,7 +148,7 @@ extension DaemonContractRpcMethods on DaemonClient {
     SimulateContractInvokeRequest request,
   ) async {
     await requireRpcMethod('simulate_contract_invoke');
-    return sendRequestAndDecode(
+    return await sendRequestAndDecode(
       DaemonMethod.simulateContractInvoke,
       RpcSimulateContractInvokeResult.fromJson,
       request.toJson(),
@@ -170,6 +161,5 @@ List<dynamic> _rpcList(Object? value) {
   throw const FormatException('Expected an array.');
 }
 
-BigInt _decodeVersionedUint64(Object? value) => rpcBigInt(
-  rpcJsonMap(value)['data'],
-);
+BigInt _decodeVersionedUint64(Object? value) =>
+    rpcBigInt(rpcJsonMap(value)['data']);

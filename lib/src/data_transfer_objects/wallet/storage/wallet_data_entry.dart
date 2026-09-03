@@ -6,8 +6,6 @@ part 'wallet_data_entry.freezed.dart';
 /// A key/value entry returned by `query_db`.
 @Freezed(fromJson: false, toJson: false)
 abstract class WalletDataEntry with _$WalletDataEntry {
-  const factory WalletDataEntry({
-    required DataValue key,
-    required DataElement value,
-  }) = _WalletDataEntry;
+  const factory({required DataValue key, required DataElement value}) =
+      _WalletDataEntry;
 }

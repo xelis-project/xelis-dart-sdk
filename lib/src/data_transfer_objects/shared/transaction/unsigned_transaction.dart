@@ -11,7 +11,7 @@ part 'unsigned_transaction.freezed.dart';
 /// Exact Rust `UnsignedTransaction` wire object.
 @Freezed(fromJson: false, toJson: false)
 abstract class UnsignedTransaction with _$UnsignedTransaction {
-  const factory UnsignedTransaction({
+  const factory({
     required TransactionType data,
     required BigInt fee,
     required BigInt feeLimit,
@@ -25,62 +25,58 @@ abstract class UnsignedTransaction with _$UnsignedTransaction {
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = _UnsignedTransaction;
 
-  const UnsignedTransaction._();
+  const new _();
 
-  factory UnsignedTransaction.fromJson(Map<String, dynamic> json) =>
-      UnsignedTransaction(
-        data: TransactionType.fromJson(
-          rpcJsonMap(json['data'], method: 'build_unsigned_transaction'),
-        ),
-        fee: rpcBigInt(
-          json['fee'],
-          method: 'build_unsigned_transaction',
-          path: r'$.fee',
-        ),
-        feeLimit: rpcBigInt(
-          json['fee_limit'],
-          method: 'build_unsigned_transaction',
-          path: r'$.fee_limit',
-        ),
-        version: rpcInt(
-          json['version'],
-          method: 'build_unsigned_transaction',
-          path: r'$.version',
-          min: 0,
-          max: 255,
-        ),
-        nonce: rpcBigInt(
-          json['nonce'],
-          method: 'build_unsigned_transaction',
-          path: r'$.nonce',
-        ),
-        source: rpcBytes(
-          json['source'],
-          method: 'build_unsigned_transaction',
-          path: r'$.source',
-          length: 32,
-        ),
-        rangeProof: rpcBytes(
-          json['range_proof'],
-          method: 'build_unsigned_transaction',
-          path: r'$.range_proof',
-        ),
-        sourceCommitments: (json['source_commitments'] as List)
-            .map(RpcSourceCommitment.fromJson)
-            .toList(growable: false),
-        reference: Reference.fromJson(
-          rpcJsonMap(json['reference'], method: 'build_unsigned_transaction'),
-        ),
-        multiSig: json['multisig'] == null
-            ? null
-            : Multisig.fromJson(
-                rpcJsonMap(
-                  json['multisig'],
-                  method: 'build_unsigned_transaction',
-                ),
-              ),
-        extraFields: RpcExtraFields.capture(json, _unsignedFields),
-      );
+  factory fromJson(Map<String, dynamic> json) => UnsignedTransaction(
+    data: TransactionType.fromJson(
+      rpcJsonMap(json['data'], method: 'build_unsigned_transaction'),
+    ),
+    fee: rpcBigInt(
+      json['fee'],
+      method: 'build_unsigned_transaction',
+      path: r'$.fee',
+    ),
+    feeLimit: rpcBigInt(
+      json['fee_limit'],
+      method: 'build_unsigned_transaction',
+      path: r'$.fee_limit',
+    ),
+    version: rpcInt(
+      json['version'],
+      method: 'build_unsigned_transaction',
+      path: r'$.version',
+      min: 0,
+      max: 255,
+    ),
+    nonce: rpcBigInt(
+      json['nonce'],
+      method: 'build_unsigned_transaction',
+      path: r'$.nonce',
+    ),
+    source: rpcBytes(
+      json['source'],
+      method: 'build_unsigned_transaction',
+      path: r'$.source',
+      length: 32,
+    ),
+    rangeProof: rpcBytes(
+      json['range_proof'],
+      method: 'build_unsigned_transaction',
+      path: r'$.range_proof',
+    ),
+    sourceCommitments: (json['source_commitments'] as List)
+        .map(RpcSourceCommitment.fromJson)
+        .toList(growable: false),
+    reference: Reference.fromJson(
+      rpcJsonMap(json['reference'], method: 'build_unsigned_transaction'),
+    ),
+    multiSig: json['multisig'] == null
+        ? null
+        : Multisig.fromJson(
+            rpcJsonMap(json['multisig'], method: 'build_unsigned_transaction'),
+          ),
+    extraFields: RpcExtraFields.capture(json, _unsignedFields),
+  );
 
   Map<String, Object?> toWireJson({bool includeExtraFields = false}) =>
       extraFields.mergeInto({
@@ -93,9 +89,8 @@ abstract class UnsignedTransaction with _$UnsignedTransaction {
         'range_proof': rangeProof,
         'source_commitments': sourceCommitments
             .map(
-              (value) => value.toWireJson(
-                includeExtraFields: includeExtraFields,
-              ),
+              (value) =>
+                  value.toWireJson(includeExtraFields: includeExtraFields),
             )
             .toList(),
         'reference': reference.toJson(),

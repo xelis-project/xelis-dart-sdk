@@ -41,9 +41,7 @@ void main() {
       expect(completeWire, containsPair('future_result_field', true));
       expect(
         (completeWire['transactions']! as List).single,
-        containsPair('future_transaction_field', {
-          'priority': BigInt.from(3),
-        }),
+        containsPair('future_transaction_field', {'priority': BigInt.from(3)}),
       );
     });
 

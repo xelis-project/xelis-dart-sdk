@@ -10,7 +10,7 @@ part 'transfer_in_entry.g.dart';
 @freezed
 abstract class TransferInEntry with _$TransferInEntry {
   /// @nodoc
-  const factory TransferInEntry({
+  const factory({
     @JsonKey(name: 'amount', fromJson: rpcBigInt, toJson: rpcBigIntToJson)
     required BigInt amount,
     @JsonKey(name: 'asset') required String asset,
@@ -20,11 +20,11 @@ abstract class TransferInEntry with _$TransferInEntry {
     RpcExtraFields extraFields,
   }) = _TransferInEntry;
 
-  const TransferInEntry._();
+  const new _();
 
   /// @nodoc
-  factory TransferInEntry.fromJson(Map<String, dynamic> json) =>
-      _$TransferInEntryFromJson(json).copyWith(
+  factory fromJson(Map<String, dynamic> json) => _$TransferInEntryFromJson(json)
+      .copyWith(
         extraFields: RpcExtraFields.capture(json, const {
           'amount',
           'asset',

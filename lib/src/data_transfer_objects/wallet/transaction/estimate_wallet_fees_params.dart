@@ -8,13 +8,13 @@ part 'estimate_wallet_fees_params.freezed.dart';
 /// Complete request accepted by the wallet `estimate_fees` method.
 @Freezed(fromJson: false, toJson: false)
 abstract class EstimateWalletFeesParams with _$EstimateWalletFeesParams {
-  const factory EstimateWalletFeesParams({
+  const factory({
     required TransactionTypeBuilder transactionTypeBuilder,
     @Default(FeeBuilder.extra()) FeeBuilder fee,
     @Default(BaseFeeMode.none()) BaseFeeMode baseFee,
   }) = _EstimateWalletFeesParams;
 
-  const EstimateWalletFeesParams._();
+  const new _();
 
   Map<String, Object?> toJson() => {
     ...transactionTypeBuilder.toRpcJson(),

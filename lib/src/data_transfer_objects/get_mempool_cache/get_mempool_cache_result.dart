@@ -10,7 +10,7 @@ part 'get_mempool_cache_result.g.dart';
 @freezed
 abstract class GetMempoolCacheResult with _$GetMempoolCacheResult {
   /// @nodoc
-  const factory GetMempoolCacheResult({
+  const factory({
     @JsonKey(
       name: 'balances',
       fromJson: _balancesFromJson,
@@ -27,10 +27,10 @@ abstract class GetMempoolCacheResult with _$GetMempoolCacheResult {
     RpcExtraFields extraFields,
   }) = _GetMempoolCacheResult;
 
-  const GetMempoolCacheResult._();
+  const new _();
 
   /// @nodoc
-  factory GetMempoolCacheResult.fromJson(Map<String, dynamic> json) =>
+  factory fromJson(Map<String, dynamic> json) =>
       _$GetMempoolCacheResultFromJson(json).copyWith(
         extraFields: RpcExtraFields.capture(json, const {
           'balances',

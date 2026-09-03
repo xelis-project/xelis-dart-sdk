@@ -10,7 +10,7 @@ part 'rpc_block_summary.freezed.dart';
 /// Typed result of the two block-summary methods.
 @Freezed(fromJson: false, toJson: false)
 abstract class RpcBlockSummary with _$RpcBlockSummary {
-  const factory RpcBlockSummary({
+  const factory({
     required String blockHash,
     required BigInt height,
     required BigInt timestamp,
@@ -23,9 +23,9 @@ abstract class RpcBlockSummary with _$RpcBlockSummary {
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = _RpcBlockSummary;
 
-  const RpcBlockSummary._();
+  const new _();
 
-  factory RpcBlockSummary.fromJson(Object? json) {
+  factory fromJson(Object? json) {
     final map = rpcJsonMap(json, method: 'get_block_summary');
     final transactions = rpcList(
       map['transactions'],

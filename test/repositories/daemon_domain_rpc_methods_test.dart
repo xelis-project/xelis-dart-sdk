@@ -78,11 +78,7 @@ void main() {
     'decodes contract data entries with ValueCell keys and values',
     () async {
       client.responses[DaemonMethod.getContractDataEntries.jsonKey] = [
-        {
-          'key': _u8(1),
-          'value': _string('one'),
-          'future_entry_field': 2,
-        },
+        {'key': _u8(1), 'value': _string('one'), 'future_entry_field': 2},
       ];
 
       final result = await client.getContractDataEntries('contract');
@@ -250,10 +246,7 @@ void main() {
       ],
     };
 
-    final result = await client.getContractsOutputs(
-      'address',
-      BigInt.from(10),
-    );
+    final result = await client.getContractsOutputs('address', BigInt.from(10));
 
     expect(result.executions.single.caller, 'caller');
     expect(result.executions.single.transfers['asset'], BigInt.from(5));
@@ -399,9 +392,7 @@ void main() {
 
     final result = await client.raw.call('future_method');
 
-    expect(result.toJson(), {
-      'height': BigInt.parse('9007199254740993'),
-    });
+    expect(result.toJson(), {'height': BigInt.parse('9007199254740993')});
   });
 
   test(
@@ -411,16 +402,14 @@ void main() {
       final result = await client.raw.call(
         'future_method',
         params: RpcJsonValue.object({
-          'height': RpcJsonValue.integer(
-            BigInt.parse('9007199254740993'),
-          ),
+          'height': RpcJsonValue.integer(BigInt.parse('9007199254740993')),
           'nested': const RpcJsonValue.object({
-            'enabled': RpcJsonValue.boolean(true),
+            'enabled': RpcJsonValue.boolean(value: true),
           }),
         }),
       );
 
-      expect(result, const RpcJsonValue.boolean(true));
+      expect(result, const RpcJsonValue.boolean(value: true));
       expect(client.lastParams, {
         'height': BigInt.parse('9007199254740993'),
         'nested': {'enabled': true},
@@ -467,18 +456,14 @@ Map<String, Object?> _string(String value) => {
 };
 
 class _FakeDaemonClient extends DaemonClient {
-  _FakeDaemonClient()
-    : super(endPoint: 'localhost:8080', secureWebSocket: false);
+  new() : super(endPoint: 'localhost:8080', secureWebSocket: false);
 
   final responses = <String, Object?>{};
   Object? lastParams;
   String? requiredMethod;
 
   @override
-  Future<Object?> sendRequest(
-    XelisJsonKey method, [
-    Object? params,
-  ]) async {
+  Future<Object?> sendRequest(XelisJsonKey method, [Object? params]) async {
     lastParams = params;
     return responses[method.jsonKey];
   }

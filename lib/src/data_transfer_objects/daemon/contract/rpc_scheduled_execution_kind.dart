@@ -7,16 +7,14 @@ part 'rpc_scheduled_execution_kind.freezed.dart';
 /// Trigger used by a scheduled execution.
 @Freezed(fromJson: false, toJson: false, toStringOverride: false)
 sealed class RpcScheduledExecutionKind with _$RpcScheduledExecutionKind {
-  const factory RpcScheduledExecutionKind.topoheight(BigInt topoheight) =
-      RpcTopoheightScheduledExecution;
-  const factory RpcScheduledExecutionKind.blockEnd() =
-      RpcBlockEndScheduledExecution;
-  const factory RpcScheduledExecutionKind.unknown(RpcJsonValue wireValue) =
+  const factory topoheight(BigInt topoheight) = RpcTopoheightScheduledExecution;
+  const factory blockEnd() = RpcBlockEndScheduledExecution;
+  const factory unknown(RpcJsonValue wireValue) =
       RpcUnknownScheduledExecutionKind;
 
-  const RpcScheduledExecutionKind._();
+  const new _();
 
-  factory RpcScheduledExecutionKind.fromJson(Object? json) {
+  factory fromJson(Object? json) {
     if (json == 'block_end') {
       return const RpcScheduledExecutionKind.blockEnd();
     }

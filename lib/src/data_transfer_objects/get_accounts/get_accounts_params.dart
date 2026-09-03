@@ -9,7 +9,7 @@ part 'get_accounts_params.g.dart';
 @freezed
 abstract class GetAccountsParams with _$GetAccountsParams {
   /// @nodoc
-  const factory GetAccountsParams({
+  const factory({
     @JsonKey(name: 'skip') int? skip,
     @JsonKey(name: 'maximum') int? maximum,
     @JsonKey(
@@ -27,6 +27,6 @@ abstract class GetAccountsParams with _$GetAccountsParams {
   }) = _GetAccountsParams;
 
   /// @nodoc
-  factory GetAccountsParams.fromJson(Map<String, dynamic> json) =>
+  factory fromJson(Map<String, dynamic> json) =>
       _$GetAccountsParamsFromJson(json);
 }

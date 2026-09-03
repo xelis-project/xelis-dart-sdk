@@ -9,7 +9,7 @@ part 'balance_version.freezed.dart';
 /// Versioned encrypted balance payload stored by the daemon.
 @Freezed(fromJson: false, toJson: false)
 abstract class BalanceVersion with _$BalanceVersion {
-  const factory BalanceVersion({
+  const factory({
     required RpcBalanceType balanceType,
     required RpcCompressedCiphertext finalBalance,
     RpcCompressedCiphertext? outputBalance,
@@ -17,9 +17,9 @@ abstract class BalanceVersion with _$BalanceVersion {
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = _BalanceVersion;
 
-  const BalanceVersion._();
+  const new _();
 
-  factory BalanceVersion.fromJson(Map<String, dynamic> json) => BalanceVersion(
+  factory fromJson(Map<String, dynamic> json) => BalanceVersion(
     balanceType: RpcBalanceType.fromJson(json['balance_type']),
     finalBalance: RpcCompressedCiphertext.fromJson(json['final_balance']),
     outputBalance: json['output_balance'] == null

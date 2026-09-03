@@ -10,7 +10,7 @@ part 'get_nonce_at_topoheight_result.g.dart';
 @freezed
 abstract class GetNonceAtTopoheightResult with _$GetNonceAtTopoheightResult {
   /// @nodoc
-  const factory GetNonceAtTopoheightResult({
+  const factory({
     @JsonKey(name: 'nonce', fromJson: rpcBigInt, toJson: rpcBigIntToJson)
     required BigInt nonce,
     @JsonKey(
@@ -24,10 +24,10 @@ abstract class GetNonceAtTopoheightResult with _$GetNonceAtTopoheightResult {
     RpcExtraFields extraFields,
   }) = _GetNonceAtTopoheightResult;
 
-  const GetNonceAtTopoheightResult._();
+  const new _();
 
   /// @nodoc
-  factory GetNonceAtTopoheightResult.fromJson(Map<String, dynamic> json) =>
+  factory fromJson(Map<String, dynamic> json) =>
       _$GetNonceAtTopoheightResultFromJson(json).copyWith(
         extraFields: RpcExtraFields.capture(json, const {
           'nonce',

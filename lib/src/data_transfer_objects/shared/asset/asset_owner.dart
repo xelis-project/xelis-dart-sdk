@@ -9,17 +9,17 @@ part 'asset_owner.freezed.dart';
 @Freezed(fromJson: false, toJson: false, toStringOverride: false)
 sealed class AssetOwner with _$AssetOwner {
   /// Native asset or removed creator link.
-  const factory AssetOwner.none() = NoAssetOwner;
+  const factory none() = NoAssetOwner;
 
   /// Original contract creator.
-  const factory AssetOwner.creator({
+  const factory creator({
     required String contract,
     required BigInt id,
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = CreatorAssetOwner;
 
   /// Ownership transferred to another contract.
-  const factory AssetOwner.owner({
+  const factory owner({
     required String origin,
     required BigInt originId,
     required String owner,
@@ -27,13 +27,13 @@ sealed class AssetOwner with _$AssetOwner {
   }) = TransferredAssetOwner;
 
   /// Variant introduced by a newer daemon.
-  const factory AssetOwner.unknown(String type, RpcJsonValue wireValue) =
+  const factory unknown(String type, RpcJsonValue wireValue) =
       UnknownAssetOwner;
 
-  const AssetOwner._();
+  const new _();
 
   /// Decodes the exact externally-tagged Rust representation.
-  factory AssetOwner.fromJson(Object? json) {
+  factory fromJson(Object? json) {
     if (json == 'none') return const AssetOwner.none();
     final map = rpcJsonMap(json, method: 'get_asset');
     if (map.length != 1) {
@@ -59,10 +59,10 @@ sealed class AssetOwner with _$AssetOwner {
   Object toWireJson({bool includeExtraFields = false}) => switch (this) {
     NoAssetOwner() => 'none',
     CreatorAssetOwner(:final contract, :final id, :final extraFields) => {
-      'creator': extraFields.mergeInto(
-        {'contract': contract, 'id': id},
-        includeExtraFields: includeExtraFields,
-      ),
+      'creator': extraFields.mergeInto({
+        'contract': contract,
+        'id': id,
+      }, includeExtraFields: includeExtraFields),
     },
     TransferredAssetOwner(
       :final origin,
@@ -71,10 +71,11 @@ sealed class AssetOwner with _$AssetOwner {
       :final extraFields,
     ) =>
       {
-        'owner': extraFields.mergeInto(
-          {'origin': origin, 'origin_id': originId, 'owner': owner},
-          includeExtraFields: includeExtraFields,
-        ),
+        'owner': extraFields.mergeInto({
+          'origin': origin,
+          'origin_id': originId,
+          'owner': owner,
+        }, includeExtraFields: includeExtraFields),
       },
     UnknownAssetOwner(:final type, :final wireValue) => {
       type: wireValue.toJson(),

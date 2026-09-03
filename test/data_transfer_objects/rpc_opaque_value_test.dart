@@ -12,10 +12,7 @@ void main() {
         'type': 'Hash',
         'value': uppercaseHash.toLowerCase(),
       });
-      expect(address.toWireJson(), {
-        'type': 'Address',
-        'value': 'xel-address',
-      });
+      expect(address.toWireJson(), {'type': 'Address', 'value': 'xel-address'});
       expect(hash.validateForInput, returnsNormally);
       expect(address.validateForInput, returnsNormally);
     });

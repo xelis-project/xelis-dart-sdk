@@ -8,24 +8,22 @@ part 'max_supply_mode.freezed.dart';
 @Freezed(fromJson: false, toJson: false, toStringOverride: false)
 sealed class MaxSupplyMode with _$MaxSupplyMode {
   /// No maximum supply.
-  const factory MaxSupplyMode.none() = NoMaxSupplyMode;
+  const factory none() = NoMaxSupplyMode;
 
   /// Fixed supply emitted once.
-  const factory MaxSupplyMode.fixed(BigInt value) = FixedMaxSupplyMode;
+  const factory fixed(BigInt value) = FixedMaxSupplyMode;
 
   /// Mintable supply capped at [value].
-  const factory MaxSupplyMode.mintable(BigInt value) = MintableMaxSupplyMode;
+  const factory mintable(BigInt value) = MintableMaxSupplyMode;
 
   /// Variant introduced by a newer daemon.
-  const factory MaxSupplyMode.unknown(
-    String type,
-    RpcJsonValue wireValue,
-  ) = UnknownMaxSupplyMode;
+  const factory unknown(String type, RpcJsonValue wireValue) =
+      UnknownMaxSupplyMode;
 
-  const MaxSupplyMode._();
+  const new _();
 
   /// Decodes the exact externally-tagged Rust representation.
-  factory MaxSupplyMode.fromJson(Object? json) {
+  factory fromJson(Object? json) {
     if (json == 'none') return const MaxSupplyMode.none();
     final map = rpcJsonMap(json, method: 'get_asset');
     if (map.length != 1) {

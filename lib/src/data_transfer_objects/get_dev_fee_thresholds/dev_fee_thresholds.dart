@@ -10,7 +10,7 @@ part 'dev_fee_thresholds.g.dart';
 @freezed
 abstract class DevFeeThresholds with _$DevFeeThresholds {
   /// @nodoc
-  const factory DevFeeThresholds({
+  const factory({
     @JsonKey(name: 'height', fromJson: rpcBigInt, toJson: rpcBigIntToJson)
     required BigInt height,
     @JsonKey(
@@ -24,10 +24,10 @@ abstract class DevFeeThresholds with _$DevFeeThresholds {
     RpcExtraFields extraFields,
   }) = _DevFeeThresholds;
 
-  const DevFeeThresholds._();
+  const new _();
 
   /// @nodoc
-  factory DevFeeThresholds.fromJson(Map<String, dynamic> json) =>
+  factory fromJson(Map<String, dynamic> json) =>
       _$DevFeeThresholdsFromJson(json).copyWith(
         extraFields: RpcExtraFields.capture(json, const {
           'height',

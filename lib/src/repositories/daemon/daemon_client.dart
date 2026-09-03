@@ -5,7 +5,7 @@ class DaemonClient extends RpcClientRepository {
   /// [DaemonClient] constructor
   ///
   /// Note: Secure WebSocket is enabled by default.
-  DaemonClient({
+  new({
     required super.endPoint,
     super.secureWebSocket,
     super.timeout,
@@ -22,9 +22,7 @@ class DaemonClient extends RpcClientRepository {
           <void Function(StableTopoheightChangedEvent event)>[],
       DaemonEvent.transactionAddedInMempool:
           <
-            void Function(
-              MempoolTransactionSummary mempoolTransactionSummary,
-            )
+            void Function(MempoolTransactionSummary mempoolTransactionSummary)
           >[],
       DaemonEvent.transactionExecuted:
           <void Function(TransactionExecutedEvent transactionExecutedEvent)>[],
@@ -36,9 +34,7 @@ class DaemonClient extends RpcClientRepository {
       DaemonEvent.peerStateUpdated: <void Function(PeerEntry peer)>[],
       DaemonEvent.peerPeerDisconnected:
           <
-            void Function(
-              PeerPeerDisconnectedEvent peerPeerDisconnectedEvent,
-            )
+            void Function(PeerPeerDisconnectedEvent peerPeerDisconnectedEvent)
           >[],
       DaemonEvent.blockOrphaned:
           <void Function(BlockOrphanedEvent blockOrphanedEvent)>[],

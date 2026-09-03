@@ -8,12 +8,12 @@ part 'sign_unsigned_transaction_params.g.dart';
 abstract class SignUnsignedTransactionParams
     with _$SignUnsignedTransactionParams {
   /// @nodoc
-  const factory SignUnsignedTransactionParams({
+  const factory({
     @JsonKey(name: 'hash') required String hash,
     @JsonKey(name: 'signer_id') required int signerId,
   }) = _SignUnsignedTransactionParams;
 
   /// @nodoc
-  factory SignUnsignedTransactionParams.fromJson(Map<String, dynamic> json) =>
+  factory fromJson(Map<String, dynamic> json) =>
       _$SignUnsignedTransactionParamsFromJson(json);
 }

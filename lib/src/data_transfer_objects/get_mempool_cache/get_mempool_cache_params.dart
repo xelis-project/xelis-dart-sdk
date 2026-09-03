@@ -7,11 +7,10 @@ part 'get_mempool_cache_params.g.dart';
 @freezed
 abstract class GetMempoolCacheParams with _$GetMempoolCacheParams {
   /// @nodoc
-  const factory GetMempoolCacheParams({
-    @JsonKey(name: 'address') required String address,
-  }) = _GetMempoolCacheParams;
+  const factory({@JsonKey(name: 'address') required String address}) =
+      _GetMempoolCacheParams;
 
   /// @nodoc
-  factory GetMempoolCacheParams.fromJson(Map<String, dynamic> json) =>
+  factory fromJson(Map<String, dynamic> json) =>
       _$GetMempoolCacheParamsFromJson(json);
 }

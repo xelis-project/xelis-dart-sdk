@@ -8,12 +8,12 @@ part 'get_mempool_params.g.dart';
 @freezed
 abstract class GetMempoolParams with _$GetMempoolParams {
   /// @nodoc
-  const factory GetMempoolParams({
+  const factory({
     @JsonKey(name: 'maximum') int? maximum,
     @JsonKey(name: 'skip') int? skip,
   }) = _GetMempoolParams;
 
   /// @nodoc
-  factory GetMempoolParams.fromJson(Map<String, dynamic> json) =>
+  factory fromJson(Map<String, dynamic> json) =>
       _$GetMempoolParamsFromJson(json);
 }

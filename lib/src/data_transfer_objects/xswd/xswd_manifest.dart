@@ -6,7 +6,7 @@ part 'xswd_manifest.freezed.dart';
 /// Versioned, strict XSWD application manifest.
 @Freezed(fromJson: false, toJson: false)
 abstract class XswdManifest with _$XswdManifest {
-  const factory XswdManifest({
+  const factory({
     required int version,
     required String id,
     required String name,
@@ -15,7 +15,7 @@ abstract class XswdManifest with _$XswdManifest {
     String? url,
   }) = _XswdManifest;
 
-  const XswdManifest._();
+  const new _();
 
   /// Current SDK envelope version.
   static const int currentVersion = 1;

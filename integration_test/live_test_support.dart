@@ -33,7 +33,7 @@ LiveConfiguration? loadLiveConfiguration(String suite) {
 }
 
 final class LiveConfiguration {
-  const LiveConfiguration({
+  const new({
     required this.suite,
     required this.stress,
     required this.targetManifest,
@@ -44,7 +44,7 @@ final class LiveConfiguration {
     required this.scenarioReport,
   });
 
-  factory LiveConfiguration.load(
+  factory load(
     String path, {
     required String suite,
     required String scenarioReport,
@@ -90,17 +90,14 @@ final class LiveConfiguration {
   final String? contractFixture;
   final String scenarioReport;
 
-  ScenarioReport createScenarioReport() => ScenarioReport(
-    File(scenarioReport),
-    suite,
-    includeStress: stress,
-  );
+  ScenarioReport createScenarioReport() =>
+      ScenarioReport(File(scenarioReport), suite, includeStress: stress);
 }
 
 class Endpoint {
-  const Endpoint({required this.endpoint, required this.secureWebSocket});
+  const new({required this.endpoint, required this.secureWebSocket});
 
-  factory Endpoint.fromJson(Map<String, dynamic> json) => Endpoint(
+  factory fromJson(Map<String, dynamic> json) => Endpoint(
     endpoint: json['endpoint'] as String,
     secureWebSocket: json['secureWebSocket'] as bool,
   );
@@ -110,14 +107,14 @@ class Endpoint {
 }
 
 final class WalletEndpoint extends Endpoint {
-  const WalletEndpoint({
+  const new({
     required super.endpoint,
     required super.secureWebSocket,
     required this.username,
     required this.password,
   });
 
-  factory WalletEndpoint.fromJson(Map<String, dynamic> json) => WalletEndpoint(
+  factory fromJson(Map<String, dynamic> json) => WalletEndpoint(
     endpoint: json['endpoint'] as String,
     secureWebSocket: json['secureWebSocket'] as bool,
     username: json['username'] as String,
@@ -129,9 +126,9 @@ final class WalletEndpoint extends Endpoint {
 }
 
 final class ContractFixture {
-  const ContractFixture({required this.sourceCommit, required this.moduleHex});
+  const new({required this.sourceCommit, required this.moduleHex});
 
-  factory ContractFixture.load(String path) {
+  factory load(String path) {
     final json =
         jsonDecode(File(path).readAsStringSync()) as Map<String, dynamic>;
     final moduleHex = json['moduleHex'] as String;
@@ -158,21 +155,18 @@ final class ContractFixture {
 }
 
 final class ScenarioReport {
-  ScenarioReport(
-    this.file,
-    String suite, {
-    required bool includeStress,
-  }) : expected = scenariosForSuite(
-         suite,
-         includeStress: includeStress,
-       ).map((scenario) => scenario.id).toList(growable: false),
-       states = {
-         for (final scenario in scenariosForSuite(
-           suite,
-           includeStress: includeStress,
-         ))
-           scenario.id: 'pending',
-       } {
+  new(this.file, String suite, {required bool includeStress})
+    : expected = scenariosForSuite(
+        suite,
+        includeStress: includeStress,
+      ).map((scenario) => scenario.id).toList(growable: false),
+      states = {
+        for (final scenario in scenariosForSuite(
+          suite,
+          includeStress: includeStress,
+        ))
+          scenario.id: 'pending',
+      } {
     write();
   }
 
@@ -202,10 +196,8 @@ final class ScenarioReport {
   void write() {
     file.parent.createSync(recursive: true);
     file.writeAsStringSync(
-      const JsonEncoder.withIndent('  ').convert({
-        'expected': expected,
-        'states': states,
-      }),
+      const JsonEncoder.withIndent('  ')
+          .convert({'expected': expected, 'states': states}),
       flush: true,
     );
   }
@@ -214,9 +206,7 @@ final class ScenarioReport {
 StreamSubscription<LogRecord> startRpcLogging() {
   Logger.root.level = Level.ALL;
   return Logger.root.onRecord.listen(
-    (record) => stdout.writeln(
-      '[rpc:${record.loggerName}] ${record.message}',
-    ),
+    (record) => stdout.writeln('[rpc:${record.loggerName}] ${record.message}'),
   );
 }
 
@@ -233,11 +223,7 @@ Future<void> connectRpc(RpcClientRepository client) async {
   await connected.future.timeout(const Duration(seconds: 30));
 }
 
-Future<void> mineBlocks(
-  DaemonClient daemon,
-  String address,
-  int count,
-) async {
+Future<void> mineBlocks(DaemonClient daemon, String address, int count) async {
   for (var index = 0; index < count; index++) {
     final template = await daemon.getBlockTemplate(
       GetBlockTemplateParams(address: address),

@@ -7,12 +7,10 @@ part 'get_multisig_params.g.dart';
 @freezed
 abstract class GetMultisigParams with _$GetMultisigParams {
   /// @nodoc
-  const factory GetMultisigParams({
-    @JsonKey(name: 'address') required String address,
-  }) = _GetMultisigParams;
+  const factory({@JsonKey(name: 'address') required String address}) =
+      _GetMultisigParams;
 
   /// @nodoc
-  factory GetMultisigParams.fromJson(
-    Map<String, dynamic> json,
-  ) => _$GetMultisigParamsFromJson(json);
+  factory fromJson(Map<String, dynamic> json) =>
+      _$GetMultisigParamsFromJson(json);
 }

@@ -76,11 +76,11 @@ void main() {
       expect(
         transactionType,
         isA<BlobPayload>()
-            .having(
-              (blob) => blob.data.toJson(),
-              'data',
-              [BigInt.one, BigInt.from(2), BigInt.from(3)],
-            )
+            .having((blob) => blob.data.toJson(), 'data', [
+              BigInt.one,
+              BigInt.from(2),
+              BigInt.from(3),
+            ])
             .having((blob) => blob.destinations, 'destinations', [
               const AddressOrPublicKey.publicKey([4, 5, 6]),
             ]),
@@ -97,11 +97,9 @@ void main() {
 
       expect(
         transactionType,
-        isA<BlobPayload>().having(
-          (blob) => blob.destinations,
-          'destinations',
-          [const AddressOrPublicKey.address('xel-address')],
-        ),
+        isA<BlobPayload>().having((blob) => blob.destinations, 'destinations', [
+          const AddressOrPublicKey.address('xel-address'),
+        ]),
       );
     });
 
@@ -147,11 +145,11 @@ void main() {
       expect(
         response.transaction.data,
         isA<BlobPayload>()
-            .having(
-              (blob) => blob.data.toJson(),
-              'data',
-              [BigInt.one, BigInt.from(2), BigInt.from(3)],
-            )
+            .having((blob) => blob.data.toJson(), 'data', [
+              BigInt.one,
+              BigInt.from(2),
+              BigInt.from(3),
+            ])
             .having((blob) => blob.destinations, 'destinations', [
               const AddressOrPublicKey.address('xel-address'),
             ]),
@@ -196,10 +194,7 @@ void main() {
       );
 
       expect(builder.toRpcJson(), {
-        'deploy_contract': {
-          'contract': '0000ab',
-          'invoke': null,
-        },
+        'deploy_contract': {'contract': '0000ab', 'invoke': null},
       });
     });
 

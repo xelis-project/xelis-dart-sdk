@@ -89,10 +89,7 @@ void main() {
       expect(transaction.toWireJson(), {
         'future_transaction': {'value': BigInt.one},
       });
-      expect(
-        () => RpcContractVersion.fromJson(1),
-        throwsFormatException,
-      );
+      expect(() => RpcContractVersion.fromJson(1), throwsFormatException);
       expect(
         () => TransactionType.fromJson({
           'first_future_variant': <String, Object?>{},

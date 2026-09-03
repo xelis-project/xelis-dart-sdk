@@ -10,31 +10,26 @@ part 'multisig_state.freezed.dart';
 @Freezed(fromJson: false, toJson: false, toStringOverride: false)
 sealed class MultisigState with _$MultisigState {
   /// Multisig configuration was deleted.
-  const factory MultisigState.deleted() = Deleted;
+  const factory deleted() = Deleted;
 
   /// Active multisig configuration.
-  const factory MultisigState.active({
+  const factory active({
     required List<String> participants,
     required int threshold,
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = Active;
 
   /// Variant introduced by a newer daemon.
-  const factory MultisigState.unknown(
-    String type,
-    RpcJsonValue wireValue,
-  ) = UnknownMultisigState;
+  const factory unknown(String type, RpcJsonValue wireValue) =
+      UnknownMultisigState;
 
-  const MultisigState._();
+  const new _();
 
   /// Decodes the exact externally-tagged enum emitted by Rust.
-  factory MultisigState.fromJson(Object? json) {
+  factory fromJson(Object? json) {
     if (json == 'deleted') return const MultisigState.deleted();
     if (json is String) {
-      return MultisigState.unknown(
-        json,
-        const RpcJsonValue.nullValue(),
-      );
+      return MultisigState.unknown(json, const RpcJsonValue.nullValue());
     }
 
     final map = rpcJsonMap(json, method: 'get_multisig', path: r'$.state');

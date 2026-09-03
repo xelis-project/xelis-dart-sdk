@@ -7,16 +7,15 @@ part 'signer_id.g.dart';
 @Freezed(toStringOverride: false)
 abstract class SignerId with _$SignerId {
   /// @nodoc
-  const factory SignerId({
+  const factory({
     @JsonKey(name: 'id') required int id,
     @JsonKey(name: 'private_key') required String privateKey,
   }) = _SignerId;
 
-  const SignerId._();
+  const new _();
 
   /// @nodoc
-  factory SignerId.fromJson(Map<String, dynamic> json) =>
-      _$SignerIdFromJson(json);
+  factory fromJson(Map<String, dynamic> json) => _$SignerIdFromJson(json);
 
   @override
   String toString() => 'SignerId(id: $id, privateKey: <redacted>)';

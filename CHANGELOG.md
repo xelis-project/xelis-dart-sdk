@@ -1,3 +1,11 @@
+## Unreleased
+
+### Breaking changes
+
+- Require the boolean payload of `RpcJsonValue.boolean` and
+  `RpcPrimitive.boolean` as the named `value` argument. For example, replace
+  `RpcJsonValue.boolean(true)` with `RpcJsonValue.boolean(value: true)`.
+
 ## 0.36.0
 
 This release aligns the SDK with XELIS `v1.25.0`. It removes public models that

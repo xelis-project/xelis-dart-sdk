@@ -15,14 +15,12 @@ extension DaemonChainRpcMethods on DaemonClient {
     {'asset': asset},
   );
 
-  Future<BigInt?> getAssetSupplyAtTopoheight(
-    String asset,
-    BigInt topoheight,
-  ) => sendRequestAndDecode(
-    DaemonMethod.getAssetSupplyAtTopoheight,
-    (result) => result == null ? null : _decodeVersionedUint64(result),
-    {'asset': asset, 'topoheight': topoheight},
-  );
+  Future<BigInt?> getAssetSupplyAtTopoheight(String asset, BigInt topoheight) =>
+      sendRequestAndDecode(
+        DaemonMethod.getAssetSupplyAtTopoheight,
+        (result) => result == null ? null : _decodeVersionedUint64(result),
+        {'asset': asset, 'topoheight': topoheight},
+      );
 
   Future<List<RpcVersionedBalance?>> getBalancesAtMaximumTopoheight({
     required String address,
@@ -108,6 +106,5 @@ List<dynamic> _rpcList(Object? value) {
   throw const FormatException('Expected an array.');
 }
 
-BigInt _decodeVersionedUint64(Object? value) => rpcBigInt(
-  rpcJsonMap(value)['data'],
-);
+BigInt _decodeVersionedUint64(Object? value) =>
+    rpcBigInt(rpcJsonMap(value)['data']);

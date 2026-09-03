@@ -2,7 +2,7 @@ import 'package:test/test.dart';
 import 'package:xelis_dart_sdk/xelis_dart_sdk.dart';
 
 final class RpcInvocation {
-  const RpcInvocation({required this.method, required this.params});
+  const new({required this.method, required this.params});
 
   final String method;
   final Object? params;
@@ -30,7 +30,7 @@ mixin RecordingRpcClient {
 }
 
 final class RecordingWalletClient extends WalletClient with RecordingRpcClient {
-  RecordingWalletClient()
+  new()
     : super(
         endPoint: 'localhost:8080',
         username: 'user',
@@ -40,12 +40,11 @@ final class RecordingWalletClient extends WalletClient with RecordingRpcClient {
 }
 
 final class RecordingDaemonClient extends DaemonClient with RecordingRpcClient {
-  RecordingDaemonClient()
-    : super(endPoint: 'localhost:8080', secureWebSocket: false);
+  new() : super(endPoint: 'localhost:8080', secureWebSocket: false);
 }
 
 final class RpcContractCase<C extends RpcClientRepository> {
-  const RpcContractCase({
+  const new({
     required this.method,
     required this.params,
     required this.response,

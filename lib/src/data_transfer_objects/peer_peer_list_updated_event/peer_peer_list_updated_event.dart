@@ -10,7 +10,7 @@ part 'peer_peer_list_updated_event.g.dart';
 @freezed
 abstract class PeerPeerListUpdatedEvent with _$PeerPeerListUpdatedEvent {
   /// @nodoc
-  const factory PeerPeerListUpdatedEvent({
+  const factory({
     @JsonKey(name: 'peer_id', fromJson: rpcBigInt, toJson: rpcBigIntToJson)
     required BigInt id,
     @JsonKey(name: 'peerlist') required List<String> peerList,
@@ -19,10 +19,10 @@ abstract class PeerPeerListUpdatedEvent with _$PeerPeerListUpdatedEvent {
     RpcExtraFields extraFields,
   }) = _PeerPeerListUpdatedEvent;
 
-  const PeerPeerListUpdatedEvent._();
+  const new _();
 
   /// @nodoc
-  factory PeerPeerListUpdatedEvent.fromJson(Map<String, dynamic> json) =>
+  factory fromJson(Map<String, dynamic> json) =>
       _$PeerPeerListUpdatedEventFromJson(json).copyWith(
         extraFields: RpcExtraFields.capture(json, const {
           'peer_id',

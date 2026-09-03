@@ -26,10 +26,7 @@ void main() {
             ],
           },
           const InterContractPermission.specific([
-            ContractCall(
-              contract: 'all',
-              chunk: ContractCallChunk.all(),
-            ),
+            ContractCall(contract: 'all', chunk: ContractCallChunk.all()),
             ContractCall(
               contract: 'specific',
               chunk: ContractCallChunk.specific([0, 65535]),

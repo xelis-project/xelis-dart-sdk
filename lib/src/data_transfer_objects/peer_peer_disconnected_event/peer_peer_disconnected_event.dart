@@ -10,7 +10,7 @@ part 'peer_peer_disconnected_event.g.dart';
 @freezed
 abstract class PeerPeerDisconnectedEvent with _$PeerPeerDisconnectedEvent {
   /// @nodoc
-  const factory PeerPeerDisconnectedEvent({
+  const factory({
     @JsonKey(name: 'peer_id', fromJson: rpcBigInt, toJson: rpcBigIntToJson)
     required BigInt id,
     @JsonKey(name: 'peer_addr') required String address,
@@ -19,10 +19,10 @@ abstract class PeerPeerDisconnectedEvent with _$PeerPeerDisconnectedEvent {
     RpcExtraFields extraFields,
   }) = _PeerPeerDisconnectedEvent;
 
-  const PeerPeerDisconnectedEvent._();
+  const new _();
 
   /// @nodoc
-  factory PeerPeerDisconnectedEvent.fromJson(Map<String, dynamic> json) =>
+  factory fromJson(Map<String, dynamic> json) =>
       _$PeerPeerDisconnectedEventFromJson(json).copyWith(
         extraFields: RpcExtraFields.capture(json, const {
           'peer_id',

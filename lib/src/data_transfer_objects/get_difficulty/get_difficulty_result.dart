@@ -10,7 +10,7 @@ part 'get_difficulty_result.g.dart';
 @freezed
 abstract class GetDifficultyResult with _$GetDifficultyResult {
   /// @nodoc
-  const factory GetDifficultyResult({
+  const factory({
     @JsonKey(
       name: 'difficulty',
       fromJson: rpcBigInt,
@@ -29,10 +29,10 @@ abstract class GetDifficultyResult with _$GetDifficultyResult {
     RpcExtraFields extraFields,
   }) = _GetDifficultyResult;
 
-  const GetDifficultyResult._();
+  const new _();
 
   /// @nodoc
-  factory GetDifficultyResult.fromJson(Map<String, dynamic> json) =>
+  factory fromJson(Map<String, dynamic> json) =>
       _$GetDifficultyResultFromJson(json).copyWith(
         extraFields: RpcExtraFields.capture(json, const {
           'difficulty',

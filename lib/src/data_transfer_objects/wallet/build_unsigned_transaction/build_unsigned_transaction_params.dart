@@ -10,7 +10,7 @@ part 'build_unsigned_transaction_params.freezed.dart';
 abstract class BuildUnsignedTransactionParams
     with _$BuildUnsignedTransactionParams {
   /// @nodoc
-  const factory BuildUnsignedTransactionParams({
+  const factory({
     required TransactionTypeBuilder transactionTypeBuilder,
     @Default(FeeBuilder.extra()) FeeBuilder fee,
     @Default(BaseFeeMode.none()) BaseFeeMode baseFee,
@@ -20,7 +20,7 @@ abstract class BuildUnsignedTransactionParams
     @Default(false) bool txAsHex,
   }) = _BuildUnsignedTransactionParams;
 
-  const BuildUnsignedTransactionParams._();
+  const new _();
 
   /// @nodoc
   Map<String, dynamic> toJson() {

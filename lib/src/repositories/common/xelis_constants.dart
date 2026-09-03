@@ -5,7 +5,7 @@
 /// JSON-RPC key for Xelis method/event.
 abstract class XelisJsonKey {
   /// @nodoc
-  const XelisJsonKey(this.jsonKey);
+  const new(this.jsonKey);
 
   /// @nodoc
   final String jsonKey;
@@ -15,7 +15,7 @@ abstract class XelisJsonKey {
 /// capability-gated APIs.
 final class RpcMethodName implements XelisJsonKey {
   /// Creates a method name.
-  const RpcMethodName(this.jsonKey);
+  const new(this.jsonKey);
 
   @override
   final String jsonKey;
@@ -24,36 +24,32 @@ final class RpcMethodName implements XelisJsonKey {
 /// A typed event subscription, including filters required by contract events.
 final class RpcEventSubscription {
   /// Creates a plain unfiltered subscription.
-  RpcEventSubscription.plain(this.event)
+  new plain(this.event)
     : notify = event.jsonKey,
       _identity = _eventSubscriptionIdentity(event.jsonKey);
 
   /// Tracks invocations of one contract.
-  RpcEventSubscription.contractInvoke({
-    required XelisJsonKey event,
-    required String contract,
-  }) : event = event,
-       notify = {
-         event.jsonKey: {'contract': contract},
-       },
-       _identity = _eventSubscriptionIdentity({
-         event.jsonKey: {'contract': contract},
-       });
+  new contractInvoke({required XelisJsonKey event, required String contract})
+    : event = event,
+      notify = {
+        event.jsonKey: {'contract': contract},
+      },
+      _identity = _eventSubscriptionIdentity({
+        event.jsonKey: {'contract': contract},
+      });
 
   /// Tracks contract transfers to one address.
-  RpcEventSubscription.contractTransfers({
-    required XelisJsonKey event,
-    required String address,
-  }) : event = event,
-       notify = {
-         event.jsonKey: {'address': address},
-       },
-       _identity = _eventSubscriptionIdentity({
-         event.jsonKey: {'address': address},
-       });
+  new contractTransfers({required XelisJsonKey event, required String address})
+    : event = event,
+      notify = {
+        event.jsonKey: {'address': address},
+      },
+      _identity = _eventSubscriptionIdentity({
+        event.jsonKey: {'address': address},
+      });
 
   /// Tracks events emitted by one contract, optionally restricted by id.
-  RpcEventSubscription.contractEvent({
+  new contractEvent({
     required XelisJsonKey event,
     required String contract,
     BigInt? id,
@@ -66,10 +62,8 @@ final class RpcEventSubscription {
        });
 
   /// Reconstructs the subscription identity carried by an event response.
-  RpcEventSubscription.fromWire({
-    required this.event,
-    required this.notify,
-  }) : _identity = _eventSubscriptionIdentity(notify);
+  new fromWire({required this.event, required this.notify})
+    : _identity = _eventSubscriptionIdentity(notify);
 
   /// Base event used for callback dispatch.
   final XelisJsonKey event;
@@ -125,7 +119,7 @@ enum XelisSubscription implements XelisJsonKey {
   unsubscribe('unsubscribe');
 
   /// @nodoc
-  const XelisSubscription(this.jsonKey);
+  new(this.jsonKey);
 
   /// The json key of the enum value.
   @override

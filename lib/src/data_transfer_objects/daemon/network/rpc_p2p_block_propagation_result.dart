@@ -9,16 +9,16 @@ part 'rpc_p2p_block_propagation_result.freezed.dart';
 @Freezed(fromJson: false, toJson: false)
 abstract class RpcP2pBlockPropagationResult
     with _$RpcP2pBlockPropagationResult {
-  const factory RpcP2pBlockPropagationResult({
+  const factory({
     required Map<BigInt, RpcTimedDirection> peers,
     required BigInt? firstSeen,
     required BigInt? processingAt,
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = _RpcP2pBlockPropagationResult;
 
-  const RpcP2pBlockPropagationResult._();
+  const new _();
 
-  factory RpcP2pBlockPropagationResult.fromJson(Object? json) {
+  factory fromJson(Object? json) {
     final map = rpcJsonMap(json, method: 'get_p2p_block_propagation');
     final peers = rpcJsonMap(
       map['peers'],
@@ -27,17 +27,16 @@ abstract class RpcP2pBlockPropagationResult
     );
     return RpcP2pBlockPropagationResult(
       peers: peers.map(
-        (peer, direction) => MapEntry(
-          BigInt.parse(peer),
-          RpcTimedDirection.fromJson(direction),
-        ),
+        (peer, direction) =>
+            MapEntry(BigInt.parse(peer), RpcTimedDirection.fromJson(direction)),
       ),
       firstSeen: rpcNullableBigInt(map['first_seen']),
       processingAt: rpcNullableBigInt(map['processing_at']),
-      extraFields: RpcExtraFields.capture(
-        map,
-        const {'peers', 'first_seen', 'processing_at'},
-      ),
+      extraFields: RpcExtraFields.capture(map, const {
+        'peers',
+        'first_seen',
+        'processing_at',
+      }),
     );
   }
 }

@@ -10,12 +10,8 @@ part 'deploy_invoke.g.dart';
 @freezed
 abstract class DeployInvoke with _$DeployInvoke {
   /// @nodoc
-  const factory DeployInvoke({
-    @JsonKey(
-      name: 'max_gas',
-      fromJson: rpcBigInt,
-      toJson: rpcBigIntToJson,
-    )
+  const factory({
+    @JsonKey(name: 'max_gas', fromJson: rpcBigInt, toJson: rpcBigIntToJson)
     required BigInt maxGas,
     @JsonKey(
       name: 'deposits',
@@ -28,11 +24,11 @@ abstract class DeployInvoke with _$DeployInvoke {
     RpcExtraFields extraFields,
   }) = _DeployInvoke;
 
-  const DeployInvoke._();
+  const new _();
 
   /// @nodoc
-  factory DeployInvoke.fromJson(Map<String, dynamic> json) =>
-      _$DeployInvokeFromJson(json).copyWith(
+  factory fromJson(Map<String, dynamic> json) => _$DeployInvokeFromJson(json)
+      .copyWith(
         extraFields: RpcExtraFields.capture(json, const {
           'max_gas',
           'deposits',

@@ -19,33 +19,32 @@ final BigInt _maxU256 = (BigInt.one << 256) - BigInt.one;
 /// Exact RPC representation of `xelis_vm::ValueCell`.
 @Freezed(fromJson: false, toJson: false, toStringOverride: false)
 sealed class RpcValueCell with _$RpcValueCell {
-  const factory RpcValueCell.primitive(
+  const factory primitive(
     RpcPrimitive value, {
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = RpcPrimitiveValueCell;
 
-  const factory RpcValueCell.bytes(
+  const factory bytes(
     Uint8List value, {
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = RpcBytesValueCell;
 
-  const factory RpcValueCell.object(
+  const factory object(
     List<RpcValueCell> values, {
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = RpcObjectValueCell;
 
-  const factory RpcValueCell.map(
+  const factory map(
     List<RpcValueCellEntry> entries, {
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = RpcMapValueCell;
 
-  const factory RpcValueCell.unknown(RpcJsonValue wireValue) =
-      RpcUnknownValueCell;
+  const factory unknown(RpcJsonValue wireValue) = RpcUnknownValueCell;
 
-  const RpcValueCell._();
+  const new _();
 
   /// Decodes the adjacent-tagged Rust representation.
-  factory RpcValueCell.fromJson(Object? json) {
+  factory fromJson(Object? json) {
     final map = rpcJsonMap(json, method: '<value_cell>');
     final type = map['type'];
     if (type is! String) {
@@ -138,9 +137,8 @@ sealed class RpcValueCell with _$RpcValueCell {
         'object',
         values
             .map(
-              (value) => value.toWireJson(
-                includeExtraFields: includeExtraFields,
-              ),
+              (value) =>
+                  value.toWireJson(includeExtraFields: includeExtraFields),
             )
             .toList(growable: false),
         extraFields,
@@ -149,9 +147,8 @@ sealed class RpcValueCell with _$RpcValueCell {
         'map',
         entries
             .map(
-              (entry) => entry.toWireJson(
-                includeExtraFields: includeExtraFields,
-              ),
+              (entry) =>
+                  entry.toWireJson(includeExtraFields: includeExtraFields),
             )
             .toList(growable: false),
         extraFields,
@@ -190,14 +187,12 @@ sealed class RpcValueCell with _$RpcValueCell {
 /// One ordered key/value pair in an XVM map.
 @freezed
 abstract class RpcValueCellEntry with _$RpcValueCellEntry {
-  const factory RpcValueCellEntry({
-    required RpcValueCell key,
-    required RpcValueCell value,
-  }) = _RpcValueCellEntry;
+  const factory({required RpcValueCell key, required RpcValueCell value}) =
+      _RpcValueCellEntry;
 
-  const RpcValueCellEntry._();
+  const new _();
 
-  factory RpcValueCellEntry.fromJson(Object? json) {
+  factory fromJson(Object? json) {
     if (json is! List || json.length != 2) {
       throw const RpcDeserializationException(
         method: '<value_cell>',
@@ -220,56 +215,55 @@ abstract class RpcValueCellEntry with _$RpcValueCellEntry {
 /// Primitive variants accepted by the XVM ValueCell wire contract.
 @Freezed(fromJson: false, toJson: false, toStringOverride: false)
 sealed class RpcPrimitive with _$RpcPrimitive {
-  const factory RpcPrimitive.nullValue({
+  const factory nullValue({
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = RpcNullPrimitive;
-  const factory RpcPrimitive.boolean(
-    bool value, {
+  const factory boolean({
+    required bool value,
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = RpcBooleanPrimitive;
-  const factory RpcPrimitive.u8(
+  const factory u8(
     int value, {
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = RpcU8Primitive;
-  const factory RpcPrimitive.u16(
+  const factory u16(
     int value, {
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = RpcU16Primitive;
-  const factory RpcPrimitive.u32(
+  const factory u32(
     int value, {
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = RpcU32Primitive;
-  const factory RpcPrimitive.u64(
+  const factory u64(
     BigInt value, {
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = RpcU64Primitive;
-  const factory RpcPrimitive.u128(
+  const factory u128(
     BigInt value, {
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = RpcU128Primitive;
-  const factory RpcPrimitive.u256(
+  const factory u256(
     BigInt value, {
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = RpcU256Primitive;
-  const factory RpcPrimitive.string(
+  const factory string(
     String value, {
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = RpcStringPrimitive;
-  const factory RpcPrimitive.range(
+  const factory range(
     RpcPrimitive start,
     RpcPrimitive end, {
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = RpcRangePrimitive;
-  const factory RpcPrimitive.opaque(
+  const factory opaque(
     RpcOpaqueValue value, {
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
   }) = RpcOpaquePrimitive;
-  const factory RpcPrimitive.unknown(RpcJsonValue wireValue) =
-      RpcUnknownPrimitive;
+  const factory unknown(RpcJsonValue wireValue) = RpcUnknownPrimitive;
 
-  const RpcPrimitive._();
+  const new _();
 
-  factory RpcPrimitive.fromJson(Object? json) {
+  factory fromJson(Object? json) {
     final map = rpcJsonMap(json, method: '<value_cell>');
     final type = map['type'];
     if (type is! String) {
@@ -286,7 +280,7 @@ sealed class RpcPrimitive with _$RpcPrimitive {
       case 'boolean':
         final value = map['value'];
         if (value is! bool) throw _primitiveError(type);
-        return RpcPrimitive.boolean(value, extraFields: extras);
+        return RpcPrimitive.boolean(value: value, extraFields: extras);
       case 'u8':
         return RpcPrimitive.u8(
           rpcInt(map['value'], min: 0, max: _maxU8.toInt()),

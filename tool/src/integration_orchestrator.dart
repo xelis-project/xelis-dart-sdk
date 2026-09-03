@@ -12,7 +12,7 @@ import 'upstream_source.dart';
 import 'xelis_target.dart';
 
 final class IntegrationOptions {
-  const IntegrationOptions({
+  const new({
     this.xelisSource,
     this.daemonBinary,
     this.walletBinary,
@@ -35,7 +35,7 @@ typedef IntegrationSuiteExecutor = Future<String> Function(
 );
 
 final class IntegrationOrchestrator {
-  IntegrationOrchestrator({
+  new({
     required this.target,
     required this.selection,
     this.stress = false,
@@ -62,9 +62,7 @@ final class IntegrationOrchestrator {
 
     final outcomes = <_SuiteOutcome>[];
     for (final suite in selection.concreteSuites) {
-      final suiteDirectory = Directory(
-        '${runDirectory.path}/${suite.name}',
-      );
+      final suiteDirectory = Directory('${runDirectory.path}/${suite.name}');
       final reportFile = File('${reportDirectory.path}/${suite.name}.json');
       try {
         final executor = suiteExecutor;
@@ -284,10 +282,7 @@ final class IntegrationOrchestrator {
         'cli,sled',
       ],
     );
-    final daemon = await _startDaemon(
-      daemonBinary,
-      runDirectory: runDirectory,
-    );
+    final daemon = await _startDaemon(daemonBinary, runDirectory: runDirectory);
     processes.add(daemon.process);
 
     final wallets = <Map<String, Object?>>[];
@@ -297,12 +292,7 @@ final class IntegrationOrchestrator {
         provided: options.walletBinary,
         xelisSource: options.xelisSource,
         buildOptions: 'release-default-features',
-        cargoArguments: const [
-          'build',
-          '--release',
-          '-p',
-          'xelis_wallet',
-        ],
+        cargoArguments: const ['build', '--release', '-p', 'xelis_wallet'],
       );
       for (var index = 0; index < suite.walletCount; index++) {
         final wallet = await _startWallet(
@@ -402,9 +392,8 @@ final class IntegrationOrchestrator {
         environment: {'CARGO_TARGET_DIR': cargoTarget.path},
         label: 'Build pinned XELIS $component',
       );
-      File(
-        '${cargoTarget.path}/release/xelis_$component$extension',
-      ).copySync(binary.path);
+      File('${cargoTarget.path}/release/xelis_$component$extension')
+          .copySync(binary.path);
       metadata.writeAsStringSync(
         const JsonEncoder.withIndent('  ').convert({
           'format': 1,
@@ -429,28 +418,24 @@ final class IntegrationOrchestrator {
     final endpoint = '127.0.0.1:$port';
     final data = Directory('${runDirectory.path}/daemon')
       ..createSync(recursive: true);
-    final process = await ManagedProcess.start(
-      binary,
-      [
-        '--network',
-        'devnet',
-        '--disable-p2p-server',
-        '--rpc-bind-address',
-        endpoint,
-        '--rpc-allow-private-methods',
-        '--rpc-allow-contract-vm-executions',
-        '--disable-interactive-mode',
-        '--disable-file-logging',
-        '--disable-ascii-art',
-        '--disable-log-color',
-        '--dir-path',
-        withTrailingSeparator(data.path),
-        '--use-db-backend',
-        'sled',
-        '--skip-pow-verification',
-      ],
-      logFile: File('${runDirectory.path}/daemon.log'),
-    );
+    final process = await ManagedProcess.start(binary, [
+      '--network',
+      'devnet',
+      '--disable-p2p-server',
+      '--rpc-bind-address',
+      endpoint,
+      '--rpc-allow-private-methods',
+      '--rpc-allow-contract-vm-executions',
+      '--disable-interactive-mode',
+      '--disable-file-logging',
+      '--disable-ascii-art',
+      '--disable-log-color',
+      '--dir-path',
+      withTrailingSeparator(data.path),
+      '--use-db-backend',
+      'sled',
+      '--skip-pow-verification',
+    ], logFile: File('${runDirectory.path}/daemon.log'));
     try {
       await waitForRpc(
         endpoint: endpoint,
@@ -484,43 +469,41 @@ final class IntegrationOrchestrator {
       '${target.commit.substring(0, 12)}/l1-18',
     ).absolute..createSync(recursive: true);
     final config = File('${runDirectory.path}/wallet-$index.json');
-    config.writeAsStringSync(
-      const JsonEncoder.withIndent('  ').convert({
-        'rpc': {
-          'bind_address': endpoint,
-          'username': username,
-          'password': password,
-          'threads': 1,
-          'notify_events_concurrency': 1,
-        },
-        'network_handler': {
-          'daemon_address': 'http://$daemonEndpoint',
-          'offline_mode': false,
-        },
-        'precomputed_tables': {
-          'precomputed_tables_l1': 18,
-          'precomputed_tables_path': withTrailingSeparator(tableDirectory.path),
-        },
-        'log': {
-          'disable_file_logging': true,
-          'disable_log_color': true,
-          'disable_interactive_mode': true,
-          'disable_ascii_art': true,
-        },
-        'wallet_path': walletDirectory.path,
-        'password': walletPassword,
-        'network': 'devnet',
-        'n_decryption_threads': 1,
-        'network_concurrency': 1,
-      }),
-      flush: true,
-    );
+    const configEncoder = JsonEncoder.withIndent('  ');
+    final configContents = configEncoder.convert({
+      'rpc': {
+        'bind_address': endpoint,
+        'username': username,
+        'password': password,
+        'threads': 1,
+        'notify_events_concurrency': 1,
+      },
+      'network_handler': {
+        'daemon_address': 'http://$daemonEndpoint',
+        'offline_mode': false,
+      },
+      'precomputed_tables': {
+        'precomputed_tables_l1': 18,
+        'precomputed_tables_path': withTrailingSeparator(tableDirectory.path),
+      },
+      'log': {
+        'disable_file_logging': true,
+        'disable_log_color': true,
+        'disable_interactive_mode': true,
+        'disable_ascii_art': true,
+      },
+      'wallet_path': walletDirectory.path,
+      'password': walletPassword,
+      'network': 'devnet',
+      'n_decryption_threads': 1,
+      'network_concurrency': 1,
+    });
+    config.writeAsStringSync(configContents, flush: true);
     try {
-      final process = await ManagedProcess.start(
-        binary,
-        ['--config-file', config.path],
-        logFile: File('${runDirectory.path}/wallet-$index.log'),
-      );
+      final process = await ManagedProcess.start(binary, [
+        '--config-file',
+        config.path,
+      ], logFile: File('${runDirectory.path}/wallet-$index.log'));
       return _WalletProcess(
         index: index,
         binary: binary,
@@ -553,9 +536,7 @@ final class IntegrationOrchestrator {
     final restarted = await ManagedProcess.start(
       wallet.binary,
       ['--config-file', wallet.configFile.path],
-      logFile: File(
-        '${runDirectory.path}/wallet-${wallet.index}-restart.log',
-      ),
+      logFile: File('${runDirectory.path}/wallet-${wallet.index}-restart.log'),
     );
     wallet.process = restarted;
     processes.add(restarted);
@@ -586,10 +567,7 @@ final class IntegrationOrchestrator {
     required bool stress,
   }) => runChecked(
     Platform.resolvedExecutable,
-    [
-      'test',
-      'integration_test/live_${suite.name}_rpc_test.dart',
-    ],
+    ['test', 'integration_test/live_${suite.name}_rpc_test.dart'],
     environment: {
       'XELIS_INTEGRATION_CONFIG': config.path,
       'XELIS_SCENARIO_REPORT': scenarioReport.path,
@@ -690,9 +668,7 @@ Future<Object?> _readRpcValue(
   final body = await utf8.decoder
       .bind(response)
       .join()
-      .timeout(
-        const Duration(seconds: 3),
-      );
+      .timeout(const Duration(seconds: 3));
   if (response.statusCode != HttpStatus.ok) {
     throw HttpException('HTTP ${response.statusCode}');
   }
@@ -752,9 +728,7 @@ void verifyContractFixture(File file) {
   }
 }
 
-Future<List<Object>> stopProcesses(
-  Iterable<StoppableProcess> processes,
-) async {
+Future<List<Object>> stopProcesses(Iterable<StoppableProcess> processes) async {
   final failures = <Object>[];
   for (final process in processes) {
     try {
@@ -787,9 +761,8 @@ Map<String, Object?> validateScenarioReport(
   if (reportedExpected is! List ||
       !reportedExpected.every((value) => value is String) ||
       reportedExpected.length != expected.length ||
-      Iterable<int>.generate(expected.length).any(
-        (index) => reportedExpected[index] != expected[index],
-      )) {
+      Iterable<int>.generate(expected.length)
+          .any((index) => reportedExpected[index] != expected[index])) {
     throw FormatException(
       'Scenario report expected list does not match the ${suite.name} catalog.',
     );
@@ -810,9 +783,7 @@ Map<String, Object?> validateScenarioReport(
   if (requirePassed) {
     final incomplete = expected.where((id) => states[id] != 'passed').toList();
     if (incomplete.isNotEmpty) {
-      throw StateError(
-        'Scenarios did not pass: ${incomplete.join(', ')}.',
-      );
+      throw StateError('Scenarios did not pass: ${incomplete.join(', ')}.');
     }
   }
   return decoded.cast<String, Object?>();
@@ -898,21 +869,21 @@ String _randomSecret() {
 }
 
 final class _SuiteOutcome {
-  const _SuiteOutcome(this.suite, this.status);
+  const new(this.suite, this.status);
 
   final IntegrationSuite suite;
   final String status;
 }
 
 final class _DaemonProcess {
-  const _DaemonProcess(this.process, this.endpoint);
+  const new(this.process, this.endpoint);
 
   final ManagedProcess process;
   final String endpoint;
 }
 
 final class _WalletProcess {
-  _WalletProcess({
+  new({
     required this.index,
     required this.binary,
     required this.process,
