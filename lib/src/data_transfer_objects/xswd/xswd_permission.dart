@@ -6,6 +6,7 @@ part 'xswd_permission.freezed.dart';
 /// A normalized and classified wallet permission.
 @Freezed(fromJson: false, toJson: false)
 abstract class XswdPermission with _$XswdPermission {
+  /// @nodoc
   const factory({
     /// Wallet RPC method without the optional `wallet.` prefix.
     required String method,

@@ -34,6 +34,7 @@ abstract class GetHardForksResult with _$GetHardForksResult {
         }),
       );
 
+  /// Encodes the RPC wire representation, optionally restoring additive fields.
   Map<String, Object?> toWireJson({bool includeExtraFields = false}) =>
       extraFields.mergeInto({
         'height': height,

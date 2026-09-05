@@ -7,6 +7,7 @@ part 'block_base_fee.freezed.dart';
 /// Current result of `get_block_base_fee_by_hash`.
 @Freezed(fromJson: false, toJson: false)
 abstract class BlockBaseFee with _$BlockBaseFee {
+  /// @nodoc
   const factory({
     required BigInt feePerKb,
     required BigInt blockSizeEma,
@@ -15,6 +16,7 @@ abstract class BlockBaseFee with _$BlockBaseFee {
 
   const new _();
 
+  /// @nodoc
   factory fromJson(Map<String, dynamic> json) => BlockBaseFee(
     feePerKb: rpcBigInt(
       json['fee_per_kb'],
@@ -30,6 +32,7 @@ abstract class BlockBaseFee with _$BlockBaseFee {
     }),
   );
 
+  /// Encodes the RPC wire representation, optionally restoring additive fields.
   Map<String, Object?> toWireJson({bool includeExtraFields = false}) =>
       extraFields.mergeInto({
         'fee_per_kb': feePerKb,

@@ -187,11 +187,13 @@ sealed class RpcValueCell with _$RpcValueCell {
 /// One ordered key/value pair in an XVM map.
 @freezed
 abstract class RpcValueCellEntry with _$RpcValueCellEntry {
+  /// @nodoc
   const factory({required RpcValueCell key, required RpcValueCell value}) =
       _RpcValueCellEntry;
 
   const new _();
 
+  /// @nodoc
   factory fromJson(Object? json) {
     if (json is! List || json.length != 2) {
       throw const RpcDeserializationException(
@@ -206,6 +208,7 @@ abstract class RpcValueCellEntry with _$RpcValueCellEntry {
     );
   }
 
+  /// Encodes the RPC wire representation, optionally restoring additive fields.
   List<Object?> toWireJson({bool includeExtraFields = false}) => [
     key.toWireJson(includeExtraFields: includeExtraFields),
     value.toWireJson(includeExtraFields: includeExtraFields),
@@ -333,6 +336,7 @@ sealed class RpcPrimitive with _$RpcPrimitive {
     }
   }
 
+  /// Encodes the RPC wire representation, optionally restoring additive fields.
   Map<String, Object?> toWireJson({bool includeExtraFields = false}) {
     Map<String, Object?> tagged(
       String type,
@@ -412,6 +416,7 @@ sealed class RpcPrimitive with _$RpcPrimitive {
     };
   }
 
+  /// Validates that this value can be used as RPC input.
   void validateForInput() {
     switch (this) {
       case RpcU8Primitive(:final value):

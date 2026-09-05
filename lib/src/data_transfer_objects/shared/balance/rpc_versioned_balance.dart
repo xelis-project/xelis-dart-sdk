@@ -8,6 +8,7 @@ part 'rpc_versioned_balance.freezed.dart';
 /// A balance version together with the topoheight at which it was found.
 @Freezed(fromJson: false, toJson: false)
 abstract class RpcVersionedBalance with _$RpcVersionedBalance {
+  /// @nodoc
   const factory({
     required BigInt topoheight,
     required BalanceVersion version,
@@ -16,6 +17,7 @@ abstract class RpcVersionedBalance with _$RpcVersionedBalance {
 
   const new _();
 
+  /// @nodoc
   factory fromJson(Object? json) {
     final map = rpcJsonMap(json, method: 'get_balances_at_maximum_topoheight');
     final versionJson = Map<String, dynamic>.of(map)..remove('topoheight');
@@ -35,6 +37,7 @@ abstract class RpcVersionedBalance with _$RpcVersionedBalance {
     );
   }
 
+  /// Encodes the RPC wire representation, optionally restoring additive fields.
   Map<String, Object?> toWireJson({bool includeExtraFields = false}) =>
       extraFields.mergeInto({
         'topoheight': topoheight,

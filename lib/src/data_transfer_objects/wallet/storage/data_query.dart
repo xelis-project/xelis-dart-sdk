@@ -110,6 +110,7 @@ sealed class DataQuery with _$DataQuery {
     };
   }
 
+  /// Encodes this value using its RPC wire representation.
   Object toJson() => switch (this) {
     NotDataQuery(:final query) => {'not': query.toJson()},
     AndDataQuery(:final queries) => {

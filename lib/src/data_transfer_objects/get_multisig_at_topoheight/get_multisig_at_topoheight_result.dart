@@ -24,6 +24,7 @@ abstract class GetMultisigAtTopoheightResult
     extraFields: RpcExtraFields.capture(json, const {'state'}),
   );
 
+  /// Encodes the RPC wire representation, optionally restoring additive fields.
   Map<String, Object?> toWireJson({bool includeExtraFields = false}) =>
       extraFields.mergeInto({
         'state': state.toWireJson(includeExtraFields: includeExtraFields),

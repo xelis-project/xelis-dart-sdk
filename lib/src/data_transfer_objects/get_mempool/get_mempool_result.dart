@@ -30,6 +30,7 @@ abstract class GetMempoolResult with _$GetMempoolResult {
         }),
       );
 
+  /// Encodes the RPC wire representation, optionally restoring additive fields.
   Map<String, Object?> toWireJson({bool includeExtraFields = false}) =>
       extraFields.mergeInto({
         'transactions': transactions

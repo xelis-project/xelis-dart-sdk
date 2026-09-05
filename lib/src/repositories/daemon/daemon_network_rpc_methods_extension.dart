@@ -4,6 +4,7 @@ import 'package:xelis_dart_sdk/src/repositories/rpc_client_repository.dart';
 
 /// Peer-to-peer and network diagnostics exposed by the daemon.
 extension DaemonNetworkRpcMethods on DaemonClient {
+  /// Returns propagation timings for the block [hash].
   Future<RpcP2pBlockPropagationResult> getP2pBlockPropagation(
     String hash, {
     bool outgoing = true,

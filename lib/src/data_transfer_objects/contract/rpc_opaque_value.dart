@@ -9,6 +9,7 @@ part 'rpc_opaque_value.freezed.dart';
 /// Environment-provided opaque primitive value.
 @Freezed(fromJson: false, toJson: false, toStringOverride: false)
 abstract class RpcOpaqueValue with _$RpcOpaqueValue {
+  /// @nodoc
   const factory({
     required String type,
     required RpcJsonValue value,
@@ -36,6 +37,7 @@ abstract class RpcOpaqueValue with _$RpcOpaqueValue {
     return RpcOpaqueValue(type: 'Address', value: RpcJsonValue.string(address));
   }
 
+  /// @nodoc
   factory fromJson(Object? json) {
     final map = rpcJsonMap(json, method: '<value_cell>');
     final type = map['type'];
@@ -53,12 +55,14 @@ abstract class RpcOpaqueValue with _$RpcOpaqueValue {
     );
   }
 
+  /// Encodes the RPC wire representation, optionally restoring additive fields.
   Map<String, Object?> toWireJson({bool includeExtraFields = false}) =>
       extraFields.mergeInto({
         'type': type,
         'value': value.toJson(),
       }, includeExtraFields: includeExtraFields);
 
+  /// Validates that this value can be used as RPC input.
   void validateForInput() {
     const externallyAccepted = {'Hash', 'Address'};
     if (!externallyAccepted.contains(type)) {

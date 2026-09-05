@@ -7,6 +7,7 @@ part 'predicated_base_fee_result.freezed.dart';
 /// Current result of `get_estimated_fee_per_kb`.
 @Freezed(fromJson: false, toJson: false)
 abstract class PredicatedBaseFeeResult with _$PredicatedBaseFeeResult {
+  /// @nodoc
   const factory({
     required BigInt feePerKb,
     required BigInt predicatedFeePerKb,
@@ -15,6 +16,7 @@ abstract class PredicatedBaseFeeResult with _$PredicatedBaseFeeResult {
 
   const new _();
 
+  /// @nodoc
   factory fromJson(Map<String, dynamic> json) => PredicatedBaseFeeResult(
     feePerKb: rpcBigInt(
       json['fee_per_kb'],
@@ -32,6 +34,7 @@ abstract class PredicatedBaseFeeResult with _$PredicatedBaseFeeResult {
     }),
   );
 
+  /// Encodes the RPC wire representation, optionally restoring additive fields.
   Map<String, Object?> toWireJson({bool includeExtraFields = false}) =>
       extraFields.mergeInto({
         'fee_per_kb': feePerKb,

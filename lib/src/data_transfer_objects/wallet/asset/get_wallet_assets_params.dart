@@ -10,9 +10,11 @@ abstract class GetWalletAssetsParams with _$GetWalletAssetsParams {
     'maximum == null || (maximum >= 0 && maximum <= 100)',
     'maximum must be between 0 and the wallet limit of 100',
   )
+  /// @nodoc
   const factory({int? skip, int? maximum}) = _GetWalletAssetsParams;
 
   const new _();
 
+  /// Encodes this value using its RPC wire representation.
   Map<String, Object> toJson() => {'skip': ?skip, 'maximum': ?maximum};
 }

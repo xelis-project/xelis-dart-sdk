@@ -88,6 +88,7 @@ sealed class MultisigState with _$MultisigState {
       wireValue is RpcJsonNullValue ? type : {type: wireValue.toJson()},
   };
 
+  /// Encodes the RPC wire representation, optionally restoring additive fields.
   Object toJson() => toWireJson();
 
   @override

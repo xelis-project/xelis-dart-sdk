@@ -11,6 +11,7 @@ part 'unsigned_transaction.freezed.dart';
 /// Exact Rust `UnsignedTransaction` wire object.
 @Freezed(fromJson: false, toJson: false)
 abstract class UnsignedTransaction with _$UnsignedTransaction {
+  /// @nodoc
   const factory({
     required TransactionType data,
     required BigInt fee,
@@ -27,6 +28,7 @@ abstract class UnsignedTransaction with _$UnsignedTransaction {
 
   const new _();
 
+  /// @nodoc
   factory fromJson(Map<String, dynamic> json) => UnsignedTransaction(
     data: TransactionType.fromJson(
       rpcJsonMap(json['data'], method: 'build_unsigned_transaction'),
@@ -78,6 +80,7 @@ abstract class UnsignedTransaction with _$UnsignedTransaction {
     extraFields: RpcExtraFields.capture(json, _unsignedFields),
   );
 
+  /// Encodes the RPC wire representation, optionally restoring additive fields.
   Map<String, Object?> toWireJson({bool includeExtraFields = false}) =>
       extraFields.mergeInto({
         'data': data.toWireJson(),

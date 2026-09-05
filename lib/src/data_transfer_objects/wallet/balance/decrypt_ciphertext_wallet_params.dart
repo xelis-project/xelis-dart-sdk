@@ -7,6 +7,7 @@ part 'decrypt_ciphertext_wallet_params.freezed.dart';
 @Freezed(fromJson: false, toJson: false)
 abstract class DecryptCiphertextWalletParams
     with _$DecryptCiphertextWalletParams {
+  /// @nodoc
   const factory({
     required RpcCompressedCiphertext ciphertext,
     BigInt? maxSupply,
@@ -14,6 +15,7 @@ abstract class DecryptCiphertextWalletParams
 
   const new _();
 
+  /// Encodes this value using its RPC wire representation.
   Map<String, Object?> toJson() => {
     'ciphertext': ciphertext.toJson(),
     if (maxSupply != null) 'max_supply': maxSupply,

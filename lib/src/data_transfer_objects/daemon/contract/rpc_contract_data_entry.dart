@@ -8,6 +8,7 @@ part 'rpc_contract_data_entry.freezed.dart';
 /// One key/value entry from contract storage.
 @Freezed(fromJson: false, toJson: false)
 abstract class RpcContractDataEntry with _$RpcContractDataEntry {
+  /// @nodoc
   const factory({
     required RpcValueCell key,
     required RpcValueCell value,
@@ -16,6 +17,7 @@ abstract class RpcContractDataEntry with _$RpcContractDataEntry {
 
   const new _();
 
+  /// @nodoc
   factory fromJson(Object? json) {
     final map = rpcJsonMap(json, method: 'get_contract_data_entries');
     return RpcContractDataEntry(

@@ -9,6 +9,7 @@ part 'rpc_schema_response.freezed.dart';
 /// The normalized schema advertised by a XELIS RPC server.
 @Freezed(fromJson: false, toJson: false)
 abstract class RpcSchemaResponse with _$RpcSchemaResponse {
+  /// Creates a normalized server schema.
   const factory({
     required String schemaUri,
     required RpcJsonValue definitions,
@@ -18,6 +19,7 @@ abstract class RpcSchemaResponse with _$RpcSchemaResponse {
 
   const new _();
 
+  /// Decodes a schema response while retaining unknown additive fields.
   factory fromJson(Object? json) {
     final map = rpcJsonMap(json, method: 'schema');
     final rawMethods = map['methods'];
@@ -52,6 +54,7 @@ abstract class RpcSchemaResponse with _$RpcSchemaResponse {
 /// One method entry in [RpcSchemaResponse].
 @Freezed(fromJson: false, toJson: false)
 abstract class RpcMethodInfo with _$RpcMethodInfo {
+  /// Creates an advertised method named [name] with its [schema].
   const factory({
     required String name,
     required RpcMethodSchema schema,
@@ -60,6 +63,7 @@ abstract class RpcMethodInfo with _$RpcMethodInfo {
 
   const new _();
 
+  /// Decodes one method entry from an advertised schema.
   factory fromJson(Object? json) {
     final map = rpcJsonMap(json, method: 'schema', path: r'$.methods[]');
     final name = map['name'];
@@ -81,6 +85,7 @@ abstract class RpcMethodInfo with _$RpcMethodInfo {
 /// Parameter and return JSON schemas for an RPC method.
 @Freezed(fromJson: false, toJson: false)
 abstract class RpcMethodSchema with _$RpcMethodSchema {
+  /// Creates the parameter, result, description and notes for an RPC method.
   const factory({
     required List<String> description,
     required List<String> notes,
@@ -91,6 +96,7 @@ abstract class RpcMethodSchema with _$RpcMethodSchema {
 
   const new _();
 
+  /// Decodes the schema attached to one advertised RPC method.
   factory fromJson(Object? json) {
     final map = rpcJsonMap(json, method: 'schema', path: r'$.methods[].schema');
     final description = map['description'];

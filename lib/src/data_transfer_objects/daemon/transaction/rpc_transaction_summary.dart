@@ -7,6 +7,7 @@ part 'rpc_transaction_summary.freezed.dart';
 /// Compact transaction information embedded in block summaries.
 @Freezed(fromJson: false, toJson: false)
 abstract class RpcTransactionSummary with _$RpcTransactionSummary {
+  /// @nodoc
   const factory({
     required String hash,
     required String source,
@@ -17,6 +18,7 @@ abstract class RpcTransactionSummary with _$RpcTransactionSummary {
 
   const new _();
 
+  /// @nodoc
   factory fromJson(Object? json) {
     final map = rpcJsonMap(json, method: 'get_transactions_summary');
     return RpcTransactionSummary(

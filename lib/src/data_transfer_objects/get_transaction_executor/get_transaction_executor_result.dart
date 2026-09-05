@@ -41,6 +41,7 @@ abstract class GetTransactionExecutorResult
         }),
       );
 
+  /// Encodes the RPC wire representation, optionally restoring additive fields.
   Map<String, Object?> toWireJson({bool includeExtraFields = false}) =>
       extraFields.mergeInto({
         'block_topoheight': blockTopoheight,

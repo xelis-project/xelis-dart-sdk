@@ -2,6 +2,7 @@ part of 'rpc_exception.dart';
 
 /// A JSON-RPC request that exceeded its configured deadline.
 final class RpcTimeoutException extends RpcException {
+  /// Creates a timeout error for [method] after the configured [timeout].
   const new({required this.method, required this.timeout})
     : super('RPC request timed out.');
 

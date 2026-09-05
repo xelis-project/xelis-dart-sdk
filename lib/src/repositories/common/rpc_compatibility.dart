@@ -6,6 +6,7 @@ import 'package:xelis_dart_sdk/src/repositories/rpc_client_repository.dart';
 
 /// Explicit access to RPC methods that do not yet have a typed SDK facade.
 final class RpcRawClient {
+  /// Wraps [_client] with access to untyped RPC methods.
   const new(this._client);
 
   final RpcClientRepository _client;

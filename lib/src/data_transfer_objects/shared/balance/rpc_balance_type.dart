@@ -25,6 +25,7 @@ sealed class RpcBalanceType with _$RpcBalanceType {
     ),
   };
 
+  /// Encodes this value using its RPC wire representation.
   String toJson() => switch (this) {
     RpcInputBalanceType() => 'input',
     RpcOutputBalanceType() => 'output',

@@ -10,6 +10,7 @@ part 'rpc_scheduled_execution.freezed.dart';
 /// A contract execution waiting to be triggered.
 @Freezed(fromJson: false, toJson: false)
 abstract class RpcScheduledExecution with _$RpcScheduledExecution {
+  /// @nodoc
   const factory({
     required String hash,
     required String contract,
@@ -23,6 +24,7 @@ abstract class RpcScheduledExecution with _$RpcScheduledExecution {
 
   const new _();
 
+  /// @nodoc
   factory fromJson(Object? json) {
     const method = 'get_contract_scheduled_executions_at_topoheight';
     final map = rpcJsonMap(json, method: method);

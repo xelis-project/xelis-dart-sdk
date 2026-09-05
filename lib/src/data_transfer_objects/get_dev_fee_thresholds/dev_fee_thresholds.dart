@@ -35,6 +35,7 @@ abstract class DevFeeThresholds with _$DevFeeThresholds {
         }),
       );
 
+  /// Encodes the RPC wire representation, optionally restoring additive fields.
   Map<String, Object?> toWireJson({bool includeExtraFields = false}) =>
       extraFields.mergeInto({
         'height': height,

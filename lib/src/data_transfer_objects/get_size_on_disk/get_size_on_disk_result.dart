@@ -30,6 +30,7 @@ abstract class GetSizeOnDiskResult with _$GetSizeOnDiskResult {
         }),
       );
 
+  /// Encodes the RPC wire representation, optionally restoring additive fields.
   Map<String, Object?> toWireJson({bool includeExtraFields = false}) =>
       extraFields.mergeInto({
         'size_bytes': sizeBytes,

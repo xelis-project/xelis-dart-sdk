@@ -8,6 +8,7 @@ part 'rpc_compressed_ciphertext.freezed.dart';
 /// Compressed ElGamal ciphertext returned in account balances.
 @Freezed(fromJson: false, toJson: false, toStringOverride: false)
 abstract class RpcCompressedCiphertext with _$RpcCompressedCiphertext {
+  /// @nodoc
   const factory({
     required List<int> commitment,
     required List<int> handle,
@@ -16,6 +17,7 @@ abstract class RpcCompressedCiphertext with _$RpcCompressedCiphertext {
 
   const new _();
 
+  /// @nodoc
   factory fromJson(Object? json) {
     final envelope = rpcJsonMap(
       json,
@@ -48,8 +50,10 @@ abstract class RpcCompressedCiphertext with _$RpcCompressedCiphertext {
     );
   }
 
+  /// Encodes this value using its RPC wire representation.
   Map<String, Object?> toJson() => {'commitment': commitment, 'handle': handle};
 
+  /// Encodes the RPC wire representation, optionally restoring additive fields.
   Map<String, Object?> toWireJson({bool includeExtraFields = false}) =>
       extraFields.mergeInto(toJson(), includeExtraFields: includeExtraFields);
 

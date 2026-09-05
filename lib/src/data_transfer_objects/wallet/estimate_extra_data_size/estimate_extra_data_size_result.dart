@@ -25,6 +25,7 @@ abstract class EstimateExtraDataSizeResult with _$EstimateExtraDataSizeResult {
       _$EstimateExtraDataSizeResultFromJson(json)
           .copyWith(extraFields: RpcExtraFields.capture(json, const {'size'}));
 
+  /// Encodes the RPC wire representation, optionally restoring additive fields.
   Map<String, Object?> toWireJson({bool includeExtraFields = false}) =>
       extraFields.mergeInto({
         'size': size,

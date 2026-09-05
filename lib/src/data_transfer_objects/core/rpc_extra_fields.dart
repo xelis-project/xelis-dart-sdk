@@ -6,6 +6,7 @@ part 'rpc_extra_fields.freezed.dart';
 /// Unknown fields captured while decoding an extensible RPC object.
 @Freezed(fromJson: false, toJson: false, toStringOverride: false)
 abstract class RpcExtraFields with _$RpcExtraFields {
+  /// @nodoc
   const factory({
     @Default(<String, RpcJsonValue>{}) Map<String, RpcJsonValue> values,
   }) = _RpcExtraFields;

@@ -207,32 +207,78 @@ enum DaemonMethod implements XelisJsonKey {
 
   /// Verify whether the requested contract data key exists.
   hasContractData('has_contract_data'),
+
+  /// Returns the current circulating supply of an asset.
   getAssetSupply('get_asset_supply'),
+
+  /// Returns an asset supply at a specific topoheight.
   getAssetSupplyAtTopoheight('get_asset_supply_at_topoheight'),
+
+  /// Returns several balances at or before a maximum topoheight.
   getBalancesAtMaximumTopoheight('get_balances_at_maximum_topoheight'),
+
+  /// Returns the base fee associated with a block hash.
   getBlockBaseFeeByHash('get_block_base_fee_by_hash'),
+
+  /// Returns the mining difficulty associated with a block hash.
   getBlockDifficultyByHash('get_block_difficulty_by_hash'),
+
+  /// Returns a block summary at a topoheight.
   getBlockSummaryAtTopoheight('get_block_summary_at_topoheight'),
+
+  /// Returns a block summary by hash.
   getBlockSummaryByHash('get_block_summary_by_hash'),
+
+  /// Lists assets associated with a contract.
   getContractAssets('get_contract_assets'),
+
+  /// Returns a contract's current asset balance.
   getContractBalance('get_contract_balance'),
+
+  /// Returns a contract's asset balance at a topoheight.
   getContractBalanceAtTopoheight('get_contract_balance_at_topoheight'),
+
+  /// Returns contract data at a topoheight.
   getContractDataAtTopoheight('get_contract_data_at_topoheight'),
+
+  /// Lists stored data entries for a contract.
   getContractDataEntries('get_contract_data_entries'),
+
+  /// Lists registered contract executions at a topoheight.
   getContractRegisteredExecutionsAtTopoheight(
     'get_contract_registered_executions_at_topoheight',
   ),
+
+  /// Lists scheduled contract executions at a topoheight.
   getContractScheduledExecutionsAtTopoheight(
     'get_contract_scheduled_executions_at_topoheight',
   ),
+
+  /// Lists transaction hashes associated with a contract.
   getContractTransactions('get_contract_transactions'),
+
+  /// Lists deployed contracts.
   getContracts('get_contracts'),
+
+  /// Returns grouped contract outputs for an address.
   getContractsOutputs('get_contracts_outputs'),
+
+  /// Returns the current predicted fee per kilobyte.
   getEstimatedFeePerKb('get_estimated_fee_per_kb'),
+
+  /// Returns propagation timings for a block.
   getP2pBlockPropagation('get_p2p_block_propagation'),
+
+  /// Returns the topoheight below which data has been pruned.
   getPrunedTopoheight('get_pruned_topoheight'),
+
+  /// Returns summaries for a list of transaction hashes.
   getTransactionsSummary('get_transactions_summary'),
+
+  /// Converts a compressed public key into an address.
   keyToAddress('key_to_address'),
+
+  /// Simulates a contract invocation without committing state changes.
   simulateContractInvoke('simulate_contract_invoke');
 
   /// Creates a new [DaemonMethod] instance.

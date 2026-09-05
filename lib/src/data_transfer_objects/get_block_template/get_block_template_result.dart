@@ -38,6 +38,7 @@ abstract class GetBlockTemplateResult with _$GetBlockTemplateResult {
     extraFields: RpcExtraFields.capture(json, _blockTemplateFields),
   );
 
+  /// Encodes the RPC wire representation, optionally restoring additive fields.
   Map<String, Object?> toJson() => toWireJson();
 
   /// Encodes known fields and optionally restores additive wire fields.

@@ -8,6 +8,7 @@ part 'wallet_asset_entry.freezed.dart';
 /// One entry returned by the wallet `get_assets` method.
 @Freezed(fromJson: false, toJson: false)
 abstract class WalletAssetEntry with _$WalletAssetEntry {
+  /// @nodoc
   const factory({
     required String asset,
     required AssetData data,
@@ -16,6 +17,7 @@ abstract class WalletAssetEntry with _$WalletAssetEntry {
 
   const new _();
 
+  /// @nodoc
   factory fromJson(Object? json) {
     final map = rpcJsonMap(json, method: 'get_assets', path: r'$[]');
     return WalletAssetEntry(
@@ -27,6 +29,7 @@ abstract class WalletAssetEntry with _$WalletAssetEntry {
     );
   }
 
+  /// Encodes the RPC wire representation, optionally restoring additive fields.
   Map<String, Object?> toWireJson({bool includeExtraFields = false}) =>
       extraFields.mergeInto({
         'asset': asset,

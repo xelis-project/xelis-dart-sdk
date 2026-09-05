@@ -6,11 +6,13 @@ part 'wallet_transaction_response.freezed.dart';
 /// Wallet response flattening a daemon transaction with optional hex bytes.
 @Freezed(fromJson: false, toJson: false)
 abstract class WalletTransactionResponse with _$WalletTransactionResponse {
+  /// @nodoc
   const factory({required RpcTransaction transaction, String? txAsHex}) =
       _WalletTransactionResponse;
 
   const new _();
 
+  /// @nodoc
   factory fromJson(Map<String, dynamic> json) {
     final transactionJson = Map<String, dynamic>.from(json)
       ..remove('tx_as_hex');

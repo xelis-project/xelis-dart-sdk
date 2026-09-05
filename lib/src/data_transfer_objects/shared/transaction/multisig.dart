@@ -23,6 +23,7 @@ abstract class Multisig with _$Multisig {
     json,
   ).copyWith(extraFields: RpcExtraFields.capture(json, const {'signatures'}));
 
+  /// Encodes the RPC wire representation, optionally restoring additive fields.
   Map<String, Object?> toWireJson({bool includeExtraFields = false}) =>
       extraFields.mergeInto({
         'signatures': signatures

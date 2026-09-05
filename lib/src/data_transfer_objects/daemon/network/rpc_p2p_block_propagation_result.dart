@@ -9,6 +9,7 @@ part 'rpc_p2p_block_propagation_result.freezed.dart';
 @Freezed(fromJson: false, toJson: false)
 abstract class RpcP2pBlockPropagationResult
     with _$RpcP2pBlockPropagationResult {
+  /// @nodoc
   const factory({
     required Map<BigInt, RpcTimedDirection> peers,
     required BigInt? firstSeen,
@@ -18,6 +19,7 @@ abstract class RpcP2pBlockPropagationResult
 
   const new _();
 
+  /// @nodoc
   factory fromJson(Object? json) {
     final map = rpcJsonMap(json, method: 'get_p2p_block_propagation');
     final peers = rpcJsonMap(

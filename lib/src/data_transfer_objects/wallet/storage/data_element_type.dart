@@ -21,6 +21,7 @@ sealed class DataElementType with _$DataElementType {
     _ => throw const FormatException('Unknown ElementType value.'),
   };
 
+  /// Encodes this value using its RPC wire representation.
   Object toJson() => switch (this) {
     ValueDataElementType(:final type) => {'Value': type.wireName},
     ArrayDataElementType() => 'Array',

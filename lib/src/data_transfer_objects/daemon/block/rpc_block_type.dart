@@ -27,6 +27,7 @@ sealed class RpcBlockType with _$RpcBlockType {
     ),
   };
 
+  /// Encodes this value using its RPC wire representation.
   String toJson() => switch (this) {
     RpcSyncBlockType() => 'Sync',
     RpcSideBlockType() => 'Side',

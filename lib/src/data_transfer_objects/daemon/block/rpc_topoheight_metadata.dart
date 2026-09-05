@@ -6,6 +6,7 @@ part 'rpc_topoheight_metadata.freezed.dart';
 /// Optional topoheight metadata flattened into a block summary by Rust.
 @Freezed(fromJson: false, toJson: false)
 abstract class RpcTopoheightMetadata with _$RpcTopoheightMetadata {
+  /// @nodoc
   const factory({
     required BigInt topoheight,
     required BigInt reward,
@@ -18,6 +19,7 @@ abstract class RpcTopoheightMetadata with _$RpcTopoheightMetadata {
 
   const new _();
 
+  /// @nodoc
   factory fromJson(Object? json) {
     final map = rpcJsonMap(json, method: 'get_block_summary');
     return RpcTopoheightMetadata(

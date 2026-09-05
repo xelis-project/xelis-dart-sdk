@@ -9,6 +9,7 @@ part 'simulate_contract_invoke_request.freezed.dart';
 @Freezed(fromJson: false, toJson: false)
 abstract class SimulateContractInvokeRequest
     with _$SimulateContractInvokeRequest {
+  /// @nodoc
   const factory({
     required String source,
     required String contract,
@@ -20,6 +21,7 @@ abstract class SimulateContractInvokeRequest
 
   const new _();
 
+  /// Encodes this value using its RPC wire representation.
   Map<String, dynamic> toJson() => {
     'source': source,
     'contract': contract,

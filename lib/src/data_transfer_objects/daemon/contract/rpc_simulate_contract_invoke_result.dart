@@ -9,6 +9,7 @@ part 'rpc_simulate_contract_invoke_result.freezed.dart';
 @Freezed(fromJson: false, toJson: false)
 abstract class RpcSimulateContractInvokeResult
     with _$RpcSimulateContractInvokeResult {
+  /// @nodoc
   const factory({
     required BigInt baseFee,
     required RpcExecutionResult result,
@@ -19,6 +20,7 @@ abstract class RpcSimulateContractInvokeResult
 
   const new _();
 
+  /// @nodoc
   factory fromJson(Object? json) {
     final map = rpcJsonMap(json, method: 'simulate_contract_invoke');
     return RpcSimulateContractInvokeResult(

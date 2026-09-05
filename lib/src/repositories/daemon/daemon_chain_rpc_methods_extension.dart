@@ -9,12 +9,14 @@ import 'package:xelis_dart_sdk/src/utils/rpc_json.dart';
 
 /// Chain, block, fee and transaction-summary methods exposed by the daemon.
 extension DaemonChainRpcMethods on DaemonClient {
+  /// Returns the current circulating supply for [asset].
   Future<BigInt> getAssetSupply(String asset) => sendRequestAndDecode(
     DaemonMethod.getAssetSupply,
     _decodeVersionedUint64,
     {'asset': asset},
   );
 
+  /// Returns the supply for [asset] at [topoheight], when available.
   Future<BigInt?> getAssetSupplyAtTopoheight(String asset, BigInt topoheight) =>
       sendRequestAndDecode(
         DaemonMethod.getAssetSupplyAtTopoheight,
@@ -22,6 +24,7 @@ extension DaemonChainRpcMethods on DaemonClient {
         {'asset': asset, 'topoheight': topoheight},
       );
 
+  /// Returns balances for [assets] at or before [maximumTopoheight].
   Future<List<RpcVersionedBalance?>> getBalancesAtMaximumTopoheight({
     required String address,
     required List<String> assets,
@@ -40,6 +43,7 @@ extension DaemonChainRpcMethods on DaemonClient {
     },
   );
 
+  /// Returns the base fee recorded for [blockHash].
   Future<BlockBaseFee> getBlockBaseFeeByHash(String blockHash) =>
       sendRequestAndDecode(
         DaemonMethod.getBlockBaseFeeByHash,
@@ -47,6 +51,7 @@ extension DaemonChainRpcMethods on DaemonClient {
         {'block_hash': blockHash},
       );
 
+  /// Returns the mining difficulty recorded for the block [hash].
   Future<BigInt> getBlockDifficultyByHash(String hash) => sendRequestAndDecode(
     DaemonMethod.getBlockDifficultyByHash,
     (result) => rpcBigInt(
@@ -56,6 +61,7 @@ extension DaemonChainRpcMethods on DaemonClient {
     {'block_hash': hash},
   );
 
+  /// Returns the block summary at [topoheight].
   Future<RpcBlockSummary> getBlockSummaryAtTopoheight(BigInt topoheight) =>
       sendRequestAndDecode(
         DaemonMethod.getBlockSummaryAtTopoheight,
@@ -63,6 +69,7 @@ extension DaemonChainRpcMethods on DaemonClient {
         {'topoheight': topoheight},
       );
 
+  /// Returns the block summary identified by [hash].
   Future<RpcBlockSummary> getBlockSummaryByHash(String hash) =>
       sendRequestAndDecode(
         DaemonMethod.getBlockSummaryByHash,
@@ -70,17 +77,20 @@ extension DaemonChainRpcMethods on DaemonClient {
         {'hash': hash},
       );
 
+  /// Returns the daemon's current predicted fee per kilobyte.
   Future<PredicatedBaseFeeResult> getEstimatedFeePerKb() =>
       sendRequestAndDecode(
         DaemonMethod.getEstimatedFeePerKb,
         (result) => PredicatedBaseFeeResult.fromJson(rpcJsonMap(result)),
       );
 
+  /// Returns the topoheight below which chain data has been pruned.
   Future<BigInt?> getPrunedTopoheight() => sendRequestAndDecode(
     DaemonMethod.getPrunedTopoheight,
     (result) => result == null ? null : rpcBigInt(result),
   );
 
+  /// Returns transaction summaries in the same order as [hashes].
   Future<List<RpcTransactionSummary?>> getTransactionsSummary(
     List<String> hashes,
   ) => sendRequestAndDecode(
@@ -94,6 +104,7 @@ extension DaemonChainRpcMethods on DaemonClient {
     {'tx_hashes': hashes},
   );
 
+  /// Converts the compressed public key [hex] into a network address.
   Future<String> keyToAddress(String hex) => sendRequestAndDecode(
     DaemonMethod.keyToAddress,
     (result) => result! as String,

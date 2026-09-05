@@ -6,6 +6,7 @@ part 'xswd_manifest.freezed.dart';
 /// Versioned, strict XSWD application manifest.
 @Freezed(fromJson: false, toJson: false)
 abstract class XswdManifest with _$XswdManifest {
+  /// @nodoc
   const factory({
     required int version,
     required String id,

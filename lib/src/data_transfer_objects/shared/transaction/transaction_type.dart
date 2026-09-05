@@ -26,6 +26,7 @@ sealed class RpcContractVersion with _$RpcContractVersion {
     _ => throw const FormatException('Expected a contract version string.'),
   };
 
+  /// Encodes this value using its RPC wire representation.
   String toJson() => switch (this) {
     RpcContractVersionV0() => 'v0',
     RpcContractVersionV1() => 'v1',
@@ -38,6 +39,7 @@ sealed class RpcContractVersion with _$RpcContractVersion {
 abstract class RpcDeployContractInvokePayload
     with _$RpcDeployContractInvokePayload {
   @JsonSerializable(explicitToJson: true)
+  /// @nodoc
   const factory({
     @JsonKey(name: 'max_gas', fromJson: rpcBigInt, toJson: rpcBigIntToJson)
     required BigInt maxGas,
@@ -45,6 +47,7 @@ abstract class RpcDeployContractInvokePayload
     required Map<String, RpcContractDeposit> deposits,
   }) = _RpcDeployContractInvokePayload;
 
+  /// @nodoc
   factory fromJson(Map<String, dynamic> json) =>
       _$RpcDeployContractInvokePayloadFromJson(json);
 }

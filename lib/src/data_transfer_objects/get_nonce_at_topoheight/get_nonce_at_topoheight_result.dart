@@ -35,6 +35,7 @@ abstract class GetNonceAtTopoheightResult with _$GetNonceAtTopoheightResult {
         }),
       );
 
+  /// Encodes the RPC wire representation, optionally restoring additive fields.
   Map<String, Object?> toWireJson({bool includeExtraFields = false}) =>
       extraFields.mergeInto({
         'nonce': nonce,

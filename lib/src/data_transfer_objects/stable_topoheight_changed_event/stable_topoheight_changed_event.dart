@@ -40,6 +40,7 @@ abstract class StableTopoheightChangedEvent
         }),
       );
 
+  /// Encodes the RPC wire representation, optionally restoring additive fields.
   Map<String, Object?> toWireJson({bool includeExtraFields = false}) =>
       extraFields.mergeInto({
         'previous_stable_topoheight': previousStableTopoheight,

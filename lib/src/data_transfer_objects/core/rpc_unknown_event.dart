@@ -6,6 +6,7 @@ part 'rpc_unknown_event.freezed.dart';
 /// Notification emitted by a newer server before the SDK models its event.
 @Freezed(toStringOverride: false)
 abstract class RpcUnknownEvent with _$RpcUnknownEvent {
+  /// @nodoc
   const factory({required String name, required RpcJsonValue payload}) =
       _RpcUnknownEvent;
 

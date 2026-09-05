@@ -28,6 +28,7 @@ abstract class ValidateAddressResult with _$ValidateAddressResult {
         }),
       );
 
+  /// Encodes the RPC wire representation, optionally restoring additive fields.
   Map<String, Object?> toWireJson({bool includeExtraFields = false}) =>
       extraFields.mergeInto({
         'is_valid': isValid,

@@ -57,6 +57,7 @@ abstract class P2pStatusResult with _$P2pStatusResult {
         }),
       );
 
+  /// Encodes the RPC wire representation, optionally restoring additive fields.
   Map<String, Object?> toWireJson({bool includeExtraFields = false}) =>
       extraFields.mergeInto({
         'best_topoheight': bestTopoheight,

@@ -8,6 +8,7 @@ part 'rpc_contracts_outputs_result.freezed.dart';
 /// Aggregated contract transfers received by one address at a topoheight.
 @Freezed(fromJson: false, toJson: false)
 abstract class RpcContractsOutputsResult with _$RpcContractsOutputsResult {
+  /// @nodoc
   const factory({
     required List<ContractTransferExecution> executions,
     @Default(RpcExtraFields()) RpcExtraFields extraFields,
@@ -15,6 +16,7 @@ abstract class RpcContractsOutputsResult with _$RpcContractsOutputsResult {
 
   const new _();
 
+  /// @nodoc
   factory fromJson(Object? json) {
     final map = rpcJsonMap(json, method: 'get_contracts_outputs');
     return RpcContractsOutputsResult(

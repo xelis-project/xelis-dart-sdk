@@ -25,6 +25,7 @@ abstract class SignatureId with _$SignatureId {
         extraFields: RpcExtraFields.capture(json, const {'id', 'signature'}),
       );
 
+  /// Encodes the RPC wire representation, optionally restoring additive fields.
   Map<String, Object?> toWireJson({bool includeExtraFields = false}) =>
       extraFields.mergeInto({
         'id': id,

@@ -8,6 +8,7 @@ part 'get_contract_module_result.freezed.dart';
 /// Versioned, nullable compiled contract module returned by the daemon.
 @Freezed(fromJson: false, toJson: false)
 abstract class GetContractModuleResult with _$GetContractModuleResult {
+  /// @nodoc
   const factory({
     required BigInt topoheight,
     required RpcJsonValue? data,

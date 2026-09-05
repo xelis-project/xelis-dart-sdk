@@ -9,6 +9,7 @@ part 'search_wallet_transaction_result.freezed.dart';
 @Freezed(fromJson: false, toJson: false)
 abstract class SearchWalletTransactionResult
     with _$SearchWalletTransactionResult {
+  /// @nodoc
   const factory({
     required TransactionEntry? transaction,
     required BigInt? index,
@@ -18,6 +19,7 @@ abstract class SearchWalletTransactionResult
 
   const new _();
 
+  /// @nodoc
   factory fromJson(Map<String, dynamic> json) => SearchWalletTransactionResult(
     transaction: json['transaction'] == null
         ? null
@@ -35,6 +37,7 @@ abstract class SearchWalletTransactionResult
     }),
   );
 
+  /// Encodes the RPC wire representation, optionally restoring additive fields.
   Map<String, Object?> toWireJson({bool includeExtraFields = false}) =>
       extraFields.mergeInto({
         'transaction': transaction?.toWireJson(),

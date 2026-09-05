@@ -41,6 +41,7 @@ abstract class GetDifficultyResult with _$GetDifficultyResult {
         }),
       );
 
+  /// Encodes the RPC wire representation, optionally restoring additive fields.
   Map<String, Object?> toWireJson({bool includeExtraFields = false}) =>
       extraFields.mergeInto({
         'difficulty': difficulty.toString(),

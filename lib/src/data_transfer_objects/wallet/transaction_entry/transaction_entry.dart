@@ -51,6 +51,7 @@ abstract class TransactionEntry with _$TransactionEntry {
     );
   }
 
+  /// Encodes the RPC wire representation, optionally restoring additive fields.
   Map<String, Object?> toWireJson({bool includeExtraFields = false}) =>
       extraFields.mergeInto({
         'hash': hash,

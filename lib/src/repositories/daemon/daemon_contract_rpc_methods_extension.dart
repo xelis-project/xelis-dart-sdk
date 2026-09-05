@@ -12,6 +12,7 @@ import 'package:xelis_dart_sdk/src/utils/rpc_json.dart';
 
 /// Contract state, execution and simulation methods exposed by the daemon.
 extension DaemonContractRpcMethods on DaemonClient {
+  /// Returns asset identifiers associated with [contract].
   Future<List<String>> getContractAssets(
     String contract, {
     int? skip,
@@ -22,6 +23,7 @@ extension DaemonContractRpcMethods on DaemonClient {
     {'contract': contract, 'skip': ?skip, 'maximum': ?maximum},
   );
 
+  /// Returns the current [asset] balance held by [contract].
   Future<BigInt> getContractBalance(String contract, String asset) =>
       sendRequestAndDecode(
         DaemonMethod.getContractBalance,
@@ -29,6 +31,7 @@ extension DaemonContractRpcMethods on DaemonClient {
         {'contract': contract, 'asset': asset},
       );
 
+  /// Returns a contract balance at an exact [topoheight], when available.
   Future<BigInt?> getContractBalanceAtTopoheight(
     String contract,
     String asset,
@@ -39,6 +42,7 @@ extension DaemonContractRpcMethods on DaemonClient {
     {'contract': contract, 'asset': asset, 'topoheight': topoheight},
   );
 
+  /// Returns the value stored under [key] at [topoheight].
   Future<GetContractDataResult> getContractDataAtTopoheight({
     required String contract,
     required RpcValueCell key,
@@ -52,6 +56,7 @@ extension DaemonContractRpcMethods on DaemonClient {
     {'contract': contract, 'key': key.toJson(), 'topoheight': topoheight},
   );
 
+  /// Lists stored data entries for [contract] within the requested range.
   Future<List<RpcContractDataEntry>> getContractDataEntries(
     String contract, {
     BigInt? minimumTopoheight,
@@ -73,6 +78,7 @@ extension DaemonContractRpcMethods on DaemonClient {
     },
   );
 
+  /// Lists registered executions at [topoheight].
   Future<List<RpcRegisteredExecution>>
   getContractRegisteredExecutionsAtTopoheight(
     BigInt topoheight, {
@@ -87,6 +93,7 @@ extension DaemonContractRpcMethods on DaemonClient {
     {'topoheight': topoheight, 'max': ?max, 'skip': ?skip},
   );
 
+  /// Lists scheduled executions at [topoheight].
   Future<List<RpcScheduledExecution>>
   getContractScheduledExecutionsAtTopoheight(
     BigInt topoheight, {
@@ -101,6 +108,7 @@ extension DaemonContractRpcMethods on DaemonClient {
     {'topoheight': topoheight, 'max': ?max, 'skip': ?skip},
   );
 
+  /// Lists transaction hashes associated with [contract].
   Future<List<String>> getContractTransactions(
     String contract, {
     int? skip,
@@ -119,6 +127,7 @@ extension DaemonContractRpcMethods on DaemonClient {
     },
   );
 
+  /// Lists deployed contract identifiers within the requested range.
   Future<List<String>> getContracts({
     int? skip,
     int? maximum,
@@ -135,6 +144,7 @@ extension DaemonContractRpcMethods on DaemonClient {
     },
   );
 
+  /// Returns grouped contract outputs for [address] at [topoheight].
   Future<RpcContractsOutputsResult> getContractsOutputs(
     String address,
     BigInt topoheight,
@@ -144,6 +154,7 @@ extension DaemonContractRpcMethods on DaemonClient {
     {'address': address, 'topoheight': topoheight},
   );
 
+  /// Simulates [request] without committing its state changes.
   Future<RpcSimulateContractInvokeResult> simulateContractInvoke(
     SimulateContractInvokeRequest request,
   ) async {

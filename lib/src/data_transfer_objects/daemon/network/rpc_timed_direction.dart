@@ -46,6 +46,7 @@ sealed class RpcTimedDirection with _$RpcTimedDirection {
     return RpcTimedDirection.unknown(RpcJsonValue.fromJson(json));
   }
 
+  /// Encodes this value using its RPC wire representation.
   Object? toJson() => switch (this) {
     RpcIncomingTimedDirection(:final receivedAt) => {
       'in': {'received_at': receivedAt},

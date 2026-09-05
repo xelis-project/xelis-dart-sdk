@@ -2,6 +2,7 @@ part of 'rpc_exception.dart';
 
 /// A response could not be decoded according to the expected RPC contract.
 final class RpcDeserializationException extends RpcException {
+  /// Creates an error describing an invalid RPC response value.
   const new({
     required this.method,
     required this.path,

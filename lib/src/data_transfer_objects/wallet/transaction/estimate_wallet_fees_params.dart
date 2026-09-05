@@ -8,6 +8,7 @@ part 'estimate_wallet_fees_params.freezed.dart';
 /// Complete request accepted by the wallet `estimate_fees` method.
 @Freezed(fromJson: false, toJson: false)
 abstract class EstimateWalletFeesParams with _$EstimateWalletFeesParams {
+  /// @nodoc
   const factory({
     required TransactionTypeBuilder transactionTypeBuilder,
     @Default(FeeBuilder.extra()) FeeBuilder fee,
@@ -16,6 +17,7 @@ abstract class EstimateWalletFeesParams with _$EstimateWalletFeesParams {
 
   const new _();
 
+  /// Encodes this value using its RPC wire representation.
   Map<String, Object?> toJson() => {
     ...transactionTypeBuilder.toRpcJson(),
     'fee': fee.toJson(),

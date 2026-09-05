@@ -9,6 +9,7 @@ part 'balance_version.freezed.dart';
 /// Versioned encrypted balance payload stored by the daemon.
 @Freezed(fromJson: false, toJson: false)
 abstract class BalanceVersion with _$BalanceVersion {
+  /// @nodoc
   const factory({
     required RpcBalanceType balanceType,
     required RpcCompressedCiphertext finalBalance,
@@ -19,6 +20,7 @@ abstract class BalanceVersion with _$BalanceVersion {
 
   const new _();
 
+  /// @nodoc
   factory fromJson(Map<String, dynamic> json) => BalanceVersion(
     balanceType: RpcBalanceType.fromJson(json['balance_type']),
     finalBalance: RpcCompressedCiphertext.fromJson(json['final_balance']),
@@ -34,6 +36,7 @@ abstract class BalanceVersion with _$BalanceVersion {
     }),
   );
 
+  /// Encodes the RPC wire representation, optionally restoring additive fields.
   Map<String, Object?> toWireJson({bool includeExtraFields = false}) =>
       extraFields.mergeInto({
         'balance_type': balanceType.toJson(),
