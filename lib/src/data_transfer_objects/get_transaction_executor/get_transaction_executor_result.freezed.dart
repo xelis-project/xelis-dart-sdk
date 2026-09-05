@@ -29,16 +29,21 @@ $GetTransactionExecutorResultCopyWith<GetTransactionExecutorResult> get copyWith
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetTransactionExecutorResult&&(identical(other.blockTopoheight, blockTopoheight) || other.blockTopoheight == blockTopoheight)&&(identical(other.blockTimestamp, blockTimestamp) || other.blockTimestamp == blockTimestamp)&&(identical(other.blockHash, blockHash) || other.blockHash == blockHash)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as GetTransactionExecutorResult;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetTransactionExecutorResult&&(identical(other.blockTopoheight, _this.blockTopoheight) || other.blockTopoheight == _this.blockTopoheight)&&(identical(other.blockTimestamp, _this.blockTimestamp) || other.blockTimestamp == _this.blockTimestamp)&&(identical(other.blockHash, _this.blockHash) || other.blockHash == _this.blockHash)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,blockTopoheight,blockTimestamp,blockHash,extraFields);
+int get hashCode {
+  final _this = this as GetTransactionExecutorResult;
+  return Object.hash(runtimeType,_this.blockTopoheight,_this.blockTimestamp,_this.blockHash,_this.extraFields);
+}
 
 @override
 String toString() {
-  return 'GetTransactionExecutorResult(blockTopoheight: $blockTopoheight, blockTimestamp: $blockTimestamp, blockHash: $blockHash, extraFields: $extraFields)';
+  final _this = this as GetTransactionExecutorResult;
+  return 'GetTransactionExecutorResult(blockTopoheight: ${_this.blockTopoheight}, blockTimestamp: ${_this.blockTimestamp}, blockHash: ${_this.blockHash}, extraFields: ${_this.extraFields})';
 }
 
 
@@ -243,16 +248,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetTransactionExecutorResult&&(identical(other.blockTopoheight, blockTopoheight) || other.blockTopoheight == blockTopoheight)&&(identical(other.blockTimestamp, blockTimestamp) || other.blockTimestamp == blockTimestamp)&&(identical(other.blockHash, blockHash) || other.blockHash == blockHash)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetTransactionExecutorResult&&(identical(other.blockTopoheight, blockTopoheight) || other.blockTopoheight == blockTopoheight)&&(identical(other.blockTimestamp, blockTimestamp) || other.blockTimestamp == blockTimestamp)&&(identical(other.blockHash, blockHash) || other.blockHash == blockHash)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,blockTopoheight,blockTimestamp,blockHash,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,blockTopoheight,blockTimestamp,blockHash,extraFields);
+}
 
 @override
 String toString() {
-  return 'GetTransactionExecutorResult(blockTopoheight: $blockTopoheight, blockTimestamp: $blockTimestamp, blockHash: $blockHash, extraFields: $extraFields)';
+    return 'GetTransactionExecutorResult(blockTopoheight: $blockTopoheight, blockTimestamp: $blockTimestamp, blockHash: $blockHash, extraFields: $extraFields)';
 }
 
 

@@ -26,16 +26,21 @@ $GetWalletAssetsParamsCopyWith<GetWalletAssetsParams> get copyWith => _$GetWalle
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetWalletAssetsParams&&(identical(other.skip, skip) || other.skip == skip)&&(identical(other.maximum, maximum) || other.maximum == maximum));
+  final _this = this as GetWalletAssetsParams;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetWalletAssetsParams&&(identical(other.skip, _this.skip) || other.skip == _this.skip)&&(identical(other.maximum, _this.maximum) || other.maximum == _this.maximum));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,skip,maximum);
+int get hashCode {
+  final _this = this as GetWalletAssetsParams;
+  return Object.hash(runtimeType,_this.skip,_this.maximum);
+}
 
 @override
 String toString() {
-  return 'GetWalletAssetsParams(skip: $skip, maximum: $maximum)';
+  final _this = this as GetWalletAssetsParams;
+  return 'GetWalletAssetsParams(skip: ${_this.skip}, maximum: ${_this.maximum})';
 }
 
 
@@ -224,16 +229,18 @@ _$GetWalletAssetsParamsCopyWith<_GetWalletAssetsParams> get copyWith => __$GetWa
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetWalletAssetsParams&&(identical(other.skip, skip) || other.skip == skip)&&(identical(other.maximum, maximum) || other.maximum == maximum));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetWalletAssetsParams&&(identical(other.skip, skip) || other.skip == skip)&&(identical(other.maximum, maximum) || other.maximum == maximum));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,skip,maximum);
+int get hashCode {
+    return Object.hash(runtimeType,skip,maximum);
+}
 
 @override
 String toString() {
-  return 'GetWalletAssetsParams(skip: $skip, maximum: $maximum)';
+    return 'GetWalletAssetsParams(skip: $skip, maximum: $maximum)';
 }
 
 

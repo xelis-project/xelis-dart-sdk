@@ -29,16 +29,21 @@ $PeerPeerDisconnectedEventCopyWith<PeerPeerDisconnectedEvent> get copyWith => _$
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is PeerPeerDisconnectedEvent&&(identical(other.id, id) || other.id == id)&&(identical(other.address, address) || other.address == address)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as PeerPeerDisconnectedEvent;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is PeerPeerDisconnectedEvent&&(identical(other.id, _this.id) || other.id == _this.id)&&(identical(other.address, _this.address) || other.address == _this.address)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,address,extraFields);
+int get hashCode {
+  final _this = this as PeerPeerDisconnectedEvent;
+  return Object.hash(runtimeType,_this.id,_this.address,_this.extraFields);
+}
 
 @override
 String toString() {
-  return 'PeerPeerDisconnectedEvent(id: $id, address: $address, extraFields: $extraFields)';
+  final _this = this as PeerPeerDisconnectedEvent;
+  return 'PeerPeerDisconnectedEvent(id: ${_this.id}, address: ${_this.address}, extraFields: ${_this.extraFields})';
 }
 
 
@@ -241,16 +246,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PeerPeerDisconnectedEvent&&(identical(other.id, id) || other.id == id)&&(identical(other.address, address) || other.address == address)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _PeerPeerDisconnectedEvent&&(identical(other.id, id) || other.id == id)&&(identical(other.address, address) || other.address == address)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,address,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,id,address,extraFields);
+}
 
 @override
 String toString() {
-  return 'PeerPeerDisconnectedEvent(id: $id, address: $address, extraFields: $extraFields)';
+    return 'PeerPeerDisconnectedEvent(id: $id, address: $address, extraFields: $extraFields)';
 }
 
 

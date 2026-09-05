@@ -26,16 +26,21 @@ $DecryptExtraDataWalletParamsCopyWith<DecryptExtraDataWalletParams> get copyWith
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is DecryptExtraDataWalletParams&&(identical(other.extraData, extraData) || other.extraData == extraData)&&(identical(other.role, role) || other.role == role));
+  final _this = this as DecryptExtraDataWalletParams;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is DecryptExtraDataWalletParams&&(identical(other.extraData, _this.extraData) || other.extraData == _this.extraData)&&(identical(other.role, _this.role) || other.role == _this.role));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,extraData,role);
+int get hashCode {
+  final _this = this as DecryptExtraDataWalletParams;
+  return Object.hash(runtimeType,_this.extraData,_this.role);
+}
 
 @override
 String toString() {
-  return 'DecryptExtraDataWalletParams(extraData: $extraData, role: $role)';
+  final _this = this as DecryptExtraDataWalletParams;
+  return 'DecryptExtraDataWalletParams(extraData: ${_this.extraData}, role: ${_this.role})';
 }
 
 
@@ -224,16 +229,18 @@ _$DecryptExtraDataWalletParamsCopyWith<_DecryptExtraDataWalletParams> get copyWi
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _DecryptExtraDataWalletParams&&(identical(other.extraData, extraData) || other.extraData == extraData)&&(identical(other.role, role) || other.role == role));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _DecryptExtraDataWalletParams&&(identical(other.extraData, extraData) || other.extraData == extraData)&&(identical(other.role, role) || other.role == role));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,extraData,role);
+int get hashCode {
+    return Object.hash(runtimeType,extraData,role);
+}
 
 @override
 String toString() {
-  return 'DecryptExtraDataWalletParams(extraData: $extraData, role: $role)';
+    return 'DecryptExtraDataWalletParams(extraData: $extraData, role: $role)';
 }
 
 

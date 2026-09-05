@@ -26,16 +26,21 @@ $GetMultisigAtTopoheightResultCopyWith<GetMultisigAtTopoheightResult> get copyWi
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetMultisigAtTopoheightResult&&(identical(other.state, state) || other.state == state)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as GetMultisigAtTopoheightResult;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetMultisigAtTopoheightResult&&(identical(other.state, _this.state) || other.state == _this.state)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,state,extraFields);
+int get hashCode {
+  final _this = this as GetMultisigAtTopoheightResult;
+  return Object.hash(runtimeType,_this.state,_this.extraFields);
+}
 
 @override
 String toString() {
-  return 'GetMultisigAtTopoheightResult(state: $state, extraFields: $extraFields)';
+  final _this = this as GetMultisigAtTopoheightResult;
+  return 'GetMultisigAtTopoheightResult(state: ${_this.state}, extraFields: ${_this.extraFields})';
 }
 
 
@@ -242,16 +247,18 @@ _$GetMultisigAtTopoheightResultCopyWith<_GetMultisigAtTopoheightResult> get copy
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetMultisigAtTopoheightResult&&(identical(other.state, state) || other.state == state)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetMultisigAtTopoheightResult&&(identical(other.state, state) || other.state == state)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,state,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,state,extraFields);
+}
 
 @override
 String toString() {
-  return 'GetMultisigAtTopoheightResult(state: $state, extraFields: $extraFields)';
+    return 'GetMultisigAtTopoheightResult(state: $state, extraFields: $extraFields)';
 }
 
 

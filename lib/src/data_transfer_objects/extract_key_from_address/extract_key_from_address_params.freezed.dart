@@ -29,16 +29,21 @@ $ExtractKeyFromAddressParamsCopyWith<ExtractKeyFromAddressParams> get copyWith =
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ExtractKeyFromAddressParams&&(identical(other.address, address) || other.address == address)&&(identical(other.asHex, asHex) || other.asHex == asHex));
+  final _this = this as ExtractKeyFromAddressParams;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ExtractKeyFromAddressParams&&(identical(other.address, _this.address) || other.address == _this.address)&&(identical(other.asHex, _this.asHex) || other.asHex == _this.asHex));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,address,asHex);
+int get hashCode {
+  final _this = this as ExtractKeyFromAddressParams;
+  return Object.hash(runtimeType,_this.address,_this.asHex);
+}
 
 @override
 String toString() {
-  return 'ExtractKeyFromAddressParams(address: $address, asHex: $asHex)';
+  final _this = this as ExtractKeyFromAddressParams;
+  return 'ExtractKeyFromAddressParams(address: ${_this.address}, asHex: ${_this.asHex})';
 }
 
 
@@ -230,16 +235,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ExtractKeyFromAddressParams&&(identical(other.address, address) || other.address == address)&&(identical(other.asHex, asHex) || other.asHex == asHex));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _ExtractKeyFromAddressParams&&(identical(other.address, address) || other.address == address)&&(identical(other.asHex, asHex) || other.asHex == asHex));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,address,asHex);
+int get hashCode {
+    return Object.hash(runtimeType,address,asHex);
+}
 
 @override
 String toString() {
-  return 'ExtractKeyFromAddressParams(address: $address, asHex: $asHex)';
+    return 'ExtractKeyFromAddressParams(address: $address, asHex: $asHex)';
 }
 
 

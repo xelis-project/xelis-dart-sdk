@@ -26,16 +26,21 @@ $RpcRegisteredExecutionCopyWith<RpcRegisteredExecution> get copyWith => _$RpcReg
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcRegisteredExecution&&(identical(other.executionHash, executionHash) || other.executionHash == executionHash)&&(identical(other.executionContract, executionContract) || other.executionContract == executionContract)&&(identical(other.executionTopoheight, executionTopoheight) || other.executionTopoheight == executionTopoheight)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as RpcRegisteredExecution;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcRegisteredExecution&&(identical(other.executionHash, _this.executionHash) || other.executionHash == _this.executionHash)&&(identical(other.executionContract, _this.executionContract) || other.executionContract == _this.executionContract)&&(identical(other.executionTopoheight, _this.executionTopoheight) || other.executionTopoheight == _this.executionTopoheight)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,executionHash,executionContract,executionTopoheight,extraFields);
+int get hashCode {
+  final _this = this as RpcRegisteredExecution;
+  return Object.hash(runtimeType,_this.executionHash,_this.executionContract,_this.executionTopoheight,_this.extraFields);
+}
 
 @override
 String toString() {
-  return 'RpcRegisteredExecution(executionHash: $executionHash, executionContract: $executionContract, executionTopoheight: $executionTopoheight, extraFields: $extraFields)';
+  final _this = this as RpcRegisteredExecution;
+  return 'RpcRegisteredExecution(executionHash: ${_this.executionHash}, executionContract: ${_this.executionContract}, executionTopoheight: ${_this.executionTopoheight}, extraFields: ${_this.extraFields})';
 }
 
 
@@ -237,16 +242,18 @@ _$RpcRegisteredExecutionCopyWith<_RpcRegisteredExecution> get copyWith => __$Rpc
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RpcRegisteredExecution&&(identical(other.executionHash, executionHash) || other.executionHash == executionHash)&&(identical(other.executionContract, executionContract) || other.executionContract == executionContract)&&(identical(other.executionTopoheight, executionTopoheight) || other.executionTopoheight == executionTopoheight)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _RpcRegisteredExecution&&(identical(other.executionHash, executionHash) || other.executionHash == executionHash)&&(identical(other.executionContract, executionContract) || other.executionContract == executionContract)&&(identical(other.executionTopoheight, executionTopoheight) || other.executionTopoheight == executionTopoheight)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,executionHash,executionContract,executionTopoheight,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,executionHash,executionContract,executionTopoheight,extraFields);
+}
 
 @override
 String toString() {
-  return 'RpcRegisteredExecution(executionHash: $executionHash, executionContract: $executionContract, executionTopoheight: $executionTopoheight, extraFields: $extraFields)';
+    return 'RpcRegisteredExecution(executionHash: $executionHash, executionContract: $executionContract, executionTopoheight: $executionTopoheight, extraFields: $extraFields)';
 }
 
 

@@ -21,7 +21,7 @@ mixin _$DataElementType {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is DataElementType);
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is DataElementType);
 }
 
 
@@ -30,7 +30,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'DataElementType()';
+    return 'DataElementType()';
 }
 
 
@@ -197,16 +197,18 @@ $ValueDataElementTypeCopyWith<ValueDataElementType> get copyWith => _$ValueDataE
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ValueDataElementType&&(identical(other.type, type) || other.type == type));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is ValueDataElementType&&(identical(other.type, type) || other.type == type));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,type);
+int get hashCode {
+    return Object.hash(runtimeType,type);
+}
 
 @override
 String toString() {
-  return 'DataElementType.value(type: $type)';
+    return 'DataElementType.value(type: $type)';
 }
 
 
@@ -258,7 +260,7 @@ class ArrayDataElementType extends DataElementType {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ArrayDataElementType);
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is ArrayDataElementType);
 }
 
 
@@ -267,7 +269,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'DataElementType.array()';
+    return 'DataElementType.array()';
 }
 
 
@@ -290,7 +292,7 @@ class FieldsDataElementType extends DataElementType {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is FieldsDataElementType);
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is FieldsDataElementType);
 }
 
 
@@ -299,7 +301,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'DataElementType.fields()';
+    return 'DataElementType.fields()';
 }
 
 

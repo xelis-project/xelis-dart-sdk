@@ -29,16 +29,21 @@ $MultisigCopyWith<Multisig> get copyWith => _$MultisigCopyWithImpl<Multisig>(thi
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is Multisig&&const DeepCollectionEquality().equals(other.signatures, signatures)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as Multisig;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is Multisig&&const DeepCollectionEquality().equals(other.signatures, _this.signatures)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(signatures),extraFields);
+int get hashCode {
+  final _this = this as Multisig;
+  return Object.hash(runtimeType,const DeepCollectionEquality().hash(_this.signatures),_this.extraFields);
+}
 
 @override
 String toString() {
-  return 'Multisig(signatures: $signatures, extraFields: $extraFields)';
+  final _this = this as Multisig;
+  return 'Multisig(signatures: ${_this.signatures}, extraFields: ${_this.extraFields})';
 }
 
 
@@ -245,16 +250,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Multisig&&const DeepCollectionEquality().equals(other._signatures, _signatures)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _Multisig&&const DeepCollectionEquality().equals(other.signatures, _signatures)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_signatures),extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,const DeepCollectionEquality().hash(_signatures),extraFields);
+}
 
 @override
 String toString() {
-  return 'Multisig(signatures: $signatures, extraFields: $extraFields)';
+    return 'Multisig(signatures: $signatures, extraFields: $extraFields)';
 }
 
 

@@ -29,16 +29,21 @@ $GetMinerWorkParamsCopyWith<GetMinerWorkParams> get copyWith => _$GetMinerWorkPa
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetMinerWorkParams&&(identical(other.template, template) || other.template == template)&&(identical(other.address, address) || other.address == address));
+  final _this = this as GetMinerWorkParams;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetMinerWorkParams&&(identical(other.template, _this.template) || other.template == _this.template)&&(identical(other.address, _this.address) || other.address == _this.address));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,template,address);
+int get hashCode {
+  final _this = this as GetMinerWorkParams;
+  return Object.hash(runtimeType,_this.template,_this.address);
+}
 
 @override
 String toString() {
-  return 'GetMinerWorkParams(template: $template, address: $address)';
+  final _this = this as GetMinerWorkParams;
+  return 'GetMinerWorkParams(template: ${_this.template}, address: ${_this.address})';
 }
 
 
@@ -230,16 +235,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetMinerWorkParams&&(identical(other.template, template) || other.template == template)&&(identical(other.address, address) || other.address == address));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetMinerWorkParams&&(identical(other.template, template) || other.template == template)&&(identical(other.address, address) || other.address == address));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,template,address);
+int get hashCode {
+    return Object.hash(runtimeType,template,address);
+}
 
 @override
 String toString() {
-  return 'GetMinerWorkParams(template: $template, address: $address)';
+    return 'GetMinerWorkParams(template: $template, address: $address)';
 }
 
 

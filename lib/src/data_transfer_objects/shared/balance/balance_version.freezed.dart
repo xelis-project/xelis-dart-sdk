@@ -26,16 +26,21 @@ $BalanceVersionCopyWith<BalanceVersion> get copyWith => _$BalanceVersionCopyWith
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is BalanceVersion&&(identical(other.balanceType, balanceType) || other.balanceType == balanceType)&&(identical(other.finalBalance, finalBalance) || other.finalBalance == finalBalance)&&(identical(other.outputBalance, outputBalance) || other.outputBalance == outputBalance)&&(identical(other.previousTopoheight, previousTopoheight) || other.previousTopoheight == previousTopoheight)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as BalanceVersion;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is BalanceVersion&&(identical(other.balanceType, _this.balanceType) || other.balanceType == _this.balanceType)&&(identical(other.finalBalance, _this.finalBalance) || other.finalBalance == _this.finalBalance)&&(identical(other.outputBalance, _this.outputBalance) || other.outputBalance == _this.outputBalance)&&(identical(other.previousTopoheight, _this.previousTopoheight) || other.previousTopoheight == _this.previousTopoheight)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,balanceType,finalBalance,outputBalance,previousTopoheight,extraFields);
+int get hashCode {
+  final _this = this as BalanceVersion;
+  return Object.hash(runtimeType,_this.balanceType,_this.finalBalance,_this.outputBalance,_this.previousTopoheight,_this.extraFields);
+}
 
 @override
 String toString() {
-  return 'BalanceVersion(balanceType: $balanceType, finalBalance: $finalBalance, outputBalance: $outputBalance, previousTopoheight: $previousTopoheight, extraFields: $extraFields)';
+  final _this = this as BalanceVersion;
+  return 'BalanceVersion(balanceType: ${_this.balanceType}, finalBalance: ${_this.finalBalance}, outputBalance: ${_this.outputBalance}, previousTopoheight: ${_this.previousTopoheight}, extraFields: ${_this.extraFields})';
 }
 
 
@@ -269,16 +274,18 @@ _$BalanceVersionCopyWith<_BalanceVersion> get copyWith => __$BalanceVersionCopyW
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _BalanceVersion&&(identical(other.balanceType, balanceType) || other.balanceType == balanceType)&&(identical(other.finalBalance, finalBalance) || other.finalBalance == finalBalance)&&(identical(other.outputBalance, outputBalance) || other.outputBalance == outputBalance)&&(identical(other.previousTopoheight, previousTopoheight) || other.previousTopoheight == previousTopoheight)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _BalanceVersion&&(identical(other.balanceType, balanceType) || other.balanceType == balanceType)&&(identical(other.finalBalance, finalBalance) || other.finalBalance == finalBalance)&&(identical(other.outputBalance, outputBalance) || other.outputBalance == outputBalance)&&(identical(other.previousTopoheight, previousTopoheight) || other.previousTopoheight == previousTopoheight)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,balanceType,finalBalance,outputBalance,previousTopoheight,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,balanceType,finalBalance,outputBalance,previousTopoheight,extraFields);
+}
 
 @override
 String toString() {
-  return 'BalanceVersion(balanceType: $balanceType, finalBalance: $finalBalance, outputBalance: $outputBalance, previousTopoheight: $previousTopoheight, extraFields: $extraFields)';
+    return 'BalanceVersion(balanceType: $balanceType, finalBalance: $finalBalance, outputBalance: $outputBalance, previousTopoheight: $previousTopoheight, extraFields: $extraFields)';
 }
 
 

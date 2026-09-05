@@ -29,16 +29,21 @@ $SignatureIdCopyWith<SignatureId> get copyWith => _$SignatureIdCopyWithImpl<Sign
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is SignatureId&&(identical(other.id, id) || other.id == id)&&(identical(other.signature, signature) || other.signature == signature)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as SignatureId;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is SignatureId&&(identical(other.id, _this.id) || other.id == _this.id)&&(identical(other.signature, _this.signature) || other.signature == _this.signature)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,signature,extraFields);
+int get hashCode {
+  final _this = this as SignatureId;
+  return Object.hash(runtimeType,_this.id,_this.signature,_this.extraFields);
+}
 
 @override
 String toString() {
-  return 'SignatureId(id: $id, signature: $signature, extraFields: $extraFields)';
+  final _this = this as SignatureId;
+  return 'SignatureId(id: ${_this.id}, signature: ${_this.signature}, extraFields: ${_this.extraFields})';
 }
 
 
@@ -241,16 +246,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _SignatureId&&(identical(other.id, id) || other.id == id)&&(identical(other.signature, signature) || other.signature == signature)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _SignatureId&&(identical(other.id, id) || other.id == id)&&(identical(other.signature, signature) || other.signature == signature)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,signature,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,id,signature,extraFields);
+}
 
 @override
 String toString() {
-  return 'SignatureId(id: $id, signature: $signature, extraFields: $extraFields)';
+    return 'SignatureId(id: $id, signature: $signature, extraFields: $extraFields)';
 }
 
 

@@ -29,16 +29,21 @@ $GetHeightRangeParamsCopyWith<GetHeightRangeParams> get copyWith => _$GetHeightR
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetHeightRangeParams&&(identical(other.startHeight, startHeight) || other.startHeight == startHeight)&&(identical(other.endHeight, endHeight) || other.endHeight == endHeight));
+  final _this = this as GetHeightRangeParams;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetHeightRangeParams&&(identical(other.startHeight, _this.startHeight) || other.startHeight == _this.startHeight)&&(identical(other.endHeight, _this.endHeight) || other.endHeight == _this.endHeight));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,startHeight,endHeight);
+int get hashCode {
+  final _this = this as GetHeightRangeParams;
+  return Object.hash(runtimeType,_this.startHeight,_this.endHeight);
+}
 
 @override
 String toString() {
-  return 'GetHeightRangeParams(startHeight: $startHeight, endHeight: $endHeight)';
+  final _this = this as GetHeightRangeParams;
+  return 'GetHeightRangeParams(startHeight: ${_this.startHeight}, endHeight: ${_this.endHeight})';
 }
 
 
@@ -230,16 +235,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetHeightRangeParams&&(identical(other.startHeight, startHeight) || other.startHeight == startHeight)&&(identical(other.endHeight, endHeight) || other.endHeight == endHeight));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetHeightRangeParams&&(identical(other.startHeight, startHeight) || other.startHeight == startHeight)&&(identical(other.endHeight, endHeight) || other.endHeight == endHeight));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,startHeight,endHeight);
+int get hashCode {
+    return Object.hash(runtimeType,startHeight,endHeight);
+}
 
 @override
 String toString() {
-  return 'GetHeightRangeParams(startHeight: $startHeight, endHeight: $endHeight)';
+    return 'GetHeightRangeParams(startHeight: $startHeight, endHeight: $endHeight)';
 }
 
 

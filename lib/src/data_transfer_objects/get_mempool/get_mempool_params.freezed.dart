@@ -29,16 +29,21 @@ $GetMempoolParamsCopyWith<GetMempoolParams> get copyWith => _$GetMempoolParamsCo
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetMempoolParams&&(identical(other.maximum, maximum) || other.maximum == maximum)&&(identical(other.skip, skip) || other.skip == skip));
+  final _this = this as GetMempoolParams;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetMempoolParams&&(identical(other.maximum, _this.maximum) || other.maximum == _this.maximum)&&(identical(other.skip, _this.skip) || other.skip == _this.skip));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,maximum,skip);
+int get hashCode {
+  final _this = this as GetMempoolParams;
+  return Object.hash(runtimeType,_this.maximum,_this.skip);
+}
 
 @override
 String toString() {
-  return 'GetMempoolParams(maximum: $maximum, skip: $skip)';
+  final _this = this as GetMempoolParams;
+  return 'GetMempoolParams(maximum: ${_this.maximum}, skip: ${_this.skip})';
 }
 
 
@@ -230,16 +235,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetMempoolParams&&(identical(other.maximum, maximum) || other.maximum == maximum)&&(identical(other.skip, skip) || other.skip == skip));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetMempoolParams&&(identical(other.maximum, maximum) || other.maximum == maximum)&&(identical(other.skip, skip) || other.skip == skip));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,maximum,skip);
+int get hashCode {
+    return Object.hash(runtimeType,maximum,skip);
+}
 
 @override
 String toString() {
-  return 'GetMempoolParams(maximum: $maximum, skip: $skip)';
+    return 'GetMempoolParams(maximum: $maximum, skip: $skip)';
 }
 
 

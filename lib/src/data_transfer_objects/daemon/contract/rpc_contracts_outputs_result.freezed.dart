@@ -26,16 +26,21 @@ $RpcContractsOutputsResultCopyWith<RpcContractsOutputsResult> get copyWith => _$
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcContractsOutputsResult&&const DeepCollectionEquality().equals(other.executions, executions)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as RpcContractsOutputsResult;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcContractsOutputsResult&&const DeepCollectionEquality().equals(other.executions, _this.executions)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(executions),extraFields);
+int get hashCode {
+  final _this = this as RpcContractsOutputsResult;
+  return Object.hash(runtimeType,const DeepCollectionEquality().hash(_this.executions),_this.extraFields);
+}
 
 @override
 String toString() {
-  return 'RpcContractsOutputsResult(executions: $executions, extraFields: $extraFields)';
+  final _this = this as RpcContractsOutputsResult;
+  return 'RpcContractsOutputsResult(executions: ${_this.executions}, extraFields: ${_this.extraFields})';
 }
 
 
@@ -239,16 +244,18 @@ _$RpcContractsOutputsResultCopyWith<_RpcContractsOutputsResult> get copyWith => 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RpcContractsOutputsResult&&const DeepCollectionEquality().equals(other._executions, _executions)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _RpcContractsOutputsResult&&const DeepCollectionEquality().equals(other.executions, _executions)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_executions),extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,const DeepCollectionEquality().hash(_executions),extraFields);
+}
 
 @override
 String toString() {
-  return 'RpcContractsOutputsResult(executions: $executions, extraFields: $extraFields)';
+    return 'RpcContractsOutputsResult(executions: $executions, extraFields: $extraFields)';
 }
 
 

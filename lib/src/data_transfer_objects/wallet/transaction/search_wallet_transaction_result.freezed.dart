@@ -26,16 +26,21 @@ $SearchWalletTransactionResultCopyWith<SearchWalletTransactionResult> get copyWi
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is SearchWalletTransactionResult&&(identical(other.transaction, transaction) || other.transaction == transaction)&&(identical(other.index, index) || other.index == index)&&(identical(other.isRawSearch, isRawSearch) || other.isRawSearch == isRawSearch)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as SearchWalletTransactionResult;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is SearchWalletTransactionResult&&(identical(other.transaction, _this.transaction) || other.transaction == _this.transaction)&&(identical(other.index, _this.index) || other.index == _this.index)&&(identical(other.isRawSearch, _this.isRawSearch) || other.isRawSearch == _this.isRawSearch)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,transaction,index,isRawSearch,extraFields);
+int get hashCode {
+  final _this = this as SearchWalletTransactionResult;
+  return Object.hash(runtimeType,_this.transaction,_this.index,_this.isRawSearch,_this.extraFields);
+}
 
 @override
 String toString() {
-  return 'SearchWalletTransactionResult(transaction: $transaction, index: $index, isRawSearch: $isRawSearch, extraFields: $extraFields)';
+  final _this = this as SearchWalletTransactionResult;
+  return 'SearchWalletTransactionResult(transaction: ${_this.transaction}, index: ${_this.index}, isRawSearch: ${_this.isRawSearch}, extraFields: ${_this.extraFields})';
 }
 
 
@@ -249,16 +254,18 @@ _$SearchWalletTransactionResultCopyWith<_SearchWalletTransactionResult> get copy
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _SearchWalletTransactionResult&&(identical(other.transaction, transaction) || other.transaction == transaction)&&(identical(other.index, index) || other.index == index)&&(identical(other.isRawSearch, isRawSearch) || other.isRawSearch == isRawSearch)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _SearchWalletTransactionResult&&(identical(other.transaction, transaction) || other.transaction == transaction)&&(identical(other.index, index) || other.index == index)&&(identical(other.isRawSearch, isRawSearch) || other.isRawSearch == isRawSearch)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,transaction,index,isRawSearch,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,transaction,index,isRawSearch,extraFields);
+}
 
 @override
 String toString() {
-  return 'SearchWalletTransactionResult(transaction: $transaction, index: $index, isRawSearch: $isRawSearch, extraFields: $extraFields)';
+    return 'SearchWalletTransactionResult(transaction: $transaction, index: $index, isRawSearch: $isRawSearch, extraFields: $extraFields)';
 }
 
 

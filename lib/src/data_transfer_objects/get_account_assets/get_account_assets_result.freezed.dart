@@ -26,16 +26,21 @@ $GetAccountAssetsResultCopyWith<GetAccountAssetsResult> get copyWith => _$GetAcc
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetAccountAssetsResult&&const DeepCollectionEquality().equals(other.assets, assets));
+  final _this = this as GetAccountAssetsResult;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetAccountAssetsResult&&const DeepCollectionEquality().equals(other.assets, _this.assets));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(assets));
+int get hashCode {
+  final _this = this as GetAccountAssetsResult;
+  return Object.hash(runtimeType,const DeepCollectionEquality().hash(_this.assets));
+}
 
 @override
 String toString() {
-  return 'GetAccountAssetsResult(assets: $assets)';
+  final _this = this as GetAccountAssetsResult;
+  return 'GetAccountAssetsResult(assets: ${_this.assets})';
 }
 
 
@@ -228,16 +233,18 @@ _$GetAccountAssetsResultCopyWith<_GetAccountAssetsResult> get copyWith => __$Get
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetAccountAssetsResult&&const DeepCollectionEquality().equals(other._assets, _assets));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetAccountAssetsResult&&const DeepCollectionEquality().equals(other.assets, _assets));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_assets));
+int get hashCode {
+    return Object.hash(runtimeType,const DeepCollectionEquality().hash(_assets));
+}
 
 @override
 String toString() {
-  return 'GetAccountAssetsResult(assets: $assets)';
+    return 'GetAccountAssetsResult(assets: $assets)';
 }
 
 

@@ -21,7 +21,7 @@ mixin _$DataElement {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is DataElement);
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is DataElement);
 }
 
 
@@ -199,12 +199,14 @@ $DataValueCopyWith<DataValue> get copyWith => _$DataValueCopyWithImpl<DataValue>
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is DataValue&&(identical(other.value, value) || other.value == value));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is DataValue&&(identical(other.value, value) || other.value == value));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,value);
+int get hashCode {
+    return Object.hash(runtimeType,value);
+}
 
 
 
@@ -276,12 +278,14 @@ $DataArrayCopyWith<DataArray> get copyWith => _$DataArrayCopyWithImpl<DataArray>
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is DataArray&&const DeepCollectionEquality().equals(other._values, _values));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is DataArray&&const DeepCollectionEquality().equals(other.values, _values));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_values));
+int get hashCode {
+    return Object.hash(runtimeType,const DeepCollectionEquality().hash(_values));
+}
 
 
 
@@ -344,12 +348,14 @@ $DataFieldsCopyWith<DataFields> get copyWith => _$DataFieldsCopyWithImpl<DataFie
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is DataFields&&const DeepCollectionEquality().equals(other._fields, _fields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is DataFields&&const DeepCollectionEquality().equals(other.fields, _fields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_fields));
+int get hashCode {
+    return Object.hash(runtimeType,const DeepCollectionEquality().hash(_fields));
+}
 
 
 
@@ -401,7 +407,7 @@ class DataNull extends DataElement {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is DataNull);
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is DataNull);
 }
 
 

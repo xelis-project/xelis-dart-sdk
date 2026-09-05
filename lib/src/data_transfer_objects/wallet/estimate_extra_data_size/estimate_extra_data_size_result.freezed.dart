@@ -29,16 +29,21 @@ $EstimateExtraDataSizeResultCopyWith<EstimateExtraDataSizeResult> get copyWith =
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is EstimateExtraDataSizeResult&&(identical(other.size, size) || other.size == size)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as EstimateExtraDataSizeResult;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is EstimateExtraDataSizeResult&&(identical(other.size, _this.size) || other.size == _this.size)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,size,extraFields);
+int get hashCode {
+  final _this = this as EstimateExtraDataSizeResult;
+  return Object.hash(runtimeType,_this.size,_this.extraFields);
+}
 
 @override
 String toString() {
-  return 'EstimateExtraDataSizeResult(size: $size, extraFields: $extraFields)';
+  final _this = this as EstimateExtraDataSizeResult;
+  return 'EstimateExtraDataSizeResult(size: ${_this.size}, extraFields: ${_this.extraFields})';
 }
 
 
@@ -239,16 +244,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _EstimateExtraDataSizeResult&&(identical(other.size, size) || other.size == size)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _EstimateExtraDataSizeResult&&(identical(other.size, size) || other.size == size)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,size,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,size,extraFields);
+}
 
 @override
 String toString() {
-  return 'EstimateExtraDataSizeResult(size: $size, extraFields: $extraFields)';
+    return 'EstimateExtraDataSizeResult(size: $size, extraFields: $extraFields)';
 }
 
 

@@ -26,12 +26,16 @@ $RpcCommitmentEqProofCopyWith<RpcCommitmentEqProof> get copyWith => _$RpcCommitm
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcCommitmentEqProof&&const DeepCollectionEquality().equals(other.y0, y0)&&const DeepCollectionEquality().equals(other.y1, y1)&&const DeepCollectionEquality().equals(other.y2, y2)&&const DeepCollectionEquality().equals(other.zS, zS)&&const DeepCollectionEquality().equals(other.zX, zX)&&const DeepCollectionEquality().equals(other.zR, zR)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as RpcCommitmentEqProof;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcCommitmentEqProof&&const DeepCollectionEquality().equals(other.y0, _this.y0)&&const DeepCollectionEquality().equals(other.y1, _this.y1)&&const DeepCollectionEquality().equals(other.y2, _this.y2)&&const DeepCollectionEquality().equals(other.zS, _this.zS)&&const DeepCollectionEquality().equals(other.zX, _this.zX)&&const DeepCollectionEquality().equals(other.zR, _this.zR)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(y0),const DeepCollectionEquality().hash(y1),const DeepCollectionEquality().hash(y2),const DeepCollectionEquality().hash(zS),const DeepCollectionEquality().hash(zX),const DeepCollectionEquality().hash(zR),extraFields);
+int get hashCode {
+  final _this = this as RpcCommitmentEqProof;
+  return Object.hash(runtimeType,const DeepCollectionEquality().hash(_this.y0),const DeepCollectionEquality().hash(_this.y1),const DeepCollectionEquality().hash(_this.y2),const DeepCollectionEquality().hash(_this.zS),const DeepCollectionEquality().hash(_this.zX),const DeepCollectionEquality().hash(_this.zR),_this.extraFields);
+}
 
 
 
@@ -275,12 +279,14 @@ _$RpcCommitmentEqProofCopyWith<_RpcCommitmentEqProof> get copyWith => __$RpcComm
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RpcCommitmentEqProof&&const DeepCollectionEquality().equals(other._y0, _y0)&&const DeepCollectionEquality().equals(other._y1, _y1)&&const DeepCollectionEquality().equals(other._y2, _y2)&&const DeepCollectionEquality().equals(other._zS, _zS)&&const DeepCollectionEquality().equals(other._zX, _zX)&&const DeepCollectionEquality().equals(other._zR, _zR)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _RpcCommitmentEqProof&&const DeepCollectionEquality().equals(other.y0, _y0)&&const DeepCollectionEquality().equals(other.y1, _y1)&&const DeepCollectionEquality().equals(other.y2, _y2)&&const DeepCollectionEquality().equals(other.zS, _zS)&&const DeepCollectionEquality().equals(other.zX, _zX)&&const DeepCollectionEquality().equals(other.zR, _zR)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_y0),const DeepCollectionEquality().hash(_y1),const DeepCollectionEquality().hash(_y2),const DeepCollectionEquality().hash(_zS),const DeepCollectionEquality().hash(_zX),const DeepCollectionEquality().hash(_zR),extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,const DeepCollectionEquality().hash(_y0),const DeepCollectionEquality().hash(_y1),const DeepCollectionEquality().hash(_y2),const DeepCollectionEquality().hash(_zS),const DeepCollectionEquality().hash(_zX),const DeepCollectionEquality().hash(_zR),extraFields);
+}
 
 
 
@@ -347,12 +353,16 @@ $RpcSourceCommitmentCopyWith<RpcSourceCommitment> get copyWith => _$RpcSourceCom
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcSourceCommitment&&const DeepCollectionEquality().equals(other.commitment, commitment)&&(identical(other.proof, proof) || other.proof == proof)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as RpcSourceCommitment;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcSourceCommitment&&const DeepCollectionEquality().equals(other.commitment, _this.commitment)&&(identical(other.proof, _this.proof) || other.proof == _this.proof)&&(identical(other.asset, _this.asset) || other.asset == _this.asset)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(commitment),proof,asset,extraFields);
+int get hashCode {
+  final _this = this as RpcSourceCommitment;
+  return Object.hash(runtimeType,const DeepCollectionEquality().hash(_this.commitment),_this.proof,_this.asset,_this.extraFields);
+}
 
 
 
@@ -569,12 +579,14 @@ _$RpcSourceCommitmentCopyWith<_RpcSourceCommitment> get copyWith => __$RpcSource
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RpcSourceCommitment&&const DeepCollectionEquality().equals(other._commitment, _commitment)&&(identical(other.proof, proof) || other.proof == proof)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _RpcSourceCommitment&&const DeepCollectionEquality().equals(other.commitment, _commitment)&&(identical(other.proof, proof) || other.proof == proof)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_commitment),proof,asset,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,const DeepCollectionEquality().hash(_commitment),proof,asset,extraFields);
+}
 
 
 

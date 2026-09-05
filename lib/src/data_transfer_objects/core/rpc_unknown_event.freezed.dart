@@ -26,12 +26,16 @@ $RpcUnknownEventCopyWith<RpcUnknownEvent> get copyWith => _$RpcUnknownEventCopyW
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcUnknownEvent&&(identical(other.name, name) || other.name == name)&&(identical(other.payload, payload) || other.payload == payload));
+  final _this = this as RpcUnknownEvent;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcUnknownEvent&&(identical(other.name, _this.name) || other.name == _this.name)&&(identical(other.payload, _this.payload) || other.payload == _this.payload));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,name,payload);
+int get hashCode {
+  final _this = this as RpcUnknownEvent;
+  return Object.hash(runtimeType,_this.name,_this.payload);
+}
 
 
 
@@ -229,12 +233,14 @@ _$RpcUnknownEventCopyWith<_RpcUnknownEvent> get copyWith => __$RpcUnknownEventCo
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RpcUnknownEvent&&(identical(other.name, name) || other.name == name)&&(identical(other.payload, payload) || other.payload == payload));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _RpcUnknownEvent&&(identical(other.name, name) || other.name == name)&&(identical(other.payload, payload) || other.payload == payload));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,name,payload);
+int get hashCode {
+    return Object.hash(runtimeType,name,payload);
+}
 
 
 

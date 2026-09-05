@@ -26,16 +26,21 @@ $SplitAddressResultCopyWith<SplitAddressResult> get copyWith => _$SplitAddressRe
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is SplitAddressResult&&(identical(other.address, address) || other.address == address)&&(identical(other.integratedData, integratedData) || other.integratedData == integratedData)&&(identical(other.size, size) || other.size == size)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as SplitAddressResult;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is SplitAddressResult&&(identical(other.address, _this.address) || other.address == _this.address)&&(identical(other.integratedData, _this.integratedData) || other.integratedData == _this.integratedData)&&(identical(other.size, _this.size) || other.size == _this.size)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,address,integratedData,size,extraFields);
+int get hashCode {
+  final _this = this as SplitAddressResult;
+  return Object.hash(runtimeType,_this.address,_this.integratedData,_this.size,_this.extraFields);
+}
 
 @override
 String toString() {
-  return 'SplitAddressResult(address: $address, integratedData: $integratedData, size: $size, extraFields: $extraFields)';
+  final _this = this as SplitAddressResult;
+  return 'SplitAddressResult(address: ${_this.address}, integratedData: ${_this.integratedData}, size: ${_this.size}, extraFields: ${_this.extraFields})';
 }
 
 
@@ -246,16 +251,18 @@ _$SplitAddressResultCopyWith<_SplitAddressResult> get copyWith => __$SplitAddres
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _SplitAddressResult&&(identical(other.address, address) || other.address == address)&&(identical(other.integratedData, integratedData) || other.integratedData == integratedData)&&(identical(other.size, size) || other.size == size)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _SplitAddressResult&&(identical(other.address, address) || other.address == address)&&(identical(other.integratedData, integratedData) || other.integratedData == integratedData)&&(identical(other.size, size) || other.size == size)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,address,integratedData,size,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,address,integratedData,size,extraFields);
+}
 
 @override
 String toString() {
-  return 'SplitAddressResult(address: $address, integratedData: $integratedData, size: $size, extraFields: $extraFields)';
+    return 'SplitAddressResult(address: $address, integratedData: $integratedData, size: $size, extraFields: $extraFields)';
 }
 
 

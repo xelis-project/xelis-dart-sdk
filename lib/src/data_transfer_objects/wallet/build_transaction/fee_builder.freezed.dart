@@ -21,7 +21,7 @@ mixin _$FeeBuilder {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is FeeBuilder);
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is FeeBuilder);
 }
 
 
@@ -30,7 +30,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'FeeBuilder()';
+    return 'FeeBuilder()';
 }
 
 
@@ -191,16 +191,18 @@ $FixedFeeBuilderCopyWith<FixedFeeBuilder> get copyWith => _$FixedFeeBuilderCopyW
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is FixedFeeBuilder&&(identical(other.amount, amount) || other.amount == amount));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is FixedFeeBuilder&&(identical(other.amount, amount) || other.amount == amount));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,amount);
+int get hashCode {
+    return Object.hash(runtimeType,amount);
+}
 
 @override
 String toString() {
-  return 'FeeBuilder.fixed(amount: $amount)';
+    return 'FeeBuilder.fixed(amount: $amount)';
 }
 
 
@@ -257,16 +259,18 @@ $ExtraFeeBuilderCopyWith<ExtraFeeBuilder> get copyWith => _$ExtraFeeBuilderCopyW
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ExtraFeeBuilder&&(identical(other.mode, mode) || other.mode == mode));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is ExtraFeeBuilder&&(identical(other.mode, mode) || other.mode == mode));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,mode);
+int get hashCode {
+    return Object.hash(runtimeType,mode);
+}
 
 @override
 String toString() {
-  return 'FeeBuilder.extra(mode: $mode)';
+    return 'FeeBuilder.extra(mode: $mode)';
 }
 
 
@@ -322,7 +326,7 @@ mixin _$ExtraFeeMode {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ExtraFeeMode);
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is ExtraFeeMode);
 }
 
 
@@ -331,7 +335,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'ExtraFeeMode()';
+    return 'ExtraFeeMode()';
 }
 
 
@@ -493,7 +497,7 @@ class NoExtraFee extends ExtraFeeMode {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is NoExtraFee);
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is NoExtraFee);
 }
 
 
@@ -502,7 +506,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'ExtraFeeMode.none()';
+    return 'ExtraFeeMode.none()';
 }
 
 
@@ -530,16 +534,18 @@ $TipExtraFeeCopyWith<TipExtraFee> get copyWith => _$TipExtraFeeCopyWithImpl<TipE
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is TipExtraFee&&(identical(other.amount, amount) || other.amount == amount));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is TipExtraFee&&(identical(other.amount, amount) || other.amount == amount));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,amount);
+int get hashCode {
+    return Object.hash(runtimeType,amount);
+}
 
 @override
 String toString() {
-  return 'ExtraFeeMode.tip(amount: $amount)';
+    return 'ExtraFeeMode.tip(amount: $amount)';
 }
 
 
@@ -596,16 +602,18 @@ $MultiplierExtraFeeCopyWith<MultiplierExtraFee> get copyWith => _$MultiplierExtr
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is MultiplierExtraFee&&(identical(other.multiplier, multiplier) || other.multiplier == multiplier));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is MultiplierExtraFee&&(identical(other.multiplier, multiplier) || other.multiplier == multiplier));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,multiplier);
+int get hashCode {
+    return Object.hash(runtimeType,multiplier);
+}
 
 @override
 String toString() {
-  return 'ExtraFeeMode.multiplier(multiplier: $multiplier)';
+    return 'ExtraFeeMode.multiplier(multiplier: $multiplier)';
 }
 
 

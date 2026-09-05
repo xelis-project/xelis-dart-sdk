@@ -29,16 +29,21 @@ $ContractDepositBuilderCopyWith<ContractDepositBuilder> get copyWith => _$Contra
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ContractDepositBuilder&&(identical(other.amount, amount) || other.amount == amount)&&(identical(other.private, private) || other.private == private));
+  final _this = this as ContractDepositBuilder;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ContractDepositBuilder&&(identical(other.amount, _this.amount) || other.amount == _this.amount)&&(identical(other.private, _this.private) || other.private == _this.private));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,amount,private);
+int get hashCode {
+  final _this = this as ContractDepositBuilder;
+  return Object.hash(runtimeType,_this.amount,_this.private);
+}
 
 @override
 String toString() {
-  return 'ContractDepositBuilder(amount: $amount, private: $private)';
+  final _this = this as ContractDepositBuilder;
+  return 'ContractDepositBuilder(amount: ${_this.amount}, private: ${_this.private})';
 }
 
 
@@ -224,16 +229,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ContractDepositBuilder&&(identical(other.amount, amount) || other.amount == amount)&&(identical(other.private, private) || other.private == private));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _ContractDepositBuilder&&(identical(other.amount, amount) || other.amount == amount)&&(identical(other.private, private) || other.private == private));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,amount,private);
+int get hashCode {
+    return Object.hash(runtimeType,amount,private);
+}
 
 @override
 String toString() {
-  return 'ContractDepositBuilder(amount: $amount, private: $private)';
+    return 'ContractDepositBuilder(amount: $amount, private: $private)';
 }
 
 

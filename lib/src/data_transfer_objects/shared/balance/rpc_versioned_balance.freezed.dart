@@ -26,16 +26,21 @@ $RpcVersionedBalanceCopyWith<RpcVersionedBalance> get copyWith => _$RpcVersioned
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcVersionedBalance&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&(identical(other.version, version) || other.version == version)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as RpcVersionedBalance;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcVersionedBalance&&(identical(other.topoheight, _this.topoheight) || other.topoheight == _this.topoheight)&&(identical(other.version, _this.version) || other.version == _this.version)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,topoheight,version,extraFields);
+int get hashCode {
+  final _this = this as RpcVersionedBalance;
+  return Object.hash(runtimeType,_this.topoheight,_this.version,_this.extraFields);
+}
 
 @override
 String toString() {
-  return 'RpcVersionedBalance(topoheight: $topoheight, version: $version, extraFields: $extraFields)';
+  final _this = this as RpcVersionedBalance;
+  return 'RpcVersionedBalance(topoheight: ${_this.topoheight}, version: ${_this.version}, extraFields: ${_this.extraFields})';
 }
 
 
@@ -244,16 +249,18 @@ _$RpcVersionedBalanceCopyWith<_RpcVersionedBalance> get copyWith => __$RpcVersio
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RpcVersionedBalance&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&(identical(other.version, version) || other.version == version)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _RpcVersionedBalance&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&(identical(other.version, version) || other.version == version)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,topoheight,version,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,topoheight,version,extraFields);
+}
 
 @override
 String toString() {
-  return 'RpcVersionedBalance(topoheight: $topoheight, version: $version, extraFields: $extraFields)';
+    return 'RpcVersionedBalance(topoheight: $topoheight, version: $version, extraFields: $extraFields)';
 }
 
 

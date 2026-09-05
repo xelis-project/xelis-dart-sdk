@@ -26,16 +26,21 @@ $RpcContractDataEntryCopyWith<RpcContractDataEntry> get copyWith => _$RpcContrac
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcContractDataEntry&&(identical(other.key, key) || other.key == key)&&(identical(other.value, value) || other.value == value)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as RpcContractDataEntry;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcContractDataEntry&&(identical(other.key, _this.key) || other.key == _this.key)&&(identical(other.value, _this.value) || other.value == _this.value)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,key,value,extraFields);
+int get hashCode {
+  final _this = this as RpcContractDataEntry;
+  return Object.hash(runtimeType,_this.key,_this.value,_this.extraFields);
+}
 
 @override
 String toString() {
-  return 'RpcContractDataEntry(key: $key, value: $value, extraFields: $extraFields)';
+  final _this = this as RpcContractDataEntry;
+  return 'RpcContractDataEntry(key: ${_this.key}, value: ${_this.value}, extraFields: ${_this.extraFields})';
 }
 
 
@@ -253,16 +258,18 @@ _$RpcContractDataEntryCopyWith<_RpcContractDataEntry> get copyWith => __$RpcCont
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RpcContractDataEntry&&(identical(other.key, key) || other.key == key)&&(identical(other.value, value) || other.value == value)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _RpcContractDataEntry&&(identical(other.key, key) || other.key == key)&&(identical(other.value, value) || other.value == value)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,key,value,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,key,value,extraFields);
+}
 
 @override
 String toString() {
-  return 'RpcContractDataEntry(key: $key, value: $value, extraFields: $extraFields)';
+    return 'RpcContractDataEntry(key: $key, value: $value, extraFields: $extraFields)';
 }
 
 

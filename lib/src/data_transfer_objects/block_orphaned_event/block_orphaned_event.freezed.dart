@@ -29,16 +29,21 @@ $BlockOrphanedEventCopyWith<BlockOrphanedEvent> get copyWith => _$BlockOrphanedE
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is BlockOrphanedEvent&&(identical(other.blockHash, blockHash) || other.blockHash == blockHash)&&(identical(other.oldTopoheight, oldTopoheight) || other.oldTopoheight == oldTopoheight)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as BlockOrphanedEvent;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is BlockOrphanedEvent&&(identical(other.blockHash, _this.blockHash) || other.blockHash == _this.blockHash)&&(identical(other.oldTopoheight, _this.oldTopoheight) || other.oldTopoheight == _this.oldTopoheight)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,blockHash,oldTopoheight,extraFields);
+int get hashCode {
+  final _this = this as BlockOrphanedEvent;
+  return Object.hash(runtimeType,_this.blockHash,_this.oldTopoheight,_this.extraFields);
+}
 
 @override
 String toString() {
-  return 'BlockOrphanedEvent(blockHash: $blockHash, oldTopoheight: $oldTopoheight, extraFields: $extraFields)';
+  final _this = this as BlockOrphanedEvent;
+  return 'BlockOrphanedEvent(blockHash: ${_this.blockHash}, oldTopoheight: ${_this.oldTopoheight}, extraFields: ${_this.extraFields})';
 }
 
 
@@ -241,16 +246,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _BlockOrphanedEvent&&(identical(other.blockHash, blockHash) || other.blockHash == blockHash)&&(identical(other.oldTopoheight, oldTopoheight) || other.oldTopoheight == oldTopoheight)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _BlockOrphanedEvent&&(identical(other.blockHash, blockHash) || other.blockHash == blockHash)&&(identical(other.oldTopoheight, oldTopoheight) || other.oldTopoheight == oldTopoheight)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,blockHash,oldTopoheight,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,blockHash,oldTopoheight,extraFields);
+}
 
 @override
 String toString() {
-  return 'BlockOrphanedEvent(blockHash: $blockHash, oldTopoheight: $oldTopoheight, extraFields: $extraFields)';
+    return 'BlockOrphanedEvent(blockHash: $blockHash, oldTopoheight: $oldTopoheight, extraFields: $extraFields)';
 }
 
 

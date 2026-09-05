@@ -26,16 +26,21 @@ $BuildTransactionParamsCopyWith<BuildTransactionParams> get copyWith => _$BuildT
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is BuildTransactionParams&&(identical(other.transactionTypeBuilder, transactionTypeBuilder) || other.transactionTypeBuilder == transactionTypeBuilder)&&(identical(other.fee, fee) || other.fee == fee)&&(identical(other.baseFee, baseFee) || other.baseFee == baseFee)&&(identical(other.feeLimit, feeLimit) || other.feeLimit == feeLimit)&&(identical(other.nonce, nonce) || other.nonce == nonce)&&(identical(other.txVersion, txVersion) || other.txVersion == txVersion)&&(identical(other.broadcast, broadcast) || other.broadcast == broadcast)&&(identical(other.txAsHex, txAsHex) || other.txAsHex == txAsHex)&&const DeepCollectionEquality().equals(other.signers, signers));
+  final _this = this as BuildTransactionParams;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is BuildTransactionParams&&(identical(other.transactionTypeBuilder, _this.transactionTypeBuilder) || other.transactionTypeBuilder == _this.transactionTypeBuilder)&&(identical(other.fee, _this.fee) || other.fee == _this.fee)&&(identical(other.baseFee, _this.baseFee) || other.baseFee == _this.baseFee)&&(identical(other.feeLimit, _this.feeLimit) || other.feeLimit == _this.feeLimit)&&(identical(other.nonce, _this.nonce) || other.nonce == _this.nonce)&&(identical(other.txVersion, _this.txVersion) || other.txVersion == _this.txVersion)&&(identical(other.broadcast, _this.broadcast) || other.broadcast == _this.broadcast)&&(identical(other.txAsHex, _this.txAsHex) || other.txAsHex == _this.txAsHex)&&const DeepCollectionEquality().equals(other.signers, _this.signers));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,transactionTypeBuilder,fee,baseFee,feeLimit,nonce,txVersion,broadcast,txAsHex,const DeepCollectionEquality().hash(signers));
+int get hashCode {
+  final _this = this as BuildTransactionParams;
+  return Object.hash(runtimeType,_this.transactionTypeBuilder,_this.fee,_this.baseFee,_this.feeLimit,_this.nonce,_this.txVersion,_this.broadcast,_this.txAsHex,const DeepCollectionEquality().hash(_this.signers));
+}
 
 @override
 String toString() {
-  return 'BuildTransactionParams(transactionTypeBuilder: $transactionTypeBuilder, fee: $fee, baseFee: $baseFee, feeLimit: $feeLimit, nonce: $nonce, txVersion: $txVersion, broadcast: $broadcast, txAsHex: $txAsHex, signers: $signers)';
+  final _this = this as BuildTransactionParams;
+  return 'BuildTransactionParams(transactionTypeBuilder: ${_this.transactionTypeBuilder}, fee: ${_this.fee}, baseFee: ${_this.baseFee}, feeLimit: ${_this.feeLimit}, nonce: ${_this.nonce}, txVersion: ${_this.txVersion}, broadcast: ${_this.broadcast}, txAsHex: ${_this.txAsHex}, signers: ${_this.signers})';
 }
 
 
@@ -271,16 +276,18 @@ _$BuildTransactionParamsCopyWith<_BuildTransactionParams> get copyWith => __$Bui
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _BuildTransactionParams&&(identical(other.transactionTypeBuilder, transactionTypeBuilder) || other.transactionTypeBuilder == transactionTypeBuilder)&&(identical(other.fee, fee) || other.fee == fee)&&(identical(other.baseFee, baseFee) || other.baseFee == baseFee)&&(identical(other.feeLimit, feeLimit) || other.feeLimit == feeLimit)&&(identical(other.nonce, nonce) || other.nonce == nonce)&&(identical(other.txVersion, txVersion) || other.txVersion == txVersion)&&(identical(other.broadcast, broadcast) || other.broadcast == broadcast)&&(identical(other.txAsHex, txAsHex) || other.txAsHex == txAsHex)&&const DeepCollectionEquality().equals(other._signers, _signers));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _BuildTransactionParams&&(identical(other.transactionTypeBuilder, transactionTypeBuilder) || other.transactionTypeBuilder == transactionTypeBuilder)&&(identical(other.fee, fee) || other.fee == fee)&&(identical(other.baseFee, baseFee) || other.baseFee == baseFee)&&(identical(other.feeLimit, feeLimit) || other.feeLimit == feeLimit)&&(identical(other.nonce, nonce) || other.nonce == nonce)&&(identical(other.txVersion, txVersion) || other.txVersion == txVersion)&&(identical(other.broadcast, broadcast) || other.broadcast == broadcast)&&(identical(other.txAsHex, txAsHex) || other.txAsHex == txAsHex)&&const DeepCollectionEquality().equals(other.signers, _signers));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,transactionTypeBuilder,fee,baseFee,feeLimit,nonce,txVersion,broadcast,txAsHex,const DeepCollectionEquality().hash(_signers));
+int get hashCode {
+    return Object.hash(runtimeType,transactionTypeBuilder,fee,baseFee,feeLimit,nonce,txVersion,broadcast,txAsHex,const DeepCollectionEquality().hash(_signers));
+}
 
 @override
 String toString() {
-  return 'BuildTransactionParams(transactionTypeBuilder: $transactionTypeBuilder, fee: $fee, baseFee: $baseFee, feeLimit: $feeLimit, nonce: $nonce, txVersion: $txVersion, broadcast: $broadcast, txAsHex: $txAsHex, signers: $signers)';
+    return 'BuildTransactionParams(transactionTypeBuilder: $transactionTypeBuilder, fee: $fee, baseFee: $baseFee, feeLimit: $feeLimit, nonce: $nonce, txVersion: $txVersion, broadcast: $broadcast, txAsHex: $txAsHex, signers: $signers)';
 }
 
 

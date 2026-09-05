@@ -26,16 +26,21 @@ $BlockBaseFeeCopyWith<BlockBaseFee> get copyWith => _$BlockBaseFeeCopyWithImpl<B
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is BlockBaseFee&&(identical(other.feePerKb, feePerKb) || other.feePerKb == feePerKb)&&(identical(other.blockSizeEma, blockSizeEma) || other.blockSizeEma == blockSizeEma)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as BlockBaseFee;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is BlockBaseFee&&(identical(other.feePerKb, _this.feePerKb) || other.feePerKb == _this.feePerKb)&&(identical(other.blockSizeEma, _this.blockSizeEma) || other.blockSizeEma == _this.blockSizeEma)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,feePerKb,blockSizeEma,extraFields);
+int get hashCode {
+  final _this = this as BlockBaseFee;
+  return Object.hash(runtimeType,_this.feePerKb,_this.blockSizeEma,_this.extraFields);
+}
 
 @override
 String toString() {
-  return 'BlockBaseFee(feePerKb: $feePerKb, blockSizeEma: $blockSizeEma, extraFields: $extraFields)';
+  final _this = this as BlockBaseFee;
+  return 'BlockBaseFee(feePerKb: ${_this.feePerKb}, blockSizeEma: ${_this.blockSizeEma}, extraFields: ${_this.extraFields})';
 }
 
 
@@ -235,16 +240,18 @@ _$BlockBaseFeeCopyWith<_BlockBaseFee> get copyWith => __$BlockBaseFeeCopyWithImp
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _BlockBaseFee&&(identical(other.feePerKb, feePerKb) || other.feePerKb == feePerKb)&&(identical(other.blockSizeEma, blockSizeEma) || other.blockSizeEma == blockSizeEma)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _BlockBaseFee&&(identical(other.feePerKb, feePerKb) || other.feePerKb == feePerKb)&&(identical(other.blockSizeEma, blockSizeEma) || other.blockSizeEma == blockSizeEma)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,feePerKb,blockSizeEma,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,feePerKb,blockSizeEma,extraFields);
+}
 
 @override
 String toString() {
-  return 'BlockBaseFee(feePerKb: $feePerKb, blockSizeEma: $blockSizeEma, extraFields: $extraFields)';
+    return 'BlockBaseFee(feePerKb: $feePerKb, blockSizeEma: $blockSizeEma, extraFields: $extraFields)';
 }
 
 

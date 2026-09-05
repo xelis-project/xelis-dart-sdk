@@ -29,16 +29,21 @@ $GetAssetsParamsCopyWith<GetAssetsParams> get copyWith => _$GetAssetsParamsCopyW
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetAssetsParams&&(identical(other.skip, skip) || other.skip == skip)&&(identical(other.maximum, maximum) || other.maximum == maximum)&&(identical(other.minimumTopoheight, minimumTopoheight) || other.minimumTopoheight == minimumTopoheight)&&(identical(other.maximumTopoheight, maximumTopoheight) || other.maximumTopoheight == maximumTopoheight));
+  final _this = this as GetAssetsParams;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetAssetsParams&&(identical(other.skip, _this.skip) || other.skip == _this.skip)&&(identical(other.maximum, _this.maximum) || other.maximum == _this.maximum)&&(identical(other.minimumTopoheight, _this.minimumTopoheight) || other.minimumTopoheight == _this.minimumTopoheight)&&(identical(other.maximumTopoheight, _this.maximumTopoheight) || other.maximumTopoheight == _this.maximumTopoheight));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,skip,maximum,minimumTopoheight,maximumTopoheight);
+int get hashCode {
+  final _this = this as GetAssetsParams;
+  return Object.hash(runtimeType,_this.skip,_this.maximum,_this.minimumTopoheight,_this.maximumTopoheight);
+}
 
 @override
 String toString() {
-  return 'GetAssetsParams(skip: $skip, maximum: $maximum, minimumTopoheight: $minimumTopoheight, maximumTopoheight: $maximumTopoheight)';
+  final _this = this as GetAssetsParams;
+  return 'GetAssetsParams(skip: ${_this.skip}, maximum: ${_this.maximum}, minimumTopoheight: ${_this.minimumTopoheight}, maximumTopoheight: ${_this.maximumTopoheight})';
 }
 
 
@@ -234,16 +239,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetAssetsParams&&(identical(other.skip, skip) || other.skip == skip)&&(identical(other.maximum, maximum) || other.maximum == maximum)&&(identical(other.minimumTopoheight, minimumTopoheight) || other.minimumTopoheight == minimumTopoheight)&&(identical(other.maximumTopoheight, maximumTopoheight) || other.maximumTopoheight == maximumTopoheight));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetAssetsParams&&(identical(other.skip, skip) || other.skip == skip)&&(identical(other.maximum, maximum) || other.maximum == maximum)&&(identical(other.minimumTopoheight, minimumTopoheight) || other.minimumTopoheight == minimumTopoheight)&&(identical(other.maximumTopoheight, maximumTopoheight) || other.maximumTopoheight == maximumTopoheight));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,skip,maximum,minimumTopoheight,maximumTopoheight);
+int get hashCode {
+    return Object.hash(runtimeType,skip,maximum,minimumTopoheight,maximumTopoheight);
+}
 
 @override
 String toString() {
-  return 'GetAssetsParams(skip: $skip, maximum: $maximum, minimumTopoheight: $minimumTopoheight, maximumTopoheight: $maximumTopoheight)';
+    return 'GetAssetsParams(skip: $skip, maximum: $maximum, minimumTopoheight: $minimumTopoheight, maximumTopoheight: $maximumTopoheight)';
 }
 
 

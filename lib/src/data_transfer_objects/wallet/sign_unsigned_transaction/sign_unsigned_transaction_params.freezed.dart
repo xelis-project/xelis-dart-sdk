@@ -29,16 +29,21 @@ $SignUnsignedTransactionParamsCopyWith<SignUnsignedTransactionParams> get copyWi
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is SignUnsignedTransactionParams&&(identical(other.hash, hash) || other.hash == hash)&&(identical(other.signerId, signerId) || other.signerId == signerId));
+  final _this = this as SignUnsignedTransactionParams;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is SignUnsignedTransactionParams&&(identical(other.hash, _this.hash) || other.hash == _this.hash)&&(identical(other.signerId, _this.signerId) || other.signerId == _this.signerId));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,hash,signerId);
+int get hashCode {
+  final _this = this as SignUnsignedTransactionParams;
+  return Object.hash(runtimeType,_this.hash,_this.signerId);
+}
 
 @override
 String toString() {
-  return 'SignUnsignedTransactionParams(hash: $hash, signerId: $signerId)';
+  final _this = this as SignUnsignedTransactionParams;
+  return 'SignUnsignedTransactionParams(hash: ${_this.hash}, signerId: ${_this.signerId})';
 }
 
 
@@ -230,16 +235,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _SignUnsignedTransactionParams&&(identical(other.hash, hash) || other.hash == hash)&&(identical(other.signerId, signerId) || other.signerId == signerId));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _SignUnsignedTransactionParams&&(identical(other.hash, hash) || other.hash == hash)&&(identical(other.signerId, signerId) || other.signerId == signerId));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,hash,signerId);
+int get hashCode {
+    return Object.hash(runtimeType,hash,signerId);
+}
 
 @override
 String toString() {
-  return 'SignUnsignedTransactionParams(hash: $hash, signerId: $signerId)';
+    return 'SignUnsignedTransactionParams(hash: $hash, signerId: $signerId)';
 }
 
 

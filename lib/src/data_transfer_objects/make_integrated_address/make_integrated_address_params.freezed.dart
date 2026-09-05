@@ -29,16 +29,21 @@ $MakeIntegratedAddressParamsCopyWith<MakeIntegratedAddressParams> get copyWith =
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is MakeIntegratedAddressParams&&(identical(other.address, address) || other.address == address)&&(identical(other.data, data) || other.data == data));
+  final _this = this as MakeIntegratedAddressParams;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is MakeIntegratedAddressParams&&(identical(other.address, _this.address) || other.address == _this.address)&&(identical(other.data, _this.data) || other.data == _this.data));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,address,data);
+int get hashCode {
+  final _this = this as MakeIntegratedAddressParams;
+  return Object.hash(runtimeType,_this.address,_this.data);
+}
 
 @override
 String toString() {
-  return 'MakeIntegratedAddressParams(address: $address, data: $data)';
+  final _this = this as MakeIntegratedAddressParams;
+  return 'MakeIntegratedAddressParams(address: ${_this.address}, data: ${_this.data})';
 }
 
 
@@ -239,16 +244,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _MakeIntegratedAddressParams&&(identical(other.address, address) || other.address == address)&&(identical(other.data, data) || other.data == data));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _MakeIntegratedAddressParams&&(identical(other.address, address) || other.address == address)&&(identical(other.data, data) || other.data == data));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,address,data);
+int get hashCode {
+    return Object.hash(runtimeType,address,data);
+}
 
 @override
 String toString() {
-  return 'MakeIntegratedAddressParams(address: $address, data: $data)';
+    return 'MakeIntegratedAddressParams(address: $address, data: $data)';
 }
 
 

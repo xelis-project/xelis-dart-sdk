@@ -26,16 +26,21 @@ $WalletNetworkInfoCopyWith<WalletNetworkInfo> get copyWith => _$WalletNetworkInf
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is WalletNetworkInfo&&(identical(other.info, info) || other.info == info)&&(identical(other.connectedTo, connectedTo) || other.connectedTo == connectedTo)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as WalletNetworkInfo;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is WalletNetworkInfo&&(identical(other.info, _this.info) || other.info == _this.info)&&(identical(other.connectedTo, _this.connectedTo) || other.connectedTo == _this.connectedTo)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,info,connectedTo,extraFields);
+int get hashCode {
+  final _this = this as WalletNetworkInfo;
+  return Object.hash(runtimeType,_this.info,_this.connectedTo,_this.extraFields);
+}
 
 @override
 String toString() {
-  return 'WalletNetworkInfo(info: $info, connectedTo: $connectedTo, extraFields: $extraFields)';
+  final _this = this as WalletNetworkInfo;
+  return 'WalletNetworkInfo(info: ${_this.info}, connectedTo: ${_this.connectedTo}, extraFields: ${_this.extraFields})';
 }
 
 
@@ -244,16 +249,18 @@ _$WalletNetworkInfoCopyWith<_WalletNetworkInfo> get copyWith => __$WalletNetwork
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _WalletNetworkInfo&&(identical(other.info, info) || other.info == info)&&(identical(other.connectedTo, connectedTo) || other.connectedTo == connectedTo)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _WalletNetworkInfo&&(identical(other.info, info) || other.info == info)&&(identical(other.connectedTo, connectedTo) || other.connectedTo == connectedTo)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,info,connectedTo,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,info,connectedTo,extraFields);
+}
 
 @override
 String toString() {
-  return 'WalletNetworkInfo(info: $info, connectedTo: $connectedTo, extraFields: $extraFields)';
+    return 'WalletNetworkInfo(info: $info, connectedTo: $connectedTo, extraFields: $extraFields)';
 }
 
 

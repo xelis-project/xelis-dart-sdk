@@ -29,16 +29,21 @@ $GetBalanceAtTopoheightParamsCopyWith<GetBalanceAtTopoheightParams> get copyWith
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetBalanceAtTopoheightParams&&(identical(other.address, address) || other.address == address)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight));
+  final _this = this as GetBalanceAtTopoheightParams;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetBalanceAtTopoheightParams&&(identical(other.address, _this.address) || other.address == _this.address)&&(identical(other.asset, _this.asset) || other.asset == _this.asset)&&(identical(other.topoheight, _this.topoheight) || other.topoheight == _this.topoheight));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,address,asset,topoheight);
+int get hashCode {
+  final _this = this as GetBalanceAtTopoheightParams;
+  return Object.hash(runtimeType,_this.address,_this.asset,_this.topoheight);
+}
 
 @override
 String toString() {
-  return 'GetBalanceAtTopoheightParams(address: $address, asset: $asset, topoheight: $topoheight)';
+  final _this = this as GetBalanceAtTopoheightParams;
+  return 'GetBalanceAtTopoheightParams(address: ${_this.address}, asset: ${_this.asset}, topoheight: ${_this.topoheight})';
 }
 
 
@@ -232,16 +237,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetBalanceAtTopoheightParams&&(identical(other.address, address) || other.address == address)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetBalanceAtTopoheightParams&&(identical(other.address, address) || other.address == address)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,address,asset,topoheight);
+int get hashCode {
+    return Object.hash(runtimeType,address,asset,topoheight);
+}
 
 @override
 String toString() {
-  return 'GetBalanceAtTopoheightParams(address: $address, asset: $asset, topoheight: $topoheight)';
+    return 'GetBalanceAtTopoheightParams(address: $address, asset: $asset, topoheight: $topoheight)';
 }
 
 

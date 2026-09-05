@@ -26,16 +26,21 @@ $ContractDeployEventCopyWith<ContractDeployEvent> get copyWith => _$ContractDepl
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ContractDeployEvent&&(identical(other.contract, contract) || other.contract == contract)&&(identical(other.blockHash, blockHash) || other.blockHash == blockHash)&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as ContractDeployEvent;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ContractDeployEvent&&(identical(other.contract, _this.contract) || other.contract == _this.contract)&&(identical(other.blockHash, _this.blockHash) || other.blockHash == _this.blockHash)&&(identical(other.topoheight, _this.topoheight) || other.topoheight == _this.topoheight)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,contract,blockHash,topoheight,extraFields);
+int get hashCode {
+  final _this = this as ContractDeployEvent;
+  return Object.hash(runtimeType,_this.contract,_this.blockHash,_this.topoheight,_this.extraFields);
+}
 
 @override
 String toString() {
-  return 'ContractDeployEvent(contract: $contract, blockHash: $blockHash, topoheight: $topoheight, extraFields: $extraFields)';
+  final _this = this as ContractDeployEvent;
+  return 'ContractDeployEvent(contract: ${_this.contract}, blockHash: ${_this.blockHash}, topoheight: ${_this.topoheight}, extraFields: ${_this.extraFields})';
 }
 
 
@@ -237,16 +242,18 @@ _$ContractDeployEventCopyWith<_ContractDeployEvent> get copyWith => __$ContractD
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ContractDeployEvent&&(identical(other.contract, contract) || other.contract == contract)&&(identical(other.blockHash, blockHash) || other.blockHash == blockHash)&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _ContractDeployEvent&&(identical(other.contract, contract) || other.contract == contract)&&(identical(other.blockHash, blockHash) || other.blockHash == blockHash)&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,contract,blockHash,topoheight,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,contract,blockHash,topoheight,extraFields);
+}
 
 @override
 String toString() {
-  return 'ContractDeployEvent(contract: $contract, blockHash: $blockHash, topoheight: $topoheight, extraFields: $extraFields)';
+    return 'ContractDeployEvent(contract: $contract, blockHash: $blockHash, topoheight: $topoheight, extraFields: $extraFields)';
 }
 
 

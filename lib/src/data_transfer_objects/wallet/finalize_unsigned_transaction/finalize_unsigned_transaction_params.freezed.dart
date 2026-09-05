@@ -29,16 +29,21 @@ $FinalizeUnsignedTransactionParamsCopyWith<FinalizeUnsignedTransactionParams> ge
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is FinalizeUnsignedTransactionParams&&(identical(other.unsignedTransaction, unsignedTransaction) || other.unsignedTransaction == unsignedTransaction)&&const DeepCollectionEquality().equals(other.signatures, signatures)&&(identical(other.broadcast, broadcast) || other.broadcast == broadcast)&&(identical(other.txAsHex, txAsHex) || other.txAsHex == txAsHex));
+  final _this = this as FinalizeUnsignedTransactionParams;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is FinalizeUnsignedTransactionParams&&(identical(other.unsignedTransaction, _this.unsignedTransaction) || other.unsignedTransaction == _this.unsignedTransaction)&&const DeepCollectionEquality().equals(other.signatures, _this.signatures)&&(identical(other.broadcast, _this.broadcast) || other.broadcast == _this.broadcast)&&(identical(other.txAsHex, _this.txAsHex) || other.txAsHex == _this.txAsHex));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,unsignedTransaction,const DeepCollectionEquality().hash(signatures),broadcast,txAsHex);
+int get hashCode {
+  final _this = this as FinalizeUnsignedTransactionParams;
+  return Object.hash(runtimeType,_this.unsignedTransaction,const DeepCollectionEquality().hash(_this.signatures),_this.broadcast,_this.txAsHex);
+}
 
 @override
 String toString() {
-  return 'FinalizeUnsignedTransactionParams(unsignedTransaction: $unsignedTransaction, signatures: $signatures, broadcast: $broadcast, txAsHex: $txAsHex)';
+  final _this = this as FinalizeUnsignedTransactionParams;
+  return 'FinalizeUnsignedTransactionParams(unsignedTransaction: ${_this.unsignedTransaction}, signatures: ${_this.signatures}, broadcast: ${_this.broadcast}, txAsHex: ${_this.txAsHex})';
 }
 
 
@@ -242,16 +247,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _FinalizeUnsignedTransactionParams&&(identical(other.unsignedTransaction, unsignedTransaction) || other.unsignedTransaction == unsignedTransaction)&&const DeepCollectionEquality().equals(other._signatures, _signatures)&&(identical(other.broadcast, broadcast) || other.broadcast == broadcast)&&(identical(other.txAsHex, txAsHex) || other.txAsHex == txAsHex));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _FinalizeUnsignedTransactionParams&&(identical(other.unsignedTransaction, unsignedTransaction) || other.unsignedTransaction == unsignedTransaction)&&const DeepCollectionEquality().equals(other.signatures, _signatures)&&(identical(other.broadcast, broadcast) || other.broadcast == broadcast)&&(identical(other.txAsHex, txAsHex) || other.txAsHex == txAsHex));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,unsignedTransaction,const DeepCollectionEquality().hash(_signatures),broadcast,txAsHex);
+int get hashCode {
+    return Object.hash(runtimeType,unsignedTransaction,const DeepCollectionEquality().hash(_signatures),broadcast,txAsHex);
+}
 
 @override
 String toString() {
-  return 'FinalizeUnsignedTransactionParams(unsignedTransaction: $unsignedTransaction, signatures: $signatures, broadcast: $broadcast, txAsHex: $txAsHex)';
+    return 'FinalizeUnsignedTransactionParams(unsignedTransaction: $unsignedTransaction, signatures: $signatures, broadcast: $broadcast, txAsHex: $txAsHex)';
 }
 
 

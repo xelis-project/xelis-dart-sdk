@@ -29,16 +29,21 @@ $IsAccountRegisteredParamsCopyWith<IsAccountRegisteredParams> get copyWith => _$
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is IsAccountRegisteredParams&&(identical(other.address, address) || other.address == address)&&(identical(other.inStableHeight, inStableHeight) || other.inStableHeight == inStableHeight));
+  final _this = this as IsAccountRegisteredParams;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is IsAccountRegisteredParams&&(identical(other.address, _this.address) || other.address == _this.address)&&(identical(other.inStableHeight, _this.inStableHeight) || other.inStableHeight == _this.inStableHeight));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,address,inStableHeight);
+int get hashCode {
+  final _this = this as IsAccountRegisteredParams;
+  return Object.hash(runtimeType,_this.address,_this.inStableHeight);
+}
 
 @override
 String toString() {
-  return 'IsAccountRegisteredParams(address: $address, inStableHeight: $inStableHeight)';
+  final _this = this as IsAccountRegisteredParams;
+  return 'IsAccountRegisteredParams(address: ${_this.address}, inStableHeight: ${_this.inStableHeight})';
 }
 
 
@@ -230,16 +235,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _IsAccountRegisteredParams&&(identical(other.address, address) || other.address == address)&&(identical(other.inStableHeight, inStableHeight) || other.inStableHeight == inStableHeight));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _IsAccountRegisteredParams&&(identical(other.address, address) || other.address == address)&&(identical(other.inStableHeight, inStableHeight) || other.inStableHeight == inStableHeight));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,address,inStableHeight);
+int get hashCode {
+    return Object.hash(runtimeType,address,inStableHeight);
+}
 
 @override
 String toString() {
-  return 'IsAccountRegisteredParams(address: $address, inStableHeight: $inStableHeight)';
+    return 'IsAccountRegisteredParams(address: $address, inStableHeight: $inStableHeight)';
 }
 
 

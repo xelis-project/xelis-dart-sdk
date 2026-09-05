@@ -26,16 +26,21 @@ $RpcScheduledExecutionCopyWith<RpcScheduledExecution> get copyWith => _$RpcSched
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcScheduledExecution&&(identical(other.hash, hash) || other.hash == hash)&&(identical(other.contract, contract) || other.contract == contract)&&(identical(other.chunkId, chunkId) || other.chunkId == chunkId)&&const DeepCollectionEquality().equals(other.params, params)&&(identical(other.maxGas, maxGas) || other.maxGas == maxGas)&&(identical(other.kind, kind) || other.kind == kind)&&const DeepCollectionEquality().equals(other.gasSources, gasSources)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as RpcScheduledExecution;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcScheduledExecution&&(identical(other.hash, _this.hash) || other.hash == _this.hash)&&(identical(other.contract, _this.contract) || other.contract == _this.contract)&&(identical(other.chunkId, _this.chunkId) || other.chunkId == _this.chunkId)&&const DeepCollectionEquality().equals(other.params, _this.params)&&(identical(other.maxGas, _this.maxGas) || other.maxGas == _this.maxGas)&&(identical(other.kind, _this.kind) || other.kind == _this.kind)&&const DeepCollectionEquality().equals(other.gasSources, _this.gasSources)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,hash,contract,chunkId,const DeepCollectionEquality().hash(params),maxGas,kind,const DeepCollectionEquality().hash(gasSources),extraFields);
+int get hashCode {
+  final _this = this as RpcScheduledExecution;
+  return Object.hash(runtimeType,_this.hash,_this.contract,_this.chunkId,const DeepCollectionEquality().hash(_this.params),_this.maxGas,_this.kind,const DeepCollectionEquality().hash(_this.gasSources),_this.extraFields);
+}
 
 @override
 String toString() {
-  return 'RpcScheduledExecution(hash: $hash, contract: $contract, chunkId: $chunkId, params: $params, maxGas: $maxGas, kind: $kind, gasSources: $gasSources, extraFields: $extraFields)';
+  final _this = this as RpcScheduledExecution;
+  return 'RpcScheduledExecution(hash: ${_this.hash}, contract: ${_this.contract}, chunkId: ${_this.chunkId}, params: ${_this.params}, maxGas: ${_this.maxGas}, kind: ${_this.kind}, gasSources: ${_this.gasSources}, extraFields: ${_this.extraFields})';
 }
 
 
@@ -266,16 +271,18 @@ _$RpcScheduledExecutionCopyWith<_RpcScheduledExecution> get copyWith => __$RpcSc
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RpcScheduledExecution&&(identical(other.hash, hash) || other.hash == hash)&&(identical(other.contract, contract) || other.contract == contract)&&(identical(other.chunkId, chunkId) || other.chunkId == chunkId)&&const DeepCollectionEquality().equals(other._params, _params)&&(identical(other.maxGas, maxGas) || other.maxGas == maxGas)&&(identical(other.kind, kind) || other.kind == kind)&&const DeepCollectionEquality().equals(other._gasSources, _gasSources)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _RpcScheduledExecution&&(identical(other.hash, hash) || other.hash == hash)&&(identical(other.contract, contract) || other.contract == contract)&&(identical(other.chunkId, chunkId) || other.chunkId == chunkId)&&const DeepCollectionEquality().equals(other.params, _params)&&(identical(other.maxGas, maxGas) || other.maxGas == maxGas)&&(identical(other.kind, kind) || other.kind == kind)&&const DeepCollectionEquality().equals(other.gasSources, _gasSources)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,hash,contract,chunkId,const DeepCollectionEquality().hash(_params),maxGas,kind,const DeepCollectionEquality().hash(_gasSources),extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,hash,contract,chunkId,const DeepCollectionEquality().hash(_params),maxGas,kind,const DeepCollectionEquality().hash(_gasSources),extraFields);
+}
 
 @override
 String toString() {
-  return 'RpcScheduledExecution(hash: $hash, contract: $contract, chunkId: $chunkId, params: $params, maxGas: $maxGas, kind: $kind, gasSources: $gasSources, extraFields: $extraFields)';
+    return 'RpcScheduledExecution(hash: $hash, contract: $contract, chunkId: $chunkId, params: $params, maxGas: $maxGas, kind: $kind, gasSources: $gasSources, extraFields: $extraFields)';
 }
 
 

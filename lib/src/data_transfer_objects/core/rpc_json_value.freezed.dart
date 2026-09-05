@@ -21,7 +21,7 @@ mixin _$RpcJsonValue {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcJsonValue);
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcJsonValue);
 }
 
 
@@ -212,7 +212,7 @@ class RpcJsonNullValue extends RpcJsonValue {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcJsonNullValue);
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcJsonNullValue);
 }
 
 
@@ -245,12 +245,14 @@ $RpcJsonBooleanCopyWith<RpcJsonBoolean> get copyWith => _$RpcJsonBooleanCopyWith
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcJsonBoolean&&(identical(other.value, value) || other.value == value));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcJsonBoolean&&(identical(other.value, value) || other.value == value));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,value);
+int get hashCode {
+    return Object.hash(runtimeType,value);
+}
 
 
 
@@ -307,12 +309,14 @@ $RpcJsonIntegerCopyWith<RpcJsonInteger> get copyWith => _$RpcJsonIntegerCopyWith
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcJsonInteger&&(identical(other.value, value) || other.value == value));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcJsonInteger&&(identical(other.value, value) || other.value == value));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,value);
+int get hashCode {
+    return Object.hash(runtimeType,value);
+}
 
 
 
@@ -369,12 +373,14 @@ $RpcJsonNumberCopyWith<RpcJsonNumber> get copyWith => _$RpcJsonNumberCopyWithImp
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcJsonNumber&&(identical(other.value, value) || other.value == value));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcJsonNumber&&(identical(other.value, value) || other.value == value));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,value);
+int get hashCode {
+    return Object.hash(runtimeType,value);
+}
 
 
 
@@ -431,12 +437,14 @@ $RpcJsonStringCopyWith<RpcJsonString> get copyWith => _$RpcJsonStringCopyWithImp
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcJsonString&&(identical(other.value, value) || other.value == value));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcJsonString&&(identical(other.value, value) || other.value == value));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,value);
+int get hashCode {
+    return Object.hash(runtimeType,value);
+}
 
 
 
@@ -499,12 +507,14 @@ $RpcJsonArrayCopyWith<RpcJsonArray> get copyWith => _$RpcJsonArrayCopyWithImpl<R
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcJsonArray&&const DeepCollectionEquality().equals(other._values, _values));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcJsonArray&&const DeepCollectionEquality().equals(other.values, _values));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_values));
+int get hashCode {
+    return Object.hash(runtimeType,const DeepCollectionEquality().hash(_values));
+}
 
 
 
@@ -567,12 +577,14 @@ $RpcJsonObjectCopyWith<RpcJsonObject> get copyWith => _$RpcJsonObjectCopyWithImp
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcJsonObject&&const DeepCollectionEquality().equals(other._values, _values));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcJsonObject&&const DeepCollectionEquality().equals(other.values, _values));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_values));
+int get hashCode {
+    return Object.hash(runtimeType,const DeepCollectionEquality().hash(_values));
+}
 
 
 

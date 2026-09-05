@@ -29,16 +29,21 @@ $ValidateAddressResultCopyWith<ValidateAddressResult> get copyWith => _$Validate
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ValidateAddressResult&&(identical(other.isValid, isValid) || other.isValid == isValid)&&(identical(other.isIntegrated, isIntegrated) || other.isIntegrated == isIntegrated)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as ValidateAddressResult;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ValidateAddressResult&&(identical(other.isValid, _this.isValid) || other.isValid == _this.isValid)&&(identical(other.isIntegrated, _this.isIntegrated) || other.isIntegrated == _this.isIntegrated)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,isValid,isIntegrated,extraFields);
+int get hashCode {
+  final _this = this as ValidateAddressResult;
+  return Object.hash(runtimeType,_this.isValid,_this.isIntegrated,_this.extraFields);
+}
 
 @override
 String toString() {
-  return 'ValidateAddressResult(isValid: $isValid, isIntegrated: $isIntegrated, extraFields: $extraFields)';
+  final _this = this as ValidateAddressResult;
+  return 'ValidateAddressResult(isValid: ${_this.isValid}, isIntegrated: ${_this.isIntegrated}, extraFields: ${_this.extraFields})';
 }
 
 
@@ -241,16 +246,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ValidateAddressResult&&(identical(other.isValid, isValid) || other.isValid == isValid)&&(identical(other.isIntegrated, isIntegrated) || other.isIntegrated == isIntegrated)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _ValidateAddressResult&&(identical(other.isValid, isValid) || other.isValid == isValid)&&(identical(other.isIntegrated, isIntegrated) || other.isIntegrated == isIntegrated)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,isValid,isIntegrated,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,isValid,isIntegrated,extraFields);
+}
 
 @override
 String toString() {
-  return 'ValidateAddressResult(isValid: $isValid, isIntegrated: $isIntegrated, extraFields: $extraFields)';
+    return 'ValidateAddressResult(isValid: $isValid, isIntegrated: $isIntegrated, extraFields: $extraFields)';
 }
 
 

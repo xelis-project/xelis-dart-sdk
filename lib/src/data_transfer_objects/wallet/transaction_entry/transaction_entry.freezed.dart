@@ -26,16 +26,21 @@ $TransactionEntryCopyWith<TransactionEntry> get copyWith => _$TransactionEntryCo
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is TransactionEntry&&(identical(other.hash, hash) || other.hash == hash)&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&(identical(other.txEntryType, txEntryType) || other.txEntryType == txEntryType)&&(identical(other.timestamp, timestamp) || other.timestamp == timestamp)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as TransactionEntry;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is TransactionEntry&&(identical(other.hash, _this.hash) || other.hash == _this.hash)&&(identical(other.topoheight, _this.topoheight) || other.topoheight == _this.topoheight)&&(identical(other.txEntryType, _this.txEntryType) || other.txEntryType == _this.txEntryType)&&(identical(other.timestamp, _this.timestamp) || other.timestamp == _this.timestamp)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,hash,topoheight,txEntryType,timestamp,extraFields);
+int get hashCode {
+  final _this = this as TransactionEntry;
+  return Object.hash(runtimeType,_this.hash,_this.topoheight,_this.txEntryType,_this.timestamp,_this.extraFields);
+}
 
 @override
 String toString() {
-  return 'TransactionEntry(hash: $hash, topoheight: $topoheight, txEntryType: $txEntryType, timestamp: $timestamp, extraFields: $extraFields)';
+  final _this = this as TransactionEntry;
+  return 'TransactionEntry(hash: ${_this.hash}, topoheight: ${_this.topoheight}, txEntryType: ${_this.txEntryType}, timestamp: ${_this.timestamp}, extraFields: ${_this.extraFields})';
 }
 
 
@@ -248,16 +253,18 @@ _$TransactionEntryCopyWith<_TransactionEntry> get copyWith => __$TransactionEntr
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _TransactionEntry&&(identical(other.hash, hash) || other.hash == hash)&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&(identical(other.txEntryType, txEntryType) || other.txEntryType == txEntryType)&&(identical(other.timestamp, timestamp) || other.timestamp == timestamp)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _TransactionEntry&&(identical(other.hash, hash) || other.hash == hash)&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&(identical(other.txEntryType, txEntryType) || other.txEntryType == txEntryType)&&(identical(other.timestamp, timestamp) || other.timestamp == timestamp)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,hash,topoheight,txEntryType,timestamp,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,hash,topoheight,txEntryType,timestamp,extraFields);
+}
 
 @override
 String toString() {
-  return 'TransactionEntry(hash: $hash, topoheight: $topoheight, txEntryType: $txEntryType, timestamp: $timestamp, extraFields: $extraFields)';
+    return 'TransactionEntry(hash: $hash, topoheight: $topoheight, txEntryType: $txEntryType, timestamp: $timestamp, extraFields: $extraFields)';
 }
 
 

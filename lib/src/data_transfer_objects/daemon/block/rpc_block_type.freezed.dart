@@ -21,7 +21,7 @@ mixin _$RpcBlockType {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcBlockType);
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcBlockType);
 }
 
 
@@ -30,7 +30,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'RpcBlockType()';
+    return 'RpcBlockType()';
 }
 
 
@@ -204,7 +204,7 @@ class RpcSyncBlockType extends RpcBlockType {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcSyncBlockType);
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcSyncBlockType);
 }
 
 
@@ -213,7 +213,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'RpcBlockType.sync()';
+    return 'RpcBlockType.sync()';
 }
 
 
@@ -236,7 +236,7 @@ class RpcSideBlockType extends RpcBlockType {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcSideBlockType);
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcSideBlockType);
 }
 
 
@@ -245,7 +245,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'RpcBlockType.side()';
+    return 'RpcBlockType.side()';
 }
 
 
@@ -268,7 +268,7 @@ class RpcOrphanedBlockType extends RpcBlockType {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcOrphanedBlockType);
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcOrphanedBlockType);
 }
 
 
@@ -277,7 +277,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'RpcBlockType.orphaned()';
+    return 'RpcBlockType.orphaned()';
 }
 
 
@@ -300,7 +300,7 @@ class RpcNormalBlockType extends RpcBlockType {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcNormalBlockType);
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcNormalBlockType);
 }
 
 
@@ -309,7 +309,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'RpcBlockType.normal()';
+    return 'RpcBlockType.normal()';
 }
 
 
@@ -337,16 +337,18 @@ $RpcUnknownBlockTypeCopyWith<RpcUnknownBlockType> get copyWith => _$RpcUnknownBl
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcUnknownBlockType&&(identical(other.wireValue, wireValue) || other.wireValue == wireValue));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcUnknownBlockType&&(identical(other.wireValue, wireValue) || other.wireValue == wireValue));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,wireValue);
+int get hashCode {
+    return Object.hash(runtimeType,wireValue);
+}
 
 @override
 String toString() {
-  return 'RpcBlockType.unknown(wireValue: $wireValue)';
+    return 'RpcBlockType.unknown(wireValue: $wireValue)';
 }
 
 

@@ -29,16 +29,21 @@ $TransferPayloadCopyWith<TransferPayload> get copyWith => _$TransferPayloadCopyW
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is TransferPayload&&(identical(other.asset, asset) || other.asset == asset)&&const DeepCollectionEquality().equals(other.commitment, commitment)&&(identical(other.validityProof, validityProof) || other.validityProof == validityProof)&&(identical(other.destination, destination) || other.destination == destination)&&const DeepCollectionEquality().equals(other.receiverHandle, receiverHandle)&&const DeepCollectionEquality().equals(other.senderHandle, senderHandle)&&(identical(other.extraData, extraData) || other.extraData == extraData));
+  final _this = this as TransferPayload;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is TransferPayload&&(identical(other.asset, _this.asset) || other.asset == _this.asset)&&const DeepCollectionEquality().equals(other.commitment, _this.commitment)&&(identical(other.validityProof, _this.validityProof) || other.validityProof == _this.validityProof)&&(identical(other.destination, _this.destination) || other.destination == _this.destination)&&const DeepCollectionEquality().equals(other.receiverHandle, _this.receiverHandle)&&const DeepCollectionEquality().equals(other.senderHandle, _this.senderHandle)&&(identical(other.extraData, _this.extraData) || other.extraData == _this.extraData));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,asset,const DeepCollectionEquality().hash(commitment),validityProof,destination,const DeepCollectionEquality().hash(receiverHandle),const DeepCollectionEquality().hash(senderHandle),extraData);
+int get hashCode {
+  final _this = this as TransferPayload;
+  return Object.hash(runtimeType,_this.asset,const DeepCollectionEquality().hash(_this.commitment),_this.validityProof,_this.destination,const DeepCollectionEquality().hash(_this.receiverHandle),const DeepCollectionEquality().hash(_this.senderHandle),_this.extraData);
+}
 
 @override
 String toString() {
-  return 'TransferPayload(asset: $asset, commitment: $commitment, validityProof: $validityProof, destination: $destination, receiverHandle: $receiverHandle, senderHandle: $senderHandle, extraData: $extraData)';
+  final _this = this as TransferPayload;
+  return 'TransferPayload(asset: ${_this.asset}, commitment: ${_this.commitment}, validityProof: ${_this.validityProof}, destination: ${_this.destination}, receiverHandle: ${_this.receiverHandle}, senderHandle: ${_this.senderHandle}, extraData: ${_this.extraData})';
 }
 
 
@@ -288,16 +293,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _TransferPayload&&(identical(other.asset, asset) || other.asset == asset)&&const DeepCollectionEquality().equals(other._commitment, _commitment)&&(identical(other.validityProof, validityProof) || other.validityProof == validityProof)&&(identical(other.destination, destination) || other.destination == destination)&&const DeepCollectionEquality().equals(other._receiverHandle, _receiverHandle)&&const DeepCollectionEquality().equals(other._senderHandle, _senderHandle)&&(identical(other.extraData, extraData) || other.extraData == extraData));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _TransferPayload&&(identical(other.asset, asset) || other.asset == asset)&&const DeepCollectionEquality().equals(other.commitment, _commitment)&&(identical(other.validityProof, validityProof) || other.validityProof == validityProof)&&(identical(other.destination, destination) || other.destination == destination)&&const DeepCollectionEquality().equals(other.receiverHandle, _receiverHandle)&&const DeepCollectionEquality().equals(other.senderHandle, _senderHandle)&&(identical(other.extraData, extraData) || other.extraData == extraData));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,asset,const DeepCollectionEquality().hash(_commitment),validityProof,destination,const DeepCollectionEquality().hash(_receiverHandle),const DeepCollectionEquality().hash(_senderHandle),extraData);
+int get hashCode {
+    return Object.hash(runtimeType,asset,const DeepCollectionEquality().hash(_commitment),validityProof,destination,const DeepCollectionEquality().hash(_receiverHandle),const DeepCollectionEquality().hash(_senderHandle),extraData);
+}
 
 @override
 String toString() {
-  return 'TransferPayload(asset: $asset, commitment: $commitment, validityProof: $validityProof, destination: $destination, receiverHandle: $receiverHandle, senderHandle: $senderHandle, extraData: $extraData)';
+    return 'TransferPayload(asset: $asset, commitment: $commitment, validityProof: $validityProof, destination: $destination, receiverHandle: $receiverHandle, senderHandle: $senderHandle, extraData: $extraData)';
 }
 
 

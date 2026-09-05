@@ -29,16 +29,21 @@ $IsTxExecutedInBlockParamsCopyWith<IsTxExecutedInBlockParams> get copyWith => _$
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is IsTxExecutedInBlockParams&&(identical(other.txHash, txHash) || other.txHash == txHash)&&(identical(other.blockHash, blockHash) || other.blockHash == blockHash));
+  final _this = this as IsTxExecutedInBlockParams;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is IsTxExecutedInBlockParams&&(identical(other.txHash, _this.txHash) || other.txHash == _this.txHash)&&(identical(other.blockHash, _this.blockHash) || other.blockHash == _this.blockHash));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,txHash,blockHash);
+int get hashCode {
+  final _this = this as IsTxExecutedInBlockParams;
+  return Object.hash(runtimeType,_this.txHash,_this.blockHash);
+}
 
 @override
 String toString() {
-  return 'IsTxExecutedInBlockParams(txHash: $txHash, blockHash: $blockHash)';
+  final _this = this as IsTxExecutedInBlockParams;
+  return 'IsTxExecutedInBlockParams(txHash: ${_this.txHash}, blockHash: ${_this.blockHash})';
 }
 
 
@@ -230,16 +235,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _IsTxExecutedInBlockParams&&(identical(other.txHash, txHash) || other.txHash == txHash)&&(identical(other.blockHash, blockHash) || other.blockHash == blockHash));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _IsTxExecutedInBlockParams&&(identical(other.txHash, txHash) || other.txHash == txHash)&&(identical(other.blockHash, blockHash) || other.blockHash == blockHash));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,txHash,blockHash);
+int get hashCode {
+    return Object.hash(runtimeType,txHash,blockHash);
+}
 
 @override
 String toString() {
-  return 'IsTxExecutedInBlockParams(txHash: $txHash, blockHash: $blockHash)';
+    return 'IsTxExecutedInBlockParams(txHash: $txHash, blockHash: $blockHash)';
 }
 
 

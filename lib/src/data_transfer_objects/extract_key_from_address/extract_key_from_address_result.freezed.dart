@@ -21,7 +21,7 @@ mixin _$ExtractKeyFromAddressResult {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ExtractKeyFromAddressResult);
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is ExtractKeyFromAddressResult);
 }
 
 
@@ -199,12 +199,14 @@ $ExtractKeyBytesResultCopyWith<ExtractKeyBytesResult> get copyWith => _$ExtractK
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ExtractKeyBytesResult&&const DeepCollectionEquality().equals(other._value, _value));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is ExtractKeyBytesResult&&const DeepCollectionEquality().equals(other.value, _value));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_value));
+int get hashCode {
+    return Object.hash(runtimeType,const DeepCollectionEquality().hash(_value));
+}
 
 
 
@@ -261,12 +263,14 @@ $ExtractKeyHexResultCopyWith<ExtractKeyHexResult> get copyWith => _$ExtractKeyHe
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ExtractKeyHexResult&&(identical(other.value, value) || other.value == value));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is ExtractKeyHexResult&&(identical(other.value, value) || other.value == value));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,value);
+int get hashCode {
+    return Object.hash(runtimeType,value);
+}
 
 
 
@@ -324,12 +328,14 @@ $ExtractKeyUnknownResultCopyWith<ExtractKeyUnknownResult> get copyWith => _$Extr
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ExtractKeyUnknownResult&&(identical(other.type, type) || other.type == type)&&(identical(other.wireValue, wireValue) || other.wireValue == wireValue));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is ExtractKeyUnknownResult&&(identical(other.type, type) || other.type == type)&&(identical(other.wireValue, wireValue) || other.wireValue == wireValue));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,type,wireValue);
+int get hashCode {
+    return Object.hash(runtimeType,type,wireValue);
+}
 
 
 

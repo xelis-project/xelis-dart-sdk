@@ -29,16 +29,21 @@ $DevFeeThresholdsCopyWith<DevFeeThresholds> get copyWith => _$DevFeeThresholdsCo
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is DevFeeThresholds&&(identical(other.height, height) || other.height == height)&&(identical(other.feePercentage, feePercentage) || other.feePercentage == feePercentage)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as DevFeeThresholds;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is DevFeeThresholds&&(identical(other.height, _this.height) || other.height == _this.height)&&(identical(other.feePercentage, _this.feePercentage) || other.feePercentage == _this.feePercentage)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,height,feePercentage,extraFields);
+int get hashCode {
+  final _this = this as DevFeeThresholds;
+  return Object.hash(runtimeType,_this.height,_this.feePercentage,_this.extraFields);
+}
 
 @override
 String toString() {
-  return 'DevFeeThresholds(height: $height, feePercentage: $feePercentage, extraFields: $extraFields)';
+  final _this = this as DevFeeThresholds;
+  return 'DevFeeThresholds(height: ${_this.height}, feePercentage: ${_this.feePercentage}, extraFields: ${_this.extraFields})';
 }
 
 
@@ -241,16 +246,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _DevFeeThresholds&&(identical(other.height, height) || other.height == height)&&(identical(other.feePercentage, feePercentage) || other.feePercentage == feePercentage)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _DevFeeThresholds&&(identical(other.height, height) || other.height == height)&&(identical(other.feePercentage, feePercentage) || other.feePercentage == feePercentage)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,height,feePercentage,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,height,feePercentage,extraFields);
+}
 
 @override
 String toString() {
-  return 'DevFeeThresholds(height: $height, feePercentage: $feePercentage, extraFields: $extraFields)';
+    return 'DevFeeThresholds(height: $height, feePercentage: $feePercentage, extraFields: $extraFields)';
 }
 
 

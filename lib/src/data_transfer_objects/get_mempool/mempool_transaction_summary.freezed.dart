@@ -29,16 +29,21 @@ $MempoolTransactionSummaryCopyWith<MempoolTransactionSummary> get copyWith => _$
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is MempoolTransactionSummary&&(identical(other.hash, hash) || other.hash == hash)&&(identical(other.source, source) || other.source == source)&&(identical(other.fee, fee) || other.fee == fee)&&(identical(other.firstSeen, firstSeen) || other.firstSeen == firstSeen)&&(identical(other.size, size) || other.size == size)&&(identical(other.feePerKb, feePerKb) || other.feePerKb == feePerKb)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as MempoolTransactionSummary;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is MempoolTransactionSummary&&(identical(other.hash, _this.hash) || other.hash == _this.hash)&&(identical(other.source, _this.source) || other.source == _this.source)&&(identical(other.fee, _this.fee) || other.fee == _this.fee)&&(identical(other.firstSeen, _this.firstSeen) || other.firstSeen == _this.firstSeen)&&(identical(other.size, _this.size) || other.size == _this.size)&&(identical(other.feePerKb, _this.feePerKb) || other.feePerKb == _this.feePerKb)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,hash,source,fee,firstSeen,size,feePerKb,extraFields);
+int get hashCode {
+  final _this = this as MempoolTransactionSummary;
+  return Object.hash(runtimeType,_this.hash,_this.source,_this.fee,_this.firstSeen,_this.size,_this.feePerKb,_this.extraFields);
+}
 
 @override
 String toString() {
-  return 'MempoolTransactionSummary(hash: $hash, source: $source, fee: $fee, firstSeen: $firstSeen, size: $size, feePerKb: $feePerKb, extraFields: $extraFields)';
+  final _this = this as MempoolTransactionSummary;
+  return 'MempoolTransactionSummary(hash: ${_this.hash}, source: ${_this.source}, fee: ${_this.fee}, firstSeen: ${_this.firstSeen}, size: ${_this.size}, feePerKb: ${_this.feePerKb}, extraFields: ${_this.extraFields})';
 }
 
 
@@ -249,16 +254,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _MempoolTransactionSummary&&(identical(other.hash, hash) || other.hash == hash)&&(identical(other.source, source) || other.source == source)&&(identical(other.fee, fee) || other.fee == fee)&&(identical(other.firstSeen, firstSeen) || other.firstSeen == firstSeen)&&(identical(other.size, size) || other.size == size)&&(identical(other.feePerKb, feePerKb) || other.feePerKb == feePerKb)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _MempoolTransactionSummary&&(identical(other.hash, hash) || other.hash == hash)&&(identical(other.source, source) || other.source == source)&&(identical(other.fee, fee) || other.fee == fee)&&(identical(other.firstSeen, firstSeen) || other.firstSeen == firstSeen)&&(identical(other.size, size) || other.size == size)&&(identical(other.feePerKb, feePerKb) || other.feePerKb == feePerKb)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,hash,source,fee,firstSeen,size,feePerKb,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,hash,source,fee,firstSeen,size,feePerKb,extraFields);
+}
 
 @override
 String toString() {
-  return 'MempoolTransactionSummary(hash: $hash, source: $source, fee: $fee, firstSeen: $firstSeen, size: $size, feePerKb: $feePerKb, extraFields: $extraFields)';
+    return 'MempoolTransactionSummary(hash: $hash, source: $source, fee: $fee, firstSeen: $firstSeen, size: $size, feePerKb: $feePerKb, extraFields: $extraFields)';
 }
 
 

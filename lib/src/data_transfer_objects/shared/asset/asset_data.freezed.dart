@@ -29,16 +29,21 @@ $AssetDataCopyWith<AssetData> get copyWith => _$AssetDataCopyWithImpl<AssetData>
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AssetData&&(identical(other.decimals, decimals) || other.decimals == decimals)&&(identical(other.name, name) || other.name == name)&&(identical(other.ticker, ticker) || other.ticker == ticker)&&(identical(other.maxSupply, maxSupply) || other.maxSupply == maxSupply)&&(identical(other.owner, owner) || other.owner == owner)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as AssetData;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AssetData&&(identical(other.decimals, _this.decimals) || other.decimals == _this.decimals)&&(identical(other.name, _this.name) || other.name == _this.name)&&(identical(other.ticker, _this.ticker) || other.ticker == _this.ticker)&&(identical(other.maxSupply, _this.maxSupply) || other.maxSupply == _this.maxSupply)&&(identical(other.owner, _this.owner) || other.owner == _this.owner)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,decimals,name,ticker,maxSupply,owner,extraFields);
+int get hashCode {
+  final _this = this as AssetData;
+  return Object.hash(runtimeType,_this.decimals,_this.name,_this.ticker,_this.maxSupply,_this.owner,_this.extraFields);
+}
 
 @override
 String toString() {
-  return 'AssetData(decimals: $decimals, name: $name, ticker: $ticker, maxSupply: $maxSupply, owner: $owner, extraFields: $extraFields)';
+  final _this = this as AssetData;
+  return 'AssetData(decimals: ${_this.decimals}, name: ${_this.name}, ticker: ${_this.ticker}, maxSupply: ${_this.maxSupply}, owner: ${_this.owner}, extraFields: ${_this.extraFields})';
 }
 
 
@@ -265,16 +270,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AssetData&&(identical(other.decimals, decimals) || other.decimals == decimals)&&(identical(other.name, name) || other.name == name)&&(identical(other.ticker, ticker) || other.ticker == ticker)&&(identical(other.maxSupply, maxSupply) || other.maxSupply == maxSupply)&&(identical(other.owner, owner) || other.owner == owner)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _AssetData&&(identical(other.decimals, decimals) || other.decimals == decimals)&&(identical(other.name, name) || other.name == name)&&(identical(other.ticker, ticker) || other.ticker == ticker)&&(identical(other.maxSupply, maxSupply) || other.maxSupply == maxSupply)&&(identical(other.owner, owner) || other.owner == owner)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,decimals,name,ticker,maxSupply,owner,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,decimals,name,ticker,maxSupply,owner,extraFields);
+}
 
 @override
 String toString() {
-  return 'AssetData(decimals: $decimals, name: $name, ticker: $ticker, maxSupply: $maxSupply, owner: $owner, extraFields: $extraFields)';
+    return 'AssetData(decimals: $decimals, name: $name, ticker: $ticker, maxSupply: $maxSupply, owner: $owner, extraFields: $extraFields)';
 }
 
 

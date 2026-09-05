@@ -29,16 +29,21 @@ $GetPeersResultCopyWith<GetPeersResult> get copyWith => _$GetPeersResultCopyWith
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetPeersResult&&const DeepCollectionEquality().equals(other.peers, peers)&&(identical(other.totalPeers, totalPeers) || other.totalPeers == totalPeers)&&(identical(other.hiddenPeers, hiddenPeers) || other.hiddenPeers == hiddenPeers)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as GetPeersResult;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetPeersResult&&const DeepCollectionEquality().equals(other.peers, _this.peers)&&(identical(other.totalPeers, _this.totalPeers) || other.totalPeers == _this.totalPeers)&&(identical(other.hiddenPeers, _this.hiddenPeers) || other.hiddenPeers == _this.hiddenPeers)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(peers),totalPeers,hiddenPeers,extraFields);
+int get hashCode {
+  final _this = this as GetPeersResult;
+  return Object.hash(runtimeType,const DeepCollectionEquality().hash(_this.peers),_this.totalPeers,_this.hiddenPeers,_this.extraFields);
+}
 
 @override
 String toString() {
-  return 'GetPeersResult(peers: $peers, totalPeers: $totalPeers, hiddenPeers: $hiddenPeers, extraFields: $extraFields)';
+  final _this = this as GetPeersResult;
+  return 'GetPeersResult(peers: ${_this.peers}, totalPeers: ${_this.totalPeers}, hiddenPeers: ${_this.hiddenPeers}, extraFields: ${_this.extraFields})';
 }
 
 
@@ -249,16 +254,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetPeersResult&&const DeepCollectionEquality().equals(other._peers, _peers)&&(identical(other.totalPeers, totalPeers) || other.totalPeers == totalPeers)&&(identical(other.hiddenPeers, hiddenPeers) || other.hiddenPeers == hiddenPeers)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetPeersResult&&const DeepCollectionEquality().equals(other.peers, _peers)&&(identical(other.totalPeers, totalPeers) || other.totalPeers == totalPeers)&&(identical(other.hiddenPeers, hiddenPeers) || other.hiddenPeers == hiddenPeers)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_peers),totalPeers,hiddenPeers,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,const DeepCollectionEquality().hash(_peers),totalPeers,hiddenPeers,extraFields);
+}
 
 @override
 String toString() {
-  return 'GetPeersResult(peers: $peers, totalPeers: $totalPeers, hiddenPeers: $hiddenPeers, extraFields: $extraFields)';
+    return 'GetPeersResult(peers: $peers, totalPeers: $totalPeers, hiddenPeers: $hiddenPeers, extraFields: $extraFields)';
 }
 
 

@@ -26,16 +26,21 @@ $SimulateContractInvokeRequestCopyWith<SimulateContractInvokeRequest> get copyWi
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is SimulateContractInvokeRequest&&(identical(other.source, source) || other.source == source)&&(identical(other.contract, contract) || other.contract == contract)&&const DeepCollectionEquality().equals(other.deposits, deposits)&&(identical(other.entryId, entryId) || other.entryId == entryId)&&const DeepCollectionEquality().equals(other.parameters, parameters)&&(identical(other.permission, permission) || other.permission == permission));
+  final _this = this as SimulateContractInvokeRequest;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is SimulateContractInvokeRequest&&(identical(other.source, _this.source) || other.source == _this.source)&&(identical(other.contract, _this.contract) || other.contract == _this.contract)&&const DeepCollectionEquality().equals(other.deposits, _this.deposits)&&(identical(other.entryId, _this.entryId) || other.entryId == _this.entryId)&&const DeepCollectionEquality().equals(other.parameters, _this.parameters)&&(identical(other.permission, _this.permission) || other.permission == _this.permission));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,source,contract,const DeepCollectionEquality().hash(deposits),entryId,const DeepCollectionEquality().hash(parameters),permission);
+int get hashCode {
+  final _this = this as SimulateContractInvokeRequest;
+  return Object.hash(runtimeType,_this.source,_this.contract,const DeepCollectionEquality().hash(_this.deposits),_this.entryId,const DeepCollectionEquality().hash(_this.parameters),_this.permission);
+}
 
 @override
 String toString() {
-  return 'SimulateContractInvokeRequest(source: $source, contract: $contract, deposits: $deposits, entryId: $entryId, parameters: $parameters, permission: $permission)';
+  final _this = this as SimulateContractInvokeRequest;
+  return 'SimulateContractInvokeRequest(source: ${_this.source}, contract: ${_this.contract}, deposits: ${_this.deposits}, entryId: ${_this.entryId}, parameters: ${_this.parameters}, permission: ${_this.permission})';
 }
 
 
@@ -253,16 +258,18 @@ _$SimulateContractInvokeRequestCopyWith<_SimulateContractInvokeRequest> get copy
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _SimulateContractInvokeRequest&&(identical(other.source, source) || other.source == source)&&(identical(other.contract, contract) || other.contract == contract)&&const DeepCollectionEquality().equals(other._deposits, _deposits)&&(identical(other.entryId, entryId) || other.entryId == entryId)&&const DeepCollectionEquality().equals(other._parameters, _parameters)&&(identical(other.permission, permission) || other.permission == permission));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _SimulateContractInvokeRequest&&(identical(other.source, source) || other.source == source)&&(identical(other.contract, contract) || other.contract == contract)&&const DeepCollectionEquality().equals(other.deposits, _deposits)&&(identical(other.entryId, entryId) || other.entryId == entryId)&&const DeepCollectionEquality().equals(other.parameters, _parameters)&&(identical(other.permission, permission) || other.permission == permission));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,source,contract,const DeepCollectionEquality().hash(_deposits),entryId,const DeepCollectionEquality().hash(_parameters),permission);
+int get hashCode {
+    return Object.hash(runtimeType,source,contract,const DeepCollectionEquality().hash(_deposits),entryId,const DeepCollectionEquality().hash(_parameters),permission);
+}
 
 @override
 String toString() {
-  return 'SimulateContractInvokeRequest(source: $source, contract: $contract, deposits: $deposits, entryId: $entryId, parameters: $parameters, permission: $permission)';
+    return 'SimulateContractInvokeRequest(source: $source, contract: $contract, deposits: $deposits, entryId: $entryId, parameters: $parameters, permission: $permission)';
 }
 
 

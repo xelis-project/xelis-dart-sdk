@@ -29,16 +29,21 @@ $P2pStatusResultCopyWith<P2pStatusResult> get copyWith => _$P2pStatusResultCopyW
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is P2pStatusResult&&(identical(other.bestTopoheight, bestTopoheight) || other.bestTopoheight == bestTopoheight)&&(identical(other.medianTopoheight, medianTopoheight) || other.medianTopoheight == medianTopoheight)&&(identical(other.maxPeers, maxPeers) || other.maxPeers == maxPeers)&&(identical(other.ourTopoheight, ourTopoheight) || other.ourTopoheight == ourTopoheight)&&(identical(other.peerCount, peerCount) || other.peerCount == peerCount)&&(identical(other.peerId, peerId) || other.peerId == peerId)&&(identical(other.tag, tag) || other.tag == tag)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as P2pStatusResult;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is P2pStatusResult&&(identical(other.bestTopoheight, _this.bestTopoheight) || other.bestTopoheight == _this.bestTopoheight)&&(identical(other.medianTopoheight, _this.medianTopoheight) || other.medianTopoheight == _this.medianTopoheight)&&(identical(other.maxPeers, _this.maxPeers) || other.maxPeers == _this.maxPeers)&&(identical(other.ourTopoheight, _this.ourTopoheight) || other.ourTopoheight == _this.ourTopoheight)&&(identical(other.peerCount, _this.peerCount) || other.peerCount == _this.peerCount)&&(identical(other.peerId, _this.peerId) || other.peerId == _this.peerId)&&(identical(other.tag, _this.tag) || other.tag == _this.tag)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,bestTopoheight,medianTopoheight,maxPeers,ourTopoheight,peerCount,peerId,tag,extraFields);
+int get hashCode {
+  final _this = this as P2pStatusResult;
+  return Object.hash(runtimeType,_this.bestTopoheight,_this.medianTopoheight,_this.maxPeers,_this.ourTopoheight,_this.peerCount,_this.peerId,_this.tag,_this.extraFields);
+}
 
 @override
 String toString() {
-  return 'P2pStatusResult(bestTopoheight: $bestTopoheight, medianTopoheight: $medianTopoheight, maxPeers: $maxPeers, ourTopoheight: $ourTopoheight, peerCount: $peerCount, peerId: $peerId, tag: $tag, extraFields: $extraFields)';
+  final _this = this as P2pStatusResult;
+  return 'P2pStatusResult(bestTopoheight: ${_this.bestTopoheight}, medianTopoheight: ${_this.medianTopoheight}, maxPeers: ${_this.maxPeers}, ourTopoheight: ${_this.ourTopoheight}, peerCount: ${_this.peerCount}, peerId: ${_this.peerId}, tag: ${_this.tag}, extraFields: ${_this.extraFields})';
 }
 
 
@@ -251,16 +256,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _P2pStatusResult&&(identical(other.bestTopoheight, bestTopoheight) || other.bestTopoheight == bestTopoheight)&&(identical(other.medianTopoheight, medianTopoheight) || other.medianTopoheight == medianTopoheight)&&(identical(other.maxPeers, maxPeers) || other.maxPeers == maxPeers)&&(identical(other.ourTopoheight, ourTopoheight) || other.ourTopoheight == ourTopoheight)&&(identical(other.peerCount, peerCount) || other.peerCount == peerCount)&&(identical(other.peerId, peerId) || other.peerId == peerId)&&(identical(other.tag, tag) || other.tag == tag)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _P2pStatusResult&&(identical(other.bestTopoheight, bestTopoheight) || other.bestTopoheight == bestTopoheight)&&(identical(other.medianTopoheight, medianTopoheight) || other.medianTopoheight == medianTopoheight)&&(identical(other.maxPeers, maxPeers) || other.maxPeers == maxPeers)&&(identical(other.ourTopoheight, ourTopoheight) || other.ourTopoheight == ourTopoheight)&&(identical(other.peerCount, peerCount) || other.peerCount == peerCount)&&(identical(other.peerId, peerId) || other.peerId == peerId)&&(identical(other.tag, tag) || other.tag == tag)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,bestTopoheight,medianTopoheight,maxPeers,ourTopoheight,peerCount,peerId,tag,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,bestTopoheight,medianTopoheight,maxPeers,ourTopoheight,peerCount,peerId,tag,extraFields);
+}
 
 @override
 String toString() {
-  return 'P2pStatusResult(bestTopoheight: $bestTopoheight, medianTopoheight: $medianTopoheight, maxPeers: $maxPeers, ourTopoheight: $ourTopoheight, peerCount: $peerCount, peerId: $peerId, tag: $tag, extraFields: $extraFields)';
+    return 'P2pStatusResult(bestTopoheight: $bestTopoheight, medianTopoheight: $medianTopoheight, maxPeers: $maxPeers, ourTopoheight: $ourTopoheight, peerCount: $peerCount, peerId: $peerId, tag: $tag, extraFields: $extraFields)';
 }
 
 

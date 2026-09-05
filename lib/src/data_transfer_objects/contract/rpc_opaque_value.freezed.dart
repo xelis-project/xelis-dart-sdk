@@ -26,12 +26,16 @@ $RpcOpaqueValueCopyWith<RpcOpaqueValue> get copyWith => _$RpcOpaqueValueCopyWith
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcOpaqueValue&&(identical(other.type, type) || other.type == type)&&(identical(other.value, value) || other.value == value)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as RpcOpaqueValue;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcOpaqueValue&&(identical(other.type, _this.type) || other.type == _this.type)&&(identical(other.value, _this.value) || other.value == _this.value)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,type,value,extraFields);
+int get hashCode {
+  final _this = this as RpcOpaqueValue;
+  return Object.hash(runtimeType,_this.type,_this.value,_this.extraFields);
+}
 
 
 
@@ -240,12 +244,14 @@ _$RpcOpaqueValueCopyWith<_RpcOpaqueValue> get copyWith => __$RpcOpaqueValueCopyW
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RpcOpaqueValue&&(identical(other.type, type) || other.type == type)&&(identical(other.value, value) || other.value == value)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _RpcOpaqueValue&&(identical(other.type, type) || other.type == type)&&(identical(other.value, value) || other.value == value)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,type,value,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,type,value,extraFields);
+}
 
 
 

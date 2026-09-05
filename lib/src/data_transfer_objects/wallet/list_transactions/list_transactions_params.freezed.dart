@@ -29,16 +29,21 @@ $ListTransactionsParamsCopyWith<ListTransactionsParams> get copyWith => _$ListTr
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ListTransactionsParams&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.minTopoheight, minTopoheight) || other.minTopoheight == minTopoheight)&&(identical(other.maxTopoheight, maxTopoheight) || other.maxTopoheight == maxTopoheight)&&(identical(other.minTimestamp, minTimestamp) || other.minTimestamp == minTimestamp)&&(identical(other.maxTimestamp, maxTimestamp) || other.maxTimestamp == maxTimestamp)&&(identical(other.address, address) || other.address == address)&&(identical(other.contract, contract) || other.contract == contract)&&(identical(other.acceptIncoming, acceptIncoming) || other.acceptIncoming == acceptIncoming)&&(identical(other.acceptOutgoing, acceptOutgoing) || other.acceptOutgoing == acceptOutgoing)&&(identical(other.acceptCoinbase, acceptCoinbase) || other.acceptCoinbase == acceptCoinbase)&&(identical(other.acceptBurn, acceptBurn) || other.acceptBurn == acceptBurn)&&(identical(other.acceptBlob, acceptBlob) || other.acceptBlob == acceptBlob)&&(identical(other.query, query) || other.query == query)&&(identical(other.limit, limit) || other.limit == limit)&&(identical(other.skip, skip) || other.skip == skip));
+  final _this = this as ListTransactionsParams;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ListTransactionsParams&&(identical(other.asset, _this.asset) || other.asset == _this.asset)&&(identical(other.minTopoheight, _this.minTopoheight) || other.minTopoheight == _this.minTopoheight)&&(identical(other.maxTopoheight, _this.maxTopoheight) || other.maxTopoheight == _this.maxTopoheight)&&(identical(other.minTimestamp, _this.minTimestamp) || other.minTimestamp == _this.minTimestamp)&&(identical(other.maxTimestamp, _this.maxTimestamp) || other.maxTimestamp == _this.maxTimestamp)&&(identical(other.address, _this.address) || other.address == _this.address)&&(identical(other.contract, _this.contract) || other.contract == _this.contract)&&(identical(other.acceptIncoming, _this.acceptIncoming) || other.acceptIncoming == _this.acceptIncoming)&&(identical(other.acceptOutgoing, _this.acceptOutgoing) || other.acceptOutgoing == _this.acceptOutgoing)&&(identical(other.acceptCoinbase, _this.acceptCoinbase) || other.acceptCoinbase == _this.acceptCoinbase)&&(identical(other.acceptBurn, _this.acceptBurn) || other.acceptBurn == _this.acceptBurn)&&(identical(other.acceptBlob, _this.acceptBlob) || other.acceptBlob == _this.acceptBlob)&&(identical(other.query, _this.query) || other.query == _this.query)&&(identical(other.limit, _this.limit) || other.limit == _this.limit)&&(identical(other.skip, _this.skip) || other.skip == _this.skip));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,asset,minTopoheight,maxTopoheight,minTimestamp,maxTimestamp,address,contract,acceptIncoming,acceptOutgoing,acceptCoinbase,acceptBurn,acceptBlob,query,limit,skip);
+int get hashCode {
+  final _this = this as ListTransactionsParams;
+  return Object.hash(runtimeType,_this.asset,_this.minTopoheight,_this.maxTopoheight,_this.minTimestamp,_this.maxTimestamp,_this.address,_this.contract,_this.acceptIncoming,_this.acceptOutgoing,_this.acceptCoinbase,_this.acceptBurn,_this.acceptBlob,_this.query,_this.limit,_this.skip);
+}
 
 @override
 String toString() {
-  return 'ListTransactionsParams(asset: $asset, minTopoheight: $minTopoheight, maxTopoheight: $maxTopoheight, minTimestamp: $minTimestamp, maxTimestamp: $maxTimestamp, address: $address, contract: $contract, acceptIncoming: $acceptIncoming, acceptOutgoing: $acceptOutgoing, acceptCoinbase: $acceptCoinbase, acceptBurn: $acceptBurn, acceptBlob: $acceptBlob, query: $query, limit: $limit, skip: $skip)';
+  final _this = this as ListTransactionsParams;
+  return 'ListTransactionsParams(asset: ${_this.asset}, minTopoheight: ${_this.minTopoheight}, maxTopoheight: ${_this.maxTopoheight}, minTimestamp: ${_this.minTimestamp}, maxTimestamp: ${_this.maxTimestamp}, address: ${_this.address}, contract: ${_this.contract}, acceptIncoming: ${_this.acceptIncoming}, acceptOutgoing: ${_this.acceptOutgoing}, acceptCoinbase: ${_this.acceptCoinbase}, acceptBurn: ${_this.acceptBurn}, acceptBlob: ${_this.acceptBlob}, query: ${_this.query}, limit: ${_this.limit}, skip: ${_this.skip})';
 }
 
 
@@ -268,16 +273,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ListTransactionsParams&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.minTopoheight, minTopoheight) || other.minTopoheight == minTopoheight)&&(identical(other.maxTopoheight, maxTopoheight) || other.maxTopoheight == maxTopoheight)&&(identical(other.minTimestamp, minTimestamp) || other.minTimestamp == minTimestamp)&&(identical(other.maxTimestamp, maxTimestamp) || other.maxTimestamp == maxTimestamp)&&(identical(other.address, address) || other.address == address)&&(identical(other.contract, contract) || other.contract == contract)&&(identical(other.acceptIncoming, acceptIncoming) || other.acceptIncoming == acceptIncoming)&&(identical(other.acceptOutgoing, acceptOutgoing) || other.acceptOutgoing == acceptOutgoing)&&(identical(other.acceptCoinbase, acceptCoinbase) || other.acceptCoinbase == acceptCoinbase)&&(identical(other.acceptBurn, acceptBurn) || other.acceptBurn == acceptBurn)&&(identical(other.acceptBlob, acceptBlob) || other.acceptBlob == acceptBlob)&&(identical(other.query, query) || other.query == query)&&(identical(other.limit, limit) || other.limit == limit)&&(identical(other.skip, skip) || other.skip == skip));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _ListTransactionsParams&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.minTopoheight, minTopoheight) || other.minTopoheight == minTopoheight)&&(identical(other.maxTopoheight, maxTopoheight) || other.maxTopoheight == maxTopoheight)&&(identical(other.minTimestamp, minTimestamp) || other.minTimestamp == minTimestamp)&&(identical(other.maxTimestamp, maxTimestamp) || other.maxTimestamp == maxTimestamp)&&(identical(other.address, address) || other.address == address)&&(identical(other.contract, contract) || other.contract == contract)&&(identical(other.acceptIncoming, acceptIncoming) || other.acceptIncoming == acceptIncoming)&&(identical(other.acceptOutgoing, acceptOutgoing) || other.acceptOutgoing == acceptOutgoing)&&(identical(other.acceptCoinbase, acceptCoinbase) || other.acceptCoinbase == acceptCoinbase)&&(identical(other.acceptBurn, acceptBurn) || other.acceptBurn == acceptBurn)&&(identical(other.acceptBlob, acceptBlob) || other.acceptBlob == acceptBlob)&&(identical(other.query, query) || other.query == query)&&(identical(other.limit, limit) || other.limit == limit)&&(identical(other.skip, skip) || other.skip == skip));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,asset,minTopoheight,maxTopoheight,minTimestamp,maxTimestamp,address,contract,acceptIncoming,acceptOutgoing,acceptCoinbase,acceptBurn,acceptBlob,query,limit,skip);
+int get hashCode {
+    return Object.hash(runtimeType,asset,minTopoheight,maxTopoheight,minTimestamp,maxTimestamp,address,contract,acceptIncoming,acceptOutgoing,acceptCoinbase,acceptBurn,acceptBlob,query,limit,skip);
+}
 
 @override
 String toString() {
-  return 'ListTransactionsParams(asset: $asset, minTopoheight: $minTopoheight, maxTopoheight: $maxTopoheight, minTimestamp: $minTimestamp, maxTimestamp: $maxTimestamp, address: $address, contract: $contract, acceptIncoming: $acceptIncoming, acceptOutgoing: $acceptOutgoing, acceptCoinbase: $acceptCoinbase, acceptBurn: $acceptBurn, acceptBlob: $acceptBlob, query: $query, limit: $limit, skip: $skip)';
+    return 'ListTransactionsParams(asset: $asset, minTopoheight: $minTopoheight, maxTopoheight: $maxTopoheight, minTimestamp: $minTimestamp, maxTimestamp: $maxTimestamp, address: $address, contract: $contract, acceptIncoming: $acceptIncoming, acceptOutgoing: $acceptOutgoing, acceptCoinbase: $acceptCoinbase, acceptBurn: $acceptBurn, acceptBlob: $acceptBlob, query: $query, limit: $limit, skip: $skip)';
 }
 
 

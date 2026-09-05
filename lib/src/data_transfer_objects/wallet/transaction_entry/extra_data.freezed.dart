@@ -21,7 +21,7 @@ mixin _$PlaintextExtraDataFlag {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is PlaintextExtraDataFlag);
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is PlaintextExtraDataFlag);
 }
 
 
@@ -30,7 +30,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'PlaintextExtraDataFlag()';
+    return 'PlaintextExtraDataFlag()';
 }
 
 
@@ -204,7 +204,7 @@ class PrivateExtraDataFlag extends PlaintextExtraDataFlag {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is PrivateExtraDataFlag);
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is PrivateExtraDataFlag);
 }
 
 
@@ -213,7 +213,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'PlaintextExtraDataFlag.private()';
+    return 'PlaintextExtraDataFlag.private()';
 }
 
 
@@ -236,7 +236,7 @@ class PublicExtraDataFlag extends PlaintextExtraDataFlag {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is PublicExtraDataFlag);
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is PublicExtraDataFlag);
 }
 
 
@@ -245,7 +245,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'PlaintextExtraDataFlag.public()';
+    return 'PlaintextExtraDataFlag.public()';
 }
 
 
@@ -268,7 +268,7 @@ class ProprietaryExtraDataFlag extends PlaintextExtraDataFlag {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ProprietaryExtraDataFlag);
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is ProprietaryExtraDataFlag);
 }
 
 
@@ -277,7 +277,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'PlaintextExtraDataFlag.proprietary()';
+    return 'PlaintextExtraDataFlag.proprietary()';
 }
 
 
@@ -300,7 +300,7 @@ class FailedExtraDataFlag extends PlaintextExtraDataFlag {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is FailedExtraDataFlag);
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is FailedExtraDataFlag);
 }
 
 
@@ -309,7 +309,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'PlaintextExtraDataFlag.failed()';
+    return 'PlaintextExtraDataFlag.failed()';
 }
 
 
@@ -337,16 +337,18 @@ $UnknownPlaintextExtraDataFlagCopyWith<UnknownPlaintextExtraDataFlag> get copyWi
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is UnknownPlaintextExtraDataFlag&&(identical(other.type, type) || other.type == type));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is UnknownPlaintextExtraDataFlag&&(identical(other.type, type) || other.type == type));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,type);
+int get hashCode {
+    return Object.hash(runtimeType,type);
+}
 
 @override
 String toString() {
-  return 'PlaintextExtraDataFlag.unknown(type: $type)';
+    return 'PlaintextExtraDataFlag.unknown(type: $type)';
 }
 
 
@@ -401,16 +403,21 @@ $ExtraDataCopyWith<ExtraData> get copyWith => _$ExtraDataCopyWithImpl<ExtraData>
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ExtraData&&(identical(other.flag, flag) || other.flag == flag)&&(identical(other.data, data) || other.data == data)&&(identical(other.sharedKey, sharedKey) || other.sharedKey == sharedKey)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as ExtraData;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ExtraData&&(identical(other.flag, _this.flag) || other.flag == _this.flag)&&(identical(other.data, _this.data) || other.data == _this.data)&&(identical(other.sharedKey, _this.sharedKey) || other.sharedKey == _this.sharedKey)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,flag,data,sharedKey,extraFields);
+int get hashCode {
+  final _this = this as ExtraData;
+  return Object.hash(runtimeType,_this.flag,_this.data,_this.sharedKey,_this.extraFields);
+}
 
 @override
 String toString() {
-  return 'ExtraData(flag: $flag, data: $data, sharedKey: $sharedKey, extraFields: $extraFields)';
+  final _this = this as ExtraData;
+  return 'ExtraData(flag: ${_this.flag}, data: ${_this.data}, sharedKey: ${_this.sharedKey}, extraFields: ${_this.extraFields})';
 }
 
 
@@ -636,16 +643,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ExtraData&&(identical(other.flag, flag) || other.flag == flag)&&(identical(other.data, data) || other.data == data)&&(identical(other.sharedKey, sharedKey) || other.sharedKey == sharedKey)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _ExtraData&&(identical(other.flag, flag) || other.flag == flag)&&(identical(other.data, data) || other.data == data)&&(identical(other.sharedKey, sharedKey) || other.sharedKey == sharedKey)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,flag,data,sharedKey,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,flag,data,sharedKey,extraFields);
+}
 
 @override
 String toString() {
-  return 'ExtraData(flag: $flag, data: $data, sharedKey: $sharedKey, extraFields: $extraFields)';
+    return 'ExtraData(flag: $flag, data: $data, sharedKey: $sharedKey, extraFields: $extraFields)';
 }
 
 

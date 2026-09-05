@@ -21,7 +21,7 @@ mixin _$BaseFeeMode {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is BaseFeeMode);
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is BaseFeeMode);
 }
 
 
@@ -30,7 +30,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'BaseFeeMode()';
+    return 'BaseFeeMode()';
 }
 
 
@@ -192,7 +192,7 @@ class NoBaseFee extends BaseFeeMode {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is NoBaseFee);
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is NoBaseFee);
 }
 
 
@@ -201,7 +201,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'BaseFeeMode.none()';
+    return 'BaseFeeMode.none()';
 }
 
 
@@ -229,16 +229,18 @@ $FixedBaseFeeCopyWith<FixedBaseFee> get copyWith => _$FixedBaseFeeCopyWithImpl<F
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is FixedBaseFee&&(identical(other.amount, amount) || other.amount == amount));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is FixedBaseFee&&(identical(other.amount, amount) || other.amount == amount));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,amount);
+int get hashCode {
+    return Object.hash(runtimeType,amount);
+}
 
 @override
 String toString() {
-  return 'BaseFeeMode.fixed(amount: $amount)';
+    return 'BaseFeeMode.fixed(amount: $amount)';
 }
 
 
@@ -295,16 +297,18 @@ $CappedBaseFeeCopyWith<CappedBaseFee> get copyWith => _$CappedBaseFeeCopyWithImp
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is CappedBaseFee&&(identical(other.amount, amount) || other.amount == amount));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is CappedBaseFee&&(identical(other.amount, amount) || other.amount == amount));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,amount);
+int get hashCode {
+    return Object.hash(runtimeType,amount);
+}
 
 @override
 String toString() {
-  return 'BaseFeeMode.cap(amount: $amount)';
+    return 'BaseFeeMode.cap(amount: $amount)';
 }
 
 

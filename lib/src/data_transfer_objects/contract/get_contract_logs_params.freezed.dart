@@ -27,16 +27,21 @@ $GetContractLogsParamsCopyWith<GetContractLogsParams> get copyWith => _$GetContr
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetContractLogsParams&&(identical(other.caller, caller) || other.caller == caller));
+  final _this = this as GetContractLogsParams;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetContractLogsParams&&(identical(other.caller, _this.caller) || other.caller == _this.caller));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,caller);
+int get hashCode {
+  final _this = this as GetContractLogsParams;
+  return Object.hash(runtimeType,_this.caller);
+}
 
 @override
 String toString() {
-  return 'GetContractLogsParams(caller: $caller)';
+  final _this = this as GetContractLogsParams;
+  return 'GetContractLogsParams(caller: ${_this.caller})';
 }
 
 
@@ -224,16 +229,18 @@ _$GetContractLogsParamsCopyWith<_GetContractLogsParams> get copyWith => __$GetCo
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetContractLogsParams&&(identical(other.caller, caller) || other.caller == caller));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetContractLogsParams&&(identical(other.caller, caller) || other.caller == caller));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,caller);
+int get hashCode {
+    return Object.hash(runtimeType,caller);
+}
 
 @override
 String toString() {
-  return 'GetContractLogsParams(caller: $caller)';
+    return 'GetContractLogsParams(caller: $caller)';
 }
 
 

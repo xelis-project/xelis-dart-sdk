@@ -29,16 +29,21 @@ $GetTopBlockParamsCopyWith<GetTopBlockParams> get copyWith => _$GetTopBlockParam
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetTopBlockParams&&(identical(other.includeTxs, includeTxs) || other.includeTxs == includeTxs));
+  final _this = this as GetTopBlockParams;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetTopBlockParams&&(identical(other.includeTxs, _this.includeTxs) || other.includeTxs == _this.includeTxs));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,includeTxs);
+int get hashCode {
+  final _this = this as GetTopBlockParams;
+  return Object.hash(runtimeType,_this.includeTxs);
+}
 
 @override
 String toString() {
-  return 'GetTopBlockParams(includeTxs: $includeTxs)';
+  final _this = this as GetTopBlockParams;
+  return 'GetTopBlockParams(includeTxs: ${_this.includeTxs})';
 }
 
 
@@ -228,16 +233,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetTopBlockParams&&(identical(other.includeTxs, includeTxs) || other.includeTxs == includeTxs));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetTopBlockParams&&(identical(other.includeTxs, includeTxs) || other.includeTxs == includeTxs));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,includeTxs);
+int get hashCode {
+    return Object.hash(runtimeType,includeTxs);
+}
 
 @override
 String toString() {
-  return 'GetTopBlockParams(includeTxs: $includeTxs)';
+    return 'GetTopBlockParams(includeTxs: $includeTxs)';
 }
 
 

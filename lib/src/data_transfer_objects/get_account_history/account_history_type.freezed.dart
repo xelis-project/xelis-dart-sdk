@@ -21,7 +21,7 @@ mixin _$AccountHistoryType {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AccountHistoryType);
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is AccountHistoryType);
 }
 
 
@@ -30,7 +30,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'AccountHistoryType()';
+    return 'AccountHistoryType()';
 }
 
 
@@ -246,16 +246,18 @@ $AccountHistoryDevFeeCopyWith<AccountHistoryDevFee> get copyWith => _$AccountHis
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AccountHistoryDevFee&&(identical(other.reward, reward) || other.reward == reward)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is AccountHistoryDevFee&&(identical(other.reward, reward) || other.reward == reward)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,reward,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,reward,extraFields);
+}
 
 @override
 String toString() {
-  return 'AccountHistoryType.devFee(reward: $reward, extraFields: $extraFields)';
+    return 'AccountHistoryType.devFee(reward: $reward, extraFields: $extraFields)';
 }
 
 
@@ -323,16 +325,18 @@ $AccountHistoryMiningCopyWith<AccountHistoryMining> get copyWith => _$AccountHis
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AccountHistoryMining&&(identical(other.reward, reward) || other.reward == reward)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is AccountHistoryMining&&(identical(other.reward, reward) || other.reward == reward)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,reward,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,reward,extraFields);
+}
 
 @override
 String toString() {
-  return 'AccountHistoryType.mining(reward: $reward, extraFields: $extraFields)';
+    return 'AccountHistoryType.mining(reward: $reward, extraFields: $extraFields)';
 }
 
 
@@ -401,16 +405,18 @@ $AccountHistoryBurnCopyWith<AccountHistoryBurn> get copyWith => _$AccountHistory
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AccountHistoryBurn&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.amount, amount) || other.amount == amount)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is AccountHistoryBurn&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.amount, amount) || other.amount == amount)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,asset,amount,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,asset,amount,extraFields);
+}
 
 @override
 String toString() {
-  return 'AccountHistoryType.burn(asset: $asset, amount: $amount, extraFields: $extraFields)';
+    return 'AccountHistoryType.burn(asset: $asset, amount: $amount, extraFields: $extraFields)';
 }
 
 
@@ -480,16 +486,18 @@ $AccountHistoryOutgoingCopyWith<AccountHistoryOutgoing> get copyWith => _$Accoun
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AccountHistoryOutgoing&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.to, to) || other.to == to)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is AccountHistoryOutgoing&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.to, to) || other.to == to)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,asset,to,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,asset,to,extraFields);
+}
 
 @override
 String toString() {
-  return 'AccountHistoryType.outgoing(asset: $asset, to: $to, extraFields: $extraFields)';
+    return 'AccountHistoryType.outgoing(asset: $asset, to: $to, extraFields: $extraFields)';
 }
 
 
@@ -559,16 +567,18 @@ $AccountHistoryIncomingCopyWith<AccountHistoryIncoming> get copyWith => _$Accoun
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AccountHistoryIncoming&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.from, from) || other.from == from)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is AccountHistoryIncoming&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.from, from) || other.from == from)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,asset,from,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,asset,from,extraFields);
+}
 
 @override
 String toString() {
-  return 'AccountHistoryType.incoming(asset: $asset, from: $from, extraFields: $extraFields)';
+    return 'AccountHistoryType.incoming(asset: $asset, from: $from, extraFields: $extraFields)';
 }
 
 
@@ -644,16 +654,18 @@ $AccountHistoryMultiSigCopyWith<AccountHistoryMultiSig> get copyWith => _$Accoun
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AccountHistoryMultiSig&&const DeepCollectionEquality().equals(other._participants, _participants)&&(identical(other.threshold, threshold) || other.threshold == threshold)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is AccountHistoryMultiSig&&const DeepCollectionEquality().equals(other.participants, _participants)&&(identical(other.threshold, threshold) || other.threshold == threshold)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_participants),threshold,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,const DeepCollectionEquality().hash(_participants),threshold,extraFields);
+}
 
 @override
 String toString() {
-  return 'AccountHistoryType.multiSig(participants: $participants, threshold: $threshold, extraFields: $extraFields)';
+    return 'AccountHistoryType.multiSig(participants: $participants, threshold: $threshold, extraFields: $extraFields)';
 }
 
 
@@ -730,16 +742,18 @@ $AccountHistoryInvokeContractCopyWith<AccountHistoryInvokeContract> get copyWith
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AccountHistoryInvokeContract&&(identical(other.contract, contract) || other.contract == contract)&&(identical(other.entryId, entryId) || other.entryId == entryId)&&const DeepCollectionEquality().equals(other._deposits, _deposits)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is AccountHistoryInvokeContract&&(identical(other.contract, contract) || other.contract == contract)&&(identical(other.entryId, entryId) || other.entryId == entryId)&&const DeepCollectionEquality().equals(other.deposits, _deposits)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,contract,entryId,const DeepCollectionEquality().hash(_deposits),extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,contract,entryId,const DeepCollectionEquality().hash(_deposits),extraFields);
+}
 
 @override
 String toString() {
-  return 'AccountHistoryType.invokeContract(contract: $contract, entryId: $entryId, deposits: $deposits, extraFields: $extraFields)';
+    return 'AccountHistoryType.invokeContract(contract: $contract, entryId: $entryId, deposits: $deposits, extraFields: $extraFields)';
 }
 
 
@@ -817,16 +831,18 @@ $AccountHistoryDeployContractCopyWith<AccountHistoryDeployContract> get copyWith
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AccountHistoryDeployContract&&const DeepCollectionEquality().equals(other._deposits, _deposits)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is AccountHistoryDeployContract&&const DeepCollectionEquality().equals(other.deposits, _deposits)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_deposits),extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,const DeepCollectionEquality().hash(_deposits),extraFields);
+}
 
 @override
 String toString() {
-  return 'AccountHistoryType.deployContract(deposits: $deposits, extraFields: $extraFields)';
+    return 'AccountHistoryType.deployContract(deposits: $deposits, extraFields: $extraFields)';
 }
 
 
@@ -896,16 +912,18 @@ $AccountHistoryFromContractCopyWith<AccountHistoryFromContract> get copyWith => 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AccountHistoryFromContract&&(identical(other.contract, contract) || other.contract == contract)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.amount, amount) || other.amount == amount)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is AccountHistoryFromContract&&(identical(other.contract, contract) || other.contract == contract)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.amount, amount) || other.amount == amount)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,contract,asset,amount,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,contract,asset,amount,extraFields);
+}
 
 @override
 String toString() {
-  return 'AccountHistoryType.fromContract(contract: $contract, asset: $asset, amount: $amount, extraFields: $extraFields)';
+    return 'AccountHistoryType.fromContract(contract: $contract, asset: $asset, amount: $amount, extraFields: $extraFields)';
 }
 
 
@@ -974,16 +992,18 @@ $AccountHistoryBlobCopyWith<AccountHistoryBlob> get copyWith => _$AccountHistory
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AccountHistoryBlob&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is AccountHistoryBlob&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,extraFields);
+}
 
 @override
 String toString() {
-  return 'AccountHistoryType.blob(extraFields: $extraFields)';
+    return 'AccountHistoryType.blob(extraFields: $extraFields)';
 }
 
 
@@ -1050,16 +1070,18 @@ $UnknownAccountHistoryTypeCopyWith<UnknownAccountHistoryType> get copyWith => _$
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is UnknownAccountHistoryType&&(identical(other.type, type) || other.type == type)&&(identical(other.wireValue, wireValue) || other.wireValue == wireValue));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is UnknownAccountHistoryType&&(identical(other.type, type) || other.type == type)&&(identical(other.wireValue, wireValue) || other.wireValue == wireValue));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,type,wireValue);
+int get hashCode {
+    return Object.hash(runtimeType,type,wireValue);
+}
 
 @override
 String toString() {
-  return 'AccountHistoryType.unknown(type: $type, wireValue: $wireValue)';
+    return 'AccountHistoryType.unknown(type: $type, wireValue: $wireValue)';
 }
 
 

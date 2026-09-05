@@ -26,16 +26,21 @@ $DecryptCiphertextWalletParamsCopyWith<DecryptCiphertextWalletParams> get copyWi
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is DecryptCiphertextWalletParams&&(identical(other.ciphertext, ciphertext) || other.ciphertext == ciphertext)&&(identical(other.maxSupply, maxSupply) || other.maxSupply == maxSupply));
+  final _this = this as DecryptCiphertextWalletParams;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is DecryptCiphertextWalletParams&&(identical(other.ciphertext, _this.ciphertext) || other.ciphertext == _this.ciphertext)&&(identical(other.maxSupply, _this.maxSupply) || other.maxSupply == _this.maxSupply));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,ciphertext,maxSupply);
+int get hashCode {
+  final _this = this as DecryptCiphertextWalletParams;
+  return Object.hash(runtimeType,_this.ciphertext,_this.maxSupply);
+}
 
 @override
 String toString() {
-  return 'DecryptCiphertextWalletParams(ciphertext: $ciphertext, maxSupply: $maxSupply)';
+  final _this = this as DecryptCiphertextWalletParams;
+  return 'DecryptCiphertextWalletParams(ciphertext: ${_this.ciphertext}, maxSupply: ${_this.maxSupply})';
 }
 
 
@@ -233,16 +238,18 @@ _$DecryptCiphertextWalletParamsCopyWith<_DecryptCiphertextWalletParams> get copy
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _DecryptCiphertextWalletParams&&(identical(other.ciphertext, ciphertext) || other.ciphertext == ciphertext)&&(identical(other.maxSupply, maxSupply) || other.maxSupply == maxSupply));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _DecryptCiphertextWalletParams&&(identical(other.ciphertext, ciphertext) || other.ciphertext == ciphertext)&&(identical(other.maxSupply, maxSupply) || other.maxSupply == maxSupply));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,ciphertext,maxSupply);
+int get hashCode {
+    return Object.hash(runtimeType,ciphertext,maxSupply);
+}
 
 @override
 String toString() {
-  return 'DecryptCiphertextWalletParams(ciphertext: $ciphertext, maxSupply: $maxSupply)';
+    return 'DecryptCiphertextWalletParams(ciphertext: $ciphertext, maxSupply: $maxSupply)';
 }
 
 

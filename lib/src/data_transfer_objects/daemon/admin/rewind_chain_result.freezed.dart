@@ -26,16 +26,21 @@ $RewindChainResultCopyWith<RewindChainResult> get copyWith => _$RewindChainResul
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RewindChainResult&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&const DeepCollectionEquality().equals(other.transactions, transactions));
+  final _this = this as RewindChainResult;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is RewindChainResult&&(identical(other.topoheight, _this.topoheight) || other.topoheight == _this.topoheight)&&const DeepCollectionEquality().equals(other.transactions, _this.transactions));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,topoheight,const DeepCollectionEquality().hash(transactions));
+int get hashCode {
+  final _this = this as RewindChainResult;
+  return Object.hash(runtimeType,_this.topoheight,const DeepCollectionEquality().hash(_this.transactions));
+}
 
 @override
 String toString() {
-  return 'RewindChainResult(topoheight: $topoheight, transactions: $transactions)';
+  final _this = this as RewindChainResult;
+  return 'RewindChainResult(topoheight: ${_this.topoheight}, transactions: ${_this.transactions})';
 }
 
 
@@ -230,16 +235,18 @@ _$RewindChainResultCopyWith<_RewindChainResult> get copyWith => __$RewindChainRe
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RewindChainResult&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&const DeepCollectionEquality().equals(other._transactions, _transactions));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _RewindChainResult&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&const DeepCollectionEquality().equals(other.transactions, _transactions));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,topoheight,const DeepCollectionEquality().hash(_transactions));
+int get hashCode {
+    return Object.hash(runtimeType,topoheight,const DeepCollectionEquality().hash(_transactions));
+}
 
 @override
 String toString() {
-  return 'RewindChainResult(topoheight: $topoheight, transactions: $transactions)';
+    return 'RewindChainResult(topoheight: $topoheight, transactions: $transactions)';
 }
 
 

@@ -29,16 +29,21 @@ $EstimateExtraDataSizeParamsCopyWith<EstimateExtraDataSizeParams> get copyWith =
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is EstimateExtraDataSizeParams&&const DeepCollectionEquality().equals(other.destinations, destinations));
+  final _this = this as EstimateExtraDataSizeParams;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is EstimateExtraDataSizeParams&&const DeepCollectionEquality().equals(other.destinations, _this.destinations));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(destinations));
+int get hashCode {
+  final _this = this as EstimateExtraDataSizeParams;
+  return Object.hash(runtimeType,const DeepCollectionEquality().hash(_this.destinations));
+}
 
 @override
 String toString() {
-  return 'EstimateExtraDataSizeParams(destinations: $destinations)';
+  final _this = this as EstimateExtraDataSizeParams;
+  return 'EstimateExtraDataSizeParams(destinations: ${_this.destinations})';
 }
 
 
@@ -234,16 +239,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _EstimateExtraDataSizeParams&&const DeepCollectionEquality().equals(other._destinations, _destinations));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _EstimateExtraDataSizeParams&&const DeepCollectionEquality().equals(other.destinations, _destinations));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_destinations));
+int get hashCode {
+    return Object.hash(runtimeType,const DeepCollectionEquality().hash(_destinations));
+}
 
 @override
 String toString() {
-  return 'EstimateExtraDataSizeParams(destinations: $destinations)';
+    return 'EstimateExtraDataSizeParams(destinations: $destinations)';
 }
 
 

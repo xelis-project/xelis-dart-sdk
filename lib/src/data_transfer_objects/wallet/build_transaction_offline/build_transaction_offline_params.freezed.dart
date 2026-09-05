@@ -26,16 +26,21 @@ $BuildTransactionOfflineParamsCopyWith<BuildTransactionOfflineParams> get copyWi
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is BuildTransactionOfflineParams&&(identical(other.transactionTypeBuilder, transactionTypeBuilder) || other.transactionTypeBuilder == transactionTypeBuilder)&&const DeepCollectionEquality().equals(other.balances, balances)&&(identical(other.reference, reference) || other.reference == reference)&&(identical(other.nonce, nonce) || other.nonce == nonce)&&(identical(other.fee, fee) || other.fee == fee)&&(identical(other.baseFee, baseFee) || other.baseFee == baseFee)&&(identical(other.feeLimit, feeLimit) || other.feeLimit == feeLimit)&&(identical(other.txVersion, txVersion) || other.txVersion == txVersion)&&(identical(other.txAsHex, txAsHex) || other.txAsHex == txAsHex)&&const DeepCollectionEquality().equals(other.signers, signers));
+  final _this = this as BuildTransactionOfflineParams;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is BuildTransactionOfflineParams&&(identical(other.transactionTypeBuilder, _this.transactionTypeBuilder) || other.transactionTypeBuilder == _this.transactionTypeBuilder)&&const DeepCollectionEquality().equals(other.balances, _this.balances)&&(identical(other.reference, _this.reference) || other.reference == _this.reference)&&(identical(other.nonce, _this.nonce) || other.nonce == _this.nonce)&&(identical(other.fee, _this.fee) || other.fee == _this.fee)&&(identical(other.baseFee, _this.baseFee) || other.baseFee == _this.baseFee)&&(identical(other.feeLimit, _this.feeLimit) || other.feeLimit == _this.feeLimit)&&(identical(other.txVersion, _this.txVersion) || other.txVersion == _this.txVersion)&&(identical(other.txAsHex, _this.txAsHex) || other.txAsHex == _this.txAsHex)&&const DeepCollectionEquality().equals(other.signers, _this.signers));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,transactionTypeBuilder,const DeepCollectionEquality().hash(balances),reference,nonce,fee,baseFee,feeLimit,txVersion,txAsHex,const DeepCollectionEquality().hash(signers));
+int get hashCode {
+  final _this = this as BuildTransactionOfflineParams;
+  return Object.hash(runtimeType,_this.transactionTypeBuilder,const DeepCollectionEquality().hash(_this.balances),_this.reference,_this.nonce,_this.fee,_this.baseFee,_this.feeLimit,_this.txVersion,_this.txAsHex,const DeepCollectionEquality().hash(_this.signers));
+}
 
 @override
 String toString() {
-  return 'BuildTransactionOfflineParams(transactionTypeBuilder: $transactionTypeBuilder, balances: $balances, reference: $reference, nonce: $nonce, fee: $fee, baseFee: $baseFee, feeLimit: $feeLimit, txVersion: $txVersion, txAsHex: $txAsHex, signers: $signers)';
+  final _this = this as BuildTransactionOfflineParams;
+  return 'BuildTransactionOfflineParams(transactionTypeBuilder: ${_this.transactionTypeBuilder}, balances: ${_this.balances}, reference: ${_this.reference}, nonce: ${_this.nonce}, fee: ${_this.fee}, baseFee: ${_this.baseFee}, feeLimit: ${_this.feeLimit}, txVersion: ${_this.txVersion}, txAsHex: ${_this.txAsHex}, signers: ${_this.signers})';
 }
 
 
@@ -279,16 +284,18 @@ _$BuildTransactionOfflineParamsCopyWith<_BuildTransactionOfflineParams> get copy
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _BuildTransactionOfflineParams&&(identical(other.transactionTypeBuilder, transactionTypeBuilder) || other.transactionTypeBuilder == transactionTypeBuilder)&&const DeepCollectionEquality().equals(other._balances, _balances)&&(identical(other.reference, reference) || other.reference == reference)&&(identical(other.nonce, nonce) || other.nonce == nonce)&&(identical(other.fee, fee) || other.fee == fee)&&(identical(other.baseFee, baseFee) || other.baseFee == baseFee)&&(identical(other.feeLimit, feeLimit) || other.feeLimit == feeLimit)&&(identical(other.txVersion, txVersion) || other.txVersion == txVersion)&&(identical(other.txAsHex, txAsHex) || other.txAsHex == txAsHex)&&const DeepCollectionEquality().equals(other._signers, _signers));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _BuildTransactionOfflineParams&&(identical(other.transactionTypeBuilder, transactionTypeBuilder) || other.transactionTypeBuilder == transactionTypeBuilder)&&const DeepCollectionEquality().equals(other.balances, _balances)&&(identical(other.reference, reference) || other.reference == reference)&&(identical(other.nonce, nonce) || other.nonce == nonce)&&(identical(other.fee, fee) || other.fee == fee)&&(identical(other.baseFee, baseFee) || other.baseFee == baseFee)&&(identical(other.feeLimit, feeLimit) || other.feeLimit == feeLimit)&&(identical(other.txVersion, txVersion) || other.txVersion == txVersion)&&(identical(other.txAsHex, txAsHex) || other.txAsHex == txAsHex)&&const DeepCollectionEquality().equals(other.signers, _signers));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,transactionTypeBuilder,const DeepCollectionEquality().hash(_balances),reference,nonce,fee,baseFee,feeLimit,txVersion,txAsHex,const DeepCollectionEquality().hash(_signers));
+int get hashCode {
+    return Object.hash(runtimeType,transactionTypeBuilder,const DeepCollectionEquality().hash(_balances),reference,nonce,fee,baseFee,feeLimit,txVersion,txAsHex,const DeepCollectionEquality().hash(_signers));
+}
 
 @override
 String toString() {
-  return 'BuildTransactionOfflineParams(transactionTypeBuilder: $transactionTypeBuilder, balances: $balances, reference: $reference, nonce: $nonce, fee: $fee, baseFee: $baseFee, feeLimit: $feeLimit, txVersion: $txVersion, txAsHex: $txAsHex, signers: $signers)';
+    return 'BuildTransactionOfflineParams(transactionTypeBuilder: $transactionTypeBuilder, balances: $balances, reference: $reference, nonce: $nonce, fee: $fee, baseFee: $baseFee, feeLimit: $feeLimit, txVersion: $txVersion, txAsHex: $txAsHex, signers: $signers)';
 }
 
 

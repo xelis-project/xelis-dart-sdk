@@ -28,16 +28,21 @@ $XswdPermissionCopyWith<XswdPermission> get copyWith => _$XswdPermissionCopyWith
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is XswdPermission&&(identical(other.method, method) || other.method == method)&&(identical(other.kind, kind) || other.kind == kind));
+  final _this = this as XswdPermission;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is XswdPermission&&(identical(other.method, _this.method) || other.method == _this.method)&&(identical(other.kind, _this.kind) || other.kind == _this.kind));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,method,kind);
+int get hashCode {
+  final _this = this as XswdPermission;
+  return Object.hash(runtimeType,_this.method,_this.kind);
+}
 
 @override
 String toString() {
-  return 'XswdPermission(method: $method, kind: $kind)';
+  final _this = this as XswdPermission;
+  return 'XswdPermission(method: ${_this.method}, kind: ${_this.kind})';
 }
 
 
@@ -228,16 +233,18 @@ _$XswdPermissionCopyWith<_XswdPermission> get copyWith => __$XswdPermissionCopyW
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _XswdPermission&&(identical(other.method, method) || other.method == method)&&(identical(other.kind, kind) || other.kind == kind));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _XswdPermission&&(identical(other.method, method) || other.method == method)&&(identical(other.kind, kind) || other.kind == kind));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,method,kind);
+int get hashCode {
+    return Object.hash(runtimeType,method,kind);
+}
 
 @override
 String toString() {
-  return 'XswdPermission(method: $method, kind: $kind)';
+    return 'XswdPermission(method: $method, kind: $kind)';
 }
 
 

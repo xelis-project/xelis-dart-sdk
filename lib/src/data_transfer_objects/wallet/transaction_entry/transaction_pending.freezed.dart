@@ -26,16 +26,21 @@ $TransactionPendingCopyWith<TransactionPending> get copyWith => _$TransactionPen
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is TransactionPending&&(identical(other.hash, hash) || other.hash == hash)&&(identical(other.txEntryType, txEntryType) || other.txEntryType == txEntryType)&&(identical(other.timestamp, timestamp) || other.timestamp == timestamp)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as TransactionPending;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is TransactionPending&&(identical(other.hash, _this.hash) || other.hash == _this.hash)&&(identical(other.txEntryType, _this.txEntryType) || other.txEntryType == _this.txEntryType)&&(identical(other.timestamp, _this.timestamp) || other.timestamp == _this.timestamp)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,hash,txEntryType,timestamp,extraFields);
+int get hashCode {
+  final _this = this as TransactionPending;
+  return Object.hash(runtimeType,_this.hash,_this.txEntryType,_this.timestamp,_this.extraFields);
+}
 
 @override
 String toString() {
-  return 'TransactionPending(hash: $hash, txEntryType: $txEntryType, timestamp: $timestamp, extraFields: $extraFields)';
+  final _this = this as TransactionPending;
+  return 'TransactionPending(hash: ${_this.hash}, txEntryType: ${_this.txEntryType}, timestamp: ${_this.timestamp}, extraFields: ${_this.extraFields})';
 }
 
 
@@ -246,16 +251,18 @@ _$TransactionPendingCopyWith<_TransactionPending> get copyWith => __$Transaction
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _TransactionPending&&(identical(other.hash, hash) || other.hash == hash)&&(identical(other.txEntryType, txEntryType) || other.txEntryType == txEntryType)&&(identical(other.timestamp, timestamp) || other.timestamp == timestamp)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _TransactionPending&&(identical(other.hash, hash) || other.hash == hash)&&(identical(other.txEntryType, txEntryType) || other.txEntryType == txEntryType)&&(identical(other.timestamp, timestamp) || other.timestamp == timestamp)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,hash,txEntryType,timestamp,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,hash,txEntryType,timestamp,extraFields);
+}
 
 @override
 String toString() {
-  return 'TransactionPending(hash: $hash, txEntryType: $txEntryType, timestamp: $timestamp, extraFields: $extraFields)';
+    return 'TransactionPending(hash: $hash, txEntryType: $txEntryType, timestamp: $timestamp, extraFields: $extraFields)';
 }
 
 

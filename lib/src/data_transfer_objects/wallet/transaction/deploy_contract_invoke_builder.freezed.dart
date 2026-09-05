@@ -29,16 +29,21 @@ $DeployContractInvokeBuilderCopyWith<DeployContractInvokeBuilder> get copyWith =
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is DeployContractInvokeBuilder&&(identical(other.maxGas, maxGas) || other.maxGas == maxGas)&&const DeepCollectionEquality().equals(other.deposits, deposits));
+  final _this = this as DeployContractInvokeBuilder;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is DeployContractInvokeBuilder&&(identical(other.maxGas, _this.maxGas) || other.maxGas == _this.maxGas)&&const DeepCollectionEquality().equals(other.deposits, _this.deposits));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,maxGas,const DeepCollectionEquality().hash(deposits));
+int get hashCode {
+  final _this = this as DeployContractInvokeBuilder;
+  return Object.hash(runtimeType,_this.maxGas,const DeepCollectionEquality().hash(_this.deposits));
+}
 
 @override
 String toString() {
-  return 'DeployContractInvokeBuilder(maxGas: $maxGas, deposits: $deposits)';
+  final _this = this as DeployContractInvokeBuilder;
+  return 'DeployContractInvokeBuilder(maxGas: ${_this.maxGas}, deposits: ${_this.deposits})';
 }
 
 
@@ -230,16 +235,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _DeployContractInvokeBuilder&&(identical(other.maxGas, maxGas) || other.maxGas == maxGas)&&const DeepCollectionEquality().equals(other._deposits, _deposits));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _DeployContractInvokeBuilder&&(identical(other.maxGas, maxGas) || other.maxGas == maxGas)&&const DeepCollectionEquality().equals(other.deposits, _deposits));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,maxGas,const DeepCollectionEquality().hash(_deposits));
+int get hashCode {
+    return Object.hash(runtimeType,maxGas,const DeepCollectionEquality().hash(_deposits));
+}
 
 @override
 String toString() {
-  return 'DeployContractInvokeBuilder(maxGas: $maxGas, deposits: $deposits)';
+    return 'DeployContractInvokeBuilder(maxGas: $maxGas, deposits: $deposits)';
 }
 
 

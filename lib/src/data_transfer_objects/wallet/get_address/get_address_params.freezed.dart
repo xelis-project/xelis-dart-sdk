@@ -29,16 +29,21 @@ $GetAddressParamsCopyWith<GetAddressParams> get copyWith => _$GetAddressParamsCo
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetAddressParams&&(identical(other.integratedData, integratedData) || other.integratedData == integratedData));
+  final _this = this as GetAddressParams;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetAddressParams&&(identical(other.integratedData, _this.integratedData) || other.integratedData == _this.integratedData));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,integratedData);
+int get hashCode {
+  final _this = this as GetAddressParams;
+  return Object.hash(runtimeType,_this.integratedData);
+}
 
 @override
 String toString() {
-  return 'GetAddressParams(integratedData: $integratedData)';
+  final _this = this as GetAddressParams;
+  return 'GetAddressParams(integratedData: ${_this.integratedData})';
 }
 
 
@@ -240,16 +245,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetAddressParams&&(identical(other.integratedData, integratedData) || other.integratedData == integratedData));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetAddressParams&&(identical(other.integratedData, integratedData) || other.integratedData == integratedData));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,integratedData);
+int get hashCode {
+    return Object.hash(runtimeType,integratedData);
+}
 
 @override
 String toString() {
-  return 'GetAddressParams(integratedData: $integratedData)';
+    return 'GetAddressParams(integratedData: $integratedData)';
 }
 
 

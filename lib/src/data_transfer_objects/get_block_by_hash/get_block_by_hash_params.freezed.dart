@@ -29,16 +29,21 @@ $GetBlockByHashParamsCopyWith<GetBlockByHashParams> get copyWith => _$GetBlockBy
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetBlockByHashParams&&(identical(other.hash, hash) || other.hash == hash)&&(identical(other.includeTxs, includeTxs) || other.includeTxs == includeTxs));
+  final _this = this as GetBlockByHashParams;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetBlockByHashParams&&(identical(other.hash, _this.hash) || other.hash == _this.hash)&&(identical(other.includeTxs, _this.includeTxs) || other.includeTxs == _this.includeTxs));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,hash,includeTxs);
+int get hashCode {
+  final _this = this as GetBlockByHashParams;
+  return Object.hash(runtimeType,_this.hash,_this.includeTxs);
+}
 
 @override
 String toString() {
-  return 'GetBlockByHashParams(hash: $hash, includeTxs: $includeTxs)';
+  final _this = this as GetBlockByHashParams;
+  return 'GetBlockByHashParams(hash: ${_this.hash}, includeTxs: ${_this.includeTxs})';
 }
 
 
@@ -230,16 +235,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetBlockByHashParams&&(identical(other.hash, hash) || other.hash == hash)&&(identical(other.includeTxs, includeTxs) || other.includeTxs == includeTxs));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetBlockByHashParams&&(identical(other.hash, hash) || other.hash == hash)&&(identical(other.includeTxs, includeTxs) || other.includeTxs == includeTxs));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,hash,includeTxs);
+int get hashCode {
+    return Object.hash(runtimeType,hash,includeTxs);
+}
 
 @override
 String toString() {
-  return 'GetBlockByHashParams(hash: $hash, includeTxs: $includeTxs)';
+    return 'GetBlockByHashParams(hash: $hash, includeTxs: $includeTxs)';
 }
 
 

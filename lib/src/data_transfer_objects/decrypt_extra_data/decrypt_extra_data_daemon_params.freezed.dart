@@ -26,16 +26,21 @@ $DecryptExtraDataDaemonParamsCopyWith<DecryptExtraDataDaemonParams> get copyWith
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is DecryptExtraDataDaemonParams&&(identical(other.extraData, extraData) || other.extraData == extraData)&&(identical(other.sharedKey, sharedKey) || other.sharedKey == sharedKey));
+  final _this = this as DecryptExtraDataDaemonParams;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is DecryptExtraDataDaemonParams&&(identical(other.extraData, _this.extraData) || other.extraData == _this.extraData)&&(identical(other.sharedKey, _this.sharedKey) || other.sharedKey == _this.sharedKey));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,extraData,sharedKey);
+int get hashCode {
+  final _this = this as DecryptExtraDataDaemonParams;
+  return Object.hash(runtimeType,_this.extraData,_this.sharedKey);
+}
 
 @override
 String toString() {
-  return 'DecryptExtraDataDaemonParams(extraData: $extraData, sharedKey: $sharedKey)';
+  final _this = this as DecryptExtraDataDaemonParams;
+  return 'DecryptExtraDataDaemonParams(extraData: ${_this.extraData}, sharedKey: ${_this.sharedKey})';
 }
 
 
@@ -224,16 +229,18 @@ _$DecryptExtraDataDaemonParamsCopyWith<_DecryptExtraDataDaemonParams> get copyWi
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _DecryptExtraDataDaemonParams&&(identical(other.extraData, extraData) || other.extraData == extraData)&&(identical(other.sharedKey, sharedKey) || other.sharedKey == sharedKey));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _DecryptExtraDataDaemonParams&&(identical(other.extraData, extraData) || other.extraData == extraData)&&(identical(other.sharedKey, sharedKey) || other.sharedKey == sharedKey));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,extraData,sharedKey);
+int get hashCode {
+    return Object.hash(runtimeType,extraData,sharedKey);
+}
 
 @override
 String toString() {
-  return 'DecryptExtraDataDaemonParams(extraData: $extraData, sharedKey: $sharedKey)';
+    return 'DecryptExtraDataDaemonParams(extraData: $extraData, sharedKey: $sharedKey)';
 }
 
 

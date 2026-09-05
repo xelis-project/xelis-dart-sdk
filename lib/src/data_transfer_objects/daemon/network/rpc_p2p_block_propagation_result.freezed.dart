@@ -26,16 +26,21 @@ $RpcP2pBlockPropagationResultCopyWith<RpcP2pBlockPropagationResult> get copyWith
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcP2pBlockPropagationResult&&const DeepCollectionEquality().equals(other.peers, peers)&&(identical(other.firstSeen, firstSeen) || other.firstSeen == firstSeen)&&(identical(other.processingAt, processingAt) || other.processingAt == processingAt)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as RpcP2pBlockPropagationResult;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcP2pBlockPropagationResult&&const DeepCollectionEquality().equals(other.peers, _this.peers)&&(identical(other.firstSeen, _this.firstSeen) || other.firstSeen == _this.firstSeen)&&(identical(other.processingAt, _this.processingAt) || other.processingAt == _this.processingAt)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(peers),firstSeen,processingAt,extraFields);
+int get hashCode {
+  final _this = this as RpcP2pBlockPropagationResult;
+  return Object.hash(runtimeType,const DeepCollectionEquality().hash(_this.peers),_this.firstSeen,_this.processingAt,_this.extraFields);
+}
 
 @override
 String toString() {
-  return 'RpcP2pBlockPropagationResult(peers: $peers, firstSeen: $firstSeen, processingAt: $processingAt, extraFields: $extraFields)';
+  final _this = this as RpcP2pBlockPropagationResult;
+  return 'RpcP2pBlockPropagationResult(peers: ${_this.peers}, firstSeen: ${_this.firstSeen}, processingAt: ${_this.processingAt}, extraFields: ${_this.extraFields})';
 }
 
 
@@ -243,16 +248,18 @@ _$RpcP2pBlockPropagationResultCopyWith<_RpcP2pBlockPropagationResult> get copyWi
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RpcP2pBlockPropagationResult&&const DeepCollectionEquality().equals(other._peers, _peers)&&(identical(other.firstSeen, firstSeen) || other.firstSeen == firstSeen)&&(identical(other.processingAt, processingAt) || other.processingAt == processingAt)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _RpcP2pBlockPropagationResult&&const DeepCollectionEquality().equals(other.peers, _peers)&&(identical(other.firstSeen, firstSeen) || other.firstSeen == firstSeen)&&(identical(other.processingAt, processingAt) || other.processingAt == processingAt)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_peers),firstSeen,processingAt,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,const DeepCollectionEquality().hash(_peers),firstSeen,processingAt,extraFields);
+}
 
 @override
 String toString() {
-  return 'RpcP2pBlockPropagationResult(peers: $peers, firstSeen: $firstSeen, processingAt: $processingAt, extraFields: $extraFields)';
+    return 'RpcP2pBlockPropagationResult(peers: $peers, firstSeen: $firstSeen, processingAt: $processingAt, extraFields: $extraFields)';
 }
 
 

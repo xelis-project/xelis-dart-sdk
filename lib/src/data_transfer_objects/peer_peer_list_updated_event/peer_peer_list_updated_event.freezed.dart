@@ -29,16 +29,21 @@ $PeerPeerListUpdatedEventCopyWith<PeerPeerListUpdatedEvent> get copyWith => _$Pe
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is PeerPeerListUpdatedEvent&&(identical(other.id, id) || other.id == id)&&const DeepCollectionEquality().equals(other.peerList, peerList)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as PeerPeerListUpdatedEvent;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is PeerPeerListUpdatedEvent&&(identical(other.id, _this.id) || other.id == _this.id)&&const DeepCollectionEquality().equals(other.peerList, _this.peerList)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,const DeepCollectionEquality().hash(peerList),extraFields);
+int get hashCode {
+  final _this = this as PeerPeerListUpdatedEvent;
+  return Object.hash(runtimeType,_this.id,const DeepCollectionEquality().hash(_this.peerList),_this.extraFields);
+}
 
 @override
 String toString() {
-  return 'PeerPeerListUpdatedEvent(id: $id, peerList: $peerList, extraFields: $extraFields)';
+  final _this = this as PeerPeerListUpdatedEvent;
+  return 'PeerPeerListUpdatedEvent(id: ${_this.id}, peerList: ${_this.peerList}, extraFields: ${_this.extraFields})';
 }
 
 
@@ -247,16 +252,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PeerPeerListUpdatedEvent&&(identical(other.id, id) || other.id == id)&&const DeepCollectionEquality().equals(other._peerList, _peerList)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _PeerPeerListUpdatedEvent&&(identical(other.id, id) || other.id == id)&&const DeepCollectionEquality().equals(other.peerList, _peerList)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,const DeepCollectionEquality().hash(_peerList),extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,id,const DeepCollectionEquality().hash(_peerList),extraFields);
+}
 
 @override
 String toString() {
-  return 'PeerPeerListUpdatedEvent(id: $id, peerList: $peerList, extraFields: $extraFields)';
+    return 'PeerPeerListUpdatedEvent(id: $id, peerList: $peerList, extraFields: $extraFields)';
 }
 
 

@@ -29,16 +29,21 @@ $GetWalletBalanceParamsCopyWith<GetWalletBalanceParams> get copyWith => _$GetWal
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetWalletBalanceParams&&(identical(other.assetHash, assetHash) || other.assetHash == assetHash));
+  final _this = this as GetWalletBalanceParams;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetWalletBalanceParams&&(identical(other.assetHash, _this.assetHash) || other.assetHash == _this.assetHash));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,assetHash);
+int get hashCode {
+  final _this = this as GetWalletBalanceParams;
+  return Object.hash(runtimeType,_this.assetHash);
+}
 
 @override
 String toString() {
-  return 'GetWalletBalanceParams(assetHash: $assetHash)';
+  final _this = this as GetWalletBalanceParams;
+  return 'GetWalletBalanceParams(assetHash: ${_this.assetHash})';
 }
 
 
@@ -228,16 +233,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetWalletBalanceParams&&(identical(other.assetHash, assetHash) || other.assetHash == assetHash));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetWalletBalanceParams&&(identical(other.assetHash, assetHash) || other.assetHash == assetHash));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,assetHash);
+int get hashCode {
+    return Object.hash(runtimeType,assetHash);
+}
 
 @override
 String toString() {
-  return 'GetWalletBalanceParams(assetHash: $assetHash)';
+    return 'GetWalletBalanceParams(assetHash: $assetHash)';
 }
 
 

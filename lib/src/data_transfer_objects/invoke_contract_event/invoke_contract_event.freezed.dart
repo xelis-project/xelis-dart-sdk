@@ -26,16 +26,21 @@ $InvokeContractEventCopyWith<InvokeContractEvent> get copyWith => _$InvokeContra
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is InvokeContractEvent&&(identical(other.blockHash, blockHash) || other.blockHash == blockHash)&&(identical(other.txHash, txHash) || other.txHash == txHash)&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&const DeepCollectionEquality().equals(other.contractLogs, contractLogs)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as InvokeContractEvent;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is InvokeContractEvent&&(identical(other.blockHash, _this.blockHash) || other.blockHash == _this.blockHash)&&(identical(other.txHash, _this.txHash) || other.txHash == _this.txHash)&&(identical(other.topoheight, _this.topoheight) || other.topoheight == _this.topoheight)&&const DeepCollectionEquality().equals(other.contractLogs, _this.contractLogs)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,blockHash,txHash,topoheight,const DeepCollectionEquality().hash(contractLogs),extraFields);
+int get hashCode {
+  final _this = this as InvokeContractEvent;
+  return Object.hash(runtimeType,_this.blockHash,_this.txHash,_this.topoheight,const DeepCollectionEquality().hash(_this.contractLogs),_this.extraFields);
+}
 
 @override
 String toString() {
-  return 'InvokeContractEvent(blockHash: $blockHash, txHash: $txHash, topoheight: $topoheight, contractLogs: $contractLogs, extraFields: $extraFields)';
+  final _this = this as InvokeContractEvent;
+  return 'InvokeContractEvent(blockHash: ${_this.blockHash}, txHash: ${_this.txHash}, topoheight: ${_this.topoheight}, contractLogs: ${_this.contractLogs}, extraFields: ${_this.extraFields})';
 }
 
 
@@ -245,16 +250,18 @@ _$InvokeContractEventCopyWith<_InvokeContractEvent> get copyWith => __$InvokeCon
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _InvokeContractEvent&&(identical(other.blockHash, blockHash) || other.blockHash == blockHash)&&(identical(other.txHash, txHash) || other.txHash == txHash)&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&const DeepCollectionEquality().equals(other._contractLogs, _contractLogs)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _InvokeContractEvent&&(identical(other.blockHash, blockHash) || other.blockHash == blockHash)&&(identical(other.txHash, txHash) || other.txHash == txHash)&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&const DeepCollectionEquality().equals(other.contractLogs, _contractLogs)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,blockHash,txHash,topoheight,const DeepCollectionEquality().hash(_contractLogs),extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,blockHash,txHash,topoheight,const DeepCollectionEquality().hash(_contractLogs),extraFields);
+}
 
 @override
 String toString() {
-  return 'InvokeContractEvent(blockHash: $blockHash, txHash: $txHash, topoheight: $topoheight, contractLogs: $contractLogs, extraFields: $extraFields)';
+    return 'InvokeContractEvent(blockHash: $blockHash, txHash: $txHash, topoheight: $topoheight, contractLogs: $contractLogs, extraFields: $extraFields)';
 }
 
 

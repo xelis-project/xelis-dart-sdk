@@ -21,7 +21,7 @@ mixin _$MaxSupplyMode {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is MaxSupplyMode);
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is MaxSupplyMode);
 }
 
 
@@ -194,7 +194,7 @@ class NoMaxSupplyMode extends MaxSupplyMode {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is NoMaxSupplyMode);
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is NoMaxSupplyMode);
 }
 
 
@@ -227,12 +227,14 @@ $FixedMaxSupplyModeCopyWith<FixedMaxSupplyMode> get copyWith => _$FixedMaxSupply
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is FixedMaxSupplyMode&&(identical(other.value, value) || other.value == value));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is FixedMaxSupplyMode&&(identical(other.value, value) || other.value == value));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,value);
+int get hashCode {
+    return Object.hash(runtimeType,value);
+}
 
 
 
@@ -289,12 +291,14 @@ $MintableMaxSupplyModeCopyWith<MintableMaxSupplyMode> get copyWith => _$Mintable
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is MintableMaxSupplyMode&&(identical(other.value, value) || other.value == value));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is MintableMaxSupplyMode&&(identical(other.value, value) || other.value == value));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,value);
+int get hashCode {
+    return Object.hash(runtimeType,value);
+}
 
 
 
@@ -352,12 +356,14 @@ $UnknownMaxSupplyModeCopyWith<UnknownMaxSupplyMode> get copyWith => _$UnknownMax
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is UnknownMaxSupplyMode&&(identical(other.type, type) || other.type == type)&&(identical(other.wireValue, wireValue) || other.wireValue == wireValue));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is UnknownMaxSupplyMode&&(identical(other.type, type) || other.type == type)&&(identical(other.wireValue, wireValue) || other.wireValue == wireValue));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,type,wireValue);
+int get hashCode {
+    return Object.hash(runtimeType,type,wireValue);
+}
 
 
 

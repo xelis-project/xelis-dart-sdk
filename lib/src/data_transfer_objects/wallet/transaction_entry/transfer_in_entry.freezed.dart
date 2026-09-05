@@ -29,16 +29,21 @@ $TransferInEntryCopyWith<TransferInEntry> get copyWith => _$TransferInEntryCopyW
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is TransferInEntry&&(identical(other.amount, amount) || other.amount == amount)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.extraData, extraData) || other.extraData == extraData)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as TransferInEntry;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is TransferInEntry&&(identical(other.amount, _this.amount) || other.amount == _this.amount)&&(identical(other.asset, _this.asset) || other.asset == _this.asset)&&(identical(other.extraData, _this.extraData) || other.extraData == _this.extraData)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,amount,asset,extraData,extraFields);
+int get hashCode {
+  final _this = this as TransferInEntry;
+  return Object.hash(runtimeType,_this.amount,_this.asset,_this.extraData,_this.extraFields);
+}
 
 @override
 String toString() {
-  return 'TransferInEntry(amount: $amount, asset: $asset, extraData: $extraData, extraFields: $extraFields)';
+  final _this = this as TransferInEntry;
+  return 'TransferInEntry(amount: ${_this.amount}, asset: ${_this.asset}, extraData: ${_this.extraData}, extraFields: ${_this.extraFields})';
 }
 
 
@@ -255,16 +260,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _TransferInEntry&&(identical(other.amount, amount) || other.amount == amount)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.extraData, extraData) || other.extraData == extraData)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _TransferInEntry&&(identical(other.amount, amount) || other.amount == amount)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.extraData, extraData) || other.extraData == extraData)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,amount,asset,extraData,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,amount,asset,extraData,extraFields);
+}
 
 @override
 String toString() {
-  return 'TransferInEntry(amount: $amount, asset: $asset, extraData: $extraData, extraFields: $extraFields)';
+    return 'TransferInEntry(amount: $amount, asset: $asset, extraData: $extraData, extraFields: $extraFields)';
 }
 
 

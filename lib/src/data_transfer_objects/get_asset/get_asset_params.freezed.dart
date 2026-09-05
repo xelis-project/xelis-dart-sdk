@@ -29,16 +29,21 @@ $GetAssetParamsCopyWith<GetAssetParams> get copyWith => _$GetAssetParamsCopyWith
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetAssetParams&&(identical(other.asset, asset) || other.asset == asset));
+  final _this = this as GetAssetParams;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetAssetParams&&(identical(other.asset, _this.asset) || other.asset == _this.asset));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,asset);
+int get hashCode {
+  final _this = this as GetAssetParams;
+  return Object.hash(runtimeType,_this.asset);
+}
 
 @override
 String toString() {
-  return 'GetAssetParams(asset: $asset)';
+  final _this = this as GetAssetParams;
+  return 'GetAssetParams(asset: ${_this.asset})';
 }
 
 
@@ -228,16 +233,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetAssetParams&&(identical(other.asset, asset) || other.asset == asset));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetAssetParams&&(identical(other.asset, asset) || other.asset == asset));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,asset);
+int get hashCode {
+    return Object.hash(runtimeType,asset);
+}
 
 @override
 String toString() {
-  return 'GetAssetParams(asset: $asset)';
+    return 'GetAssetParams(asset: $asset)';
 }
 
 

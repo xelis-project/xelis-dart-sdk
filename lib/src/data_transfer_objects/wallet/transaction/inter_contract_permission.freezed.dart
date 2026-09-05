@@ -21,7 +21,7 @@ mixin _$InterContractPermission {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is InterContractPermission);
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is InterContractPermission);
 }
 
 
@@ -30,7 +30,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'InterContractPermission()';
+    return 'InterContractPermission()';
 }
 
 
@@ -204,7 +204,7 @@ class NoInterContractPermission extends InterContractPermission {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is NoInterContractPermission);
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is NoInterContractPermission);
 }
 
 
@@ -213,7 +213,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'InterContractPermission.none()';
+    return 'InterContractPermission.none()';
 }
 
 
@@ -236,7 +236,7 @@ class AllInterContractPermission extends InterContractPermission {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AllInterContractPermission);
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is AllInterContractPermission);
 }
 
 
@@ -245,7 +245,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'InterContractPermission.all()';
+    return 'InterContractPermission.all()';
 }
 
 
@@ -279,16 +279,18 @@ $SpecificInterContractPermissionCopyWith<SpecificInterContractPermission> get co
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is SpecificInterContractPermission&&const DeepCollectionEquality().equals(other._calls, _calls));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is SpecificInterContractPermission&&const DeepCollectionEquality().equals(other.calls, _calls));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_calls));
+int get hashCode {
+    return Object.hash(runtimeType,const DeepCollectionEquality().hash(_calls));
+}
 
 @override
 String toString() {
-  return 'InterContractPermission.specific(calls: $calls)';
+    return 'InterContractPermission.specific(calls: $calls)';
 }
 
 
@@ -351,16 +353,18 @@ $ExcludedInterContractPermissionCopyWith<ExcludedInterContractPermission> get co
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ExcludedInterContractPermission&&const DeepCollectionEquality().equals(other._calls, _calls));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is ExcludedInterContractPermission&&const DeepCollectionEquality().equals(other.calls, _calls));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_calls));
+int get hashCode {
+    return Object.hash(runtimeType,const DeepCollectionEquality().hash(_calls));
+}
 
 @override
 String toString() {
-  return 'InterContractPermission.exclude(calls: $calls)';
+    return 'InterContractPermission.exclude(calls: $calls)';
 }
 
 
@@ -418,16 +422,18 @@ $UnknownInterContractPermissionCopyWith<UnknownInterContractPermission> get copy
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is UnknownInterContractPermission&&(identical(other.type, type) || other.type == type)&&(identical(other.wireValue, wireValue) || other.wireValue == wireValue));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is UnknownInterContractPermission&&(identical(other.type, type) || other.type == type)&&(identical(other.wireValue, wireValue) || other.wireValue == wireValue));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,type,wireValue);
+int get hashCode {
+    return Object.hash(runtimeType,type,wireValue);
+}
 
 @override
 String toString() {
-  return 'InterContractPermission.unknown(type: $type, wireValue: $wireValue)';
+    return 'InterContractPermission.unknown(type: $type, wireValue: $wireValue)';
 }
 
 
@@ -489,16 +495,21 @@ $ContractCallCopyWith<ContractCall> get copyWith => _$ContractCallCopyWithImpl<C
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ContractCall&&(identical(other.contract, contract) || other.contract == contract)&&(identical(other.chunk, chunk) || other.chunk == chunk)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as ContractCall;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ContractCall&&(identical(other.contract, _this.contract) || other.contract == _this.contract)&&(identical(other.chunk, _this.chunk) || other.chunk == _this.chunk)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,contract,chunk,extraFields);
+int get hashCode {
+  final _this = this as ContractCall;
+  return Object.hash(runtimeType,_this.contract,_this.chunk,_this.extraFields);
+}
 
 @override
 String toString() {
-  return 'ContractCall(contract: $contract, chunk: $chunk, extraFields: $extraFields)';
+  final _this = this as ContractCall;
+  return 'ContractCall(contract: ${_this.contract}, chunk: ${_this.chunk}, extraFields: ${_this.extraFields})';
 }
 
 
@@ -707,16 +718,18 @@ _$ContractCallCopyWith<_ContractCall> get copyWith => __$ContractCallCopyWithImp
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ContractCall&&(identical(other.contract, contract) || other.contract == contract)&&(identical(other.chunk, chunk) || other.chunk == chunk)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _ContractCall&&(identical(other.contract, contract) || other.contract == contract)&&(identical(other.chunk, chunk) || other.chunk == chunk)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,contract,chunk,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,contract,chunk,extraFields);
+}
 
 @override
 String toString() {
-  return 'ContractCall(contract: $contract, chunk: $chunk, extraFields: $extraFields)';
+    return 'ContractCall(contract: $contract, chunk: $chunk, extraFields: $extraFields)';
 }
 
 
@@ -783,7 +796,7 @@ mixin _$ContractCallChunk {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ContractCallChunk);
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is ContractCallChunk);
 }
 
 
@@ -792,7 +805,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'ContractCallChunk()';
+    return 'ContractCallChunk()';
 }
 
 
@@ -960,7 +973,7 @@ class AllContractCallChunks extends ContractCallChunk {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AllContractCallChunks);
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is AllContractCallChunks);
 }
 
 
@@ -969,7 +982,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'ContractCallChunk.all()';
+    return 'ContractCallChunk.all()';
 }
 
 
@@ -1003,16 +1016,18 @@ $SpecificContractCallChunksCopyWith<SpecificContractCallChunks> get copyWith => 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is SpecificContractCallChunks&&const DeepCollectionEquality().equals(other._chunks, _chunks));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is SpecificContractCallChunks&&const DeepCollectionEquality().equals(other.chunks, _chunks));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_chunks));
+int get hashCode {
+    return Object.hash(runtimeType,const DeepCollectionEquality().hash(_chunks));
+}
 
 @override
 String toString() {
-  return 'ContractCallChunk.specific(chunks: $chunks)';
+    return 'ContractCallChunk.specific(chunks: $chunks)';
 }
 
 
@@ -1075,16 +1090,18 @@ $ExcludedContractCallChunksCopyWith<ExcludedContractCallChunks> get copyWith => 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ExcludedContractCallChunks&&const DeepCollectionEquality().equals(other._chunks, _chunks));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is ExcludedContractCallChunks&&const DeepCollectionEquality().equals(other.chunks, _chunks));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_chunks));
+int get hashCode {
+    return Object.hash(runtimeType,const DeepCollectionEquality().hash(_chunks));
+}
 
 @override
 String toString() {
-  return 'ContractCallChunk.exclude(chunks: $chunks)';
+    return 'ContractCallChunk.exclude(chunks: $chunks)';
 }
 
 
@@ -1142,16 +1159,18 @@ $UnknownContractCallChunkCopyWith<UnknownContractCallChunk> get copyWith => _$Un
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is UnknownContractCallChunk&&(identical(other.type, type) || other.type == type)&&(identical(other.wireValue, wireValue) || other.wireValue == wireValue));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is UnknownContractCallChunk&&(identical(other.type, type) || other.type == type)&&(identical(other.wireValue, wireValue) || other.wireValue == wireValue));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,type,wireValue);
+int get hashCode {
+    return Object.hash(runtimeType,type,wireValue);
+}
 
 @override
 String toString() {
-  return 'ContractCallChunk.unknown(type: $type, wireValue: $wireValue)';
+    return 'ContractCallChunk.unknown(type: $type, wireValue: $wireValue)';
 }
 
 

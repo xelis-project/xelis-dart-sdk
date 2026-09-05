@@ -21,7 +21,7 @@ mixin _$RpcContractDeposit {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcContractDeposit);
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcContractDeposit);
 }
 
 
@@ -193,12 +193,14 @@ $RpcPublicContractDepositCopyWith<RpcPublicContractDeposit> get copyWith => _$Rp
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcPublicContractDeposit&&(identical(other.amount, amount) || other.amount == amount));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcPublicContractDeposit&&(identical(other.amount, amount) || other.amount == amount));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,amount);
+int get hashCode {
+    return Object.hash(runtimeType,amount);
+}
 
 
 
@@ -259,12 +261,14 @@ $RpcPrivateContractDepositCopyWith<RpcPrivateContractDeposit> get copyWith => _$
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcPrivateContractDeposit&&(identical(other.commitment, commitment) || other.commitment == commitment)&&(identical(other.senderHandle, senderHandle) || other.senderHandle == senderHandle)&&(identical(other.receiverHandle, receiverHandle) || other.receiverHandle == receiverHandle)&&(identical(other.validityProof, validityProof) || other.validityProof == validityProof)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcPrivateContractDeposit&&(identical(other.commitment, commitment) || other.commitment == commitment)&&(identical(other.senderHandle, senderHandle) || other.senderHandle == senderHandle)&&(identical(other.receiverHandle, receiverHandle) || other.receiverHandle == receiverHandle)&&(identical(other.validityProof, validityProof) || other.validityProof == validityProof)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,commitment,senderHandle,receiverHandle,validityProof,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,commitment,senderHandle,receiverHandle,validityProof,extraFields);
+}
 
 
 
@@ -371,12 +375,14 @@ $RpcUnknownContractDepositCopyWith<RpcUnknownContractDeposit> get copyWith => _$
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcUnknownContractDeposit&&(identical(other.type, type) || other.type == type)&&(identical(other.wireValue, wireValue) || other.wireValue == wireValue));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcUnknownContractDeposit&&(identical(other.type, type) || other.type == type)&&(identical(other.wireValue, wireValue) || other.wireValue == wireValue));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,type,wireValue);
+int get hashCode {
+    return Object.hash(runtimeType,type,wireValue);
+}
 
 
 

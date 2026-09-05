@@ -29,16 +29,21 @@ $GetTopoheightRangeParamsCopyWith<GetTopoheightRangeParams> get copyWith => _$Ge
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetTopoheightRangeParams&&(identical(other.startTopoheight, startTopoheight) || other.startTopoheight == startTopoheight)&&(identical(other.endTopoheight, endTopoheight) || other.endTopoheight == endTopoheight));
+  final _this = this as GetTopoheightRangeParams;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetTopoheightRangeParams&&(identical(other.startTopoheight, _this.startTopoheight) || other.startTopoheight == _this.startTopoheight)&&(identical(other.endTopoheight, _this.endTopoheight) || other.endTopoheight == _this.endTopoheight));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,startTopoheight,endTopoheight);
+int get hashCode {
+  final _this = this as GetTopoheightRangeParams;
+  return Object.hash(runtimeType,_this.startTopoheight,_this.endTopoheight);
+}
 
 @override
 String toString() {
-  return 'GetTopoheightRangeParams(startTopoheight: $startTopoheight, endTopoheight: $endTopoheight)';
+  final _this = this as GetTopoheightRangeParams;
+  return 'GetTopoheightRangeParams(startTopoheight: ${_this.startTopoheight}, endTopoheight: ${_this.endTopoheight})';
 }
 
 
@@ -230,16 +235,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetTopoheightRangeParams&&(identical(other.startTopoheight, startTopoheight) || other.startTopoheight == startTopoheight)&&(identical(other.endTopoheight, endTopoheight) || other.endTopoheight == endTopoheight));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetTopoheightRangeParams&&(identical(other.startTopoheight, startTopoheight) || other.startTopoheight == startTopoheight)&&(identical(other.endTopoheight, endTopoheight) || other.endTopoheight == endTopoheight));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,startTopoheight,endTopoheight);
+int get hashCode {
+    return Object.hash(runtimeType,startTopoheight,endTopoheight);
+}
 
 @override
 String toString() {
-  return 'GetTopoheightRangeParams(startTopoheight: $startTopoheight, endTopoheight: $endTopoheight)';
+    return 'GetTopoheightRangeParams(startTopoheight: $startTopoheight, endTopoheight: $endTopoheight)';
 }
 
 

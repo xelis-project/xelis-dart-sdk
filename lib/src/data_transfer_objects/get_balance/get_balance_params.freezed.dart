@@ -29,16 +29,21 @@ $GetBalanceParamsCopyWith<GetBalanceParams> get copyWith => _$GetBalanceParamsCo
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetBalanceParams&&(identical(other.address, address) || other.address == address)&&(identical(other.asset, asset) || other.asset == asset));
+  final _this = this as GetBalanceParams;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetBalanceParams&&(identical(other.address, _this.address) || other.address == _this.address)&&(identical(other.asset, _this.asset) || other.asset == _this.asset));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,address,asset);
+int get hashCode {
+  final _this = this as GetBalanceParams;
+  return Object.hash(runtimeType,_this.address,_this.asset);
+}
 
 @override
 String toString() {
-  return 'GetBalanceParams(address: $address, asset: $asset)';
+  final _this = this as GetBalanceParams;
+  return 'GetBalanceParams(address: ${_this.address}, asset: ${_this.asset})';
 }
 
 
@@ -230,16 +235,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetBalanceParams&&(identical(other.address, address) || other.address == address)&&(identical(other.asset, asset) || other.asset == asset));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetBalanceParams&&(identical(other.address, address) || other.address == address)&&(identical(other.asset, asset) || other.asset == asset));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,address,asset);
+int get hashCode {
+    return Object.hash(runtimeType,address,asset);
+}
 
 @override
 String toString() {
-  return 'GetBalanceParams(address: $address, asset: $asset)';
+    return 'GetBalanceParams(address: $address, asset: $asset)';
 }
 
 

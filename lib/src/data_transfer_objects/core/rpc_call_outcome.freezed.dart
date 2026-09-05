@@ -21,7 +21,7 @@ mixin _$RpcCallOutcome<T> {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcCallOutcome<T>);
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcCallOutcome<T>);
 }
 
 
@@ -30,7 +30,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'RpcCallOutcome<$T>()';
+    return 'RpcCallOutcome<$T>()';
 }
 
 
@@ -191,16 +191,18 @@ $RpcCallSuccessCopyWith<T, RpcCallSuccess<T>> get copyWith => _$RpcCallSuccessCo
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcCallSuccess<T>&&const DeepCollectionEquality().equals(other.value, value));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcCallSuccess<T>&&const DeepCollectionEquality().equals(other.value, value));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(value));
+int get hashCode {
+    return Object.hash(runtimeType,const DeepCollectionEquality().hash(value));
+}
 
 @override
 String toString() {
-  return 'RpcCallOutcome<$T>.success(value: $value)';
+    return 'RpcCallOutcome<$T>.success(value: $value)';
 }
 
 
@@ -258,16 +260,18 @@ $RpcCallFailureCopyWith<T, RpcCallFailure<T>> get copyWith => _$RpcCallFailureCo
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcCallFailure<T>&&(identical(other.error, error) || other.error == error)&&(identical(other.rawPayload, rawPayload) || other.rawPayload == rawPayload));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcCallFailure<T>&&(identical(other.error, error) || other.error == error)&&(identical(other.rawPayload, rawPayload) || other.rawPayload == rawPayload));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,error,rawPayload);
+int get hashCode {
+    return Object.hash(runtimeType,error,rawPayload);
+}
 
 @override
 String toString() {
-  return 'RpcCallOutcome<$T>.failure(error: $error, rawPayload: $rawPayload)';
+    return 'RpcCallOutcome<$T>.failure(error: $error, rawPayload: $rawPayload)';
 }
 
 

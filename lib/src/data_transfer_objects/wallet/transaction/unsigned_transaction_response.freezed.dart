@@ -26,16 +26,21 @@ $UnsignedTransactionResponseCopyWith<UnsignedTransactionResponse> get copyWith =
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is UnsignedTransactionResponse&&(identical(other.transaction, transaction) || other.transaction == transaction)&&(identical(other.hash, hash) || other.hash == hash)&&(identical(other.threshold, threshold) || other.threshold == threshold)&&(identical(other.txAsHex, txAsHex) || other.txAsHex == txAsHex));
+  final _this = this as UnsignedTransactionResponse;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is UnsignedTransactionResponse&&(identical(other.transaction, _this.transaction) || other.transaction == _this.transaction)&&(identical(other.hash, _this.hash) || other.hash == _this.hash)&&(identical(other.threshold, _this.threshold) || other.threshold == _this.threshold)&&(identical(other.txAsHex, _this.txAsHex) || other.txAsHex == _this.txAsHex));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,transaction,hash,threshold,txAsHex);
+int get hashCode {
+  final _this = this as UnsignedTransactionResponse;
+  return Object.hash(runtimeType,_this.transaction,_this.hash,_this.threshold,_this.txAsHex);
+}
 
 @override
 String toString() {
-  return 'UnsignedTransactionResponse(transaction: $transaction, hash: $hash, threshold: $threshold, txAsHex: $txAsHex)';
+  final _this = this as UnsignedTransactionResponse;
+  return 'UnsignedTransactionResponse(transaction: ${_this.transaction}, hash: ${_this.hash}, threshold: ${_this.threshold}, txAsHex: ${_this.txAsHex})';
 }
 
 
@@ -237,16 +242,18 @@ _$UnsignedTransactionResponseCopyWith<_UnsignedTransactionResponse> get copyWith
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _UnsignedTransactionResponse&&(identical(other.transaction, transaction) || other.transaction == transaction)&&(identical(other.hash, hash) || other.hash == hash)&&(identical(other.threshold, threshold) || other.threshold == threshold)&&(identical(other.txAsHex, txAsHex) || other.txAsHex == txAsHex));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _UnsignedTransactionResponse&&(identical(other.transaction, transaction) || other.transaction == transaction)&&(identical(other.hash, hash) || other.hash == hash)&&(identical(other.threshold, threshold) || other.threshold == threshold)&&(identical(other.txAsHex, txAsHex) || other.txAsHex == txAsHex));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,transaction,hash,threshold,txAsHex);
+int get hashCode {
+    return Object.hash(runtimeType,transaction,hash,threshold,txAsHex);
+}
 
 @override
 String toString() {
-  return 'UnsignedTransactionResponse(transaction: $transaction, hash: $hash, threshold: $threshold, txAsHex: $txAsHex)';
+    return 'UnsignedTransactionResponse(transaction: $transaction, hash: $hash, threshold: $threshold, txAsHex: $txAsHex)';
 }
 
 

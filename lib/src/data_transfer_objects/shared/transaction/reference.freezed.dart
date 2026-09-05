@@ -29,16 +29,21 @@ $ReferenceCopyWith<Reference> get copyWith => _$ReferenceCopyWithImpl<Reference>
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is Reference&&(identical(other.hash, hash) || other.hash == hash)&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight));
+  final _this = this as Reference;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is Reference&&(identical(other.hash, _this.hash) || other.hash == _this.hash)&&(identical(other.topoheight, _this.topoheight) || other.topoheight == _this.topoheight));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,hash,topoheight);
+int get hashCode {
+  final _this = this as Reference;
+  return Object.hash(runtimeType,_this.hash,_this.topoheight);
+}
 
 @override
 String toString() {
-  return 'Reference(hash: $hash, topoheight: $topoheight)';
+  final _this = this as Reference;
+  return 'Reference(hash: ${_this.hash}, topoheight: ${_this.topoheight})';
 }
 
 
@@ -230,16 +235,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Reference&&(identical(other.hash, hash) || other.hash == hash)&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _Reference&&(identical(other.hash, hash) || other.hash == hash)&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,hash,topoheight);
+int get hashCode {
+    return Object.hash(runtimeType,hash,topoheight);
+}
 
 @override
 String toString() {
-  return 'Reference(hash: $hash, topoheight: $topoheight)';
+    return 'Reference(hash: $hash, topoheight: $topoheight)';
 }
 
 

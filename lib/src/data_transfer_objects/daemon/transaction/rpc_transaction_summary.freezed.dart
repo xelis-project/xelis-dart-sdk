@@ -26,16 +26,21 @@ $RpcTransactionSummaryCopyWith<RpcTransactionSummary> get copyWith => _$RpcTrans
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcTransactionSummary&&(identical(other.hash, hash) || other.hash == hash)&&(identical(other.source, source) || other.source == source)&&(identical(other.fee, fee) || other.fee == fee)&&(identical(other.size, size) || other.size == size)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as RpcTransactionSummary;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcTransactionSummary&&(identical(other.hash, _this.hash) || other.hash == _this.hash)&&(identical(other.source, _this.source) || other.source == _this.source)&&(identical(other.fee, _this.fee) || other.fee == _this.fee)&&(identical(other.size, _this.size) || other.size == _this.size)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,hash,source,fee,size,extraFields);
+int get hashCode {
+  final _this = this as RpcTransactionSummary;
+  return Object.hash(runtimeType,_this.hash,_this.source,_this.fee,_this.size,_this.extraFields);
+}
 
 @override
 String toString() {
-  return 'RpcTransactionSummary(hash: $hash, source: $source, fee: $fee, size: $size, extraFields: $extraFields)';
+  final _this = this as RpcTransactionSummary;
+  return 'RpcTransactionSummary(hash: ${_this.hash}, source: ${_this.source}, fee: ${_this.fee}, size: ${_this.size}, extraFields: ${_this.extraFields})';
 }
 
 
@@ -239,16 +244,18 @@ _$RpcTransactionSummaryCopyWith<_RpcTransactionSummary> get copyWith => __$RpcTr
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RpcTransactionSummary&&(identical(other.hash, hash) || other.hash == hash)&&(identical(other.source, source) || other.source == source)&&(identical(other.fee, fee) || other.fee == fee)&&(identical(other.size, size) || other.size == size)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _RpcTransactionSummary&&(identical(other.hash, hash) || other.hash == hash)&&(identical(other.source, source) || other.source == source)&&(identical(other.fee, fee) || other.fee == fee)&&(identical(other.size, size) || other.size == size)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,hash,source,fee,size,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,hash,source,fee,size,extraFields);
+}
 
 @override
 String toString() {
-  return 'RpcTransactionSummary(hash: $hash, source: $source, fee: $fee, size: $size, extraFields: $extraFields)';
+    return 'RpcTransactionSummary(hash: $hash, source: $source, fee: $fee, size: $size, extraFields: $extraFields)';
 }
 
 

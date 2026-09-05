@@ -29,16 +29,21 @@ $RescanParamsCopyWith<RescanParams> get copyWith => _$RescanParamsCopyWithImpl<R
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RescanParams&&(identical(other.untilTopoheight, untilTopoheight) || other.untilTopoheight == untilTopoheight));
+  final _this = this as RescanParams;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is RescanParams&&(identical(other.untilTopoheight, _this.untilTopoheight) || other.untilTopoheight == _this.untilTopoheight));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,untilTopoheight);
+int get hashCode {
+  final _this = this as RescanParams;
+  return Object.hash(runtimeType,_this.untilTopoheight);
+}
 
 @override
 String toString() {
-  return 'RescanParams(untilTopoheight: $untilTopoheight)';
+  final _this = this as RescanParams;
+  return 'RescanParams(untilTopoheight: ${_this.untilTopoheight})';
 }
 
 
@@ -228,16 +233,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RescanParams&&(identical(other.untilTopoheight, untilTopoheight) || other.untilTopoheight == untilTopoheight));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _RescanParams&&(identical(other.untilTopoheight, untilTopoheight) || other.untilTopoheight == untilTopoheight));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,untilTopoheight);
+int get hashCode {
+    return Object.hash(runtimeType,untilTopoheight);
+}
 
 @override
 String toString() {
-  return 'RescanParams(untilTopoheight: $untilTopoheight)';
+    return 'RescanParams(untilTopoheight: $untilTopoheight)';
 }
 
 

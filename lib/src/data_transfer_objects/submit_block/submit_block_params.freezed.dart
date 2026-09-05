@@ -29,16 +29,21 @@ $SubmitBlockParamsCopyWith<SubmitBlockParams> get copyWith => _$SubmitBlockParam
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is SubmitBlockParams&&(identical(other.blockTemplate, blockTemplate) || other.blockTemplate == blockTemplate));
+  final _this = this as SubmitBlockParams;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is SubmitBlockParams&&(identical(other.blockTemplate, _this.blockTemplate) || other.blockTemplate == _this.blockTemplate));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,blockTemplate);
+int get hashCode {
+  final _this = this as SubmitBlockParams;
+  return Object.hash(runtimeType,_this.blockTemplate);
+}
 
 @override
 String toString() {
-  return 'SubmitBlockParams(blockTemplate: $blockTemplate)';
+  final _this = this as SubmitBlockParams;
+  return 'SubmitBlockParams(blockTemplate: ${_this.blockTemplate})';
 }
 
 
@@ -228,16 +233,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _SubmitBlockParams&&(identical(other.blockTemplate, blockTemplate) || other.blockTemplate == blockTemplate));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _SubmitBlockParams&&(identical(other.blockTemplate, blockTemplate) || other.blockTemplate == blockTemplate));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,blockTemplate);
+int get hashCode {
+    return Object.hash(runtimeType,blockTemplate);
+}
 
 @override
 String toString() {
-  return 'SubmitBlockParams(blockTemplate: $blockTemplate)';
+    return 'SubmitBlockParams(blockTemplate: $blockTemplate)';
 }
 
 

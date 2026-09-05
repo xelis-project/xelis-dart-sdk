@@ -26,12 +26,16 @@ $RpcCompressedCiphertextCopyWith<RpcCompressedCiphertext> get copyWith => _$RpcC
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcCompressedCiphertext&&const DeepCollectionEquality().equals(other.commitment, commitment)&&const DeepCollectionEquality().equals(other.handle, handle)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as RpcCompressedCiphertext;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcCompressedCiphertext&&const DeepCollectionEquality().equals(other.commitment, _this.commitment)&&const DeepCollectionEquality().equals(other.handle, _this.handle)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(commitment),const DeepCollectionEquality().hash(handle),extraFields);
+int get hashCode {
+  final _this = this as RpcCompressedCiphertext;
+  return Object.hash(runtimeType,const DeepCollectionEquality().hash(_this.commitment),const DeepCollectionEquality().hash(_this.handle),_this.extraFields);
+}
 
 
 
@@ -243,12 +247,14 @@ _$RpcCompressedCiphertextCopyWith<_RpcCompressedCiphertext> get copyWith => __$R
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RpcCompressedCiphertext&&const DeepCollectionEquality().equals(other._commitment, _commitment)&&const DeepCollectionEquality().equals(other._handle, _handle)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _RpcCompressedCiphertext&&const DeepCollectionEquality().equals(other.commitment, _commitment)&&const DeepCollectionEquality().equals(other.handle, _handle)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_commitment),const DeepCollectionEquality().hash(_handle),extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,const DeepCollectionEquality().hash(_commitment),const DeepCollectionEquality().hash(_handle),extraFields);
+}
 
 
 

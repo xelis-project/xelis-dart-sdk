@@ -21,7 +21,7 @@ mixin _$MultisigState {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is MultisigState);
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is MultisigState);
 }
 
 
@@ -188,7 +188,7 @@ class Deleted extends MultisigState {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is Deleted);
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is Deleted);
 }
 
 
@@ -229,12 +229,14 @@ $ActiveCopyWith<Active> get copyWith => _$ActiveCopyWithImpl<Active>(this, _$ide
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is Active&&const DeepCollectionEquality().equals(other._participants, _participants)&&(identical(other.threshold, threshold) || other.threshold == threshold)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is Active&&const DeepCollectionEquality().equals(other.participants, _participants)&&(identical(other.threshold, threshold) || other.threshold == threshold)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_participants),threshold,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,const DeepCollectionEquality().hash(_participants),threshold,extraFields);
+}
 
 
 
@@ -303,12 +305,14 @@ $UnknownMultisigStateCopyWith<UnknownMultisigState> get copyWith => _$UnknownMul
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is UnknownMultisigState&&(identical(other.type, type) || other.type == type)&&(identical(other.wireValue, wireValue) || other.wireValue == wireValue));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is UnknownMultisigState&&(identical(other.type, type) || other.type == type)&&(identical(other.wireValue, wireValue) || other.wireValue == wireValue));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,type,wireValue);
+int get hashCode {
+    return Object.hash(runtimeType,type,wireValue);
+}
 
 
 

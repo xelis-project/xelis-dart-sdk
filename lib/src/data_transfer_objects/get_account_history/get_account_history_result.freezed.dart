@@ -26,16 +26,21 @@ $GetAccountHistoryResultCopyWith<GetAccountHistoryResult> get copyWith => _$GetA
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetAccountHistoryResult&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&(identical(other.hash, hash) || other.hash == hash)&&(identical(other.blockTimestamp, blockTimestamp) || other.blockTimestamp == blockTimestamp)&&(identical(other.historyType, historyType) || other.historyType == historyType)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as GetAccountHistoryResult;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetAccountHistoryResult&&(identical(other.topoheight, _this.topoheight) || other.topoheight == _this.topoheight)&&(identical(other.hash, _this.hash) || other.hash == _this.hash)&&(identical(other.blockTimestamp, _this.blockTimestamp) || other.blockTimestamp == _this.blockTimestamp)&&(identical(other.historyType, _this.historyType) || other.historyType == _this.historyType)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,topoheight,hash,blockTimestamp,historyType,extraFields);
+int get hashCode {
+  final _this = this as GetAccountHistoryResult;
+  return Object.hash(runtimeType,_this.topoheight,_this.hash,_this.blockTimestamp,_this.historyType,_this.extraFields);
+}
 
 @override
 String toString() {
-  return 'GetAccountHistoryResult(topoheight: $topoheight, hash: $hash, blockTimestamp: $blockTimestamp, historyType: $historyType, extraFields: $extraFields)';
+  final _this = this as GetAccountHistoryResult;
+  return 'GetAccountHistoryResult(topoheight: ${_this.topoheight}, hash: ${_this.hash}, blockTimestamp: ${_this.blockTimestamp}, historyType: ${_this.historyType}, extraFields: ${_this.extraFields})';
 }
 
 
@@ -248,16 +253,18 @@ _$GetAccountHistoryResultCopyWith<_GetAccountHistoryResult> get copyWith => __$G
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetAccountHistoryResult&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&(identical(other.hash, hash) || other.hash == hash)&&(identical(other.blockTimestamp, blockTimestamp) || other.blockTimestamp == blockTimestamp)&&(identical(other.historyType, historyType) || other.historyType == historyType)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetAccountHistoryResult&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&(identical(other.hash, hash) || other.hash == hash)&&(identical(other.blockTimestamp, blockTimestamp) || other.blockTimestamp == blockTimestamp)&&(identical(other.historyType, historyType) || other.historyType == historyType)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,topoheight,hash,blockTimestamp,historyType,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,topoheight,hash,blockTimestamp,historyType,extraFields);
+}
 
 @override
 String toString() {
-  return 'GetAccountHistoryResult(topoheight: $topoheight, hash: $hash, blockTimestamp: $blockTimestamp, historyType: $historyType, extraFields: $extraFields)';
+    return 'GetAccountHistoryResult(topoheight: $topoheight, hash: $hash, blockTimestamp: $blockTimestamp, historyType: $historyType, extraFields: $extraFields)';
 }
 
 

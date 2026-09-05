@@ -26,16 +26,21 @@ $GetMultisigResultCopyWith<GetMultisigResult> get copyWith => _$GetMultisigResul
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetMultisigResult&&(identical(other.state, state) || other.state == state)&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as GetMultisigResult;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetMultisigResult&&(identical(other.state, _this.state) || other.state == _this.state)&&(identical(other.topoheight, _this.topoheight) || other.topoheight == _this.topoheight)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,state,topoheight,extraFields);
+int get hashCode {
+  final _this = this as GetMultisigResult;
+  return Object.hash(runtimeType,_this.state,_this.topoheight,_this.extraFields);
+}
 
 @override
 String toString() {
-  return 'GetMultisigResult(state: $state, topoheight: $topoheight, extraFields: $extraFields)';
+  final _this = this as GetMultisigResult;
+  return 'GetMultisigResult(state: ${_this.state}, topoheight: ${_this.topoheight}, extraFields: ${_this.extraFields})';
 }
 
 
@@ -244,16 +249,18 @@ _$GetMultisigResultCopyWith<_GetMultisigResult> get copyWith => __$GetMultisigRe
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetMultisigResult&&(identical(other.state, state) || other.state == state)&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetMultisigResult&&(identical(other.state, state) || other.state == state)&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,state,topoheight,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,state,topoheight,extraFields);
+}
 
 @override
 String toString() {
-  return 'GetMultisigResult(state: $state, topoheight: $topoheight, extraFields: $extraFields)';
+    return 'GetMultisigResult(state: $state, topoheight: $topoheight, extraFields: $extraFields)';
 }
 
 

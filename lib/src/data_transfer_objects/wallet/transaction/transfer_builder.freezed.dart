@@ -29,16 +29,21 @@ $TransferBuilderCopyWith<TransferBuilder> get copyWith => _$TransferBuilderCopyW
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is TransferBuilder&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.amount, amount) || other.amount == amount)&&(identical(other.destination, destination) || other.destination == destination)&&(identical(other.encryptExtraData, encryptExtraData) || other.encryptExtraData == encryptExtraData)&&(identical(other.extraData, extraData) || other.extraData == extraData));
+  final _this = this as TransferBuilder;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is TransferBuilder&&(identical(other.asset, _this.asset) || other.asset == _this.asset)&&(identical(other.amount, _this.amount) || other.amount == _this.amount)&&(identical(other.destination, _this.destination) || other.destination == _this.destination)&&(identical(other.encryptExtraData, _this.encryptExtraData) || other.encryptExtraData == _this.encryptExtraData)&&(identical(other.extraData, _this.extraData) || other.extraData == _this.extraData));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,asset,amount,destination,encryptExtraData,extraData);
+int get hashCode {
+  final _this = this as TransferBuilder;
+  return Object.hash(runtimeType,_this.asset,_this.amount,_this.destination,_this.encryptExtraData,_this.extraData);
+}
 
 @override
 String toString() {
-  return 'TransferBuilder(asset: $asset, amount: $amount, destination: $destination, encryptExtraData: $encryptExtraData, extraData: $extraData)';
+  final _this = this as TransferBuilder;
+  return 'TransferBuilder(asset: ${_this.asset}, amount: ${_this.amount}, destination: ${_this.destination}, encryptExtraData: ${_this.encryptExtraData}, extraData: ${_this.extraData})';
 }
 
 
@@ -248,16 +253,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _TransferBuilder&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.amount, amount) || other.amount == amount)&&(identical(other.destination, destination) || other.destination == destination)&&(identical(other.encryptExtraData, encryptExtraData) || other.encryptExtraData == encryptExtraData)&&(identical(other.extraData, extraData) || other.extraData == extraData));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _TransferBuilder&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.amount, amount) || other.amount == amount)&&(identical(other.destination, destination) || other.destination == destination)&&(identical(other.encryptExtraData, encryptExtraData) || other.encryptExtraData == encryptExtraData)&&(identical(other.extraData, extraData) || other.extraData == extraData));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,asset,amount,destination,encryptExtraData,extraData);
+int get hashCode {
+    return Object.hash(runtimeType,asset,amount,destination,encryptExtraData,extraData);
+}
 
 @override
 String toString() {
-  return 'TransferBuilder(asset: $asset, amount: $amount, destination: $destination, encryptExtraData: $encryptExtraData, extraData: $extraData)';
+    return 'TransferBuilder(asset: $asset, amount: $amount, destination: $destination, encryptExtraData: $encryptExtraData, extraData: $extraData)';
 }
 
 

@@ -21,7 +21,7 @@ mixin _$RpcBalanceType {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcBalanceType);
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcBalanceType);
 }
 
 
@@ -30,7 +30,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'RpcBalanceType()';
+    return 'RpcBalanceType()';
 }
 
 
@@ -198,7 +198,7 @@ class RpcInputBalanceType extends RpcBalanceType {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcInputBalanceType);
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcInputBalanceType);
 }
 
 
@@ -207,7 +207,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'RpcBalanceType.input()';
+    return 'RpcBalanceType.input()';
 }
 
 
@@ -230,7 +230,7 @@ class RpcOutputBalanceType extends RpcBalanceType {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcOutputBalanceType);
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcOutputBalanceType);
 }
 
 
@@ -239,7 +239,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'RpcBalanceType.output()';
+    return 'RpcBalanceType.output()';
 }
 
 
@@ -262,7 +262,7 @@ class RpcBothBalanceType extends RpcBalanceType {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcBothBalanceType);
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcBothBalanceType);
 }
 
 
@@ -271,7 +271,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'RpcBalanceType.both()';
+    return 'RpcBalanceType.both()';
 }
 
 
@@ -299,16 +299,18 @@ $RpcUnknownBalanceTypeCopyWith<RpcUnknownBalanceType> get copyWith => _$RpcUnkno
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcUnknownBalanceType&&(identical(other.wireValue, wireValue) || other.wireValue == wireValue));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcUnknownBalanceType&&(identical(other.wireValue, wireValue) || other.wireValue == wireValue));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,wireValue);
+int get hashCode {
+    return Object.hash(runtimeType,wireValue);
+}
 
 @override
 String toString() {
-  return 'RpcBalanceType.unknown(wireValue: $wireValue)';
+    return 'RpcBalanceType.unknown(wireValue: $wireValue)';
 }
 
 

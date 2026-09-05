@@ -29,16 +29,21 @@ $GetContractDataParamsCopyWith<GetContractDataParams> get copyWith => _$GetContr
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetContractDataParams&&(identical(other.contractHash, contractHash) || other.contractHash == contractHash)&&(identical(other.key, key) || other.key == key));
+  final _this = this as GetContractDataParams;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetContractDataParams&&(identical(other.contractHash, _this.contractHash) || other.contractHash == _this.contractHash)&&(identical(other.key, _this.key) || other.key == _this.key));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,contractHash,key);
+int get hashCode {
+  final _this = this as GetContractDataParams;
+  return Object.hash(runtimeType,_this.contractHash,_this.key);
+}
 
 @override
 String toString() {
-  return 'GetContractDataParams(contractHash: $contractHash, key: $key)';
+  final _this = this as GetContractDataParams;
+  return 'GetContractDataParams(contractHash: ${_this.contractHash}, key: ${_this.key})';
 }
 
 
@@ -239,16 +244,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetContractDataParams&&(identical(other.contractHash, contractHash) || other.contractHash == contractHash)&&(identical(other.key, key) || other.key == key));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetContractDataParams&&(identical(other.contractHash, contractHash) || other.contractHash == contractHash)&&(identical(other.key, key) || other.key == key));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,contractHash,key);
+int get hashCode {
+    return Object.hash(runtimeType,contractHash,key);
+}
 
 @override
 String toString() {
-  return 'GetContractDataParams(contractHash: $contractHash, key: $key)';
+    return 'GetContractDataParams(contractHash: $contractHash, key: $key)';
 }
 
 

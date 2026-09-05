@@ -29,16 +29,21 @@ $HasNonceResultCopyWith<HasNonceResult> get copyWith => _$HasNonceResultCopyWith
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is HasNonceResult&&(identical(other.exist, exist) || other.exist == exist)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as HasNonceResult;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is HasNonceResult&&(identical(other.exist, _this.exist) || other.exist == _this.exist)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,exist,extraFields);
+int get hashCode {
+  final _this = this as HasNonceResult;
+  return Object.hash(runtimeType,_this.exist,_this.extraFields);
+}
 
 @override
 String toString() {
-  return 'HasNonceResult(exist: $exist, extraFields: $extraFields)';
+  final _this = this as HasNonceResult;
+  return 'HasNonceResult(exist: ${_this.exist}, extraFields: ${_this.extraFields})';
 }
 
 
@@ -239,16 +244,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _HasNonceResult&&(identical(other.exist, exist) || other.exist == exist)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _HasNonceResult&&(identical(other.exist, exist) || other.exist == exist)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,exist,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,exist,extraFields);
+}
 
 @override
 String toString() {
-  return 'HasNonceResult(exist: $exist, extraFields: $extraFields)';
+    return 'HasNonceResult(exist: $exist, extraFields: $extraFields)';
 }
 
 

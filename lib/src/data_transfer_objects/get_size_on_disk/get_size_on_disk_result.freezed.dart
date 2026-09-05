@@ -29,16 +29,21 @@ $GetSizeOnDiskResultCopyWith<GetSizeOnDiskResult> get copyWith => _$GetSizeOnDis
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetSizeOnDiskResult&&(identical(other.sizeBytes, sizeBytes) || other.sizeBytes == sizeBytes)&&(identical(other.sizeFormatted, sizeFormatted) || other.sizeFormatted == sizeFormatted)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as GetSizeOnDiskResult;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetSizeOnDiskResult&&(identical(other.sizeBytes, _this.sizeBytes) || other.sizeBytes == _this.sizeBytes)&&(identical(other.sizeFormatted, _this.sizeFormatted) || other.sizeFormatted == _this.sizeFormatted)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,sizeBytes,sizeFormatted,extraFields);
+int get hashCode {
+  final _this = this as GetSizeOnDiskResult;
+  return Object.hash(runtimeType,_this.sizeBytes,_this.sizeFormatted,_this.extraFields);
+}
 
 @override
 String toString() {
-  return 'GetSizeOnDiskResult(sizeBytes: $sizeBytes, sizeFormatted: $sizeFormatted, extraFields: $extraFields)';
+  final _this = this as GetSizeOnDiskResult;
+  return 'GetSizeOnDiskResult(sizeBytes: ${_this.sizeBytes}, sizeFormatted: ${_this.sizeFormatted}, extraFields: ${_this.extraFields})';
 }
 
 
@@ -241,16 +246,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetSizeOnDiskResult&&(identical(other.sizeBytes, sizeBytes) || other.sizeBytes == sizeBytes)&&(identical(other.sizeFormatted, sizeFormatted) || other.sizeFormatted == sizeFormatted)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetSizeOnDiskResult&&(identical(other.sizeBytes, sizeBytes) || other.sizeBytes == sizeBytes)&&(identical(other.sizeFormatted, sizeFormatted) || other.sizeFormatted == sizeFormatted)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,sizeBytes,sizeFormatted,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,sizeBytes,sizeFormatted,extraFields);
+}
 
 @override
 String toString() {
-  return 'GetSizeOnDiskResult(sizeBytes: $sizeBytes, sizeFormatted: $sizeFormatted, extraFields: $extraFields)';
+    return 'GetSizeOnDiskResult(sizeBytes: $sizeBytes, sizeFormatted: $sizeFormatted, extraFields: $extraFields)';
 }
 
 

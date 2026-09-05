@@ -21,7 +21,7 @@ mixin _$RpcValueCell {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcValueCell);
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcValueCell);
 }
 
 
@@ -206,12 +206,14 @@ $RpcPrimitiveValueCellCopyWith<RpcPrimitiveValueCell> get copyWith => _$RpcPrimi
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcPrimitiveValueCell&&(identical(other.value, value) || other.value == value)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcPrimitiveValueCell&&(identical(other.value, value) || other.value == value)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,value,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,value,extraFields);
+}
 
 
 
@@ -288,12 +290,14 @@ $RpcBytesValueCellCopyWith<RpcBytesValueCell> get copyWith => _$RpcBytesValueCel
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcBytesValueCell&&const DeepCollectionEquality().equals(other.value, value)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcBytesValueCell&&const DeepCollectionEquality().equals(other.value, value)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(value),extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,const DeepCollectionEquality().hash(value),extraFields);
+}
 
 
 
@@ -367,12 +371,14 @@ $RpcObjectValueCellCopyWith<RpcObjectValueCell> get copyWith => _$RpcObjectValue
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcObjectValueCell&&const DeepCollectionEquality().equals(other._values, _values)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcObjectValueCell&&const DeepCollectionEquality().equals(other.values, _values)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_values),extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,const DeepCollectionEquality().hash(_values),extraFields);
+}
 
 
 
@@ -446,12 +452,14 @@ $RpcMapValueCellCopyWith<RpcMapValueCell> get copyWith => _$RpcMapValueCellCopyW
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcMapValueCell&&const DeepCollectionEquality().equals(other._entries, _entries)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcMapValueCell&&const DeepCollectionEquality().equals(other.entries, _entries)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_entries),extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,const DeepCollectionEquality().hash(_entries),extraFields);
+}
 
 
 
@@ -518,12 +526,14 @@ $RpcUnknownValueCellCopyWith<RpcUnknownValueCell> get copyWith => _$RpcUnknownVa
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcUnknownValueCell&&(identical(other.wireValue, wireValue) || other.wireValue == wireValue));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcUnknownValueCell&&(identical(other.wireValue, wireValue) || other.wireValue == wireValue));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,wireValue);
+int get hashCode {
+    return Object.hash(runtimeType,wireValue);
+}
 
 
 
@@ -584,16 +594,21 @@ $RpcValueCellEntryCopyWith<RpcValueCellEntry> get copyWith => _$RpcValueCellEntr
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcValueCellEntry&&(identical(other.key, key) || other.key == key)&&(identical(other.value, value) || other.value == value));
+  final _this = this as RpcValueCellEntry;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcValueCellEntry&&(identical(other.key, _this.key) || other.key == _this.key)&&(identical(other.value, _this.value) || other.value == _this.value));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,key,value);
+int get hashCode {
+  final _this = this as RpcValueCellEntry;
+  return Object.hash(runtimeType,_this.key,_this.value);
+}
 
 @override
 String toString() {
-  return 'RpcValueCellEntry(key: $key, value: $value)';
+  final _this = this as RpcValueCellEntry;
+  return 'RpcValueCellEntry(key: ${_this.key}, value: ${_this.value})';
 }
 
 
@@ -800,16 +815,18 @@ _$RpcValueCellEntryCopyWith<_RpcValueCellEntry> get copyWith => __$RpcValueCellE
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RpcValueCellEntry&&(identical(other.key, key) || other.key == key)&&(identical(other.value, value) || other.value == value));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _RpcValueCellEntry&&(identical(other.key, key) || other.key == key)&&(identical(other.value, value) || other.value == value));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,key,value);
+int get hashCode {
+    return Object.hash(runtimeType,key,value);
+}
 
 @override
 String toString() {
-  return 'RpcValueCellEntry(key: $key, value: $value)';
+    return 'RpcValueCellEntry(key: $key, value: $value)';
 }
 
 
@@ -875,7 +892,7 @@ mixin _$RpcPrimitive {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcPrimitive);
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcPrimitive);
 }
 
 
@@ -1101,12 +1118,14 @@ $RpcNullPrimitiveCopyWith<RpcNullPrimitive> get copyWith => _$RpcNullPrimitiveCo
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcNullPrimitive&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcNullPrimitive&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,extraFields);
+}
 
 
 
@@ -1173,12 +1192,14 @@ $RpcBooleanPrimitiveCopyWith<RpcBooleanPrimitive> get copyWith => _$RpcBooleanPr
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcBooleanPrimitive&&(identical(other.value, value) || other.value == value)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcBooleanPrimitive&&(identical(other.value, value) || other.value == value)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,value,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,value,extraFields);
+}
 
 
 
@@ -1246,12 +1267,14 @@ $RpcU8PrimitiveCopyWith<RpcU8Primitive> get copyWith => _$RpcU8PrimitiveCopyWith
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcU8Primitive&&(identical(other.value, value) || other.value == value)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcU8Primitive&&(identical(other.value, value) || other.value == value)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,value,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,value,extraFields);
+}
 
 
 
@@ -1319,12 +1342,14 @@ $RpcU16PrimitiveCopyWith<RpcU16Primitive> get copyWith => _$RpcU16PrimitiveCopyW
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcU16Primitive&&(identical(other.value, value) || other.value == value)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcU16Primitive&&(identical(other.value, value) || other.value == value)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,value,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,value,extraFields);
+}
 
 
 
@@ -1392,12 +1417,14 @@ $RpcU32PrimitiveCopyWith<RpcU32Primitive> get copyWith => _$RpcU32PrimitiveCopyW
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcU32Primitive&&(identical(other.value, value) || other.value == value)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcU32Primitive&&(identical(other.value, value) || other.value == value)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,value,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,value,extraFields);
+}
 
 
 
@@ -1465,12 +1492,14 @@ $RpcU64PrimitiveCopyWith<RpcU64Primitive> get copyWith => _$RpcU64PrimitiveCopyW
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcU64Primitive&&(identical(other.value, value) || other.value == value)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcU64Primitive&&(identical(other.value, value) || other.value == value)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,value,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,value,extraFields);
+}
 
 
 
@@ -1538,12 +1567,14 @@ $RpcU128PrimitiveCopyWith<RpcU128Primitive> get copyWith => _$RpcU128PrimitiveCo
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcU128Primitive&&(identical(other.value, value) || other.value == value)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcU128Primitive&&(identical(other.value, value) || other.value == value)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,value,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,value,extraFields);
+}
 
 
 
@@ -1611,12 +1642,14 @@ $RpcU256PrimitiveCopyWith<RpcU256Primitive> get copyWith => _$RpcU256PrimitiveCo
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcU256Primitive&&(identical(other.value, value) || other.value == value)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcU256Primitive&&(identical(other.value, value) || other.value == value)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,value,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,value,extraFields);
+}
 
 
 
@@ -1684,12 +1717,14 @@ $RpcStringPrimitiveCopyWith<RpcStringPrimitive> get copyWith => _$RpcStringPrimi
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcStringPrimitive&&(identical(other.value, value) || other.value == value)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcStringPrimitive&&(identical(other.value, value) || other.value == value)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,value,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,value,extraFields);
+}
 
 
 
@@ -1758,12 +1793,14 @@ $RpcRangePrimitiveCopyWith<RpcRangePrimitive> get copyWith => _$RpcRangePrimitiv
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcRangePrimitive&&(identical(other.start, start) || other.start == start)&&(identical(other.end, end) || other.end == end)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcRangePrimitive&&(identical(other.start, start) || other.start == start)&&(identical(other.end, end) || other.end == end)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,start,end,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,start,end,extraFields);
+}
 
 
 
@@ -1850,12 +1887,14 @@ $RpcOpaquePrimitiveCopyWith<RpcOpaquePrimitive> get copyWith => _$RpcOpaquePrimi
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcOpaquePrimitive&&(identical(other.value, value) || other.value == value)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcOpaquePrimitive&&(identical(other.value, value) || other.value == value)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,value,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,value,extraFields);
+}
 
 
 
@@ -1931,12 +1970,14 @@ $RpcUnknownPrimitiveCopyWith<RpcUnknownPrimitive> get copyWith => _$RpcUnknownPr
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcUnknownPrimitive&&(identical(other.wireValue, wireValue) || other.wireValue == wireValue));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcUnknownPrimitive&&(identical(other.wireValue, wireValue) || other.wireValue == wireValue));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,wireValue);
+int get hashCode {
+    return Object.hash(runtimeType,wireValue);
+}
 
 
 

@@ -29,16 +29,21 @@ $ValidateAddressParamsCopyWith<ValidateAddressParams> get copyWith => _$Validate
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ValidateAddressParams&&(identical(other.address, address) || other.address == address)&&(identical(other.allowIntegrated, allowIntegrated) || other.allowIntegrated == allowIntegrated)&&(identical(other.maxIntegratedDataSize, maxIntegratedDataSize) || other.maxIntegratedDataSize == maxIntegratedDataSize));
+  final _this = this as ValidateAddressParams;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ValidateAddressParams&&(identical(other.address, _this.address) || other.address == _this.address)&&(identical(other.allowIntegrated, _this.allowIntegrated) || other.allowIntegrated == _this.allowIntegrated)&&(identical(other.maxIntegratedDataSize, _this.maxIntegratedDataSize) || other.maxIntegratedDataSize == _this.maxIntegratedDataSize));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,address,allowIntegrated,maxIntegratedDataSize);
+int get hashCode {
+  final _this = this as ValidateAddressParams;
+  return Object.hash(runtimeType,_this.address,_this.allowIntegrated,_this.maxIntegratedDataSize);
+}
 
 @override
 String toString() {
-  return 'ValidateAddressParams(address: $address, allowIntegrated: $allowIntegrated, maxIntegratedDataSize: $maxIntegratedDataSize)';
+  final _this = this as ValidateAddressParams;
+  return 'ValidateAddressParams(address: ${_this.address}, allowIntegrated: ${_this.allowIntegrated}, maxIntegratedDataSize: ${_this.maxIntegratedDataSize})';
 }
 
 
@@ -232,16 +237,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ValidateAddressParams&&(identical(other.address, address) || other.address == address)&&(identical(other.allowIntegrated, allowIntegrated) || other.allowIntegrated == allowIntegrated)&&(identical(other.maxIntegratedDataSize, maxIntegratedDataSize) || other.maxIntegratedDataSize == maxIntegratedDataSize));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _ValidateAddressParams&&(identical(other.address, address) || other.address == address)&&(identical(other.allowIntegrated, allowIntegrated) || other.allowIntegrated == allowIntegrated)&&(identical(other.maxIntegratedDataSize, maxIntegratedDataSize) || other.maxIntegratedDataSize == maxIntegratedDataSize));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,address,allowIntegrated,maxIntegratedDataSize);
+int get hashCode {
+    return Object.hash(runtimeType,address,allowIntegrated,maxIntegratedDataSize);
+}
 
 @override
 String toString() {
-  return 'ValidateAddressParams(address: $address, allowIntegrated: $allowIntegrated, maxIntegratedDataSize: $maxIntegratedDataSize)';
+    return 'ValidateAddressParams(address: $address, allowIntegrated: $allowIntegrated, maxIntegratedDataSize: $maxIntegratedDataSize)';
 }
 
 

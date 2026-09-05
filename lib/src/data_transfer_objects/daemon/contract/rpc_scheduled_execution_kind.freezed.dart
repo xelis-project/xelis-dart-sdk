@@ -21,7 +21,7 @@ mixin _$RpcScheduledExecutionKind {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcScheduledExecutionKind);
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcScheduledExecutionKind);
 }
 
 
@@ -193,12 +193,14 @@ $RpcTopoheightScheduledExecutionCopyWith<RpcTopoheightScheduledExecution> get co
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcTopoheightScheduledExecution&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcTopoheightScheduledExecution&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,topoheight);
+int get hashCode {
+    return Object.hash(runtimeType,topoheight);
+}
 
 
 
@@ -250,7 +252,7 @@ class RpcBlockEndScheduledExecution extends RpcScheduledExecutionKind {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcBlockEndScheduledExecution);
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcBlockEndScheduledExecution);
 }
 
 
@@ -283,12 +285,14 @@ $RpcUnknownScheduledExecutionKindCopyWith<RpcUnknownScheduledExecutionKind> get 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcUnknownScheduledExecutionKind&&(identical(other.wireValue, wireValue) || other.wireValue == wireValue));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcUnknownScheduledExecutionKind&&(identical(other.wireValue, wireValue) || other.wireValue == wireValue));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,wireValue);
+int get hashCode {
+    return Object.hash(runtimeType,wireValue);
+}
 
 
 

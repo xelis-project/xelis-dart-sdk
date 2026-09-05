@@ -26,16 +26,21 @@ $EstimateWalletFeesParamsCopyWith<EstimateWalletFeesParams> get copyWith => _$Es
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is EstimateWalletFeesParams&&(identical(other.transactionTypeBuilder, transactionTypeBuilder) || other.transactionTypeBuilder == transactionTypeBuilder)&&(identical(other.fee, fee) || other.fee == fee)&&(identical(other.baseFee, baseFee) || other.baseFee == baseFee));
+  final _this = this as EstimateWalletFeesParams;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is EstimateWalletFeesParams&&(identical(other.transactionTypeBuilder, _this.transactionTypeBuilder) || other.transactionTypeBuilder == _this.transactionTypeBuilder)&&(identical(other.fee, _this.fee) || other.fee == _this.fee)&&(identical(other.baseFee, _this.baseFee) || other.baseFee == _this.baseFee));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,transactionTypeBuilder,fee,baseFee);
+int get hashCode {
+  final _this = this as EstimateWalletFeesParams;
+  return Object.hash(runtimeType,_this.transactionTypeBuilder,_this.fee,_this.baseFee);
+}
 
 @override
 String toString() {
-  return 'EstimateWalletFeesParams(transactionTypeBuilder: $transactionTypeBuilder, fee: $fee, baseFee: $baseFee)';
+  final _this = this as EstimateWalletFeesParams;
+  return 'EstimateWalletFeesParams(transactionTypeBuilder: ${_this.transactionTypeBuilder}, fee: ${_this.fee}, baseFee: ${_this.baseFee})';
 }
 
 
@@ -253,16 +258,18 @@ _$EstimateWalletFeesParamsCopyWith<_EstimateWalletFeesParams> get copyWith => __
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _EstimateWalletFeesParams&&(identical(other.transactionTypeBuilder, transactionTypeBuilder) || other.transactionTypeBuilder == transactionTypeBuilder)&&(identical(other.fee, fee) || other.fee == fee)&&(identical(other.baseFee, baseFee) || other.baseFee == baseFee));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _EstimateWalletFeesParams&&(identical(other.transactionTypeBuilder, transactionTypeBuilder) || other.transactionTypeBuilder == transactionTypeBuilder)&&(identical(other.fee, fee) || other.fee == fee)&&(identical(other.baseFee, baseFee) || other.baseFee == baseFee));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,transactionTypeBuilder,fee,baseFee);
+int get hashCode {
+    return Object.hash(runtimeType,transactionTypeBuilder,fee,baseFee);
+}
 
 @override
 String toString() {
-  return 'EstimateWalletFeesParams(transactionTypeBuilder: $transactionTypeBuilder, fee: $fee, baseFee: $baseFee)';
+    return 'EstimateWalletFeesParams(transactionTypeBuilder: $transactionTypeBuilder, fee: $fee, baseFee: $baseFee)';
 }
 
 

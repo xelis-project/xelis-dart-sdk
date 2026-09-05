@@ -26,16 +26,21 @@ $WalletAssetEntryCopyWith<WalletAssetEntry> get copyWith => _$WalletAssetEntryCo
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is WalletAssetEntry&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.data, data) || other.data == data)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as WalletAssetEntry;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is WalletAssetEntry&&(identical(other.asset, _this.asset) || other.asset == _this.asset)&&(identical(other.data, _this.data) || other.data == _this.data)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,asset,data,extraFields);
+int get hashCode {
+  final _this = this as WalletAssetEntry;
+  return Object.hash(runtimeType,_this.asset,_this.data,_this.extraFields);
+}
 
 @override
 String toString() {
-  return 'WalletAssetEntry(asset: $asset, data: $data, extraFields: $extraFields)';
+  final _this = this as WalletAssetEntry;
+  return 'WalletAssetEntry(asset: ${_this.asset}, data: ${_this.data}, extraFields: ${_this.extraFields})';
 }
 
 
@@ -244,16 +249,18 @@ _$WalletAssetEntryCopyWith<_WalletAssetEntry> get copyWith => __$WalletAssetEntr
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _WalletAssetEntry&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.data, data) || other.data == data)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _WalletAssetEntry&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.data, data) || other.data == data)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,asset,data,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,asset,data,extraFields);
+}
 
 @override
 String toString() {
-  return 'WalletAssetEntry(asset: $asset, data: $data, extraFields: $extraFields)';
+    return 'WalletAssetEntry(asset: $asset, data: $data, extraFields: $extraFields)';
 }
 
 

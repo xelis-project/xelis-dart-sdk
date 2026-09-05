@@ -29,12 +29,16 @@ $SignerIdCopyWith<SignerId> get copyWith => _$SignerIdCopyWithImpl<SignerId>(thi
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is SignerId&&(identical(other.id, id) || other.id == id)&&(identical(other.privateKey, privateKey) || other.privateKey == privateKey));
+  final _this = this as SignerId;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is SignerId&&(identical(other.id, _this.id) || other.id == _this.id)&&(identical(other.privateKey, _this.privateKey) || other.privateKey == _this.privateKey));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,privateKey);
+int get hashCode {
+  final _this = this as SignerId;
+  return Object.hash(runtimeType,_this.id,_this.privateKey);
+}
 
 
 
@@ -226,12 +230,14 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _SignerId&&(identical(other.id, id) || other.id == id)&&(identical(other.privateKey, privateKey) || other.privateKey == privateKey));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _SignerId&&(identical(other.id, id) || other.id == id)&&(identical(other.privateKey, privateKey) || other.privateKey == privateKey));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,privateKey);
+int get hashCode {
+    return Object.hash(runtimeType,id,privateKey);
+}
 
 
 

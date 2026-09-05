@@ -29,16 +29,21 @@ $GetMempoolCacheResultCopyWith<GetMempoolCacheResult> get copyWith => _$GetMempo
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetMempoolCacheResult&&const DeepCollectionEquality().equals(other.balances, balances)&&(identical(other.max, max) || other.max == max)&&(identical(other.min, min) || other.min == min)&&const DeepCollectionEquality().equals(other.txs, txs)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as GetMempoolCacheResult;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetMempoolCacheResult&&const DeepCollectionEquality().equals(other.balances, _this.balances)&&(identical(other.max, _this.max) || other.max == _this.max)&&(identical(other.min, _this.min) || other.min == _this.min)&&const DeepCollectionEquality().equals(other.txs, _this.txs)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(balances),max,min,const DeepCollectionEquality().hash(txs),extraFields);
+int get hashCode {
+  final _this = this as GetMempoolCacheResult;
+  return Object.hash(runtimeType,const DeepCollectionEquality().hash(_this.balances),_this.max,_this.min,const DeepCollectionEquality().hash(_this.txs),_this.extraFields);
+}
 
 @override
 String toString() {
-  return 'GetMempoolCacheResult(balances: $balances, max: $max, min: $min, txs: $txs, extraFields: $extraFields)';
+  final _this = this as GetMempoolCacheResult;
+  return 'GetMempoolCacheResult(balances: ${_this.balances}, max: ${_this.max}, min: ${_this.min}, txs: ${_this.txs}, extraFields: ${_this.extraFields})';
 }
 
 
@@ -257,16 +262,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetMempoolCacheResult&&const DeepCollectionEquality().equals(other._balances, _balances)&&(identical(other.max, max) || other.max == max)&&(identical(other.min, min) || other.min == min)&&const DeepCollectionEquality().equals(other._txs, _txs)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetMempoolCacheResult&&const DeepCollectionEquality().equals(other.balances, _balances)&&(identical(other.max, max) || other.max == max)&&(identical(other.min, min) || other.min == min)&&const DeepCollectionEquality().equals(other.txs, _txs)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_balances),max,min,const DeepCollectionEquality().hash(_txs),extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,const DeepCollectionEquality().hash(_balances),max,min,const DeepCollectionEquality().hash(_txs),extraFields);
+}
 
 @override
 String toString() {
-  return 'GetMempoolCacheResult(balances: $balances, max: $max, min: $min, txs: $txs, extraFields: $extraFields)';
+    return 'GetMempoolCacheResult(balances: $balances, max: $max, min: $min, txs: $txs, extraFields: $extraFields)';
 }
 
 

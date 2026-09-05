@@ -29,16 +29,21 @@ $GetAccountsParamsCopyWith<GetAccountsParams> get copyWith => _$GetAccountsParam
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetAccountsParams&&(identical(other.skip, skip) || other.skip == skip)&&(identical(other.maximum, maximum) || other.maximum == maximum)&&(identical(other.minTopoheight, minTopoheight) || other.minTopoheight == minTopoheight)&&(identical(other.maxTopoheight, maxTopoheight) || other.maxTopoheight == maxTopoheight));
+  final _this = this as GetAccountsParams;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetAccountsParams&&(identical(other.skip, _this.skip) || other.skip == _this.skip)&&(identical(other.maximum, _this.maximum) || other.maximum == _this.maximum)&&(identical(other.minTopoheight, _this.minTopoheight) || other.minTopoheight == _this.minTopoheight)&&(identical(other.maxTopoheight, _this.maxTopoheight) || other.maxTopoheight == _this.maxTopoheight));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,skip,maximum,minTopoheight,maxTopoheight);
+int get hashCode {
+  final _this = this as GetAccountsParams;
+  return Object.hash(runtimeType,_this.skip,_this.maximum,_this.minTopoheight,_this.maxTopoheight);
+}
 
 @override
 String toString() {
-  return 'GetAccountsParams(skip: $skip, maximum: $maximum, minTopoheight: $minTopoheight, maxTopoheight: $maxTopoheight)';
+  final _this = this as GetAccountsParams;
+  return 'GetAccountsParams(skip: ${_this.skip}, maximum: ${_this.maximum}, minTopoheight: ${_this.minTopoheight}, maxTopoheight: ${_this.maxTopoheight})';
 }
 
 
@@ -234,16 +239,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetAccountsParams&&(identical(other.skip, skip) || other.skip == skip)&&(identical(other.maximum, maximum) || other.maximum == maximum)&&(identical(other.minTopoheight, minTopoheight) || other.minTopoheight == minTopoheight)&&(identical(other.maxTopoheight, maxTopoheight) || other.maxTopoheight == maxTopoheight));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetAccountsParams&&(identical(other.skip, skip) || other.skip == skip)&&(identical(other.maximum, maximum) || other.maximum == maximum)&&(identical(other.minTopoheight, minTopoheight) || other.minTopoheight == minTopoheight)&&(identical(other.maxTopoheight, maxTopoheight) || other.maxTopoheight == maxTopoheight));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,skip,maximum,minTopoheight,maxTopoheight);
+int get hashCode {
+    return Object.hash(runtimeType,skip,maximum,minTopoheight,maxTopoheight);
+}
 
 @override
 String toString() {
-  return 'GetAccountsParams(skip: $skip, maximum: $maximum, minTopoheight: $minTopoheight, maxTopoheight: $maxTopoheight)';
+    return 'GetAccountsParams(skip: $skip, maximum: $maximum, minTopoheight: $minTopoheight, maxTopoheight: $maxTopoheight)';
 }
 
 

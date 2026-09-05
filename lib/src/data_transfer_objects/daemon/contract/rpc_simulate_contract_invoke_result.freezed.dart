@@ -26,16 +26,21 @@ $RpcSimulateContractInvokeResultCopyWith<RpcSimulateContractInvokeResult> get co
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcSimulateContractInvokeResult&&(identical(other.baseFee, baseFee) || other.baseFee == baseFee)&&(identical(other.result, result) || other.result == result)&&(identical(other.blockHash, blockHash) || other.blockHash == blockHash)&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as RpcSimulateContractInvokeResult;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcSimulateContractInvokeResult&&(identical(other.baseFee, _this.baseFee) || other.baseFee == _this.baseFee)&&(identical(other.result, _this.result) || other.result == _this.result)&&(identical(other.blockHash, _this.blockHash) || other.blockHash == _this.blockHash)&&(identical(other.topoheight, _this.topoheight) || other.topoheight == _this.topoheight)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,baseFee,result,blockHash,topoheight,extraFields);
+int get hashCode {
+  final _this = this as RpcSimulateContractInvokeResult;
+  return Object.hash(runtimeType,_this.baseFee,_this.result,_this.blockHash,_this.topoheight,_this.extraFields);
+}
 
 @override
 String toString() {
-  return 'RpcSimulateContractInvokeResult(baseFee: $baseFee, result: $result, blockHash: $blockHash, topoheight: $topoheight, extraFields: $extraFields)';
+  final _this = this as RpcSimulateContractInvokeResult;
+  return 'RpcSimulateContractInvokeResult(baseFee: ${_this.baseFee}, result: ${_this.result}, blockHash: ${_this.blockHash}, topoheight: ${_this.topoheight}, extraFields: ${_this.extraFields})';
 }
 
 
@@ -248,16 +253,18 @@ _$RpcSimulateContractInvokeResultCopyWith<_RpcSimulateContractInvokeResult> get 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RpcSimulateContractInvokeResult&&(identical(other.baseFee, baseFee) || other.baseFee == baseFee)&&(identical(other.result, result) || other.result == result)&&(identical(other.blockHash, blockHash) || other.blockHash == blockHash)&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _RpcSimulateContractInvokeResult&&(identical(other.baseFee, baseFee) || other.baseFee == baseFee)&&(identical(other.result, result) || other.result == result)&&(identical(other.blockHash, blockHash) || other.blockHash == blockHash)&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,baseFee,result,blockHash,topoheight,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,baseFee,result,blockHash,topoheight,extraFields);
+}
 
 @override
 String toString() {
-  return 'RpcSimulateContractInvokeResult(baseFee: $baseFee, result: $result, blockHash: $blockHash, topoheight: $topoheight, extraFields: $extraFields)';
+    return 'RpcSimulateContractInvokeResult(baseFee: $baseFee, result: $result, blockHash: $blockHash, topoheight: $topoheight, extraFields: $extraFields)';
 }
 
 

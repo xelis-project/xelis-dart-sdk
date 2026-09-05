@@ -29,16 +29,21 @@ $TransactionExecutedEventCopyWith<TransactionExecutedEvent> get copyWith => _$Tr
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is TransactionExecutedEvent&&(identical(other.blockHash, blockHash) || other.blockHash == blockHash)&&(identical(other.txHash, txHash) || other.txHash == txHash)&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as TransactionExecutedEvent;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is TransactionExecutedEvent&&(identical(other.blockHash, _this.blockHash) || other.blockHash == _this.blockHash)&&(identical(other.txHash, _this.txHash) || other.txHash == _this.txHash)&&(identical(other.topoheight, _this.topoheight) || other.topoheight == _this.topoheight)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,blockHash,txHash,topoheight,extraFields);
+int get hashCode {
+  final _this = this as TransactionExecutedEvent;
+  return Object.hash(runtimeType,_this.blockHash,_this.txHash,_this.topoheight,_this.extraFields);
+}
 
 @override
 String toString() {
-  return 'TransactionExecutedEvent(blockHash: $blockHash, txHash: $txHash, topoheight: $topoheight, extraFields: $extraFields)';
+  final _this = this as TransactionExecutedEvent;
+  return 'TransactionExecutedEvent(blockHash: ${_this.blockHash}, txHash: ${_this.txHash}, topoheight: ${_this.topoheight}, extraFields: ${_this.extraFields})';
 }
 
 
@@ -243,16 +248,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _TransactionExecutedEvent&&(identical(other.blockHash, blockHash) || other.blockHash == blockHash)&&(identical(other.txHash, txHash) || other.txHash == txHash)&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _TransactionExecutedEvent&&(identical(other.blockHash, blockHash) || other.blockHash == blockHash)&&(identical(other.txHash, txHash) || other.txHash == txHash)&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,blockHash,txHash,topoheight,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,blockHash,txHash,topoheight,extraFields);
+}
 
 @override
 String toString() {
-  return 'TransactionExecutedEvent(blockHash: $blockHash, txHash: $txHash, topoheight: $topoheight, extraFields: $extraFields)';
+    return 'TransactionExecutedEvent(blockHash: $blockHash, txHash: $txHash, topoheight: $topoheight, extraFields: $extraFields)';
 }
 
 

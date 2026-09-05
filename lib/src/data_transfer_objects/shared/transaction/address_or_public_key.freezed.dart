@@ -21,7 +21,7 @@ mixin _$AddressOrPublicKey {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AddressOrPublicKey);
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is AddressOrPublicKey);
 }
 
 
@@ -30,7 +30,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'AddressOrPublicKey()';
+    return 'AddressOrPublicKey()';
 }
 
 
@@ -191,16 +191,18 @@ $AddressValueCopyWith<AddressValue> get copyWith => _$AddressValueCopyWithImpl<A
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AddressValue&&(identical(other.value, value) || other.value == value));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is AddressValue&&(identical(other.value, value) || other.value == value));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,value);
+int get hashCode {
+    return Object.hash(runtimeType,value);
+}
 
 @override
 String toString() {
-  return 'AddressOrPublicKey.address(value: $value)';
+    return 'AddressOrPublicKey.address(value: $value)';
 }
 
 
@@ -263,16 +265,18 @@ $PublicKeyValueCopyWith<PublicKeyValue> get copyWith => _$PublicKeyValueCopyWith
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is PublicKeyValue&&const DeepCollectionEquality().equals(other._bytes, _bytes));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is PublicKeyValue&&const DeepCollectionEquality().equals(other.bytes, _bytes));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_bytes));
+int get hashCode {
+    return Object.hash(runtimeType,const DeepCollectionEquality().hash(_bytes));
+}
 
 @override
 String toString() {
-  return 'AddressOrPublicKey.publicKey(bytes: $bytes)';
+    return 'AddressOrPublicKey.publicKey(bytes: $bytes)';
 }
 
 

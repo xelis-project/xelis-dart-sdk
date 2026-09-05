@@ -29,16 +29,21 @@ $PeerEntryCopyWith<PeerEntry> get copyWith => _$PeerEntryCopyWithImpl<PeerEntry>
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is PeerEntry&&(identical(other.address, address) || other.address == address)&&(identical(other.bytesRecv, bytesRecv) || other.bytesRecv == bytesRecv)&&(identical(other.bytesSent, bytesSent) || other.bytesSent == bytesSent)&&(identical(other.connectedOn, connectedOn) || other.connectedOn == connectedOn)&&(identical(other.cumulativeDifficulty, cumulativeDifficulty) || other.cumulativeDifficulty == cumulativeDifficulty)&&(identical(other.height, height) || other.height == height)&&(identical(other.id, id) || other.id == id)&&(identical(other.lastPing, lastPing) || other.lastPing == lastPing)&&(identical(other.localPort, localPort) || other.localPort == localPort)&&(identical(other.prunedTopoheight, prunedTopoheight) || other.prunedTopoheight == prunedTopoheight)&&(identical(other.tag, tag) || other.tag == tag)&&(identical(other.topBlockHash, topBlockHash) || other.topBlockHash == topBlockHash)&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&(identical(other.version, version) || other.version == version)&&const DeepCollectionEquality().equals(other.peers, peers)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as PeerEntry;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is PeerEntry&&(identical(other.address, _this.address) || other.address == _this.address)&&(identical(other.bytesRecv, _this.bytesRecv) || other.bytesRecv == _this.bytesRecv)&&(identical(other.bytesSent, _this.bytesSent) || other.bytesSent == _this.bytesSent)&&(identical(other.connectedOn, _this.connectedOn) || other.connectedOn == _this.connectedOn)&&(identical(other.cumulativeDifficulty, _this.cumulativeDifficulty) || other.cumulativeDifficulty == _this.cumulativeDifficulty)&&(identical(other.height, _this.height) || other.height == _this.height)&&(identical(other.id, _this.id) || other.id == _this.id)&&(identical(other.lastPing, _this.lastPing) || other.lastPing == _this.lastPing)&&(identical(other.localPort, _this.localPort) || other.localPort == _this.localPort)&&(identical(other.prunedTopoheight, _this.prunedTopoheight) || other.prunedTopoheight == _this.prunedTopoheight)&&(identical(other.tag, _this.tag) || other.tag == _this.tag)&&(identical(other.topBlockHash, _this.topBlockHash) || other.topBlockHash == _this.topBlockHash)&&(identical(other.topoheight, _this.topoheight) || other.topoheight == _this.topoheight)&&(identical(other.version, _this.version) || other.version == _this.version)&&const DeepCollectionEquality().equals(other.peers, _this.peers)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,address,bytesRecv,bytesSent,connectedOn,cumulativeDifficulty,height,id,lastPing,localPort,prunedTopoheight,tag,topBlockHash,topoheight,version,const DeepCollectionEquality().hash(peers),extraFields);
+int get hashCode {
+  final _this = this as PeerEntry;
+  return Object.hash(runtimeType,_this.address,_this.bytesRecv,_this.bytesSent,_this.connectedOn,_this.cumulativeDifficulty,_this.height,_this.id,_this.lastPing,_this.localPort,_this.prunedTopoheight,_this.tag,_this.topBlockHash,_this.topoheight,_this.version,const DeepCollectionEquality().hash(_this.peers),_this.extraFields);
+}
 
 @override
 String toString() {
-  return 'PeerEntry(address: $address, bytesRecv: $bytesRecv, bytesSent: $bytesSent, connectedOn: $connectedOn, cumulativeDifficulty: $cumulativeDifficulty, height: $height, id: $id, lastPing: $lastPing, localPort: $localPort, prunedTopoheight: $prunedTopoheight, tag: $tag, topBlockHash: $topBlockHash, topoheight: $topoheight, version: $version, peers: $peers, extraFields: $extraFields)';
+  final _this = this as PeerEntry;
+  return 'PeerEntry(address: ${_this.address}, bytesRecv: ${_this.bytesRecv}, bytesSent: ${_this.bytesSent}, connectedOn: ${_this.connectedOn}, cumulativeDifficulty: ${_this.cumulativeDifficulty}, height: ${_this.height}, id: ${_this.id}, lastPing: ${_this.lastPing}, localPort: ${_this.localPort}, prunedTopoheight: ${_this.prunedTopoheight}, tag: ${_this.tag}, topBlockHash: ${_this.topBlockHash}, topoheight: ${_this.topoheight}, version: ${_this.version}, peers: ${_this.peers}, extraFields: ${_this.extraFields})';
 }
 
 
@@ -273,16 +278,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PeerEntry&&(identical(other.address, address) || other.address == address)&&(identical(other.bytesRecv, bytesRecv) || other.bytesRecv == bytesRecv)&&(identical(other.bytesSent, bytesSent) || other.bytesSent == bytesSent)&&(identical(other.connectedOn, connectedOn) || other.connectedOn == connectedOn)&&(identical(other.cumulativeDifficulty, cumulativeDifficulty) || other.cumulativeDifficulty == cumulativeDifficulty)&&(identical(other.height, height) || other.height == height)&&(identical(other.id, id) || other.id == id)&&(identical(other.lastPing, lastPing) || other.lastPing == lastPing)&&(identical(other.localPort, localPort) || other.localPort == localPort)&&(identical(other.prunedTopoheight, prunedTopoheight) || other.prunedTopoheight == prunedTopoheight)&&(identical(other.tag, tag) || other.tag == tag)&&(identical(other.topBlockHash, topBlockHash) || other.topBlockHash == topBlockHash)&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&(identical(other.version, version) || other.version == version)&&const DeepCollectionEquality().equals(other._peers, _peers)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _PeerEntry&&(identical(other.address, address) || other.address == address)&&(identical(other.bytesRecv, bytesRecv) || other.bytesRecv == bytesRecv)&&(identical(other.bytesSent, bytesSent) || other.bytesSent == bytesSent)&&(identical(other.connectedOn, connectedOn) || other.connectedOn == connectedOn)&&(identical(other.cumulativeDifficulty, cumulativeDifficulty) || other.cumulativeDifficulty == cumulativeDifficulty)&&(identical(other.height, height) || other.height == height)&&(identical(other.id, id) || other.id == id)&&(identical(other.lastPing, lastPing) || other.lastPing == lastPing)&&(identical(other.localPort, localPort) || other.localPort == localPort)&&(identical(other.prunedTopoheight, prunedTopoheight) || other.prunedTopoheight == prunedTopoheight)&&(identical(other.tag, tag) || other.tag == tag)&&(identical(other.topBlockHash, topBlockHash) || other.topBlockHash == topBlockHash)&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&(identical(other.version, version) || other.version == version)&&const DeepCollectionEquality().equals(other.peers, _peers)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,address,bytesRecv,bytesSent,connectedOn,cumulativeDifficulty,height,id,lastPing,localPort,prunedTopoheight,tag,topBlockHash,topoheight,version,const DeepCollectionEquality().hash(_peers),extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,address,bytesRecv,bytesSent,connectedOn,cumulativeDifficulty,height,id,lastPing,localPort,prunedTopoheight,tag,topBlockHash,topoheight,version,const DeepCollectionEquality().hash(_peers),extraFields);
+}
 
 @override
 String toString() {
-  return 'PeerEntry(address: $address, bytesRecv: $bytesRecv, bytesSent: $bytesSent, connectedOn: $connectedOn, cumulativeDifficulty: $cumulativeDifficulty, height: $height, id: $id, lastPing: $lastPing, localPort: $localPort, prunedTopoheight: $prunedTopoheight, tag: $tag, topBlockHash: $topBlockHash, topoheight: $topoheight, version: $version, peers: $peers, extraFields: $extraFields)';
+    return 'PeerEntry(address: $address, bytesRecv: $bytesRecv, bytesSent: $bytesSent, connectedOn: $connectedOn, cumulativeDifficulty: $cumulativeDifficulty, height: $height, id: $id, lastPing: $lastPing, localPort: $localPort, prunedTopoheight: $prunedTopoheight, tag: $tag, topBlockHash: $topBlockHash, topoheight: $topoheight, version: $version, peers: $peers, extraFields: $extraFields)';
 }
 
 

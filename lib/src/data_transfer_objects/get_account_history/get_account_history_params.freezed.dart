@@ -29,16 +29,21 @@ $GetAccountHistoryParamsCopyWith<GetAccountHistoryParams> get copyWith => _$GetA
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetAccountHistoryParams&&(identical(other.address, address) || other.address == address)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.incomingFlow, incomingFlow) || other.incomingFlow == incomingFlow)&&(identical(other.outgoingFlow, outgoingFlow) || other.outgoingFlow == outgoingFlow)&&(identical(other.minimumTopoheight, minimumTopoheight) || other.minimumTopoheight == minimumTopoheight)&&(identical(other.maximumTopoheight, maximumTopoheight) || other.maximumTopoheight == maximumTopoheight));
+  final _this = this as GetAccountHistoryParams;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetAccountHistoryParams&&(identical(other.address, _this.address) || other.address == _this.address)&&(identical(other.asset, _this.asset) || other.asset == _this.asset)&&(identical(other.incomingFlow, _this.incomingFlow) || other.incomingFlow == _this.incomingFlow)&&(identical(other.outgoingFlow, _this.outgoingFlow) || other.outgoingFlow == _this.outgoingFlow)&&(identical(other.minimumTopoheight, _this.minimumTopoheight) || other.minimumTopoheight == _this.minimumTopoheight)&&(identical(other.maximumTopoheight, _this.maximumTopoheight) || other.maximumTopoheight == _this.maximumTopoheight));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,address,asset,incomingFlow,outgoingFlow,minimumTopoheight,maximumTopoheight);
+int get hashCode {
+  final _this = this as GetAccountHistoryParams;
+  return Object.hash(runtimeType,_this.address,_this.asset,_this.incomingFlow,_this.outgoingFlow,_this.minimumTopoheight,_this.maximumTopoheight);
+}
 
 @override
 String toString() {
-  return 'GetAccountHistoryParams(address: $address, asset: $asset, incomingFlow: $incomingFlow, outgoingFlow: $outgoingFlow, minimumTopoheight: $minimumTopoheight, maximumTopoheight: $maximumTopoheight)';
+  final _this = this as GetAccountHistoryParams;
+  return 'GetAccountHistoryParams(address: ${_this.address}, asset: ${_this.asset}, incomingFlow: ${_this.incomingFlow}, outgoingFlow: ${_this.outgoingFlow}, minimumTopoheight: ${_this.minimumTopoheight}, maximumTopoheight: ${_this.maximumTopoheight})';
 }
 
 
@@ -238,16 +243,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetAccountHistoryParams&&(identical(other.address, address) || other.address == address)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.incomingFlow, incomingFlow) || other.incomingFlow == incomingFlow)&&(identical(other.outgoingFlow, outgoingFlow) || other.outgoingFlow == outgoingFlow)&&(identical(other.minimumTopoheight, minimumTopoheight) || other.minimumTopoheight == minimumTopoheight)&&(identical(other.maximumTopoheight, maximumTopoheight) || other.maximumTopoheight == maximumTopoheight));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetAccountHistoryParams&&(identical(other.address, address) || other.address == address)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.incomingFlow, incomingFlow) || other.incomingFlow == incomingFlow)&&(identical(other.outgoingFlow, outgoingFlow) || other.outgoingFlow == outgoingFlow)&&(identical(other.minimumTopoheight, minimumTopoheight) || other.minimumTopoheight == minimumTopoheight)&&(identical(other.maximumTopoheight, maximumTopoheight) || other.maximumTopoheight == maximumTopoheight));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,address,asset,incomingFlow,outgoingFlow,minimumTopoheight,maximumTopoheight);
+int get hashCode {
+    return Object.hash(runtimeType,address,asset,incomingFlow,outgoingFlow,minimumTopoheight,maximumTopoheight);
+}
 
 @override
 String toString() {
-  return 'GetAccountHistoryParams(address: $address, asset: $asset, incomingFlow: $incomingFlow, outgoingFlow: $outgoingFlow, minimumTopoheight: $minimumTopoheight, maximumTopoheight: $maximumTopoheight)';
+    return 'GetAccountHistoryParams(address: $address, asset: $asset, incomingFlow: $incomingFlow, outgoingFlow: $outgoingFlow, minimumTopoheight: $minimumTopoheight, maximumTopoheight: $maximumTopoheight)';
 }
 
 

@@ -29,16 +29,21 @@ $FeeRatesEstimatedCopyWith<FeeRatesEstimated> get copyWith => _$FeeRatesEstimate
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is FeeRatesEstimated&&(identical(other.low, low) || other.low == low)&&(identical(other.medium, medium) || other.medium == medium)&&(identical(other.high, high) || other.high == high)&&(identical(other.defaultFee, defaultFee) || other.defaultFee == defaultFee)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as FeeRatesEstimated;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is FeeRatesEstimated&&(identical(other.low, _this.low) || other.low == _this.low)&&(identical(other.medium, _this.medium) || other.medium == _this.medium)&&(identical(other.high, _this.high) || other.high == _this.high)&&(identical(other.defaultFee, _this.defaultFee) || other.defaultFee == _this.defaultFee)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,low,medium,high,defaultFee,extraFields);
+int get hashCode {
+  final _this = this as FeeRatesEstimated;
+  return Object.hash(runtimeType,_this.low,_this.medium,_this.high,_this.defaultFee,_this.extraFields);
+}
 
 @override
 String toString() {
-  return 'FeeRatesEstimated(low: $low, medium: $medium, high: $high, defaultFee: $defaultFee, extraFields: $extraFields)';
+  final _this = this as FeeRatesEstimated;
+  return 'FeeRatesEstimated(low: ${_this.low}, medium: ${_this.medium}, high: ${_this.high}, defaultFee: ${_this.defaultFee}, extraFields: ${_this.extraFields})';
 }
 
 
@@ -245,16 +250,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _FeeRatesEstimated&&(identical(other.low, low) || other.low == low)&&(identical(other.medium, medium) || other.medium == medium)&&(identical(other.high, high) || other.high == high)&&(identical(other.defaultFee, defaultFee) || other.defaultFee == defaultFee)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _FeeRatesEstimated&&(identical(other.low, low) || other.low == low)&&(identical(other.medium, medium) || other.medium == medium)&&(identical(other.high, high) || other.high == high)&&(identical(other.defaultFee, defaultFee) || other.defaultFee == defaultFee)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,low,medium,high,defaultFee,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,low,medium,high,defaultFee,extraFields);
+}
 
 @override
 String toString() {
-  return 'FeeRatesEstimated(low: $low, medium: $medium, high: $high, defaultFee: $defaultFee, extraFields: $extraFields)';
+    return 'FeeRatesEstimated(low: $low, medium: $medium, high: $high, defaultFee: $defaultFee, extraFields: $extraFields)';
 }
 
 

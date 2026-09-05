@@ -21,7 +21,7 @@ mixin _$RpcGasSource {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcGasSource);
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcGasSource);
 }
 
 
@@ -30,7 +30,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'RpcGasSource()';
+    return 'RpcGasSource()';
 }
 
 
@@ -209,16 +209,18 @@ $RpcContractGasSourceCopyWith<RpcContractGasSource> get copyWith => _$RpcContrac
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcContractGasSource&&(identical(other.hash, hash) || other.hash == hash));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcContractGasSource&&(identical(other.hash, hash) || other.hash == hash));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,hash);
+int get hashCode {
+    return Object.hash(runtimeType,hash);
+}
 
 @override
 String toString() {
-  return 'RpcGasSource.contract(hash: $hash)';
+    return 'RpcGasSource.contract(hash: $hash)';
 }
 
 
@@ -281,16 +283,18 @@ $RpcAccountGasSourceCopyWith<RpcAccountGasSource> get copyWith => _$RpcAccountGa
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcAccountGasSource&&const DeepCollectionEquality().equals(other._publicKey, _publicKey));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcAccountGasSource&&const DeepCollectionEquality().equals(other.publicKey, _publicKey));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_publicKey));
+int get hashCode {
+    return Object.hash(runtimeType,const DeepCollectionEquality().hash(_publicKey));
+}
 
 @override
 String toString() {
-  return 'RpcGasSource.account(publicKey: $publicKey)';
+    return 'RpcGasSource.account(publicKey: $publicKey)';
 }
 
 
@@ -347,16 +351,18 @@ $RpcContractBalanceGasSourceCopyWith<RpcContractBalanceGasSource> get copyWith =
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcContractBalanceGasSource&&(identical(other.hash, hash) || other.hash == hash));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcContractBalanceGasSource&&(identical(other.hash, hash) || other.hash == hash));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,hash);
+int get hashCode {
+    return Object.hash(runtimeType,hash);
+}
 
 @override
 String toString() {
-  return 'RpcGasSource.contractBalance(hash: $hash)';
+    return 'RpcGasSource.contractBalance(hash: $hash)';
 }
 
 
@@ -419,16 +425,18 @@ $RpcAccountBalanceGasSourceCopyWith<RpcAccountBalanceGasSource> get copyWith => 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcAccountBalanceGasSource&&const DeepCollectionEquality().equals(other._publicKey, _publicKey));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcAccountBalanceGasSource&&const DeepCollectionEquality().equals(other.publicKey, _publicKey));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_publicKey));
+int get hashCode {
+    return Object.hash(runtimeType,const DeepCollectionEquality().hash(_publicKey));
+}
 
 @override
 String toString() {
-  return 'RpcGasSource.accountBalance(publicKey: $publicKey)';
+    return 'RpcGasSource.accountBalance(publicKey: $publicKey)';
 }
 
 
@@ -485,16 +493,18 @@ $RpcUnknownGasSourceCopyWith<RpcUnknownGasSource> get copyWith => _$RpcUnknownGa
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcUnknownGasSource&&(identical(other.wireValue, wireValue) || other.wireValue == wireValue));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcUnknownGasSource&&(identical(other.wireValue, wireValue) || other.wireValue == wireValue));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,wireValue);
+int get hashCode {
+    return Object.hash(runtimeType,wireValue);
+}
 
 @override
 String toString() {
-  return 'RpcGasSource.unknown(wireValue: $wireValue)';
+    return 'RpcGasSource.unknown(wireValue: $wireValue)';
 }
 
 
@@ -555,16 +565,21 @@ $RpcGasSourceEntryCopyWith<RpcGasSourceEntry> get copyWith => _$RpcGasSourceEntr
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcGasSourceEntry&&(identical(other.key, key) || other.key == key)&&(identical(other.value, value) || other.value == value)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as RpcGasSourceEntry;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcGasSourceEntry&&(identical(other.key, _this.key) || other.key == _this.key)&&(identical(other.value, _this.value) || other.value == _this.value)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,key,value,extraFields);
+int get hashCode {
+  final _this = this as RpcGasSourceEntry;
+  return Object.hash(runtimeType,_this.key,_this.value,_this.extraFields);
+}
 
 @override
 String toString() {
-  return 'RpcGasSourceEntry(key: $key, value: $value, extraFields: $extraFields)';
+  final _this = this as RpcGasSourceEntry;
+  return 'RpcGasSourceEntry(key: ${_this.key}, value: ${_this.value}, extraFields: ${_this.extraFields})';
 }
 
 
@@ -773,16 +788,18 @@ _$RpcGasSourceEntryCopyWith<_RpcGasSourceEntry> get copyWith => __$RpcGasSourceE
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RpcGasSourceEntry&&(identical(other.key, key) || other.key == key)&&(identical(other.value, value) || other.value == value)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _RpcGasSourceEntry&&(identical(other.key, key) || other.key == key)&&(identical(other.value, value) || other.value == value)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,key,value,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,key,value,extraFields);
+}
 
 @override
 String toString() {
-  return 'RpcGasSourceEntry(key: $key, value: $value, extraFields: $extraFields)';
+    return 'RpcGasSourceEntry(key: $key, value: $value, extraFields: $extraFields)';
 }
 
 

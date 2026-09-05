@@ -26,16 +26,21 @@ $WalletQueryResultCopyWith<WalletQueryResult> get copyWith => _$WalletQueryResul
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is WalletQueryResult&&const DeepCollectionEquality().equals(other.entries, entries)&&(identical(other.next, next) || other.next == next)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as WalletQueryResult;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is WalletQueryResult&&const DeepCollectionEquality().equals(other.entries, _this.entries)&&(identical(other.next, _this.next) || other.next == _this.next)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(entries),next,extraFields);
+int get hashCode {
+  final _this = this as WalletQueryResult;
+  return Object.hash(runtimeType,const DeepCollectionEquality().hash(_this.entries),_this.next,_this.extraFields);
+}
 
 @override
 String toString() {
-  return 'WalletQueryResult(entries: $entries, next: $next, extraFields: $extraFields)';
+  final _this = this as WalletQueryResult;
+  return 'WalletQueryResult(entries: ${_this.entries}, next: ${_this.next}, extraFields: ${_this.extraFields})';
 }
 
 
@@ -241,16 +246,18 @@ _$WalletQueryResultCopyWith<_WalletQueryResult> get copyWith => __$WalletQueryRe
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _WalletQueryResult&&const DeepCollectionEquality().equals(other._entries, _entries)&&(identical(other.next, next) || other.next == next)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _WalletQueryResult&&const DeepCollectionEquality().equals(other.entries, _entries)&&(identical(other.next, next) || other.next == next)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_entries),next,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,const DeepCollectionEquality().hash(_entries),next,extraFields);
+}
 
 @override
 String toString() {
-  return 'WalletQueryResult(entries: $entries, next: $next, extraFields: $extraFields)';
+    return 'WalletQueryResult(entries: $entries, next: $next, extraFields: $extraFields)';
 }
 
 

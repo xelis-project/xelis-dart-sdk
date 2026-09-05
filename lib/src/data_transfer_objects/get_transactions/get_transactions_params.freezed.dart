@@ -29,16 +29,21 @@ $GetTransactionsParamsCopyWith<GetTransactionsParams> get copyWith => _$GetTrans
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetTransactionsParams&&const DeepCollectionEquality().equals(other.txHashes, txHashes));
+  final _this = this as GetTransactionsParams;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetTransactionsParams&&const DeepCollectionEquality().equals(other.txHashes, _this.txHashes));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(txHashes));
+int get hashCode {
+  final _this = this as GetTransactionsParams;
+  return Object.hash(runtimeType,const DeepCollectionEquality().hash(_this.txHashes));
+}
 
 @override
 String toString() {
-  return 'GetTransactionsParams(txHashes: $txHashes)';
+  final _this = this as GetTransactionsParams;
+  return 'GetTransactionsParams(txHashes: ${_this.txHashes})';
 }
 
 
@@ -234,16 +239,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetTransactionsParams&&const DeepCollectionEquality().equals(other._txHashes, _txHashes));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetTransactionsParams&&const DeepCollectionEquality().equals(other.txHashes, _txHashes));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_txHashes));
+int get hashCode {
+    return Object.hash(runtimeType,const DeepCollectionEquality().hash(_txHashes));
+}
 
 @override
 String toString() {
-  return 'GetTransactionsParams(txHashes: $txHashes)';
+    return 'GetTransactionsParams(txHashes: $txHashes)';
 }
 
 

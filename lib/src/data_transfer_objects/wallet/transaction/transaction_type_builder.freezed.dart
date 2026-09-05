@@ -63,7 +63,7 @@ mixin _$TransactionTypeBuilder {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is TransactionTypeBuilder);
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is TransactionTypeBuilder);
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -72,7 +72,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'TransactionTypeBuilder()';
+    return 'TransactionTypeBuilder()';
 }
 
 
@@ -270,16 +270,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is TransfersBuilder&&const DeepCollectionEquality().equals(other._transfers, _transfers));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is TransfersBuilder&&const DeepCollectionEquality().equals(other.transfers, _transfers));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_transfers));
+int get hashCode {
+    return Object.hash(runtimeType,const DeepCollectionEquality().hash(_transfers));
+}
 
 @override
 String toString() {
-  return 'TransactionTypeBuilder.transfers(transfers: $transfers)';
+    return 'TransactionTypeBuilder.transfers(transfers: $transfers)';
 }
 
 
@@ -344,16 +346,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is BurnBuilder&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.amount, amount) || other.amount == amount));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is BurnBuilder&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.amount, amount) || other.amount == amount));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,asset,amount);
+int get hashCode {
+    return Object.hash(runtimeType,asset,amount);
+}
 
 @override
 String toString() {
-  return 'TransactionTypeBuilder.burn(asset: $asset, amount: $amount)';
+    return 'TransactionTypeBuilder.burn(asset: $asset, amount: $amount)';
 }
 
 
@@ -425,16 +429,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is MultisigBuilder&&(identical(other.threshold, threshold) || other.threshold == threshold)&&const DeepCollectionEquality().equals(other._participants, _participants));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is MultisigBuilder&&(identical(other.threshold, threshold) || other.threshold == threshold)&&const DeepCollectionEquality().equals(other.participants, _participants));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,threshold,const DeepCollectionEquality().hash(_participants));
+int get hashCode {
+    return Object.hash(runtimeType,threshold,const DeepCollectionEquality().hash(_participants));
+}
 
 @override
 String toString() {
-  return 'TransactionTypeBuilder.multisig(threshold: $threshold, participants: $participants)';
+    return 'TransactionTypeBuilder.multisig(threshold: $threshold, participants: $participants)';
 }
 
 
@@ -516,16 +522,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is InvokeContractBuilder&&(identical(other.contract, contract) || other.contract == contract)&&(identical(other.maxGas, maxGas) || other.maxGas == maxGas)&&(identical(other.entryId, entryId) || other.entryId == entryId)&&const DeepCollectionEquality().equals(other._parameters, _parameters)&&const DeepCollectionEquality().equals(other._deposits, _deposits)&&(identical(other.permission, permission) || other.permission == permission));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is InvokeContractBuilder&&(identical(other.contract, contract) || other.contract == contract)&&(identical(other.maxGas, maxGas) || other.maxGas == maxGas)&&(identical(other.entryId, entryId) || other.entryId == entryId)&&const DeepCollectionEquality().equals(other.parameters, _parameters)&&const DeepCollectionEquality().equals(other.deposits, _deposits)&&(identical(other.permission, permission) || other.permission == permission));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,contract,maxGas,entryId,const DeepCollectionEquality().hash(_parameters),const DeepCollectionEquality().hash(_deposits),permission);
+int get hashCode {
+    return Object.hash(runtimeType,contract,maxGas,entryId,const DeepCollectionEquality().hash(_parameters),const DeepCollectionEquality().hash(_deposits),permission);
+}
 
 @override
 String toString() {
-  return 'TransactionTypeBuilder.invokeContract(contract: $contract, maxGas: $maxGas, entryId: $entryId, parameters: $parameters, deposits: $deposits, permission: $permission)';
+    return 'TransactionTypeBuilder.invokeContract(contract: $contract, maxGas: $maxGas, entryId: $entryId, parameters: $parameters, deposits: $deposits, permission: $permission)';
 }
 
 
@@ -604,16 +612,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is DeployContractBuilder&&(identical(other.contract, contract) || other.contract == contract)&&(identical(other.invoke, invoke) || other.invoke == invoke));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is DeployContractBuilder&&(identical(other.contract, contract) || other.contract == contract)&&(identical(other.invoke, invoke) || other.invoke == invoke));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,contract,invoke);
+int get hashCode {
+    return Object.hash(runtimeType,contract,invoke);
+}
 
 @override
 String toString() {
-  return 'TransactionTypeBuilder.deployContract(contract: $contract, invoke: $invoke)';
+    return 'TransactionTypeBuilder.deployContract(contract: $contract, invoke: $invoke)';
 }
 
 
@@ -698,16 +708,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is BlobBuilder&&(identical(other.data, data) || other.data == data)&&const DeepCollectionEquality().equals(other._destinations, _destinations)&&(identical(other.encrypt, encrypt) || other.encrypt == encrypt));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is BlobBuilder&&(identical(other.data, data) || other.data == data)&&const DeepCollectionEquality().equals(other.destinations, _destinations)&&(identical(other.encrypt, encrypt) || other.encrypt == encrypt));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,data,const DeepCollectionEquality().hash(_destinations),encrypt);
+int get hashCode {
+    return Object.hash(runtimeType,data,const DeepCollectionEquality().hash(_destinations),encrypt);
+}
 
 @override
 String toString() {
-  return 'TransactionTypeBuilder.blob(data: $data, destinations: $destinations, encrypt: $encrypt)';
+    return 'TransactionTypeBuilder.blob(data: $data, destinations: $destinations, encrypt: $encrypt)';
 }
 
 

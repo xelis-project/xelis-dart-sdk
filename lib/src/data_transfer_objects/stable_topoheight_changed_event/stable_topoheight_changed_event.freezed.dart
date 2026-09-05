@@ -29,16 +29,21 @@ $StableTopoheightChangedEventCopyWith<StableTopoheightChangedEvent> get copyWith
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is StableTopoheightChangedEvent&&(identical(other.previousStableTopoheight, previousStableTopoheight) || other.previousStableTopoheight == previousStableTopoheight)&&(identical(other.newStableTopoheight, newStableTopoheight) || other.newStableTopoheight == newStableTopoheight)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as StableTopoheightChangedEvent;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is StableTopoheightChangedEvent&&(identical(other.previousStableTopoheight, _this.previousStableTopoheight) || other.previousStableTopoheight == _this.previousStableTopoheight)&&(identical(other.newStableTopoheight, _this.newStableTopoheight) || other.newStableTopoheight == _this.newStableTopoheight)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,previousStableTopoheight,newStableTopoheight,extraFields);
+int get hashCode {
+  final _this = this as StableTopoheightChangedEvent;
+  return Object.hash(runtimeType,_this.previousStableTopoheight,_this.newStableTopoheight,_this.extraFields);
+}
 
 @override
 String toString() {
-  return 'StableTopoheightChangedEvent(previousStableTopoheight: $previousStableTopoheight, newStableTopoheight: $newStableTopoheight, extraFields: $extraFields)';
+  final _this = this as StableTopoheightChangedEvent;
+  return 'StableTopoheightChangedEvent(previousStableTopoheight: ${_this.previousStableTopoheight}, newStableTopoheight: ${_this.newStableTopoheight}, extraFields: ${_this.extraFields})';
 }
 
 
@@ -241,16 +246,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _StableTopoheightChangedEvent&&(identical(other.previousStableTopoheight, previousStableTopoheight) || other.previousStableTopoheight == previousStableTopoheight)&&(identical(other.newStableTopoheight, newStableTopoheight) || other.newStableTopoheight == newStableTopoheight)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _StableTopoheightChangedEvent&&(identical(other.previousStableTopoheight, previousStableTopoheight) || other.previousStableTopoheight == previousStableTopoheight)&&(identical(other.newStableTopoheight, newStableTopoheight) || other.newStableTopoheight == newStableTopoheight)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,previousStableTopoheight,newStableTopoheight,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,previousStableTopoheight,newStableTopoheight,extraFields);
+}
 
 @override
 String toString() {
-  return 'StableTopoheightChangedEvent(previousStableTopoheight: $previousStableTopoheight, newStableTopoheight: $newStableTopoheight, extraFields: $extraFields)';
+    return 'StableTopoheightChangedEvent(previousStableTopoheight: $previousStableTopoheight, newStableTopoheight: $newStableTopoheight, extraFields: $extraFields)';
 }
 
 

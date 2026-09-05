@@ -29,16 +29,21 @@ $SubmitTransactionParamsCopyWith<SubmitTransactionParams> get copyWith => _$Subm
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is SubmitTransactionParams&&(identical(other.hex, hex) || other.hex == hex));
+  final _this = this as SubmitTransactionParams;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is SubmitTransactionParams&&(identical(other.hex, _this.hex) || other.hex == _this.hex));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,hex);
+int get hashCode {
+  final _this = this as SubmitTransactionParams;
+  return Object.hash(runtimeType,_this.hex);
+}
 
 @override
 String toString() {
-  return 'SubmitTransactionParams(hex: $hex)';
+  final _this = this as SubmitTransactionParams;
+  return 'SubmitTransactionParams(hex: ${_this.hex})';
 }
 
 
@@ -228,16 +233,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _SubmitTransactionParams&&(identical(other.hex, hex) || other.hex == hex));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _SubmitTransactionParams&&(identical(other.hex, hex) || other.hex == hex));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,hex);
+int get hashCode {
+    return Object.hash(runtimeType,hex);
+}
 
 @override
 String toString() {
-  return 'SubmitTransactionParams(hex: $hex)';
+    return 'SubmitTransactionParams(hex: $hex)';
 }
 
 

@@ -29,16 +29,21 @@ $GetDifficultyResultCopyWith<GetDifficultyResult> get copyWith => _$GetDifficult
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetDifficultyResult&&(identical(other.difficulty, difficulty) || other.difficulty == difficulty)&&(identical(other.hashrate, hashrate) || other.hashrate == hashrate)&&(identical(other.hashrateFormatted, hashrateFormatted) || other.hashrateFormatted == hashrateFormatted)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as GetDifficultyResult;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetDifficultyResult&&(identical(other.difficulty, _this.difficulty) || other.difficulty == _this.difficulty)&&(identical(other.hashrate, _this.hashrate) || other.hashrate == _this.hashrate)&&(identical(other.hashrateFormatted, _this.hashrateFormatted) || other.hashrateFormatted == _this.hashrateFormatted)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,difficulty,hashrate,hashrateFormatted,extraFields);
+int get hashCode {
+  final _this = this as GetDifficultyResult;
+  return Object.hash(runtimeType,_this.difficulty,_this.hashrate,_this.hashrateFormatted,_this.extraFields);
+}
 
 @override
 String toString() {
-  return 'GetDifficultyResult(difficulty: $difficulty, hashrate: $hashrate, hashrateFormatted: $hashrateFormatted, extraFields: $extraFields)';
+  final _this = this as GetDifficultyResult;
+  return 'GetDifficultyResult(difficulty: ${_this.difficulty}, hashrate: ${_this.hashrate}, hashrateFormatted: ${_this.hashrateFormatted}, extraFields: ${_this.extraFields})';
 }
 
 
@@ -243,16 +248,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetDifficultyResult&&(identical(other.difficulty, difficulty) || other.difficulty == difficulty)&&(identical(other.hashrate, hashrate) || other.hashrate == hashrate)&&(identical(other.hashrateFormatted, hashrateFormatted) || other.hashrateFormatted == hashrateFormatted)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetDifficultyResult&&(identical(other.difficulty, difficulty) || other.difficulty == difficulty)&&(identical(other.hashrate, hashrate) || other.hashrate == hashrate)&&(identical(other.hashrateFormatted, hashrateFormatted) || other.hashrateFormatted == hashrateFormatted)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,difficulty,hashrate,hashrateFormatted,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,difficulty,hashrate,hashrateFormatted,extraFields);
+}
 
 @override
 String toString() {
-  return 'GetDifficultyResult(difficulty: $difficulty, hashrate: $hashrate, hashrateFormatted: $hashrateFormatted, extraFields: $extraFields)';
+    return 'GetDifficultyResult(difficulty: $difficulty, hashrate: $hashrate, hashrateFormatted: $hashrateFormatted, extraFields: $extraFields)';
 }
 
 

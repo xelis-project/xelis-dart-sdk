@@ -26,16 +26,21 @@ $GetBlockTemplateResultCopyWith<GetBlockTemplateResult> get copyWith => _$GetBlo
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetBlockTemplateResult&&(identical(other.difficulty, difficulty) || other.difficulty == difficulty)&&(identical(other.height, height) || other.height == height)&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&(identical(other.template, template) || other.template == template)&&(identical(other.algorithm, algorithm) || other.algorithm == algorithm)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as GetBlockTemplateResult;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetBlockTemplateResult&&(identical(other.difficulty, _this.difficulty) || other.difficulty == _this.difficulty)&&(identical(other.height, _this.height) || other.height == _this.height)&&(identical(other.topoheight, _this.topoheight) || other.topoheight == _this.topoheight)&&(identical(other.template, _this.template) || other.template == _this.template)&&(identical(other.algorithm, _this.algorithm) || other.algorithm == _this.algorithm)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,difficulty,height,topoheight,template,algorithm,extraFields);
+int get hashCode {
+  final _this = this as GetBlockTemplateResult;
+  return Object.hash(runtimeType,_this.difficulty,_this.height,_this.topoheight,_this.template,_this.algorithm,_this.extraFields);
+}
 
 @override
 String toString() {
-  return 'GetBlockTemplateResult(difficulty: $difficulty, height: $height, topoheight: $topoheight, template: $template, algorithm: $algorithm, extraFields: $extraFields)';
+  final _this = this as GetBlockTemplateResult;
+  return 'GetBlockTemplateResult(difficulty: ${_this.difficulty}, height: ${_this.height}, topoheight: ${_this.topoheight}, template: ${_this.template}, algorithm: ${_this.algorithm}, extraFields: ${_this.extraFields})';
 }
 
 
@@ -241,16 +246,18 @@ _$GetBlockTemplateResultCopyWith<_GetBlockTemplateResult> get copyWith => __$Get
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetBlockTemplateResult&&(identical(other.difficulty, difficulty) || other.difficulty == difficulty)&&(identical(other.height, height) || other.height == height)&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&(identical(other.template, template) || other.template == template)&&(identical(other.algorithm, algorithm) || other.algorithm == algorithm)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetBlockTemplateResult&&(identical(other.difficulty, difficulty) || other.difficulty == difficulty)&&(identical(other.height, height) || other.height == height)&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&(identical(other.template, template) || other.template == template)&&(identical(other.algorithm, algorithm) || other.algorithm == algorithm)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,difficulty,height,topoheight,template,algorithm,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,difficulty,height,topoheight,template,algorithm,extraFields);
+}
 
 @override
 String toString() {
-  return 'GetBlockTemplateResult(difficulty: $difficulty, height: $height, topoheight: $topoheight, template: $template, algorithm: $algorithm, extraFields: $extraFields)';
+    return 'GetBlockTemplateResult(difficulty: $difficulty, height: $height, topoheight: $topoheight, template: $template, algorithm: $algorithm, extraFields: $extraFields)';
 }
 
 

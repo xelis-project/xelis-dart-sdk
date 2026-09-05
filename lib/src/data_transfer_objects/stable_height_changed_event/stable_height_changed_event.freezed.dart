@@ -29,16 +29,21 @@ $StableHeightChangedEventCopyWith<StableHeightChangedEvent> get copyWith => _$St
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is StableHeightChangedEvent&&(identical(other.previousStableHeight, previousStableHeight) || other.previousStableHeight == previousStableHeight)&&(identical(other.newStableHeight, newStableHeight) || other.newStableHeight == newStableHeight)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as StableHeightChangedEvent;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is StableHeightChangedEvent&&(identical(other.previousStableHeight, _this.previousStableHeight) || other.previousStableHeight == _this.previousStableHeight)&&(identical(other.newStableHeight, _this.newStableHeight) || other.newStableHeight == _this.newStableHeight)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,previousStableHeight,newStableHeight,extraFields);
+int get hashCode {
+  final _this = this as StableHeightChangedEvent;
+  return Object.hash(runtimeType,_this.previousStableHeight,_this.newStableHeight,_this.extraFields);
+}
 
 @override
 String toString() {
-  return 'StableHeightChangedEvent(previousStableHeight: $previousStableHeight, newStableHeight: $newStableHeight, extraFields: $extraFields)';
+  final _this = this as StableHeightChangedEvent;
+  return 'StableHeightChangedEvent(previousStableHeight: ${_this.previousStableHeight}, newStableHeight: ${_this.newStableHeight}, extraFields: ${_this.extraFields})';
 }
 
 
@@ -241,16 +246,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _StableHeightChangedEvent&&(identical(other.previousStableHeight, previousStableHeight) || other.previousStableHeight == previousStableHeight)&&(identical(other.newStableHeight, newStableHeight) || other.newStableHeight == newStableHeight)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _StableHeightChangedEvent&&(identical(other.previousStableHeight, previousStableHeight) || other.previousStableHeight == previousStableHeight)&&(identical(other.newStableHeight, newStableHeight) || other.newStableHeight == newStableHeight)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,previousStableHeight,newStableHeight,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,previousStableHeight,newStableHeight,extraFields);
+}
 
 @override
 String toString() {
-  return 'StableHeightChangedEvent(previousStableHeight: $previousStableHeight, newStableHeight: $newStableHeight, extraFields: $extraFields)';
+    return 'StableHeightChangedEvent(previousStableHeight: $previousStableHeight, newStableHeight: $newStableHeight, extraFields: $extraFields)';
 }
 
 

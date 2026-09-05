@@ -26,16 +26,21 @@ $RpcAssetDataCopyWith<RpcAssetData> get copyWith => _$RpcAssetDataCopyWithImpl<R
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcAssetData&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&(identical(other.data, data) || other.data == data));
+  final _this = this as RpcAssetData;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcAssetData&&(identical(other.asset, _this.asset) || other.asset == _this.asset)&&(identical(other.topoheight, _this.topoheight) || other.topoheight == _this.topoheight)&&(identical(other.data, _this.data) || other.data == _this.data));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,asset,topoheight,data);
+int get hashCode {
+  final _this = this as RpcAssetData;
+  return Object.hash(runtimeType,_this.asset,_this.topoheight,_this.data);
+}
 
 @override
 String toString() {
-  return 'RpcAssetData(asset: $asset, topoheight: $topoheight, data: $data)';
+  final _this = this as RpcAssetData;
+  return 'RpcAssetData(asset: ${_this.asset}, topoheight: ${_this.topoheight}, data: ${_this.data})';
 }
 
 
@@ -235,16 +240,18 @@ _$RpcAssetDataCopyWith<_RpcAssetData> get copyWith => __$RpcAssetDataCopyWithImp
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RpcAssetData&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&(identical(other.data, data) || other.data == data));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _RpcAssetData&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&(identical(other.data, data) || other.data == data));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,asset,topoheight,data);
+int get hashCode {
+    return Object.hash(runtimeType,asset,topoheight,data);
+}
 
 @override
 String toString() {
-  return 'RpcAssetData(asset: $asset, topoheight: $topoheight, data: $data)';
+    return 'RpcAssetData(asset: $asset, topoheight: $topoheight, data: $data)';
 }
 
 

@@ -26,12 +26,16 @@ $RpcContractLogCopyWith<RpcContractLog> get copyWith => _$RpcContractLogCopyWith
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcContractLog&&(identical(other.valueExtraFields, valueExtraFields) || other.valueExtraFields == valueExtraFields)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as RpcContractLog;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcContractLog&&(identical(other.valueExtraFields, _this.valueExtraFields) || other.valueExtraFields == _this.valueExtraFields)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,valueExtraFields,extraFields);
+int get hashCode {
+  final _this = this as RpcContractLog;
+  return Object.hash(runtimeType,_this.valueExtraFields,_this.extraFields);
+}
 
 
 
@@ -317,12 +321,14 @@ $RefundGasContractLogCopyWith<RefundGasContractLog> get copyWith => _$RefundGasC
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RefundGasContractLog&&(identical(other.amount, amount) || other.amount == amount)&&(identical(other.valueExtraFields, valueExtraFields) || other.valueExtraFields == valueExtraFields)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RefundGasContractLog&&(identical(other.amount, amount) || other.amount == amount)&&(identical(other.valueExtraFields, valueExtraFields) || other.valueExtraFields == valueExtraFields)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,amount,valueExtraFields,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,amount,valueExtraFields,extraFields);
+}
 
 
 
@@ -404,12 +410,14 @@ $TransferContractLogCopyWith<TransferContractLog> get copyWith => _$TransferCont
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is TransferContractLog&&(identical(other.contract, contract) || other.contract == contract)&&(identical(other.amount, amount) || other.amount == amount)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.destination, destination) || other.destination == destination)&&(identical(other.valueExtraFields, valueExtraFields) || other.valueExtraFields == valueExtraFields)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is TransferContractLog&&(identical(other.contract, contract) || other.contract == contract)&&(identical(other.amount, amount) || other.amount == amount)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.destination, destination) || other.destination == destination)&&(identical(other.valueExtraFields, valueExtraFields) || other.valueExtraFields == valueExtraFields)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,contract,amount,asset,destination,valueExtraFields,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,contract,amount,asset,destination,valueExtraFields,extraFields);
+}
 
 
 
@@ -494,12 +502,14 @@ $TransferToContractLogCopyWith<TransferToContractLog> get copyWith => _$Transfer
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is TransferToContractLog&&(identical(other.contract, contract) || other.contract == contract)&&(identical(other.amount, amount) || other.amount == amount)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.destination, destination) || other.destination == destination)&&(identical(other.valueExtraFields, valueExtraFields) || other.valueExtraFields == valueExtraFields)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is TransferToContractLog&&(identical(other.contract, contract) || other.contract == contract)&&(identical(other.amount, amount) || other.amount == amount)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.destination, destination) || other.destination == destination)&&(identical(other.valueExtraFields, valueExtraFields) || other.valueExtraFields == valueExtraFields)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,contract,amount,asset,destination,valueExtraFields,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,contract,amount,asset,destination,valueExtraFields,extraFields);
+}
 
 
 
@@ -583,12 +593,14 @@ $MintContractLogCopyWith<MintContractLog> get copyWith => _$MintContractLogCopyW
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is MintContractLog&&(identical(other.contract, contract) || other.contract == contract)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.amount, amount) || other.amount == amount)&&(identical(other.valueExtraFields, valueExtraFields) || other.valueExtraFields == valueExtraFields)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is MintContractLog&&(identical(other.contract, contract) || other.contract == contract)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.amount, amount) || other.amount == amount)&&(identical(other.valueExtraFields, valueExtraFields) || other.valueExtraFields == valueExtraFields)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,contract,asset,amount,valueExtraFields,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,contract,asset,amount,valueExtraFields,extraFields);
+}
 
 
 
@@ -671,12 +683,14 @@ $BurnContractLogCopyWith<BurnContractLog> get copyWith => _$BurnContractLogCopyW
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is BurnContractLog&&(identical(other.contract, contract) || other.contract == contract)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.amount, amount) || other.amount == amount)&&(identical(other.valueExtraFields, valueExtraFields) || other.valueExtraFields == valueExtraFields)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is BurnContractLog&&(identical(other.contract, contract) || other.contract == contract)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.amount, amount) || other.amount == amount)&&(identical(other.valueExtraFields, valueExtraFields) || other.valueExtraFields == valueExtraFields)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,contract,asset,amount,valueExtraFields,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,contract,asset,amount,valueExtraFields,extraFields);
+}
 
 
 
@@ -758,12 +772,14 @@ $NewAssetContractLogCopyWith<NewAssetContractLog> get copyWith => _$NewAssetCont
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is NewAssetContractLog&&(identical(other.contract, contract) || other.contract == contract)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.valueExtraFields, valueExtraFields) || other.valueExtraFields == valueExtraFields)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is NewAssetContractLog&&(identical(other.contract, contract) || other.contract == contract)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.valueExtraFields, valueExtraFields) || other.valueExtraFields == valueExtraFields)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,contract,asset,valueExtraFields,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,contract,asset,valueExtraFields,extraFields);
+}
 
 
 
@@ -843,12 +859,14 @@ $ExitCodeContractLogCopyWith<ExitCodeContractLog> get copyWith => _$ExitCodeCont
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ExitCodeContractLog&&(identical(other.code, code) || other.code == code)&&(identical(other.valueExtraFields, valueExtraFields) || other.valueExtraFields == valueExtraFields)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is ExitCodeContractLog&&(identical(other.code, code) || other.code == code)&&(identical(other.valueExtraFields, valueExtraFields) || other.valueExtraFields == valueExtraFields)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,code,valueExtraFields,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,code,valueExtraFields,extraFields);
+}
 
 
 
@@ -926,12 +944,14 @@ $RefundDepositsContractLogCopyWith<RefundDepositsContractLog> get copyWith => _$
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RefundDepositsContractLog&&(identical(other.valueExtraFields, valueExtraFields) || other.valueExtraFields == valueExtraFields)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RefundDepositsContractLog&&(identical(other.valueExtraFields, valueExtraFields) || other.valueExtraFields == valueExtraFields)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,valueExtraFields,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,valueExtraFields,extraFields);
+}
 
 
 
@@ -1010,12 +1030,14 @@ $GasInjectionContractLogCopyWith<GasInjectionContractLog> get copyWith => _$GasI
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GasInjectionContractLog&&(identical(other.contract, contract) || other.contract == contract)&&(identical(other.amount, amount) || other.amount == amount)&&(identical(other.valueExtraFields, valueExtraFields) || other.valueExtraFields == valueExtraFields)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is GasInjectionContractLog&&(identical(other.contract, contract) || other.contract == contract)&&(identical(other.amount, amount) || other.amount == amount)&&(identical(other.valueExtraFields, valueExtraFields) || other.valueExtraFields == valueExtraFields)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,contract,amount,valueExtraFields,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,contract,amount,valueExtraFields,extraFields);
+}
 
 
 
@@ -1097,12 +1119,14 @@ $ScheduledExecutionContractLogCopyWith<ScheduledExecutionContractLog> get copyWi
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ScheduledExecutionContractLog&&(identical(other.contract, contract) || other.contract == contract)&&(identical(other.hash, hash) || other.hash == hash)&&(identical(other.kind, kind) || other.kind == kind)&&(identical(other.valueExtraFields, valueExtraFields) || other.valueExtraFields == valueExtraFields)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is ScheduledExecutionContractLog&&(identical(other.contract, contract) || other.contract == contract)&&(identical(other.hash, hash) || other.hash == hash)&&(identical(other.kind, kind) || other.kind == kind)&&(identical(other.valueExtraFields, valueExtraFields) || other.valueExtraFields == valueExtraFields)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,contract,hash,kind,valueExtraFields,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,contract,hash,kind,valueExtraFields,extraFields);
+}
 
 
 
@@ -1192,12 +1216,14 @@ $ExitPayloadContractLogCopyWith<ExitPayloadContractLog> get copyWith => _$ExitPa
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ExitPayloadContractLog&&(identical(other.payload, payload) || other.payload == payload)&&(identical(other.valueExtraFields, valueExtraFields) || other.valueExtraFields == valueExtraFields)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is ExitPayloadContractLog&&(identical(other.payload, payload) || other.payload == payload)&&(identical(other.valueExtraFields, valueExtraFields) || other.valueExtraFields == valueExtraFields)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,payload,valueExtraFields,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,payload,valueExtraFields,extraFields);
+}
 
 
 
@@ -1289,12 +1315,14 @@ $TransferPayloadContractLogCopyWith<TransferPayloadContractLog> get copyWith => 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is TransferPayloadContractLog&&(identical(other.contract, contract) || other.contract == contract)&&(identical(other.amount, amount) || other.amount == amount)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.destination, destination) || other.destination == destination)&&(identical(other.payload, payload) || other.payload == payload)&&(identical(other.valueExtraFields, valueExtraFields) || other.valueExtraFields == valueExtraFields)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is TransferPayloadContractLog&&(identical(other.contract, contract) || other.contract == contract)&&(identical(other.amount, amount) || other.amount == amount)&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.destination, destination) || other.destination == destination)&&(identical(other.payload, payload) || other.payload == payload)&&(identical(other.valueExtraFields, valueExtraFields) || other.valueExtraFields == valueExtraFields)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,contract,amount,asset,destination,payload,valueExtraFields,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,contract,amount,asset,destination,payload,valueExtraFields,extraFields);
+}
 
 
 
@@ -1386,12 +1414,14 @@ $ExitErrorContractLogCopyWith<ExitErrorContractLog> get copyWith => _$ExitErrorC
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ExitErrorContractLog&&(identical(other.error, error) || other.error == error)&&(identical(other.valueExtraFields, valueExtraFields) || other.valueExtraFields == valueExtraFields)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is ExitErrorContractLog&&(identical(other.error, error) || other.error == error)&&(identical(other.valueExtraFields, valueExtraFields) || other.valueExtraFields == valueExtraFields)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,error,valueExtraFields,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,error,valueExtraFields,extraFields);
+}
 
 
 
@@ -1480,12 +1510,14 @@ $EventContractLogCopyWith<EventContractLog> get copyWith => _$EventContractLogCo
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is EventContractLog&&(identical(other.contract, contract) || other.contract == contract)&&(identical(other.eventId, eventId) || other.eventId == eventId)&&(identical(other.valueExtraFields, valueExtraFields) || other.valueExtraFields == valueExtraFields)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is EventContractLog&&(identical(other.contract, contract) || other.contract == contract)&&(identical(other.eventId, eventId) || other.eventId == eventId)&&(identical(other.valueExtraFields, valueExtraFields) || other.valueExtraFields == valueExtraFields)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,contract,eventId,valueExtraFields,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,contract,eventId,valueExtraFields,extraFields);
+}
 
 
 
@@ -1566,12 +1598,14 @@ $UnknownRpcContractLogCopyWith<UnknownRpcContractLog> get copyWith => _$UnknownR
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is UnknownRpcContractLog&&(identical(other.type, type) || other.type == type)&&(identical(other.wireValue, wireValue) || other.wireValue == wireValue)&&(identical(other.valueExtraFields, valueExtraFields) || other.valueExtraFields == valueExtraFields)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is UnknownRpcContractLog&&(identical(other.type, type) || other.type == type)&&(identical(other.wireValue, wireValue) || other.wireValue == wireValue)&&(identical(other.valueExtraFields, valueExtraFields) || other.valueExtraFields == valueExtraFields)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,type,wireValue,valueExtraFields,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,type,wireValue,valueExtraFields,extraFields);
+}
 
 
 
@@ -1648,7 +1682,7 @@ mixin _$RpcScheduledExecutionLogKind {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcScheduledExecutionLogKind);
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcScheduledExecutionLogKind);
 }
 
 
@@ -1820,12 +1854,14 @@ $RpcTopoheightExecutionLogKindCopyWith<RpcTopoheightExecutionLogKind> get copyWi
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcTopoheightExecutionLogKind&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcTopoheightExecutionLogKind&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,topoheight);
+int get hashCode {
+    return Object.hash(runtimeType,topoheight);
+}
 
 
 
@@ -1890,12 +1926,14 @@ $RpcBlockEndExecutionLogKindCopyWith<RpcBlockEndExecutionLogKind> get copyWith =
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcBlockEndExecutionLogKind&&(identical(other.chunkId, chunkId) || other.chunkId == chunkId)&&(identical(other.maxGas, maxGas) || other.maxGas == maxGas)&&const DeepCollectionEquality().equals(other._params, _params));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcBlockEndExecutionLogKind&&(identical(other.chunkId, chunkId) || other.chunkId == chunkId)&&(identical(other.maxGas, maxGas) || other.maxGas == maxGas)&&const DeepCollectionEquality().equals(other.params, _params));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,chunkId,maxGas,const DeepCollectionEquality().hash(_params));
+int get hashCode {
+    return Object.hash(runtimeType,chunkId,maxGas,const DeepCollectionEquality().hash(_params));
+}
 
 
 
@@ -1954,12 +1992,14 @@ $RpcUnknownExecutionLogKindCopyWith<RpcUnknownExecutionLogKind> get copyWith => 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcUnknownExecutionLogKind&&(identical(other.wireValue, wireValue) || other.wireValue == wireValue));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcUnknownExecutionLogKind&&(identical(other.wireValue, wireValue) || other.wireValue == wireValue));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,wireValue);
+int get hashCode {
+    return Object.hash(runtimeType,wireValue);
+}
 
 
 

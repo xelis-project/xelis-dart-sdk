@@ -29,16 +29,21 @@ $GetNonceParamsCopyWith<GetNonceParams> get copyWith => _$GetNonceParamsCopyWith
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetNonceParams&&(identical(other.address, address) || other.address == address)&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight));
+  final _this = this as GetNonceParams;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetNonceParams&&(identical(other.address, _this.address) || other.address == _this.address)&&(identical(other.topoheight, _this.topoheight) || other.topoheight == _this.topoheight));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,address,topoheight);
+int get hashCode {
+  final _this = this as GetNonceParams;
+  return Object.hash(runtimeType,_this.address,_this.topoheight);
+}
 
 @override
 String toString() {
-  return 'GetNonceParams(address: $address, topoheight: $topoheight)';
+  final _this = this as GetNonceParams;
+  return 'GetNonceParams(address: ${_this.address}, topoheight: ${_this.topoheight})';
 }
 
 
@@ -230,16 +235,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetNonceParams&&(identical(other.address, address) || other.address == address)&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetNonceParams&&(identical(other.address, address) || other.address == address)&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,address,topoheight);
+int get hashCode {
+    return Object.hash(runtimeType,address,topoheight);
+}
 
 @override
 String toString() {
-  return 'GetNonceParams(address: $address, topoheight: $topoheight)';
+    return 'GetNonceParams(address: $address, topoheight: $topoheight)';
 }
 
 

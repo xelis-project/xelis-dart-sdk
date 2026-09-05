@@ -29,16 +29,21 @@ $DeployInvokeCopyWith<DeployInvoke> get copyWith => _$DeployInvokeCopyWithImpl<D
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is DeployInvoke&&(identical(other.maxGas, maxGas) || other.maxGas == maxGas)&&const DeepCollectionEquality().equals(other.deposits, deposits)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as DeployInvoke;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is DeployInvoke&&(identical(other.maxGas, _this.maxGas) || other.maxGas == _this.maxGas)&&const DeepCollectionEquality().equals(other.deposits, _this.deposits)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,maxGas,const DeepCollectionEquality().hash(deposits),extraFields);
+int get hashCode {
+  final _this = this as DeployInvoke;
+  return Object.hash(runtimeType,_this.maxGas,const DeepCollectionEquality().hash(_this.deposits),_this.extraFields);
+}
 
 @override
 String toString() {
-  return 'DeployInvoke(maxGas: $maxGas, deposits: $deposits, extraFields: $extraFields)';
+  final _this = this as DeployInvoke;
+  return 'DeployInvoke(maxGas: ${_this.maxGas}, deposits: ${_this.deposits}, extraFields: ${_this.extraFields})';
 }
 
 
@@ -247,16 +252,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _DeployInvoke&&(identical(other.maxGas, maxGas) || other.maxGas == maxGas)&&const DeepCollectionEquality().equals(other._deposits, _deposits)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _DeployInvoke&&(identical(other.maxGas, maxGas) || other.maxGas == maxGas)&&const DeepCollectionEquality().equals(other.deposits, _deposits)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,maxGas,const DeepCollectionEquality().hash(_deposits),extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,maxGas,const DeepCollectionEquality().hash(_deposits),extraFields);
+}
 
 @override
 String toString() {
-  return 'DeployInvoke(maxGas: $maxGas, deposits: $deposits, extraFields: $extraFields)';
+    return 'DeployInvoke(maxGas: $maxGas, deposits: $deposits, extraFields: $extraFields)';
 }
 
 

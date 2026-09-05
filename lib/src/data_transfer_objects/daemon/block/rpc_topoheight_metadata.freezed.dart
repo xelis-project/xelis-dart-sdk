@@ -26,16 +26,21 @@ $RpcTopoheightMetadataCopyWith<RpcTopoheightMetadata> get copyWith => _$RpcTopoh
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcTopoheightMetadata&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&(identical(other.reward, reward) || other.reward == reward)&&(identical(other.minerReward, minerReward) || other.minerReward == minerReward)&&(identical(other.devReward, devReward) || other.devReward == devReward)&&(identical(other.supply, supply) || other.supply == supply)&&(identical(other.totalFees, totalFees) || other.totalFees == totalFees)&&(identical(other.totalFeesBurned, totalFeesBurned) || other.totalFeesBurned == totalFeesBurned));
+  final _this = this as RpcTopoheightMetadata;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcTopoheightMetadata&&(identical(other.topoheight, _this.topoheight) || other.topoheight == _this.topoheight)&&(identical(other.reward, _this.reward) || other.reward == _this.reward)&&(identical(other.minerReward, _this.minerReward) || other.minerReward == _this.minerReward)&&(identical(other.devReward, _this.devReward) || other.devReward == _this.devReward)&&(identical(other.supply, _this.supply) || other.supply == _this.supply)&&(identical(other.totalFees, _this.totalFees) || other.totalFees == _this.totalFees)&&(identical(other.totalFeesBurned, _this.totalFeesBurned) || other.totalFeesBurned == _this.totalFeesBurned));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,topoheight,reward,minerReward,devReward,supply,totalFees,totalFeesBurned);
+int get hashCode {
+  final _this = this as RpcTopoheightMetadata;
+  return Object.hash(runtimeType,_this.topoheight,_this.reward,_this.minerReward,_this.devReward,_this.supply,_this.totalFees,_this.totalFeesBurned);
+}
 
 @override
 String toString() {
-  return 'RpcTopoheightMetadata(topoheight: $topoheight, reward: $reward, minerReward: $minerReward, devReward: $devReward, supply: $supply, totalFees: $totalFees, totalFeesBurned: $totalFeesBurned)';
+  final _this = this as RpcTopoheightMetadata;
+  return 'RpcTopoheightMetadata(topoheight: ${_this.topoheight}, reward: ${_this.reward}, minerReward: ${_this.minerReward}, devReward: ${_this.devReward}, supply: ${_this.supply}, totalFees: ${_this.totalFees}, totalFeesBurned: ${_this.totalFeesBurned})';
 }
 
 
@@ -234,16 +239,18 @@ _$RpcTopoheightMetadataCopyWith<_RpcTopoheightMetadata> get copyWith => __$RpcTo
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RpcTopoheightMetadata&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&(identical(other.reward, reward) || other.reward == reward)&&(identical(other.minerReward, minerReward) || other.minerReward == minerReward)&&(identical(other.devReward, devReward) || other.devReward == devReward)&&(identical(other.supply, supply) || other.supply == supply)&&(identical(other.totalFees, totalFees) || other.totalFees == totalFees)&&(identical(other.totalFeesBurned, totalFeesBurned) || other.totalFeesBurned == totalFeesBurned));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _RpcTopoheightMetadata&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&(identical(other.reward, reward) || other.reward == reward)&&(identical(other.minerReward, minerReward) || other.minerReward == minerReward)&&(identical(other.devReward, devReward) || other.devReward == devReward)&&(identical(other.supply, supply) || other.supply == supply)&&(identical(other.totalFees, totalFees) || other.totalFees == totalFees)&&(identical(other.totalFeesBurned, totalFeesBurned) || other.totalFeesBurned == totalFeesBurned));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,topoheight,reward,minerReward,devReward,supply,totalFees,totalFeesBurned);
+int get hashCode {
+    return Object.hash(runtimeType,topoheight,reward,minerReward,devReward,supply,totalFees,totalFeesBurned);
+}
 
 @override
 String toString() {
-  return 'RpcTopoheightMetadata(topoheight: $topoheight, reward: $reward, minerReward: $minerReward, devReward: $devReward, supply: $supply, totalFees: $totalFees, totalFeesBurned: $totalFeesBurned)';
+    return 'RpcTopoheightMetadata(topoheight: $topoheight, reward: $reward, minerReward: $minerReward, devReward: $devReward, supply: $supply, totalFees: $totalFees, totalFeesBurned: $totalFeesBurned)';
 }
 
 

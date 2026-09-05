@@ -29,16 +29,21 @@ $GetBlockAtTopoheightParamsCopyWith<GetBlockAtTopoheightParams> get copyWith => 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetBlockAtTopoheightParams&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&(identical(other.includeTxs, includeTxs) || other.includeTxs == includeTxs));
+  final _this = this as GetBlockAtTopoheightParams;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetBlockAtTopoheightParams&&(identical(other.topoheight, _this.topoheight) || other.topoheight == _this.topoheight)&&(identical(other.includeTxs, _this.includeTxs) || other.includeTxs == _this.includeTxs));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,topoheight,includeTxs);
+int get hashCode {
+  final _this = this as GetBlockAtTopoheightParams;
+  return Object.hash(runtimeType,_this.topoheight,_this.includeTxs);
+}
 
 @override
 String toString() {
-  return 'GetBlockAtTopoheightParams(topoheight: $topoheight, includeTxs: $includeTxs)';
+  final _this = this as GetBlockAtTopoheightParams;
+  return 'GetBlockAtTopoheightParams(topoheight: ${_this.topoheight}, includeTxs: ${_this.includeTxs})';
 }
 
 
@@ -230,16 +235,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetBlockAtTopoheightParams&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&(identical(other.includeTxs, includeTxs) || other.includeTxs == includeTxs));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetBlockAtTopoheightParams&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&(identical(other.includeTxs, includeTxs) || other.includeTxs == includeTxs));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,topoheight,includeTxs);
+int get hashCode {
+    return Object.hash(runtimeType,topoheight,includeTxs);
+}
 
 @override
 String toString() {
-  return 'GetBlockAtTopoheightParams(topoheight: $topoheight, includeTxs: $includeTxs)';
+    return 'GetBlockAtTopoheightParams(topoheight: $topoheight, includeTxs: $includeTxs)';
 }
 
 

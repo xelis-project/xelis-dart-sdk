@@ -26,12 +26,16 @@ $RpcExtraFieldsCopyWith<RpcExtraFields> get copyWith => _$RpcExtraFieldsCopyWith
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcExtraFields&&const DeepCollectionEquality().equals(other.values, values));
+  final _this = this as RpcExtraFields;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcExtraFields&&const DeepCollectionEquality().equals(other.values, _this.values));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(values));
+int get hashCode {
+  final _this = this as RpcExtraFields;
+  return Object.hash(runtimeType,const DeepCollectionEquality().hash(_this.values));
+}
 
 
 
@@ -224,12 +228,14 @@ _$RpcExtraFieldsCopyWith<_RpcExtraFields> get copyWith => __$RpcExtraFieldsCopyW
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RpcExtraFields&&const DeepCollectionEquality().equals(other._values, _values));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _RpcExtraFields&&const DeepCollectionEquality().equals(other.values, _values));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_values));
+int get hashCode {
+    return Object.hash(runtimeType,const DeepCollectionEquality().hash(_values));
+}
 
 
 

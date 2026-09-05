@@ -29,16 +29,21 @@ $GetNonceAtTopoheightResultCopyWith<GetNonceAtTopoheightResult> get copyWith => 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetNonceAtTopoheightResult&&(identical(other.nonce, nonce) || other.nonce == nonce)&&(identical(other.previousTopoheight, previousTopoheight) || other.previousTopoheight == previousTopoheight)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as GetNonceAtTopoheightResult;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetNonceAtTopoheightResult&&(identical(other.nonce, _this.nonce) || other.nonce == _this.nonce)&&(identical(other.previousTopoheight, _this.previousTopoheight) || other.previousTopoheight == _this.previousTopoheight)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,nonce,previousTopoheight,extraFields);
+int get hashCode {
+  final _this = this as GetNonceAtTopoheightResult;
+  return Object.hash(runtimeType,_this.nonce,_this.previousTopoheight,_this.extraFields);
+}
 
 @override
 String toString() {
-  return 'GetNonceAtTopoheightResult(nonce: $nonce, previousTopoheight: $previousTopoheight, extraFields: $extraFields)';
+  final _this = this as GetNonceAtTopoheightResult;
+  return 'GetNonceAtTopoheightResult(nonce: ${_this.nonce}, previousTopoheight: ${_this.previousTopoheight}, extraFields: ${_this.extraFields})';
 }
 
 
@@ -241,16 +246,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetNonceAtTopoheightResult&&(identical(other.nonce, nonce) || other.nonce == nonce)&&(identical(other.previousTopoheight, previousTopoheight) || other.previousTopoheight == previousTopoheight)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetNonceAtTopoheightResult&&(identical(other.nonce, nonce) || other.nonce == nonce)&&(identical(other.previousTopoheight, previousTopoheight) || other.previousTopoheight == previousTopoheight)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,nonce,previousTopoheight,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,nonce,previousTopoheight,extraFields);
+}
 
 @override
 String toString() {
-  return 'GetNonceAtTopoheightResult(nonce: $nonce, previousTopoheight: $previousTopoheight, extraFields: $extraFields)';
+    return 'GetNonceAtTopoheightResult(nonce: $nonce, previousTopoheight: $previousTopoheight, extraFields: $extraFields)';
 }
 
 

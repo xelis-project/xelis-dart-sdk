@@ -29,16 +29,21 @@ $BalanceChangedEventCopyWith<BalanceChangedEvent> get copyWith => _$BalanceChang
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is BalanceChangedEvent&&(identical(other.assetHash, assetHash) || other.assetHash == assetHash)&&(identical(other.balance, balance) || other.balance == balance)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as BalanceChangedEvent;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is BalanceChangedEvent&&(identical(other.assetHash, _this.assetHash) || other.assetHash == _this.assetHash)&&(identical(other.balance, _this.balance) || other.balance == _this.balance)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,assetHash,balance,extraFields);
+int get hashCode {
+  final _this = this as BalanceChangedEvent;
+  return Object.hash(runtimeType,_this.assetHash,_this.balance,_this.extraFields);
+}
 
 @override
 String toString() {
-  return 'BalanceChangedEvent(assetHash: $assetHash, balance: $balance, extraFields: $extraFields)';
+  final _this = this as BalanceChangedEvent;
+  return 'BalanceChangedEvent(assetHash: ${_this.assetHash}, balance: ${_this.balance}, extraFields: ${_this.extraFields})';
 }
 
 
@@ -241,16 +246,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _BalanceChangedEvent&&(identical(other.assetHash, assetHash) || other.assetHash == assetHash)&&(identical(other.balance, balance) || other.balance == balance)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _BalanceChangedEvent&&(identical(other.assetHash, assetHash) || other.assetHash == assetHash)&&(identical(other.balance, balance) || other.balance == balance)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,assetHash,balance,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,assetHash,balance,extraFields);
+}
 
 @override
 String toString() {
-  return 'BalanceChangedEvent(assetHash: $assetHash, balance: $balance, extraFields: $extraFields)';
+    return 'BalanceChangedEvent(assetHash: $assetHash, balance: $balance, extraFields: $extraFields)';
 }
 
 

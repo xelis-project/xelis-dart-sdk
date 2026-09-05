@@ -26,16 +26,21 @@ $GetContractDataResultCopyWith<GetContractDataResult> get copyWith => _$GetContr
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetContractDataResult&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&(identical(other.data, data) || other.data == data)&&(identical(other.previousTopoheight, previousTopoheight) || other.previousTopoheight == previousTopoheight)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as GetContractDataResult;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetContractDataResult&&(identical(other.topoheight, _this.topoheight) || other.topoheight == _this.topoheight)&&(identical(other.data, _this.data) || other.data == _this.data)&&(identical(other.previousTopoheight, _this.previousTopoheight) || other.previousTopoheight == _this.previousTopoheight)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,topoheight,data,previousTopoheight,extraFields);
+int get hashCode {
+  final _this = this as GetContractDataResult;
+  return Object.hash(runtimeType,_this.topoheight,_this.data,_this.previousTopoheight,_this.extraFields);
+}
 
 @override
 String toString() {
-  return 'GetContractDataResult(topoheight: $topoheight, data: $data, previousTopoheight: $previousTopoheight, extraFields: $extraFields)';
+  final _this = this as GetContractDataResult;
+  return 'GetContractDataResult(topoheight: ${_this.topoheight}, data: ${_this.data}, previousTopoheight: ${_this.previousTopoheight}, extraFields: ${_this.extraFields})';
 }
 
 
@@ -249,16 +254,18 @@ _$GetContractDataResultCopyWith<_GetContractDataResult> get copyWith => __$GetCo
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetContractDataResult&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&(identical(other.data, data) || other.data == data)&&(identical(other.previousTopoheight, previousTopoheight) || other.previousTopoheight == previousTopoheight)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetContractDataResult&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&(identical(other.data, data) || other.data == data)&&(identical(other.previousTopoheight, previousTopoheight) || other.previousTopoheight == previousTopoheight)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,topoheight,data,previousTopoheight,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,topoheight,data,previousTopoheight,extraFields);
+}
 
 @override
 String toString() {
-  return 'GetContractDataResult(topoheight: $topoheight, data: $data, previousTopoheight: $previousTopoheight, extraFields: $extraFields)';
+    return 'GetContractDataResult(topoheight: $topoheight, data: $data, previousTopoheight: $previousTopoheight, extraFields: $extraFields)';
 }
 
 

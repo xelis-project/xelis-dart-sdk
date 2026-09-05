@@ -26,12 +26,16 @@ $RpcExitErrorCopyWith<RpcExitError> get copyWith => _$RpcExitErrorCopyWithImpl<R
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcExitError&&(identical(other.code, code) || other.code == code)&&(identical(other.message, message) || other.message == message)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as RpcExitError;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcExitError&&(identical(other.code, _this.code) || other.code == _this.code)&&(identical(other.message, _this.message) || other.message == _this.message)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,code,message,extraFields);
+int get hashCode {
+  final _this = this as RpcExitError;
+  return Object.hash(runtimeType,_this.code,_this.message,_this.extraFields);
+}
 
 
 
@@ -231,12 +235,14 @@ _$RpcExitErrorCopyWith<_RpcExitError> get copyWith => __$RpcExitErrorCopyWithImp
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RpcExitError&&(identical(other.code, code) || other.code == code)&&(identical(other.message, message) || other.message == message)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _RpcExitError&&(identical(other.code, code) || other.code == code)&&(identical(other.message, message) || other.message == message)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,code,message,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,code,message,extraFields);
+}
 
 
 

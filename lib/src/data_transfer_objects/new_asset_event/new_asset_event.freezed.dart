@@ -29,16 +29,21 @@ $NewAssetEventCopyWith<NewAssetEvent> get copyWith => _$NewAssetEventCopyWithImp
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is NewAssetEvent&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.blockHash, blockHash) || other.blockHash == blockHash)&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as NewAssetEvent;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is NewAssetEvent&&(identical(other.asset, _this.asset) || other.asset == _this.asset)&&(identical(other.blockHash, _this.blockHash) || other.blockHash == _this.blockHash)&&(identical(other.topoheight, _this.topoheight) || other.topoheight == _this.topoheight)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,asset,blockHash,topoheight,extraFields);
+int get hashCode {
+  final _this = this as NewAssetEvent;
+  return Object.hash(runtimeType,_this.asset,_this.blockHash,_this.topoheight,_this.extraFields);
+}
 
 @override
 String toString() {
-  return 'NewAssetEvent(asset: $asset, blockHash: $blockHash, topoheight: $topoheight, extraFields: $extraFields)';
+  final _this = this as NewAssetEvent;
+  return 'NewAssetEvent(asset: ${_this.asset}, blockHash: ${_this.blockHash}, topoheight: ${_this.topoheight}, extraFields: ${_this.extraFields})';
 }
 
 
@@ -243,16 +248,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _NewAssetEvent&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.blockHash, blockHash) || other.blockHash == blockHash)&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _NewAssetEvent&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.blockHash, blockHash) || other.blockHash == blockHash)&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,asset,blockHash,topoheight,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,asset,blockHash,topoheight,extraFields);
+}
 
 @override
 String toString() {
-  return 'NewAssetEvent(asset: $asset, blockHash: $blockHash, topoheight: $topoheight, extraFields: $extraFields)';
+    return 'NewAssetEvent(asset: $asset, blockHash: $blockHash, topoheight: $topoheight, extraFields: $extraFields)';
 }
 
 

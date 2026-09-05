@@ -26,16 +26,21 @@ $GetBalanceResultCopyWith<GetBalanceResult> get copyWith => _$GetBalanceResultCo
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetBalanceResult&&(identical(other.versionedBalance, versionedBalance) || other.versionedBalance == versionedBalance)&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as GetBalanceResult;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetBalanceResult&&(identical(other.versionedBalance, _this.versionedBalance) || other.versionedBalance == _this.versionedBalance)&&(identical(other.topoheight, _this.topoheight) || other.topoheight == _this.topoheight)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,versionedBalance,topoheight,extraFields);
+int get hashCode {
+  final _this = this as GetBalanceResult;
+  return Object.hash(runtimeType,_this.versionedBalance,_this.topoheight,_this.extraFields);
+}
 
 @override
 String toString() {
-  return 'GetBalanceResult(versionedBalance: $versionedBalance, topoheight: $topoheight, extraFields: $extraFields)';
+  final _this = this as GetBalanceResult;
+  return 'GetBalanceResult(versionedBalance: ${_this.versionedBalance}, topoheight: ${_this.topoheight}, extraFields: ${_this.extraFields})';
 }
 
 
@@ -244,16 +249,18 @@ _$GetBalanceResultCopyWith<_GetBalanceResult> get copyWith => __$GetBalanceResul
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetBalanceResult&&(identical(other.versionedBalance, versionedBalance) || other.versionedBalance == versionedBalance)&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetBalanceResult&&(identical(other.versionedBalance, versionedBalance) || other.versionedBalance == versionedBalance)&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,versionedBalance,topoheight,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,versionedBalance,topoheight,extraFields);
+}
 
 @override
 String toString() {
-  return 'GetBalanceResult(versionedBalance: $versionedBalance, topoheight: $topoheight, extraFields: $extraFields)';
+    return 'GetBalanceResult(versionedBalance: $versionedBalance, topoheight: $topoheight, extraFields: $extraFields)';
 }
 
 

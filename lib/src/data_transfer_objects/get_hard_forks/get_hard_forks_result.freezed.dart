@@ -29,16 +29,21 @@ $GetHardForksResultCopyWith<GetHardForksResult> get copyWith => _$GetHardForksRe
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetHardForksResult&&(identical(other.height, height) || other.height == height)&&(identical(other.version, version) || other.version == version)&&(identical(other.changelog, changelog) || other.changelog == changelog)&&(identical(other.versionRequirement, versionRequirement) || other.versionRequirement == versionRequirement)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as GetHardForksResult;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetHardForksResult&&(identical(other.height, _this.height) || other.height == _this.height)&&(identical(other.version, _this.version) || other.version == _this.version)&&(identical(other.changelog, _this.changelog) || other.changelog == _this.changelog)&&(identical(other.versionRequirement, _this.versionRequirement) || other.versionRequirement == _this.versionRequirement)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,height,version,changelog,versionRequirement,extraFields);
+int get hashCode {
+  final _this = this as GetHardForksResult;
+  return Object.hash(runtimeType,_this.height,_this.version,_this.changelog,_this.versionRequirement,_this.extraFields);
+}
 
 @override
 String toString() {
-  return 'GetHardForksResult(height: $height, version: $version, changelog: $changelog, versionRequirement: $versionRequirement, extraFields: $extraFields)';
+  final _this = this as GetHardForksResult;
+  return 'GetHardForksResult(height: ${_this.height}, version: ${_this.version}, changelog: ${_this.changelog}, versionRequirement: ${_this.versionRequirement}, extraFields: ${_this.extraFields})';
 }
 
 
@@ -245,16 +250,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetHardForksResult&&(identical(other.height, height) || other.height == height)&&(identical(other.version, version) || other.version == version)&&(identical(other.changelog, changelog) || other.changelog == changelog)&&(identical(other.versionRequirement, versionRequirement) || other.versionRequirement == versionRequirement)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetHardForksResult&&(identical(other.height, height) || other.height == height)&&(identical(other.version, version) || other.version == version)&&(identical(other.changelog, changelog) || other.changelog == changelog)&&(identical(other.versionRequirement, versionRequirement) || other.versionRequirement == versionRequirement)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,height,version,changelog,versionRequirement,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,height,version,changelog,versionRequirement,extraFields);
+}
 
 @override
 String toString() {
-  return 'GetHardForksResult(height: $height, version: $version, changelog: $changelog, versionRequirement: $versionRequirement, extraFields: $extraFields)';
+    return 'GetHardForksResult(height: $height, version: $version, changelog: $changelog, versionRequirement: $versionRequirement, extraFields: $extraFields)';
 }
 
 

@@ -21,7 +21,7 @@ mixin _$RpcTimedDirection {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcTimedDirection);
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcTimedDirection);
 }
 
 
@@ -199,12 +199,14 @@ $RpcIncomingTimedDirectionCopyWith<RpcIncomingTimedDirection> get copyWith => _$
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcIncomingTimedDirection&&(identical(other.receivedAt, receivedAt) || other.receivedAt == receivedAt));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcIncomingTimedDirection&&(identical(other.receivedAt, receivedAt) || other.receivedAt == receivedAt));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,receivedAt);
+int get hashCode {
+    return Object.hash(runtimeType,receivedAt);
+}
 
 
 
@@ -261,12 +263,14 @@ $RpcOutgoingTimedDirectionCopyWith<RpcOutgoingTimedDirection> get copyWith => _$
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcOutgoingTimedDirection&&(identical(other.sentAt, sentAt) || other.sentAt == sentAt));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcOutgoingTimedDirection&&(identical(other.sentAt, sentAt) || other.sentAt == sentAt));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,sentAt);
+int get hashCode {
+    return Object.hash(runtimeType,sentAt);
+}
 
 
 
@@ -324,12 +328,14 @@ $RpcBothTimedDirectionCopyWith<RpcBothTimedDirection> get copyWith => _$RpcBothT
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcBothTimedDirection&&(identical(other.receivedAt, receivedAt) || other.receivedAt == receivedAt)&&(identical(other.sentAt, sentAt) || other.sentAt == sentAt));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcBothTimedDirection&&(identical(other.receivedAt, receivedAt) || other.receivedAt == receivedAt)&&(identical(other.sentAt, sentAt) || other.sentAt == sentAt));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,receivedAt,sentAt);
+int get hashCode {
+    return Object.hash(runtimeType,receivedAt,sentAt);
+}
 
 
 
@@ -387,12 +393,14 @@ $RpcUnknownTimedDirectionCopyWith<RpcUnknownTimedDirection> get copyWith => _$Rp
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcUnknownTimedDirection&&(identical(other.wireValue, wireValue) || other.wireValue == wireValue));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcUnknownTimedDirection&&(identical(other.wireValue, wireValue) || other.wireValue == wireValue));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,wireValue);
+int get hashCode {
+    return Object.hash(runtimeType,wireValue);
+}
 
 
 

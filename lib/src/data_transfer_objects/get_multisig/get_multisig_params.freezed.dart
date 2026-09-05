@@ -29,16 +29,21 @@ $GetMultisigParamsCopyWith<GetMultisigParams> get copyWith => _$GetMultisigParam
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetMultisigParams&&(identical(other.address, address) || other.address == address));
+  final _this = this as GetMultisigParams;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetMultisigParams&&(identical(other.address, _this.address) || other.address == _this.address));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,address);
+int get hashCode {
+  final _this = this as GetMultisigParams;
+  return Object.hash(runtimeType,_this.address);
+}
 
 @override
 String toString() {
-  return 'GetMultisigParams(address: $address)';
+  final _this = this as GetMultisigParams;
+  return 'GetMultisigParams(address: ${_this.address})';
 }
 
 
@@ -228,16 +233,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetMultisigParams&&(identical(other.address, address) || other.address == address));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetMultisigParams&&(identical(other.address, address) || other.address == address));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,address);
+int get hashCode {
+    return Object.hash(runtimeType,address);
+}
 
 @override
 String toString() {
-  return 'GetMultisigParams(address: $address)';
+    return 'GetMultisigParams(address: $address)';
 }
 
 

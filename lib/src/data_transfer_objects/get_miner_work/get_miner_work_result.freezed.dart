@@ -29,16 +29,21 @@ $GetMinerWorkResultCopyWith<GetMinerWorkResult> get copyWith => _$GetMinerWorkRe
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetMinerWorkResult&&(identical(other.algorithm, algorithm) || other.algorithm == algorithm)&&(identical(other.minerWork, minerWork) || other.minerWork == minerWork)&&(identical(other.height, height) || other.height == height)&&(identical(other.difficulty, difficulty) || other.difficulty == difficulty)&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as GetMinerWorkResult;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetMinerWorkResult&&(identical(other.algorithm, _this.algorithm) || other.algorithm == _this.algorithm)&&(identical(other.minerWork, _this.minerWork) || other.minerWork == _this.minerWork)&&(identical(other.height, _this.height) || other.height == _this.height)&&(identical(other.difficulty, _this.difficulty) || other.difficulty == _this.difficulty)&&(identical(other.topoheight, _this.topoheight) || other.topoheight == _this.topoheight)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,algorithm,minerWork,height,difficulty,topoheight,extraFields);
+int get hashCode {
+  final _this = this as GetMinerWorkResult;
+  return Object.hash(runtimeType,_this.algorithm,_this.minerWork,_this.height,_this.difficulty,_this.topoheight,_this.extraFields);
+}
 
 @override
 String toString() {
-  return 'GetMinerWorkResult(algorithm: $algorithm, minerWork: $minerWork, height: $height, difficulty: $difficulty, topoheight: $topoheight, extraFields: $extraFields)';
+  final _this = this as GetMinerWorkResult;
+  return 'GetMinerWorkResult(algorithm: ${_this.algorithm}, minerWork: ${_this.minerWork}, height: ${_this.height}, difficulty: ${_this.difficulty}, topoheight: ${_this.topoheight}, extraFields: ${_this.extraFields})';
 }
 
 
@@ -247,16 +252,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetMinerWorkResult&&(identical(other.algorithm, algorithm) || other.algorithm == algorithm)&&(identical(other.minerWork, minerWork) || other.minerWork == minerWork)&&(identical(other.height, height) || other.height == height)&&(identical(other.difficulty, difficulty) || other.difficulty == difficulty)&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetMinerWorkResult&&(identical(other.algorithm, algorithm) || other.algorithm == algorithm)&&(identical(other.minerWork, minerWork) || other.minerWork == minerWork)&&(identical(other.height, height) || other.height == height)&&(identical(other.difficulty, difficulty) || other.difficulty == difficulty)&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,algorithm,minerWork,height,difficulty,topoheight,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,algorithm,minerWork,height,difficulty,topoheight,extraFields);
+}
 
 @override
 String toString() {
-  return 'GetMinerWorkResult(algorithm: $algorithm, minerWork: $minerWork, height: $height, difficulty: $difficulty, topoheight: $topoheight, extraFields: $extraFields)';
+    return 'GetMinerWorkResult(algorithm: $algorithm, minerWork: $minerWork, height: $height, difficulty: $difficulty, topoheight: $topoheight, extraFields: $extraFields)';
 }
 
 

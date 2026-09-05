@@ -21,7 +21,7 @@ mixin _$AssetOwner {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AssetOwner);
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is AssetOwner);
 }
 
 
@@ -194,7 +194,7 @@ class NoAssetOwner extends AssetOwner {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is NoAssetOwner);
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is NoAssetOwner);
 }
 
 
@@ -229,12 +229,14 @@ $CreatorAssetOwnerCopyWith<CreatorAssetOwner> get copyWith => _$CreatorAssetOwne
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is CreatorAssetOwner&&(identical(other.contract, contract) || other.contract == contract)&&(identical(other.id, id) || other.id == id)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is CreatorAssetOwner&&(identical(other.contract, contract) || other.contract == contract)&&(identical(other.id, id) || other.id == id)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,contract,id,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,contract,id,extraFields);
+}
 
 
 
@@ -305,12 +307,14 @@ $TransferredAssetOwnerCopyWith<TransferredAssetOwner> get copyWith => _$Transfer
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is TransferredAssetOwner&&(identical(other.origin, origin) || other.origin == origin)&&(identical(other.originId, originId) || other.originId == originId)&&(identical(other.owner, owner) || other.owner == owner)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is TransferredAssetOwner&&(identical(other.origin, origin) || other.origin == origin)&&(identical(other.originId, originId) || other.originId == originId)&&(identical(other.owner, owner) || other.owner == owner)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,origin,originId,owner,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,origin,originId,owner,extraFields);
+}
 
 
 
@@ -380,12 +384,14 @@ $UnknownAssetOwnerCopyWith<UnknownAssetOwner> get copyWith => _$UnknownAssetOwne
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is UnknownAssetOwner&&(identical(other.type, type) || other.type == type)&&(identical(other.wireValue, wireValue) || other.wireValue == wireValue));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is UnknownAssetOwner&&(identical(other.type, type) || other.type == type)&&(identical(other.wireValue, wireValue) || other.wireValue == wireValue));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,type,wireValue);
+int get hashCode {
+    return Object.hash(runtimeType,type,wireValue);
+}
 
 
 

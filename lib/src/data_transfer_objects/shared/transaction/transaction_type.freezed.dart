@@ -21,7 +21,7 @@ mixin _$RpcContractVersion {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcContractVersion);
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcContractVersion);
 }
 
 
@@ -30,7 +30,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'RpcContractVersion()';
+    return 'RpcContractVersion()';
 }
 
 
@@ -192,7 +192,7 @@ class RpcContractVersionV0 extends RpcContractVersion {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcContractVersionV0);
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcContractVersionV0);
 }
 
 
@@ -201,7 +201,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'RpcContractVersion.v0()';
+    return 'RpcContractVersion.v0()';
 }
 
 
@@ -224,7 +224,7 @@ class RpcContractVersionV1 extends RpcContractVersion {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcContractVersionV1);
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcContractVersionV1);
 }
 
 
@@ -233,7 +233,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'RpcContractVersion.v1()';
+    return 'RpcContractVersion.v1()';
 }
 
 
@@ -261,16 +261,18 @@ $RpcUnknownContractVersionCopyWith<RpcUnknownContractVersion> get copyWith => _$
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcUnknownContractVersion&&(identical(other.wireValue, wireValue) || other.wireValue == wireValue));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcUnknownContractVersion&&(identical(other.wireValue, wireValue) || other.wireValue == wireValue));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,wireValue);
+int get hashCode {
+    return Object.hash(runtimeType,wireValue);
+}
 
 @override
 String toString() {
-  return 'RpcContractVersion.unknown(wireValue: $wireValue)';
+    return 'RpcContractVersion.unknown(wireValue: $wireValue)';
 }
 
 
@@ -325,16 +327,21 @@ $RpcDeployContractInvokePayloadCopyWith<RpcDeployContractInvokePayload> get copy
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcDeployContractInvokePayload&&(identical(other.maxGas, maxGas) || other.maxGas == maxGas)&&const DeepCollectionEquality().equals(other.deposits, deposits));
+  final _this = this as RpcDeployContractInvokePayload;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcDeployContractInvokePayload&&(identical(other.maxGas, _this.maxGas) || other.maxGas == _this.maxGas)&&const DeepCollectionEquality().equals(other.deposits, _this.deposits));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,maxGas,const DeepCollectionEquality().hash(deposits));
+int get hashCode {
+  final _this = this as RpcDeployContractInvokePayload;
+  return Object.hash(runtimeType,_this.maxGas,const DeepCollectionEquality().hash(_this.deposits));
+}
 
 @override
 String toString() {
-  return 'RpcDeployContractInvokePayload(maxGas: $maxGas, deposits: $deposits)';
+  final _this = this as RpcDeployContractInvokePayload;
+  return 'RpcDeployContractInvokePayload(maxGas: ${_this.maxGas}, deposits: ${_this.deposits})';
 }
 
 
@@ -532,16 +539,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RpcDeployContractInvokePayload&&(identical(other.maxGas, maxGas) || other.maxGas == maxGas)&&const DeepCollectionEquality().equals(other._deposits, _deposits));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _RpcDeployContractInvokePayload&&(identical(other.maxGas, maxGas) || other.maxGas == maxGas)&&const DeepCollectionEquality().equals(other.deposits, _deposits));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,maxGas,const DeepCollectionEquality().hash(_deposits));
+int get hashCode {
+    return Object.hash(runtimeType,maxGas,const DeepCollectionEquality().hash(_deposits));
+}
 
 @override
 String toString() {
-  return 'RpcDeployContractInvokePayload(maxGas: $maxGas, deposits: $deposits)';
+    return 'RpcDeployContractInvokePayload(maxGas: $maxGas, deposits: $deposits)';
 }
 
 
@@ -635,7 +644,7 @@ mixin _$TransactionType {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is TransactionType);
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is TransactionType);
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -644,7 +653,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'TransactionType()';
+    return 'TransactionType()';
 }
 
 
@@ -848,16 +857,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is TransfersPayload&&const DeepCollectionEquality().equals(other._transfers, _transfers));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is TransfersPayload&&const DeepCollectionEquality().equals(other.transfers, _transfers));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_transfers));
+int get hashCode {
+    return Object.hash(runtimeType,const DeepCollectionEquality().hash(_transfers));
+}
 
 @override
 String toString() {
-  return 'TransactionType.transfers(transfers: $transfers)';
+    return 'TransactionType.transfers(transfers: $transfers)';
 }
 
 
@@ -922,16 +933,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is BurnPayload&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.amount, amount) || other.amount == amount));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is BurnPayload&&(identical(other.asset, asset) || other.asset == asset)&&(identical(other.amount, amount) || other.amount == amount));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,asset,amount);
+int get hashCode {
+    return Object.hash(runtimeType,asset,amount);
+}
 
 @override
 String toString() {
-  return 'TransactionType.burn(asset: $asset, amount: $amount)';
+    return 'TransactionType.burn(asset: $asset, amount: $amount)';
 }
 
 
@@ -1003,16 +1016,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is MultisigPayload&&const DeepCollectionEquality().equals(other._participants, _participants)&&(identical(other.threshold, threshold) || other.threshold == threshold));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is MultisigPayload&&const DeepCollectionEquality().equals(other.participants, _participants)&&(identical(other.threshold, threshold) || other.threshold == threshold));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_participants),threshold);
+int get hashCode {
+    return Object.hash(runtimeType,const DeepCollectionEquality().hash(_participants),threshold);
+}
 
 @override
 String toString() {
-  return 'TransactionType.multisig(participants: $participants, threshold: $threshold)';
+    return 'TransactionType.multisig(participants: $participants, threshold: $threshold)';
 }
 
 
@@ -1094,16 +1109,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is InvokeContractPayload&&(identical(other.contract, contract) || other.contract == contract)&&const DeepCollectionEquality().equals(other._deposits, _deposits)&&(identical(other.entryId, entryId) || other.entryId == entryId)&&(identical(other.maxGas, maxGas) || other.maxGas == maxGas)&&const DeepCollectionEquality().equals(other._parameters, _parameters)&&(identical(other.permission, permission) || other.permission == permission));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is InvokeContractPayload&&(identical(other.contract, contract) || other.contract == contract)&&const DeepCollectionEquality().equals(other.deposits, _deposits)&&(identical(other.entryId, entryId) || other.entryId == entryId)&&(identical(other.maxGas, maxGas) || other.maxGas == maxGas)&&const DeepCollectionEquality().equals(other.parameters, _parameters)&&(identical(other.permission, permission) || other.permission == permission));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,contract,const DeepCollectionEquality().hash(_deposits),entryId,maxGas,const DeepCollectionEquality().hash(_parameters),permission);
+int get hashCode {
+    return Object.hash(runtimeType,contract,const DeepCollectionEquality().hash(_deposits),entryId,maxGas,const DeepCollectionEquality().hash(_parameters),permission);
+}
 
 @override
 String toString() {
-  return 'TransactionType.invokeContract(contract: $contract, deposits: $deposits, entryId: $entryId, maxGas: $maxGas, parameters: $parameters, permission: $permission)';
+    return 'TransactionType.invokeContract(contract: $contract, deposits: $deposits, entryId: $entryId, maxGas: $maxGas, parameters: $parameters, permission: $permission)';
 }
 
 
@@ -1183,16 +1200,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is DeployContractPayload&&(identical(other.version, version) || other.version == version)&&(identical(other.module, module) || other.module == module)&&(identical(other.invoke, invoke) || other.invoke == invoke));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is DeployContractPayload&&(identical(other.version, version) || other.version == version)&&(identical(other.module, module) || other.module == module)&&(identical(other.invoke, invoke) || other.invoke == invoke));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,version,module,invoke);
+int get hashCode {
+    return Object.hash(runtimeType,version,module,invoke);
+}
 
 @override
 String toString() {
-  return 'TransactionType.deployContract(version: $version, module: $module, invoke: $invoke)';
+    return 'TransactionType.deployContract(version: $version, module: $module, invoke: $invoke)';
 }
 
 
@@ -1295,16 +1314,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is BlobPayload&&(identical(other.data, data) || other.data == data)&&const DeepCollectionEquality().equals(other._destinations, _destinations));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is BlobPayload&&(identical(other.data, data) || other.data == data)&&const DeepCollectionEquality().equals(other.destinations, _destinations));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,data,const DeepCollectionEquality().hash(_destinations));
+int get hashCode {
+    return Object.hash(runtimeType,data,const DeepCollectionEquality().hash(_destinations));
+}
 
 @override
 String toString() {
-  return 'TransactionType.blob(data: $data, destinations: $destinations)';
+    return 'TransactionType.blob(data: $data, destinations: $destinations)';
 }
 
 
@@ -1379,16 +1400,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is UnknownTransactionPayload&&(identical(other.type, type) || other.type == type)&&(identical(other.wireValue, wireValue) || other.wireValue == wireValue));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is UnknownTransactionPayload&&(identical(other.type, type) || other.type == type)&&(identical(other.wireValue, wireValue) || other.wireValue == wireValue));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,type,wireValue);
+int get hashCode {
+    return Object.hash(runtimeType,type,wireValue);
+}
 
 @override
 String toString() {
-  return 'TransactionType.unknown(type: $type, wireValue: $wireValue)';
+    return 'TransactionType.unknown(type: $type, wireValue: $wireValue)';
 }
 
 

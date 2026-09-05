@@ -29,16 +29,21 @@ $GetBlocksAtHeightParamsCopyWith<GetBlocksAtHeightParams> get copyWith => _$GetB
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetBlocksAtHeightParams&&(identical(other.height, height) || other.height == height)&&(identical(other.includeTxs, includeTxs) || other.includeTxs == includeTxs));
+  final _this = this as GetBlocksAtHeightParams;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetBlocksAtHeightParams&&(identical(other.height, _this.height) || other.height == _this.height)&&(identical(other.includeTxs, _this.includeTxs) || other.includeTxs == _this.includeTxs));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,height,includeTxs);
+int get hashCode {
+  final _this = this as GetBlocksAtHeightParams;
+  return Object.hash(runtimeType,_this.height,_this.includeTxs);
+}
 
 @override
 String toString() {
-  return 'GetBlocksAtHeightParams(height: $height, includeTxs: $includeTxs)';
+  final _this = this as GetBlocksAtHeightParams;
+  return 'GetBlocksAtHeightParams(height: ${_this.height}, includeTxs: ${_this.includeTxs})';
 }
 
 
@@ -230,16 +235,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetBlocksAtHeightParams&&(identical(other.height, height) || other.height == height)&&(identical(other.includeTxs, includeTxs) || other.includeTxs == includeTxs));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetBlocksAtHeightParams&&(identical(other.height, height) || other.height == height)&&(identical(other.includeTxs, includeTxs) || other.includeTxs == includeTxs));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,height,includeTxs);
+int get hashCode {
+    return Object.hash(runtimeType,height,includeTxs);
+}
 
 @override
 String toString() {
-  return 'GetBlocksAtHeightParams(height: $height, includeTxs: $includeTxs)';
+    return 'GetBlocksAtHeightParams(height: $height, includeTxs: $includeTxs)';
 }
 
 

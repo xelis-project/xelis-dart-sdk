@@ -26,16 +26,21 @@ $PredicatedBaseFeeResultCopyWith<PredicatedBaseFeeResult> get copyWith => _$Pred
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is PredicatedBaseFeeResult&&(identical(other.feePerKb, feePerKb) || other.feePerKb == feePerKb)&&(identical(other.predicatedFeePerKb, predicatedFeePerKb) || other.predicatedFeePerKb == predicatedFeePerKb)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as PredicatedBaseFeeResult;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is PredicatedBaseFeeResult&&(identical(other.feePerKb, _this.feePerKb) || other.feePerKb == _this.feePerKb)&&(identical(other.predicatedFeePerKb, _this.predicatedFeePerKb) || other.predicatedFeePerKb == _this.predicatedFeePerKb)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,feePerKb,predicatedFeePerKb,extraFields);
+int get hashCode {
+  final _this = this as PredicatedBaseFeeResult;
+  return Object.hash(runtimeType,_this.feePerKb,_this.predicatedFeePerKb,_this.extraFields);
+}
 
 @override
 String toString() {
-  return 'PredicatedBaseFeeResult(feePerKb: $feePerKb, predicatedFeePerKb: $predicatedFeePerKb, extraFields: $extraFields)';
+  final _this = this as PredicatedBaseFeeResult;
+  return 'PredicatedBaseFeeResult(feePerKb: ${_this.feePerKb}, predicatedFeePerKb: ${_this.predicatedFeePerKb}, extraFields: ${_this.extraFields})';
 }
 
 
@@ -235,16 +240,18 @@ _$PredicatedBaseFeeResultCopyWith<_PredicatedBaseFeeResult> get copyWith => __$P
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PredicatedBaseFeeResult&&(identical(other.feePerKb, feePerKb) || other.feePerKb == feePerKb)&&(identical(other.predicatedFeePerKb, predicatedFeePerKb) || other.predicatedFeePerKb == predicatedFeePerKb)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _PredicatedBaseFeeResult&&(identical(other.feePerKb, feePerKb) || other.feePerKb == feePerKb)&&(identical(other.predicatedFeePerKb, predicatedFeePerKb) || other.predicatedFeePerKb == predicatedFeePerKb)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,feePerKb,predicatedFeePerKb,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,feePerKb,predicatedFeePerKb,extraFields);
+}
 
 @override
 String toString() {
-  return 'PredicatedBaseFeeResult(feePerKb: $feePerKb, predicatedFeePerKb: $predicatedFeePerKb, extraFields: $extraFields)';
+    return 'PredicatedBaseFeeResult(feePerKb: $feePerKb, predicatedFeePerKb: $predicatedFeePerKb, extraFields: $extraFields)';
 }
 
 

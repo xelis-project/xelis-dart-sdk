@@ -26,16 +26,21 @@ $GetStableBalanceResultCopyWith<GetStableBalanceResult> get copyWith => _$GetSta
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetStableBalanceResult&&(identical(other.versionedBalance, versionedBalance) || other.versionedBalance == versionedBalance)&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&(identical(other.stableTopoheight, stableTopoheight) || other.stableTopoheight == stableTopoheight)&&(identical(other.stableBlockHash, stableBlockHash) || other.stableBlockHash == stableBlockHash)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as GetStableBalanceResult;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetStableBalanceResult&&(identical(other.versionedBalance, _this.versionedBalance) || other.versionedBalance == _this.versionedBalance)&&(identical(other.topoheight, _this.topoheight) || other.topoheight == _this.topoheight)&&(identical(other.stableTopoheight, _this.stableTopoheight) || other.stableTopoheight == _this.stableTopoheight)&&(identical(other.stableBlockHash, _this.stableBlockHash) || other.stableBlockHash == _this.stableBlockHash)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,versionedBalance,topoheight,stableTopoheight,stableBlockHash,extraFields);
+int get hashCode {
+  final _this = this as GetStableBalanceResult;
+  return Object.hash(runtimeType,_this.versionedBalance,_this.topoheight,_this.stableTopoheight,_this.stableBlockHash,_this.extraFields);
+}
 
 @override
 String toString() {
-  return 'GetStableBalanceResult(versionedBalance: $versionedBalance, topoheight: $topoheight, stableTopoheight: $stableTopoheight, stableBlockHash: $stableBlockHash, extraFields: $extraFields)';
+  final _this = this as GetStableBalanceResult;
+  return 'GetStableBalanceResult(versionedBalance: ${_this.versionedBalance}, topoheight: ${_this.topoheight}, stableTopoheight: ${_this.stableTopoheight}, stableBlockHash: ${_this.stableBlockHash}, extraFields: ${_this.extraFields})';
 }
 
 
@@ -248,16 +253,18 @@ _$GetStableBalanceResultCopyWith<_GetStableBalanceResult> get copyWith => __$Get
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetStableBalanceResult&&(identical(other.versionedBalance, versionedBalance) || other.versionedBalance == versionedBalance)&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&(identical(other.stableTopoheight, stableTopoheight) || other.stableTopoheight == stableTopoheight)&&(identical(other.stableBlockHash, stableBlockHash) || other.stableBlockHash == stableBlockHash)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetStableBalanceResult&&(identical(other.versionedBalance, versionedBalance) || other.versionedBalance == versionedBalance)&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&(identical(other.stableTopoheight, stableTopoheight) || other.stableTopoheight == stableTopoheight)&&(identical(other.stableBlockHash, stableBlockHash) || other.stableBlockHash == stableBlockHash)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,versionedBalance,topoheight,stableTopoheight,stableBlockHash,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,versionedBalance,topoheight,stableTopoheight,stableBlockHash,extraFields);
+}
 
 @override
 String toString() {
-  return 'GetStableBalanceResult(versionedBalance: $versionedBalance, topoheight: $topoheight, stableTopoheight: $stableTopoheight, stableBlockHash: $stableBlockHash, extraFields: $extraFields)';
+    return 'GetStableBalanceResult(versionedBalance: $versionedBalance, topoheight: $topoheight, stableTopoheight: $stableTopoheight, stableBlockHash: $stableBlockHash, extraFields: $extraFields)';
 }
 
 

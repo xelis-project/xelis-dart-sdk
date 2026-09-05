@@ -26,16 +26,21 @@ $RpcExecutionResultCopyWith<RpcExecutionResult> get copyWith => _$RpcExecutionRe
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcExecutionResult&&(identical(other.usedGas, usedGas) || other.usedGas == usedGas)&&(identical(other.burnedGas, burnedGas) || other.burnedGas == burnedGas)&&(identical(other.feeGas, feeGas) || other.feeGas == feeGas)&&(identical(other.vmMaxGas, vmMaxGas) || other.vmMaxGas == vmMaxGas)&&(identical(other.exitValue, exitValue) || other.exitValue == exitValue)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as RpcExecutionResult;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcExecutionResult&&(identical(other.usedGas, _this.usedGas) || other.usedGas == _this.usedGas)&&(identical(other.burnedGas, _this.burnedGas) || other.burnedGas == _this.burnedGas)&&(identical(other.feeGas, _this.feeGas) || other.feeGas == _this.feeGas)&&(identical(other.vmMaxGas, _this.vmMaxGas) || other.vmMaxGas == _this.vmMaxGas)&&(identical(other.exitValue, _this.exitValue) || other.exitValue == _this.exitValue)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,usedGas,burnedGas,feeGas,vmMaxGas,exitValue,extraFields);
+int get hashCode {
+  final _this = this as RpcExecutionResult;
+  return Object.hash(runtimeType,_this.usedGas,_this.burnedGas,_this.feeGas,_this.vmMaxGas,_this.exitValue,_this.extraFields);
+}
 
 @override
 String toString() {
-  return 'RpcExecutionResult(usedGas: $usedGas, burnedGas: $burnedGas, feeGas: $feeGas, vmMaxGas: $vmMaxGas, exitValue: $exitValue, extraFields: $extraFields)';
+  final _this = this as RpcExecutionResult;
+  return 'RpcExecutionResult(usedGas: ${_this.usedGas}, burnedGas: ${_this.burnedGas}, feeGas: ${_this.feeGas}, vmMaxGas: ${_this.vmMaxGas}, exitValue: ${_this.exitValue}, extraFields: ${_this.extraFields})';
 }
 
 
@@ -250,16 +255,18 @@ _$RpcExecutionResultCopyWith<_RpcExecutionResult> get copyWith => __$RpcExecutio
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RpcExecutionResult&&(identical(other.usedGas, usedGas) || other.usedGas == usedGas)&&(identical(other.burnedGas, burnedGas) || other.burnedGas == burnedGas)&&(identical(other.feeGas, feeGas) || other.feeGas == feeGas)&&(identical(other.vmMaxGas, vmMaxGas) || other.vmMaxGas == vmMaxGas)&&(identical(other.exitValue, exitValue) || other.exitValue == exitValue)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _RpcExecutionResult&&(identical(other.usedGas, usedGas) || other.usedGas == usedGas)&&(identical(other.burnedGas, burnedGas) || other.burnedGas == burnedGas)&&(identical(other.feeGas, feeGas) || other.feeGas == feeGas)&&(identical(other.vmMaxGas, vmMaxGas) || other.vmMaxGas == vmMaxGas)&&(identical(other.exitValue, exitValue) || other.exitValue == exitValue)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,usedGas,burnedGas,feeGas,vmMaxGas,exitValue,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,usedGas,burnedGas,feeGas,vmMaxGas,exitValue,extraFields);
+}
 
 @override
 String toString() {
-  return 'RpcExecutionResult(usedGas: $usedGas, burnedGas: $burnedGas, feeGas: $feeGas, vmMaxGas: $vmMaxGas, exitValue: $exitValue, extraFields: $extraFields)';
+    return 'RpcExecutionResult(usedGas: $usedGas, burnedGas: $burnedGas, feeGas: $feeGas, vmMaxGas: $vmMaxGas, exitValue: $exitValue, extraFields: $extraFields)';
 }
 
 

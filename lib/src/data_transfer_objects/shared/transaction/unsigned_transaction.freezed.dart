@@ -26,16 +26,21 @@ $UnsignedTransactionCopyWith<UnsignedTransaction> get copyWith => _$UnsignedTran
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is UnsignedTransaction&&(identical(other.data, data) || other.data == data)&&(identical(other.fee, fee) || other.fee == fee)&&(identical(other.feeLimit, feeLimit) || other.feeLimit == feeLimit)&&(identical(other.version, version) || other.version == version)&&(identical(other.nonce, nonce) || other.nonce == nonce)&&const DeepCollectionEquality().equals(other.source, source)&&const DeepCollectionEquality().equals(other.rangeProof, rangeProof)&&const DeepCollectionEquality().equals(other.sourceCommitments, sourceCommitments)&&(identical(other.reference, reference) || other.reference == reference)&&(identical(other.multiSig, multiSig) || other.multiSig == multiSig)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as UnsignedTransaction;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is UnsignedTransaction&&(identical(other.data, _this.data) || other.data == _this.data)&&(identical(other.fee, _this.fee) || other.fee == _this.fee)&&(identical(other.feeLimit, _this.feeLimit) || other.feeLimit == _this.feeLimit)&&(identical(other.version, _this.version) || other.version == _this.version)&&(identical(other.nonce, _this.nonce) || other.nonce == _this.nonce)&&const DeepCollectionEquality().equals(other.source, _this.source)&&const DeepCollectionEquality().equals(other.rangeProof, _this.rangeProof)&&const DeepCollectionEquality().equals(other.sourceCommitments, _this.sourceCommitments)&&(identical(other.reference, _this.reference) || other.reference == _this.reference)&&(identical(other.multiSig, _this.multiSig) || other.multiSig == _this.multiSig)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,data,fee,feeLimit,version,nonce,const DeepCollectionEquality().hash(source),const DeepCollectionEquality().hash(rangeProof),const DeepCollectionEquality().hash(sourceCommitments),reference,multiSig,extraFields);
+int get hashCode {
+  final _this = this as UnsignedTransaction;
+  return Object.hash(runtimeType,_this.data,_this.fee,_this.feeLimit,_this.version,_this.nonce,const DeepCollectionEquality().hash(_this.source),const DeepCollectionEquality().hash(_this.rangeProof),const DeepCollectionEquality().hash(_this.sourceCommitments),_this.reference,_this.multiSig,_this.extraFields);
+}
 
 @override
 String toString() {
-  return 'UnsignedTransaction(data: $data, fee: $fee, feeLimit: $feeLimit, version: $version, nonce: $nonce, source: $source, rangeProof: $rangeProof, sourceCommitments: $sourceCommitments, reference: $reference, multiSig: $multiSig, extraFields: $extraFields)';
+  final _this = this as UnsignedTransaction;
+  return 'UnsignedTransaction(data: ${_this.data}, fee: ${_this.fee}, feeLimit: ${_this.feeLimit}, version: ${_this.version}, nonce: ${_this.nonce}, source: ${_this.source}, rangeProof: ${_this.rangeProof}, sourceCommitments: ${_this.sourceCommitments}, reference: ${_this.reference}, multiSig: ${_this.multiSig}, extraFields: ${_this.extraFields})';
 }
 
 
@@ -299,16 +304,18 @@ _$UnsignedTransactionCopyWith<_UnsignedTransaction> get copyWith => __$UnsignedT
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _UnsignedTransaction&&(identical(other.data, data) || other.data == data)&&(identical(other.fee, fee) || other.fee == fee)&&(identical(other.feeLimit, feeLimit) || other.feeLimit == feeLimit)&&(identical(other.version, version) || other.version == version)&&(identical(other.nonce, nonce) || other.nonce == nonce)&&const DeepCollectionEquality().equals(other._source, _source)&&const DeepCollectionEquality().equals(other._rangeProof, _rangeProof)&&const DeepCollectionEquality().equals(other._sourceCommitments, _sourceCommitments)&&(identical(other.reference, reference) || other.reference == reference)&&(identical(other.multiSig, multiSig) || other.multiSig == multiSig)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _UnsignedTransaction&&(identical(other.data, data) || other.data == data)&&(identical(other.fee, fee) || other.fee == fee)&&(identical(other.feeLimit, feeLimit) || other.feeLimit == feeLimit)&&(identical(other.version, version) || other.version == version)&&(identical(other.nonce, nonce) || other.nonce == nonce)&&const DeepCollectionEquality().equals(other.source, _source)&&const DeepCollectionEquality().equals(other.rangeProof, _rangeProof)&&const DeepCollectionEquality().equals(other.sourceCommitments, _sourceCommitments)&&(identical(other.reference, reference) || other.reference == reference)&&(identical(other.multiSig, multiSig) || other.multiSig == multiSig)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,data,fee,feeLimit,version,nonce,const DeepCollectionEquality().hash(_source),const DeepCollectionEquality().hash(_rangeProof),const DeepCollectionEquality().hash(_sourceCommitments),reference,multiSig,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,data,fee,feeLimit,version,nonce,const DeepCollectionEquality().hash(_source),const DeepCollectionEquality().hash(_rangeProof),const DeepCollectionEquality().hash(_sourceCommitments),reference,multiSig,extraFields);
+}
 
 @override
 String toString() {
-  return 'UnsignedTransaction(data: $data, fee: $fee, feeLimit: $feeLimit, version: $version, nonce: $nonce, source: $source, rangeProof: $rangeProof, sourceCommitments: $sourceCommitments, reference: $reference, multiSig: $multiSig, extraFields: $extraFields)';
+    return 'UnsignedTransaction(data: $data, fee: $fee, feeLimit: $feeLimit, version: $version, nonce: $nonce, source: $source, rangeProof: $rangeProof, sourceCommitments: $sourceCommitments, reference: $reference, multiSig: $multiSig, extraFields: $extraFields)';
 }
 
 

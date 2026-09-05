@@ -26,16 +26,21 @@ $RpcTransactionCopyWith<RpcTransaction> get copyWith => _$RpcTransactionCopyWith
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcTransaction&&(identical(other.hash, hash) || other.hash == hash)&&(identical(other.data, data) || other.data == data)&&(identical(other.fee, fee) || other.fee == fee)&&(identical(other.feeLimit, feeLimit) || other.feeLimit == feeLimit)&&(identical(other.version, version) || other.version == version)&&(identical(other.nonce, nonce) || other.nonce == nonce)&&(identical(other.source, source) || other.source == source)&&const DeepCollectionEquality().equals(other.rangeProof, rangeProof)&&const DeepCollectionEquality().equals(other.sourceCommitments, sourceCommitments)&&(identical(other.reference, reference) || other.reference == reference)&&(identical(other.signature, signature) || other.signature == signature)&&(identical(other.size, size) || other.size == size)&&(identical(other.feePaid, feePaid) || other.feePaid == feePaid)&&(identical(other.feeRefund, feeRefund) || other.feeRefund == feeRefund)&&(identical(other.multiSig, multiSig) || other.multiSig == multiSig)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as RpcTransaction;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcTransaction&&(identical(other.hash, _this.hash) || other.hash == _this.hash)&&(identical(other.data, _this.data) || other.data == _this.data)&&(identical(other.fee, _this.fee) || other.fee == _this.fee)&&(identical(other.feeLimit, _this.feeLimit) || other.feeLimit == _this.feeLimit)&&(identical(other.version, _this.version) || other.version == _this.version)&&(identical(other.nonce, _this.nonce) || other.nonce == _this.nonce)&&(identical(other.source, _this.source) || other.source == _this.source)&&const DeepCollectionEquality().equals(other.rangeProof, _this.rangeProof)&&const DeepCollectionEquality().equals(other.sourceCommitments, _this.sourceCommitments)&&(identical(other.reference, _this.reference) || other.reference == _this.reference)&&(identical(other.signature, _this.signature) || other.signature == _this.signature)&&(identical(other.size, _this.size) || other.size == _this.size)&&(identical(other.feePaid, _this.feePaid) || other.feePaid == _this.feePaid)&&(identical(other.feeRefund, _this.feeRefund) || other.feeRefund == _this.feeRefund)&&(identical(other.multiSig, _this.multiSig) || other.multiSig == _this.multiSig)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,hash,data,fee,feeLimit,version,nonce,source,const DeepCollectionEquality().hash(rangeProof),const DeepCollectionEquality().hash(sourceCommitments),reference,signature,size,feePaid,feeRefund,multiSig,extraFields);
+int get hashCode {
+  final _this = this as RpcTransaction;
+  return Object.hash(runtimeType,_this.hash,_this.data,_this.fee,_this.feeLimit,_this.version,_this.nonce,_this.source,const DeepCollectionEquality().hash(_this.rangeProof),const DeepCollectionEquality().hash(_this.sourceCommitments),_this.reference,_this.signature,_this.size,_this.feePaid,_this.feeRefund,_this.multiSig,_this.extraFields);
+}
 
 @override
 String toString() {
-  return 'RpcTransaction(hash: $hash, data: $data, fee: $fee, feeLimit: $feeLimit, version: $version, nonce: $nonce, source: $source, rangeProof: $rangeProof, sourceCommitments: $sourceCommitments, reference: $reference, signature: $signature, size: $size, feePaid: $feePaid, feeRefund: $feeRefund, multiSig: $multiSig, extraFields: $extraFields)';
+  final _this = this as RpcTransaction;
+  return 'RpcTransaction(hash: ${_this.hash}, data: ${_this.data}, fee: ${_this.fee}, feeLimit: ${_this.feeLimit}, version: ${_this.version}, nonce: ${_this.nonce}, source: ${_this.source}, rangeProof: ${_this.rangeProof}, sourceCommitments: ${_this.sourceCommitments}, reference: ${_this.reference}, signature: ${_this.signature}, size: ${_this.size}, feePaid: ${_this.feePaid}, feeRefund: ${_this.feeRefund}, multiSig: ${_this.multiSig}, extraFields: ${_this.extraFields})';
 }
 
 
@@ -303,16 +308,18 @@ _$RpcTransactionCopyWith<_RpcTransaction> get copyWith => __$RpcTransactionCopyW
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RpcTransaction&&(identical(other.hash, hash) || other.hash == hash)&&(identical(other.data, data) || other.data == data)&&(identical(other.fee, fee) || other.fee == fee)&&(identical(other.feeLimit, feeLimit) || other.feeLimit == feeLimit)&&(identical(other.version, version) || other.version == version)&&(identical(other.nonce, nonce) || other.nonce == nonce)&&(identical(other.source, source) || other.source == source)&&const DeepCollectionEquality().equals(other._rangeProof, _rangeProof)&&const DeepCollectionEquality().equals(other._sourceCommitments, _sourceCommitments)&&(identical(other.reference, reference) || other.reference == reference)&&(identical(other.signature, signature) || other.signature == signature)&&(identical(other.size, size) || other.size == size)&&(identical(other.feePaid, feePaid) || other.feePaid == feePaid)&&(identical(other.feeRefund, feeRefund) || other.feeRefund == feeRefund)&&(identical(other.multiSig, multiSig) || other.multiSig == multiSig)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _RpcTransaction&&(identical(other.hash, hash) || other.hash == hash)&&(identical(other.data, data) || other.data == data)&&(identical(other.fee, fee) || other.fee == fee)&&(identical(other.feeLimit, feeLimit) || other.feeLimit == feeLimit)&&(identical(other.version, version) || other.version == version)&&(identical(other.nonce, nonce) || other.nonce == nonce)&&(identical(other.source, source) || other.source == source)&&const DeepCollectionEquality().equals(other.rangeProof, _rangeProof)&&const DeepCollectionEquality().equals(other.sourceCommitments, _sourceCommitments)&&(identical(other.reference, reference) || other.reference == reference)&&(identical(other.signature, signature) || other.signature == signature)&&(identical(other.size, size) || other.size == size)&&(identical(other.feePaid, feePaid) || other.feePaid == feePaid)&&(identical(other.feeRefund, feeRefund) || other.feeRefund == feeRefund)&&(identical(other.multiSig, multiSig) || other.multiSig == multiSig)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,hash,data,fee,feeLimit,version,nonce,source,const DeepCollectionEquality().hash(_rangeProof),const DeepCollectionEquality().hash(_sourceCommitments),reference,signature,size,feePaid,feeRefund,multiSig,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,hash,data,fee,feeLimit,version,nonce,source,const DeepCollectionEquality().hash(_rangeProof),const DeepCollectionEquality().hash(_sourceCommitments),reference,signature,size,feePaid,feeRefund,multiSig,extraFields);
+}
 
 @override
 String toString() {
-  return 'RpcTransaction(hash: $hash, data: $data, fee: $fee, feeLimit: $feeLimit, version: $version, nonce: $nonce, source: $source, rangeProof: $rangeProof, sourceCommitments: $sourceCommitments, reference: $reference, signature: $signature, size: $size, feePaid: $feePaid, feeRefund: $feeRefund, multiSig: $multiSig, extraFields: $extraFields)';
+    return 'RpcTransaction(hash: $hash, data: $data, fee: $fee, feeLimit: $feeLimit, version: $version, nonce: $nonce, source: $source, rangeProof: $rangeProof, sourceCommitments: $sourceCommitments, reference: $reference, signature: $signature, size: $size, feePaid: $feePaid, feeRefund: $feeRefund, multiSig: $multiSig, extraFields: $extraFields)';
 }
 
 

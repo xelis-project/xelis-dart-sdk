@@ -26,16 +26,21 @@ $XswdManifestCopyWith<XswdManifest> get copyWith => _$XswdManifestCopyWithImpl<X
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is XswdManifest&&(identical(other.version, version) || other.version == version)&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.description, description) || other.description == description)&&const DeepCollectionEquality().equals(other.permissions, permissions)&&(identical(other.url, url) || other.url == url));
+  final _this = this as XswdManifest;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is XswdManifest&&(identical(other.version, _this.version) || other.version == _this.version)&&(identical(other.id, _this.id) || other.id == _this.id)&&(identical(other.name, _this.name) || other.name == _this.name)&&(identical(other.description, _this.description) || other.description == _this.description)&&const DeepCollectionEquality().equals(other.permissions, _this.permissions)&&(identical(other.url, _this.url) || other.url == _this.url));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,version,id,name,description,const DeepCollectionEquality().hash(permissions),url);
+int get hashCode {
+  final _this = this as XswdManifest;
+  return Object.hash(runtimeType,_this.version,_this.id,_this.name,_this.description,const DeepCollectionEquality().hash(_this.permissions),_this.url);
+}
 
 @override
 String toString() {
-  return 'XswdManifest(version: $version, id: $id, name: $name, description: $description, permissions: $permissions, url: $url)';
+  final _this = this as XswdManifest;
+  return 'XswdManifest(version: ${_this.version}, id: ${_this.id}, name: ${_this.name}, description: ${_this.description}, permissions: ${_this.permissions}, url: ${_this.url})';
 }
 
 
@@ -238,16 +243,18 @@ _$XswdManifestCopyWith<_XswdManifest> get copyWith => __$XswdManifestCopyWithImp
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _XswdManifest&&(identical(other.version, version) || other.version == version)&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.description, description) || other.description == description)&&const DeepCollectionEquality().equals(other._permissions, _permissions)&&(identical(other.url, url) || other.url == url));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _XswdManifest&&(identical(other.version, version) || other.version == version)&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.description, description) || other.description == description)&&const DeepCollectionEquality().equals(other.permissions, _permissions)&&(identical(other.url, url) || other.url == url));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,version,id,name,description,const DeepCollectionEquality().hash(_permissions),url);
+int get hashCode {
+    return Object.hash(runtimeType,version,id,name,description,const DeepCollectionEquality().hash(_permissions),url);
+}
 
 @override
 String toString() {
-  return 'XswdManifest(version: $version, id: $id, name: $name, description: $description, permissions: $permissions, url: $url)';
+    return 'XswdManifest(version: $version, id: $id, name: $name, description: $description, permissions: $permissions, url: $url)';
 }
 
 

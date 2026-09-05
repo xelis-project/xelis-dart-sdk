@@ -29,16 +29,21 @@ $GetMempoolResultCopyWith<GetMempoolResult> get copyWith => _$GetMempoolResultCo
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetMempoolResult&&const DeepCollectionEquality().equals(other.transactions, transactions)&&(identical(other.total, total) || other.total == total)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as GetMempoolResult;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetMempoolResult&&const DeepCollectionEquality().equals(other.transactions, _this.transactions)&&(identical(other.total, _this.total) || other.total == _this.total)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(transactions),total,extraFields);
+int get hashCode {
+  final _this = this as GetMempoolResult;
+  return Object.hash(runtimeType,const DeepCollectionEquality().hash(_this.transactions),_this.total,_this.extraFields);
+}
 
 @override
 String toString() {
-  return 'GetMempoolResult(transactions: $transactions, total: $total, extraFields: $extraFields)';
+  final _this = this as GetMempoolResult;
+  return 'GetMempoolResult(transactions: ${_this.transactions}, total: ${_this.total}, extraFields: ${_this.extraFields})';
 }
 
 
@@ -247,16 +252,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetMempoolResult&&const DeepCollectionEquality().equals(other._transactions, _transactions)&&(identical(other.total, total) || other.total == total)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetMempoolResult&&const DeepCollectionEquality().equals(other.transactions, _transactions)&&(identical(other.total, total) || other.total == total)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_transactions),total,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,const DeepCollectionEquality().hash(_transactions),total,extraFields);
+}
 
 @override
 String toString() {
-  return 'GetMempoolResult(transactions: $transactions, total: $total, extraFields: $extraFields)';
+    return 'GetMempoolResult(transactions: $transactions, total: $total, extraFields: $extraFields)';
 }
 
 

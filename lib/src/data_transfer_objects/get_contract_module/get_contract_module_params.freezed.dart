@@ -29,16 +29,21 @@ $GetContractModuleParamsCopyWith<GetContractModuleParams> get copyWith => _$GetC
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetContractModuleParams&&(identical(other.contractHash, contractHash) || other.contractHash == contractHash));
+  final _this = this as GetContractModuleParams;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetContractModuleParams&&(identical(other.contractHash, _this.contractHash) || other.contractHash == _this.contractHash));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,contractHash);
+int get hashCode {
+  final _this = this as GetContractModuleParams;
+  return Object.hash(runtimeType,_this.contractHash);
+}
 
 @override
 String toString() {
-  return 'GetContractModuleParams(contractHash: $contractHash)';
+  final _this = this as GetContractModuleParams;
+  return 'GetContractModuleParams(contractHash: ${_this.contractHash})';
 }
 
 
@@ -228,16 +233,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetContractModuleParams&&(identical(other.contractHash, contractHash) || other.contractHash == contractHash));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetContractModuleParams&&(identical(other.contractHash, contractHash) || other.contractHash == contractHash));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,contractHash);
+int get hashCode {
+    return Object.hash(runtimeType,contractHash);
+}
 
 @override
 String toString() {
-  return 'GetContractModuleParams(contractHash: $contractHash)';
+    return 'GetContractModuleParams(contractHash: $contractHash)';
 }
 
 

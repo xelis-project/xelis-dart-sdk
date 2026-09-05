@@ -29,16 +29,21 @@ $GetTransactionParamsCopyWith<GetTransactionParams> get copyWith => _$GetTransac
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetTransactionParams&&(identical(other.hash, hash) || other.hash == hash));
+  final _this = this as GetTransactionParams;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetTransactionParams&&(identical(other.hash, _this.hash) || other.hash == _this.hash));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,hash);
+int get hashCode {
+  final _this = this as GetTransactionParams;
+  return Object.hash(runtimeType,_this.hash);
+}
 
 @override
 String toString() {
-  return 'GetTransactionParams(hash: $hash)';
+  final _this = this as GetTransactionParams;
+  return 'GetTransactionParams(hash: ${_this.hash})';
 }
 
 
@@ -228,16 +233,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetTransactionParams&&(identical(other.hash, hash) || other.hash == hash));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _GetTransactionParams&&(identical(other.hash, hash) || other.hash == hash));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,hash);
+int get hashCode {
+    return Object.hash(runtimeType,hash);
+}
 
 @override
 String toString() {
-  return 'GetTransactionParams(hash: $hash)';
+    return 'GetTransactionParams(hash: $hash)';
 }
 
 

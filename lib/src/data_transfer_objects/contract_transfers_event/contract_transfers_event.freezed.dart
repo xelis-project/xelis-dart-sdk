@@ -26,16 +26,21 @@ $ContractTransfersEventCopyWith<ContractTransfersEvent> get copyWith => _$Contra
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ContractTransfersEvent&&(identical(other.blockHash, blockHash) || other.blockHash == blockHash)&&(identical(other.blockTimestamp, blockTimestamp) || other.blockTimestamp == blockTimestamp)&&const DeepCollectionEquality().equals(other.executions, executions)&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as ContractTransfersEvent;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ContractTransfersEvent&&(identical(other.blockHash, _this.blockHash) || other.blockHash == _this.blockHash)&&(identical(other.blockTimestamp, _this.blockTimestamp) || other.blockTimestamp == _this.blockTimestamp)&&const DeepCollectionEquality().equals(other.executions, _this.executions)&&(identical(other.topoheight, _this.topoheight) || other.topoheight == _this.topoheight)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,blockHash,blockTimestamp,const DeepCollectionEquality().hash(executions),topoheight,extraFields);
+int get hashCode {
+  final _this = this as ContractTransfersEvent;
+  return Object.hash(runtimeType,_this.blockHash,_this.blockTimestamp,const DeepCollectionEquality().hash(_this.executions),_this.topoheight,_this.extraFields);
+}
 
 @override
 String toString() {
-  return 'ContractTransfersEvent(blockHash: $blockHash, blockTimestamp: $blockTimestamp, executions: $executions, topoheight: $topoheight, extraFields: $extraFields)';
+  final _this = this as ContractTransfersEvent;
+  return 'ContractTransfersEvent(blockHash: ${_this.blockHash}, blockTimestamp: ${_this.blockTimestamp}, executions: ${_this.executions}, topoheight: ${_this.topoheight}, extraFields: ${_this.extraFields})';
 }
 
 
@@ -245,16 +250,18 @@ _$ContractTransfersEventCopyWith<_ContractTransfersEvent> get copyWith => __$Con
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ContractTransfersEvent&&(identical(other.blockHash, blockHash) || other.blockHash == blockHash)&&(identical(other.blockTimestamp, blockTimestamp) || other.blockTimestamp == blockTimestamp)&&const DeepCollectionEquality().equals(other._executions, _executions)&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _ContractTransfersEvent&&(identical(other.blockHash, blockHash) || other.blockHash == blockHash)&&(identical(other.blockTimestamp, blockTimestamp) || other.blockTimestamp == blockTimestamp)&&const DeepCollectionEquality().equals(other.executions, _executions)&&(identical(other.topoheight, topoheight) || other.topoheight == topoheight)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,blockHash,blockTimestamp,const DeepCollectionEquality().hash(_executions),topoheight,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,blockHash,blockTimestamp,const DeepCollectionEquality().hash(_executions),topoheight,extraFields);
+}
 
 @override
 String toString() {
-  return 'ContractTransfersEvent(blockHash: $blockHash, blockTimestamp: $blockTimestamp, executions: $executions, topoheight: $topoheight, extraFields: $extraFields)';
+    return 'ContractTransfersEvent(blockHash: $blockHash, blockTimestamp: $blockTimestamp, executions: $executions, topoheight: $topoheight, extraFields: $extraFields)';
 }
 
 
@@ -319,16 +326,21 @@ $ContractTransferExecutionCopyWith<ContractTransferExecution> get copyWith => _$
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ContractTransferExecution&&(identical(other.contract, contract) || other.contract == contract)&&(identical(other.caller, caller) || other.caller == caller)&&const DeepCollectionEquality().equals(other.transfers, transfers)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields)&&(identical(other.keyExtraFields, keyExtraFields) || other.keyExtraFields == keyExtraFields)&&(identical(other.valueExtraFields, valueExtraFields) || other.valueExtraFields == valueExtraFields));
+  final _this = this as ContractTransferExecution;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ContractTransferExecution&&(identical(other.contract, _this.contract) || other.contract == _this.contract)&&(identical(other.caller, _this.caller) || other.caller == _this.caller)&&const DeepCollectionEquality().equals(other.transfers, _this.transfers)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields)&&(identical(other.keyExtraFields, _this.keyExtraFields) || other.keyExtraFields == _this.keyExtraFields)&&(identical(other.valueExtraFields, _this.valueExtraFields) || other.valueExtraFields == _this.valueExtraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,contract,caller,const DeepCollectionEquality().hash(transfers),extraFields,keyExtraFields,valueExtraFields);
+int get hashCode {
+  final _this = this as ContractTransferExecution;
+  return Object.hash(runtimeType,_this.contract,_this.caller,const DeepCollectionEquality().hash(_this.transfers),_this.extraFields,_this.keyExtraFields,_this.valueExtraFields);
+}
 
 @override
 String toString() {
-  return 'ContractTransferExecution(contract: $contract, caller: $caller, transfers: $transfers, extraFields: $extraFields, keyExtraFields: $keyExtraFields, valueExtraFields: $valueExtraFields)';
+  final _this = this as ContractTransferExecution;
+  return 'ContractTransferExecution(contract: ${_this.contract}, caller: ${_this.caller}, transfers: ${_this.transfers}, extraFields: ${_this.extraFields}, keyExtraFields: ${_this.keyExtraFields}, valueExtraFields: ${_this.valueExtraFields})';
 }
 
 
@@ -558,16 +570,18 @@ _$ContractTransferExecutionCopyWith<_ContractTransferExecution> get copyWith => 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ContractTransferExecution&&(identical(other.contract, contract) || other.contract == contract)&&(identical(other.caller, caller) || other.caller == caller)&&const DeepCollectionEquality().equals(other._transfers, _transfers)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields)&&(identical(other.keyExtraFields, keyExtraFields) || other.keyExtraFields == keyExtraFields)&&(identical(other.valueExtraFields, valueExtraFields) || other.valueExtraFields == valueExtraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _ContractTransferExecution&&(identical(other.contract, contract) || other.contract == contract)&&(identical(other.caller, caller) || other.caller == caller)&&const DeepCollectionEquality().equals(other.transfers, _transfers)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields)&&(identical(other.keyExtraFields, keyExtraFields) || other.keyExtraFields == keyExtraFields)&&(identical(other.valueExtraFields, valueExtraFields) || other.valueExtraFields == valueExtraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,contract,caller,const DeepCollectionEquality().hash(_transfers),extraFields,keyExtraFields,valueExtraFields);
+int get hashCode {
+    return Object.hash(runtimeType,contract,caller,const DeepCollectionEquality().hash(_transfers),extraFields,keyExtraFields,valueExtraFields);
+}
 
 @override
 String toString() {
-  return 'ContractTransferExecution(contract: $contract, caller: $caller, transfers: $transfers, extraFields: $extraFields, keyExtraFields: $keyExtraFields, valueExtraFields: $valueExtraFields)';
+    return 'ContractTransferExecution(contract: $contract, caller: $caller, transfers: $transfers, extraFields: $extraFields, keyExtraFields: $keyExtraFields, valueExtraFields: $valueExtraFields)';
 }
 
 

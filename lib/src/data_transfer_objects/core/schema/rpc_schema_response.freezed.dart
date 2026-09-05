@@ -26,16 +26,21 @@ $RpcSchemaResponseCopyWith<RpcSchemaResponse> get copyWith => _$RpcSchemaRespons
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcSchemaResponse&&(identical(other.schemaUri, schemaUri) || other.schemaUri == schemaUri)&&(identical(other.definitions, definitions) || other.definitions == definitions)&&const DeepCollectionEquality().equals(other.methods, methods)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as RpcSchemaResponse;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcSchemaResponse&&(identical(other.schemaUri, _this.schemaUri) || other.schemaUri == _this.schemaUri)&&(identical(other.definitions, _this.definitions) || other.definitions == _this.definitions)&&const DeepCollectionEquality().equals(other.methods, _this.methods)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,schemaUri,definitions,const DeepCollectionEquality().hash(methods),extraFields);
+int get hashCode {
+  final _this = this as RpcSchemaResponse;
+  return Object.hash(runtimeType,_this.schemaUri,_this.definitions,const DeepCollectionEquality().hash(_this.methods),_this.extraFields);
+}
 
 @override
 String toString() {
-  return 'RpcSchemaResponse(schemaUri: $schemaUri, definitions: $definitions, methods: $methods, extraFields: $extraFields)';
+  final _this = this as RpcSchemaResponse;
+  return 'RpcSchemaResponse(schemaUri: ${_this.schemaUri}, definitions: ${_this.definitions}, methods: ${_this.methods}, extraFields: ${_this.extraFields})';
 }
 
 
@@ -252,16 +257,18 @@ _$RpcSchemaResponseCopyWith<_RpcSchemaResponse> get copyWith => __$RpcSchemaResp
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RpcSchemaResponse&&(identical(other.schemaUri, schemaUri) || other.schemaUri == schemaUri)&&(identical(other.definitions, definitions) || other.definitions == definitions)&&const DeepCollectionEquality().equals(other._methods, _methods)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _RpcSchemaResponse&&(identical(other.schemaUri, schemaUri) || other.schemaUri == schemaUri)&&(identical(other.definitions, definitions) || other.definitions == definitions)&&const DeepCollectionEquality().equals(other.methods, _methods)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,schemaUri,definitions,const DeepCollectionEquality().hash(_methods),extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,schemaUri,definitions,const DeepCollectionEquality().hash(_methods),extraFields);
+}
 
 @override
 String toString() {
-  return 'RpcSchemaResponse(schemaUri: $schemaUri, definitions: $definitions, methods: $methods, extraFields: $extraFields)';
+    return 'RpcSchemaResponse(schemaUri: $schemaUri, definitions: $definitions, methods: $methods, extraFields: $extraFields)';
 }
 
 
@@ -334,16 +341,21 @@ $RpcMethodInfoCopyWith<RpcMethodInfo> get copyWith => _$RpcMethodInfoCopyWithImp
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcMethodInfo&&(identical(other.name, name) || other.name == name)&&(identical(other.schema, schema) || other.schema == schema)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as RpcMethodInfo;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcMethodInfo&&(identical(other.name, _this.name) || other.name == _this.name)&&(identical(other.schema, _this.schema) || other.schema == _this.schema)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,name,schema,extraFields);
+int get hashCode {
+  final _this = this as RpcMethodInfo;
+  return Object.hash(runtimeType,_this.name,_this.schema,_this.extraFields);
+}
 
 @override
 String toString() {
-  return 'RpcMethodInfo(name: $name, schema: $schema, extraFields: $extraFields)';
+  final _this = this as RpcMethodInfo;
+  return 'RpcMethodInfo(name: ${_this.name}, schema: ${_this.schema}, extraFields: ${_this.extraFields})';
 }
 
 
@@ -552,16 +564,18 @@ _$RpcMethodInfoCopyWith<_RpcMethodInfo> get copyWith => __$RpcMethodInfoCopyWith
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RpcMethodInfo&&(identical(other.name, name) || other.name == name)&&(identical(other.schema, schema) || other.schema == schema)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _RpcMethodInfo&&(identical(other.name, name) || other.name == name)&&(identical(other.schema, schema) || other.schema == schema)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,name,schema,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,name,schema,extraFields);
+}
 
 @override
 String toString() {
-  return 'RpcMethodInfo(name: $name, schema: $schema, extraFields: $extraFields)';
+    return 'RpcMethodInfo(name: $name, schema: $schema, extraFields: $extraFields)';
 }
 
 
@@ -633,16 +647,21 @@ $RpcMethodSchemaCopyWith<RpcMethodSchema> get copyWith => _$RpcMethodSchemaCopyW
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcMethodSchema&&const DeepCollectionEquality().equals(other.description, description)&&const DeepCollectionEquality().equals(other.notes, notes)&&(identical(other.paramsSchema, paramsSchema) || other.paramsSchema == paramsSchema)&&(identical(other.returnsSchema, returnsSchema) || other.returnsSchema == returnsSchema)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as RpcMethodSchema;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcMethodSchema&&const DeepCollectionEquality().equals(other.description, _this.description)&&const DeepCollectionEquality().equals(other.notes, _this.notes)&&(identical(other.paramsSchema, _this.paramsSchema) || other.paramsSchema == _this.paramsSchema)&&(identical(other.returnsSchema, _this.returnsSchema) || other.returnsSchema == _this.returnsSchema)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(description),const DeepCollectionEquality().hash(notes),paramsSchema,returnsSchema,extraFields);
+int get hashCode {
+  final _this = this as RpcMethodSchema;
+  return Object.hash(runtimeType,const DeepCollectionEquality().hash(_this.description),const DeepCollectionEquality().hash(_this.notes),_this.paramsSchema,_this.returnsSchema,_this.extraFields);
+}
 
 @override
 String toString() {
-  return 'RpcMethodSchema(description: $description, notes: $notes, paramsSchema: $paramsSchema, returnsSchema: $returnsSchema, extraFields: $extraFields)';
+  final _this = this as RpcMethodSchema;
+  return 'RpcMethodSchema(description: ${_this.description}, notes: ${_this.notes}, paramsSchema: ${_this.paramsSchema}, returnsSchema: ${_this.returnsSchema}, extraFields: ${_this.extraFields})';
 }
 
 
@@ -879,16 +898,18 @@ _$RpcMethodSchemaCopyWith<_RpcMethodSchema> get copyWith => __$RpcMethodSchemaCo
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RpcMethodSchema&&const DeepCollectionEquality().equals(other._description, _description)&&const DeepCollectionEquality().equals(other._notes, _notes)&&(identical(other.paramsSchema, paramsSchema) || other.paramsSchema == paramsSchema)&&(identical(other.returnsSchema, returnsSchema) || other.returnsSchema == returnsSchema)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _RpcMethodSchema&&const DeepCollectionEquality().equals(other.description, _description)&&const DeepCollectionEquality().equals(other.notes, _notes)&&(identical(other.paramsSchema, paramsSchema) || other.paramsSchema == paramsSchema)&&(identical(other.returnsSchema, returnsSchema) || other.returnsSchema == returnsSchema)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_description),const DeepCollectionEquality().hash(_notes),paramsSchema,returnsSchema,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,const DeepCollectionEquality().hash(_description),const DeepCollectionEquality().hash(_notes),paramsSchema,returnsSchema,extraFields);
+}
 
 @override
 String toString() {
-  return 'RpcMethodSchema(description: $description, notes: $notes, paramsSchema: $paramsSchema, returnsSchema: $returnsSchema, extraFields: $extraFields)';
+    return 'RpcMethodSchema(description: $description, notes: $notes, paramsSchema: $paramsSchema, returnsSchema: $returnsSchema, extraFields: $extraFields)';
 }
 
 

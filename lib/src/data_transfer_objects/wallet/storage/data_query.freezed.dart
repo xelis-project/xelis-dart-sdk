@@ -26,16 +26,21 @@ $QueryNumberCopyWith<QueryNumber> get copyWith => _$QueryNumberCopyWithImpl<Quer
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is QueryNumber&&(identical(other.value, value) || other.value == value));
+  final _this = this as QueryNumber;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is QueryNumber&&(identical(other.value, _this.value) || other.value == _this.value));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,value);
+int get hashCode {
+  final _this = this as QueryNumber;
+  return Object.hash(runtimeType,_this.value);
+}
 
 @override
 String toString() {
-  return 'QueryNumber(value: $value)';
+  final _this = this as QueryNumber;
+  return 'QueryNumber(value: ${_this.value})';
 }
 
 
@@ -234,16 +239,18 @@ $GreaterQueryNumberCopyWith<GreaterQueryNumber> get copyWith => _$GreaterQueryNu
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GreaterQueryNumber&&(identical(other.value, value) || other.value == value));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is GreaterQueryNumber&&(identical(other.value, value) || other.value == value));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,value);
+int get hashCode {
+    return Object.hash(runtimeType,value);
+}
 
 @override
 String toString() {
-  return 'QueryNumber.greater(value: $value)';
+    return 'QueryNumber.greater(value: $value)';
 }
 
 
@@ -300,16 +307,18 @@ $GreaterOrEqualQueryNumberCopyWith<GreaterOrEqualQueryNumber> get copyWith => _$
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GreaterOrEqualQueryNumber&&(identical(other.value, value) || other.value == value));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is GreaterOrEqualQueryNumber&&(identical(other.value, value) || other.value == value));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,value);
+int get hashCode {
+    return Object.hash(runtimeType,value);
+}
 
 @override
 String toString() {
-  return 'QueryNumber.greaterOrEqual(value: $value)';
+    return 'QueryNumber.greaterOrEqual(value: $value)';
 }
 
 
@@ -366,16 +375,18 @@ $LesserQueryNumberCopyWith<LesserQueryNumber> get copyWith => _$LesserQueryNumbe
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is LesserQueryNumber&&(identical(other.value, value) || other.value == value));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is LesserQueryNumber&&(identical(other.value, value) || other.value == value));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,value);
+int get hashCode {
+    return Object.hash(runtimeType,value);
+}
 
 @override
 String toString() {
-  return 'QueryNumber.lesser(value: $value)';
+    return 'QueryNumber.lesser(value: $value)';
 }
 
 
@@ -432,16 +443,18 @@ $LesserOrEqualQueryNumberCopyWith<LesserOrEqualQueryNumber> get copyWith => _$Le
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is LesserOrEqualQueryNumber&&(identical(other.value, value) || other.value == value));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is LesserOrEqualQueryNumber&&(identical(other.value, value) || other.value == value));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,value);
+int get hashCode {
+    return Object.hash(runtimeType,value);
+}
 
 @override
 String toString() {
-  return 'QueryNumber.lesserOrEqual(value: $value)';
+    return 'QueryNumber.lesserOrEqual(value: $value)';
 }
 
 
@@ -488,7 +501,7 @@ mixin _$DataQuery {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is DataQuery);
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is DataQuery);
 }
 
 
@@ -497,7 +510,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'DataQuery()';
+    return 'DataQuery()';
 }
 
 
@@ -760,16 +773,18 @@ $NotDataQueryCopyWith<NotDataQuery> get copyWith => _$NotDataQueryCopyWithImpl<N
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is NotDataQuery&&(identical(other.query, query) || other.query == query));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is NotDataQuery&&(identical(other.query, query) || other.query == query));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,query);
+int get hashCode {
+    return Object.hash(runtimeType,query);
+}
 
 @override
 String toString() {
-  return 'DataQuery.not(query: $query)';
+    return 'DataQuery.not(query: $query)';
 }
 
 
@@ -841,16 +856,18 @@ $AndDataQueryCopyWith<AndDataQuery> get copyWith => _$AndDataQueryCopyWithImpl<A
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AndDataQuery&&const DeepCollectionEquality().equals(other._queries, _queries));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is AndDataQuery&&const DeepCollectionEquality().equals(other.queries, _queries));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_queries));
+int get hashCode {
+    return Object.hash(runtimeType,const DeepCollectionEquality().hash(_queries));
+}
 
 @override
 String toString() {
-  return 'DataQuery.and(queries: $queries)';
+    return 'DataQuery.and(queries: $queries)';
 }
 
 
@@ -913,16 +930,18 @@ $OrDataQueryCopyWith<OrDataQuery> get copyWith => _$OrDataQueryCopyWithImpl<OrDa
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is OrDataQuery&&const DeepCollectionEquality().equals(other._queries, _queries));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is OrDataQuery&&const DeepCollectionEquality().equals(other.queries, _queries));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_queries));
+int get hashCode {
+    return Object.hash(runtimeType,const DeepCollectionEquality().hash(_queries));
+}
 
 @override
 String toString() {
-  return 'DataQuery.or(queries: $queries)';
+    return 'DataQuery.or(queries: $queries)';
 }
 
 
@@ -979,16 +998,18 @@ $EqualDataQueryCopyWith<EqualDataQuery> get copyWith => _$EqualDataQueryCopyWith
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is EqualDataQuery&&const DeepCollectionEquality().equals(other.value, value));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is EqualDataQuery&&const DeepCollectionEquality().equals(other.value, value));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(value));
+int get hashCode {
+    return Object.hash(runtimeType,const DeepCollectionEquality().hash(value));
+}
 
 @override
 String toString() {
-  return 'DataQuery.equal(value: $value)';
+    return 'DataQuery.equal(value: $value)';
 }
 
 
@@ -1045,16 +1066,18 @@ $StartsWithDataQueryCopyWith<StartsWithDataQuery> get copyWith => _$StartsWithDa
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is StartsWithDataQuery&&const DeepCollectionEquality().equals(other.value, value));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is StartsWithDataQuery&&const DeepCollectionEquality().equals(other.value, value));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(value));
+int get hashCode {
+    return Object.hash(runtimeType,const DeepCollectionEquality().hash(value));
+}
 
 @override
 String toString() {
-  return 'DataQuery.startsWith(value: $value)';
+    return 'DataQuery.startsWith(value: $value)';
 }
 
 
@@ -1111,16 +1134,18 @@ $EndsWithDataQueryCopyWith<EndsWithDataQuery> get copyWith => _$EndsWithDataQuer
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is EndsWithDataQuery&&const DeepCollectionEquality().equals(other.value, value));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is EndsWithDataQuery&&const DeepCollectionEquality().equals(other.value, value));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(value));
+int get hashCode {
+    return Object.hash(runtimeType,const DeepCollectionEquality().hash(value));
+}
 
 @override
 String toString() {
-  return 'DataQuery.endsWith(value: $value)';
+    return 'DataQuery.endsWith(value: $value)';
 }
 
 
@@ -1177,16 +1202,18 @@ $ContainsValueQueryCopyWith<ContainsValueQuery> get copyWith => _$ContainsValueQ
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ContainsValueQuery&&const DeepCollectionEquality().equals(other.value, value));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is ContainsValueQuery&&const DeepCollectionEquality().equals(other.value, value));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(value));
+int get hashCode {
+    return Object.hash(runtimeType,const DeepCollectionEquality().hash(value));
+}
 
 @override
 String toString() {
-  return 'DataQuery.containsValue(value: $value)';
+    return 'DataQuery.containsValue(value: $value)';
 }
 
 
@@ -1243,16 +1270,18 @@ $IsOfTypeDataQueryCopyWith<IsOfTypeDataQuery> get copyWith => _$IsOfTypeDataQuer
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is IsOfTypeDataQuery&&(identical(other.type, type) || other.type == type));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is IsOfTypeDataQuery&&(identical(other.type, type) || other.type == type));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,type);
+int get hashCode {
+    return Object.hash(runtimeType,type);
+}
 
 @override
 String toString() {
-  return 'DataQuery.isOfType(type: $type)';
+    return 'DataQuery.isOfType(type: $type)';
 }
 
 
@@ -1309,16 +1338,18 @@ $MatchesDataQueryCopyWith<MatchesDataQuery> get copyWith => _$MatchesDataQueryCo
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is MatchesDataQuery&&(identical(other.pattern, pattern) || other.pattern == pattern));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is MatchesDataQuery&&(identical(other.pattern, pattern) || other.pattern == pattern));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,pattern);
+int get hashCode {
+    return Object.hash(runtimeType,pattern);
+}
 
 @override
 String toString() {
-  return 'DataQuery.matches(pattern: $pattern)';
+    return 'DataQuery.matches(pattern: $pattern)';
 }
 
 
@@ -1375,16 +1406,18 @@ $GreaterDataQueryCopyWith<GreaterDataQuery> get copyWith => _$GreaterDataQueryCo
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GreaterDataQuery&&(identical(other.value, value) || other.value == value));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is GreaterDataQuery&&(identical(other.value, value) || other.value == value));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,value);
+int get hashCode {
+    return Object.hash(runtimeType,value);
+}
 
 @override
 String toString() {
-  return 'DataQuery.greater(value: $value)';
+    return 'DataQuery.greater(value: $value)';
 }
 
 
@@ -1441,16 +1474,18 @@ $GreaterOrEqualDataQueryCopyWith<GreaterOrEqualDataQuery> get copyWith => _$Grea
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GreaterOrEqualDataQuery&&(identical(other.value, value) || other.value == value));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is GreaterOrEqualDataQuery&&(identical(other.value, value) || other.value == value));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,value);
+int get hashCode {
+    return Object.hash(runtimeType,value);
+}
 
 @override
 String toString() {
-  return 'DataQuery.greaterOrEqual(value: $value)';
+    return 'DataQuery.greaterOrEqual(value: $value)';
 }
 
 
@@ -1507,16 +1542,18 @@ $LesserDataQueryCopyWith<LesserDataQuery> get copyWith => _$LesserDataQueryCopyW
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is LesserDataQuery&&(identical(other.value, value) || other.value == value));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is LesserDataQuery&&(identical(other.value, value) || other.value == value));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,value);
+int get hashCode {
+    return Object.hash(runtimeType,value);
+}
 
 @override
 String toString() {
-  return 'DataQuery.lesser(value: $value)';
+    return 'DataQuery.lesser(value: $value)';
 }
 
 
@@ -1573,16 +1610,18 @@ $LesserOrEqualDataQueryCopyWith<LesserOrEqualDataQuery> get copyWith => _$Lesser
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is LesserOrEqualDataQuery&&(identical(other.value, value) || other.value == value));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is LesserOrEqualDataQuery&&(identical(other.value, value) || other.value == value));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,value);
+int get hashCode {
+    return Object.hash(runtimeType,value);
+}
 
 @override
 String toString() {
-  return 'DataQuery.lesserOrEqual(value: $value)';
+    return 'DataQuery.lesserOrEqual(value: $value)';
 }
 
 
@@ -1640,16 +1679,18 @@ $HasKeyDataQueryCopyWith<HasKeyDataQuery> get copyWith => _$HasKeyDataQueryCopyW
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is HasKeyDataQuery&&const DeepCollectionEquality().equals(other.key, key)&&(identical(other.query, query) || other.query == query));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is HasKeyDataQuery&&const DeepCollectionEquality().equals(other.key, key)&&(identical(other.query, query) || other.query == query));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(key),query);
+int get hashCode {
+    return Object.hash(runtimeType,const DeepCollectionEquality().hash(key),query);
+}
 
 @override
 String toString() {
-  return 'DataQuery.hasKey(key: $key, query: $query)';
+    return 'DataQuery.hasKey(key: $key, query: $query)';
 }
 
 
@@ -1720,16 +1761,18 @@ $AtKeyDataQueryCopyWith<AtKeyDataQuery> get copyWith => _$AtKeyDataQueryCopyWith
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AtKeyDataQuery&&const DeepCollectionEquality().equals(other.key, key)&&(identical(other.query, query) || other.query == query));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is AtKeyDataQuery&&const DeepCollectionEquality().equals(other.key, key)&&(identical(other.query, query) || other.query == query));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(key),query);
+int get hashCode {
+    return Object.hash(runtimeType,const DeepCollectionEquality().hash(key),query);
+}
 
 @override
 String toString() {
-  return 'DataQuery.atKey(key: $key, query: $query)';
+    return 'DataQuery.atKey(key: $key, query: $query)';
 }
 
 
@@ -1796,16 +1839,18 @@ $LengthDataQueryCopyWith<LengthDataQuery> get copyWith => _$LengthDataQueryCopyW
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is LengthDataQuery&&(identical(other.comparison, comparison) || other.comparison == comparison));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is LengthDataQuery&&(identical(other.comparison, comparison) || other.comparison == comparison));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,comparison);
+int get hashCode {
+    return Object.hash(runtimeType,comparison);
+}
 
 @override
 String toString() {
-  return 'DataQuery.length(comparison: $comparison)';
+    return 'DataQuery.length(comparison: $comparison)';
 }
 
 
@@ -1871,16 +1916,18 @@ $ContainsElementDataQueryCopyWith<ContainsElementDataQuery> get copyWith => _$Co
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ContainsElementDataQuery&&(identical(other.value, value) || other.value == value));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is ContainsElementDataQuery&&(identical(other.value, value) || other.value == value));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,value);
+int get hashCode {
+    return Object.hash(runtimeType,value);
+}
 
 @override
 String toString() {
-  return 'DataQuery.containsElement(value: $value)';
+    return 'DataQuery.containsElement(value: $value)';
 }
 
 
@@ -1947,16 +1994,18 @@ $AtPositionDataQueryCopyWith<AtPositionDataQuery> get copyWith => _$AtPositionDa
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AtPositionDataQuery&&(identical(other.position, position) || other.position == position)&&(identical(other.query, query) || other.query == query));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is AtPositionDataQuery&&(identical(other.position, position) || other.position == position)&&(identical(other.query, query) || other.query == query));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,position,query);
+int get hashCode {
+    return Object.hash(runtimeType,position,query);
+}
 
 @override
 String toString() {
-  return 'DataQuery.atPosition(position: $position, query: $query)';
+    return 'DataQuery.atPosition(position: $position, query: $query)';
 }
 
 
@@ -2023,16 +2072,18 @@ $ElementTypeDataQueryCopyWith<ElementTypeDataQuery> get copyWith => _$ElementTyp
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ElementTypeDataQuery&&(identical(other.type, type) || other.type == type));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is ElementTypeDataQuery&&(identical(other.type, type) || other.type == type));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,type);
+int get hashCode {
+    return Object.hash(runtimeType,type);
+}
 
 @override
 String toString() {
-  return 'DataQuery.elementType(type: $type)';
+    return 'DataQuery.elementType(type: $type)';
 }
 
 

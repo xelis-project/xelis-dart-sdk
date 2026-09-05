@@ -26,16 +26,21 @@ $RpcBlockSummaryCopyWith<RpcBlockSummary> get copyWith => _$RpcBlockSummaryCopyW
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcBlockSummary&&(identical(other.blockHash, blockHash) || other.blockHash == blockHash)&&(identical(other.height, height) || other.height == height)&&(identical(other.timestamp, timestamp) || other.timestamp == timestamp)&&(identical(other.miner, miner) || other.miner == miner)&&const DeepCollectionEquality().equals(other.transactions, transactions)&&(identical(other.blockType, blockType) || other.blockType == blockType)&&(identical(other.difficulty, difficulty) || other.difficulty == difficulty)&&(identical(other.cumulativeDifficulty, cumulativeDifficulty) || other.cumulativeDifficulty == cumulativeDifficulty)&&(identical(other.metadata, metadata) || other.metadata == metadata)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+  final _this = this as RpcBlockSummary;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcBlockSummary&&(identical(other.blockHash, _this.blockHash) || other.blockHash == _this.blockHash)&&(identical(other.height, _this.height) || other.height == _this.height)&&(identical(other.timestamp, _this.timestamp) || other.timestamp == _this.timestamp)&&(identical(other.miner, _this.miner) || other.miner == _this.miner)&&const DeepCollectionEquality().equals(other.transactions, _this.transactions)&&(identical(other.blockType, _this.blockType) || other.blockType == _this.blockType)&&(identical(other.difficulty, _this.difficulty) || other.difficulty == _this.difficulty)&&(identical(other.cumulativeDifficulty, _this.cumulativeDifficulty) || other.cumulativeDifficulty == _this.cumulativeDifficulty)&&(identical(other.metadata, _this.metadata) || other.metadata == _this.metadata)&&(identical(other.extraFields, _this.extraFields) || other.extraFields == _this.extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,blockHash,height,timestamp,miner,const DeepCollectionEquality().hash(transactions),blockType,difficulty,cumulativeDifficulty,metadata,extraFields);
+int get hashCode {
+  final _this = this as RpcBlockSummary;
+  return Object.hash(runtimeType,_this.blockHash,_this.height,_this.timestamp,_this.miner,const DeepCollectionEquality().hash(_this.transactions),_this.blockType,_this.difficulty,_this.cumulativeDifficulty,_this.metadata,_this.extraFields);
+}
 
 @override
 String toString() {
-  return 'RpcBlockSummary(blockHash: $blockHash, height: $height, timestamp: $timestamp, miner: $miner, transactions: $transactions, blockType: $blockType, difficulty: $difficulty, cumulativeDifficulty: $cumulativeDifficulty, metadata: $metadata, extraFields: $extraFields)';
+  final _this = this as RpcBlockSummary;
+  return 'RpcBlockSummary(blockHash: ${_this.blockHash}, height: ${_this.height}, timestamp: ${_this.timestamp}, miner: ${_this.miner}, transactions: ${_this.transactions}, blockType: ${_this.blockType}, difficulty: ${_this.difficulty}, cumulativeDifficulty: ${_this.cumulativeDifficulty}, metadata: ${_this.metadata}, extraFields: ${_this.extraFields})';
 }
 
 
@@ -276,16 +281,18 @@ _$RpcBlockSummaryCopyWith<_RpcBlockSummary> get copyWith => __$RpcBlockSummaryCo
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RpcBlockSummary&&(identical(other.blockHash, blockHash) || other.blockHash == blockHash)&&(identical(other.height, height) || other.height == height)&&(identical(other.timestamp, timestamp) || other.timestamp == timestamp)&&(identical(other.miner, miner) || other.miner == miner)&&const DeepCollectionEquality().equals(other._transactions, _transactions)&&(identical(other.blockType, blockType) || other.blockType == blockType)&&(identical(other.difficulty, difficulty) || other.difficulty == difficulty)&&(identical(other.cumulativeDifficulty, cumulativeDifficulty) || other.cumulativeDifficulty == cumulativeDifficulty)&&(identical(other.metadata, metadata) || other.metadata == metadata)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _RpcBlockSummary&&(identical(other.blockHash, blockHash) || other.blockHash == blockHash)&&(identical(other.height, height) || other.height == height)&&(identical(other.timestamp, timestamp) || other.timestamp == timestamp)&&(identical(other.miner, miner) || other.miner == miner)&&const DeepCollectionEquality().equals(other.transactions, _transactions)&&(identical(other.blockType, blockType) || other.blockType == blockType)&&(identical(other.difficulty, difficulty) || other.difficulty == difficulty)&&(identical(other.cumulativeDifficulty, cumulativeDifficulty) || other.cumulativeDifficulty == cumulativeDifficulty)&&(identical(other.metadata, metadata) || other.metadata == metadata)&&(identical(other.extraFields, extraFields) || other.extraFields == extraFields));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,blockHash,height,timestamp,miner,const DeepCollectionEquality().hash(_transactions),blockType,difficulty,cumulativeDifficulty,metadata,extraFields);
+int get hashCode {
+    return Object.hash(runtimeType,blockHash,height,timestamp,miner,const DeepCollectionEquality().hash(_transactions),blockType,difficulty,cumulativeDifficulty,metadata,extraFields);
+}
 
 @override
 String toString() {
-  return 'RpcBlockSummary(blockHash: $blockHash, height: $height, timestamp: $timestamp, miner: $miner, transactions: $transactions, blockType: $blockType, difficulty: $difficulty, cumulativeDifficulty: $cumulativeDifficulty, metadata: $metadata, extraFields: $extraFields)';
+    return 'RpcBlockSummary(blockHash: $blockHash, height: $height, timestamp: $timestamp, miner: $miner, transactions: $transactions, blockType: $blockType, difficulty: $difficulty, cumulativeDifficulty: $cumulativeDifficulty, metadata: $metadata, extraFields: $extraFields)';
 }
 
 

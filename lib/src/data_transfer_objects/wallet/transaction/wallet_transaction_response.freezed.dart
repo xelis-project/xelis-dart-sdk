@@ -26,16 +26,21 @@ $WalletTransactionResponseCopyWith<WalletTransactionResponse> get copyWith => _$
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is WalletTransactionResponse&&(identical(other.transaction, transaction) || other.transaction == transaction)&&(identical(other.txAsHex, txAsHex) || other.txAsHex == txAsHex));
+  final _this = this as WalletTransactionResponse;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is WalletTransactionResponse&&(identical(other.transaction, _this.transaction) || other.transaction == _this.transaction)&&(identical(other.txAsHex, _this.txAsHex) || other.txAsHex == _this.txAsHex));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,transaction,txAsHex);
+int get hashCode {
+  final _this = this as WalletTransactionResponse;
+  return Object.hash(runtimeType,_this.transaction,_this.txAsHex);
+}
 
 @override
 String toString() {
-  return 'WalletTransactionResponse(transaction: $transaction, txAsHex: $txAsHex)';
+  final _this = this as WalletTransactionResponse;
+  return 'WalletTransactionResponse(transaction: ${_this.transaction}, txAsHex: ${_this.txAsHex})';
 }
 
 
@@ -233,16 +238,18 @@ _$WalletTransactionResponseCopyWith<_WalletTransactionResponse> get copyWith => 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _WalletTransactionResponse&&(identical(other.transaction, transaction) || other.transaction == transaction)&&(identical(other.txAsHex, txAsHex) || other.txAsHex == txAsHex));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _WalletTransactionResponse&&(identical(other.transaction, transaction) || other.transaction == transaction)&&(identical(other.txAsHex, txAsHex) || other.txAsHex == txAsHex));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,transaction,txAsHex);
+int get hashCode {
+    return Object.hash(runtimeType,transaction,txAsHex);
+}
 
 @override
 String toString() {
-  return 'WalletTransactionResponse(transaction: $transaction, txAsHex: $txAsHex)';
+    return 'WalletTransactionResponse(transaction: $transaction, txAsHex: $txAsHex)';
 }
 
 

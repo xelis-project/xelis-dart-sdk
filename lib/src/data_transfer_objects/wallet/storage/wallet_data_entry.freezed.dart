@@ -26,16 +26,21 @@ $WalletDataEntryCopyWith<WalletDataEntry> get copyWith => _$WalletDataEntryCopyW
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is WalletDataEntry&&const DeepCollectionEquality().equals(other.key, key)&&(identical(other.value, value) || other.value == value));
+  final _this = this as WalletDataEntry;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is WalletDataEntry&&const DeepCollectionEquality().equals(other.key, _this.key)&&(identical(other.value, _this.value) || other.value == _this.value));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(key),value);
+int get hashCode {
+  final _this = this as WalletDataEntry;
+  return Object.hash(runtimeType,const DeepCollectionEquality().hash(_this.key),_this.value);
+}
 
 @override
 String toString() {
-  return 'WalletDataEntry(key: $key, value: $value)';
+  final _this = this as WalletDataEntry;
+  return 'WalletDataEntry(key: ${_this.key}, value: ${_this.value})';
 }
 
 
@@ -233,16 +238,18 @@ _$WalletDataEntryCopyWith<_WalletDataEntry> get copyWith => __$WalletDataEntryCo
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _WalletDataEntry&&const DeepCollectionEquality().equals(other.key, key)&&(identical(other.value, value) || other.value == value));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _WalletDataEntry&&const DeepCollectionEquality().equals(other.key, key)&&(identical(other.value, value) || other.value == value));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(key),value);
+int get hashCode {
+    return Object.hash(runtimeType,const DeepCollectionEquality().hash(key),value);
+}
 
 @override
 String toString() {
-  return 'WalletDataEntry(key: $key, value: $value)';
+    return 'WalletDataEntry(key: $key, value: $value)';
 }
 
 

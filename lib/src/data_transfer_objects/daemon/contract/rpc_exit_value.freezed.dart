@@ -21,7 +21,7 @@ mixin _$RpcExitValue {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcExitValue);
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcExitValue);
 }
 
 
@@ -199,12 +199,14 @@ $RpcErrorExitValueCopyWith<RpcErrorExitValue> get copyWith => _$RpcErrorExitValu
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcErrorExitValue&&(identical(other.error, error) || other.error == error));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcErrorExitValue&&(identical(other.error, error) || other.error == error));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,error);
+int get hashCode {
+    return Object.hash(runtimeType,error);
+}
 
 
 
@@ -270,12 +272,14 @@ $RpcCodeExitValueCopyWith<RpcCodeExitValue> get copyWith => _$RpcCodeExitValueCo
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcCodeExitValue&&(identical(other.code, code) || other.code == code));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcCodeExitValue&&(identical(other.code, code) || other.code == code));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,code);
+int get hashCode {
+    return Object.hash(runtimeType,code);
+}
 
 
 
@@ -332,12 +336,14 @@ $RpcPayloadExitValueCopyWith<RpcPayloadExitValue> get copyWith => _$RpcPayloadEx
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcPayloadExitValue&&(identical(other.payload, payload) || other.payload == payload));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcPayloadExitValue&&(identical(other.payload, payload) || other.payload == payload));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,payload);
+int get hashCode {
+    return Object.hash(runtimeType,payload);
+}
 
 
 
@@ -403,12 +409,14 @@ $RpcUnknownExitValueCopyWith<RpcUnknownExitValue> get copyWith => _$RpcUnknownEx
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcUnknownExitValue&&(identical(other.wireValue, wireValue) || other.wireValue == wireValue));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is RpcUnknownExitValue&&(identical(other.wireValue, wireValue) || other.wireValue == wireValue));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,wireValue);
+int get hashCode {
+    return Object.hash(runtimeType,wireValue);
+}
 
 
 
